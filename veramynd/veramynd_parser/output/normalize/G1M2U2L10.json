@@ -1,0 +1,403 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U2L10",
+  "title": "Lesson 10: Speaking and Listening: Patterns of the Stars",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "2",
+      "lesson": "10",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": [
+      "Writing",
+      "Language"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will use notes about star patterns to participate in a Science Talk, record observations in a notebook, and reflect on integrity during discussions.",
+  "what_is_taught": [
+    {
+      "skill": "review information from an anchor chart",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "identify important information to answer a question",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "share ideas with a partner using polite communication",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "record notes with words and sketches to explain a scientific question",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use sentence frames to build onto others' ideas during a group discussion",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "participate in a structured Science Talk protocol in small groups",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "reflect on personal behavior and integrity during group discussions",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "record observations of images and videos in a notebook using descriptive language",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use language supports such as sentence frames and word walls to aid communication and writing",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "Phonological Awareness",
+    "Phonics",
+    "Fluency",
+    "Comprehension",
+    "Independent Writing of extended texts"
+  ],
+  "student_actions": {
+    "recognition_identification": "identify important information from anchor charts and notes",
+    "oral_production": "share ideas with partners and groups using sentence frames",
+    "written_production": "write notes and observations in notes sheets and notebooks",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "participate in Science Talk protocol using sentence frames",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain reasoning for notes and ideas during partner and group discussions",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Direct students' attention to the Patterns of the Stars anchor chart and review the big ideas.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner: 'What information do you think is most important to know when answering the question 'Why can't we see stars during the day?''",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Circulate and listen in as students share with their partner.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Tell students that now they will record their own notes about why we can't see stars during the day, and they might want to include a note, or notes, like the one starred on the anchor chart.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Display the Patterns of the Stars notes sheet and read the prompt aloud: -'Why can't we see stars during the day?'",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Tell students they may begin writing their own notes to answer the question: Focus students on the prompt. Reread it aloud and invite them to begin writing their individual notes.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Circulate and support students as they write. Remind them to use the Patterns of the Moon anchor chart and Sun, Moon, and Stars Word Wall to help them while writing.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "-'Why can't we see stars during the day?'",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Remind them that they used this protocol in Lessons 6 and 8 and review as necessary using the Science Talk Protocol anchor chart.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Remind students of the sentence frames during the previous Science Talks: 'I think he/she means __________.' 'I'd like to add ________.' 'This makes me think __________.' Invite students to repeat each sentence frame as you read it aloud.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Guide students through the protocol. Circulate and use the Speaking and Listening Checklist to track student progress. Prompt students with questions to help them expand on their ideas.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Refocus whole group and collect students' notes sheets.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Using a total participation technique, invite responses from the group: 'What does it mean to have integrity?' (to do the right thing even when it's hard)",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Invite students to Think-Pair-Share with an elbow partner: 'What is one way you noticed yourself or a classmate showing integrity during the Science Talk protocol?'",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Ask students to return to their seats. Share a few great examples of integrity that you heard while listening to students talk.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Direct students' attention to the learning targets and read the second one aloud: 'I can record my observations of videos/images of the sky in the Sky notebook.'",
+      "location": "Closing and Assessment B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Display pages 9-10 of the Sky notebook and sun photograph 7 and use the same process as in previous lessons to distribute notebooks and colored pencils and to guide students to complete this page.",
+      "location": "Closing and Assessment B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Signal all students to stop writing through the use of a designated sound and collect their Sky notebooks.",
+      "location": "Closing and Assessment B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "written_production"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Models reviewing anchor charts, using sentence frames for discussion, and writing notes with sketches.",
+    "prompts_that_cue_student_response": [
+      "What information do you think is most important to know when answering the question 'Why can't we see stars during the day?'",
+      "What does it mean to have integrity?",
+      "What is one way you noticed yourself or a classmate showing integrity during the Science Talk protocol?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "Uses multiple instructional blocks to develop speaking, listening, and writing skills related to scientific observation and discussion.",
+    "depth": "Focuses on using notes to support oral discussion and reflection on integrity, with scaffolds for language and writing."
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "anchor charts, notes sheets, photographs, word walls",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Review Patterns of the Stars anchor chart and discuss important information.",
+    "direct_instruction": "Model use of sentence frames and note-taking strategies.",
+    "guided_practice": "Participate in Science Talk protocol in small groups using notes and sentence frames.",
+    "independent_application": "Write observations in Sky notebook independently.",
+    "check_for_understanding": "Reflect on integrity and use of evidence during Science Talk.",
+    "differentiated_reinforce": "Provide guided notes sheets and sentence frames for ELLs and students needing support.",
+    "differentiated_extend": "Encourage ELLs to verbalize thinking with peers and use home language support."
+  },
+  "supports": {
+    "english_language_learners": "Rephrase complex questions, provide sentence frames, group students strategically, label photographs, and encourage verbalizing thinking.",
+    "universal_design_udl": "Use total participation techniques, provide supportive writing tools, and offer multiple ways to respond.",
+    "below_level_reinforce": "Provide partially filled-in notes sheets and guided writing support.",
+    "above_level_extend": "Encourage use of sentence frames to build on others' ideas and explain reasoning during discussions."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Observation of participation in Science Talk and review of notes and Sky notebook entries.",
+    "recognition_vs_production": "Production"
+  },
+  "materials": [
+    "Patterns of the Stars anchor chart (begun in Lesson 7)",
+    "Patterns of the Stars notes sheet (one per student and one to display)",
+    "Pencils (one per student)",
+    "Sun, Moon, and Stars Word Wall (begun in Unit 1, Lesson 1)",
+    "Does the Sun Sleep?: Noticing Sun, Moon, and Star Patterns (one to display)",
+    "Science Talk Protocol anchor chart (begun in Lesson 6)",
+    "Speaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Unit 2 Guiding Question anchor chart (begun in Lesson 2; added to during Work Time C; see supporting materials)",
+    "Working to Become Ethical People anchor chart (begun in Unit 1, Lesson 4)",
+    "Sky notebook (from Lesson 4; pages 9-10; one per student and one to display)",
+    "Sun photograph 7 (one to display)",
+    "Prepositions anchor chart (begun in Lesson 7)",
+    "Colored pencils (class set; variety of colors per student)",
+    "Adjectives anchor chart (begun in Lesson 4)"
+  ],
+  "vocabulary": {
+    "new": [
+      "pattern, stars, sun, shine (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Science Talk protocol",
+    "Think-Pair-Share",
+    "Total participation technique"
+  ],
+  "notes": "The lesson integrates speaking, listening, and writing around a science topic, emphasizing use of evidence and respectful communication. Supports for ELLs and students needing additional help are embedded throughout.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "expository"
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 307,
+    "source_page_end": 316
+  }
+}

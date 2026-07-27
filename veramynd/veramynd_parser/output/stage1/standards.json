@@ -1,0 +1,2826 @@
+{
+  "grade": 1,
+  "framework": "GA ELA",
+  "standards": [
+    {
+      "code": "1.F",
+      "level": "domain",
+      "label": "Foundations",
+      "text": "Students build a foundation for achieving dynamic literacy practices to aid reading comprehension.",
+      "parent_code": null,
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 2
+      }
+    },
+    {
+      "code": "1.F.PA",
+      "level": "big_idea",
+      "label": "Phonological Awareness",
+      "text": "Students develop the ability to identify and produce the sound structures of spoken language and how they can be divided into smaller components and manipulated.",
+      "parent_code": "1.F",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 3
+      }
+    },
+    {
+      "code": "1.F.PA.4",
+      "level": "standard",
+      "label": "Syllables",
+      "text": "Identify and manipulate syllables in spoken words.",
+      "parent_code": "1.F.PA",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 4
+      }
+    },
+    {
+      "code": "1.F.PA.4.d",
+      "level": "substandard",
+      "label": "",
+      "text": "Add, delete, and substitute syllables in spoken words.",
+      "parent_code": "1.F.PA.4",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 5
+      }
+    },
+    {
+      "code": "1.F.PA.5",
+      "level": "standard",
+      "label": "Onsets & Rimes",
+      "text": "Blend and segment onsets and rimes in spoken words.",
+      "parent_code": "1.F.PA",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 6
+      }
+    },
+    {
+      "code": "1.F.PA.5.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Blend onsets and rimes of spoken one-syllable words with blends, digraphs, and trigraphs in the initial and final positions.",
+      "parent_code": "1.F.PA.5",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 7
+      }
+    },
+    {
+      "code": "1.F.PA.5.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Segment onsets and rimes of spoken one-syllable words with blends, digraphs, and trigraphs in the initial and final positions.",
+      "parent_code": "1.F.PA.5",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 8
+      }
+    },
+    {
+      "code": "1.F.PA.6",
+      "level": "standard",
+      "label": "Phonemic Awareness",
+      "text": "Identify and manipulate the individual sounds in spoken words.",
+      "parent_code": "1.F.PA",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 9
+      }
+    },
+    {
+      "code": "1.F.PA.6.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Isolate and pronounce initial, medial, and final sounds in spoken one-syllable words, including words with digraphs and blends.",
+      "parent_code": "1.F.PA.6",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 10
+      }
+    },
+    {
+      "code": "1.F.PA.6.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Distinguish between short and long vowel sounds in spoken one-syllable words.",
+      "parent_code": "1.F.PA.6",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 11
+      }
+    },
+    {
+      "code": "1.F.PA.6.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Blend and segment up to five phonemes, including consonant blends and digraphs, in spoken words.",
+      "parent_code": "1.F.PA.6",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 12
+      }
+    },
+    {
+      "code": "1.F.PA.6.d",
+      "level": "substandard",
+      "label": "",
+      "text": "Add, delete, and substitute phonemes in spoken one-syllable words with three or more phonemes.",
+      "parent_code": "1.F.PA.6",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 13
+      }
+    },
+    {
+      "code": "1.F.P",
+      "level": "big_idea",
+      "label": "Phonics",
+      "text": "Students learn the relationships between the sounds of spoken language and the letters of written language as they decode and encode words in context and in isolation.",
+      "parent_code": "1.F",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 14
+      }
+    },
+    {
+      "code": "1.F.P.1",
+      "level": "standard",
+      "label": "Phoneme-Grapheme Correspondences",
+      "text": "Identify and produce phoneme-grapheme correspondences.",
+      "parent_code": "1.F.P",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 15
+      }
+    },
+    {
+      "code": "1.F.P.1.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Identify and produce phoneme-grapheme correspondences for frequently used consonant blends and digraphs.",
+      "parent_code": "1.F.P.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 16
+      }
+    },
+    {
+      "code": "1.F.P.1.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Identify and produce both long and short vowel sounds for A, E, I, O, U, including final -e and vowel digraphs.",
+      "parent_code": "1.F.P.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 17
+      }
+    },
+    {
+      "code": "1.F.P.2",
+      "level": "standard",
+      "label": "Decoding with Phonics",
+      "text": "Use grade-level phonics skills to decode words in context and in isolation.",
+      "parent_code": "1.F.P",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 18
+      }
+    },
+    {
+      "code": "1.F.P.2.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Decode regularly spelled one-syllable words with a variety of spelling patterns (VC, CV, CVC, CVCe, VCC, CCVC, CVCC, CVVC, CCVCC), including high-frequency words.",
+      "parent_code": "1.F.P.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 19
+      }
+    },
+    {
+      "code": "1.F.P.2.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Identify and decode parts of irregularly spelled words, including high-frequency words.",
+      "parent_code": "1.F.P.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 20
+      }
+    },
+    {
+      "code": "1.F.P.2.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Decode one-syllable nonsense words with a variety of spelling patterns (VC, CV, CVC, CVCe, VCC, CCVC, CVCC, CVVC, CCVCC).",
+      "parent_code": "1.F.P.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 21
+      }
+    },
+    {
+      "code": "1.F.P.2.d",
+      "level": "substandard",
+      "label": "",
+      "text": "Decode two-syllable words with basic patterns by applying knowledge of basic syllable types.",
+      "parent_code": "1.F.P.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 22
+      }
+    },
+    {
+      "code": "1.F.P.3",
+      "level": "standard",
+      "label": "Encoding with Phonics",
+      "text": "Use grade-level phonics skills to encode words in context and in isolation.",
+      "parent_code": "1.F.P",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 23
+      }
+    },
+    {
+      "code": "1.F.P.3.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Encode regularly spelled one-syllable words with a variety of spelling patterns (VC, CVC, CVCe, VCC, CCVC, CVCC, CCVCC), including high-frequency words.",
+      "parent_code": "1.F.P.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 24
+      }
+    },
+    {
+      "code": "1.F.P.3.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Identify and encode irregularly spelled words, including high-frequency words.",
+      "parent_code": "1.F.P.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 25
+      }
+    },
+    {
+      "code": "1.F.P.3.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Encode one-syllable nonsense words with a variety of spelling patterns (VC, CVC, CVCe, VCC, CCVC, CVCC, CCVCC).",
+      "parent_code": "1.F.P.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 26
+      }
+    },
+    {
+      "code": "1.F.P.3.d",
+      "level": "substandard",
+      "label": "",
+      "text": "Encode two-syllable words with basic patterns by applying knowledge of basic syllable types.",
+      "parent_code": "1.F.P.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 27
+      }
+    },
+    {
+      "code": "1.F.F",
+      "level": "big_idea",
+      "label": "Fluency",
+      "text": "Students read text aloud or silently with speed, accuracy, and expression.",
+      "parent_code": "1.F",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 28
+      }
+    },
+    {
+      "code": "1.F.F.1",
+      "level": "standard",
+      "label": "Oral & Silent Reading Fluency",
+      "text": "Demonstrate oral and silent reading fluency while reading grade-level texts for understanding, self-correcting as necessary to ensure accuracy and aid comprehension.",
+      "parent_code": "1.F.F",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 29
+      }
+    },
+    {
+      "code": "1.F.F.1.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Increase sight word vocabulary using decoding skills by reading grade-appropriate regularly and irregularly spelled words, including high-frequency words, in isolation and context with increasing automaticity.",
+      "parent_code": "1.F.F.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 30
+      }
+    },
+    {
+      "code": "1.F.F.1.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Read a wide range of grade-level texts aloud with increasing accuracy.",
+      "parent_code": "1.F.F.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 31
+      }
+    },
+    {
+      "code": "1.F.F.1.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Read a wide range of grade-level texts aloud with appropriate prosody (phrasing, expression, juncture/pause, and intonation) to demonstrate understanding.",
+      "parent_code": "1.F.F.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 32
+      }
+    },
+    {
+      "code": "1.F.F.1.d",
+      "level": "substandard",
+      "label": "",
+      "text": "Self-correct while reading text (silently or aloud) to improve comprehension and fluency, rereading as necessary.",
+      "parent_code": "1.F.F.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 33
+      }
+    },
+    {
+      "code": "1.F.H",
+      "level": "big_idea",
+      "label": "Handwriting",
+      "text": "Students develop print handwriting skills.",
+      "parent_code": "1.F",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 34
+      }
+    },
+    {
+      "code": "1.F.H.1",
+      "level": "standard",
+      "label": "Motor Skills & Letter/Word Formation",
+      "text": "Use fine motor skills to form legible letters and words in print.",
+      "parent_code": "1.F.H",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 35
+      }
+    },
+    {
+      "code": "1.F.H.1.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Form all uppercase and lowercase letters and words with accuracy and consistency.",
+      "parent_code": "1.F.H.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 36
+      }
+    },
+    {
+      "code": "1.F.H.1.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Form words with accuracy and consistency.",
+      "parent_code": "1.F.H.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 37
+      }
+    },
+    {
+      "code": "1.F.H.1.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Use appropriate spacing between letters, words, and sentences across lines on a page.",
+      "parent_code": "1.F.H.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 38
+      }
+    },
+    {
+      "code": "1.F.H.2",
+      "level": "standard",
+      "label": "Transcription & Handwriting Fluency",
+      "text": "Use working memory to transcribe oral language to written text and maintain meaning while writing letters, words, and sentences quickly and accurately.",
+      "parent_code": "1.F.H",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 39
+      }
+    },
+    {
+      "code": "1.F.H.2.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Perform basic transcription skills.",
+      "parent_code": "1.F.H.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 40
+      }
+    },
+    {
+      "code": "1.F.H.2.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Build handwriting fluency by forming accurate letters and words with increasing speed.",
+      "parent_code": "1.F.H.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 41
+      }
+    },
+    {
+      "code": "1.P",
+      "level": "domain",
+      "label": "Practices",
+      "text": "Students engage routinely in four literacy practices that ground, shape, and inform the expectations of the Foundations, Language, and Texts domains.",
+      "parent_code": null,
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 42
+      }
+    },
+    {
+      "code": "1.P.EICC",
+      "level": "big_idea",
+      "label": "",
+      "text": "Engagement & Intention for Comprehension & Composition: Students develop personal and academic identities as readers and writers, approaching texts for a variety of tasks and purposes and engaging in reading and writing processes in order to deepen comprehension and strengthen composition.",
+      "parent_code": "1.P",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 43
+      }
+    },
+    {
+      "code": "1.P.EICC.1",
+      "level": "standard",
+      "label": "Reader & Writer Identity",
+      "text": "Build an identity as a reader and writer, developing a repertoire of resources and tools to continuously expand participation as an active consumer and producer of texts.",
+      "parent_code": "1.P.EICC",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 44
+      }
+    },
+    {
+      "code": "1.P.EICC.1.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Generate, understand, monitor, and discuss personal and academic reading and writing goals, revising as appropriate. (I/C)",
+      "parent_code": "1.P.EICC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 45
+      }
+    },
+    {
+      "code": "1.P.EICC.1.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Discuss or write about personal and academic reading and writing preferences, referring to specific techniques, topics, modes, and genres that resonate most. (I/C)",
+      "parent_code": "1.P.EICC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 46
+      }
+    },
+    {
+      "code": "1.P.EICC.1.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Select, read, and write texts of personal interest and academic relevance to grade-level texts and topics. (I/C)",
+      "parent_code": "1.P.EICC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 47
+      }
+    },
+    {
+      "code": "1.P.EICC.1.d",
+      "level": "substandard",
+      "label": "",
+      "text": "Build a repertoire of comprehension and composition skills, strategies, and techniques, drawing from them as needed to aid the interpretation and construction of texts. (I/C)",
+      "parent_code": "1.P.EICC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 48
+      }
+    },
+    {
+      "code": "1.P.EICC.1.e",
+      "level": "substandard",
+      "label": "",
+      "text": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing individual writing, listening as others share their writing, and offering and responding to feedback. (I/C)",
+      "parent_code": "1.P.EICC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 49
+      }
+    },
+    {
+      "code": "1.P.EICC.1.f",
+      "level": "substandard",
+      "label": "",
+      "text": "Develop independence and autonomy as a reader and writer. (I/C)",
+      "parent_code": "1.P.EICC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 50
+      }
+    },
+    {
+      "code": "1.P.EICC.2",
+      "level": "standard",
+      "label": "Engagement & Intention",
+      "text": "Engage in written or spoken dialogue as author and audience for a variety of tasks and purposes, making intentional connections within, between, and beyond texts.",
+      "parent_code": "1.P.EICC",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 51
+      }
+    },
+    {
+      "code": "1.P.EICC.2.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Share real or imagined experiences by interpreting and constructing texts that tell or include stories. (I/C)",
+      "parent_code": "1.P.EICC.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 52
+      }
+    },
+    {
+      "code": "1.P.EICC.2.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Make use of texts to build knowledge, develop skills, make informed decisions, and share information and ideas. (I/C)",
+      "parent_code": "1.P.EICC.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 53
+      }
+    },
+    {
+      "code": "1.P.EICC.2.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)",
+      "parent_code": "1.P.EICC.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 54
+      }
+    },
+    {
+      "code": "1.P.EICC.2.d",
+      "level": "substandard",
+      "label": "",
+      "text": "Interpret and construct texts to aid the analysis and evaluation of texts and ideas. (I/C)",
+      "parent_code": "1.P.EICC.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 55
+      }
+    },
+    {
+      "code": "1.P.EICC.2.e",
+      "level": "substandard",
+      "label": "",
+      "text": "Consume and produce texts in order to solve problems or influence decisions. (I/C)",
+      "parent_code": "1.P.EICC.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 56
+      }
+    },
+    {
+      "code": "1.P.EICC.3",
+      "level": "standard",
+      "label": "Comprehension Strategies",
+      "text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals.",
+      "parent_code": "1.P.EICC",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 57
+      }
+    },
+    {
+      "code": "1.P.EICC.3.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Establish a purpose and set goals for reading, monitor comprehension, and adjust as needed. (I)",
+      "parent_code": "1.P.EICC.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 58
+      }
+    },
+    {
+      "code": "1.P.EICC.3.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Scan and skim the text, making note of structures and sections that might be most useful. (I)",
+      "parent_code": "1.P.EICC.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 59
+      }
+    },
+    {
+      "code": "1.P.EICC.3.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Draw from, compare, build, and integrate prior knowledge with the material in the text, addressing inconsistencies or gaps and adding to knowledge repertoires as appropriate. (I)",
+      "parent_code": "1.P.EICC.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 60
+      }
+    },
+    {
+      "code": "1.P.EICC.3.d",
+      "level": "substandard",
+      "label": "",
+      "text": "Summarize and visualize sections of the text to maintain understanding. (I)",
+      "parent_code": "1.P.EICC.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 61
+      }
+    },
+    {
+      "code": "1.P.EICC.3.e",
+      "level": "substandard",
+      "label": "",
+      "text": "Make and track predictions about the events and information likely to come next. (I)",
+      "parent_code": "1.P.EICC.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 62
+      }
+    },
+    {
+      "code": "1.P.EICC.3.f",
+      "level": "substandard",
+      "label": "",
+      "text": "Make, track, and support inferences about different levels of meaning within the text. (I)",
+      "parent_code": "1.P.EICC.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 63
+      }
+    },
+    {
+      "code": "1.P.EICC.3.g",
+      "level": "substandard",
+      "label": "",
+      "text": "Determine the meanings of unfamiliar words and concepts by applying knowledge of context and of academic vocabulary and word parts. (I)",
+      "parent_code": "1.P.EICC.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 64
+      }
+    },
+    {
+      "code": "1.P.EICC.4",
+      "level": "standard",
+      "label": "Writing Processes",
+      "text": "Compose a range of texts for a variety of purposes and audiences, flexibly engaging in writing processes to plan, draft, evaluate, revise, and edit texts.",
+      "parent_code": "1.P.EICC",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 65
+      }
+    },
+    {
+      "code": "1.P.EICC.4.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Establish a purpose and goals for writing and identify a target audience. (C)",
+      "parent_code": "1.P.EICC.4",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 66
+      }
+    },
+    {
+      "code": "1.P.EICC.4.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Plan how to organize the text by selecting modes, genres, and structures that will achieve the purpose and meet the needs of the target audience. (C)",
+      "parent_code": "1.P.EICC.4",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 67
+      }
+    },
+    {
+      "code": "1.P.EICC.4.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Generate ideas for content by assessing prior knowledge, gathering information from texts, and engaging in discussions with others. (C)",
+      "parent_code": "1.P.EICC.4",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 68
+      }
+    },
+    {
+      "code": "1.P.EICC.4.d",
+      "level": "substandard",
+      "label": "",
+      "text": "Link ideas and information to the organization plan, highlighting ideas and information that are most relevant, useful, and impactful. (C)",
+      "parent_code": "1.P.EICC.4",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 69
+      }
+    },
+    {
+      "code": "1.P.EICC.4.e",
+      "level": "substandard",
+      "label": "",
+      "text": "Construct an initial draft by integrating ideas and information; selecting words, phrases, and sentences; and incorporating craft techniques that will best achieve the purpose of the text and resonate with the target audience. (C)",
+      "parent_code": "1.P.EICC.4",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 70
+      }
+    },
+    {
+      "code": "1.P.EICC.4.f",
+      "level": "substandard",
+      "label": "",
+      "text": "Evaluate the text’s effectiveness based on self-review or feedback from others, determining whether the text matches the purpose and goals for writing. (C)",
+      "parent_code": "1.P.EICC.4",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 71
+      }
+    },
+    {
+      "code": "1.P.EICC.4.g",
+      "level": "substandard",
+      "label": "",
+      "text": "Make changes to the text based on self-evaluation or external feedback, revising the organization, ideas, information, word choices, and craft techniques in order to increase the text’s effectiveness. (C)",
+      "parent_code": "1.P.EICC.4",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 72
+      }
+    },
+    {
+      "code": "1.P.EICC.4.h",
+      "level": "substandard",
+      "label": "",
+      "text": "Edit the text, ensuring it adheres to the conventions of written language. (C)",
+      "parent_code": "1.P.EICC.4",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 73
+      }
+    },
+    {
+      "code": "1.P.ST",
+      "level": "big_idea",
+      "label": "Situating Texts",
+      "text": "Students develop and apply a multilayered understanding of context, author, audience, and purpose to ground and propel the interpretation and construction of texts.",
+      "parent_code": "1.P",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 74
+      }
+    },
+    {
+      "code": "1.P.ST.1",
+      "level": "standard",
+      "label": "Context",
+      "text": "Develop and apply knowledge of key components of context such as background information, geographic location, cultural influences, time period, and contemporary events when interpreting and constructing texts.",
+      "parent_code": "1.P.ST",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 75
+      }
+    },
+    {
+      "code": "1.P.ST.1.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Use prior knowledge, formal or informal research, and discussions with others to identify the key components of context that are most relevant. (I/C)",
+      "parent_code": "1.P.ST.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 76
+      }
+    },
+    {
+      "code": "1.P.ST.1.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Consider how context impacts the purposes of the author and the audience. (I/C)",
+      "parent_code": "1.P.ST.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 77
+      }
+    },
+    {
+      "code": "1.P.ST.1.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Explore how context shapes the author’s decisions and the audience’s responses during the interpretation and construction of texts. (I/C)",
+      "parent_code": "1.P.ST.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 78
+      }
+    },
+    {
+      "code": "1.P.ST.2",
+      "level": "standard",
+      "label": "Author, Audience, & Purpose",
+      "text": "Interpret and construct texts by developing and applying knowledge of the strategies and techniques authors use to accommodate the target audience and achieve the text’s purpose.",
+      "parent_code": "1.P.ST",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 79
+      }
+    },
+    {
+      "code": "1.P.ST.2.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Develop and apply knowledge of author, audience, and context to discern and establish the purpose of texts being interpreted or constructed and to evaluate the extent to which those texts achieve those purposes. (I/C)",
+      "parent_code": "1.P.ST.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 80
+      }
+    },
+    {
+      "code": "1.P.ST.2.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Draw from knowledge of author, audience, and context to discern and establish a clear point of view or unique perspective when interpreting and constructing texts. (I/C)",
+      "parent_code": "1.P.ST.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 81
+      }
+    },
+    {
+      "code": "1.P.ST.2.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Draw from knowledge of how authors consider context and audience to determine which information and ideas to highlight, which text design is most accessible, which word choices and language structures are most effective, and which craft techniques are most impactful. (I/C)",
+      "parent_code": "1.P.ST.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 82
+      }
+    },
+    {
+      "code": "1.P.AC",
+      "level": "big_idea",
+      "label": "Author’s Craft",
+      "text": "Students apply knowledge of author’s craft to enhance the interpretation and construction of texts.",
+      "parent_code": "1.P",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 83
+      }
+    },
+    {
+      "code": "1.P.AC.1",
+      "level": "standard",
+      "label": "Reading like a Writer",
+      "text": "Interpret texts through the author’s lens by identifying, analyzing, and evaluating craft techniques that are connected to the responses, thoughts, decisions, and questions triggered by the text.",
+      "parent_code": "1.P.AC",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 84
+      }
+    },
+    {
+      "code": "1.P.AC.1.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Identify, apply, and analyze the literary, expository, and opinion (grades K-5) or rhetorical (grades 6-12) elements in texts, explaining or evaluating how specific elements affect the target audience and support the text’s purpose. (I/C)",
+      "parent_code": "1.P.AC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 85
+      }
+    },
+    {
+      "code": "1.P.AC.1.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Identify, apply, and analyze important, interesting, or effective uses of language, explaining or evaluating how specific word choices affect the target audience and support the text’s purpose. (I/C)",
+      "parent_code": "1.P.AC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 86
+      }
+    },
+    {
+      "code": "1.P.AC.1.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Explain, analyze, and evaluate how the author’s use of sentence structure and syntax affects the target audience and supports the text’s purpose. (I/C)",
+      "parent_code": "1.P.AC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 87
+      }
+    },
+    {
+      "code": "1.P.AC.1.d",
+      "level": "substandard",
+      "label": "",
+      "text": "Describe, analyze, and evaluate the design and organization of the text, explaining how specific formats, structures, patterns, and features influence the audience, contribute to the text’s accessibility, and support the text’s purpose. (I/C)",
+      "parent_code": "1.P.AC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 88
+      }
+    },
+    {
+      "code": "1.P.AC.2",
+      "level": "standard",
+      "label": "Writing like a Reader",
+      "text": "Construct texts with the audience’s experience in mind, basing decisions about craft techniques on context and purpose.",
+      "parent_code": "1.P.AC",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 89
+      }
+    },
+    {
+      "code": "1.P.AC.2.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Integrate literary, expository, and opinion (grades K-5) or rhetorical (grades 6-12) elements to appeal to target audiences and achieve specific purposes. (I/C)",
+      "parent_code": "1.P.AC.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 90
+      }
+    },
+    {
+      "code": "1.P.AC.2.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Craft words and phrases in order to influence the responses, thoughts, decisions, and questions of the target audience and achieve a specific purpose. (I/C)",
+      "parent_code": "1.P.AC.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 91
+      }
+    },
+    {
+      "code": "1.P.AC.2.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Make decisions about sentence structure and syntax in order to accommodate and influence the audience and achieve a specific purpose. (I/C)",
+      "parent_code": "1.P.AC.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 92
+      }
+    },
+    {
+      "code": "1.P.AC.2.d",
+      "level": "substandard",
+      "label": "",
+      "text": "Organize texts by incorporating specific formats, structures, patterns, and features to influence the audience, facilitate accessibility, and support the text’s purpose. (I/C)",
+      "parent_code": "1.P.AC.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 93
+      }
+    },
+    {
+      "code": "1.P.AC.3",
+      "level": "standard",
+      "label": "Text Design",
+      "text": "Consider the impact of text design on audience and purpose when consuming and producing texts across modes and genres.",
+      "parent_code": "1.P.AC",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 94
+      }
+    },
+    {
+      "code": "1.P.AC.3.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Explore and create texts in various modes and genres, developing and applying knowledge of how specific features impact meaning, tone, style, purpose, and audience. (I/C)",
+      "parent_code": "1.P.AC.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 95
+      }
+    },
+    {
+      "code": "1.P.AC.3.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Apply knowledge of how mode and genre impact what kinds of ideas and information are included in texts. (I/C)",
+      "parent_code": "1.P.AC.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 96
+      }
+    },
+    {
+      "code": "1.P.AC.3.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Apply knowledge of how mode and genre impact how ideas and information are structured and arranged in texts. (I/C)",
+      "parent_code": "1.P.AC.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 97
+      }
+    },
+    {
+      "code": "1.P.AC.3.d",
+      "level": "substandard",
+      "label": "",
+      "text": "Consume and produce multimodal texts, integrating a variety of genres, text features, and craft techniques to influence target audiences and achieve specific purposes. (I/C)",
+      "parent_code": "1.P.AC.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 98
+      }
+    },
+    {
+      "code": "1.P.CP",
+      "level": "big_idea",
+      "label": "Collaboration & Presentation",
+      "text": "Students build and share knowledge as they engage with others in a range of settings and for a variety of purposes.",
+      "parent_code": "1.P",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 99
+      }
+    },
+    {
+      "code": "1.P.CP.1",
+      "level": "standard",
+      "label": "Collaboration",
+      "text": "Collaborate with others to accomplish shared goals and projects.",
+      "parent_code": "1.P.CP",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 100
+      }
+    },
+    {
+      "code": "1.P.CP.1.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Arrive to group discussions and collaborative meetings prepared to be an active participant in the work. (I/C)",
+      "parent_code": "1.P.CP.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 101
+      }
+    },
+    {
+      "code": "1.P.CP.1.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects. (I/C)",
+      "parent_code": "1.P.CP.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 102
+      }
+    },
+    {
+      "code": "1.P.CP.1.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Contribute to discussions and shared projects by offering ideas, listening to the ideas of others, and providing feedback. (I/C)",
+      "parent_code": "1.P.CP.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 103
+      }
+    },
+    {
+      "code": "1.P.CP.1.d",
+      "level": "substandard",
+      "label": "",
+      "text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)",
+      "parent_code": "1.P.CP.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 104
+      }
+    },
+    {
+      "code": "1.P.CP.2",
+      "level": "standard",
+      "label": "Presentation",
+      "text": "Use presentation skills to tailor communication to target audiences for specific purposes.",
+      "parent_code": "1.P.CP",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 105
+      }
+    },
+    {
+      "code": "1.P.CP.2.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Communicate clearly to present ideas, information, and texts. (I/C)",
+      "parent_code": "1.P.CP.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 106
+      }
+    },
+    {
+      "code": "1.P.CP.2.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Integrate modes and genres most appropriate to purpose and audience. (I/C)",
+      "parent_code": "1.P.CP.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 107
+      }
+    },
+    {
+      "code": "1.P.CP.2.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Vary tone, pace, and nonverbal gestures as appropriate to purpose and audience. (I/C)",
+      "parent_code": "1.P.CP.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 108
+      }
+    },
+    {
+      "code": "1.P.CP.2.d",
+      "level": "substandard",
+      "label": "",
+      "text": "Engage in dialogue with audiences by asking and answering questions. (I/C)",
+      "parent_code": "1.P.CP.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 109
+      }
+    },
+    {
+      "code": "1.P.CP.2.e",
+      "level": "substandard",
+      "label": "",
+      "text": "Build background knowledge by reciting all or part of significant poems and speeches as appropriate by grade level. (I/C)",
+      "parent_code": "1.P.CP.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 110
+      }
+    },
+    {
+      "code": "1.L",
+      "level": "domain",
+      "label": "Language",
+      "text": "Students learn and apply the structures and conventions of standard English. Students observe and analyze how grammar works in reading and writing. Students build vocabularies and determine word meanings as they relate to reading and writing.",
+      "parent_code": null,
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 111
+      }
+    },
+    {
+      "code": "1.L.GC",
+      "level": "big_idea",
+      "label": "Grammar Conventions",
+      "text": "Students observe, analyze, and use the structures and conventions of Standard English grammar, usage, and mechanics as they interpret and construct texts.",
+      "parent_code": "1.L",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 112
+      }
+    },
+    {
+      "code": "1.L.GC.1",
+      "level": "standard",
+      "label": "Grammar, Usage, & Mechanics",
+      "text": "Learn and apply conventions of Standard English grammar, usage, and mechanics to aid the comprehension of texts and to communicate clearly in written and spoken language.",
+      "parent_code": "1.L.GC",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 113
+      }
+    },
+    {
+      "code": "1.L.GC.1.5",
+      "level": "substandard",
+      "label": "Grammar",
+      "text": "Form regular plural nouns by adding -s or -es. (Master)",
+      "parent_code": "1.L.GC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 114
+      }
+    },
+    {
+      "code": "1.L.GC.1.6",
+      "level": "substandard",
+      "label": "Grammar",
+      "text": "Form and use verbs by adding -ing, -ed, or -s. (Master)",
+      "parent_code": "1.L.GC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 115
+      }
+    },
+    {
+      "code": "1.L.GC.1.7",
+      "level": "substandard",
+      "label": "Grammar",
+      "text": "Use action verbs. (Master)",
+      "parent_code": "1.L.GC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 116
+      }
+    },
+    {
+      "code": "1.L.GC.1.8",
+      "level": "substandard",
+      "label": "Grammar",
+      "text": "Use adjectives and adverbs. (Continue)",
+      "parent_code": "1.L.GC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 117
+      }
+    },
+    {
+      "code": "1.L.GC.1.9",
+      "level": "substandard",
+      "label": "Grammar",
+      "text": "Use common and proper nouns. (Continue)",
+      "parent_code": "1.L.GC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 118
+      }
+    },
+    {
+      "code": "1.L.GC.1.10",
+      "level": "substandard",
+      "label": "Grammar",
+      "text": "Form and use the simple verb tenses. (Continue)",
+      "parent_code": "1.L.GC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 119
+      }
+    },
+    {
+      "code": "1.L.GC.1.11",
+      "level": "substandard",
+      "label": "Usage",
+      "text": "Use determiners (articles, possessive determiners, demonstrative adjectives). (Continue)",
+      "parent_code": "1.L.GC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 120
+      }
+    },
+    {
+      "code": "1.L.GC.1.12",
+      "level": "substandard",
+      "label": "Mechanics",
+      "text": "Capitalize proper nouns. (Continue)",
+      "parent_code": "1.L.GC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 121
+      }
+    },
+    {
+      "code": "1.L.GC.1.13",
+      "level": "substandard",
+      "label": "Mechanics",
+      "text": "Use periods, exclamation marks, and question marks at the end of sentences. (Continue)",
+      "parent_code": "1.L.GC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 122
+      }
+    },
+    {
+      "code": "1.L.GC.1.14",
+      "level": "substandard",
+      "label": "Grammar",
+      "text": "Form plural nouns by changing -y to -ies. (Introduce)",
+      "parent_code": "1.L.GC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 123
+      }
+    },
+    {
+      "code": "1.L.GC.1.15",
+      "level": "substandard",
+      "label": "Grammar",
+      "text": "Use personal pronouns (subject, object, and possessive). (Introduce)",
+      "parent_code": "1.L.GC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 124
+      }
+    },
+    {
+      "code": "1.L.GC.1.16",
+      "level": "substandard",
+      "label": "Grammar",
+      "text": "Use frequently occurring prepositions. (Introduce)",
+      "parent_code": "1.L.GC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 125
+      }
+    },
+    {
+      "code": "1.L.GC.1.17",
+      "level": "substandard",
+      "label": "Mechanics",
+      "text": "Use commas to separate items in a series and to format dates, addresses, salutations, and closings. (Introduce)",
+      "parent_code": "1.L.GC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 126
+      }
+    },
+    {
+      "code": "1.L.GC.1.18",
+      "level": "substandard",
+      "label": "Mechanics",
+      "text": "Use apostrophes to form contractions and singular possessive nouns. (Introduce)",
+      "parent_code": "1.L.GC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 127
+      }
+    },
+    {
+      "code": "1.L.GC.1.19",
+      "level": "substandard",
+      "label": "Grammar",
+      "text": "Form and use irregular plural nouns. (Introduce)",
+      "parent_code": "1.L.GC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 128
+      }
+    },
+    {
+      "code": "1.L.GC.1.20",
+      "level": "substandard",
+      "label": "Grammar",
+      "text": "Form and use the past tense of irregular verbs. (Introduce)",
+      "parent_code": "1.L.GC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 129
+      }
+    },
+    {
+      "code": "1.L.GC.1.21",
+      "level": "substandard",
+      "label": "Grammar",
+      "text": "Use coordinating conjunctions to join words, phrases, or clauses. (Introduce)",
+      "parent_code": "1.L.GC.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 130
+      }
+    },
+    {
+      "code": "1.L.GC.2",
+      "level": "standard",
+      "label": "Syntax",
+      "text": "Recognize and compose coherent sentences that express complete thoughts.",
+      "parent_code": "1.L.GC",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 131
+      }
+    },
+    {
+      "code": "1.L.GC.2.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Distinguish between complete and incomplete simple sentences, and identify the sentence type (i.e., declarative, imperative, interrogative, and exclamatory). (I)",
+      "parent_code": "1.L.GC.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 132
+      }
+    },
+    {
+      "code": "1.L.GC.2.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Use a variety of simple sentences (including a variety of sentence types) to develop clarity in written texts. (C)",
+      "parent_code": "1.L.GC.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 133
+      }
+    },
+    {
+      "code": "1.L.GC.2.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Use singular and plural subjects with matching verbs. (C)",
+      "parent_code": "1.L.GC.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 134
+      }
+    },
+    {
+      "code": "1.L.GC.2.d",
+      "level": "substandard",
+      "label": "",
+      "text": "With adult support, use adjectives or adverbs to add details or clarify meaning. (C)",
+      "parent_code": "1.L.GC.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 135
+      }
+    },
+    {
+      "code": "1.L.V",
+      "level": "big_idea",
+      "label": "Vocabulary",
+      "text": "Students engage in a wide range of written and spoken activities during which they expand and deepen their vocabularies, build word analysis skill sets (morphology), and determine or clarify the meanings of words and phrases.",
+      "parent_code": "1.L",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 136
+      }
+    },
+    {
+      "code": "1.L.V.1",
+      "level": "standard",
+      "label": "",
+      "text": "General, Academic, & Specialized Vocabulary: Acquire and use general, academic, and specialized vocabulary words and phrases in a variety of settings.",
+      "parent_code": "1.L.V",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 137
+      }
+    },
+    {
+      "code": "1.L.V.1.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Acquire and apply general, academic, and specialized vocabulary words and phrases through grade-level texts and content. (I)",
+      "parent_code": "1.L.V.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 138
+      }
+    },
+    {
+      "code": "1.L.V.1.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Use grade-level general, academic, and specialized vocabulary words and phrases to communicate in a variety of settings. (C)",
+      "parent_code": "1.L.V.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 139
+      }
+    },
+    {
+      "code": "1.L.V.2",
+      "level": "standard",
+      "label": "Word Analysis",
+      "text": "Acquire and apply word analysis skills to deconstruct and construct words to make meaning.",
+      "parent_code": "1.L.V",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 140
+      }
+    },
+    {
+      "code": "1.L.V.2.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Identify frequently occurring root words (e.g., look) and inflectional endings used to form and comprehend new words (e.g., looks, looked, looking). (I)",
+      "parent_code": "1.L.V.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 141
+      }
+    },
+    {
+      "code": "1.L.V.2.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Construct words using frequently occurring roots words and inflectional endings. (C)",
+      "parent_code": "1.L.V.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 142
+      }
+    },
+    {
+      "code": "1.L.V.3",
+      "level": "standard",
+      "label": "Meaning & Purpose",
+      "text": "Make connections between words and phrases and use reference materials to determine or clarify word meanings in a variety of settings and for a variety of purposes.",
+      "parent_code": "1.L.V",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 143
+      }
+    },
+    {
+      "code": "1.L.V.3.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Use context within and beyond a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases. (I)",
+      "parent_code": "1.L.V.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 144
+      }
+    },
+    {
+      "code": "1.L.V.3.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Identify the relationship between words and their synonyms and antonyms. (I)",
+      "parent_code": "1.L.V.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 145
+      }
+    },
+    {
+      "code": "1.L.V.3.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Distinguish shades of meaning among verbs that describe the same general action (e.g., walk, march, strut, prance). (I)",
+      "parent_code": "1.L.V.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 146
+      }
+    },
+    {
+      "code": "1.L.V.3.d",
+      "level": "substandard",
+      "label": "",
+      "text": "With teacher support, use a picture dictionary or digital resource to clarify the meaning of unknown words and phrases. (I)",
+      "parent_code": "1.L.V.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 147
+      }
+    },
+    {
+      "code": "1.L.V.3.e",
+      "level": "substandard",
+      "label": "",
+      "text": "Use knowledge of word relationships and learned vocabulary words and phrases when making word choices in speaking and writing. (C)",
+      "parent_code": "1.L.V.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 148
+      }
+    },
+    {
+      "code": "1.T",
+      "level": "domain",
+      "label": "Texts",
+      "text": "Students grow in their learning as they purposefully engage with texts.",
+      "parent_code": null,
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 149
+      }
+    },
+    {
+      "code": "1.T.C",
+      "level": "big_idea",
+      "label": "Context",
+      "text": "Students explore the relationships and roles of authors, purposes, and audiences of texts.",
+      "parent_code": "1.T",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 150
+      }
+    },
+    {
+      "code": "1.T.C.1",
+      "level": "standard",
+      "label": "Purpose & Audience",
+      "text": "Explain how authors of texts use language for a specific purpose and a target audience.",
+      "parent_code": "1.T.C",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 151
+      }
+    },
+    {
+      "code": "1.T.C.1.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Identify the general purpose (e.g., to tell stories, to provide information, to share opinions, to explain ideas) and target audience in a variety of texts. (I)",
+      "parent_code": "1.T.C.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 152
+      }
+    },
+    {
+      "code": "1.T.C.1.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Identify different modes of communication: print, digital, auditory, and visual. (I)",
+      "parent_code": "1.T.C.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 153
+      }
+    },
+    {
+      "code": "1.T.C.1.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Create texts in teacher-selected modes (e.g., print, digital, auditory, and/or visual). (C)",
+      "parent_code": "1.T.C.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 154
+      }
+    },
+    {
+      "code": "1.T.C.2",
+      "level": "standard",
+      "label": "Authors & Speakers",
+      "text": "Investigate the relationships between authors and speakers in texts.",
+      "parent_code": "1.T.C",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 155
+      }
+    },
+    {
+      "code": "1.T.C.2.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Identify who is speaking or telling the story at various points in a text. (I)",
+      "parent_code": "1.T.C.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 156
+      }
+    },
+    {
+      "code": "1.T.SS",
+      "level": "big_idea",
+      "label": "Structures & Style",
+      "text": "Students build and apply knowledge about language and organizational structures and elements used to convey and arrange ideas and information in texts.",
+      "parent_code": "1.T",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 157
+      }
+    },
+    {
+      "code": "1.T.SS.1",
+      "level": "standard",
+      "label": "Organization",
+      "text": "Identify and use organizational structures to craft meaning.",
+      "parent_code": "1.T.SS",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 158
+      }
+    },
+    {
+      "code": "1.T.SS.1.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Identify and use various text features (e.g., diagrams, tables of contents) to locate information and make meaning in texts. (I)",
+      "parent_code": "1.T.SS.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 159
+      }
+    },
+    {
+      "code": "1.T.SS.1.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Use text features (e.g., illustrations, page numbers, bold print, headings) to add clarity and meaning to texts. (C)",
+      "parent_code": "1.T.SS.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 160
+      }
+    },
+    {
+      "code": "1.T.SS.1.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Use transition words or phrases, such as once upon a time, next, and last to sequence events and actions. (C)",
+      "parent_code": "1.T.SS.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 161
+      }
+    },
+    {
+      "code": "1.T.SS.2",
+      "level": "standard",
+      "label": "Craft",
+      "text": "Identify and use descriptive and engaging language.",
+      "parent_code": "1.T.SS",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 162
+      }
+    },
+    {
+      "code": "1.T.SS.2.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Identify and explain the use of descriptive words in texts. (I)",
+      "parent_code": "1.T.SS.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 163
+      }
+    },
+    {
+      "code": "1.T.SS.2.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Use descriptive words to craft engaging texts. (C)",
+      "parent_code": "1.T.SS.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 164
+      }
+    },
+    {
+      "code": "1.T.T",
+      "level": "big_idea",
+      "label": "Techniques",
+      "text": "Students identify and use narrative, expository, opinion, and poetic techniques as they interpret and construct a variety of texts.",
+      "parent_code": "1.T",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 165
+      }
+    },
+    {
+      "code": "1.T.T.1",
+      "level": "standard",
+      "label": "Narrative Techniques",
+      "text": "Identify and use narrative techniques to shape understanding.",
+      "parent_code": "1.T.T",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 166
+      }
+    },
+    {
+      "code": "1.T.T.1.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue. (I)",
+      "parent_code": "1.T.T.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 167
+      }
+    },
+    {
+      "code": "1.T.T.1.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Identify a simple plot with a problem and solution. (I)",
+      "parent_code": "1.T.T.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 168
+      }
+    },
+    {
+      "code": "1.T.T.1.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)",
+      "parent_code": "1.T.T.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 169
+      }
+    },
+    {
+      "code": "1.T.T.1.d",
+      "level": "substandard",
+      "label": "",
+      "text": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures. (I)",
+      "parent_code": "1.T.T.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 170
+      }
+    },
+    {
+      "code": "1.T.T.1.e",
+      "level": "substandard",
+      "label": "",
+      "text": "Use knowledge of narrative techniques (e.g., characters, settings, events) to create texts that share real or imagined experiences and events with a sense of closure. (C)",
+      "parent_code": "1.T.T.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 171
+      }
+    },
+    {
+      "code": "1.T.T.2",
+      "level": "standard",
+      "label": "Expository Techniques",
+      "text": "Identify and use expository techniques to shape understanding.",
+      "parent_code": "1.T.T",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 172
+      }
+    },
+    {
+      "code": "1.T.T.2.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Identify techniques used to craft expository texts, including main topic and supporting details. (I)",
+      "parent_code": "1.T.T.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 173
+      }
+    },
+    {
+      "code": "1.T.T.2.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Describe the connection between two individuals, events, ideas, or pieces of information in a text. (I)",
+      "parent_code": "1.T.T.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 174
+      }
+    },
+    {
+      "code": "1.T.T.2.d",
+      "level": "substandard",
+      "label": "",
+      "text": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure. (C)",
+      "parent_code": "1.T.T.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 175
+      }
+    },
+    {
+      "code": "1.T.T.3",
+      "level": "standard",
+      "label": "Opinion Techniques",
+      "text": "Identify and use opinion techniques to shape understanding.",
+      "parent_code": "1.T.T",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 176
+      }
+    },
+    {
+      "code": "1.T.T.3.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Identify techniques used to craft opinion texts, including the author’s opinion and supporting reasons. (I)",
+      "parent_code": "1.T.T.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 177
+      }
+    },
+    {
+      "code": "1.T.T.3.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Use knowledge of opinion techniques to create opinion pieces that introduce the topic, state an opinion about the topic, and provides two or more reasons to support the opinion with linking words and and because. (C)",
+      "parent_code": "1.T.T.3",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 178
+      }
+    },
+    {
+      "code": "1.T.T.4",
+      "level": "standard",
+      "label": "Poetic Techniques",
+      "text": "Identify and use poetic techniques to shape understanding.",
+      "parent_code": "1.T.T",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 179
+      }
+    },
+    {
+      "code": "1.T.T.4.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Identify and describe poetic techniques used to craft texts, including rhyme, alliteration, and repeated lines. (I)",
+      "parent_code": "1.T.T.4",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 180
+      }
+    },
+    {
+      "code": "1.T.T.4.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Use poetic techniques to create poems using simple words and/or phrases that may or may not rhyme. (C)",
+      "parent_code": "1.T.T.4",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 181
+      }
+    },
+    {
+      "code": "1.T.RA",
+      "level": "big_idea",
+      "label": "Research & Analysis",
+      "text": "Students use, discuss, analyze, and curate texts as they engage in various conversations, activities, and projects about a range of grade-level texts and topics.",
+      "parent_code": "1.T",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 182
+      }
+    },
+    {
+      "code": "1.T.RA.1",
+      "level": "standard",
+      "label": "Research & Inquiry",
+      "text": "Build knowledge about the world by asking or generating questions about topics of interest, researching the answers, using multiple sources, and communicating relevant and accurate information about the topic.",
+      "parent_code": "1.T.RA",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 183
+      }
+    },
+    {
+      "code": "1.T.RA.1.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Ask questions about topics of interest for research. (I)",
+      "parent_code": "1.T.RA.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 184
+      }
+    },
+    {
+      "code": "1.T.RA.1.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Work collaboratively or individually to conduct research on a shared or personal topic of interest by gathering and organizing information from provided sources (including print, digital, and personal communication) using graphic organizers or other support aids. (I)",
+      "parent_code": "1.T.RA.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 185
+      }
+    },
+    {
+      "code": "1.T.RA.1.c",
+      "level": "substandard",
+      "label": "",
+      "text": "Share relevant and accurate information through a variety of different modes. (C)",
+      "parent_code": "1.T.RA.1",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 186
+      }
+    },
+    {
+      "code": "1.T.RA.2",
+      "level": "standard",
+      "label": "Curating Sources & Evidence",
+      "text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics.",
+      "parent_code": "1.T.RA",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 187
+      }
+    },
+    {
+      "code": "1.T.RA.2.a",
+      "level": "substandard",
+      "label": "",
+      "text": "Refer to parts of texts when supporting an idea, answer, or opinion. (I)",
+      "parent_code": "1.T.RA.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 188
+      }
+    },
+    {
+      "code": "1.T.RA.2.b",
+      "level": "substandard",
+      "label": "",
+      "text": "Explore various sources of information, including print, digital, and personal communication. (I)",
+      "parent_code": "1.T.RA.2",
+      "grade": 1,
+      "provenance": {
+        "source_id": "Grade 1 GA ELA Standards.xlsx",
+        "page_start": null,
+        "page_end": null,
+        "sheet": "Sheet1",
+        "row": 189
+      }
+    }
+  ]
+}

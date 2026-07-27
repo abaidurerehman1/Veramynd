@@ -1,0 +1,508 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U1L1",
+  "title": "Lesson 1: Noticing and Wondering: Observing and Asking Questions about the Sun, Moon, and Stars",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "1",
+      "lesson": "1",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening",
+      "Writing",
+      "Vocabulary"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will observe and describe features of the sun, moon, and stars in pictures and videos, ask questions about their observations, and express their ideas through discussion, drawing, and writing.",
+  "what_is_taught": [
+    {
+      "skill": "describe observations about the sun, moon, and stars from pictures and videos",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "ask questions about observations of the sun, moon, and stars",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "listen and respond to peers' observations and questions in group discussions",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use sentence frames to share observations and questions orally",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "write and draw to record observations and questions about the sun, moon, and stars",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use vocabulary related to the sun, moon, and stars with understanding",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "practice habits of effective learners such as initiative, collaboration, perseverance, and responsibility",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "participate in structured speaking and listening protocols (Picture Tea Party, Back-to-Back and Face-to-Face)",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "phonics/decoding",
+    "fluency",
+    "independent extended writing",
+    "complex grammar instruction"
+  ],
+  "student_actions": {
+    "recognition_identification": "identify and recognize features of the sun, moon, and stars in pictures and videos",
+    "oral_production": "share observations and questions orally using sentence frames and group protocols",
+    "written_production": "write and draw observations and questions on response sheets",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "participate in structured discussion protocols following steps and sentence frames",
+    "investigation_handson": "examine mystery sky photos closely",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain observations and questions about the sun, moon, and stars during discussions",
+    "comprehension_response": "respond to questions about the story and videos, and share connections to personal experiences orally and in writing or drawing, including during read-aloud and group discussions with peers and teacher facilitation, using sentence frames and protocols to support expression and comprehension",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "'Based on the title of the story, what do you think this story will be about?' (a little boy who likes things in the sky; a little boy who likes the clouds; a little boy who likes to look at the sky)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "oral_production",
+        "reasoning_explanation",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'As I read this story, I want you to think hard about all of the things Elvin wonders about and all of the questions he has.'",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'What is one thing we know about Elvin?' (He loves to look at the sky, he wonders about the sun and the moon, and he likes to lie down in the grass to look at the sky.)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "'What does Elvin observe about the sun?' (He sees it in different places in the sky, he sees that sometimes it is bright and sometimes it is pale, and sometimes he can't see it at all because they sky is full of clouds.)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "'What does Elvin wonder about the sun?' (He wonders how it moves, he wonders about its size, and he wonders about its different colors.)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "'What does Elvin observe about the moon?' (He sees that the moon is sometimes small and sometimes large, he sees that sometimes it rises from behind buildings, and sometimes he doesn't see it at all.') 'What does Elvin wonder about the moon?' (He wonders why it is different sizes and why the shape of the moon sometimes changes.)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "'What did you notice about the sky, the sun, the moon, or the stars?' (Responses will vary.)",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "I can describe what I observe in pictures and videos of the sun, moon, and stars.",
+      "location": "Opening B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Referring to the Picture Tea Party Protocol anchor chart, explain the steps:",
+      "location": "Opening B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": [
+        "investigation_handson"
+      ]
+    },
+    {
+      "quote": "Distribute the mystery sky photos and guide students through the Picture Tea Party protocol using the Picture Tea Party Protocol anchor chart.",
+      "location": "Opening B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": [
+        "investigation_handson",
+        "procedural_application",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Give students specific, positive feedback on their work during the Picture Tea Party protocol. (Example: 'I noticed Sarah looking closely at her picture for details to share with her group.')",
+      "location": "Opening B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Ask students to repeat the word aloud with an accompanying hand gesture.",
+      "location": "Opening B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'The sun shines through my window in the morning.'",
+      "location": "Opening B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Show students the Sun, Moon, and Stars Word Wall card for sun.",
+      "location": "Opening B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Tell students there are a few videos of the sky, sun, moon, and stars to see, and that as they watch the videos they should look carefully to see what they notice about the sky and what they observe about the sun, the moon, and the stars in the sky in each of the videos.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": [
+        "investigation_handson"
+      ]
+    },
+    {
+      "quote": "Guide students through the protocol using the following question and sentence frame:",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Guide students through the protocol using the following question and sentence frames:",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Show students the Sun, Moon, and Stars Word Wall card for moon and follow the same routine established in the Opening: Provide its definition, use it in a sentence with an accompanying gesture, and place the Word Wall card and picture for it on the Sun, Moon, and Stars Word Wall.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Show students the Sun, Moon, and Stars Word Wall card for star and follow the same routine as above.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Invite students to use the response sheet to capture the things they noticed and wondered about the sun, moon, and stars. Tell them that they can use pictures and words to show what they notice and what they wonder.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Prompt students by referencing the mystery sky photos and asking students to articulate what they shared with their partners during the Picture Tea Party protocol or the Back-to-Back and Face-to-Face protocol. Remind students that they can draw and write to show what they notice and wonder.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [],
+      "supports_action": [
+        "written_production",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Provide students with sentence frames as needed:",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally",
+        "in writing"
+      ],
+      "supports_action": [
+        "oral_production",
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Invite students bring their response sheets and return to the whole group area.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Using a total participation technique, invite responses from the group:",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "As students discuss what they learned about the sun, moon, and stars promote self-reflection by revisiting the four habits of character (initiative, collaboration, perseverance, and responsibility) on the Working to Be Effective Learners Anchor Chart. Ask students to Think-Pair-Share one way they demonstrated a habit of character during today's lesson.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Model fluent, expressive read-aloud of 'Elvin, the Boy Who Loved the Sky,' Part 1; explain and demonstrate the Picture Tea Party and Back-to-Back and Face-to-Face discussion protocols; introduce and define vocabulary words related to the sun, moon, and stars with gestures and sentence examples; review habits of effective learners with anchor chart and link to student experiences; model writing wonders using sentence frames.",
+    "prompts_that_cue_student_response": [
+      "Based on the title of the story, what do you think this story will be about?",
+      "What is one thing we know about Elvin?",
+      "What does Elvin observe about the sun?",
+      "What does Elvin wonder about the sun?",
+      "What does Elvin observe about the moon?",
+      "What does Elvin wonder about the moon?",
+      "What did you notice about the sky, the sun, the moon, or the stars?",
+      "What is one thing you noticed about the sun in the video?",
+      "What is one thing you noticed or wondered about the moon or the stars in this video?",
+      "Which of these habits of character did you focus on using learning more about during the last module? How did you show that you were using it?",
+      "What is one of these habits of character that you would like to continue to focus on as we start this new module?",
+      "Think-Pair-Share one way you demonstrated a habit of character during today's lesson."
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "observing and discussing features of the sun, moon, and stars in pictures and videos; asking questions about observations; practicing habits of effective learners",
+    "depth": "using structured discussion protocols and sentence frames to support oral expression; recording observations and questions through drawing and writing"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "pictures, videos, mystery sky photos, story text",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Reading aloud the story 'Elvin, the Boy Who Loved the Sky,' Part 1; introducing learning targets",
+    "direct_instruction": "Modeling reading, explaining discussion protocols, introducing vocabulary and habits of effective learners",
+    "guided_practice": "Participating in Picture Tea Party and Back-to-Back and Face-to-Face protocols; group discussions",
+    "independent_application": "Writing and drawing observations and questions on response sheets",
+    "check_for_understanding": "Whole group sharing and anchor chart co-creation",
+    "differentiated_reinforce": "ELL supports including modeling, sentence frames, and vocabulary gestures",
+    "differentiated_extend": "Encouraging self- and peer-correction of pronunciation and extended discussion"
+  },
+  "supports": {
+    "english_language_learners": "Provides sentence frames, vocabulary gestures, modeling of discussion protocols, and opportunities for repetition and peer correction to support ELLs.",
+    "universal_design_udl": "Offers multiple means of representation (visuals, gestures, videos), expression (drawing, writing, oral sharing), and engagement (partner and group discussions, choice of writing tools).",
+    "below_level_reinforce": "Uses sentence frames and modeling to scaffold oral and written expression; repeats videos for better comprehension.",
+    "above_level_extend": "Encourages self- and peer-correction of pronunciation; invites students to share translations of vocabulary words in home languages."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Observations of student participation in discussions, use of sentence frames, and completion of noticing and wondering response sheets.",
+    "recognition_vs_production": "Primarily production through oral and written responses."
+  },
+  "materials": [
+    "'Elvin, the Boy Who Loved the Sky,' Part 1 (one to display; for teacher read-aloud)",
+    "Mystery sky photos (one per student)",
+    "Picture Tea Party protocol anchor chart (new; teacher-created; see supporting materials)",
+    "Classroom Discussion Norms anchor chart (begun in Module 1)",
+    "Speaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Sun, Moon, and Stars Word Wall (new; teacher-created; see Teaching Notes)",
+    "Sun, Moon, and Stars Word Wall cards (new; teacher-created; three)",
+    "Working to Become Effective Learners anchor chart (begun in Module 1)'Observe Sunrise and Sunset' (video; play in entirety; see Teaching Notes)",
+    "Back-to-Back and Face-to-Face Protocol anchor chart (begun in Module 1)",
+    "'Moonrise' (video; play in entirety; see Teaching Notes)",
+    "'Time-lapse of Starry Night Sky' (video; play in entirety; see Teaching Notes)",
+    "Noticing and Wondering response sheet (one per student)",
+    "Pencils (one per student)",
+    "Crayons (class set; variety of colors per student)",
+    "Noticing and Wondering anchor chart (new; co-created with students during Closing; see supporting materials)"
+  ],
+  "vocabulary": {
+    "new": [
+      "sun, moon, stars (L)",
+      "observe, effective (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Picture Tea Party discussion protocol",
+    "Back-to-Back and Face-to-Face discussion protocol",
+    "Use of sentence frames for oral and written expression"
+  ],
+  "notes": "The lesson integrates comprehension of informational text and multimedia with speaking, listening, vocabulary development, and writing/drawing to support young learners' observation and inquiry skills about natural phenomena. It also incorporates habits of effective learners to foster self-regulation and collaboration.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "narrative",
+    "text_complexity": {
+      "quantitative": "read-aloud text; quantitative measure not specified",
+      "qualitative": "simple narrative structure with descriptive language about natural phenomena; accessible vocabulary with some domain-specific terms",
+      "reader_and_task": "Text is read aloud to students; tasks include observation, discussion, and recording of ideas with scaffolds such as sentence frames and protocols."
+    }
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 39,
+    "source_page_end": 50
+  }
+}

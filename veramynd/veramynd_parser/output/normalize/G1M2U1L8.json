@@ -1,0 +1,734 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U1L8",
+  "title": "Lesson 8: Focused Read-aloud and Retelling, Session 1: Papa, Please Get the Moon for Me",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "1",
+      "lesson": "8",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Language",
+      "Speaking & Listening",
+      "Writing"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will answer questions about key details and describe characters and setting from the story Papa, Please Get the Moon for Me, using oral discussion, role-play, and independent writing.",
+  "what_is_taught": [
+    {
+      "skill": "identify and describe characters in a story",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "identify and describe the setting of a story",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "distinguish between proper nouns and common nouns",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use present and past verb tenses in oral language",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use sentence stems to orally share ideas",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "participate in partner discussions using turn and talk",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "role-play characters and setting from a story",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "write responses describing characters and setting",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use sentence frames to write descriptive sentences with reasons",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use classroom resources to support writing (Word Wall, Story Elements board)",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "share imaginative ideas orally with a partner",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "phonics/decoding",
+    "fluency",
+    "independent extended writing",
+    "complex grammar structures beyond noun types and verb tenses"
+  ],
+  "student_actions": {
+    "recognition_identification": "identify characters and setting in the story and distinguish noun types",
+    "oral_production": "participate in partner discussions, share ideas using sentence stems, role-play characters and setting, sing song in different tenses, share imaginative ideas with a partner",
+    "written_production": "write responses describing characters and setting using sentence frames",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "apply role-play protocol to act out story sections",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain why a descriptive word fits a character using sentence frames",
+    "comprehension_response": "answer questions about key details from the story orally and in writing",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Remind students that they have used this song to learn about nouns, verbs, and pronouns. With excitement, tell students that they can also use this poem to learn about the different tenses: past, present, and future!",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students that the poem is written in present tense and that present tense means that whatever is happening is going on right now.",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'Use the present tense to say something you see today in the classroom.' (Responses will vary, but may include: 'I see the computer. I see the teacher. I see my friends. Etc.')",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'Use the past tense to say something you saw yesterday in the classroom.' Model as needed. (Responses will vary, but may include: 'I saw the art teacher. I saw grey skies. I saw wet rain boots. Etc.')",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Invite students to sing the song in the past tense with you.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Cold call two to three students to share what they discussed with their partner. Encourage students to use the sentence stem 'The song is telling us _________.'",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using sentence stem"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Ask students to turn and talk with an elbow partner: 'How is the moon described in this song?' (The moon is described as rising up above the trees.)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Cold call two to three students to share what descriptions they heard. Encourage students to use the sentence stem 'The moon is described as __________.'",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using sentence stem"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Direct students' attention to the posted learning targets and read them aloud: 'I can answer questions about key details from Papa, Please Get the Moon for Me 'I can describe the characters and setting from Papa, Please Get the Moon for Me.'",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Review the definitions of character and setting.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to Think-Pair-Share with an elbow partner: 'What is a character in a story?' (a person, animal, or object in a story, play, or movie) 'What is the setting in a story?' (when and where a story takes place)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Show students the Sun, Moon, and Stars Word Wall card for moon and follow the same routine established in the Lesson 1: Provide its definition, use it in a sentence with an accompanying gesture, and place the Word Wall card and picture for it on the Sun, Moon, and Stars Word Wall.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Show students the Sun, Moon, and Stars Word Wall card for night and follow the same routine as above: Provide its definition, use it in a sentence with an accompanying gesture, and place the Word Wall card and picture for it on the Sun, Moon, and Stars Word Wall.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'Who are the characters in this story?' (Monica, Papa, and the moon)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'Where is this story taking place?' (outside the house)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Draw students' attention back to the text and read aloud pages 5-12 slowly, fluently, with expression, and without interruption.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Pause after reading page 12 to remind students that Papa and the moon are also characters in the story.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Remind students that nouns are words that are people, places, or things, so the characters in a story are words that are nouns.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students that nouns can be proper nouns or common nouns. A proper noun is a specific name and is always spelled with a capital letter like Ms. Adelia or San Jeronimo Bilingual School (insert your name and your school name). A common noun is a word used for general people, places, or things like girls, boys, and school.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'Which of these words are proper nouns?' (Monica and Papa)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "'Which of these words are common nouns?' (moon)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner: 'What does the author tell us about Papa? How would you describe him?' (He works hard to get Monica the moon. He is kind, caring, generous, hardworking, etc.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'Who can tell us what your classmate said in your own words?' (Responses will vary.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner:",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using evidence"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Direct students' attention to the posted learning targets and reread the second one aloud: 'I can describe the characters and setting from Papa, Please Get the Moon for Me.'",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Share with students that as in the previous lessons, they will get a chance to show what they know about the characters and setting of Papa, Please Get the Moon for Me using the RolePlay protocol.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Move students into pre-determined pairs and tell them they are going to use the Role-Play protocol to act out a section of Papa, Please Get the Moon for Me.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Invite students to begin the protocol for pages 17-20.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "oral_production",
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Give students specific, positive feedback on their ability to role-play the characters and setting of Papa, Please Get the Moon for Me. (Example: 'Devonte, you really showed Papa's determination when you pretended to climb that very high ladder.')",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Direct students' attention to the Working to Become Effective Learners anchor chart and quickly review it.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Share that now they are going to write what they know about the characters and setting in Papa, Please Get the Moon for Me.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'What is one attribute of the Working to Become Effective Learners anchor chart you will use today as you write?' (Responses will vary.)",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Display the Papa, Please Get the Moon for Me response sheet.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Focus students on Part I and read the prompt aloud, allowing adequate think time: -'Who are the main characters?' -'Where does the story take place?'",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to show a thumbs-up if they are ready to begin writing and drawing about the characters and setting from Papa, Please Get the Moon for Me.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students that they may begin writing their responses to Part I.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Circulate to support students as they write. Encourage them to use classroom resources (Story Elements board, Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Focus students on Part II and read the prompt aloud, allowing adequate think time: 'Based on the pictures, which of these words best describes Papa?' Read four options aloud and model selecting one and circling it.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Provide the following sentence frame: 'I think Papa is __________ because ________________________.'",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to show a thumbs-up if they are ready to begin writing about Papa from Papa, Please Get the Moon for Me.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students that they may begin writing their responses to Part II.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Cold call two to three students to share out.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Share that today students learned all about the characters and setting in Papa, Please Get the Moon for Me. They learned how Monica was imaginative as she pretended she could play with the moon.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students they will now share what they imagine about the night sky with a classmate using the Pinky Partners protocol.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Guide students through the protocol using the following question: 'In Papa, Please Get the Moon for Me, Monica imagined that she could play with the moon. What do you imagine when you look up at the night sky?'",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Circulate and listen in as students share with their partner.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Give students specific, positive feedback regarding their sharing. (Example: 'Kaylee, I heard you sharing in a loud and proud voice. Andres, you used a complete sentence to share how you imagine traveling to outer space in a rocket ship.')",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "As you circulate and listen in during the Pinky Partners protocol, scaffold partner conversations as needed. Some students may benefit from explicit prompting or a sentence frame. (Example: 'When I look up at the night sky, I pretend the moon is a _______. I imagine _____ with the moon.')",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Models use of present and past tense in song; models definitions of character and setting; models use of Word Wall cards; models role-play protocol; models writing using sentence frames; models Pinky Partners protocol.",
+    "prompts_that_cue_student_response": [
+      "Use the present tense to say something you see today in the classroom.",
+      "Use the past tense to say something you saw yesterday in the classroom.",
+      "Cold call students to share what they discussed with their partner using sentence stems.",
+      "What is a character in a story? What is the setting in a story?",
+      "Who are the characters in this story?",
+      "Where is this story taking place?",
+      "Which of these words are proper nouns? Which are common nouns?",
+      "What does the author tell us about Papa? How would you describe him?",
+      "How can you describe the setting by looking at this illustration for evidence?",
+      "What is one attribute of the Working to Become Effective Learners anchor chart you will use today as you write?",
+      "In Papa, Please Get the Moon for Me, Monica imagined that she could play with the moon. What do you imagine when you look up at the night sky?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "characters and setting in one story",
+    "depth": "basic identification and description with some grammar focus on nouns and verb tenses"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "text read aloud and song",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Song and Movement and Language: 'Sun, Moon, and Stars' Version 2 song",
+    "direct_instruction": "Focused Read-aloud, Session 1: Papa, Please Get the Moon for Me",
+    "guided_practice": "Role-Play: Character and Setting, Pages 17-20",
+    "independent_application": "Independent Writing: Papa, Please Get the Moon for Me Response Sheet, Parts I and II",
+    "check_for_understanding": "Pinky Partners: Making Connections",
+    "differentiated_reinforce": "",
+    "differentiated_extend": ""
+  },
+  "supports": {
+    "english_language_learners": "Provides sentence stems and frames; uses gestures and visuals for vocabulary; models pronunciation; encourages peer oral rehearsal; pairs ELLs with strong language models.",
+    "universal_design_udl": "Uses multiple modalities including song, read-aloud, partner talk, role-play, and writing; provides visual supports like Word Walls and Story Elements board; offers modified response sheets for fine motor support.",
+    "below_level_reinforce": "Small group support with teacher; use of Story Elements board and Word Walls for idea generation.",
+    "above_level_extend": "Encourages text-to-text connections with prior texts; invites students to explain reasoning orally."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "oral responses during partner talk, role-play, and Pinky Partners; written responses on Papa, Please Get the Moon for Me response sheet",
+    "recognition_vs_production": "production"
+  },
+  "materials": [
+    "'Sun, Moon, and Stars' Version 2 song (from Lesson 5; one to display)",
+    "Language Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Sun, Moon, and Stars Word Wall (begun in Lesson 1; added to during the Opening)",
+    "Sun, Moon, and Stars Word Wall cards (new; teacher-created; two)",
+    "Story Elements board (new; teacher-created; see Teaching Notes)",
+    "Reading Literature Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Papa, Please Get the Moon for Me (one to display; for teacher read-aloud)",
+    "Story Elements Board Icons: Papa, Please Get the Moon for Me (two; added to Story Elements board during Work Time A)",
+    "Story Elements Board: Papa, Please Get the Moon for Me (answers, for teacher reference)",
+    "Role-Play Protocol anchor chart (begun Lesson 4)",
+    "Working to Become Effective Learners anchor chart (begun in Module 1)",
+    "Papa, Please Get the Moon for Me response sheet (one for teacher modeling and one per student)",
+    "Pencils (one per student)",
+    "Pinky Partners Protocol anchor chart (begun Module 1)",
+    "Speaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)"
+  ],
+  "vocabulary": {
+    "new": [
+      "present tense, past tense (T)",
+      "proper noun, common noun, moon, night (L)",
+      "noun, verb, pronoun (T)",
+      "character, setting (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Role-Play protocol",
+    "Pinky Partners protocol"
+  ],
+  "notes": "Lesson includes supports for English learners and students needing fine motor accommodations. Emphasizes oral language development and comprehension through multiple modalities. Uses text-to-text connections to prior lessons for generalization.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "narrative",
+    "text_complexity": {
+      "quantitative": "read aloud; quantitative measure not specified",
+      "qualitative": "simple story structure; familiar language; concrete knowledge demands",
+      "reader_and_task": "read aloud removes decoding load; tasks require oral and written comprehension and production"
+    }
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 112,
+    "source_page_end": 124
+  }
+}

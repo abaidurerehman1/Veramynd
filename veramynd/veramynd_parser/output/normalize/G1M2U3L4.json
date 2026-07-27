@@ -1,0 +1,497 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U3L4",
+  "title": "Lesson 4: Speaking and Listening: Planning and Writing 'What the Moon Sees' Poem",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "3",
+      "lesson": "4",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Vocabulary",
+      "Speaking & Listening",
+      "Language"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will plan and write a narrative poem using a model and evidence, while expanding vocabulary and practicing respectful discussion.",
+  "what_is_taught": [
+    {
+      "skill": "use adjectives to describe nouns",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "plan writing by discussing ideas with classmates",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "write a narrative poem using a model and evidence",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "turn ideas from a planner into complete sentences",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use prepositional phrases to add detail",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use vocabulary related to time of night to support writing",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "engage in respectful partner discussion and turn and talk",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "analyze writing to identify qualities of high-quality work",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use writing conventions such as punctuation and spelling",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "Phonics/decoding",
+    "Fluency",
+    "Independent writing beyond planning and shared writing",
+    "Extended writing composition",
+    "Comprehension of complex texts"
+  ],
+  "student_actions": {
+    "recognition_identification": "identify vocabulary words and parts of a poem",
+    "oral_production": "discuss ideas with partners and share responses aloud",
+    "written_production": "write ideas on a verse planner and contribute to shared writing",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain word meanings and writing choices",
+    "comprehension_response": "respond to questions about the poem and vocabulary meanings",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Tell students they are going to use the Interactive Word Wall protocol again to make more connections between words, grow their brains, and become even stronger readers and writers. Today they will use adjectives that describe the sun.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Using a total participation technique, invite responses from the group: 'What is one connection you made during the Interactive Word Wall protocol?' (Responses will vary.)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Provide students specific, positive feedback about the connections they made between words. (Example: 'Joel, I heard you connect orange with large because at sunrise the sun often looks large and orange.')",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Direct students' attention to the learning targets and read the first one aloud: 'I can write a narrative poem using a model and evidence.'",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Using a total participation technique, invite responses from the group:",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner as you point to each line of the verse and ask:",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "For ELLs: Mini Language Dive. Ask students about the meaning of chunks from the 'What the Moon Sees' poem. Write and display student responses next to the chunks. Examples: -Point to the chunk The thin, silver moon. Ask: 'What are thin and silver, and what are they doing?' (adjectives describing moon; details)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Direct students' attention to the learning targets and read the second one aloud: 'I can plan my writing by discussing ideas with classmates.'",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner: 'What do you notice about the information included on the verse planner?'(It asks for the time, what the moon looks like, what the moon does, and what the moon sees, just like the parts of verse 1.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Tell students that they will first work with a partner to talk about and write their ideas for the 'What the Moon Sees' verse planner for verse 2.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "in writing"
+      ],
+      "supports_action": [
+        "oral_production",
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk with their partner:",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Dismiss students to their workspaces and invite them to begin writing.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Give students specific, positive feedback on their ability to plan with a partner. ('Example: Ana, I heard you and Danny respectfully come to an agreement about what the moon 'sees' by combining your two ideas.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Redirect students' attention to the displayed 'What the Moon Sees' poem and reread verse 1 aloud.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Think aloud as you write to model how you use information in the room to help you fill in the verse planner (e.g., the Time of Night anchor chart; Sun, Moon, and Stars Word Wall; Adjectives anchor chart).",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students that now that they have helped to plan verse 2, you are going to model how to write it in complete sentences on the 'What the Moon Sees' poem underneath verse 1.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Think aloud and model how to turn the ideas from the verse planner into complete sentences (e.g., 'Midnight. Hmm, I wrote that because it was the time of night. So I write it as a complete sentence: 'It is midnight.' I want to make sure I use a period at the end of my sentence and spell midnight correctly using the Time of Night anchor chart.').",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [
+        "in writing",
+        "using key details"
+      ],
+      "supports_action": []
+    },
+    {
+      "quote": "If time permits, invite students to call out the proper letters and words needed for the sentences and model how to use the tools in the classroom to support high-quality writing.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "When verse 2 is complete, reread verses 1 and 2 of the poem without interruption to support comprehension.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Give students specific, positive feedback on how they helped to take the ideas from the verse planner and turn them into complete sentences. (Example: 'Kai, you reminded us that the adjectives big and round were describing the moon. That helped me to write the sentence: 'The big, round moon is high in the sky.'')",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Remind students that today they learned how to plan a verse of the narrative poem 'What the Moon Sees' and to turn the ideas from the verse planner into a complete verse.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner:",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Refocus whole group and confirm with students that this writing is high quality because it includes details and follows conventions.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Give students specific, positive feedback on their ability to use the High-Quality Work anchor chart. (Example: 'Vinay, you pointed out that using adjectives added details to the writing.')",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "reasoning_explanation"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Models how to use a verse planner and anchor charts to write complete sentences for a narrative poem; models use of adjectives and prepositional phrases; models respectful partner discussion.",
+    "prompts_that_cue_student_response": [
+      "What is one connection you made during the Interactive Word Wall protocol?",
+      "Using the title as evidence, what do you think this poem will be about?",
+      "What do you notice about the information included on the verse planner?",
+      "How does our shared writing add to your understanding of how to write a verse for the 'What the Moon Sees' poem?",
+      "How do you know that I am writing complete sentences?",
+      "Invite students to turn and talk with an elbow partner:"
+    ],
+    "with_prompting_and_support": "no"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "narrative poem writing and vocabulary development",
+    "depth": "planning, writing, and analyzing narrative poem verses"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "poem text, verse planner, anchor charts, word walls",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Building Vocabulary: Interactive Word Wall",
+    "direct_instruction": "Shared Reading: 'What the Moon Sees' Poem, Verse 1",
+    "guided_practice": "Preparing for Writing: 'What the Moon Sees' Verse Planner, Verse 2",
+    "independent_application": "Shared Writing: 'What the Moon Sees' Poem, Verse 2",
+    "check_for_understanding": "Engaging the Writer: High-Quality Work Anchor Chart",
+    "differentiated_reinforce": "",
+    "differentiated_extend": ""
+  },
+  "supports": {
+    "english_language_learners": "Provides home language discussion opportunities, visuals for vocabulary, mini language dives, and color-coding to support ELLs.",
+    "universal_design_udl": "Uses anchor charts, word walls, visuals, and total participation techniques to support diverse learners.",
+    "below_level_reinforce": "Offers partially filled planners and guided writing support.",
+    "above_level_extend": "Encourages students to analyze writing quality and provide evidence for their ideas."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Observation of student discussions, planning, and shared writing contributions",
+    "recognition_vs_production": "Production"
+  },
+  "materials": [
+    "Interactive Word Wall Protocol anchor chart (begun in Lesson 2)",
+    "Interactive Word Wall cards (from Lessons 2-3 and new; teacher-created; one set per group)",
+    "Arrow cards (from Lesson 2; one set per group)",
+    "'What the Moon Sees' poem (one to display)",
+    "'What the Moon Sees' poem (example, for teacher reference)",
+    "Time of Night anchor chart (new; teacher-created; see supporting materials)",
+    "Sun, Moon, and Stars Word Wall (begun in Unit 1, Lesson 1)",
+    "'What the Moon Sees' verse planner (one per student and one to display)",
+    "Adjectives anchor chart (begun in Unit 2, Lesson 4)",
+    "Pencils (one per student)",
+    "'What the Moon Sees' verse planner (example, for teacher reference)",
+    "High-Quality Work anchor chart (begun in Lesson 3)",
+    "Speaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)"
+  ],
+  "vocabulary": {
+    "new": [
+      "narrative poem, twilight, dusk (L)",
+      "evening, midnight, high quality (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Interactive Word Wall protocol",
+    "Total participation technique",
+    "Turn and talk partner discussions"
+  ],
+  "notes": "The lesson integrates vocabulary development with writing a narrative poem, emphasizing planning, respectful discussion, and use of descriptive language.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "narrative"
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 375,
+    "source_page_end": 384
+  }
+}

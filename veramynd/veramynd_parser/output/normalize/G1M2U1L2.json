@@ -1,0 +1,488 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U1L2",
+  "title": "Lesson 2: Reading and Speaking and Listening: Why Do Authors Write Stories about the Sun and Moon?",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "1",
+      "lesson": "2",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening",
+      "Writing",
+      "Language"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will infer why authors write stories about the sun, moon, and stars using details from the text Why the Sun and the Moon Live in the Sky, and express their ideas through discussion and independent writing.",
+  "what_is_taught": [
+    {
+      "skill": "infer why authors write stories using details from a text",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "listen to and comprehend a read-aloud story",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "participate in structured partner discussion using Think-Pair-Share",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use sentence frames to support independent writing",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "express ideas orally in whole group sharing",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "follow multi-step movement routine modeled by teacher",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "describe observations about movement and body actions",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use vocabulary words explain and infer in context",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "Phonics",
+    "Phonological Awareness",
+    "Fluency",
+    "Independent writing beyond guided response",
+    "Complex grammar instruction"
+  ],
+  "student_actions": {
+    "recognition_identification": "identify story elements and vocabulary in discussion and reading",
+    "oral_production": "participate in partner and whole group discussions and share ideas orally",
+    "written_production": "draw and write responses to the guiding question using pictures and words",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "perform the Sun Movement routine steps as modeled",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain why authors write stories using evidence from the text",
+    "comprehension_response": "answer questions about story content and author purpose orally and in writing",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "'What did we learn about Elvin from the story?' (He loves to look at the sky, he wonders about the sun and the moon, and he likes to lie down in the grass to look at the sky.)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What did Elvin share with us after we read his story in the last lesson?' (He shared that he saw a photographer and asked about the sun and moon, and the photographer gave him pictures. He shared those pictures with us.)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What is Elvin wondering about now?' (He wonders if the sun and moon move. He wonders how the sun and moon move.)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Model the first five steps of the Sun Movement routine while referencing the Sun Movement chart",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to join you as you complete Steps 1-5.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "physically"
+      ],
+      "supports_action": [
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "'What did you notice about how my body moved while I did this routine?' (You moved in your own space. You moved safely and calmly. Your voice was off when you were moving.)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Offer students specific, positive feedback on their work learning a new movement routine. (Example: 'I noticed that everyone took great care to make sure their bodies were safe as we learned the new movements.')",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Read aloud 'Elvin, the Boy Who Loved the Sky,' Part 3 and invite students to follow along as you track the print.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'What was this story mostly about?' (The sun wanted the water to visit his house. The water brought a lot of friends, and then the sun and moon got pushed out of the house and into the sky.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'How did the author include the sun and moon in this story?' (The sun and moon were characters in the story. The story is about how the sun and moon got into the sky.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Tell students that authors write stories about the sun, moon, and stars for all kinds of reasons. Tell them that now they will discuss why they think this author wrote this particular story about the sun and moon.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Direct students' attention to the Unit 1 Guiding Question anchor chart and read the question aloud: 'Why do authors write about the sun, moon, and stars?'",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students they are now going to use the Think-Pair-Share protocol to discuss why Elphinstone Dayrell, the author of Why the Sun and the Moon Live in the Sky, wrote about the sun and moon.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'Why do authors write about the sun, moon, and stars?'",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Refocus whole group and invite a few students to share with the whole group.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'Who can repeat what your classmate said?' (Responses will vary.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Invite students to use the response sheet to capture their ideas about why this author wrote about the sun and moon. Tell students that they can use pictures and words to show their thinking.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing",
+        "using pictures and words"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Prompt students by asking questions to focus their thinking: 'How did the author include the sun and moon in this story? Why do you think the author included the sun and moon in this way?'",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": [
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Provide students with sentence frames as needed: 'I think the author wrote about the ______ because __________.'",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Refocus students whole group and invite a few to share out their ideas with the whole group.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "As students share out, clarify and capture their response on the Unit 1 Guiding Question anchor chart, making sure to frame the idea of why the author wrote the story about the sun and moon with the word explain.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Offer students specific, positive feedback on their writing and drawing in response to the unit's guiding question as it relates to the text they read during this lesson.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "I can infer why authors write about the sun, moon, and stars using details from Why the Sun and the Moon Live in the Sky.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner: 'What is something you learned or did during this lesson that helped you meet the learning target?' (Responses will vary.)",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Refocus students whole group and invite two or three students to share out with the whole group.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Model the first five steps of the Sun Movement routine while referencing the Sun Movement chart; read aloud texts fluently and with expression; clarify vocabulary and sentence frames; capture student ideas on anchor charts.",
+    "prompts_that_cue_student_response": [
+      "What did we learn about Elvin from the story?",
+      "What did Elvin share with us after we read his story in the last lesson?",
+      "What is Elvin wondering about now?",
+      "What was this story mostly about?",
+      "How did the author include the sun and moon in this story?",
+      "Why do authors write about the sun, moon, and stars?",
+      "Who can repeat what your classmate said?",
+      "What is something you learned or did during this lesson that helped you meet the learning target?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "One unit focusing on stories about the sun, moon, and stars",
+    "depth": "Includes reading, discussion, movement, and writing activities to infer author purpose"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "Texts read aloud including 'Elvin, the Boy Who Loved the Sky' Parts 2 and 3, and 'Why the Sun and the Moon Live in the Sky'",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Engaging the Learner: Introducing the Sun Movement Routine",
+    "direct_instruction": "Reading Aloud: Why the Sun and the Moon Live in the Sky",
+    "guided_practice": "Structured Discussion: Introducing the Unit 1 Guiding Question",
+    "independent_application": "Independent Writing: Reflecting on the Unit 1 Guiding Question",
+    "check_for_understanding": "Reflecting on Learning",
+    "differentiated_reinforce": "",
+    "differentiated_extend": ""
+  },
+  "supports": {
+    "english_language_learners": "Provides sentence frames, mini language dives, and visual supports such as charts and enlarged text to support comprehension and production.",
+    "universal_design_udl": "Offers multiple modes of expression including drawing and writing, movement activities, and partner discussions to engage diverse learners.",
+    "below_level_reinforce": "Teacher circulates to provide prompts and support during independent writing and discussion.",
+    "above_level_extend": "Students are invited to share ideas orally and make connections to personal experiences with stories about the sun and moon."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Observation of student participation in discussion, movement routine, and independent writing; teacher notes on Speaking and Listening Checklist",
+    "recognition_vs_production": "Primarily production through oral and written responses"
+  },
+  "materials": [
+    "'Elvin, the Boy Who Loved the Sky,' Part 2 (one to display; for teacher read-aloud)",
+    "Sun Movement chart (new; teacher-created; see supporting materials)",
+    "Moon Movement chart (new; teacher-created; see supporting materials)",
+    "'Elvin, the Boy Who Loved the Sky,' Part 3 (one to display; for teacher read-aloud)",
+    "Why the Sun and the Moon Live in the Sky (one to display; for teacher read-aloud)",
+    "Kitten's First Full Moon",
+    "(one to display)",
+    "Sun and Moon (one to display)",
+    "Summer Sun Risin' (one to display)",
+    "Noticing and Wondering anchor chart (begun in Lesson 1)",
+    "Unit 1 Guiding Question anchor chart (new; co-created with students during Work Time C; see supporting materials)",
+    "Think-Pair-Share anchor chart (begun in Module 1)",
+    "Speaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Unit 1 Guiding Question response sheet (one per student)",
+    "Pencils (one per student)",
+    "Crayons (class set; variety of colors per student)"
+  ],
+  "vocabulary": {
+    "new": [
+      "explain, infer (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Think-Pair-Share",
+    "Total Participation Technique"
+  ],
+  "notes": "The lesson integrates movement with comprehension and writing to engage students in learning about author purpose through culturally relevant texts. Supports for ELLs and diverse learners are embedded throughout.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "narrative",
+    "text_complexity": {
+      "quantitative": "Read-aloud mediation; text complexity not independently measured",
+      "qualitative": "Simple narrative structure with familiar vocabulary and cultural content; moderate knowledge demands",
+      "reader_and_task": "Students listen to read-alouds and respond through discussion and writing; scaffolded supports reduce decoding demands"
+    }
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 51,
+    "source_page_end": 60
+  }
+}

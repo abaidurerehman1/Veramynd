@@ -1,0 +1,433 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U1L7",
+  "title": "Lesson 7: Close Read-aloud Culminating Task and Reflecting on Guiding Question",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "1",
+      "lesson": "7",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Language",
+      "Speaking & Listening"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will retell important events from the story Summer Sun Risin' and reflect on the unit's guiding question about why authors write about the sun, moon, and stars.",
+  "what_is_taught": [
+    {
+      "skill": "retell important events from a story",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "identify nouns in a song",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "identify verbs in a song",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "identify pronouns in a song",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use sentence frames and language structures to support oral responses",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "participate in Think-Pair-Share discussion protocol",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "reflect on learning using the Sit, Kneel, Stand protocol",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "listen and explain classmates' ideas in own words",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "phonics/decoding",
+    "independent writing",
+    "fluency",
+    "vocabulary word meanings beyond identification",
+    "formal grammar instruction beyond noun, verb, pronoun identification"
+  ],
+  "student_actions": {
+    "recognition_identification": "identify nouns, verbs, and pronouns in a song and story",
+    "oral_production": "sing song with motions, answer questions orally, participate in partner and whole group discussions, share reflections orally",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain classmates' ideas in own words and give examples during discussion",
+    "comprehension_response": "retell important story events orally and respond to guiding questions orally and in discussion contexts, reflect on learning progress orally and through group protocol responses, participate in Turn and Talk and Think-Pair-Share activities to respond to questions about story and song content, and reflect on learning using Sit, Kneel, Stand protocol",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Direct students' attention to the 'Sun, Moon, and Stars'Version 2 song and invite students to join you in singing and doing the motions for the song.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "with motions"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'What nouns are in the song?' (the sun, the moon, the stars, I)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "'What verbs are in the song?' (shines, see, lights, make, look)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "'What pronouns are in the song?' (it, them)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Turn and Talk: 'What nouns are in the song?'",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "with partner"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Direct students' attention to the posted learning target and read it aloud: 'I can retell important events of what the boy and the sun do throughout Summer Sun Risin'.'",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Define retell (to tell again).",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Explain that when we retell stories, we tell the important parts again to help us understand the story better and to remember the important parts.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Guide students through the close read-aloud for Summer Sun Risin' using the Close Readaloud Guide: Summer Sun Risin' (Session 5; for teacher reference).",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Offer students specific feedback on the close reading skills they used as they answered the focus question: What is the boy doing when the sun is rising, at its highest, and setting in the sky?",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "For ELLs: Underline the prefix re- and tell students that it means again. Ask: 'If remeans again, what do you think it means to retell?' (to tell again)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Remind students that they have been working toward answering this question through their close reading of Summer Sun Risin'. Tell them they will now add their new learning to the Unit 1 Guiding Question anchor chart.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Invite students to Think-Pair-Share with an elbow partner: 'Was it [the text] about the sun or the moon?' 'Why do you think the author wrote the book?'",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "with partner"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Gather students back together and invite a few students to share with the whole group.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "whole group"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'Can you give an example?' (Responses will vary.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'Who can tell us what your classmate said in your own words?' (Responses will vary.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Remind them that the best learning happens when learners check to see how well they are doing and what they can do to be even better. Tell them that this is called assessing and that today they will do use the Sit, Kneel, Stand protocol.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Guide students through the protocol using the learning target.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'Who can tell us what your classmate said in your own words?' (Responses will vary.)",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Model retelling the story and explain the meaning of retell; model identifying nouns, verbs, and pronouns in the song; model use of protocols such as Think-Pair-Share and Sit, Kneel, Stand.",
+    "prompts_that_cue_student_response": [
+      "What nouns are in the song?",
+      "What verbs are in the song?",
+      "What pronouns are in the song?",
+      "If remeans again, what do you think it means to retell?",
+      "Was it about the sun or the moon?",
+      "Why do you think the author wrote the book?",
+      "Can you give an example?",
+      "Who can tell us what your classmate said in your own words?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "story retelling, parts of speech identification, discussion protocols",
+    "depth": "focus on retelling key story events and identifying nouns, verbs, pronouns in a song"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "text and song",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Song and Movement: 'Sun, Moon, and Stars' Song",
+    "direct_instruction": "Close Read-aloud Culminating Task: Summer Sun Risin'",
+    "guided_practice": "Structured Discussion: Reflecting on Unit 1 Guiding Question",
+    "independent_application": "Reflecting on Learning",
+    "check_for_understanding": "Reflecting on Learning",
+    "differentiated_reinforce": "",
+    "differentiated_extend": ""
+  },
+  "supports": {
+    "english_language_learners": "Encourage ELLs to sing along or sing duets with confident students; underline prefix re- and explain meaning; provide sentence frames for partner talk.",
+    "universal_design_udl": "Provide alternative seating options; create class songbook with lyrics and motions; scribe student reflections on chart paper.",
+    "below_level_reinforce": "Use sentence frames and partner talk to scaffold responses.",
+    "above_level_extend": "Encourage students to generate new lines for the song with matching nouns, verbs, and pronouns."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Oral retelling and participation in discussion protocols; reflection using Sit, Kneel, Stand protocol",
+    "recognition_vs_production": "production"
+  },
+  "materials": [
+    "'Sun, Moon, and Stars' Version 2 song (from Lesson 5; one to display)",
+    "Language Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Close Read-aloud Guide: Summer Sun Risin' (Session 5; for teacher reference)",
+    "-Summer Sun Risin' (one to display; for teacher read-aloud)",
+    "-Summer Sun Risin' anchor chart (begun in Lesson 3)",
+    "-Summer Sun Risin' Culminating Task response sheet (from Lesson 3; one for teacher modeling and one per student)",
+    "The Sun, Moon, and Stars",
+    "-Reading Literature Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Unit 1 Guiding Question anchor chart (begun in Lesson 2; added to during Work Time B; see supporting materials)",
+    "Think-Pair-Share Protocol anchor chart (begun in Module 1)",
+    "Speaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Sit, Kneel, Stand Protocol anchor chart (begun in Module 1)",
+    "Pencils (one per student)"
+  ],
+  "vocabulary": {
+    "new": [
+      "retell (L)",
+      "noun, verb, pronoun (T)",
+      "characters, events, setting, sunset (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Think-Pair-Share",
+    "Sit, Kneel, Stand"
+  ],
+  "notes": "The lesson integrates language development with comprehension through song and story retelling. It includes supports for ELLs and uses classroom protocols to scaffold discussion and reflection.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "narrative",
+    "text_complexity": {
+      "quantitative": "read-aloud mediation; quantitative measure not specified",
+      "qualitative": "simple story structure with clear sequence of events; familiar language; supportive illustrations",
+      "reader_and_task": "read-aloud removes decoding demands; tasks require oral retelling and discussion"
+    }
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 104,
+    "source_page_end": 111
+  }
+}

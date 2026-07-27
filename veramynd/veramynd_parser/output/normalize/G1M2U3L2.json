@@ -1,0 +1,617 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U3L2",
+  "title": "Lesson 2: Reading, Speaking, and Listening: Describing the Moon and What It 'Sees'",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "3",
+      "lesson": "2",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Vocabulary",
+    "secondary": [
+      "Comprehension",
+      "Speaking & Listening"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will practice using connecting descriptive vocabulary words, ask and answer questions about the night using a text, describe what the moon 'sees' using evidence from pictures, videos, and text, and participate in role-play and discussion protocols to support comprehension and oral language development.",
+  "what_is_taught": [
+    {
+      "skill": "use and connect descriptive vocabulary words",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "ask and answer questions about a text",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "describe what the moon 'sees' using evidence from pictures, videos, and text",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "participate in role-play to act out text sections",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "participate in turn-and-talk discussions with a partner",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use sentence frames to explain word connections",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use adjective + noun phrases to describe observations",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "reflect on learning and discuss how observations support writing",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "phonics/decoding",
+    "independent writing",
+    "fluency decoding",
+    "grammar conventions"
+  ],
+  "student_actions": {
+    "recognition_identification": "identify and recognize vocabulary words and text details",
+    "oral_production": "orally explain word connections, answer questions, participate in role-play and partner discussions",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "connect vocabulary cards using arrow cards",
+    "procedural_application": "apply Interactive Word Wall, Role-Play, Close Viewing, and Pinky Partners protocols",
+    "investigation_handson": "observe photographs and videos to generate ideas",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain why vocabulary words belong together and justify observations",
+    "comprehension_response": "answer questions about text and illustrations, describe what the moon 'sees' using evidence from multiple sources, discuss learning reflections orally and with partners, paraphrase word meanings and connections using sentence frames and prompts, generate ideas for writing narrative poems about the moon's observations using text and media evidence, participate in total participation techniques and turn-and-talks to share ideas orally, use sentence frames to support oral language processing, and discuss observations in home language groups for ELLs, when applicable, to support comprehension and language development, including describing adjectives and their use in text and observations, and connecting vocabulary words based on meaning and context.",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "With excitement, share with students that today they will practice using connecting vocabulary from the Sun, Moon, and Stars Word Wall and the Adjectives anchor chart using the Interactive Word Wall protocol.",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to look at the cards laid out on the floor, and then point to the place in the classroom where they have seen the same words (e.g., the Sun, Moon, and Stars Word Wall and Adjectives anchor chart).",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Hold up each Interactive Word Wall card, reading the word aloud and explaining that all the words are adjectives, or descriptive words, from Units 1 and 2. Make sure all students can see the word.",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Model making a connection between two Word Wall card adjectives. Refer to the Interactive Word Wall Protocol anchor chart.",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Choose an Interactive Word Wall card. Read the word on the card aloud (e.g., sliver).",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Using an arrow card, connect this card to another Interactive Word Wall card (e.g., sliver -> crescent).",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "matching_sorting_sequencing"
+      ]
+    },
+    {
+      "quote": "Read the word on the second card aloud (e.g., crescent).",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Explain why the two Interactive Word Wall cards belong together (e.g., 'These two adjectives belong together because they both can be used to describe a crescent moon').",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Invite students to begin the Interactive Word Wall protocol.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Circulate and listen in as students discuss the vocabulary. Provide support and guidance as needed by reminding students of the definitions and encouraging them to use the word in a sentence.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "student_production",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Referring to the Interactive Word Wall Protocol anchor chart, read aloud the steps. Tell students you will now show them how to participate in the Interactive Word Wall protocol.",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Direct students' attention to the posted learning targets and read them aloud: 'I can ask and answer questions about night based on the text What the Sun Sees, What the Moon Sees.' 'I can describe what the moon 'sees' using evidence from pictures, videos, and the text.'",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Pause at page 18. Using a total participation technique, invite responses from the group: 'What do you see in the illustrations that helps you know it is a quiet barnyard?' (Animals are sleeping; the animals are not moving.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Pause at page 22. Using a total participation technique, invite responses from the group: 'What do you see in the illustrations that helps you know it is an empty street?' (There are no people or cars in the street.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Pause at page 24. Using a total participation technique, invite responses from the group: 'What do you see in the illustrations that helps you know it is a silent playground?' (There are no kids playing and talking.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Add the word quiet to the Adjectives anchor chart.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Add the word empty to the Adjectives anchor chart.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Add the word silent to the Adjectives anchor chart",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Display the What the Moon Sees anchor chart and tell students that they are now going to look back at the illustrations to generate ideas of what the moon sees at night during this story.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Flip through the illustrations on pages 15-28. Pause at each page and invite students to say out loud what the moon sees on that page and add it to the What the Moon Sees anchor chart.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Tell students that they are going to continue generating ideas about what the moon might see by observing some photographs and videos of the world at night.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Move students into pre-determined pairs and tell them they are going to use the Role-Play protocol to act out some sections of What the Sun Sees, What the Moon Sees.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Invite students to begin role-playing the following sections of text:",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Circulate as students role-play. Use the Speaking and Listening Checklist to track students' progress toward.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Give students specific, positive feedback on their ability to role-play sections of What the Sun Sees, What the Moon Sees. (Example: 'Lila, you demonstrated how lively and active hooting owls would be during the night.')",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "With excitement, tell students that they will now participate in a close viewing of some photographs and videos to brainstorm more ideas of what the moon might 'see' throughout the night.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Display night photograph 1 and provide time for students to silently view it.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "investigation_handson"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner: 'What could the moon 'see' or observe?' (a raccoon; dark, leafy trees)",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Circulate and listen in as students share with each other. Record a selection of their ideas on the What the Moon Sees anchor chart.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Display night photograph 2 and provide time for students to silently view it. Repeat the question from above and add a selection of student ideas to the What the Moon Sees anchor chart.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "investigation_handson",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Play 'Wildlife in the Backyard at Night.'",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner:",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Play 'Downtown Boston at Night.'",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Repeat the process from the first video, using the same question.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Direct students' attention to the Unit 3 guiding question and read the question aloud:",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students they are going to use the Pinky Partners protocol to answer this question. Remind them that they used this protocol earlier in Module 2 and review as necessary using the Pinky Partners Protocol anchor chart.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "If productive, cue students to think about their thinking: 'How will our role-play and close viewing of the photographs and videos help you write a story? I'll give you time to think and discuss with a partner.' (Responses will vary.)",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Model use of the Interactive Word Wall protocol, Role-Play protocol, Close Viewing protocol, and Pinky Partners protocol; read aloud text sections with fluency and expression; explain vocabulary word meanings and connections; demonstrate how to describe observations using adjective + noun phrases; provide sentence frames to support oral language; model coping and self-regulation strategies during role-play; provide positive feedback on student participation and understanding.",
+    "prompts_that_cue_student_response": [
+      "What do you see in the illustrations that helps you know it is a quiet barnyard?",
+      "What does quiet mean?",
+      "What do you see in the illustrations that helps you know it is an empty street?",
+      "What do you see in the illustrations that helps you know it is a silent playground?",
+      "What could the moon 'see' or observe?",
+      "How will our role-play and close viewing of the photographs and videos help you write a story?",
+      "How can we use our knowledge of the moon and observations of the night to write a story?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "vocabulary development, text comprehension, oral language, and collaborative discussion",
+    "depth": "focused practice connecting adjectives, comprehension of text and media, and oral explanation of ideas"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "text, photographs, videos, anchor charts, word cards",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Building Vocabulary: Interactive Word Wall",
+    "direct_instruction": "Focused Read-aloud: What the Moon Sees, Pages 17-30",
+    "guided_practice": "Role-Play: What the Moon Sees, Selected Pages; Close Viewing: What the Moon 'Sees'",
+    "independent_application": "Reflecting on Learning",
+    "check_for_understanding": "Throughout all sections via total participation techniques and partner discussions",
+    "differentiated_reinforce": "Sentence frames and home language group discussions for ELLs",
+    "differentiated_extend": "Encouraging students to use adjective + noun phrases and paraphrase connections"
+  },
+  "supports": {
+    "english_language_learners": "Use of sentence frames, home language group discussions, paraphrasing prompts, and mini language dives to support comprehension and oral language development.",
+    "universal_design_udl": "Use of multiple modalities including visual aids, partner talk, sentence frames, and hands-on protocols to engage diverse learners.",
+    "below_level_reinforce": "Teacher circulates to provide definitions and sentence support during Interactive Word Wall protocol.",
+    "above_level_extend": "Challenge students to think about removing adjectives and discuss the effect on meaning."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Observation of student participation in protocols, oral responses to questions, and role-play performance",
+    "recognition_vs_production": "production"
+  },
+  "materials": [
+    "Interactive Word Wall Protocol anchor chart (new; teacher-created; see supporting materials)",
+    "Interactive Word Wall cards (one set per group)",
+    "Arrow cards (one set per group)",
+    "What the Sun Sees, What the Moon Sees (one to display; for focused read-aloud)",
+    "Reading Literature Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Adjectives anchor chart (begun in Unit 2, Lesson 4; added to during Work Time A; see supporting materials)",
+    "What the Moon Sees anchor chart (new; co-created with students during Work Time A; see supporting materials)",
+    "What the Moon Sees anchor chart (answers, for teacher reference)",
+    "Role-Play Protocol anchor chart (begun in Unit 1, Lesson 4)",
+    "Speaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Close Viewing Protocol anchor chart (begun in Module 1)",
+    "Night photograph 1 (one to display)",
+    "Night photograph 2 (one to display)",
+    "'Wildlife in the Backyard at Night!' (video; play in entirety; see Teaching Notes)",
+    "'Downtown Boston at Night' (video; play in entirety; see Teaching Notes)",
+    "Unit 3 guiding question (new; teacher-created; see supporting materials)",
+    "Pinky Partners Protocol anchor chart (begun in Unit 2, Lesson 2)",
+    "The Sun, Moon, and Stars"
+  ],
+  "vocabulary": {
+    "new": [
+      "connect (L)",
+      "quiet, empty, silent (T)",
+      "adjective, sliver, crescent, moon, night (L)",
+      "bright (T)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Interactive Word Wall protocol",
+    "Role-Play protocol",
+    "Close Viewing protocol",
+    "Pinky Partners protocol"
+  ],
+  "notes": "The lesson integrates vocabulary development with comprehension and oral language through interactive protocols and media. Supports for ELLs and self-regulation strategies are embedded. The lesson prepares students to write a narrative poem in a subsequent lesson.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "narrative",
+    "text_complexity": {
+      "quantitative": "read-aloud mediation; quantitative measures not specified",
+      "qualitative": "simple narrative structure with descriptive language; supported by illustrations and media; low knowledge demands",
+      "reader_and_task": "Students engage with text and media through read-aloud, discussion, and observation; scaffolded by protocols and visual supports"
+    }
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 355,
+    "source_page_end": 365
+  }
+}

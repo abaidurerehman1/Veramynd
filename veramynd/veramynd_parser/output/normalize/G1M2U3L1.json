@@ -1,0 +1,643 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U3L1",
+  "title": "Lesson 1: Noticing and Wondering: What Happens during the Day and Night?",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "3",
+      "lesson": "1",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening",
+      "Language"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will listen to and discuss texts and videos about daytime and nighttime activities to ask and answer questions and describe observations about what happens during the day and night.",
+  "what_is_taught": [
+    {
+      "skill": "ask questions about a text",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "answer questions about a text using details",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "describe activities of animals and people during day and night",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use imagination to understand figurative language about the sun and moon",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "sort pictures into categories based on attributes",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "explain reasoning for sorting categories",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use sentence frames to describe observations",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "participate in partner discussions using protocols",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "reflect on personal experiences related to daytime and nighttime",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use vocabulary words related to writing and categorization",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "phonics/decoding",
+    "independent writing",
+    "fluency decoding",
+    "spelling conventions"
+  ],
+  "student_actions": {
+    "recognition_identification": "listen and identify details in read-alouds and videos",
+    "oral_production": "answer questions orally, share observations, explain sorting categories, participate in partner talk",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "sort picture cards into daytime and nighttime categories",
+    "procedural_application": "use sorting and partner discussion protocols",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain why pictures belong in categories and provide evidence from texts and videos",
+    "comprehension_response": "answer questions about texts and videos, describe observations about day and night activities, reflect on personal experiences related to day and night activities, use sentence frames to communicate ideas orally, paraphrase story content, act or sketch story activities for comprehension support if needed, mime observations to communicate ideas for ELLs, compare and contrast observations with personal experiences, respond to total participation technique prompts, share thinking with partners and whole group",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "'What are some things that Elvin wondered about?' (if the sun and moon had stories; if the sun and moon danced and had songs)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What are some things that Elvin shared with us because he wondered about the sun, moon, and stars?' (photographs, songs, movement routines, books)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What does a writer do? Why do you think Elvin is sharing his wonderings about the sun, moon, and stars with a writer?' (A writer tells stories and shares information. Elvin wonders if he can tell stories and write about the sun, moon, and stars.)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What, in the story, makes you think so?' (Responses will vary.)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using evidence from text"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'What is Elvin wondering about now?' (if he can write about the sun and moon)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "I can ask and answer questions about day and night based on the text What the Sun Sees, What the Moon Sees.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "'What do you think the author means when she writes 'what the sun sees' and 'what the moon sees'?' (Responses will vary.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'When the author wrote about what the sun sees, was she writing about daytime or nighttime?' (daytime)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What did the sun 'see' animals and people doing during the daytime?' (busy children, crowded streets, animals in the barn)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner: 'What did the sun 'see' animals and people doing during the daytime?'",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "with partner"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'When the author wrote about what the moon sees, was she writing about daytime or nighttime?' (nighttime)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner:",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "with partner"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Tell students that now they will sort pictures and words of activities that might happen during the day or during nighttime.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "matching_sorting_sequencing"
+      ]
+    },
+    {
+      "quote": "Invite students to begin the Sorting protocol.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "'What does it mean to sort pictures into different categories?' (We will put pictures that go together in one group or category and other pictures that go together in another group or category.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "'Can you explain what is the same about the pictures in this categories?' (Responses will vary.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "'What are you sorting into the daytime category? Why?' (Responses will vary.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "'What are you sorting into the nighttime category? Why?' (Responses will vary.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "After 7-8 minutes, refocus students and invite one or two pairs to share what they sorted into the daytime category and what they sorted into the nighttime category.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "in pairs"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "'What is something you did that helped you succeed in the Sorting protocol? I'll give you time to think and discuss with a partner.' (Responses will vary.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "with partner"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "I can describe what animals and people do during the day and night based on observations of pictures and videos.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "'What are some activities that people might do during the day when the sun is out? What are some activities that people might do during the night when the moon is out?' (During the day, people might play, walk outside, and go to school. During the night, people might watch television at home, take a bath, and go to bed.)",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Tell students that as they watch the videos, they should look carefully to see what they notice and observe about the sky, the sun, the moon, and what animals and people are doing during the daytime and during the nighttime.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Guide students through the Back-to-Back and Face-to-Face protocol using this question: 'What is one thing you noticed about what people and animals do during the day?'",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "procedural_application",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Provide a sentence frame if necessary:",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally",
+        "using sentence frame"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "As students share, circulate and continue to use the Speaking and Listening Checklist to assess their progress toward the learning target.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Refocus students whole group and play 'Downtown Boston at Night.'",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Repeat the process above for the protocol, using the following question and sentence stem:",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally",
+        "using sentence frame"
+      ],
+      "supports_action": [
+        "oral_production",
+        "procedural_application",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Refocus students whole group and invite a few volunteers to share out to the whole group.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk: 'What do you and your family do during the daytime?' 'What do you and your family do during nighttime?'",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "with partner"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Select two or three students to share their responses with the whole group.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Offer students specific, positive feedback on their work during the lesson to answer questions about daytime and nighttime.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "For ELLs: Share successful communication as well as one or two common, important language errors. For example, if students made errors with verb tense, discuss an example and guide the students to correct it.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Model fluent, expressive read-alouds of texts about the sun, moon, and stars; model use of sorting and partner discussion protocols; model use of sentence frames for describing observations; provide positive feedback and language correction during closing.",
+    "prompts_that_cue_student_response": [
+      "What are some things that Elvin wondered about?",
+      "What are some things that Elvin shared with us because he wondered about the sun, moon, and stars?",
+      "What does a writer do? Why do you think Elvin is sharing his wonderings about the sun, moon, and stars with a writer?",
+      "What, in the story, makes you think so?",
+      "What is Elvin wondering about now?",
+      "What do you think the author means when she writes 'what the sun sees' and 'what the moon sees'?",
+      "When the author wrote about what the sun sees, was she writing about daytime or nighttime?",
+      "What did the sun 'see' animals and people doing during the daytime?",
+      "When the author wrote about what the moon sees, was she writing about daytime or nighttime?",
+      "What does it mean to sort pictures into different categories?",
+      "Can you explain what is the same about the pictures in this categories?",
+      "What are you sorting into the daytime category? Why?",
+      "What are you sorting into the nighttime category? Why?",
+      "What is one thing you noticed about what people and animals do during the day?",
+      "What is one thing you noticed about what people and animals do during the night?",
+      "What do you and your family do during the daytime?",
+      "What do you and your family do during nighttime?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "multiple texts and media about day and night activities",
+    "depth": "understanding and describing daytime and nighttime activities, sorting and categorizing, using language to explain and reflect"
+  },
+  "context": {
+    "mode": "interpretation",
+    "stimulus_provided": "texts, videos, picture cards",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Reading Aloud: 'Elvin, the Boy Who Loved the Sky,' Part 6",
+    "direct_instruction": "Reading Aloud: What the Sun Sees, What the Moon Sees",
+    "guided_practice": "Sorting Protocol: Daytime and Nighttime Activities; Video and Back-to-Back and Face-to-Face: What Happens during the Day and Night?",
+    "independent_application": "Reflecting on Learning",
+    "check_for_understanding": "Throughout lesson via total participation techniques and partner sharing",
+    "differentiated_reinforce": "Sentence frames and acting/sketching for ELLs",
+    "differentiated_extend": "Encouraging students to compare and contrast video observations with personal experiences"
+  },
+  "supports": {
+    "english_language_learners": "Provides visual text display, sentence frames, acting/sketching, miming, and language correction to support comprehension and oral production.",
+    "universal_design_udl": "Uses multiple modalities including read-alouds, videos, partner talk, sorting hands-on activity, and sentence frames to engage diverse learners.",
+    "below_level_reinforce": "Offers heavier comprehension support through acting or sketching story activities and sentence frames.",
+    "above_level_extend": "Invites students to compare and contrast observations with personal experiences and to explain reasoning for sorting categories."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Observations of student responses during read-aloud discussions, sorting protocol, partner talk, and whole group sharing.",
+    "recognition_vs_production": "Both recognition of details in texts and videos and oral production of explanations and reflections."
+  },
+  "materials": [
+    "'Elvin, the Boy Who Loved the Sky,' Part 1 (from Unit 1, Lesson 1; one to display)",
+    "'Elvin, the Boy Who Loved the Sky,' Part 6 (one to display; for teacher read-aloud)",
+    "What the Sun Sees, What the Moon Sees (one to display; for teacher read-aloud)",
+    "Reading Literature Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Sorting Protocol anchor chart (begun in Module 1)",
+    "Picture cards (one set per pair)",
+    "Back-to-Back and Face-to-Face Protocol anchor chart (begun in Module 1)",
+    "'City Street Time Lapse Stock Video' (video; play in entirety; see Teaching Notes)",
+    "S peaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "'Downtown Boston at Night' (video; play in entirety; see Teaching Notes)"
+  ],
+  "vocabulary": {
+    "new": [
+      "writer, inspired, initiative, collaboration (L)",
+      "category, evidence (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Sorting protocol",
+    "Back-to-Back and Face-to-Face partner discussion protocol",
+    "Total participation technique"
+  ],
+  "notes": "Lesson includes supports for English learners and students needing additional language or social-emotional support. The lesson integrates comprehension of informational and narrative texts with speaking and listening protocols and categorization skills.",
+  "subject_profile": {
+    "mode": "interpretation",
+    "genre": "narrative",
+    "text_complexity": {
+      "quantitative": "read-aloud mediation; quantitative measure not specified",
+      "qualitative": "Simple narrative and informational text structure; familiar language; imaginative descriptions of sun and moon; concrete content about day and night activities",
+      "reader_and_task": "Read-aloud removes decoding demands; students engage in listening comprehension, partner discussions, and categorization tasks."
+    }
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 345,
+    "source_page_end": 354
+  }
+}

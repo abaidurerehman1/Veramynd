@@ -1,0 +1,675 @@
+{
+  "schema_version": "1.0-chunk",
+  "resource_id": "G1M2U1L7",
+  "grade": 1,
+  "module": 2,
+  "unit": 1,
+  "lesson": 7,
+  "title": "Lesson 7: Close Read-aloud Culminating Task and Reflecting on Guiding Question",
+  "prompt_version": "normalize_ela.v2.1",
+  "lesson_chunk": {
+    "chunk_id": "G1M2U1L7#lesson",
+    "family": "lesson",
+    "resource_id": "G1M2U1L7",
+    "text": "Domain primary: Comprehension\nDomain secondary: Language, Speaking & Listening\nMode: both\nGenre: narrative\nObjective: Students will retell important events from the story Summer Sun Risin' and reflect on the unit's guiding question about why authors write about the sun, moon, and stars.\nSkills taught:\n- retell important events from a story (DOK2_skills_concepts, primary)\n- identify nouns in a song (DOK1_recall_reproduction, secondary)\n- identify verbs in a song (DOK1_recall_reproduction, secondary)\n- identify pronouns in a song (DOK1_recall_reproduction, secondary)\n- use sentence frames and language structures to support oral responses (DOK2_skills_concepts, secondary)\n- participate in Think-Pair-Share discussion protocol (DOK2_skills_concepts, secondary)\n- reflect on learning using the Sit, Kneel, Stand protocol (DOK2_skills_concepts, secondary)\n- listen and explain classmates' ideas in own words (DOK2_skills_concepts, secondary)\nStudent actions:\n- recognition_identification: identify nouns, verbs, and pronouns in a song and story\n- oral_production: sing song with motions, answer questions orally, participate in partner and whole group discussions, share reflections orally\n- reasoning_explanation: explain classmates' ideas in own words and give examples during discussion\n- comprehension_response: retell important story events orally and respond to guiding questions orally and in discussion contexts, reflect on learning progress orally and through group protocol responses, participate in Turn and Talk and Think-Pair-Share activities to respond to questions about story and song content, and reflect on learning using Sit, Kneel, Stand protocol",
+    "content_hash": "2fe7336429b5b909ee6c1c7f277f6ca0088e631c9c8acb25f038a1b0658f44f9",
+    "metadata": {
+      "grade": 1,
+      "module": 2,
+      "unit": 1,
+      "lesson": 7,
+      "title": "Lesson 7: Close Read-aloud Culminating Task and Reflecting on Guiding Question",
+      "domain_primary": "Comprehension",
+      "domain_secondary": [
+        "Language",
+        "Speaking & Listening"
+      ],
+      "mode": "both",
+      "genre": "narrative",
+      "prompt_version": "normalize_ela.v2.1",
+      "page_start": 104,
+      "page_end": 111
+    }
+  },
+  "instructional_chunks": [
+    {
+      "chunk_id": "G1M2U1L7#Opening#A",
+      "family": "instructional",
+      "resource_id": "G1M2U1L7",
+      "text": "[Opening A] Song and Movement: 'Sun, Moon, and Stars' Song\n- Gather students whole group.\n- Direct students' attention to the 'Sun, Moon, and Stars'Version 2 song and invite students to join you in singing and doing the motions for the song.\n- Remind students that they have looked at three types of words in this song: nouns, verbs, and pronouns.\n- Turn and Talk:\n- 'What nouns are in the song?' (the sun, the moon, the stars, I)\n- 'What verbs are in the song?' (shines, see, lights, make, look)\n- 'What pronouns are in the song?' (it, them)\n- Circulate and listen as students share. Track students' progress towards L.1.1c and L.1.1d on the Language Checklist.\n- As time permits, sing the song one more time or generate a new line for the song in collaboration with students. Include a noun with matching verb and pronoun (Ex. My mom taught me to watch the sky and now we watch it day and night.)\n- After singing the song with motions, foster community and offer alternatives to auditory information by making a class resource that includes the lyrics and motions to the song for students to revisit during free time. (Example: Create a class songbook that can be kept in the classroom library. Include a page with the lyrics to the song, embedding drawings for the motions or photos of children demonstrating the motions.) (MMR, MME)\n- For ELLs: Identify students who might be mouthing the words or not singing while the class sings chorally. If students seem to be avoiding singing, encourage them to sing without pressuring them. If students are comfortable, invite them to sing 'duets' with more confident students so they can more easily hear themselves as they practice.",
+      "content_hash": "ad3854b187f7c3dfd09aa59bebe0c6969b50b0c0c039f8a6fbbde24ec1d15fd6",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 1,
+        "lesson": 7,
+        "family": "instructional",
+        "section": "Opening",
+        "letter": "A"
+      },
+      "section": "Opening",
+      "letter": "A",
+      "title": "Song and Movement: 'Sun, Moon, and Stars' Song",
+      "page": 108,
+      "minutes": 5,
+      "steps": [
+        "Gather students whole group.",
+        "Direct students' attention to the 'Sun, Moon, and Stars'Version 2 song and invite students to join you in singing and doing the motions for the song.",
+        "Remind students that they have looked at three types of words in this song: nouns, verbs, and pronouns.",
+        "Turn and Talk:",
+        "'What nouns are in the song?' (the sun, the moon, the stars, I)",
+        "'What verbs are in the song?' (shines, see, lights, make, look)",
+        "'What pronouns are in the song?' (it, them)",
+        "Circulate and listen as students share. Track students' progress towards L.1.1c and L.1.1d on the Language Checklist.",
+        "As time permits, sing the song one more time or generate a new line for the song in collaboration with students. Include a noun with matching verb and pronoun (Ex. My mom taught me to watch the sky and now we watch it day and night.)",
+        "After singing the song with motions, foster community and offer alternatives to auditory information by making a class resource that includes the lyrics and motions to the song for students to revisit during free time. (Example: Create a class songbook that can be kept in the classroom library. Include a page with the lyrics to the song, embedding drawings for the motions or photos of children demonstrating the motions.) (MMR, MME)",
+        "For ELLs: Identify students who might be mouthing the words or not singing while the class sings chorally. If students seem to be avoiding singing, encourage them to sing without pressuring them. If students are comfortable, invite them to sing 'duets' with more confident students so they can more easily hear themselves as they practice."
+      ]
+    },
+    {
+      "chunk_id": "G1M2U1L7#Work Time#A",
+      "family": "instructional",
+      "resource_id": "G1M2U1L7",
+      "text": "[Work Time A] Close Read-aloud Culminating Task: Summer Sun Risin'\n- Direct students' attention to the posted learning target and read it aloud:\n- 'I can retell important events of what the boy and the sun do throughout Summer Sun Risin'.'\n- Define retell (to tell again).\n- Explain that when we retell stories, we tell the important parts again to help us understand the story better and to remember the important parts.\n- Remind students that over the past several lessons they have had a chance to think about events from the beginning, middle, and end of the story. Tell them that today they will focus on retelling the important events of what the boy and the sun do throughout the whole story.\n- Guide students through the close read-aloud for Summer Sun Risin' using the Close Readaloud Guide: Summer Sun Risin' (Session 5; for teacher reference). Consider using the Reading Literature Checklist (see Assessment Overview and Resources).\n- During Session 5, refer to the guide for the use of Summer Sun Risin', the Summer Sun Risin' anchor chart, and the Summer Sun Risin' Culminating Task response sheet.\n- Offer students specific feedback on the close reading skills they used as they answered the focus question: What is the boy doing when the sun is rising, at its highest, and setting in the sky? (Example: 'Everyone looked closely at the pictures in the text and listened to the text read aloud to notice and describe all the things the boy does as the sun is changing from sunrise to sunset.')\n- As you prepare students for the close read-aloud session, provide options for physical action and sensory input by differentiating seating. Some students might benefit from sitting on a gym ball, a move-and-sit cushion, or a chair with a resistive elastic band wrapped around the legs. (MMAE)\n- For ELLs: Underline the prefix re-\n- and tell students that it means again. Ask:\n- 'If remeans again, what do you think it means to retell?' (to tell again)\n- For ELLs: Remind students of the content and language structures they practiced during the Language Dive and Mini Language Dives in lessons 4-6. Direct them to any related sentence frames or work still on display. Invite students to draw from this language as they complete their culminating tasks.",
+      "content_hash": "3e5ae4489affe23c7f0a4412752f838ea274d8ca2ddc3dac2f1117fee5427817",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 1,
+        "lesson": 7,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "A"
+      },
+      "section": "Work Time",
+      "letter": "A",
+      "title": "Close Read-aloud Culminating Task: Summer Sun Risin'",
+      "page": 109,
+      "minutes": 40,
+      "steps": [
+        "Direct students' attention to the posted learning target and read it aloud:",
+        "'I can retell important events of what the boy and the sun do throughout Summer Sun Risin'.'",
+        "Define retell (to tell again).",
+        "Explain that when we retell stories, we tell the important parts again to help us understand the story better and to remember the important parts.",
+        "Remind students that over the past several lessons they have had a chance to think about events from the beginning, middle, and end of the story. Tell them that today they will focus on retelling the important events of what the boy and the sun do throughout the whole story.",
+        "Guide students through the close read-aloud for Summer Sun Risin' using the Close Readaloud Guide: Summer Sun Risin' (Session 5; for teacher reference). Consider using the Reading Literature Checklist (see Assessment Overview and Resources).",
+        "During Session 5, refer to the guide for the use of Summer Sun Risin', the Summer Sun Risin' anchor chart, and the Summer Sun Risin' Culminating Task response sheet.",
+        "Offer students specific feedback on the close reading skills they used as they answered the focus question: What is the boy doing when the sun is rising, at its highest, and setting in the sky? (Example: 'Everyone looked closely at the pictures in the text and listened to the text read aloud to notice and describe all the things the boy does as the sun is changing from sunrise to sunset.')",
+        "As you prepare students for the close read-aloud session, provide options for physical action and sensory input by differentiating seating. Some students might benefit from sitting on a gym ball, a move-and-sit cushion, or a chair with a resistive elastic band wrapped around the legs. (MMAE)",
+        "For ELLs: Underline the prefix re-",
+        "and tell students that it means again. Ask:",
+        "'If remeans again, what do you think it means to retell?' (to tell again)",
+        "For ELLs: Remind students of the content and language structures they practiced during the Language Dive and Mini Language Dives in lessons 4-6. Direct them to any related sentence frames or work still on display. Invite students to draw from this language as they complete their culminating tasks."
+      ]
+    },
+    {
+      "chunk_id": "G1M2U1L7#Work Time#B",
+      "family": "instructional",
+      "resource_id": "G1M2U1L7",
+      "text": "[Work Time B] Structured Discussion: Reflecting on Unit 1 Guiding Question\n- Refocus students whole group.\n- Direct their attention to the Unit 1 Guiding Question anchor chart and read it aloud:\n- 'Why do authors write about the sun, moon, and stars?'\n- Remind students that they have been working toward answering this question through their close reading of Summer Sun Risin'. Tell them they will now add their new learning to the Unit 1 Guiding Question anchor chart.\n- Point to each column on the anchor chart and read the headings aloud.\n- -'What is the title and author of the book?' ( Summer Sun Risin' by W. Nikola-Lisa)\n- -'Was it about the sun or the moon?' (sun)\n- -'Why do you think the author wrote the book?' (Answers will vary, but may include something like: to show and tell all the things you can do during the day.)\n- Ask students to help you fill out the first column of the anchor chart.\n- Tell students they are going to use the Think-Pair-Share protocol to address the other two questions. Remind them that they used this protocol in previous lessons, and review as necessary using the Think-Pair-Share Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)\n- Invite students to Think-Pair-Share with an elbow partner:\n- 'Was it [the text] about the sun or the moon?'\n- 'Why do you think the author wrote the book?'\n- As students talk, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group. Consider documenting progress toward SL.1.2 using the Speaking and Listening Checklist.\n- Remind students to make a bridge with their arms after both partners have shared.\n- Gather students back together and invite a few students to share with the whole group.\n- If productive, cue students to expand the conversation by giving an example and to listen carefully and seek to understand:\n- 'Can you give an example?' (Responses will vary.)\n- 'Who can tell us what your classmate said in your own words?' (Responses will vary.)\n- Thank students for their hard work reflecting on the guiding question and remind them that they will add to this anchor chart throughout the unit each time they read a new text.\n- When circulating and listening in during the Think-Pair-Share, scaffold partner conversations as needed. Some students may benefit from explicit prompting or a sentence frame. (Example: ' Summer Sun Risin' was about the _____ [sun/moon]. I think the author wrote the book because _____.') (MMAE)",
+      "content_hash": "f0f6e25230de4e07fc0a5cf013843009223c0256a325b41c2757a6e2f341d9fd",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 1,
+        "lesson": 7,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "B"
+      },
+      "section": "Work Time",
+      "letter": "B",
+      "title": "Structured Discussion: Reflecting on Unit 1 Guiding Question",
+      "page": 109,
+      "minutes": 10,
+      "steps": [
+        "Refocus students whole group.",
+        "Direct their attention to the Unit 1 Guiding Question anchor chart and read it aloud:",
+        "'Why do authors write about the sun, moon, and stars?'",
+        "Remind students that they have been working toward answering this question through their close reading of Summer Sun Risin'. Tell them they will now add their new learning to the Unit 1 Guiding Question anchor chart.",
+        "Point to each column on the anchor chart and read the headings aloud.",
+        "-'What is the title and author of the book?' ( Summer Sun Risin' by W. Nikola-Lisa)",
+        "-'Was it about the sun or the moon?' (sun)",
+        "-'Why do you think the author wrote the book?' (Answers will vary, but may include something like: to show and tell all the things you can do during the day.)",
+        "Ask students to help you fill out the first column of the anchor chart.",
+        "Tell students they are going to use the Think-Pair-Share protocol to address the other two questions. Remind them that they used this protocol in previous lessons, and review as necessary using the Think-Pair-Share Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)",
+        "Invite students to Think-Pair-Share with an elbow partner:",
+        "'Was it [the text] about the sun or the moon?'",
+        "'Why do you think the author wrote the book?'",
+        "As students talk, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group. Consider documenting progress toward SL.1.2 using the Speaking and Listening Checklist.",
+        "Remind students to make a bridge with their arms after both partners have shared.",
+        "Gather students back together and invite a few students to share with the whole group.",
+        "If productive, cue students to expand the conversation by giving an example and to listen carefully and seek to understand:",
+        "'Can you give an example?' (Responses will vary.)",
+        "'Who can tell us what your classmate said in your own words?' (Responses will vary.)",
+        "Thank students for their hard work reflecting on the guiding question and remind them that they will add to this anchor chart throughout the unit each time they read a new text.",
+        "When circulating and listening in during the Think-Pair-Share, scaffold partner conversations as needed. Some students may benefit from explicit prompting or a sentence frame. (Example: ' Summer Sun Risin' was about the _____ [sun/moon]. I think the author wrote the book because _____.') (MMAE)"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U1L7#Closing and Assessment#A",
+      "family": "instructional",
+      "resource_id": "G1M2U1L7",
+      "text": "[Closing and Assessment A] Reflecting on Learning\n- Gather students together whole group.\n- Remind them that the best learning happens when learners check to see how well they are doing and what they can do to be even better. Tell them that this is called assessing and that today they will do use the Sit, Kneel, Stand protocol. Remind students that they used this\n- protocol in Module 1 and review as necessary, using the Sit, Kneel, Stand Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)\n- Guide students through the protocol using the learning target.\n- If productive, cue students to listen carefully and seek to understand:\n- 'Who can tell us what your classmate said in your own words?' (Responses will vary.)\n- Offer students specific, positive feedback on their work of accurately reflecting on their learning today. (Example: 'It is always challenging to think about how well you are doing with a learning target and in thinking about what you can do even better, but I notice that everyone was thoughtful in their reflection, and it is clear that everyone really seems to know where they are at in meeting the learning target.')\n- As students share their reflections on the learning target, offer alternatives to auditory information by scribing their ideas on chart paper. Save this list and revisit students' goals/needs in future lessons. (MMR)",
+      "content_hash": "5d84df92a1b74203ac0220589b4d1098b20ba586da9ca8f8f3ac87ae6ff72dc8",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 1,
+        "lesson": 7,
+        "family": "instructional",
+        "section": "Closing and Assessment",
+        "letter": "A"
+      },
+      "section": "Closing and Assessment",
+      "letter": "A",
+      "title": "Reflecting on Learning",
+      "page": 110,
+      "minutes": 5,
+      "steps": [
+        "Gather students together whole group.",
+        "Remind them that the best learning happens when learners check to see how well they are doing and what they can do to be even better. Tell them that this is called assessing and that today they will do use the Sit, Kneel, Stand protocol. Remind students that they used this",
+        "protocol in Module 1 and review as necessary, using the Sit, Kneel, Stand Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)",
+        "Guide students through the protocol using the learning target.",
+        "If productive, cue students to listen carefully and seek to understand:",
+        "'Who can tell us what your classmate said in your own words?' (Responses will vary.)",
+        "Offer students specific, positive feedback on their work of accurately reflecting on their learning today. (Example: 'It is always challenging to think about how well you are doing with a learning target and in thinking about what you can do even better, but I notice that everyone was thoughtful in their reflection, and it is clear that everyone really seems to know where they are at in meeting the learning target.')",
+        "As students share their reflections on the learning target, offer alternatives to auditory information by scribing their ideas on chart paper. Save this list and revisit students' goals/needs in future lessons. (MMR)"
+      ]
+    }
+  ],
+  "evidence_pointers": [
+    {
+      "chunk_id": "G1M2U1L7#evidence#0",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L7",
+      "text": "",
+      "content_hash": "f1b2c6fa1a06f61bbe3044813a24053ae74076696c44899bb2bf6c46373db992",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L7#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L7#Opening#A",
+      "location": "Opening A",
+      "quote": "Direct students' attention to the 'Sun, Moon, and Stars'Version 2 song and invite students to join you in singing and doing the motions for the song.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally",
+        "with motions"
+      ],
+      "evidence_index": 0
+    },
+    {
+      "chunk_id": "G1M2U1L7#evidence#1",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L7",
+      "text": "",
+      "content_hash": "7de6ff22e7017bfd1767bfc2bb06425ca7005ccb7a1ca7d9a96ba0911fe96ff2",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L7#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U1L7#Opening#A",
+      "location": "Opening A",
+      "quote": "'What nouns are in the song?' (the sun, the moon, the stars, I)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 1
+    },
+    {
+      "chunk_id": "G1M2U1L7#evidence#2",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L7",
+      "text": "",
+      "content_hash": "af50f2f196b7a45661209aa15ec91a316b4495fc730d5e3e0c18790e68c551e6",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L7#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U1L7#Opening#A",
+      "location": "Opening A",
+      "quote": "'What verbs are in the song?' (shines, see, lights, make, look)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 2
+    },
+    {
+      "chunk_id": "G1M2U1L7#evidence#3",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L7",
+      "text": "",
+      "content_hash": "a686aa863a5b466d0a73585e13dc86b4b16bdf0437df60ed5e1d59d7c0174d02",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L7#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U1L7#Opening#A",
+      "location": "Opening A",
+      "quote": "'What pronouns are in the song?' (it, them)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 3
+    },
+    {
+      "chunk_id": "G1M2U1L7#evidence#4",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L7",
+      "text": "",
+      "content_hash": "ba5012739d50533d9a005ceabdcef879410aa6770b033a8b6ba97b7d1feb9545",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L7#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L7#Opening#A",
+      "location": "Opening A",
+      "quote": "Turn and Talk: 'What nouns are in the song?'",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally",
+        "with partner"
+      ],
+      "evidence_index": 4
+    },
+    {
+      "chunk_id": "G1M2U1L7#evidence#5",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L7",
+      "text": "",
+      "content_hash": "7da3e053abed2cdb2f14d795a44ed65a2ae4138a04d65660d4513605096a6bac",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L7#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L7#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Direct students' attention to the posted learning target and read it aloud: 'I can retell important events of what the boy and the sun do throughout Summer Sun Risin'.'",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 5
+    },
+    {
+      "chunk_id": "G1M2U1L7#evidence#6",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L7",
+      "text": "",
+      "content_hash": "1c692a8be763659fe7a718e8e79e16bf8eaa4d3a02701e3d690ba96a005a203c",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L7#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U1L7#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Define retell (to tell again).",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 6
+    },
+    {
+      "chunk_id": "G1M2U1L7#evidence#7",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L7",
+      "text": "",
+      "content_hash": "5417950fe1471695696d25d591dddc567cb5fa04ac85cfcea8a7293dd53b7f37",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L7#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U1L7#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Explain that when we retell stories, we tell the important parts again to help us understand the story better and to remember the important parts.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 7
+    },
+    {
+      "chunk_id": "G1M2U1L7#evidence#8",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L7",
+      "text": "",
+      "content_hash": "07ddf7c2b4fd114d7f4532ca80c4b0a39cf2c0f21d18cbb2b0a90db4496e0db0",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L7#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L7#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Guide students through the close read-aloud for Summer Sun Risin' using the Close Readaloud Guide: Summer Sun Risin' (Session 5; for teacher reference).",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 8
+    },
+    {
+      "chunk_id": "G1M2U1L7#evidence#9",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L7",
+      "text": "",
+      "content_hash": "7ea2492e5c299f513044e922eb4176634f58ff9e3f4d9f68eb55301b533e7343",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L7#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_scribe"
+      },
+      "block_chunk_id": "G1M2U1L7#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Offer students specific feedback on the close reading skills they used as they answered the focus question: What is the boy doing when the sun is rising, at its highest, and setting in the sky?",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 9
+    },
+    {
+      "chunk_id": "G1M2U1L7#evidence#10",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L7",
+      "text": "",
+      "content_hash": "44c3e548df10834744c56aae2f809afbfd0aa0ae8696387c088f299f6b1f8ccd",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L7#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U1L7#Work Time#A",
+      "location": "Work Time A",
+      "quote": "For ELLs: Underline the prefix re- and tell students that it means again. Ask: 'If remeans again, what do you think it means to retell?' (to tell again)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 10
+    },
+    {
+      "chunk_id": "G1M2U1L7#evidence#11",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L7",
+      "text": "",
+      "content_hash": "a24871ff9c8b94e8d4f711ead4968f4b4b81a436143310067b7f0c95c6f3913e",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L7#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L7#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Remind students that they have been working toward answering this question through their close reading of Summer Sun Risin'. Tell them they will now add their new learning to the Unit 1 Guiding Question anchor chart.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 11
+    },
+    {
+      "chunk_id": "G1M2U1L7#evidence#12",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L7",
+      "text": "",
+      "content_hash": "a023b060eaf7f9ded00356e2cb70078acb62568af4aa146fd064735ec06327ef",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L7#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L7#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Invite students to Think-Pair-Share with an elbow partner: 'Was it [the text] about the sun or the moon?' 'Why do you think the author wrote the book?'",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally",
+        "with partner"
+      ],
+      "evidence_index": 12
+    },
+    {
+      "chunk_id": "G1M2U1L7#evidence#13",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L7",
+      "text": "",
+      "content_hash": "9e0dc6700452d8f6f87cd3b354deec29a745d33af758eb105a41f15d79efc992",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L7#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L7#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Gather students back together and invite a few students to share with the whole group.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally",
+        "whole group"
+      ],
+      "evidence_index": 13
+    },
+    {
+      "chunk_id": "G1M2U1L7#evidence#14",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L7",
+      "text": "",
+      "content_hash": "0dc8d804ed583ec78851714628e6c3d23507e7ad030ad523f92f9fc52d0a2049",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L7#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U1L7#Work Time#B",
+      "location": "Work Time B",
+      "quote": "'Can you give an example?' (Responses will vary.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 14
+    },
+    {
+      "chunk_id": "G1M2U1L7#evidence#15",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L7",
+      "text": "",
+      "content_hash": "bb9e5e8a20c1127e63f27b04548f36bb56af8a18ea242028ba0001c1f5682997",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L7#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U1L7#Work Time#B",
+      "location": "Work Time B",
+      "quote": "'Who can tell us what your classmate said in your own words?' (Responses will vary.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 15
+    },
+    {
+      "chunk_id": "G1M2U1L7#evidence#16",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L7",
+      "text": "",
+      "content_hash": "9588ae21ede92040b4dd2d3a2b275de0a29cc0561ae1140d5d8980be6160ca31",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L7#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L7#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Remind them that the best learning happens when learners check to see how well they are doing and what they can do to be even better. Tell them that this is called assessing and that today they will do use the Sit, Kneel, Stand protocol.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 16
+    },
+    {
+      "chunk_id": "G1M2U1L7#evidence#17",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L7",
+      "text": "",
+      "content_hash": "961ed8dc5cf117ac79400dc3beb3842437581037aebde525364aafa5fd5a7fd8",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L7#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L7#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Guide students through the protocol using the learning target.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 17
+    },
+    {
+      "chunk_id": "G1M2U1L7#evidence#18",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L7",
+      "text": "",
+      "content_hash": "bb9e5e8a20c1127e63f27b04548f36bb56af8a18ea242028ba0001c1f5682997",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L7#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U1L7#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "'Who can tell us what your classmate said in your own words?' (Responses will vary.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 18
+    }
+  ]
+}

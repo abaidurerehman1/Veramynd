@@ -1,0 +1,563 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U2L8",
+  "title": "Lesson 8: Speaking and Listening: Patterns of the Moon",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "2",
+      "lesson": "8",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": [
+      "Writing",
+      "Language"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will use notes about the moon's changing shape to participate in a Science Talk, build on others' ideas, and record observations in their Sky notebooks.",
+  "what_is_taught": [
+    {
+      "skill": "use notes to support participation in a group discussion",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "build onto others' ideas during a group discussion",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use sentence frames to respond to classmates' ideas",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "record personal notes about scientific observations using words and pictures",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use word walls and anchor charts as writing resources",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "participate in shared writing to describe daily activities",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use adjectives and prepositions in writing",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "Phonics/decoding",
+    "Fluency",
+    "Independent extended writing",
+    "Comprehension of complex texts"
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "participate orally in partner talks and group Science Talk using sentence frames",
+    "written_production": "write personal notes and complete notebook pages using words and pictures",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "apply Science Talk protocol in group discussion",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain reasoning during partner talks and Science Talk",
+    "comprehension_response": "respond to questions about the moon's patterns and daily activities in writing and discussion",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Invite students to turn and talk with an elbow partner: 'What information do you think is most important to know when answering the question 'Why does the moon seem to change shape?'",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Circulate and listen in as students share with their partner.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "student_production",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Note trends in responses (e.g., everyone is talking about the sun lighting the moon) and mark them on the anchor chart with a star.",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students that next they will record their own notes about why the moon seems to change, and they might want to include a note, or notes, like the one(s) starred on the anchor chart.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Display the Patterns of the Moon notes sheet and read the prompt aloud: -'Why does the moon seem to change?'",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Remind students that they need to record their notes in a way that is useful to them, maybe with pictures and only a few words, so they can read from their notes and use them as evidence in the Science Talk.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Give students about a minute to look at the exemplars. Then invite students to turn and talk to an elbow partner:",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Using a total participation technique, invite responses from the group.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Remind students that as they record their notes, they should focus on drawing quick sketches that will help them explain why the moon seems to change, and writing words that are clear and easy to reread.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Focus students on the prompt. Reread it aloud and invite them to begin writing their individual notes.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Circulate and support students as they write.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to take out their Patterns of the Moon notes sheets. Remind them that they will use these notes and take turns responding to their group members' ideas.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Direct students' attention to the learning targets and read the first one aloud: 'I can build onto others' ideas while participating in a Science Talk about patterns of the moon.'",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Remind students that in order to work toward this target, they should try using a sentence frame as they respond to their classmates.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Review the previously taught sentence frames: 'I think he/she means __________.' 'I'd like to add ________.' 'This makes me think __________ because ___________.'",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Use equity sticks to select two student volunteers to model how to build onto a group member's idea:",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "student_production",
+      "support": "modeled",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Practice using the sentence frames to respond to the volunteer's answer. Say: 'I would like to add \u2026'",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "student_production",
+      "support": "modeled",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Using a total participation technique, invite responses from the group: 'How will you show your partner you are listening to him or her?' (use eye contact; answer the questions they ask me)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Guide students through the protocol.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Circulate to observe students as they discuss and gather data on using the Speaking and Listening Checklist. Prompt students with questions to help them expand on their ideas (Examples: 'What is causing the moon to shine?' 'Is the moon changing shape?' 'Why or why not?' 'How does the evidence from your notes help you explain this?')",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "student_production",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally",
+        "using notes"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Tell students they will now add their learning to the Unit 2 Guiding Question anchor chart.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Using a total participation technique, invite responses from the group:",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "As students share out, clarify and capture their responses on the Unit 2 Guiding Question anchor chart.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Once the chart is complete, help students synthesize their learning by rereading the previous information and new information added to the anchor chart.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Direct students' attention to the posted learning targets and read the second one aloud: 'I can record my observations of videos/images of the sky in the Sky notebook.'",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students that similar to previous lessons, they will use the sun photograph to complete this page in their Sky notebook.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Follow the same process as in previous lessons to distribute notebooks, pencils, and colored pencils, and guide students to complete this page.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Remind students to use the Prepositions anchor chart and Adjectives anchor chart, and the Sun, Moon, and Stars Word Wall as necessary.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Signal all students to stop writing through the use of a designated sound. Collect students' Sky notebooks.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students that now they will learn a new part of the Sky notebook through shared writing.",
+      "location": "Closing and Assessment B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Display the Describing What People Do during the Day recording form and read the prompt aloud:",
+      "location": "Closing and Assessment B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Ask: 'What are people doing when the sun looks like this?' (People are cooking dinner; people are walking home from school; etc.)",
+      "location": "Closing and Assessment B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Cold call on one to two students to share out.",
+      "location": "Closing and Assessment B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Select one response to record on the paper. Draw a quick sketch to match the written response.",
+      "location": "Closing and Assessment B",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "If time permits, invite students to call out the proper letters and words needed for the sentence and write down the complete response.",
+      "location": "Closing and Assessment B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "written_production"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Models use of sentence frames for building on ideas during Science Talk; models shared writing using word walls and anchor charts; guides students in writing notes and completing notebook pages.",
+    "prompts_that_cue_student_response": [
+      "What information do you think is most important to know when answering the question 'Why does the moon seem to change shape?'",
+      "So, do you mean _____?",
+      "How will you show your partner you are listening to him or her?",
+      "What pattern of the moon have we investigated over the past few lessons?",
+      "What are people doing when the sun looks like this?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "Uses multiple modes of communication including partner talk, group discussion, and writing to explore scientific ideas about the moon's changing shape.",
+    "depth": "Focuses on building ideas collaboratively and recording observations with support from visual resources and sentence frames."
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "anchor charts, notes sheets, photographs, word walls, sentence frames",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Review Patterns of the Moon anchor chart and discuss important information orally with a partner.",
+    "direct_instruction": "Model use of sentence frames and shared writing; guide note-taking and Science Talk protocol.",
+    "guided_practice": "Students write notes independently and participate in Science Talk in small groups using notes and sentence frames.",
+    "independent_application": "Students write observations in Sky notebooks and participate in shared writing about daily activities.",
+    "check_for_understanding": "Teacher circulates during Science Talk and writing to provide feedback and support.",
+    "differentiated_reinforce": "Provide sentence frames and partially filled notes sheets for students needing support.",
+    "differentiated_extend": "Challenge students to explain reasoning during partner talks and Science Talk."
+  },
+  "supports": {
+    "english_language_learners": "Rephrase complex questions; provide sentence frames; group students strategically; use visuals and think time to support comprehension and expression.",
+    "universal_design_udl": "Offer multiple means of representation and expression including visuals, sentence frames, and partner talk; provide individual copies of anchor charts for visual support.",
+    "below_level_reinforce": "Provide partially filled notes sheets and guided writing support.",
+    "above_level_extend": "Encourage students to explain reasoning and add details during discussions."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Observation of student participation in Science Talk and review of written notes and Sky notebook entries.",
+    "recognition_vs_production": "Production"
+  },
+  "materials": [
+    "Patterns of the Moon anchor chart (begun in Lesson 7)",
+    "Patterns of the Moon notes sheet (one per student and one to display)",
+    "What Makes Day and Night notes sheet (two to display; see Teaching Notes)",
+    "Pencils (one per student)",
+    "Sun, Moon, and Stars Word Wall (begun in Unit 1, Lesson 1)",
+    "Does the Sun Sleep?: Noticing Sun, Moon, and Star Patterns (one to display)",
+    "Science Talk Protocol anchor chart (begun in Lesson 6)",
+    "Equity sticks (class set; one per student)",
+    "Speaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Unit 2 Guiding Question anchor chart (begun in Lesson 2; added to during Work Time C; see supporting materials)",
+    "Sky notebook (from Lesson 4; page 7; one per student and one to display)",
+    "Sun photograph 6 (one to display)",
+    "Colored pencils (class set; variety of colors per student)",
+    "Prepositions anchor chart (begun in Lesson 7)",
+    "Adjectives anchor chart (begun in Lesson 4)",
+    "Describing What People Do during the Day recording form (one for teacher modeling and one to display)"
+  ],
+  "vocabulary": {
+    "new": [
+      "pattern, shine, change, crescent, gibbous, half-moon (L), full moon, seems to, appears to, phase (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Science Talk protocol",
+    "Turn and talk partner discussions",
+    "Use of sentence frames for oral responses"
+  ],
+  "notes": "Lesson integrates speaking, listening, and writing to build understanding of moon phases and patterns in the sky. Supports ELLs and diverse learners with scaffolds and visuals.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "expository"
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 284,
+    "source_page_end": 294
+  }
+}

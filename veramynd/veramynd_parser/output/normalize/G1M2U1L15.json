@@ -1,0 +1,524 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U1L15",
+  "title": "Lesson 15: Unit 1 Assessment, Part II: Reading and Answering Questions about Kitten's First Full Moon",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "1",
+      "lesson": "15",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Writing",
+      "Speaking & Listening",
+      "Language"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will describe characters, setting, major events, and the central message of a story by listening to a read-aloud, discussing story elements, and writing and drawing responses.",
+  "what_is_taught": [
+    {
+      "skill": "describe characters in a story",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "describe setting in a story",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "describe major events in a story in sequence",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "describe the central message of a story",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "participate in partner discussions using a structured protocol",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "write and draw to respond to story comprehension prompts",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use total participation techniques to answer questions",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "reflect on personal behavior and demonstrate respect",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use word wall and anchor charts to support spelling and vocabulary",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "Phonics/decoding",
+    "Fluency",
+    "Independent writing beyond assessment responses",
+    "Phonological Awareness"
+  ],
+  "student_actions": {
+    "recognition_identification": "Students identify story elements and respond to questions about characters, setting, and events.",
+    "oral_production": "Students orally answer questions, share ideas in partner discussions, and participate in group sharing.",
+    "written_production": "Students write sentences and draw pictures to show their understanding of story elements and the central message.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Students apply the Back-to-Back and Face-to-Face discussion protocol in partner conversations.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Students explain why the author wrote the story and describe story elements using evidence from the text.",
+    "comprehension_response": "Students respond to comprehension prompts by discussing, writing, and drawing about story elements and the central message of the story.",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Direct students' attention to the posted 'Sun, Moon, and Stars' Version 2 song and invite students to join you in singing the song and completing the accompanying movements.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Display Kitten's First Full Moon and read the title aloud.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Remind students that in the previous lesson they listened to Kitten's First Full Moon and identified and described the character and setting in the story.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'Who is the main character in? Where does the story take place?'",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'I can describe the characters, setting, major events, and central message from Kitten's First Full Moon. '",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students that today they will listen to Kitten's First Full Moon and then they will describe what happens in the beginning, the middle, and the end of the story.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "While still displaying the text, read Kitten's First Full Moon aloud slowly, fluently, and with minimal interruption.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [
+        "fluently"
+      ],
+      "supports_action": []
+    },
+    {
+      "quote": "'What happened in the beginning of the story?' (Kitten wanted a bowl of milk.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Stop after reading page 6 and invite students to turn and talk with an elbow partner: 'What happened in the beginning of the story?' (Kitten wanted a bowl of milk.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Refocus students whole group and call on one or two students to share out.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Direct students' attention to the posted Story Elements board and place the Story Elements Board Icon: Kitten's First Full Moon for beginning on the Story Elements board.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'What are one or two things that happened in the middle of the story?' (Kitten ran through a field. Kitten climbed a tree.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'What are one or two more things that happened in the middle of the story?' (Kitten saw the bowl of milk in the lake. Kitten jumped into the lake.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Place the Story Elements Board Icon: Kitten's First Full Moon for middle on the Story Elements board.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'What happened at the end of the story?' (Kitten went back home. Kitten saw a bowl of milk on the porch and she drank from it.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Place the Story Elements Board Icon: Kitten's First Full Moon for end on the Story Elements board.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Distribute prepared clipboards with the Unit 1 Assessment response sheets.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Direct students' attention to Part III of the Unit 1 Assessment response sheet. Remind them that they should use pictures and words to show their thinking.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to point to the first box and write and draw their answers to the prompt: 'What happened in the beginning of the story?'",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Repeat this process with the second and third boxes.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Direct students' attention to Part IV and read the prompt aloud:",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to use pictures and words to show their answer, using the box in Part IV to draw a picture and writing one or two sentences on the lines at the bottom of the box.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Collect students' response sheets and offer specific, positive feedback on their writing and drawing. (Example: 'I noticed that Jeron and Elijah referred back to the Story Elements board while writing to make sure they were recalling the correct details from the story.')",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'Why do you think Kevin Henkes wrote about the moon in this story?' (to imagine what the moon looks like to a kitten; to imagine what the kitten thinks when she looks at the moon)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Guide students through three rounds of the protocol, each time finding a new partner to answer one of the following questions:",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Invite a few students to share out.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "As students share out, clarify and capture their ideas on the Unit 1 Guiding Question anchor chart, writing down the language they use as accurately as possible. If possible, model",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to turn and talk to an elbow partner: 'How have you shown respect throughout this unit?'",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Using a total participation technique, invite responses from the group:",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Teacher models reading the story aloud fluently and with minimal interruption, models use of the Story Elements board, and models writing and drawing responses to comprehension prompts.",
+    "prompts_that_cue_student_response": [
+      "Who is the main character in? Where does the story take place?",
+      "What happened in the beginning of the story?",
+      "What are one or two things that happened in the middle of the story?",
+      "What are one or two more things that happened in the middle of the story?",
+      "What happened at the end of the story?",
+      "What are some ways that Kevin Henkes included the moon in his story Kitten's First Full Moon?",
+      "How did Kevin Henkes describe the moon in this story, or what did the moon look like in this story?",
+      "Why do you think Kevin Henkes wrote about the moon in this story?",
+      "How have you shown respect throughout this unit?",
+      "How have you seen a classmate show respect during this unit?"
+    ],
+    "with_prompting_and_support": "no"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "full story comprehension and reflection",
+    "depth": "detailed description of story elements and author purpose"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "text read aloud and displayed",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Song and Movement and Language: 'Sun, Moon, and Stars' Version 2 song",
+    "direct_instruction": "Reading Kitten's First Full Moon aloud and modeling story element identification",
+    "guided_practice": "Partner discussions about story events and author purpose",
+    "independent_application": "Writing and drawing responses on Unit 1 Assessment response sheets",
+    "check_for_understanding": "Whole group sharing and total participation techniques",
+    "differentiated_reinforce": "Use of word wall and anchor charts for vocabulary and spelling support",
+    "differentiated_extend": "Extended partner discussions using Back-to-Back and Face-to-Face protocol"
+  },
+  "supports": {
+    "english_language_learners": "Display text on document camera or enlarged copy; rephrase directions; monitor understanding; provide vocabulary support using word wall.",
+    "universal_design_udl": "Offer varied writing tools and drawing utensils; provide sensory accommodations; allow flexible pacing and breaks during assessment.",
+    "below_level_reinforce": "Use Story Elements board and icons to support recall; provide additional questions to support writing.",
+    "above_level_extend": "Encourage extended partner discussions and sharing; model use of word wall for spelling."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Written and drawn responses to comprehension prompts on Unit 1 Assessment response sheets; oral sharing during partner and group discussions.",
+    "recognition_vs_production": "production"
+  },
+  "materials": [
+    "'Sun, Moon, and Stars' Version 2 song (from Lesson 5; one to display)",
+    "Kitten's First Full Moon (one to display; for teacher read-aloud)",
+    "Story Elements board (begun in Lesson 14; added to during Work Time A)",
+    "Story Elements Board Icons: Kitten's First Full Moon (from Lesson 14; three; added during Work Time A)",
+    "Unit 1 Assessment response sheet (see Assessment Overview and Resources; one per student)",
+    "Unit 1 Guiding Question anchor chart (begun in Lesson 2; added to in Work Time B; see supporting materials)",
+    "Back-to-Back and Face-to-Face Protocol anchor chart (begun in Module 1)",
+    "Sun, Moon, and Stars Word Wall (begun in Lesson 1)",
+    "Working to Become Ethical People anchor chart (begun in Lesson 4)"
+  ],
+  "vocabulary": {
+    "new": [],
+    "review": []
+  },
+  "protocols_routines": [
+    "Back-to-Back and Face-to-Face partner discussion protocol",
+    "Total participation techniques for group responses"
+  ],
+  "notes": "The lesson includes a read-aloud of Kitten's First Full Moon with pauses for partner talk and whole group sharing to describe story elements and author purpose. Students write and draw responses on assessment sheets to demonstrate comprehension. The lesson also includes reflection on respectful behavior during the unit. Supports for ELLs and students with diverse needs are integrated.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "narrative",
+    "text_complexity": {
+      "quantitative": "read-aloud; above independent reading level for Grade 1",
+      "qualitative": "simple story structure with clear sequence; familiar language; low knowledge demands",
+      "reader_and_task": "Students listen to a fluent read-aloud and respond orally and in writing with support from visuals and anchor charts."
+    }
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 184,
+    "source_page_end": 192
+  }
+}

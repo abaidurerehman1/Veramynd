@@ -1,0 +1,1077 @@
+{
+  "schema_version": "1.0-chunk",
+  "resource_id": "G1M2U2L4",
+  "grade": 1,
+  "module": 2,
+  "unit": 2,
+  "lesson": 4,
+  "title": "Lesson 4: Close Read-aloud, Session 3: What Makes Day and Night",
+  "prompt_version": "normalize_ela.v2.1",
+  "lesson_chunk": {
+    "chunk_id": "G1M2U2L4#lesson",
+    "family": "lesson",
+    "resource_id": "G1M2U2L4",
+    "text": "Domain primary: Comprehension\nDomain secondary: Writing, Speaking & Listening, Vocabulary\nMode: both\nGenre: expository\nObjective: Students will distinguish information learned from illustrations and text about the pattern of light and dark on earth and record observations about the sun and moon using adjectives in their writing.\nSkills taught:\n- distinguish information learned from illustrations and text (DOK2_skills_concepts, primary)\n- describe the pattern of light and dark on earth using details from text and illustrations (DOK2_skills_concepts, primary)\n- use adjectives to describe objects (sun, moon, stars) (DOK2_skills_concepts, primary)\n- fill in missing adjectives in a poem using an anchor chart (DOK2_skills_concepts, primary)\n- participate in group discussion using sentence stems and protocols (DOK3_strategic_thinking, secondary)\n- engage in partner talk to share ideas and reflections (DOK3_strategic_thinking, secondary)\n- conduct a hands-on experiment modeling earth's rotation and its effect on daylight and darkness (DOK2_skills_concepts, primary)\n- use scientific vocabulary related to earth's movement (e.g., rotate) (DOK1_recall_reproduction, secondary)\n- write observations using adjectives in complete sentences in a notebook (DOK2_skills_concepts, primary)\n- use classroom resources (word walls, charts) to support writing (DOK2_skills_concepts, secondary)\n- demonstrate understanding of integrity and ethical behavior during group work (DOK3_strategic_thinking, secondary)\nStudent actions:\n- recognition_identification: identify missing adjectives and scientific vocabulary in text and charts\n- oral_production: participate in group and partner discussions, share ideas and reflections orally\n- written_production: write sentences and draw pictures describing the sun and moon using adjectives in a notebook\n- investigation_handson: engage in hands-on modeling of earth's rotation using flashlights and partner roles\n- representation_modeling: model earth and sun positions during the experiment and represent ideas in writing and drawing\n- reasoning_explanation: explain how earth's rotation causes day and night and justify use of adjectives\n- comprehension_response: respond to questions about text and illustrations to describe patterns of light and dark on earth and poem content and meaning in writing and discussion",
+    "content_hash": "10ab48af4d8d39d928b5880448def453bb89b6d632c251d6be388ff841c6f319",
+    "metadata": {
+      "grade": 1,
+      "module": 2,
+      "unit": 2,
+      "lesson": 4,
+      "title": "Lesson 4: Close Read-aloud, Session 3: What Makes Day and Night",
+      "domain_primary": "Comprehension",
+      "domain_secondary": [
+        "Writing",
+        "Speaking & Listening",
+        "Vocabulary"
+      ],
+      "mode": "both",
+      "genre": "expository",
+      "prompt_version": "normalize_ela.v2.1",
+      "page_start": 239,
+      "page_end": 250
+    }
+  },
+  "instructional_chunks": [
+    {
+      "chunk_id": "G1M2U2L4#Opening#A",
+      "family": "instructional",
+      "resource_id": "G1M2U2L4",
+      "text": "[Opening A] Engaging the Learner: 'What We See: The Sun, Moon, and Stars' Poem\n- Invite students to the whole group area.\n- Remind them that in previous lessons they listened to the poem being read aloud and listened for adjectives that describe the sun, moon, and stars.\n- Direct students' attention to the posted Adjectives anchor chart. Say: 'We did great work finding all the adjectives in the poem. I pulled them out and put them onto a chart.'\n- Point to each adjective while reading aloud.\n- Display the 'What We See: The Sun, Moon, and Stars' poem version 2. Ask:\n- 'What do you notice that's different about the poem today?' (There are empty spaces and words missing.)\n- 'What words are missing in the empty spaces?' (adjectives)\n- Tell students that today they will follow along while the poem is read aloud. They should use adjectives from the Adjectives anchor chart to fill in the correct missing adjectives.\n- Use the following procedure to complete filling in the missing adjectives in the poem:\n- Invite students to follow along as you read the poem aloud and track the print: 'The sun looks ______________.'\n- Using a total participation technique, invite responses from the group:\n- 'Which adjective fits in the missing space?' (Responses will vary.)\n- As students share responses, use their ideas to fill in the missing adjective. (Example: 'The sun looks large and yellow.')\n- Invite students to join you as you read the corrected line of the poem.\n- When all corrections have been made, read the corrected poem together with students.\n- Direct students' attention back to the Adjectives anchor chart. Ask:\n- 'Can we add any more adjectives to describe the sun, moon, and stars to this chart?' (Responses will vary.)\n- 'What is something at home or at school that we could describe using this adjective?' (Responses will vary)\n- As students share, add any remaining adjectives to the chart.\n- Remind students to use the adjective from the Adjectives anchor chart when they write in their Sky notebooks later in today's lesson.\n- To support students' expressive skills, offer index cards (before reading the poem) preprinted with adjectives from the poem to select as students select missing words. (MMAE)\n- For ELLs: Challenge students by displaying the poem without adjectives, but without the blank spaces to indicate where they belong. Invite students to determine where the adjectives should be placed within the poem. Guide them to conclude that adjectives come before people places and things in sentences, not after. (Example: 'This says 'from moon to moon.' Where should I put an adjective? 'From moon crescent'? That doesn't sound right. Right! 'From crescent moon'!'",
+      "content_hash": "cb90aff62243bef3c3f854dce58f329a632bb43f25b8f19f22c09724975359b5",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 4,
+        "family": "instructional",
+        "section": "Opening",
+        "letter": "A"
+      },
+      "section": "Opening",
+      "letter": "A",
+      "title": "Engaging the Learner: 'What We See: The Sun, Moon, and Stars' Poem",
+      "page": 244,
+      "minutes": 10,
+      "steps": [
+        "Invite students to the whole group area.",
+        "Remind them that in previous lessons they listened to the poem being read aloud and listened for adjectives that describe the sun, moon, and stars.",
+        "Direct students' attention to the posted Adjectives anchor chart. Say: 'We did great work finding all the adjectives in the poem. I pulled them out and put them onto a chart.'",
+        "Point to each adjective while reading aloud.",
+        "Display the 'What We See: The Sun, Moon, and Stars' poem version 2. Ask:",
+        "'What do you notice that's different about the poem today?' (There are empty spaces and words missing.)",
+        "'What words are missing in the empty spaces?' (adjectives)",
+        "Tell students that today they will follow along while the poem is read aloud. They should use adjectives from the Adjectives anchor chart to fill in the correct missing adjectives.",
+        "Use the following procedure to complete filling in the missing adjectives in the poem:",
+        "Invite students to follow along as you read the poem aloud and track the print: 'The sun looks ______________.'",
+        "Using a total participation technique, invite responses from the group:",
+        "'Which adjective fits in the missing space?' (Responses will vary.)",
+        "As students share responses, use their ideas to fill in the missing adjective. (Example: 'The sun looks large and yellow.')",
+        "Invite students to join you as you read the corrected line of the poem.",
+        "When all corrections have been made, read the corrected poem together with students.",
+        "Direct students' attention back to the Adjectives anchor chart. Ask:",
+        "'Can we add any more adjectives to describe the sun, moon, and stars to this chart?' (Responses will vary.)",
+        "'What is something at home or at school that we could describe using this adjective?' (Responses will vary)",
+        "As students share, add any remaining adjectives to the chart.",
+        "Remind students to use the adjective from the Adjectives anchor chart when they write in their Sky notebooks later in today's lesson.",
+        "To support students' expressive skills, offer index cards (before reading the poem) preprinted with adjectives from the poem to select as students select missing words. (MMAE)",
+        "For ELLs: Challenge students by displaying the poem without adjectives, but without the blank spaces to indicate where they belong. Invite students to determine where the adjectives should be placed within the poem. Guide them to conclude that adjectives come before people places and things in sentences, not after. (Example: 'This says 'from moon to moon.' Where should I put an adjective? 'From moon crescent'? That doesn't sound right. Right! 'From crescent moon'!'"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U2L4#Work Time#A",
+      "family": "instructional",
+      "resource_id": "G1M2U2L4",
+      "text": "[Work Time A] Close Read-aloud, Session 3: What Makes Day and Night, Pages 16-20\n- Refocus students whole group.\n- Direct their attention to the posted learning targets and read the first one aloud:\n- 'I can distinguish what I learn from the illustrations and what I learn from the text in the book What Makes Day and Night to describe the pattern of light and dark on earth.'\n- Invite students to turn and talk to an elbow partner:\n- 'What do we notice about how the illustrations and the text in the book help us to understand the pattern of light and dark on earth'? (The pictures and the words match, and they show part of earth in light and some in dark.)\n- Invite one or two students to share out.\n- Tell students that today they will continue to investigate the pattern of light and dark on earth and see how that affects us on earth.\n- Review the focus question by reading it aloud:\n- 'What makes day and night on earth?'\n- Invite students to take out their imaginary bows and to take aim at the target.\n- Guide students through the close read-aloud of What Makes Day and Night using the Close Read-aloud Guide: What Makes Day and Night (Session 3; for teacher reference). Consider using the Reading Informational Text Checklist (see Assessment Overview and Resources).\n- During Session 3, refer to the guide for the use of What Makes Day and Night, the What Makes Day and Night anchor chart, the Sun, Moon, and Stars Word Wall cards, the Sun, Moon, and Stars Word Wall, and the globe.\n- Refocus whole group.\n- Before reading, provide white boards and dry-erase markers as an option for students to record (in drawing or writing) their ideas. This will also help scaffold active listening for key details. (MMR, MMAE)",
+      "content_hash": "f86eaacdff190432a585cead6ec213a8808785b43e01937a5db09c428c329327",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 4,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "A"
+      },
+      "section": "Work Time",
+      "letter": "A",
+      "title": "Close Read-aloud, Session 3: What Makes Day and Night, Pages 16-20",
+      "page": 245,
+      "minutes": 20,
+      "steps": [
+        "Refocus students whole group.",
+        "Direct their attention to the posted learning targets and read the first one aloud:",
+        "'I can distinguish what I learn from the illustrations and what I learn from the text in the book What Makes Day and Night to describe the pattern of light and dark on earth.'",
+        "Invite students to turn and talk to an elbow partner:",
+        "'What do we notice about how the illustrations and the text in the book help us to understand the pattern of light and dark on earth'? (The pictures and the words match, and they show part of earth in light and some in dark.)",
+        "Invite one or two students to share out.",
+        "Tell students that today they will continue to investigate the pattern of light and dark on earth and see how that affects us on earth.",
+        "Review the focus question by reading it aloud:",
+        "'What makes day and night on earth?'",
+        "Invite students to take out their imaginary bows and to take aim at the target.",
+        "Guide students through the close read-aloud of What Makes Day and Night using the Close Read-aloud Guide: What Makes Day and Night (Session 3; for teacher reference). Consider using the Reading Informational Text Checklist (see Assessment Overview and Resources).",
+        "During Session 3, refer to the guide for the use of What Makes Day and Night, the What Makes Day and Night anchor chart, the Sun, Moon, and Stars Word Wall cards, the Sun, Moon, and Stars Word Wall, and the globe.",
+        "Refocus whole group.",
+        "Before reading, provide white boards and dry-erase markers as an option for students to record (in drawing or writing) their ideas. This will also help scaffold active listening for key details. (MMR, MMAE)"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U2L4#Work Time#B",
+      "family": "instructional",
+      "resource_id": "G1M2U2L4",
+      "text": "[Work Time B] Engaging the Scientist: Introducing Integrity and Modeling How the Earth Moves\n- Share with students that now that they have learned how the earth moves from daylight to darkness, they are going to explore this occurrence more closely through an experiment.\n- Briefly introduce the definition of rotate (turn in a circle around a center point).\n- Invite students to turn and talk with an elbow partner:\n- 'During the day, is the earth facing toward the sun, or away from the sun? How do you know?' (The earth is facing the sun during daytime. I know because the sun gives us light and warmth.)\n- Tell students that today they will work in groups to see how daylight turns into darkness as the earth rotates throughout the day.\n- Remind students that in the previous unit they learned one habit of character about how we treat others. Direct students' attention to the posted Working to Become Ethical People anchor chart and read it aloud:\n- 'Respect: I treat myself, others, and the environment with care.'\n- Invite students to turn and talk with an elbow partner:\n- 'How did you show respect during the Role-Play protocol in the last unit?' (Responses will vary, but may include: I made sure to take turns with my partner so we could be different characters.)\n- Invite one or two students to share with the whole group.\n- Tell students that today they will learn a new habit of character connected to how we treat each other.\n- Direct students' attention to the first row that reads integrity. Tell students the next habit of character they will learn about is integrity.\n- Point to the column that reads, 'What does it mean?' and read the definition of integrity:\n- Using a total participation technique, invite responses from the group:\n- 'Have you experienced a time when you had to do the right thing even when it's hard? What was the scenario?' (Yes, I had to choose not to play around and distract my friend during a group lesson.)\n- 'Why is it important to do right thing when following directions in a group activity?' (It keeps us on task.)\n- Tell students that they can show integrity by working with their group on today's science activity. They should focus on following directions and avoiding distractions even if it seems hard.\n- Invite students to turn and talk to an elbow partner:\n- 'How will you show integrity during the science activity?' (I will follow directions and keep on task.)\n- Display pages 22-23 of What Makes Day and Night. Say:\n- 'Today you will work in pairs to re-create the illustrations on pages 22 and 23.'\n- Move students into pre-determined pairs and point to the first illustration on page 22. Read the text beneath the illustration aloud.\n- 'Stand so that your left side is toward the lamp. Hold your arms out all the way. Your left hand points toward the lamp. This is sunrise.'\n- Distribute fl ashlights. Tell students that one partner will model being the earth and the other partner will model being the sun by holding a flashlight.\n- Invite students to re-create the first illustration on page 22.\n- Point to the second illustration on page 22. Read the text beneath the illustration aloud.\n- Invite students to re-create the second illustration on page 22.\n- Point to the first illustration on page 23. Read the text beneath the illustration aloud.\n- Invite students to re-create the first illustration on page 23.\n- Point to the second illustration on page 23. Read the text beneath the illustration aloud.\n- Invite students to re-create the second illustration on page 23.\n- Tell students that they will now talk with a partner using the Pinky Partners protocol to discuss what they noticed about how the earth moves from daylight to darkness. Remind students that they used this protocol in Module 1 and review as necessary, using the Pinky Partners Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Guide students through the protocol.\n- As students talk, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group. Document progress toward SL.1.1 using the Speaking and Listening Checklist.\n- Remind students to make a bridge with their arms after both partners have shared.\n- Gather students back together and invite a few students to share out.\n- Tell students that they will use this activity again in the next lesson.\n- If productive, cue students to think about their thinking:\n- 'How does our experiment add to your understanding of what makes day and night? I'll give you time to think and discuss with a partner.' (Responses will vary.)\n- To activate background knowledge, provide one or two examples of what integrity looks and sounds like. (Example: 'When my son shows integrity, I see him studying for a test while his friends are outside playing basketball. What do you see?') (MMR)\n- For ELLs: The concept of integrity may seem abstract for some students. Make it more concrete by telling a brief story about how you show integrity in your life. Provide dialogue that illustrates what showing integrity might sound like. (Examples: 'Once, when I was a kid, I was so tired that I wanted to stay in bed. I thought about telling a lie that I had a tummy ache so that I could stay home from school. But I decided to tell the truth instead, even though it was hard. I said, 'I'm going to do the right thing!'')",
+      "content_hash": "f862b37c4d7e40e543597ac4018ab6352a5e8246fa44259b70b23978bac72cd1",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 4,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "B"
+      },
+      "section": "Work Time",
+      "letter": "B",
+      "title": "Engaging the Scientist: Introducing Integrity and Modeling How the Earth Moves",
+      "page": 246,
+      "minutes": 15,
+      "steps": [
+        "Share with students that now that they have learned how the earth moves from daylight to darkness, they are going to explore this occurrence more closely through an experiment.",
+        "Briefly introduce the definition of rotate (turn in a circle around a center point).",
+        "Invite students to turn and talk with an elbow partner:",
+        "'During the day, is the earth facing toward the sun, or away from the sun? How do you know?' (The earth is facing the sun during daytime. I know because the sun gives us light and warmth.)",
+        "Tell students that today they will work in groups to see how daylight turns into darkness as the earth rotates throughout the day.",
+        "Remind students that in the previous unit they learned one habit of character about how we treat others. Direct students' attention to the posted Working to Become Ethical People anchor chart and read it aloud:",
+        "'Respect: I treat myself, others, and the environment with care.'",
+        "Invite students to turn and talk with an elbow partner:",
+        "'How did you show respect during the Role-Play protocol in the last unit?' (Responses will vary, but may include: I made sure to take turns with my partner so we could be different characters.)",
+        "Invite one or two students to share with the whole group.",
+        "Tell students that today they will learn a new habit of character connected to how we treat each other.",
+        "Direct students' attention to the first row that reads integrity. Tell students the next habit of character they will learn about is integrity.",
+        "Point to the column that reads, 'What does it mean?' and read the definition of integrity:",
+        "Using a total participation technique, invite responses from the group:",
+        "'Have you experienced a time when you had to do the right thing even when it's hard? What was the scenario?' (Yes, I had to choose not to play around and distract my friend during a group lesson.)",
+        "'Why is it important to do right thing when following directions in a group activity?' (It keeps us on task.)",
+        "Tell students that they can show integrity by working with their group on today's science activity. They should focus on following directions and avoiding distractions even if it seems hard.",
+        "Invite students to turn and talk to an elbow partner:",
+        "'How will you show integrity during the science activity?' (I will follow directions and keep on task.)",
+        "Display pages 22-23 of What Makes Day and Night. Say:",
+        "'Today you will work in pairs to re-create the illustrations on pages 22 and 23.'",
+        "Move students into pre-determined pairs and point to the first illustration on page 22. Read the text beneath the illustration aloud.",
+        "'Stand so that your left side is toward the lamp. Hold your arms out all the way. Your left hand points toward the lamp. This is sunrise.'",
+        "Distribute fl ashlights. Tell students that one partner will model being the earth and the other partner will model being the sun by holding a flashlight.",
+        "Invite students to re-create the first illustration on page 22.",
+        "Point to the second illustration on page 22. Read the text beneath the illustration aloud.",
+        "Invite students to re-create the second illustration on page 22.",
+        "Point to the first illustration on page 23. Read the text beneath the illustration aloud.",
+        "Invite students to re-create the first illustration on page 23.",
+        "Point to the second illustration on page 23. Read the text beneath the illustration aloud.",
+        "Invite students to re-create the second illustration on page 23.",
+        "Tell students that they will now talk with a partner using the Pinky Partners protocol to discuss what they noticed about how the earth moves from daylight to darkness. Remind students that they used this protocol in Module 1 and review as necessary, using the Pinky Partners Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
+        "Guide students through the protocol.",
+        "As students talk, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group. Document progress toward SL.1.1 using the Speaking and Listening Checklist.",
+        "Remind students to make a bridge with their arms after both partners have shared.",
+        "Gather students back together and invite a few students to share out.",
+        "Tell students that they will use this activity again in the next lesson.",
+        "If productive, cue students to think about their thinking:",
+        "'How does our experiment add to your understanding of what makes day and night? I'll give you time to think and discuss with a partner.' (Responses will vary.)",
+        "To activate background knowledge, provide one or two examples of what integrity looks and sounds like. (Example: 'When my son shows integrity, I see him studying for a test while his friends are outside playing basketball. What do you see?') (MMR)",
+        "For ELLs: The concept of integrity may seem abstract for some students. Make it more concrete by telling a brief story about how you show integrity in your life. Provide dialogue that illustrates what showing integrity might sound like. (Examples: 'Once, when I was a kid, I was so tired that I wanted to stay in bed. I thought about telling a lie that I had a tummy ache so that I could stay home from school. But I decided to tell the truth instead, even though it was hard. I said, 'I'm going to do the right thing!'')"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U2L4#Work Time#C",
+      "family": "instructional",
+      "resource_id": "G1M2U2L4",
+      "text": "[Work Time C] Structured Discussion: Reflecting on Integrity\n- Direct students' attention to the Working to Become Ethical People anchor chart. Point to the column that reads, 'What does it mean?' and read the definition of integrity:\n- -'I do the right thing even when it's hard.'\n- Tell students they are going to use the Think-Pair-Share protocol to discuss how they showed integrity during the science activity. Remind them that they used this protocol in Lesson 3, and review as necessary using the Think-Pair-Share Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Invite students to Think-Pair-Share with an elbow partner:\n- 'How did you show integrity during the science activity?' (Responses will vary.)\n- Offer the following sentence stems as necessary:\n- -'I showed integrity by _________.'\n- -'This helped me and my partner because _________.'\n- As students talk, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group. Document progress toward SL.1.1 using the Speaking and Listening Checklist.\n- Remind students to make a bridge with their arms after both partners have shared.\n- Gather students back together and invite a few students to share out.\n- Remind students that they will keep working on using this habit of character throughout the unit when working with partners and small groups.\n- During the Think-Pair-Share, scaffold self-regulatory skills by helping students anticipate and manage frustration. Model what to do if a partner has an idea they do not agree with. (Example: 'My partner said she showed integrity by holding the flashlight. If I don't agree with that, I can remember to ask her to say more about how that shows integrity. This will help me better understand her thinking.') (MME)\n- For ELLs: Invite students, whole class, to generate ideas about how they showed integrity. Record and display student thinking. Invite students to draw from these\n- ideas as they think about and discuss ways they showed integrity with their partners (examples: listening carefully, using the flashlight properly, following instructions).",
+      "content_hash": "8b2f43477720d506d0bebd0c1cdcfa6bb43172c9ab86032ec5cc9efc738af588",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 4,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "C"
+      },
+      "section": "Work Time",
+      "letter": "C",
+      "title": "Structured Discussion: Reflecting on Integrity",
+      "page": 248,
+      "minutes": 5,
+      "steps": [
+        "Direct students' attention to the Working to Become Ethical People anchor chart. Point to the column that reads, 'What does it mean?' and read the definition of integrity:",
+        "-'I do the right thing even when it's hard.'",
+        "Tell students they are going to use the Think-Pair-Share protocol to discuss how they showed integrity during the science activity. Remind them that they used this protocol in Lesson 3, and review as necessary using the Think-Pair-Share Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
+        "Invite students to Think-Pair-Share with an elbow partner:",
+        "'How did you show integrity during the science activity?' (Responses will vary.)",
+        "Offer the following sentence stems as necessary:",
+        "-'I showed integrity by _________.'",
+        "-'This helped me and my partner because _________.'",
+        "As students talk, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group. Document progress toward SL.1.1 using the Speaking and Listening Checklist.",
+        "Remind students to make a bridge with their arms after both partners have shared.",
+        "Gather students back together and invite a few students to share out.",
+        "Remind students that they will keep working on using this habit of character throughout the unit when working with partners and small groups.",
+        "During the Think-Pair-Share, scaffold self-regulatory skills by helping students anticipate and manage frustration. Model what to do if a partner has an idea they do not agree with. (Example: 'My partner said she showed integrity by holding the flashlight. If I don't agree with that, I can remember to ask her to say more about how that shows integrity. This will help me better understand her thinking.') (MME)",
+        "For ELLs: Invite students, whole class, to generate ideas about how they showed integrity. Record and display student thinking. Invite students to draw from these",
+        "ideas as they think about and discuss ways they showed integrity with their partners (examples: listening carefully, using the flashlight properly, following instructions)."
+      ]
+    },
+    {
+      "chunk_id": "G1M2U2L4#Closing and Assessment#A",
+      "family": "instructional",
+      "resource_id": "G1M2U2L4",
+      "text": "[Closing and Assessment A] Independent Writing: Sky Notebook\n- Refocus students whole group.\n- Remind them that earlier in the lesson they were introduced to the Adjectives anchor chart. Now they will look at a new set of sun and moon pictures and write about these pictures using adjectives from the anchor chart in their very own Sky notebook.\n- Display sun photograph 3 and moon photograph 3.\n- Invite students to turn and talk to an elbow partner:\n- 'What adjectives describe the sun?' (Answers will vary, but may include: yellow, bright, fiery, shiny.)\n- 'What adjectives describe the moon?' (Answers will vary, but may include: white, crescent.)\n- Display the Sky notebook. Tell students that for the remainder of this unit they will capture their observations of the sun and moon in this notebook.\n- Direct students to the top of page 1 and read the question aloud: 'What does the sun look like?'\n- Direct students to the top of page 2 and read the question aloud: 'What does the moon look like?'\n- Tell students that today they will answer these two questions using pictures and words to show their thinking. Remind students to use the Adjectives anchor chart to describe what the sun and the moon look like. Remind students to use a complete sentence when answering the question.\n- Invite students to show a thumbs-up or touch their head if they are ready to begin writing and drawing about the sun and moon.\n- Point out the Sky notebooks, pencils, colored pencils, and crayons already at student workspaces.\n- Transition students to their workspaces and invite them to begin working on page 1.\n- After 3 minutes of work time, recommend that students begin working on page 2.\n- Circulate and support students as necessary. Encourage them to use classroom resources (Word Walls, high-frequency word lists, and alphabet or letter sound combination charts). Refer to Sky notebook (answers, for teacher reference) as necessary.\n- After 3 minutes, signal all students to stop working through the use of a designated sound. Model cleanup, keeping directions clear and brief. Collect the notebooks and tell students they will continue to write in their Sky notebook in upcoming lessons.\n- Offer students specific, positive feedback on their use of adjectives. (Example: 'I noticed you were thinking about which adjectives best describe today's moon picture.')\n- Minimize distractions during independent writing by providing tools such as soundcanceling headphones or individual dividers. (MME)\n- For ELLs: Provide students with a sentence frame to support their writing in their Sky notebooks. (Example: The sun looks _____ and _____.')\n- For ELLs: Briefly discuss the photograph to ensure that all students are prepared to write about the different objects in it. Label relevant objects in the photograph to support students as they write. (Example: 'Does anyone know what this is? That's right, it is a streetlight. Ingrid, can you label the streetlight? And these are towers. I'll label them.')",
+      "content_hash": "e9da9b939dfd038ff275fcd6d0e4177876e4049e80d9cad50882336a46e93387",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 4,
+        "family": "instructional",
+        "section": "Closing and Assessment",
+        "letter": "A"
+      },
+      "section": "Closing and Assessment",
+      "letter": "A",
+      "title": "Independent Writing: Sky Notebook",
+      "page": 249,
+      "minutes": 10,
+      "steps": [
+        "Refocus students whole group.",
+        "Remind them that earlier in the lesson they were introduced to the Adjectives anchor chart. Now they will look at a new set of sun and moon pictures and write about these pictures using adjectives from the anchor chart in their very own Sky notebook.",
+        "Display sun photograph 3 and moon photograph 3.",
+        "Invite students to turn and talk to an elbow partner:",
+        "'What adjectives describe the sun?' (Answers will vary, but may include: yellow, bright, fiery, shiny.)",
+        "'What adjectives describe the moon?' (Answers will vary, but may include: white, crescent.)",
+        "Display the Sky notebook. Tell students that for the remainder of this unit they will capture their observations of the sun and moon in this notebook.",
+        "Direct students to the top of page 1 and read the question aloud: 'What does the sun look like?'",
+        "Direct students to the top of page 2 and read the question aloud: 'What does the moon look like?'",
+        "Tell students that today they will answer these two questions using pictures and words to show their thinking. Remind students to use the Adjectives anchor chart to describe what the sun and the moon look like. Remind students to use a complete sentence when answering the question.",
+        "Invite students to show a thumbs-up or touch their head if they are ready to begin writing and drawing about the sun and moon.",
+        "Point out the Sky notebooks, pencils, colored pencils, and crayons already at student workspaces.",
+        "Transition students to their workspaces and invite them to begin working on page 1.",
+        "After 3 minutes of work time, recommend that students begin working on page 2.",
+        "Circulate and support students as necessary. Encourage them to use classroom resources (Word Walls, high-frequency word lists, and alphabet or letter sound combination charts). Refer to Sky notebook (answers, for teacher reference) as necessary.",
+        "After 3 minutes, signal all students to stop working through the use of a designated sound. Model cleanup, keeping directions clear and brief. Collect the notebooks and tell students they will continue to write in their Sky notebook in upcoming lessons.",
+        "Offer students specific, positive feedback on their use of adjectives. (Example: 'I noticed you were thinking about which adjectives best describe today's moon picture.')",
+        "Minimize distractions during independent writing by providing tools such as soundcanceling headphones or individual dividers. (MME)",
+        "For ELLs: Provide students with a sentence frame to support their writing in their Sky notebooks. (Example: The sun looks _____ and _____.')",
+        "For ELLs: Briefly discuss the photograph to ensure that all students are prepared to write about the different objects in it. Label relevant objects in the photograph to support students as they write. (Example: 'Does anyone know what this is? That's right, it is a streetlight. Ingrid, can you label the streetlight? And these are towers. I'll label them.')"
+      ]
+    }
+  ],
+  "evidence_pointers": [
+    {
+      "chunk_id": "G1M2U2L4#evidence#0",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "b3fd0c923619d865c2f32908815d4b501135616936cadd4fc8b27bb3f5319a22",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L4#Opening#A",
+      "location": "Opening A",
+      "quote": "Remind them that in previous lessons they listened to the poem being read aloud and listened for adjectives that describe the sun, moon, and stars.",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 0
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#1",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "eb13dec48e9a548eb2a3a0564e1767afb672476a6e571073ebe7c5f7a3febc46",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L4#Opening#A",
+      "location": "Opening A",
+      "quote": "Invite students to follow along as you read the poem aloud and track the print: 'The sun looks ______________.'",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 1
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#2",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "270416e0a3848c185e392d76f25ba0769841ff7b6dccd1842db897ec6d509b9d",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L4#Opening#A",
+      "location": "Opening A",
+      "quote": "'Which adjective fits in the missing space?' (Responses will vary.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 2
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#3",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "c282217552e934bee24ce0e3f3543a7eedb57b4db6ff08d98f738b639c2e935d",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "student_production"
+      },
+      "block_chunk_id": "G1M2U2L4#Opening#A",
+      "location": "Opening A",
+      "quote": "As students share responses, use their ideas to fill in the missing adjective. (Example: 'The sun looks large and yellow.')",
+      "actor": "student",
+      "evidence_role": "student_production",
+      "support": "with_prompting",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 3
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#4",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "862d11fe81e8692155ac24032394bc3047b598ee5d5aae6d7d0f47743c89a826",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L4#Opening#A",
+      "location": "Opening A",
+      "quote": "When all corrections have been made, read the corrected poem together with students.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 4
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#5",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "1428d65f822aaedd47f2d59903ba95ac708dd61491a26e1aa02c834a23b79d99",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L4#Opening#A",
+      "location": "Opening A",
+      "quote": "'Can we add any more adjectives to describe the sun, moon, and stars to this chart?' (Responses will vary.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 5
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#6",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "85f79c129a1c3c1f10d9a9136b4628da74e2749689f95033ffa1216f5f4fdd11",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L4#Opening#A",
+      "location": "Opening A",
+      "quote": "'What is something at home or at school that we could describe using this adjective?' (Responses will vary)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 6
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#7",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "1861c15580e794c1a5d37ff0699b3676200c42542143da4359913fd1d200f8ed",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L4#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Invite students to turn and talk to an elbow partner: 'What do we notice about how the illustrations and the text in the book help us to understand the pattern of light and dark on earth'? (The pictures and the words match, and they show part of earth in light and some in dark.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 7
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#8",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "7e16e712118eca3af685429d3c05adab2c37d23935781c25b7832ed44072c7da",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L4#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Guide students through the close read-aloud of What Makes Day and Night using the Close Read-aloud Guide: What Makes Day and Night (Session 3; for teacher reference).",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 8
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#9",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "a9bb2fd083ed1824f55b096609a35d11852638ebe42f35a8216f0febc3289635",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L4#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Before reading, provide white boards and dry-erase markers as an option for students to record (in drawing or writing) their ideas.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "written_production",
+        "representation_modeling"
+      ],
+      "qualifiers": [
+        "in writing",
+        "drawing"
+      ],
+      "evidence_index": 9
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#10",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "0fdb33f0c644c2615c61a1332982cc1982131a370f770fe6ce5c0470f8e217c4",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L4#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Invite students to turn and talk with an elbow partner: 'During the day, is the earth facing toward the sun, or away from the sun? How do you know?' (The earth is facing the sun during daytime. I know because the sun gives us light and warmth.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 10
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#11",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "8b24f11147896b47d41532ae9541191c83159e77d06184c03ec73d7473a2cfad",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L4#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Tell students that today they will work in groups to see how daylight turns into darkness as the earth rotates throughout the day.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "investigation_handson"
+      ],
+      "qualifiers": [],
+      "evidence_index": 11
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#12",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "2fd694521208977bccf83fd2dd25585ce96deadf0ea40217acb996b77477e68c",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L4#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Invite students to turn and talk with an elbow partner:",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 12
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#13",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "06677dd25f0ad465241d7f163d58c83204e070884301e3c32871461f7cb01ef4",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L4#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Using a total participation technique, invite responses from the group:",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 13
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#14",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "b2abfeeae1fd77e0e7fe2c9eb8397558a4a7118e20ec701dc99f609ee5d882a3",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L4#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Display pages 22-23 of What Makes Day and Night. Say: 'Today you will work in pairs to re-create the illustrations on pages 22 and 23.'",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "investigation_handson",
+        "representation_modeling"
+      ],
+      "qualifiers": [],
+      "evidence_index": 14
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#15",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "af7a1bb14e769eaec3d8dd57e6da5d09efea54000a79e2a32cb86bb0d237477f",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L4#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Distribute fl ashlights. Tell students that one partner will model being the earth and the other partner will model being the sun by holding a flashlight.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "investigation_handson",
+        "representation_modeling"
+      ],
+      "qualifiers": [],
+      "evidence_index": 15
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#16",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "0b916c4af98e82b45ee7a4984d0c57f858eefaa1662dc33bb90ada5585d7a037",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L4#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Invite students to re-create the first illustration on page 22.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "investigation_handson",
+        "representation_modeling"
+      ],
+      "qualifiers": [],
+      "evidence_index": 16
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#17",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "ef9685b6d7be13470ceb232386160ac6989c0181e8b8adceea1fda8dd2f8a909",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L4#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Tell students that they will now talk with a partner using the Pinky Partners protocol to discuss what they noticed about how the earth moves from daylight to darkness.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 17
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#18",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "2e39cbc362d24be784cf20c34ff167e0cd87a4b31f90377a03f01f47cfc06f65",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L4#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Guide students through the protocol.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 18
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#19",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "26b1ac791cb1d85dc169bb70fcfc83a84c5b943bba1f51884c9cbe7b228d0899",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L4#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Invite students to Think-Pair-Share with an elbow partner: 'How did you show integrity during the science activity?' (Responses will vary.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 19
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#20",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "cd29acf508a90e2cced98c786188441898c9a890fb516f15ce87ad507d304e32",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L4#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Offer the following sentence stems as necessary:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 20
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#21",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "f86368faea0b626da78ac75904b73898904958809c02b5be8aac168154f8424b",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L4#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Gather students back together and invite a few students to share out.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 21
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#22",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "1a15332eb073286ea90f7a25992c76396785ead19f7c4e497462c51af545091a",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L4#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Remind students that they will keep working on using this habit of character throughout the unit when working with partners and small groups.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 22
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#23",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "d3a7b7c01db49b61cc564e4aa6abcd756133bb7aa817573a848cf721ef5cb44c",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L4#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Remind them that earlier in the lesson they were introduced to the Adjectives anchor chart. Now they will look at a new set of sun and moon pictures and write about these pictures using adjectives from the anchor chart in their very own Sky notebook.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "written_production",
+        "recognition_identification"
+      ],
+      "qualifiers": [],
+      "evidence_index": 23
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#24",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "cced4acb4e78fd6f1f84bdb6c965b91ed9e971349c53a1820565ec570cced10d",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L4#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Invite students to turn and talk to an elbow partner:",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 24
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#25",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "89013284cb18ad21d08e2cb14c8f050de18ac464ec3c9e4e01f886a7ac37064c",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L4#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Invite students to show a thumbs-up or touch their head if they are ready to begin writing and drawing about the sun and moon.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 25
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#26",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "d3953fb2a82f1cf9b05d53596edf8f5a23ae9de33b4784b7f3ea68bdd9a8af24",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L4#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Transition students to their workspaces and invite them to begin working on page 1.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "written_production",
+        "representation_modeling"
+      ],
+      "qualifiers": [
+        "in writing",
+        "drawing"
+      ],
+      "evidence_index": 26
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#27",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "eb8fafaf54d33ac4d0e69d86bc5bba0d1e99dcbfd23014011c4fc700f03aeb4f",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L4#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "After 3 minutes of work time, recommend that students begin working on page 2.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "written_production",
+        "representation_modeling"
+      ],
+      "qualifiers": [
+        "in writing",
+        "drawing"
+      ],
+      "evidence_index": 27
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#28",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "1cf32d0d93154d8395251d341ead0a4e9dfc077ed20d1fdaac40bdc8372601dc",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L4#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Circulate and support students as necessary. Encourage them to use classroom resources (Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "supports_action": [
+        "written_production"
+      ],
+      "qualifiers": [
+        "in writing"
+      ],
+      "evidence_index": 28
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#29",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "637884918d0c64bdf4d608d2e81181acb7df9d8b90209df00774bb66500c231a",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_scribe"
+      },
+      "block_chunk_id": "G1M2U2L4#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Offer students specific, positive feedback on their use of adjectives. (Example: 'I noticed you were thinking about which adjectives best describe today's moon picture.')",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 29
+    },
+    {
+      "chunk_id": "G1M2U2L4#evidence#30",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L4",
+      "text": "",
+      "content_hash": "f40ff2ef64a1bccc151d46a99eb13d82f19d84d87d5a4716641c16dd1de24129",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L4#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L4#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "For ELLs: Provide students with a sentence frame to support their writing in their Sky notebooks. (Example: The sun looks _____ and _____.')",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "supports_action": [
+        "written_production"
+      ],
+      "qualifiers": [
+        "in writing"
+      ],
+      "evidence_index": 30
+    }
+  ]
+}

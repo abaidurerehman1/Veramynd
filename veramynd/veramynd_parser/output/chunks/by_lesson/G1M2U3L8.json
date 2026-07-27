@@ -1,0 +1,2714 @@
+{
+  "schema_version": "1.0-chunk",
+  "resource_id": "G1M2U3L8",
+  "grade": 1,
+  "module": 2,
+  "unit": 3,
+  "lesson": 8,
+  "title": "Lesson 8: Unit 3 Assessment, Part I: Using Observations of the Sun to Write Narrative Poems",
+  "prompt_version": "normalize_ela.v2.1",
+  "lesson_chunk": {
+    "chunk_id": "G1M2U3L8#lesson",
+    "family": "lesson",
+    "resource_id": "G1M2U3L8",
+    "text": "Domain primary: Writing\nDomain secondary: Speaking & Listening\nMode: both\nGenre: narrative\nObjective: Students will write the first verse of a narrative poem about what the sun might see at different times of day, using a model and evidence, and will practice giving kind, helpful, and specific feedback to peers.\nSkills taught:\n- plan a narrative poem verse using a verse planner (DOK2_skills_concepts, primary)\n- write a narrative poem verse using complete sentences and correct punctuation (DOK2_skills_concepts, primary)\n- use a model poem as a writing guide (DOK2_skills_concepts, primary)\n- use descriptive details in writing (DOK2_skills_concepts, primary)\n- use classroom resources (anchor charts, word walls) to support writing (DOK2_skills_concepts, primary)\n- draw a sketch to illustrate a poem verse (DOK1_recall_reproduction, secondary)\n- give kind, helpful, and specific feedback to a peer (DOK3_strategic_thinking, primary)\n- use sentence frames to provide feedback (DOK2_skills_concepts, secondary)\n- participate in peer feedback protocols (DOK2_skills_concepts, primary)\n- reflect on giving and receiving feedback using Think-Pair-Share (DOK3_strategic_thinking, primary)\nStudent actions:\n- recognition_identification: identify and recognize poem elements and feedback criteria\n- oral_production: answer questions about the poem and feedback; participate in singing and partner discussions; give oral feedback\n- written_production: write answers to verse planner questions; write poem verse; write feedback\n- investigation_handson: draw sketches illustrating poem verses\n- reasoning_explanation: explain feedback given and received; explain poem elements",
+    "content_hash": "988ea743d05edcf27e44d4d68202064c91d0b8b5f07ff0d77116506807b1d2f8",
+    "metadata": {
+      "grade": 1,
+      "module": 2,
+      "unit": 3,
+      "lesson": 8,
+      "title": "Lesson 8: Unit 3 Assessment, Part I: Using Observations of the Sun to Write Narrative Poems",
+      "domain_primary": "Writing",
+      "domain_secondary": [
+        "Speaking & Listening"
+      ],
+      "mode": "both",
+      "genre": "narrative",
+      "prompt_version": "normalize_ela.v2.1",
+      "page_start": 414,
+      "page_end": 423
+    }
+  },
+  "instructional_chunks": [
+    {
+      "chunk_id": "G1M2U3L8#Opening#A",
+      "family": "instructional",
+      "resource_id": "G1M2U3L8",
+      "text": "[Opening A] Engaging the Learner: 'Sun' Song\n- Invite students to the whole group area.\n- Remind students that throughout Unit 1, they learned two songs about the sun and moon. Tell them that now they will get to review and practice singing the 'Sun, Moon, and Stars' song in preparation for the end of module celebration.\n- Direct students' attention to the 'Sun, Moon, and Stars' song.\n- Using a total participation technique, invite responses from the group:\n- 'What is the 'Sun, Moon, and Stars' song about?' (It's about the position and description of the sun at different parts of the day.)\n- 'What are some accompanying movements that we used as we sang the song?' (Answers will vary, but may include: beginning with their arms straight in the air, centered above their heads and slowly having their arms and fist lower to show the sun sinking lower.)\n- Invite students to quietly and quickly stand up.\n- Invite students to join you in singing the 'Sun, Moon, and Stars' and completing the accompanying movements.\n- Repeat the song one or two times as time permits.\n- Provide options for physical movement as students sing the 'Sun' song. (Example: Invite students to join in singing with movements as appropriate from a seated position.) (MMAE)\n- For ELLs: Identify students who might be mouthing the words or not singing while the class sings chorally. If students seem to be avoiding singing, encourage them to sing without pressuring them. If students are comfortable, invite them to sing 'duets' with more confident students so they can more easily hear themselves as they practice.",
+      "content_hash": "04cb3152c6e1a83dae6404b44821c79bb785c9e287b61f1016b18a1652800a2d",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 3,
+        "lesson": 8,
+        "family": "instructional",
+        "section": "Opening",
+        "letter": "A"
+      },
+      "section": "Opening",
+      "letter": "A",
+      "title": "Engaging the Learner: 'Sun' Song",
+      "page": 418,
+      "minutes": 5,
+      "steps": [
+        "Invite students to the whole group area.",
+        "Remind students that throughout Unit 1, they learned two songs about the sun and moon. Tell them that now they will get to review and practice singing the 'Sun, Moon, and Stars' song in preparation for the end of module celebration.",
+        "Direct students' attention to the 'Sun, Moon, and Stars' song.",
+        "Using a total participation technique, invite responses from the group:",
+        "'What is the 'Sun, Moon, and Stars' song about?' (It's about the position and description of the sun at different parts of the day.)",
+        "'What are some accompanying movements that we used as we sang the song?' (Answers will vary, but may include: beginning with their arms straight in the air, centered above their heads and slowly having their arms and fist lower to show the sun sinking lower.)",
+        "Invite students to quietly and quickly stand up.",
+        "Invite students to join you in singing the 'Sun, Moon, and Stars' and completing the accompanying movements.",
+        "Repeat the song one or two times as time permits.",
+        "Provide options for physical movement as students sing the 'Sun' song. (Example: Invite students to join in singing with movements as appropriate from a seated position.) (MMAE)",
+        "For ELLs: Identify students who might be mouthing the words or not singing while the class sings chorally. If students seem to be avoiding singing, encourage them to sing without pressuring them. If students are comfortable, invite them to sing 'duets' with more confident students so they can more easily hear themselves as they practice."
+      ]
+    },
+    {
+      "chunk_id": "G1M2U3L8#Work Time#A",
+      "family": "instructional",
+      "resource_id": "G1M2U3L8",
+      "text": "[Work Time A] Preparing for Independent Writing: 'What the Sun Sees' Poem, Verse 1\n- Refocus students whole group.\n- Remind students that earlier in the unit, they wrote a poem that personified the moon.\n- Tell students that today they will begin to plan and write their 'What the Sun Sees' poem that describes what the sun might 'see' at different times of day.\n- Display the 'What the Sun Sees' verse planner.\n- Tell students that now they will work with a partner to begin planning the first verse of their 'What the Sun Sees' poem using the 'What the Sun Sees' verse planner.\n- Point to the heading that says 'Verse 1' and read each question in Column 1 aloud:\n- -'What time is it?'\n- -'What does the sun look like?'\n- -'What is the sun doing?'\n- -'What does the sun see?'\n- Tell students that they will work with a partner to discuss each of these questions.\n- Prompt students to use their resources as support:\n- -Time of Day anchor chart to help them find words to describe a particular time of day\n- -Adjectives anchor chart to help them find words to describe what the sun looks like during a particular time of day\n- -What the Sun Sees anchor chart to help them find words to describe what the sun 'sees' at a particular time of day\n- -The pages in their Sky notebook that describe the sun in the morning\n- Distribute Sky notebooks and 'What the Sun Sees' verse planners.\n- Move students into pre-determined pairs. Invite pairs to find a quiet location to discuss the questions on the verse planner for verse 1.\n- Circulate and support students to reference their notebooks and the various anchor charts. Prompt students with questions such as:\n- 'What time of day will you write about?'\n- 'What adjectives describe the sun at this time of day?'\n- 'What is the sun doing at this time of day?'\n- 'What does the sun 'see' at this time of day?'\n- Consider using the Speaking and Listening Checklist to track students' progress towards the targeted standard.\n- After 5-7 minutes, refocus students whole group. Using a total participation technique, invite responses from the group:\n- 'What time of day will your first verse be about?' (morning)\n- 'What does the sun 'see' at this time of day?' (The sun sees me waking up.)\n- Again, display the 'What the Sun Sees' verse planner and tell students that they will now have a chance to independently capture their thinking for verse 1 on the 'What the Sun Sees' verse planner.\n- Direct students' attention to Verse 1 and review the prompt questions as necessary.\n- Point to the box below the prompt questions. Tell students that after they are done writing an answer to each of the questions, they should draw a quick sketch in the box that shows the location and description of the sun at the specific time.\n- Transition students to their workspaces and invite them to begin writing and drawing.\n- Circulate and support students as necessary. Prompt students to use the Time of Day anchor chart, Adjectives anchor chart, What the Sun Sees anchor chart, and their Sky notebooks as resources as they write.\n- When 1 minute remains, signal students to stop working through the use of a designated sound. Model cleanup, keeping directions clear and brief.\n- Tell students that they will use this verse planner as they begin to write the first verse of their poem in the next part of the lesson.\n- For students who may need additional support recording their ideas in writing: Provide a partially filled-in or guided 'What the Sun Sees' verse planner to help students know what to record. (MMAE)\n- For ELLs: If students are paired with a partner of a more advanced proficiency level, consider changing partners so students are placed in pairs of similar proficiency. This will foster independence while providing the opportunity to assess whether they are ready to move on to writing.\n- For ELLs: Remind students that the sun doesn't actually 'see' but that the author of the poem chose to use this to make his writing more interesting. Tell students they will get to try this in their own writing.",
+      "content_hash": "64367a3a6040cc0925985555bf0aaf4a4174243e07521b089c86d95f59604d56",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 3,
+        "lesson": 8,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "A"
+      },
+      "section": "Work Time",
+      "letter": "A",
+      "title": "Preparing for Independent Writing: 'What the Sun Sees' Poem, Verse 1",
+      "page": 419,
+      "minutes": 15,
+      "steps": [
+        "Refocus students whole group.",
+        "Remind students that earlier in the unit, they wrote a poem that personified the moon.",
+        "Tell students that today they will begin to plan and write their 'What the Sun Sees' poem that describes what the sun might 'see' at different times of day.",
+        "Display the 'What the Sun Sees' verse planner.",
+        "Tell students that now they will work with a partner to begin planning the first verse of their 'What the Sun Sees' poem using the 'What the Sun Sees' verse planner.",
+        "Point to the heading that says 'Verse 1' and read each question in Column 1 aloud:",
+        "-'What time is it?'",
+        "-'What does the sun look like?'",
+        "-'What is the sun doing?'",
+        "-'What does the sun see?'",
+        "Tell students that they will work with a partner to discuss each of these questions.",
+        "Prompt students to use their resources as support:",
+        "-Time of Day anchor chart to help them find words to describe a particular time of day",
+        "-Adjectives anchor chart to help them find words to describe what the sun looks like during a particular time of day",
+        "-What the Sun Sees anchor chart to help them find words to describe what the sun 'sees' at a particular time of day",
+        "-The pages in their Sky notebook that describe the sun in the morning",
+        "Distribute Sky notebooks and 'What the Sun Sees' verse planners.",
+        "Move students into pre-determined pairs. Invite pairs to find a quiet location to discuss the questions on the verse planner for verse 1.",
+        "Circulate and support students to reference their notebooks and the various anchor charts. Prompt students with questions such as:",
+        "'What time of day will you write about?'",
+        "'What adjectives describe the sun at this time of day?'",
+        "'What is the sun doing at this time of day?'",
+        "'What does the sun 'see' at this time of day?'",
+        "Consider using the Speaking and Listening Checklist to track students' progress towards the targeted standard.",
+        "After 5-7 minutes, refocus students whole group. Using a total participation technique, invite responses from the group:",
+        "'What time of day will your first verse be about?' (morning)",
+        "'What does the sun 'see' at this time of day?' (The sun sees me waking up.)",
+        "Again, display the 'What the Sun Sees' verse planner and tell students that they will now have a chance to independently capture their thinking for verse 1 on the 'What the Sun Sees' verse planner.",
+        "Direct students' attention to Verse 1 and review the prompt questions as necessary.",
+        "Point to the box below the prompt questions. Tell students that after they are done writing an answer to each of the questions, they should draw a quick sketch in the box that shows the location and description of the sun at the specific time.",
+        "Transition students to their workspaces and invite them to begin writing and drawing.",
+        "Circulate and support students as necessary. Prompt students to use the Time of Day anchor chart, Adjectives anchor chart, What the Sun Sees anchor chart, and their Sky notebooks as resources as they write.",
+        "When 1 minute remains, signal students to stop working through the use of a designated sound. Model cleanup, keeping directions clear and brief.",
+        "Tell students that they will use this verse planner as they begin to write the first verse of their poem in the next part of the lesson.",
+        "For students who may need additional support recording their ideas in writing: Provide a partially filled-in or guided 'What the Sun Sees' verse planner to help students know what to record. (MMAE)",
+        "For ELLs: If students are paired with a partner of a more advanced proficiency level, consider changing partners so students are placed in pairs of similar proficiency. This will foster independence while providing the opportunity to assess whether they are ready to move on to writing.",
+        "For ELLs: Remind students that the sun doesn't actually 'see' but that the author of the poem chose to use this to make his writing more interesting. Tell students they will get to try this in their own writing."
+      ]
+    },
+    {
+      "chunk_id": "G1M2U3L8#Work Time#B",
+      "family": "instructional",
+      "resource_id": "G1M2U3L8",
+      "text": "[Work Time B] Unit 3 Assessment, Part I: 'What the Sun Sees' Poem, Verse 1\n- Refocus students whole group.\n- Direct students' attention to the posted learning targets and read the first one aloud:\n- 'I can write a narrative poem based on a model and using evidence.'\n- Tell students that their narrative poem will be three verses long and will describe what the sun might 'see' at different times of day.\n- Right now, students will begin writing verse 1 of their poem, using their verse planner as research and the 'What the Moon Sees' class poem as a model for their writing.\n- Display the 'What the Moon Sees' verse planner example and 'What the Moon Sees' example.\n- Using a total participation technique, invite responses from the group:\n- 'What is different between the 'What the Moon Sees' verse planner and the final 'What the Moon Sees' poem?' (The final poem doesn't have prompts or questions. The final poem is written out in complete sentences.)\n- Display the 'What the Sun Sees' poem.\n- Tell students that now they will take the information from their 'What the Sun Sees' verse planner and write verse 1 of their 'What the Sun Sees' poem.\n- Direct students' attention to the posted High-Quality Work anchor chart and read aloud the criteria for high-quality work.\n- Invite students to turn and talk with an elbow partner: 'What is one thing that you are going to focus on to make your writing high quality?' (make sure I have descriptive details; make sure I write neatly and spell high-frequency words correctly)\n- Point out the 'What the Sun Sees' poem sheets and pencils already at the workspaces, transition students to their workspaces, and invite them to begin working.\n- Remind students to use their 'What the Sun Sees' verse planner to help them write verse 1 and to write using complete sentences and correct punctuation.\n- Circulate and support students as necessary. Encourage them to use classroom resources (Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).\n- When 1 minute remains, signal students to stop working through the use of a designated sound. Model cleanup, keeping directions clear and brief.\n- Collect students' 'What the Sun Sees' poems and tell them they will complete the remaining verses during the next two lessons.\n- Before students begin the Unit 3 Assessment, emphasize process and effort by discussing the purpose of assessments. Say: 'What we are doing today is similar to the poem writing from previous lessons, but this is called an assessment. The purpose of an assessment is to help me know what you are learning and how well I'm teaching you. Give your best effort!' (MME)\n- For ELLs: Consider having students paraphrase what they need to do to meet the learning target. Make sure they understand what evidence they will use to write the poem.\n- For ELLs: If students can't complete the work independently, consider providing them with a written sentence frame: 'It is _________. The ___________ sun is _________. The sun sees __________.' Allow time for students to grapple with completing this independent writing portion of the Unit 3 Assessment before providing the support. Grappling will help students build independence and offer an opportunity to assess what they are able to do independently.",
+      "content_hash": "67e36c43362efd88468052e4aea289015db93e3916bb678a23ccca9c1e56f142",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 3,
+        "lesson": 8,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "B"
+      },
+      "section": "Work Time",
+      "letter": "B",
+      "title": "Unit 3 Assessment, Part I: 'What the Sun Sees' Poem, Verse 1",
+      "page": 420,
+      "minutes": 20,
+      "steps": [
+        "Refocus students whole group.",
+        "Direct students' attention to the posted learning targets and read the first one aloud:",
+        "'I can write a narrative poem based on a model and using evidence.'",
+        "Tell students that their narrative poem will be three verses long and will describe what the sun might 'see' at different times of day.",
+        "Right now, students will begin writing verse 1 of their poem, using their verse planner as research and the 'What the Moon Sees' class poem as a model for their writing.",
+        "Display the 'What the Moon Sees' verse planner example and 'What the Moon Sees' example.",
+        "Using a total participation technique, invite responses from the group:",
+        "'What is different between the 'What the Moon Sees' verse planner and the final 'What the Moon Sees' poem?' (The final poem doesn't have prompts or questions. The final poem is written out in complete sentences.)",
+        "Display the 'What the Sun Sees' poem.",
+        "Tell students that now they will take the information from their 'What the Sun Sees' verse planner and write verse 1 of their 'What the Sun Sees' poem.",
+        "Direct students' attention to the posted High-Quality Work anchor chart and read aloud the criteria for high-quality work.",
+        "Invite students to turn and talk with an elbow partner: 'What is one thing that you are going to focus on to make your writing high quality?' (make sure I have descriptive details; make sure I write neatly and spell high-frequency words correctly)",
+        "Point out the 'What the Sun Sees' poem sheets and pencils already at the workspaces, transition students to their workspaces, and invite them to begin working.",
+        "Remind students to use their 'What the Sun Sees' verse planner to help them write verse 1 and to write using complete sentences and correct punctuation.",
+        "Circulate and support students as necessary. Encourage them to use classroom resources (Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).",
+        "When 1 minute remains, signal students to stop working through the use of a designated sound. Model cleanup, keeping directions clear and brief.",
+        "Collect students' 'What the Sun Sees' poems and tell them they will complete the remaining verses during the next two lessons.",
+        "Before students begin the Unit 3 Assessment, emphasize process and effort by discussing the purpose of assessments. Say: 'What we are doing today is similar to the poem writing from previous lessons, but this is called an assessment. The purpose of an assessment is to help me know what you are learning and how well I'm teaching you. Give your best effort!' (MME)",
+        "For ELLs: Consider having students paraphrase what they need to do to meet the learning target. Make sure they understand what evidence they will use to write the poem.",
+        "For ELLs: If students can't complete the work independently, consider providing them with a written sentence frame: 'It is _________. The ___________ sun is _________. The sun sees __________.' Allow time for students to grapple with completing this independent writing portion of the Unit 3 Assessment before providing the support. Grappling will help students build independence and offer an opportunity to assess what they are able to do independently."
+      ]
+    },
+    {
+      "chunk_id": "G1M2U3L8#Work Time#C",
+      "family": "instructional",
+      "resource_id": "G1M2U3L8",
+      "text": "[Work Time C] Peer Feedback: 'What the Sun Sees' Poem, Verse 1\n- Invite students to join in giving some silent applause for their hard work today as writers!\n- Direct students' attention to the posted learning targets and read the second one aloud:\n- 'I can provide kind, helpful, and specific feedback to my classmates.'\n- Tell students that giving feedback to classmates is a new skill that they are learning and is one way to ensure that their work is high quality.\n- Tell them that they are now going to share their poems with a partner and give feedback to their partner about his or her poem.\n- Tell students that today when a partner shares his or her work, they are going to give kind, helpful, and specific feedback. That is feedback that tells the writer one thing that he or she did a good job with in the writing and one thing he or she could do a better job with, while still being kind.\n- Direct students' attention to the posted Working to Become Ethical People anchor chart and read aloud what is written for respect. Remind students to focus on showing respect while giving feedback.\n- Remind students that they have all worked hard on their writing, and it is important to remember that when they are giving feedback so they don't hurt people's feelings. It is also important to remember that we all have ways in which our writing could be better. Tell students that you are going to model giving helpful and specific feedback to a classmate, and you want them to watch how the feedback is helpful AND kind.\n- Invite a student volunteer to help you model giving kind, specific, and helpful feedback:\n- Invite the student volunteer to share his or her work with you.\n- Model giving kind feedback by pointing out something that your partner did well using the sentence frame: 'You did a good job of ________.'\n- Model giving helpful and specific feedback by pointing out something you think the partner could add to or change about the verse using the sentence frame: 'I think you should ________ because _______.'\n- Model referring to the High-Quality Work anchor chart to provide the criteria for your feedback.\n- Thank your partner for sharing his or her work with you.\n- Using a total participation technique, invite responses from the group:\n- 'What did you notice about the way I gave feedback to my partner on his/her writing?' (You were nice about it; you pointed out something specific; you suggested something your partner could change.)\n- Tell students that they will now use the Pinky Partners protocol to share their work and give feedback to a partner. Remind them that they used this protocol in Unit 2 and review as necessary using the Pinky Partners Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Guide students through the protocol, encouraging them to use the following frames:\n- -'You did a good job of _____________.'\n- 'I think you should ________ because _________.'\n- Circulate as students share and prompt them to use the criteria on the High-Quality Work anchor chart when providing feedback. Take note of how students are interacting with one another using the Speaking and Listening Checklist.\n- Remind students to make a bridge with their arms after both partners have shared.\n- After both partners have shared and offered feedback, refocus students whole group.\n- For ELLs: Consider inviting an ELL student volunteer to help you model giving kind, specific, and helpful feedback using think-aloud, the Peer Feedback sentence starters and the High-Quality Work anchor chart.\n- For students who may need additional support with auditory processing: Display a checklist for peer feedback. Example:\n- -Be kind.\n- -Point out something specific.\n- -Suggest something your partner could change. (MMR)",
+      "content_hash": "a39b8c60c6f309b871fa1fd2e575682d6b28ffa4918c3e0da36c241368bdf79a",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 3,
+        "lesson": 8,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "C"
+      },
+      "section": "Work Time",
+      "letter": "C",
+      "title": "Peer Feedback: 'What the Sun Sees' Poem, Verse 1",
+      "page": 421,
+      "minutes": 15,
+      "steps": [
+        "Invite students to join in giving some silent applause for their hard work today as writers!",
+        "Direct students' attention to the posted learning targets and read the second one aloud:",
+        "'I can provide kind, helpful, and specific feedback to my classmates.'",
+        "Tell students that giving feedback to classmates is a new skill that they are learning and is one way to ensure that their work is high quality.",
+        "Tell them that they are now going to share their poems with a partner and give feedback to their partner about his or her poem.",
+        "Tell students that today when a partner shares his or her work, they are going to give kind, helpful, and specific feedback. That is feedback that tells the writer one thing that he or she did a good job with in the writing and one thing he or she could do a better job with, while still being kind.",
+        "Direct students' attention to the posted Working to Become Ethical People anchor chart and read aloud what is written for respect. Remind students to focus on showing respect while giving feedback.",
+        "Remind students that they have all worked hard on their writing, and it is important to remember that when they are giving feedback so they don't hurt people's feelings. It is also important to remember that we all have ways in which our writing could be better. Tell students that you are going to model giving helpful and specific feedback to a classmate, and you want them to watch how the feedback is helpful AND kind.",
+        "Invite a student volunteer to help you model giving kind, specific, and helpful feedback:",
+        "Invite the student volunteer to share his or her work with you.",
+        "Model giving kind feedback by pointing out something that your partner did well using the sentence frame: 'You did a good job of ________.'",
+        "Model giving helpful and specific feedback by pointing out something you think the partner could add to or change about the verse using the sentence frame: 'I think you should ________ because _______.'",
+        "Model referring to the High-Quality Work anchor chart to provide the criteria for your feedback.",
+        "Thank your partner for sharing his or her work with you.",
+        "Using a total participation technique, invite responses from the group:",
+        "'What did you notice about the way I gave feedback to my partner on his/her writing?' (You were nice about it; you pointed out something specific; you suggested something your partner could change.)",
+        "Tell students that they will now use the Pinky Partners protocol to share their work and give feedback to a partner. Remind them that they used this protocol in Unit 2 and review as necessary using the Pinky Partners Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
+        "Guide students through the protocol, encouraging them to use the following frames:",
+        "-'You did a good job of _____________.'",
+        "'I think you should ________ because _________.'",
+        "Circulate as students share and prompt them to use the criteria on the High-Quality Work anchor chart when providing feedback. Take note of how students are interacting with one another using the Speaking and Listening Checklist.",
+        "Remind students to make a bridge with their arms after both partners have shared.",
+        "After both partners have shared and offered feedback, refocus students whole group.",
+        "For ELLs: Consider inviting an ELL student volunteer to help you model giving kind, specific, and helpful feedback using think-aloud, the Peer Feedback sentence starters and the High-Quality Work anchor chart.",
+        "For students who may need additional support with auditory processing: Display a checklist for peer feedback. Example:",
+        "-Be kind.",
+        "-Point out something specific.",
+        "-Suggest something your partner could change. (MMR)"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U3L8#Closing and Assessment#A",
+      "family": "instructional",
+      "resource_id": "G1M2U3L8",
+      "text": "[Closing and Assessment A] Reflecting on Learning\n- Offer students specific positive feedback on their conversations giving feedback to one another. (Example: 'I heard Lupe giving Steven kind feedback. She told him that he did a good job of describing the morning sun with lots of details, and she suggested that he become more specific about what the sun 'sees' at morning time.')\n- Remind students that throughout this unit, they are learning and practicing how to give and receive feedback that is kind, helpful, and specific.\n- Tell students they are going to use the Think-Pair-Share protocol to reflect on how well they gave and received feedback in this lesson. Remind them that they used this protocol in many previous lessons and review as necessary using the Think-Pair-Share Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Invite partners to Think-Pair-Share with an elbow partner:\n- 'How did you do giving and receiving feedback?' (Responses will vary.) 'What worked well?' (Responses will vary.)\n- 'What could you improve?' (Responses will vary.)\n- As students talk, circulate and listen in. Take note of the ideas students are sharing and target a few students to share out with the whole group. Document progress toward SL.1.4 using the Speaking and Listening Checklist.\n- Remind students to make a bridge with their arms after both partners have shared.\n- Gather students back together and invite the selected students to share with the whole group.\n- Remind students that they will continue to reflect on the process of giving feedback over the next several lessons.\n- After students share their reflections, foster a sense of community and provide options for physical action by inviting students to give themselves a special applause. (MME)\n- For ELLs: Consider making a T chart to capture students' ideas of 'what worked well' and 'what I could improve' that students could refer to and also add to as they continue to reflect on the process of giving feedback over the next several lessons.",
+      "content_hash": "25701f7822c69bda566624eb9c02480e7059725bb92d56cc97c074b5a65f4661",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 3,
+        "lesson": 8,
+        "family": "instructional",
+        "section": "Closing and Assessment",
+        "letter": "A"
+      },
+      "section": "Closing and Assessment",
+      "letter": "A",
+      "title": "Reflecting on Learning",
+      "page": 423,
+      "minutes": 5,
+      "steps": [
+        "Offer students specific positive feedback on their conversations giving feedback to one another. (Example: 'I heard Lupe giving Steven kind feedback. She told him that he did a good job of describing the morning sun with lots of details, and she suggested that he become more specific about what the sun 'sees' at morning time.')",
+        "Remind students that throughout this unit, they are learning and practicing how to give and receive feedback that is kind, helpful, and specific.",
+        "Tell students they are going to use the Think-Pair-Share protocol to reflect on how well they gave and received feedback in this lesson. Remind them that they used this protocol in many previous lessons and review as necessary using the Think-Pair-Share Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
+        "Invite partners to Think-Pair-Share with an elbow partner:",
+        "'How did you do giving and receiving feedback?' (Responses will vary.) 'What worked well?' (Responses will vary.)",
+        "'What could you improve?' (Responses will vary.)",
+        "As students talk, circulate and listen in. Take note of the ideas students are sharing and target a few students to share out with the whole group. Document progress toward SL.1.4 using the Speaking and Listening Checklist.",
+        "Remind students to make a bridge with their arms after both partners have shared.",
+        "Gather students back together and invite the selected students to share with the whole group.",
+        "Remind students that they will continue to reflect on the process of giving feedback over the next several lessons.",
+        "After students share their reflections, foster a sense of community and provide options for physical action by inviting students to give themselves a special applause. (MME)",
+        "For ELLs: Consider making a T chart to capture students' ideas of 'what worked well' and 'what I could improve' that students could refer to and also add to as they continue to reflect on the process of giving feedback over the next several lessons."
+      ]
+    }
+  ],
+  "evidence_pointers": [
+    {
+      "chunk_id": "G1M2U3L8#evidence#0",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "2865e64590864cc100e1a491010bae84b613cccea293b583e8d4e3d63c5c6bd3",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Opening#A",
+      "location": "Opening A",
+      "quote": "Invite students to the whole group area.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification"
+      ],
+      "qualifiers": [],
+      "evidence_index": 0
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#1",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "5d59ff331bd983ee05e9d844cd952a82fb58070959aadf38c0d2bead8525ac79",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Opening#A",
+        "location": "Opening A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Opening#A",
+      "location": "Opening A",
+      "quote": "Remind students that throughout Unit 1, they learned two songs about the sun and moon. Tell them that now they will get to review and practice singing the 'Sun, Moon, and Stars' song in preparation for the end of module celebration.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 1
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#2",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "5389aa968fab7d7c6b6c19de71db8069aa2c735878a4de78fc259421f25e5d77",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Opening#A",
+        "location": "Opening A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Opening#A",
+      "location": "Opening A",
+      "quote": "Direct students' attention to the 'Sun, Moon, and Stars' song.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 2
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#3",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "651f013c1b576c0a17423fa3e58c06276e78000fd127b6343aa0762476839e44",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L8#Opening#A",
+      "location": "Opening A",
+      "quote": "'What is the 'Sun, Moon, and Stars' song about?' (It's about the position and description of the sun at different parts of the day.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 3
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#4",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "f09b8ebf0e099b64623714b9b1fda0b8d104c7ebf57d4e24008e9550540934f1",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L8#Opening#A",
+      "location": "Opening A",
+      "quote": "'What are some accompanying movements that we used as we sang the song?' (Answers will vary, but may include: beginning with their arms straight in the air, centered above their heads and slowly having their arms and fist lower to show the sun sinking lower.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 4
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#5",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "ef2aba62bbbe0c652933dc924fcb5555d8cbac3d29f730879760addba5d97d95",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Opening#A",
+      "location": "Opening A",
+      "quote": "Invite students to quietly and quickly stand up.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [],
+      "evidence_index": 5
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#6",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "378005934419af64e5ee562790408627b1404424825eddf0a4d01c7e4edd4ee1",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Opening#A",
+      "location": "Opening A",
+      "quote": "Invite students to join you in singing the 'Sun, Moon, and Stars' and completing the accompanying movements.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 6
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#7",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "4b5139b81d33ef11e2f232d798723fe9493b74a7cd3ce962b46a83ba17dff6ae",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Opening#A",
+        "location": "Opening A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Opening#A",
+      "location": "Opening A",
+      "quote": "Repeat the song one or two times as time permits.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 7
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#8",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "4f3b758fb7f595a55314a4dcfa5e0b0d5260d2b3f9fba3bf87af67ab338b8286",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Opening#A",
+        "location": "Opening A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Opening#A",
+      "location": "Opening A",
+      "quote": "Provide options for physical movement as students sing the 'Sun' song. (Example: Invite students to join in singing with movements as appropriate from a seated position.) (MMAE)",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 8
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#9",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "d3e91da93e1f842100fb03c59f385ac9fe98953eb31f5a9b580348f5e764c761",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Opening#A",
+        "location": "Opening A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Opening#A",
+      "location": "Opening A",
+      "quote": "For ELLs: Identify students who might be mouthing the words or not singing while the class sings chorally. If students seem to be avoiding singing, encourage them to sing without pressuring them. If students are comfortable, invite them to sing 'duets' with more confident students so they can more easily hear themselves as they practice.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 9
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#10",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "7035057548c14e1c50b457fc67f6d56ab0440712eba306ac0458206b7ec33c4f",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Refocus students whole group.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification"
+      ],
+      "qualifiers": [],
+      "evidence_index": 10
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#11",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "47b32b48186aea8cb53c89f9cc8f38c930f9d317bfe75b3598192f575f64e321",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Remind students that earlier in the unit, they wrote a poem that personified the moon.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 11
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#12",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "2ee421468e37e90ca0422e33650384f422df8471730f2410ea7d430db9734dce",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Tell students that today they will begin to plan and write their 'What the Sun Sees' poem that describes what the sun might 'see' at different times of day.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 12
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#13",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "ad299eef4f2cb2b6a051efba039059cf3c92a6348ac1b2869a83f3f80eb2710d",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Display the 'What the Sun Sees' verse planner.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 13
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#14",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "72eda217c424b98dd881700a10ec8edad8d04e01e1228e8cd330e7f11cd15bb7",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Tell students that now they will work with a partner to begin planning the first verse of their 'What the Sun Sees' poem using the 'What the Sun Sees' verse planner.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [],
+      "evidence_index": 14
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#15",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "68a89edfa657167f757e5eb1cdec32a5bd30c281fa45ccf80033a90a24d50c42",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Point to the heading that says 'Verse 1' and read each question in Column 1 aloud:",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 15
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#16",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "82c1878162951aab7340b1d78995b37307cdbf6051e509dca1e91afec40c64ac",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "-'What time is it?'",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 16
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#17",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "0d883513dfbe71ad150e3500e26ffbdbc0f63285230c04c85e4fc1705b5a8f13",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "-'What does the sun look like?'",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 17
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#18",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "c8937cf1390bd78332e955812ed16f027c21614ff5231e8e544e3347522bc9dc",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "-'What is the sun doing?'",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 18
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#19",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "d63d2c65650d7c66ccfe8b9bd44fb0a29c1eb8ca447e5e4b9366c168a63a24de",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "-'What does the sun see?'",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 19
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#20",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "27e98eba0aaae9601aaaa83c1919aa6c2a46da5b76b0525de5c96c5ab9b78bb6",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Tell students that they will work with a partner to discuss each of these questions.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [],
+      "evidence_index": 20
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#21",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "14616cf7e58d6e51820ee9c4cd6f459c588810f9eb1b37503095a40a9c9fc4b9",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Prompt students to use their resources as support:",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 21
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#22",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "5881e42fbacb62c814e418281c81b4e98ce1b71188f26af85d6279dee604dd94",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "-Time of Day anchor chart to help them find words to describe a particular time of day",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 22
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#23",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "6fc64cf7cc76c1c1b702d5f98193688fde91770cc4e35819dc4fcdf16ee5e07d",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "-Adjectives anchor chart to help them find words to describe what the sun looks like during a particular time of day",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 23
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#24",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "e56644818b6247b34e775319b74a45c23a262a7b7a949ae24ac76a749c5fdae6",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "-What the Sun Sees anchor chart to help them find words to describe what the sun 'sees' at a particular time of day",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 24
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#25",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "814e9865f2d5c1c7e55c9a79464366f27d3c742ae631516bcb42e725f4da2a3b",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "-The pages in their Sky notebook that describe the sun in the morning",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 25
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#26",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "6238480388dcbb5c44fdf69709e6e85aadf90ca0f24af835c4af3a385f241423",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Distribute Sky notebooks and 'What the Sun Sees' verse planners.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 26
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#27",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "7900db570dff6f736e95010b99f74a36b4ae4f3cd19d84b4b0aa8e65ff795da2",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Move students into pre-determined pairs. Invite pairs to find a quiet location to discuss the questions on the verse planner for verse 1.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [],
+      "evidence_index": 27
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#28",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "95fc09ccd46683c2fdcd01cd48cbe8e7bab905e23bd4bd1463835b47e4b085eb",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Circulate and support students to reference their notebooks and the various anchor charts. Prompt students with questions such as:",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 28
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#29",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "dd8c1413418ae8ae06f84d6ade92e7b32d67793efc7e70566e5e9d642f175298",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "'What time of day will you write about?'",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 29
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#30",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "ffd4a1f56bcf96fa671c908bf21e3f5a2f6af1aa406f846fa143c5a3bc30916a",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "'What adjectives describe the sun at this time of day?'",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 30
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#31",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "4966c43cffde6e87614b4c9200fc89892b898f7b71d517774159a292e15ab0b5",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "'What is the sun doing at this time of day?'",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 31
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#32",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "c0b736cde5233e09ecdda1b9e0a8c23c2b8362681cf9312a6b28e6549ea5cd75",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "'What does the sun 'see' at this time of day?'",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 32
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#33",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "38d057f3de797744c093a733f1b5728fd7a35c7046c76d984cd6c44a4649bffa",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "After 5-7 minutes, refocus students whole group. Using a total participation technique, invite responses from the group:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [],
+      "evidence_index": 33
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#34",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "f1ab2f0cd6d98ea92ca0e0b4c449851107801b71d222d3934fa6512d1bc01e48",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "'What time of day will your first verse be about?' (morning)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 34
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#35",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "9c5577d6544294adbd6a11389f56848de3b31ef0a03a556ed784b14740d6962f",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "'What does the sun 'see' at this time of day?' (The sun sees me waking up.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 35
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#36",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "18114d03040b4b411085609007ae838c14eb04bb942baa2f7328927acd870699",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Again, display the 'What the Sun Sees' verse planner and tell students that they will now have a chance to independently capture their thinking for verse 1 on the 'What the Sun Sees' verse planner.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 36
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#37",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "9831565a664faae659004a4722dde0fd758c0737ceee87d7273da7020eef1075",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Direct students' attention to Verse 1 and review the prompt questions as necessary.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 37
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#38",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "a55d660d873454e19b3dc276575884a69ca2f880d7b9a6eccc04e17f3bf9486b",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Point to the box below the prompt questions. Tell students that after they are done writing an answer to each of the questions, they should draw a quick sketch in the box that shows the location and description of the sun at the specific time.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 38
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#39",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "bb306f3c2a0c3a49815cac274a7d43d103c87cdf6d9d82637b3738dc8d0ce609",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Transition students to their workspaces and invite them to begin writing and drawing.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "written_production",
+        "investigation_handson"
+      ],
+      "qualifiers": [],
+      "evidence_index": 39
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#40",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "687600102360240fc5a356235b2189ea62a1ab3cf591de3931cee50775a7d71e",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Circulate and support students as necessary. Prompt students to use the Time of Day anchor chart, Adjectives anchor chart, What the Sun Sees anchor chart, and their Sky notebooks as resources as they write.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 40
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#41",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "ace6683ab897a93575b81eac61aeb9595c50ac88c5e7e3dc9bbf4dbb4a7cf06e",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "When 1 minute remains, signal students to stop working through the use of a designated sound. Model cleanup, keeping directions clear and brief.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 41
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#42",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "1202cc47cfcf53585c16f80c9f7090294319715ded426d920410405fdcf70b84",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Tell students that they will use this verse planner as they begin to write the first verse of their poem in the next part of the lesson.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 42
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#43",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "e25d10df63954ea176c6e32538782d08e80bfe6b39a0a2f913c9bab3f12af604",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "For students who may need additional support recording their ideas in writing: Provide a partially filled-in or guided 'What the Sun Sees' verse planner to help students know what to record. (MMAE)",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 43
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#44",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "07de66b33c5b821b7b3671bcc215da4b194bf6536148ae90ceb5e2ad64d218dc",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "For ELLs: If students are paired with a partner of a more advanced proficiency level, consider changing partners so students are placed in pairs of similar proficiency. This will foster independence while providing the opportunity to assess whether they are ready to move on to writing.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 44
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#45",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "cf64f5969db51232501d7eeef3d3998cf18bae4658a5178e88f3cb9f2f5fc361",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#A",
+      "location": "Work Time A",
+      "quote": "For ELLs: Remind students that the sun doesn't actually 'see' but that the author of the poem chose to use this to make his writing more interesting. Tell students they will get to try this in their own writing.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 45
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#46",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "7035057548c14e1c50b457fc67f6d56ab0440712eba306ac0458206b7ec33c4f",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Refocus students whole group.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification"
+      ],
+      "qualifiers": [],
+      "evidence_index": 46
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#47",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "962972dfec8f81fc6f92bca01071232cb77d35704a2521eaecc51426d1a95c7f",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Direct students' attention to the posted learning targets and read the first one aloud:",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 47
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#48",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "e09e0451db1c02dc93ba832c9229d0ff9c06778ec050db8717f3633ff7090703",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#B",
+      "location": "Work Time B",
+      "quote": "I can write a narrative poem based on a model and using evidence.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 48
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#49",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "f1286d1588316f6642c45123624e4cf1aa1de94876fd583438af13a670dcc142",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Tell students that their narrative poem will be three verses long and will describe what the sun might 'see' at different times of day.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 49
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#50",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "77dd833006389a743e3d9f87587879928a7425c60e0bd4af863042941576d1f1",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Right now, students will begin writing verse 1 of their poem, using their verse planner as research and the 'What the Moon Sees' class poem as a model for their writing.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 50
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#51",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "f6c21ee178c4807c21f3825a0d217cba2add15d315c96eb6f96acdb25fa2b4fe",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Display the 'What the Moon Sees' verse planner example and 'What the Moon Sees' example.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 51
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#52",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "06677dd25f0ad465241d7f163d58c83204e070884301e3c32871461f7cb01ef4",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Using a total participation technique, invite responses from the group:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [],
+      "evidence_index": 52
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#53",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "80c168bdbba5899ff7ca38a61b8043359de77678b720fb4ab7a6abc39859e6a6",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#B",
+      "location": "Work Time B",
+      "quote": "'What is different between the 'What the Moon Sees' verse planner and the final 'What the Moon Sees' poem?' (The final poem doesn't have prompts or questions. The final poem is written out in complete sentences.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 53
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#54",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "cf602084f67975bdc470a5abf8ecebced530964b63a0537586b7ce2aeaa83299",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Display the 'What the Sun Sees' poem.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 54
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#55",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "f2885034b4017a5a09ac759ef6a7747bb542b281fd4400deb41e68ccb22371db",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Tell students that now they will take the information from their 'What the Sun Sees' verse planner and write verse 1 of their 'What the Sun Sees' poem.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 55
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#56",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "6be09bfff60be40771dc35e53c2f48a754ea055e28343ac2b26c524287ec2f78",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Direct students' attention to the posted High-Quality Work anchor chart and read aloud the criteria for high-quality work.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 56
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#57",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "6c755c268f1167a0947fd7c1af08a27b2f1239a0e072a510bf396a63f6e855b4",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Invite students to turn and talk with an elbow partner: 'What is one thing that you are going to focus on to make your writing high quality?' (make sure I have descriptive details; make sure I write neatly and spell high-frequency words correctly)",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 57
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#58",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "9105c579191a7d93e426bcaa5e3c6658862aac5a04ebe33be00342afe4aa9db2",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Point out the 'What the Sun Sees' poem sheets and pencils already at the workspaces, transition students to their workspaces, and invite them to begin working.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "written_production"
+      ],
+      "qualifiers": [],
+      "evidence_index": 58
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#59",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "d661a561faa61da67cab054706a2529ef0a416064429234067e29a19ffd17afb",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Remind students to use their 'What the Sun Sees' verse planner to help them write verse 1 and to write using complete sentences and correct punctuation.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 59
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#60",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "1cf32d0d93154d8395251d341ead0a4e9dfc077ed20d1fdaac40bdc8372601dc",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Circulate and support students as necessary. Encourage them to use classroom resources (Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 60
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#61",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "ace6683ab897a93575b81eac61aeb9595c50ac88c5e7e3dc9bbf4dbb4a7cf06e",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#B",
+      "location": "Work Time B",
+      "quote": "When 1 minute remains, signal students to stop working through the use of a designated sound. Model cleanup, keeping directions clear and brief.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 61
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#62",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "8f4bd1507c24a67643724e8d869e407d9aafd9bb80c9e57a01e19d023b53da10",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Collect students' 'What the Sun Sees' poems and tell them they will complete the remaining verses during the next two lessons.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 62
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#63",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "20188044e6a4c897e2b217fb9bcb0595211090b4c0949d85a8b7a9a74c3942f1",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Before students begin the Unit 3 Assessment, emphasize process and effort by discussing the purpose of assessments. Say: 'What we are doing today is similar to the poem writing from previous lessons, but this is called an assessment. The purpose of an assessment is to help me know what you are learning and how well I'm teaching you. Give your best effort!' (MME)",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 63
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#64",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "666ca0ca7bd244e7fa1b71e382d4b2fd7bb6bf23356c6dbfa0a17a33253dca45",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#B",
+      "location": "Work Time B",
+      "quote": "For ELLs: Consider having students paraphrase what they need to do to meet the learning target. Make sure they understand what evidence they will use to write the poem.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 64
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#65",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "3a9a00813b73edc50369c1a347dabc73275399d1680199325f4cddac7fa4105a",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#B",
+      "location": "Work Time B",
+      "quote": "For ELLs: If students can't complete the work independently, consider providing them with a written sentence frame: 'It is _________. The ___________ sun is _________. The sun sees __________.' Allow time for students to grapple with completing this independent writing portion of the Unit 3 Assessment before providing the support. Grappling will help students build independence and offer an opportunity to assess what they are able to do independently.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 65
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#66",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "494ff7b85d5d7f5773c15ae952c846b327298fc274cd752f3656557a1eec21bf",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Invite students to join in giving some silent applause for their hard work today as writers!",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [],
+      "evidence_index": 66
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#67",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "ace54f30175917f2144158d7b1427470a4de9943158043860949e4d2d9c0b57f",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Direct students' attention to the posted learning targets and read the second one aloud:",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 67
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#68",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "b76c36dc517e52de869175d0bc2e7aec635164f478b744d21ebb83d3f815817a",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "I can provide kind, helpful, and specific feedback to my classmates.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 68
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#69",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "33e404100749b0a0e6e2d3d87490be612942b675f78246fa18704affde722add",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Tell students that giving feedback to classmates is a new skill that they are learning and is one way to ensure that their work is high quality.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 69
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#70",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "ef514014bda6e017a7832e3e4f7f29f367c774c7323ad3e553b13557b737849b",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Tell them that they are now going to share their poems with a partner and give feedback to their partner about his or her poem.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 70
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#71",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "c533cf3a2afb962c648413f514d272b97b65e2f5f31bc412af20744f993fed71",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Tell students that today when a partner shares his or her work, they are going to give kind, helpful, and specific feedback. That is feedback that tells the writer one thing that he or she did a good job with in the writing and one thing he or she could do a better job with, while still being kind.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 71
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#72",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "c590bbba1252fc0027ff001fac36d68963020c1f6fe7d90b95791e6cc09e2f2f",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Direct students' attention to the posted Working to Become Ethical People anchor chart and read aloud what is written for respect. Remind students to focus on showing respect while giving feedback.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 72
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#73",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "897313afd5566cb56bc410026b694ea6178e7755d08575fe44788b7851b182fa",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Remind students that they have all worked hard on their writing, and it is important to remember that when they are giving feedback so they don't hurt people's feelings. It is also important to remember that we all have ways in which our writing could be better. Tell students that you are going to model giving helpful and specific feedback to a classmate, and you want them to watch how the feedback is helpful AND kind.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 73
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#74",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "5953af12f528607e82f8d2dc0cbedd02d3b8eae9759eacfdb47a3702407feea4",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Invite a student volunteer to help you model giving kind, specific, and helpful feedback:",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 74
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#75",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "1b921092a6103099b031fa097bc75b6b8746402b81118d72256e83cfce64cbbe",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Invite the student volunteer to share his or her work with you.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [],
+      "evidence_index": 75
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#76",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "cb9128f3ca45030a4f28c84e7af00b8b32a58b8d238e6a5431b13a93f3fc648a",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Model giving kind feedback by pointing out something that your partner did well using the sentence frame: 'You did a good job of ________.'",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 76
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#77",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "78010828d64ba14e9b773f2bb69fe4e51b38c91d6664d153ce6c33d24d169586",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Model giving helpful and specific feedback by pointing out something you think the partner could add to or change about the verse using the sentence frame: 'I think you should ________ because _______.'",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 77
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#78",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "faa61e0ab3f18e7e18c7ac75fae38f3b3847e23756a56ae1775a5c4ce032930d",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Model referring to the High-Quality Work anchor chart to provide the criteria for your feedback.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 78
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#79",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "279a3cbbaf3982a4b5d4fc5a295018ac14e70189aba58758876cb847379972b5",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Thank your partner for sharing his or her work with you.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 79
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#80",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "06677dd25f0ad465241d7f163d58c83204e070884301e3c32871461f7cb01ef4",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Using a total participation technique, invite responses from the group:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [],
+      "evidence_index": 80
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#81",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "9ec4f1ff6afaad7818d93a799f3d20262957b67e06158c2787891d9865241d94",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "'What did you notice about the way I gave feedback to my partner on his/her writing?' (You were nice about it; you pointed out something specific; you suggested something your partner could change.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 81
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#82",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "e4ca58f3abc05167a6e832d58e88fab93e16c3926eccb405da7a06d6dd5d3f59",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Tell students that they will now use the Pinky Partners protocol to share their work and give feedback to a partner. Remind them that they used this protocol in Unit 2 and review as necessary using the Pinky Partners Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 82
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#83",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "e4e5bbdfb74b9f38cd5dd7914bfe10b247bf6f9c9b1a5b3111b8f5df627b32af",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Guide students through the protocol, encouraging them to use the following frames:",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 83
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#84",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "56a22d041811ed37c6c164bda986e6772d8f56f181ea606dcaa26c20a224381e",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "-'You did a good job of _____________.'",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 84
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#85",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "60265f0ad77f6bfcb95df2af3029625aaf1cc6856d47eaf76d3b997b9ea490e1",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "'I think you should ________ because _________.'",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 85
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#86",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "3908344f7b6d84f2cdf93389e5e22334ce14652e1bed1a9c28f6fd9304fd6a43",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Circulate as students share and prompt them to use the criteria on the High-Quality Work anchor chart when providing feedback. Take note of how students are interacting with one another using the Speaking and Listening Checklist.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 86
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#87",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "e64063d2db2403c0e2704871a7845382a68a78e62a22a7e9db731ff8050fc00a",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Remind students to make a bridge with their arms after both partners have shared.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [],
+      "evidence_index": 87
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#88",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "6667b9ce272aa665e7e1ba17359b963d33b7dc9f646ba5c0be7233b95b915eda",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "After both partners have shared and offered feedback, refocus students whole group.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification"
+      ],
+      "qualifiers": [],
+      "evidence_index": 88
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#89",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "0ec7fd19e9a11526aa5f997061317f95380ad4980600844cff3cc851c6220f66",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "For ELLs: Consider inviting an ELL student volunteer to help you model giving kind, specific, and helpful feedback using think-aloud, the Peer Feedback sentence starters and the High-Quality Work anchor chart.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 89
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#90",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "6a2fa727d55afb63cff834789524bd2a1209ae3e2436d5f64057d97be1d93cbe",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "For students who may need additional support with auditory processing: Display a checklist for peer feedback. Example:",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 90
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#91",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "b5c8ebde1ad2b24cea77f28bc4885392f8264d935833c9ac5eb073ed5c17536e",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "-Be kind.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 91
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#92",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "ca9691108111d8ed8c478b57972682b0f0c8d88ef1428909253ad3d5bb7e9d7d",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "-Point out something specific.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 92
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#93",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "095ab74434d29567b072f5dc88da7aff161b7c0756de355554d64f59534fbdda",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Work Time#C",
+      "location": "Work Time C",
+      "quote": "-Suggest something your partner could change. (MMR)",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 93
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#94",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "4342490735654a61961fe58849e1791e809b3b10cfe21d7e35af7017c7429017",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Offer students specific positive feedback on their conversations giving feedback to one another. (Example: 'I heard Lupe giving Steven kind feedback. She told him that he did a good job of describing the morning sun with lots of details, and she suggested that he become more specific about what the sun 'sees' at morning time.')",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 94
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#95",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "1a678a79ec531b23690efca922061e650f9def4005b22eb81c6ba5c57cd9f7fe",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Remind students that throughout this unit, they are learning and practicing how to give and receive feedback that is kind, helpful, and specific.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 95
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#96",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "2840f890010e1e2a85f9784d9051eee8d2f53ce424d56d201f6a7055cff0ae94",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Tell students they are going to use the Think-Pair-Share protocol to reflect on how well they gave and received feedback in this lesson. Remind them that they used this protocol in many previous lessons and review as necessary using the Think-Pair-Share Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 96
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#97",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "8fc1b5789e3b492cc0122d86e0afec54e6bccb3bbb87092f2d018b1ae0b2eb2a",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Invite partners to Think-Pair-Share with an elbow partner:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [],
+      "evidence_index": 97
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#98",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "82dbb6919da1282da663023cba16c7536893236428b5aa3d6382533a2d440184",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "'How did you do giving and receiving feedback?' (Responses will vary.) 'What worked well?' (Responses will vary.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 98
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#99",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "7ff3bc8d947b5c7996d8dbdcf13929ee8ff2b12f3b711e8adff48d6c3ec69ba3",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "'What could you improve?' (Responses will vary.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 99
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#100",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "2d4a30b79790f1fbafe380fa02747e6f9d6468469ff8285235bd13a72cf2e466",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "As students talk, circulate and listen in. Take note of the ideas students are sharing and target a few students to share out with the whole group. Document progress toward using the Speaking and Listening Checklist.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 100
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#101",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "e64063d2db2403c0e2704871a7845382a68a78e62a22a7e9db731ff8050fc00a",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Remind students to make a bridge with their arms after both partners have shared.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [],
+      "evidence_index": 101
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#102",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "e9b7b665eadfc2163cd3227980718a166e9e59472a5b6292b32a12cfa9a5d5b8",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Gather students back together and invite the selected students to share with the whole group.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [],
+      "evidence_index": 102
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#103",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "c2b0b01c0d598ed87fd4b9d253391340d1219045d9a506d31b5cd33960fe0c32",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Remind students that they will continue to reflect on the process of giving feedback over the next several lessons.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 103
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#104",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "97324ec1be1c944f93e518d871dada6e78e644df56aaa7f3d1ee8331ec55a4a5",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "After students share their reflections, foster a sense of community and provide options for physical action by inviting students to give themselves a special applause. (MME)",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [],
+      "evidence_index": 104
+    },
+    {
+      "chunk_id": "G1M2U3L8#evidence#105",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L8",
+      "text": "",
+      "content_hash": "d40fe39120b6a8e3d261002c1874c8f51e314990d942590f2d030accaea050d1",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L8#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "For ELLs: Consider making a T chart to capture students' ideas of 'what worked well' and 'what I could improve' that students could refer to and also add to as they continue to reflect on the process of giving feedback over the next several lessons.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 105
+    }
+  ]
+}

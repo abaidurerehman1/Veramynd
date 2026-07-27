@@ -1,0 +1,974 @@
+{
+  "schema_version": "1.0-chunk",
+  "resource_id": "G1M2U2L3",
+  "grade": 1,
+  "module": 2,
+  "unit": 2,
+  "lesson": 3,
+  "title": "Lesson 3: Close Read-aloud, Session 2: What Makes Day and Night",
+  "prompt_version": "normalize_ela.v2.1",
+  "lesson_chunk": {
+    "chunk_id": "G1M2U2L3#lesson",
+    "family": "lesson",
+    "resource_id": "G1M2U2L3",
+    "text": "Domain primary: Comprehension\nDomain secondary: Speaking & Listening, Writing, Vocabulary\nMode: both\nGenre: expository\nObjective: Students will distinguish information learned from illustrations and text in an informational book to describe the pattern of light and dark on earth and record observations about the sun and moon using descriptive words.\nSkills taught:\n- distinguish information learned from illustrations and text (DOK2_skills_concepts, primary)\n- describe the pattern of light and dark on earth (DOK2_skills_concepts, primary)\n- identify adjectives that describe the sun, moon, and stars (DOK1_recall_reproduction, primary)\n- use adjectives to describe objects orally (DOK2_skills_concepts, primary)\n- participate in a close read-aloud of an informational text (DOK1_recall_reproduction, primary)\n- engage in partner discussion using sentence frames (DOK2_skills_concepts, secondary)\n- use a speaking and listening protocol to share ideas (DOK2_skills_concepts, secondary)\n- record observations using pictures and words during shared writing (DOK2_skills_concepts, primary)\n- formulate complete sentences using descriptive words (DOK2_skills_concepts, secondary)\nStudent actions:\n- recognition_identification: identify adjectives and information from text and illustrations\n- oral_production: respond orally to questions and participate in partner discussions using sentence frames\n- written_production: participate in shared writing by contributing words and ideas\n- reasoning_explanation: explain meanings of words and describe observations orally\n- comprehension_response: answer questions about text and illustrations orally",
+    "content_hash": "e11cbff9a4dc79420861e529a9a106188d0b6449d3eb5d0cd40e48929026454f",
+    "metadata": {
+      "grade": 1,
+      "module": 2,
+      "unit": 2,
+      "lesson": 3,
+      "title": "Lesson 3: Close Read-aloud, Session 2: What Makes Day and Night",
+      "domain_primary": "Comprehension",
+      "domain_secondary": [
+        "Speaking & Listening",
+        "Writing",
+        "Vocabulary"
+      ],
+      "mode": "both",
+      "genre": "expository",
+      "prompt_version": "normalize_ela.v2.1",
+      "page_start": 228,
+      "page_end": 238
+    }
+  },
+  "instructional_chunks": [
+    {
+      "chunk_id": "G1M2U2L3#Opening#A",
+      "family": "instructional",
+      "resource_id": "G1M2U2L3",
+      "text": "[Opening A] Engaging the Learner: 'What We See: The Sun, Moon, and Stars' Poem\n- Invite students to the whole group area.\n- Display the 'What We See: The Sun, Moon, and Stars' poem.\n- Remind students that in the previous lesson they listened to a poem full of adjectives that describe the sun, moon, and stars. Remind students that an adjective is word that describes a person, place, or thing.\n- Using a total participation technique, invite responses from the group:\n- 'Why did we circle/highlight some of the words in the poem?' (We circled the adjectives.)\n- 'What were some adjectives that we circled to describe the sun?' (orange, round)\n- Say:\n- 'As I reread the poem today, I want you to listen for adjectives used to describe the sun, moon, and stars. When you hear an adjective read aloud, quietly put a thumb out in front of your chest.' Model the hand gesture if necessary.\n- Invite students to quietly push the imaginary button on their brains to show they are ready to listen for adjectives.\n- Read aloud poem, fluently and with expression.\n- Using a total participation technique, invite responses from the group:\n- 'What were some adjectives that you heard to describe the sun, moon, or stars?' (sun: hot, moon: full, stars: twinkling)\n- 'What is something at home or at school that we could describe using this adjective?' (a bowl of soup; the nightlight)\n- Tell students to keep these adjectives tucked away in their brains to use during shared writing later today. Tomorrow the class will create an Adjectives anchor chart to record the adjectives found in the poem.\n- When using total participation techniques, minimize discomfort and/or perceived threats and distractions by alerting individual students that you are going to call on them next. (MME)\n- For ELLs: Encourage students to look at the Adjectives Construction board (described in Lesson 2) for clues. Invite them to add any new adjectives they find onto the board. For additional practice, invite students to create sentences with adjectives using the frame 'I observe a(n) [adjective] [noun] in the sky.'",
+      "content_hash": "4a717cb7a9787b74b31937a850c3370b509d9ce50a8ba9f49294858691f47860",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 3,
+        "family": "instructional",
+        "section": "Opening",
+        "letter": "A"
+      },
+      "section": "Opening",
+      "letter": "A",
+      "title": "Engaging the Learner: 'What We See: The Sun, Moon, and Stars' Poem",
+      "page": 233,
+      "minutes": 10,
+      "steps": [
+        "Invite students to the whole group area.",
+        "Display the 'What We See: The Sun, Moon, and Stars' poem.",
+        "Remind students that in the previous lesson they listened to a poem full of adjectives that describe the sun, moon, and stars. Remind students that an adjective is word that describes a person, place, or thing.",
+        "Using a total participation technique, invite responses from the group:",
+        "'Why did we circle/highlight some of the words in the poem?' (We circled the adjectives.)",
+        "'What were some adjectives that we circled to describe the sun?' (orange, round)",
+        "Say:",
+        "'As I reread the poem today, I want you to listen for adjectives used to describe the sun, moon, and stars. When you hear an adjective read aloud, quietly put a thumb out in front of your chest.' Model the hand gesture if necessary.",
+        "Invite students to quietly push the imaginary button on their brains to show they are ready to listen for adjectives.",
+        "Read aloud poem, fluently and with expression.",
+        "Using a total participation technique, invite responses from the group:",
+        "'What were some adjectives that you heard to describe the sun, moon, or stars?' (sun: hot, moon: full, stars: twinkling)",
+        "'What is something at home or at school that we could describe using this adjective?' (a bowl of soup; the nightlight)",
+        "Tell students to keep these adjectives tucked away in their brains to use during shared writing later today. Tomorrow the class will create an Adjectives anchor chart to record the adjectives found in the poem.",
+        "When using total participation techniques, minimize discomfort and/or perceived threats and distractions by alerting individual students that you are going to call on them next. (MME)",
+        "For ELLs: Encourage students to look at the Adjectives Construction board (described in Lesson 2) for clues. Invite them to add any new adjectives they find onto the board. For additional practice, invite students to create sentences with adjectives using the frame 'I observe a(n) [adjective] [noun] in the sky.'"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U2L3#Work Time#A",
+      "family": "instructional",
+      "resource_id": "G1M2U2L3",
+      "text": "[Work Time A] Close Read-aloud, Session 2: What Makes Day and Night, Pages 14-15\n- Refocus students whole group.\n- Direct their attention to the posted learning targets and read the first one aloud:\n- I can distinguish what I learn from the illustrations and what I learn from the text in the book What Makes Day and Night to describe the pattern of light and dark on earth.\n- Reread the target, emphasizing these words:\n- 'I can distinguish what I learn from the illustrations and what I learn from the text in the book What Makes Day and Night to describe the pattern of light and dark on earth.'\n- Define the word distinguish (to tell apart by seeing differences).\n- Invite students to turn and talk to an elbow partner:\n- 'What does this learning target mean?' (find information that is different in the illustrations and in the text to tell about the pattern of light and dark on earth)\n- Gather students back together and invite a few students to share out. Clarify the meaning of the target as needed.\n- Invite students to take out their imaginary bow and to take aim at the target.\n- Guide students through the close read-aloud for What Makes Day and Night using the Close Read-aloud Guide: What Makes Day and Night (Session 2; for teacher reference). Consider using the Reading Informational Text Checklist during the close read-aloud (see Assessment Overview and Resources).\n- Refer to the guide for the use of What Makes Day and Night, the What Makes Day and Night anchor chart, the Sun, Moon, and Stars Word Wall cards, and the Sun, Moon, and Stars Word Wall.\n- Refocus whole group.\n- Tell students that in the next lesson they will conduct an experiment to better see the pattern of light and dark on earth.\n- To activate background knowledge of familiar concepts and support comprehension of vocabulary, invite students to recall a time they sat in a shadow outside (e.g., under a tree, in the shade of a building, etc.) as the Word Wall card for shadow is added to the Sun, Moon, and Stars Word Wall. (MMR)",
+      "content_hash": "384d1997654cbc8feb5a8fdc9495e7269ee14c4beb8034953ade9ffbd3938a85",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 3,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "A"
+      },
+      "section": "Work Time",
+      "letter": "A",
+      "title": "Close Read-aloud, Session 2: What Makes Day and Night, Pages 14-15",
+      "page": 234,
+      "minutes": 20,
+      "steps": [
+        "Refocus students whole group.",
+        "Direct their attention to the posted learning targets and read the first one aloud:",
+        "I can distinguish what I learn from the illustrations and what I learn from the text in the book What Makes Day and Night to describe the pattern of light and dark on earth.",
+        "Reread the target, emphasizing these words:",
+        "'I can distinguish what I learn from the illustrations and what I learn from the text in the book What Makes Day and Night to describe the pattern of light and dark on earth.'",
+        "Define the word distinguish (to tell apart by seeing differences).",
+        "Invite students to turn and talk to an elbow partner:",
+        "'What does this learning target mean?' (find information that is different in the illustrations and in the text to tell about the pattern of light and dark on earth)",
+        "Gather students back together and invite a few students to share out. Clarify the meaning of the target as needed.",
+        "Invite students to take out their imaginary bow and to take aim at the target.",
+        "Guide students through the close read-aloud for What Makes Day and Night using the Close Read-aloud Guide: What Makes Day and Night (Session 2; for teacher reference). Consider using the Reading Informational Text Checklist during the close read-aloud (see Assessment Overview and Resources).",
+        "Refer to the guide for the use of What Makes Day and Night, the What Makes Day and Night anchor chart, the Sun, Moon, and Stars Word Wall cards, and the Sun, Moon, and Stars Word Wall.",
+        "Refocus whole group.",
+        "Tell students that in the next lesson they will conduct an experiment to better see the pattern of light and dark on earth.",
+        "To activate background knowledge of familiar concepts and support comprehension of vocabulary, invite students to recall a time they sat in a shadow outside (e.g., under a tree, in the shade of a building, etc.) as the Word Wall card for shadow is added to the Sun, Moon, and Stars Word Wall. (MMR)"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U2L3#Work Time#B",
+      "family": "instructional",
+      "resource_id": "G1M2U2L3",
+      "text": "[Work Time B] Back-to-Back and Face-to-Face: Earth's Rotation\n- Tell students you have a video of the earth to show them. As they watch the video, they should look carefully to see what they notice about how the earth moves and rotates, and think about the questions they have.\n- Model standing and rotating in place for students. While rotating, say: 'I am rotating right now.'\n- Using a total participation technique, invite responses from the group:\n- 'What are some words to describe what I am doing?' (turning, spinning, rotating)\n- 'What does it mean to rotate?' (turn in a circle around a center point)\n- As students share responses, confirm thinking: Rotate means to turn in a circle around a center point.\n- Play the 'Blue Marble Animations' video.\n- At the completion of the video, tell students that they now have a chance to share their thinking with a partner using the Back-to-Back and Face-to-Face protocol. Remind them that they used this protocol in Module 1, and review as necessary using the Back-to-Back and Face-to-Face Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Guide students through Round 1 of the protocol using the following question:\n- Provide a sentence frame as necessary:\n- -'I would like to add _____.'\n- Refocus students whole group and play the video again.\n- Guide students through Round 2 of the protocol using the following question:\n- 'As the earth rotates, which side of the earth has day and which side has night?'\n- Provide a sentence frame as necessary:\n- 'I would like to add ______'\n- -If productive, use a Goal 3 Conversation Cue to challenge students:\n- As students share, circulate and continue to use the Speaking and Listening Checklist to assess students' progress toward the learning target.\n- Refocus whole group and invite students to quickly and quietly return to their seats.\n- To help students anticipate and prepare for sharing during the protocol, identify which partner will share first. For example, provide students with index cards that designate whether they are partner A or B. (MME)\n- For ELLs: Introduce and model using the sentence frames to respond to others' ideas. Display the sentence frames in speech bubbles. Example: 'Jason said he saw the earth moving. I also saw the earth moving, but I also saw it rotating. I have something to add to his idea! So what would I say? That's right, I would like to add that I saw the earth rotating!')\n- For ELLs: Tell students it is common to use the word that following the phrase I would like to add. Invite students to practice using this expression. (Example: 'I would like to add that part of the earth is always light and part of the earth is always dark.')",
+      "content_hash": "d26ab083db18ca113d013dfdae8ea265a51968edaa5c0bc52059fe45734c9739",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 3,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "B"
+      },
+      "section": "Work Time",
+      "letter": "B",
+      "title": "Back-to-Back and Face-to-Face: Earth's Rotation",
+      "page": 235,
+      "minutes": 15,
+      "steps": [
+        "Tell students you have a video of the earth to show them. As they watch the video, they should look carefully to see what they notice about how the earth moves and rotates, and think about the questions they have.",
+        "Model standing and rotating in place for students. While rotating, say: 'I am rotating right now.'",
+        "Using a total participation technique, invite responses from the group:",
+        "'What are some words to describe what I am doing?' (turning, spinning, rotating)",
+        "'What does it mean to rotate?' (turn in a circle around a center point)",
+        "As students share responses, confirm thinking: Rotate means to turn in a circle around a center point.",
+        "Play the 'Blue Marble Animations' video.",
+        "At the completion of the video, tell students that they now have a chance to share their thinking with a partner using the Back-to-Back and Face-to-Face protocol. Remind them that they used this protocol in Module 1, and review as necessary using the Back-to-Back and Face-to-Face Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
+        "Guide students through Round 1 of the protocol using the following question:",
+        "Provide a sentence frame as necessary:",
+        "-'I would like to add _____.'",
+        "Refocus students whole group and play the video again.",
+        "Guide students through Round 2 of the protocol using the following question:",
+        "'As the earth rotates, which side of the earth has day and which side has night?'",
+        "Provide a sentence frame as necessary:",
+        "'I would like to add ______'",
+        "-If productive, use a Goal 3 Conversation Cue to challenge students:",
+        "As students share, circulate and continue to use the Speaking and Listening Checklist to assess students' progress toward the learning target.",
+        "Refocus whole group and invite students to quickly and quietly return to their seats.",
+        "To help students anticipate and prepare for sharing during the protocol, identify which partner will share first. For example, provide students with index cards that designate whether they are partner A or B. (MME)",
+        "For ELLs: Introduce and model using the sentence frames to respond to others' ideas. Display the sentence frames in speech bubbles. Example: 'Jason said he saw the earth moving. I also saw the earth moving, but I also saw it rotating. I have something to add to his idea! So what would I say? That's right, I would like to add that I saw the earth rotating!')",
+        "For ELLs: Tell students it is common to use the word that following the phrase I would like to add. Invite students to practice using this expression. (Example: 'I would like to add that part of the earth is always light and part of the earth is always dark.')"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U2L3#Closing and Assessment#A",
+      "family": "instructional",
+      "resource_id": "G1M2U2L3",
+      "text": "[Closing and Assessment A] Shared Writing: Describing the Sun and Moon\n- Refocus students whole group.\n- Direct students' attention to the posted learning targets and read the second one aloud:\n- Tell them that today they will look at a new image of the sun and moon and help record their observations using pictures and words during shared writing. Remind students that earlier in today's lesson they continued to identify adjectives that describe the sun and moon.\n- Display sun photograph 2 and moon photograph 2.\n- Using a total participation technique, invite responses from the group.\n- 'How would you describe the sun in this photograph? What adjectives could you use to describe it?' (yellow, hidden)\n- 'How would you describe the moon in this photograph? What adjectives could you use to describe it?' (sliver, white)\n- Display the Describing the Sun and Moon recording form.\n- Remind students of the procedure for shared writing from Lesson 2. Review the procedure briefly.\n- Point to the question on page 1 and read it aloud, and using a total participation technique, invite responses from the group:\n- 'What does the sun look like?'\n- Prompt students to use the Sun, Moon, and Stars Word Wall and the 'What We See: The Sun, Moon, and Stars' poem as resources as they describe the sun.\n- As students share responses, use their ideas to complete page 1. Think aloud how to use the words from the question itself as a cue to formulate the answer using a complete sentence. (Example: The sun looks yellow and hidden.)\n- Draw a quick sketch of what the sun looks like.\n- Turn to page 2.\n- Point to the question on page 2 and read it aloud:\n- Prompt students to use the Sun, Moon, and Stars Word Wall and the 'What We See: The Sun, Moon, and Stars' poem as resources as they describe the sun.\n- As students share responses, use their ideas to complete page 2. Think aloud how to use the words from the question itself as a cue to formulate the answer using a complete sentence. (Example: The moon looks white and little.)\n- Draw a quick sketch of what the moon looks like.\n- With excitement, tell students that in the next lesson they will receive their very own Sky notebook and will write about the sun and moon using adjectives.\n- When displaying the photographs, support students' expressive skills by offering adjectives and/or picture cues preprinted on index cards for students to select as they share words that describe the sun and the moon (e.g., yellow, hidden, white, silver). (MMAE)\n- For ELLs: Support students as they formulate sentences for the Describing the Sun and Moon recording form. Invite students to use the Adjectives Construction board (See Lesson 2) with the sentence frame: 'The [sun/moon] looks like a(n) [adjective] [noun].' (Example: The sun looks like an orange ball. The sun looks bright and yellow.) Invite students to identify any new adjectives they might like to add to the board.",
+      "content_hash": "00b62a2efd28ac60e421d5a989df1929b20439866b5d5d9775d5cd970019bb6e",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 3,
+        "family": "instructional",
+        "section": "Closing and Assessment",
+        "letter": "A"
+      },
+      "section": "Closing and Assessment",
+      "letter": "A",
+      "title": "Shared Writing: Describing the Sun and Moon",
+      "page": 236,
+      "minutes": 10,
+      "steps": [
+        "Refocus students whole group.",
+        "Direct students' attention to the posted learning targets and read the second one aloud:",
+        "Tell them that today they will look at a new image of the sun and moon and help record their observations using pictures and words during shared writing. Remind students that earlier in today's lesson they continued to identify adjectives that describe the sun and moon.",
+        "Display sun photograph 2 and moon photograph 2.",
+        "Using a total participation technique, invite responses from the group.",
+        "'How would you describe the sun in this photograph? What adjectives could you use to describe it?' (yellow, hidden)",
+        "'How would you describe the moon in this photograph? What adjectives could you use to describe it?' (sliver, white)",
+        "Display the Describing the Sun and Moon recording form.",
+        "Remind students of the procedure for shared writing from Lesson 2. Review the procedure briefly.",
+        "Point to the question on page 1 and read it aloud, and using a total participation technique, invite responses from the group:",
+        "'What does the sun look like?'",
+        "Prompt students to use the Sun, Moon, and Stars Word Wall and the 'What We See: The Sun, Moon, and Stars' poem as resources as they describe the sun.",
+        "As students share responses, use their ideas to complete page 1. Think aloud how to use the words from the question itself as a cue to formulate the answer using a complete sentence. (Example: The sun looks yellow and hidden.)",
+        "Draw a quick sketch of what the sun looks like.",
+        "Turn to page 2.",
+        "Point to the question on page 2 and read it aloud:",
+        "Prompt students to use the Sun, Moon, and Stars Word Wall and the 'What We See: The Sun, Moon, and Stars' poem as resources as they describe the sun.",
+        "As students share responses, use their ideas to complete page 2. Think aloud how to use the words from the question itself as a cue to formulate the answer using a complete sentence. (Example: The moon looks white and little.)",
+        "Draw a quick sketch of what the moon looks like.",
+        "With excitement, tell students that in the next lesson they will receive their very own Sky notebook and will write about the sun and moon using adjectives.",
+        "When displaying the photographs, support students' expressive skills by offering adjectives and/or picture cues preprinted on index cards for students to select as they share words that describe the sun and the moon (e.g., yellow, hidden, white, silver). (MMAE)",
+        "For ELLs: Support students as they formulate sentences for the Describing the Sun and Moon recording form. Invite students to use the Adjectives Construction board (See Lesson 2) with the sentence frame: 'The [sun/moon] looks like a(n) [adjective] [noun].' (Example: The sun looks like an orange ball. The sun looks bright and yellow.) Invite students to identify any new adjectives they might like to add to the board."
+      ]
+    },
+    {
+      "chunk_id": "G1M2U2L3#Closing and Assessment#B",
+      "family": "instructional",
+      "resource_id": "G1M2U2L3",
+      "text": "[Closing and Assessment B] Reflecting on Learning\n- Refocus students whole group.\n- Direct their attention to the posted learning targets and read the first one aloud:\n- 'I can distinguish what I learn from the illustrations and what I learn from the text in the book What Makes Day and Night to describe the pattern of light and dark on earth.'\n- Invite students to turn and talk with an elbow partner:\n- 'What is something you learned from an illustration to describe the pattern of light and dark on earth?' (I saw a picture of the earth spinning. Half of the earth faces the sun, and the other half faces away from the sun.)\n- 'What did you read in the text that confirmed what you saw in the illustration?' (The text said that the earth spins around and light from the sun falls on one-half of the spinning earth.)\n- As students talk, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group.\n- Refocus students whole group and invite one or two students to share out.\n- As students share with a partner, increase mastery-oriented feedback by providing feedback that is frequent, timely, and specific to individual pairs of students. (Example: 'I hear that you learned some very interesting things from the illustrations in the text. Can you share how what we read in the text confirms what you saw in the illustrations?') (MME, MMAE)\n- For ELLs: Review the learning target introduced in Work Time A. Ask students to give specific examples of how they worked toward achieving it in this lesson. Invite students to rephrase the learning target now that they have more experience describing patterns. (Example: I can tell what I learned about patterns in the pictures and words from What Makes Day and Night.)",
+      "content_hash": "910fdb03fdeabbc8777798f4257c9dec29a076e1317374467dbfe19c5a70f1e6",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 3,
+        "family": "instructional",
+        "section": "Closing and Assessment",
+        "letter": "B"
+      },
+      "section": "Closing and Assessment",
+      "letter": "B",
+      "title": "Reflecting on Learning",
+      "page": 237,
+      "minutes": 5,
+      "steps": [
+        "Refocus students whole group.",
+        "Direct their attention to the posted learning targets and read the first one aloud:",
+        "'I can distinguish what I learn from the illustrations and what I learn from the text in the book What Makes Day and Night to describe the pattern of light and dark on earth.'",
+        "Invite students to turn and talk with an elbow partner:",
+        "'What is something you learned from an illustration to describe the pattern of light and dark on earth?' (I saw a picture of the earth spinning. Half of the earth faces the sun, and the other half faces away from the sun.)",
+        "'What did you read in the text that confirmed what you saw in the illustration?' (The text said that the earth spins around and light from the sun falls on one-half of the spinning earth.)",
+        "As students talk, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group.",
+        "Refocus students whole group and invite one or two students to share out.",
+        "As students share with a partner, increase mastery-oriented feedback by providing feedback that is frequent, timely, and specific to individual pairs of students. (Example: 'I hear that you learned some very interesting things from the illustrations in the text. Can you share how what we read in the text confirms what you saw in the illustrations?') (MME, MMAE)",
+        "For ELLs: Review the learning target introduced in Work Time A. Ask students to give specific examples of how they worked toward achieving it in this lesson. Invite students to rephrase the learning target now that they have more experience describing patterns. (Example: I can tell what I learned about patterns in the pictures and words from What Makes Day and Night.)"
+      ]
+    }
+  ],
+  "evidence_pointers": [
+    {
+      "chunk_id": "G1M2U2L3#evidence#0",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "69ed20a23ae1f7da4f044ea9b17dfac2f727da06bebeefff40b87c22d572e9d0",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L3#Opening#A",
+      "location": "Opening A",
+      "quote": "'Why did we circle/highlight some of the words in the poem?' (We circled the adjectives.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification",
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 0
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#1",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "60280ff2fa67c8bde37610bb80c8e19c1e627a3caf8357571bffe3e4d0e8df6b",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L3#Opening#A",
+      "location": "Opening A",
+      "quote": "'What were some adjectives that we circled to describe the sun?' (orange, round)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification",
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 1
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#2",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "7122ae4e6eed814b94de93f4d30e2c58ad603b66fb48206eb2ca7cdcd81a8598",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L3#Opening#A",
+      "location": "Opening A",
+      "quote": "'As I reread the poem today, I want you to listen for adjectives used to describe the sun, moon, and stars. When you hear an adjective read aloud, quietly put a thumb out in front of your chest.' Model the hand gesture if necessary.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification"
+      ],
+      "qualifiers": [
+        "quietly"
+      ],
+      "evidence_index": 2
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#3",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "6ef570ec7fc83ea9a65c8066bcf145859a66de4a2d2c6b52e1dcbb2a6c93dfa3",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Opening#A",
+        "location": "Opening A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U2L3#Opening#A",
+      "location": "Opening A",
+      "quote": "Read aloud poem, fluently and with expression.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 3
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#4",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "58f08d1a658751435628c58e5f4aa16d4f56f788a1d9bc1dc5f43907d4a88736",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L3#Opening#A",
+      "location": "Opening A",
+      "quote": "'What were some adjectives that you heard to describe the sun, moon, or stars?' (sun: hot, moon: full, stars: twinkling)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification",
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 4
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#5",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "c4b42e48a46bec1a4a069420c69c0d072b7a204c1de6f17144322b5b78ede183",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L3#Opening#A",
+      "location": "Opening A",
+      "quote": "'What is something at home or at school that we could describe using this adjective?' (a bowl of soup; the nightlight)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 5
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#6",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "4229d404351c05911e93765064965b88c329e049d8cea762a4ca9f630728347e",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L3#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Invite students to turn and talk to an elbow partner: 'What does this learning target mean?' (find information that is different in the illustrations and in the text to tell about the pattern of light and dark on earth)",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 6
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#7",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "746b2fd8268bd87315b0479ddc56f855a7cafc26828d72f2147317b15fe28f55",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L3#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Guide students through the close read-aloud for What Makes Day and Night using the Close Read-aloud Guide: What Makes Day and Night (Session 2; for teacher reference).",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "comprehension_response"
+      ],
+      "qualifiers": [],
+      "evidence_index": 7
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#8",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "0d8a37c273bd3b8c655c334b38fa4ba26fe4472f4afe948a64fe5b4349b323c7",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L3#Work Time#A",
+      "location": "Work Time A",
+      "quote": "To activate background knowledge of familiar concepts and support comprehension of vocabulary, invite students to recall a time they sat in a shadow outside (e.g., under a tree, in the shade of a building, etc.) as the Word Wall card for shadow is added to the Sun, Moon, and Stars Word Wall.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 8
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#9",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "045f550edfede10cbffcec80ede548fc0692613c6a54e22cdf773c03721bb300",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U2L3#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Model standing and rotating in place for students. While rotating, say: 'I am rotating right now.'",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 9
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#10",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "0fb1fa5830770a06caf4d960ee09bcd4addddc1177582a49f73e18f5532ac670",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L3#Work Time#B",
+      "location": "Work Time B",
+      "quote": "'What are some words to describe what I am doing?' (turning, spinning, rotating)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "recognition_identification"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 10
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#11",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "060e45e355e9a1ed147bc0b57a460119ec6884b673eb9ff2309e99d127f500da",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L3#Work Time#B",
+      "location": "Work Time B",
+      "quote": "'What does it mean to rotate?' (turn in a circle around a center point)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 11
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#12",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "295461708c2b37884f75a79bafc38a3d155addf521687500f1cc27520f1c89a2",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L3#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Play the 'Blue Marble Animations' video.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification",
+        "comprehension_response"
+      ],
+      "qualifiers": [],
+      "evidence_index": 12
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#13",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "978a62861c1c59378bfc57c3d439bd4314cf33d3cf857b9d9e6a313570db74b7",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L3#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Guide students through Round 1 of the protocol using the following question:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally",
+        "using sentence frames"
+      ],
+      "evidence_index": 13
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#14",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "c07a38d404e556336de5759c0eb5755be0a9a9bf6363279cbeba6586f656c858",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L3#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Provide a sentence frame as necessary:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally",
+        "using sentence frames"
+      ],
+      "evidence_index": 14
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#15",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "7035057548c14e1c50b457fc67f6d56ab0440712eba306ac0458206b7ec33c4f",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Refocus students whole group.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 15
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#16",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "f3cb00daaac9a4e0d4693052a827234da23257ab8d639100b906c2d2502fb717",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "'How would you describe the sun in this photograph? What adjectives could you use to describe it?' (yellow, hidden)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "recognition_identification"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 16
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#17",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "04e5a06b0eb67f657c341ce4be7490eca0429104f8d63d325cd21b6bd25024c2",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "'How would you describe the moon in this photograph? What adjectives could you use to describe it?' (sliver, white)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "recognition_identification"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 17
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#18",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "0ebdbb0345eb21c99c418883e8ce77e3f1e0f14d71a0cade6fb2ed0c71a0ff01",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Display the Describing the Sun and Moon recording form.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 18
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#19",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "5a99124e075dcba5e1e1f5b121e27e0c653de65141928fb5148f1dc54d9b8a28",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Using a total participation technique, invite responses from the group.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 19
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#20",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "999c72b2b2cd2f24cccf843e25d012e700ea75586fc581aed03ae7e9d5f88f3c",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "'What does the sun look like?'",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 20
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#21",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "73ce38087eda375d151189a372a728530ba46acc7473b920376841195450fdb8",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_scribe"
+      },
+      "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "As students share responses, use their ideas to complete page 1. Think aloud how to use the words from the question itself as a cue to formulate the answer using a complete sentence. (Example: The sun looks yellow and hidden.)",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [
+        "in complete sentences"
+      ],
+      "evidence_index": 21
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#22",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "17e9d547f9addf778ecd912b318e3ddc9430fe6e9d5e59b8c90c2d7dc2add850",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Draw a quick sketch of what the sun looks like.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 22
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#23",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "8ff18ad71169517a99b74cbc164c3ae0c6fdae21621c46c9f7d22366fd88a7d7",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Point to the question on page 2 and read it aloud:",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 23
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#24",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "acd880fdd299c58be36304120493e7f891f1f676b275db0a89406c113307ab3c",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_scribe"
+      },
+      "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "As students share responses, use their ideas to complete page 2. Think aloud how to use the words from the question itself as a cue to formulate the answer using a complete sentence. (Example: The moon looks white and little.)",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [
+        "in complete sentences"
+      ],
+      "evidence_index": 24
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#25",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "5ac0de9dd1383cdd9f55913f8ee28cb23e3719295fc457abe74a68c0afe7af05",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Draw a quick sketch of what the moon looks like.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 25
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#26",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "bdbfa210a22ea3b888845ddcf5132b7e19e50cfea707a9f1c144232e66c154b9",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L3#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "For ELLs: Support students as they formulate sentences for the Describing the Sun and Moon recording form. Invite students to use the Adjectives Construction board (See Lesson 2) with the sentence frame: 'The [sun/moon] looks like a(n) [adjective] [noun].' (Example: The sun looks like an orange ball. The sun looks bright and yellow.) Invite students to identify any new adjectives they might like to add to the board.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "supports_action": [
+        "oral_production",
+        "written_production"
+      ],
+      "qualifiers": [
+        "orally",
+        "using sentence frames"
+      ],
+      "evidence_index": 26
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#27",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "f5c1a08dd09ef448fc3aff2e167e28b746e560fc98b768c497f6a8adb014f95d",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Closing and Assessment#B",
+        "location": "Closing and Assessment B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L3#Closing and Assessment#B",
+      "location": "Closing and Assessment B",
+      "quote": "Invite students to turn and talk with an elbow partner: 'What is something you learned from an illustration to describe the pattern of light and dark on earth?' (I saw a picture of the earth spinning. Half of the earth faces the sun, and the other half faces away from the sun.)",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 27
+    },
+    {
+      "chunk_id": "G1M2U2L3#evidence#28",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L3",
+      "text": "",
+      "content_hash": "ab8a8ace504cd1ab3ba7c69234c02d6ca5d911ec81fc8c2e19aeae18a7f9c123",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L3#Closing and Assessment#B",
+        "location": "Closing and Assessment B",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L3#Closing and Assessment#B",
+      "location": "Closing and Assessment B",
+      "quote": "'What did you read in the text that confirmed what you saw in the illustration?' (The text said that the earth spins around and light from the sun falls on one-half of the spinning earth.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 28
+    }
+  ]
+}

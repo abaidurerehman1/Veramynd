@@ -1,0 +1,1071 @@
+{
+  "schema_version": "1.0-chunk",
+  "resource_id": "G1M2U2L1",
+  "grade": 1,
+  "module": 2,
+  "unit": 2,
+  "lesson": 1,
+  "title": "Lesson 1: Noticing and Wondering: Observing and Asking Questions about the Sun, Moon, and Stars",
+  "prompt_version": "normalize_ela.v2.1",
+  "lesson_chunk": {
+    "chunk_id": "G1M2U2L1#lesson",
+    "family": "lesson",
+    "resource_id": "G1M2U2L1",
+    "text": "Domain primary: Comprehension\nDomain secondary: Speaking & Listening, Vocabulary\nMode: both\nGenre: mixed\nObjective: Students will observe and describe patterns in pictures and videos of the sun, moon, and stars, and ask and record questions about their observations.\nSkills taught:\n- describe observations in pictures and videos (DOK2_skills_concepts, primary)\n- ask questions about observations (DOK2_skills_concepts, primary)\n- record observations and questions in shared writing (DOK2_skills_concepts, primary)\n- identify and discuss vocabulary related to astronomy and patterns (DOK1_recall_reproduction, secondary)\n- participate in partner discussions using sentence frames (DOK2_skills_concepts, secondary)\n- use classroom discussion protocols (Picture Tea Party, Think-Pair-Share) (DOK2_skills_concepts, secondary)\nStudent actions:\n- recognition_identification: identify and recognize vocabulary and patterns in pictures and text\n- oral_production: share observations and questions orally with partners and whole group\n- reasoning_explanation: explain reasoning for word associations and observations during discussions\n- comprehension_response: respond to questions about the text and illustrations orally and in partner talk, using evidence from the text and observations to support answers and ideas, sometimes using sentence frames for support and elaboration, and contribute ideas to anchor charts and word walls to build understanding and vocabulary related to astronomy and patterns in the sky",
+    "content_hash": "4bf3f4640d8f81dcd673fb578b4ba37e794deb6bcfc9baba81d688c9c6477806",
+    "metadata": {
+      "grade": 1,
+      "module": 2,
+      "unit": 2,
+      "lesson": 1,
+      "title": "Lesson 1: Noticing and Wondering: Observing and Asking Questions about the Sun, Moon, and Stars",
+      "domain_primary": "Comprehension",
+      "domain_secondary": [
+        "Speaking & Listening",
+        "Vocabulary"
+      ],
+      "mode": "both",
+      "genre": "mixed",
+      "prompt_version": "normalize_ela.v2.1",
+      "page_start": 205,
+      "page_end": 216
+    }
+  },
+  "instructional_chunks": [
+    {
+      "chunk_id": "G1M2U2L1#Opening#A",
+      "family": "instructional",
+      "resource_id": "G1M2U2L1",
+      "text": "[Opening A] Reading Aloud: 'Elvin, the Boy Who Loved the Sky,' Part 5\n- Gather students whole group.\n- Remind them that in the last unit, they were introduced to Elvin, who shared his questions and observations about the sun, moon, and stars with them.\n- Tell students that to help them remember all the things Elvin wondered about, you are going to briefly reread part of the story.\n- Display 'Elvin, the Boy Who Loved the Sky,' Part 1 and read it aloud slowly, fluently, with expression, and without interruption.\n- Explain to students that you are going to begin using equity sticks as a way of calling on them to share their ideas with the group. Each of their names is on a different popsicle stick, and you will pull one at random. When you do, that student will share his or her ideas with the class.\n- Invite students to turn and talk with an elbow partner, and use equity sticks to select students to share their responses with the whole group:\n- 'What are some things that Elvin wondered about?' (if the sun and moon had stories; if the sun and moon danced and had songs)\n- 'What are some things that Elvin shared with us because he wondered about the sun, moon, and stars?' (photographs, songs, movement routines, books)\n- Tell students that today is an exciting day because you have a new story about Elvin to read to them and that you think there are more things Elvin wonders about.\n- Display ' Elvin, the Boy Who Loved the Sky,' Part 5 and read the first three sentences aloud fluently, with expression, and without interruption.\n- Focus students' attention on the word astronomer.\n- Invite students to turn and talk with an elbow partner: 'What word does the word astronomer remind you of?' (astronaut, astronomy)\n- Using equity sticks, cold call students to share out.\n- If productive, use a Goal 3 Conversation Cue to encourage students to provide reasoning: 'Why does the word astronomer remind you of that?' (Responses will vary; e.g., they sound the same.)\n- Point out that all of these wordsastronomer, astronaut, and astronomy -have a similar beginning, astro.\n- Tell students that astro means having to do with outer space, objects in the sky, and the sun, moon, and stars.\n- Show students the Sun, Moon, and Stars Word Wall card for astronomer.\n- Tell students that an astronomer is a scientist who studies the sky, universe, and beyond.\n- Invite students to repeat the word with you and to clap its syllables as they say it.\n- Place the Word Wall card and picture for astronomer on the Sun, Moon, and Stars Word Wall.\n- Draw students' attention back to the text and read the remainder of Part 5.\n- With excitement, reveal and then display two or three of the pattern photographs.\n- Using a total participation technique, invite responses from the group: 'What is Elvin wondering about now?' (He wonders if there are facts about the sun, moon, and stars.)\n- When preparing students for the read-aloud, provide options for physical action and sensory input by differentiating seating. Some students might benefit from sitting on a gym ball, a move-and-sit cushion, or a chair with a resistive elastic band wrapped around the legs. (MMAE)\n- For ELLs: For heavier support, invite students to act out the roles of Elvin and the astronomer during the read-aloud.",
+      "content_hash": "ab1d5b12085163e1b3597103b88ceb9d0367d71f8d9d1ed6b6324eaf673f9fa8",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 1,
+        "family": "instructional",
+        "section": "Opening",
+        "letter": "A"
+      },
+      "section": "Opening",
+      "letter": "A",
+      "title": "Reading Aloud: 'Elvin, the Boy Who Loved the Sky,' Part 5",
+      "page": 210,
+      "minutes": 10,
+      "steps": [
+        "Gather students whole group.",
+        "Remind them that in the last unit, they were introduced to Elvin, who shared his questions and observations about the sun, moon, and stars with them.",
+        "Tell students that to help them remember all the things Elvin wondered about, you are going to briefly reread part of the story.",
+        "Display 'Elvin, the Boy Who Loved the Sky,' Part 1 and read it aloud slowly, fluently, with expression, and without interruption.",
+        "Explain to students that you are going to begin using equity sticks as a way of calling on them to share their ideas with the group. Each of their names is on a different popsicle stick, and you will pull one at random. When you do, that student will share his or her ideas with the class.",
+        "Invite students to turn and talk with an elbow partner, and use equity sticks to select students to share their responses with the whole group:",
+        "'What are some things that Elvin wondered about?' (if the sun and moon had stories; if the sun and moon danced and had songs)",
+        "'What are some things that Elvin shared with us because he wondered about the sun, moon, and stars?' (photographs, songs, movement routines, books)",
+        "Tell students that today is an exciting day because you have a new story about Elvin to read to them and that you think there are more things Elvin wonders about.",
+        "Display ' Elvin, the Boy Who Loved the Sky,' Part 5 and read the first three sentences aloud fluently, with expression, and without interruption.",
+        "Focus students' attention on the word astronomer.",
+        "Invite students to turn and talk with an elbow partner: 'What word does the word astronomer remind you of?' (astronaut, astronomy)",
+        "Using equity sticks, cold call students to share out.",
+        "If productive, use a Goal 3 Conversation Cue to encourage students to provide reasoning: 'Why does the word astronomer remind you of that?' (Responses will vary; e.g., they sound the same.)",
+        "Point out that all of these wordsastronomer, astronaut, and astronomy -have a similar beginning, astro.",
+        "Tell students that astro means having to do with outer space, objects in the sky, and the sun, moon, and stars.",
+        "Show students the Sun, Moon, and Stars Word Wall card for astronomer.",
+        "Tell students that an astronomer is a scientist who studies the sky, universe, and beyond.",
+        "Invite students to repeat the word with you and to clap its syllables as they say it.",
+        "Place the Word Wall card and picture for astronomer on the Sun, Moon, and Stars Word Wall.",
+        "Draw students' attention back to the text and read the remainder of Part 5.",
+        "With excitement, reveal and then display two or three of the pattern photographs.",
+        "Using a total participation technique, invite responses from the group: 'What is Elvin wondering about now?' (He wonders if there are facts about the sun, moon, and stars.)",
+        "When preparing students for the read-aloud, provide options for physical action and sensory input by differentiating seating. Some students might benefit from sitting on a gym ball, a move-and-sit cushion, or a chair with a resistive elastic band wrapped around the legs. (MMAE)",
+        "For ELLs: For heavier support, invite students to act out the roles of Elvin and the astronomer during the read-aloud."
+      ]
+    },
+    {
+      "chunk_id": "G1M2U2L1#Work Time#A",
+      "family": "instructional",
+      "resource_id": "G1M2U2L1",
+      "text": "[Work Time A] Picture Tea Party: Pattern Photographs\n- Tell students that now they are going to get a chance to closely examine the pattern photographs that Elvin shared with them.\n- Explain that they are going to use the Picture Tea Party protocol to view and discuss the pattern photographs. Remind students that they used this protocol in Unit 1, and review as necessary using the Picture Tea Party Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Guide students through the protocol.\n- After 5-6 minutes, refocus whole group and collect the pattern photographs.\n- Using a total participation technique, invite responses from the group:\n- 'What did you notice in your pictures?' (Responses will vary, but may include: things repeating, the sunlight creating a pattern on the ground, the moon in different shapes over and over again, and groups of stars creating a pattern in the sky.)\n- Inform students that the photographs they looked at show patterns.\n- Using a total participation technique, invite responses from the group:\n- 'What does the word pattern mean?' (an arrangement of shapes, lines, letters, numbers, or colors that can be repeated or used again and again)\n- Remind students that when Elvin wondered if the sun, moon, and stars had facts, an astronomer gave him these photographs.\n- If productive, use a Goal 3 Conversation Cue to encourage students to provide reasoning.\n- Using a total participation technique, invite responses from the group:\n- 'Why do you think the astronomer gave Elvin photographs of patterns when Elvin was wondering if there were facts about the sun, moon, and stars?' (Student responses may vary; if necessary, guide them toward: the sun, moon, and stars follow patterns or there are patterns that have to do with the sun, moon, and stars.)\n- To activate background knowledge, provide one or two familiar examples of what a pattern looks and sounds like. Example: Display a visual of building cubes arranged in a pattern or invite students to listen to a clapping pattern (e.g., clap hands twice, tap thighs once, repeat). (MMR)\n- For ELLs: Invite a small group of volunteers to briefly fish bowl or model the Picture Tea Party protocol for the group. As they model, cold call students to repeat or add to what the volunteers have said, using the sentence frames. This will provide an opportunity to check for comprehension while giving some students practice using the sentence frames before the protocol begins.\n- For ELLs: It may take longer for some students to process language and follow the conversation during the Picture Tea Party protocol. Encourage students to speak up when they would like to hear something repeated. Empower them with questions they can ask to regulate the pace of the conversation. (Examples: 'Can you please repeat what you said?' 'Can you please speak more slowly?')",
+      "content_hash": "69754b9fa8f053b8011824907d15cf4570ecab48559f722ad5803cd2d8a610ab",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 1,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "A"
+      },
+      "section": "Work Time",
+      "letter": "A",
+      "title": "Picture Tea Party: Pattern Photographs",
+      "page": 212,
+      "minutes": 10,
+      "steps": [
+        "Tell students that now they are going to get a chance to closely examine the pattern photographs that Elvin shared with them.",
+        "Explain that they are going to use the Picture Tea Party protocol to view and discuss the pattern photographs. Remind students that they used this protocol in Unit 1, and review as necessary using the Picture Tea Party Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
+        "Guide students through the protocol.",
+        "After 5-6 minutes, refocus whole group and collect the pattern photographs.",
+        "Using a total participation technique, invite responses from the group:",
+        "'What did you notice in your pictures?' (Responses will vary, but may include: things repeating, the sunlight creating a pattern on the ground, the moon in different shapes over and over again, and groups of stars creating a pattern in the sky.)",
+        "Inform students that the photographs they looked at show patterns.",
+        "Using a total participation technique, invite responses from the group:",
+        "'What does the word pattern mean?' (an arrangement of shapes, lines, letters, numbers, or colors that can be repeated or used again and again)",
+        "Remind students that when Elvin wondered if the sun, moon, and stars had facts, an astronomer gave him these photographs.",
+        "If productive, use a Goal 3 Conversation Cue to encourage students to provide reasoning.",
+        "Using a total participation technique, invite responses from the group:",
+        "'Why do you think the astronomer gave Elvin photographs of patterns when Elvin was wondering if there were facts about the sun, moon, and stars?' (Student responses may vary; if necessary, guide them toward: the sun, moon, and stars follow patterns or there are patterns that have to do with the sun, moon, and stars.)",
+        "To activate background knowledge, provide one or two familiar examples of what a pattern looks and sounds like. Example: Display a visual of building cubes arranged in a pattern or invite students to listen to a clapping pattern (e.g., clap hands twice, tap thighs once, repeat). (MMR)",
+        "For ELLs: Invite a small group of volunteers to briefly fish bowl or model the Picture Tea Party protocol for the group. As they model, cold call students to repeat or add to what the volunteers have said, using the sentence frames. This will provide an opportunity to check for comprehension while giving some students practice using the sentence frames before the protocol begins.",
+        "For ELLs: It may take longer for some students to process language and follow the conversation during the Picture Tea Party protocol. Encourage students to speak up when they would like to hear something repeated. Empower them with questions they can ask to regulate the pace of the conversation. (Examples: 'Can you please repeat what you said?' 'Can you please speak more slowly?')"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U2L1#Work Time#B",
+      "family": "instructional",
+      "resource_id": "G1M2U2L1",
+      "text": "[Work Time B] Focused Read-aloud: Does the Sun Sleep?: Noticing Sun, Moon, and Star Patterns, Pages 4-9\n- Tell students that today is exciting because you have a new text to share with them!\n- Display Does the Sun Sleep?: Noticing Sun, Moon, and Star Patterns and read the title aloud.\n- Display Summer Sun Risin' next to Does the Sun Sleep: Noticing Sun, Moon, and Star Patterns.\n- Tell students that Summer Sun Risin' is a narrative text that tells a story, while the new text Does the Sun Sleep: Noticing Sun, Moon, and Star Patterns is an informational text that teaches the reader information.\n- Using a total participation technique, invite responses from the group:\n- Explain to students that in this unit they will be reading informational texts, like Does the Sun Sleep to learn more information about the patterns of the sun, moon and stars.\n- Read pages 4-7 slowly, fluently, with expression, and without interruption.\n- Direct students' attention to the Patterns of the Sun anchor chart and read the title aloud. Tell students that as they read this section of the text about the sun they will capture ideas and facts about the sun and its patterns on the chart.\n- Reread page 7 and invite students to turn and talk with an elbow partner:\n- 'What is a pattern that the sun follows?' (It shines during the day. We cannot see the sun\n- at night.)\n- Use equity sticks to call on one or two students to share out.\n- If productive, use a Goal 3 Conversation Cue to encourage students to provide evidence:\n- 'What, in the text, makes you think so?' (Responses will vary.)\n- As students share out, clarify and capture their ideas on the Patterns of the Sun anchor chart, writing down the language they use as accurately as possible. Refer to Patterns of the Sun anchor chart (example, for teacher reference) as necessary.\n- Draw students' attention back to the text and read page 8 fluently and without interruption.\n- Focus students' attention on the word horizon.\n- Reread the last two lines on page 8 and, using equity sticks, select a student to come to the front of the whole group area and respond:\n- 'Where is the horizon line in the illustration on page 8?'\n- Display the Sun, Moon, and Stars Word Wall card for horizon and review the definition for it (the line where the sky and the land seem to meet).\n- Invite students to repeat the word with you and place the card on the Sun, Moon, and Stars Word Wall.\n- Draw students' attention back to the text and read page 9 fluently and without interruption.\n- Direct students' attention to the three pictures on pages 8-9. Using a total participation technique, invite responses from the group:\n- 'What do you notice about where the sun is in the sky in these three pictures?' (near the horizon, high in the sky, and then near the horizon again)\n- As students share out, clarify and capture their ideas on the Patterns of the Sun anchor chart, writing down the language they use as accurately as possible. Refer to Patterns of the Sun anchor chart (example, for teacher reference) as necessary.\n- Review the information that has been recorded on the Patterns of the Sun anchor chart.\n- Invite students to turn and talk with an elbow partner:\n- Refocus students whole group and offer them specific, positive feedback on their work during the focused read-aloud. (Example: 'This section of the text contained a lot of important information about the sun and patterns that it follows, and I noticed you all paid close attention to the text and illustrations to make sure you understood the information.')\n- Tell students that now they will watch the time-lapse video of the sun from Unit 1 again, this time paying attention to any patterns that the sun follows.\n- Before reading, provide white boards and dry-erase markers as an option for students to record (in drawing or writing) their ideas. This will also help scaffold active listening for key details. (MMR, MMAE)\n- For ELLs: Pair students with a partner who has more advanced or native language proficiency. The partner with greater language proficiency in the pair can serve as a model during the read-aloud, initiating discussions and providing implicit sentence frames.\n- For ELLs: During the read-aloud, provide sentence frames for Think-Pair-Shares. (Example: 'One thing I learned about a pattern is …')\n- For ELLs: During the read-aloud, display the text on a document camera or an enlarged copy of the text to help direct students to the appropriate sentences on each page.",
+      "content_hash": "0908407e90246d72dd1e41051bee433e0c450183872ecd8436825bff22579ae9",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 1,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "B"
+      },
+      "section": "Work Time",
+      "letter": "B",
+      "title": "Focused Read-aloud: Does the Sun Sleep?: Noticing Sun, Moon, and Star Patterns, Pages 4-9",
+      "page": 213,
+      "minutes": 20,
+      "steps": [
+        "Tell students that today is exciting because you have a new text to share with them!",
+        "Display Does the Sun Sleep?: Noticing Sun, Moon, and Star Patterns and read the title aloud.",
+        "Display Summer Sun Risin' next to Does the Sun Sleep: Noticing Sun, Moon, and Star Patterns.",
+        "Tell students that Summer Sun Risin' is a narrative text that tells a story, while the new text Does the Sun Sleep: Noticing Sun, Moon, and Star Patterns is an informational text that teaches the reader information.",
+        "Using a total participation technique, invite responses from the group:",
+        "Explain to students that in this unit they will be reading informational texts, like Does the Sun Sleep to learn more information about the patterns of the sun, moon and stars.",
+        "Read pages 4-7 slowly, fluently, with expression, and without interruption.",
+        "Direct students' attention to the Patterns of the Sun anchor chart and read the title aloud. Tell students that as they read this section of the text about the sun they will capture ideas and facts about the sun and its patterns on the chart.",
+        "Reread page 7 and invite students to turn and talk with an elbow partner:",
+        "'What is a pattern that the sun follows?' (It shines during the day. We cannot see the sun",
+        "at night.)",
+        "Use equity sticks to call on one or two students to share out.",
+        "If productive, use a Goal 3 Conversation Cue to encourage students to provide evidence:",
+        "'What, in the text, makes you think so?' (Responses will vary.)",
+        "As students share out, clarify and capture their ideas on the Patterns of the Sun anchor chart, writing down the language they use as accurately as possible. Refer to Patterns of the Sun anchor chart (example, for teacher reference) as necessary.",
+        "Draw students' attention back to the text and read page 8 fluently and without interruption.",
+        "Focus students' attention on the word horizon.",
+        "Reread the last two lines on page 8 and, using equity sticks, select a student to come to the front of the whole group area and respond:",
+        "'Where is the horizon line in the illustration on page 8?'",
+        "Display the Sun, Moon, and Stars Word Wall card for horizon and review the definition for it (the line where the sky and the land seem to meet).",
+        "Invite students to repeat the word with you and place the card on the Sun, Moon, and Stars Word Wall.",
+        "Draw students' attention back to the text and read page 9 fluently and without interruption.",
+        "Direct students' attention to the three pictures on pages 8-9. Using a total participation technique, invite responses from the group:",
+        "'What do you notice about where the sun is in the sky in these three pictures?' (near the horizon, high in the sky, and then near the horizon again)",
+        "As students share out, clarify and capture their ideas on the Patterns of the Sun anchor chart, writing down the language they use as accurately as possible. Refer to Patterns of the Sun anchor chart (example, for teacher reference) as necessary.",
+        "Review the information that has been recorded on the Patterns of the Sun anchor chart.",
+        "Invite students to turn and talk with an elbow partner:",
+        "Refocus students whole group and offer them specific, positive feedback on their work during the focused read-aloud. (Example: 'This section of the text contained a lot of important information about the sun and patterns that it follows, and I noticed you all paid close attention to the text and illustrations to make sure you understood the information.')",
+        "Tell students that now they will watch the time-lapse video of the sun from Unit 1 again, this time paying attention to any patterns that the sun follows.",
+        "Before reading, provide white boards and dry-erase markers as an option for students to record (in drawing or writing) their ideas. This will also help scaffold active listening for key details. (MMR, MMAE)",
+        "For ELLs: Pair students with a partner who has more advanced or native language proficiency. The partner with greater language proficiency in the pair can serve as a model during the read-aloud, initiating discussions and providing implicit sentence frames.",
+        "For ELLs: During the read-aloud, provide sentence frames for Think-Pair-Shares. (Example: 'One thing I learned about a pattern is …')",
+        "For ELLs: During the read-aloud, display the text on a document camera or an enlarged copy of the text to help direct students to the appropriate sentences on each page."
+      ]
+    },
+    {
+      "chunk_id": "G1M2U2L1#Work Time#C",
+      "family": "instructional",
+      "resource_id": "G1M2U2L1",
+      "text": "[Work Time C] Engaging the Scientist: 'Observe Sunrise and Sunset'\n- Remind students that during Unit 1 they watched a short video of the sun rising and setting. Tell students that they are going to view the video again and then have the opportunity to discuss what they notice and wonder with a partner.\n- Play the 'Observe Sunrise and Sunset' time-lapse video.\n- Tell students they will use the Think-Pair-Share protocol to discuss what they noticed and observed about the sun in the video. Remind them that they've used this protocol before. Review as necessary using the Think-Pair-Share Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Invite students to Think-Pair-Share with an elbow partner:\n- 'What do you notice about the sun in this video? What patterns do you notice the sun following in this video?' (Responses will vary, but may include: The sun is near the horizon\n- As students talk, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group.\n- Refocus students whole group and invite a few students to share out.\n- Prompt students to add on or to build onto others' ideas by using several focusing questionsfor example:\n- ''Does anyone have anything to add to what Vernon said?'\n- 'What does what Janice said make you think?'\n- As students respond to these questions, prompt them to use a sentence frame:\n- 'I'd like to add _______.'\n- 'That makes me think _____ because ______.'\n- Tell students that now they will revisit their notices and wonderings from Unit 1 and add their new thinking and new questions.\n- During the Think-Pair-Share (before refocusing students whole group), increase mastery-oriented feedback by providing feedback that is frequent, timely, and specific to individual pairs of students. (Example: 'Great noticing! I heard you mention specifically that you saw that the sun looked like it was moving across the sky during the day. That sounds like part of the pattern each day, because you said that you saw that happen each day.') (MME)\n- For ELLs: Watch the 'Sun Time Lapse' video twice. Students will be able to absorb and process more information during their second viewing after they understand the general idea during the first viewing. Consider introducing and displaying the question 'What patterns do you notice the sun following in this video?' before watching it.\n- For ELLs: Introduce and model using the sentence frames to respond to others' ideas. Display the sentence frames in speech bubbles. Example: 'I have something more to say about Brianna's idea, so I am going to say, 'I'd like to add to Brianna's idea.''",
+      "content_hash": "5daba659353f245c1425c8294fedb9f37585508b4d34c5a648f487bd8ed30ec4",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 1,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "C"
+      },
+      "section": "Work Time",
+      "letter": "C",
+      "title": "Engaging the Scientist: 'Observe Sunrise and Sunset'",
+      "page": 214,
+      "minutes": 10,
+      "steps": [
+        "Remind students that during Unit 1 they watched a short video of the sun rising and setting. Tell students that they are going to view the video again and then have the opportunity to discuss what they notice and wonder with a partner.",
+        "Play the 'Observe Sunrise and Sunset' time-lapse video.",
+        "Tell students they will use the Think-Pair-Share protocol to discuss what they noticed and observed about the sun in the video. Remind them that they've used this protocol before. Review as necessary using the Think-Pair-Share Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
+        "Invite students to Think-Pair-Share with an elbow partner:",
+        "'What do you notice about the sun in this video? What patterns do you notice the sun following in this video?' (Responses will vary, but may include: The sun is near the horizon",
+        "As students talk, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group.",
+        "Refocus students whole group and invite a few students to share out.",
+        "Prompt students to add on or to build onto others' ideas by using several focusing questionsfor example:",
+        "''Does anyone have anything to add to what Vernon said?'",
+        "'What does what Janice said make you think?'",
+        "As students respond to these questions, prompt them to use a sentence frame:",
+        "'I'd like to add _______.'",
+        "'That makes me think _____ because ______.'",
+        "Tell students that now they will revisit their notices and wonderings from Unit 1 and add their new thinking and new questions.",
+        "During the Think-Pair-Share (before refocusing students whole group), increase mastery-oriented feedback by providing feedback that is frequent, timely, and specific to individual pairs of students. (Example: 'Great noticing! I heard you mention specifically that you saw that the sun looked like it was moving across the sky during the day. That sounds like part of the pattern each day, because you said that you saw that happen each day.') (MME)",
+        "For ELLs: Watch the 'Sun Time Lapse' video twice. Students will be able to absorb and process more information during their second viewing after they understand the general idea during the first viewing. Consider introducing and displaying the question 'What patterns do you notice the sun following in this video?' before watching it.",
+        "For ELLs: Introduce and model using the sentence frames to respond to others' ideas. Display the sentence frames in speech bubbles. Example: 'I have something more to say about Brianna's idea, so I am going to say, 'I'd like to add to Brianna's idea.''"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U2L1#Closing and Assessment#A",
+      "family": "instructional",
+      "resource_id": "G1M2U2L1",
+      "text": "[Closing and Assessment A] Shared Writing: Recording Our Observations and Questions about the Sun, Moon, and Stars\n- Direct students' attention to the Noticing and Wondering anchor chart.\n- Review what students had noticed and wondered about the sun, moon, and stars during Unit 1 by reading the chart aloud.\n- Invite students to turn to an elbow partner and talk after providing 30 seconds of wait time for each of the following questions:\n- 'What are some new things you notice about the sun?' (Student responses will vary.)\n- 'What are new questions or wonders you have about the sun?' (Student responses will vary.)\n- Refocus whole group and call students to share out.\n- As students share out, clarify and capture their ideas on the Noticing and Wondering anchor chart, writing down the language they use as accurately as possible. If possible, model referring to the Sun, Moon, and Stars Word Wall as a tool to help when spelling contentrelated words.\n- Share with students that in the next lesson they will continue learning about patterns in the sky that can be observed.\n- Before inviting students to turn and talk, provide scaffolds to support organization and working memory. Example: Offer an index card divided in two. Include (1) a picture of the sun on one half and (2) a question mark on the other half. Invite students to use this card as a guide for sharing (1) notices about the sun and (2) questions they have about the sun. (MMAE, MMR)",
+      "content_hash": "158a33b74da4bd24337a5e683c66b9290dc6e5e0c84d4ca4e3139622b925b5c0",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 1,
+        "family": "instructional",
+        "section": "Closing and Assessment",
+        "letter": "A"
+      },
+      "section": "Closing and Assessment",
+      "letter": "A",
+      "title": "Shared Writing: Recording Our Observations and Questions about the Sun, Moon, and Stars",
+      "page": 215,
+      "minutes": 10,
+      "steps": [
+        "Direct students' attention to the Noticing and Wondering anchor chart.",
+        "Review what students had noticed and wondered about the sun, moon, and stars during Unit 1 by reading the chart aloud.",
+        "Invite students to turn to an elbow partner and talk after providing 30 seconds of wait time for each of the following questions:",
+        "'What are some new things you notice about the sun?' (Student responses will vary.)",
+        "'What are new questions or wonders you have about the sun?' (Student responses will vary.)",
+        "Refocus whole group and call students to share out.",
+        "As students share out, clarify and capture their ideas on the Noticing and Wondering anchor chart, writing down the language they use as accurately as possible. If possible, model referring to the Sun, Moon, and Stars Word Wall as a tool to help when spelling contentrelated words.",
+        "Share with students that in the next lesson they will continue learning about patterns in the sky that can be observed.",
+        "Before inviting students to turn and talk, provide scaffolds to support organization and working memory. Example: Offer an index card divided in two. Include (1) a picture of the sun on one half and (2) a question mark on the other half. Invite students to use this card as a guide for sharing (1) notices about the sun and (2) questions they have about the sun. (MMAE, MMR)"
+      ]
+    }
+  ],
+  "evidence_pointers": [
+    {
+      "chunk_id": "G1M2U2L1#evidence#0",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "01918449a46987d8f4787ad787f77ea9f2ed4529892fc8c6d21552147d6fdd27",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Opening#A",
+      "location": "Opening A",
+      "quote": "Invite students to turn and talk with an elbow partner, and use equity sticks to select students to share their responses with the whole group: 'What are some things that Elvin wondered about?' (if the sun and moon had stories; if the sun and moon danced and had songs)",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 0
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#1",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "a4e8ed7bb62f5d1826fa39f524fd8c2873e7efc456152de4d03bf744c74b36a1",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Opening#A",
+      "location": "Opening A",
+      "quote": "Invite students to turn and talk with an elbow partner: 'What word does the word astronomer remind you of?' (astronaut, astronomy)",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 1
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#2",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "c63c4d8b6bfb22c9ee165cd09b7b9970c46c754acd95edaf300bc448c8c741ff",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Opening#A",
+      "location": "Opening A",
+      "quote": "Using equity sticks, cold call students to share out.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 2
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#3",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "b6c7467bc74754a1e93135239067e44e66952a151608a161710b24251f3ca296",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Opening#A",
+      "location": "Opening A",
+      "quote": "Invite students to repeat the word with you and to clap its syllables as they say it.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "recognition_identification"
+      ],
+      "qualifiers": [
+        "orally",
+        "with clapping"
+      ],
+      "evidence_index": 3
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#4",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "5095dab1b0cae8f1f82b806e7f332e18281e5f78dc656cac63d58c04190271cb",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Opening#A",
+      "location": "Opening A",
+      "quote": "Using a total participation technique, invite responses from the group: 'What is Elvin wondering about now?' (He wonders if there are facts about the sun, moon, and stars.)",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 4
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#5",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "4f45e2671c71548704fcd5caf328c43cf35e0d4ca03fc15a4520bd29548606a7",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Using a total participation technique, invite responses from the group: 'What did you notice in your pictures?' (Responses will vary, but may include: things repeating, the sunlight creating a pattern on the ground, the moon in different shapes over and over again, and groups of stars creating a pattern in the sky.)",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 5
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#6",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "06677dd25f0ad465241d7f163d58c83204e070884301e3c32871461f7cb01ef4",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Using a total participation technique, invite responses from the group:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "recognition_identification"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 6
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#7",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "06677dd25f0ad465241d7f163d58c83204e070884301e3c32871461f7cb01ef4",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Using a total participation technique, invite responses from the group:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally",
+        "with reasoning"
+      ],
+      "evidence_index": 7
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#8",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "f3e5c9929f06e33ad8d027539e54520c09e720e4c045575bede7bf81a2874a32",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Invite a small group of volunteers to briefly fish bowl or model the Picture Tea Party protocol for the group. As they model, cold call students to repeat or add to what the volunteers have said, using the sentence frames.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally",
+        "using sentence frames"
+      ],
+      "evidence_index": 8
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#9",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "0e437995f15f9d21fdcf7c9351174cdd68e40d3f027b2396832546066b2dca9d",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Display Does the Sun Sleep?: Noticing Sun, Moon, and Star Patterns and read the title aloud.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 9
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#10",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "06677dd25f0ad465241d7f163d58c83204e070884301e3c32871461f7cb01ef4",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Using a total participation technique, invite responses from the group:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 10
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#11",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "1f338d40bde7c70081349b9bbdaae8b730184aad2d6cea18781d4d6a052eb5ab",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#B",
+      "location": "Work Time B",
+      "quote": "'What is a pattern that the sun follows?' (It shines during the day. We cannot see the sun",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 11
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#12",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "65cf855fff77c02632d91ed620f84a1b67787e9dad072180de585177df61ff93",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Use equity sticks to call on one or two students to share out.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 12
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#13",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "6744f579ae9f7473878c683cbbc4c4d60afcfce94af36d44dff50d22d581c202",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#B",
+      "location": "Work Time B",
+      "quote": "If productive, use a Goal 3 Conversation Cue to encourage students to provide evidence: 'What, in the text, makes you think so?' (Responses will vary.)",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally",
+        "using evidence from text"
+      ],
+      "evidence_index": 13
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#14",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "96bc512117b0fb5292204aa32d2e610194148cfa19316a1525e43ad552b80b30",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Reread page 7 and invite students to turn and talk with an elbow partner: 'What is a pattern that the sun follows?' (It shines during the day. We cannot see the sun at night.)",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 14
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#15",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "f87080318e11c389fc849958c426c86079ebbc9533fabdb7c66df05eb5ad97a1",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#B",
+      "location": "Work Time B",
+      "quote": "'Where is the horizon line in the illustration on page 8?'",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 15
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#16",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "28e232dcffa8229747f45ceeb2673dc55285c463a47298528f3632ae66ae41fb",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Invite students to repeat the word with you and place the card on the Sun, Moon, and Stars Word Wall.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "recognition_identification"
+      ],
+      "qualifiers": [
+        "orally",
+        "with repetition"
+      ],
+      "evidence_index": 16
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#17",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "18b003aabaca8e58363d8ffc384b91b0730e1c00d707dd8b6cf70cdfa516ab57",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Using a total participation technique, invite responses from the group: 'What do you notice about where the sun is in the sky in these three pictures?' (near the horizon, high in the sky, and then near the horizon again)",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 17
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#18",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "2fd694521208977bccf83fd2dd25585ce96deadf0ea40217acb996b77477e68c",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Invite students to turn and talk with an elbow partner:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 18
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#19",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "733aae0c6b184c05847722e9144d014aadf03ce9f129ec3d40f89f4076d77369",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Tell students that now they will watch the time-lapse video of the sun from Unit 1 again, this time paying attention to any patterns that the sun follows.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 19
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#20",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "c0ee78b573842cd1127b2c20fa76ee4acb478573364538c68409828e82d65b5b",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Play the 'Observe Sunrise and Sunset' time-lapse video.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 20
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#21",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "2421aab589f54f3d47c64664a6142dd48dc3054cc48fd6f3762500fbc5e1a678",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Invite students to Think-Pair-Share with an elbow partner:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 21
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#22",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "91c2de2e258b46be3800bef42eb62fd6977d7e0e1a7f181df341da196e969274",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Refocus students whole group and invite a few students to share out.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 22
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#23",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "685361539b93cab2f94a1f8f271f1562cfc829cfd6dac3890d20c016d095b956",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Prompt students to add on or to build onto others' ideas by using several focusing questionsfor example: ''Does anyone have anything to add to what Vernon said?' 'What does what Janice said make you think?'",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally",
+        "using sentence frames"
+      ],
+      "evidence_index": 23
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#24",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "682ed3239e94f3f640fa46185d272fbba13ad1c40c0d8d0d7a383c6348c86c05",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Tell students that now they will revisit their notices and wonderings from Unit 1 and add their new thinking and new questions.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 24
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#25",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "7909d089fb481cc1b9ce5b8d50ea7f0d81132175f648752091a49a885f9645c5",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U2L1#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Direct students' attention to the Noticing and Wondering anchor chart.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 25
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#26",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "4f3eb794f55afb80f388f7b2d7383e6561716a2c34963d7a6a13a728817ad09f",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Invite students to turn to an elbow partner and talk after providing 30 seconds of wait time for each of the following questions: 'What are some new things you notice about the sun?' (Student responses will vary.)",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 26
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#27",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "8017a90babdf9840253761c0c5a57c02010151d27218e1ba2efb4bf8b8bbb7aa",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Invite students to turn to an elbow partner and talk after providing 30 seconds of wait time for each of the following questions:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 27
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#28",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "6fb92d7807b8b68b181a66dca9f1fa7ee828eef79533c47de971d748777011e1",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Refocus whole group and call students to share out.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 28
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#29",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "19bda1036fb82e19e64394c4826a26b0a584c4e537c3d4f1d6f56108f16893f5",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_scribe"
+      },
+      "block_chunk_id": "G1M2U2L1#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "As students share out, clarify and capture their ideas on the Noticing and Wondering anchor chart, writing down the language they use as accurately as possible.",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 29
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#30",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "3baa43aa181d37854e73b0af81457751884e7cdf199eb6fdbaf853964741e40c",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U2L1#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "If possible, model referring to the Sun, Moon, and Stars Word Wall as a tool to help when spelling contentrelated words.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 30
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#31",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "bf8dfa8ea139788b2930649bc95729fe3ba103e8357ee60c93b5658024c6de9d",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U2L1#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Share with students that in the next lesson they will continue learning about patterns in the sky that can be observed.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 31
+    }
+  ]
+}

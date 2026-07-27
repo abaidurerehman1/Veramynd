@@ -1,0 +1,555 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U1L12",
+  "title": "Lesson 12: Focused Read-aloud and Retelling, Session 1: Why the Sun and the Moon Live in the Sky",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "1",
+      "lesson": "12",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening",
+      "Writing",
+      "Language"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will answer questions about key details and describe characters, setting, and major events from the story Why the Sun and the Moon Live in the Sky, using oral discussion, role-play, and independent writing.",
+  "what_is_taught": [
+    {
+      "skill": "answer questions about key details from a story",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "describe characters from a story",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "describe setting from a story",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "describe major events from a story",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use a signal to identify story elements during read-aloud",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "turn and talk with a partner to discuss story details",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "participate in role-play to retell story elements",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use puppets to represent characters during role-play",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "write responses about characters and setting using a response sheet",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use classroom resources to support writing",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "engage in partner and whole group discussion to reflect on learning",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use sentence frames and language supports to explain story details",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "identify and discuss vocabulary related to story elements",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "demonstrate respect and care for classroom materials and environment",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "Phonics/decoding",
+    "Fluency",
+    "Independent writing beyond response sheet",
+    "Complex grammar instruction"
+  ],
+  "student_actions": {
+    "recognition_identification": "identify story elements and vocabulary words during read-aloud and word wall review",
+    "oral_production": "answer questions, share ideas in partner and whole group discussions, participate in role-play, and reflect orally on learning",
+    "written_production": "write responses about characters and setting on a response sheet",
+    "matching_sorting_sequencing": "sequence story events during role-play and place story element icons on the board",
+    "procedural_application": "use protocols for role-play and partner discussions",
+    "investigation_handson": "engage physically by moving bodies to represent characters and care for puppets",
+    "representation_modeling": "use puppets to represent characters and demonstrate respectful behavior",
+    "reasoning_explanation": "explain story details and reasons for characters' actions orally and in writing",
+    "comprehension_response": "respond to questions about key details and story elements orally and in writing, including retelling and summarizing story parts and reflecting on learning progress in discussions and partner talk, using sentence frames and language supports as needed, including for ELLs and students needing scaffolding, and participate in a mini language dive to understand sentence chunks in the story text, supported by sketches and word banks for vocabulary and meaning",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Display the 'Sun, Moon, and Stars' song and invite students to sing and move along with you as you sing the complete song in the present tense.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "with movement"
+      ],
+      "supports_action": [
+        "oral_production",
+        "investigation_handson"
+      ]
+    },
+    {
+      "quote": "If time permits, repeat the song in the past tense and in the future tense.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Direct students' attention to the posted learning targets and read them aloud: 'I can answer questions about key details from Why the Sun and the Moon Live in the Sky.' 'I can describe the characters, setting, and major events from Why the Sun and the Moon Live in the Sky.'",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Display Why the Sun and the Moon Live in the Sky and remind students that, as in previous lessons, they will use a signal to show when they see or hear a character introduced in the story. Demonstrate the signal (thumbs-up, pat your head, touch your toes, etc.).",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Draw students' attention back to the book and read aloud pages 1-12 slowly, fluently, with expression, and without interruption, looking for students to use the designated signal.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "using designated signal"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "'Who are the characters?' (Sun, Moon, and Water)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Invite a student volunteer to come up and place the Story Elements Board Icons: Why the Sun and the Moon Live in the Sky for Sun, Moon, Water on the Story Elements board.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "physically placing icons"
+      ],
+      "supports_action": [
+        "matching_sorting_sequencing"
+      ]
+    },
+    {
+      "quote": "'As you look carefully at the illustration, what details help you understand the setting?' (huts or houses made of grass, a pathway, people in costumes, etc.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "'Based on these details, when and where is this story taking place?' (a long time ago in a village or small town on earth)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Invite a student volunteer to come up and place the Story Elements board icon for village on the board.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "physically placing icon"
+      ],
+      "supports_action": [
+        "matching_sorting_sequencing"
+      ]
+    },
+    {
+      "quote": "Briefly review the words: sun, moon, sky, and earth.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "'What has Water done so far in the story? How is that affecting Sun and Moon?' (Water brought friends to the house and they are filling up the house, so Sun and Moon have no space.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Invite students to move their bodies to pretend to be the Moon or the Sun going up in the sky as the read-aloud comes to a close.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "physically",
+        "with movement"
+      ],
+      "supports_action": [
+        "investigation_handson",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'At the end of the story, why did Sun and Moon go up into the sky?' (because their house was overflowed with water and there was no room for them)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "'Who can tell us what your classmate said in your own words?' (Responses will vary.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using own words"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner:",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "with partner"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Display each Why the Sun and the Moon Live in the Sky puppet and invite students to call out the names of the characters in a choral response.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "choral response"
+      ],
+      "supports_action": [
+        "oral_production",
+        "representation_modeling"
+      ]
+    },
+    {
+      "quote": "Move students into pre-determined triads and guide them through the Role-Play protocol with pages 7-17 of Why the Sun and the Moon Live in the Sky.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "in groups"
+      ],
+      "supports_action": [
+        "oral_production",
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Give students specific, positive feedback on their ability to show care for their environment. (Example: 'Angela and Eliot showed how to be effective learners with respect to their environment when Eliot dropped his sun puppet and Angela very carefully picked it up and handed it to him.')",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "physically",
+        "with care"
+      ],
+      "supports_action": [
+        "investigation_handson",
+        "representation_modeling"
+      ]
+    },
+    {
+      "quote": "Tell students that now they are going to write what they know about the characters and setting of Why the Sun and the Moon Live in the Sky, just as they did in Lessons 8 and 10.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Distribute prepared clipboards with Why the Sun and the Moon Live in the Sky response sheets and pencils and follow the same routine established in Lessons 8 and 10 to complete Parts I and II.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Circulate to support students as they write. Encourage them to use classroom resources (Story Elements board, Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "in writing",
+        "using classroom resources"
+      ],
+      "supports_action": [
+        "written_production",
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Invite students to move back into a circle around the whole group meeting area.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "physically"
+      ],
+      "supports_action": [
+        "investigation_handson"
+      ]
+    },
+    {
+      "quote": "Guide students through the protocol using the following question: 'How did you work to become and effective learner for yourself, your classmates, and the classroom environment during today's lesson?' (Responses will vary.)",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Invite students to return to their seats and engage in a whole group discussion regarding their responses as time permits.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Model reading the story aloud with expression and fluency; demonstrate the use of signals to identify story elements; model the use of sentence frames and language chunks for ELLs; model respectful care for classroom materials; model the role-play protocol.",
+    "prompts_that_cue_student_response": [
+      "Who are the characters?",
+      "As you look carefully at the illustration, what details help you understand the setting?",
+      "Based on these details, when and where is this story taking place?",
+      "What has Water done so far in the story? How is that affecting Sun and Moon?",
+      "At the end of the story, why did Sun and Moon go up into the sky?",
+      "Who can tell us what your classmate said in your own words?",
+      "How can we work to become effective learners and care for the puppets?",
+      "How did you work to become and effective learner for yourself, your classmates, and the classroom environment during today's lesson?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "story comprehension, character and setting description, retelling, oral and written response, respectful behavior",
+    "depth": "focused read-aloud with multiple comprehension checks, role-play protocol, independent writing with scaffolds, language support for ELLs"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "text read aloud and visual supports including story elements board, puppets, word wall, sketches",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Song and Movement and Language: 'Sun, Moon, and Stars' Version 2 Song",
+    "direct_instruction": "Focused Read-aloud, Session 1: Why the Sun and the Moon Live in the Sky",
+    "guided_practice": "Role-Play: Character and Setting, Pages 7-17",
+    "independent_application": "Independent Writing: Why the Sun and the Moon Live in the Sky Response Sheet, Parts I and II",
+    "check_for_understanding": "Reflecting on Learning",
+    "differentiated_reinforce": "Provide sentence frames and word banks for ELLs; group students by language proficiency",
+    "differentiated_extend": "Invite advanced students to create word banks and model language for peers"
+  },
+  "supports": {
+    "english_language_learners": "Use sentence frames, word banks, grouping by proficiency, mini language dive with sketches and chunking",
+    "universal_design_udl": "Use multiple modes including oral, visual, kinesthetic; provide sentence frames and partner talk; use visual timers and alternative signals",
+    "below_level_reinforce": "Provide small group support for writing; allow repetition of words and phrases; use sentence frames",
+    "above_level_extend": "Invite advanced students to create word banks and model language for peers; encourage choral responses and leadership in role-play"
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "oral responses during read-aloud and discussions; written responses on story elements response sheet; observation of role-play participation and respectful behavior",
+    "recognition_vs_production": "both recognition and production"
+  },
+  "materials": [
+    "'Sun, Moon, and Stars' Version 2 song (from Lesson 5; one to display)",
+    "Story Elements board (blank; added to during Work Time A)",
+    "Reading Literature Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Why the Sun and the Moon Live in the Sky (one to display; for teacher read-aloud)",
+    "Story Elements Board Icons: Why the Sun and the Moon Live in the Sky (two; added to Story Elements board during Work Time A)",
+    "Story Elements Board: Why the Sun and the Moon Live in the Sky (answers, for teacher reference)",
+    "Sun, Moon, and Stars Word Wall (begun in Lesson 1)",
+    "Working to Become Ethical People anchor chart (begun in Lesson 4; added to during Work Time B; see supporting materials)",
+    "Why the Sun and the Moon Live in the Sky puppets (one per student)",
+    "Role-Play Protocol anchor chart (begun Lesson 4)",
+    "Speaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Why the Sun and the Moon Live in the Sky response sheet(one per student and one to display)",
+    "Pencils (one per student)",
+    "Back-to-Back and Face-to-Face Protocol anchor chart (begun in Module 1)"
+  ],
+  "vocabulary": {
+    "new": [
+      "character, setting, moon, sun (L)",
+      "sky, earth (T)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Role-Play Protocol",
+    "Back-to-Back and Face-to-Face Protocol"
+  ],
+  "notes": "Lesson includes supports for ELLs and students needing scaffolding; uses multiple modalities including song, movement, oral discussion, role-play, and writing; emphasizes comprehension of story elements and respectful classroom behavior.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "narrative",
+    "text_complexity": {
+      "quantitative": "read-aloud mediation; quantitative measure not specified",
+      "qualitative": "simple narrative structure with clear characters and setting; language includes compound sentences and vocabulary supported by visuals and word walls",
+      "reader_and_task": "read-aloud removes decoding load; tasks include oral comprehension, partner talk, role-play, and writing with scaffolds"
+    }
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 156,
+    "source_page_end": 165
+  }
+}

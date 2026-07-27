@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://curriculum-normalization/ela.schema.json",
+  "title": "Curriculum Normalization — ELA Profile",
+  "$comment": "This file was originally meant to compose a subject-agnostic core schema (curriculum_normalization.core.schema.json) via allOf $ref, but that core file is not present in this repository and the $ref below has been removed so this file resolves and validates standalone. As a result this schema alone does NOT enforce the universal required set the core was meant to (resource_id, title, provenance.{program,grade,subject}, placement.resource_type, objective, what_is_taught[>=1], student_actions, evidence[>=1]) -- see ela_schema_README.md. Those are enforced at runtime by the Python NormalizedLesson Pydantic model instead, which is authoritative for this pipeline.",
+  "description": "ELA/Literacy profile. Pins down the fields the ELA scoring overlay depends on: constrains domain.primary to eight FRAMEWORK-NEUTRAL content strands (a science-of-reading taxonomy, NOT any single state's strand codes), requires the Interpretation/Construction mode and the 'with prompting and support' qualifier, conditionally requires genre when Writing or Comprehension appears in domain.primary OR domain.secondary (the Techniques strand is genre-gated), and conditionally requires a text_complexity block when Comprehension appears in domain.primary OR domain.secondary (reading alignment is inseparable from text complexity). Apply this schema to any record whose provenance.subject is 'ELA/Literacy'; see $comment above for what it does not (yet) independently enforce. Runtime enforcement of the primary-OR-secondary gate is in NormalizedLesson (JSON Schema if/then below covers the primary case; secondary is enforced in Pydantic).",
+
+  "allOf": [
+    {
+      "if": {
+        "anyOf": [
+          {
+            "properties": {
+              "domain": {
+                "properties": {
+                  "primary": { "enum": ["Writing", "Comprehension"] }
+                },
+                "required": ["primary"]
+              }
+            }
+          },
+          {
+            "properties": {
+              "domain": {
+                "properties": {
+                  "secondary": {
+                    "contains": { "enum": ["Writing", "Comprehension"] }
+                  }
+                },
+                "required": ["secondary"]
+              }
+            }
+          }
+        ]
+      },
+      "then": {
+        "properties": {
+          "subject_profile": { "required": ["mode", "genre"] }
+        }
+      }
+    },
+
+    {
+      "if": {
+        "anyOf": [
+          {
+            "properties": {
+              "domain": {
+                "properties": {
+                  "primary": { "const": "Comprehension" }
+                },
+                "required": ["primary"]
+              }
+            }
+          },
+          {
+            "properties": {
+              "domain": {
+                "properties": {
+                  "secondary": {
+                    "contains": { "const": "Comprehension" }
+                  }
+                },
+                "required": ["secondary"]
+              }
+            }
+          }
+        ]
+      },
+      "then": {
+        "properties": {
+          "subject_profile": { "required": ["mode", "genre", "text_complexity"] }
+        }
+      }
+    }
+  ],
+
+  "properties": {
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "subject": { "const": "ELA/Literacy" }
+      },
+      "required": ["subject"]
+    },
+
+    "domain": {
+      "type": "object",
+      "properties": {
+        "primary": {
+          "type": "string",
+          "enum": [
+            "Phonological Awareness",
+            "Phonics",
+            "Fluency",
+            "Vocabulary",
+            "Comprehension",
+            "Writing",
+            "Language",
+            "Speaking & Listening"
+          ],
+          "description": "Coarse, FRAMEWORK-NEUTRAL content strand — a science-of-reading pedagogical taxonomy, NOT any single state's standard-strand codes (CCSS RL/RI/RF/W/SL/L, Georgia GSE, Texas TEKS strands, etc. all differ and are not 1:1). Its only job is cheap, high-precision candidate-narrowing so the engine does not score a phonics resource against a writing standard. The per-grade/per-state OVERLAY owns the crosswalk from this neutral strand to that state's strand architecture — the same division of labor that keeps the record standards-agnostic and lets the overlay supply the standards. Finer distinctions inside a neutral strand (e.g. literary vs. informational within 'Comprehension') are recovered by subject_profile.mode, subject_profile.genre, and what_is_taught, so the coarse enum need not — and deliberately does not — mirror any framework's strand list."
+        }
+      }
+    },
+
+    "teacher_actions": {
+      "type": "object",
+      "required": ["with_prompting_and_support"]
+    },
+
+    "subject_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": ["interpretation", "construction", "both"],
+          "description": "The Interpretation/Construction axis. Interpretation = student works from given material (text, image, prompt); Construction = student produces new material (writing, original oral composition). 'both' when a single resource does each. Drives which side of the standard the resource can satisfy."
+        },
+        "genre": {
+          "type": "string",
+          "enum": ["narrative", "expository", "opinion", "poetic", "mixed", "n/a"],
+          "description": "Text/task genre. Required when Writing or Comprehension appears in domain.primary OR domain.secondary because the Techniques strand is genre-gated; use 'n/a' only for genre-irrelevant foundational-skills resources."
+        },
+        "text_complexity": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "The CCSS three-part text-complexity model for the resource's central text. REQUIRED when Comprehension appears in domain.primary OR domain.secondary because a reading standard's grade-alignment is inseparable from text complexity. Omit when Comprehension is neither primary nor secondary.",
+          "properties": {
+            "quantitative": {
+              "type": "string",
+              "description": "Quantitative measure + the grade band it falls in, e.g. '450L (grade 2-3 band)'. For a read-aloud, note that complexity is teacher-mediated (decoding load removed). Use 'not measured' if the source gives none."
+            },
+            "qualitative": {
+              "type": "string",
+              "description": "Qualitative features: text structure, language conventionality/clarity, knowledge demands, and levels of meaning/purpose."
+            },
+            "reader_and_task": {
+              "type": "string",
+              "description": "Reader-and-task considerations the resource names (motivation, background knowledge, task complexity, scaffolds). Optional."
+            }
+          },
+          "required": ["quantitative", "qualitative"]
+        }
+      },
+      "required": ["mode"]
+    }
+  },
+
+  "required": ["subject_profile"]
+}

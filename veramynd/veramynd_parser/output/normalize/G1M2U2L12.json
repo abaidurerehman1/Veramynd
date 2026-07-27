@@ -1,0 +1,358 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U2L12",
+  "title": "Lesson 12: Unit 2 Assessment: Discussing Observable Patterns in the Sky",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "2",
+      "lesson": "12",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": [
+      "Writing",
+      "Comprehension"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will participate in a Science Talk to build on others' ideas about observable patterns in the sky and record observations in their Sky notebooks.",
+  "what_is_taught": [
+    {
+      "skill": "participate in a group discussion using sentence frames to build on others' ideas",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use notes and observations to support discussion contributions",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "recite poems with accompanying gestures and actions",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "identify adjectives in a poem",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "identify prepositions in a poem",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "observe photographs and record observations in a notebook using drawing and writing",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "reflect on personal behavior related to integrity and share examples orally",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "phonics/decoding",
+    "fluency",
+    "independent extended writing",
+    "formal grammar instruction"
+  ],
+  "student_actions": {
+    "recognition_identification": "identify adjectives and prepositions in poems orally",
+    "oral_production": "participate orally in Science Talk discussions and partner conversations about integrity",
+    "written_production": "draw and write observations in Sky notebooks",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "apply Science Talk protocol using sentence frames",
+    "investigation_handson": "observe photographs of the sun and moon closely",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain how their ideas build on others' during discussions",
+    "comprehension_response": "respond to questions about observable patterns in the sky and integrity",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "'In this poem, we found a lot of adjectives. What are adjectives?' (words that describe a person, place, or thing)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Invite a student volunteer to lead the class in reciting the poem and doing any accompanying hand gestures and actions. Repeat as time allows with one or two more student volunteers.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'In this poem, we found a lot of prepositions. What is a preposition?' (a word that describes the location of something)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "I can build onto others' ideas while participating in a Science Talk about observable patterns in the sky.",
+      "location": "Opening B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What are the observable patterns in the sky that we have learned about?' (the pattern of light and dark; the pattern of the sun rising and setting; the pattern of the moon seeming to change shape; the pattern of only seeing stars at night)",
+      "location": "Opening B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What does it mean to build onto others' ideas? What are some ways you can do that while participating in the Science Talk protocol?' (adding on to what someone else said; add new information to an idea that someone else shared; use sentence frames to share your thinking and how it relates to what others have already said)",
+      "location": "Opening B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Invite group member A to begin the Science Talk protocol:",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using sentence frames"
+      ],
+      "supports_action": [
+        "oral_production",
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Observe students sharing information about their selected pattern in the sky, using sentence frames to add on to the discussion, and using their notes as a resource as they share and discuss.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using notes",
+        "using sentence frames"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "-Direct students in Group 2 to open to page 13 in their Sky notebook.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "using notebook"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Invite students in Group 2 to observe the photographs closely before using the pencils and crayons to complete pages 13-16 in their Sky notebook.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "using pencils and crayons",
+        "observing closely"
+      ],
+      "supports_action": [
+        "investigation_handson",
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Invite all students back to the whole group meeting area and refocus students whole group.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk to an elbow partner: 'How have you shown integrity throughout this unit?'",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Using a total participation technique, invite responses from the group:",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Model reciting poems with gestures and actions; review Science Talk protocol and sentence frames; provide positive feedback on discussion participation and effort; scaffold partner conversations with sentence frames and prompts; model coping strategies for assessment anxiety.",
+    "prompts_that_cue_student_response": [
+      "'In this poem, we found a lot of adjectives. What are adjectives?'",
+      "'In this poem, we found a lot of prepositions. What is a preposition?'",
+      "'What are the observable patterns in the sky that we have learned about?'",
+      "'What does it mean to build onto others' ideas? What are some ways you can do that while participating in the Science Talk protocol?'",
+      "'How have you shown integrity throughout this unit?'",
+      "'How have you seen a classmate show integrity during this unit?'"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "Unit 2 poems, observable sky patterns, Science Talk protocol, integrity reflection",
+    "depth": "Reciting poems, identifying adjectives and prepositions, discussing observable patterns using sentence frames, recording observations, reflecting on integrity"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "poems, photographs, notes sheets, Sky notebook",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Revisiting Unit 2 poems with recitation and identification of adjectives and prepositions",
+    "direct_instruction": "Review Science Talk protocol and sentence frames; explain assessment purpose and directions",
+    "guided_practice": "Science Talk discussions in small groups using notes and sentence frames; independent observation and recording in Sky notebooks",
+    "independent_application": "Completing Sky notebook pages independently; participating in Science Talk assessment",
+    "check_for_understanding": "Partner conversations reflecting on integrity; whole group sharing",
+    "differentiated_reinforce": "Scaffolded partner conversations with sentence frames; visual supports for poems",
+    "differentiated_extend": "ELL support with rephrased directions and sentence frames for responses"
+  },
+  "supports": {
+    "english_language_learners": "Provide sentence frames and rephrase directions; offer visual supports and multiple response options",
+    "universal_design_udl": "Offer individual copies of poems for visual support; scaffold partner talk; model coping strategies",
+    "below_level_reinforce": "Use sentence frames and prompts to support participation in discussions",
+    "above_level_extend": "Encourage elaboration in Science Talk contributions; provide opportunities for original narrative writing in future units"
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Science Talk group discussion and independent Sky notebook entries",
+    "recognition_vs_production": "production"
+  },
+  "materials": [
+    "'What We See: The Sun, Moon, and Stars' poem (from Lesson 2; one to display)",
+    "'Where Are They? The Sun, Moon, and Stars' poem (from Lesson 7; one to display)",
+    "Sun photograph 8 (one to display)",
+    "Moon photograph 8 (one to display)",
+    "Sky notebook (from Lesson 4; pages 13-16; one per student)",
+    "Pencils (one per student)",
+    "Crayons (class set; variety of colors per student)",
+    "Patterns of the Moon notes sheet (from Lesson 8; one per student)",
+    "Patterns of the Stars notes sheet (from Lesson 10; one per student)",
+    "What Makes Day and Night notes sheet (from Lesson 6; one per student)",
+    "Science Talk Protocol anchor chart (begun in Lesson 6)",
+    "Speaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Working to Become Ethical People anchor chart (begun in Unit 1, Lesson 4)"
+  ],
+  "vocabulary": {
+    "new": [
+      "build onto others' ideas, adjective, preposition (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Science Talk protocol",
+    "total participation technique"
+  ],
+  "notes": "Lesson integrates speaking, listening, and writing through a culminating assessment of observable sky patterns and reflection on integrity. Supports include sentence frames, visual aids, and scaffolding for ELLs and diverse learners.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "poetic",
+    "text_complexity": {
+      "quantitative": "read-aloud mediation; quantitative measures not specified",
+      "qualitative": "simple poem structures; familiar language; concrete knowledge of observable sky patterns",
+      "reader_and_task": "Students engage with read-aloud poems and photographs, then produce oral and written responses using scaffolded sentence frames and notes."
+    }
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 326,
+    "source_page_end": 334
+  }
+}

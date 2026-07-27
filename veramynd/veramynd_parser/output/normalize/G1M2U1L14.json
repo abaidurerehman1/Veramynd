@@ -1,0 +1,407 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U1L14",
+  "title": "Lesson 14: Unit 1 Assessment, Part I: Reading and Answering Questions about Kitten's First Full Moon",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "1",
+      "lesson": "14",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening",
+      "Writing",
+      "Language"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will listen to a story read aloud, identify and describe characters and setting, answer questions about key details, participate in role-play to understand major events and central message, and write responses about the story.",
+  "what_is_taught": [
+    {
+      "skill": "identify the main character of a story",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "describe the main character using story details",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "identify the setting of a story",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "describe the setting using story details",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "answer questions about key details from a story",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "write responses using pictures and words to show thinking about story elements",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use sentence frames to support writing about story details",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "participate in role-play to act out major events of a story",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "discuss and explain the central message of a story",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "reflect on learning progress using a protocol",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "participate in group singing and movement to reinforce learning",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "Phonics",
+    "Phonological Awareness",
+    "Fluency",
+    "Independent writing beyond short responses",
+    "Vocabulary instruction beyond basic definitions"
+  ],
+  "student_actions": {
+    "recognition_identification": "Students identify characters and settings in the story and recognize story elements on charts and response sheets.",
+    "oral_production": "Students orally describe characters and settings, answer questions, share out with the group, participate in role-play, and sing the song with motions.",
+    "written_production": "Students write responses to prompts about the main character and setting using pictures and words, and write sentences explaining their word choice with support from sentence frames.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Students apply the Role-Play protocol to act out story events and use sentence frames to write about story details.",
+    "investigation_handson": "Students engage in movement routines and use puppets to act out story events.",
+    "representation_modeling": "Students use charts and boards to represent story elements and use sentence frames to model writing.",
+    "reasoning_explanation": "Students explain why they chose certain words to describe the character using evidence from pictures and discuss the central message of the story.",
+    "comprehension_response": "Students respond to questions about key details, describe story elements, and reflect on their learning progress using the Sit, Kneel, Stand protocol and group discussion about learning targets and next steps in learning progressions, orally and in writing as appropriate for the task and support provided.",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Invite students to the whole group area.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Direct students' attention to the Sun Movement chart and invite a student volunteer to lead the class through one round of the Sun Movement routine.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "investigation_handson"
+      ]
+    },
+    {
+      "quote": "Direct students' attention to the posted learning targets and read the first one aloud: 'I can ask and answer questions about key details from Kitten's First Full Moon.'",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "'Who is the main character of this story? How would you describe the character?' (Kitten; curious, adventurous, brave, a cat with white fur)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Invite students to complete Part I of the Unit 1 Assessment response sheet. Remind them that they should use pictures and words to show their thinking.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing",
+        "using pictures and words"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Invite students to circle the word they think best describes how Kitten is acting in the pictures displayed on the Kitten's First Full Moon chart.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using pictures"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Tell students to write one or two sentences to describe how Kitten is acting and to explain what, from the pictures, helped them.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing",
+        "using sentence frames"
+      ],
+      "supports_action": [
+        "written_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Move students into pre-determined pairs and tell them they are going to use the Role-Play protocol to act out a few of the major events of Kitten's First Full Moon.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "in pairs"
+      ],
+      "supports_action": [
+        "oral_production",
+        "procedural_application",
+        "investigation_handson"
+      ]
+    },
+    {
+      "quote": "Distribute Kitten's First Full Moon puppets and guide students through the protocol for the following sections of text: -Pages 1-2 -Pages 7-8 -Pages 11-12 -Pages 19-22 -Pages 27-28",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "using puppets"
+      ],
+      "supports_action": [
+        "investigation_handson",
+        "representation_modeling"
+      ]
+    },
+    {
+      "quote": "'After rereading and acting out these parts of the text, what do you notice about the moon in this story?' (Kitten thinks it is a bowl of milk and she tries to get it, but she can't. The moon stays in the same place the whole time.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally",
+        "using story details"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'Why couldn't Kitten get the first bowl of milk she saw?' (The bowl of milk was actually the moon and the moon is in the sky, so Kitten couldn't get it.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally",
+        "using story details"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'How did you rate yourself on the learning targets? Why?' (Responses will vary.)",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "reflectively"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What do you think you need to do next time to do even better?' (Responses will vary.)",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "reflectively"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Tell students they will end the lesson singing the 'Sun, Moon, and Stars' Version 2 song to celebrate their hard work during this lesson and all the previous lessons.",
+      "location": "Closing and Assessment B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "with movement"
+      ],
+      "supports_action": [
+        "oral_production",
+        "investigation_handson"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "The teacher models reading the story aloud fluently and with minimal interruption, reads learning targets aloud, guides students through movement routines and role-play protocols, provides sentence frames for writing, and leads reflection protocols.",
+    "prompts_that_cue_student_response": [
+      "Who is the main character of this story? How would you describe the character?",
+      "What is the setting of this story? Where and when does the story take place?",
+      "After rereading and acting out these parts of the text, what do you notice about the moon in this story?",
+      "Why couldn't Kitten get the first bowl of milk she saw?",
+      "How did you rate yourself on the learning targets? Why?",
+      "What do you think you need to do next time to do even better?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "story elements including character, setting, major events, and central message",
+    "depth": "identification, description, oral and written response, role-play, and reflection"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "story read aloud with supporting charts and puppets",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Engaging the Learner: Sun and Moon Movement Routines",
+    "direct_instruction": "Reading Kitten's First Full Moon aloud and reviewing story elements",
+    "guided_practice": "Turn and talk about character and setting; role-play major events",
+    "independent_application": "Writing responses on Unit 1 Assessment response sheet",
+    "check_for_understanding": "Sharing out responses and reflecting on learning targets",
+    "differentiated_reinforce": "Providing sentence frames and varied writing tools",
+    "differentiated_extend": "Role-play protocol and singing with varied voices"
+  },
+  "supports": {
+    "english_language_learners": "Use of enlarged text display, rephrasing directions, and monitoring during assessment",
+    "universal_design_udl": "Options for writing tools, multiple modes of expression including movement and singing",
+    "below_level_reinforce": "Sentence frames and oral articulation before writing",
+    "above_level_extend": "Role-play protocol and varied singing voices"
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Written responses to story element prompts and oral participation in discussion and role-play",
+    "recognition_vs_production": "Both recognition of story elements and production of oral and written responses"
+  },
+  "materials": [
+    "Sun Movement chart (from Lesson 2; one to display)",
+    "Moon Movement chart (from Lesson 2; one to display)",
+    "Kitten's First Full Moon (one to display; for teacher read-aloud)",
+    "Story Elements board (blank; added to during Work Time A)",
+    "Story Elements Board Icons: Kitten's First Full Moon (three; added to Story Elements board during Work Time A)",
+    "Story Elements Board: Kitten's First Full Moon (answers, for teacher reference)",
+    "Unit 1 Assessment response sheet (see Assessment Overview and Resources; one per student)",
+    "Pencils (one per student)",
+    "Kitten's First Full Moon chart (new; teacher-created; see supporting materials)",
+    "Role-Play Protocol anchor chart (begun in Lesson 4)",
+    "Kitten's First Full Moon puppets (one set per pair)",
+    "'Sun, Moon, and Stars' Version 2 song (from Lesson 8; one to display)"
+  ],
+  "vocabulary": {
+    "new": [
+      "character, setting, central message (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Sun and Moon Movement routines",
+    "Role-Play protocol",
+    "Sit, Kneel, Stand reflection protocol"
+  ],
+  "notes": "The lesson includes multiple modes of engagement including movement, oral discussion, role-play, and writing. Supports for ELLs and varied fine motor skills are provided. The assessment is formative and integrated into the lesson.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "narrative",
+    "text_complexity": {
+      "quantitative": "Read-aloud text; quantitative measure not specified",
+      "qualitative": "Simple narrative structure with clear characters and setting; accessible language for Grade 1; supported by visuals and read-aloud",
+      "reader_and_task": "Read aloud by teacher to reduce decoding load; tasks include oral discussion, role-play, and short written responses with scaffolding"
+    }
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 175,
+    "source_page_end": 183
+  }
+}

@@ -1,0 +1,394 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U1L3",
+  "title": "Lesson 3: Close Read-aloud, Session 1: Summer Sun Risin'",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "1",
+      "lesson": "3",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening",
+      "Writing",
+      "Language"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will ask and answer questions about the main character and setting in a story using key details, participate in a song with noun and verb identification, practice a movement routine, and write and draw responses about the story.",
+  "what_is_taught": [
+    {
+      "skill": "ask questions about a story using key details",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "answer questions about a story using key details",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "identify nouns in a song",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "identify verbs in a song",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "echo and sing a song line by line while tracking print",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "generate motions to accompany nouns and verbs in a song",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "practice a movement routine safely",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "describe story elements such as main character and setting",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use pictures and words to write about story elements",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "participate in partner talk to discuss story elements and reading behaviors",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "Phonics/decoding",
+    "Fluency independent reading",
+    "Extended writing",
+    "Phonological Awareness"
+  ],
+  "student_actions": {
+    "recognition_identification": "identify nouns and verbs in a song by touching head or foot",
+    "oral_production": "echo song lines, sing song with movements, answer questions orally, participate in partner talk",
+    "written_production": "write and draw about main character and setting on response sheet",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "practice steps of the Sun Movement routine",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain motions for nouns and verbs, describe story elements orally",
+    "comprehension_response": "answer questions about main character and setting using key details from text",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Sing the 'Sun, Moon, and Stars' song, tracking the print with your finger or a pointer.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "tracking print"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Tell students you are going to sing the 'Sun, Moon, and Stars' song aloud line by line and as you do, you would like them to: -Echo each line of the song as it is sung, tracking the print",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "tracking print"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Tell students that you are slowly going to repeat the song. When they hear or see a noun they can touch their head, and when they see or hear a verb they can touch their foot.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "using physical response"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "After singing the song and underlining the nouns and verbs invite students to reread the phrases with you:",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'What are some hand gestures, motions, or actions that could go along with these nouns and verbs in the song?' (Responses will vary, but may include: lifting their arms to form a circle; twinkling their fingers like stars; etc.)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "explaining"
+      ],
+      "supports_action": [
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Invite students to join you as you practice Steps 1-5, taking 10-15 seconds for each step.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "physically",
+        "with safety"
+      ],
+      "supports_action": [
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Remind students of the story 'Elvin, the Boy Who Loved the Sky' and what they have learned about why Elvin loves the sun and moon.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "recalling"
+      ],
+      "supports_action": [
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk to an elbow partner: 'What does it look like to look closely at the illustrations?' (Look for students to mimic studying and looking deeply at imaginary pictures.) 'What does it look like to reread the text?' (Look for students to mimic rereading a pretend text.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "partner talk"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'Who is the main character?' (the boy) 'Where does the story take place?' (a farm)",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Invite students to show a thumbs-up or to touch their head if they are ready to begin writing and drawing about the main character and setting.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "physically",
+        "preparing"
+      ],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students that today they will complete only Part 1, by writing and drawing about the main character and setting using key details from the text.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing",
+        "using key details"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Transition students to their workspaces and invite them to begin working.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Circulate and support students as necessary. Encourage them to use classroom resources (Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Remind students of the work they did thinking about key details relating to the main character and setting in Summer Sun Risin' during the close read-aloud.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "comprehension_response"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Model reading aloud with expression and fluency; model underlining nouns and verbs in different colors; model thinking aloud about story elements; model cleanup routine; provide positive feedback on student participation and work.",
+    "prompts_that_cue_student_response": [
+      "What are some hand gestures, motions, or actions that could go along with these nouns and verbs in the song?",
+      "What does it look like to look closely at the illustrations?",
+      "What does it look like to reread the text?",
+      "Who is the main character?",
+      "Where does the story take place?",
+      "What are key details?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "multiple story elements and reading behaviors",
+    "depth": "focus on key details and story elements with some integration of language and movement"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "text read aloud and song lyrics displayed",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Engaging the Learner: Reading 'Elvin, the Boy Who Loved the Sky,' Part 4 and Introducing the 'Sun, Moon, and Stars' Song",
+    "direct_instruction": "Reviewing Close Readers Do These Things Anchor Chart",
+    "guided_practice": "Close Read-aloud, Session 1: Summer Sun Risin', Pages 1-28",
+    "independent_application": "Independent Writing: Summer Sun Risin' Response Sheet, Part 1",
+    "check_for_understanding": "Turn and talk partner discussions and whole group share outs",
+    "differentiated_reinforce": "Seating arrangements for ELLs and students needing support",
+    "differentiated_extend": "Repeated singing with movements and partner modeling for ELLs"
+  },
+  "supports": {
+    "english_language_learners": "Provides visuals for nouns, sentence frames for partner talk, and peer modeling; seating arrangements to support comfort and language proficiency.",
+    "universal_design_udl": "Offers multiple modes of participation including singing, movement, partner talk, and drawing; uses visual aids and physical cues; provides modified response sheets.",
+    "below_level_reinforce": "Mentor seating next to more comfortable singers; use of visuals and sentence frames.",
+    "above_level_extend": "Repeated practice of song with movements; partner modeling for language support."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Observation of student participation in song, partner talk, and independent writing response sheet",
+    "recognition_vs_production": "Production"
+  },
+  "materials": [
+    "'Elvin, the Boy Who Loved the Sky,' Part 4 (one to display; for teacher read-aloud)",
+    "'Sun, Moon, and Stars' song (one to display)",
+    "Markers (two different colors; for teacher use)",
+    "Close Readers Do These Things anchor chart (begun in Module 1)",
+    "-Close Read-aloud Guide: Summer Sun Risin' (Session 1; for teacher reference)",
+    "-Summer Sun Risin' (one to display; for teacher read-aloud)",
+    "-Sun, Moon, and Stars Word Wall cards (new; teacher-created; two)",
+    "-Sun, Moon, and Stars Word Wall (begun in Lesson 1; added to in Work Time B; see Teaching Notes)",
+    "-Summer Sun Risin' icons (new; one set for teacher use during the close read-aloud)",
+    "-Sun icon (new; one for teacher use during the close read-aloud)",
+    "-Summer Sun Risin' word cards (new; for teacher use during the close read-aloud; one)",
+    "-Summer Sun Risin' anchor chart (new; co-created with students during Work Time A; see Close Read-aloud Guide)",
+    "The Sun, Moon, and Stars",
+    "-Summer Sun Risin' Culminating Task response sheet (one for teacher modeling and one per student; see Close Read-aloud Guide)",
+    "-Reading Literature Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Sun Movement chart (from Lesson 2; one to display)",
+    "Summer Sun Risin' response sheet (one for teaching modeling and one per student)",
+    "Colored pencils (class set; variety of colors per student)",
+    "Pencils (one per student)"
+  ],
+  "vocabulary": {
+    "new": [
+      "events, setting, diagram (L)",
+      "arisin', sunrise, horizon (T)",
+      "noun, verb, character, observation, illustration, key details (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Sun Movement routine",
+    "Close Readers Do These Things anchor chart",
+    "Total participation techniques"
+  ],
+  "notes": "Lesson integrates comprehension of story elements with language skills (noun and verb identification) and physical movement to support engagement and understanding. Supports for ELLs and students needing additional help are embedded throughout.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "narrative",
+    "text_complexity": {
+      "quantitative": "Read aloud text; quantitative measure not specified",
+      "qualitative": "Simple narrative structure with clear setting and character; language includes some domain-specific vocabulary (e.g., risin', horizon); supported by illustrations and icons",
+      "reader_and_task": "Text is read aloud to students, reducing decoding demands; tasks require listening comprehension, oral response, and written/drawn response about story elements"
+    }
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 61,
+    "source_page_end": 71
+  }
+}

@@ -1,0 +1,575 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U3L3",
+  "title": "Lesson 3: Speaking and Listening: Introduction to High-Quality Work",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "3",
+      "lesson": "3",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "55 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": [
+      "Vocabulary",
+      "Writing",
+      "Language"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will define and analyze what makes writing high quality by examining models of writing and discussing vocabulary to build comprehension and speaking skills.",
+  "what_is_taught": [
+    {
+      "skill": "define the meaning of 'high quality' in writing",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "analyze models of high-quality writing by noticing features",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "discuss vocabulary words using the Interactive Word Wall protocol",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use sentence frames to support oral language processing",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use an anchor chart to categorize features of high-quality writing",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use a protocol to discuss and analyze writing with peers",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "give specific positive feedback on peers' observations about writing quality",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use vocabulary words in sentences during discussion",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "Phonics",
+    "Phonological Awareness",
+    "Fluency",
+    "Independent writing",
+    "Comprehension of narrative or expository texts"
+  ],
+  "student_actions": {
+    "recognition_identification": "identify vocabulary words and features of high-quality writing during discussions",
+    "oral_production": "discuss vocabulary meanings, analyze writing features, and share observations orally with partners and groups",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "participate in Interactive Word Wall and Back-to-Back and Face-to-Face protocols",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain reasons for identifying writing as high quality and justify observations with evidence from texts",
+    "comprehension_response": "respond to questions about what makes writing high quality and what they notice and wonder about the writing during discussions and partner talk, using sentence frames as needed, and paraphrasing classmates' ideas orally in their own words, sometimes with prompting and support, and sometimes independently, including using vocabulary words in sentences during the Interactive Word Wall protocol and analyzing models of writing",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Tell students they are going to use the Interactive Word Wall protocol with new words added to the set to continue strengthening their comprehension and build their knowledge of vocabulary.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "oral_production",
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Invite students to begin the Interactive Word Wall protocol.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Circulate and listen in as students discuss the vocabulary. Provide support and guidance as needed by reminding students of the definitions and encouraging them to use the word in a sentence.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "student_production",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally",
+        "using vocabulary words in sentences"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Using a total participation technique, invite responses from the group:",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "oral_production",
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "With excitement, tell students that they will soon begin a new writing piece, a narrative poem! Explain that to write the narrative poem, they need to think about what makes writing high quality, so today they will look at examples of high-quality writing from other first-graders.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Direct students' attention to the posted learning targets and read both aloud: 'I can define what it means for work to be 'high quality.'' 'I can analyze models of high-quality work.'",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Underline the words high quality in the learning target and invite students to turn and talk with an elbow partner:",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Define high quality (something that is viewed as excellent).",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Display Model of Excellence #1 and read it aloud slowly, fluently, with expression, and without interruption.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "After reading, invite students to give a quick thumbs-up to show if they think that writing was high quality, or excellent.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Tell students that now they are going to analyze the writing, or examine it closely, to determine what makes it high quality.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'What, in the Model of Excellence #1, makes you think so?' (Responses will vary.) 'Who can tell us what your classmate said in your own words?' (Responses will vary.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally",
+        "in their own words"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Flip back through the pages of Model of Excellence #1 and invite students to give a thumbsup when they notice something that makes this writing high quality, or excellent.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "'What do you notice about this writing that makes it high quality? What do you notice about how the sentences start and end?' (Responses will vary, but may include: It has complete sentences. The words explain the pictures. The words are written carefully.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Flip back through the pages of Model of Excellence #1 and invite students to give a thumbsup if they see or hear something that makes them wonder or question.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "'What do you wonder about this writing?' (Responses will vary.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Synthesize students' noticings and wonderings by paraphrasing important aspects of highquality work that were unearthed during the discussion. Clarify with students as needed.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Give students specific, positive feedback on their ability to notice and wonder about what made that writing high quality. (Example: 'Lamar noticed that the illustrations were beautiful, with lots of colors. Valeria wonders why the writing was done on purple paper.')",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Direct students' attention to the High-Quality Work anchor chart and invite them to turn and talk with an elbow partner:",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Circulate and listen in as students share ideas with one another. As you listen, select three or four students to share out their ideas.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "student_production",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Summarize student thinking and say something like, 'Wow, we all have such great ideas about what makes first-grade work high quality! I think we can put all those ideas into two categories on our High-Quality Work anchor chart':",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'Includes details'",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'Follows conventions'",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Write 'includes details' on the High-Quality Work anchor chart and ask:",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Confirm students' thinking and share with them that for the writing they will do in this unit, narrative poetry, they will include details by using strong adjectives, choosing appropriate words from the Sun, Moon, and Stars Word Wall, and writing sentences that let the reader imagine the scene.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Reread the sentence on the third page of Model of Excellence #1 and invite students to close their eyes and imagine what the butterfly is doing and what it looks like: 'A butterfly has legs with claws so they can grasp on flowers.' Explain how the sentence includes details that allow you to imagine the butterfly landing on a flower and using its claws to grasp and hold on.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Write 'follows conventions' on the High-Quality Work anchor chart and explain that by following conventions, writers ensure that their writing looks good and is readable. Tell students that in this unit, they will follow conventions by using end punctuation (periods), writing in complete sentences, and spelling words from the Word Wall and anchor charts correctly.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Reread the completed High-Quality Work anchor chart for comprehension and thank students for their hard work in analyzing what it means to do high-quality work in first grade. Share that they will use this anchor chart to make sure their work continues to be high quality!",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students that you have one more piece of writing to share with them today, but that now they have a job to do! They are going to use the High-Quality Work anchor chart to analyze the work and decide if it is of high quality.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Display Model of Excellence #2 and read it aloud fluently and without interruption.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students they are going to use the Back-to-Back and Face-to-Face protocol to discuss what makes this writing high quality. Remind them that they used this protocol in past lessons and review as necessary using the Back-to-Back and Face-to-Face Protocol anchor chart.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "As students discuss, circulate the room and listen in. As needed, refer students to the HighQuality Work anchor chart to back up their claims.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "student_production",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Using a total participation technique, invite responses from the group:",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'How does our Back-to-Back and Face-to Face protocol add to your understanding of high-quality work? I'll give you time to think and discuss with a partner.' (Responses will vary.)",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Provide specific, positive feedback on student analysis using the High-Quality Work anchor chart. (Example: 'Mia, I heard you say that the writer used lots of details by describing what happened at the park.')",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students that later in the unit, they will use the High-Quality Work anchor chart as they write narrative poems together and independently.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Model reading aloud of high-quality writing examples and explain the meaning of 'high quality' and how to analyze writing. Model use of anchor charts and protocols for discussion.",
+    "prompts_that_cue_student_response": [
+      "Define high quality.",
+      "What, in the Model of Excellence #1, makes you think so?",
+      "Who can tell us what your classmate said in your own words?",
+      "What do you notice about this writing that makes it high quality?",
+      "What do you wonder about this writing?",
+      "What did you see and hear in the writing that makes it high quality?",
+      "How does our Back-to-Back and Face-to Face protocol add to your understanding of high-quality work?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "Vocabulary development, oral language, speaking and listening protocols, analysis of writing quality",
+    "depth": "Focused analysis of writing features and vocabulary use with scaffolded partner and group discussions"
+  },
+  "context": {
+    "mode": "interpretation",
+    "stimulus_provided": "Model of Excellence #1 and #2 texts, Interactive Word Wall cards, High-Quality Work anchor chart, protocol anchor charts",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Building Vocabulary: Interactive Word Wall",
+    "direct_instruction": "Reading Aloud: Model of Excellence #1",
+    "guided_practice": "Noticing and Wondering: Analyzing High-Quality Work",
+    "independent_application": "Shared Writing: High-Quality Work Anchor Chart",
+    "check_for_understanding": "Back-to-Back and Face-to Face: Model of Excellence #2",
+    "differentiated_reinforce": "",
+    "differentiated_extend": ""
+  },
+  "supports": {
+    "english_language_learners": "Provides sentence frames, encourages discussion in home language groups, models turn and talk, and offers visual reminders to support ELLs.",
+    "universal_design_udl": "Uses visual timers, total participation techniques, and multiple modes of engagement including partner talk and whole group discussion.",
+    "below_level_reinforce": "Offers sentence frames and paraphrasing support during discussions.",
+    "above_level_extend": "Encourages elaboration on aspects of high-quality writing and use of vocabulary in sentences."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Observation of student participation in protocols and oral responses about writing quality",
+    "recognition_vs_production": "Production"
+  },
+  "materials": [
+    "Interactive Word Wall Protocol anchor chart (begun in Lesson 2)",
+    "Interactive Word Wall cards (from Lesson 2 and new; teacher-created; one set per group)",
+    "Arrow cards (from Lesson 2; one set per group)",
+    "Model of Excellence #1 (one to display)",
+    "High-Quality Work anchor chart (new; co-created with students during Work Time C; see supporting materials)",
+    "High-Quality Work anchor chart (answers, for teacher reference)",
+    "Model of Excellence #2 (one to display)",
+    "Back-to-Back and Face-to-Face Protocol anchor chart (begun in Unit 2, Lesson 7)",
+    "Speaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)"
+  ],
+  "vocabulary": {
+    "new": [
+      "high quality, analyze (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Interactive Word Wall protocol",
+    "Back-to-Back and Face-to-Face protocol",
+    "Total Participation Technique"
+  ],
+  "notes": "Lesson focuses on speaking and listening skills through vocabulary discussion and analysis of writing quality models. Includes supports for ELLs and uses anchor charts and protocols to scaffold student discussion and analysis.",
+  "subject_profile": {
+    "mode": "interpretation",
+    "genre": "narrative"
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 366,
+    "source_page_end": 374
+  }
+}

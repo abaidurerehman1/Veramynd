@@ -1,0 +1,22 @@
+# Pinned dependency lock for reproducible installs (Dep1).
+# Install: pip install -r requirements.lock
+# Generated to match pyproject.toml pins (2026-07-23).
+
+pymupdf==1.25.5
+openpyxl==3.1.5
+pydantic==2.10.6
+
+# Optional: normalize
+# openai==1.70.0
+# python-dotenv==1.1.0
+
+# Optional: docling
+# docling==2.114.0
+
+# Optional: embed
+# sentence-transformers==3.4.1
+# numpy==2.2.4
+
+# Optional: test
+# pytest==8.3.5
+# numpy==2.2.4

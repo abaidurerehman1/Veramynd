@@ -1,0 +1,625 @@
+{
+  "schema_version": "1.0-chunk",
+  "resource_id": "G1M2U1L3",
+  "grade": 1,
+  "module": 2,
+  "unit": 1,
+  "lesson": 3,
+  "title": "Lesson 3: Close Read-aloud, Session 1: Summer Sun Risin'",
+  "prompt_version": "normalize_ela.v2.1",
+  "lesson_chunk": {
+    "chunk_id": "G1M2U1L3#lesson",
+    "family": "lesson",
+    "resource_id": "G1M2U1L3",
+    "text": "Domain primary: Comprehension\nDomain secondary: Speaking & Listening, Writing, Language\nMode: both\nGenre: narrative\nObjective: Students will ask and answer questions about the main character and setting in a story using key details, participate in a song with noun and verb identification, practice a movement routine, and write and draw responses about the story.\nSkills taught:\n- ask questions about a story using key details (DOK2_skills_concepts, primary)\n- answer questions about a story using key details (DOK2_skills_concepts, primary)\n- identify nouns in a song (DOK1_recall_reproduction, primary)\n- identify verbs in a song (DOK1_recall_reproduction, primary)\n- echo and sing a song line by line while tracking print (DOK1_recall_reproduction, primary)\n- generate motions to accompany nouns and verbs in a song (DOK2_skills_concepts, secondary)\n- practice a movement routine safely (DOK1_recall_reproduction, secondary)\n- describe story elements such as main character and setting (DOK2_skills_concepts, primary)\n- use pictures and words to write about story elements (DOK2_skills_concepts, primary)\n- participate in partner talk to discuss story elements and reading behaviors (DOK2_skills_concepts, secondary)\nStudent actions:\n- recognition_identification: identify nouns and verbs in a song by touching head or foot\n- oral_production: echo song lines, sing song with movements, answer questions orally, participate in partner talk\n- written_production: write and draw about main character and setting on response sheet\n- procedural_application: practice steps of the Sun Movement routine\n- reasoning_explanation: explain motions for nouns and verbs, describe story elements orally\n- comprehension_response: answer questions about main character and setting using key details from text",
+    "content_hash": "fcf47c9359219be8027cfe23e7c4588feb7672d3e52b334bc6291e7860b5591e",
+    "metadata": {
+      "grade": 1,
+      "module": 2,
+      "unit": 1,
+      "lesson": 3,
+      "title": "Lesson 3: Close Read-aloud, Session 1: Summer Sun Risin'",
+      "domain_primary": "Comprehension",
+      "domain_secondary": [
+        "Speaking & Listening",
+        "Writing",
+        "Language"
+      ],
+      "mode": "both",
+      "genre": "narrative",
+      "prompt_version": "normalize_ela.v2.1",
+      "page_start": 61,
+      "page_end": 71
+    }
+  },
+  "instructional_chunks": [
+    {
+      "chunk_id": "G1M2U1L3#Opening#A",
+      "family": "instructional",
+      "resource_id": "G1M2U1L3",
+      "text": "[Opening A] Engaging the Learner: Reading 'Elvin, the Boy Who Loved the Sky,' Part 4 and Introducing the 'Sun, Moon, and Stars' Song\n- Gather students whole group. As needed, remind them to move safely and make space for everyone.\n- Remind students of the story 'Elvin, the Boy Who Loved the Sky' and what they have learned about why Elvin loves the sun and moon.\n- Share that today, they will hear the next part of the story.\n- Display ' Elvin, the Boy Who Loved the Sky,' Part 4 and read it aloud slowly, fluently, with expression, and without interruption.\n- After you read the end of Part 4 and read the words 'but the musician did not answer his questions. Instead he gave him this...' direct students' attention to the posted 'Sun, Moon, and Stars' song.\n- Share that today, students will learn the 'Sun, Moon, and Stars' song.\n- Direct students' attention to the 'Sun, Moon, and Stars' song.\n- Tell students you are going to sing the 'Sun, Moon, and Stars' song aloud line by line and as you do, you would like them to:\n- -Echo each line of the song as it is sung, tracking the print\n- Sing the 'Sun, Moon, and Stars' song, tracking the print with your finger or a pointer.\n- Tell students you would like them to think of some motions that go along with this song. Point out that this song uses nouns and their matching verbs and that these can help them think of some movements for the song.\n- Remind students that nouns are people, places, or things (like 'the sun'!), and that verbs are action words (like 'shines'!).\n- Model using markers to underline the noun 'the sun' with one color and the verb 'shines' with the other color.\n- Tell students that you are slowly going to repeat the song. When they hear or see a noun they can touch their head, and when they see or hear a verb they can touch their foot.\n- Sing the song aloud slowly and underline the nouns and verbs in their prospective colors.\n- After singing the song and underlining the nouns and verbs invite students to reread the phrases with you:\n- -'The sun shines'\n- -'I see'\n- -'The moon lights'\n- -'I see:\n- -'Stars make'\n- -'I see'\n- -'I see'\n- -'I look'\n- -'I see'\n- Using a total participation technique, invite responses from the group:\n- 'What are some hand gestures, motions, or actions that could go along with these nouns and verbs in the song?' (Responses will vary, but may include: lifting their arms to form a circle; twinkling their fingers like stars; etc.)\n- If time permits, repeat the song inviting students to sing with their movements for each noun and verb.\n- Provide differentiated mentors by seating students who are less comfortable singing next to students who may be more comfortable. (MMAE)\n- For ELLs: Before singing the 'Sun, Moon, and Stars' song, reread the lyrics aloud and invite students to listen carefully for words that describe the sun and to give a silent signal when they hear one. Invite students to underline the words that they identify.\n- Provide differentiated mentors by seating students who are less comfortable singing next to students who may be more comfortable. (MMAE)\n- For ELLs: Provide visuals for the nouns in the song (sun, moon, stars) and use these visuals when helping students to identify theses nouns.",
+      "content_hash": "d8f3779c25333ecdaaacd7b319f716ba66e7b4281c32691ccff3a15bdcba5871",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 1,
+        "lesson": 3,
+        "family": "instructional",
+        "section": "Opening",
+        "letter": "A"
+      },
+      "section": "Opening",
+      "letter": "A",
+      "title": "Engaging the Learner: Reading 'Elvin, the Boy Who Loved the Sky,' Part 4 and Introducing the 'Sun, Moon, and Stars' Song",
+      "page": 66,
+      "minutes": 10,
+      "steps": [
+        "Gather students whole group. As needed, remind them to move safely and make space for everyone.",
+        "Remind students of the story 'Elvin, the Boy Who Loved the Sky' and what they have learned about why Elvin loves the sun and moon.",
+        "Share that today, they will hear the next part of the story.",
+        "Display ' Elvin, the Boy Who Loved the Sky,' Part 4 and read it aloud slowly, fluently, with expression, and without interruption.",
+        "After you read the end of Part 4 and read the words 'but the musician did not answer his questions. Instead he gave him this...' direct students' attention to the posted 'Sun, Moon, and Stars' song.",
+        "Share that today, students will learn the 'Sun, Moon, and Stars' song.",
+        "Direct students' attention to the 'Sun, Moon, and Stars' song.",
+        "Tell students you are going to sing the 'Sun, Moon, and Stars' song aloud line by line and as you do, you would like them to:",
+        "-Echo each line of the song as it is sung, tracking the print",
+        "Sing the 'Sun, Moon, and Stars' song, tracking the print with your finger or a pointer.",
+        "Tell students you would like them to think of some motions that go along with this song. Point out that this song uses nouns and their matching verbs and that these can help them think of some movements for the song.",
+        "Remind students that nouns are people, places, or things (like 'the sun'!), and that verbs are action words (like 'shines'!).",
+        "Model using markers to underline the noun 'the sun' with one color and the verb 'shines' with the other color.",
+        "Tell students that you are slowly going to repeat the song. When they hear or see a noun they can touch their head, and when they see or hear a verb they can touch their foot.",
+        "Sing the song aloud slowly and underline the nouns and verbs in their prospective colors.",
+        "After singing the song and underlining the nouns and verbs invite students to reread the phrases with you:",
+        "-'The sun shines'",
+        "-'I see'",
+        "-'The moon lights'",
+        "-'I see:",
+        "-'Stars make'",
+        "-'I see'",
+        "-'I see'",
+        "-'I look'",
+        "-'I see'",
+        "Using a total participation technique, invite responses from the group:",
+        "'What are some hand gestures, motions, or actions that could go along with these nouns and verbs in the song?' (Responses will vary, but may include: lifting their arms to form a circle; twinkling their fingers like stars; etc.)",
+        "If time permits, repeat the song inviting students to sing with their movements for each noun and verb.",
+        "Provide differentiated mentors by seating students who are less comfortable singing next to students who may be more comfortable. (MMAE)",
+        "For ELLs: Before singing the 'Sun, Moon, and Stars' song, reread the lyrics aloud and invite students to listen carefully for words that describe the sun and to give a silent signal when they hear one. Invite students to underline the words that they identify.",
+        "Provide differentiated mentors by seating students who are less comfortable singing next to students who may be more comfortable. (MMAE)",
+        "For ELLs: Provide visuals for the nouns in the song (sun, moon, stars) and use these visuals when helping students to identify theses nouns."
+      ]
+    },
+    {
+      "chunk_id": "G1M2U1L3#Work Time#A",
+      "family": "instructional",
+      "resource_id": "G1M2U1L3",
+      "text": "[Work Time A] Reviewing Close Readers Do These Things Anchor Chart\n- Direct students' attention to the posted Close Readers Do These Things anchor chart. Point to each bullet while reading aloud.\n- Remind students that readers do things to help them really understand the text well. (This is true even if they are hearing the text read aloud to them.) Explain that readers look closely at the illustrations to help them understand the details of the story and reread important parts of the text.\n- Invite students to turn and talk to an elbow partner:\n- 'What does it look like to look closely at the illustrations?' (Look for students to mimic studying and looking deeply at imaginary pictures.)\n- 'What does it look like to reread the text?' (Look for students to mimic rereading a pretend text.)\n- Refocus whole group and invite one or two students to share out.\n- Share with students that today, they will begin reading a new book called Summer Sun Risin' and will get to practice the things close readers do as they answer the focus question: 'What is the boy doing when the sun is rising, at its highest, and setting in the sky?'\n- To activate background knowledge, link each bullet on the anchor chart to printed photographs of students closely reading. (MMR)\n- During Work Time A, circulate and listen for students to use descriptive language as they talk about their tea party picture. (SL.2.2)\n- For ELLs: Some students may be confused about whether the prompt 'What does it look like …' requires them to provide a verbal description or to act it out. Make clear that students can choose to show or tell to their partners. As an option, invite one partner to act out looking closely at the illustrations while the other describes his or her actions. (Example: 'You are looking at your hands up close as if you are looking at every part of the picture.')",
+      "content_hash": "9d859a737362e6a7105b0453adc29b0e954d361663e811afc6c0d2caaaad2fad",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 1,
+        "lesson": 3,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "A"
+      },
+      "section": "Work Time",
+      "letter": "A",
+      "title": "Reviewing Close Readers Do These Things Anchor Chart",
+      "page": 67,
+      "minutes": 5,
+      "steps": [
+        "Direct students' attention to the posted Close Readers Do These Things anchor chart. Point to each bullet while reading aloud.",
+        "Remind students that readers do things to help them really understand the text well. (This is true even if they are hearing the text read aloud to them.) Explain that readers look closely at the illustrations to help them understand the details of the story and reread important parts of the text.",
+        "Invite students to turn and talk to an elbow partner:",
+        "'What does it look like to look closely at the illustrations?' (Look for students to mimic studying and looking deeply at imaginary pictures.)",
+        "'What does it look like to reread the text?' (Look for students to mimic rereading a pretend text.)",
+        "Refocus whole group and invite one or two students to share out.",
+        "Share with students that today, they will begin reading a new book called Summer Sun Risin' and will get to practice the things close readers do as they answer the focus question: 'What is the boy doing when the sun is rising, at its highest, and setting in the sky?'",
+        "To activate background knowledge, link each bullet on the anchor chart to printed photographs of students closely reading. (MMR)",
+        "During Work Time A, circulate and listen for students to use descriptive language as they talk about their tea party picture. (SL.2.2)",
+        "For ELLs: Some students may be confused about whether the prompt 'What does it look like …' requires them to provide a verbal description or to act it out. Make clear that students can choose to show or tell to their partners. As an option, invite one partner to act out looking closely at the illustrations while the other describes his or her actions. (Example: 'You are looking at your hands up close as if you are looking at every part of the picture.')"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U1L3#Work Time#B",
+      "family": "instructional",
+      "resource_id": "G1M2U1L3",
+      "text": "[Work Time B] Close Read-aloud, Session 1: Summer Sun Risin', Pages 1-28\n- Refocus students whole group.\n- Direct their attention to the posted learning target and read it aloud:\n- 'I can ask and answer questions about the boy and the sun in Summer Sun Risin' using key details from the text.'\n- Using a total participation technique, invite responses from group:\n- 'What are key details?' (important parts of the text that support the main idea)\n- Share that today, students will hear a story read aloud about a boy's daily activities as the sun travels across the sky from sunrise to sunset. They should pay attention to key details about the main character and setting.\n- Remind students of the definition of character (person, animal, or object in a story, play, or movie)\n- Using a total participation technique, invite responses from the group:\n- 'What is the setting of a story?' (when and where a story takes place)\n- As students share out, confirm thinking and explain that the setting is when and where a story takes place.\n- Display Summer Sun Risin'.\n- Briefly review the definition of risin' (rising)( to climb upwards).\n- Guide students through the close read-aloud for Summer Sun Risin' using the Close Readaloud Guide: Summer Sun Risin' (Session 1; for teacher reference). Consider using the Reading Literature Checklist during the close read-aloud (see Assessment Overview and Resources).\n- During Session 1, refer to the guide for the use of:\n- -Summer Sun Risin' icons\n- -Sun icon\n- -Summer Sun Risin' word cards\n- -Summer Sun Risin' anchor chart\n- -Summer Sun Risin' Culminating Task response sheet\n- Refocus whole group. Give students specific, positive feedback on their close reading skills. (Example: 'I saw you using the illustrations to think about where this story takes place.')\n- Tell students that in the next lesson they will write and draw about the key details from the beginning of the text.\n- When preparing students for the close read-aloud, provide options for physical action and sensory input by differentiating seating. Some students might benefit from sitting on a gym ball, a move-and-sit cushion, or a chair with a resistive elastic band wrapped around the legs. (MMAE)\n- For ELLs: Pair students with a partner who has more advanced or native language proficiency. The partner with greater language proficiency in the pair can serve as a model during the read-aloud, initiating discussions and providing implicit sentence frames.\n- For ELLs: During the read-aloud, provide sentence frames for Think-Pair-Shares. (Example: 'The text is mostly about …'\n- For ELLs: During the read-aloud, display the text on a document camera or an enlarged copy of the text to help direct students to the appropriate sentences on each page.\n- For ELLs: Point out that take and place are words we hear a lot together. Example: 'When you hear take place together, we are talking about where something happens.' Prompt students to practice using the phrase. Ask:\n- 'Where does art class happen? Where does it take place? ' (Art class takes place in the art room.)",
+      "content_hash": "3d9d6a14d3f753140e060df33f06ff2e869b81a3da457dad0fbfab4c831b8d1a",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 1,
+        "lesson": 3,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "B"
+      },
+      "section": "Work Time",
+      "letter": "B",
+      "title": "Close Read-aloud, Session 1: Summer Sun Risin', Pages 1-28",
+      "page": 68,
+      "minutes": 30,
+      "steps": [
+        "Refocus students whole group.",
+        "Direct their attention to the posted learning target and read it aloud:",
+        "'I can ask and answer questions about the boy and the sun in Summer Sun Risin' using key details from the text.'",
+        "Using a total participation technique, invite responses from group:",
+        "'What are key details?' (important parts of the text that support the main idea)",
+        "Share that today, students will hear a story read aloud about a boy's daily activities as the sun travels across the sky from sunrise to sunset. They should pay attention to key details about the main character and setting.",
+        "Remind students of the definition of character (person, animal, or object in a story, play, or movie)",
+        "Using a total participation technique, invite responses from the group:",
+        "'What is the setting of a story?' (when and where a story takes place)",
+        "As students share out, confirm thinking and explain that the setting is when and where a story takes place.",
+        "Display Summer Sun Risin'.",
+        "Briefly review the definition of risin' (rising)( to climb upwards).",
+        "Guide students through the close read-aloud for Summer Sun Risin' using the Close Readaloud Guide: Summer Sun Risin' (Session 1; for teacher reference). Consider using the Reading Literature Checklist during the close read-aloud (see Assessment Overview and Resources).",
+        "During Session 1, refer to the guide for the use of:",
+        "-Summer Sun Risin' icons",
+        "-Sun icon",
+        "-Summer Sun Risin' word cards",
+        "-Summer Sun Risin' anchor chart",
+        "-Summer Sun Risin' Culminating Task response sheet",
+        "Refocus whole group. Give students specific, positive feedback on their close reading skills. (Example: 'I saw you using the illustrations to think about where this story takes place.')",
+        "Tell students that in the next lesson they will write and draw about the key details from the beginning of the text.",
+        "When preparing students for the close read-aloud, provide options for physical action and sensory input by differentiating seating. Some students might benefit from sitting on a gym ball, a move-and-sit cushion, or a chair with a resistive elastic band wrapped around the legs. (MMAE)",
+        "For ELLs: Pair students with a partner who has more advanced or native language proficiency. The partner with greater language proficiency in the pair can serve as a model during the read-aloud, initiating discussions and providing implicit sentence frames.",
+        "For ELLs: During the read-aloud, provide sentence frames for Think-Pair-Shares. (Example: 'The text is mostly about …'",
+        "For ELLs: During the read-aloud, display the text on a document camera or an enlarged copy of the text to help direct students to the appropriate sentences on each page.",
+        "For ELLs: Point out that take and place are words we hear a lot together. Example: 'When you hear take place together, we are talking about where something happens.' Prompt students to practice using the phrase. Ask:",
+        "'Where does art class happen? Where does it take place? ' (Art class takes place in the art room.)"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U1L3#Work Time#C",
+      "family": "instructional",
+      "resource_id": "G1M2U1L3",
+      "text": "[Work Time C] Engaging the Learner: Sun Movement Routine\n- Invite students to stand up and spread out inside and around the edge of the whole group meeting area. As needed, remind students to move safely and make space for everyone.\n- Remind them that in the previous lesson, they learned the Sun Movement routine as a way to say 'hello' to the sun.\n- -Invite students to review Steps 1-5 of the Sun Movement routine while referencing the Sun Movement chart. Tell the class that today, they will practice Steps 1-5.\n- -Invite students to join you as you practice Steps 1-5, taking 10-15 seconds for each step.\n- -Repeat once or twice as time permits.\n- -Offer students specific, positive feedback on their work practicing the beginning movements in the routine. (Example: 'I noticed that everyone took great care to make sure their bodies were safe as we practiced the beginning movements.')\n- Tell students that throughout the unit they will continue to practice the Sun Movement routine.\n- Before asking students to complete the Sun Movement routine, ensure safety and minimize distractions by reminding students to find their pre-determined spots for movement. (Example: Use masking tape to mark a place on the floor for each student, ensuring that students will have enough space to move safely.) (MME)",
+      "content_hash": "f09bbd94ae7b1c8fbbe53b2c28af19073be2f07660bdde07d721613295b763a4",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 1,
+        "lesson": 3,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "C"
+      },
+      "section": "Work Time",
+      "letter": "C",
+      "title": "Engaging the Learner: Sun Movement Routine",
+      "page": 69,
+      "minutes": 5,
+      "steps": [
+        "Invite students to stand up and spread out inside and around the edge of the whole group meeting area. As needed, remind students to move safely and make space for everyone.",
+        "Remind them that in the previous lesson, they learned the Sun Movement routine as a way to say 'hello' to the sun.",
+        "-Invite students to review Steps 1-5 of the Sun Movement routine while referencing the Sun Movement chart. Tell the class that today, they will practice Steps 1-5.",
+        "-Invite students to join you as you practice Steps 1-5, taking 10-15 seconds for each step.",
+        "-Repeat once or twice as time permits.",
+        "-Offer students specific, positive feedback on their work practicing the beginning movements in the routine. (Example: 'I noticed that everyone took great care to make sure their bodies were safe as we practiced the beginning movements.')",
+        "Tell students that throughout the unit they will continue to practice the Sun Movement routine.",
+        "Before asking students to complete the Sun Movement routine, ensure safety and minimize distractions by reminding students to find their pre-determined spots for movement. (Example: Use masking tape to mark a place on the floor for each student, ensuring that students will have enough space to move safely.) (MME)"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U1L3#Closing and Assessment#A",
+      "family": "instructional",
+      "resource_id": "G1M2U1L3",
+      "text": "[Closing and Assessment A] Independent Writing: Summer Sun Risin' Response Sheet, Part 1\n- Remind students of the work they did thinking about key details relating to the main character and setting in Summer Sun Risin' during the close read-aloud.\n- Invite students to turn and talk to an elbow partner:\n- 'Who is the main character?' (the boy)\n- 'Where does the story take place?' (a farm)\n- Display Summer Sun Risin' response sheet. Point out that this material has two parts. Tell students that today they will complete only Part 1, by writing and drawing about the main character and setting using key details from the text.\n- -Direct students to the top of the page and point to Part 1 and read the title aloud:\n- 'Use words and pictures to answer these questions.'\n- -Point to the table below the title and read the headings of each column aloud:\n- 'Who are the main characters?'\n- 'Where does the story take place?'\n- -Tell students that today they will answer these two questions using pictures and words to show their thinking.\n- -Invite students to show a thumbs-up or to touch their head if they are ready to begin writing and drawing about the main character and setting.\n- -Point out the Summer Sun Risin' response sheets already at their workspaces.\n- -Transition students to their workspaces and invite them to begin working.\n- -Circulate and support students as necessary. Encourage them to use classroom resources (Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).\n- After 5 minutes, signal all students to stop working through the use of a designated sound. Model cleanup, keeping directions clear and brief. Collect their response sheets.\n- Offer students specific, positive feedback on their thinking regarding the characters and setting as it relates to the text they read during this lesson. (Example: 'I saw that Elijah not only drew the boy and his mother and father under the section for characters, but he also stretched and spelled the word boy under his drawing.')\n- Remind students that in the next few lessons they will begin to role-play events from the story and use thinking from this role-play to help with writing and drawing about the major events from the beginning, middle, and end of the story.\n- When preparing students for independent writing, vary methods for fine motor responses by offering modified response sheets with a separate box for drawing and lines for writing. (MMAE)\n- Before the transition to clean up, support self-regulation and independence during the transition by providing a clear routine for what to do with unfinished work and using a visual timer. (MME)\n- For ELLs: While displaying the Summer Sun Risin' response sheet, sketch a stickfigure icon next to the character heading and a landscape icon next to the setting heading. Model and think aloud completing it using a text familiar to all students, such as The Most Magnificent Thing. (Example: 'Who is the main character from The Most Magnificent Thing? Oh, that's right! It is the little girl! I will draw a picture of the little girl and write, 'little girl.'')",
+      "content_hash": "1ba4ba30332b1a318825ab0b98d725371b7d93d9cfee1c47b02faec80ecc06ee",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 1,
+        "lesson": 3,
+        "family": "instructional",
+        "section": "Closing and Assessment",
+        "letter": "A"
+      },
+      "section": "Closing and Assessment",
+      "letter": "A",
+      "title": "Independent Writing: Summer Sun Risin' Response Sheet, Part 1",
+      "page": 70,
+      "minutes": 10,
+      "steps": [
+        "Remind students of the work they did thinking about key details relating to the main character and setting in Summer Sun Risin' during the close read-aloud.",
+        "Invite students to turn and talk to an elbow partner:",
+        "'Who is the main character?' (the boy)",
+        "'Where does the story take place?' (a farm)",
+        "Display Summer Sun Risin' response sheet. Point out that this material has two parts. Tell students that today they will complete only Part 1, by writing and drawing about the main character and setting using key details from the text.",
+        "-Direct students to the top of the page and point to Part 1 and read the title aloud:",
+        "'Use words and pictures to answer these questions.'",
+        "-Point to the table below the title and read the headings of each column aloud:",
+        "'Who are the main characters?'",
+        "'Where does the story take place?'",
+        "-Tell students that today they will answer these two questions using pictures and words to show their thinking.",
+        "-Invite students to show a thumbs-up or to touch their head if they are ready to begin writing and drawing about the main character and setting.",
+        "-Point out the Summer Sun Risin' response sheets already at their workspaces.",
+        "-Transition students to their workspaces and invite them to begin working.",
+        "-Circulate and support students as necessary. Encourage them to use classroom resources (Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).",
+        "After 5 minutes, signal all students to stop working through the use of a designated sound. Model cleanup, keeping directions clear and brief. Collect their response sheets.",
+        "Offer students specific, positive feedback on their thinking regarding the characters and setting as it relates to the text they read during this lesson. (Example: 'I saw that Elijah not only drew the boy and his mother and father under the section for characters, but he also stretched and spelled the word boy under his drawing.')",
+        "Remind students that in the next few lessons they will begin to role-play events from the story and use thinking from this role-play to help with writing and drawing about the major events from the beginning, middle, and end of the story.",
+        "When preparing students for independent writing, vary methods for fine motor responses by offering modified response sheets with a separate box for drawing and lines for writing. (MMAE)",
+        "Before the transition to clean up, support self-regulation and independence during the transition by providing a clear routine for what to do with unfinished work and using a visual timer. (MME)",
+        "For ELLs: While displaying the Summer Sun Risin' response sheet, sketch a stickfigure icon next to the character heading and a landscape icon next to the setting heading. Model and think aloud completing it using a text familiar to all students, such as The Most Magnificent Thing. (Example: 'Who is the main character from The Most Magnificent Thing? Oh, that's right! It is the little girl! I will draw a picture of the little girl and write, 'little girl.'')"
+      ]
+    }
+  ],
+  "evidence_pointers": [
+    {
+      "chunk_id": "G1M2U1L3#evidence#0",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L3",
+      "text": "",
+      "content_hash": "d8bd7c9224a409f2bfa4a9174ec21ad574bd7f97b0a8d517525c33c221163144",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L3#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L3#Opening#A",
+      "location": "Opening A",
+      "quote": "Sing the 'Sun, Moon, and Stars' song, tracking the print with your finger or a pointer.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally",
+        "tracking print"
+      ],
+      "evidence_index": 0
+    },
+    {
+      "chunk_id": "G1M2U1L3#evidence#1",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L3",
+      "text": "",
+      "content_hash": "7d9065aebfbaa07df1263b4043a485de78478391346ac5e00b8eba50e9bab6d2",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L3#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L3#Opening#A",
+      "location": "Opening A",
+      "quote": "Tell students you are going to sing the 'Sun, Moon, and Stars' song aloud line by line and as you do, you would like them to: -Echo each line of the song as it is sung, tracking the print",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally",
+        "tracking print"
+      ],
+      "evidence_index": 1
+    },
+    {
+      "chunk_id": "G1M2U1L3#evidence#2",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L3",
+      "text": "",
+      "content_hash": "a9f9eaa466166386586bd074f0bb0d256483b95d9f7c5c2b6b8434df5bc45bdb",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L3#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L3#Opening#A",
+      "location": "Opening A",
+      "quote": "Tell students that you are slowly going to repeat the song. When they hear or see a noun they can touch their head, and when they see or hear a verb they can touch their foot.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification"
+      ],
+      "qualifiers": [
+        "using physical response"
+      ],
+      "evidence_index": 2
+    },
+    {
+      "chunk_id": "G1M2U1L3#evidence#3",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L3",
+      "text": "",
+      "content_hash": "c05fab765adb7dab820a758c47b91e4715efec2fbfa2ff54669bcfd7a24f3c4b",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L3#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L3#Opening#A",
+      "location": "Opening A",
+      "quote": "After singing the song and underlining the nouns and verbs invite students to reread the phrases with you:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "evidence_index": 3
+    },
+    {
+      "chunk_id": "G1M2U1L3#evidence#4",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L3",
+      "text": "",
+      "content_hash": "a8548bbc7f10cb2bc177d8abf216ec86fde3b74d524af05e72ed079f1cb9714d",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L3#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U1L3#Opening#A",
+      "location": "Opening A",
+      "quote": "'What are some hand gestures, motions, or actions that could go along with these nouns and verbs in the song?' (Responses will vary, but may include: lifting their arms to form a circle; twinkling their fingers like stars; etc.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally",
+        "explaining"
+      ],
+      "evidence_index": 4
+    },
+    {
+      "chunk_id": "G1M2U1L3#evidence#5",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L3",
+      "text": "",
+      "content_hash": "19e8e764793701cb2fd4029547a89a236dbb684d62032d5730d0ff323022a9ff",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L3#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L3#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Invite students to join you as you practice Steps 1-5, taking 10-15 seconds for each step.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "procedural_application"
+      ],
+      "qualifiers": [
+        "physically",
+        "with safety"
+      ],
+      "evidence_index": 5
+    },
+    {
+      "chunk_id": "G1M2U1L3#evidence#6",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L3",
+      "text": "",
+      "content_hash": "9d18f6d04398cc7ef173373dc6920977a27b6b3e095e69145163bd295cc272a7",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L3#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U1L3#Opening#A",
+      "location": "Opening A",
+      "quote": "Remind students of the story 'Elvin, the Boy Who Loved the Sky' and what they have learned about why Elvin loves the sun and moon.",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally",
+        "recalling"
+      ],
+      "evidence_index": 6
+    },
+    {
+      "chunk_id": "G1M2U1L3#evidence#7",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L3",
+      "text": "",
+      "content_hash": "5409be8d16e878d624710a1db61dff7a2db256ea533aadeeba8d3cd70b0d2e0e",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L3#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L3#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Invite students to turn and talk to an elbow partner: 'What does it look like to look closely at the illustrations?' (Look for students to mimic studying and looking deeply at imaginary pictures.) 'What does it look like to reread the text?' (Look for students to mimic rereading a pretend text.)",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally",
+        "partner talk"
+      ],
+      "evidence_index": 7
+    },
+    {
+      "chunk_id": "G1M2U1L3#evidence#8",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L3",
+      "text": "",
+      "content_hash": "96346a223e9145d602bf6a5ba13f1f9e01ed07db3e3cf6090c3d65a5a8a28cbd",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L3#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U1L3#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "'Who is the main character?' (the boy) 'Where does the story take place?' (a farm)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "evidence_index": 8
+    },
+    {
+      "chunk_id": "G1M2U1L3#evidence#9",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L3",
+      "text": "",
+      "content_hash": "ca0348b2cdcb78d5941cf0719d3353547e2be134a591427cf985441b497e418f",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L3#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L3#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Invite students to show a thumbs-up or to touch their head if they are ready to begin writing and drawing about the main character and setting.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [],
+      "qualifiers": [
+        "physically",
+        "preparing"
+      ],
+      "evidence_index": 9
+    },
+    {
+      "chunk_id": "G1M2U1L3#evidence#10",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L3",
+      "text": "",
+      "content_hash": "2cfed26da222be1f9d3190841e87fd9263819151788bcad183cfe5baecd5d85d",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L3#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L3#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Tell students that today they will complete only Part 1, by writing and drawing about the main character and setting using key details from the text.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "written_production"
+      ],
+      "qualifiers": [
+        "in writing",
+        "using key details"
+      ],
+      "evidence_index": 10
+    },
+    {
+      "chunk_id": "G1M2U1L3#evidence#11",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L3",
+      "text": "",
+      "content_hash": "b0404a620dddfa65ab5c47a27b70a6d32b3051aa1dd268e0a8f9d4b5b2757e64",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L3#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L3#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Transition students to their workspaces and invite them to begin working.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "written_production"
+      ],
+      "qualifiers": [
+        "in writing"
+      ],
+      "evidence_index": 11
+    },
+    {
+      "chunk_id": "G1M2U1L3#evidence#12",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L3",
+      "text": "",
+      "content_hash": "1cf32d0d93154d8395251d341ead0a4e9dfc077ed20d1fdaac40bdc8372601dc",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L3#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L3#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Circulate and support students as necessary. Encourage them to use classroom resources (Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "supports_action": [
+        "written_production"
+      ],
+      "qualifiers": [
+        "in writing"
+      ],
+      "evidence_index": 12
+    },
+    {
+      "chunk_id": "G1M2U1L3#evidence#13",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L3",
+      "text": "",
+      "content_hash": "3e79cdee549f885ab8fbd1c59e2a536bc05ad437dc8b228be9d293c7101029a8",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L3#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U1L3#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Remind students of the work they did thinking about key details relating to the main character and setting in Summer Sun Risin' during the close read-aloud.",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "evidence_index": 13
+    }
+  ]
+}

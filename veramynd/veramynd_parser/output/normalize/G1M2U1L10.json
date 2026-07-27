@@ -1,0 +1,533 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U1L10",
+  "title": "Lesson 10: Focused Read-aloud and Retelling, Session 1: Sun and Moon",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "1",
+      "lesson": "10",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening",
+      "Writing",
+      "Vocabulary"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will answer questions about key details and describe characters and setting from the story Sun and Moon, participate in role-play and structured discussion, and write responses about the story.",
+  "what_is_taught": [
+    {
+      "skill": "answer questions about key details from a story",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "describe characters from a story",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "describe setting from a story",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "participate in role-play to represent characters and setting",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "write responses about characters and setting using a response sheet",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use discussion norms during a structured discussion",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use vocabulary words in context and sentences",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use physical movement to represent story elements (Moon Movement routine)",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "phonics/decoding",
+    "phonological awareness",
+    "fluency independent reading",
+    "independent writing beyond response sheet",
+    "investigative research",
+    "complex text analysis"
+  ],
+  "student_actions": {
+    "recognition_identification": "identify characters, setting, and vocabulary words in the story and on charts",
+    "oral_production": "answer questions orally, participate in partner talk and whole group discussion, role-play characters",
+    "written_production": "write responses about characters and setting on a response sheet",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "perform Moon Movement routine steps",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain character feelings and story setting using text and illustrations",
+    "comprehension_response": "respond to questions about key details, characters, and setting orally and in writing",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Follow the same process used for the Sun Movement routine to lead students in Steps 1-6 of the Moon Movement routine, providing time for students to practice and try it out.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "physically",
+        "with movement"
+      ],
+      "supports_action": [
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Name the side stretches as 'crescent moon' shapes.",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Show students the Sun, Moon, and Stars Word Wall card for crescent and follow the same routine established in the Lesson 1: Provide its definition, use it in a sentence with an accompanying gesture, and place the Word Wall card and picture for it on the Sun, Moon, and Stars Word Wall.",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Direct students' attention to the posted learning targets and read them aloud: 'I can answer questions about key details from Sun and Moon.' 'I can describe the characters and setting from Sun and Moon.'",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Display Sun and Moon and tell students that today they will use a signal to show when they see or hear a character introduced in the story. Demonstrate the signal (thumbs-up, pat your head, touch your toes, etc.).",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "using a signal"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Read pages 1-10 slowly, fluently, with expression, and without interruption.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'Who are the characters in this story? How does the author describe (not physical descriptions) Sun and Moon?' (Sun and Moon are the characters. They are friends. Moon is bored with his place in the sky at night.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Place the Story Elements Board Icons: Sun and Moon for Sun and Moon (the characters) on the Story Elements board.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Show students the Sun, Moon, and Stars Word Wall card for earth.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'What is earth?' (the planet on which we live)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Invite students to use the word earth in a sentence. (Example: 'We live on planet earth.')",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "in a sentence"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Pause after reading page 11 and invite students to turn and talk with an elbow partner: 'Look carefully at the illustration. Tell me what details you see that help you understand the setting.' (dark sky, people and animals down below, etc.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using illustration details"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "'When and where is this story taking place?' (at night in the sky above the earth)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Place the Story Elements board icon for the sky on the Story Elements board.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner:",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using illustration evidence"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "'Why do you think Moon decided to remain in the night sky? What made him change his mind?' (He paid attention to all the beautiful things he sees at night.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using reasoning"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Invite students to whisper a response into their hands: 'What is something beautiful you would want to see during the night?' (Responses will vary.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "whispered"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Use the routine established in the first half of the module to review the first learning target with students and guide them through the Role-Play protocol for pages 1-11 of Sun and Moon.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "with peers"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Give students specific, positive feedback on their ability to role-play the characters and setting of Sun and Moon. (Example: 'Mikayla, you really showed Moon's curiosity about the daytime as you showed the excitement with your facial expressions and body.')",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students that now they are going to write what they know about the characters and setting in Sun and Moon.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Distribute prepared clipboards with Sun and Moon response sheet and pencils and follow the same routine established in Lesson 8 to complete Parts I and II.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Circulate to support students as they write. Encourage them to use classroom resources (Story Elements board, Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to form a circle in the whole group area.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "physically"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Invite students to whisper a response into their hands: 'What is one discussion norm you want to uphold while discussing today?' (Responses will vary.)",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "whispered"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner:",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "with partner"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'Who can tell us what your classmate said in your own words?' (Responses will vary.)",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "paraphrasing"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Engage students in a whole group discussion regarding their responses.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "in whole group"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation",
+        "comprehension_response"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Model the Moon Movement routine steps and use gestures and sentences to teach vocabulary words such as crescent and earth. Read aloud the story Sun and Moon with expression and fluency. Model how to use the Story Elements board and Role-Play protocol. Review discussion norms and model positive feedback during discussions.",
+    "prompts_that_cue_student_response": [
+      "Who are the characters in this story?",
+      "How does the author describe Sun and Moon?",
+      "What is earth?",
+      "Look carefully at the illustration. Tell me what details you see that help you understand the setting.",
+      "When and where is this story taking place?",
+      "Based on the illustrations for evidence, what did Moon see when he paid attention to the world during the night?",
+      "Why do you think Moon decided to remain in the night sky? What made him change his mind?",
+      "What is one discussion norm you want to uphold while discussing today?",
+      "Would you rather be the sun or the moon? Why?",
+      "Who can tell us what your classmate said in your own words?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "characters, setting, story details, vocabulary, movement, discussion",
+    "depth": "basic comprehension and description of story elements; role-play and writing responses; use of vocabulary in context"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "text Sun and Moon read aloud with illustrations, Moon Movement chart, Word Wall cards, Story Elements board, response sheets",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Engaging the Learner: Introducing the Moon Movement Routine",
+    "direct_instruction": "Focused Read-aloud, Session 1: Sun and Moon",
+    "guided_practice": "Role-Play: Character and Setting, Pages 1-11",
+    "independent_application": "Independent Writing: Sun and Moon Response Sheet, Parts I and II",
+    "check_for_understanding": "Structured Discussion: Making Connections",
+    "differentiated_reinforce": "",
+    "differentiated_extend": ""
+  },
+  "supports": {
+    "english_language_learners": "Encourage active listening by assigning groups specific characters to listen for and use signals; provide visual and gesture support for vocabulary; model sentence frames for writing; allow oral rehearsal with peers.",
+    "universal_design_udl": "Provide options for physical action and sensory input such as seating on gym balls or cushions; offer modified response sheets with drawing and writing spaces; scaffold partner conversations with sentence frames; write student ideas on charts for reference.",
+    "below_level_reinforce": "Seat less comfortable students next to more comfortable peers for movement and singing; provide small group support during writing; use visual aids and gestures for vocabulary.",
+    "above_level_extend": "Encourage students to elaborate on their role-play and discussion responses; invite students to explain reasoning behind their character and setting descriptions."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Observation of student responses during read-aloud, role-play, writing, and discussion; collection of response sheets",
+    "recognition_vs_production": "Both recognition and production of comprehension and oral/written language"
+  },
+  "materials": [
+    "Moon Movement chart (from Lesson 2; one to display)",
+    "Sun, Moon, and Stars Word Wall cards (new; teacher-created; 1)",
+    "Sun, Moon, and Stars Word Wall (begun in Lesson 1; added to during the Opening and Work Time A)",
+    "Story Elements board (blank; added to during Work Time A)",
+    "Sun and Moon (one to display; for teacher read-aloud)",
+    "Story Elements Board Icons: Sun and Moon (two; added to Story Elements board during Work Time A)",
+    "Story Elements Board: Sun and Moon (answers, for teacher reference)",
+    "Reading Literature Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Role-Play Protocol anchor chart (begun Lesson 4)",
+    "Speaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Working to Become Effective Learners anchor chart (begun in Module 1)",
+    "Sun and Moon response sheet (one per student)",
+    "Pencils (one per student)",
+    "Discussion Norms anchor chart (begun in Module 1)"
+  ],
+  "vocabulary": {
+    "new": [
+      "crescent (L)",
+      "character, setting, moon, sun (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Moon Movement routine",
+    "Role-Play protocol",
+    "Discussion Norms"
+  ],
+  "notes": "The lesson integrates physical movement with comprehension and vocabulary development. It includes differentiated supports for English learners and students with varied sensory needs. The lesson emphasizes oral and written responses to story elements and encourages collaborative discussion.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "narrative",
+    "text_complexity": {
+      "quantitative": "Read aloud text; quantitative measure not specified",
+      "qualitative": "Simple narrative structure with illustrations supporting comprehension; language includes descriptive phrases and character feelings; knowledge demands include understanding setting and character emotions",
+      "reader_and_task": "Read aloud removes decoding demands; tasks require listening comprehension, oral discussion, role-play, and writing responses about story elements"
+    }
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 136,
+    "source_page_end": 145
+  }
+}

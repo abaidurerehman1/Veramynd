@@ -1,0 +1,556 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U2L3",
+  "title": "Lesson 3: Close Read-aloud, Session 2: What Makes Day and Night",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "2",
+      "lesson": "3",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening",
+      "Writing",
+      "Vocabulary"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will distinguish information learned from illustrations and text in an informational book to describe the pattern of light and dark on earth and record observations about the sun and moon using descriptive words.",
+  "what_is_taught": [
+    {
+      "skill": "distinguish information learned from illustrations and text",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "describe the pattern of light and dark on earth",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "identify adjectives that describe the sun, moon, and stars",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use adjectives to describe objects orally",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "participate in a close read-aloud of an informational text",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "engage in partner discussion using sentence frames",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use a speaking and listening protocol to share ideas",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "record observations using pictures and words during shared writing",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "formulate complete sentences using descriptive words",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "Phonics/decoding",
+    "Independent writing",
+    "Phonological Awareness",
+    "Fluency"
+  ],
+  "student_actions": {
+    "recognition_identification": "identify adjectives and information from text and illustrations",
+    "oral_production": "respond orally to questions and participate in partner discussions using sentence frames",
+    "written_production": "participate in shared writing by contributing words and ideas",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain meanings of words and describe observations orally",
+    "comprehension_response": "answer questions about text and illustrations orally",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "'Why did we circle/highlight some of the words in the poem?' (We circled the adjectives.)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What were some adjectives that we circled to describe the sun?' (orange, round)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'As I reread the poem today, I want you to listen for adjectives used to describe the sun, moon, and stars. When you hear an adjective read aloud, quietly put a thumb out in front of your chest.' Model the hand gesture if necessary.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "quietly"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Read aloud poem, fluently and with expression.",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'What were some adjectives that you heard to describe the sun, moon, or stars?' (sun: hot, moon: full, stars: twinkling)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What is something at home or at school that we could describe using this adjective?' (a bowl of soup; the nightlight)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk to an elbow partner: 'What does this learning target mean?' (find information that is different in the illustrations and in the text to tell about the pattern of light and dark on earth)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Guide students through the close read-aloud for What Makes Day and Night using the Close Read-aloud Guide: What Makes Day and Night (Session 2; for teacher reference).",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "To activate background knowledge of familiar concepts and support comprehension of vocabulary, invite students to recall a time they sat in a shadow outside (e.g., under a tree, in the shade of a building, etc.) as the Word Wall card for shadow is added to the Sun, Moon, and Stars Word Wall.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Model standing and rotating in place for students. While rotating, say: 'I am rotating right now.'",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'What are some words to describe what I am doing?' (turning, spinning, rotating)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "'What does it mean to rotate?' (turn in a circle around a center point)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Play the 'Blue Marble Animations' video.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "recognition_identification",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Guide students through Round 1 of the protocol using the following question:",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally",
+        "using sentence frames"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Provide a sentence frame as necessary:",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally",
+        "using sentence frames"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Refocus students whole group.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'How would you describe the sun in this photograph? What adjectives could you use to describe it?' (yellow, hidden)",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "'How would you describe the moon in this photograph? What adjectives could you use to describe it?' (sliver, white)",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Display the Describing the Sun and Moon recording form.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Using a total participation technique, invite responses from the group.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'What does the sun look like?'",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "As students share responses, use their ideas to complete page 1. Think aloud how to use the words from the question itself as a cue to formulate the answer using a complete sentence. (Example: The sun looks yellow and hidden.)",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [
+        "in complete sentences"
+      ],
+      "supports_action": []
+    },
+    {
+      "quote": "Draw a quick sketch of what the sun looks like.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Point to the question on page 2 and read it aloud:",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "As students share responses, use their ideas to complete page 2. Think aloud how to use the words from the question itself as a cue to formulate the answer using a complete sentence. (Example: The moon looks white and little.)",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [
+        "in complete sentences"
+      ],
+      "supports_action": []
+    },
+    {
+      "quote": "Draw a quick sketch of what the moon looks like.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "For ELLs: Support students as they formulate sentences for the Describing the Sun and Moon recording form. Invite students to use the Adjectives Construction board (See Lesson 2) with the sentence frame: 'The [sun/moon] looks like a(n) [adjective] [noun].' (Example: The sun looks like an orange ball. The sun looks bright and yellow.) Invite students to identify any new adjectives they might like to add to the board.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally",
+        "using sentence frames"
+      ],
+      "supports_action": [
+        "oral_production",
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner: 'What is something you learned from an illustration to describe the pattern of light and dark on earth?' (I saw a picture of the earth spinning. Half of the earth faces the sun, and the other half faces away from the sun.)",
+      "location": "Closing and Assessment B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "'What did you read in the text that confirmed what you saw in the illustration?' (The text said that the earth spins around and light from the sun falls on one-half of the spinning earth.)",
+      "location": "Closing and Assessment B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Model fluent expressive reading of the poem and the close read-aloud text; model standing and rotating to demonstrate earth's rotation; model shared writing by thinking aloud and sketching observations; model use of sentence frames for partner discussions and descriptive sentences.",
+    "prompts_that_cue_student_response": [
+      "Why did we circle/highlight some of the words in the poem?",
+      "What were some adjectives that we circled to describe the sun?",
+      "What were some adjectives that you heard to describe the sun, moon, or stars?",
+      "What is something at home or at school that we could describe using this adjective?",
+      "What does this learning target mean?",
+      "What are some words to describe what I am doing?",
+      "What does it mean to rotate?",
+      "How would you describe the sun in this photograph? What adjectives could you use to describe it?",
+      "How would you describe the moon in this photograph? What adjectives could you use to describe it?",
+      "What does the sun look like?",
+      "What is something you learned from an illustration to describe the pattern of light and dark on earth?",
+      "What did you read in the text that confirmed what you saw in the illustration?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "Focus on distinguishing information from illustrations and text about earth's light and dark pattern and describing the sun and moon using adjectives.",
+    "depth": "Includes comprehension of informational text, vocabulary development, oral language practice, and shared writing."
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "text, photographs, video, poem",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Engaging the Learner: 'What We See: The Sun, Moon, and Stars' Poem",
+    "direct_instruction": "Close Read-aloud, Session 2: What Makes Day and Night, Pages 14-15",
+    "guided_practice": "Back-to-Back and Face-to-Face: Earth's Rotation",
+    "independent_application": "Shared Writing: Describing the Sun and Moon",
+    "check_for_understanding": "Reflecting on Learning",
+    "differentiated_reinforce": "",
+    "differentiated_extend": ""
+  },
+  "supports": {
+    "english_language_learners": "Encourage use of sentence frames and the Adjectives Construction board; provide picture and word cues; model language structures.",
+    "universal_design_udl": "Use total participation techniques; provide sentence frames; use visual supports such as photographs, word walls, and anchor charts.",
+    "below_level_reinforce": "Use sentence frames and word banks to support oral and written expression.",
+    "above_level_extend": "Challenge students to add details during partner discussions and share out with evidence from text and illustrations."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Observation of student oral responses, partner discussions, and participation in shared writing.",
+    "recognition_vs_production": "Primarily production through oral and written responses."
+  },
+  "materials": [
+    "'What We See: The Sun, Moon, and Stars' poem (from Lesson 2; one to display; for teacher read-aloud)",
+    "Close Read-aloud Guide: What Makes Day and Night (Session 2; for teacher reference)",
+    "-Sun, Moon, and Stars Word Wall cards (new; teacher-created; three)",
+    "-Sun, Moon, and Stars Word Wall (begun in Unit 1, Lesson 1; added to during Work Time A)",
+    "-What Makes Day and Night (one to display; for teacher read-aloud)",
+    "-What Makes Day and Night anchor chart (new; co-created with students during Work Time A; see Close Read-aloud Guide)",
+    "-Reading Informational Text Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Flashlight (one; used by teacher during the close read-aloud)",
+    "'Blue Marble Animations' (video; play in entirety; see Technology and Multimedia)",
+    "Back-to-Back and Face-to-Face Protocol anchor chart (begun in Module 1)",
+    "Speaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Sun photograph 2 (one to display)",
+    "Moon photograph 2 (one to display)",
+    "Describing the Sun and Moon recording form(from Lesson 2; one for teaching modeling and one per student)",
+    "Sentence strip chunks: What Makes Day and Night (one to display, see supporting materials)"
+  ],
+  "vocabulary": {
+    "new": [
+      "spins, light, shadow (T)",
+      "pattern, day, night, sun, earth, darkness (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Total Participation Technique",
+    "Back-to-Back and Face-to-Face Protocol"
+  ],
+  "notes": "Lesson includes multiple opportunities for students to identify and use adjectives, engage in partner talk with sentence frames, participate in a close read-aloud, and contribute to shared writing. Supports for ELLs and varied learners are embedded.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "expository",
+    "text_complexity": {
+      "quantitative": "Read-aloud mediation; quantitative measure not specified",
+      "qualitative": "Informational text with illustrations; moderate language and knowledge demands",
+      "reader_and_task": "Students listen to read-aloud and engage in discussion and shared writing; visual supports and sentence frames scaffold comprehension and expression."
+    }
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 228,
+    "source_page_end": 238
+  }
+}

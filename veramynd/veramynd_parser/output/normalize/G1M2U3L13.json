@@ -1,0 +1,423 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U3L13",
+  "title": "Lesson 13: Speaking and Listening: Sharing and Celebrating Our Work",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "3",
+      "lesson": "13",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": [
+      "Writing",
+      "Comprehension"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will present information about the sun, moon, and stars to others, read their writing aloud clearly, and reflect on their learning through drawing and writing.",
+  "what_is_taught": [
+    {
+      "skill": "present information about the sun, moon, and stars to others",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "answer questions from visitors about the sun, moon, and stars",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "read own writing aloud using a strong and clear voice",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "listen attentively to peers' presentations",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "draw a picture to represent learning about the sun, moon, or stars",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "write a sentence to show one thing learned about the sun, moon, or stars",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "reflect on personal learning and behavior as a learner",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "Phonics",
+    "Phonological Awareness",
+    "Fluency",
+    "Vocabulary"
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "sing songs, answer questions, share poems and notebook entries, participate in discussions and reflections orally",
+    "written_production": "write sentences and draw pictures to show learning during reflection",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain what was learned and how respect or integrity was shown",
+    "comprehension_response": "respond to questions from visitors and peers about the sun, moon, and stars using learned information and listen attentively to others' presentations and poems",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Invite students to join you as sing the song and complete the accompanying hand motions.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "I can present information about the sun, moon, and stars to others.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'When you are answering questions from the visitors, what is it important that you remember to do?' (speak clearly and loudly, make eye contact with visitors, listen as others share)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Tell students they now will share information about the sun, moon, and stars with the visitors, and they will answer questions from the visitors:",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Invite a visitor to ask the first student in the group the first question.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Circulate as students answer questions and offer guidance and support as necessary.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "student_production",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "I can read my writing aloud using a strong and clear voice.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students that they now will share their 'What the Sun Sees' poems with the visitors.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Ask the visitors to help keep the group moving along and offer support as needed.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Direct students' attention to their 'What the Sun Sees' poems and encourage the first student to stand up and begin sharing.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Circulate as students share and offer guidance and support as necessary.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "student_production",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Tell students they will remain in the same small groups and follow the same order for sharing their Sky notebooks as they did their 'What the Sun Sees' poems.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite the first student in each group to begin sharing.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Circulate as students share and offer guidance and support as necessary.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "student_production",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Tell students that now they will have a chance to draw a picture and write a sentence to show one thing they learned about the sun, moon, or stars during this module.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Distribute prepared clipboards with the End of Module Reflection recording form attached and pencils to each student.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Direct students' attention to the first prompt using the displayed End of Module Reflection recording form. Invite students to put their finger on it and invite them to begin writing and drawing about one thing they learned about the sun, moon, or stars.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "As students draw and write, circulate and ask them to tell you what they learned.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "student_production",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "After a few minutes, repeat this process with the second prompt on the recording form:",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "As students draw and write, circulate and ask them to tell you how they showed respect or integrity.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "student_production",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Model singing the 'Sun, Moon, and Stars' song with hand motions; model reading learning targets aloud; model sharing and answering questions clearly and with eye contact; model use of reflection recording form for drawing and writing.",
+    "prompts_that_cue_student_response": [
+      "What did we do that is similar to what astronomers do?",
+      "When you are answering questions from the visitors, what is it important that you remember to do?",
+      "While other students are sharing, what should you do?",
+      "What is something you have learned about the sun, moon, or stars in this module?",
+      "One way I showed respect or integrity as a learner is ______."
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "Sharing knowledge about the sun, moon, and stars through oral presentations, reading aloud, and reflection",
+    "depth": "Practicing clear oral communication, listening skills, and written reflection on learning and behavior"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "Students share songs, poems, notebook entries, and reflections about the sun, moon, and stars with visitors and peers.",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Engaging the Learner: Sharing the 'Sun, Moon, and Stars' Song",
+    "direct_instruction": "Review of learning targets and modeling of clear oral presentation and reflection writing",
+    "guided_practice": "Small group presentations answering visitor questions and sharing poems and notebooks",
+    "independent_application": "Drawing and writing reflections on learning and behavior",
+    "check_for_understanding": "Teacher circulates and offers feedback during presentations and reflections",
+    "differentiated_reinforce": "Pairing confident students with less confident peers; providing question choice for some students",
+    "differentiated_extend": "Encouraging students to introduce songs or read anchor charts aloud"
+  },
+  "supports": {
+    "english_language_learners": "Provide introductions of visitors and students in small groups; allow question choice for some students; pair students with buddies for support; offer dictation for writing reflections.",
+    "universal_design_udl": "Use of visual charts and anchor charts; seating arrangements to support confidence; use of total participation techniques; frequent time checks and clear routines.",
+    "below_level_reinforce": "Pair less confident students with confident peers; allow practice of answers before presentations.",
+    "above_level_extend": "Encourage students to introduce songs or read anchor charts aloud to build confidence."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Observation of student presentations, reading aloud, and reflection writing; use of Speaking and Listening Checklist",
+    "recognition_vs_production": "Production"
+  },
+  "materials": [
+    "'Sun, Moon, and Stars' song (from Unit 1, Lesson 3; one to display)",
+    "Presentation Groups chart (new; teacher-created; see supporting materials)",
+    "Questions sheet (one per visitor)",
+    "Speaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Ways We Share Our Work anchor chart (begun in Module 1)",
+    "'What the Sun Sees' poem (completed in Lesson 11; one per student)",
+    "Sun Movement chart (from Unit 1, Lesson 2; one to display)",
+    "Sky notebooks (completed in Unit 2; one per student)",
+    "Moon Movement chart (from Unit 1, Lesson 10; one to display)",
+    "End of Module Reflection recording form (one per student)",
+    "Pencils (one per student)"
+  ],
+  "vocabulary": {
+    "new": [
+      "astronomer, reflect (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Total participation technique",
+    "Use of Speaking and Listening Checklist",
+    "Use of anchor charts for sharing work",
+    "Use of visual time timer for transitions"
+  ],
+  "notes": "Lesson includes multiple opportunities for oral presentation, listening, and written reflection on a science topic. Supports for ELLs and students needing confidence-building are embedded. The lesson integrates speaking, listening, reading aloud, and writing in a celebratory sharing context.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "narrative",
+    "text_complexity": {
+      "quantitative": "read-aloud mediation; quantitative measure not specified",
+      "qualitative": "Simple narrative structure with familiar vocabulary; supported by visuals and oral scaffolding",
+      "reader_and_task": "Students share familiar content orally and in writing with support; task includes reflection and presentation to visitors."
+    }
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 459,
+    "source_page_end": 467
+  }
+}

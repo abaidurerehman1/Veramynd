@@ -1,0 +1,624 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U2L5",
+  "title": "Lesson 5: Close Read-aloud, Session 4: What Makes Day and Night",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "2",
+      "lesson": "5",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Writing",
+      "Speaking & Listening",
+      "Language"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will learn to distinguish information from illustrations and text about the pattern of light and dark on earth, describe the location of the sun, moon, and stars using prepositions, and record observations in writing using descriptive language.",
+  "what_is_taught": [
+    {
+      "skill": "distinguish information learned from illustrations versus text",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "describe the pattern of light and dark on earth",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "identify and define nouns, verbs, adjectives, and prepositions in a poem",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use gestures and hand motions to represent meaning of poem verses",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "repeat poem verses with expression and varied voices",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "take notes using pictures and words to record key ideas about day and night",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use sentence frames to support writing about day and night",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "participate in shared writing to reflect on guiding questions and patterns in the sky",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use descriptive adjectives to write about the sun in a notebook",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "write complete sentences describing observations",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "describe the location of the sun using prepositions in shared writing",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "Phonological Awareness",
+    "Phonics",
+    "Fluency",
+    "Independent writing of extended texts",
+    "Advanced grammar beyond nouns, verbs, adjectives, and prepositions"
+  ],
+  "student_actions": {
+    "recognition_identification": "identify nouns, verbs, adjectives, and prepositions in a poem and text",
+    "oral_production": "answer questions about the poem and text, participate in partner talk, repeat poem verses with expression, share ideas during group discussions",
+    "written_production": "write notes using pictures and words about day and night, write sentences describing the sun in a notebook, contribute to shared writing about the sun's location",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "use sentence frames to complete writing tasks",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "use gestures and hand motions to represent poem verses",
+    "reasoning_explanation": "explain meanings of text chunks and patterns in the sky, discuss how illustrations and text provide information",
+    "comprehension_response": "answer questions about the poem's meaning and the pattern of light and dark on earth, respond to prompts about observations in the sky and the sun's location in pictures, reflect on guiding questions orally and in writing, distinguish information from illustrations and text in a book",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Tell students that you will recite the poem first on your own as they listen. Say: 'As I read the poem, I want you to think about what the poem is about.'",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Read aloud the entire poem, slowly, fluently, with expression, and without interruption.",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'What is the poem about?' (where the sun, moon, and stars are in location to other things like buildings, ground, trees)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Invite students to whisper a noun from the poem, 'Where Are They: The Sun, Moon, and Stars', into their hands. Then invite them to whisper a verb from the poem into their hands.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Define preposition (a word that describes the location of one thing in relation to another thing).",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'What are some hand gestures, motions, or actions that go along with each verse of the poem?' (Answers will vary, but might include: lifting their arms slowly to show the sun rising up over the horizon, sun high in the sky, full moon coming up over buildings.)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "using gestures"
+      ],
+      "supports_action": [
+        "representation_modeling",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Reread the poem aloud a second time and invite students to repeat each verse after it is read, using their own chosen gestures and hand motions.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "with expression"
+      ],
+      "supports_action": [
+        "oral_production",
+        "representation_modeling"
+      ]
+    },
+    {
+      "quote": "Invite students to try repeating each verse in a whisper voice, in a giant voice, and/or in an opera voice.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "with expression",
+        "using varied voices"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "I can distinguish what I learn from the illustrations and what I learn from the text in the book What Makes Day and Night to describe the pattern of light and dark on earth.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Invite students to recall previous close read-aloud sessions in which they identified learning from the illustrations and from the text to describe light and dark on earth.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Ask: 'What does this sentence mean?' Responses will vary.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'What, in the illustrations, help you understand that information? What, in the text, helps you understand that information?' (Responses will vary.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'Can you use a direction word to complete the sentence frame: The earth is moving you ______?' (around in space; away from the sun; toward the light)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally",
+        "using sentence frame"
+      ],
+      "supports_action": [
+        "procedural_application",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'I can distinguish what I learn from the illustrations and what I learn from the text in the book What Makes Day and Night to take notes on the pattern of light and dark on earth.'",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What does it mean to take notes?' (short, written-down words to help us remember something)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Tell students they will use their own notes sheet to capture quick notes about the pattern of light and dark that we call day and night. Tell students that they will use these notes in the next lesson during the Science Talk protocol. Students can use pictures and words to record their notes.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing",
+        "using pictures and words"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Invite students to begin working.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing",
+        "using pictures and words"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Provide sentence frames as needed:",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "in writing",
+        "using sentence frames"
+      ],
+      "supports_action": [
+        "procedural_application",
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Refocus students whole group and invite a few students to share out their notes.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Invite students to stretch their hands up to the sky as if they are touching the sun as they transition.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "using gestures"
+      ],
+      "supports_action": [
+        "representation_modeling"
+      ]
+    },
+    {
+      "quote": "Ask: 'What is the pattern?' (light and dark on earth, which we call day and night)",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'How does our discussion add to your understanding of how to answer the guiding question: What patterns can we observe in the sky? I'll give you time to think and discuss with a partner.' (Responses will vary.)",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "I can record my observations from images/videos of the sky in my Sky Notebook.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What does the sun look like?'",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Students should answer the question using pictures and words to show their thinking. Remind students to use the Adjectives anchor chart to describe what the sun looks like. Remind students to use a complete sentence when answering the question.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing",
+        "using pictures and words",
+        "in complete sentences"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Transition students to their workspaces and invite students to begin working on page 3.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Refocus students whole group.",
+      "location": "Closing and Assessment B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'Where do we see the sun?'",
+      "location": "Closing and Assessment B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Using a total participation technique, invite responses from the group.",
+      "location": "Closing and Assessment B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Begin by circling one of the pictures that most closely resembles the location of the sun in the photograph and then model writing a complete sentence to describe the location of the sun. (Example: 'The sun is over the building.')",
+      "location": "Closing and Assessment B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Give students specific, positive feedback for their work helping to describe the position of the sun and tell them that they will write about the position of the moon during the next lesson.",
+      "location": "Closing and Assessment B",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Teacher models fluent, expressive reading of the poem and models writing a complete sentence describing the sun's location. Teacher defines nouns, verbs, adjectives, and prepositions. Teacher guides close read-aloud and note-taking procedures. Teacher facilitates shared writing and provides sentence frames.",
+    "prompts_that_cue_student_response": [
+      "What is the poem about?",
+      "What are some hand gestures, motions, or actions that go along with each verse of the poem?",
+      "What does this sentence mean?",
+      "What, in the illustrations, help you understand that information? What, in the text, helps you understand that information?",
+      "Can you use a direction word to complete the sentence frame: The earth is moving you ______?",
+      "What does it mean to take notes?",
+      "What is the pattern?",
+      "How does our discussion add to your understanding of how to answer the guiding question: What patterns can we observe in the sky?",
+      "What does the sun look like?",
+      "Where do we see the sun?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "Focus on understanding the pattern of light and dark on earth and describing the location of sun, moon, and stars using prepositions; includes reading, discussion, note-taking, and writing.",
+    "depth": "Students engage in close reading, oral discussion, note-taking with pictures and words, and shared writing to deepen understanding of informational text and descriptive language."
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "text, images, anchor charts, poem, photographs",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Engaging the Learner: 'Where Are They? The Sun, Moon, and Stars' Poem",
+    "direct_instruction": "Close Read-aloud, Session 4: What Makes Day and Night, Pages 24-27",
+    "guided_practice": "Independent Writing: What Makes Day and Night Notes; Shared Writing: Reflecting on Unit 2 Guiding Question",
+    "independent_application": "Independent Writing: Sky Notebook",
+    "check_for_understanding": "Shared Writing: Describing the Position of the Sun",
+    "differentiated_reinforce": "Support for ELLs and students needing writing assistance",
+    "differentiated_extend": "Options for expressive reading and varied voices during poem repetition"
+  },
+  "supports": {
+    "english_language_learners": "Mini Language Dive activities to support understanding of prepositions and sentence chunks; use of sentence frames and visual aids; options for expression and repetition.",
+    "universal_design_udl": "Multiple modes of engagement including oral, written, gestural, and visual supports; use of sentence frames; total participation techniques; varied voice options for poem reading.",
+    "below_level_reinforce": "Partially filled-in notes sheets; guided writing support; visual aids and sentence frames.",
+    "above_level_extend": "Encouragement to use varied voices and expression during poem repetition; partner discussions to deepen understanding."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Observation of student oral responses, note-taking, and shared writing contributions",
+    "recognition_vs_production": "Both recognition of information in text and illustrations and production of oral and written responses"
+  },
+  "materials": [
+    "'Where Are They? The Sun, Moon, and Stars' poem (one to display; for teacher read-aloud)",
+    "Close Read-aloud Guide: What Makes Day and Night (Session 4; for teacher reference)",
+    "-What Makes Day and Night (one to display; for teacher read-aloud)",
+    "-What Makes Day and Night anchor chart (begun in Lesson 3; see close read-aloud guide)",
+    "-Reading Informational Text Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "What Makes Day and Night notes sheet (one to display and one per student)",
+    "Pencils (one per student)",
+    "Crayons (class set; variety of colors per student)",
+    "Colored pencils (class set; variety of colors per student)",
+    "Unit 2 Guiding Question anchor chart (begun in Lesson 2; added to during Work Time C; see supporting materials)",
+    "Sun photograph 4 (one to display)",
+    "Sky notebook (from Lesson 4; page 3; one per student)",
+    "Sky notebook (from Lesson 4; answers, for teacher reference)",
+    "Adjectives anchor chart (from Lesson 4)",
+    "Describing the Position of the Sun recording form(one for teaching modeling and one per student)"
+  ],
+  "vocabulary": {
+    "new": [
+      "earth, sun, day, night, spin (L)",
+      "daylight, midnight (T)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Total participation technique",
+    "Turn and talk",
+    "Science Talk protocol"
+  ],
+  "notes": "Lesson integrates comprehension of informational text with vocabulary development (nouns, verbs, adjectives, prepositions) and writing skills through note-taking and shared writing. Supports for ELLs and differentiated instruction are embedded.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "expository",
+    "text_complexity": {
+      "quantitative": "Read-aloud mediation; text pages 24-27 of What Makes Day and Night (grade-appropriate informational text)",
+      "qualitative": "Simple structure with clear cause-effect and descriptive language; familiar content about earth and sky; supports provided for language and concept comprehension",
+      "reader_and_task": "Students engage with text and illustrations with teacher support; tasks include oral discussion, note-taking, and writing using sentence frames and visual aids."
+    }
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 251,
+    "source_page_end": 261
+  }
+}

@@ -1,0 +1,1125 @@
+{
+  "schema_version": "1.0-chunk",
+  "resource_id": "G1M2U3L1",
+  "grade": 1,
+  "module": 2,
+  "unit": 3,
+  "lesson": 1,
+  "title": "Lesson 1: Noticing and Wondering: What Happens during the Day and Night?",
+  "prompt_version": "normalize_ela.v2.1",
+  "lesson_chunk": {
+    "chunk_id": "G1M2U3L1#lesson",
+    "family": "lesson",
+    "resource_id": "G1M2U3L1",
+    "text": "Domain primary: Comprehension\nDomain secondary: Speaking & Listening, Language\nMode: interpretation\nGenre: narrative\nObjective: Students will listen to and discuss texts and videos about daytime and nighttime activities to ask and answer questions and describe observations about what happens during the day and night.\nSkills taught:\n- ask questions about a text (DOK2_skills_concepts, primary)\n- answer questions about a text using details (DOK2_skills_concepts, primary)\n- describe activities of animals and people during day and night (DOK2_skills_concepts, primary)\n- use imagination to understand figurative language about the sun and moon (DOK2_skills_concepts, secondary)\n- sort pictures into categories based on attributes (DOK2_skills_concepts, primary)\n- explain reasoning for sorting categories (DOK2_skills_concepts, primary)\n- use sentence frames to describe observations (DOK2_skills_concepts, secondary)\n- participate in partner discussions using protocols (DOK2_skills_concepts, secondary)\n- reflect on personal experiences related to daytime and nighttime (DOK2_skills_concepts, primary)\n- use vocabulary words related to writing and categorization (DOK1_recall_reproduction, secondary)\nStudent actions:\n- recognition_identification: listen and identify details in read-alouds and videos\n- oral_production: answer questions orally, share observations, explain sorting categories, participate in partner talk\n- matching_sorting_sequencing: sort picture cards into daytime and nighttime categories\n- procedural_application: use sorting and partner discussion protocols\n- reasoning_explanation: explain why pictures belong in categories and provide evidence from texts and videos\n- comprehension_response: answer questions about texts and videos, describe observations about day and night activities, reflect on personal experiences related to day and night activities, use sentence frames to communicate ideas orally, paraphrase story content, act or sketch story activities for comprehension support if needed, mime observations to communicate ideas for ELLs, compare and contrast observations with personal experiences, respond to total participation technique prompts, share thinking with partners and whole group",
+    "content_hash": "33975ebdad32c9d597aa5df1c1f90fb3597f4fd4657bb4d3f92facd049679135",
+    "metadata": {
+      "grade": 1,
+      "module": 2,
+      "unit": 3,
+      "lesson": 1,
+      "title": "Lesson 1: Noticing and Wondering: What Happens during the Day and Night?",
+      "domain_primary": "Comprehension",
+      "domain_secondary": [
+        "Speaking & Listening",
+        "Language"
+      ],
+      "mode": "interpretation",
+      "genre": "narrative",
+      "prompt_version": "normalize_ela.v2.1",
+      "page_start": 345,
+      "page_end": 354
+    }
+  },
+  "instructional_chunks": [
+    {
+      "chunk_id": "G1M2U3L1#Opening#A",
+      "family": "instructional",
+      "resource_id": "G1M2U3L1",
+      "text": "[Opening A] Reading Aloud: 'Elvin, the Boy Who Loved the Sky,' Part 6\n- Gather students whole group.\n- Tell students that in the last two units, they heard stories about Elvin, who shared his questions and observations about the sun, moon, and stars with them.\n- Tell students that to help them remember all of the things Elvin wondered about, you are going to briefly reread part of the story.\n- Display 'Elvin, the Boy Who Loved the Sky,' Part 1 and read it aloud fluently, with expression, and without interruption.\n- Using a total participation technique, invite responses from the group:\n- 'What are some things that Elvin wondered about?' (if the sun and moon had stories; if the sun and moon danced and had songs)\n- 'What are some things that Elvin shared with us because he wondered about the sun, moon, and stars?' (photographs, songs, movement routines, books)\n- Tell students that today is an exciting day because you have a new story about Elvin to read to them and that you think there are more things Elvin wonders about.\n- Display ' Elvin, the Boy Who Loved the Sky,' Part 6 and read aloud the first three sentences fluently, with expression, and without interruption.\n- Focus students on the word writer.\n- Using a total participation technique, invite responses from the group:\n- 'What does a writer do? Why do you think Elvin is sharing his wonderings about the sun, moon, and stars with a writer?' (A writer tells stories and shares information. Elvin wonders if he can tell stories and write about the sun, moon, and stars.)\n- If productive, cue students to provide evidence:\n- 'What, in the story, makes you think so?' (Responses will vary.)\n- Draw students' attention back to the text and finish reading Part 6.\n- Using a total participation technique, invite responses from the group:\n- 'What is Elvin wondering about now?' (if he can write about the sun and moon)\n- When using a total participation technique, minimize discomfort or perceived threats and distractions by alerting individual students that you are going to call on them next. (MME)\n- For ELLs: During the read-aloud, display the text on a document camera or an enlarged copy of the text to help direct students to the appropriate sentences on each page.\n- For ELLs: To provide heavier support of comprehension, invite students to act or sketch Elvin's activities. Invite students who need lighter support to paraphrase the story in simpler language.",
+      "content_hash": "f04bdcb5a1723357c77d966ea544ba862b7aebd0721519145b8d85e9e9413a80",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 3,
+        "lesson": 1,
+        "family": "instructional",
+        "section": "Opening",
+        "letter": "A"
+      },
+      "section": "Opening",
+      "letter": "A",
+      "title": "Reading Aloud: 'Elvin, the Boy Who Loved the Sky,' Part 6",
+      "page": 349,
+      "minutes": 10,
+      "steps": [
+        "Gather students whole group.",
+        "Tell students that in the last two units, they heard stories about Elvin, who shared his questions and observations about the sun, moon, and stars with them.",
+        "Tell students that to help them remember all of the things Elvin wondered about, you are going to briefly reread part of the story.",
+        "Display 'Elvin, the Boy Who Loved the Sky,' Part 1 and read it aloud fluently, with expression, and without interruption.",
+        "Using a total participation technique, invite responses from the group:",
+        "'What are some things that Elvin wondered about?' (if the sun and moon had stories; if the sun and moon danced and had songs)",
+        "'What are some things that Elvin shared with us because he wondered about the sun, moon, and stars?' (photographs, songs, movement routines, books)",
+        "Tell students that today is an exciting day because you have a new story about Elvin to read to them and that you think there are more things Elvin wonders about.",
+        "Display ' Elvin, the Boy Who Loved the Sky,' Part 6 and read aloud the first three sentences fluently, with expression, and without interruption.",
+        "Focus students on the word writer.",
+        "Using a total participation technique, invite responses from the group:",
+        "'What does a writer do? Why do you think Elvin is sharing his wonderings about the sun, moon, and stars with a writer?' (A writer tells stories and shares information. Elvin wonders if he can tell stories and write about the sun, moon, and stars.)",
+        "If productive, cue students to provide evidence:",
+        "'What, in the story, makes you think so?' (Responses will vary.)",
+        "Draw students' attention back to the text and finish reading Part 6.",
+        "Using a total participation technique, invite responses from the group:",
+        "'What is Elvin wondering about now?' (if he can write about the sun and moon)",
+        "When using a total participation technique, minimize discomfort or perceived threats and distractions by alerting individual students that you are going to call on them next. (MME)",
+        "For ELLs: During the read-aloud, display the text on a document camera or an enlarged copy of the text to help direct students to the appropriate sentences on each page.",
+        "For ELLs: To provide heavier support of comprehension, invite students to act or sketch Elvin's activities. Invite students who need lighter support to paraphrase the story in simpler language."
+      ]
+    },
+    {
+      "chunk_id": "G1M2U3L1#Work Time#A",
+      "family": "instructional",
+      "resource_id": "G1M2U3L1",
+      "text": "[Work Time A] Reading Aloud: What the Sun Sees, What the Moon Sees\n- With excitement, reveal and then display What the Sun Sees, What the Moon Sees.\n- Tell students that they are going to listen to What the Sun Sees, What the Moon Sees to help Elvin better understand if he can write about the sun, moon, and stars.\n- Direct students' attention to the posted learning targets and read the first one aloud:\n- 'I can ask and answer questions about day and night based on the text What the Sun Sees, What the Moon Sees.'\n- Focus students on the title of the text within the learning target.\n- Using a total participation technique, invite responses from the group:\n- 'What do you think the author means when she writes 'what the sun sees' and 'what the moon sees'?' (Responses will vary.)\n- 'When the author uses 'what the sun sees' or 'what the moon sees' in the title of the text, does she mean the moon has eyes and can actually see things?' (no)\n- 'Why do you think the author describes the sun and moon in this way?' (to show imagination)\n- Tell students that sometimes writers use their imagination to write about what an animal or thing might see or do. Explain that in the case of this story, the author is using her imagination to think about what the sun or the moon, looking down on earth from the sky, might see.\n- While still displaying the text, complete a first read of the text, reading slowly, fluently, with expression, and without interruption.\n- Use the Reading Literature Checklist as students respond to the following series of\n- questions to track students' progress towards RL 1.1 and RL 1.10.\n- Using a total participation technique, invite responses from the group:\n- 'When the author wrote about what the sun sees, was she writing about daytime or nighttime?' (daytime)\n- Invite students to turn and talk with an elbow partner:\n- 'What did the sun 'see' animals and people doing during the daytime?' (busy children, crowded streets, animals in the barn)\n- Circulate as students talk and target a few students to share out with the whole group.\n- Using a total participation technique, invite responses from the group:\n- 'When the author wrote about what the moon sees, was she writing about daytime or nighttime?' (nighttime)\n- Invite students to turn and talk with an elbow partner:\n- Tell students that now they will sort pictures and words of activities that might happen during the day or during nighttime.\n- To activate prior knowledge and support expressive skills, offer index cards with text and images as possible responses for students to use as they share their response (e.g., busy children, crowded streets, animals in the barn). (MMR, MMAE)\n- For ELLs: Mini Language Dive. Ask students about the meaning of the chunks from key sentences from the What the Sun Sees, What the Moon Sees: 'The sun sees / blue skies. The sun sees / crowded barnyards.' Write and display student responses next to the chunks. Point to pictures in the text on display, or quickly sketch and display the meaning of the sentences and refer to the sky outside. Examples:\n- Read the chunks aloud in sequence. Ask:\n- 'What is the meaning of these sentences?' (Responses will vary.)\n- Place your finger on the chunk: blue skies. Ask:\n- 'What kind of skies does the sun see?' (blue)\n- Point to blue. Say:\n- 'Sometimes we want to say more about something, like the skies. We want to say what color they are. We can add a word before the thing to say more about it.' Consider demonstrating by removing blue and reading the sentence. 'Now I want to say that the skies are blue.' Then add blue back in again and reread the sentence to emphasize.\n- 'Can we say, The sun sees skies blue?' (No.)\n- Repeat the sequence above with the chunk crowded barnyards.\n- 'Can you find another sentence in this book where the writer added a word to say more about something?' Tell students you will give them time to think and discuss with their partner. (All of the sentences follow this pattern, e.g., sleeping owls.)\n- 'As we read this book and others, I want you to think about how a writer puts in another word to say more about the next word.'\n- Display this sentence frame: 'I see _____ books.'\n- 'Can you put in a word before books to say more about the books?'",
+      "content_hash": "d85bf6ca689a14a837e960038db5dbb6472511f1ecc6794eb59cd63277f80493",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 3,
+        "lesson": 1,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "A"
+      },
+      "section": "Work Time",
+      "letter": "A",
+      "title": "Reading Aloud: What the Sun Sees, What the Moon Sees",
+      "page": 350,
+      "minutes": 15,
+      "steps": [
+        "With excitement, reveal and then display What the Sun Sees, What the Moon Sees.",
+        "Tell students that they are going to listen to What the Sun Sees, What the Moon Sees to help Elvin better understand if he can write about the sun, moon, and stars.",
+        "Direct students' attention to the posted learning targets and read the first one aloud:",
+        "'I can ask and answer questions about day and night based on the text What the Sun Sees, What the Moon Sees.'",
+        "Focus students on the title of the text within the learning target.",
+        "Using a total participation technique, invite responses from the group:",
+        "'What do you think the author means when she writes 'what the sun sees' and 'what the moon sees'?' (Responses will vary.)",
+        "'When the author uses 'what the sun sees' or 'what the moon sees' in the title of the text, does she mean the moon has eyes and can actually see things?' (no)",
+        "'Why do you think the author describes the sun and moon in this way?' (to show imagination)",
+        "Tell students that sometimes writers use their imagination to write about what an animal or thing might see or do. Explain that in the case of this story, the author is using her imagination to think about what the sun or the moon, looking down on earth from the sky, might see.",
+        "While still displaying the text, complete a first read of the text, reading slowly, fluently, with expression, and without interruption.",
+        "Use the Reading Literature Checklist as students respond to the following series of",
+        "questions to track students' progress towards RL 1.1 and RL 1.10.",
+        "Using a total participation technique, invite responses from the group:",
+        "'When the author wrote about what the sun sees, was she writing about daytime or nighttime?' (daytime)",
+        "Invite students to turn and talk with an elbow partner:",
+        "'What did the sun 'see' animals and people doing during the daytime?' (busy children, crowded streets, animals in the barn)",
+        "Circulate as students talk and target a few students to share out with the whole group.",
+        "Using a total participation technique, invite responses from the group:",
+        "'When the author wrote about what the moon sees, was she writing about daytime or nighttime?' (nighttime)",
+        "Invite students to turn and talk with an elbow partner:",
+        "Tell students that now they will sort pictures and words of activities that might happen during the day or during nighttime.",
+        "To activate prior knowledge and support expressive skills, offer index cards with text and images as possible responses for students to use as they share their response (e.g., busy children, crowded streets, animals in the barn). (MMR, MMAE)",
+        "For ELLs: Mini Language Dive. Ask students about the meaning of the chunks from key sentences from the What the Sun Sees, What the Moon Sees: 'The sun sees / blue skies. The sun sees / crowded barnyards.' Write and display student responses next to the chunks. Point to pictures in the text on display, or quickly sketch and display the meaning of the sentences and refer to the sky outside. Examples:",
+        "Read the chunks aloud in sequence. Ask:",
+        "'What is the meaning of these sentences?' (Responses will vary.)",
+        "Place your finger on the chunk: blue skies. Ask:",
+        "'What kind of skies does the sun see?' (blue)",
+        "Point to blue. Say:",
+        "'Sometimes we want to say more about something, like the skies. We want to say what color they are. We can add a word before the thing to say more about it.' Consider demonstrating by removing blue and reading the sentence. 'Now I want to say that the skies are blue.' Then add blue back in again and reread the sentence to emphasize.",
+        "'Can we say, The sun sees skies blue?' (No.)",
+        "Repeat the sequence above with the chunk crowded barnyards.",
+        "'Can you find another sentence in this book where the writer added a word to say more about something?' Tell students you will give them time to think and discuss with their partner. (All of the sentences follow this pattern, e.g., sleeping owls.)",
+        "'As we read this book and others, I want you to think about how a writer puts in another word to say more about the next word.'",
+        "Display this sentence frame: 'I see _____ books.'",
+        "'Can you put in a word before books to say more about the books?'"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U3L1#Work Time#B",
+      "family": "instructional",
+      "resource_id": "G1M2U3L1",
+      "text": "[Work Time B] Sorting Protocol: Daytime and Nighttime Activities\n- Refocus students whole group.\n- Tell students they are going to use the Sorting protocol to sort pictures of different activities into different categories. Remind them that they used this protocol in Module 1 and review as necessary using the Sorting Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Using a total participation technique, invite responses from the group:\n- 'What does it mean to sort pictures into different categories?' (We will put pictures that go together in one group or category and other pictures that go together in another group or category.)\n- Briefly review the definition of category as necessary.\n- Move students into pre-determined pairs and distribute the Picture Cards.\n- Invite students to begin the Sorting protocol.\n- As students circulate and share, prompt them to explain the categories they chose by asking:\n- 'Can you explain what is the same about the pictures in this categories?' (Responses will vary.)\n- 'What are you sorting into the daytime category? Why?' (Responses will vary.)\n- 'What are you sorting into the nighttime category? Why?' (Responses will vary.)\n- After 7-8 minutes, refocus students and invite one or two pairs to share what they sorted into the daytime category and what they sorted into the nighttime category.\n- If productive, cue students to think about their thinking:\n- \"What is something you did that helped you succeed in the Sorting protocol? I'll give you time to think and discuss with a partner.' (Responses will vary.)\n- Refocus students whole group and offer specific, positive feedback on their sorting. (Example: 'I noticed that Janelle and Siobhan sorted and re-sorted their picture cards to see if they could come up with different categories.')\n- For students who may need additional support anticipating and managing frustration: Before students begin sorting, model what to do if their partner has an idea they do not agree with. (Example: 'My partner may suggest an idea for sorting that I don't agree with. If that happens, I can remember that we can listen to each other and come to a decision together.') (MME)\n- For ELLs: To provide lighter support, consider inviting students to create sentence frames to use as they respond to your questions. (Example: 'One thing that is the same about the pictures in this category is that they all _____.')",
+      "content_hash": "b9289a1a4c75c264d82b384d45be0f3fbeef97019a244293b709adbef91a38a9",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 3,
+        "lesson": 1,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "B"
+      },
+      "section": "Work Time",
+      "letter": "B",
+      "title": "Sorting Protocol: Daytime and Nighttime Activities",
+      "page": 351,
+      "minutes": 15,
+      "steps": [
+        "Refocus students whole group.",
+        "Tell students they are going to use the Sorting protocol to sort pictures of different activities into different categories. Remind them that they used this protocol in Module 1 and review as necessary using the Sorting Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
+        "Using a total participation technique, invite responses from the group:",
+        "'What does it mean to sort pictures into different categories?' (We will put pictures that go together in one group or category and other pictures that go together in another group or category.)",
+        "Briefly review the definition of category as necessary.",
+        "Move students into pre-determined pairs and distribute the Picture Cards.",
+        "Invite students to begin the Sorting protocol.",
+        "As students circulate and share, prompt them to explain the categories they chose by asking:",
+        "'Can you explain what is the same about the pictures in this categories?' (Responses will vary.)",
+        "'What are you sorting into the daytime category? Why?' (Responses will vary.)",
+        "'What are you sorting into the nighttime category? Why?' (Responses will vary.)",
+        "After 7-8 minutes, refocus students and invite one or two pairs to share what they sorted into the daytime category and what they sorted into the nighttime category.",
+        "If productive, cue students to think about their thinking:",
+        "\"What is something you did that helped you succeed in the Sorting protocol? I'll give you time to think and discuss with a partner.' (Responses will vary.)",
+        "Refocus students whole group and offer specific, positive feedback on their sorting. (Example: 'I noticed that Janelle and Siobhan sorted and re-sorted their picture cards to see if they could come up with different categories.')",
+        "For students who may need additional support anticipating and managing frustration: Before students begin sorting, model what to do if their partner has an idea they do not agree with. (Example: 'My partner may suggest an idea for sorting that I don't agree with. If that happens, I can remember that we can listen to each other and come to a decision together.') (MME)",
+        "For ELLs: To provide lighter support, consider inviting students to create sentence frames to use as they respond to your questions. (Example: 'One thing that is the same about the pictures in this category is that they all _____.')"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U3L1#Work Time#C",
+      "family": "instructional",
+      "resource_id": "G1M2U3L1",
+      "text": "[Work Time C] Video and Back-to-Back and Face-to-Face: What Happens during the Day and Night?\n- Tell students you have a couple videos of the daytime and nighttime to show them.\n- Direct students' attention to the posted learning targets and read the second one aloud:\n- 'I can describe what animals and people do during the day and night based on observations of pictures and videos.'\n- Using a total participation technique, invite responses from the group:\n- 'What are some activities that people might do during the day when the sun is out? What are some activities that people might do during the night when the moon is out?' (During the day, people might play, walk outside, and go to school. During the night, people might watch television at home, take a bath, and go to bed.)\n- Tell students that as they watch the videos, they should look carefully to see what they notice and observe about the sky, the sun, the moon, and what animals and people are doing during the daytime and during the nighttime. Tell students they should also think about the questions they have as they watch the videos.\n- Inform students that after they watch each video, they will have a chance to share their thinking with a partner using the Back-to-Back and Face-to-Face protocol. Remind them that they used this protocol in Module 1 and review as necessary using the Back-to-Back and Face-to-Face Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Play 'City Street Time Lapse Stock Video.'\n- Guide students through the Back-to-Back and Face-to-Face protocol using this question:\n- 'What is one thing you noticed about what people and animals do during the day?'\n- Provide a sentence frame if necessary:\n- -'I noticed that during the day, people and animals __________.'\n- As students share, circulate and continue to use the Speaking and Listening Checklist to assess their progress toward the learning target.\n- Refocus students whole group and play 'Downtown Boston at Night.'\n- Repeat the process above for the protocol, using the following question and sentence stem:\n- -'What is one thing you noticed about what people and animals do during the night?'\n- -'I noticed that during the night, people and animals __________.'\n- As students share, circulate and continue to use the Speaking and Listening Checklist to assess students' progress toward the learning target.\n- Refocus students whole group and invite a few volunteers to share out to the whole group.\n- For students who may be uncomfortable sharing their own ideas with the entire class: Consider allowing them to share what their partner said so that they still have a chance to speak in front of the class. (MME)\n- For ELLs: Before initiating the Back-to-Back and Face-to-Face protocol, brainstorm two or three things that the people and animals do during the day in the video. Record and display student ideas. Practice using the sentence frame with the ideas. If students have trouble thinking of things to say during their partner discussions, invite them to use one of the ideas generated by the class.\n- For ELLs: If students have trouble communicating their ideas about what people and animals are doing during the day, invite them to mime their thoughts about something they saw. Teach them the word or phrase for the actions they signal and invite them to repeat. Display the word or phrase. (Example: 'It looks like you are eating. Can you say, 'I noticed that during the day, people and animals are eating'?')\n- For ELLs: To provide lighter support, invite students to compare and contrast what they see in the videos with what they do.\n- For ELLs: Jot down examples of successful communication as well as any common, important language errors to share with students during Closing and Assessment A. For example, check whether students are using verb tense correctly",
+      "content_hash": "d4209bf309be7a8917efd0bcaadb946ef43d6b9d3aaea16793d01e99331000a9",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 3,
+        "lesson": 1,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "C"
+      },
+      "section": "Work Time",
+      "letter": "C",
+      "title": "Video and Back-to-Back and Face-to-Face: What Happens during the Day and Night?",
+      "page": 352,
+      "minutes": 15,
+      "steps": [
+        "Tell students you have a couple videos of the daytime and nighttime to show them.",
+        "Direct students' attention to the posted learning targets and read the second one aloud:",
+        "'I can describe what animals and people do during the day and night based on observations of pictures and videos.'",
+        "Using a total participation technique, invite responses from the group:",
+        "'What are some activities that people might do during the day when the sun is out? What are some activities that people might do during the night when the moon is out?' (During the day, people might play, walk outside, and go to school. During the night, people might watch television at home, take a bath, and go to bed.)",
+        "Tell students that as they watch the videos, they should look carefully to see what they notice and observe about the sky, the sun, the moon, and what animals and people are doing during the daytime and during the nighttime. Tell students they should also think about the questions they have as they watch the videos.",
+        "Inform students that after they watch each video, they will have a chance to share their thinking with a partner using the Back-to-Back and Face-to-Face protocol. Remind them that they used this protocol in Module 1 and review as necessary using the Back-to-Back and Face-to-Face Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
+        "Play 'City Street Time Lapse Stock Video.'",
+        "Guide students through the Back-to-Back and Face-to-Face protocol using this question:",
+        "'What is one thing you noticed about what people and animals do during the day?'",
+        "Provide a sentence frame if necessary:",
+        "-'I noticed that during the day, people and animals __________.'",
+        "As students share, circulate and continue to use the Speaking and Listening Checklist to assess their progress toward the learning target.",
+        "Refocus students whole group and play 'Downtown Boston at Night.'",
+        "Repeat the process above for the protocol, using the following question and sentence stem:",
+        "-'What is one thing you noticed about what people and animals do during the night?'",
+        "-'I noticed that during the night, people and animals __________.'",
+        "As students share, circulate and continue to use the Speaking and Listening Checklist to assess students' progress toward the learning target.",
+        "Refocus students whole group and invite a few volunteers to share out to the whole group.",
+        "For students who may be uncomfortable sharing their own ideas with the entire class: Consider allowing them to share what their partner said so that they still have a chance to speak in front of the class. (MME)",
+        "For ELLs: Before initiating the Back-to-Back and Face-to-Face protocol, brainstorm two or three things that the people and animals do during the day in the video. Record and display student ideas. Practice using the sentence frame with the ideas. If students have trouble thinking of things to say during their partner discussions, invite them to use one of the ideas generated by the class.",
+        "For ELLs: If students have trouble communicating their ideas about what people and animals are doing during the day, invite them to mime their thoughts about something they saw. Teach them the word or phrase for the actions they signal and invite them to repeat. Display the word or phrase. (Example: 'It looks like you are eating. Can you say, 'I noticed that during the day, people and animals are eating'?')",
+        "For ELLs: To provide lighter support, invite students to compare and contrast what they see in the videos with what they do.",
+        "For ELLs: Jot down examples of successful communication as well as any common, important language errors to share with students during Closing and Assessment A. For example, check whether students are using verb tense correctly"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U3L1#Closing and Assessment#A",
+      "family": "instructional",
+      "resource_id": "G1M2U3L1",
+      "text": "[Closing and Assessment A] Reflecting on Learning\n- Invite students to turn and talk:\n- 'What do you and your family do during the daytime?'\n- 'What do you and your family do during nighttime?'\n- Circulate and listen as students share out. Select two or three students to share their responses with the whole group.\n- Offer students specific, positive feedback on their work during the lesson to answer questions about daytime and nighttime. (Example: 'Haiyan related what she saw in the video clip during the night to her father because he goes to work at night; RaShawn noticed that during the day, there are a lot more people, but at night there were a lot more animals.')\n- For ELLs: Share successful communication as well as one or two common, important language errors. For example, if students made errors with verb tense, discuss an example and guide the students to correct it. Example: 'Some of you were saying, 'I noticed that during the night, people and animals sleeping.' We need to add one more word before sleeping so that this is a complete sentence. What are the people and animals doing?'",
+      "content_hash": "b58e41ec7f0b23638fd9cf32c0732d78baef5df7ad208276822ce27d587b2df8",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 3,
+        "lesson": 1,
+        "family": "instructional",
+        "section": "Closing and Assessment",
+        "letter": "A"
+      },
+      "section": "Closing and Assessment",
+      "letter": "A",
+      "title": "Reflecting on Learning",
+      "page": 354,
+      "minutes": 5,
+      "steps": [
+        "Invite students to turn and talk:",
+        "'What do you and your family do during the daytime?'",
+        "'What do you and your family do during nighttime?'",
+        "Circulate and listen as students share out. Select two or three students to share their responses with the whole group.",
+        "Offer students specific, positive feedback on their work during the lesson to answer questions about daytime and nighttime. (Example: 'Haiyan related what she saw in the video clip during the night to her father because he goes to work at night; RaShawn noticed that during the day, there are a lot more people, but at night there were a lot more animals.')",
+        "For ELLs: Share successful communication as well as one or two common, important language errors. For example, if students made errors with verb tense, discuss an example and guide the students to correct it. Example: 'Some of you were saying, 'I noticed that during the night, people and animals sleeping.' We need to add one more word before sleeping so that this is a complete sentence. What are the people and animals doing?'"
+      ]
+    }
+  ],
+  "evidence_pointers": [
+    {
+      "chunk_id": "G1M2U3L1#evidence#0",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "7f33578c51e764246e17e447a130d52301afb81f2141a4f1655fa98f242c6b92",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L1#Opening#A",
+      "location": "Opening A",
+      "quote": "'What are some things that Elvin wondered about?' (if the sun and moon had stories; if the sun and moon danced and had songs)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 0
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#1",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "4c725f16db74a5880c88e31cf0c3c2945f2aefbb88a3c6b0071538ad6f5f3c18",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L1#Opening#A",
+      "location": "Opening A",
+      "quote": "'What are some things that Elvin shared with us because he wondered about the sun, moon, and stars?' (photographs, songs, movement routines, books)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 1
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#2",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "3dd49a8d400c2489c89309fdd22a2997c831180c915b0c0e83d662156bc1fae0",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L1#Opening#A",
+      "location": "Opening A",
+      "quote": "'What does a writer do? Why do you think Elvin is sharing his wonderings about the sun, moon, and stars with a writer?' (A writer tells stories and shares information. Elvin wonders if he can tell stories and write about the sun, moon, and stars.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 2
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#3",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "4cd5b1068d92932f161c8f13c8e21a1695f1b0b9ccfe102f2f0b6b5b734ca7aa",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L1#Opening#A",
+      "location": "Opening A",
+      "quote": "'What, in the story, makes you think so?' (Responses will vary.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally",
+        "using evidence from text"
+      ],
+      "evidence_index": 3
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#4",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "c943fa750391708c1f41c4b9aa8dfd407a88a765121e3b6b452db71030a32826",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L1#Opening#A",
+      "location": "Opening A",
+      "quote": "'What is Elvin wondering about now?' (if he can write about the sun and moon)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 4
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#5",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "75ef7b5e0865aa22f45b6d9ac21202a5696da2a01f141a84c33626c85fde8edd",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#A",
+      "location": "Work Time A",
+      "quote": "I can ask and answer questions about day and night based on the text What the Sun Sees, What the Moon Sees.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 5
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#6",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "eb702a7327d8a9bba7a32911dd91d6738d2a0eeebc2cf08b358d4b8ace4f0ea9",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#A",
+      "location": "Work Time A",
+      "quote": "'What do you think the author means when she writes 'what the sun sees' and 'what the moon sees'?' (Responses will vary.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 6
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#7",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "317da31f347d3442cc12e31e8665a9a537b0147b9f5f0a83fe90d38301555631",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#A",
+      "location": "Work Time A",
+      "quote": "'When the author wrote about what the sun sees, was she writing about daytime or nighttime?' (daytime)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 7
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#8",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "d16096fddfbe7ed330a4b494d01e2b9a899317e7a93e7cfe7ff4ca0fec7adb46",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#A",
+      "location": "Work Time A",
+      "quote": "'What did the sun 'see' animals and people doing during the daytime?' (busy children, crowded streets, animals in the barn)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 8
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#9",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "0b6bfb171fd7231a7f1716ed185da0b8967cd6984bf70fbb8ed819cc7cfbea0c",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Invite students to turn and talk with an elbow partner: 'What did the sun 'see' animals and people doing during the daytime?'",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally",
+        "with partner"
+      ],
+      "evidence_index": 9
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#10",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "f90e5b8c902d29726a18db76464435b268c6aa830b91a41d74941eea6d908e77",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#A",
+      "location": "Work Time A",
+      "quote": "'When the author wrote about what the moon sees, was she writing about daytime or nighttime?' (nighttime)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 10
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#11",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "2fd694521208977bccf83fd2dd25585ce96deadf0ea40217acb996b77477e68c",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Invite students to turn and talk with an elbow partner:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally",
+        "with partner"
+      ],
+      "evidence_index": 11
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#12",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "7616da15291b7a6b2104d039da2d2bf8707879939b44047d1c9d0b5d993a67f7",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Tell students that now they will sort pictures and words of activities that might happen during the day or during nighttime.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "matching_sorting_sequencing"
+      ],
+      "qualifiers": [],
+      "evidence_index": 12
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#13",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "53b54b7abdb2ab608ef229d3135410e4aa9a8f8ebf7f9089f448e057e1c85f1c",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Invite students to begin the Sorting protocol.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "procedural_application"
+      ],
+      "qualifiers": [],
+      "evidence_index": 13
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#14",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "d5744582ec953a5ff03524fe39faf010db4f2a511e6db0fdc5226fce6450fa59",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#B",
+      "location": "Work Time B",
+      "quote": "'What does it mean to sort pictures into different categories?' (We will put pictures that go together in one group or category and other pictures that go together in another group or category.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 14
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#15",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "c53a1b28b422e84a2244c0895314cb73ebead5e87d3185eb68a0fc9798c3b26a",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#B",
+      "location": "Work Time B",
+      "quote": "'Can you explain what is the same about the pictures in this categories?' (Responses will vary.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 15
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#16",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "eb17dfa28cbee35bd6a23e6046352d9000f9f159cbec5695e134fe97401cfcd9",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#B",
+      "location": "Work Time B",
+      "quote": "'What are you sorting into the daytime category? Why?' (Responses will vary.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 16
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#17",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "94a0d557995d452fe797f01082a892202602572ef5e707574cee7a97c2b4b6f9",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#B",
+      "location": "Work Time B",
+      "quote": "'What are you sorting into the nighttime category? Why?' (Responses will vary.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 17
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#18",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "c9a444f52d024e1a9f15f9c75700c0e0441df71a5061c5ac4570449b2a3e2d1b",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#B",
+      "location": "Work Time B",
+      "quote": "After 7-8 minutes, refocus students and invite one or two pairs to share what they sorted into the daytime category and what they sorted into the nighttime category.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally",
+        "in pairs"
+      ],
+      "evidence_index": 18
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#19",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "8642ef5f15e01069218feb62d6cf86169c3b51da4c2423554b17b2d1e3938e72",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#B",
+      "location": "Work Time B",
+      "quote": "'What is something you did that helped you succeed in the Sorting protocol? I'll give you time to think and discuss with a partner.' (Responses will vary.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally",
+        "with partner"
+      ],
+      "evidence_index": 19
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#20",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "aee8a2f5fa77861a7327686456fd849c96ff47d6e8fc9e5d00de400690a7b23e",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#C",
+      "location": "Work Time C",
+      "quote": "I can describe what animals and people do during the day and night based on observations of pictures and videos.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 20
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#21",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "1b80d4a6efa895635b807e79087bec65870f0a97b877de2e401f1078771d4617",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#C",
+      "location": "Work Time C",
+      "quote": "'What are some activities that people might do during the day when the sun is out? What are some activities that people might do during the night when the moon is out?' (During the day, people might play, walk outside, and go to school. During the night, people might watch television at home, take a bath, and go to bed.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 21
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#22",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "83a6a3b6daebfb43f656ddaecbbabb3a7d5fabfa47ca2e3b20f49a998afe24db",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Tell students that as they watch the videos, they should look carefully to see what they notice and observe about the sky, the sun, the moon, and what animals and people are doing during the daytime and during the nighttime.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "comprehension_response"
+      ],
+      "qualifiers": [],
+      "evidence_index": 22
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#23",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "37b839665b32ec674f01ca4fd0a1852c5a1cf7cfdaf39793fe72305db872cc11",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Guide students through the Back-to-Back and Face-to-Face protocol using this question: 'What is one thing you noticed about what people and animals do during the day?'",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "procedural_application",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 23
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#24",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "182b45949115d34959e6a61fc89c510ca3dedcba0a2e35567276e3884a1f0b7a",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Provide a sentence frame if necessary:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally",
+        "using sentence frame"
+      ],
+      "evidence_index": 24
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#25",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "ca7e5a601518d88645df139e74c7316046dbb178e9cec75a6e45f2bdc4abf393",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#C",
+      "location": "Work Time C",
+      "quote": "As students share, circulate and continue to use the Speaking and Listening Checklist to assess their progress toward the learning target.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 25
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#26",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "4142f2337971597a39e4d8508aea98e754090ef974b4c86881893b157070007d",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Refocus students whole group and play 'Downtown Boston at Night.'",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 26
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#27",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "0e4d968aa67ee9997acbdce27453694ba163f84312d7dd080a1e794a2b2623fd",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Repeat the process above for the protocol, using the following question and sentence stem:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "supports_action": [
+        "oral_production",
+        "procedural_application",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally",
+        "using sentence frame"
+      ],
+      "evidence_index": 27
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#28",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "7b9f6f485c37816cf7436350a748433a1a14207bd86c39d286ecc714b8ecf5d6",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L1#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Refocus students whole group and invite a few volunteers to share out to the whole group.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 28
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#29",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "71b7928ee8e1c0ab2c4a62a010682fb95199b10434af870b88616cbddc19de5e",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L1#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Invite students to turn and talk: 'What do you and your family do during the daytime?' 'What do you and your family do during nighttime?'",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally",
+        "with partner"
+      ],
+      "evidence_index": 29
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#30",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "3362470cdd74c2276bdc8c8fb4de6848740c90eef42cf4a1ddf8e36872879b95",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L1#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Select two or three students to share their responses with the whole group.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 30
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#31",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "520ecf5a83a7e27c23b07ebf0c86c5b8a9f3388c25ebeb1062c999cb8a2e61d1",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_scribe"
+      },
+      "block_chunk_id": "G1M2U3L1#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Offer students specific, positive feedback on their work during the lesson to answer questions about daytime and nighttime.",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 31
+    },
+    {
+      "chunk_id": "G1M2U3L1#evidence#32",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L1",
+      "text": "",
+      "content_hash": "ff4b38ca5ece5e11da495c2b2027caf737966a3654c2473cc66136d04e8c981e",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L1#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L1#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "For ELLs: Share successful communication as well as one or two common, important language errors. For example, if students made errors with verb tense, discuss an example and guide the students to correct it.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 32
+    }
+  ]
+}

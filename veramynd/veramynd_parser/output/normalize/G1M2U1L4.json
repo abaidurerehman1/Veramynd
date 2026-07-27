@@ -1,0 +1,544 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U1L4",
+  "title": "Lesson 4: Close Read-aloud, Session 2 and Role-Playing: Summer Sun Risin'",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "1",
+      "lesson": "4",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": [
+      "Comprehension",
+      "Language"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will describe what the boy and the sun do at the beginning of the story Summer Sun Risin' and demonstrate understanding through role-playing and partner discussions about respect and their experiences with the sun rising.",
+  "what_is_taught": [
+    {
+      "skill": "describe actions of characters and elements in a story",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "participate in role-playing to demonstrate understanding of story events",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use partner discussion protocols to share ideas about respect and experiences",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "listen and respond to peers' ideas using sentence stems and paraphrasing",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "follow multi-step movement routines safely and accurately",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use sentence frames to express ideas about respect",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "interpret verbal and visual cues to understand story vocabulary and meaning",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "phonics/decoding",
+    "independent writing",
+    "fluency",
+    "formal vocabulary instruction beyond contextual understanding",
+    "extended writing composition"
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "participate in partner and group discussions, role-play characters, and share ideas orally",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "perform the Sun Movement routine steps safely and in sequence",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "model movements and role-play characters from the story",
+    "reasoning_explanation": "explain what motions represent and how respect is shown using sentence stems and paraphrasing",
+    "comprehension_response": "respond to questions about story events and partner discussions about respect and experiences with the sun rising",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Invite students to stand up and spread out inside and around the edge of the whole group meeting area. As needed, remind students to move safely and make space for everyone.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "safely"
+      ],
+      "supports_action": [
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Model Steps 6-10 of the Sun Movement routine while referencing the Sun Movement chart:",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Point to the image next to Step 6 and read aloud the step: 'Slowly stretch your body up to the right, keeping arms in line with your ears.'",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to join you as you practice Steps 1-10.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in sequence"
+      ],
+      "supports_action": [
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Offer students specific, positive feedback on their work learning the new movements in the routine. (Example: 'I noticed that everyone took great care to make sure their bodies were safe as we learned the new movements.')",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "After demonstrating Steps 6-10 of the Sun Movement routine, support comprehension by asking students to share what they think the motions represent (the sunbeams are spreading light and warmth in all directions). (MMR)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Direct students' attention to the posted learning target and read it aloud: 'I can describe what the boy and the sun do in the beginning of Summer Sun Risin'.'",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Using a total participation technique, invite responses from the group: 'How do these pictures help us understand this learning target?' (The pictures mean we will talk about what the boy and the sun do at the beginning of the story.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Tell students that during today's close read-aloud session, they will read to meet this target.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Guide students through the close read-aloud for Summer Sun Risin' using the Close Readaloud Guide: Summer Sun Risin' (Session 2; for teacher reference).",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'What is Pa doing?' (opening the barn door a little bit)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'What is the boy doing?' (opening the barn door really wide)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'What is the sun doing?' (Shining; filling the barn with sunlight)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Refocus students whole group.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students they are now going to act out part of Summer Sun Risin' using the Role-Play Protocol anchor chart. Share that acting out different parts of the text can help them understand it better.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to begin the Role-Play protocol. All students should first act out pages 3-4, then pages 5-6.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "in role"
+      ],
+      "supports_action": [
+        "oral_production",
+        "representation_modeling"
+      ]
+    },
+    {
+      "quote": "Refocus students whole group and offer them specific, positive feedback on their roleplaying. (Example: 'I noticed everyone participated and worked with their partner to act out what the boy did at the beginning of the story.')",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to turn and talk to an elbow partner: 'How will you show respect during our Role-Play protocol?' (I will listen to my partner and not make fun of him or her.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Direct students' attention to the Working to Become Ethical People anchor chart and read the title aloud.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Using a total participation technique, invite responses from the group:",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Direct students' attention to the Working to Become Ethical People anchor chart. Point to the column that reads, 'What does it mean?' and read the definition of respect: 'I treat myself, others, and the environment with care.'",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students they are going to use the Think-Pair-Share protocol to discuss how they showed respect during the Role-Play protocol.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to Think-Pair-Share with an elbow partner: 'What did it look and sound like when you were showing respect during the Role-Play protocol?'",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Offer the following sentence stems as necessary:",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Gather students back together and invite a few students to share with the whole group.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Remind students that they will keep working on what respect looks like and sounds like throughout the unit.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Gather students together whole group. Tell them that they just finished role-playing what the boy in Summer Sun Risin' experiences when the sun is rising. They now get to talk with a partner about what they experience when the sun is rising. Define experience (to feel or know).",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students they are going to discuss their experience when the sun is rising with a pinky partner.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Guide students through the protocol to discuss their experience when the sun is rising.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "As students talk, circulate and listen in. Take note of the ideas students are sharing and target a few students to share out with the whole group.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Remind students to make a bridge with their arms after both partners have shared.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Gather students back together and invite a few students to share with the whole group.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Model Steps 6-10 of the Sun Movement routine while referencing the Sun Movement chart; read aloud learning targets and story chunks; model role-play protocol steps; read and explain anchor charts about respect and ethical habits; model Think-Pair-Share and Pinky Partners protocols.",
+    "prompts_that_cue_student_response": [
+      "How do these pictures help us understand this learning target?",
+      "Who can tell us what your classmate said in your own words?",
+      "What is Pa doing?",
+      "What is the boy doing?",
+      "What is the sun doing?",
+      "How will you show respect during our Role-Play protocol?",
+      "How does the picture on the chart show respect?",
+      "What did it look and sound like when you were showing respect during the Role-Play protocol?",
+      "Who can tell us what your classmate said in your own words?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "story beginning events, character actions, respect as a character trait, partner discussion protocols",
+    "depth": "close reading of text, role-playing, partner discussion with sentence stems, movement routine practice"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "text, anchor charts, movement chart, role-play protocol chart, sentence stems",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Engaging the Learner: Sun Movement Routine",
+    "direct_instruction": "Close Read-aloud, Session 2: Summer Sun Risin', Pages 2-10",
+    "guided_practice": "Role-Playing and Showing Respect, Pages 3-6",
+    "independent_application": "Structured Discussion: Reflecting on Respect; Pinky Partners: Sun Experience-Sunrise",
+    "check_for_understanding": "Structured Discussion: Reflecting on Respect; Pinky Partners: Sun Experience-Sunrise",
+    "differentiated_reinforce": "Options for physical action and sensory input during close read-aloud; sentence frames for ELLs",
+    "differentiated_extend": "Pairing ELLs with more proficient partners for role-play modeling"
+  },
+  "supports": {
+    "english_language_learners": "Mini Language Dive on text chunks; sentence frames for expressing respect; pairing with proficient partners for role-play",
+    "universal_design_udl": "Options for seating and sensory input during read-aloud; multiple participation protocols (total participation, Think-Pair-Share, Pinky Partners)",
+    "below_level_reinforce": "Additional modeling of Sun Movement routine; sentence stems for partner talk",
+    "above_level_extend": "Encourage elaboration in partner discussions; role-play middle events in future lessons"
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "observation of participation in role-play, partner discussions, and movement routine",
+    "recognition_vs_production": "production"
+  },
+  "materials": [
+    "Sun Movement chart (from Lesson 2; one to display)",
+    "Close Read-aloud Guide: Summer Sun Risin' (Session 2; for teacher reference)",
+    "-Summer Sun Risin' (one to display; for teacher read-aloud)",
+    "-Summer Sun Risin' anchor chart (begun in Lesson 3; co-created with students during Work Time A; see Close Read-aloud Guide)",
+    "-Summer Sun Risin' icons (from Lesson 3; one set for teacher use during the close read-aloud)",
+    "-Sun icon (from Lesson 3; two; for teacher use during the close read-aloud)",
+    "-Summer Sun Risin' word cards (new; teacher-created; two)",
+    "-Reading Literature Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Role-Play Protocol anchor chart (new; teacher-created; see Teaching Notes)",
+    "Working to Become Effective Learners anchor chart (begun in Module 1)",
+    "Working to Become Ethical People anchor chart (new; teacher created; see supporting materials)",
+    "Think-Pair-Share Protocol anchor chart (begun in Module 1)",
+    "Speaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Pinky Partners Protocol anchor chart (begun in Module 1)"
+  ],
+  "vocabulary": {
+    "new": [
+      "respect (L)",
+      "risin', climbin' (T)",
+      "sunrise, retell, characters, events, observations, experience (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Sun Movement routine",
+    "Role-Play protocol",
+    "Think-Pair-Share protocol",
+    "Pinky Partners protocol"
+  ],
+  "notes": "The lesson integrates physical movement with comprehension and social-emotional learning through respect. It supports ELLs with language scaffolds and offers sensory accommodations. The lesson emphasizes oral language production and partner collaboration.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "narrative",
+    "text_complexity": {
+      "quantitative": "read-aloud mediation; text pages 2-10 of Summer Sun Risin'",
+      "qualitative": "simple narrative structure with supportive illustrations; familiar language; low knowledge demands",
+      "reader_and_task": "read-aloud removes decoding load; tasks require oral comprehension and oral production through discussion and role-play"
+    }
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 72,
+    "source_page_end": 82
+  }
+}

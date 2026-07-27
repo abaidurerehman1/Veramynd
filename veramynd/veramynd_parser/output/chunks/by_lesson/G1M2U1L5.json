@@ -1,0 +1,1186 @@
+{
+  "schema_version": "1.0-chunk",
+  "resource_id": "G1M2U1L5",
+  "grade": 1,
+  "module": 2,
+  "unit": 1,
+  "lesson": 5,
+  "title": "Lesson 5: Close Read-aloud, Session 3 and Role-Playing: Summer Sun Risin'",
+  "prompt_version": "normalize_ela.v2.1",
+  "lesson_chunk": {
+    "chunk_id": "G1M2U1L5#lesson",
+    "family": "lesson",
+    "resource_id": "G1M2U1L5",
+    "text": "Domain primary: Comprehension\nDomain secondary: Speaking & Listening, Writing, Language\nMode: both\nGenre: narrative\nObjective: Students will describe what the boy and the sun do in the middle of the story Summer Sun Risin' through close reading, role-playing, discussion, and writing.\nSkills taught:\n- identify nouns and verbs in a song (DOK1_recall_reproduction, primary)\n- recognize and identify pronouns replacing nouns (DOK1_recall_reproduction, primary)\n- describe story elements including main character, setting, and events (DOK2_skills_concepts, primary)\n- use key details from text to describe what characters do (DOK2_skills_concepts, primary)\n- participate in role-playing to act out story events (DOK2_skills_concepts, primary)\n- reflect on and discuss respectful behavior during partner work (DOK2_skills_concepts, secondary)\n- write and draw about story events using sentence frames (DOK2_skills_concepts, primary)\n- use sentence stems to support oral expression (DOK2_skills_concepts, secondary)\n- engage in structured discussion using Think-Pair-Share protocol (DOK2_skills_concepts, primary)\nStudent actions:\n- recognition_identification: identify nouns, verbs, and pronouns in a song and story\n- oral_production: participate in partner discussions, role-play, and whole group sharing\n- written_production: write and draw about story events using sentence frames\n- procedural_application: apply role-play and discussion protocols\n- reasoning_explanation: explain what the boy and sun do and how respect is shown\n- comprehension_response: respond to questions about story elements and experiences with the sun during midday and other times of day",
+    "content_hash": "823bdd84a2005e467687f4f7830298f90aa0755ac9476917701ea93c56bba0fe",
+    "metadata": {
+      "grade": 1,
+      "module": 2,
+      "unit": 1,
+      "lesson": 5,
+      "title": "Lesson 5: Close Read-aloud, Session 3 and Role-Playing: Summer Sun Risin'",
+      "domain_primary": "Comprehension",
+      "domain_secondary": [
+        "Speaking & Listening",
+        "Writing",
+        "Language"
+      ],
+      "mode": "both",
+      "genre": "narrative",
+      "prompt_version": "normalize_ela.v2.1",
+      "page_start": 83,
+      "page_end": 93
+    }
+  },
+  "instructional_chunks": [
+    {
+      "chunk_id": "G1M2U1L5#Opening#A",
+      "family": "instructional",
+      "resource_id": "G1M2U1L5",
+      "text": "[Opening A] Song and Movement: 'Sun, Moon, and Stars' Song\n- Gather students whole group. As needed, remind them to move safely and make space for everyone.\n- Remind students that they've learned a new song about the sun that was delivered to them by Elvin.\n- Direct students' attention to the ' Sun, Moon, and Stars' Version 2 song and invite them to join you in singing.\n- Remind students of the gestures, motions, and actions that they created.\n- Remind students that this song uses nouns and their matching verbs. Remind students that nouns are people, places, or things (like 'the sun'!), and that verbs are action words (like 'shines'!).\n- Turn and Talk:\n- 'What are some of the nouns and verbs that go together in this song?' (Responses will vary)\n- Circulate with the Language Checklist as students share to track students' progress towards L.1.1c.\n- Tell students that not only does this song use nouns and verbs, it also includes pronouns. Tell students that a pronoun is a word that can take the place of a noun.\n- Redirect students' attention to the first verse and reread it aloud. Tell students that the pronoun in this verse is 'it' because it replaces the noun 'the sun'. Use a marker to draw a box around the pronoun 'it'.\n- Tell students that you are slowly going to repeat the song. When they hear or see a pronoun they can touch their nose.\n- Sing the song aloud slowly and draw a box around the pronouns.\n- After singing the song and drawing a box around the pronouns and invite students to reread the pronouns with you: 'it' and 'them'.\n- If time allows, practice replacing nouns with pronouns by naming individuals, groups, or things in the classroom and having students generate the matching pronouns.\n- Provide differentiated mentors by seating students who are less comfortable singing next to students who may be more comfortable. (MMAE)\n- For ELLs: Before singing the song, reread the lyrics aloud and invite students to give a silent signal when they hear pronouns. Invite students to come up and circle the words that they identify.",
+      "content_hash": "a81d63b44c0453952492cd09c9606ccc8a05831ae383bad7dce9bbde1b2ba4a3",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 1,
+        "lesson": 5,
+        "family": "instructional",
+        "section": "Opening",
+        "letter": "A"
+      },
+      "section": "Opening",
+      "letter": "A",
+      "title": "Song and Movement: 'Sun, Moon, and Stars' Song",
+      "page": 88,
+      "minutes": 10,
+      "steps": [
+        "Gather students whole group. As needed, remind them to move safely and make space for everyone.",
+        "Remind students that they've learned a new song about the sun that was delivered to them by Elvin.",
+        "Direct students' attention to the ' Sun, Moon, and Stars' Version 2 song and invite them to join you in singing.",
+        "Remind students of the gestures, motions, and actions that they created.",
+        "Remind students that this song uses nouns and their matching verbs. Remind students that nouns are people, places, or things (like 'the sun'!), and that verbs are action words (like 'shines'!).",
+        "Turn and Talk:",
+        "'What are some of the nouns and verbs that go together in this song?' (Responses will vary)",
+        "Circulate with the Language Checklist as students share to track students' progress towards L.1.1c.",
+        "Tell students that not only does this song use nouns and verbs, it also includes pronouns. Tell students that a pronoun is a word that can take the place of a noun.",
+        "Redirect students' attention to the first verse and reread it aloud. Tell students that the pronoun in this verse is 'it' because it replaces the noun 'the sun'. Use a marker to draw a box around the pronoun 'it'.",
+        "Tell students that you are slowly going to repeat the song. When they hear or see a pronoun they can touch their nose.",
+        "Sing the song aloud slowly and draw a box around the pronouns.",
+        "After singing the song and drawing a box around the pronouns and invite students to reread the pronouns with you: 'it' and 'them'.",
+        "If time allows, practice replacing nouns with pronouns by naming individuals, groups, or things in the classroom and having students generate the matching pronouns.",
+        "Provide differentiated mentors by seating students who are less comfortable singing next to students who may be more comfortable. (MMAE)",
+        "For ELLs: Before singing the song, reread the lyrics aloud and invite students to give a silent signal when they hear pronouns. Invite students to come up and circle the words that they identify."
+      ]
+    },
+    {
+      "chunk_id": "G1M2U1L5#Work Time#A",
+      "family": "instructional",
+      "resource_id": "G1M2U1L5",
+      "text": "[Work Time A] Close Read-aloud, Session 3: Summer Sun Risin', Pages 11-20\n- Invite students to turn and talk to an elbow partner:\n- 'Who is the main character? Where does the story take place? What happened in the beginning of the story?' (The main character is a boy. The story takes place on a farm. In the beginning of the story, a boy wakes up and starts to work on a farm. The sun is rising and moving in the sky.)\n- Refocus whole group and invite one or two students to share out.\n- Direct students' attention to the posted learning target and read it aloud:\n- 'I can describe what the boy and the sun do in the middle of Summer Sun Risin'.'\n- Invite students to turn and talk to an elbow partner:\n- 'What time of day do you think the middle of the story takes place?' (in the middle of the day)\n- 'Where do you think the sun will be in the middle of the story?' (in the middle of the page)\n- Tell students that during today's close read-aloud session they will read to meet this target.\n- Invite students to take out their magic bows and take aim at the target.\n- Guide students through the close read-aloud for Summer Sun Risin' using the Close Readaloud Guide: Summer Sun Risin' (Session 3; for teacher reference). Consider using the ReadingLiterature Checklist during the close read-aloud(see Assessment Overview and Resources).\n- Refer to the guide for the use of:\n- -Summer Sun Risin'\n- -Summer Sun Risin' anchor chart\n- -Summer Sun Risin' icons\n- -Sun icon\n- -Summer Sun Risin' word card\n- Tell students that in the next lesson they will write and draw about the key details from the end of the text.\n- To active background knowledge before students discuss what the boy and sun do in the middle of Summer Sun Risin', invite students to reflect on the relationship based on what they know about the beginning of the story. (Example: 'Think back to what the boy and sun were doing at the beginning of the story. With your\n- partner, discuss why you think the sun will be in the middle of the page in the middle of the story. What have you learned from the story so far that makes you think this might be the case?') (MMR)\n- For ELLs: During or after Work Time A, guide students through the Language Dive (see supporting materials). Refer to the Language Dive Guide: Summer Sun Risin' (for teacher reference). Display Sentence Strip Chunks: Summer Sun Risin'.",
+      "content_hash": "a327ee586de73a33ef851a1bfc8d44fc41d6b3d77e409202c60c962c6b351895",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 1,
+        "lesson": 5,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "A"
+      },
+      "section": "Work Time",
+      "letter": "A",
+      "title": "Close Read-aloud, Session 3: Summer Sun Risin', Pages 11-20",
+      "page": 89,
+      "minutes": 25,
+      "steps": [
+        "Invite students to turn and talk to an elbow partner:",
+        "'Who is the main character? Where does the story take place? What happened in the beginning of the story?' (The main character is a boy. The story takes place on a farm. In the beginning of the story, a boy wakes up and starts to work on a farm. The sun is rising and moving in the sky.)",
+        "Refocus whole group and invite one or two students to share out.",
+        "Direct students' attention to the posted learning target and read it aloud:",
+        "'I can describe what the boy and the sun do in the middle of Summer Sun Risin'.'",
+        "Invite students to turn and talk to an elbow partner:",
+        "'What time of day do you think the middle of the story takes place?' (in the middle of the day)",
+        "'Where do you think the sun will be in the middle of the story?' (in the middle of the page)",
+        "Tell students that during today's close read-aloud session they will read to meet this target.",
+        "Invite students to take out their magic bows and take aim at the target.",
+        "Guide students through the close read-aloud for Summer Sun Risin' using the Close Readaloud Guide: Summer Sun Risin' (Session 3; for teacher reference). Consider using the ReadingLiterature Checklist during the close read-aloud(see Assessment Overview and Resources).",
+        "Refer to the guide for the use of:",
+        "-Summer Sun Risin'",
+        "-Summer Sun Risin' anchor chart",
+        "-Summer Sun Risin' icons",
+        "-Sun icon",
+        "-Summer Sun Risin' word card",
+        "Tell students that in the next lesson they will write and draw about the key details from the end of the text.",
+        "To active background knowledge before students discuss what the boy and sun do in the middle of Summer Sun Risin', invite students to reflect on the relationship based on what they know about the beginning of the story. (Example: 'Think back to what the boy and sun were doing at the beginning of the story. With your",
+        "partner, discuss why you think the sun will be in the middle of the page in the middle of the story. What have you learned from the story so far that makes you think this might be the case?') (MMR)",
+        "For ELLs: During or after Work Time A, guide students through the Language Dive (see supporting materials). Refer to the Language Dive Guide: Summer Sun Risin' (for teacher reference). Display Sentence Strip Chunks: Summer Sun Risin'."
+      ]
+    },
+    {
+      "chunk_id": "G1M2U1L5#Work Time#B",
+      "family": "instructional",
+      "resource_id": "G1M2U1L5",
+      "text": "[Work Time B] Role-Playing and Reflecting on Respect, Pages 13, 15, and 19\n- Refocus students whole group.\n- Offer specific feedback on their close reading skills used to explore the focus question: 'What is the boy doing when the sun is at its highest in the sky?' (Example: 'Everyone looked closely at the pictures in the text to notice that because the sun is pausing, it must be noon or lunch time.')\n- Tell students that later in the lesson they will write and draw about the beginning and middle events so today they will continue to think about, discuss, and role-play these events with a partner so they better understand them in order to do their best writing.\n- Move students into pre-determined pairs and tell them they are going to use the Role-Play protocol to act out a few of the middle events of Summer Sun Risin'. Remind them that they have been using this protocol in the last lesson and review as necessary using the RolePlayProtocol anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)\n- Direct students' attention to the posted Working to Become Ethical People anchor chart and review what is written on it by reading it aloud.\n- Remind students to focus on showing respect while working with a partner during the RolePlay protocol. Students should continue to focus on what it looks like and sounds like to show respect.\n- Invite students to begin the Role-Play protocol for the following sections of text:\n- -Pages 13\n- -Pages 15\n- -Pages 19\n- Refocus students whole group and offer them specific, positive feedback on their roleplaying. (Example: 'I noticed each partner group acting like the character and doing the things they did.')\n- Tell students that in the next lesson, they will role-play the ending events from the story and use their thinking from this role-play to help with writing and drawing about the major events from the story.\n- Tell students they are going to use the Think-Pair-Share protocol to discuss how they showed respect during the Role-Play protocol. Remind them that they used this protocol in previous lessons, and review as necessary using the Think-Pair-Share Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)\n- Invite them to Think-Pair-Share with an elbow partner:\n- 'What did it look and sound like when you were showing respect during the Role-Play protocol?'\n- Offer the following sentence stems as necessary:\n- -'It sounded _________, so I saw respect today.'\n- -'It looked like ________, so I saw respect today.'\n- As students talk, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group. Consider documenting progress toward SL.1.2 using the Speaking and Listening Checklist.\n- Remind students to make a bridge with their arms after both partners have shared.\n- Gather students back together and invite a few students to share out.\n- Remind students that they will keep working on what respect looks like and sounds like throughout the unit.\n- As students begin the Role-Play protocol, highlight critical features of Summer Sun Risin' by displaying specific pages on the document camera. Prompt students to refer to these pages for ideas about what to do or say as they role-play. (MMR)\n- When giving directions for the Role-Play protocol, foster collaboration by reminding students of strategies for resolving a disagreement. (Example: 'Yesterday we discussed strategies for what to do if you have a disagreement with your role-play partner. What can we do or say to respectfully resolve our problem?') (MME)\n- For ELLs: Offer alternative sentence frames to expand opportunities for students to express themselves. (Examples: 'I heard others_______, so I saw respect today.' 'I saw others _____, so I saw respect today.' 'I saw _____ taking care of others by _____.')",
+      "content_hash": "13641dc6006c37d453ac8ba24ac5bd39744a019d61948b78da118d168c4054d9",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 1,
+        "lesson": 5,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "B"
+      },
+      "section": "Work Time",
+      "letter": "B",
+      "title": "Role-Playing and Reflecting on Respect, Pages 13, 15, and 19",
+      "page": 90,
+      "minutes": 10,
+      "steps": [
+        "Refocus students whole group.",
+        "Offer specific feedback on their close reading skills used to explore the focus question: 'What is the boy doing when the sun is at its highest in the sky?' (Example: 'Everyone looked closely at the pictures in the text to notice that because the sun is pausing, it must be noon or lunch time.')",
+        "Tell students that later in the lesson they will write and draw about the beginning and middle events so today they will continue to think about, discuss, and role-play these events with a partner so they better understand them in order to do their best writing.",
+        "Move students into pre-determined pairs and tell them they are going to use the Role-Play protocol to act out a few of the middle events of Summer Sun Risin'. Remind them that they have been using this protocol in the last lesson and review as necessary using the RolePlayProtocol anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)",
+        "Direct students' attention to the posted Working to Become Ethical People anchor chart and review what is written on it by reading it aloud.",
+        "Remind students to focus on showing respect while working with a partner during the RolePlay protocol. Students should continue to focus on what it looks like and sounds like to show respect.",
+        "Invite students to begin the Role-Play protocol for the following sections of text:",
+        "-Pages 13",
+        "-Pages 15",
+        "-Pages 19",
+        "Refocus students whole group and offer them specific, positive feedback on their roleplaying. (Example: 'I noticed each partner group acting like the character and doing the things they did.')",
+        "Tell students that in the next lesson, they will role-play the ending events from the story and use their thinking from this role-play to help with writing and drawing about the major events from the story.",
+        "Tell students they are going to use the Think-Pair-Share protocol to discuss how they showed respect during the Role-Play protocol. Remind them that they used this protocol in previous lessons, and review as necessary using the Think-Pair-Share Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)",
+        "Invite them to Think-Pair-Share with an elbow partner:",
+        "'What did it look and sound like when you were showing respect during the Role-Play protocol?'",
+        "Offer the following sentence stems as necessary:",
+        "-'It sounded _________, so I saw respect today.'",
+        "-'It looked like ________, so I saw respect today.'",
+        "As students talk, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group. Consider documenting progress toward SL.1.2 using the Speaking and Listening Checklist.",
+        "Remind students to make a bridge with their arms after both partners have shared.",
+        "Gather students back together and invite a few students to share out.",
+        "Remind students that they will keep working on what respect looks like and sounds like throughout the unit.",
+        "As students begin the Role-Play protocol, highlight critical features of Summer Sun Risin' by displaying specific pages on the document camera. Prompt students to refer to these pages for ideas about what to do or say as they role-play. (MMR)",
+        "When giving directions for the Role-Play protocol, foster collaboration by reminding students of strategies for resolving a disagreement. (Example: 'Yesterday we discussed strategies for what to do if you have a disagreement with your role-play partner. What can we do or say to respectfully resolve our problem?') (MME)",
+        "For ELLs: Offer alternative sentence frames to expand opportunities for students to express themselves. (Examples: 'I heard others_______, so I saw respect today.' 'I saw others _____, so I saw respect today.' 'I saw _____ taking care of others by _____.')"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U1L5#Work Time#C",
+      "family": "instructional",
+      "resource_id": "G1M2U1L5",
+      "text": "[Work Time C] Independent Writing: Summer Sun Risin' Response Sheet, Part II\n- Display Part II of the Summer Sun Risin' response sheet.\n- Read the directions aloud: 'Draw a picture to show an event from the beginning of the story, from the middle of the story, and from the end of the story. Complete the sentence frame at the bottom of each box to tell what your picture shows.'\n- Direct students' attention to the three boxes. As you point to each box, read the sentence frame. (Example: Point to the beginning box and read, 'In the beginning …'\n- Using a total participation technique, invite responses from the group:\n- 'What will we be writing and drawing in these boxes?' (the events from the beginning, middle, and end of the story)\n- Tell students that in Lesson 3 they had a chance to write and draw about the main character and setting of Summer Sun Risin' using key details from the text. Today, they will write and draw about the beginning and middle events using key details from the text.\n- Remind students to think about the parts they acted out for the beginning and the middle of the story when completing today's writing task.\n- Invite students to turn and talk to an elbow partner:\n- 'What happened in the middle of the story?' (It's lunchtime, and the boy has lunch.)\n- Remind students to focus only on events from the beginning and middle. Tell them they will write about the events from the end of the book tomorrow.\n- Invite students to show a thumbs-up or touch their head if they are ready to begin writing and drawing about the events from the beginning and middle of Summer Sun Risin'.\n- Point out the Summer Sun Risin' response sheets and pencils already at their workspaces. Transition students to their workspaces and invite them to begin.\n- Circulate and support students as necessary. Encourage them to use classroom resources (Word Walls, high-frequency word lists, and alphabet or letter sound combination charts) as necessary.\n- After 5 minutes, signal students to stop working. Model cleanup, keeping directions clear and brief. Invite students to walk safely to the whole group gathering area. Collect response sheets.\n- Remind students that in the next lesson they will role-play events from the end of the story and use thinking from this to help with writing and drawing about the major events from the end of the story.\n- When preparing students for independent writing, vary methods for fine motor responses by offering modified response sheets with a separate box for drawing and lines for writing. (MMAE)\n- For ELLs: Before inviting students to complete their Summer Sun Risin' response sheets, model and think aloud completing it using a text familiar to all students, such as The Most Magnificent Thing. (Example: 'What events happened in the beginning? Oh, that's right! It is the little girl! I will draw a picture of the little girl and write, 'little girl.'')",
+      "content_hash": "7ea7de7b555ad2cc0a5e22142f0a448fcbe366fb20adb03df740a5dd366631cb",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 1,
+        "lesson": 5,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "C"
+      },
+      "section": "Work Time",
+      "letter": "C",
+      "title": "Independent Writing: Summer Sun Risin' Response Sheet, Part II",
+      "page": 91,
+      "minutes": 10,
+      "steps": [
+        "Display Part II of the Summer Sun Risin' response sheet.",
+        "Read the directions aloud: 'Draw a picture to show an event from the beginning of the story, from the middle of the story, and from the end of the story. Complete the sentence frame at the bottom of each box to tell what your picture shows.'",
+        "Direct students' attention to the three boxes. As you point to each box, read the sentence frame. (Example: Point to the beginning box and read, 'In the beginning …'",
+        "Using a total participation technique, invite responses from the group:",
+        "'What will we be writing and drawing in these boxes?' (the events from the beginning, middle, and end of the story)",
+        "Tell students that in Lesson 3 they had a chance to write and draw about the main character and setting of Summer Sun Risin' using key details from the text. Today, they will write and draw about the beginning and middle events using key details from the text.",
+        "Remind students to think about the parts they acted out for the beginning and the middle of the story when completing today's writing task.",
+        "Invite students to turn and talk to an elbow partner:",
+        "'What happened in the middle of the story?' (It's lunchtime, and the boy has lunch.)",
+        "Remind students to focus only on events from the beginning and middle. Tell them they will write about the events from the end of the book tomorrow.",
+        "Invite students to show a thumbs-up or touch their head if they are ready to begin writing and drawing about the events from the beginning and middle of Summer Sun Risin'.",
+        "Point out the Summer Sun Risin' response sheets and pencils already at their workspaces. Transition students to their workspaces and invite them to begin.",
+        "Circulate and support students as necessary. Encourage them to use classroom resources (Word Walls, high-frequency word lists, and alphabet or letter sound combination charts) as necessary.",
+        "After 5 minutes, signal students to stop working. Model cleanup, keeping directions clear and brief. Invite students to walk safely to the whole group gathering area. Collect response sheets.",
+        "Remind students that in the next lesson they will role-play events from the end of the story and use thinking from this to help with writing and drawing about the major events from the end of the story.",
+        "When preparing students for independent writing, vary methods for fine motor responses by offering modified response sheets with a separate box for drawing and lines for writing. (MMAE)",
+        "For ELLs: Before inviting students to complete their Summer Sun Risin' response sheets, model and think aloud completing it using a text familiar to all students, such as The Most Magnificent Thing. (Example: 'What events happened in the beginning? Oh, that's right! It is the little girl! I will draw a picture of the little girl and write, 'little girl.'')"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U1L5#Closing and Assessment#A",
+      "family": "instructional",
+      "resource_id": "G1M2U1L5",
+      "text": "[Closing and Assessment A] Structured Discussion: Sun Experience-Midday\n- Gather students together whole group.\n- Tell them they are going to use the Think-Pair-Share protocol to discuss what the boy experiences when the sun is highest in the sky and what they themselves experience when the sun is highest in the sky. Remind students that they used this protocol earlier in today's lesson, and review as necessary using the Think-Pair-Share Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)\n- Briefly review the definition of experience (to feel or know).\n- Invite students to Think-Pair-Share with an elbow partner:\n- 'Where is the sun during midday?' (At midday, the sun is highest in the sky-in the middle of the sky.)\n- 'What does the boy experience during midday?' (At midday, the boy is having lunch.)\n- 'What do you experience during midday?' (Responses will vary, but may include: At midday, I like to play outside.)\n- Offer the following sentence stem as necessary:\n- 'At midday (the sun/the boy/I) _________.'\n- As students talk, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group. Consider documenting progress toward SL.1.2 using the Speaking and Listening Checklist.\n- Remind students to make a bridge with their arms after both partners have shared.\n- Gather students back together and invite a few students to share with the whole group.\n- If time permits, cue students to expand the conversation by saying more and to listen carefully:\n- 'Can you say more about that?' (Responses will vary.)\n- 'Who can repeat what your classmate said?' (Responses will vary.)\n- Tell students that tomorrow they will continue to discuss their experience with the sun when it is close to the horizon at sunset.",
+      "content_hash": "8ddc041c83f7a44e38cd2622cd67715bb280558ca6ad2be74547906ab07acd16",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 1,
+        "lesson": 5,
+        "family": "instructional",
+        "section": "Closing and Assessment",
+        "letter": "A"
+      },
+      "section": "Closing and Assessment",
+      "letter": "A",
+      "title": "Structured Discussion: Sun Experience-Midday",
+      "page": 92,
+      "minutes": 5,
+      "steps": [
+        "Gather students together whole group.",
+        "Tell them they are going to use the Think-Pair-Share protocol to discuss what the boy experiences when the sun is highest in the sky and what they themselves experience when the sun is highest in the sky. Remind students that they used this protocol earlier in today's lesson, and review as necessary using the Think-Pair-Share Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)",
+        "Briefly review the definition of experience (to feel or know).",
+        "Invite students to Think-Pair-Share with an elbow partner:",
+        "'Where is the sun during midday?' (At midday, the sun is highest in the sky-in the middle of the sky.)",
+        "'What does the boy experience during midday?' (At midday, the boy is having lunch.)",
+        "'What do you experience during midday?' (Responses will vary, but may include: At midday, I like to play outside.)",
+        "Offer the following sentence stem as necessary:",
+        "'At midday (the sun/the boy/I) _________.'",
+        "As students talk, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group. Consider documenting progress toward SL.1.2 using the Speaking and Listening Checklist.",
+        "Remind students to make a bridge with their arms after both partners have shared.",
+        "Gather students back together and invite a few students to share with the whole group.",
+        "If time permits, cue students to expand the conversation by saying more and to listen carefully:",
+        "'Can you say more about that?' (Responses will vary.)",
+        "'Who can repeat what your classmate said?' (Responses will vary.)",
+        "Tell students that tomorrow they will continue to discuss their experience with the sun when it is close to the horizon at sunset."
+      ]
+    }
+  ],
+  "evidence_pointers": [
+    {
+      "chunk_id": "G1M2U1L5#evidence#0",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "15489745c36abb6db753fc49c042307b51c6fc8cd1f756bb59d3ae69d5b18896",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L5#Opening#A",
+      "location": "Opening A",
+      "quote": "Direct students' attention to the ' Sun, Moon, and Stars' Version 2 song and invite them to join you in singing.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 0
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#1",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "4ff6b633a5a4429bba10c37606ec986d6f256fe39098228e8cc7bb67cc36b969",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Opening#A",
+        "location": "Opening A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U1L5#Opening#A",
+      "location": "Opening A",
+      "quote": "Remind students that this song uses nouns and their matching verbs. Remind students that nouns are people, places, or things (like 'the sun'!), and that verbs are action words (like 'shines'!).",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 1
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#2",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "fd35289ecacda3799ada521a3f9a2f22dad899f734f15e9b7d7ac65557fe5dbe",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U1L5#Opening#A",
+      "location": "Opening A",
+      "quote": "'What are some of the nouns and verbs that go together in this song?' (Responses will vary)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 2
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#3",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "77a0a1feace6104d3b52dc8e48efe6232ad32b9accad322ee1935eb1b48a75ba",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Opening#A",
+        "location": "Opening A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U1L5#Opening#A",
+      "location": "Opening A",
+      "quote": "Tell students that not only does this song use nouns and verbs, it also includes pronouns. Tell students that a pronoun is a word that can take the place of a noun.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 3
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#4",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "58e1b7cc86b18a8c4f4ba2fcfb59d2485b704596f0757e4680879ba62a0d498b",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Opening#A",
+        "location": "Opening A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U1L5#Opening#A",
+      "location": "Opening A",
+      "quote": "Redirect students' attention to the first verse and reread it aloud. Tell students that the pronoun in this verse is 'it' because it replaces the noun 'the sun'. Use a marker to draw a box around the pronoun 'it'.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 4
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#5",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "e6396f7a33637fb4e61aa41129db45928bb02b01e77ab12f7a7a0d4926d9b173",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L5#Opening#A",
+      "location": "Opening A",
+      "quote": "Tell students that you are slowly going to repeat the song. When they hear or see a pronoun they can touch their nose.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally",
+        "with prompting"
+      ],
+      "evidence_index": 5
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#6",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "6e4562aab26333f3ca1cb24ad8f836713563c3a8021f78e342f531d565144d27",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Opening#A",
+        "location": "Opening A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U1L5#Opening#A",
+      "location": "Opening A",
+      "quote": "Sing the song aloud slowly and draw a box around the pronouns.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 6
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#7",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "c76574b3a7fbdd8d3bc3a036dcdcd982248749c88d2e1dbac2b72ec2ce3aeaa9",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L5#Opening#A",
+      "location": "Opening A",
+      "quote": "After singing the song and drawing a box around the pronouns and invite students to reread the pronouns with you: 'it' and 'them'.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "supports_action": [
+        "recognition_identification",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 7
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#8",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "df74b8fa1159da84005c2a6586cdf2045a7b977a1e4fd7811a16e8744522119b",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Invite students to turn and talk to an elbow partner: 'Who is the main character? Where does the story take place? What happened in the beginning of the story?'",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 8
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#9",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "fb45df18fd5b6346f174ec43a77c5a181776911b4a43e9458574935e00d3f167",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Refocus whole group and invite one or two students to share out.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 9
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#10",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "a1cb7bdc4d7953b7ae3eb3fbf457394e0ff510a40edcdee52d6f8e73561d5ff0",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Direct students' attention to the posted learning target and read it aloud: 'I can describe what the boy and the sun do in the middle of Summer Sun Risin'.'",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 10
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#11",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "cced4acb4e78fd6f1f84bdb6c965b91ed9e971349c53a1820565ec570cced10d",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Invite students to turn and talk to an elbow partner:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 11
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#12",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "b3618a04eccc51970e059cf820f03b8d46e460a5f933848f62a1a644438483ca",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#A",
+      "location": "Work Time A",
+      "quote": "'Where do you think the sun will be in the middle of the story?'",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 12
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#13",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "0c25f4a05614adbabe8ca15e68ec0b4e1d33911e0f6021595d00e38785310165",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Guide students through the close read-aloud for Summer Sun Risin' using the Close Readaloud Guide: Summer Sun Risin' (Session 3; for teacher reference).",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 13
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#14",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "7035057548c14e1c50b457fc67f6d56ab0440712eba306ac0458206b7ec33c4f",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Refocus students whole group.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 14
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#15",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "c7a0dd7b1504bc0f5201b9fffd4b9ab6c1d92bb639a2e2e64738bc7d7e8ecabf",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Offer specific feedback on their close reading skills used to explore the focus question: 'What is the boy doing when the sun is at its highest in the sky?'",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 15
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#16",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "19821277891ed8abe96b7f06533c64b2fcc26e4450c239d37382b551b1d02d29",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Tell students that later in the lesson they will write and draw about the beginning and middle events so today they will continue to think about, discuss, and role-play these events with a partner so they better understand them in order to do their best writing.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 16
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#17",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "80910a3a9be865349b29e044dd8dcf59d6783e1d55c17e9dc95a8f38939f9c17",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Move students into pre-determined pairs and tell them they are going to use the Role-Play protocol to act out a few of the middle events of Summer Sun Risin'.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "procedural_application"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 17
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#18",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "91f88c3a656ef3e3032c81ad3fc05403eb3f6cc68d28c330c982b8db2200d85f",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Remind students to focus on showing respect while working with a partner during the RolePlay protocol.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 18
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#19",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "e50337c49358bd873029963355a34617051df1b297a176a37b2c9ce57e34b143",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Invite students to begin the Role-Play protocol for the following sections of text:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "procedural_application"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 19
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#20",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "ba69caf70d9e0033d817c1ec65845985a0f92525f8eed2bcba3705d6d75d2485",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#B",
+        "location": "Work Time B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Tell students that in the next lesson, they will role-play the ending events from the story and use their thinking from this role-play to help with writing and drawing about the major events from the story.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 20
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#21",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "d8240f0b90a7d0108eb9d41206c92068225de0483b0a508bce9e950164e68a96",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Tell students they are going to use the Think-Pair-Share protocol to discuss how they showed respect during the Role-Play protocol.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "procedural_application"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 21
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#22",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "adbd4b508dffbce186468c106de4ca23e10f9d33d61a0d1544abc37361877bce",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#B",
+      "location": "Work Time B",
+      "quote": "'What did it look and sound like when you were showing respect during the Role-Play protocol?'",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 22
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#23",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "ead83b5801a7bef65cd64a1997859079c770cd59dd715ded49402cd3e7416191",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Invite them to Think-Pair-Share with an elbow partner: 'What did it look and sound like when you were showing respect during the Role-Play protocol?'",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 23
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#24",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "f86368faea0b626da78ac75904b73898904958809c02b5be8aac168154f8424b",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Gather students back together and invite a few students to share out.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 24
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#25",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "295762636b135a4d02d8bd0efffbde9a84d28aa6fceba3f3e36e4d798a02dafa",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Display Part II of the Summer Sun Risin' response sheet.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 25
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#26",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "fd99d581fad8e6a10ef3557f398724952de751c2b943b5f7eaf6f2285dbbdf10",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Read the directions aloud: 'Draw a picture to show an event from the beginning of the story, from the middle of the story, and from the end of the story. Complete the sentence frame at the bottom of each box to tell what your picture shows.'",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 26
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#27",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "cced4acb4e78fd6f1f84bdb6c965b91ed9e971349c53a1820565ec570cced10d",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Invite students to turn and talk to an elbow partner:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 27
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#28",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "24a7fffbf9dd99626145f6c4d2297a449f5ea8ca0dcfcf9fcb1096968e9d8806",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Invite students to show a thumbs-up or touch their head if they are ready to begin writing and drawing about the events from the beginning and middle of Summer Sun Risin'.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 28
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#29",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "4cd2550abbe5f9febb6cad883f80f9c6109c0d3af29fe15393659b035ea09262",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Transition students to their workspaces and invite them to begin.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "written_production"
+      ],
+      "qualifiers": [
+        "in writing"
+      ],
+      "evidence_index": 29
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#30",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "2cfcb8a93ea17852fa227e980b9e5bea69cb3a263d070e76c4794448dd066757",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Circulate and support students as necessary. Encourage them to use classroom resources (Word Walls, high-frequency word lists, and alphabet or letter sound combination charts) as necessary.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 30
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#31",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "a44d9857ca4502e1ac946a231cb1efd212157db80a1660ed748eef21a6b3a878",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U1L5#Work Time#C",
+      "location": "Work Time C",
+      "quote": "After 5 minutes, signal students to stop working. Model cleanup, keeping directions clear and brief.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 31
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#32",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "06367326cc7d11625ca7cc0205b4a5e3d6bb7c52ae8ba4a12ba356a5c40d1207",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U1L5#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Gather students together whole group.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 32
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#33",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "3da5c5ce5b3d769e0012ec03278316d5d74be1bab435fe0e2f6e14f64be2aff6",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L5#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Tell them they are going to use the Think-Pair-Share protocol to discuss what the boy experiences when the sun is highest in the sky and what they themselves experience when the sun is highest in the sky.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "procedural_application"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 33
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#34",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "439883e2a8751a42176a09323031461cc36b29553b7513d6ab09a2b8973f8ad0",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L5#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Invite students to Think-Pair-Share with an elbow partner: 'Where is the sun during midday?'",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 34
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#35",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "593ac5a1864968c938bea053b5d41558ec478f039ad80f5b5005a6b62a3f51e7",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U1L5#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "'What does the boy experience during midday?'",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 35
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#36",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "77fbd78dd3041ff62a3d7dacadf65b1f7b07656bfdacabe0e60506ae3b7f28c0",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U1L5#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "'What do you experience during midday?'",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 36
+    },
+    {
+      "chunk_id": "G1M2U1L5#evidence#37",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U1L5",
+      "text": "",
+      "content_hash": "9e0dc6700452d8f6f87cd3b354deec29a745d33af758eb105a41f15d79efc992",
+      "metadata": {
+        "block_chunk_id": "G1M2U1L5#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U1L5#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Gather students back together and invite a few students to share with the whole group.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 37
+    }
+  ]
+}

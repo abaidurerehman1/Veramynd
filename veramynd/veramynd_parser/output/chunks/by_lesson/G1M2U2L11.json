@@ -1,0 +1,764 @@
+{
+  "schema_version": "1.0-chunk",
+  "resource_id": "G1M2U2L11",
+  "grade": 1,
+  "module": 2,
+  "unit": 2,
+  "lesson": 11,
+  "title": "Lesson 11: Reading, Writing, and Speaking: Preparing for the Unit 2 Assessment",
+  "prompt_version": "normalize_ela.v2.1",
+  "lesson_chunk": {
+    "chunk_id": "G1M2U2L11#lesson",
+    "family": "lesson",
+    "resource_id": "G1M2U2L11",
+    "text": "Domain primary: Speaking & Listening\nDomain secondary: Writing, Comprehension, Language\nMode: both\nGenre: expository\nObjective: Students will review and describe patterns observed in the sky using evidence from notes, share information orally with partners, and record observations in their Sky notebook.\nSkills taught:\n- describe a pattern observed in the sky using evidence from notes (DOK2_skills_concepts, primary)\n- share information about a selected pattern orally with a partner using notes (DOK2_skills_concepts, primary)\n- use a structured partner discussion protocol (Back-to-Back and Face-to-Face) to share and clarify information (DOK2_skills_concepts, primary)\n- record observations from videos/images of the sky in a notebook (DOK1_recall_reproduction, primary)\n- use prepositions and adjectives to describe observations in writing (DOK2_skills_concepts, secondary)\n- participate in reciting a poem with gestures or hand motions (DOK1_recall_reproduction, secondary)\n- use sentence frames to support oral expression (DOK2_skills_concepts, secondary)\n- engage in partner talk to recall and share information (DOK2_skills_concepts, secondary)\nStudent actions:\n- recognition_identification: identify patterns and evidence from notes and images\n- oral_production: orally share information about patterns and participate in poem recitation\n- written_production: write observations and descriptions in the Sky notebook\n- matching_sorting_sequencing: sequence and select notes sheets for sharing\n- procedural_application: apply the Back-to-Back and Face-to-Face discussion protocol\n- reasoning_explanation: explain and clarify information about patterns orally\n- comprehension_response: respond to questions about patterns and evidence from notes and images, including turn and talk and partner sharing activities, and answer prompts about observations and patterns in the sky, using evidence from notes and images to support responses, and participate in total participation techniques to recall vocabulary and concepts related to evidence and patterns in the sky.",
+    "content_hash": "7bc5243a3e6f74c0a873ad0e0eb194caf7b5873108d3b1ff9ee8073bdb9ef928",
+    "metadata": {
+      "grade": 1,
+      "module": 2,
+      "unit": 2,
+      "lesson": 11,
+      "title": "Lesson 11: Reading, Writing, and Speaking: Preparing for the Unit 2 Assessment",
+      "domain_primary": "Speaking & Listening",
+      "domain_secondary": [
+        "Writing",
+        "Comprehension",
+        "Language"
+      ],
+      "mode": "both",
+      "genre": "expository",
+      "prompt_version": "normalize_ela.v2.1",
+      "page_start": 317,
+      "page_end": 325
+    }
+  },
+  "instructional_chunks": [
+    {
+      "chunk_id": "G1M2U2L11#Opening#A",
+      "family": "instructional",
+      "resource_id": "G1M2U2L11",
+      "text": "[Opening A] Engaging the Learner: 'Where Are They? The Sun, Moon, and Stars' Poem\n- Invite students to the whole group area.\n- Direct their attention to the ' Where Are They? The Sun, Moon, and Stars' poem.\n- Remind them that they have done a lot of hard work learning and reciting this poem and today they will get a chance to practice it.\n- Invite a student volunteer to lead the class in reciting the poem and doing any accompanying hand motions or gestures. Repeat as time allows with other student volunteers.\n- Invite students to be seated.\n- Some students may be uncomfortable with individually leading the class in reciting the poem. Support engagement by inviting them to co-lead with a partner so that they still have a chance to lead in front of the class. (MME)\n- For ELLs: Invite an ELL to read the poem for the class. This will boost the student's confidence while providing a strong model for students who need heavier support.",
+      "content_hash": "76e3a9b54e6f04fb437ed040cf292c5bda43ccfa29d5589f297c4f545dd5097b",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 11,
+        "family": "instructional",
+        "section": "Opening",
+        "letter": "A"
+      },
+      "section": "Opening",
+      "letter": "A",
+      "title": "Engaging the Learner: 'Where Are They? The Sun, Moon, and Stars' Poem",
+      "page": 321,
+      "minutes": 5,
+      "steps": [
+        "Invite students to the whole group area.",
+        "Direct their attention to the ' Where Are They? The Sun, Moon, and Stars' poem.",
+        "Remind them that they have done a lot of hard work learning and reciting this poem and today they will get a chance to practice it.",
+        "Invite a student volunteer to lead the class in reciting the poem and doing any accompanying hand motions or gestures. Repeat as time allows with other student volunteers.",
+        "Invite students to be seated.",
+        "Some students may be uncomfortable with individually leading the class in reciting the poem. Support engagement by inviting them to co-lead with a partner so that they still have a chance to lead in front of the class. (MME)",
+        "For ELLs: Invite an ELL to read the poem for the class. This will boost the student's confidence while providing a strong model for students who need heavier support."
+      ]
+    },
+    {
+      "chunk_id": "G1M2U2L11#Opening#B",
+      "family": "instructional",
+      "resource_id": "G1M2U2L11",
+      "text": "[Opening B] Reviewing Learning Targets\n- Direct students' attention to the posted learning targets and read the first one aloud:\n- 'I can describe a pattern that can be observed in the sky using evidence from my notes about the sun, moon, or stars.'\n- Using a total participation technique, invite responses from the group:\n- 'What do you remember about what the word evidence means?' (proof or facts that show something is true)\n- Tell students that throughout the course of the unit, they have gathered a lot of evidence to help them describe a number of patterns that can be observed in the sky.\n- Invite students to turn and talk with an elbow partner:\n- 'What patterns in the sky have we learned about from reading, writing, and discussing throughout the unit?' (the pattern of light and dark; the pattern of the sun rising and setting; the pattern of the moon seeming to change shape; the pattern of seeing stars only at night)\n- Share with students that during today's lesson, they will have a chance to review all of the learning they have done about the various patterns in the sky.\n- To support expressive skills and activate prior knowledge, offer index cards with pictures or key words (e.g., sun, moon, stars) to scaffold students' participation before they turn and talk. (MMR, MMAE, MME)\n- For ELLs: Briefly review the Language Dive and Mini Language Dive sentences from the unit. Invite students to share what evidence the sentences offer for helping them describe patterns in the sky.",
+      "content_hash": "5bf4a4fec817acdbbf919c63db5c8e1b5482ddf2c66d91d9b82a28dd1ed066d2",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 11,
+        "family": "instructional",
+        "section": "Opening",
+        "letter": "B"
+      },
+      "section": "Opening",
+      "letter": "B",
+      "title": "Reviewing Learning Targets",
+      "page": 321,
+      "minutes": 5,
+      "steps": [
+        "Direct students' attention to the posted learning targets and read the first one aloud:",
+        "'I can describe a pattern that can be observed in the sky using evidence from my notes about the sun, moon, or stars.'",
+        "Using a total participation technique, invite responses from the group:",
+        "'What do you remember about what the word evidence means?' (proof or facts that show something is true)",
+        "Tell students that throughout the course of the unit, they have gathered a lot of evidence to help them describe a number of patterns that can be observed in the sky.",
+        "Invite students to turn and talk with an elbow partner:",
+        "'What patterns in the sky have we learned about from reading, writing, and discussing throughout the unit?' (the pattern of light and dark; the pattern of the sun rising and setting; the pattern of the moon seeming to change shape; the pattern of seeing stars only at night)",
+        "Share with students that during today's lesson, they will have a chance to review all of the learning they have done about the various patterns in the sky.",
+        "To support expressive skills and activate prior knowledge, offer index cards with pictures or key words (e.g., sun, moon, stars) to scaffold students' participation before they turn and talk. (MMR, MMAE, MME)",
+        "For ELLs: Briefly review the Language Dive and Mini Language Dive sentences from the unit. Invite students to share what evidence the sentences offer for helping them describe patterns in the sky."
+      ]
+    },
+    {
+      "chunk_id": "G1M2U2L11#Work Time#A",
+      "family": "instructional",
+      "resource_id": "G1M2U2L11",
+      "text": "[Work Time A] Shared Reading: Revisiting Unit 2 Guiding Question Anchor Chart\n- Remind students that over the course of the unit they have gathered a lot of information to help answer the unit's guiding question. They have done so by reading texts, viewing photographs and videos, discussing and sharing with partners, and writing as a class and independently.\n- Tell students that now they have a chance to review their thinking on the unit's guiding question.\n- Direct students' attention to the posted Unit 2 Guiding Question anchor chart and read it aloud.\n- Tell students that to help them remember the patterns in the sky that they have learned about, they will now think of a hand motion, gesture, or action to go along with each pattern.\n- Ask students to turn and talk, and use equity sticks to select students to share their responses with the whole group:\n- 'What is something we can do safely and respectfully with our hands or bodies to show the pattern of light and dark and how it makes day and night on earth?' (Responses will vary, but may include: standing in place and turning in a circle like the earth rotating or spinning, or a motion to show people awake during the day coupled with a motion to show people sleeping at night.)\n- Select one of the suggested motions and invite the class to join you in doing it.\n- Repeat this process for each of the following questions:\n- 'What is something we can do safely and respectfully with our hands or bodies to show the pattern of the sun rising and setting?' (Student responses will vary, but may include: placing arms straight out to one side of body and creating an arc to the other side of body.)\n- 'What is something we can do safely and respectfully with our hands or bodies to show the pattern of the moon seeming to change shape?' (Student responses will vary, but may include: holding both arms above the head in a circle shape to show a full moon, or holding one arm above the head to show a crescent shape.)\n- 'What is something we can do safely and respectfully with our hands or bodies to show the pattern of the stars?' (Student responses will vary, but may include: opening and closing hands from fist to show stars twinkling.)\n- Invite students to safely and quickly stand up and repeat all of the selected motions as you read the information on the Unit 2 Guiding Question anchor chart for each pattern in the sky.\n- Invite students to safely and respectfully twinkle like stars as they return to their workspaces.\n- Support expression and engagement by removing barriers and providing alternatives for physical movement. (Example: Offer photographs of possible gestures or motions that show the patterns of light and dark, the sun, the moon, and stars.) (MMAE, MME)",
+      "content_hash": "a95d361b69b81f6302deaaf8540f6a7c3e8bd59f1eb0871d2d384698af2874fb",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 11,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "A"
+      },
+      "section": "Work Time",
+      "letter": "A",
+      "title": "Shared Reading: Revisiting Unit 2 Guiding Question Anchor Chart",
+      "page": 322,
+      "minutes": 10,
+      "steps": [
+        "Remind students that over the course of the unit they have gathered a lot of information to help answer the unit's guiding question. They have done so by reading texts, viewing photographs and videos, discussing and sharing with partners, and writing as a class and independently.",
+        "Tell students that now they have a chance to review their thinking on the unit's guiding question.",
+        "Direct students' attention to the posted Unit 2 Guiding Question anchor chart and read it aloud.",
+        "Tell students that to help them remember the patterns in the sky that they have learned about, they will now think of a hand motion, gesture, or action to go along with each pattern.",
+        "Ask students to turn and talk, and use equity sticks to select students to share their responses with the whole group:",
+        "'What is something we can do safely and respectfully with our hands or bodies to show the pattern of light and dark and how it makes day and night on earth?' (Responses will vary, but may include: standing in place and turning in a circle like the earth rotating or spinning, or a motion to show people awake during the day coupled with a motion to show people sleeping at night.)",
+        "Select one of the suggested motions and invite the class to join you in doing it.",
+        "Repeat this process for each of the following questions:",
+        "'What is something we can do safely and respectfully with our hands or bodies to show the pattern of the sun rising and setting?' (Student responses will vary, but may include: placing arms straight out to one side of body and creating an arc to the other side of body.)",
+        "'What is something we can do safely and respectfully with our hands or bodies to show the pattern of the moon seeming to change shape?' (Student responses will vary, but may include: holding both arms above the head in a circle shape to show a full moon, or holding one arm above the head to show a crescent shape.)",
+        "'What is something we can do safely and respectfully with our hands or bodies to show the pattern of the stars?' (Student responses will vary, but may include: opening and closing hands from fist to show stars twinkling.)",
+        "Invite students to safely and quickly stand up and repeat all of the selected motions as you read the information on the Unit 2 Guiding Question anchor chart for each pattern in the sky.",
+        "Invite students to safely and respectfully twinkle like stars as they return to their workspaces.",
+        "Support expression and engagement by removing barriers and providing alternatives for physical movement. (Example: Offer photographs of possible gestures or motions that show the patterns of light and dark, the sun, the moon, and stars.) (MMAE, MME)"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U2L11#Work Time#B",
+      "family": "instructional",
+      "resource_id": "G1M2U2L11",
+      "text": "[Work Time B] Reviewing Notes: Preparing for the Unit 2 Assessment\n- Refocus students whole group and offer specific, positive feedback on their shared reading of the Unit 2 Guiding Question anchor chart. (Example: 'There is a lot of information on our Unit 2 Guiding Question anchor chart, and everyone worked hard to read it aloud or follow along as I read it.')\n- Tell students that in the next lesson, they will participate in a Science Talk with a small group to discuss the Unit 2 Guiding Question: 'What patterns can we observe in the sky?'\n- Remind students of the detailed notes they have taken about each pattern in the sky by pointing out the following at their workspaces:\n- -What Makes Day and Night notes sheet\n- -Patterns of the Moon notes sheet\n- -Patterns of the Stars notes sheet\n- Tell students that they will now review their notes on each of the patterns in the sky and decide which pattern they would like to speak about during the Science Talk in the next lesson.\n- Invite students to review and reread each of their notes sheets. Circulate and remind students to think about which pattern in the sky they would like to speak about during the Science Talk in the next lesson.\n- If students are having difficulty selecting a pattern in the sky, prompt them with further questions:\n- 'For which pattern do you have the most information?'\n- 'For which pattern do your notes feel the most clear and helpful?'\n- When 2 minutes remain, refocus students whole group.\n- Invite students to use a pencil to mark a star on the top of the notes sheet for the pattern in the sky they will speak about during the Science Talk in the next lesson and to keep that notes sheet in their hands.\n- Invite students to return their other two notes sheets to a neat pile in the center of their workspaces.\n- Tell students they will now use the notes sheet they have in their hand to share with a partner information about the pattern in the sky they selected.\n- To support self-regulation and independence before students review their notes, use a visual timer and provide a checklist of steps. Example: (1) Read day and night\n- notes, (2) read moon notes, (3) read stars notes, (4) choose one notes sheet for sharing. (MMR, MME)\n- For ELLs: If students are having difficulty selecting a pattern in the sky, invite them to practice discussing two of them. Help them determine which one they felt more comfortable and successful speaking about.",
+      "content_hash": "c887f774b9dd3c07dbdcf185882888674a69f8ffd73248213b0ca7c24c7ff19f",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 11,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "B"
+      },
+      "section": "Work Time",
+      "letter": "B",
+      "title": "Reviewing Notes: Preparing for the Unit 2 Assessment",
+      "page": 323,
+      "minutes": 10,
+      "steps": [
+        "Refocus students whole group and offer specific, positive feedback on their shared reading of the Unit 2 Guiding Question anchor chart. (Example: 'There is a lot of information on our Unit 2 Guiding Question anchor chart, and everyone worked hard to read it aloud or follow along as I read it.')",
+        "Tell students that in the next lesson, they will participate in a Science Talk with a small group to discuss the Unit 2 Guiding Question: 'What patterns can we observe in the sky?'",
+        "Remind students of the detailed notes they have taken about each pattern in the sky by pointing out the following at their workspaces:",
+        "-What Makes Day and Night notes sheet",
+        "-Patterns of the Moon notes sheet",
+        "-Patterns of the Stars notes sheet",
+        "Tell students that they will now review their notes on each of the patterns in the sky and decide which pattern they would like to speak about during the Science Talk in the next lesson.",
+        "Invite students to review and reread each of their notes sheets. Circulate and remind students to think about which pattern in the sky they would like to speak about during the Science Talk in the next lesson.",
+        "If students are having difficulty selecting a pattern in the sky, prompt them with further questions:",
+        "'For which pattern do you have the most information?'",
+        "'For which pattern do your notes feel the most clear and helpful?'",
+        "When 2 minutes remain, refocus students whole group.",
+        "Invite students to use a pencil to mark a star on the top of the notes sheet for the pattern in the sky they will speak about during the Science Talk in the next lesson and to keep that notes sheet in their hands.",
+        "Invite students to return their other two notes sheets to a neat pile in the center of their workspaces.",
+        "Tell students they will now use the notes sheet they have in their hand to share with a partner information about the pattern in the sky they selected.",
+        "To support self-regulation and independence before students review their notes, use a visual timer and provide a checklist of steps. Example: (1) Read day and night",
+        "notes, (2) read moon notes, (3) read stars notes, (4) choose one notes sheet for sharing. (MMR, MME)",
+        "For ELLs: If students are having difficulty selecting a pattern in the sky, invite them to practice discussing two of them. Help them determine which one they felt more comfortable and successful speaking about."
+      ]
+    },
+    {
+      "chunk_id": "G1M2U2L11#Work Time#C",
+      "family": "instructional",
+      "resource_id": "G1M2U2L11",
+      "text": "[Work Time C] Back-to-Back and Face-to-Face: Sharing Information about Patterns in the Sky\n- Invite students back to the whole group area.\n- Tell them they are going to use the Back-to-Back and Face-to-Face protocol to share information about their selected pattern. Remind them that they used this protocol in Unit 1, and review as necessary using the Back-to-Back and Face-to-Face Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Lead students through three rounds of the Back-to-Back and Face-to-Face protocol, reminding them to use their notes sheet as they answer the following questions:\n- 'What pattern in the sky are you sharing about?' (Responses will vary, depending on chosen pattern.)\n- 'What are one or two pieces of information you learned about this pattern in the sky?' (Responses will vary, depending on chosen pattern.)\n- 'What is one thing you still wonder about for this pattern in the sky?' (Responses will vary, depending on chosen pattern.)\n- Circulate to support students as they use their notes, prompting them to use the pictures and labels on their notes sheets to help recall information about their selected pattern in the sky. Take note of the ideas students are sharing and target a few students to share out with the whole group.\n- Refocus whole group and invite a few students to share out.\n- If productive, cue students to clarify the conversation by confirming what they mean and to listen carefully and seek to understand:\n- 'So, do you mean _____?' (Responses will vary.)\n- 'Who can tell us what your classmate said in your own words?' (Responses will vary.)\n- During the Back-to-Back and Face-to-Face protocol, increase mastery-oriented feedback by providing feedback that is frequent, timely, and specific to individual pairs of students. (Example: 'I hear that you clearly shared two interesting facts from what you learned about the pattern of the moon. Can you share something that you still wonder about the pattern of the moon?') (MME)\n- For ELLs: Provide students with sentence frames to prompt their speech for each question. (Examples: 'I am sharing about …' 'One thing I learned about _____ is' 'I wonder …')",
+      "content_hash": "fcfe2046c90ba41dccf5cc5949df638b2ce5657d6cacec5da2b04d66b2bfff81",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 11,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "C"
+      },
+      "section": "Work Time",
+      "letter": "C",
+      "title": "Back-to-Back and Face-to-Face: Sharing Information about Patterns in the Sky",
+      "page": 324,
+      "minutes": 15,
+      "steps": [
+        "Invite students back to the whole group area.",
+        "Tell them they are going to use the Back-to-Back and Face-to-Face protocol to share information about their selected pattern. Remind them that they used this protocol in Unit 1, and review as necessary using the Back-to-Back and Face-to-Face Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
+        "Lead students through three rounds of the Back-to-Back and Face-to-Face protocol, reminding them to use their notes sheet as they answer the following questions:",
+        "'What pattern in the sky are you sharing about?' (Responses will vary, depending on chosen pattern.)",
+        "'What are one or two pieces of information you learned about this pattern in the sky?' (Responses will vary, depending on chosen pattern.)",
+        "'What is one thing you still wonder about for this pattern in the sky?' (Responses will vary, depending on chosen pattern.)",
+        "Circulate to support students as they use their notes, prompting them to use the pictures and labels on their notes sheets to help recall information about their selected pattern in the sky. Take note of the ideas students are sharing and target a few students to share out with the whole group.",
+        "Refocus whole group and invite a few students to share out.",
+        "If productive, cue students to clarify the conversation by confirming what they mean and to listen carefully and seek to understand:",
+        "'So, do you mean _____?' (Responses will vary.)",
+        "'Who can tell us what your classmate said in your own words?' (Responses will vary.)",
+        "During the Back-to-Back and Face-to-Face protocol, increase mastery-oriented feedback by providing feedback that is frequent, timely, and specific to individual pairs of students. (Example: 'I hear that you clearly shared two interesting facts from what you learned about the pattern of the moon. Can you share something that you still wonder about the pattern of the moon?') (MME)",
+        "For ELLs: Provide students with sentence frames to prompt their speech for each question. (Examples: 'I am sharing about …' 'One thing I learned about _____ is' 'I wonder …')"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U2L11#Closing and Assessment#A",
+      "family": "instructional",
+      "resource_id": "G1M2U2L11",
+      "text": "[Closing and Assessment A] Independent Writing: Sky Notebook\n- Refocus students whole group and offer specific, positive feedback on students' use of their notes to share information. (Example: 'I noticed that Jontue and Arturo used the drawings and labels on their notes sheet to share information about the pattern in the sky they selected with their partner.')\n- Remind students that in the next lesson, they will participate in a Science Talk with a small group, discussing the pattern in the sky they have selected.\n- Tell students that now they will have a chance to complete another entry in their Sky notebook, this time focusing on the moon. Remind students that throughout the unit, they have completed many entries in their Sky notebooks.\n- Direct students' attention to the posted learning targets and read the second one aloud:\n- 'I can record my observations from videos/images of the sky in my Sky notebook.'\n- Using a total participation technique, invite responses from the group:\n- 'What are some observations from images of the sun and moon you have recorded thus far in your Sky notebook?' (Responses will vary, but may include: the sun in different places in the sky; the sun looking yellow and high in the sky; a crescent moon; a full moon; the different places in the sky we can see the sun and the moon.)\n- Display pages 11-12 of the Sky notebook and moon photograph 7 and use the same process as in previous lessons to distribute notebooks and pencils and to guide students to complete this page. Remind students to use the Prepositions anchor chart, Adjectives anchor chart, and the Sun, Moon, and Stars Word Wall as necessary.\n- Circulate to support students as they write. Refer to Sky notebook (answers, for teacher reference) as necessary.\n- Collect the Sky notebooks.\n- If productive, cue students to think about their thinking:\n- 'How does our Sky notebook add to your understanding of adjectives and prepositions? I'll give you time to think and discuss with a partner.' (Responses will vary.)\n- Tell students that in the next lesson, they will get to complete another, final entry in their Sky notebook, this time writing about the sun and the moon.\n- After independent writing, foster a sense of community and provide options for physical action by inviting the whole class to join you in a special recognition for their efforts (e.g., high-fives, silent cheer, or a stadium-style wave). (MMAE, MME)\n- For ELLs: Briefly discuss the photograph to ensure that all students are prepared to write about the different objects in it. Label relevant objects in the photograph to support students as they write. (Example: 'Does anyone know what this is? That's right, it looks like a hill. Mina, can you label the hill? I also see some grass and dirt.')",
+      "content_hash": "a8ac8645fc39203459d9ed6582b40cb12ca711e4dc0e91c68ffebefdc8ad608e",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 2,
+        "lesson": 11,
+        "family": "instructional",
+        "section": "Closing and Assessment",
+        "letter": "A"
+      },
+      "section": "Closing and Assessment",
+      "letter": "A",
+      "title": "Independent Writing: Sky Notebook",
+      "page": 325,
+      "minutes": 15,
+      "steps": [
+        "Refocus students whole group and offer specific, positive feedback on students' use of their notes to share information. (Example: 'I noticed that Jontue and Arturo used the drawings and labels on their notes sheet to share information about the pattern in the sky they selected with their partner.')",
+        "Remind students that in the next lesson, they will participate in a Science Talk with a small group, discussing the pattern in the sky they have selected.",
+        "Tell students that now they will have a chance to complete another entry in their Sky notebook, this time focusing on the moon. Remind students that throughout the unit, they have completed many entries in their Sky notebooks.",
+        "Direct students' attention to the posted learning targets and read the second one aloud:",
+        "'I can record my observations from videos/images of the sky in my Sky notebook.'",
+        "Using a total participation technique, invite responses from the group:",
+        "'What are some observations from images of the sun and moon you have recorded thus far in your Sky notebook?' (Responses will vary, but may include: the sun in different places in the sky; the sun looking yellow and high in the sky; a crescent moon; a full moon; the different places in the sky we can see the sun and the moon.)",
+        "Display pages 11-12 of the Sky notebook and moon photograph 7 and use the same process as in previous lessons to distribute notebooks and pencils and to guide students to complete this page. Remind students to use the Prepositions anchor chart, Adjectives anchor chart, and the Sun, Moon, and Stars Word Wall as necessary.",
+        "Circulate to support students as they write. Refer to Sky notebook (answers, for teacher reference) as necessary.",
+        "Collect the Sky notebooks.",
+        "If productive, cue students to think about their thinking:",
+        "'How does our Sky notebook add to your understanding of adjectives and prepositions? I'll give you time to think and discuss with a partner.' (Responses will vary.)",
+        "Tell students that in the next lesson, they will get to complete another, final entry in their Sky notebook, this time writing about the sun and the moon.",
+        "After independent writing, foster a sense of community and provide options for physical action by inviting the whole class to join you in a special recognition for their efforts (e.g., high-fives, silent cheer, or a stadium-style wave). (MMAE, MME)",
+        "For ELLs: Briefly discuss the photograph to ensure that all students are prepared to write about the different objects in it. Label relevant objects in the photograph to support students as they write. (Example: 'Does anyone know what this is? That's right, it looks like a hill. Mina, can you label the hill? I also see some grass and dirt.')"
+      ]
+    }
+  ],
+  "evidence_pointers": [
+    {
+      "chunk_id": "G1M2U2L11#evidence#0",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L11",
+      "text": "",
+      "content_hash": "8f3f3e6a80728d6933fb5d24a24cfe457fb343664e51868943f5cd4f5305dbe7",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L11#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L11#Opening#A",
+      "location": "Opening A",
+      "quote": "Invite a student volunteer to lead the class in reciting the poem and doing any accompanying hand motions or gestures. Repeat as time allows with other student volunteers.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally",
+        "with gestures"
+      ],
+      "evidence_index": 0
+    },
+    {
+      "chunk_id": "G1M2U2L11#evidence#1",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L11",
+      "text": "",
+      "content_hash": "8bb7b785f25c7f538b8caecbd2986a89f47c6dfd174e3b62f5a42d91234d9b40",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L11#Opening#B",
+        "location": "Opening B",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U2L11#Opening#B",
+      "location": "Opening B",
+      "quote": "I can describe a pattern that can be observed in the sky using evidence from my notes about the sun, moon, or stars.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 1
+    },
+    {
+      "chunk_id": "G1M2U2L11#evidence#2",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L11",
+      "text": "",
+      "content_hash": "535dba26c241ce0e22c7e5ebdba8d883a8e6ae0617147725dfd5face8765c7b0",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L11#Opening#B",
+        "location": "Opening B",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L11#Opening#B",
+      "location": "Opening B",
+      "quote": "'What do you remember about what the word evidence means?' (proof or facts that show something is true)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 2
+    },
+    {
+      "chunk_id": "G1M2U2L11#evidence#3",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L11",
+      "text": "",
+      "content_hash": "64275b451acb12ee085e54ad2d028c1bb1d9126f85267360970cc53b952125d4",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L11#Opening#B",
+        "location": "Opening B",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L11#Opening#B",
+      "location": "Opening B",
+      "quote": "'What patterns in the sky have we learned about from reading, writing, and discussing throughout the unit?' (the pattern of light and dark; the pattern of the sun rising and setting; the pattern of the moon seeming to change shape; the pattern of seeing stars only at night)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 3
+    },
+    {
+      "chunk_id": "G1M2U2L11#evidence#4",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L11",
+      "text": "",
+      "content_hash": "9855bc233bc5c5b9dbc446a1e35a8b09adceec4205123579896b4f18eee8847c",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L11#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L11#Work Time#A",
+      "location": "Work Time A",
+      "quote": "'What is something we can do safely and respectfully with our hands or bodies to show the pattern of light and dark and how it makes day and night on earth?' (Responses will vary, but may include: standing in place and turning in a circle like the earth rotating or spinning, or a motion to show people awake during the day coupled with a motion to show people sleeping at night.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally",
+        "using gestures"
+      ],
+      "evidence_index": 4
+    },
+    {
+      "chunk_id": "G1M2U2L11#evidence#5",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L11",
+      "text": "",
+      "content_hash": "da22fcd3b3075e6dcdee3ce73b9db3f816efb3ecd8783870a71316f440da442e",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L11#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L11#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Invite students to safely and quickly stand up and repeat all of the selected motions as you read the information on the Unit 2 Guiding Question anchor chart for each pattern in the sky.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "using gestures"
+      ],
+      "evidence_index": 5
+    },
+    {
+      "chunk_id": "G1M2U2L11#evidence#6",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L11",
+      "text": "",
+      "content_hash": "871a53fc00eb2074b6a98fbbbd3c2ef32cea1d47a29048b548bb5fb1f76ed999",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L11#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L11#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Invite students to review and reread each of their notes sheets. Circulate and remind students to think about which pattern in the sky they would like to speak about during the Science Talk in the next lesson.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification"
+      ],
+      "qualifiers": [
+        "using notes"
+      ],
+      "evidence_index": 6
+    },
+    {
+      "chunk_id": "G1M2U2L11#evidence#7",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L11",
+      "text": "",
+      "content_hash": "11b0fa6f09b05ec2d313e559355cdd91bc66bcde4439ff9ba411a76f95babe33",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L11#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L11#Work Time#B",
+      "location": "Work Time B",
+      "quote": "'For which pattern do you have the most information?'",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "supports_action": [
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 7
+    },
+    {
+      "chunk_id": "G1M2U2L11#evidence#8",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L11",
+      "text": "",
+      "content_hash": "04e6c9dda3b0966e4da56f35043639b6a9c341651388b64de0c7ca4395cca03e",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L11#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L11#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Invite students to use a pencil to mark a star on the top of the notes sheet for the pattern in the sky they will speak about during the Science Talk in the next lesson and to keep that notes sheet in their hands.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "written_production",
+        "matching_sorting_sequencing"
+      ],
+      "qualifiers": [
+        "written"
+      ],
+      "evidence_index": 8
+    },
+    {
+      "chunk_id": "G1M2U2L11#evidence#9",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L11",
+      "text": "",
+      "content_hash": "6fab2af809343af113d76170ac45250e0eb2c2c702876a0afe16a814268684c6",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L11#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U2L11#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Tell them they are going to use the Back-to-Back and Face-to-Face protocol to share information about their selected pattern. Remind them that they used this protocol in Unit 1, and review as necessary using the Back-to-Back and Face-to-Face Protocol anchor chart.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 9
+    },
+    {
+      "chunk_id": "G1M2U2L11#evidence#10",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L11",
+      "text": "",
+      "content_hash": "66c3b1f46ab20bca222e402f4c99655efa26afba4f276fec9701e902e8d510ef",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L11#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L11#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Lead students through three rounds of the Back-to-Back and Face-to-Face protocol, reminding them to use their notes sheet as they answer the following questions:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "procedural_application"
+      ],
+      "qualifiers": [
+        "orally",
+        "using notes"
+      ],
+      "evidence_index": 10
+    },
+    {
+      "chunk_id": "G1M2U2L11#evidence#11",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L11",
+      "text": "",
+      "content_hash": "c81853bbaae84656c115502b30e815dfef7fe5e07b4aadb94f92f797adc9589f",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L11#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L11#Work Time#C",
+      "location": "Work Time C",
+      "quote": "'What pattern in the sky are you sharing about?'",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 11
+    },
+    {
+      "chunk_id": "G1M2U2L11#evidence#12",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L11",
+      "text": "",
+      "content_hash": "638fcb8a6160f00eee49e1e035a65f3cf1c1f72ce78f4b5fa29ac32aadfb5ac3",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L11#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L11#Work Time#C",
+      "location": "Work Time C",
+      "quote": "'What are one or two pieces of information you learned about this pattern in the sky?'",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally",
+        "using notes"
+      ],
+      "evidence_index": 12
+    },
+    {
+      "chunk_id": "G1M2U2L11#evidence#13",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L11",
+      "text": "",
+      "content_hash": "0263af76353209982d752a0306fe549a12bff7d06ebe00f6605aed3677b8b68d",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L11#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L11#Work Time#C",
+      "location": "Work Time C",
+      "quote": "'What is one thing you still wonder about for this pattern in the sky?'",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 13
+    },
+    {
+      "chunk_id": "G1M2U2L11#evidence#14",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L11",
+      "text": "",
+      "content_hash": "a584e628c021a10252b3fc39f8bafa1528b284c02e6f6324346bd8fd21af13d3",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L11#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L11#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Refocus whole group and invite a few students to share out.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 14
+    },
+    {
+      "chunk_id": "G1M2U2L11#evidence#15",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L11",
+      "text": "",
+      "content_hash": "445012ac28c4e274db110b82ab98a09f384c743dbadcc522bdfb1646c70e9b97",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L11#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U2L11#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Provide students with sentence frames to prompt their speech for each question. (Examples: 'I am sharing about …' 'One thing I learned about _____ is' 'I wonder …')",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 15
+    },
+    {
+      "chunk_id": "G1M2U2L11#evidence#16",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L11",
+      "text": "",
+      "content_hash": "5e3f783576aaeb9f6abfe5b556d9749983a8025ca24e7102b0854819af67ed60",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L11#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U2L11#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "I can record my observations from videos/images of the sky in my Sky Notebook.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 16
+    },
+    {
+      "chunk_id": "G1M2U2L11#evidence#17",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L11",
+      "text": "",
+      "content_hash": "e3dafa1a39196aa1547f557c415e07b4a30db7fa357561ebf92d708954535cdd",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L11#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L11#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Display pages 11-12 of the Sky notebook and moon photograph 7 and use the same process as in previous lessons to distribute notebooks and pencils and to guide students to complete this page.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "written_production"
+      ],
+      "qualifiers": [
+        "written"
+      ],
+      "evidence_index": 17
+    },
+    {
+      "chunk_id": "G1M2U2L11#evidence#18",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L11",
+      "text": "",
+      "content_hash": "0b4af9a234c45fe99b7d7184d34467947faef4e9510ef5e17fd652296180e995",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L11#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "teacher",
+        "evidence_role": "teacher_scribe"
+      },
+      "block_chunk_id": "G1M2U2L11#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Circulate to support students as they write.",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 18
+    },
+    {
+      "chunk_id": "G1M2U2L11#evidence#19",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L11",
+      "text": "",
+      "content_hash": "6a8de8a0fbaf0651adcab94b80db983f8d21b8476645ec11cfcb024816fc71d3",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L11#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U2L11#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "'How does our Sky notebook add to your understanding of adjectives and prepositions? I'll give you time to think and discuss with a partner.'",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 19
+    }
+  ]
+}

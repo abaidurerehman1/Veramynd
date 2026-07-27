@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0-embed-qdrant",
+  "status": "complete",
+  "model_id": "text-embedding-3-large",
+  "dimensions": 3072,
+  "collection": "veramynd_chunks",
+  "total_chunks": 242,
+  "lesson_chunks": 40,
+  "instructional_chunks": 202,
+  "upserted": 242,
+  "failed": [],
+  "qdrant_point_count": 242
+}

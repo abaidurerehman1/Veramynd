@@ -1,0 +1,124 @@
+{
+  "schema_version": "2.0-ela",
+  "_comment": "BLANK ELA fill-in-the-blank template. Validates against curriculum_normalization.ela.schema.json once the <...> placeholders are replaced. REQUIRED fields (schema will reject the record without them): resource_id, title, provenance.{program,grade,subject}, placement.resource_type, domain.primary, objective, what_is_taught[>=1] (each item is an object {skill, cognitive_demand} with optional emphasis), student_actions (all 9 + domain_specific), evidence[>=1] (each item needs quote, location, actor, evidence_role, support, supports_action), teacher_actions.with_prompting_and_support, subject_profile.mode (and subject_profile.genre when domain.primary is Writing or Comprehension; and subject_profile.text_complexity{quantitative,qualitative} when domain.primary is Comprehension). Use tokens NONE OBSERVED / NONE / n/a / null / \"\" / [] / {} exactly as in the field guide.",
+
+  "resource_id": "<PROGRAM_GRADE_[MODULE_]UNIT_[LESSON|DAY]_[TYPE_SLUG]>",
+  "title": "<title as printed in source>",
+
+  "provenance": {
+    "program": "<publisher/program>",
+    "source_document": "<file name or URL>",
+    "grade": "<PreK|K|1..12|band>",
+    "jurisdiction": "<state/authority to score against, e.g. Georgia, or empty string>",
+    "subject": "ELA/Literacy",
+    "format": "<paper-based|online digital|blended>"
+  },
+
+  "placement": {
+    "resource_type": "<unit|main_lesson|lesson_component|routine|supplemental|skill_builder|practice_activity|assessment|intervention|enrichment|ancillary|connection>",
+    "hierarchy": {
+      "module": "",
+      "unit": "",
+      "lesson": "",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "<e.g. 45 minutes>",
+    "part_of": "<parent resource_id or null>",
+    "children": []
+  },
+
+  "domain": {
+    "primary": "<Phonological Awareness|Phonics|Fluency|Vocabulary|Comprehension|Writing|Language|Speaking & Listening>",
+    "secondary": []
+  },
+  "level": "",
+
+  "objective": "<one sentence, framework-neutral — the resource's own goal, NOT a standards claim>",
+
+  "what_is_taught": [
+    { "skill": "<concrete sub-skill 1, framework-neutral — no standard code>", "cognitive_demand": "<DOK1_recall_reproduction|DOK2_skills_concepts|DOK3_strategic_thinking|DOK4_extended_thinking>", "emphasis": "<primary|secondary|incidental — optional>" }
+  ],
+  "what_is_NOT_taught": [],
+
+  "student_actions": {
+    "recognition_identification": "<how, or NONE OBSERVED>",
+    "oral_production": "<how, or NONE OBSERVED>",
+    "written_production": "<how, or NONE OBSERVED>",
+    "matching_sorting_sequencing": "<how, or NONE OBSERVED>",
+    "procedural_application": "<how, or NONE OBSERVED>",
+    "investigation_handson": "<how, or NONE OBSERVED>",
+    "representation_modeling": "<how, or NONE OBSERVED>",
+    "reasoning_explanation": "<how, or NONE OBSERVED>",
+    "comprehension_response": "<how, or NONE OBSERVED>",
+    "domain_specific": {}
+  },
+
+  "evidence": [
+    {
+      "quote": "<verbatim source text>",
+      "location": "<page/section reference>",
+      "actor": "<student|teacher|shared|unspecified>",
+      "evidence_role": "<directive_prompt|student_production|elicitation_check|teacher_model|teacher_scribe|assessment_item>",
+      "support": "<independent|with_prompting|modeled|not_applicable>",
+      "qualifiers": [],
+      "supports_action": ["<student_actions key this quote proves; [] for teacher_model/teacher_scribe>"]
+    }
+  ],
+
+  "teacher_actions": {
+    "direct_instruction": "<what the teacher models>",
+    "prompts_that_cue_student_response": [],
+    "with_prompting_and_support": "<yes|no>"
+  },
+
+  "example_items": {},
+
+  "scope": { "breadth": "", "depth": "" },
+
+  "context": {
+    "mode": "<in isolation|in context|within full texts|oral discussion of images>",
+    "stimulus_provided": "<read-aloud|text|visual|none — describe>",
+    "with_visual_support": "<yes|no>"
+  },
+
+  "sections_covered": {
+    "warm_up": "n/a",
+    "direct_instruction": "n/a",
+    "guided_practice": "n/a",
+    "independent_application": "n/a",
+    "check_for_understanding": "n/a",
+    "differentiated_reinforce": "n/a",
+    "differentiated_extend": "n/a"
+  },
+
+  "supports": {
+    "english_language_learners": "NONE",
+    "universal_design_udl": "NONE",
+    "below_level_reinforce": "NONE",
+    "above_level_extend": "NONE"
+  },
+
+  "assessment": {
+    "type": "<formative|summative|none>",
+    "method": "",
+    "recognition_vs_production": null
+  },
+
+  "materials": [],
+  "vocabulary": { "new": [], "review": [] },
+  "protocols_routines": [],
+  "notes": "",
+
+  "subject_profile": {
+    "mode": "<interpretation|construction|both>",
+    "genre": "<narrative|expository|opinion|poetic|mixed|n/a — REQUIRED when domain.primary is Writing or Comprehension>",
+    "text_complexity": {
+      "quantitative": "<Lexile/measure + grade band, e.g. '450L (grade 2-3 band)', or 'not measured' — REQUIRED block when domain.primary is Comprehension; delete this whole text_complexity object otherwise>",
+      "qualitative": "<structure, language, knowledge demands, levels of meaning>",
+      "reader_and_task": "<reader/task considerations — optional>"
+    }
+  }
+}

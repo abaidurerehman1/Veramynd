@@ -1,0 +1,498 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U2L6",
+  "title": "Lesson 6: Close Read-aloud, Culminating Task: What Makes Day and Night",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "2",
+      "lesson": "6",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "65 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening",
+      "Writing",
+      "Language"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will understand what causes day and night on earth by closely reading an informational text, participate in a structured science discussion using evidence from notes, and describe observations about the sky through independent and shared writing.",
+  "what_is_taught": [
+    {
+      "skill": "identify and discuss prepositions in a poem",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "listen to and echo a poem with gestures",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "answer a focus question about day and night using text details",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "create a diagram to represent day and night on earth",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "participate in a structured small-group science discussion using notes as evidence",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use sentence starters to build on peers' ideas during discussion",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "listen actively and show understanding during peer discussion",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "write independently to describe observations using adjectives",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "engage in shared writing to describe the position of the moon using prepositions",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use classroom resources to support writing (word walls, high-frequency word lists, letter-sound charts)",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "phonics/decoding",
+    "fluency",
+    "independent extended writing",
+    "complex vocabulary instruction beyond basic science terms",
+    "formal grammar instruction beyond prepositions"
+  ],
+  "student_actions": {
+    "recognition_identification": "identify prepositions and details in text and images",
+    "oral_production": "echo poem verses, participate in science talk using sentence starters, share ideas orally",
+    "written_production": "write descriptions independently and contribute to shared writing",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "apply science talk protocol steps in triads",
+    "investigation_handson": "create diagrams representing day and night",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain ideas during science talk and describe observations",
+    "comprehension_response": "answer focus questions about day and night using text and notes evidence, respond to prompts about moon position and poem content",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Tell students that you will read the poem first on your own as they listen, then they should echo each verse as you read it a second time.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "What word(s) describe where we see the sun, moon, and stars in these verses?' (above and below)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Circle and/or highlight the prepositions in each verse as you continue to read the poem aloud.",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "If time permits, invite students to read the poem with you one last time.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Review the focus question by reading it aloud.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Using a total participation technique, invite responses from the group: 'What makes day and night on earth?' (The sun shines on half of the earth; that half has day. The other half is in the shadow or darkness; that half has night.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Tell students that today they will create a diagram that shows day and night on earth.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "investigation_handson"
+      ]
+    },
+    {
+      "quote": "During the culminating task, support fine motor skills and expression of knowledge by providing a scaffolded diagram. (Example: Offer pre-cut labels and shapes and/ or include a line to denote the halves of the earth.)",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to move safely to a spot on the edge of the whole group meeting area.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to turn and talk to an elbow partner: 'What does this learning target mean?' (We are going to have a Science Talk to discuss day and night on earth.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Invite a few students to share out.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Ask two student volunteers to help you model how to build onto a group member's idea:",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "student_production",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally",
+        "using sentence starters"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Using a total participation technique, invite responses from the group:",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Guide students through each step of the Science Talk protocol using the question: 'What makes night?'",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "procedural_application",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Circulate to observe students as they discuss. Gather data on using the Speaking and Listening Checklist. Prompt students with questions to help them expand on their ideas.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to turn and talk to an elbow partner:",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Direct their attention to the posted learning targets and read the second one aloud: 'I can record my observations from images/videos of the sky in my Sky notebook.'",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to turn and talk to an elbow partner:",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Display page 4 of the Sky notebook and follow the same process established in Lesson 5 by reading the prompt aloud, encouraging students to use pictures and words to show their thinking, and reminding them to use the Adjectives anchor chart for their descriptions.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Circulate and support students as necessary. Encourage them to use classroom resources (Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Refocus students whole group.",
+      "location": "Closing and Assessment B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Display the Describing the Position of the Moon recording form and using a total participation technique, invite responses from the group.",
+      "location": "Closing and Assessment B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Tell students that they will have the opportunity to describe the location of the moon in the picture through shared writing.",
+      "location": "Closing and Assessment B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Begin by circling one of the pictures that most closely resembles the location of the moon in the photograph and then model writing a complete sentence to describe the location of the moon. (Example: 'The moon is behind the branch.')",
+      "location": "Closing and Assessment B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "If productive, cue students with a challenge: 'What if the moon was above the branch? How would that change the picture? I'll give you time to think and discuss with a partner.'",
+      "location": "Closing and Assessment B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Model reading the poem aloud with gestures; model circling and highlighting prepositions; model creating a diagram of day and night; model using sentence starters during Science Talk; model writing complete sentences describing moon position.",
+    "prompts_that_cue_student_response": [
+      "What word(s) describe where we see the sun, moon, and stars in these verses?",
+      "What makes day and night on earth?",
+      "What does this learning target mean?",
+      "How will you show your partner you are listening to him or her?",
+      "What is one thing you did well during your Science Talk triad?",
+      "Where do we see the moon?",
+      "What if the moon was above the branch? How would that change the picture?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "poem comprehension, informational text comprehension, science discussion, writing about observations",
+    "depth": "identifying prepositions, answering focus questions, diagram creation, structured discussion, independent and shared writing"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "text, images, notes, anchor charts",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Engaging the Learner: 'Where Are They? The Sun, Moon, and Stars' Poem",
+    "direct_instruction": "Close Read-aloud Culminating Task: What Makes Day and Night, Entire Text",
+    "guided_practice": "Launching Science Talk Protocol",
+    "independent_application": "Independent Writing: Sky Notebook",
+    "check_for_understanding": "Shared Writing: Describing the Position of the Moon",
+    "differentiated_reinforce": "",
+    "differentiated_extend": ""
+  },
+  "supports": {
+    "english_language_learners": "Use of sentence frames, grouping by language proficiency, use of Prepositions Construction board, and encouragement to ask for repetition or slower speech.",
+    "universal_design_udl": "Use of gestures, scaffolded diagrams, pre-cut labels, and supportive writing tools such as pencil grips and slanted desks.",
+    "below_level_reinforce": "Provide pre-cut labels and shapes for diagram; model sentence frames and use of prepositions.",
+    "above_level_extend": "Encourage students to add details during Science Talk and challenge with hypothetical questions about moon position."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Observation of student participation in Science Talk, review of diagrams and writing in Sky notebooks, and shared writing contributions.",
+    "recognition_vs_production": "Both recognition of text details and production of oral and written responses."
+  },
+  "materials": [
+    "'Where Are They? The Sun, Moon, and Stars' poem (from Lesson 5; one to display; for teacher read-aloud)",
+    "'Where Are They? The Sun, Moon, and Stars' poem (example, for teacher reference)",
+    "Close Read-aloud Guide: What Makes Day and Night (Session 5; for teacher reference)",
+    "-What Makes Day and Night (one to display; for teacher read-aloud)",
+    "-What Makes Day and Night anchor chart (begun in Lesson 3; see Close Readaloud Guide)",
+    "-What Makes Day and Night Culminating Task diagram (from Lesson 2; one for teacher modeling and one per student; see Close Read-aloud Guide)",
+    "-What Makes Day and Night Culminating Task icons (one set per student; see Close Read-aloud Guide)",
+    "-Reading Informational Text Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Scissors (one per student)",
+    "Glue stick (one per student)",
+    "Colored pencils (class set; variety of colors per student)",
+    "Pencils (one per student)",
+    "Science Talk Protocol anchor chart (new; teacher-created; see supporting materials)",
+    "What Makes Day and Night notes sheet (from Lesson 5; one per student)",
+    "Working to Become Ethical People anchor chart (begun in Unit 1, Lesson 4)",
+    "Speaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Moon photograph 4 (one to display)",
+    "Sky notebook (from Lesson 4; page 4; one per student)",
+    "Sky notebook (from Lesson 4; answers, for teacher reference)",
+    "Adjectives anchor chart (from Lesson 4)",
+    "Describing the Position of the Moon recording form (one for teaching modeling and one per student)"
+  ],
+  "vocabulary": {
+    "new": [
+      "preposition, depict, participate, Science Talk, triad (L)",
+      "discuss, observe (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Science Talk protocol",
+    "Total participation techniques"
+  ],
+  "notes": "Lesson integrates comprehension of informational text with language skills (prepositions), speaking and listening protocols, and writing about observations. Supports for ELLs and fine motor development are included.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "expository",
+    "text_complexity": {
+      "quantitative": "Read-aloud mediation; quantitative measure not specified",
+      "qualitative": "Informational text with diagrams; moderate language and knowledge demands",
+      "reader_and_task": "Students listen to read-aloud and use notes and images to complete tasks; supports provided for ELLs and fine motor skills."
+    }
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 262,
+    "source_page_end": 272
+  }
+}

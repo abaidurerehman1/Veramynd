@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0-embed-qdrant",
+  "model_id": "text-embedding-3-large",
+  "dimensions": 3072,
+  "distance": "Cosine",
+  "collection": "veramynd_chunks",
+  "qdrant_backend": "local_path",
+  "qdrant_url": null,
+  "qdrant_path": "C:\\Users\\Administrator\\Downloads\\veramynd-ready-to-run\\veramynd\\veramynd_parser\\.qdrant_data",
+  "lesson_vectors": 40,
+  "instructional_vectors": 202,
+  "total_vectors": 242,
+  "qdrant_point_count": 242,
+  "corpus_hash": "56c1961bf93b470079efae0de7fd77be7d9f833ebd965c7055ee97d674891b09",
+  "failed": [],
+  "source_chunks_dir": "output\\chunks",
+  "note": "evidence_pointer chunks are not embedded"
+}

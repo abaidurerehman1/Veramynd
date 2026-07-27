@@ -1,0 +1,437 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U2L11",
+  "title": "Lesson 11: Reading, Writing, and Speaking: Preparing for the Unit 2 Assessment",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "2",
+      "lesson": "11",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": [
+      "Writing",
+      "Comprehension",
+      "Language"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will review and describe patterns observed in the sky using evidence from notes, share information orally with partners, and record observations in their Sky notebook.",
+  "what_is_taught": [
+    {
+      "skill": "describe a pattern observed in the sky using evidence from notes",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "share information about a selected pattern orally with a partner using notes",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use a structured partner discussion protocol (Back-to-Back and Face-to-Face) to share and clarify information",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "record observations from videos/images of the sky in a notebook",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use prepositions and adjectives to describe observations in writing",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "participate in reciting a poem with gestures or hand motions",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use sentence frames to support oral expression",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "engage in partner talk to recall and share information",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "Phonics/decoding",
+    "Fluency",
+    "Independent writing of extended texts",
+    "Phonological Awareness"
+  ],
+  "student_actions": {
+    "recognition_identification": "identify patterns and evidence from notes and images",
+    "oral_production": "orally share information about patterns and participate in poem recitation",
+    "written_production": "write observations and descriptions in the Sky notebook",
+    "matching_sorting_sequencing": "sequence and select notes sheets for sharing",
+    "procedural_application": "apply the Back-to-Back and Face-to-Face discussion protocol",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain and clarify information about patterns orally",
+    "comprehension_response": "respond to questions about patterns and evidence from notes and images, including turn and talk and partner sharing activities, and answer prompts about observations and patterns in the sky, using evidence from notes and images to support responses, and participate in total participation techniques to recall vocabulary and concepts related to evidence and patterns in the sky.",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Invite a student volunteer to lead the class in reciting the poem and doing any accompanying hand motions or gestures. Repeat as time allows with other student volunteers.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "with gestures"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "I can describe a pattern that can be observed in the sky using evidence from my notes about the sun, moon, or stars.",
+      "location": "Opening B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'What do you remember about what the word evidence means?' (proof or facts that show something is true)",
+      "location": "Opening B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What patterns in the sky have we learned about from reading, writing, and discussing throughout the unit?' (the pattern of light and dark; the pattern of the sun rising and setting; the pattern of the moon seeming to change shape; the pattern of seeing stars only at night)",
+      "location": "Opening B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What is something we can do safely and respectfully with our hands or bodies to show the pattern of light and dark and how it makes day and night on earth?' (Responses will vary, but may include: standing in place and turning in a circle like the earth rotating or spinning, or a motion to show people awake during the day coupled with a motion to show people sleeping at night.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using gestures"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Invite students to safely and quickly stand up and repeat all of the selected motions as you read the information on the Unit 2 Guiding Question anchor chart for each pattern in the sky.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "using gestures"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Invite students to review and reread each of their notes sheets. Circulate and remind students to think about which pattern in the sky they would like to speak about during the Science Talk in the next lesson.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "using notes"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "'For which pattern do you have the most information?'",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Invite students to use a pencil to mark a star on the top of the notes sheet for the pattern in the sky they will speak about during the Science Talk in the next lesson and to keep that notes sheet in their hands.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "written"
+      ],
+      "supports_action": [
+        "written_production",
+        "matching_sorting_sequencing"
+      ]
+    },
+    {
+      "quote": "Tell them they are going to use the Back-to-Back and Face-to-Face protocol to share information about their selected pattern. Remind them that they used this protocol in Unit 1, and review as necessary using the Back-to-Back and Face-to-Face Protocol anchor chart.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Lead students through three rounds of the Back-to-Back and Face-to-Face protocol, reminding them to use their notes sheet as they answer the following questions:",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using notes"
+      ],
+      "supports_action": [
+        "oral_production",
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "'What pattern in the sky are you sharing about?'",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What are one or two pieces of information you learned about this pattern in the sky?'",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using notes"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What is one thing you still wonder about for this pattern in the sky?'",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Refocus whole group and invite a few students to share out.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Provide students with sentence frames to prompt their speech for each question. (Examples: 'I am sharing about \u2026' 'One thing I learned about _____ is' 'I wonder \u2026')",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "I can record my observations from videos/images of the sky in my Sky Notebook.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Display pages 11-12 of the Sky notebook and moon photograph 7 and use the same process as in previous lessons to distribute notebooks and pencils and to guide students to complete this page.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "written"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Circulate to support students as they write.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'How does our Sky notebook add to your understanding of adjectives and prepositions? I'll give you time to think and discuss with a partner.'",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Models reciting the poem with gestures; reads learning targets aloud; models use of the Back-to-Back and Face-to-Face protocol; guides students in completing the Sky notebook page using photographs and anchor charts; provides sentence frames for oral sharing.",
+    "prompts_that_cue_student_response": [
+      "What do you remember about what the word evidence means?",
+      "What patterns in the sky have we learned about?",
+      "What is something we can do safely and respectfully with our hands or bodies to show the pattern of light and dark?",
+      "For which pattern do you have the most information?",
+      "What pattern in the sky are you sharing about?",
+      "What are one or two pieces of information you learned about this pattern?",
+      "What is one thing you still wonder about for this pattern?",
+      "How does our Sky notebook add to your understanding of adjectives and prepositions?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "Review and synthesis of multiple patterns observed in the sky; oral sharing and writing about observations",
+    "depth": "Application of partner discussion protocol; use of evidence from notes to describe patterns; recording observations with descriptive language"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "texts, photographs, videos, notes sheets, poem, Sky notebook, photographs of the moon",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Reciting poem with gestures; reviewing learning targets",
+    "direct_instruction": "Reviewing Unit 2 Guiding Question anchor chart; modeling discussion protocol; guiding notebook writing",
+    "guided_practice": "Partner sharing using Back-to-Back and Face-to-Face protocol; turn and talk to recall patterns",
+    "independent_application": "Independent writing in Sky notebook",
+    "check_for_understanding": "Eliciting responses about evidence and patterns; partner sharing; notebook writing",
+    "differentiated_reinforce": "Providing sentence frames and visual supports for ELLs and students needing movement alternatives",
+    "differentiated_extend": "Encouraging students to select patterns they know best and share more detailed information"
+  },
+  "supports": {
+    "english_language_learners": "Provides sentence frames, visual supports, and partner talk to scaffold oral and written expression.",
+    "universal_design_udl": "Offers alternatives for physical movement; uses multiple modalities including gestures, visuals, and partner talk.",
+    "below_level_reinforce": "Uses visual supports and sentence frames to scaffold participation.",
+    "above_level_extend": "Encourages students to select patterns with most information and share detailed observations orally."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Observation of oral sharing using notes; review of written notebook entries",
+    "recognition_vs_production": "Production"
+  },
+  "materials": [
+    "'Where Are They? The Sun, Moon, and Stars' poem (from Lesson 8, one to display)",
+    "Unit 2 Guiding Question anchor chart (begun in Lesson 2)",
+    "Equity sticks (class set; one per student)",
+    "What Makes Day and Night notes sheet (from Lesson 6; one per student)",
+    "Patterns of the Moon notes sheet (from Lesson 8; one per student)",
+    "Patterns of the Stars notes sheet (from Lesson 10; one per student)",
+    "Pencils (one per student)",
+    "Back-to-Back and Face-to-Face Protocol anchor chart (begun in Module 1)",
+    "Sky notebook (from Lesson 4; pages 11-12; one per student and one to display)",
+    "Sky notebook (from Lesson 4; answers, for teacher reference)",
+    "Moon photograph 7 (one to display)",
+    "Prepositions anchor chart (begun in Lesson 7)",
+    "Adjectives anchor chart (begun in Lesson 4)"
+  ],
+  "vocabulary": {
+    "new": [
+      "evidence (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Back-to-Back and Face-to-Face partner discussion protocol",
+    "Total participation techniques",
+    "Turn and talk partner sharing"
+  ],
+  "notes": "Lesson focuses on reviewing and synthesizing knowledge about sky patterns through oral and written expression, using notes and visual supports. Includes supports for ELLs and students needing movement alternatives.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "expository",
+    "text_complexity": {
+      "quantitative": "n/a (read-aloud and discussion-based)",
+      "qualitative": "Moderate complexity: multiple informational patterns, use of visuals and notes, structured partner talk",
+      "reader_and_task": "Students use notes and visuals to support comprehension and expression; scaffolded oral and written tasks."
+    }
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 317,
+    "source_page_end": 325
+  }
+}

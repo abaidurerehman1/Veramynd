@@ -1,0 +1,19 @@
+check                                               result gate  detail
+--------------------------------------------------------------------------------------
+V1 lesson count matches expected                    PASS   hard  40 (expected 40)
+V2 pages fully partition (no gap/overlap)           PASS   hard  440/440 pages
+V3 lesson starts strictly increasing                PASS   hard  
+V4 no inverted page spans                           PASS   hard  
+V5 lesson ids unique                                PASS   hard  
+V6 lessons contiguous within each unit              PASS   hard  
+V7 running header matches bookmark code             PASS   hard  40/40 confirmed
+V8 every lesson has required blocks                 PASS   soft  all present
+V13 agenda plan matches body blocks                 PASS   hard  all aligned
+V14 every instructional block has steps             PASS   soft  all have steps
+V9 agenda time within sane band                     PASS   soft  all in band
+V11 every lesson has Materials                      PASS   hard  all present
+V12 every lesson has Vocabulary                     WARN   soft  3 empty: ['G1M2U1L15', 'G1M2U3L10', 'G1M2U3L12']
+V10 Docling standards grounded in PyMuPDF text      PASS   hard  all 40 Docling lesson(s) confirmed by second engine
+V15 cross-engine structural agreement (opt-in)      PASS   hard  40 Docling lesson(s) confirmed by independent PyMuPDF re-division
+--------------------------------------------------------------------------------------
+RESULT: 15 checks · 0 FAIL · 1 WARN → GO

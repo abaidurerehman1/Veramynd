@@ -1,0 +1,376 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U3L10",
+  "title": "Lesson 10: Unit 3 Assessment, Part III: Using Observations of the Sun to Write Narrative Poems",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "3",
+      "lesson": "10",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Speaking & Listening"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will write the final verse and closing of a narrative poem about the sun using observations and provide kind, helpful, and specific feedback to peers.",
+  "what_is_taught": [
+    {
+      "skill": "plan the final verse and closing of a narrative poem",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "write the final verse and closing of a narrative poem",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use descriptive adjectives in writing",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "provide kind, helpful, and specific feedback to peers",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "participate in peer feedback protocols",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "reflect on giving and receiving feedback",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "engage in physical movement routines to energize",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "Phonics",
+    "Phonological Awareness",
+    "Fluency",
+    "Vocabulary",
+    "Comprehension",
+    "Language",
+    "Independent writing beyond poem final verse and closing"
+  ],
+  "student_actions": {
+    "recognition_identification": "identify and recall steps of a physical movement routine and poem elements",
+    "oral_production": "discuss ideas for poem closing, share feedback with partners, participate in Think-Pair-Share reflections",
+    "written_production": "write the final verse and closing of a poem using a verse planner",
+    "matching_sorting_sequencing": "sequence steps of the Sun Movement routine and poem planning steps",
+    "procedural_application": "apply peer feedback protocols and writing processes",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain ideas for poem closing and feedback suggestions",
+    "comprehension_response": "respond to questions about poem elements and feedback experiences in group discussions and partner talks",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Direct students' attention to the Sun Movement chart and invite a student volunteer to lead the class through the routine.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "recognition_identification",
+        "matching_sorting_sequencing"
+      ]
+    },
+    {
+      "quote": "Remind students that during the past two lessons, they have written verses 1 and 2 of their poems. Today, they will work with the same partner to plan the third verse and closing.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Review each prompt question by reading them aloud.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Move students into pairs and invite them to turn and talk: 'After closely examining the closing sentence of the poem, what ideas do you have for how to end your own poem?' (Responses will vary.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "'What time of day will your third verse be about?' (It's going to be about dusk.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Display page 2 of the ' What the Sun Sees' poem.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students that today they will write the final verse and closing of their poem.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Using a total participation technique, invite responses from the group: 'When we wrote our poem about the moon, what did you notice about the closing in the 'What the Moon Sees' poem?' (The poem doesn't just end. The moon goes to sleep, and the sun comes up.) 'What do you need to remember as you write the closing?' (I need to make sure the poem feels complete. I need to think about what happens when the sun goes away.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Follow the same process used in Lessons 8-9 to guide students through completing verse 3 and the closing at their workspaces. Circulate to support them as they work and refer them to their verse planners and the High-Quality Work anchor chart as necessary.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production",
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Offer specific, positive feedback on students' planning and writing processes. (Example: 'I noticed that Jack took time to describe what the sun looked like at the evening time with descriptive adjectives. I also noticed that he wrote a closing that described what happens at the end of the day.')",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell the writers that today they will share verse 3 and the closing of their poem with a partner using the Pinky Partner protocol.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Guide students through the protocol using the following sentence frames:",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally",
+        "using sentence frames"
+      ],
+      "supports_action": [
+        "oral_production",
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Circulate as students share; prompt them to use the criteria on the High-Quality Work anchor chart when providing feedback.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Refocus whole group and offer students specific, positive feedback on their work providing feedback over the past several lessons to one another. (Example: 'I heard Angel giving Damien specific feedback on his closing. He told Damien to describe what happens at the very end of the day.')",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students they will again use the Think-Pair-Share protocol to reflect on how well they gave and received feedback in this lesson.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to Think-Pair-Share with an elbow partner: 'How did you do giving and receiving feedback?' 'What worked well?' 'What could you improve?'",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "To foster a sense of community and provide options for physical action after students have completed their work, invite the whole class to join you in a special applause (e.g., silent cheer, firecracker, hip-hip hooray, and high-five a classmate). (MMAE, MME)",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "physically"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Model reviewing and practicing the Sun Movement routine; model reviewing poem planning prompts; model peer feedback protocols; model Think-Pair-Share reflection protocol.",
+    "prompts_that_cue_student_response": [
+      "After closely examining the closing sentence of the poem, what ideas do you have for how to end your own poem?",
+      "What time of day will your third verse be about?",
+      "What does the sun 'see' at this time of day?",
+      "What is an idea for your closing?",
+      "When we wrote our poem about the moon, what did you notice about the closing in the 'What the Moon Sees' poem?",
+      "What do you need to remember as you write the closing?",
+      "How did you do giving and receiving feedback?",
+      "What worked well?",
+      "What could you improve?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "final verse and closing of a narrative poem; peer feedback and reflection",
+    "depth": "planning, writing, sharing, and reflecting on poem closing; using descriptive language; applying feedback protocols"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "poem model, verse planners, anchor charts, peer feedback protocols",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Engaging the Learner: Sun Movement Routine",
+    "direct_instruction": "Review poem planning prompts and peer feedback protocols",
+    "guided_practice": "Planning and writing the final verse and closing with partner support",
+    "independent_application": "Writing the final verse and closing independently; peer feedback sharing",
+    "check_for_understanding": "Think-Pair-Share reflection on feedback giving and receiving",
+    "differentiated_reinforce": "Partially filled-in verse planners for students needing support",
+    "differentiated_extend": "Encouraging oral processing of ideas for ELLs"
+  },
+  "supports": {
+    "english_language_learners": "Provide oral processing time and sentence frames; review resources and vocabulary; give positive feedback on ELL success.",
+    "universal_design_udl": "Offer physical movement options; provide noise-canceling headphones or dividers; use sentence frames and partially filled planners.",
+    "below_level_reinforce": "Provide guided verse planners and sentence frames for writing support.",
+    "above_level_extend": "Encourage oral elaboration and use of descriptive adjectives in writing."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Observation of poem writing, peer feedback participation, and Think-Pair-Share reflections",
+    "recognition_vs_production": "production"
+  },
+  "materials": [
+    "Sun Movement chart (from Unit 1, Lesson 2; one to display)",
+    "'What the Sun Sees' verse planner (begun in Lesson 8; added to during Work Time A; one per student)",
+    "'What the Moon Sees' example (from Lesson 7; one to display)",
+    "Sky notebook (completed in Unit 2; one per student)",
+    "Speaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "The Sun, Moon, and Stars",
+    "Time of Day anchor chart (begun in Lesson 4)",
+    "Adjectives anchor chart (begun in Unit 2, Lesson 4)",
+    "What the Sun Sees anchor chart (begun in Lesson 4)",
+    "'What the Sun Sees' poem (begun in Lesson 8; added to during Work Time B; one per student)",
+    "High-Quality Work anchor chart (begun in Lesson 3)",
+    "Pinky Partners Protocol anchor chart (begun in Module 1)",
+    "Think-Pair-Share Protocol anchor chart (begin in Module 1)"
+  ],
+  "vocabulary": {
+    "new": [],
+    "review": []
+  },
+  "protocols_routines": [
+    "Sun Movement routine",
+    "Pinky Partners peer feedback protocol",
+    "Think-Pair-Share reflection protocol"
+  ],
+  "notes": "Lesson 10 of Unit 3 focuses on writing the final verse and closing of a narrative poem about the sun, using observations and descriptive language, and providing peer feedback. The lesson includes physical movement to energize students and multiple supports for ELLs and students needing writing assistance.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "narrative"
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 432,
+    "source_page_end": 439
+  }
+}

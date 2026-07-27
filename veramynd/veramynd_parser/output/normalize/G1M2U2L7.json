@@ -1,0 +1,1059 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U2L7",
+  "title": "Lesson 7: Focused Read-aloud, Session 1: Does the Sun Sleep? Noticing Sun, Moon, and Star Patterns",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "2",
+      "lesson": "7",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening",
+      "Writing",
+      "Vocabulary"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will learn to identify and use prepositions in a poem, distinguish information learned from illustrations and text about moon patterns, and record observations about the sky using descriptive language and prepositions.",
+  "what_is_taught": [
+    {
+      "skill": "identify prepositions in spoken text",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use a prepositions anchor chart to select correct prepositions to complete a poem",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "listen for prepositions in a read-aloud and signal when heard",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "explain the meaning of prepositions in own words",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "distinguish information learned from illustrations versus text in an informational book",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "describe patterns of the moon based on text and diagrams",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use vocabulary words related to moon phases and changes (e.g., change, waxing, waning, seems to, appears to)",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "participate in turn-and-talk discussions to share observations and explanations",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "observe and describe a video demonstration and simulation of moon phases",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "engage in a simulation to model the phases of the moon and describe observations",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "record observations and descriptions of the sun and moon using adjectives and prepositions in a notebook",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use word walls and anchor charts to support vocabulary and writing",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use sentence frames to support writing observations",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "Phonics/decoding",
+    "Fluency independent reading",
+    "Independent extended writing",
+    "Grammar beyond prepositions and adjectives",
+    "Advanced vocabulary instruction"
+  ],
+  "student_actions": {
+    "recognition_identification": "identify prepositions in poem and vocabulary words in word wall cards",
+    "oral_production": "answer questions, share observations, participate in turn-and-talk discussions, name moon phases during simulation",
+    "written_production": "write observations and descriptions using adjectives and prepositions in Sky notebook",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "participate in simulation modeling moon phases",
+    "investigation_handson": "engage in moon phases simulation and watch video demonstration",
+    "representation_modeling": "use hand gestures to demonstrate vocabulary meanings and moon phases",
+    "reasoning_explanation": "explain meaning of prepositions, describe moon patterns, explain why moon seems to change shape",
+    "comprehension_response": "respond to questions about text and diagrams, share new information learned about moon patterns and prepositions in discussions",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Display the Prepositions anchor chart and say: 'We did great work finding all the prepositions in the poem yesterday. I pulled them out and put them onto this chart.'",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Read the Prepositions anchor chart and invite students to move their hands to show the location (e.g., for 'on top of,' put their hands on top of their heads).",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "using hand gestures"
+      ],
+      "supports_action": [
+        "representation_modeling"
+      ]
+    },
+    {
+      "quote": "Display 'Where Are They? The Sun, Moon, and Stars' poem version 2 and read it aloud, pausing at the missing prepositions.",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Use equity sticks to select students to come up and use the Prepositions anchor chart to fill in the correct word or phrase. Continue to call students until the entire poem is filled in.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "using Prepositions anchor chart"
+      ],
+      "supports_action": [
+        "oral_production",
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Say: 'As I reread the poem today, I want you to listen for prepositions. When you hear a preposition read aloud, quietly put a thumb out in front of your chest.' Model the hand gesture if necessary.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "using hand gesture"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "representation_modeling"
+      ]
+    },
+    {
+      "quote": "Invite students to quietly push the imaginary button on their brains to show they are ready to listen for prepositions.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Reread the completed poem and look for students to put up their thumbs when a preposition is read aloud.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "quietly",
+        "using thumb gesture"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner: 'In your own words, what is a preposition?' (a word that tells the position of a person, place, or thing)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Cold call on two or three students to share out.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Direct students' attention to the posted learning targets and read the first target aloud: 'I can distinguish what I learn from the illustrations and what I learn from the text in the book Does the Sun Sleep?: Noticing Sun, Moon, and Star Patterns to describe patterns of the moon.'",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Display the Unit 2 Guiding Question anchor chart and read the question aloud: 'What patterns can we observe in the sky?'",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Share with students that today they will read to find out what patterns they can observe about the moon.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Display Does the Sun Sleep?: Noticing Sun, Moon, and Star Patterns and model using the table of contents to find the chapter titled 'The Moon.'",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Using a total participation technique, invite responses from the group: 'How is this text similar to the close read aloud text, What Makes Day and Night?' (they are both informational texts that teach us about the sun and the moon.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Read pages 12-13 slowly, fluently, with expression, and without interruption.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [
+        "fluently",
+        "with expression"
+      ],
+      "supports_action": []
+    },
+    {
+      "quote": "Use the Reading Informational Text Checklist as students respond to the following series of questions to track students' progress towards the targeted standards.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Ask students to look closely at the diagram of the phases of the moon. Invite students to turn and talk to an elbow partner: 'What do you notice about the moon's shape over time? What is this diagram showing us about the moon?' (It changes. Sometimes it is a thin crescent, sometimes it's a half-moon, sometimes it's full.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Cold call on two to three students to share out.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Show students the Sun, Moon, and Stars Word Wall card for change and ask: 'What does it mean if something is changing?' (It is different from how it was before.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Cold call on one or two students to share out.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Define the word change (to make different or alter).",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Place the Word Wall card on the Sun, Moon, and Stars Word Wall.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Reread the note on page 12 ('The moon follows a pattern of waxing and waning \u2026') and ask: 'What new information does this note provide us? What more have we learned about the moon from the text?' (There are special words used to describe how the moon changes. Waxing is when the moon gets bigger, and waning is when the moon gets smaller.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Cold call on two to three students to share out.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Show students the Sun, Moon, and Stars Word Wall cards for waxing and waning.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to make a hand gesture with you to demonstrate the meaning as you define the words (appearing to become larger; appearing to become smaller).",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "using hand gestures"
+      ],
+      "supports_action": [
+        "representation_modeling"
+      ]
+    },
+    {
+      "quote": "Place the Word Wall cards on the Sun, Moon, and Stars Word Wall.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Reread the Unit 2 guiding question and invite students to give a thumbs-up if they have learned about a pattern of the moon.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "using thumb gesture"
+      ],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "Draw students' attention back to the text and read aloud page 14 fluently and without interruption. Ask:",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [
+        "fluently"
+      ],
+      "supports_action": []
+    },
+    {
+      "quote": "As students share out, capture their responses on Patterns of the Moon anchor chart. Refer to Patterns of the Moon anchor chart (answers, for teacher reference) as necessary.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Draw students' attention back to the text and read aloud page 15 fluently and without interruption. Ask:",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [
+        "fluently"
+      ],
+      "supports_action": []
+    },
+    {
+      "quote": "As students share out, capture their responses on the Patterns of the Moon anchor chart. Refer to Patterns of the Moon anchor chart (answers, for teacher reference) as necessary.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Draw students' attention back to the text and reread the last two sentences of page 15 and ask: 'Is the moon changing shape?' (We only see what is lit up by the sun, so what we see from earth looks different if the whole moon is not in the light from the sun. The moon isn't actually changing, but what we can see looks different.).",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "As students share out, capture their responses on the Patterns of the Moon anchor chart. Refer to Patterns of the Moon anchor chart (answers, for teacher reference) as necessary.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Introduce the Sun, Moon, and Stars Word Wall cards for seems to and appears to and explain that we can use these terms to describe what something looks like. The moon seems to, or appears to, be changing shape, but it's not. Place the Word Wall cards on the Sun, Moon, and Stars Word Wall.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner:",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Reread the information added to the Patterns of the Moon anchor chart and tell students that now they will watch a video and do a simulation to understand better why the moon looks like it is changing.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Before the focused read-aloud, provide white boards and dry-erase markers as an option for students to record (in drawing or writing) their ideas. This will also help scaffold active listening for key details.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in drawing or writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Share with students that now that they have read about the patterns of the moon and why the moon's shape seems to change, they will watch a video demonstration about the phases of the moon and do a simulation.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Review the Sun, Moon, and Stars Word Wall cards for full moon, half-moon, and crescent moon.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Play ' Moon Phases Demonstration.'",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner: 'What did you notice about the appearance of the moon as it circled around?' (The part of the moon that was lit up grew bigger and bigger until it was a full moon; then it grew smaller and smaller.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "using key details"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Cold call on two to three students to share out.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Tell students that people call this appeared change of the moon the 'phases of the moon' and that we see the moon go through one complete phase, or pattern, in about a month.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students that now they are going to try the demonstration shown in the video. Direct students' attention to the Working to Become Ethical People anchor chart and review the big ideas.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Remind students that integrity means to do the right thing even when it's hard. Tell them that you will be observing during the simulation to look for great examples of integrity.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Ask students to sit in a circle in the whole group meeting area.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Place the lightbulb in the middle of the meeting area and turn it on. Gather the moon sign to hold toward the light during the simulation.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Prepare students for the simulation by telling them that just as in the video, in order to see the phases, or pattern, of the moon the room needs to be dark. Encourage students to uphold integrity during the experiment and stay on task. Tell them that the class will be split in half: One half will take part in the simulation and the other half will observe. Then they will switch.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Call up half of the class.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Have students stand around you as you orbit the moon sign around your head (the earth). Make sure you are standing close enough to the lightbulb (the sun) to ensure good light and shadow.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "participating in simulation"
+      ],
+      "supports_action": [
+        "investigation_handson",
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Invite students to name the phases of the moon as they see the change occur across the face of the moon.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "As you engage in the simulation, think aloud about how the moon's shape is not changing, but the amount of the moon you can see lit up by the sun seems to grow bigger and smaller as it circles the earth.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Switch groups and repeat the demonstration.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Direct students back to their seats in the whole group meeting area.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Ask students to turn and talk with an elbow partner:",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Cold call on two to three students to share out.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "If productive, cue students to clarify the conversation by confirming what they mean and to listen carefully and seek to understand: 'So, do you mean _____?' (Responses will vary.)",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'Who can tell us what your classmate said in your own words?' (Responses will vary.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Give students specific, positive feedback on upholding their integrity for learning during the demonstration. (Example: 'Sophia, I noticed that as you were waiting for your turn to do the experiment, you were watching the other group to understand what to do.')",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Facilitate personal coping and self-regulation skills by modeling socially appropriate ways to express enthusiasm and excitement about this simulation. For example, give a silent cheer, give yourself a hug, take a deep breath and smile, or raise the roof.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Direct students' attention to the second posted learning target and read it aloud: 'I can record my observations of images of the sky in the Sky notebook.'",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Remind students that they will be writing in their Sky notebooks to reach this target.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Display: -Pages 5-6 of the Sky notebook -Sun photograph 5 -Moon photograph 5",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students that similar to previous lessons, they will use the sun and moon photographs to complete these pages in their Sky notebook",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Point out the Sky notebooks, pencils, and colored pencils at students' workspaces.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Remind them that they should include an adjective to describe the sun and moon, and a preposition to state the precise location. Remind students to use the Sun, Moon, and Stars Word Wall, the Prepositions anchor chart, and the Adjectives anchor chart while writing.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Briefly review the instructions on pages 5 and 6 of the Sky notebook. Invite students to circle the moon on page 6 that looks most like the moon in the photograph.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students that if they would like to take a closer look at the photographs, they are welcome to quietly get up and move closer during writing time, taking care to be respectful of their classmates.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Direct students to their seats and tell them to begin writing in their Sky notebooks.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Circulate and listen in as students write.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "When 2 minutes remain, give students a time reminder.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Signal all students to stop writing through a designated sound. Ask students to put away their Sky notebooks in the designated turn-in area.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Collect the Sky notebooks.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "If productive, cue students to think about their thinking: 'How does our Sky notebook add to your understanding of adjectives and prepositions? I'll give you time to think and discuss with a partner.' (Responses will vary.)",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Tell students that tomorrow they will use the information they learned about the moon to take part in a Science Talk with their classmates, so they should continue thinking about the pattern of the moon and how its shape seems to change.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Models reading and identifying prepositions in a poem; models using table of contents to locate text chapters; models reading informational text fluently; models defining vocabulary words and using hand gestures; models conducting a moon phases simulation; models writing instructions and use of word walls and anchor charts.",
+    "prompts_that_cue_student_response": [
+      "In your own words, what is a preposition?",
+      "How is this text similar to the close read aloud text, What Makes Day and Night?",
+      "What do you notice about the moon's shape over time? What is this diagram showing us about the moon?",
+      "What does it mean if something is changing?",
+      "What new information does this note provide us? What more have we learned about the moon from the text?",
+      "Is the moon changing shape?",
+      "What is one piece of new information you learned about patterns of the moon?",
+      "What did you notice about the appearance of the moon as it circled around?",
+      "Who can tell us what your classmate said in your own words?",
+      "How does our Sky notebook add to your understanding of adjectives and prepositions?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "prepositions in poetry; informational text about moon patterns; vocabulary related to moon phases; simulation of moon phases; descriptive writing about sun and moon",
+    "depth": "identifying and using prepositions; distinguishing information from text and illustrations; understanding moon phase patterns; applying vocabulary in context; recording observations with descriptive language"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "text, diagrams, video, simulation, photographs",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Poem and Movement: 'Where Are They? The Sun, Moon, and Stars' Poem Version 2",
+    "direct_instruction": "Focused Read-aloud: Does the Sun Sleep?: Noticing Sun, Moon, and Star Patterns, Pages 12-15",
+    "guided_practice": "Engaging the Scientist: Why Does the Moon Seem to Change Shape?",
+    "independent_application": "Independent Writing: Sky Notebook",
+    "check_for_understanding": "Cold call sharing and turn-and-talk discussions",
+    "differentiated_reinforce": "ELL supports with sentence frames and scaffolded visuals",
+    "differentiated_extend": "Challenge ELLs to place prepositions without blanks in poem and practice vocabulary phrases"
+  },
+  "supports": {
+    "english_language_learners": "Provides sentence frames for writing; offers scaffolded visuals and vocabulary practice; repeats video; challenges advanced ELLs with poem without blanks",
+    "universal_design_udl": "Uses hand gestures, visual anchor charts, word walls, white boards for drawing/writing, and partner talk to support diverse learners",
+    "below_level_reinforce": "Offers preprinted preposition cards to support expressive skills",
+    "above_level_extend": "Challenges ELLs to place prepositions independently without blanks; encourages elaboration in discussions"
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Observation of student participation in poem completion, turn-and-talk discussions, simulation participation, and writing in Sky notebooks",
+    "recognition_vs_production": "Both recognition (identifying prepositions, vocabulary) and production (oral explanations, writing observations)"
+  },
+  "materials": [
+    "Prepositions anchor chart (new; teacher-created; see supporting materials)",
+    "'Where Are They? The Sun, Moon, and Stars' poem version 2 (one to display; for teacher read-aloud)",
+    "Equity sticks (class set; one per student)",
+    "Unit 2 Guiding Question anchor chart (begun in Lesson 2)",
+    "Does the Sun Sleep?: Noticing Sun, Moon, and Star Patterns (one to display; for teacher read-aloud)",
+    "Reading Literature Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Reading Informational Text Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "Sun, Moon, and Stars Word Wall cards (new; teacher-created; 3)",
+    "Sun, Moon, and Stars Word Wall (begun in Unit 1, Lesson 1)",
+    "Patterns of the Moon anchor chart (new; co-created with students during Work Time A; see supporting materials)",
+    "Patterns of the Moon anchor chart (answers, for teacher reference)",
+    "'Moon Phases Demonstration' (video; play 2:24 to end; see Teaching Notes)",
+    "Working to Become Ethical People anchor chart (begun in Unit 1, Lesson 4)",
+    "Light bulb (one for teacher modeling)",
+    "Moon sign (one for teacher modeling)",
+    "Sky notebook (from Lesson 4; pages 5-6; one per student)",
+    "Sun photograph 5 (one to display)",
+    "Moon photograph 5 (one to display)",
+    "Pencils (one per student)",
+    "Colored pencils (class set; variety of colors per student)",
+    "Adjectives anchor chart (begun in Lesson 4)"
+  ],
+  "vocabulary": {
+    "new": [
+      "change, seems to, appears to, phase, simulation (L)",
+      "waxing, waning (T)",
+      "The Sun, Moon, and Stars",
+      "moon, pattern, shine (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Turn and talk with elbow partner",
+    "Cold call sharing",
+    "Use of equity sticks for participation",
+    "Use of hand gestures to demonstrate vocabulary meanings",
+    "Simulation of moon phases in small groups",
+    "Use of visual timers and clear routines for transitions"
+  ],
+  "notes": "Lesson integrates vocabulary development with comprehension of informational text and hands-on simulation. Emphasizes use of prepositions in both oral and written language. Supports ELLs with scaffolded visuals and sentence frames. Includes social-emotional learning focus on integrity during simulation.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "expository",
+    "text_complexity": {
+      "quantitative": "Read-aloud text pages 12-15; quantitative measure not specified due to read-aloud mediation",
+      "qualitative": "Informational text with diagrams; moderate language complexity; requires understanding of scientific concepts and vocabulary",
+      "reader_and_task": "Students listen to read-aloud, observe diagrams and video, participate in simulation, and write observations using vocabulary and prepositions"
+    }
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 273,
+    "source_page_end": 283
+  }
+}

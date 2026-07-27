@@ -1,0 +1,493 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U3L11",
+  "title": "Lesson 11: Unit 3 Performance Task: Revising and Editing My 'What the Sun Sees' Poem",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "3",
+      "lesson": "11",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Speaking & Listening",
+      "Language"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will revise and edit their narrative poems to improve details and conventions, and share their revised work with a partner using a structured protocol.",
+  "what_is_taught": [
+    {
+      "skill": "revise writing to improve descriptive details",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "edit writing to correct conventions such as complete sentences and punctuation",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use a checklist to identify areas needing revision and editing",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "reread writing to locate and make revisions and edits",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "share revised writing orally with a partner using a structured protocol",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "participate in partner discussion to explain revision and editing choices",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "follow oral directions and participate in movement routines",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "Phonics",
+    "Phonological Awareness",
+    "Fluency",
+    "Vocabulary"
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "discuss revision and editing choices with peers and share revised poems orally",
+    "written_production": "make revisions and edits directly on poem templates",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "apply revision and editing steps using a checklist",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain how checklist feedback guides revision and editing",
+    "comprehension_response": "respond to questions about revision and editing processes and criteria for high-quality writing",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Display the Moon Movement chart and invite student volunteers to lead the class through the Moon Movement routine as time permits.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Referring to the High-Quality Work anchor chart, read both criteria aloud: -'Includes details' -'Follows conventions'",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'What kinds of details should we include in our writing?' (descriptive details that make a picture in the reader's mind)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'Which conventions should we follow?' (complete sentences, end punctuation, Word Wall words spelled correctly)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'What makes a piece of writing high quality?' (when our writing shows our knowledge and displays craftsmanship)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "comprehension_response",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Direct students' attention to the posted learning targets and read them aloud: 'I can revise my work for details.' 'I can edit my work for conventions.'",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Display and read aloud the 'What the Sun Sees' example.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'When I look at the checklist, I notice that I have a lot of check marks in the 'yes' column and three check marks in the 'no' column. From the checklist, it looks like I need to go back and reread my poem to make sure I used adjectives precisely. I also notice that the checklist shows that I need to edit my writing for complete sentences and for end punctuation.'",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [
+        "thinking aloud"
+      ],
+      "supports_action": []
+    },
+    {
+      "quote": "'After reviewing the checklist, I'm going to start by revising the details in my poem. Let me reread my poem once more and search for adjectives that are not precise. (Read the poem aloud again.) After rereading my poem, I'm thinking that my adjective might not be precise in my first verse. (Reread the first verse.) I think the sun is more orange in the morning, rather than white. So I am going to erase the word white in the first verse and replace it with orange.'",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [
+        "thinking aloud",
+        "in writing"
+      ],
+      "supports_action": []
+    },
+    {
+      "quote": "'I see on the checklist that I also need to edit my poem for end punctuation and for complete sentences. Let me reread my poem once more and search for these two things. (Read the poem aloud again.) Oops, I notice that the second line of the second verse is not a complete sentence. (Reread the second verse.) I want to poem to say, 'The sun sees smiling kids,' so I am going to finish writing the words smiling kids on the line.'",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [
+        "thinking aloud",
+        "in writing"
+      ],
+      "supports_action": []
+    },
+    {
+      "quote": "'I also notice that I forgot to include some periods. I am missing a period in the first verse and one at the end of the poem. I will add these periods right now.'",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [
+        "thinking aloud",
+        "in writing"
+      ],
+      "supports_action": []
+    },
+    {
+      "quote": "'What did I do to revise my poem today?' (You first looked at the check marks on the table labeled 'Includes details,' and then reread your poem to make the necessary revisions.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'What did I do to edit my poem today?' (You then looked at the check marks on the table labeled 'Follows conventions,' and then reread your poem to make the necessary edits.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'How did the checklist help?' (It helped direct you to what needed to be revised and edited.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Direct students' attention to the High-Quality Narrative Poem Checklist example. Remind students that this checklist provides feedback to the writer about revisions and edits that need to be made.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell students that you read each of their poems and used the High-Quality Narrative Poem Checklist to provide feedback to each student that they can use to revise and edit their poems.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "As students revise and edit their poems, they should use the following procedure: Begin by reviewing the High-Quality Narrative Poem Checklist. Identify criteria on the checklist that need to be revised or edited. Reread the poem and locate places in the poem that need to be revised or edited. Make revisions and edits directly on the template, making sure to show craftsmanship. Reread the poem one last time to catch any revisions or edits that may have been missed the first time.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "procedural_application",
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Distribute prepared clipboards with students' 'What the Sun Sees' poem and checklist. Then, transition students to their workspaces and invite them to begin working. As students work, circulate and monitor their progress toward using the Narrative Writing Checklist.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Remind students to show craftsmanship by taking their time when revising and editing their poem. Remind them that their final poems will be shared at the end of module celebration, so they should do their best work.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Give students a 5-minute warning to finish up their revisions and edits.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "If productive, cue students to think about their thinking and to listen carefully and seek to understand: \"What did you do today that helped you succeed in with revisions and editing? I'll give you time to think and discuss with a partner.' (Responses will vary.)",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "'Who can tell us what your classmate said in your own words?' (Responses will vary.)",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Invite students to give you an air high-five for their hard work today revising and editing their poems.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Tell the writers that they are going to use the Pinky Partners protocol to share their revised poem with a partner. Remind them that they used this protocol in Lessons 8-10 and review as necessary using the Pinky Partners Protocol anchor chart.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Guide students through the protocol and circulate to support them as necessary.",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Refocus whole group, and with excitement, share that in the next lesson, students will practice sharing their poems in preparation for the end of module celebration.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "To support communication and engagement, pair students with strategic partners to ensure they have a strong, politely helpful partner to support their efforts at writing their poem.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "For ELLs: Some students can benefit from having time to practice reading their revised poems to themselves, before sharing them with a partner.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Model use of the High-Quality Narrative Poem Checklist to revise and edit a poem; demonstrate thinking aloud while revising adjectives, sentence completeness, and punctuation; review the Pinky Partners protocol for sharing writing.",
+    "prompts_that_cue_student_response": [
+      "What kinds of details should we include in our writing?",
+      "Which conventions should we follow?",
+      "What makes a piece of writing high quality?",
+      "What did I do to revise my poem today?",
+      "What did I do to edit my poem today?",
+      "How did the checklist help?",
+      "What did you do today that helped you succeed in with revisions and editing?",
+      "Who can tell us what your classmate said in your own words?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "Focus on revising and editing a single narrative poem",
+    "depth": "Detailed use of a checklist to guide revision and editing; partner sharing protocol"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "text and checklist",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Engaging the Learner: Moon Movement Routine",
+    "direct_instruction": "Revising and Editing: Using the High-Quality Narrative Poem Checklist",
+    "guided_practice": "Revising and Editing: Using the High-Quality Narrative Poem Checklist",
+    "independent_application": "Revising and Editing: 'What the Sun Sees' Poem",
+    "check_for_understanding": "Pinky Partners: Sharing Our Work",
+    "differentiated_reinforce": "",
+    "differentiated_extend": ""
+  },
+  "supports": {
+    "english_language_learners": "Provides verbal review of routine steps and checklist criteria; uses examples and clarifications; allows wait time; pairs strategic partners; reads feedback aloud as needed.",
+    "universal_design_udl": "Offers movement options during routines; uses visual charts and checklists; models thinking aloud; provides multiple opportunities for oral and written expression.",
+    "below_level_reinforce": "Allows ample wait time; provides examples and rereads; offers one-on-one support during revision and editing.",
+    "above_level_extend": "Encourages students to explain revision and editing choices orally and with partners; promotes use of precise adjectives and craftsmanship."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Observation of student revisions and edits on poem templates; oral sharing using Pinky Partners protocol",
+    "recognition_vs_production": "production"
+  },
+  "materials": [
+    "Moon Movement chart (from Unit 1, Lesson 2; one to display)",
+    "High-Quality Work anchor chart (begun in Lesson 3)",
+    "High-Quality Narrative Poem Checklist example (one to display; see Assessment Overview and Resources)",
+    "'What the Sun Sees' example (one to display)",
+    "'What the Sun Sees' example (answers, for teacher reference)",
+    "High-Quality Narrative Poem Checklist (one per student; returned with feedback during Work Time C; see Assessment Overview and Resources)",
+    "'What the Sun Sees' poem (completed in Lesson 10; revised during Work Time C; one per student)",
+    "Narrative Writing Checklist (from Lesson 5; for teacher reference; see Assessment Overview and Resources)",
+    "Pinky Partners Protocol anchor chart (begun in Module 1)",
+    "The Sun, Moon, and Stars"
+  ],
+  "vocabulary": {
+    "new": [
+      "revise, edit (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Moon Movement routine",
+    "Pinky Partners protocol"
+  ],
+  "notes": "Lesson focuses on revising and editing a narrative poem using a detailed checklist and sharing work with a partner. Includes supports for ELLs and students needing language or comprehension assistance.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "narrative"
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 440,
+    "source_page_end": 449
+  }
+}

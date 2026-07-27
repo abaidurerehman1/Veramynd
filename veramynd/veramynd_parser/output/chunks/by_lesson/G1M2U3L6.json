@@ -1,0 +1,1150 @@
+{
+  "schema_version": "1.0-chunk",
+  "resource_id": "G1M2U3L6",
+  "grade": 1,
+  "module": 2,
+  "unit": 3,
+  "lesson": 6,
+  "title": "Lesson 6: Reading, Speaking, and Listening: Describing the Sun and What It 'Sees'",
+  "prompt_version": "normalize_ela.v2.1",
+  "lesson_chunk": {
+    "chunk_id": "G1M2U3L6#lesson",
+    "family": "lesson",
+    "resource_id": "G1M2U3L6",
+    "text": "Domain primary: Comprehension\nDomain secondary: Speaking & Listening, Vocabulary, Writing\nMode: both\nGenre: narrative\nObjective: Students will ask and answer questions about daytime using the text What the Sun Sees, What the Moon Sees, and describe what the sun 'sees' using evidence from pictures, videos, and the text.\nSkills taught:\n- ask questions about a text (DOK2_skills_concepts, primary)\n- answer questions about a text (DOK2_skills_concepts, primary)\n- describe what the sun 'sees' using evidence from text and multimedia (DOK2_skills_concepts, primary)\n- identify and explain adjectives in text (DOK2_skills_concepts, primary)\n- make connections between words using an interactive word wall (DOK2_skills_concepts, primary)\n- participate in role-play to demonstrate understanding of text (DOK3_strategic_thinking, primary)\n- make observations from photographs and videos (DOK2_skills_concepts, primary)\n- use sentence frames to support oral language (DOK1_recall_reproduction, secondary)\n- reflect on personal behavior and classroom respect (DOK3_strategic_thinking, secondary)\n- use complete sentences with adjectives to describe observations (DOK2_skills_concepts, secondary)\nStudent actions:\n- recognition_identification: identify adjectives and connections between words during word wall and read-aloud\n- oral_production: answer questions about the text, participate in role-play, discuss observations with partners, share reflections on respect\n- matching_sorting_sequencing: sequence events or ideas during role-play and word wall activities\n- procedural_application: apply the Interactive Word Wall and Role-Play protocols\n- investigation_handson: observe photographs and videos and make observations\n- reasoning_explanation: explain connections between words and justify reflections on respect\n- comprehension_response: respond to questions about the text and observations from multimedia materials and text evidence to describe what the sun 'sees' in the story and media content, participate in discussions about adjectives and their meanings in context, and reflect on classroom respect behaviors during the Sit, Kneel, Stand protocol assessment activity, using sentence frames and partner discussions to support responses as needed, and share role-play performances demonstrating understanding of text sections, using oral language to verbalize role-played content, and make connections between adjectives and their opposites in the text, as well as generate ideas from illustrations and multimedia to add to anchor charts for comprehension and writing preparation.",
+    "content_hash": "7b6e5247a56d713f48e6bc44d1011bf64e8d455c01b3b60901c1c7cf95a8e512",
+    "metadata": {
+      "grade": 1,
+      "module": 2,
+      "unit": 3,
+      "lesson": 6,
+      "title": "Lesson 6: Reading, Speaking, and Listening: Describing the Sun and What It 'Sees'",
+      "domain_primary": "Comprehension",
+      "domain_secondary": [
+        "Speaking & Listening",
+        "Vocabulary",
+        "Writing"
+      ],
+      "mode": "both",
+      "genre": "narrative",
+      "prompt_version": "normalize_ela.v2.1",
+      "page_start": 394,
+      "page_end": 403
+    }
+  },
+  "instructional_chunks": [
+    {
+      "chunk_id": "G1M2U3L6#Opening#A",
+      "family": "instructional",
+      "resource_id": "G1M2U3L6",
+      "text": "[Opening A] Building Vocabulary: Interactive Word Wall\n- Tell students that they are going to use the Interactive Word Wall protocol again to make more connections between words, grow their brains, and become even stronger readers and writers. Today they will add to the set some adjectives that describe the sun.\n- Remind students that they used this protocol in Lessons 2-4 and review as necessary using the Interactive Word Wall Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Move students into the pre-determined small groups and distribute the sets of Interactive Word Wall cards and arrow cards. Use the same process from Lesson 3 to guide students through the protocol.\n- Direct students to move to the whole group meeting area.\n- Using a total participation technique, invite responses from the group:\n- 'What is one connection you made during the Interactive Word Wall protocol?' (Responses will vary.)\n- Give students specific, positive feedback about the connections they made between words. (Example: 'Joel, I heard you connect orange with large because at sunrise the sun often looks large and orange.')\n- As students explain the connection between words, provide sentence frames to support oral language processing. (MMAE)\n- For ELLs: Consider inviting students to discuss the meaning of the Interactive Word Wall cards in home language groups before beginning the Interactive Word Wall protocol.\n- For ELLs: Check for comprehension by inviting students to paraphrase the rational for each connection in their own words. Restate or rephrase as necessary.",
+      "content_hash": "bbc39001ade69e8db5a5fadd9a858c0bb0522d3d85e9fee28331bd8eebe9bd8e",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 3,
+        "lesson": 6,
+        "family": "instructional",
+        "section": "Opening",
+        "letter": "A"
+      },
+      "section": "Opening",
+      "letter": "A",
+      "title": "Building Vocabulary: Interactive Word Wall",
+      "page": 399,
+      "minutes": 10,
+      "steps": [
+        "Tell students that they are going to use the Interactive Word Wall protocol again to make more connections between words, grow their brains, and become even stronger readers and writers. Today they will add to the set some adjectives that describe the sun.",
+        "Remind students that they used this protocol in Lessons 2-4 and review as necessary using the Interactive Word Wall Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
+        "Move students into the pre-determined small groups and distribute the sets of Interactive Word Wall cards and arrow cards. Use the same process from Lesson 3 to guide students through the protocol.",
+        "Direct students to move to the whole group meeting area.",
+        "Using a total participation technique, invite responses from the group:",
+        "'What is one connection you made during the Interactive Word Wall protocol?' (Responses will vary.)",
+        "Give students specific, positive feedback about the connections they made between words. (Example: 'Joel, I heard you connect orange with large because at sunrise the sun often looks large and orange.')",
+        "As students explain the connection between words, provide sentence frames to support oral language processing. (MMAE)",
+        "For ELLs: Consider inviting students to discuss the meaning of the Interactive Word Wall cards in home language groups before beginning the Interactive Word Wall protocol.",
+        "For ELLs: Check for comprehension by inviting students to paraphrase the rational for each connection in their own words. Restate or rephrase as necessary."
+      ]
+    },
+    {
+      "chunk_id": "G1M2U3L6#Work Time#A",
+      "family": "instructional",
+      "resource_id": "G1M2U3L6",
+      "text": "[Work Time A] Focused Read-aloud: What the Sun Sees, Pages 1-16\n- Direct students' attention to the posted learning targets and read them aloud:\n- 'I can ask and answer questions about day based on the text What the Sun Sees, What the Moon Sees.'\n- 'I can describe what the sun 'sees' using evidence from pictures, videos, and the text.'\n- Display What the Sun Sees, What the Moon Sees. Model using the front cover of the text to decide where to begin reading. Say: 'Today we are going to read just the part of the book about the sun. I can find that section of the book by looking at the cover and finding the picture of the sun.'\n- Consider using the Reading Literature Checklist during the focused read-aloud to track students' progress toward Rl.1.1 and RL.1.10.\n- Read pages 1-4 fluently and without interruption.\n- Pause after reading page 4. Using a total participation technique, invite responses from the group:\n- Confirm students' definition of crowded and point out that it is being used as an adjective because it describes what the barnyard looks like.\n- Add crowded to the Adjectives anchor chart.\n- Draw students' attention back to the text and read aloud pages 5-8 fluently and without interruption.\n- Pause after reading page 8. Using a total participation technique, invite responses from the group:\n- Confirm students' definition of bustling and point out that it is being used as an adjective because it describes the street.\n- Add bustling to the Adjectives anchor chart.\n- Draw students' attention back to the text and read aloud pages 9-10 fluently and without interruption.\n- Pause after reading page 10. Using a total participation technique, invite responses from the group:\n- Confirm students' definition of noisy and point out that it is being used as an adjective because it describes the sounds of the playground.\n- Add noisy to the Adjectives anchor chart.\n- If productive, cue students with a challenge:\n- 'What if we remove the words crowded, bustling, and noisy? I'll give you time to think and discuss with a partner.' Reread the sentences, omitting the adjectives. (Responses will vary.)\n- 'Can you figure out the connection between these adjectives and the adjectives quiet, empty, and silent?]\n- Draw students' attention back to the text and read aloud pages 11-16 fluently and without interruption.\n- Direct students' attention to the What the Sun Sees anchor chart and tell them that they are now going to look back at the illustrations to generate ideas of what the sun sees in daytime during this story.\n- Flip through the illustrations on pages 1-16. Pause at each page and invite students to say out loud what the sun sees on each page and add it to the What the Sun Sees anchor chart. Refer to the What the Sun Sees anchor chart (answers, for teacher reference) as necessary.\n- Tell students that they are going to continue generating ideas about what the sun might see as they observe some photographs and videos of the world during the day, but first they are going to use the Role-Play protocol to act out some selected pages from What the Sun Sees, What the Moon Sees.\n- As students are invited to share their thinking, support oral language and processing by allowing ample wait time. (MME, MMAE)\n- For ELLs: During or after Work Time A, guide students through a Language Dive. Refer to Language Dive Guide: What the Sun Sees, What the Moon Sees. Display Sentence Strip Chunks: What the Sun Sees, What the Moon Sees.",
+      "content_hash": "d132ed6517917e7e3f4eacee8413f838b689b337ff86f84c10cd6e447bb8032d",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 3,
+        "lesson": 6,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "A"
+      },
+      "section": "Work Time",
+      "letter": "A",
+      "title": "Focused Read-aloud: What the Sun Sees, Pages 1-16",
+      "page": 399,
+      "minutes": 15,
+      "steps": [
+        "Direct students' attention to the posted learning targets and read them aloud:",
+        "'I can ask and answer questions about day based on the text What the Sun Sees, What the Moon Sees.'",
+        "'I can describe what the sun 'sees' using evidence from pictures, videos, and the text.'",
+        "Display What the Sun Sees, What the Moon Sees. Model using the front cover of the text to decide where to begin reading. Say: 'Today we are going to read just the part of the book about the sun. I can find that section of the book by looking at the cover and finding the picture of the sun.'",
+        "Consider using the Reading Literature Checklist during the focused read-aloud to track students' progress toward Rl.1.1 and RL.1.10.",
+        "Read pages 1-4 fluently and without interruption.",
+        "Pause after reading page 4. Using a total participation technique, invite responses from the group:",
+        "Confirm students' definition of crowded and point out that it is being used as an adjective because it describes what the barnyard looks like.",
+        "Add crowded to the Adjectives anchor chart.",
+        "Draw students' attention back to the text and read aloud pages 5-8 fluently and without interruption.",
+        "Pause after reading page 8. Using a total participation technique, invite responses from the group:",
+        "Confirm students' definition of bustling and point out that it is being used as an adjective because it describes the street.",
+        "Add bustling to the Adjectives anchor chart.",
+        "Draw students' attention back to the text and read aloud pages 9-10 fluently and without interruption.",
+        "Pause after reading page 10. Using a total participation technique, invite responses from the group:",
+        "Confirm students' definition of noisy and point out that it is being used as an adjective because it describes the sounds of the playground.",
+        "Add noisy to the Adjectives anchor chart.",
+        "If productive, cue students with a challenge:",
+        "'What if we remove the words crowded, bustling, and noisy? I'll give you time to think and discuss with a partner.' Reread the sentences, omitting the adjectives. (Responses will vary.)",
+        "'Can you figure out the connection between these adjectives and the adjectives quiet, empty, and silent?]",
+        "Draw students' attention back to the text and read aloud pages 11-16 fluently and without interruption.",
+        "Direct students' attention to the What the Sun Sees anchor chart and tell them that they are now going to look back at the illustrations to generate ideas of what the sun sees in daytime during this story.",
+        "Flip through the illustrations on pages 1-16. Pause at each page and invite students to say out loud what the sun sees on each page and add it to the What the Sun Sees anchor chart. Refer to the What the Sun Sees anchor chart (answers, for teacher reference) as necessary.",
+        "Tell students that they are going to continue generating ideas about what the sun might see as they observe some photographs and videos of the world during the day, but first they are going to use the Role-Play protocol to act out some selected pages from What the Sun Sees, What the Moon Sees.",
+        "As students are invited to share their thinking, support oral language and processing by allowing ample wait time. (MME, MMAE)",
+        "For ELLs: During or after Work Time A, guide students through a Language Dive. Refer to Language Dive Guide: What the Sun Sees, What the Moon Sees. Display Sentence Strip Chunks: What the Sun Sees, What the Moon Sees."
+      ]
+    },
+    {
+      "chunk_id": "G1M2U3L6#Work Time#B",
+      "family": "instructional",
+      "resource_id": "G1M2U3L6",
+      "text": "[Work Time B] Role-Play: What the Sun Sees, Selected Pages\n- Share with students that they will now get a chance to show their understanding of some of the different things the sun 'sees' in What the Sun Sees, What the Moon Sees using the RolePlay protocol. Remind students that they used this protocol in Lesson 2 and review using the Role-Play protocol anchor chart as needed. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Invite students to begin role-playing the following sections of text:\n- -Pages 3-4 (crowded barnyards)\n- -Pages 7-8 (bustling streets)\n- -Pages 13-14 (busy children)\n- Circulate as students role-play and use the Speaking and Listening Checklist to track students' progress toward SL.1.2 and SL.1.4.\n- Give students specific, positive feedback on their ability to role-play sections of What the Sun Sees, What the Moon Sees. (Example: 'Carlos, you demonstrated how a street can be bustling by pretending to be in a traffic jam with Benjamin.')\n- Facilitate personal coping and self-regulation skills by modeling socially appropriate ways to express enthusiasm and excitement during the role-play. Examples: give yourself a hug or take a deep breath and smile. (MME)\n- For ELLs: Ensure that students put words to their role-plays. If students can't verbalize, remind them of the word or phrase and have them repeat it. Prompt them to repeat the word or phrase as they role-play.",
+      "content_hash": "663860a72840a6279fea458503a9d52e9b6a00f22bc23a6127d86cdf7ccb6329",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 3,
+        "lesson": 6,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "B"
+      },
+      "section": "Work Time",
+      "letter": "B",
+      "title": "Role-Play: What the Sun Sees, Selected Pages",
+      "page": 401,
+      "minutes": 10,
+      "steps": [
+        "Share with students that they will now get a chance to show their understanding of some of the different things the sun 'sees' in What the Sun Sees, What the Moon Sees using the RolePlay protocol. Remind students that they used this protocol in Lesson 2 and review using the Role-Play protocol anchor chart as needed. (Refer to the Classroom Protocols document for the full version of the protocol.)",
+        "Invite students to begin role-playing the following sections of text:",
+        "-Pages 3-4 (crowded barnyards)",
+        "-Pages 7-8 (bustling streets)",
+        "-Pages 13-14 (busy children)",
+        "Circulate as students role-play and use the Speaking and Listening Checklist to track students' progress toward SL.1.2 and SL.1.4.",
+        "Give students specific, positive feedback on their ability to role-play sections of What the Sun Sees, What the Moon Sees. (Example: 'Carlos, you demonstrated how a street can be bustling by pretending to be in a traffic jam with Benjamin.')",
+        "Facilitate personal coping and self-regulation skills by modeling socially appropriate ways to express enthusiasm and excitement during the role-play. Examples: give yourself a hug or take a deep breath and smile. (MME)",
+        "For ELLs: Ensure that students put words to their role-plays. If students can't verbalize, remind them of the word or phrase and have them repeat it. Prompt them to repeat the word or phrase as they role-play."
+      ]
+    },
+    {
+      "chunk_id": "G1M2U3L6#Work Time#C",
+      "family": "instructional",
+      "resource_id": "G1M2U3L6",
+      "text": "[Work Time C] Making Observations What the Sun 'Sees'\n- With excitement, tell students that they will now participate in a close viewing of some photographs and videos to brainstorm some ideas of what the sun might 'see' throughout the day.\n- Display day photograph 1 and provide time for students to silently view it.\n- Invite students to turn and talk with an elbow partner:\n- 'What could the sun 'see' or observe?' (an elephant walking through a forest or jungle)\n- Circulate and listen in as students share with each other. Record a selection of students' ideas on the What the Sun Sees anchor chart.\n- Display day photograph 2 and provide time for students to silently view it. Repeat the question from above and add a selection of student ideas to the What the Sun Sees anchor chart.\n- Tell students that now that they have made observations from photographs, they are going to make observations from video clips.\n- Play 'British Wildlife Filmed on a DSLR.'\n- Invite students to turn and talk with an elbow partner:\n- 'What could the sun 'see' or observe?' (birds flying around, deer eating grass)\n- Circulate and listen in as students share with each other. Record a selection of students' ideas on the What the Sun Sees anchor chart.\n- Play 'Street Time Lapse.'\n- Repeat the process from the first video, using the same question.\n- Direct students' attention to the completed What the Sun Sees anchor chart and read through the multitude of responses.\n- Explain that students will use these observations to write a narrative poem describing what the sun sees beginning in the next lesson.\n- If productive, cue students to think about their thinking:\n- 'How do our photographs and video add to your understanding of how to write a narrative poem? I'll give you time to think and discuss with a partner.' (Responses will vary.)\n- Before making observations, provide white boards and dry-erase markers as an option for students to record (in drawing or writing) their ideas. This will also help scaffold active viewing and listening for key details. (MMR, MMAE)\n- For ELLs: Encourage students to use complete sentences with adjectives as they describe what the sun could see or observe in the photographs and videos. (Examples: The moon could observe hungry birds eating squirmy worms/a watchful deer drinking from a calm pond.)",
+      "content_hash": "801093a2d7d58483390223832cd499627bf94c9a684c13673a16aa1622394028",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 3,
+        "lesson": 6,
+        "family": "instructional",
+        "section": "Work Time",
+        "letter": "C"
+      },
+      "section": "Work Time",
+      "letter": "C",
+      "title": "Making Observations What the Sun 'Sees'",
+      "page": 402,
+      "minutes": 15,
+      "steps": [
+        "With excitement, tell students that they will now participate in a close viewing of some photographs and videos to brainstorm some ideas of what the sun might 'see' throughout the day.",
+        "Display day photograph 1 and provide time for students to silently view it.",
+        "Invite students to turn and talk with an elbow partner:",
+        "'What could the sun 'see' or observe?' (an elephant walking through a forest or jungle)",
+        "Circulate and listen in as students share with each other. Record a selection of students' ideas on the What the Sun Sees anchor chart.",
+        "Display day photograph 2 and provide time for students to silently view it. Repeat the question from above and add a selection of student ideas to the What the Sun Sees anchor chart.",
+        "Tell students that now that they have made observations from photographs, they are going to make observations from video clips.",
+        "Play 'British Wildlife Filmed on a DSLR.'",
+        "Invite students to turn and talk with an elbow partner:",
+        "'What could the sun 'see' or observe?' (birds flying around, deer eating grass)",
+        "Circulate and listen in as students share with each other. Record a selection of students' ideas on the What the Sun Sees anchor chart.",
+        "Play 'Street Time Lapse.'",
+        "Repeat the process from the first video, using the same question.",
+        "Direct students' attention to the completed What the Sun Sees anchor chart and read through the multitude of responses.",
+        "Explain that students will use these observations to write a narrative poem describing what the sun sees beginning in the next lesson.",
+        "If productive, cue students to think about their thinking:",
+        "'How do our photographs and video add to your understanding of how to write a narrative poem? I'll give you time to think and discuss with a partner.' (Responses will vary.)",
+        "Before making observations, provide white boards and dry-erase markers as an option for students to record (in drawing or writing) their ideas. This will also help scaffold active viewing and listening for key details. (MMR, MMAE)",
+        "For ELLs: Encourage students to use complete sentences with adjectives as they describe what the sun could see or observe in the photographs and videos. (Examples: The moon could observe hungry birds eating squirmy worms/a watchful deer drinking from a calm pond.)"
+      ]
+    },
+    {
+      "chunk_id": "G1M2U3L6#Closing and Assessment#A",
+      "family": "instructional",
+      "resource_id": "G1M2U3L6",
+      "text": "[Closing and Assessment A] Reflecting on Learning\n- Remind students that the best learning happens when learners check to see how well they are doing and what they can do to be even better. Tell students they will use the Sit, Kneel, Stand protocol to assess how they upheld respect for themselves and their classmates throughout the lesson. Remind them that they used this protocol in Module 1 and review the Sit, Kneel, Stand Protocol anchor chart as necessary. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Direct students' attention to the Working to Become Ethical People anchor chart and review the habit of respect.\n- Guide students through the protocol using the question:\n- 'How did you uphold respect during today's lesson?'\n- Invite students to return to their seats and cold call two to three students to share their thoughts.\n- Prompt students to clarify and justify their thinking with questions such as:\n- 'Why do you think the class showed respect?'\n- 'What can our class do a little better next time?'\n- Provide specific, positive feedback to students on their ability to uphold a respectful classroom. Tell them that in the next few lessons, they will begin writing their independent 'What the Sun Sees' poems and that it will be important to uphold the habits of character as they work to create a beautiful, high-quality poem.\n- After students share their reflections, foster a sense of community and provide options for physical action by inviting them to give themselves a special applause. (MME)\n- For ELLs: Before introducing the Sit, Kneel, Stand protocol, ask students to brainstorm a few ways they showed respect during parts of this lesson. Write and display these ideas to reinforce language.",
+      "content_hash": "c0fb46f3a1df5b3c7732ac893c583ed22ab83cc431cb4374f5187e3708647961",
+      "metadata": {
+        "grade": 1,
+        "module": 2,
+        "unit": 3,
+        "lesson": 6,
+        "family": "instructional",
+        "section": "Closing and Assessment",
+        "letter": "A"
+      },
+      "section": "Closing and Assessment",
+      "letter": "A",
+      "title": "Reflecting on Learning",
+      "page": 403,
+      "minutes": 10,
+      "steps": [
+        "Remind students that the best learning happens when learners check to see how well they are doing and what they can do to be even better. Tell students they will use the Sit, Kneel, Stand protocol to assess how they upheld respect for themselves and their classmates throughout the lesson. Remind them that they used this protocol in Module 1 and review the Sit, Kneel, Stand Protocol anchor chart as necessary. (Refer to the Classroom Protocols document for the full version of the protocol.)",
+        "Direct students' attention to the Working to Become Ethical People anchor chart and review the habit of respect.",
+        "Guide students through the protocol using the question:",
+        "'How did you uphold respect during today's lesson?'",
+        "Invite students to return to their seats and cold call two to three students to share their thoughts.",
+        "Prompt students to clarify and justify their thinking with questions such as:",
+        "'Why do you think the class showed respect?'",
+        "'What can our class do a little better next time?'",
+        "Provide specific, positive feedback to students on their ability to uphold a respectful classroom. Tell them that in the next few lessons, they will begin writing their independent 'What the Sun Sees' poems and that it will be important to uphold the habits of character as they work to create a beautiful, high-quality poem.",
+        "After students share their reflections, foster a sense of community and provide options for physical action by inviting them to give themselves a special applause. (MME)",
+        "For ELLs: Before introducing the Sit, Kneel, Stand protocol, ask students to brainstorm a few ways they showed respect during parts of this lesson. Write and display these ideas to reinforce language."
+      ]
+    }
+  ],
+  "evidence_pointers": [
+    {
+      "chunk_id": "G1M2U3L6#evidence#0",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "bb37844129ca41652654ee7094939766a61c8f22142ca7f748a3d3c6a257fcda",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L6#Opening#A",
+      "location": "Opening A",
+      "quote": "Tell students that they are going to use the Interactive Word Wall protocol again to make more connections between words, grow their brains, and become even stronger readers and writers. Today they will add to the set some adjectives that describe the sun.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "recognition_identification",
+        "procedural_application"
+      ],
+      "qualifiers": [],
+      "evidence_index": 0
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#1",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "03fc4283a338935330d38ed4402ef135d565862c739b8d9fbe25c54270ed7fa3",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L6#Opening#A",
+      "location": "Opening A",
+      "quote": "Move students into the pre-determined small groups and distribute the sets of Interactive Word Wall cards and arrow cards. Use the same process from Lesson 3 to guide students through the protocol.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "procedural_application"
+      ],
+      "qualifiers": [],
+      "evidence_index": 1
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#2",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "2a6c49439b99f3ab8de82c9eaacd90177d77b8a0e984905f91439756c4cabefe",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L6#Opening#A",
+      "location": "Opening A",
+      "quote": "'What is one connection you made during the Interactive Word Wall protocol?' (Responses will vary.)",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 2
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#3",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "0a32bc6b44b45bb6207d3c036a92668a1cd9978f3225ae0534239e842c7cf45a",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Opening#A",
+        "location": "Opening A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L6#Opening#A",
+      "location": "Opening A",
+      "quote": "Give students specific, positive feedback about the connections they made between words. (Example: 'Joel, I heard you connect orange with large because at sunrise the sun often looks large and orange.')",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 3
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#4",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "28d84a8ad8a0e9b949b7f54353d5c8cacb8b0dcf19a232ca3856aa4f0f3c1bf8",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#A",
+      "location": "Work Time A",
+      "quote": "'I can ask and answer questions about day based on the text What the Sun Sees, What the Moon Sees.'",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 4
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#5",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "778ea473cd645b9a28edf0a59a77f731fb1e31a78f3e12f477ab3862b7bbcbb5",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#A",
+      "location": "Work Time A",
+      "quote": "I can describe what the sun 'sees' using evidence from pictures, videos, and the text.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 5
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#6",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "d3f8b8d17b835805aabf9f673f8bfe96931ec2b6457af00f332781f024cbe0e7",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Read pages 1-4 fluently and without interruption.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 6
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#7",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "5ec1fc2c4bf5937b690fcfe0dfb52b06c7c469db79c36aea150bca3b1e3cfd62",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Pause after reading page 4. Using a total participation technique, invite responses from the group:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 7
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#8",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "41d401d01cab171a865ed6ef2def88167e475108d5965638fc3fca0008c5a677",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Confirm students' definition of crowded and point out that it is being used as an adjective because it describes what the barnyard looks like.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 8
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#9",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "439a2cc84d547d4f9dbcb3633c1e7f65becc3c8fe78177d56fea16d730201e6e",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Add crowded to the Adjectives anchor chart.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 9
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#10",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "896278cf1187639df673c23afa8c1dce65b3d5194f9f5ca703105d6375b53c65",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Pause after reading page 8. Using a total participation technique, invite responses from the group:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 10
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#11",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "fab2d755b721973ab8ce0999b3619732afb2cf37aefdffa8f449565bf134754a",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Confirm students' definition of bustling and point out that it is being used as an adjective because it describes the street.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 11
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#12",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "0447c95e77cbded6a0174252ddbca5e6e6d9c2ea2906f9210eb2223777b70188",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Add bustling to the Adjectives anchor chart.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 12
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#13",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "92d3d743e83b9be1034e8e9cffe38c916c37278a123b44a87ecb4a0bdebfb0d4",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Pause after reading page 10. Using a total participation technique, invite responses from the group:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 13
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#14",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "631c4d34f95ec9c0db5fb1126218dd04a4f59a79d09d79f664420e6287ed031c",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Confirm students' definition of noisy and point out that it is being used as an adjective because it describes the sounds of the playground.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 14
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#15",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "d92c57d38bcaa148566351b2eac8e3a47a20972bf3e08735807a2d259ad7b757",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#A",
+        "location": "Work Time A",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Add noisy to the Adjectives anchor chart.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 15
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#16",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "f58ef42fdc98df9334f786f8ce1cfdb9c8b6e8afdce9245a77aedbf6cf2245d6",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#A",
+      "location": "Work Time A",
+      "quote": "'What if we remove the words crowded, bustling, and noisy? I'll give you time to think and discuss with a partner.' Reread the sentences, omitting the adjectives. (Responses will vary.)",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation",
+        "matching_sorting_sequencing"
+      ],
+      "qualifiers": [
+        "orally",
+        "with_prompting"
+      ],
+      "evidence_index": 16
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#17",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "4e1dfcf4613c4e4a7f4e65f7d776e6888fdcd56027f7050c94768467edc23e7f",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#A",
+      "location": "Work Time A",
+      "quote": "'Can you figure out the connection between these adjectives and the adjectives quiet, empty, and silent?]",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally",
+        "with_prompting"
+      ],
+      "evidence_index": 17
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#18",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "faa8384f3327ebba1d5804dc73e8610ae5646eecdfc4357f64419fb7b087446b",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#A",
+        "location": "Work Time A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#A",
+      "location": "Work Time A",
+      "quote": "Flip through the illustrations on pages 1-16. Pause at each page and invite students to say out loud what the sun sees on each page and add it to the What the Sun Sees anchor chart.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 18
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#19",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "b2c094eba3900876735b90b064d44c1a4d988a5447f9cf4864b129454ff6945b",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Share with students that they will now get a chance to show their understanding of some of the different things the sun 'sees' in What the Sun Sees, What the Moon Sees using the RolePlay protocol.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "procedural_application"
+      ],
+      "qualifiers": [],
+      "evidence_index": 19
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#20",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "cd98e6ed0171bd322864c3d191c47fc74034c5009d97aacf890d10f964b2fd4f",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Invite students to begin role-playing the following sections of text: -Pages 3-4 (crowded barnyards) -Pages 7-8 (bustling streets) -Pages 13-14 (busy children)",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "procedural_application"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 20
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#21",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "8a43b22bed61f66a200dd5b0e8bcbcca04377a2a6cf753a380102fb1333b7e08",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Give students specific, positive feedback on their ability to role-play sections of What the Sun Sees, What the Moon Sees. (Example: 'Carlos, you demonstrated how a street can be bustling by pretending to be in a traffic jam with Benjamin.')",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 21
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#22",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "bc6059f74f19244efabda771a33a7ba848b0ab3daacca99e5079bfa2cb800246",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#B",
+      "location": "Work Time B",
+      "quote": "For ELLs: Ensure that students put words to their role-plays. If students can't verbalize, remind them of the word or phrase and have them repeat it. Prompt them to repeat the word or phrase as they role-play.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "supports_action": [
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally",
+        "with_prompting"
+      ],
+      "evidence_index": 22
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#23",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "59da057455d18c1ff33d6869ea67532b01aadfc69b80a63c08d55d28849d4feb",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#C",
+      "location": "Work Time C",
+      "quote": "With excitement, tell students that they will now participate in a close viewing of some photographs and videos to brainstorm some ideas of what the sun might 'see' throughout the day.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "investigation_handson"
+      ],
+      "qualifiers": [],
+      "evidence_index": 23
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#24",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "2c2e42114463420682584cd89a014634fdc834e11418f422c80a53be3e3f8084",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Invite students to turn and talk with an elbow partner: 'What could the sun 'see' or observe?' (an elephant walking through a forest or jungle)",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 24
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#25",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "cab26a010e21b043ce33ad37ec5df44550bfa525693028a78c909be3c63bbb90",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_scribe"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Circulate and listen in as students share with each other. Record a selection of students' ideas on the What the Sun Sees anchor chart.",
+      "actor": "teacher",
+      "evidence_role": "teacher_scribe",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 25
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#26",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "a51cb8a9a70bfdcb0f751c1d4e49291d0ebf57ab2898ce1d2457361a51df721b",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Play 'British Wildlife Filmed on a DSLR.'",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 26
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#27",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "2fd694521208977bccf83fd2dd25585ce96deadf0ea40217acb996b77477e68c",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Invite students to turn and talk with an elbow partner:",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 27
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#28",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "c37a781342101f74da68032391fd85a4d030766a9f0aeed978738e9f51cc93d9",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Play 'Street Time Lapse.'",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 28
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#29",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "7e0f9c67aeab8f90ec4486ad7c4c622a3d4050b50ab4a0ebd160e52f152fa578",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Repeat the process from the first video, using the same question.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 29
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#30",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "2a0113295e2d530dfcfe2be84346b77d4ee46247cbdb6f99e70b996179f63a36",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#C",
+        "location": "Work Time C",
+        "actor": "teacher",
+        "evidence_role": "teacher_model"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#C",
+      "location": "Work Time C",
+      "quote": "Direct students' attention to the completed What the Sun Sees anchor chart and read through the multitude of responses.",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "supports_action": [],
+      "qualifiers": [],
+      "evidence_index": 30
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#31",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "c4e129ba94e5b8f97251171aed27a2fd9af1ea12df95d91e9cd89e65fc21d48e",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Work Time#C",
+        "location": "Work Time C",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L6#Work Time#C",
+      "location": "Work Time C",
+      "quote": "'How do our photographs and video add to your understanding of how to write a narrative poem? I'll give you time to think and discuss with a partner.' (Responses will vary.)",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 31
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#32",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "cf61de506b7320d10be2dda6b259c219e3ddf6ba2bc27b587502b3e2a5248d02",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L6#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Remind students that the best learning happens when learners check to see how well they are doing and what they can do to be even better. Tell students they will use the Sit, Kneel, Stand protocol to assess how they upheld respect for themselves and their classmates throughout the lesson.",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "procedural_application"
+      ],
+      "qualifiers": [],
+      "evidence_index": 32
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#33",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "05ac0f14dec3288df2f367b0e3a98e190d9ca79a53171fa3fe1ee6e5e26fdc14",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U3L6#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Guide students through the protocol using the question: 'How did you uphold respect during today's lesson?'",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 33
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#34",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "af5258ffe78a318015ff1b96966dddf7e1d19934cf3224a3ab23495d2ece4883",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L6#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "Invite students to return to their seats and cold call two to three students to share their thoughts.",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 34
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#35",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "687e8fbc6e9785df496a959e27b5645e63c0c14b564c1109243220990b429656",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L6#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "'Why do you think the class showed respect?'",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 35
+    },
+    {
+      "chunk_id": "G1M2U3L6#evidence#36",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U3L6",
+      "text": "",
+      "content_hash": "bbf600a08d1907703c9e6d10d63b356f219f791cb54bbbac84a4aeabc96ef502",
+      "metadata": {
+        "block_chunk_id": "G1M2U3L6#Closing and Assessment#A",
+        "location": "Closing and Assessment A",
+        "actor": "student",
+        "evidence_role": "elicitation_check"
+      },
+      "block_chunk_id": "G1M2U3L6#Closing and Assessment#A",
+      "location": "Closing and Assessment A",
+      "quote": "'What can our class do a little better next time?'",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production"
+      ],
+      "qualifiers": [
+        "orally"
+      ],
+      "evidence_index": 36
+    }
+  ]
+}

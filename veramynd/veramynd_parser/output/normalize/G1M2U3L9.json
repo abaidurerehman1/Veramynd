@@ -1,0 +1,496 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U3L9",
+  "title": "Lesson 9: Unit 3 Assessment, Part II: Using Observations of the Sun to Write Narratives",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "3",
+      "lesson": "9",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Speaking & Listening",
+      "Language"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will write the second verse of a narrative poem about the sun using evidence from observations and provide kind, helpful, and specific feedback to peers.",
+  "what_is_taught": [
+    {
+      "skill": "write a narrative poem based on a model and using evidence",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use a verse planner to organize ideas for writing",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "write complete sentences with correct punctuation",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "discuss and plan writing collaboratively with a partner",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "give kind, helpful, and specific feedback to a peer",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "use sentence frames to support writing when needed",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "reflect on giving and receiving feedback using a protocol",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "use anchor charts and notebooks as writing resources",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "participate in choral singing with movements",
+      "cognitive_demand": "DOK1_recall_reproduction",
+      "emphasis": "incidental"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "Phonics",
+    "Phonological Awareness",
+    "Fluency",
+    "Independent writing beyond the poem verse",
+    "Vocabulary instruction beyond use of anchor charts"
+  ],
+  "student_actions": {
+    "recognition_identification": "identify and recall information from anchor charts and notebooks to support writing",
+    "oral_production": "sing chorally with movements; discuss planning and feedback with partners; share reflections orally",
+    "written_production": "write the second verse of a poem using a verse planner and complete sentences",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "apply writing conventions such as punctuation and sentence structure",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain how research and resources support their writing; justify feedback to peers",
+    "comprehension_response": "respond to prompts about writing and feedback during partner and group discussions; reflect on learning process orally; answer questions about resource use and writing targets; provide feedback using sentence frames and protocols; participate in Think-Pair-Share reflections orally; use criteria to evaluate writing quality; discuss poem content and writing process with partners; use sentence frames to support writing when needed; use feedback protocols to guide peer review; use anchor charts and notebooks to find descriptive words and information for writing; share specific feedback with peers using sentence frames; reflect on giving and receiving feedback using a protocol; participate in choral singing with movements; discuss planning and writing with partners; share reflections orally with the group; use sentence frames to support writing when needed; provide kind, helpful, and specific feedback to peers orally; use a verse planner to organize ideas for writing; write complete sentences with correct punctuation; write the second verse of a poem using a verse planner and complete sentences; discuss and plan writing collaboratively with a partner; give kind, helpful, and specific feedback to a peer; reflect on giving and receiving feedback using a protocol; use anchor charts and notebooks as writing resources; participate in choral singing with movements",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Invite students to join you in singing the 'Sun, Moon, and Stars' song and completing the accompanying movements.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally",
+        "with movements"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Remind them that yesterday they began writing the first verse of their 'What the Sun Sees' poem. Today they will work with the same partner to plan the second verse.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Review each prompt question by reading them aloud.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Remind students that they will first work with a partner to discuss each of these questions.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Prompt students to use their resources as support: -Time of Day anchor chart -Adjectives anchor chart -What the Sun Sees anchor chart -Pages in their Sky notebook that describe the sun at midday",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Distribute Sky notebooks and 'What the Sun Sees' verse planners.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Move students into pre-determined pairs and invite pairs to find a quiet location to plan together.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Circulate and support students to reference their notebooks and the various anchor charts.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Using a total participation technique, invite responses from the group:",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Tell students that now they will have a chance to independently capture their thinking for verse 2 on the 'What the Sun Sees' verse planner.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Invite students to begin writing and circulate to support them as necessary.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing",
+        "with accuracy"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner: 'How did you use your research about the sun to help you write your poem?' (My verse planner and my Sky notebook helped me find adjectives to describe the sun.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner:",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Remind students to use their 'What the Sun Sees' verse planner to help them write verse 2 using complete sentences and correct punctuation.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "in writing",
+        "with accuracy"
+      ],
+      "supports_action": [
+        "written_production",
+        "procedural_application"
+      ]
+    },
+    {
+      "quote": "Offer students specific, positive feedback on their focus when writing verse 2 of their poems.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell the writers that today they will share verse 2 of their poem with a partner.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Remind students that when a partner shares his or her work, they are going to give kind, helpful and specific feedback.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Tell students that they are going to use the Pinky Partners protocol to provide feedback to a partner on verse 2.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Guide students through the protocol, encouraging them to use the following frames:",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally",
+        "with prompting"
+      ],
+      "supports_action": [
+        "oral_production",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Circulate as students share; prompt them to use the criteria on the High-Quality Work anchor chart when providing feedback.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Offer students specific, positive feedback on their conversations giving feedback to one another.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to Think-Pair-Share with an elbow partner: 'How did you do giving and receiving feedback?'",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Invite students to Think-Pair-Share with an elbow partner:",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "Invite students to Think-Pair-Share with an elbow partner:",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response",
+        "reasoning_explanation"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Model reviewing prompt questions and using anchor charts and notebooks to support writing; model giving specific, positive feedback; model using the Pinky Partners protocol for peer feedback; model cleanup routines.",
+    "prompts_that_cue_student_response": [
+      "How did you use your research about the sun to help you write your poem?",
+      "What did you need to remember when writing the first verse of your 'What the Sun Sees' poem?",
+      "How did you do giving and receiving feedback?",
+      "What worked well?",
+      "What could you improve?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "writing a narrative poem about the sun using evidence; peer feedback; reflection on feedback process",
+    "depth": "planning, writing, revising, and reflecting on narrative poem writing and peer feedback"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "text and anchor charts about the sun and times of day; verse planner; poem model",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Engaging the Learner: 'Sun, 'Moon, and Stars' Song",
+    "direct_instruction": "Review prompt questions and model use of resources; model feedback protocol",
+    "guided_practice": "Partner planning and discussion; peer feedback using Pinky Partners protocol",
+    "independent_application": "Writing second verse of poem independently",
+    "check_for_understanding": "Think-Pair-Share reflection on giving and receiving feedback",
+    "differentiated_reinforce": "Provide partially filled verse planners and sentence frames for students needing support",
+    "differentiated_extend": "Encourage paraphrasing learning targets and independent writing before support for ELLs"
+  },
+  "supports": {
+    "english_language_learners": "Provide sentence frames for writing; encourage paraphrasing learning targets; review use of anchor charts and notebooks; provide guided verse planners; give positive feedback to ELLs",
+    "universal_design_udl": "Provide options for physical movement during song; use sound-canceling headphones or dividers to minimize distractions; display checklists for peer feedback; use total participation techniques",
+    "below_level_reinforce": "Provide partially filled-in or guided verse planners; use sentence frames for writing support",
+    "above_level_extend": "Encourage paraphrasing learning targets; allow grappling with writing before providing sentence frames"
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "Observation of independent writing and peer feedback; Think-Pair-Share reflection",
+    "recognition_vs_production": "production"
+  },
+  "materials": [
+    "'Sun, Moon, and Stars' song (from Unit 1, Lesson 43; one to display)",
+    "'What the Sun Sees' verse planner (begun in Lesson 8; added to during Work Time A; one per student)",
+    "Time of Day anchor chart (begun in Lesson 4)",
+    "Adjectives anchor chart (begun in Unit 2, Lesson 4)",
+    "What the Sun Sees anchor chart (begun in Lesson 4)",
+    "Sky notebook (completed in Unit 2; one per student)",
+    "Speaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "'What the Sun Sees' poem (begun in Lesson 8; added to during Work Time B; one per student; see Assessment Overview and Resources)",
+    "Pinky Partners Protocol anchor chart (begun in Module 1)",
+    "High-Quality Work anchor chart (begun in Lesson 3)",
+    "Think-Pair-Share Protocol anchor chart (begin in Module 1)"
+  ],
+  "vocabulary": {
+    "new": [
+      "adjective, criteria, illustration, feedback (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Pinky Partners protocol",
+    "Think-Pair-Share protocol"
+  ],
+  "notes": "Lesson focuses on writing the second verse of a narrative poem about the sun using evidence from observations and peer feedback. Includes supports for ELLs and students needing additional writing help. Uses multiple anchor charts and notebooks as resources. Incorporates movement and oral language practice through song and partner discussions.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "narrative"
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 424,
+    "source_page_end": 431
+  }
+}

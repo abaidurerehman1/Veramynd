@@ -1,0 +1,566 @@
+{
+  "schema_version": "2.0-ela",
+  "resource_id": "G1M2U3L7",
+  "title": "Lesson 7: Speaking and Listening: Analyzing a Model of High Quality Work",
+  "provenance": {
+    "program": "EL Education",
+    "source_document": "ELA Grade 1 Module 2 Teacher Guide.pdf",
+    "grade": "1",
+    "jurisdiction": "",
+    "subject": "ELA/Literacy",
+    "format": "paper-based"
+  },
+  "placement": {
+    "resource_type": "main_lesson",
+    "hierarchy": {
+      "module": "2",
+      "unit": "3",
+      "lesson": "7",
+      "day": "",
+      "session": "",
+      "component": ""
+    },
+    "sequence": "",
+    "pacing": "60 minutes",
+    "part_of": null,
+    "children": []
+  },
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": [
+      "Vocabulary",
+      "Writing",
+      "Language"
+    ]
+  },
+  "level": "Grade 1",
+  "objective": "Students will discuss and analyze word connections and models of high-quality writing to plan their own descriptive poem about the sun at different times of day.",
+  "what_is_taught": [
+    {
+      "skill": "use an interactive word wall protocol to make connections between descriptive words",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "discuss word connections and explain reasoning",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "review and select descriptive entries from a personal notebook to support writing",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "analyze examples and non-examples of writing to identify characteristics of high-quality work",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "compare details and conventions in writing examples",
+      "cognitive_demand": "DOK3_strategic_thinking",
+      "emphasis": "primary"
+    },
+    {
+      "skill": "participate in a temporal line game to understand time-related language",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "collaborate in small groups to sequence temporal phrases",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "secondary"
+    },
+    {
+      "skill": "reflect on learning by discussing how prior work supports writing planning",
+      "cognitive_demand": "DOK2_skills_concepts",
+      "emphasis": "primary"
+    }
+  ],
+  "what_is_NOT_taught": [
+    "Phonological Awareness",
+    "Phonics",
+    "Fluency",
+    "Independent writing"
+  ],
+  "student_actions": {
+    "recognition_identification": "identify and select descriptive words and notebook entries",
+    "oral_production": "discuss word connections, explain reasoning, share observations about writing examples, participate in group sequencing, and reflect on learning",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "arrange temporal line cards in order",
+    "procedural_application": "apply the interactive word wall protocol steps and follow game instructions",
+    "investigation_handson": "handle word wall cards, arrow cards, temporal line cards, and sticky notes",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "explain word connections and justify which writing example is high quality",
+    "comprehension_response": "respond to questions about word connections, writing details, and temporal lines in discussion and partner talk, and share reflections on learning in whole group discussion and partner talk, using descriptive details and criteria for high-quality work as guides, with some responses prompted or scaffolded by teacher cues and partner discussion, and some independently produced responses in whole group sharing and partner talk contexts, demonstrating understanding of descriptive language and writing conventions, and the concept of temporal sequencing in language use, as evidenced by student participation in the Interactive Word Wall protocol, selection and discussion of Sky notebook entries, analysis of writing examples, participation in the Temporal Line Game, and reflection on learning during closing discussion.",
+    "domain_specific": {}
+  },
+  "evidence": [
+    {
+      "quote": "Tell students that they are going to use the Interactive Word Wall protocol again to make more connections between words, grow their brains, and become even stronger readers and writers. Today they will use adjectives that describe the sun.",
+      "location": "Opening A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Move students into pre-determined triads and distribute the sets of Interactive Word Wall cards and arrow cards. Use the same process from Lesson 3 to guide students through the protocol.",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [],
+      "supports_action": [
+        "procedural_application",
+        "investigation_handson"
+      ]
+    },
+    {
+      "quote": "'What word connections did you make, and why?' (I connected red and blazing because that's what the sun looks like.)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What step in this protocol did you do well?' (I sat in my triad. I waited my turn. I connected two cards. I explained my connection.)",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Invite students to turn and talk with an elbow partner:",
+      "location": "Opening A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [],
+      "supports_action": [
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Tell students that in the next lesson, they will begin to plan and write their 'What the Sun Sees' poem that describes what the sun might 'see' at different times of day.",
+      "location": "Work Time A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Tell student that they will now review their Sky notebook and pick three entries, one each that describes the sun at morning, midday, and evening.",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "'Which illustration in your Sky notebook shows the sun at morning? Midday? Evening?'",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'Where was the location of the sun during morning? Midday? Evening?'",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "with_prompting",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "reasoning_explanation",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "'What page did you select?' (I chose a page that describes the sun at midday.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "recognition_identification",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'How did you know that the page selected represented morning, midday, or evening?' (It was midday because the sun was high in the sky and bright and round. It was evening because the sun was orange and setting over the horizon.)",
+      "location": "Work Time A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Direct students' attention to the posted learning targets and read the second one aloud:",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "I can analyze a model of high-quality work.",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Review the words analyze (to examine or study closely) and model (a strong example).",
+      "location": "Work Time B",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Invite students to compare the example and the non-example, paying attention to the two criteria on the High-Quality Work anchor chart.",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "recognition_identification",
+        "reasoning_explanation"
+      ]
+    },
+    {
+      "quote": "'What do you notice about the details used to describe the moon in this poem?' (The details aren't that interesting; it seems boring; they seem plain.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What do you notice about the use of conventions in this poem?' (It is missing periods. Some words are spelled incorrectly.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What do you notice about the details used to describe the moon in this poem?' (The details are interesting; it's more descriptive; I get a picture in my mind as I read it.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What do you notice about the use of conventions in this poem?' (It has complete sentences. It uses periods. Words are spelled correctly.)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'Which example best shows high-quality work, and why?' (the second one, because it has descriptive details and follows conventions the best)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Tell students that they will now participate in a new word game that will introduce them to temporal lines used in poems.",
+      "location": "Work Time C",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "Each triad will receive two sets of temporal line cards.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "investigation_handson"
+      ]
+    },
+    {
+      "quote": "Each person should read and review his or her card.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "recognition_identification"
+      ]
+    },
+    {
+      "quote": "When every person in the triad is ready, they work together to arrange themselves in order according to their temporal line card. (Example: first, 'It is morning'; second, 'It is noon'; third, 'It is evening.')",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "matching_sorting_sequencing",
+        "oral_production"
+      ]
+    },
+    {
+      "quote": "Distribute temporal line cards and move students into pre-determined triads. Invite triads to find a quiet location in the classroom to complete the game.",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "independent",
+      "qualifiers": [],
+      "supports_action": [
+        "procedural_application",
+        "investigation_handson"
+      ]
+    },
+    {
+      "quote": "'What were some of the temporal lines that you heard?' (It is morning. It is noon. It is dusk.)",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "Direct students' attention to the posted learning targets and read them aloud:",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "I can plan my writing by discussing ideas with classmates.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "I can analyze a model of high-quality work.",
+      "location": "Closing and Assessment A",
+      "actor": "teacher",
+      "evidence_role": "teacher_model",
+      "support": "not_applicable",
+      "qualifiers": [],
+      "supports_action": []
+    },
+    {
+      "quote": "'How did your Sky notebook help you begin to plan your 'What the Sun Sees' poem?' (It had descriptions of the sun at different times of the day that I already wrote.)",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production",
+        "comprehension_response"
+      ]
+    },
+    {
+      "quote": "'What criteria should our writing include to make it high quality?' (descriptive details; it should follow conventions)",
+      "location": "Closing and Assessment A",
+      "actor": "student",
+      "evidence_role": "elicitation_check",
+      "support": "independent",
+      "qualifiers": [
+        "orally"
+      ],
+      "supports_action": [
+        "reasoning_explanation",
+        "oral_production",
+        "comprehension_response"
+      ]
+    }
+  ],
+  "teacher_actions": {
+    "direct_instruction": "Model use of the Interactive Word Wall protocol and explain criteria for high-quality writing using anchor charts and examples.",
+    "prompts_that_cue_student_response": [
+      "What word connections did you make, and why?",
+      "What step in this protocol did you do well?",
+      "Which illustration in your Sky notebook shows the sun at morning? Midday? Evening?",
+      "Where was the location of the sun during morning? Midday? Evening?",
+      "What do you notice about the details used to describe the moon in this poem?",
+      "What do you notice about the use of conventions in this poem?",
+      "Which example best shows high-quality work, and why?",
+      "What were some of the temporal lines that you heard?",
+      "How did your Sky notebook help you begin to plan your 'What the Sun Sees' poem?",
+      "What criteria should our writing include to make it high quality?"
+    ],
+    "with_prompting_and_support": "yes"
+  },
+  "example_items": {},
+  "scope": {
+    "breadth": "vocabulary development, writing planning, and language sequencing",
+    "depth": "analyzing word connections and writing quality, sequencing temporal language, and reflecting on learning"
+  },
+  "context": {
+    "mode": "both",
+    "stimulus_provided": "teacher models, anchor charts, word cards, notebook entries, example and non-example poems, temporal line cards",
+    "with_visual_support": "yes"
+  },
+  "sections_covered": {
+    "warm_up": "Building Vocabulary: Interactive Word Wall",
+    "direct_instruction": "Analyzing an Example and Non-Example: 'What the Moon Sees' Class Poem",
+    "guided_practice": "Developing Language: Temporal Line Game",
+    "independent_application": "Engaging the Writer: Reviewing the Sky Notebook",
+    "check_for_understanding": "Reflecting on Learning",
+    "differentiated_reinforce": "",
+    "differentiated_extend": ""
+  },
+  "supports": {
+    "english_language_learners": "Use home language groups for discussion, provide visual cues for vocabulary and temporal words, and allow ELL students to share work to practice oral language.",
+    "universal_design_udl": "Provide visual supports such as anchor charts, drawings, photographs, and clear routines with timers to support self-regulation and comprehension.",
+    "below_level_reinforce": "Offer additional prompting and modeling for protocol steps and vocabulary understanding.",
+    "above_level_extend": "Challenge students to consider the impact of removing details from writing examples and discuss implications for quality."
+  },
+  "assessment": {
+    "type": "formative",
+    "method": "oral responses during partner talk and whole group discussions, observation of participation in protocols and games",
+    "recognition_vs_production": "both"
+  },
+  "materials": [
+    "Interactive Word Wall Protocol anchor chart (begun in Lesson 2)",
+    "Interactive Word Wall cards (from Lesson 6; one set per triad)",
+    "The Sun, Moon, and Stars",
+    "Arrow cards (from Lesson 2; one set per triad)",
+    "Sky notebook (completed in Unit 2; one per student)",
+    "Sticky notes (three per student)",
+    "High-Quality Work anchor chart (begun in Lesson 3)",
+    "'What the Moon Sees' example (one to display)",
+    "'What the Moon Sees' non-example (one to display)",
+    "Temporal line cards (two sets per triad)",
+    "Working to Become Ethical People anchor chart (begun in Unit 1, Lesson 4)"
+  ],
+  "vocabulary": {
+    "new": [
+      "temporal, dawn, first, then, next, finally, last (L)",
+      "analyze, model, morning, midday, noon, afternoon (L)"
+    ],
+    "review": []
+  },
+  "protocols_routines": [
+    "Interactive Word Wall protocol",
+    "Total participation techniques",
+    "Turn and talk with elbow partner",
+    "Use of anchor charts for vocabulary and writing criteria"
+  ],
+  "notes": "The lesson integrates vocabulary development, speaking and listening skills, and writing planning through interactive protocols and games. It includes supports for ELLs and students needing self-regulation assistance.",
+  "subject_profile": {
+    "mode": "both",
+    "genre": "poetic"
+  },
+  "_pipeline": {
+    "prompt_version": "normalize_ela.v2.1",
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "source_page_start": 404,
+    "source_page_end": 413
+  }
+}

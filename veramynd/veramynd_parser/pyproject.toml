@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools==75.8.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "veramynd-parser"
+version = "0.1.0"
+description = "Structure-aware parser for curriculum teacher guides and standards, with a safety-net verifier."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+# Base install is deliberately lightweight. Versions are pinned for reproducible
+# installs (Dep1). Docling remains opt-in via the `docling` extra.
+dependencies = [
+    "pymupdf==1.25.5",
+    "openpyxl==3.1.5",
+    "pydantic==2.10.6",
+]
+
+[project.optional-dependencies]
+test = ["pytest==8.3.5"]
+docling = ["docling==2.114.0"]
+lite = ["pymupdf==1.25.5", "openpyxl==3.1.5", "pydantic==2.10.6"]
+# Stage 3 ELA curriculum normalizer — OpenAI only.
+normalize = ["openai==1.70.0", "python-dotenv==1.1.0", "pydantic==2.10.6"]
+# OpenAI embeddings + Qdrant upsert for chunk indexes.
+embed = [
+    "openai==1.70.0",
+    "python-dotenv==1.1.0",
+    "qdrant-client==1.13.3",
+]
+
+[project.scripts]
+veramynd-parser = "veramynd_parser.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["veramynd_parser*"]
+
+[tool.setuptools.package-data]
+veramynd_parser = ["prompts/*.md", "schemas/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
