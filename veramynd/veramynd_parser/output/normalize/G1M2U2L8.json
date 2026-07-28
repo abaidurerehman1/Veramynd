@@ -91,7 +91,7 @@
   },
   "evidence": [
     {
-      "quote": "Invite students to turn and talk with an elbow partner: 'What information do you think is most important to know when answering the question 'Why does the moon seem to change shape?'",
+      "quote": "Invite students to turn and talk with an elbow partner:",
       "location": "Opening A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -104,7 +104,7 @@
       ]
     },
     {
-      "quote": "Circulate and listen in as students share with their partner.",
+      "quote": "Circulate and listen in as students share with their partner. Note trends in responses (e.g., everyone is talking about the sun lighting the moon) and mark them on the anchor chart with a star.",
       "location": "Opening A",
       "actor": "student",
       "evidence_role": "student_production",
@@ -117,7 +117,7 @@
       ]
     },
     {
-      "quote": "Note trends in responses (e.g., everyone is talking about the sun lighting the moon) and mark them on the anchor chart with a star.",
+      "quote": "Circulate and listen in as students share with their partner. Note trends in responses (e.g., everyone is talking about the sun lighting the moon) and mark them on the anchor chart with a star.",
       "location": "Opening A",
       "actor": "teacher",
       "evidence_role": "teacher_scribe",
@@ -135,7 +135,7 @@
       "supports_action": []
     },
     {
-      "quote": "Display the Patterns of the Moon notes sheet and read the prompt aloud: -'Why does the moon seem to change?'",
+      "quote": "Display the Patterns of the Moon notes sheet and read the prompt aloud:",
       "location": "Work Time A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -144,7 +144,7 @@
       "supports_action": []
     },
     {
-      "quote": "Remind students that they need to record their notes in a way that is useful to them, maybe with pictures and only a few words, so they can read from their notes and use them as evidence in the Science Talk.",
+      "quote": "Remind students that they need to record their notes in a way that is useful to them, maybe with pictures and only a few words, so they can read from their notes and use them as evidence in the Science Talk. They should record only the information that they think is most important.",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -201,7 +201,7 @@
       ]
     },
     {
-      "quote": "Circulate and support students as they write.",
+      "quote": "Circulate and support students as they write. Remind them to use the Patterns of the Moon anchor chart and Sun, Moon, and Stars Word Wall to help them while writing. If students are having a difficult time explaining their ideas, invite them to look again at Does the Sun Sleep?: Noticing Sun, Moon, and Stars Patterns and jot down what they see or hear that they want to record.",
       "location": "Work Time A",
       "actor": "teacher",
       "evidence_role": "teacher_scribe",
@@ -223,7 +223,7 @@
       ]
     },
     {
-      "quote": "Direct students' attention to the learning targets and read the first one aloud: 'I can build onto others' ideas while participating in a Science Talk about patterns of the moon.'",
+      "quote": "I can build onto others' ideas while participating in a Science Talk about patterns of the moon.",
       "location": "Work Time B",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -241,7 +241,7 @@
       "supports_action": []
     },
     {
-      "quote": "Review the previously taught sentence frames: 'I think he/she means __________.' 'I'd like to add ________.' 'This makes me think __________ because ___________.'",
+      "quote": "Review the previously taught sentence frames:",
       "location": "Work Time B",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -276,7 +276,7 @@
       ]
     },
     {
-      "quote": "Using a total participation technique, invite responses from the group: 'How will you show your partner you are listening to him or her?' (use eye contact; answer the questions they ask me)",
+      "quote": "Using a total participation technique, invite responses from the group:",
       "location": "Work Time B",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -361,7 +361,7 @@
       "supports_action": []
     },
     {
-      "quote": "Direct students' attention to the posted learning targets and read the second one aloud: 'I can record my observations of videos/images of the sky in the Sky notebook.'",
+      "quote": "I can record my observations of videos/images of the sky in the Sky Notebook.",
       "location": "Closing and Assessment A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -379,7 +379,7 @@
       "supports_action": []
     },
     {
-      "quote": "Follow the same process as in previous lessons to distribute notebooks, pencils, and colored pencils, and guide students to complete this page.",
+      "quote": "Follow the same process as in previous lessons to distribute notebooks, pencils, and colored pencils, and guide students to complete this page. Remind students to use the Prepositions anchor chart and Adjectives anchor chart, and the Sun, Moon, and Stars Word Wall as necessary.",
       "location": "Closing and Assessment A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -392,7 +392,7 @@
       ]
     },
     {
-      "quote": "Remind students to use the Prepositions anchor chart and Adjectives anchor chart, and the Sun, Moon, and Stars Word Wall as necessary.",
+      "quote": "Follow the same process as in previous lessons to distribute notebooks, pencils, and colored pencils, and guide students to complete this page. Remind students to use the Prepositions anchor chart and Adjectives anchor chart, and the Sun, Moon, and Stars Word Wall as necessary.",
       "location": "Closing and Assessment A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -401,7 +401,7 @@
       "supports_action": []
     },
     {
-      "quote": "Signal all students to stop writing through the use of a designated sound. Collect students' Sky notebooks.",
+      "quote": "Signal all students to stop writing through the use of a designated sound.",
       "location": "Closing and Assessment A",
       "actor": "teacher",
       "evidence_role": "teacher_scribe",
@@ -428,7 +428,7 @@
       "supports_action": []
     },
     {
-      "quote": "Ask: 'What are people doing when the sun looks like this?' (People are cooking dinner; people are walking home from school; etc.)",
+      "quote": "'What are people doing when the sun looks like this?' (People are cooking dinner; people are walking home from school; etc.)",
       "location": "Closing and Assessment B",
       "actor": "student",
       "evidence_role": "elicitation_check",
@@ -464,7 +464,7 @@
       "supports_action": []
     },
     {
-      "quote": "If time permits, invite students to call out the proper letters and words needed for the sentence and write down the complete response.",
+      "quote": "If time permits, invite students to call out the proper letters and words needed for the sentence and write down the complete response. Model using the Sun, Moon, and Stars Word Wall and High-Frequency Word Wall as a resource while responding.",
       "location": "Closing and Assessment B",
       "actor": "student",
       "evidence_role": "elicitation_check",

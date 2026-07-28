@@ -75,7 +75,7 @@
   "student_actions": {
     "recognition_identification": "identify and recognize vocabulary and patterns in pictures and text",
     "oral_production": "share observations and questions orally with partners and whole group",
-    "written_production": "NONE OBSERVED",
+    "written_production": "Record ideas in writing and/or drawing (including optional whiteboard / response-sheet production).",
     "matching_sorting_sequencing": "NONE OBSERVED",
     "procedural_application": "NONE OBSERVED",
     "investigation_handson": "NONE OBSERVED",
@@ -86,7 +86,7 @@
   },
   "evidence": [
     {
-      "quote": "Invite students to turn and talk with an elbow partner, and use equity sticks to select students to share their responses with the whole group: 'What are some things that Elvin wondered about?' (if the sun and moon had stories; if the sun and moon danced and had songs)",
+      "quote": "Invite students to turn and talk with an elbow partner, and use equity sticks to select students to share their responses with the whole group:",
       "location": "Opening A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -153,7 +153,7 @@
       ]
     },
     {
-      "quote": "Using a total participation technique, invite responses from the group: 'What did you notice in your pictures?' (Responses will vary, but may include: things repeating, the sunlight creating a pattern on the ground, the moon in different shapes over and over again, and groups of stars creating a pattern in the sky.)",
+      "quote": "Using a total participation technique, invite responses from the group:",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -196,7 +196,7 @@
       ]
     },
     {
-      "quote": "Invite a small group of volunteers to briefly fish bowl or model the Picture Tea Party protocol for the group. As they model, cold call students to repeat or add to what the volunteers have said, using the sentence frames.",
+      "quote": "For ELLs: Invite a small group of volunteers to briefly fish bowl or model the Picture Tea Party protocol for the group. As they model, cold call students to repeat or add to what the volunteers have said, using the sentence frames. This will provide an opportunity to check for comprehension while giving some students practice using the sentence frames before the protocol begins.",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -259,7 +259,7 @@
       ]
     },
     {
-      "quote": "If productive, use a Goal 3 Conversation Cue to encourage students to provide evidence: 'What, in the text, makes you think so?' (Responses will vary.)",
+      "quote": "If productive, use a Goal 3 Conversation Cue to encourage students to provide evidence:",
       "location": "Work Time B",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -274,7 +274,7 @@
       ]
     },
     {
-      "quote": "Reread page 7 and invite students to turn and talk with an elbow partner: 'What is a pattern that the sun follows?' (It shines during the day. We cannot see the sun at night.)",
+      "quote": "Reread page 7 and invite students to turn and talk with an elbow partner:",
       "location": "Work Time B",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -317,7 +317,7 @@
       ]
     },
     {
-      "quote": "Using a total participation technique, invite responses from the group: 'What do you notice about where the sun is in the sky in these three pictures?' (near the horizon, high in the sky, and then near the horizon again)",
+      "quote": "Using a total participation technique, invite responses from the group:",
       "location": "Work Time B",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -389,7 +389,7 @@
       ]
     },
     {
-      "quote": "Prompt students to add on or to build onto others' ideas by using several focusing questionsfor example: ''Does anyone have anything to add to what Vernon said?' 'What does what Janice said make you think?'",
+      "quote": "Prompt students to add on or to build onto others' ideas by using several focusing questionsfor example:",
       "location": "Work Time C",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -422,7 +422,7 @@
       "supports_action": []
     },
     {
-      "quote": "Invite students to turn to an elbow partner and talk after providing 30 seconds of wait time for each of the following questions: 'What are some new things you notice about the sun?' (Student responses will vary.)",
+      "quote": "Invite students to turn to an elbow partner and talk after providing 30 seconds of wait time for each of the following questions:",
       "location": "Closing and Assessment A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -461,7 +461,7 @@
       ]
     },
     {
-      "quote": "As students share out, clarify and capture their ideas on the Noticing and Wondering anchor chart, writing down the language they use as accurately as possible.",
+      "quote": "As students share out, clarify and capture their ideas on the Noticing and Wondering anchor chart, writing down the language they use as accurately as possible. If possible, model referring to the Sun, Moon, and Stars Word Wall as a tool to help when spelling contentrelated words.",
       "location": "Closing and Assessment A",
       "actor": "teacher",
       "evidence_role": "teacher_scribe",
@@ -470,7 +470,7 @@
       "supports_action": []
     },
     {
-      "quote": "If possible, model referring to the Sun, Moon, and Stars Word Wall as a tool to help when spelling contentrelated words.",
+      "quote": "As students share out, clarify and capture their ideas on the Noticing and Wondering anchor chart, writing down the language they use as accurately as possible. If possible, model referring to the Sun, Moon, and Stars Word Wall as a tool to help when spelling contentrelated words.",
       "location": "Closing and Assessment A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -486,6 +486,19 @@
       "support": "not_applicable",
       "qualifiers": [],
       "supports_action": []
+    },
+    {
+      "quote": "Before reading, provide white boards and dry-erase markers as an option for students to record (in drawing or writing) their ideas. This will also help scaffold active listening for key details. (MMR, MMAE)",
+      "location": "Work Time B",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
+      ]
     }
   ],
   "teacher_actions": {

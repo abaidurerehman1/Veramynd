@@ -11,8 +11,8 @@
     "chunk_id": "G1M2U2L1#lesson",
     "family": "lesson",
     "resource_id": "G1M2U2L1",
-    "text": "Domain primary: Comprehension\nDomain secondary: Speaking & Listening, Vocabulary\nMode: both\nGenre: mixed\nObjective: Students will observe and describe patterns in pictures and videos of the sun, moon, and stars, and ask and record questions about their observations.\nSkills taught:\n- describe observations in pictures and videos (DOK2_skills_concepts, primary)\n- ask questions about observations (DOK2_skills_concepts, primary)\n- record observations and questions in shared writing (DOK2_skills_concepts, primary)\n- identify and discuss vocabulary related to astronomy and patterns (DOK1_recall_reproduction, secondary)\n- participate in partner discussions using sentence frames (DOK2_skills_concepts, secondary)\n- use classroom discussion protocols (Picture Tea Party, Think-Pair-Share) (DOK2_skills_concepts, secondary)\nStudent actions:\n- recognition_identification: identify and recognize vocabulary and patterns in pictures and text\n- oral_production: share observations and questions orally with partners and whole group\n- reasoning_explanation: explain reasoning for word associations and observations during discussions\n- comprehension_response: respond to questions about the text and illustrations orally and in partner talk, using evidence from the text and observations to support answers and ideas, sometimes using sentence frames for support and elaboration, and contribute ideas to anchor charts and word walls to build understanding and vocabulary related to astronomy and patterns in the sky",
-    "content_hash": "4bf3f4640d8f81dcd673fb578b4ba37e794deb6bcfc9baba81d688c9c6477806",
+    "text": "Domain primary: Comprehension\nDomain secondary: Speaking & Listening, Vocabulary\nMode: both\nGenre: mixed\nObjective: Students will observe and describe patterns in pictures and videos of the sun, moon, and stars, and ask and record questions about their observations.\nSkills taught:\n- describe observations in pictures and videos (DOK2_skills_concepts, primary)\n- ask questions about observations (DOK2_skills_concepts, primary)\n- record observations and questions in shared writing (DOK2_skills_concepts, primary)\n- identify and discuss vocabulary related to astronomy and patterns (DOK1_recall_reproduction, secondary)\n- participate in partner discussions using sentence frames (DOK2_skills_concepts, secondary)\n- use classroom discussion protocols (Picture Tea Party, Think-Pair-Share) (DOK2_skills_concepts, secondary)\nStudent actions:\n- recognition_identification: identify and recognize vocabulary and patterns in pictures and text\n- oral_production: share observations and questions orally with partners and whole group\n- written_production: Record ideas in writing and/or drawing (including optional whiteboard / response-sheet production).\n- reasoning_explanation: explain reasoning for word associations and observations during discussions\n- comprehension_response: respond to questions about the text and illustrations orally and in partner talk, using evidence from the text and observations to support answers and ideas, sometimes using sentence frames for support and elaboration, and contribute ideas to anchor charts and word walls to build understanding and vocabulary related to astronomy and patterns in the sky",
+    "content_hash": "65293822f8fe66c292975dc3b9962b0907b62797aa8eac5d3273438f82a9463b",
     "metadata": {
       "grade": 1,
       "module": 2,
@@ -254,7 +254,7 @@
       "family": "evidence_pointer",
       "resource_id": "G1M2U2L1",
       "text": "",
-      "content_hash": "01918449a46987d8f4787ad787f77ea9f2ed4529892fc8c6d21552147d6fdd27",
+      "content_hash": "7287a9b31ffda5aa0a42da23f081b52e207fdaa2b97e35a8aec42d9330f651e8",
       "metadata": {
         "block_chunk_id": "G1M2U2L1#Opening#A",
         "location": "Opening A",
@@ -263,7 +263,7 @@
       },
       "block_chunk_id": "G1M2U2L1#Opening#A",
       "location": "Opening A",
-      "quote": "Invite students to turn and talk with an elbow partner, and use equity sticks to select students to share their responses with the whole group: 'What are some things that Elvin wondered about?' (if the sun and moon had stories; if the sun and moon danced and had songs)",
+      "quote": "Invite students to turn and talk with an elbow partner, and use equity sticks to select students to share their responses with the whole group:",
       "actor": "student",
       "evidence_role": "directive_prompt",
       "support": "independent",
@@ -386,7 +386,7 @@
       "family": "evidence_pointer",
       "resource_id": "G1M2U2L1",
       "text": "",
-      "content_hash": "4f45e2671c71548704fcd5caf328c43cf35e0d4ca03fc15a4520bd29548606a7",
+      "content_hash": "06677dd25f0ad465241d7f163d58c83204e070884301e3c32871461f7cb01ef4",
       "metadata": {
         "block_chunk_id": "G1M2U2L1#Work Time#A",
         "location": "Work Time A",
@@ -395,7 +395,7 @@
       },
       "block_chunk_id": "G1M2U2L1#Work Time#A",
       "location": "Work Time A",
-      "quote": "Using a total participation technique, invite responses from the group: 'What did you notice in your pictures?' (Responses will vary, but may include: things repeating, the sunlight creating a pattern on the ground, the moon in different shapes over and over again, and groups of stars creating a pattern in the sky.)",
+      "quote": "Using a total participation technique, invite responses from the group:",
       "actor": "student",
       "evidence_role": "directive_prompt",
       "support": "independent",
@@ -468,7 +468,7 @@
       "family": "evidence_pointer",
       "resource_id": "G1M2U2L1",
       "text": "",
-      "content_hash": "f3e5c9929f06e33ad8d027539e54520c09e720e4c045575bede7bf81a2874a32",
+      "content_hash": "fe83847f908302516ac04000e0768492f87c049271d0de0a185724f223bf35a3",
       "metadata": {
         "block_chunk_id": "G1M2U2L1#Work Time#A",
         "location": "Work Time A",
@@ -477,7 +477,7 @@
       },
       "block_chunk_id": "G1M2U2L1#Work Time#A",
       "location": "Work Time A",
-      "quote": "Invite a small group of volunteers to briefly fish bowl or model the Picture Tea Party protocol for the group. As they model, cold call students to repeat or add to what the volunteers have said, using the sentence frames.",
+      "quote": "For ELLs: Invite a small group of volunteers to briefly fish bowl or model the Picture Tea Party protocol for the group. As they model, cold call students to repeat or add to what the volunteers have said, using the sentence frames. This will provide an opportunity to check for comprehension while giving some students practice using the sentence frames before the protocol begins.",
       "actor": "student",
       "evidence_role": "directive_prompt",
       "support": "with_prompting",
@@ -596,7 +596,7 @@
       "family": "evidence_pointer",
       "resource_id": "G1M2U2L1",
       "text": "",
-      "content_hash": "6744f579ae9f7473878c683cbbc4c4d60afcfce94af36d44dff50d22d581c202",
+      "content_hash": "6b88f1236028e5a6885fd20401d0982bdf5466b588b6e2d98ecd9ff5216dc500",
       "metadata": {
         "block_chunk_id": "G1M2U2L1#Work Time#B",
         "location": "Work Time B",
@@ -605,7 +605,7 @@
       },
       "block_chunk_id": "G1M2U2L1#Work Time#B",
       "location": "Work Time B",
-      "quote": "If productive, use a Goal 3 Conversation Cue to encourage students to provide evidence: 'What, in the text, makes you think so?' (Responses will vary.)",
+      "quote": "If productive, use a Goal 3 Conversation Cue to encourage students to provide evidence:",
       "actor": "student",
       "evidence_role": "directive_prompt",
       "support": "independent",
@@ -624,7 +624,7 @@
       "family": "evidence_pointer",
       "resource_id": "G1M2U2L1",
       "text": "",
-      "content_hash": "96bc512117b0fb5292204aa32d2e610194148cfa19316a1525e43ad552b80b30",
+      "content_hash": "b26e81092e5ee7d29393196cf940ecb99ac4e5fb4f9d18dab6b7bfc4883d18db",
       "metadata": {
         "block_chunk_id": "G1M2U2L1#Work Time#B",
         "location": "Work Time B",
@@ -633,7 +633,7 @@
       },
       "block_chunk_id": "G1M2U2L1#Work Time#B",
       "location": "Work Time B",
-      "quote": "Reread page 7 and invite students to turn and talk with an elbow partner: 'What is a pattern that the sun follows?' (It shines during the day. We cannot see the sun at night.)",
+      "quote": "Reread page 7 and invite students to turn and talk with an elbow partner:",
       "actor": "student",
       "evidence_role": "directive_prompt",
       "support": "independent",
@@ -706,7 +706,7 @@
       "family": "evidence_pointer",
       "resource_id": "G1M2U2L1",
       "text": "",
-      "content_hash": "18b003aabaca8e58363d8ffc384b91b0730e1c00d707dd8b6cf70cdfa516ab57",
+      "content_hash": "06677dd25f0ad465241d7f163d58c83204e070884301e3c32871461f7cb01ef4",
       "metadata": {
         "block_chunk_id": "G1M2U2L1#Work Time#B",
         "location": "Work Time B",
@@ -715,7 +715,7 @@
       },
       "block_chunk_id": "G1M2U2L1#Work Time#B",
       "location": "Work Time B",
-      "quote": "Using a total participation technique, invite responses from the group: 'What do you notice about where the sun is in the sky in these three pictures?' (near the horizon, high in the sky, and then near the horizon again)",
+      "quote": "Using a total participation technique, invite responses from the group:",
       "actor": "student",
       "evidence_role": "directive_prompt",
       "support": "independent",
@@ -856,7 +856,7 @@
       "family": "evidence_pointer",
       "resource_id": "G1M2U2L1",
       "text": "",
-      "content_hash": "685361539b93cab2f94a1f8f271f1562cfc829cfd6dac3890d20c016d095b956",
+      "content_hash": "c0871f4343b8a55a609ef39bb4d18e1fdc0f57c473bfb5d0cfd718504d7a4a78",
       "metadata": {
         "block_chunk_id": "G1M2U2L1#Work Time#C",
         "location": "Work Time C",
@@ -865,7 +865,7 @@
       },
       "block_chunk_id": "G1M2U2L1#Work Time#C",
       "location": "Work Time C",
-      "quote": "Prompt students to add on or to build onto others' ideas by using several focusing questionsfor example: ''Does anyone have anything to add to what Vernon said?' 'What does what Janice said make you think?'",
+      "quote": "Prompt students to add on or to build onto others' ideas by using several focusing questionsfor example:",
       "actor": "student",
       "evidence_role": "directive_prompt",
       "support": "independent",
@@ -928,7 +928,7 @@
       "family": "evidence_pointer",
       "resource_id": "G1M2U2L1",
       "text": "",
-      "content_hash": "4f3eb794f55afb80f388f7b2d7383e6561716a2c34963d7a6a13a728817ad09f",
+      "content_hash": "8017a90babdf9840253761c0c5a57c02010151d27218e1ba2efb4bf8b8bbb7aa",
       "metadata": {
         "block_chunk_id": "G1M2U2L1#Closing and Assessment#A",
         "location": "Closing and Assessment A",
@@ -937,7 +937,7 @@
       },
       "block_chunk_id": "G1M2U2L1#Closing and Assessment#A",
       "location": "Closing and Assessment A",
-      "quote": "Invite students to turn to an elbow partner and talk after providing 30 seconds of wait time for each of the following questions: 'What are some new things you notice about the sun?' (Student responses will vary.)",
+      "quote": "Invite students to turn to an elbow partner and talk after providing 30 seconds of wait time for each of the following questions:",
       "actor": "student",
       "evidence_role": "directive_prompt",
       "support": "independent",
@@ -1006,7 +1006,7 @@
       "family": "evidence_pointer",
       "resource_id": "G1M2U2L1",
       "text": "",
-      "content_hash": "19bda1036fb82e19e64394c4826a26b0a584c4e537c3d4f1d6f56108f16893f5",
+      "content_hash": "492f815dd3a48d8f975da60b582804305ff45ac512fb742cc641c4eb5f6c9c0d",
       "metadata": {
         "block_chunk_id": "G1M2U2L1#Closing and Assessment#A",
         "location": "Closing and Assessment A",
@@ -1015,7 +1015,7 @@
       },
       "block_chunk_id": "G1M2U2L1#Closing and Assessment#A",
       "location": "Closing and Assessment A",
-      "quote": "As students share out, clarify and capture their ideas on the Noticing and Wondering anchor chart, writing down the language they use as accurately as possible.",
+      "quote": "As students share out, clarify and capture their ideas on the Noticing and Wondering anchor chart, writing down the language they use as accurately as possible. If possible, model referring to the Sun, Moon, and Stars Word Wall as a tool to help when spelling contentrelated words.",
       "actor": "teacher",
       "evidence_role": "teacher_scribe",
       "support": "not_applicable",
@@ -1028,7 +1028,7 @@
       "family": "evidence_pointer",
       "resource_id": "G1M2U2L1",
       "text": "",
-      "content_hash": "3baa43aa181d37854e73b0af81457751884e7cdf199eb6fdbaf853964741e40c",
+      "content_hash": "492f815dd3a48d8f975da60b582804305ff45ac512fb742cc641c4eb5f6c9c0d",
       "metadata": {
         "block_chunk_id": "G1M2U2L1#Closing and Assessment#A",
         "location": "Closing and Assessment A",
@@ -1037,7 +1037,7 @@
       },
       "block_chunk_id": "G1M2U2L1#Closing and Assessment#A",
       "location": "Closing and Assessment A",
-      "quote": "If possible, model referring to the Sun, Moon, and Stars Word Wall as a tool to help when spelling contentrelated words.",
+      "quote": "As students share out, clarify and capture their ideas on the Noticing and Wondering anchor chart, writing down the language they use as accurately as possible. If possible, model referring to the Sun, Moon, and Stars Word Wall as a tool to help when spelling contentrelated words.",
       "actor": "teacher",
       "evidence_role": "teacher_model",
       "support": "not_applicable",
@@ -1066,6 +1066,32 @@
       "supports_action": [],
       "qualifiers": [],
       "evidence_index": 31
+    },
+    {
+      "chunk_id": "G1M2U2L1#evidence#32",
+      "family": "evidence_pointer",
+      "resource_id": "G1M2U2L1",
+      "text": "",
+      "content_hash": "bd846776aadfe600896785efde334b46fc186d503c0058764d2221a2694ae6c4",
+      "metadata": {
+        "block_chunk_id": "G1M2U2L1#Work Time#B",
+        "location": "Work Time B",
+        "actor": "student",
+        "evidence_role": "directive_prompt"
+      },
+      "block_chunk_id": "G1M2U2L1#Work Time#B",
+      "location": "Work Time B",
+      "quote": "Before reading, provide white boards and dry-erase markers as an option for students to record (in drawing or writing) their ideas. This will also help scaffold active listening for key details. (MMR, MMAE)",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "supports_action": [
+        "written_production"
+      ],
+      "qualifiers": [
+        "in writing"
+      ],
+      "evidence_index": 32
     }
   ]
 }

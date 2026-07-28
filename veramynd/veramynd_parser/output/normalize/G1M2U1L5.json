@@ -83,7 +83,6 @@
     }
   ],
   "what_is_NOT_taught": [
-    "phonics/decoding",
     "fluency",
     "independent writing beyond sentence frames",
     "complex grammar structures beyond pronouns",
@@ -195,7 +194,7 @@
       ]
     },
     {
-      "quote": "Invite students to turn and talk to an elbow partner: 'Who is the main character? Where does the story take place? What happened in the beginning of the story?'",
+      "quote": "Invite students to turn and talk to an elbow partner:",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -222,7 +221,7 @@
       ]
     },
     {
-      "quote": "Direct students' attention to the posted learning target and read it aloud: 'I can describe what the boy and the sun do in the middle of Summer Sun Risin'.'",
+      "quote": "I can describe what the boy and the sun do in the middle of Summer Sun Risin'.",
       "location": "Work Time A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -245,7 +244,7 @@
       ]
     },
     {
-      "quote": "'Where do you think the sun will be in the middle of the story?'",
+      "quote": "'Where do you think the sun will be in the middle of the story?' (in the middle of the page)",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -259,7 +258,7 @@
       ]
     },
     {
-      "quote": "Guide students through the close read-aloud for Summer Sun Risin' using the Close Readaloud Guide: Summer Sun Risin' (Session 3; for teacher reference).",
+      "quote": "Guide students through the close read-aloud for Summer Sun Risin' using the Close Readaloud Guide: Summer Sun Risin' (Session 3; for teacher reference). Consider using the ReadingLiterature Checklist during the close read-aloud(see Assessment Overview and Resources).",
       "location": "Work Time A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -277,7 +276,7 @@
       "supports_action": []
     },
     {
-      "quote": "Offer specific feedback on their close reading skills used to explore the focus question: 'What is the boy doing when the sun is at its highest in the sky?'",
+      "quote": "Offer specific feedback on their close reading skills used to explore the focus question: 'What is the boy doing when the sun is at its highest in the sky?' (Example: 'Everyone looked closely at the pictures in the text to notice that because the sun is pausing, it must be noon or lunch time.')",
       "location": "Work Time B",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -295,7 +294,7 @@
       "supports_action": []
     },
     {
-      "quote": "Move students into pre-determined pairs and tell them they are going to use the Role-Play protocol to act out a few of the middle events of Summer Sun Risin'.",
+      "quote": "Move students into pre-determined pairs and tell them they are going to use the Role-Play protocol to act out a few of the middle events of Summer Sun Risin'. Remind them that they have been using this protocol in the last lesson and review as necessary using the RolePlayProtocol anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)",
       "location": "Work Time B",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -309,7 +308,7 @@
       ]
     },
     {
-      "quote": "Remind students to focus on showing respect while working with a partner during the RolePlay protocol.",
+      "quote": "Remind students to focus on showing respect while working with a partner during the RolePlay protocol. Students should continue to focus on what it looks like and sounds like to show respect.",
       "location": "Work Time B",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -341,7 +340,7 @@
       "supports_action": []
     },
     {
-      "quote": "Tell students they are going to use the Think-Pair-Share protocol to discuss how they showed respect during the Role-Play protocol.",
+      "quote": "Tell students they are going to use the Think-Pair-Share protocol to discuss how they showed respect during the Role-Play protocol. Remind them that they used this protocol in previous lessons, and review as necessary using the Think-Pair-Share Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)",
       "location": "Work Time B",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -369,7 +368,7 @@
       ]
     },
     {
-      "quote": "Invite them to Think-Pair-Share with an elbow partner: 'What did it look and sound like when you were showing respect during the Role-Play protocol?'",
+      "quote": "Invite them to Think-Pair-Share with an elbow partner:",
       "location": "Work Time B",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -437,7 +436,7 @@
       "supports_action": []
     },
     {
-      "quote": "Transition students to their workspaces and invite them to begin.",
+      "quote": "Point out the Summer Sun Risin' response sheets and pencils already at their workspaces. Transition students to their workspaces and invite them to begin.",
       "location": "Work Time C",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -459,7 +458,7 @@
       "supports_action": []
     },
     {
-      "quote": "After 5 minutes, signal students to stop working. Model cleanup, keeping directions clear and brief.",
+      "quote": "After 5 minutes, signal students to stop working. Model cleanup, keeping directions clear and brief. Invite students to walk safely to the whole group gathering area. Collect response sheets.",
       "location": "Work Time C",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -477,7 +476,7 @@
       "supports_action": []
     },
     {
-      "quote": "Tell them they are going to use the Think-Pair-Share protocol to discuss what the boy experiences when the sun is highest in the sky and what they themselves experience when the sun is highest in the sky.",
+      "quote": "Tell them they are going to use the Think-Pair-Share protocol to discuss what the boy experiences when the sun is highest in the sky and what they themselves experience when the sun is highest in the sky. Remind students that they used this protocol earlier in today's lesson, and review as necessary using the Think-Pair-Share Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)",
       "location": "Closing and Assessment A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -491,7 +490,7 @@
       ]
     },
     {
-      "quote": "Invite students to Think-Pair-Share with an elbow partner: 'Where is the sun during midday?'",
+      "quote": "Invite students to Think-Pair-Share with an elbow partner:",
       "location": "Closing and Assessment A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -505,7 +504,7 @@
       ]
     },
     {
-      "quote": "'What does the boy experience during midday?'",
+      "quote": "'What does the boy experience during midday?' (At midday, the boy is having lunch.)",
       "location": "Closing and Assessment A",
       "actor": "student",
       "evidence_role": "elicitation_check",
@@ -519,7 +518,7 @@
       ]
     },
     {
-      "quote": "'What do you experience during midday?'",
+      "quote": "'What do you experience during midday?' (Responses will vary, but may include: At midday, I like to play outside.)",
       "location": "Closing and Assessment A",
       "actor": "student",
       "evidence_role": "elicitation_check",

@@ -108,7 +108,6 @@
     }
   ],
   "what_is_NOT_taught": [
-    "Phonics/decoding",
     "Fluency",
     "Independent writing beyond response sheet",
     "Complex grammar instruction"
@@ -155,7 +154,7 @@
       ]
     },
     {
-      "quote": "Direct students' attention to the posted learning targets and read them aloud: 'I can answer questions about key details from Why the Sun and the Moon Live in the Sky.' 'I can describe the characters, setting, and major events from Why the Sun and the Moon Live in the Sky.'",
+      "quote": "I can answer questions about key details from Why the Sun and the Moon Live in the Sky.",
       "location": "Work Time A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -200,7 +199,7 @@
       ]
     },
     {
-      "quote": "Invite a student volunteer to come up and place the Story Elements Board Icons: Why the Sun and the Moon Live in the Sky for Sun, Moon, Water on the Story Elements board.",
+      "quote": "Why the Sun and the Moon",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -281,7 +280,7 @@
       ]
     },
     {
-      "quote": "Invite students to move their bodies to pretend to be the Moon or the Sun going up in the sky as the read-aloud comes to a close.",
+      "quote": "Draw students' attention back to the text and read the remainder of it. Invite students to move their bodies to pretend to be the Moon or the Sun going up in the sky as the read-aloud comes to a close.",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -340,7 +339,7 @@
       ]
     },
     {
-      "quote": "Display each Why the Sun and the Moon Live in the Sky puppet and invite students to call out the names of the characters in a choral response.",
+      "quote": "Why the Sun and the Moon",
       "location": "Work Time B",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -355,7 +354,7 @@
       ]
     },
     {
-      "quote": "Move students into pre-determined triads and guide them through the Role-Play protocol with pages 7-17 of Why the Sun and the Moon Live in the Sky.",
+      "quote": "Why the Sun and the Moon",
       "location": "Work Time B",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -385,7 +384,7 @@
       ]
     },
     {
-      "quote": "Tell students that now they are going to write what they know about the characters and setting of Why the Sun and the Moon Live in the Sky, just as they did in Lessons 8 and 10.",
+      "quote": "Why the Sun and the Moon",
       "location": "Work Time C",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -394,7 +393,7 @@
       "supports_action": []
     },
     {
-      "quote": "Distribute prepared clipboards with Why the Sun and the Moon Live in the Sky response sheets and pencils and follow the same routine established in Lessons 8 and 10 to complete Parts I and II.",
+      "quote": "Why the Sun and the Moon",
       "location": "Work Time C",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -407,7 +406,7 @@
       ]
     },
     {
-      "quote": "Circulate to support students as they write. Encourage them to use classroom resources (Story Elements board, Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).",
+      "quote": "Circulate to support students as they write. Encourage them to use classroom resources (Story Elements board, Word Walls, high-frequency word lists, and alphabet or letter sound combination charts). If students need additional support generating ideas, invite them to work in a small group with support and refer to the Story Elements board from Work Time A.",
       "location": "Work Time C",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -435,7 +434,7 @@
       ]
     },
     {
-      "quote": "Guide students through the protocol using the following question: 'How did you work to become and effective learner for yourself, your classmates, and the classroom environment during today's lesson?' (Responses will vary.)",
+      "quote": "Guide students through the protocol using the following question:",
       "location": "Closing and Assessment A",
       "actor": "student",
       "evidence_role": "elicitation_check",

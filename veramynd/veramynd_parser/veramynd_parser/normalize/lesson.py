@@ -133,6 +133,13 @@ def _ascii_punct(text: str) -> str:
 
 
 def _sanitize_normalized(norm: NormalizedLesson) -> NormalizedLesson:
+    """Normalize typographic punctuation in free text.
+
+    Evidence quotes are left untouched here — ``sanitize_normalized_lesson``
+    already rewrites them to Stage-1 verbatim spans; re-folding quotes would
+    break exact string-matching against source steps.
+    """
+
     def _skills(items):
         return [
             s.model_copy(update={"skill": _ascii_punct(s.skill)})
@@ -143,7 +150,6 @@ def _sanitize_normalized(norm: NormalizedLesson) -> NormalizedLesson:
         return [
             e.model_copy(
                 update={
-                    "quote": _ascii_punct(e.quote),
                     "location": _ascii_punct(e.location),
                     "qualifiers": [_ascii_punct(q) for q in e.qualifiers],
                 }

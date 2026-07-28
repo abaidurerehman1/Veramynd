@@ -96,7 +96,7 @@
   "student_actions": {
     "recognition_identification": "identify adjectives and connections between words during word wall and read-aloud",
     "oral_production": "answer questions about the text, participate in role-play, discuss observations with partners, share reflections on respect",
-    "written_production": "NONE OBSERVED",
+    "written_production": "Record ideas in writing and/or drawing (including optional whiteboard / response-sheet production).",
     "matching_sorting_sequencing": "sequence events or ideas during role-play and word wall activities",
     "procedural_application": "apply the Interactive Word Wall and Role-Play protocols",
     "investigation_handson": "observe photographs and videos and make observations",
@@ -185,7 +185,7 @@
       "supports_action": []
     },
     {
-      "quote": "Pause after reading page 4. Using a total participation technique, invite responses from the group:",
+      "quote": "Using a total participation technique, invite responses from the group:",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -216,7 +216,7 @@
       "supports_action": []
     },
     {
-      "quote": "Pause after reading page 8. Using a total participation technique, invite responses from the group:",
+      "quote": "Using a total participation technique, invite responses from the group:",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -247,7 +247,7 @@
       "supports_action": []
     },
     {
-      "quote": "Pause after reading page 10. Using a total participation technique, invite responses from the group:",
+      "quote": "Using a total participation technique, invite responses from the group:",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -309,7 +309,7 @@
       ]
     },
     {
-      "quote": "Flip through the illustrations on pages 1-16. Pause at each page and invite students to say out loud what the sun sees on each page and add it to the What the Sun Sees anchor chart.",
+      "quote": "Flip through the illustrations on pages 1-16. Pause at each page and invite students to say out loud what the sun sees on each page and add it to the What the Sun Sees anchor chart. Refer to the What the Sun Sees anchor chart (answers, for teacher reference) as necessary.",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -323,7 +323,7 @@
       ]
     },
     {
-      "quote": "Share with students that they will now get a chance to show their understanding of some of the different things the sun 'sees' in What the Sun Sees, What the Moon Sees using the RolePlay protocol.",
+      "quote": "Share with students that they will now get a chance to show their understanding of some of the different things the sun 'sees' in What the Sun Sees, What the Moon Sees using the RolePlay protocol. Remind students that they used this protocol in Lesson 2 and review using the Role-Play protocol anchor chart as needed. (Refer to the Classroom Protocols document for the full version of the protocol.)",
       "location": "Work Time B",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -334,7 +334,7 @@
       ]
     },
     {
-      "quote": "Invite students to begin role-playing the following sections of text: -Pages 3-4 (crowded barnyards) -Pages 7-8 (bustling streets) -Pages 13-14 (busy children)",
+      "quote": "Invite students to begin role-playing the following sections of text:",
       "location": "Work Time B",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -387,7 +387,7 @@
       ]
     },
     {
-      "quote": "Invite students to turn and talk with an elbow partner: 'What could the sun 'see' or observe?' (an elephant walking through a forest or jungle)",
+      "quote": "Invite students to turn and talk with an elbow partner:",
       "location": "Work Time C",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -479,7 +479,7 @@
       ]
     },
     {
-      "quote": "Remind students that the best learning happens when learners check to see how well they are doing and what they can do to be even better. Tell students they will use the Sit, Kneel, Stand protocol to assess how they upheld respect for themselves and their classmates throughout the lesson.",
+      "quote": "Remind students that the best learning happens when learners check to see how well they are doing and what they can do to be even better. Tell students they will use the Sit, Kneel, Stand protocol to assess how they upheld respect for themselves and their classmates throughout the lesson. Remind them that they used this protocol in Module 1 and review the Sit, Kneel, Stand Protocol anchor chart as necessary. (Refer to the Classroom Protocols document for the full version of the protocol.)",
       "location": "Closing and Assessment A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -490,7 +490,7 @@
       ]
     },
     {
-      "quote": "Guide students through the protocol using the question: 'How did you uphold respect during today's lesson?'",
+      "quote": "Guide students through the protocol using the question:",
       "location": "Closing and Assessment A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -544,6 +544,19 @@
       "supports_action": [
         "reasoning_explanation",
         "oral_production"
+      ]
+    },
+    {
+      "quote": "Before making observations, provide white boards and dry-erase markers as an option for students to record (in drawing or writing) their ideas. This will also help scaffold active viewing and listening for key details. (MMR, MMAE)",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
       ]
     }
   ],

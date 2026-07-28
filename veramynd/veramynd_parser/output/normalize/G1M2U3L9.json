@@ -131,7 +131,7 @@
       ]
     },
     {
-      "quote": "Review each prompt question by reading them aloud.",
+      "quote": "Display the 'What the Sun Sees' verse planner and focus students on page 2. Review each prompt question by reading them aloud.",
       "location": "Work Time A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -154,7 +154,7 @@
       ]
     },
     {
-      "quote": "Prompt students to use their resources as support: -Time of Day anchor chart -Adjectives anchor chart -What the Sun Sees anchor chart -Pages in their Sky notebook that describe the sun at midday",
+      "quote": "Prompt students to use their resources as support:",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -202,7 +202,7 @@
       "supports_action": []
     },
     {
-      "quote": "Using a total participation technique, invite responses from the group:",
+      "quote": "After 5-7 minutes, refocus whole group. Using a total participation technique, invite responses from the group:",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -243,7 +243,7 @@
       ]
     },
     {
-      "quote": "Invite students to turn and talk with an elbow partner: 'How did you use your research about the sun to help you write your poem?' (My verse planner and my Sky notebook helped me find adjectives to describe the sun.)",
+      "quote": "Invite students to turn and talk with an elbow partner:",
       "location": "Work Time B",
       "actor": "student",
       "evidence_role": "elicitation_check",
@@ -288,7 +288,7 @@
       ]
     },
     {
-      "quote": "Offer students specific, positive feedback on their focus when writing verse 2 of their poems.",
+      "quote": "Offer students specific, positive feedback on their focus when writing verse 2 of their poems. (Example: 'I noticed that Emily took time to describe what the sun looked like at midday with descriptive adjectives. I noticed that she referenced the Adjectives anchor chart to get suggestions for adjectives to use in her verse.')",
       "location": "Work Time C",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -311,7 +311,7 @@
       ]
     },
     {
-      "quote": "Remind students that when a partner shares his or her work, they are going to give kind, helpful and specific feedback.",
+      "quote": "Remind students that when a partner shares his or her work, they are going to give kind, helpful and specific feedback. This feedback should include one thing the writer did a good job of in the writing and one thing that they might want to consider revising, while still being kind.",
       "location": "Work Time C",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -325,7 +325,7 @@
       ]
     },
     {
-      "quote": "Tell students that they are going to use the Pinky Partners protocol to provide feedback to a partner on verse 2.",
+      "quote": "Tell students that they are going to use the Pinky Partners protocol to provide feedback to a partner on verse 2. Remind them that they used this protocol in Lesson 8 and review as necessary using the Pinky Partners Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
       "location": "Work Time C",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -354,7 +354,7 @@
       ]
     },
     {
-      "quote": "Circulate as students share; prompt them to use the criteria on the High-Quality Work anchor chart when providing feedback.",
+      "quote": "Circulate as students share; prompt them to use the criteria on the High-Quality Work anchor chart when providing feedback. Take note of how students are interacting with one another using the Speaking and Listening Checklist.",
       "location": "Work Time C",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -363,7 +363,7 @@
       "supports_action": []
     },
     {
-      "quote": "Offer students specific, positive feedback on their conversations giving feedback to one another.",
+      "quote": "Offer students specific, positive feedback on their conversations giving feedback to one another. (Example: 'I heard Ty giving Jamal helpful feedback. He told him that he did a good job of describing the midday sun with lots of details, and he suggested that Jamal go back to check his poem for correct punctuation because some of his sentences did not end with a period.')",
       "location": "Closing and Assessment A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -372,7 +372,7 @@
       "supports_action": []
     },
     {
-      "quote": "Invite students to Think-Pair-Share with an elbow partner: 'How did you do giving and receiving feedback?'",
+      "quote": "Invite students to Think-Pair-Share with an elbow partner:",
       "location": "Closing and Assessment A",
       "actor": "student",
       "evidence_role": "directive_prompt",

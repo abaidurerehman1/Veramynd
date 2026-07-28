@@ -20,10 +20,15 @@ from .models import (
     dump_bundle_json,
 )
 
-# Canonical Stage-1 instructional sections (verified on EL Education G1M2).
-CANONICAL_SECTIONS = frozenset({"Opening", "Work Time", "Closing and Assessment"})
+# Example EL Education labels — informational only. K–12 / multi-publisher
+# chunking accepts any non-empty Stage-1 section string + letter.
+KNOWN_EL_SECTIONS = frozenset({"Opening", "Work Time", "Closing and Assessment"})
+# Back-compat alias (do not use as an allowlist).
+CANONICAL_SECTIONS = KNOWN_EL_SECTIONS
 
 _LOCATION_BLOCK = re.compile(r"^\s*(?P<section>.+?)\s+(?P<letter>[A-Z])\b")
+_LETTER = re.compile(r"^[A-Z]$")
+_SECTION_MAX_LEN = 120
 
 PROGRESS_NAME = "chunk_progress.json"
 MANIFEST_NAME = "chunk_manifest.json"
@@ -31,6 +36,28 @@ MANIFEST_NAME = "chunk_manifest.json"
 
 def _sha256_text(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def normalize_section_label(section: str) -> str:
+    """Trim Stage-1 section labels for stable chunk IDs (publisher-agnostic)."""
+    return " ".join((section or "").split())
+
+
+def validate_block_identity(resource_id: str, section: str, letter: str) -> tuple[str, str]:
+    """Require a usable section+letter from Stage-1; no publisher-specific allowlist."""
+    section = normalize_section_label(section)
+    letter = (letter or "").strip()
+    if not section:
+        raise ValueError(f"{resource_id}: instructional block missing section")
+    if len(section) > _SECTION_MAX_LEN:
+        raise ValueError(
+            f"{resource_id}: section label too long ({len(section)} > {_SECTION_MAX_LEN})"
+        )
+    if not _LETTER.match(letter):
+        raise ValueError(
+            f"{resource_id}: instructional block letter must be A–Z, got {letter!r}"
+        )
+    return section, letter
 
 
 def lesson_chunk_id(resource_id: str) -> str:
@@ -139,17 +166,9 @@ def build_lesson_bundle(
     instructional: list[InstructionalChunk] = []
     block_ids: set[str] = set()
     for block in lesson.instructional_blocks:
-        section = (block.section or "").strip()
-        letter = (block.letter or "").strip()
-        if not section or not letter:
-            raise ValueError(
-                f"{resource_id}: instructional block missing section/letter"
-            )
-        if section not in CANONICAL_SECTIONS:
-            raise ValueError(
-                f"{resource_id}: non-canonical section {section!r}; "
-                f"expected one of {sorted(CANONICAL_SECTIONS)}"
-            )
+        section, letter = validate_block_identity(
+            resource_id, block.section or "", block.letter or ""
+        )
         steps = [s for s in (block.steps or []) if (s or "").strip()]
         if not steps:
             raise ValueError(
@@ -198,7 +217,7 @@ def build_lesson_bundle(
                 f"{resource_id}: evidence[{i}] location {loc!r} is not "
                 f"'{{section}} {{letter}}'"
             )
-        section, letter = parsed
+        section, letter = validate_block_identity(resource_id, parsed[0], parsed[1])
         bid = block_chunk_id(resource_id, section, letter)
         if bid not in block_ids:
             raise ValueError(
@@ -305,14 +324,18 @@ def chunk_lessons_dir(
         "instructional_chunks": progress["instructional_chunks"],
         "evidence_pointers": progress["evidence_pointers"],
         "failed": failed,
-        "canonical_sections": sorted(CANONICAL_SECTIONS),
+        "sections_policy": "stage1_labels",
+        "known_el_sections_example": sorted(KNOWN_EL_SECTIONS),
         "outputs": {
             "by_lesson": "by_lesson/",
             "manifest": MANIFEST_NAME,
         },
         "strategy": {
             "lesson": "normalize competency text (1 chunk / lesson)",
-            "instructional": "Stage-1 block raw steps (1 chunk / section+letter)",
+            "instructional": (
+                "Stage-1 block raw steps (1 chunk / section+letter); "
+                "section labels are publisher-agnostic from Stage-1"
+            ),
             "evidence_pointer": "join metadata; string-match quote inside block",
         },
     }
@@ -331,6 +354,7 @@ def chunk_lessons_dir(
 
 __all__ = [
     "CANONICAL_SECTIONS",
+    "KNOWN_EL_SECTIONS",
     "PROGRESS_NAME",
     "MANIFEST_NAME",
     "block_chunk_id",
@@ -340,4 +364,7 @@ __all__ = [
     "chunk_lessons_dir",
     "evidence_pointer_id",
     "lesson_chunk_id",
+    "normalize_section_label",
+    "validate_block_identity",
 ]
+

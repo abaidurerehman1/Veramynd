@@ -21,8 +21,15 @@ class EmbeddableChunk:
 _EMBED_FAMILIES = frozenset({"lesson", "instructional"})
 
 
-def load_embeddable_chunks(chunks_dir: Path | str) -> list[EmbeddableChunk]:
-    """Read ``by_lesson/*.json`` and return lesson + instructional chunks only."""
+def load_embeddable_chunks(
+    chunks_dir: Path | str,
+    *,
+    resource_ids: set[str] | None = None,
+) -> list[EmbeddableChunk]:
+    """Read ``by_lesson/*.json`` and return lesson + instructional chunks only.
+
+    If ``resource_ids`` is set, only those lesson codes are loaded (partial re-embed).
+    """
     root = Path(chunks_dir)
     by_lesson = root / "by_lesson"
     if not by_lesson.is_dir():
@@ -43,6 +50,8 @@ def load_embeddable_chunks(chunks_dir: Path | str) -> list[EmbeddableChunk]:
         resource_id = (data.get("resource_id") or "").strip()
         if not resource_id:
             raise ValueError(f"{path}: missing resource_id")
+        if resource_ids is not None and resource_id not in resource_ids:
+            continue
 
         rows: list[dict] = []
         lesson = data.get("lesson_chunk")
@@ -84,6 +93,10 @@ def load_embeddable_chunks(chunks_dir: Path | str) -> list[EmbeddableChunk]:
                     metadata=dict(row.get("metadata") or {}),
                 )
             )
+    if resource_ids is not None and not out:
+        raise FileNotFoundError(
+            f"no embeddable chunks for resource_ids={sorted(resource_ids)} under {by_lesson}"
+        )
     return out
 
 

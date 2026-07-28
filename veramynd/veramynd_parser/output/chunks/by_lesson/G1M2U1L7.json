@@ -289,35 +289,7 @@
       "family": "evidence_pointer",
       "resource_id": "G1M2U1L7",
       "text": "",
-      "content_hash": "ba5012739d50533d9a005ceabdcef879410aa6770b033a8b6ba97b7d1feb9545",
-      "metadata": {
-        "block_chunk_id": "G1M2U1L7#Opening#A",
-        "location": "Opening A",
-        "actor": "student",
-        "evidence_role": "directive_prompt"
-      },
-      "block_chunk_id": "G1M2U1L7#Opening#A",
-      "location": "Opening A",
-      "quote": "Turn and Talk: 'What nouns are in the song?'",
-      "actor": "student",
-      "evidence_role": "directive_prompt",
-      "support": "independent",
-      "supports_action": [
-        "oral_production",
-        "comprehension_response"
-      ],
-      "qualifiers": [
-        "orally",
-        "with partner"
-      ],
-      "evidence_index": 4
-    },
-    {
-      "chunk_id": "G1M2U1L7#evidence#5",
-      "family": "evidence_pointer",
-      "resource_id": "G1M2U1L7",
-      "text": "",
-      "content_hash": "7da3e053abed2cdb2f14d795a44ed65a2ae4138a04d65660d4513605096a6bac",
+      "content_hash": "6569ad9591c2dd506560895da27343fcc405f1af5fc72169eb2f989f55c17f55",
       "metadata": {
         "block_chunk_id": "G1M2U1L7#Work Time#A",
         "location": "Work Time A",
@@ -326,7 +298,7 @@
       },
       "block_chunk_id": "G1M2U1L7#Work Time#A",
       "location": "Work Time A",
-      "quote": "Direct students' attention to the posted learning target and read it aloud: 'I can retell important events of what the boy and the sun do throughout Summer Sun Risin'.'",
+      "quote": "I can retell important events of what the boy and the sun do throughout Summer Sun Risin'.",
       "actor": "student",
       "evidence_role": "directive_prompt",
       "support": "independent",
@@ -336,10 +308,10 @@
       "qualifiers": [
         "orally"
       ],
-      "evidence_index": 5
+      "evidence_index": 4
     },
     {
-      "chunk_id": "G1M2U1L7#evidence#6",
+      "chunk_id": "G1M2U1L7#evidence#5",
       "family": "evidence_pointer",
       "resource_id": "G1M2U1L7",
       "text": "",
@@ -358,10 +330,10 @@
       "support": "not_applicable",
       "supports_action": [],
       "qualifiers": [],
-      "evidence_index": 6
+      "evidence_index": 5
     },
     {
-      "chunk_id": "G1M2U1L7#evidence#7",
+      "chunk_id": "G1M2U1L7#evidence#6",
       "family": "evidence_pointer",
       "resource_id": "G1M2U1L7",
       "text": "",
@@ -380,14 +352,14 @@
       "support": "not_applicable",
       "supports_action": [],
       "qualifiers": [],
-      "evidence_index": 7
+      "evidence_index": 6
     },
     {
-      "chunk_id": "G1M2U1L7#evidence#8",
+      "chunk_id": "G1M2U1L7#evidence#7",
       "family": "evidence_pointer",
       "resource_id": "G1M2U1L7",
       "text": "",
-      "content_hash": "07ddf7c2b4fd114d7f4532ca80c4b0a39cf2c0f21d18cbb2b0a90db4496e0db0",
+      "content_hash": "af76d96f3f42909143f0951d94f7d4ebd0053e2c6ea5a81f0fc6eacb4116cff6",
       "metadata": {
         "block_chunk_id": "G1M2U1L7#Work Time#A",
         "location": "Work Time A",
@@ -396,7 +368,7 @@
       },
       "block_chunk_id": "G1M2U1L7#Work Time#A",
       "location": "Work Time A",
-      "quote": "Guide students through the close read-aloud for Summer Sun Risin' using the Close Readaloud Guide: Summer Sun Risin' (Session 5; for teacher reference).",
+      "quote": "Guide students through the close read-aloud for Summer Sun Risin' using the Close Readaloud Guide: Summer Sun Risin' (Session 5; for teacher reference). Consider using the Reading Literature Checklist (see Assessment Overview and Resources).",
       "actor": "student",
       "evidence_role": "directive_prompt",
       "support": "independent",
@@ -406,14 +378,14 @@
       "qualifiers": [
         "orally"
       ],
-      "evidence_index": 8
+      "evidence_index": 7
     },
     {
-      "chunk_id": "G1M2U1L7#evidence#9",
+      "chunk_id": "G1M2U1L7#evidence#8",
       "family": "evidence_pointer",
       "resource_id": "G1M2U1L7",
       "text": "",
-      "content_hash": "7ea2492e5c299f513044e922eb4176634f58ff9e3f4d9f68eb55301b533e7343",
+      "content_hash": "f683d8fedc219a741e9d6340b4efda64fb0828f780ce722951402da8e7c8b67e",
       "metadata": {
         "block_chunk_id": "G1M2U1L7#Work Time#A",
         "location": "Work Time A",
@@ -422,20 +394,20 @@
       },
       "block_chunk_id": "G1M2U1L7#Work Time#A",
       "location": "Work Time A",
-      "quote": "Offer students specific feedback on the close reading skills they used as they answered the focus question: What is the boy doing when the sun is rising, at its highest, and setting in the sky?",
+      "quote": "Offer students specific feedback on the close reading skills they used as they answered the focus question: What is the boy doing when the sun is rising, at its highest, and setting in the sky? (Example: 'Everyone looked closely at the pictures in the text and listened to the text read aloud to notice and describe all the things the boy does as the sun is changing from sunrise to sunset.')",
       "actor": "teacher",
       "evidence_role": "teacher_scribe",
       "support": "not_applicable",
       "supports_action": [],
       "qualifiers": [],
-      "evidence_index": 9
+      "evidence_index": 8
     },
     {
-      "chunk_id": "G1M2U1L7#evidence#10",
+      "chunk_id": "G1M2U1L7#evidence#9",
       "family": "evidence_pointer",
       "resource_id": "G1M2U1L7",
       "text": "",
-      "content_hash": "44c3e548df10834744c56aae2f809afbfd0aa0ae8696387c088f299f6b1f8ccd",
+      "content_hash": "71310daed584d73cc5c9b68c9249e752f6938173320f71f4bb48b0c29e7f578a",
       "metadata": {
         "block_chunk_id": "G1M2U1L7#Work Time#A",
         "location": "Work Time A",
@@ -444,7 +416,7 @@
       },
       "block_chunk_id": "G1M2U1L7#Work Time#A",
       "location": "Work Time A",
-      "quote": "For ELLs: Underline the prefix re- and tell students that it means again. Ask: 'If remeans again, what do you think it means to retell?' (to tell again)",
+      "quote": "For ELLs: Underline the prefix re-",
       "actor": "student",
       "evidence_role": "elicitation_check",
       "support": "with_prompting",
@@ -455,10 +427,10 @@
       "qualifiers": [
         "orally"
       ],
-      "evidence_index": 10
+      "evidence_index": 9
     },
     {
-      "chunk_id": "G1M2U1L7#evidence#11",
+      "chunk_id": "G1M2U1L7#evidence#10",
       "family": "evidence_pointer",
       "resource_id": "G1M2U1L7",
       "text": "",
@@ -481,14 +453,14 @@
       "qualifiers": [
         "orally"
       ],
-      "evidence_index": 11
+      "evidence_index": 10
     },
     {
-      "chunk_id": "G1M2U1L7#evidence#12",
+      "chunk_id": "G1M2U1L7#evidence#11",
       "family": "evidence_pointer",
       "resource_id": "G1M2U1L7",
       "text": "",
-      "content_hash": "a023b060eaf7f9ded00356e2cb70078acb62568af4aa146fd064735ec06327ef",
+      "content_hash": "2421aab589f54f3d47c64664a6142dd48dc3054cc48fd6f3762500fbc5e1a678",
       "metadata": {
         "block_chunk_id": "G1M2U1L7#Work Time#B",
         "location": "Work Time B",
@@ -497,7 +469,7 @@
       },
       "block_chunk_id": "G1M2U1L7#Work Time#B",
       "location": "Work Time B",
-      "quote": "Invite students to Think-Pair-Share with an elbow partner: 'Was it [the text] about the sun or the moon?' 'Why do you think the author wrote the book?'",
+      "quote": "Invite students to Think-Pair-Share with an elbow partner:",
       "actor": "student",
       "evidence_role": "directive_prompt",
       "support": "independent",
@@ -509,10 +481,10 @@
         "orally",
         "with partner"
       ],
-      "evidence_index": 12
+      "evidence_index": 11
     },
     {
-      "chunk_id": "G1M2U1L7#evidence#13",
+      "chunk_id": "G1M2U1L7#evidence#12",
       "family": "evidence_pointer",
       "resource_id": "G1M2U1L7",
       "text": "",
@@ -536,10 +508,10 @@
         "orally",
         "whole group"
       ],
-      "evidence_index": 13
+      "evidence_index": 12
     },
     {
-      "chunk_id": "G1M2U1L7#evidence#14",
+      "chunk_id": "G1M2U1L7#evidence#13",
       "family": "evidence_pointer",
       "resource_id": "G1M2U1L7",
       "text": "",
@@ -563,10 +535,10 @@
       "qualifiers": [
         "orally"
       ],
-      "evidence_index": 14
+      "evidence_index": 13
     },
     {
-      "chunk_id": "G1M2U1L7#evidence#15",
+      "chunk_id": "G1M2U1L7#evidence#14",
       "family": "evidence_pointer",
       "resource_id": "G1M2U1L7",
       "text": "",
@@ -590,14 +562,14 @@
       "qualifiers": [
         "orally"
       ],
-      "evidence_index": 15
+      "evidence_index": 14
     },
     {
-      "chunk_id": "G1M2U1L7#evidence#16",
+      "chunk_id": "G1M2U1L7#evidence#15",
       "family": "evidence_pointer",
       "resource_id": "G1M2U1L7",
       "text": "",
-      "content_hash": "9588ae21ede92040b4dd2d3a2b275de0a29cc0561ae1140d5d8980be6160ca31",
+      "content_hash": "ad3a8cbfacaede9cc6d47b5d3cb0d3611100927037f39e623b8f80fb9def7ad8",
       "metadata": {
         "block_chunk_id": "G1M2U1L7#Closing and Assessment#A",
         "location": "Closing and Assessment A",
@@ -606,7 +578,7 @@
       },
       "block_chunk_id": "G1M2U1L7#Closing and Assessment#A",
       "location": "Closing and Assessment A",
-      "quote": "Remind them that the best learning happens when learners check to see how well they are doing and what they can do to be even better. Tell them that this is called assessing and that today they will do use the Sit, Kneel, Stand protocol.",
+      "quote": "Remind them that the best learning happens when learners check to see how well they are doing and what they can do to be even better. Tell them that this is called assessing and that today they will do use the Sit, Kneel, Stand protocol. Remind students that they used this",
       "actor": "student",
       "evidence_role": "directive_prompt",
       "support": "independent",
@@ -616,10 +588,10 @@
       "qualifiers": [
         "orally"
       ],
-      "evidence_index": 16
+      "evidence_index": 15
     },
     {
-      "chunk_id": "G1M2U1L7#evidence#17",
+      "chunk_id": "G1M2U1L7#evidence#16",
       "family": "evidence_pointer",
       "resource_id": "G1M2U1L7",
       "text": "",
@@ -642,10 +614,10 @@
       "qualifiers": [
         "orally"
       ],
-      "evidence_index": 17
+      "evidence_index": 16
     },
     {
-      "chunk_id": "G1M2U1L7#evidence#18",
+      "chunk_id": "G1M2U1L7#evidence#17",
       "family": "evidence_pointer",
       "resource_id": "G1M2U1L7",
       "text": "",
@@ -669,7 +641,7 @@
       "qualifiers": [
         "orally"
       ],
-      "evidence_index": 18
+      "evidence_index": 17
     }
   ]
 }

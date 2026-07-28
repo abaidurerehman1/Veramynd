@@ -85,7 +85,7 @@
   "student_actions": {
     "recognition_identification": "identify and recognize vocabulary words and text details",
     "oral_production": "orally explain word connections, answer questions, participate in role-play and partner discussions",
-    "written_production": "NONE OBSERVED",
+    "written_production": "Record ideas in writing and/or drawing (including optional whiteboard / response-sheet production).",
     "matching_sorting_sequencing": "connect vocabulary cards using arrow cards",
     "procedural_application": "apply Interactive Word Wall, Role-Play, Close Viewing, and Pinky Partners protocols",
     "investigation_handson": "observe photographs and videos to generate ideas",
@@ -226,7 +226,7 @@
       "supports_action": []
     },
     {
-      "quote": "Direct students' attention to the posted learning targets and read them aloud: 'I can ask and answer questions about night based on the text What the Sun Sees, What the Moon Sees.' 'I can describe what the moon 'sees' using evidence from pictures, videos, and the text.'",
+      "quote": "I can ask and answer questions about night based on the text What the Sun Sees, What the Moon Sees.",
       "location": "Work Time A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -235,7 +235,7 @@
       "supports_action": []
     },
     {
-      "quote": "Pause at page 18. Using a total participation technique, invite responses from the group: 'What do you see in the illustrations that helps you know it is a quiet barnyard?' (Animals are sleeping; the animals are not moving.)",
+      "quote": "Pause at page 18. Using a total participation technique, invite responses from the group:",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "elicitation_check",
@@ -249,7 +249,7 @@
       ]
     },
     {
-      "quote": "Pause at page 22. Using a total participation technique, invite responses from the group: 'What do you see in the illustrations that helps you know it is an empty street?' (There are no people or cars in the street.)",
+      "quote": "Pause at page 22. Using a total participation technique, invite responses from the group:",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "elicitation_check",
@@ -263,7 +263,7 @@
       ]
     },
     {
-      "quote": "Pause at page 24. Using a total participation technique, invite responses from the group: 'What do you see in the illustrations that helps you know it is a silent playground?' (There are no kids playing and talking.)",
+      "quote": "Pause at page 24. Using a total participation technique, invite responses from the group:",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "elicitation_check",
@@ -313,7 +313,7 @@
       "supports_action": []
     },
     {
-      "quote": "Flip through the illustrations on pages 15-28. Pause at each page and invite students to say out loud what the moon sees on that page and add it to the What the Moon Sees anchor chart.",
+      "quote": "Flip through the illustrations on pages 15-28. Pause at each page and invite students to say out loud what the moon sees on that page and add it to the What the Moon Sees anchor chart. Refer to What the Moon Sees anchor chart (answers, for teacher reference) as necessary.",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -336,7 +336,7 @@
       "supports_action": []
     },
     {
-      "quote": "Move students into pre-determined pairs and tell them they are going to use the Role-Play protocol to act out some sections of What the Sun Sees, What the Moon Sees.",
+      "quote": "Move students into pre-determined pairs and tell them they are going to use the Role-Play protocol to act out some sections of What the Sun Sees, What the Moon Sees. Remind them that they used this protocol in Unit 1 and review the Role-Play Protocol anchor chart as needed. (Refer to the Classroom Protocols document for the full version of the protocol.)",
       "location": "Work Time B",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -381,7 +381,7 @@
       "supports_action": []
     },
     {
-      "quote": "With excitement, tell students that they will now participate in a close viewing of some photographs and videos to brainstorm more ideas of what the moon might 'see' throughout the night.",
+      "quote": "With excitement, tell students that they will now participate in a close viewing of some photographs and videos to brainstorm more ideas of what the moon might 'see' throughout the night. Tell students they are going to use the Close Viewing protocol. Remind them that they used this protocol in Module 1 and review as necessary using the Close Viewing Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
       "location": "Work Time C",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -401,7 +401,7 @@
       ]
     },
     {
-      "quote": "Invite students to turn and talk with an elbow partner: 'What could the moon 'see' or observe?' (a raccoon; dark, leafy trees)",
+      "quote": "Invite students to turn and talk with an elbow partner:",
       "location": "Work Time C",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -492,7 +492,7 @@
       "supports_action": []
     },
     {
-      "quote": "Tell students they are going to use the Pinky Partners protocol to answer this question. Remind them that they used this protocol earlier in Module 2 and review as necessary using the Pinky Partners Protocol anchor chart.",
+      "quote": "Tell students they are going to use the Pinky Partners protocol to answer this question. Remind them that they used this protocol earlier in Module 2 and review as necessary using the Pinky Partners Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
       "location": "Closing and Assessment A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -505,7 +505,7 @@
       ]
     },
     {
-      "quote": "If productive, cue students to think about their thinking: 'How will our role-play and close viewing of the photographs and videos help you write a story? I'll give you time to think and discuss with a partner.' (Responses will vary.)",
+      "quote": "If productive, cue students to think about their thinking:",
       "location": "Closing and Assessment A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -516,6 +516,19 @@
       "supports_action": [
         "reasoning_explanation",
         "oral_production"
+      ]
+    },
+    {
+      "quote": "Before the Close Viewing protocol, provide white boards and dry-erase markers as an option for students to record (in drawing or writing) their ideas. This will also help scaffold active viewing and listening for key details. (MMR, MMAE)",
+      "location": "Work Time C",
+      "actor": "student",
+      "evidence_role": "directive_prompt",
+      "support": "with_prompting",
+      "qualifiers": [
+        "in writing"
+      ],
+      "supports_action": [
+        "written_production"
       ]
     }
   ],

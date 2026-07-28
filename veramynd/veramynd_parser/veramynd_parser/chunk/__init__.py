@@ -2,10 +2,12 @@
 
 from .builder import (
     CANONICAL_SECTIONS,
+    KNOWN_EL_SECTIONS,
     block_chunk_id,
     build_lesson_bundle,
     chunk_lessons_dir,
     lesson_chunk_id,
+    validate_block_identity,
 )
 from .models import (
     CHUNK_SCHEMA_VERSION,
@@ -18,6 +20,7 @@ from .models import (
 __all__ = [
     "CANONICAL_SECTIONS",
     "CHUNK_SCHEMA_VERSION",
+    "KNOWN_EL_SECTIONS",
     "EvidencePointer",
     "InstructionalChunk",
     "LessonChunk",
@@ -26,4 +29,5 @@ __all__ = [
     "build_lesson_bundle",
     "chunk_lessons_dir",
     "lesson_chunk_id",
+    "validate_block_identity",
 ]

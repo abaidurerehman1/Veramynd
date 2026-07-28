@@ -97,7 +97,7 @@
   },
   "evidence": [
     {
-      "quote": "Direct students' attention to the posted learning targets and read the first one aloud: 'I can write a narrative poem using a model and evidence.'",
+      "quote": "I can write a narrative poem using a model and evidence.",
       "location": "Opening A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -128,7 +128,7 @@
       "supports_action": []
     },
     {
-      "quote": "Invite students to turn and talk with an elbow partner: 'What is something you saw or heard in the poem that let you know the poem is high quality?'",
+      "quote": "Invite students to turn and talk with an elbow partner:",
       "location": "Opening A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -170,7 +170,7 @@
       ]
     },
     {
-      "quote": "Invite students to turn and talk with their partner: 'What do you want to write in verse 3? Why?' (Answers will vary.)",
+      "quote": "Invite students to turn and talk with their partner:",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -278,7 +278,7 @@
       ]
     },
     {
-      "quote": "Direct students' attention to the posted learning targets and read the second one aloud: -I can provide kind, helpful, and specific feedback to my classmates.",
+      "quote": "I can provide kind, helpful, and specific feedback to my classmates.",
       "location": "Work Time C",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -314,7 +314,7 @@
       "supports_action": []
     },
     {
-      "quote": "Using a total participation technique, invite responses from the group: 'What does it mean to be kind, helpful, and specific?' (You say it in a nice way; you say something that will help the writer; you talk about a precise part.)",
+      "quote": "Using a total participation technique, invite responses from the group:",
       "location": "Work Time C",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -338,7 +338,7 @@
       "supports_action": []
     },
     {
-      "quote": "Tell students they are going to use the Pinky Partners protocol to provide feedback on their partners' writing. Remind them that they used this protocol in Unit 2 and review as necessary using the Pinky Partners Protocol anchor chart.",
+      "quote": "Tell students they are going to use the Pinky Partners protocol to provide feedback on their partners' writing. Remind them that they used this protocol in Unit 2 and review as necessary using the Pinky Partners Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
       "location": "Work Time C",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -397,7 +397,7 @@
       ]
     },
     {
-      "quote": "'What can we do differently to make giving and receiving feedback even better next time?'",
+      "quote": "'What can we do differently to make giving and receiving feedback even better next time?' (Responses will vary, but may include: We could be more respectful when the other person is reading so we don't interrupt each other; we could say two things we liked instead of just one.)",
       "location": "Closing and Assessment A",
       "actor": "student",
       "evidence_role": "directive_prompt",

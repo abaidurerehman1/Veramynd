@@ -287,6 +287,7 @@ def embed_chunks_to_qdrant(
     openai_key: str | None = None,
     embed_fn: Callable[..., list[list[float]]] | None = None,
     qdrant_client: Any | None = None,
+    resource_ids: set[str] | None = None,
 ) -> dict:
     """Embed lesson+instructional chunks and upsert into Qdrant."""
     src = Path(chunks_dir)
@@ -302,7 +303,7 @@ def embed_chunks_to_qdrant(
     )
     collection_name = settings["collection"]
 
-    chunks = load_embeddable_chunks(src)
+    chunks = load_embeddable_chunks(src, resource_ids=resource_ids)
     if not chunks:
         raise EmbedError(f"no lesson/instructional chunks found under {src}")
     _validate_chunk_lengths(chunks)
@@ -396,6 +397,7 @@ def embed_chunks_to_qdrant(
         "corpus_hash": corpus_hash,
         "failed": [],
         "source_chunks_dir": str(src),
+        "resource_ids_filter": sorted(resource_ids) if resource_ids else None,
         "note": "evidence_pointer chunks are not embedded",
     }
     atomic_write_text(dst / MANIFEST_NAME, json.dumps(manifest, indent=2) + "\n")

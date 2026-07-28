@@ -88,7 +88,6 @@
     }
   ],
   "what_is_NOT_taught": [
-    "phonics/decoding",
     "fluency",
     "independent extended writing",
     "complex vocabulary instruction beyond basic science terms",
@@ -108,7 +107,7 @@
   },
   "evidence": [
     {
-      "quote": "Tell students that you will read the poem first on your own as they listen, then they should echo each verse as you read it a second time.",
+      "quote": "Tell students that you will read the poem first on your own as they listen, then they should echo each verse as you read it a second time. Remind students of the gestures and hand motions that they created in the previous lesson.",
       "location": "Opening A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -135,7 +134,7 @@
       ]
     },
     {
-      "quote": "Circle and/or highlight the prepositions in each verse as you continue to read the poem aloud.",
+      "quote": "Circle and/or highlight the prepositions in each verse as you continue to read the poem aloud. Refer to 'Where Are They? The Sun, Moon, and Stars' poem (example, for teacher reference) as necessary.",
       "location": "Opening A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -166,7 +165,7 @@
       "supports_action": []
     },
     {
-      "quote": "Using a total participation technique, invite responses from the group: 'What makes day and night on earth?' (The sun shines on half of the earth; that half has day. The other half is in the shadow or darkness; that half has night.)",
+      "quote": "Using a total participation technique, invite responses from the group:",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "elicitation_check",
@@ -191,7 +190,7 @@
       ]
     },
     {
-      "quote": "During the culminating task, support fine motor skills and expression of knowledge by providing a scaffolded diagram. (Example: Offer pre-cut labels and shapes and/ or include a line to denote the halves of the earth.)",
+      "quote": "During the culminating task, support fine motor skills and expression of knowledge by providing a scaffolded diagram. (Example: Offer pre-cut labels and shapes and/ or include a line to denote the halves of the earth.) (MMR, MMAE)",
       "location": "Work Time A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -209,7 +208,7 @@
       "supports_action": []
     },
     {
-      "quote": "Invite students to turn and talk to an elbow partner: 'What does this learning target mean?' (We are going to have a Science Talk to discuss day and night on earth.)",
+      "quote": "Invite students to turn and talk to an elbow partner:",
       "location": "Work Time B",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -265,7 +264,7 @@
       ]
     },
     {
-      "quote": "Guide students through each step of the Science Talk protocol using the question: 'What makes night?'",
+      "quote": "Guide students through each step of the Science Talk protocol using the question:",
       "location": "Work Time B",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -300,7 +299,7 @@
       ]
     },
     {
-      "quote": "Direct their attention to the posted learning targets and read the second one aloud: 'I can record my observations from images/videos of the sky in my Sky notebook.'",
+      "quote": "I can record my observations from images/videos of the sky in my Sky Notebook.",
       "location": "Closing and Assessment A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -335,7 +334,7 @@
       ]
     },
     {
-      "quote": "Circulate and support students as necessary. Encourage them to use classroom resources (Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).",
+      "quote": "Circulate and support students as necessary. Encourage them to use classroom resources (Word Walls, high-frequency word lists, and alphabet or letter sound combination charts). Refer to Sky notebook (answers, for teacher reference) as necessary.",
       "location": "Closing and Assessment A",
       "actor": "teacher",
       "evidence_role": "teacher_scribe",
@@ -378,7 +377,7 @@
       ]
     },
     {
-      "quote": "Begin by circling one of the pictures that most closely resembles the location of the moon in the photograph and then model writing a complete sentence to describe the location of the moon. (Example: 'The moon is behind the branch.')",
+      "quote": "As students share responses, use their ideas to answer the prompt. Begin by circling one of the pictures that most closely resembles the location of the moon in the photograph and then model writing a complete sentence to describe the location of the moon. (Example: 'The moon is behind the branch.')",
       "location": "Closing and Assessment B",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -387,7 +386,7 @@
       "supports_action": []
     },
     {
-      "quote": "If productive, cue students with a challenge: 'What if the moon was above the branch? How would that change the picture? I'll give you time to think and discuss with a partner.'",
+      "quote": "If productive, cue students with a challenge:",
       "location": "Closing and Assessment B",
       "actor": "student",
       "evidence_role": "directive_prompt",

@@ -92,7 +92,7 @@
   },
   "evidence": [
     {
-      "quote": "Tell students that you will read the poem first on your own as they listen, then they should echo each verse as you read it a second time.",
+      "quote": "Tell students that you will read the poem first on your own as they listen, then they should echo each verse as you read it a second time. Invite students to think of and use gestures and hand motions that go along with the poem as you read it aloud.",
       "location": "Opening A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -157,7 +157,7 @@
       ]
     },
     {
-      "quote": "Define adjectives for students (words that describe a person, place, or thing).",
+      "quote": "Tell students that this poem uses another kind of word as it describes what the sun, moon, and stars look like. Words that describe things like the sun, moon, and stars have a special name, adjectives. Define adjectives for students (words that describe a person, place, or thing).",
       "location": "Opening A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -207,7 +207,7 @@
       ]
     },
     {
-      "quote": "Circle and/or highlight the adjectives in each verse as you continue to read the poem aloud.",
+      "quote": "Circle and/or highlight the adjectives in each verse as you continue to read the poem aloud. Refer to 'What We See: The Sun, Moon, and Stars' poem (example, for teacher reference) as necessary.",
       "location": "Opening A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -216,7 +216,7 @@
       "supports_action": []
     },
     {
-      "quote": "Direct students' attention to the Unit 2 Guiding Question anchor chart and read the guiding question aloud: 'What patterns can we observe in the sky?'",
+      "quote": "Direct students' attention to the Unit 2 Guiding Question anchor chart and read the guiding question aloud:",
       "location": "Work Time A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -267,7 +267,7 @@
       ]
     },
     {
-      "quote": "Share with students that today, they will begin reading a new book called What Makes Day and Night and will begin to collect information about different patterns that can be observed in the sky.",
+      "quote": "Share with students that today, they will begin reading a new book called What Makes Day and Night and will begin to collect information about different patterns that can be observed in the sky. Remind students that they will add this information to the Unit 2 Guiding Question anchor chart and will continue to add new information to the chart throughout the unit.",
       "location": "Work Time A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -276,7 +276,7 @@
       "supports_action": []
     },
     {
-      "quote": "Guide students through the close read-aloud for What Makes Day and Night using the Close Read-aloud Guide: What Makes Day and Night (Session 1; for teacher reference).",
+      "quote": "Guide students through the close read-aloud for What Makes Day and Night using the Close Read-aloud Guide: What Makes Day and Night (Session 1; for teacher reference). Consider using the Reading Informational Text Checklist during the close read-aloud (see Assessment Overview and Resources).",
       "location": "Work Time B",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -285,7 +285,7 @@
       "supports_action": []
     },
     {
-      "quote": "'I saw you listen to the text and study the illustrations to learn about how the earth rotates.'",
+      "quote": "Refocus whole group. Give students specific, positive feedback on their close reading skills. (Example: 'I saw you listen to the text and study the illustrations to learn about how the earth rotates.')",
       "location": "Work Time B",
       "actor": "teacher",
       "evidence_role": "teacher_scribe",
@@ -303,7 +303,7 @@
       "supports_action": []
     },
     {
-      "quote": "Before beginning the close read-aloud, provide white boards and dry-erase markers as an option for students to record (in drawing or writing) their ideas.",
+      "quote": "Before beginning the close read-aloud, provide white boards and dry-erase markers as an option for students to record (in drawing or writing) their ideas. This will also help scaffold active listening for key details. (MMR, MMAE)",
       "location": "Work Time B",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -325,7 +325,7 @@
       "supports_action": []
     },
     {
-      "quote": "Tell students that today they will look at images of the sun and moon and then record their observations using pictures and words.",
+      "quote": "Tell students that today they will look at images of the sun and moon and then record their observations using pictures and words. Remind them that earlier in the lesson they identified adjectives, or words to describe something, to describe what the sun and moon look like.",
       "location": "Work Time C",
       "actor": "teacher",
       "evidence_role": "teacher_model",

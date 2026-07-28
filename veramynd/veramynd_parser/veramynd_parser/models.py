@@ -64,7 +64,7 @@ class BlockFamily(str, Enum):
 
     COVER = "cover"                # the publisher's claim: standards, targets, agenda
     TEACHING_NOTES = "teaching_notes"  # context: purpose, vocabulary, materials
-    INSTRUCTIONAL = "instructional"    # the evidence: Opening / Work Time / Closing
+    INSTRUCTIONAL = "instructional"    # evidence: publisher section blocks + steps
 
 
 class AgendaItem(BaseModel):
@@ -72,7 +72,11 @@ class AgendaItem(BaseModel):
 
     model_config = _STRICT
 
-    section: str = Field(description="Opening / Work Time / Closing and Assessment.")
+    section: str = Field(
+        description=(
+            "Publisher section label from Stage-1 (e.g. Opening, Warm-Up, Guided Practice)."
+        )
+    )
     letter: str = Field(description="Sub-block letter, e.g. 'A'.", pattern=_LETTER_PATTERN)
     title: str = Field(default="", description="Activity title.")
     minutes: int | None = Field(default=None, ge=0, description="Duration in minutes, if printed.")
@@ -104,7 +108,11 @@ class InstructionalBlock(BaseModel):
 
     model_config = _STRICT
 
-    section: str = Field(description="Opening / Work Time / Closing and Assessment.")
+    section: str = Field(
+        description=(
+            "Publisher section label from Stage-1 (e.g. Opening, Warm-Up, Guided Practice)."
+        )
+    )
     letter: str = Field(description="Sub-block letter, e.g. 'A'.", pattern=_LETTER_PATTERN)
     title: str = Field(default="", description="Activity title, from the body header.")
     minutes: int | None = Field(default=None, ge=0)

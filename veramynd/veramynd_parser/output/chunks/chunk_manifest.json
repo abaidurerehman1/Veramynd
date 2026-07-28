@@ -3,9 +3,10 @@
   "lessons": 40,
   "lesson_chunks": 40,
   "instructional_chunks": 202,
-  "evidence_pointers": 1298,
+  "evidence_pointers": 1300,
   "failed": [],
-  "canonical_sections": [
+  "sections_policy": "stage1_labels",
+  "known_el_sections_example": [
     "Closing and Assessment",
     "Opening",
     "Work Time"
@@ -16,7 +17,7 @@
   },
   "strategy": {
     "lesson": "normalize competency text (1 chunk / lesson)",
-    "instructional": "Stage-1 block raw steps (1 chunk / section+letter)",
+    "instructional": "Stage-1 block raw steps (1 chunk / section+letter); section labels are publisher-agnostic from Stage-1",
     "evidence_pointer": "join metadata; string-match quote inside block"
   }
 }

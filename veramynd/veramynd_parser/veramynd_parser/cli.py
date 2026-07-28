@@ -537,6 +537,7 @@ def cmd_embed_chunks(args: argparse.Namespace) -> int:
             qdrant_api_key=args.qdrant_api_key,
             qdrant_path=args.qdrant_path,
             recreate=bool(args.recreate),
+            resource_ids=set(args.resource_id) if args.resource_id else None,
         )
     except (EmbedError, LlmError) as e:
         print(f"ERROR: {e}", file=sys.stderr)
@@ -812,6 +813,12 @@ def build_parser() -> argparse.ArgumentParser:
         "--recreate",
         action="store_true",
         help="delete and recreate the collection before upsert",
+    )
+    em.add_argument(
+        "--resource-id",
+        action="append",
+        default=[],
+        help="limit embed/upsert to one lesson code (repeatable), e.g. --resource-id G1M2U2L1",
     )
     em.set_defaults(func=cmd_embed_chunks)
 

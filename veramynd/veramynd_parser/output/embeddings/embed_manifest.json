@@ -7,12 +7,17 @@
   "qdrant_backend": "local_path",
   "qdrant_url": null,
   "qdrant_path": "C:\\Users\\Administrator\\Downloads\\veramynd-ready-to-run\\veramynd\\veramynd_parser\\.qdrant_data",
-  "lesson_vectors": 40,
-  "instructional_vectors": 202,
-  "total_vectors": 242,
+  "lesson_vectors": 3,
+  "instructional_vectors": 15,
+  "total_vectors": 18,
   "qdrant_point_count": 242,
-  "corpus_hash": "56c1961bf93b470079efae0de7fd77be7d9f833ebd965c7055ee97d674891b09",
+  "corpus_hash": "bb36440c8b90a2746db520dc6e1ea8e948662801484375b095845ec9bf3548fe",
   "failed": [],
   "source_chunks_dir": "output\\chunks",
+  "resource_ids_filter": [
+    "G1M2U2L1",
+    "G1M2U3L2",
+    "G1M2U3L6"
+  ],
   "note": "evidence_pointer chunks are not embedded"
 }

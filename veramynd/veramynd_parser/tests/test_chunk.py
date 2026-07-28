@@ -8,7 +8,7 @@ from pathlib import Path
 import pytest
 
 from veramynd_parser.chunk.builder import (
-    CANONICAL_SECTIONS,
+    KNOWN_EL_SECTIONS,
     block_chunk_id,
     build_block_text,
     build_lesson_bundle,
@@ -136,7 +136,7 @@ def test_build_bundle_joins_evidence_to_blocks():
     assert bundle.lesson_chunk.chunk_id == lesson_chunk_id(lesson.code)
     assert bundle.lesson_chunk.family == "lesson"
     assert len(bundle.instructional_chunks) == 3
-    assert {c.section for c in bundle.instructional_chunks} == set(CANONICAL_SECTIONS)
+    assert {c.section for c in bundle.instructional_chunks} == set(KNOWN_EL_SECTIONS)
     closing_id = block_chunk_id(lesson.code, "Closing and Assessment", "A")
     assert any(c.chunk_id == closing_id for c in bundle.instructional_chunks)
     assert len(bundle.evidence_pointers) == 2
@@ -168,13 +168,61 @@ def test_build_bundle_rejects_unjoined_location():
         build_lesson_bundle(lesson, norm)
 
 
-def test_build_bundle_rejects_non_canonical_section():
+def test_build_bundle_accepts_publisher_section_labels():
+    """K–12 / multi-publisher: Stage-1 section strings are not EL-only."""
+    lesson = _sample_lesson()
+    other = lesson.model_copy(
+        update={
+            "instructional_blocks": [
+                InstructionalBlock(
+                    section="Warm-Up",
+                    letter="A",
+                    title="Do Now",
+                    page=1,
+                    steps=["Students complete the do-now on the board."],
+                ),
+                InstructionalBlock(
+                    section="Guided Practice",
+                    letter="B",
+                    title="Model",
+                    page=2,
+                    steps=["Teacher models the strategy aloud."],
+                ),
+            ]
+        }
+    )
+    norm = minimal_normalized_lesson(resource_id=lesson.code)
+    norm = norm.model_copy(
+        update={
+            "evidence": [
+                EvidenceItem(
+                    quote="Students complete the do-now on the board.",
+                    location="Warm-Up A",
+                    actor="student",
+                    evidence_role="directive_prompt",
+                    support="independent",
+                    supports_action=["written_production"],
+                )
+            ]
+        }
+    )
+    bundle = build_lesson_bundle(other, norm)
+    assert {c.section for c in bundle.instructional_chunks} == {
+        "Warm-Up",
+        "Guided Practice",
+    }
+    assert bundle.evidence_pointers[0].block_chunk_id == block_chunk_id(
+        lesson.code, "Warm-Up", "A"
+    )
+
+
+def test_build_bundle_rejects_empty_section():
     lesson = _sample_lesson()
     bad = lesson.model_copy(
         update={
             "instructional_blocks": [
                 InstructionalBlock(
-                    section="Warm Up",
+                    section="   ",
                     letter="A",
                     title="x",
                     page=1,
@@ -183,7 +231,7 @@ def test_build_bundle_rejects_non_canonical_section():
             ]
         }
     )
-    with pytest.raises(ValueError, match="non-canonical"):
+    with pytest.raises(ValueError, match="missing section"):
         build_lesson_bundle(bad, minimal_normalized_lesson(resource_id=lesson.code))
 
 
@@ -208,6 +256,7 @@ def test_chunk_lessons_dir_writes_bundles(tmp_path: Path):
     assert manifest["lesson_chunks"] == 1
     assert manifest["instructional_chunks"] == 3
     assert manifest["evidence_pointers"] == 1
+    assert manifest["sections_policy"] == "stage1_labels"
     assert not manifest["failed"]
     assert "embed_lesson_jsonl" not in manifest["outputs"]
 

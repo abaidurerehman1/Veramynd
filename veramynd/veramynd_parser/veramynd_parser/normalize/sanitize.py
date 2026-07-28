@@ -9,6 +9,8 @@ Enforces blank-template / README rules the model often misses:
    In-advance prep bullets; New vs Review preserved when present)
 6. ``evidence[].location`` joins to Stage-1 ``{section} {letter}`` block IDs
    (e.g. LLM ``Closing A`` → Stage-1 ``Closing and Assessment A``)
+7. ``what_is_NOT_taught`` cannot claim phonics/decoding when Stage-1 text
+   (including Meeting Students' Needs / feedback) shows encoding work
 """
 
 from __future__ import annotations
@@ -66,10 +68,98 @@ _READINESS_MANAGEMENT = re.compile(
     re.I | re.S,
 )
 
+# Student write/draw elicitation in Stage-1 steps (grade-agnostic).
+# Prefer precision: only clear student-production cues (whiteboard scaffolds,
+# invite/have students to write/draw, response-sheet completion). Mentions of
+# authors/writers, "next lesson", or "high-quality writing" samples must NOT match.
+_WRITTEN_ELICIT = re.compile(
+    r"(?:"
+    r"white\s*boards?.{0,160}?record\s*\([^)]*(?:drawing|writing)"
+    r"|(?:invite|have)\s+students\s+to\s+"
+    r"(?:write|begin\s+writing|begin\s+drawing)\b"
+    r"|(?:invite|have)\s+students\s+to\s+draw\b(?!\s+from\b)(?!\s+on\b)(?!\s+upon\b)"
+    r"|invite\s+students\s+to\s+complete.{0,80}?response\s+sheet"
+    r"|students\s+begin\s+(?:writing|drawing)\b"
+    r"|begin\s+working.{0,60}?(?:response\s+sheet|writing\s+and\s+drawing)"
+    r"|tell\s+students\s+that\s+today\s+they\s+will\s+"
+    r"(?:write|draw|complete.{0,40}?response\s+sheet)"
+    r")",
+    re.I | re.S,
+)
+
+# Steps that mention write/draw but do NOT elicit student written production now.
+_WRITTEN_FALSE_POSITIVE = re.compile(
+    r"(?:"
+    r"\bnext\s+lesson\b"
+    r"|\bsubsequent\s+lesson\b"
+    r"|\bnext\s+few\s+lessons\b"
+    r"|\bin\s+a\s+later\s+lesson\b"
+    r"|\bwill\s+soon\s+begin\b"
+    r"|\bprepare\s+to\s+begin\s+writing\b"
+    r"|draw\s+students['’]?\s+attention\b"
+    r"|authors?\s+write\b"
+    r"|writers?\s+use\b"
+    r"|why\s+do\s+(?:authors|writers)\b"
+    r"|what\s+does\s+a\s+writer\b"
+    r"|if\s+he\s+can\s+write\b"
+    r"|draw\s+from\s+this\s+language\b"
+    r"|high[- ]quality\s+writing\b"
+    r"|above\s+the\s+target,\s*draw\s+a\s+simple\s+picture"
+    r"|ready\s+to\s+begin\s+(?:writing|drawing)"
+    r"|thumbs[- ]up.{0,80}ready"
+    r")",
+    re.I | re.S,
+)
+
 # Leading "{section} {letter}" join key used by Stage-1 instructional_blocks.
 _LOCATION_BLOCK = re.compile(
     r"^\s*(?P<section>.+?)\s+(?P<letter>[A-Z])\b(?P<rest>.*)$"
 )
+
+# Omission labels that assert phonics/decoding was not taught.
+_PHONICS_OMISSION_LABEL = re.compile(
+    r"\bphonics\b|\bdecoding\b|\bencoding\b|\bdecode\b|\bencode\b",
+    re.I,
+)
+
+# Stage-1 evidence that phonics/encoding occurred (including MSN / feedback boxes
+# that live inside instructional steps). Conservative: any hit blocks the omission.
+_PHONICS_ENCODING_EVIDENCE = re.compile(
+    r"(?:"
+    r"\bphonics\b"
+    r"|\bdecoding\b"
+    r"|\bencoding\b"
+    r"|\bdecode(?:s|d|ing)?\b"
+    r"|\bencode(?:s|d|ing)?\b"
+    r"|\bsound(?:s|ed|ing)?\s+out\b"
+    r"|\bstretch(?:ed|ing)?\s+and\s+spell"
+    r"|\btricky\s+spelling\b"
+    r"|\bletter[\s-]*sound\b"
+    r"|\bgrapheme\b"
+    r"|\bphoneme\b"
+    r"|\bblend(?:s|ed|ing)?\s+(?:the\s+)?(?:sounds?|word)"
+    r"|\bsegment(?:s|ed|ing)?\s+(?:the\s+)?(?:sounds?|word)"
+    r"|\bCVC\b"
+    r"|\bdigraph\b"
+    r"|\balphabet\s+or\s+letter\s+sound"
+    r"|\bspelled\s+the\s+word\b"
+    r"|\bspell\s+the\s+word\b"
+    r"|\bWord\s+Wall\b.{0,80}?\bspell\b"
+    r"|\bproperly\s+spell\b"
+    r")",
+    re.I | re.S,
+)
+
+# Quote-like characters folded for verbatim span recovery.
+_QUOTE_CHARS = "\"'“”‘’"
+
+
+def _fold_quotes(text: str) -> str:
+    """Map all quote glyphs to ASCII apostrophe for tolerant matching."""
+    out = []
+    for ch in text or "":
+        out.append("'" if ch in _QUOTE_CHARS else ch)
+    return "".join(out)
 
 
 def agenda_pacing(lesson: Lesson) -> str:
@@ -138,52 +228,132 @@ def lesson_source_corpus(lesson: Lesson) -> str:
 
 
 def quote_is_verbatim(quote: str, corpus: str) -> bool:
-    """True if quote (whitespace-normalized) appears in the source corpus."""
+    """True if quote (whitespace- + quote-folded) appears in the source corpus."""
     q = _norm_ws(quote)
     if not q:
         return False
     c = _norm_ws(corpus)
     if q in c:
         return True
-    # Allow surrounding quotes difference.
-    stripped = q.strip("\"'")
-    return bool(stripped) and stripped in c
+    stripped = q.strip(_QUOTE_CHARS)
+    if stripped and stripped in c:
+        return True
+    qf = _fold_quotes(q)
+    cf = _fold_quotes(c)
+    if qf in cf:
+        return True
+    sf = _fold_quotes(stripped)
+    return bool(sf) and sf in cf
 
 
 def resolve_verbatim_quote(quote: str, source_lines: list[str], corpus: str) -> str | None:
-    """Return an exact source span, or None if the quote cannot be grounded."""
+    """Return an exact Stage-1 source line (preferred) for grounding.
+
+    Never keeps the LLM's paraphrase/truncation / quote-style rewrite when a
+    Stage-1 line can be recovered — production engines exact-match quotes.
+    """
+    del corpus  # matching is line-based; corpus kept for call-site compatibility
     redacted = redact_standard_codes(quote)
     if not _norm_ws(redacted):
         return None
-    if quote_is_verbatim(redacted, corpus):
-        # Prefer the original source casing/punctuation when an exact line matches.
-        target = _norm_ws(redacted).lower()
-        for line in source_lines:
-            if _norm_ws(line).lower() == target:
-                return line
-            if _norm_ws(line).lower() == target.strip("\"'"):
-                return line
-        return redacted
+
+    qn = _norm_ws(redacted).lower()
+    qn_stripped = qn.strip(_QUOTE_CHARS)
+    qn_fold = _fold_quotes(qn)
+    qn_fold_stripped = _fold_quotes(qn_stripped)
 
     best_line = ""
     best_ratio = 0.0
-    qn = _norm_ws(redacted).lower()
+    contained: str | None = None
+
     for line in source_lines:
-        ln = _norm_ws(line).lower()
-        if not ln:
+        ln = _norm_ws(line)
+        ln_l = ln.lower()
+        if not ln_l:
             continue
-        # Quote is a contiguous span of a source step (or vice versa): accept exactly.
-        if qn in ln:
+        ln_fold = _fold_quotes(ln_l)
+        ln_strip = ln_l.strip(_QUOTE_CHARS)
+
+        if qn == ln_l or qn_stripped == ln_strip or qn_fold == ln_fold:
             return line
-        if ln in qn and len(ln) >= 24:
+
+        # Quote is a contiguous span of a source step (quote-style tolerant).
+        if (
+            qn in ln_l
+            or qn_stripped in ln_l
+            or qn_fold in ln_fold
+            or (qn_fold_stripped and qn_fold_stripped in ln_fold)
+        ):
+            if contained is None or len(line) < len(contained):
+                contained = line
+            continue
+
+        # Source line is a contiguous span of a longer LLM quote.
+        if ln_l in qn and len(ln_l) >= 24:
             return line
-        ratio = SequenceMatcher(None, qn, ln).ratio()
+        if ln_fold in qn_fold and len(ln_fold) >= 24:
+            return line
+
+        # Also compare against code-redacted source (LLM often drops CCSS codes).
+        ln_redacted = _norm_ws(redact_standard_codes(line)).lower()
+        if ln_redacted:
+            if qn == ln_redacted or qn_stripped == ln_redacted.strip(_QUOTE_CHARS):
+                return line
+            if qn in ln_redacted or _fold_quotes(qn) in _fold_quotes(ln_redacted):
+                if contained is None or len(line) < len(contained):
+                    contained = line
+                continue
+            ratio_red = SequenceMatcher(None, qn, ln_redacted).ratio()
+            if ratio_red > best_ratio:
+                best_ratio = ratio_red
+                best_line = line
+
+        ratio = SequenceMatcher(None, qn_fold, ln_fold).ratio()
         if ratio > best_ratio:
             best_ratio = ratio
             best_line = line
+
+    if contained is not None:
+        return contained
     if best_ratio >= _VERBATIM_RATIO and best_line:
         return best_line
     return None
+
+
+def lesson_has_phonics_encoding_evidence(lesson: Lesson) -> bool:
+    """True when Stage-1 text shows phonics/decoding/encoding (incl. MSN/feedback)."""
+    return bool(_PHONICS_ENCODING_EVIDENCE.search(lesson_source_corpus(lesson)))
+
+
+def scrub_contradicted_not_taught(
+    not_taught: list[str],
+    lesson: Lesson,
+    *,
+    domain_strands: set[str] | None = None,
+) -> tuple[list[str], list[str]]:
+    """Drop phonics/decoding omissions that contradict Stage-1 (or domain).
+
+    Production rule: never claim phonics/decoding is \"not taught\" when the
+    lesson text (steps, Meeting Students' Needs, feedback examples, Word Wall
+    spelling supports, etc.) shows encoding/decoding work — or when Phonics is
+    already in domain.primary/secondary.
+    """
+    strands = domain_strands or set()
+    has_evidence = lesson_has_phonics_encoding_evidence(lesson) or ("Phonics" in strands)
+    if not has_evidence:
+        return list(not_taught), []
+
+    kept: list[str] = []
+    warnings: list[str] = []
+    for item in not_taught:
+        if _PHONICS_OMISSION_LABEL.search(item or ""):
+            warnings.append(
+                f"removed what_is_NOT_taught {item!r} — Stage-1 shows "
+                f"phonics/decoding/encoding evidence (or Phonics in domain)"
+            )
+            continue
+        kept.append(item)
+    return kept, warnings
 
 
 def sanitize_evidence_against_source(
@@ -262,6 +432,129 @@ def clear_readiness_supports_action(
         )
         out.append(item.model_copy(update={"supports_action": []}))
     return out, warnings
+
+
+def find_written_elicitation_steps(lesson: Lesson) -> list[tuple[str, str, str]]:
+    """Return ``(section, letter, step)`` for steps that elicit student write/draw.
+
+    Grade-agnostic Stage-1 scan used by the sanitizer so future uploads cannot
+    mark ``written_production`` as NONE OBSERVED when steps clearly call for it.
+    """
+    hits: list[tuple[str, str, str]] = []
+    for block in lesson.instructional_blocks:
+        section = (block.section or "").strip()
+        letter = (block.letter or "").strip()
+        if not section or not letter:
+            continue
+        for step in block.steps or []:
+            text = (step or "").strip()
+            if not text:
+                continue
+            if _WRITTEN_FALSE_POSITIVE.search(text):
+                continue
+            if _WRITTEN_ELICIT.search(text):
+                hits.append((section, letter, text))
+    return hits
+
+
+def ensure_written_production_from_steps(
+    norm: NormalizedLesson,
+    lesson: Lesson,
+) -> tuple[NormalizedLesson, list[str]]:
+    """Fill ``written_production`` + backing evidence when Stage-1 steps elicit it.
+
+    Prompt rule: a student action is NONE OBSERVED only if no step calls for it.
+    Optional scaffolds (e.g. whiteboards for drawing/writing) still count.
+    """
+    warnings: list[str] = []
+    hits = find_written_elicitation_steps(lesson)
+    if not hits:
+        return norm, warnings
+
+    current = (norm.student_actions.written_production or "").strip()
+    covered = any(
+        "written_production" in (e.supports_action or []) for e in norm.evidence
+    )
+
+    if current and current != NONE_OBSERVED and covered:
+        return norm, warnings
+
+    section, letter, step = hits[0]
+    location = f"{section} {letter}"
+    description = (
+        "Record ideas in writing and/or drawing "
+        "(including optional whiteboard / response-sheet production)."
+    )
+
+    sa = norm.student_actions.model_dump()
+    if not current or current == NONE_OBSERVED:
+        sa["written_production"] = description
+        warnings.append(
+            "written_production filled from Stage-1 write/draw elicitation "
+            f"at {location!r}"
+        )
+
+    evidence = list(norm.evidence)
+    if not covered:
+        # Prefer an existing verbatim evidence row on this step if present.
+        matched = False
+        for i, item in enumerate(evidence):
+            if (item.quote or "").strip() == step:
+                keys = list(dict.fromkeys([*item.supports_action, "written_production"]))
+                evidence[i] = item.model_copy(
+                    update={
+                        "supports_action": keys,
+                        "actor": "student"
+                        if item.evidence_role
+                        in {
+                            "directive_prompt",
+                            "elicitation_check",
+                            "student_production",
+                            "assessment_item",
+                        }
+                        else item.actor,
+                    }
+                )
+                matched = True
+                warnings.append(
+                    f"evidence[{i}] tagged written_production "
+                    f"(Stage-1 write/draw step at {location!r})"
+                )
+                break
+        if not matched:
+            evidence.append(
+                EvidenceItem(
+                    quote=step,
+                    location=location,
+                    actor="student",
+                    evidence_role="directive_prompt",
+                    support="with_prompting",
+                    qualifiers=["in writing"],
+                    supports_action=["written_production"],
+                )
+            )
+            warnings.append(
+                f"evidence added for written_production from Stage-1 step at {location!r}"
+            )
+
+    sp = norm.subject_profile
+    if sp.mode == "interpretation":
+        sp = sp.model_copy(update={"mode": "both"})
+        warnings.append(
+            "subject_profile.mode interpretation -> both "
+            "(student write/draw elicitation present)"
+        )
+
+    return (
+        norm.model_copy(
+            update={
+                "student_actions": StudentActions(**sa),
+                "evidence": evidence,
+                "subject_profile": sp,
+            }
+        ),
+        warnings,
+    )
 
 
 def stage1_block_ids(lesson: Lesson) -> set[str]:
@@ -437,6 +730,14 @@ def sanitize_normalized_lesson(
     for key in STUDENT_ACTION_KEYS:
         sa[key] = redact_standard_codes(sa[key])
 
+    domain_strands = {norm.domain.primary, *(norm.domain.secondary or [])}
+    not_taught, not_taught_warnings = scrub_contradicted_not_taught(
+        [redact_standard_codes(x) for x in norm.what_is_NOT_taught],
+        lesson,
+        domain_strands=domain_strands,
+    )
+    warnings.extend(not_taught_warnings)
+
     # Re-stamp identity lists from Stage 1 so repair/normalize always drop
     # page furniture and In-advance prep bullets, and respect New vs Review.
     materials = [redact_standard_codes(m) for m in clean_materials(list(lesson.materials))]
@@ -450,7 +751,7 @@ def sanitize_normalized_lesson(
         update={
             "objective": redact_standard_codes(norm.objective),
             "what_is_taught": taught,
-            "what_is_NOT_taught": [redact_standard_codes(x) for x in norm.what_is_NOT_taught],
+            "what_is_NOT_taught": not_taught,
             "student_actions": StudentActions(**sa),
             "evidence": evidence,
             "notes": redact_standard_codes(norm.notes),
@@ -469,6 +770,12 @@ def sanitize_normalized_lesson(
             "vocabulary": vocabulary,
         }
     )
+
+    # After evidence is clean/joined: enforce write/draw elicitation from Stage-1
+    # so NONE OBSERVED cannot contradict steps on any future upload.
+    norm, written_warnings = ensure_written_production_from_steps(norm, lesson)
+    warnings.extend(written_warnings)
+
     before = {
         k
         for k in STUDENT_ACTION_KEYS

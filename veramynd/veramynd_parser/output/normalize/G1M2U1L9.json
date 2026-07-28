@@ -93,7 +93,6 @@
     }
   ],
   "what_is_NOT_taught": [
-    "phonics/decoding",
     "fluency",
     "independent extended writing",
     "complex grammar instruction"
@@ -130,7 +129,7 @@
       "supports_action": []
     },
     {
-      "quote": "'Use the future tense to say something you will see in the classroom tomorrow.' Model as needed.",
+      "quote": "'Use the future tense to say something you will see in the classroom tomorrow.' Model as needed. (Responses will vary, but may include: 'I will see the art teacher. I will see my best friends. Etc.')",
       "location": "Opening A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -178,7 +177,7 @@
       ]
     },
     {
-      "quote": "Invite students to turn and talk to an elbow partner: 'What will we track with the Story Elements board today? (major events from the beginning, middle, and end of the story)'",
+      "quote": "Invite students to turn and talk to an elbow partner:",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -218,7 +217,7 @@
       ]
     },
     {
-      "quote": "'Who can repeat what your classmate said?'",
+      "quote": "'Who can repeat what your classmate said?' (Responses will vary.)",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "elicitation_check",
@@ -258,7 +257,7 @@
       ]
     },
     {
-      "quote": "Invite students to Think-Pair-Share with an elbow partner: 'What was the central message of this story? What do you think the author, Eric Carle, was trying to show and tell us about the moon?'",
+      "quote": "Invite students to Think-Pair-Share with an elbow partner:",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -313,7 +312,7 @@
       ]
     },
     {
-      "quote": "Move students into pre-determined pairs and tell them they are going to use the Role-Play protocol to act out the key details of Papa, Please Get the Moon for Me.",
+      "quote": "Move students into pre-determined pairs and tell them they are going to use the Role-Play protocol to act out the key details of Papa, Please Get the Moon for Me. Remind them that they have been using this protocol in the past few lessons, and review as necessary using the Role-Play protocol anchor chart. Refer to the Classroom Protocols document for the full version of the protocol.",
       "location": "Work Time B",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -327,7 +326,7 @@
       ]
     },
     {
-      "quote": "Give students specific, positive feedback on their ability to role-play the key details of Papa, Please Get the Moon for Me.",
+      "quote": "Give students specific, positive feedback on their ability to role-play the key details of Papa, Please Get the Moon for Me. (Example: 'Ava, you made your body smaller and smaller to show how the moon grew smaller and smaller in the middle of the story.')",
       "location": "Work Time B",
       "actor": "teacher",
       "evidence_role": "teacher_scribe",
@@ -395,7 +394,7 @@
       ]
     },
     {
-      "quote": "Circulate to support students as they write. Encourage them to use classroom resources (Story Elements board, Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).",
+      "quote": "Circulate to support students as they write. Encourage them to use classroom resources (Story Elements board, Word Walls, high-frequency word lists, and alphabet or letter sound combination charts). If students need additional support generating ideas, invite them to work in a small group with teacher support and refer to the Story Elements board from Work Time A.",
       "location": "Work Time C",
       "actor": "teacher",
       "evidence_role": "teacher_scribe",
@@ -404,7 +403,7 @@
       "supports_action": []
     },
     {
-      "quote": "Provide specific, positive feedback about students' ability to complete Part III of their response sheets.",
+      "quote": "Provide specific, positive feedback about students' ability to complete Part III of their response sheets. (Example: 'Charlotte, I saw that you chose to draw your picture first and then write the words for each part of the story.')",
       "location": "Work Time C",
       "actor": "teacher",
       "evidence_role": "teacher_scribe",
@@ -431,7 +430,7 @@
       "supports_action": []
     },
     {
-      "quote": "'Was this story about the sun, the moon, or both?'",
+      "quote": "'Was this story about the sun, the moon, or both?' (the moon)",
       "location": "Closing and Assessment A",
       "actor": "student",
       "evidence_role": "elicitation_check",
@@ -460,7 +459,7 @@
       ]
     },
     {
-      "quote": "'Can you say more about that?'",
+      "quote": "'Can you say more about that?' (Responses will vary.)",
       "location": "Closing and Assessment A",
       "actor": "student",
       "evidence_role": "elicitation_check",

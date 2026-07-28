@@ -98,7 +98,7 @@
   },
   "evidence": [
     {
-      "quote": "Tell students they are going to use the Interactive Word Wall protocol with new words added to the set to continue strengthening their comprehension and build their knowledge of vocabulary.",
+      "quote": "Tell students they are going to use the Interactive Word Wall protocol with new words added to the set to continue strengthening their comprehension and build their knowledge of vocabulary. Remind them that they used this protocol in Lesson 2 and review as necessary",
       "location": "Opening A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -110,7 +110,7 @@
       ]
     },
     {
-      "quote": "Invite students to begin the Interactive Word Wall protocol.",
+      "quote": "-Invite students to begin the Interactive Word Wall protocol.",
       "location": "Opening A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -121,7 +121,7 @@
       ]
     },
     {
-      "quote": "Circulate and listen in as students discuss the vocabulary. Provide support and guidance as needed by reminding students of the definitions and encouraging them to use the word in a sentence.",
+      "quote": "-Circulate and listen in as students discuss the vocabulary. Provide support and guidance as needed by reminding students of the definitions and encouraging them to use the word in a sentence.",
       "location": "Opening A",
       "actor": "student",
       "evidence_role": "student_production",
@@ -157,7 +157,7 @@
       "supports_action": []
     },
     {
-      "quote": "Direct students' attention to the posted learning targets and read both aloud: 'I can define what it means for work to be 'high quality.'' 'I can analyze models of high-quality work.'",
+      "quote": "I can define what it means for work to be 'high quality.'",
       "location": "Work Time A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -178,7 +178,7 @@
       ]
     },
     {
-      "quote": "Define high quality (something that is viewed as excellent).",
+      "quote": "Define high quality (something that is viewed as excellent). With excitement, tell students that you have an example of high-quality writing to share today from another first-grade class!",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "elicitation_check",
@@ -221,7 +221,7 @@
       "supports_action": []
     },
     {
-      "quote": "'What, in the Model of Excellence #1, makes you think so?' (Responses will vary.) 'Who can tell us what your classmate said in your own words?' (Responses will vary.)",
+      "quote": "If productive, cue students to provide evidence and to listen carefully and seek to understand: 'What, in the Model of Excellence #1, makes you think so?' (Responses will vary.) 'Who can tell us what your classmate said in your own words?' (Responses will vary.)",
       "location": "Work Time B",
       "actor": "student",
       "evidence_role": "elicitation_check",
@@ -342,7 +342,7 @@
       "supports_action": []
     },
     {
-      "quote": "'Includes details'",
+      "quote": "-'Includes details'",
       "location": "Work Time C",
       "actor": "teacher",
       "evidence_role": "teacher_scribe",
@@ -351,7 +351,7 @@
       "supports_action": []
     },
     {
-      "quote": "'Follows conventions'",
+      "quote": "-'Follows conventions'",
       "location": "Work Time C",
       "actor": "teacher",
       "evidence_role": "teacher_scribe",
@@ -387,7 +387,7 @@
       "supports_action": []
     },
     {
-      "quote": "Write 'follows conventions' on the High-Quality Work anchor chart and explain that by following conventions, writers ensure that their writing looks good and is readable. Tell students that in this unit, they will follow conventions by using end punctuation (periods), writing in complete sentences, and spelling words from the Word Wall and anchor charts correctly.",
+      "quote": "Write 'follows conventions' on the High-Quality Work anchor chart and explain that by following conventions, writers ensure that their writing looks good and is readable. Tell",
       "location": "Work Time C",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -423,7 +423,7 @@
       "supports_action": []
     },
     {
-      "quote": "Tell students they are going to use the Back-to-Back and Face-to-Face protocol to discuss what makes this writing high quality. Remind them that they used this protocol in past lessons and review as necessary using the Back-to-Back and Face-to-Face Protocol anchor chart.",
+      "quote": "Tell students they are going to use the Back-to-Back and Face-to-Face protocol to discuss what makes this writing high quality. Remind them that they used this protocol in past lessons and review as necessary using the Back-to-Back and Face-to-Face Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
       "location": "Closing and Assessment A",
       "actor": "student",
       "evidence_role": "directive_prompt",

@@ -337,3 +337,239 @@ def test_sanitize_canonicalizes_closing_location_to_stage1_block_id():
     closing = next(e for e in fixed.evidence if "share one learning" in e.quote)
     assert closing.location == "Closing and Assessment A"
     assert any("Closing A" in w and "Closing and Assessment A" in w for w in warnings)
+
+
+def test_sanitize_fills_written_production_from_whiteboard_step():
+    """Enterprise guard: optional whiteboard write/draw must not stay NONE OBSERVED."""
+    step = (
+        "Before reading, provide white boards and dry-erase markers as an option "
+        "for students to record (in drawing or writing) their ideas."
+    )
+    lesson = _lesson_with_steps(
+        steps=[
+            "'What does the sun look like?'",
+            step,
+        ]
+    )
+    norm = minimal_normalized_lesson(resource_id="G1M2U2L3").model_copy(
+        update={
+            "student_actions": StudentActions(
+                oral_production="Answer questions about the sun.",
+                written_production="NONE OBSERVED",
+            ),
+            "subject_profile": SubjectProfile(mode="interpretation", genre="n/a"),
+            "evidence": [
+                EvidenceItem(
+                    quote="'What does the sun look like?'",
+                    location="Work Time A",
+                    actor="student",
+                    evidence_role="elicitation_check",
+                    support="with_prompting",
+                    supports_action=["oral_production"],
+                ),
+            ],
+        }
+    )
+    fixed, warnings = sanitize_normalized_lesson(norm, lesson)
+    assert fixed.student_actions.written_production != "NONE OBSERVED"
+    assert any(
+        "written_production" in (e.supports_action or []) for e in fixed.evidence
+    )
+    assert fixed.subject_profile.mode == "both"
+    assert any("written_production" in w for w in warnings)
+
+
+def test_sanitize_ignores_next_lesson_write_mentions():
+    lesson = _lesson_with_steps(
+        steps=[
+            "'What does the sun look like?'",
+            "Tell students that in the next lesson they will write and draw about key details.",
+        ]
+    )
+    norm = minimal_normalized_lesson(resource_id="G1M2U2L3").model_copy(
+        update={
+            "student_actions": StudentActions(
+                oral_production="Answer questions about the sun.",
+                written_production="NONE OBSERVED",
+            ),
+            "evidence": [
+                EvidenceItem(
+                    quote="'What does the sun look like?'",
+                    location="Work Time A",
+                    actor="student",
+                    evidence_role="elicitation_check",
+                    support="with_prompting",
+                    supports_action=["oral_production"],
+                ),
+            ],
+        }
+    )
+    fixed, _warnings = sanitize_normalized_lesson(norm, lesson)
+    assert fixed.student_actions.written_production == "NONE OBSERVED"
+
+
+def test_sanitize_ignores_draw_from_language_idiom():
+    lesson = _lesson_with_steps(
+        steps=[
+            "'What does the sun look like?'",
+            "Invite students to draw from this language as they complete their culminating tasks.",
+        ]
+    )
+    norm = minimal_normalized_lesson(resource_id="G1M2U2L3").model_copy(
+        update={
+            "student_actions": StudentActions(
+                oral_production="Answer questions about the sun.",
+                written_production="NONE OBSERVED",
+            ),
+            "evidence": [
+                EvidenceItem(
+                    quote="'What does the sun look like?'",
+                    location="Work Time A",
+                    actor="student",
+                    evidence_role="elicitation_check",
+                    support="with_prompting",
+                    supports_action=["oral_production"],
+                ),
+            ],
+        }
+    )
+    fixed, _warnings = sanitize_normalized_lesson(norm, lesson)
+    assert fixed.student_actions.written_production == "NONE OBSERVED"
+
+
+def test_scrub_phonics_omission_when_sound_out_in_steps():
+    """Production: MSN/feedback encoding must not sit under what_is_NOT_taught."""
+    lesson = _lesson_with_steps(
+        steps=[
+            "'What does the sun look like?'",
+            (
+                "Emphasize process and effort in writing by modeling how to sound "
+                "out a word with tricky spelling."
+            ),
+        ]
+    )
+    norm = minimal_normalized_lesson(resource_id="G1M2U1L8").model_copy(
+        update={
+            "what_is_NOT_taught": ["phonics/decoding", "Fluency"],
+            "evidence": [
+                EvidenceItem(
+                    quote="'What does the sun look like?'",
+                    location="Work Time A",
+                    actor="student",
+                    evidence_role="elicitation_check",
+                    support="with_prompting",
+                    supports_action=["oral_production"],
+                ),
+            ],
+        }
+    )
+    fixed, warnings = sanitize_normalized_lesson(norm, lesson)
+    assert "phonics/decoding" not in fixed.what_is_NOT_taught
+    assert "Fluency" in fixed.what_is_NOT_taught
+    assert any("phonics/decoding" in w for w in warnings)
+
+
+def test_scrub_phonics_omission_when_stretch_and_spell_feedback():
+    lesson = _lesson_with_steps(
+        steps=[
+            (
+                "Offer students specific feedback. (Example: 'I saw that Elijah "
+                "not only drew the character under the section for characters, "
+                "but he also stretched and spelled the word boy under his drawing.')"
+            ),
+        ]
+    )
+    norm = minimal_normalized_lesson(resource_id="G1M2U1L3").model_copy(
+        update={
+            "what_is_NOT_taught": ["Phonics/decoding"],
+            "evidence": [
+                EvidenceItem(
+                    quote=(
+                        "Offer students specific feedback. (Example: 'I saw that Elijah "
+                        "not only drew the character under the section for characters, "
+                        "but he also stretched and spelled the word boy under his drawing.')"
+                    ),
+                    location="Work Time A",
+                    actor="student",
+                    evidence_role="student_production",
+                    support="independent",
+                    supports_action=["written_production"],
+                ),
+            ],
+        }
+    )
+    fixed, warnings = sanitize_normalized_lesson(norm, lesson)
+    assert fixed.what_is_NOT_taught == []
+    assert any("Phonics/decoding" in w for w in warnings)
+
+
+def test_keeps_phonics_omission_when_no_encoding_evidence():
+    lesson = _lesson_with_steps(
+        steps=["Invite students to turn and talk about the moon."]
+    )
+    norm = minimal_normalized_lesson(resource_id="G1M2U1L1").model_copy(
+        update={
+            "what_is_NOT_taught": ["phonics/decoding", "Fluency"],
+            "evidence": [
+                EvidenceItem(
+                    quote="Invite students to turn and talk about the moon.",
+                    location="Work Time A",
+                    actor="student",
+                    evidence_role="directive_prompt",
+                    support="with_prompting",
+                    supports_action=["oral_production"],
+                ),
+            ],
+        }
+    )
+    fixed, warnings = sanitize_normalized_lesson(norm, lesson)
+    assert "phonics/decoding" in fixed.what_is_NOT_taught
+    assert not any("phonics" in w.lower() for w in warnings)
+
+
+def test_resolve_quote_recovers_source_line_not_llm_rewrite():
+    """LLM single-quote / truncated rewrites must snap back to Stage-1 text."""
+    from veramynd_parser.normalize.sanitize import resolve_verbatim_quote
+
+    source = 'Ask: "What does this sentence mean?" Responses will vary.'
+    lesson = _lesson_with_steps(steps=[source, "Invite students to turn and talk."])
+    lines = [source, "Invite students to turn and talk."]
+    corpus = "\n".join(lines)
+    llm_quote = "Ask: 'What does this sentence mean?' Responses will vary."
+    resolved = resolve_verbatim_quote(llm_quote, lines, corpus)
+    assert resolved == source
+
+    fixed, warnings = sanitize_normalized_lesson(
+        minimal_normalized_lesson(resource_id="G1M2U2L5").model_copy(
+            update={
+                "evidence": [
+                    EvidenceItem(
+                        quote=llm_quote,
+                        location="Work Time A",
+                        actor="student",
+                        evidence_role="elicitation_check",
+                        support="with_prompting",
+                        supports_action=["oral_production"],
+                    ),
+                ],
+            }
+        ),
+        lesson,
+    )
+    assert fixed.evidence[0].quote == source
+    assert any("verbatim" in w for w in warnings)
+
+
+def test_resolve_quote_recovers_line_after_standard_code_redaction():
+    from veramynd_parser.normalize.sanitize import resolve_verbatim_quote
+
+    source = (
+        "Circulate to observe students as they discuss. Gather data on "
+        "SL.1.1a, SL.1.1b, SL.1.4, and SL.1.6 using the Speaking and Listening Checklist."
+    )
+    llm_quote = (
+        "Circulate to observe students as they discuss. Gather data on using "
+        "the Speaking and Listening Checklist."
+    )
+    resolved = resolve_verbatim_quote(llm_quote, [source], source)
+    assert resolved == source

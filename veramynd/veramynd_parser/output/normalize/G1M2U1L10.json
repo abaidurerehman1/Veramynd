@@ -78,7 +78,6 @@
     }
   ],
   "what_is_NOT_taught": [
-    "phonics/decoding",
     "phonological awareness",
     "fluency independent reading",
     "independent writing beyond response sheet",
@@ -131,7 +130,7 @@
       "supports_action": []
     },
     {
-      "quote": "Direct students' attention to the posted learning targets and read them aloud: 'I can answer questions about key details from Sun and Moon.' 'I can describe the characters and setting from Sun and Moon.'",
+      "quote": "I can answer questions about key details from Sun and Moon.",
       "location": "Work Time A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -153,7 +152,7 @@
       ]
     },
     {
-      "quote": "Read pages 1-10 slowly, fluently, with expression, and without interruption.",
+      "quote": "Tell students you are now going to begin reading the text aloud. As you do, they should use the chosen signal when they hear or see a character. Read pages 1-10 slowly, fluently, with expression, and without interruption.",
       "location": "Work Time A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -178,7 +177,7 @@
       ]
     },
     {
-      "quote": "Place the Story Elements Board Icons: Sun and Moon for Sun and Moon (the characters) on the Story Elements board.",
+      "quote": "Place the Story Elements Board Icons: Sun and Moon for Sun and Moon (the characters) on the Story Elements board. Refer to Story Elements Board: Sun and Moon (answers, for teacher reference) and track students' progress towards with the Reading Literature Checklist as necessary.",
       "location": "Work Time A",
       "actor": "teacher",
       "evidence_role": "teacher_scribe",
@@ -224,7 +223,7 @@
       ]
     },
     {
-      "quote": "Pause after reading page 11 and invite students to turn and talk with an elbow partner: 'Look carefully at the illustration. Tell me what details you see that help you understand the setting.' (dark sky, people and animals down below, etc.)",
+      "quote": "Invite students to turn and talk with an elbow partner:",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -294,7 +293,7 @@
       ]
     },
     {
-      "quote": "Invite students to whisper a response into their hands: 'What is something beautiful you would want to see during the night?' (Responses will vary.)",
+      "quote": "Invite students to whisper a response into their hands:",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -358,7 +357,7 @@
       ]
     },
     {
-      "quote": "Circulate to support students as they write. Encourage them to use classroom resources (Story Elements board, Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).",
+      "quote": "Circulate to support students as they write. Encourage them to use classroom resources (Story Elements board, Word Walls, high-frequency word lists, and alphabet or letter sound combination charts). If students need additional support generating ideas, invite them to work in a small group with support and refer to the Story Elements board from Work Time A.",
       "location": "Work Time C",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -380,7 +379,7 @@
       ]
     },
     {
-      "quote": "Invite students to whisper a response into their hands: 'What is one discussion norm you want to uphold while discussing today?' (Responses will vary.)",
+      "quote": "Invite students to whisper a response into their hands:",
       "location": "Closing and Assessment A",
       "actor": "student",
       "evidence_role": "directive_prompt",

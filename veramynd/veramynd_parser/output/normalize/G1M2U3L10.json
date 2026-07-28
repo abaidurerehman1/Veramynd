@@ -117,7 +117,7 @@
       "supports_action": []
     },
     {
-      "quote": "Review each prompt question by reading them aloud.",
+      "quote": "Display the 'What the Sun Sees' verse planner and focus students on page 3. Review each prompt question by reading them aloud.",
       "location": "Work Time A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -126,7 +126,7 @@
       "supports_action": []
     },
     {
-      "quote": "Move students into pairs and invite them to turn and talk: 'After closely examining the closing sentence of the poem, what ideas do you have for how to end your own poem?' (Responses will vary.)",
+      "quote": "Move students into pairs and invite them to turn and talk:",
       "location": "Work Time A",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -165,7 +165,7 @@
       "supports_action": []
     },
     {
-      "quote": "Tell students that today they will write the final verse and closing of their poem.",
+      "quote": "Remind students that in the previous lessons, they wrote verses 1 and 2 of their 'What the Sun Sees' poem. Tell students that today they will write the final verse and closing of their poem.",
       "location": "Work Time B",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -174,7 +174,7 @@
       "supports_action": []
     },
     {
-      "quote": "Using a total participation technique, invite responses from the group: 'When we wrote our poem about the moon, what did you notice about the closing in the 'What the Moon Sees' poem?' (The poem doesn't just end. The moon goes to sleep, and the sun comes up.) 'What do you need to remember as you write the closing?' (I need to make sure the poem feels complete. I need to think about what happens when the sun goes away.)",
+      "quote": "Using a total participation technique, invite responses from the group:",
       "location": "Work Time B",
       "actor": "student",
       "evidence_role": "directive_prompt",
@@ -213,7 +213,7 @@
       "supports_action": []
     },
     {
-      "quote": "Tell the writers that today they will share verse 3 and the closing of their poem with a partner using the Pinky Partner protocol.",
+      "quote": "Tell the writers that today they will share verse 3 and the closing of their poem with a partner using the Pinky Partner protocol. Remind students that they used this protocol in Lessons 8-9 and review using the Pinky Partners Protocol anchor chart as necessary. (Refer to the Classroom Protocols document for the full version of the protocol.)",
       "location": "Work Time C",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -237,7 +237,7 @@
       ]
     },
     {
-      "quote": "Circulate as students share; prompt them to use the criteria on the High-Quality Work anchor chart when providing feedback.",
+      "quote": "Circulate as students share; prompt them to use the criteria on the High-Quality Work anchor chart when providing feedback. Take note of how students are interacting with one another using the Speaking and Listening Checklist.",
       "location": "Work Time C",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -255,7 +255,7 @@
       "supports_action": []
     },
     {
-      "quote": "Tell students they will again use the Think-Pair-Share protocol to reflect on how well they gave and received feedback in this lesson.",
+      "quote": "Tell students they will again use the Think-Pair-Share protocol to reflect on how well they gave and received feedback in this lesson. Remind them that they used this protocol in many previous lessons and review as necessary using the Think-Pair-Share Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
       "location": "Closing and Assessment A",
       "actor": "teacher",
       "evidence_role": "teacher_model",
@@ -264,7 +264,7 @@
       "supports_action": []
     },
     {
-      "quote": "Invite students to Think-Pair-Share with an elbow partner: 'How did you do giving and receiving feedback?' 'What worked well?' 'What could you improve?'",
+      "quote": "Invite students to Think-Pair-Share with an elbow partner:",
       "location": "Closing and Assessment A",
       "actor": "student",
       "evidence_role": "directive_prompt",

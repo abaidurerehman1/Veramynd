@@ -16,7 +16,7 @@ Status of the Stage-1 prep path for EL Education G1M2 (40 lessons).
 | | |
 |---|---|
 | Technique | 3-level hierarchical, structure-grounded |
-| Levels | **Lesson** (normalize competency text) → **Instructional** (Stage-1 Opening / Work Time / Closing blocks) → **Evidence pointer** (quote→block join; not embedded) |
+| Levels | **Lesson** (normalize competency text) → **Instructional** (Stage-1 section+letter blocks; publisher-agnostic labels) → **Evidence pointer** (quote→block join; not embedded) |
 | CLI | `veramynd-parser chunk-lessons` |
 | Output | `veramynd_parser/output/chunks/by_lesson/` |
 
