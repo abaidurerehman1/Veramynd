@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.C.1.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Create texts in teacher-selected modes (e.g., print, digital, auditory, and/or visual). (C)",
+  "parent_code": "1.T.C.1",
+  "ancestor_path": [
+    "1.T",
+    "1.T.C",
+    "1.T.C.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": []
+  },
+  "competency_statement": "Create texts using teacher-selected modes such as print, digital, auditory, or visual formats.",
+  "observable_behaviors": [
+    "Use a computer or tablet to type or draw a text.",
+    "Record or dictate a story or information orally.",
+    "Create a drawing or visual representation to accompany a text.",
+    "Write or produce a text in a format chosen by the teacher."
+  ],
+  "pedagogy_terms": [
+    "text creation",
+    "modes of communication",
+    "print",
+    "digital",
+    "auditory",
+    "visual"
+  ],
+  "exact_codes": [
+    "1.T.C.1.c"
+  ],
+  "skill_clauses": [
+    "Create texts in print mode as selected by the teacher.",
+    "Create texts in digital mode as selected by the teacher.",
+    "Create texts in auditory mode as selected by the teacher.",
+    "Create texts in visual mode as selected by the teacher."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Produce spoken texts or recordings as directed by the teacher.",
+    "written_production": "Write or type texts in print or digital formats as directed.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use teacher-selected modes to create texts.",
+    "investigation_handson": "Use tools or materials to create texts in various modes.",
+    "representation_modeling": "Demonstrate creating texts in different modes as modeled by the teacher.",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.C.1.c\nDomain primary: Writing\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Create texts using teacher-selected modes such as print, digital, auditory, or visual formats.\nSkills:\n- Create texts in print mode as selected by the teacher.\n- Create texts in digital mode as selected by the teacher.\n- Create texts in auditory mode as selected by the teacher.\n- Create texts in visual mode as selected by the teacher.\nObservable behaviors:\n- Use a computer or tablet to type or draw a text.\n- Record or dictate a story or information orally.\n- Create a drawing or visual representation to accompany a text.\n- Write or produce a text in a format chosen by the teacher.\nPedagogy terms: text creation, modes of communication, print, digital, auditory, visual\nRequired student actions:\n- oral_production: Produce spoken texts or recordings as directed by the teacher.\n- written_production: Write or type texts in print or digital formats as directed.\n- procedural_application: Use teacher-selected modes to create texts.\n- investigation_handson: Use tools or materials to create texts in various modes.\n- representation_modeling: Demonstrate creating texts in different modes as modeled by the teacher.\nCodes: 1.T.C.1.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

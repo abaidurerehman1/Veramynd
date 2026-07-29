@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.3.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Draw from, compare, build, and integrate prior knowledge with the material in the text, addressing inconsistencies or gaps and adding to knowledge repertoires as appropriate. (I)",
+  "parent_code": "1.P.EICC.3",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.3"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": []
+  },
+  "competency_statement": "Use what you already know to understand new information in a text, compare it with the text, and add new knowledge while noticing and resolving any differences or missing information.",
+  "observable_behaviors": [
+    "Recall relevant prior knowledge related to the text topic.",
+    "Compare prior knowledge with information presented in the text.",
+    "Identify inconsistencies or gaps between prior knowledge and the text.",
+    "Integrate new information from the text into existing knowledge.",
+    "Adjust understanding when encountering conflicting information."
+  ],
+  "pedagogy_terms": [
+    "prior knowledge",
+    "compare",
+    "integrate",
+    "comprehension strategies",
+    "knowledge building"
+  ],
+  "exact_codes": [
+    "1.P.EICC.3.c"
+  ],
+  "skill_clauses": [
+    "Draw from prior knowledge to understand the text.",
+    "Compare prior knowledge with information in the text.",
+    "Build and integrate new knowledge with prior knowledge.",
+    "Address inconsistencies or gaps between prior knowledge and the text."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize prior knowledge related to the text topic.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply prior knowledge to understand and interpret the text.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "Model connections between prior knowledge and text information.",
+    "reasoning_explanation": "Explain how prior knowledge and text information are compared and integrated, addressing inconsistencies or gaps.",
+    "comprehension_response": "Respond to texts by integrating prior knowledge and new information, noting any inconsistencies or gaps.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.3.c\nDomain primary: Comprehension\nDomain secondary: none\nCognitive demand: DOK3_strategic_thinking\nCompetency: Use what you already know to understand new information in a text, compare it with the text, and add new knowledge while noticing and resolving any differences or missing information.\nSkills:\n- Draw from prior knowledge to understand the text.\n- Compare prior knowledge with information in the text.\n- Build and integrate new knowledge with prior knowledge.\n- Address inconsistencies or gaps between prior knowledge and the text.\nObservable behaviors:\n- Recall relevant prior knowledge related to the text topic.\n- Compare prior knowledge with information presented in the text.\n- Identify inconsistencies or gaps between prior knowledge and the text.\n- Integrate new information from the text into existing knowledge.\n- Adjust understanding when encountering conflicting information.\nPedagogy terms: prior knowledge, compare, integrate, comprehension strategies, knowledge building\nRequired student actions:\n- recognition_identification: Recognize prior knowledge related to the text topic.\n- procedural_application: Apply prior knowledge to understand and interpret the text.\n- representation_modeling: Model connections between prior knowledge and text information.\n- reasoning_explanation: Explain how prior knowledge and text information are compared and integrated, addressing inconsistencies or gaps.\n- comprehension_response: Respond to texts by integrating prior knowledge and new information, noting any inconsistencies or gaps.\nCodes: 1.P.EICC.3.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

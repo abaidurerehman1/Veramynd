@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.1.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Discuss or write about personal and academic reading and writing preferences, referring to specific techniques, topics, modes, and genres that resonate most. (I/C)",
+  "parent_code": "1.P.EICC.1",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Writing"
+    ]
+  },
+  "competency_statement": "Discuss or write about your personal and academic reading and writing preferences, mentioning specific techniques, topics, modes, and genres you like.",
+  "observable_behaviors": [
+    "Talk about favorite reading and writing techniques, topics, modes, and genres.",
+    "Write about personal and academic preferences in reading and writing, citing specific examples."
+  ],
+  "pedagogy_terms": [
+    "reading preferences",
+    "writing preferences",
+    "genres",
+    "modes",
+    "techniques",
+    "topics"
+  ],
+  "exact_codes": [
+    "1.P.EICC.1.b"
+  ],
+  "skill_clauses": [
+    "Discuss personal and academic reading and writing preferences.",
+    "Refer to specific techniques, topics, modes, and genres that resonate most in discussion or writing."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Discuss personal and academic reading and writing preferences with specific references.",
+    "written_production": "Write about personal and academic reading and writing preferences, including specific techniques, topics, modes, and genres.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain which reading and writing techniques, topics, modes, and genres resonate most personally and academically.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.1.b\nDomain primary: Comprehension\nDomain secondary: Writing\nCognitive demand: DOK2_skills_concepts\nCompetency: Discuss or write about your personal and academic reading and writing preferences, mentioning specific techniques, topics, modes, and genres you like.\nSkills:\n- Discuss personal and academic reading and writing preferences.\n- Refer to specific techniques, topics, modes, and genres that resonate most in discussion or writing.\nObservable behaviors:\n- Talk about favorite reading and writing techniques, topics, modes, and genres.\n- Write about personal and academic preferences in reading and writing, citing specific examples.\nPedagogy terms: reading preferences, writing preferences, genres, modes, techniques, topics\nRequired student actions:\n- oral_production: Discuss personal and academic reading and writing preferences with specific references.\n- written_production: Write about personal and academic reading and writing preferences, including specific techniques, topics, modes, and genres.\n- reasoning_explanation: Explain which reading and writing techniques, topics, modes, and genres resonate most personally and academically.\nCodes: 1.P.EICC.1.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

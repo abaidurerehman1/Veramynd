@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.AC.1.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Identify, apply, and analyze the literary, expository, and opinion (grades K-5) or rhetorical (grades 6-12) elements in texts, explaining or evaluating how specific elements affect the target audience and support the text\u2019s purpose. (I/C)",
+  "parent_code": "1.P.AC.1",
+  "ancestor_path": [
+    "1.P",
+    "1.P.AC",
+    "1.P.AC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Identify, use, and analyze elements in literary, expository, and opinion texts to explain or evaluate how these elements influence the audience and support the text's purpose.",
+  "observable_behaviors": [
+    "Point out literary, expository, or opinion elements in a text.",
+    "Explain how a specific element affects the audience's understanding or feelings.",
+    "Describe how an element supports the purpose of the text.",
+    "Analyze how different elements work together to influence the reader."
+  ],
+  "pedagogy_terms": [
+    "literary elements",
+    "expository elements",
+    "opinion elements",
+    "text purpose",
+    "audience",
+    "analyze",
+    "evaluate"
+  ],
+  "exact_codes": [
+    "1.P.AC.1.a"
+  ],
+  "skill_clauses": [
+    "Identify literary, expository, and opinion elements in texts.",
+    "Apply knowledge of these elements to interpret texts.",
+    "Analyze how specific elements affect the target audience.",
+    "Explain or evaluate how elements support the text's purpose."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify literary, expository, and opinion elements in texts.",
+    "oral_production": "Explain how specific elements affect the audience and support the text's purpose.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply knowledge of text elements to interpret texts.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "Analyze and model how elements influence the audience and support the text's purpose.",
+    "reasoning_explanation": "Explain or evaluate how specific elements affect the target audience and support the text's purpose.",
+    "comprehension_response": "Respond to texts by identifying and analyzing elements that influence audience and purpose.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.AC.1.a\nDomain primary: Comprehension\nDomain secondary: Language\nCognitive demand: DOK3_strategic_thinking\nCompetency: Identify, use, and analyze elements in literary, expository, and opinion texts to explain or evaluate how these elements influence the audience and support the text's purpose.\nSkills:\n- Identify literary, expository, and opinion elements in texts.\n- Apply knowledge of these elements to interpret texts.\n- Analyze how specific elements affect the target audience.\n- Explain or evaluate how elements support the text's purpose.\nObservable behaviors:\n- Point out literary, expository, or opinion elements in a text.\n- Explain how a specific element affects the audience's understanding or feelings.\n- Describe how an element supports the purpose of the text.\n- Analyze how different elements work together to influence the reader.\nPedagogy terms: literary elements, expository elements, opinion elements, text purpose, audience, analyze, evaluate\nRequired student actions:\n- recognition_identification: Identify literary, expository, and opinion elements in texts.\n- oral_production: Explain how specific elements affect the audience and support the text's purpose.\n- procedural_application: Apply knowledge of text elements to interpret texts.\n- representation_modeling: Analyze and model how elements influence the audience and support the text's purpose.\n- reasoning_explanation: Explain or evaluate how specific elements affect the target audience and support the text's purpose.\n- comprehension_response: Respond to texts by identifying and analyzing elements that influence audience and purpose.\nCodes: 1.P.AC.1.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

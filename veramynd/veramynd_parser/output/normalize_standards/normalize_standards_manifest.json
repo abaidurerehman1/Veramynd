@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0-std",
+  "prompt_version": "normalize_std.v1.0",
+  "framework": "GA ELA",
+  "grade": 1,
+  "normalized": 170,
+  "failed": [],
+  "levels": [
+    "standard",
+    "substandard"
+  ],
+  "note": "domain/big_idea nodes are not normalized (not scorable leaves)"
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.AC.2.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Integrate literary, expository, and opinion (grades K-5) or rhetorical (grades 6-12) elements to appeal to target audiences and achieve specific purposes. (I/C)",
+  "parent_code": "1.P.AC.2",
+  "ancestor_path": [
+    "1.P",
+    "1.P.AC",
+    "1.P.AC.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Comprehension"
+    ]
+  },
+  "competency_statement": "Integrate elements from literary, expository, and opinion texts to appeal to a specific audience and achieve a particular purpose.",
+  "observable_behaviors": [
+    "Combine features from different types of texts such as stories, informational writing, and opinions in their own writing.",
+    "Make choices about text elements to suit the audience's interests and the writing's purpose.",
+    "Use knowledge of different text types to enhance writing effectiveness."
+  ],
+  "pedagogy_terms": [
+    "literary elements",
+    "expository elements",
+    "opinion elements",
+    "audience awareness",
+    "purposeful writing"
+  ],
+  "exact_codes": [
+    "1.P.AC.2.a"
+  ],
+  "skill_clauses": [
+    "Integrate literary elements to appeal to target audiences.",
+    "Integrate expository elements to appeal to target audiences.",
+    "Integrate opinion elements to appeal to target audiences.",
+    "Use these integrated elements to achieve specific purposes in writing."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Combine literary, expository, and opinion elements in writing to appeal to an audience and fulfill a purpose.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply knowledge of different text elements to create writing that suits the audience and purpose.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how integrating different text elements helps appeal to the audience and achieve the writing purpose.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.AC.2.a\nDomain primary: Writing\nDomain secondary: Comprehension\nCognitive demand: DOK3_strategic_thinking\nCompetency: Integrate elements from literary, expository, and opinion texts to appeal to a specific audience and achieve a particular purpose.\nSkills:\n- Integrate literary elements to appeal to target audiences.\n- Integrate expository elements to appeal to target audiences.\n- Integrate opinion elements to appeal to target audiences.\n- Use these integrated elements to achieve specific purposes in writing.\nObservable behaviors:\n- Combine features from different types of texts such as stories, informational writing, and opinions in their own writing.\n- Make choices about text elements to suit the audience's interests and the writing's purpose.\n- Use knowledge of different text types to enhance writing effectiveness.\nPedagogy terms: literary elements, expository elements, opinion elements, audience awareness, purposeful writing\nRequired student actions:\n- written_production: Combine literary, expository, and opinion elements in writing to appeal to an audience and fulfill a purpose.\n- procedural_application: Apply knowledge of different text elements to create writing that suits the audience and purpose.\n- reasoning_explanation: Explain how integrating different text elements helps appeal to the audience and achieve the writing purpose.\nCodes: 1.P.AC.2.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

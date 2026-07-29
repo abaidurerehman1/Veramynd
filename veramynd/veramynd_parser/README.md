@@ -229,6 +229,22 @@ veramynd-parser embed-chunks output/chunks --out output/embeddings --recreate
 Uses `OPENAI_API_KEY` from `.env`. Default model: `text-embedding-3-large` (3072-d).  
 Stores vectors in Qdrant (`QDRANT_URL` or local `.qdrant_data`). Evidence pointers are not embedded.
 
+### Embed standards → Qdrant
+
+```bash
+veramynd-parser embed-standards output/normalize_standards --out output/embeddings --recreate
+```
+
+Same model (`text-embedding-3-large`). Collection default: `veramynd_standards`
+(does not use `QDRANT_COLLECTION`; override with `--collection` or
+`QDRANT_STANDARDS_COLLECTION`).
+
+Smoke check (lesson chunk → nearest standards):
+
+```bash
+veramynd-parser smoke-retrieve-standards --chunk-file output/chunks/by_lesson/G1M2U2L1.json --family lesson
+```
+
 Library:
 
 ```python

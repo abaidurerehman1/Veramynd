@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.T.1.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue. (I)",
+  "parent_code": "1.T.T.1",
+  "ancestor_path": [
+    "1.T",
+    "1.T.T",
+    "1.T.T.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening"
+    ]
+  },
+  "competency_statement": "Identify story elements such as characters, setting, major events, and dialogue used to craft stories.",
+  "observable_behaviors": [
+    "Point out characters in a story.",
+    "Describe the setting of a story.",
+    "Identify major events in a story.",
+    "Recognize dialogue between characters in a story."
+  ],
+  "pedagogy_terms": [
+    "characters",
+    "setting",
+    "major events",
+    "dialogue",
+    "story elements"
+  ],
+  "exact_codes": [
+    "1.T.T.1.a"
+  ],
+  "skill_clauses": [
+    "Identify characters used to craft a story.",
+    "Identify the setting used to craft a story.",
+    "Identify major events used to craft a story.",
+    "Identify dialogue used to craft a story."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify story elements such as characters, setting, major events, and dialogue in a story.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK1_recall_reproduction",
+  "notes": "",
+  "embed_text": "Standard: 1.T.T.1.a\nDomain primary: Comprehension\nDomain secondary: Speaking & Listening\nCognitive demand: DOK1_recall_reproduction\nCompetency: Identify story elements such as characters, setting, major events, and dialogue used to craft stories.\nSkills:\n- Identify characters used to craft a story.\n- Identify the setting used to craft a story.\n- Identify major events used to craft a story.\n- Identify dialogue used to craft a story.\nObservable behaviors:\n- Point out characters in a story.\n- Describe the setting of a story.\n- Identify major events in a story.\n- Recognize dialogue between characters in a story.\nPedagogy terms: characters, setting, major events, dialogue, story elements\nRequired student actions:\n- recognition_identification: Identify story elements such as characters, setting, major events, and dialogue in a story.\nCodes: 1.T.T.1.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

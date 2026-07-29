@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.V.2",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Word Analysis",
+  "raw_text": "Acquire and apply word analysis skills to deconstruct and construct words to make meaning.",
+  "parent_code": "1.L.V",
+  "ancestor_path": [
+    "1.L",
+    "1.L.V"
+  ],
+  "child_codes": [
+    "1.L.V.2.a",
+    "1.L.V.2.c"
+  ],
+  "child_texts": [
+    "Identify frequently occurring root words (e.g., look) and inflectional endings used to form and comprehend new words (e.g., looks, looked, looking). (I)",
+    "Construct words using frequently occurring roots words and inflectional endings. (C)"
+  ],
+  "domain": {
+    "primary": "Vocabulary",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Students acquire and apply word analysis skills to break down and build words to understand their meanings.",
+  "observable_behaviors": [
+    "Identify root words and inflectional endings in spoken or written words.",
+    "Use root words and inflectional endings to form new words.",
+    "Recognize how adding endings changes word meanings or forms."
+  ],
+  "pedagogy_terms": [
+    "root words",
+    "inflectional endings",
+    "word construction",
+    "word analysis"
+  ],
+  "exact_codes": [
+    "1.L.V.2"
+  ],
+  "skill_clauses": [
+    "Identify frequently occurring root words and inflectional endings used to form and comprehend new words.",
+    "Construct words using frequently occurring root words and inflectional endings."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify frequently occurring root words and inflectional endings in words.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Construct words using frequently occurring root words and inflectional endings.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply knowledge of root words and inflectional endings to understand and form new words.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.V.2\nDomain primary: Vocabulary\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Students acquire and apply word analysis skills to break down and build words to understand their meanings.\nSkills:\n- Identify frequently occurring root words and inflectional endings used to form and comprehend new words.\n- Construct words using frequently occurring root words and inflectional endings.\nObservable behaviors:\n- Identify root words and inflectional endings in spoken or written words.\n- Use root words and inflectional endings to form new words.\n- Recognize how adding endings changes word meanings or forms.\nPedagogy terms: root words, inflectional endings, word construction, word analysis\nRequired student actions:\n- recognition_identification: Identify frequently occurring root words and inflectional endings in words.\n- written_production: Construct words using frequently occurring root words and inflectional endings.\n- procedural_application: Apply knowledge of root words and inflectional endings to understand and form new words.\nCodes: 1.L.V.2",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

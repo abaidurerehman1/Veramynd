@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.AC.3.d",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Consume and produce multimodal texts, integrating a variety of genres, text features, and craft techniques to influence target audiences and achieve specific purposes. (I/C)",
+  "parent_code": "1.P.AC.3",
+  "ancestor_path": [
+    "1.P",
+    "1.P.AC",
+    "1.P.AC.3"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": [
+      "Writing",
+      "Comprehension"
+    ]
+  },
+  "competency_statement": "Use and understand multimodal texts that combine different genres, text features, and craft techniques to influence audiences and achieve specific purposes.",
+  "observable_behaviors": [
+    "Identify different genres within multimodal texts.",
+    "Recognize and describe various text features in multimodal texts.",
+    "Explain how craft techniques affect the audience and purpose of a text.",
+    "Create multimodal texts that combine genres, text features, and craft techniques to influence a target audience.",
+    "Use multimodal elements to achieve a specific purpose in communication."
+  ],
+  "pedagogy_terms": [
+    "multimodal texts",
+    "genres",
+    "text features",
+    "craft techniques",
+    "audience",
+    "purpose"
+  ],
+  "exact_codes": [
+    "1.P.AC.3.d"
+  ],
+  "skill_clauses": [
+    "Consume multimodal texts that integrate various genres, text features, and craft techniques.",
+    "Produce multimodal texts that combine genres, text features, and craft techniques to influence target audiences and achieve specific purposes."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify genres, text features, and craft techniques in multimodal texts.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Produce multimodal texts that integrate genres, text features, and craft techniques to influence audiences and purposes.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use knowledge of text design to create multimodal texts for specific audiences and purposes.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how different genres, text features, and craft techniques influence the audience and purpose of multimodal texts.",
+    "comprehension_response": "Respond to multimodal texts by discussing how their design affects audience and purpose.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.AC.3.d\nDomain primary: Speaking & Listening\nDomain secondary: Writing, Comprehension\nCognitive demand: DOK3_strategic_thinking\nCompetency: Use and understand multimodal texts that combine different genres, text features, and craft techniques to influence audiences and achieve specific purposes.\nSkills:\n- Consume multimodal texts that integrate various genres, text features, and craft techniques.\n- Produce multimodal texts that combine genres, text features, and craft techniques to influence target audiences and achieve specific purposes.\nObservable behaviors:\n- Identify different genres within multimodal texts.\n- Recognize and describe various text features in multimodal texts.\n- Explain how craft techniques affect the audience and purpose of a text.\n- Create multimodal texts that combine genres, text features, and craft techniques to influence a target audience.\n- Use multimodal elements to achieve a specific purpose in communication.\nPedagogy terms: multimodal texts, genres, text features, craft techniques, audience, purpose\nRequired student actions:\n- recognition_identification: Identify genres, text features, and craft techniques in multimodal texts.\n- written_production: Produce multimodal texts that integrate genres, text features, and craft techniques to influence audiences and purposes.\n- procedural_application: Use knowledge of text design to create multimodal texts for specific audiences and purposes.\n- reasoning_explanation: Explain how different genres, text features, and craft techniques influence the audience and purpose of multimodal texts.\n- comprehension_response: Respond to multimodal texts by discussing how their design affects audience and purpose.\nCodes: 1.P.AC.3.d",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.PA.6.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Distinguish between short and long vowel sounds in spoken one-syllable words.",
+  "parent_code": "1.F.PA.6",
+  "ancestor_path": [
+    "1.F",
+    "1.F.PA",
+    "1.F.PA.6"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Phonological Awareness",
+    "secondary": []
+  },
+  "competency_statement": "Distinguish between short and long vowel sounds in spoken one-syllable words.",
+  "observable_behaviors": [
+    "Listen to spoken one-syllable words and identify whether the vowel sound is short or long.",
+    "Say one-syllable words aloud and indicate if the vowel sound is short or long."
+  ],
+  "pedagogy_terms": [
+    "short vowel sounds",
+    "long vowel sounds",
+    "one-syllable words",
+    "phonemic awareness",
+    "vowel distinction"
+  ],
+  "exact_codes": [
+    "1.F.PA.6.b"
+  ],
+  "skill_clauses": [
+    "Distinguish between short vowel sounds in spoken one-syllable words.",
+    "Distinguish between long vowel sounds in spoken one-syllable words."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify whether a spoken one-syllable word contains a short or long vowel sound.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "Sort spoken one-syllable words by short or long vowel sounds.",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.PA.6.b\nDomain primary: Phonological Awareness\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Distinguish between short and long vowel sounds in spoken one-syllable words.\nSkills:\n- Distinguish between short vowel sounds in spoken one-syllable words.\n- Distinguish between long vowel sounds in spoken one-syllable words.\nObservable behaviors:\n- Listen to spoken one-syllable words and identify whether the vowel sound is short or long.\n- Say one-syllable words aloud and indicate if the vowel sound is short or long.\nPedagogy terms: short vowel sounds, long vowel sounds, one-syllable words, phonemic awareness, vowel distinction\nRequired student actions:\n- recognition_identification: Identify whether a spoken one-syllable word contains a short or long vowel sound.\n- matching_sorting_sequencing: Sort spoken one-syllable words by short or long vowel sounds.\nCodes: 1.F.PA.6.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

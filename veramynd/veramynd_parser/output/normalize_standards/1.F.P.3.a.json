@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.P.3.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Encode regularly spelled one-syllable words with a variety of spelling patterns (VC, CVC, CVCe, VCC, CCVC, CVCC, CCVCC), including high-frequency words.",
+  "parent_code": "1.F.P.3",
+  "ancestor_path": [
+    "1.F",
+    "1.F.P",
+    "1.F.P.3"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Phonics",
+    "secondary": []
+  },
+  "competency_statement": "Encode regularly spelled one-syllable words using various spelling patterns, including high-frequency words.",
+  "observable_behaviors": [
+    "Spell one-syllable words with VC, CVC, CVCe, VCC, CCVC, CVCC, and CCVCC patterns.",
+    "Spell high-frequency one-syllable words correctly.",
+    "Write words both in isolation and within context using appropriate phonics patterns."
+  ],
+  "pedagogy_terms": [
+    "encoding",
+    "spelling patterns",
+    "one-syllable words",
+    "high-frequency words"
+  ],
+  "exact_codes": [
+    "1.F.P.3.a"
+  ],
+  "skill_clauses": [
+    "Encode regularly spelled one-syllable words with VC, CVC, CVCe, VCC, CCVC, CVCC, and CCVCC patterns.",
+    "Include high-frequency one-syllable words in encoding tasks."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Write one-syllable words using specified spelling patterns and high-frequency words.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply phonics knowledge to encode one-syllable words with various spelling patterns.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.P.3.a\nDomain primary: Phonics\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Encode regularly spelled one-syllable words using various spelling patterns, including high-frequency words.\nSkills:\n- Encode regularly spelled one-syllable words with VC, CVC, CVCe, VCC, CCVC, CVCC, and CCVCC patterns.\n- Include high-frequency one-syllable words in encoding tasks.\nObservable behaviors:\n- Spell one-syllable words with VC, CVC, CVCe, VCC, CCVC, CVCC, and CCVCC patterns.\n- Spell high-frequency one-syllable words correctly.\n- Write words both in isolation and within context using appropriate phonics patterns.\nPedagogy terms: encoding, spelling patterns, one-syllable words, high-frequency words\nRequired student actions:\n- written_production: Write one-syllable words using specified spelling patterns and high-frequency words.\n- procedural_application: Apply phonics knowledge to encode one-syllable words with various spelling patterns.\nCodes: 1.F.P.3.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

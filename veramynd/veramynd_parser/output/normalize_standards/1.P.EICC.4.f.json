@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.4.f",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Evaluate the text\u2019s effectiveness based on self-review or feedback from others, determining whether the text matches the purpose and goals for writing. (C)",
+  "parent_code": "1.P.EICC.4",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.4"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": []
+  },
+  "competency_statement": "Evaluate a text's effectiveness by reviewing it yourself or using feedback from others to decide if it meets the intended purpose and writing goals.",
+  "observable_behaviors": [
+    "Review a written text to see if it meets the intended purpose.",
+    "Use feedback from others to assess the text's effectiveness.",
+    "Decide if the text matches the goals set for the writing task."
+  ],
+  "pedagogy_terms": [
+    "evaluate",
+    "self-review",
+    "feedback",
+    "writing purpose",
+    "writing goals"
+  ],
+  "exact_codes": [
+    "1.P.EICC.4.f"
+  ],
+  "skill_clauses": [
+    "Evaluate the text's effectiveness based on self-review.",
+    "Evaluate the text's effectiveness based on feedback from others.",
+    "Determine whether the text matches the purpose and goals for writing."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Evaluate a text's effectiveness by reviewing it or using feedback to determine if it meets writing goals.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain whether the text matches the purpose and goals based on review or feedback.",
+    "comprehension_response": "Respond to feedback and self-review to judge the text's effectiveness.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.4.f\nDomain primary: Writing\nDomain secondary: none\nCognitive demand: DOK3_strategic_thinking\nCompetency: Evaluate a text's effectiveness by reviewing it yourself or using feedback from others to decide if it meets the intended purpose and writing goals.\nSkills:\n- Evaluate the text's effectiveness based on self-review.\n- Evaluate the text's effectiveness based on feedback from others.\n- Determine whether the text matches the purpose and goals for writing.\nObservable behaviors:\n- Review a written text to see if it meets the intended purpose.\n- Use feedback from others to assess the text's effectiveness.\n- Decide if the text matches the goals set for the writing task.\nPedagogy terms: evaluate, self-review, feedback, writing purpose, writing goals\nRequired student actions:\n- procedural_application: Evaluate a text's effectiveness by reviewing it or using feedback to determine if it meets writing goals.\n- reasoning_explanation: Explain whether the text matches the purpose and goals based on review or feedback.\n- comprehension_response: Respond to feedback and self-review to judge the text's effectiveness.\nCodes: 1.P.EICC.4.f",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

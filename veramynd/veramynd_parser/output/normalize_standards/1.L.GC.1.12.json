@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.GC.1.12",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Mechanics",
+  "raw_text": "Capitalize proper nouns. (Continue)",
+  "parent_code": "1.L.GC.1",
+  "ancestor_path": [
+    "1.L",
+    "1.L.GC",
+    "1.L.GC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Language",
+    "secondary": []
+  },
+  "competency_statement": "Capitalize proper nouns correctly in writing.",
+  "observable_behaviors": [
+    "Identify proper nouns in text.",
+    "Use capital letters at the beginning of proper nouns when writing."
+  ],
+  "pedagogy_terms": [
+    "capitalization",
+    "proper nouns",
+    "mechanics"
+  ],
+  "exact_codes": [
+    "1.L.GC.1.12"
+  ],
+  "skill_clauses": [
+    "Capitalize proper nouns."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize proper nouns that require capitalization.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Capitalize proper nouns in writing.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply capitalization rules to proper nouns in writing.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK1_recall_reproduction",
+  "notes": "",
+  "embed_text": "Standard: 1.L.GC.1.12\nDomain primary: Language\nDomain secondary: none\nCognitive demand: DOK1_recall_reproduction\nCompetency: Capitalize proper nouns correctly in writing.\nSkills:\n- Capitalize proper nouns.\nObservable behaviors:\n- Identify proper nouns in text.\n- Use capital letters at the beginning of proper nouns when writing.\nPedagogy terms: capitalization, proper nouns, mechanics\nRequired student actions:\n- recognition_identification: Recognize proper nouns that require capitalization.\n- written_production: Capitalize proper nouns in writing.\n- procedural_application: Apply capitalization rules to proper nouns in writing.\nCodes: 1.L.GC.1.12",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

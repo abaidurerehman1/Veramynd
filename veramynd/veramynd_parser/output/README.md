@@ -51,6 +51,7 @@ Hierarchy: **lesson** (normalize competency text) → **instructional** (Stage-1
 | `.qdrant_data/` (package root) | Local Qdrant store when `QDRANT_URL` unset |
 
 Default: OpenAI **`text-embedding-3-large`** (3072-d, Cosine) → collection `veramynd_chunks`.
+Standards: same model → collection `veramynd_standards` (`embed-standards`).
 
 ## Regenerate
 
@@ -64,7 +65,13 @@ veramynd-parser normalize-lessons output/stage1/lessons --out output/normalize
 # Hierarchical chunks (no LLM)
 veramynd-parser chunk-lessons output/stage1/lessons --normalize-dir output/normalize --out output/chunks
 
-# Embed + Qdrant upsert
+# Embed + Qdrant upsert (lessons)
 pip install -e '.[embed]'
 veramynd-parser embed-chunks output/chunks --out output/embeddings --recreate
+
+# Embed + Qdrant upsert (standards)
+veramynd-parser embed-standards output/normalize_standards --out output/embeddings --recreate
+
+# Smoke: lesson chunk → nearest GA standards
+veramynd-parser smoke-retrieve-standards --chunk-file output/chunks/by_lesson/G1M2U2L1.json --family lesson
 ```

@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.PA.6.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Blend and segment up to five phonemes, including consonant blends and digraphs, in spoken words.",
+  "parent_code": "1.F.PA.6",
+  "ancestor_path": [
+    "1.F",
+    "1.F.PA",
+    "1.F.PA.6"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Phonological Awareness",
+    "secondary": []
+  },
+  "competency_statement": "Blend and break apart up to five individual sounds, including consonant blends and digraphs, in spoken words.",
+  "observable_behaviors": [
+    "Say a word by blending up to five phonemes together.",
+    "Break a spoken word into up to five individual phonemes.",
+    "Recognize consonant blends and digraphs within spoken words."
+  ],
+  "pedagogy_terms": [
+    "phonemes",
+    "blend",
+    "segment",
+    "consonant blends",
+    "digraphs"
+  ],
+  "exact_codes": [
+    "1.F.PA.6.c"
+  ],
+  "skill_clauses": [
+    "Blend up to five phonemes in spoken words including consonant blends and digraphs.",
+    "Segment up to five phonemes in spoken words including consonant blends and digraphs."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify individual phonemes including consonant blends and digraphs in spoken words.",
+    "oral_production": "Blend and segment up to five phonemes including consonant blends and digraphs in spoken words.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.PA.6.c\nDomain primary: Phonological Awareness\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Blend and break apart up to five individual sounds, including consonant blends and digraphs, in spoken words.\nSkills:\n- Blend up to five phonemes in spoken words including consonant blends and digraphs.\n- Segment up to five phonemes in spoken words including consonant blends and digraphs.\nObservable behaviors:\n- Say a word by blending up to five phonemes together.\n- Break a spoken word into up to five individual phonemes.\n- Recognize consonant blends and digraphs within spoken words.\nPedagogy terms: phonemes, blend, segment, consonant blends, digraphs\nRequired student actions:\n- recognition_identification: Identify individual phonemes including consonant blends and digraphs in spoken words.\n- oral_production: Blend and segment up to five phonemes including consonant blends and digraphs in spoken words.\nCodes: 1.F.PA.6.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

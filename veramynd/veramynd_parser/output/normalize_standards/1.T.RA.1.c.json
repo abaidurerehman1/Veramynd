@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.RA.1.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Share relevant and accurate information through a variety of different modes. (C)",
+  "parent_code": "1.T.RA.1",
+  "ancestor_path": [
+    "1.T",
+    "1.T.RA",
+    "1.T.RA.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": [
+      "Writing"
+    ]
+  },
+  "competency_statement": "Students share relevant and accurate information using different ways to communicate.",
+  "observable_behaviors": [
+    "Use spoken words to share information clearly.",
+    "Use drawings or pictures to communicate ideas.",
+    "Use writing or digital tools to share information.",
+    "Choose different ways to present information depending on the situation."
+  ],
+  "pedagogy_terms": [
+    "share information",
+    "communication modes",
+    "relevant information",
+    "accurate information"
+  ],
+  "exact_codes": [
+    "1.T.RA.1.c"
+  ],
+  "skill_clauses": [
+    "Share relevant information about a topic.",
+    "Share accurate information about a topic.",
+    "Use a variety of communication modes to share information."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Share information clearly using spoken language.",
+    "written_production": "Share information clearly using writing or drawing.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use different communication modes to share information appropriately.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.RA.1.c\nDomain primary: Speaking & Listening\nDomain secondary: Writing\nCognitive demand: DOK2_skills_concepts\nCompetency: Students share relevant and accurate information using different ways to communicate.\nSkills:\n- Share relevant information about a topic.\n- Share accurate information about a topic.\n- Use a variety of communication modes to share information.\nObservable behaviors:\n- Use spoken words to share information clearly.\n- Use drawings or pictures to communicate ideas.\n- Use writing or digital tools to share information.\n- Choose different ways to present information depending on the situation.\nPedagogy terms: share information, communication modes, relevant information, accurate information\nRequired student actions:\n- oral_production: Share information clearly using spoken language.\n- written_production: Share information clearly using writing or drawing.\n- procedural_application: Use different communication modes to share information appropriately.\nCodes: 1.T.RA.1.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.T.2.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Identify techniques used to craft expository texts, including main topic and supporting details. (I)",
+  "parent_code": "1.T.T.2",
+  "ancestor_path": [
+    "1.T",
+    "1.T.T",
+    "1.T.T.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Writing"
+    ]
+  },
+  "competency_statement": "Identify techniques used to create expository texts, including recognizing the main topic and supporting details.",
+  "observable_behaviors": [
+    "Point out the main topic in an expository text.",
+    "Identify supporting details that explain or describe the main topic.",
+    "Recognize techniques authors use to organize and present information in expository texts."
+  ],
+  "pedagogy_terms": [
+    "expository text",
+    "main topic",
+    "supporting details",
+    "text features",
+    "text structure"
+  ],
+  "exact_codes": [
+    "1.T.T.2.a"
+  ],
+  "skill_clauses": [
+    "Identify the main topic in an expository text.",
+    "Identify supporting details in an expository text.",
+    "Recognize techniques used to craft expository texts."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify the main topic and supporting details in expository texts.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how supporting details relate to the main topic in an expository text.",
+    "comprehension_response": "Describe the main topic and supporting details when reading expository texts.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.T.2.a\nDomain primary: Comprehension\nDomain secondary: Writing\nCognitive demand: DOK2_skills_concepts\nCompetency: Identify techniques used to create expository texts, including recognizing the main topic and supporting details.\nSkills:\n- Identify the main topic in an expository text.\n- Identify supporting details in an expository text.\n- Recognize techniques used to craft expository texts.\nObservable behaviors:\n- Point out the main topic in an expository text.\n- Identify supporting details that explain or describe the main topic.\n- Recognize techniques authors use to organize and present information in expository texts.\nPedagogy terms: expository text, main topic, supporting details, text features, text structure\nRequired student actions:\n- recognition_identification: Identify the main topic and supporting details in expository texts.\n- reasoning_explanation: Explain how supporting details relate to the main topic in an expository text.\n- comprehension_response: Describe the main topic and supporting details when reading expository texts.\nCodes: 1.T.T.2.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

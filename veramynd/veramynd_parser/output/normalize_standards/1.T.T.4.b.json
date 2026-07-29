@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.T.4.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Use poetic techniques to create poems using simple words and/or phrases that may or may not rhyme. (C)",
+  "parent_code": "1.T.T.4",
+  "ancestor_path": [
+    "1.T",
+    "1.T.T",
+    "1.T.T.4"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Create poems using simple words or phrases that may or may not rhyme by applying poetic techniques.",
+  "observable_behaviors": [
+    "Write poems using simple words or phrases.",
+    "Use poetic techniques such as rhyme or rhythm in poems.",
+    "Experiment with rhyming and non-rhyming phrases in poetry."
+  ],
+  "pedagogy_terms": [
+    "poetic techniques",
+    "poems",
+    "rhyme",
+    "phrases",
+    "simple words"
+  ],
+  "exact_codes": [
+    "1.T.T.4.b"
+  ],
+  "skill_clauses": [
+    "Use poetic techniques to create poems.",
+    "Use simple words and/or phrases in poems.",
+    "Create poems that may or may not rhyme."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Write poems using simple words or phrases applying poetic techniques.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use poetic techniques to create poems with simple words or phrases that may or may not rhyme.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.T.4.b\nDomain primary: Writing\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Create poems using simple words or phrases that may or may not rhyme by applying poetic techniques.\nSkills:\n- Use poetic techniques to create poems.\n- Use simple words and/or phrases in poems.\n- Create poems that may or may not rhyme.\nObservable behaviors:\n- Write poems using simple words or phrases.\n- Use poetic techniques such as rhyme or rhythm in poems.\n- Experiment with rhyming and non-rhyming phrases in poetry.\nPedagogy terms: poetic techniques, poems, rhyme, phrases, simple words\nRequired student actions:\n- written_production: Write poems using simple words or phrases applying poetic techniques.\n- procedural_application: Use poetic techniques to create poems with simple words or phrases that may or may not rhyme.\nCodes: 1.T.T.4.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

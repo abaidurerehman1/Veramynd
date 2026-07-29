@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.SS.1.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Use transition words or phrases, such as once upon a time, next, and last to sequence events and actions. (C)",
+  "parent_code": "1.T.SS.1",
+  "ancestor_path": [
+    "1.T",
+    "1.T.SS",
+    "1.T.SS.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Use transition words or phrases to put events and actions in order when telling or writing about them.",
+  "observable_behaviors": [
+    "Use phrases like 'once upon a time' to start a story sequence.",
+    "Use words like 'next' to show what happens after an event.",
+    "Use the word 'last' to indicate the final event in a sequence."
+  ],
+  "pedagogy_terms": [
+    "transition words",
+    "sequence",
+    "events",
+    "phrases"
+  ],
+  "exact_codes": [
+    "1.T.SS.1.c"
+  ],
+  "skill_clauses": [
+    "Use transition words or phrases to sequence events.",
+    "Use transition words or phrases to sequence actions."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize transition words or phrases that show sequence in texts.",
+    "oral_production": "Use transition words or phrases orally to sequence events and actions.",
+    "written_production": "Use transition words or phrases in writing to sequence events and actions.",
+    "matching_sorting_sequencing": "Sequence events or actions using transition words or phrases.",
+    "procedural_application": "Apply transition words or phrases to organize events and actions in order.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how transition words or phrases help sequence events and actions.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.SS.1.c\nDomain primary: Comprehension\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Use transition words or phrases to put events and actions in order when telling or writing about them.\nSkills:\n- Use transition words or phrases to sequence events.\n- Use transition words or phrases to sequence actions.\nObservable behaviors:\n- Use phrases like 'once upon a time' to start a story sequence.\n- Use words like 'next' to show what happens after an event.\n- Use the word 'last' to indicate the final event in a sequence.\nPedagogy terms: transition words, sequence, events, phrases\nRequired student actions:\n- recognition_identification: Recognize transition words or phrases that show sequence in texts.\n- oral_production: Use transition words or phrases orally to sequence events and actions.\n- written_production: Use transition words or phrases in writing to sequence events and actions.\n- matching_sorting_sequencing: Sequence events or actions using transition words or phrases.\n- procedural_application: Apply transition words or phrases to organize events and actions in order.\n- reasoning_explanation: Explain how transition words or phrases help sequence events and actions.\nCodes: 1.T.SS.1.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

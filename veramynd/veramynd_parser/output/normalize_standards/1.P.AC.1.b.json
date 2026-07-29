@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.AC.1.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Identify, apply, and analyze important, interesting, or effective uses of language, explaining or evaluating how specific word choices affect the target audience and support the text\u2019s purpose. (I/C)",
+  "parent_code": "1.P.AC.1",
+  "ancestor_path": [
+    "1.P",
+    "1.P.AC",
+    "1.P.AC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Language",
+    "secondary": [
+      "Comprehension"
+    ]
+  },
+  "competency_statement": "Identify and explain how specific word choices in a text affect the audience and support the text's purpose.",
+  "observable_behaviors": [
+    "Point out important or interesting words an author uses in a text.",
+    "Explain how certain words influence the feelings or thoughts of the audience.",
+    "Describe how word choices help the author achieve the purpose of the text."
+  ],
+  "pedagogy_terms": [
+    "word choice",
+    "author's craft",
+    "audience",
+    "text purpose",
+    "explanation",
+    "evaluation"
+  ],
+  "exact_codes": [
+    "1.P.AC.1.b"
+  ],
+  "skill_clauses": [
+    "Identify important, interesting, or effective uses of language in a text.",
+    "Apply understanding of word choices to interpret how they affect the target audience.",
+    "Analyze and explain how specific word choices support the text's purpose."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify important or effective word choices in a text.",
+    "oral_production": "Explain orally how specific words affect the audience and support the text's purpose.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply understanding of word choice effects to interpret texts.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "Analyze and explain the impact of word choices on the audience and text purpose.",
+    "reasoning_explanation": "Explain or evaluate how specific word choices influence the audience and support the text's purpose.",
+    "comprehension_response": "Respond to texts by discussing the effects of word choices on audience and purpose.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.AC.1.b\nDomain primary: Language\nDomain secondary: Comprehension\nCognitive demand: DOK3_strategic_thinking\nCompetency: Identify and explain how specific word choices in a text affect the audience and support the text's purpose.\nSkills:\n- Identify important, interesting, or effective uses of language in a text.\n- Apply understanding of word choices to interpret how they affect the target audience.\n- Analyze and explain how specific word choices support the text's purpose.\nObservable behaviors:\n- Point out important or interesting words an author uses in a text.\n- Explain how certain words influence the feelings or thoughts of the audience.\n- Describe how word choices help the author achieve the purpose of the text.\nPedagogy terms: word choice, author's craft, audience, text purpose, explanation, evaluation\nRequired student actions:\n- recognition_identification: Identify important or effective word choices in a text.\n- oral_production: Explain orally how specific words affect the audience and support the text's purpose.\n- procedural_application: Apply understanding of word choice effects to interpret texts.\n- representation_modeling: Analyze and explain the impact of word choices on the audience and text purpose.\n- reasoning_explanation: Explain or evaluate how specific word choices influence the audience and support the text's purpose.\n- comprehension_response: Respond to texts by discussing the effects of word choices on audience and purpose.\nCodes: 1.P.AC.1.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

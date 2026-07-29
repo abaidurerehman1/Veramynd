@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.P.2",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Decoding with Phonics",
+  "raw_text": "Use grade-level phonics skills to decode words in context and in isolation.",
+  "parent_code": "1.F.P",
+  "ancestor_path": [
+    "1.F",
+    "1.F.P"
+  ],
+  "child_codes": [
+    "1.F.P.2.a",
+    "1.F.P.2.b",
+    "1.F.P.2.c",
+    "1.F.P.2.d"
+  ],
+  "child_texts": [
+    "Decode regularly spelled one-syllable words with a variety of spelling patterns (VC, CV, CVC, CVCe, VCC, CCVC, CVCC, CVVC, CCVCC), including high-frequency words.",
+    "Identify and decode parts of irregularly spelled words, including high-frequency words.",
+    "Decode one-syllable nonsense words with a variety of spelling patterns (VC, CV, CVC, CVCe, VCC, CCVC, CVCC, CVVC, CCVCC).",
+    "Decode two-syllable words with basic patterns by applying knowledge of basic syllable types."
+  ],
+  "domain": {
+    "primary": "Phonics",
+    "secondary": []
+  },
+  "competency_statement": "Use grade-level phonics skills to decode words in context and in isolation.",
+  "observable_behaviors": [
+    "Read regularly spelled one-syllable words with various spelling patterns such as VC, CV, CVC, CVCe, VCC, CCVC, CVCC, CVVC, and CCVCC, including high-frequency words.",
+    "Identify and decode parts of irregularly spelled words, including high-frequency words.",
+    "Decode one-syllable nonsense words with a variety of spelling patterns.",
+    "Decode two-syllable words by applying knowledge of basic syllable types."
+  ],
+  "pedagogy_terms": [
+    "decoding",
+    "phonics",
+    "spelling patterns",
+    "syllable types",
+    "high-frequency words",
+    "nonsense words"
+  ],
+  "exact_codes": [
+    "1.F.P.2"
+  ],
+  "skill_clauses": [
+    "Decode regularly spelled one-syllable words with a variety of spelling patterns including high-frequency words.",
+    "Identify and decode parts of irregularly spelled words including high-frequency words.",
+    "Decode one-syllable nonsense words with a variety of spelling patterns.",
+    "Decode two-syllable words by applying knowledge of basic syllable types."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize regularly and irregularly spelled words and parts of words.",
+    "oral_production": "Read aloud one- and two-syllable words with various spelling patterns and nonsense words.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply phonics knowledge to decode words in context and isolation.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.P.2\nDomain primary: Phonics\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Use grade-level phonics skills to decode words in context and in isolation.\nSkills:\n- Decode regularly spelled one-syllable words with a variety of spelling patterns including high-frequency words.\n- Identify and decode parts of irregularly spelled words including high-frequency words.\n- Decode one-syllable nonsense words with a variety of spelling patterns.\n- Decode two-syllable words by applying knowledge of basic syllable types.\nObservable behaviors:\n- Read regularly spelled one-syllable words with various spelling patterns such as VC, CV, CVC, CVCe, VCC, CCVC, CVCC, CVVC, and CCVCC, including high-frequency words.\n- Identify and decode parts of irregularly spelled words, including high-frequency words.\n- Decode one-syllable nonsense words with a variety of spelling patterns.\n- Decode two-syllable words by applying knowledge of basic syllable types.\nPedagogy terms: decoding, phonics, spelling patterns, syllable types, high-frequency words, nonsense words\nRequired student actions:\n- recognition_identification: Recognize regularly and irregularly spelled words and parts of words.\n- oral_production: Read aloud one- and two-syllable words with various spelling patterns and nonsense words.\n- procedural_application: Apply phonics knowledge to decode words in context and isolation.\nCodes: 1.F.P.2",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.GC.2",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Syntax",
+  "raw_text": "Recognize and compose coherent sentences that express complete thoughts.",
+  "parent_code": "1.L.GC",
+  "ancestor_path": [
+    "1.L",
+    "1.L.GC"
+  ],
+  "child_codes": [
+    "1.L.GC.2.a",
+    "1.L.GC.2.b",
+    "1.L.GC.2.c",
+    "1.L.GC.2.d"
+  ],
+  "child_texts": [
+    "Distinguish between complete and incomplete simple sentences, and identify the sentence type (i.e., declarative, imperative, interrogative, and exclamatory). (I)",
+    "Use a variety of simple sentences (including a variety of sentence types) to develop clarity in written texts. (C)",
+    "Use singular and plural subjects with matching verbs. (C)",
+    "With adult support, use adjectives or adverbs to add details or clarify meaning. (C)"
+  ],
+  "domain": {
+    "primary": "Language",
+    "secondary": [
+      "Writing"
+    ]
+  },
+  "competency_statement": "Recognize and create complete and clear sentences that express full thoughts using correct sentence types, subject-verb agreement, and descriptive words.",
+  "observable_behaviors": [
+    "Identify whether a sentence is complete or incomplete.",
+    "Name the type of sentence as declarative, imperative, interrogative, or exclamatory.",
+    "Write simple sentences using different sentence types.",
+    "Use singular and plural subjects with matching verbs in sentences.",
+    "Add adjectives or adverbs to sentences to provide more detail or clarify meaning with adult support."
+  ],
+  "pedagogy_terms": [
+    "sentence types",
+    "complete sentences",
+    "subject-verb agreement",
+    "adjectives",
+    "adverbs",
+    "sentence clarity"
+  ],
+  "exact_codes": [
+    "1.L.GC.2"
+  ],
+  "skill_clauses": [
+    "Distinguish between complete and incomplete simple sentences and identify their types (declarative, imperative, interrogative, exclamatory).",
+    "Use a variety of simple sentences including different sentence types to make writing clear.",
+    "Use singular and plural subjects with matching verbs.",
+    "With adult support, use adjectives or adverbs to add details or clarify meaning."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify complete and incomplete sentences and sentence types.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Write simple sentences using various sentence types and correct subject-verb agreement; add adjectives or adverbs with support.",
+    "matching_sorting_sequencing": "Sort sentences by type and completeness.",
+    "procedural_application": "Use singular and plural subjects with matching verbs in writing; use adjectives or adverbs to add detail with support.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain the difference between complete and incomplete sentences and identify sentence types.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.GC.2\nDomain primary: Language\nDomain secondary: Writing\nCognitive demand: DOK2_skills_concepts\nCompetency: Recognize and create complete and clear sentences that express full thoughts using correct sentence types, subject-verb agreement, and descriptive words.\nSkills:\n- Distinguish between complete and incomplete simple sentences and identify their types (declarative, imperative, interrogative, exclamatory).\n- Use a variety of simple sentences including different sentence types to make writing clear.\n- Use singular and plural subjects with matching verbs.\n- With adult support, use adjectives or adverbs to add details or clarify meaning.\nObservable behaviors:\n- Identify whether a sentence is complete or incomplete.\n- Name the type of sentence as declarative, imperative, interrogative, or exclamatory.\n- Write simple sentences using different sentence types.\n- Use singular and plural subjects with matching verbs in sentences.\n- Add adjectives or adverbs to sentences to provide more detail or clarify meaning with adult support.\nPedagogy terms: sentence types, complete sentences, subject-verb agreement, adjectives, adverbs, sentence clarity\nRequired student actions:\n- recognition_identification: Identify complete and incomplete sentences and sentence types.\n- written_production: Write simple sentences using various sentence types and correct subject-verb agreement; add adjectives or adverbs with support.\n- matching_sorting_sequencing: Sort sentences by type and completeness.\n- procedural_application: Use singular and plural subjects with matching verbs in writing; use adjectives or adverbs to add detail with support.\n- reasoning_explanation: Explain the difference between complete and incomplete sentences and identify sentence types.\nCodes: 1.L.GC.2",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

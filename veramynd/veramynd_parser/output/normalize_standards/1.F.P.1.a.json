@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.P.1.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Identify and produce phoneme-grapheme correspondences for frequently used consonant blends and digraphs.",
+  "parent_code": "1.F.P.1",
+  "ancestor_path": [
+    "1.F",
+    "1.F.P",
+    "1.F.P.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Phonics",
+    "secondary": []
+  },
+  "competency_statement": "Identify and produce the sounds and letters for common consonant blends and digraphs.",
+  "observable_behaviors": [
+    "Recognize consonant blends and digraphs in spoken and written words.",
+    "Produce the sounds of consonant blends and digraphs when reading aloud.",
+    "Write consonant blends and digraphs to represent sounds in words."
+  ],
+  "pedagogy_terms": [
+    "phoneme-grapheme correspondences",
+    "consonant blends",
+    "digraphs",
+    "sound-letter relationships"
+  ],
+  "exact_codes": [
+    "1.F.P.1.a"
+  ],
+  "skill_clauses": [
+    "Identify phoneme-grapheme correspondences for frequently used consonant blends.",
+    "Identify phoneme-grapheme correspondences for frequently used consonant digraphs.",
+    "Produce phoneme-grapheme correspondences for frequently used consonant blends.",
+    "Produce phoneme-grapheme correspondences for frequently used consonant digraphs."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify consonant blends and digraphs in spoken and written words.",
+    "oral_production": "Produce the sounds of consonant blends and digraphs aloud.",
+    "written_production": "Write consonant blends and digraphs to represent sounds in words.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.P.1.a\nDomain primary: Phonics\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Identify and produce the sounds and letters for common consonant blends and digraphs.\nSkills:\n- Identify phoneme-grapheme correspondences for frequently used consonant blends.\n- Identify phoneme-grapheme correspondences for frequently used consonant digraphs.\n- Produce phoneme-grapheme correspondences for frequently used consonant blends.\n- Produce phoneme-grapheme correspondences for frequently used consonant digraphs.\nObservable behaviors:\n- Recognize consonant blends and digraphs in spoken and written words.\n- Produce the sounds of consonant blends and digraphs when reading aloud.\n- Write consonant blends and digraphs to represent sounds in words.\nPedagogy terms: phoneme-grapheme correspondences, consonant blends, digraphs, sound-letter relationships\nRequired student actions:\n- recognition_identification: Identify consonant blends and digraphs in spoken and written words.\n- oral_production: Produce the sounds of consonant blends and digraphs aloud.\n- written_production: Write consonant blends and digraphs to represent sounds in words.\nCodes: 1.F.P.1.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

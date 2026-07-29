@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.RA.2",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Curating Sources & Evidence",
+  "raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics.",
+  "parent_code": "1.T.RA",
+  "ancestor_path": [
+    "1.T",
+    "1.T.RA"
+  ],
+  "child_codes": [
+    "1.T.RA.2.a",
+    "1.T.RA.2.b"
+  ],
+  "child_texts": [
+    "Refer to parts of texts when supporting an idea, answer, or opinion. (I)",
+    "Explore various sources of information, including print, digital, and personal communication. (I)"
+  ],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening"
+    ]
+  },
+  "competency_statement": "Use parts of texts to support ideas or answers and explore different sources of information to make connections on various topics.",
+  "observable_behaviors": [
+    "Point to or name parts of a text when explaining an idea or answer.",
+    "Identify and use information from print, digital, and personal communication sources.",
+    "Discuss connections made from exploring multiple sources on a topic."
+  ],
+  "pedagogy_terms": [
+    "text evidence",
+    "sources",
+    "information exploration",
+    "connections"
+  ],
+  "exact_codes": [
+    "1.T.RA.2"
+  ],
+  "skill_clauses": [
+    "Refer to parts of texts when supporting an idea, answer, or opinion.",
+    "Explore various sources of information, including print, digital, and personal communication."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify parts of texts that support ideas or answers.",
+    "oral_production": "Explain ideas or answers using parts of texts and discuss information from various sources.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use parts of texts to support ideas or answers and explore various sources of information.",
+    "investigation_handson": "Explore various sources of information including print, digital, and personal communication.",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Refer to parts of texts to support ideas or answers and explain connections made from multiple sources.",
+    "comprehension_response": "Use text parts to address specific questions and integrate information from various sources to understand topics.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.RA.2\nDomain primary: Comprehension\nDomain secondary: Speaking & Listening\nCognitive demand: DOK2_skills_concepts\nCompetency: Use parts of texts to support ideas or answers and explore different sources of information to make connections on various topics.\nSkills:\n- Refer to parts of texts when supporting an idea, answer, or opinion.\n- Explore various sources of information, including print, digital, and personal communication.\nObservable behaviors:\n- Point to or name parts of a text when explaining an idea or answer.\n- Identify and use information from print, digital, and personal communication sources.\n- Discuss connections made from exploring multiple sources on a topic.\nPedagogy terms: text evidence, sources, information exploration, connections\nRequired student actions:\n- recognition_identification: Identify parts of texts that support ideas or answers.\n- oral_production: Explain ideas or answers using parts of texts and discuss information from various sources.\n- procedural_application: Use parts of texts to support ideas or answers and explore various sources of information.\n- investigation_handson: Explore various sources of information including print, digital, and personal communication.\n- reasoning_explanation: Refer to parts of texts to support ideas or answers and explain connections made from multiple sources.\n- comprehension_response: Use text parts to address specific questions and integrate information from various sources to understand topics.\nCodes: 1.T.RA.2",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

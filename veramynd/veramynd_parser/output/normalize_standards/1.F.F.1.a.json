@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.F.1.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Increase sight word vocabulary using decoding skills by reading grade-appropriate regularly and irregularly spelled words, including high-frequency words, in isolation and context with increasing automaticity.",
+  "parent_code": "1.F.F.1",
+  "ancestor_path": [
+    "1.F",
+    "1.F.F",
+    "1.F.F.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Fluency",
+    "secondary": [
+      "Phonics"
+    ]
+  },
+  "competency_statement": "Read grade-appropriate regularly and irregularly spelled words, including high-frequency words, both alone and in context, with increasing automaticity by using decoding skills.",
+  "observable_behaviors": [
+    "Read high-frequency words aloud with increasing speed and accuracy.",
+    "Use decoding skills to read regularly spelled words automatically.",
+    "Use decoding skills to read irregularly spelled words automatically.",
+    "Read words both in isolation and within sentences or texts.",
+    "Demonstrate growing automaticity when recognizing sight words."
+  ],
+  "pedagogy_terms": [
+    "sight words",
+    "decoding",
+    "automaticity",
+    "high-frequency words",
+    "regularly spelled words",
+    "irregularly spelled words"
+  ],
+  "exact_codes": [
+    "1.F.F.1.a"
+  ],
+  "skill_clauses": [
+    "Increase sight word vocabulary by reading high-frequency words.",
+    "Use decoding skills to read regularly spelled words.",
+    "Use decoding skills to read irregularly spelled words.",
+    "Read words both in isolation and in context with increasing automaticity."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify grade-appropriate regularly and irregularly spelled words and high-frequency words in isolation and context.",
+    "oral_production": "Read grade-appropriate regularly and irregularly spelled words and high-frequency words aloud with increasing automaticity.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply decoding skills to read words automatically in isolation and context.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.F.1.a\nDomain primary: Fluency\nDomain secondary: Phonics\nCognitive demand: DOK2_skills_concepts\nCompetency: Read grade-appropriate regularly and irregularly spelled words, including high-frequency words, both alone and in context, with increasing automaticity by using decoding skills.\nSkills:\n- Increase sight word vocabulary by reading high-frequency words.\n- Use decoding skills to read regularly spelled words.\n- Use decoding skills to read irregularly spelled words.\n- Read words both in isolation and in context with increasing automaticity.\nObservable behaviors:\n- Read high-frequency words aloud with increasing speed and accuracy.\n- Use decoding skills to read regularly spelled words automatically.\n- Use decoding skills to read irregularly spelled words automatically.\n- Read words both in isolation and within sentences or texts.\n- Demonstrate growing automaticity when recognizing sight words.\nPedagogy terms: sight words, decoding, automaticity, high-frequency words, regularly spelled words, irregularly spelled words\nRequired student actions:\n- recognition_identification: Identify grade-appropriate regularly and irregularly spelled words and high-frequency words in isolation and context.\n- oral_production: Read grade-appropriate regularly and irregularly spelled words and high-frequency words aloud with increasing automaticity.\n- procedural_application: Apply decoding skills to read words automatically in isolation and context.\nCodes: 1.F.F.1.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

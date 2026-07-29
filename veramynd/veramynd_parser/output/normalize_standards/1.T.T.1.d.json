@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.T.1.d",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures. (I)",
+  "parent_code": "1.T.T.1",
+  "ancestor_path": [
+    "1.T",
+    "1.T.T",
+    "1.T.T.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening"
+    ]
+  },
+  "competency_statement": "With adult support, compare and contrast characters and their experiences in stories from different cultures.",
+  "observable_behaviors": [
+    "Identify characters in stories from diverse cultures.",
+    "Describe experiences of characters in different stories.",
+    "Discuss similarities and differences between characters and their experiences across stories."
+  ],
+  "pedagogy_terms": [
+    "compare and contrast",
+    "characters",
+    "experiences",
+    "stories",
+    "diverse cultures",
+    "adult support"
+  ],
+  "exact_codes": [
+    "1.T.T.1.d"
+  ],
+  "skill_clauses": [
+    "Compare characters in stories from diverse cultures with adult support.",
+    "Contrast characters in stories from diverse cultures with adult support.",
+    "Compare experiences of characters in stories from diverse cultures with adult support.",
+    "Contrast experiences of characters in stories from diverse cultures with adult support."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize characters and their experiences in stories from diverse cultures with adult support.",
+    "oral_production": "Describe and discuss similarities and differences between characters and their experiences in stories with adult support.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how characters and their experiences are similar or different across stories with adult support.",
+    "comprehension_response": "Compare and contrast characters and their experiences in stories from diverse cultures with adult support.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.T.1.d\nDomain primary: Comprehension\nDomain secondary: Speaking & Listening\nCognitive demand: DOK2_skills_concepts\nCompetency: With adult support, compare and contrast characters and their experiences in stories from different cultures.\nSkills:\n- Compare characters in stories from diverse cultures with adult support.\n- Contrast characters in stories from diverse cultures with adult support.\n- Compare experiences of characters in stories from diverse cultures with adult support.\n- Contrast experiences of characters in stories from diverse cultures with adult support.\nObservable behaviors:\n- Identify characters in stories from diverse cultures.\n- Describe experiences of characters in different stories.\n- Discuss similarities and differences between characters and their experiences across stories.\nPedagogy terms: compare and contrast, characters, experiences, stories, diverse cultures, adult support\nRequired student actions:\n- recognition_identification: Recognize characters and their experiences in stories from diverse cultures with adult support.\n- oral_production: Describe and discuss similarities and differences between characters and their experiences in stories with adult support.\n- reasoning_explanation: Explain how characters and their experiences are similar or different across stories with adult support.\n- comprehension_response: Compare and contrast characters and their experiences in stories from diverse cultures with adult support.\nCodes: 1.T.T.1.d",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

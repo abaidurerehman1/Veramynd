@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.CP.1.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Arrive to group discussions and collaborative meetings prepared to be an active participant in the work. (I/C)",
+  "parent_code": "1.P.CP.1",
+  "ancestor_path": [
+    "1.P",
+    "1.P.CP",
+    "1.P.CP.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": []
+  },
+  "competency_statement": "Be prepared to actively participate in group discussions and collaborative meetings.",
+  "observable_behaviors": [
+    "Come to group discussions ready to contribute ideas and listen to others.",
+    "Bring necessary materials or information to collaborative meetings.",
+    "Engage respectfully and attentively during group work."
+  ],
+  "pedagogy_terms": [
+    "collaboration",
+    "group discussions",
+    "active participation",
+    "preparedness"
+  ],
+  "exact_codes": [
+    "1.P.CP.1.a"
+  ],
+  "skill_clauses": [
+    "Arrive prepared to participate in group discussions and collaborative meetings."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Participate actively by speaking and sharing ideas in group discussions.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Prepare for group discussions by gathering needed materials or information.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "Listen and respond appropriately to others during group discussions.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.CP.1.a\nDomain primary: Speaking & Listening\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Be prepared to actively participate in group discussions and collaborative meetings.\nSkills:\n- Arrive prepared to participate in group discussions and collaborative meetings.\nObservable behaviors:\n- Come to group discussions ready to contribute ideas and listen to others.\n- Bring necessary materials or information to collaborative meetings.\n- Engage respectfully and attentively during group work.\nPedagogy terms: collaboration, group discussions, active participation, preparedness\nRequired student actions:\n- oral_production: Participate actively by speaking and sharing ideas in group discussions.\n- procedural_application: Prepare for group discussions by gathering needed materials or information.\n- comprehension_response: Listen and respond appropriately to others during group discussions.\nCodes: 1.P.CP.1.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

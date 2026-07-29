@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.3.d",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)",
+  "parent_code": "1.P.EICC.3",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.3"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening"
+    ]
+  },
+  "competency_statement": "Summarize parts of a text and create visual representations to help understand what is read.",
+  "observable_behaviors": [
+    "Retell key points from sections of a text in their own words.",
+    "Draw or create pictures that represent important ideas from the text.",
+    "Use summaries and visuals to check understanding while reading."
+  ],
+  "pedagogy_terms": [
+    "summarize",
+    "visualize",
+    "comprehension strategies",
+    "meaning-making"
+  ],
+  "exact_codes": [
+    "1.P.EICC.3.d"
+  ],
+  "skill_clauses": [
+    "Summarize sections of the text to maintain understanding.",
+    "Visualize sections of the text to maintain understanding."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Summarize sections of a text orally to show understanding.",
+    "written_production": "Create drawings or visual representations of text sections to support comprehension.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use summarizing and visualizing strategies during reading to maintain understanding.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "Model summarizing and visualizing parts of a text to maintain comprehension.",
+    "reasoning_explanation": "Explain how summarizing and visualizing help maintain understanding of the text.",
+    "comprehension_response": "Summarize and visualize sections of the text to demonstrate ongoing comprehension.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.3.d\nDomain primary: Comprehension\nDomain secondary: Speaking & Listening\nCognitive demand: DOK2_skills_concepts\nCompetency: Summarize parts of a text and create visual representations to help understand what is read.\nSkills:\n- Summarize sections of the text to maintain understanding.\n- Visualize sections of the text to maintain understanding.\nObservable behaviors:\n- Retell key points from sections of a text in their own words.\n- Draw or create pictures that represent important ideas from the text.\n- Use summaries and visuals to check understanding while reading.\nPedagogy terms: summarize, visualize, comprehension strategies, meaning-making\nRequired student actions:\n- oral_production: Summarize sections of a text orally to show understanding.\n- written_production: Create drawings or visual representations of text sections to support comprehension.\n- procedural_application: Use summarizing and visualizing strategies during reading to maintain understanding.\n- representation_modeling: Model summarizing and visualizing parts of a text to maintain comprehension.\n- reasoning_explanation: Explain how summarizing and visualizing help maintain understanding of the text.\n- comprehension_response: Summarize and visualize sections of the text to demonstrate ongoing comprehension.\nCodes: 1.P.EICC.3.d",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

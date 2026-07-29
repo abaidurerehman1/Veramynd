@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.CP.1",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Collaboration",
+  "raw_text": "Collaborate with others to accomplish shared goals and projects.",
+  "parent_code": "1.P.CP",
+  "ancestor_path": [
+    "1.P",
+    "1.P.CP"
+  ],
+  "child_codes": [
+    "1.P.CP.1.a",
+    "1.P.CP.1.b",
+    "1.P.CP.1.c",
+    "1.P.CP.1.d"
+  ],
+  "child_texts": [
+    "Arrive to group discussions and collaborative meetings prepared to be an active participant in the work. (I/C)",
+    "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects. (I/C)",
+    "Contribute to discussions and shared projects by offering ideas, listening to the ideas of others, and providing feedback. (I/C)",
+    "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)"
+  ],
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Work together with others to achieve shared goals and complete projects.",
+  "observable_behaviors": [
+    "Come prepared to participate actively in group discussions and meetings.",
+    "Help set group rules, goals, and procedures to keep the group productive.",
+    "Share ideas, listen to others, and give feedback during discussions and projects.",
+    "Collaborate to discuss topics, investigate questions, solve problems, and create texts."
+  ],
+  "pedagogy_terms": [
+    "collaboration",
+    "group discussion",
+    "shared goals",
+    "feedback",
+    "active participation"
+  ],
+  "exact_codes": [
+    "1.P.CP.1"
+  ],
+  "skill_clauses": [
+    "Arrive prepared to actively participate in group discussions and collaborative meetings.",
+    "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects.",
+    "Contribute to discussions and shared projects by offering ideas, listening to the ideas of others, and providing feedback.",
+    "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Contribute ideas and provide feedback during group discussions.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Participate in establishing group norms, goals, and procedures for shared projects.",
+    "investigation_handson": "Work with others to investigate questions and solve problems.",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "Listen to and consider the ideas of others during collaboration.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.CP.1\nDomain primary: Speaking & Listening\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Work together with others to achieve shared goals and complete projects.\nSkills:\n- Arrive prepared to actively participate in group discussions and collaborative meetings.\n- Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects.\n- Contribute to discussions and shared projects by offering ideas, listening to the ideas of others, and providing feedback.\n- Work with others to discuss topics, investigate questions, solve problems, and explore and create texts.\nObservable behaviors:\n- Come prepared to participate actively in group discussions and meetings.\n- Help set group rules, goals, and procedures to keep the group productive.\n- Share ideas, listen to others, and give feedback during discussions and projects.\n- Collaborate to discuss topics, investigate questions, solve problems, and create texts.\nPedagogy terms: collaboration, group discussion, shared goals, feedback, active participation\nRequired student actions:\n- oral_production: Contribute ideas and provide feedback during group discussions.\n- procedural_application: Participate in establishing group norms, goals, and procedures for shared projects.\n- investigation_handson: Work with others to investigate questions and solve problems.\n- comprehension_response: Listen to and consider the ideas of others during collaboration.\nCodes: 1.P.CP.1",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.GC.1.10",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Grammar",
+  "raw_text": "Form and use the simple verb tenses. (Continue)",
+  "parent_code": "1.L.GC.1",
+  "ancestor_path": [
+    "1.L",
+    "1.L.GC",
+    "1.L.GC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Language",
+    "secondary": []
+  },
+  "competency_statement": "Use and form simple verb tenses correctly in speaking and writing.",
+  "observable_behaviors": [
+    "Use verbs to show actions happening now, in the past, or in the future.",
+    "Identify simple verb tenses in sentences.",
+    "Construct sentences using simple present, past, and future verb tenses."
+  ],
+  "pedagogy_terms": [
+    "simple verb tenses",
+    "present tense",
+    "past tense",
+    "future tense",
+    "verb usage"
+  ],
+  "exact_codes": [
+    "1.L.GC.1.10"
+  ],
+  "skill_clauses": [
+    "Form simple verb tenses.",
+    "Use simple verb tenses correctly in communication."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify simple verb tenses in spoken or written sentences.",
+    "oral_production": "Use simple verb tenses correctly when speaking.",
+    "written_production": "Write sentences using simple verb tenses correctly.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Form and use simple verb tenses in communication.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.GC.1.10\nDomain primary: Language\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Use and form simple verb tenses correctly in speaking and writing.\nSkills:\n- Form simple verb tenses.\n- Use simple verb tenses correctly in communication.\nObservable behaviors:\n- Use verbs to show actions happening now, in the past, or in the future.\n- Identify simple verb tenses in sentences.\n- Construct sentences using simple present, past, and future verb tenses.\nPedagogy terms: simple verb tenses, present tense, past tense, future tense, verb usage\nRequired student actions:\n- recognition_identification: Identify simple verb tenses in spoken or written sentences.\n- oral_production: Use simple verb tenses correctly when speaking.\n- written_production: Write sentences using simple verb tenses correctly.\n- procedural_application: Form and use simple verb tenses in communication.\nCodes: 1.L.GC.1.10",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

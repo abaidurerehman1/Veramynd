@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.P.3.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Encode one-syllable nonsense words with a variety of spelling patterns (VC, CVC, CVCe, VCC, CCVC, CVCC, CCVCC).",
+  "parent_code": "1.F.P.3",
+  "ancestor_path": [
+    "1.F",
+    "1.F.P",
+    "1.F.P.3"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Phonics",
+    "secondary": []
+  },
+  "competency_statement": "Encode one-syllable nonsense words using various spelling patterns such as VC, CVC, CVCe, VCC, CCVC, CVCC, and CCVCC.",
+  "observable_behaviors": [
+    "Write one-syllable nonsense words using different phonics spelling patterns.",
+    "Apply phonics knowledge to spell nonsense words with vowel-consonant and consonant-vowel combinations.",
+    "Demonstrate encoding skills with nonsense words that include silent e and consonant blends."
+  ],
+  "pedagogy_terms": [
+    "encoding",
+    "phonics",
+    "spelling patterns",
+    "nonsense words",
+    "VC",
+    "CVC",
+    "CVCe",
+    "VCC",
+    "CCVC",
+    "CVCC",
+    "CCVCC"
+  ],
+  "exact_codes": [
+    "1.F.P.3.c"
+  ],
+  "skill_clauses": [
+    "Encode one-syllable nonsense words using VC pattern.",
+    "Encode one-syllable nonsense words using CVC pattern.",
+    "Encode one-syllable nonsense words using CVCe pattern.",
+    "Encode one-syllable nonsense words using VCC pattern.",
+    "Encode one-syllable nonsense words using CCVC pattern.",
+    "Encode one-syllable nonsense words using CVCC pattern.",
+    "Encode one-syllable nonsense words using CCVCC pattern."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Spell one-syllable nonsense words using specified phonics patterns.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply phonics rules to encode nonsense words with various spelling patterns.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.P.3.c\nDomain primary: Phonics\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Encode one-syllable nonsense words using various spelling patterns such as VC, CVC, CVCe, VCC, CCVC, CVCC, and CCVCC.\nSkills:\n- Encode one-syllable nonsense words using VC pattern.\n- Encode one-syllable nonsense words using CVC pattern.\n- Encode one-syllable nonsense words using CVCe pattern.\n- Encode one-syllable nonsense words using VCC pattern.\n- Encode one-syllable nonsense words using CCVC pattern.\n- Encode one-syllable nonsense words using CVCC pattern.\n- Encode one-syllable nonsense words using CCVCC pattern.\nObservable behaviors:\n- Write one-syllable nonsense words using different phonics spelling patterns.\n- Apply phonics knowledge to spell nonsense words with vowel-consonant and consonant-vowel combinations.\n- Demonstrate encoding skills with nonsense words that include silent e and consonant blends.\nPedagogy terms: encoding, phonics, spelling patterns, nonsense words, VC, CVC, CVCe, VCC, CCVC, CVCC, CCVCC\nRequired student actions:\n- written_production: Spell one-syllable nonsense words using specified phonics patterns.\n- procedural_application: Apply phonics rules to encode nonsense words with various spelling patterns.\nCodes: 1.F.P.3.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

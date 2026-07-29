@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.AC.3.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Apply knowledge of how mode and genre impact what kinds of ideas and information are included in texts. (I/C)",
+  "parent_code": "1.P.AC.3",
+  "ancestor_path": [
+    "1.P",
+    "1.P.AC",
+    "1.P.AC.3"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Writing"
+    ]
+  },
+  "competency_statement": "Apply knowledge of how the mode and genre of a text affect the types of ideas and information included when reading or creating texts.",
+  "observable_behaviors": [
+    "Identify how different modes (such as print, digital, or multimedia) influence the content of a text.",
+    "Recognize how different genres (such as stories, informational texts, or poems) shape the kinds of ideas and information presented.",
+    "Explain why certain ideas or information are included based on the text's mode and genre."
+  ],
+  "pedagogy_terms": [
+    "mode",
+    "genre",
+    "text design",
+    "audience",
+    "purpose",
+    "ideas",
+    "information"
+  ],
+  "exact_codes": [
+    "1.P.AC.3.b"
+  ],
+  "skill_clauses": [
+    "Apply knowledge of how mode impacts the kinds of ideas and information included in texts.",
+    "Apply knowledge of how genre impacts the kinds of ideas and information included in texts."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize how mode and genre influence text content.",
+    "oral_production": "Explain orally how mode and genre affect ideas and information in texts.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply knowledge of mode and genre to understand or create texts.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain the impact of mode and genre on the ideas and information included in texts.",
+    "comprehension_response": "Respond to texts by considering how mode and genre affect their content.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.AC.3.b\nDomain primary: Comprehension\nDomain secondary: Writing\nCognitive demand: DOK2_skills_concepts\nCompetency: Apply knowledge of how the mode and genre of a text affect the types of ideas and information included when reading or creating texts.\nSkills:\n- Apply knowledge of how mode impacts the kinds of ideas and information included in texts.\n- Apply knowledge of how genre impacts the kinds of ideas and information included in texts.\nObservable behaviors:\n- Identify how different modes (such as print, digital, or multimedia) influence the content of a text.\n- Recognize how different genres (such as stories, informational texts, or poems) shape the kinds of ideas and information presented.\n- Explain why certain ideas or information are included based on the text's mode and genre.\nPedagogy terms: mode, genre, text design, audience, purpose, ideas, information\nRequired student actions:\n- recognition_identification: Recognize how mode and genre influence text content.\n- oral_production: Explain orally how mode and genre affect ideas and information in texts.\n- procedural_application: Apply knowledge of mode and genre to understand or create texts.\n- reasoning_explanation: Explain the impact of mode and genre on the ideas and information included in texts.\n- comprehension_response: Respond to texts by considering how mode and genre affect their content.\nCodes: 1.P.AC.3.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

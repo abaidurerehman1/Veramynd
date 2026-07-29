@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.4.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Establish a purpose and goals for writing and identify a target audience. (C)",
+  "parent_code": "1.P.EICC.4",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.4"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": []
+  },
+  "competency_statement": "Set a clear purpose and goals for writing and identify who the writing is for.",
+  "observable_behaviors": [
+    "State why they are writing a text.",
+    "Describe what they want to accomplish with their writing.",
+    "Name the intended readers or audience for their writing."
+  ],
+  "pedagogy_terms": [
+    "writing purpose",
+    "writing goals",
+    "audience awareness"
+  ],
+  "exact_codes": [
+    "1.P.EICC.4.a"
+  ],
+  "skill_clauses": [
+    "Establish a purpose for writing.",
+    "Set goals for writing.",
+    "Identify a target audience for writing."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize the purpose and audience of a writing task when described.",
+    "oral_production": "Explain the purpose and audience for their writing orally.",
+    "written_production": "Write statements about the purpose and goals for their writing and identify the audience.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply the process of setting a purpose and identifying an audience before writing.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "Model setting a purpose and identifying an audience for writing.",
+    "reasoning_explanation": "Explain why setting a purpose and identifying an audience is important for writing.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.4.a\nDomain primary: Writing\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Set a clear purpose and goals for writing and identify who the writing is for.\nSkills:\n- Establish a purpose for writing.\n- Set goals for writing.\n- Identify a target audience for writing.\nObservable behaviors:\n- State why they are writing a text.\n- Describe what they want to accomplish with their writing.\n- Name the intended readers or audience for their writing.\nPedagogy terms: writing purpose, writing goals, audience awareness\nRequired student actions:\n- recognition_identification: Recognize the purpose and audience of a writing task when described.\n- oral_production: Explain the purpose and audience for their writing orally.\n- written_production: Write statements about the purpose and goals for their writing and identify the audience.\n- procedural_application: Apply the process of setting a purpose and identifying an audience before writing.\n- representation_modeling: Model setting a purpose and identifying an audience for writing.\n- reasoning_explanation: Explain why setting a purpose and identifying an audience is important for writing.\nCodes: 1.P.EICC.4.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

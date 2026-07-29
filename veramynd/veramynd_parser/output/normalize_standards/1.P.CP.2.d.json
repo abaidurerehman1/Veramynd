@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.CP.2.d",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Engage in dialogue with audiences by asking and answering questions. (I/C)",
+  "parent_code": "1.P.CP.2",
+  "ancestor_path": [
+    "1.P",
+    "1.P.CP",
+    "1.P.CP.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": []
+  },
+  "competency_statement": "Engage in conversations with audiences by asking and answering questions.",
+  "observable_behaviors": [
+    "Ask questions to clarify or learn more during a conversation.",
+    "Answer questions from an audience to share information or ideas.",
+    "Participate actively in a dialogue with others."
+  ],
+  "pedagogy_terms": [
+    "dialogue",
+    "ask and answer questions",
+    "audience engagement",
+    "communication skills"
+  ],
+  "exact_codes": [
+    "1.P.CP.2.d"
+  ],
+  "skill_clauses": [
+    "Engage in dialogue with audiences.",
+    "Ask questions during dialogue.",
+    "Answer questions during dialogue."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Ask and answer questions during a conversation with an audience.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Engage in dialogue by asking and answering questions appropriate to the audience and purpose.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "Respond appropriately to questions asked by an audience.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.CP.2.d\nDomain primary: Speaking & Listening\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Engage in conversations with audiences by asking and answering questions.\nSkills:\n- Engage in dialogue with audiences.\n- Ask questions during dialogue.\n- Answer questions during dialogue.\nObservable behaviors:\n- Ask questions to clarify or learn more during a conversation.\n- Answer questions from an audience to share information or ideas.\n- Participate actively in a dialogue with others.\nPedagogy terms: dialogue, ask and answer questions, audience engagement, communication skills\nRequired student actions:\n- oral_production: Ask and answer questions during a conversation with an audience.\n- procedural_application: Engage in dialogue by asking and answering questions appropriate to the audience and purpose.\n- comprehension_response: Respond appropriately to questions asked by an audience.\nCodes: 1.P.CP.2.d",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

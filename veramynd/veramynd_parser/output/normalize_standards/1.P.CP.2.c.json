@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.CP.2.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Vary tone, pace, and nonverbal gestures as appropriate to purpose and audience. (I/C)",
+  "parent_code": "1.P.CP.2",
+  "ancestor_path": [
+    "1.P",
+    "1.P.CP",
+    "1.P.CP.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": []
+  },
+  "competency_statement": "Use different tones of voice, speaking speeds, and body gestures to suit the purpose and audience when presenting.",
+  "observable_behaviors": [
+    "Change tone of voice to match the audience or purpose.",
+    "Adjust speaking speed to keep the audience engaged.",
+    "Use appropriate facial expressions and gestures during a presentation."
+  ],
+  "pedagogy_terms": [
+    "tone",
+    "pace",
+    "nonverbal gestures",
+    "audience",
+    "purpose",
+    "presentation skills"
+  ],
+  "exact_codes": [
+    "1.P.CP.2.c"
+  ],
+  "skill_clauses": [
+    "Vary tone as appropriate to purpose and audience.",
+    "Vary pace as appropriate to purpose and audience.",
+    "Use nonverbal gestures appropriate to purpose and audience."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Use varied tone, pace, and gestures when speaking to an audience.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply different tones, pacing, and nonverbal gestures to suit the audience and purpose during presentations.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain why changing tone, pace, and gestures is important for different audiences and purposes.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.CP.2.c\nDomain primary: Speaking & Listening\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Use different tones of voice, speaking speeds, and body gestures to suit the purpose and audience when presenting.\nSkills:\n- Vary tone as appropriate to purpose and audience.\n- Vary pace as appropriate to purpose and audience.\n- Use nonverbal gestures appropriate to purpose and audience.\nObservable behaviors:\n- Change tone of voice to match the audience or purpose.\n- Adjust speaking speed to keep the audience engaged.\n- Use appropriate facial expressions and gestures during a presentation.\nPedagogy terms: tone, pace, nonverbal gestures, audience, purpose, presentation skills\nRequired student actions:\n- oral_production: Use varied tone, pace, and gestures when speaking to an audience.\n- procedural_application: Apply different tones, pacing, and nonverbal gestures to suit the audience and purpose during presentations.\n- reasoning_explanation: Explain why changing tone, pace, and gestures is important for different audiences and purposes.\nCodes: 1.P.CP.2.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

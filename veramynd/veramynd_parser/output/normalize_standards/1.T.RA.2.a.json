@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.RA.2.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Refer to parts of texts when supporting an idea, answer, or opinion. (I)",
+  "parent_code": "1.T.RA.2",
+  "ancestor_path": [
+    "1.T",
+    "1.T.RA",
+    "1.T.RA.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": []
+  },
+  "competency_statement": "Use specific parts of texts to support an idea, answer, or opinion.",
+  "observable_behaviors": [
+    "Point to or name parts of a text that support an idea or answer.",
+    "Explain how a part of a text helps support an opinion or answer.",
+    "Use text details to back up a response or idea."
+  ],
+  "pedagogy_terms": [
+    "text evidence",
+    "supporting details",
+    "opinion",
+    "answer"
+  ],
+  "exact_codes": [
+    "1.T.RA.2.a"
+  ],
+  "skill_clauses": [
+    "Refer to parts of texts to support an idea.",
+    "Refer to parts of texts to support an answer.",
+    "Refer to parts of texts to support an opinion."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify parts of a text that support an idea, answer, or opinion.",
+    "oral_production": "Explain orally how parts of a text support an idea, answer, or opinion.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use parts of texts to support an idea, answer, or opinion in discussion or response.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain reasoning by referring to parts of texts that support an idea, answer, or opinion.",
+    "comprehension_response": "Respond to questions or prompts by referring to parts of texts that support an idea, answer, or opinion.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.RA.2.a\nDomain primary: Comprehension\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Use specific parts of texts to support an idea, answer, or opinion.\nSkills:\n- Refer to parts of texts to support an idea.\n- Refer to parts of texts to support an answer.\n- Refer to parts of texts to support an opinion.\nObservable behaviors:\n- Point to or name parts of a text that support an idea or answer.\n- Explain how a part of a text helps support an opinion or answer.\n- Use text details to back up a response or idea.\nPedagogy terms: text evidence, supporting details, opinion, answer\nRequired student actions:\n- recognition_identification: Identify parts of a text that support an idea, answer, or opinion.\n- oral_production: Explain orally how parts of a text support an idea, answer, or opinion.\n- procedural_application: Use parts of texts to support an idea, answer, or opinion in discussion or response.\n- reasoning_explanation: Explain reasoning by referring to parts of texts that support an idea, answer, or opinion.\n- comprehension_response: Respond to questions or prompts by referring to parts of texts that support an idea, answer, or opinion.\nCodes: 1.T.RA.2.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

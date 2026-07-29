@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.3.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Establish a purpose and set goals for reading, monitor comprehension, and adjust as needed. (I)",
+  "parent_code": "1.P.EICC.3",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.3"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": []
+  },
+  "competency_statement": "Set a purpose and goals for reading, check understanding while reading, and make changes to improve comprehension as needed.",
+  "observable_behaviors": [
+    "State a reason for reading a text.",
+    "Set specific goals for what to understand or learn from reading.",
+    "Pause during reading to think about whether the text makes sense.",
+    "Use strategies to fix understanding when confused, such as rereading or asking questions."
+  ],
+  "pedagogy_terms": [
+    "purpose setting",
+    "goal setting",
+    "monitor comprehension",
+    "self-correction",
+    "reading strategies"
+  ],
+  "exact_codes": [
+    "1.P.EICC.3.a"
+  ],
+  "skill_clauses": [
+    "Establish a purpose for reading.",
+    "Set goals for what to achieve during reading.",
+    "Monitor comprehension while reading.",
+    "Adjust reading strategies as needed to improve understanding."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Set a purpose and goals for reading, monitor comprehension during reading, and adjust reading strategies as needed to understand the text.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain the purpose for reading and describe how to check and adjust understanding while reading.",
+    "comprehension_response": "Demonstrate monitoring of comprehension and adjustments made to improve understanding during reading.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.3.a\nDomain primary: Comprehension\nDomain secondary: none\nCognitive demand: DOK3_strategic_thinking\nCompetency: Set a purpose and goals for reading, check understanding while reading, and make changes to improve comprehension as needed.\nSkills:\n- Establish a purpose for reading.\n- Set goals for what to achieve during reading.\n- Monitor comprehension while reading.\n- Adjust reading strategies as needed to improve understanding.\nObservable behaviors:\n- State a reason for reading a text.\n- Set specific goals for what to understand or learn from reading.\n- Pause during reading to think about whether the text makes sense.\n- Use strategies to fix understanding when confused, such as rereading or asking questions.\nPedagogy terms: purpose setting, goal setting, monitor comprehension, self-correction, reading strategies\nRequired student actions:\n- procedural_application: Set a purpose and goals for reading, monitor comprehension during reading, and adjust reading strategies as needed to understand the text.\n- reasoning_explanation: Explain the purpose for reading and describe how to check and adjust understanding while reading.\n- comprehension_response: Demonstrate monitoring of comprehension and adjustments made to improve understanding during reading.\nCodes: 1.P.EICC.3.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

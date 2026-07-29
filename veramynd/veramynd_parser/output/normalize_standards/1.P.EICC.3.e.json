@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.3.e",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Make and track predictions about the events and information likely to come next. (I)",
+  "parent_code": "1.P.EICC.3",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.3"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": []
+  },
+  "competency_statement": "Make and keep track of predictions about what will happen next in a text.",
+  "observable_behaviors": [
+    "State what they think will happen next in a story or text.",
+    "Explain why they think a certain event or information will come next.",
+    "Recall previous predictions and compare them to what actually happens as they read."
+  ],
+  "pedagogy_terms": [
+    "predictions",
+    "comprehension strategies",
+    "monitoring understanding"
+  ],
+  "exact_codes": [
+    "1.P.EICC.3.e"
+  ],
+  "skill_clauses": [
+    "Make predictions about events or information likely to come next in a text.",
+    "Track those predictions as reading progresses."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize when a text invites making predictions about upcoming events or information.",
+    "oral_production": "Verbally express predictions about what will happen next in a text.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "Track the sequence of events and update predictions accordingly.",
+    "procedural_application": "Apply the strategy of making and revising predictions while reading.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "Model making predictions about text events before and during reading.",
+    "reasoning_explanation": "Explain the reasoning behind predictions about upcoming text content.",
+    "comprehension_response": "Respond to texts by making and tracking predictions about future events or information.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.3.e\nDomain primary: Comprehension\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Make and keep track of predictions about what will happen next in a text.\nSkills:\n- Make predictions about events or information likely to come next in a text.\n- Track those predictions as reading progresses.\nObservable behaviors:\n- State what they think will happen next in a story or text.\n- Explain why they think a certain event or information will come next.\n- Recall previous predictions and compare them to what actually happens as they read.\nPedagogy terms: predictions, comprehension strategies, monitoring understanding\nRequired student actions:\n- recognition_identification: Recognize when a text invites making predictions about upcoming events or information.\n- oral_production: Verbally express predictions about what will happen next in a text.\n- matching_sorting_sequencing: Track the sequence of events and update predictions accordingly.\n- procedural_application: Apply the strategy of making and revising predictions while reading.\n- representation_modeling: Model making predictions about text events before and during reading.\n- reasoning_explanation: Explain the reasoning behind predictions about upcoming text content.\n- comprehension_response: Respond to texts by making and tracking predictions about future events or information.\nCodes: 1.P.EICC.3.e",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

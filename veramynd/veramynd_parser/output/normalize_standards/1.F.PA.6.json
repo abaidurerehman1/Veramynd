@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.PA.6",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Phonemic Awareness",
+  "raw_text": "Identify and manipulate the individual sounds in spoken words.",
+  "parent_code": "1.F.PA",
+  "ancestor_path": [
+    "1.F",
+    "1.F.PA"
+  ],
+  "child_codes": [
+    "1.F.PA.6.a",
+    "1.F.PA.6.b",
+    "1.F.PA.6.c",
+    "1.F.PA.6.d"
+  ],
+  "child_texts": [
+    "Isolate and pronounce initial, medial, and final sounds in spoken one-syllable words, including words with digraphs and blends.",
+    "Distinguish between short and long vowel sounds in spoken one-syllable words.",
+    "Blend and segment up to five phonemes, including consonant blends and digraphs, in spoken words.",
+    "Add, delete, and substitute phonemes in spoken one-syllable words with three or more phonemes."
+  ],
+  "domain": {
+    "primary": "Phonological Awareness",
+    "secondary": []
+  },
+  "competency_statement": "Identify and manipulate individual sounds in spoken one-syllable words, including isolating, blending, segmenting, and changing phonemes.",
+  "observable_behaviors": [
+    "Isolate and say the first, middle, and last sounds in spoken one-syllable words, including those with blends and digraphs.",
+    "Distinguish between short and long vowel sounds in spoken one-syllable words.",
+    "Blend and break apart up to five sounds in spoken words, including consonant blends and digraphs.",
+    "Add, delete, or substitute sounds in spoken one-syllable words with three or more sounds."
+  ],
+  "pedagogy_terms": [
+    "phonemes",
+    "isolation",
+    "blending",
+    "segmenting",
+    "manipulation",
+    "digraphs",
+    "blends",
+    "short vowels",
+    "long vowels"
+  ],
+  "exact_codes": [
+    "1.F.PA.6"
+  ],
+  "skill_clauses": [
+    "Isolate and pronounce initial, medial, and final sounds in spoken one-syllable words, including words with digraphs and blends.",
+    "Distinguish between short and long vowel sounds in spoken one-syllable words.",
+    "Blend and segment up to five phonemes, including consonant blends and digraphs, in spoken words.",
+    "Add, delete, and substitute phonemes in spoken one-syllable words with three or more phonemes."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify initial, medial, and final sounds in spoken one-syllable words.",
+    "oral_production": "Pronounce isolated sounds and manipulate phonemes by adding, deleting, or substituting them in spoken words.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Blend and segment phonemes in spoken words.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Distinguish between short and long vowel sounds in spoken words.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.PA.6\nDomain primary: Phonological Awareness\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Identify and manipulate individual sounds in spoken one-syllable words, including isolating, blending, segmenting, and changing phonemes.\nSkills:\n- Isolate and pronounce initial, medial, and final sounds in spoken one-syllable words, including words with digraphs and blends.\n- Distinguish between short and long vowel sounds in spoken one-syllable words.\n- Blend and segment up to five phonemes, including consonant blends and digraphs, in spoken words.\n- Add, delete, and substitute phonemes in spoken one-syllable words with three or more phonemes.\nObservable behaviors:\n- Isolate and say the first, middle, and last sounds in spoken one-syllable words, including those with blends and digraphs.\n- Distinguish between short and long vowel sounds in spoken one-syllable words.\n- Blend and break apart up to five sounds in spoken words, including consonant blends and digraphs.\n- Add, delete, or substitute sounds in spoken one-syllable words with three or more sounds.\nPedagogy terms: phonemes, isolation, blending, segmenting, manipulation, digraphs, blends, short vowels, long vowels\nRequired student actions:\n- recognition_identification: Identify initial, medial, and final sounds in spoken one-syllable words.\n- oral_production: Pronounce isolated sounds and manipulate phonemes by adding, deleting, or substituting them in spoken words.\n- procedural_application: Blend and segment phonemes in spoken words.\n- reasoning_explanation: Distinguish between short and long vowel sounds in spoken words.\nCodes: 1.F.PA.6",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

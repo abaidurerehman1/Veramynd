@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.GC.2.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Use singular and plural subjects with matching verbs. (C)",
+  "parent_code": "1.L.GC.2",
+  "ancestor_path": [
+    "1.L",
+    "1.L.GC",
+    "1.L.GC.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Language",
+    "secondary": []
+  },
+  "competency_statement": "Use singular and plural subjects with verbs that agree in number in sentences.",
+  "observable_behaviors": [
+    "Identify singular and plural subjects in sentences.",
+    "Use verbs that correctly match singular and plural subjects when speaking or writing.",
+    "Recognize when a verb does not agree with its subject in number."
+  ],
+  "pedagogy_terms": [
+    "subject-verb agreement",
+    "singular subjects",
+    "plural subjects",
+    "verbs",
+    "syntax"
+  ],
+  "exact_codes": [
+    "1.L.GC.2.c"
+  ],
+  "skill_clauses": [
+    "Use singular subjects with matching singular verbs.",
+    "Use plural subjects with matching plural verbs."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify singular and plural subjects and their matching verbs in sentences.",
+    "oral_production": "Use singular and plural subjects with matching verbs when speaking.",
+    "written_production": "Write sentences using singular and plural subjects with matching verbs.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply subject-verb agreement rules to compose coherent sentences.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain why verbs must agree in number with their subjects.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.GC.2.c\nDomain primary: Language\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Use singular and plural subjects with verbs that agree in number in sentences.\nSkills:\n- Use singular subjects with matching singular verbs.\n- Use plural subjects with matching plural verbs.\nObservable behaviors:\n- Identify singular and plural subjects in sentences.\n- Use verbs that correctly match singular and plural subjects when speaking or writing.\n- Recognize when a verb does not agree with its subject in number.\nPedagogy terms: subject-verb agreement, singular subjects, plural subjects, verbs, syntax\nRequired student actions:\n- recognition_identification: Identify singular and plural subjects and their matching verbs in sentences.\n- oral_production: Use singular and plural subjects with matching verbs when speaking.\n- written_production: Write sentences using singular and plural subjects with matching verbs.\n- procedural_application: Apply subject-verb agreement rules to compose coherent sentences.\n- reasoning_explanation: Explain why verbs must agree in number with their subjects.\nCodes: 1.L.GC.2.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.V.1.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Use grade-level general, academic, and specialized vocabulary words and phrases to communicate in a variety of settings. (C)",
+  "parent_code": "1.L.V.1",
+  "ancestor_path": [
+    "1.L",
+    "1.L.V",
+    "1.L.V.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Vocabulary",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Use grade-level general, academic, and specialized vocabulary words and phrases to communicate in different settings.",
+  "observable_behaviors": [
+    "Use appropriate vocabulary words when speaking or writing for different purposes and audiences.",
+    "Select words that fit the topic and situation in conversations and writing.",
+    "Demonstrate understanding of word meanings by using them correctly in context."
+  ],
+  "pedagogy_terms": [
+    "vocabulary",
+    "word meanings",
+    "academic vocabulary",
+    "specialized vocabulary",
+    "communication"
+  ],
+  "exact_codes": [
+    "1.L.V.1.b"
+  ],
+  "skill_clauses": [
+    "Use grade-level general vocabulary words and phrases to communicate.",
+    "Use grade-level academic vocabulary words and phrases to communicate.",
+    "Use grade-level specialized vocabulary words and phrases to communicate."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize grade-level general, academic, and specialized vocabulary words and phrases in spoken and written language.",
+    "oral_production": "Use grade-level vocabulary words and phrases correctly when speaking in various settings.",
+    "written_production": "Use grade-level vocabulary words and phrases correctly when writing for different purposes.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply knowledge of grade-level vocabulary to communicate effectively in different settings.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.V.1.b\nDomain primary: Vocabulary\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Use grade-level general, academic, and specialized vocabulary words and phrases to communicate in different settings.\nSkills:\n- Use grade-level general vocabulary words and phrases to communicate.\n- Use grade-level academic vocabulary words and phrases to communicate.\n- Use grade-level specialized vocabulary words and phrases to communicate.\nObservable behaviors:\n- Use appropriate vocabulary words when speaking or writing for different purposes and audiences.\n- Select words that fit the topic and situation in conversations and writing.\n- Demonstrate understanding of word meanings by using them correctly in context.\nPedagogy terms: vocabulary, word meanings, academic vocabulary, specialized vocabulary, communication\nRequired student actions:\n- recognition_identification: Recognize grade-level general, academic, and specialized vocabulary words and phrases in spoken and written language.\n- oral_production: Use grade-level vocabulary words and phrases correctly when speaking in various settings.\n- written_production: Use grade-level vocabulary words and phrases correctly when writing for different purposes.\n- procedural_application: Apply knowledge of grade-level vocabulary to communicate effectively in different settings.\nCodes: 1.L.V.1.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

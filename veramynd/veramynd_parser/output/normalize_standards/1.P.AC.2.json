@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.AC.2",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Writing like a Reader",
+  "raw_text": "Construct texts with the audience\u2019s experience in mind, basing decisions about craft techniques on context and purpose.",
+  "parent_code": "1.P.AC",
+  "ancestor_path": [
+    "1.P",
+    "1.P.AC"
+  ],
+  "child_codes": [
+    "1.P.AC.2.a",
+    "1.P.AC.2.b",
+    "1.P.AC.2.c",
+    "1.P.AC.2.d"
+  ],
+  "child_texts": [
+    "Integrate literary, expository, and opinion (grades K-5) or rhetorical (grades 6-12) elements to appeal to target audiences and achieve specific purposes. (I/C)",
+    "Craft words and phrases in order to influence the responses, thoughts, decisions, and questions of the target audience and achieve a specific purpose. (I/C)",
+    "Make decisions about sentence structure and syntax in order to accommodate and influence the audience and achieve a specific purpose. (I/C)",
+    "Organize texts by incorporating specific formats, structures, patterns, and features to influence the audience, facilitate accessibility, and support the text's purpose. (I/C)"
+  ],
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Construct texts by making choices about craft techniques that consider the audience's experience, context, and purpose.",
+  "observable_behaviors": [
+    "Choose literary, expository, or opinion elements to appeal to a specific audience.",
+    "Select words and phrases to influence the audience's thoughts and responses.",
+    "Decide on sentence structure and syntax to suit the audience and purpose.",
+    "Organize text using formats, structures, and features to support the purpose and help the audience understand."
+  ],
+  "pedagogy_terms": [
+    "author's craft",
+    "audience",
+    "purpose",
+    "text structure",
+    "word choice",
+    "sentence structure"
+  ],
+  "exact_codes": [
+    "1.P.AC.2"
+  ],
+  "skill_clauses": [
+    "Integrate literary, expository, and opinion or rhetorical elements to appeal to target audiences and achieve specific purposes.",
+    "Craft words and phrases to influence the responses, thoughts, decisions, and questions of the target audience and achieve a specific purpose.",
+    "Make decisions about sentence structure and syntax to accommodate and influence the audience and achieve a specific purpose.",
+    "Organize texts by incorporating specific formats, structures, patterns, and features to influence the audience, facilitate accessibility, and support the text's purpose."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Write texts that use craft techniques to influence an audience and achieve a purpose.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply knowledge of literary, expository, opinion, and rhetorical elements to construct texts for specific audiences and purposes.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how choices in words, sentence structure, and text organization influence the audience and support the text's purpose.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.AC.2\nDomain primary: Writing\nDomain secondary: Language\nCognitive demand: DOK3_strategic_thinking\nCompetency: Construct texts by making choices about craft techniques that consider the audience's experience, context, and purpose.\nSkills:\n- Integrate literary, expository, and opinion or rhetorical elements to appeal to target audiences and achieve specific purposes.\n- Craft words and phrases to influence the responses, thoughts, decisions, and questions of the target audience and achieve a specific purpose.\n- Make decisions about sentence structure and syntax to accommodate and influence the audience and achieve a specific purpose.\n- Organize texts by incorporating specific formats, structures, patterns, and features to influence the audience, facilitate accessibility, and support the text's purpose.\nObservable behaviors:\n- Choose literary, expository, or opinion elements to appeal to a specific audience.\n- Select words and phrases to influence the audience's thoughts and responses.\n- Decide on sentence structure and syntax to suit the audience and purpose.\n- Organize text using formats, structures, and features to support the purpose and help the audience understand.\nPedagogy terms: author's craft, audience, purpose, text structure, word choice, sentence structure\nRequired student actions:\n- written_production: Write texts that use craft techniques to influence an audience and achieve a purpose.\n- procedural_application: Apply knowledge of literary, expository, opinion, and rhetorical elements to construct texts for specific audiences and purposes.\n- reasoning_explanation: Explain how choices in words, sentence structure, and text organization influence the audience and support the text's purpose.\nCodes: 1.P.AC.2",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

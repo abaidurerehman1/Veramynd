@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.1.d",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Build a repertoire of comprehension and composition skills, strategies, and techniques, drawing from them as needed to aid the interpretation and construction of texts. (I/C)",
+  "parent_code": "1.P.EICC.1",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Writing"
+    ]
+  },
+  "competency_statement": "Use a variety of comprehension and composition skills, strategies, and techniques to understand and create texts as needed.",
+  "observable_behaviors": [
+    "Select and apply different comprehension strategies to understand texts.",
+    "Use composition techniques to create or write texts.",
+    "Draw on multiple skills and strategies to interpret texts.",
+    "Use appropriate skills and strategies to construct texts for different purposes."
+  ],
+  "pedagogy_terms": [
+    "comprehension strategies",
+    "composition techniques",
+    "text interpretation",
+    "text construction"
+  ],
+  "exact_codes": [
+    "1.P.EICC.1.d"
+  ],
+  "skill_clauses": [
+    "Build a repertoire of comprehension skills, strategies, and techniques.",
+    "Build a repertoire of composition skills, strategies, and techniques.",
+    "Draw from these skills and strategies as needed to interpret texts.",
+    "Draw from these skills and strategies as needed to construct texts."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Use composition techniques to write or create texts.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply comprehension and composition skills and strategies as needed to understand and create texts.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how different skills and strategies help in understanding or creating texts.",
+    "comprehension_response": "Use comprehension strategies to interpret texts and respond appropriately.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.1.d\nDomain primary: Comprehension\nDomain secondary: Writing\nCognitive demand: DOK3_strategic_thinking\nCompetency: Use a variety of comprehension and composition skills, strategies, and techniques to understand and create texts as needed.\nSkills:\n- Build a repertoire of comprehension skills, strategies, and techniques.\n- Build a repertoire of composition skills, strategies, and techniques.\n- Draw from these skills and strategies as needed to interpret texts.\n- Draw from these skills and strategies as needed to construct texts.\nObservable behaviors:\n- Select and apply different comprehension strategies to understand texts.\n- Use composition techniques to create or write texts.\n- Draw on multiple skills and strategies to interpret texts.\n- Use appropriate skills and strategies to construct texts for different purposes.\nPedagogy terms: comprehension strategies, composition techniques, text interpretation, text construction\nRequired student actions:\n- written_production: Use composition techniques to write or create texts.\n- procedural_application: Apply comprehension and composition skills and strategies as needed to understand and create texts.\n- reasoning_explanation: Explain how different skills and strategies help in understanding or creating texts.\n- comprehension_response: Use comprehension strategies to interpret texts and respond appropriately.\nCodes: 1.P.EICC.1.d",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

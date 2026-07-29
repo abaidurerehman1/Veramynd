@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.CP.1.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects. (I/C)",
+  "parent_code": "1.P.CP.1",
+  "ancestor_path": [
+    "1.P",
+    "1.P.CP",
+    "1.P.CP.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Work together with others to set group rules, decide goals and steps, and help keep the group productive during shared projects.",
+  "observable_behaviors": [
+    "Discuss and agree on group norms with peers",
+    "Set clear goals for a group project",
+    "Plan and follow procedures to complete tasks",
+    "Encourage and support group members to stay focused and productive"
+  ],
+  "pedagogy_terms": [
+    "collaboration",
+    "group norms",
+    "goal setting",
+    "procedures",
+    "productivity"
+  ],
+  "exact_codes": [
+    "1.P.CP.1.b"
+  ],
+  "skill_clauses": [
+    "Collaborate with others to determine group norms",
+    "Establish goals and procedures for shared projects",
+    "Facilitate productivity when working on shared projects"
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Express ideas and suggestions for group norms, goals, and procedures",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply agreed-upon group norms and procedures during shared projects",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain the importance of group norms and procedures for productivity",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.CP.1.b\nDomain primary: Speaking & Listening\nDomain secondary: Language\nCognitive demand: DOK3_strategic_thinking\nCompetency: Work together with others to set group rules, decide goals and steps, and help keep the group productive during shared projects.\nSkills:\n- Collaborate with others to determine group norms\n- Establish goals and procedures for shared projects\n- Facilitate productivity when working on shared projects\nObservable behaviors:\n- Discuss and agree on group norms with peers\n- Set clear goals for a group project\n- Plan and follow procedures to complete tasks\n- Encourage and support group members to stay focused and productive\nPedagogy terms: collaboration, group norms, goal setting, procedures, productivity\nRequired student actions:\n- oral_production: Express ideas and suggestions for group norms, goals, and procedures\n- procedural_application: Apply agreed-upon group norms and procedures during shared projects\n- reasoning_explanation: Explain the importance of group norms and procedures for productivity\nCodes: 1.P.CP.1.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

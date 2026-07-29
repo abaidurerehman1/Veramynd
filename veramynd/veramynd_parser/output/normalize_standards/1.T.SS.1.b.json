@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.SS.1.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Use text features (e.g., illustrations, page numbers, bold print, headings) to add clarity and meaning to texts. (C)",
+  "parent_code": "1.T.SS.1",
+  "ancestor_path": [
+    "1.T",
+    "1.T.SS",
+    "1.T.SS.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Use text features like illustrations, page numbers, bold print, and headings to better understand and clarify the meaning of texts.",
+  "observable_behaviors": [
+    "Point to and name text features such as illustrations, page numbers, bold print, and headings in a text.",
+    "Explain how these text features help make the meaning of the text clearer.",
+    "Use text features to find information or understand the text better."
+  ],
+  "pedagogy_terms": [
+    "text features",
+    "illustrations",
+    "headings",
+    "bold print",
+    "page numbers",
+    "clarity",
+    "meaning"
+  ],
+  "exact_codes": [
+    "1.T.SS.1.b"
+  ],
+  "skill_clauses": [
+    "Use illustrations to add clarity and meaning to texts.",
+    "Use page numbers to add clarity and meaning to texts.",
+    "Use bold print to add clarity and meaning to texts.",
+    "Use headings to add clarity and meaning to texts."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify text features such as illustrations, page numbers, bold print, and headings in a text.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use text features to clarify and understand the meaning of texts.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how text features add clarity and meaning to texts.",
+    "comprehension_response": "Use text features to support understanding of texts.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.SS.1.b\nDomain primary: Comprehension\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Use text features like illustrations, page numbers, bold print, and headings to better understand and clarify the meaning of texts.\nSkills:\n- Use illustrations to add clarity and meaning to texts.\n- Use page numbers to add clarity and meaning to texts.\n- Use bold print to add clarity and meaning to texts.\n- Use headings to add clarity and meaning to texts.\nObservable behaviors:\n- Point to and name text features such as illustrations, page numbers, bold print, and headings in a text.\n- Explain how these text features help make the meaning of the text clearer.\n- Use text features to find information or understand the text better.\nPedagogy terms: text features, illustrations, headings, bold print, page numbers, clarity, meaning\nRequired student actions:\n- recognition_identification: Identify text features such as illustrations, page numbers, bold print, and headings in a text.\n- procedural_application: Use text features to clarify and understand the meaning of texts.\n- reasoning_explanation: Explain how text features add clarity and meaning to texts.\n- comprehension_response: Use text features to support understanding of texts.\nCodes: 1.T.SS.1.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

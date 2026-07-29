@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.V.3.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Identify the relationship between words and their synonyms and antonyms. (I)",
+  "parent_code": "1.L.V.3",
+  "ancestor_path": [
+    "1.L",
+    "1.L.V",
+    "1.L.V.3"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Vocabulary",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Identify how words are related to their synonyms and antonyms.",
+  "observable_behaviors": [
+    "Point out pairs of words that mean the same (synonyms).",
+    "Point out pairs of words that mean the opposite (antonyms).",
+    "Explain how two words are similar or different in meaning."
+  ],
+  "pedagogy_terms": [
+    "synonyms",
+    "antonyms",
+    "word relationships",
+    "word meanings"
+  ],
+  "exact_codes": [
+    "1.L.V.3.b"
+  ],
+  "skill_clauses": [
+    "Identify the relationship between words and their synonyms.",
+    "Identify the relationship between words and their antonyms."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize pairs of words that are synonyms or antonyms.",
+    "oral_production": "Use synonyms and antonyms in spoken sentences.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "Match words with their synonyms and antonyms.",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain the relationship between words and their synonyms or antonyms.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.V.3.b\nDomain primary: Vocabulary\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Identify how words are related to their synonyms and antonyms.\nSkills:\n- Identify the relationship between words and their synonyms.\n- Identify the relationship between words and their antonyms.\nObservable behaviors:\n- Point out pairs of words that mean the same (synonyms).\n- Point out pairs of words that mean the opposite (antonyms).\n- Explain how two words are similar or different in meaning.\nPedagogy terms: synonyms, antonyms, word relationships, word meanings\nRequired student actions:\n- recognition_identification: Recognize pairs of words that are synonyms or antonyms.\n- oral_production: Use synonyms and antonyms in spoken sentences.\n- matching_sorting_sequencing: Match words with their synonyms and antonyms.\n- reasoning_explanation: Explain the relationship between words and their synonyms or antonyms.\nCodes: 1.L.V.3.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

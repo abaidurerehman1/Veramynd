@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.SS.2.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Use descriptive words to craft engaging texts. (C)",
+  "parent_code": "1.T.SS.2",
+  "ancestor_path": [
+    "1.T",
+    "1.T.SS",
+    "1.T.SS.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": []
+  },
+  "competency_statement": "Use descriptive words to create engaging texts.",
+  "observable_behaviors": [
+    "Choose descriptive words to make writing more interesting.",
+    "Write sentences that include descriptive language to engage readers."
+  ],
+  "pedagogy_terms": [
+    "descriptive words",
+    "engaging language",
+    "crafting text"
+  ],
+  "exact_codes": [
+    "1.T.SS.2.b"
+  ],
+  "skill_clauses": [
+    "Use descriptive words.",
+    "Craft texts that engage readers."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify descriptive words in texts.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Use descriptive words in writing to make texts engaging.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply descriptive words to craft engaging texts.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.SS.2.b\nDomain primary: Writing\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Use descriptive words to create engaging texts.\nSkills:\n- Use descriptive words.\n- Craft texts that engage readers.\nObservable behaviors:\n- Choose descriptive words to make writing more interesting.\n- Write sentences that include descriptive language to engage readers.\nPedagogy terms: descriptive words, engaging language, crafting text\nRequired student actions:\n- recognition_identification: Identify descriptive words in texts.\n- written_production: Use descriptive words in writing to make texts engaging.\n- procedural_application: Apply descriptive words to craft engaging texts.\nCodes: 1.T.SS.2.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

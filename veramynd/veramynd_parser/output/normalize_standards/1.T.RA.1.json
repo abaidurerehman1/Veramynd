@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.RA.1",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Research & Inquiry",
+  "raw_text": "Build knowledge about the world by asking or generating questions about topics of interest, researching the answers, using multiple sources, and communicating relevant and accurate information about the topic.",
+  "parent_code": "1.T.RA",
+  "ancestor_path": [
+    "1.T",
+    "1.T.RA"
+  ],
+  "child_codes": [
+    "1.T.RA.1.a",
+    "1.T.RA.1.b",
+    "1.T.RA.1.c"
+  ],
+  "child_texts": [
+    "Ask questions about topics of interest for research. (I)",
+    "Work collaboratively or individually to conduct research on a shared or personal topic of interest by gathering and organizing information from provided sources (including print, digital, and personal communication) using graphic organizers or other support aids. (I)",
+    "Share relevant and accurate information through a variety of different modes. (C)"
+  ],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening",
+      "Writing"
+    ]
+  },
+  "competency_statement": "Students ask questions about topics they are interested in, research answers using multiple sources, and share accurate information in different ways.",
+  "observable_behaviors": [
+    "Ask questions about topics they want to learn more about.",
+    "Gather and organize information from print, digital, and personal communication sources.",
+    "Use graphic organizers or other tools to help organize research information.",
+    "Work alone or with others to conduct research on a topic.",
+    "Share information they found using speaking, writing, or other communication methods."
+  ],
+  "pedagogy_terms": [
+    "ask questions",
+    "research",
+    "multiple sources",
+    "graphic organizers",
+    "collaboration",
+    "information sharing"
+  ],
+  "exact_codes": [
+    "1.T.RA.1"
+  ],
+  "skill_clauses": [
+    "Ask questions about topics of interest for research.",
+    "Conduct research individually or collaboratively by gathering and organizing information from multiple sources using graphic organizers or support aids.",
+    "Share relevant and accurate information through different communication modes."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize questions about topics of interest for research.",
+    "oral_production": "Ask questions about topics and share information orally.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "Organize information using graphic organizers or support aids.",
+    "procedural_application": "Conduct research individually or collaboratively using multiple sources.",
+    "investigation_handson": "Gather information from print, digital, and personal communication sources.",
+    "representation_modeling": "Use graphic organizers or other tools to organize research information.",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "Share relevant and accurate information through various modes.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.RA.1\nDomain primary: Comprehension\nDomain secondary: Speaking & Listening, Writing\nCognitive demand: DOK2_skills_concepts\nCompetency: Students ask questions about topics they are interested in, research answers using multiple sources, and share accurate information in different ways.\nSkills:\n- Ask questions about topics of interest for research.\n- Conduct research individually or collaboratively by gathering and organizing information from multiple sources using graphic organizers or support aids.\n- Share relevant and accurate information through different communication modes.\nObservable behaviors:\n- Ask questions about topics they want to learn more about.\n- Gather and organize information from print, digital, and personal communication sources.\n- Use graphic organizers or other tools to help organize research information.\n- Work alone or with others to conduct research on a topic.\n- Share information they found using speaking, writing, or other communication methods.\nPedagogy terms: ask questions, research, multiple sources, graphic organizers, collaboration, information sharing\nRequired student actions:\n- recognition_identification: Recognize questions about topics of interest for research.\n- oral_production: Ask questions about topics and share information orally.\n- matching_sorting_sequencing: Organize information using graphic organizers or support aids.\n- procedural_application: Conduct research individually or collaboratively using multiple sources.\n- investigation_handson: Gather information from print, digital, and personal communication sources.\n- representation_modeling: Use graphic organizers or other tools to organize research information.\n- comprehension_response: Share relevant and accurate information through various modes.\nCodes: 1.T.RA.1",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

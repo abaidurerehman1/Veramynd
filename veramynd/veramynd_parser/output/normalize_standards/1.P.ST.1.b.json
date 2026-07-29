@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.ST.1.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Consider how context impacts the purposes of the author and the audience. (I/C)",
+  "parent_code": "1.P.ST.1",
+  "ancestor_path": [
+    "1.P",
+    "1.P.ST",
+    "1.P.ST.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening"
+    ]
+  },
+  "competency_statement": "Understand how the context influences the author's and audience's purposes when reading or discussing texts.",
+  "observable_behaviors": [
+    "Identify the author's purpose in a text considering the context.",
+    "Explain how the context affects what the author wants to achieve.",
+    "Describe how the audience's needs or expectations influence the text's purpose."
+  ],
+  "pedagogy_terms": [
+    "context",
+    "author's purpose",
+    "audience",
+    "interpretation"
+  ],
+  "exact_codes": [
+    "1.P.ST.1.b"
+  ],
+  "skill_clauses": [
+    "Consider how context impacts the author's purpose.",
+    "Consider how context impacts the audience's purpose."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize how context relates to author and audience purposes in texts.",
+    "oral_production": "Explain orally how context impacts the author's and audience's purposes.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Consider context when discussing or interpreting author and audience purposes.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain reasoning about how context influences author and audience purposes.",
+    "comprehension_response": "Respond to questions about how context affects author and audience purposes.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.ST.1.b\nDomain primary: Comprehension\nDomain secondary: Speaking & Listening\nCognitive demand: DOK2_skills_concepts\nCompetency: Understand how the context influences the author's and audience's purposes when reading or discussing texts.\nSkills:\n- Consider how context impacts the author's purpose.\n- Consider how context impacts the audience's purpose.\nObservable behaviors:\n- Identify the author's purpose in a text considering the context.\n- Explain how the context affects what the author wants to achieve.\n- Describe how the audience's needs or expectations influence the text's purpose.\nPedagogy terms: context, author's purpose, audience, interpretation\nRequired student actions:\n- recognition_identification: Recognize how context relates to author and audience purposes in texts.\n- oral_production: Explain orally how context impacts the author's and audience's purposes.\n- procedural_application: Consider context when discussing or interpreting author and audience purposes.\n- reasoning_explanation: Explain reasoning about how context influences author and audience purposes.\n- comprehension_response: Respond to questions about how context affects author and audience purposes.\nCodes: 1.P.ST.1.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

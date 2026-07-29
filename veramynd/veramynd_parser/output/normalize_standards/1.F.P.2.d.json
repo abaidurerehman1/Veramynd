@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.P.2.d",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Decode two-syllable words with basic patterns by applying knowledge of basic syllable types.",
+  "parent_code": "1.F.P.2",
+  "ancestor_path": [
+    "1.F",
+    "1.F.P",
+    "1.F.P.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Phonics",
+    "secondary": []
+  },
+  "competency_statement": "Decode two-syllable words by applying knowledge of basic syllable types.",
+  "observable_behaviors": [
+    "Identify two-syllable words in text.",
+    "Apply knowledge of basic syllable types to decode each syllable.",
+    "Blend syllables to read the whole two-syllable word."
+  ],
+  "pedagogy_terms": [
+    "two-syllable words",
+    "basic syllable types",
+    "decode",
+    "blend syllables"
+  ],
+  "exact_codes": [
+    "1.F.P.2.d"
+  ],
+  "skill_clauses": [
+    "Decode two-syllable words.",
+    "Apply knowledge of basic syllable types to decode words."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize two-syllable words and basic syllable types in text.",
+    "oral_production": "Pronounce two-syllable words by blending decoded syllables.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply knowledge of basic syllable types to decode two-syllable words.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.P.2.d\nDomain primary: Phonics\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Decode two-syllable words by applying knowledge of basic syllable types.\nSkills:\n- Decode two-syllable words.\n- Apply knowledge of basic syllable types to decode words.\nObservable behaviors:\n- Identify two-syllable words in text.\n- Apply knowledge of basic syllable types to decode each syllable.\n- Blend syllables to read the whole two-syllable word.\nPedagogy terms: two-syllable words, basic syllable types, decode, blend syllables\nRequired student actions:\n- recognition_identification: Recognize two-syllable words and basic syllable types in text.\n- oral_production: Pronounce two-syllable words by blending decoded syllables.\n- procedural_application: Apply knowledge of basic syllable types to decode two-syllable words.\nCodes: 1.F.P.2.d",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

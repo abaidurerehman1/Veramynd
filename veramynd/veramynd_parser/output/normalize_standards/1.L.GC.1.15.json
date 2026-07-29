@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.GC.1.15",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Grammar",
+  "raw_text": "Use personal pronouns (subject, object, and possessive). (Introduce)",
+  "parent_code": "1.L.GC.1",
+  "ancestor_path": [
+    "1.L",
+    "1.L.GC",
+    "1.L.GC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Language",
+    "secondary": []
+  },
+  "competency_statement": "Use personal pronouns as subjects, objects, and possessives in sentences.",
+  "observable_behaviors": [
+    "Identify personal pronouns used as subjects in sentences.",
+    "Identify personal pronouns used as objects in sentences.",
+    "Identify personal pronouns used to show possession in sentences.",
+    "Use personal pronouns correctly when speaking or writing simple sentences."
+  ],
+  "pedagogy_terms": [
+    "personal pronouns",
+    "subject pronouns",
+    "object pronouns",
+    "possessive pronouns"
+  ],
+  "exact_codes": [
+    "1.L.GC.1.15"
+  ],
+  "skill_clauses": [
+    "Use personal pronouns as subjects in sentences.",
+    "Use personal pronouns as objects in sentences.",
+    "Use personal pronouns to show possession."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize personal pronouns used as subjects, objects, and possessives in sentences.",
+    "oral_production": "Use personal pronouns correctly when speaking.",
+    "written_production": "Use personal pronouns correctly when writing sentences.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply the use of personal pronouns as subjects, objects, and possessives in sentences.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK1_recall_reproduction",
+  "notes": "",
+  "embed_text": "Standard: 1.L.GC.1.15\nDomain primary: Language\nDomain secondary: none\nCognitive demand: DOK1_recall_reproduction\nCompetency: Use personal pronouns as subjects, objects, and possessives in sentences.\nSkills:\n- Use personal pronouns as subjects in sentences.\n- Use personal pronouns as objects in sentences.\n- Use personal pronouns to show possession.\nObservable behaviors:\n- Identify personal pronouns used as subjects in sentences.\n- Identify personal pronouns used as objects in sentences.\n- Identify personal pronouns used to show possession in sentences.\n- Use personal pronouns correctly when speaking or writing simple sentences.\nPedagogy terms: personal pronouns, subject pronouns, object pronouns, possessive pronouns\nRequired student actions:\n- recognition_identification: Recognize personal pronouns used as subjects, objects, and possessives in sentences.\n- oral_production: Use personal pronouns correctly when speaking.\n- written_production: Use personal pronouns correctly when writing sentences.\n- procedural_application: Apply the use of personal pronouns as subjects, objects, and possessives in sentences.\nCodes: 1.L.GC.1.15",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

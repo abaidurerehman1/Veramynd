@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.H.1.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Use appropriate spacing between letters, words, and sentences across lines on a page.",
+  "parent_code": "1.F.H.1",
+  "ancestor_path": [
+    "1.F",
+    "1.F.H",
+    "1.F.H.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": []
+  },
+  "competency_statement": "Use correct spacing between letters, words, and sentences when writing on a page.",
+  "observable_behaviors": [
+    "Leave spaces between letters within words to keep them clear.",
+    "Leave spaces between words to separate them.",
+    "Leave spaces between sentences to show sentence boundaries.",
+    "Maintain consistent spacing across lines on a page."
+  ],
+  "pedagogy_terms": [
+    "spacing",
+    "letters",
+    "words",
+    "sentences",
+    "handwriting",
+    "print"
+  ],
+  "exact_codes": [
+    "1.F.H.1.c"
+  ],
+  "skill_clauses": [
+    "Use appropriate spacing between letters.",
+    "Use appropriate spacing between words.",
+    "Use appropriate spacing between sentences.",
+    "Maintain spacing consistency across lines on a page."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Use appropriate spacing between letters, words, and sentences when writing.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply correct spacing conventions in handwriting across lines on a page.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.H.1.c\nDomain primary: Writing\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Use correct spacing between letters, words, and sentences when writing on a page.\nSkills:\n- Use appropriate spacing between letters.\n- Use appropriate spacing between words.\n- Use appropriate spacing between sentences.\n- Maintain spacing consistency across lines on a page.\nObservable behaviors:\n- Leave spaces between letters within words to keep them clear.\n- Leave spaces between words to separate them.\n- Leave spaces between sentences to show sentence boundaries.\n- Maintain consistent spacing across lines on a page.\nPedagogy terms: spacing, letters, words, sentences, handwriting, print\nRequired student actions:\n- written_production: Use appropriate spacing between letters, words, and sentences when writing.\n- procedural_application: Apply correct spacing conventions in handwriting across lines on a page.\nCodes: 1.F.H.1.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.GC.2.d",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "With adult support, use adjectives or adverbs to add details or clarify meaning. (C)",
+  "parent_code": "1.L.GC.2",
+  "ancestor_path": [
+    "1.L",
+    "1.L.GC",
+    "1.L.GC.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Language",
+    "secondary": []
+  },
+  "competency_statement": "With adult support, use adjectives or adverbs to add details or clarify meaning in sentences.",
+  "observable_behaviors": [
+    "Use adjectives to describe nouns in sentences with help.",
+    "Use adverbs to describe verbs or adjectives in sentences with help.",
+    "Add descriptive words to sentences to make meaning clearer with adult guidance."
+  ],
+  "pedagogy_terms": [
+    "adjectives",
+    "adverbs",
+    "sentence details",
+    "clarify meaning"
+  ],
+  "exact_codes": [
+    "1.L.GC.2.d"
+  ],
+  "skill_clauses": [
+    "Use adjectives to add details or clarify meaning with adult support.",
+    "Use adverbs to add details or clarify meaning with adult support."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Use adjectives or adverbs orally to add details or clarify meaning with adult support.",
+    "written_production": "Write sentences using adjectives or adverbs to add details or clarify meaning with adult support.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply the use of adjectives or adverbs to add details or clarify meaning in sentences with adult support.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how adjectives or adverbs add details or clarify meaning in sentences with adult support.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.GC.2.d\nDomain primary: Language\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: With adult support, use adjectives or adverbs to add details or clarify meaning in sentences.\nSkills:\n- Use adjectives to add details or clarify meaning with adult support.\n- Use adverbs to add details or clarify meaning with adult support.\nObservable behaviors:\n- Use adjectives to describe nouns in sentences with help.\n- Use adverbs to describe verbs or adjectives in sentences with help.\n- Add descriptive words to sentences to make meaning clearer with adult guidance.\nPedagogy terms: adjectives, adverbs, sentence details, clarify meaning\nRequired student actions:\n- oral_production: Use adjectives or adverbs orally to add details or clarify meaning with adult support.\n- written_production: Write sentences using adjectives or adverbs to add details or clarify meaning with adult support.\n- procedural_application: Apply the use of adjectives or adverbs to add details or clarify meaning in sentences with adult support.\n- reasoning_explanation: Explain how adjectives or adverbs add details or clarify meaning in sentences with adult support.\nCodes: 1.L.GC.2.d",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

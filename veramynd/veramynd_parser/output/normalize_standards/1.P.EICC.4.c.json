@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.4.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Generate ideas for content by assessing prior knowledge, gathering information from texts, and engaging in discussions with others. (C)",
+  "parent_code": "1.P.EICC.4",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.4"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Speaking & Listening",
+      "Comprehension"
+    ]
+  },
+  "competency_statement": "Generate ideas for writing by using what they already know, gathering information from texts, and talking with others.",
+  "observable_behaviors": [
+    "Recall and use prior knowledge to think of writing topics.",
+    "Find information in texts to help develop writing ideas.",
+    "Participate in discussions to share and develop ideas for writing."
+  ],
+  "pedagogy_terms": [
+    "generate ideas",
+    "prior knowledge",
+    "gather information",
+    "discussions",
+    "writing process"
+  ],
+  "exact_codes": [
+    "1.P.EICC.4.c"
+  ],
+  "skill_clauses": [
+    "Generate ideas for writing by assessing prior knowledge.",
+    "Generate ideas for writing by gathering information from texts.",
+    "Generate ideas for writing by engaging in discussions with others."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify prior knowledge relevant to a writing topic.",
+    "oral_production": "Participate in discussions to share ideas for writing.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use prior knowledge and information from texts to generate ideas for writing.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how prior knowledge, information from texts, and discussions help generate writing ideas.",
+    "comprehension_response": "Gather information from texts to support writing ideas.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.4.c\nDomain primary: Writing\nDomain secondary: Speaking & Listening, Comprehension\nCognitive demand: DOK2_skills_concepts\nCompetency: Generate ideas for writing by using what they already know, gathering information from texts, and talking with others.\nSkills:\n- Generate ideas for writing by assessing prior knowledge.\n- Generate ideas for writing by gathering information from texts.\n- Generate ideas for writing by engaging in discussions with others.\nObservable behaviors:\n- Recall and use prior knowledge to think of writing topics.\n- Find information in texts to help develop writing ideas.\n- Participate in discussions to share and develop ideas for writing.\nPedagogy terms: generate ideas, prior knowledge, gather information, discussions, writing process\nRequired student actions:\n- recognition_identification: Identify prior knowledge relevant to a writing topic.\n- oral_production: Participate in discussions to share ideas for writing.\n- procedural_application: Use prior knowledge and information from texts to generate ideas for writing.\n- reasoning_explanation: Explain how prior knowledge, information from texts, and discussions help generate writing ideas.\n- comprehension_response: Gather information from texts to support writing ideas.\nCodes: 1.P.EICC.4.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

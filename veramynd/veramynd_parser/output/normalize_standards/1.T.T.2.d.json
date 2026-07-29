@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.T.2.d",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure. (C)",
+  "parent_code": "1.T.T.2",
+  "ancestor_path": [
+    "1.T",
+    "1.T.T",
+    "1.T.T.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Comprehension"
+    ]
+  },
+  "competency_statement": "Use expository writing techniques to introduce a topic, provide facts about the topic, and give a sense of closure in writing.",
+  "observable_behaviors": [
+    "Write an introduction that states the topic clearly.",
+    "Include facts that explain or describe the topic.",
+    "Write a concluding sentence or statement that wraps up the information.",
+    "Organize writing to show a clear beginning, middle, and end related to the topic."
+  ],
+  "pedagogy_terms": [
+    "expository writing",
+    "introduction",
+    "facts",
+    "closure",
+    "topic",
+    "conclusion"
+  ],
+  "exact_codes": [
+    "1.T.T.2.d"
+  ],
+  "skill_clauses": [
+    "Use knowledge of expository techniques to introduce a topic.",
+    "Use knowledge of expository techniques to supply facts about the topic.",
+    "Use knowledge of expository techniques to provide a sense of closure."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize expository writing features such as introductions, facts, and conclusions in texts.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Write an introduction, supply facts, and provide a closing statement about a topic.",
+    "matching_sorting_sequencing": "Sequence sentences or ideas to form a coherent expository paragraph with introduction, facts, and closure.",
+    "procedural_application": "Apply knowledge of expository techniques to organize writing about a topic.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "Model writing that introduces a topic, includes facts, and ends with closure.",
+    "reasoning_explanation": "Explain how the introduction, facts, and closure help shape understanding of the topic.",
+    "comprehension_response": "Respond to questions about the purpose of introductions, facts, and closure in expository texts.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.T.2.d\nDomain primary: Writing\nDomain secondary: Comprehension\nCognitive demand: DOK2_skills_concepts\nCompetency: Use expository writing techniques to introduce a topic, provide facts about the topic, and give a sense of closure in writing.\nSkills:\n- Use knowledge of expository techniques to introduce a topic.\n- Use knowledge of expository techniques to supply facts about the topic.\n- Use knowledge of expository techniques to provide a sense of closure.\nObservable behaviors:\n- Write an introduction that states the topic clearly.\n- Include facts that explain or describe the topic.\n- Write a concluding sentence or statement that wraps up the information.\n- Organize writing to show a clear beginning, middle, and end related to the topic.\nPedagogy terms: expository writing, introduction, facts, closure, topic, conclusion\nRequired student actions:\n- recognition_identification: Recognize expository writing features such as introductions, facts, and conclusions in texts.\n- written_production: Write an introduction, supply facts, and provide a closing statement about a topic.\n- matching_sorting_sequencing: Sequence sentences or ideas to form a coherent expository paragraph with introduction, facts, and closure.\n- procedural_application: Apply knowledge of expository techniques to organize writing about a topic.\n- representation_modeling: Model writing that introduces a topic, includes facts, and ends with closure.\n- reasoning_explanation: Explain how the introduction, facts, and closure help shape understanding of the topic.\n- comprehension_response: Respond to questions about the purpose of introductions, facts, and closure in expository texts.\nCodes: 1.T.T.2.d",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

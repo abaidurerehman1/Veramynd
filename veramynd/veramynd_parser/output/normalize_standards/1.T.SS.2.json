@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.SS.2",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Craft",
+  "raw_text": "Identify and use descriptive and engaging language.",
+  "parent_code": "1.T.SS",
+  "ancestor_path": [
+    "1.T",
+    "1.T.SS"
+  ],
+  "child_codes": [
+    "1.T.SS.2.a",
+    "1.T.SS.2.b"
+  ],
+  "child_texts": [
+    "Identify and explain the use of descriptive words in texts. (I)",
+    "Use descriptive words to craft engaging texts. (C)"
+  ],
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Students identify descriptive words in texts and use descriptive words to create engaging writing.",
+  "observable_behaviors": [
+    "Point out descriptive words in a story or text.",
+    "Explain why certain words make the text more interesting.",
+    "Use descriptive words when writing sentences or short texts.",
+    "Choose words that help readers picture what is being described."
+  ],
+  "pedagogy_terms": [
+    "descriptive words",
+    "engaging language",
+    "word choice",
+    "writing"
+  ],
+  "exact_codes": [
+    "1.T.SS.2"
+  ],
+  "skill_clauses": [
+    "Identify descriptive words in texts.",
+    "Explain the use of descriptive words in texts.",
+    "Use descriptive words to craft engaging texts."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify descriptive words in texts.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Use descriptive words to write engaging texts.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use descriptive words to craft engaging texts.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "Explain the use of descriptive words in texts.",
+    "reasoning_explanation": "Explain why descriptive words are used in texts.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.SS.2\nDomain primary: Writing\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Students identify descriptive words in texts and use descriptive words to create engaging writing.\nSkills:\n- Identify descriptive words in texts.\n- Explain the use of descriptive words in texts.\n- Use descriptive words to craft engaging texts.\nObservable behaviors:\n- Point out descriptive words in a story or text.\n- Explain why certain words make the text more interesting.\n- Use descriptive words when writing sentences or short texts.\n- Choose words that help readers picture what is being described.\nPedagogy terms: descriptive words, engaging language, word choice, writing\nRequired student actions:\n- recognition_identification: Identify descriptive words in texts.\n- written_production: Use descriptive words to write engaging texts.\n- procedural_application: Use descriptive words to craft engaging texts.\n- representation_modeling: Explain the use of descriptive words in texts.\n- reasoning_explanation: Explain why descriptive words are used in texts.\nCodes: 1.T.SS.2",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

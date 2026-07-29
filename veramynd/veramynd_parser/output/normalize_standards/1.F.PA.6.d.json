@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.PA.6.d",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Add, delete, and substitute phonemes in spoken one-syllable words with three or more phonemes.",
+  "parent_code": "1.F.PA.6",
+  "ancestor_path": [
+    "1.F",
+    "1.F.PA",
+    "1.F.PA.6"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Phonological Awareness",
+    "secondary": []
+  },
+  "competency_statement": "The student can add, delete, and substitute individual sounds (phonemes) in spoken one-syllable words that have three or more phonemes.",
+  "observable_behaviors": [
+    "Add a sound to a spoken one-syllable word and say the new word.",
+    "Delete a sound from a spoken one-syllable word and say the new word.",
+    "Substitute one sound for another in a spoken one-syllable word and say the new word."
+  ],
+  "pedagogy_terms": [
+    "phonemes",
+    "add phonemes",
+    "delete phonemes",
+    "substitute phonemes",
+    "one-syllable words"
+  ],
+  "exact_codes": [
+    "1.F.PA.6.d"
+  ],
+  "skill_clauses": [
+    "Add phonemes in spoken one-syllable words with three or more phonemes.",
+    "Delete phonemes in spoken one-syllable words with three or more phonemes.",
+    "Substitute phonemes in spoken one-syllable words with three or more phonemes."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Add, delete, and substitute phonemes orally in spoken one-syllable words with three or more phonemes.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Manipulate phonemes by adding, deleting, and substituting them in spoken one-syllable words with three or more phonemes.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how adding, deleting, or substituting a phoneme changes the spoken word.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.PA.6.d\nDomain primary: Phonological Awareness\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: The student can add, delete, and substitute individual sounds (phonemes) in spoken one-syllable words that have three or more phonemes.\nSkills:\n- Add phonemes in spoken one-syllable words with three or more phonemes.\n- Delete phonemes in spoken one-syllable words with three or more phonemes.\n- Substitute phonemes in spoken one-syllable words with three or more phonemes.\nObservable behaviors:\n- Add a sound to a spoken one-syllable word and say the new word.\n- Delete a sound from a spoken one-syllable word and say the new word.\n- Substitute one sound for another in a spoken one-syllable word and say the new word.\nPedagogy terms: phonemes, add phonemes, delete phonemes, substitute phonemes, one-syllable words\nRequired student actions:\n- oral_production: Add, delete, and substitute phonemes orally in spoken one-syllable words with three or more phonemes.\n- procedural_application: Manipulate phonemes by adding, deleting, and substituting them in spoken one-syllable words with three or more phonemes.\n- reasoning_explanation: Explain how adding, deleting, or substituting a phoneme changes the spoken word.\nCodes: 1.F.PA.6.d",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

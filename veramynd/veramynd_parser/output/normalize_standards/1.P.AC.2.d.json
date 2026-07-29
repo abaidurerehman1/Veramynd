@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.AC.2.d",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Organize texts by incorporating specific formats, structures, patterns, and features to influence the audience, facilitate accessibility, and support the text\u2019s purpose. (I/C)",
+  "parent_code": "1.P.AC.2",
+  "ancestor_path": [
+    "1.P",
+    "1.P.AC",
+    "1.P.AC.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Organize texts using specific formats, structures, patterns, and features to influence the audience, make the text easier to understand, and support the text's purpose.",
+  "observable_behaviors": [
+    "Use a clear text structure appropriate to the purpose and audience.",
+    "Include recognizable text features and patterns to guide the reader.",
+    "Arrange ideas and information in a way that helps the audience understand and engage with the text."
+  ],
+  "pedagogy_terms": [
+    "text structure",
+    "text features",
+    "audience awareness",
+    "purpose",
+    "organization"
+  ],
+  "exact_codes": [
+    "1.P.AC.2.d"
+  ],
+  "skill_clauses": [
+    "Organize texts by incorporating specific formats.",
+    "Organize texts by incorporating specific structures.",
+    "Organize texts by incorporating specific patterns.",
+    "Organize texts by incorporating specific features.",
+    "Use these elements to influence the audience.",
+    "Use these elements to facilitate accessibility of the text.",
+    "Use these elements to support the text's purpose."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify specific text formats, structures, patterns, and features in written texts.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Organize and write texts using specific formats, structures, patterns, and features to support purpose and audience.",
+    "matching_sorting_sequencing": "Sequence ideas and information using appropriate text structures and patterns.",
+    "procedural_application": "Apply knowledge of text formats and features to organize writing effectively for the audience and purpose.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "Model organizing texts with specific structures and features to influence the audience and support purpose.",
+    "reasoning_explanation": "Explain how chosen text formats, structures, patterns, and features help influence the audience and support the text's purpose.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.AC.2.d\nDomain primary: Writing\nDomain secondary: Language\nCognitive demand: DOK3_strategic_thinking\nCompetency: Organize texts using specific formats, structures, patterns, and features to influence the audience, make the text easier to understand, and support the text's purpose.\nSkills:\n- Organize texts by incorporating specific formats.\n- Organize texts by incorporating specific structures.\n- Organize texts by incorporating specific patterns.\n- Organize texts by incorporating specific features.\n- Use these elements to influence the audience.\n- Use these elements to facilitate accessibility of the text.\n- Use these elements to support the text's purpose.\nObservable behaviors:\n- Use a clear text structure appropriate to the purpose and audience.\n- Include recognizable text features and patterns to guide the reader.\n- Arrange ideas and information in a way that helps the audience understand and engage with the text.\nPedagogy terms: text structure, text features, audience awareness, purpose, organization\nRequired student actions:\n- recognition_identification: Identify specific text formats, structures, patterns, and features in written texts.\n- written_production: Organize and write texts using specific formats, structures, patterns, and features to support purpose and audience.\n- matching_sorting_sequencing: Sequence ideas and information using appropriate text structures and patterns.\n- procedural_application: Apply knowledge of text formats and features to organize writing effectively for the audience and purpose.\n- representation_modeling: Model organizing texts with specific structures and features to influence the audience and support purpose.\n- reasoning_explanation: Explain how chosen text formats, structures, patterns, and features help influence the audience and support the text's purpose.\nCodes: 1.P.AC.2.d",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

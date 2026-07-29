@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.H.1.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Form all uppercase and lowercase letters and words with accuracy and consistency.",
+  "parent_code": "1.F.H.1",
+  "ancestor_path": [
+    "1.F",
+    "1.F.H",
+    "1.F.H.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Form all uppercase and lowercase letters and words accurately and consistently by hand.",
+  "observable_behaviors": [
+    "Write uppercase letters clearly and correctly.",
+    "Write lowercase letters clearly and correctly.",
+    "Form words by writing letters accurately and consistently."
+  ],
+  "pedagogy_terms": [
+    "letter formation",
+    "uppercase letters",
+    "lowercase letters",
+    "handwriting",
+    "fine motor skills"
+  ],
+  "exact_codes": [
+    "1.F.H.1.a"
+  ],
+  "skill_clauses": [
+    "Form uppercase letters accurately and consistently.",
+    "Form lowercase letters accurately and consistently.",
+    "Form words by writing letters accurately and consistently."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Write uppercase and lowercase letters and words accurately and consistently by hand.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply fine motor skills to form letters and words legibly and consistently.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.H.1.a\nDomain primary: Writing\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Form all uppercase and lowercase letters and words accurately and consistently by hand.\nSkills:\n- Form uppercase letters accurately and consistently.\n- Form lowercase letters accurately and consistently.\n- Form words by writing letters accurately and consistently.\nObservable behaviors:\n- Write uppercase letters clearly and correctly.\n- Write lowercase letters clearly and correctly.\n- Form words by writing letters accurately and consistently.\nPedagogy terms: letter formation, uppercase letters, lowercase letters, handwriting, fine motor skills\nRequired student actions:\n- written_production: Write uppercase and lowercase letters and words accurately and consistently by hand.\n- procedural_application: Apply fine motor skills to form letters and words legibly and consistently.\nCodes: 1.F.H.1.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

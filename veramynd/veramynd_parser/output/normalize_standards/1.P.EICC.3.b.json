@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.3.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Scan and skim the text, making note of structures and sections that might be most useful. (I)",
+  "parent_code": "1.P.EICC.3",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.3"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": []
+  },
+  "competency_statement": "Scan and skim a text to identify its structures and sections that are most useful for understanding.",
+  "observable_behaviors": [
+    "Look over a text quickly to find headings, sections, or parts that seem important.",
+    "Notice how the text is organized into different parts or sections.",
+    "Point out or mark sections that might help answer questions or complete a task."
+  ],
+  "pedagogy_terms": [
+    "scan",
+    "skim",
+    "text structures",
+    "sections",
+    "comprehension strategies"
+  ],
+  "exact_codes": [
+    "1.P.EICC.3.b"
+  ],
+  "skill_clauses": [
+    "Scan a text to find useful structures and sections.",
+    "Skim a text to quickly note parts that might help with comprehension or tasks."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify text structures and sections while scanning or skimming.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use scanning and skimming strategies to locate useful parts of a text.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain why certain text structures or sections might be useful for a given purpose.",
+    "comprehension_response": "Respond to a text by noting useful sections or structures found through scanning and skimming.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.3.b\nDomain primary: Comprehension\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Scan and skim a text to identify its structures and sections that are most useful for understanding.\nSkills:\n- Scan a text to find useful structures and sections.\n- Skim a text to quickly note parts that might help with comprehension or tasks.\nObservable behaviors:\n- Look over a text quickly to find headings, sections, or parts that seem important.\n- Notice how the text is organized into different parts or sections.\n- Point out or mark sections that might help answer questions or complete a task.\nPedagogy terms: scan, skim, text structures, sections, comprehension strategies\nRequired student actions:\n- recognition_identification: Identify text structures and sections while scanning or skimming.\n- procedural_application: Use scanning and skimming strategies to locate useful parts of a text.\n- reasoning_explanation: Explain why certain text structures or sections might be useful for a given purpose.\n- comprehension_response: Respond to a text by noting useful sections or structures found through scanning and skimming.\nCodes: 1.P.EICC.3.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.ST.2.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Draw from knowledge of author, audience, and context to discern and establish a clear point of view or unique perspective when interpreting and constructing texts. (I/C)",
+  "parent_code": "1.P.ST.2",
+  "ancestor_path": [
+    "1.P",
+    "1.P.ST",
+    "1.P.ST.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Writing"
+    ]
+  },
+  "competency_statement": "Use what you know about the author, audience, and context to identify and express a clear point of view or unique perspective when reading or creating texts.",
+  "observable_behaviors": [
+    "Explain who the author is writing for and why.",
+    "Identify the context of a text and how it influences the message.",
+    "State a clear point of view or perspective about a text.",
+    "Create a text that shows a unique perspective based on understanding the author, audience, and context."
+  ],
+  "pedagogy_terms": [
+    "author",
+    "audience",
+    "context",
+    "point of view",
+    "perspective",
+    "interpret",
+    "construct"
+  ],
+  "exact_codes": [
+    "1.P.ST.2.b"
+  ],
+  "skill_clauses": [
+    "Draw from knowledge of the author to understand texts.",
+    "Draw from knowledge of the audience to understand texts.",
+    "Draw from knowledge of the context to understand texts.",
+    "Use this knowledge to discern a clear point of view or unique perspective when interpreting texts.",
+    "Use this knowledge to establish a clear point of view or unique perspective when constructing texts."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize the author, audience, and context in texts.",
+    "oral_production": "Express a clear point of view or perspective orally when discussing texts.",
+    "written_production": "Write texts that show a clear point of view or unique perspective based on author, audience, and context.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply knowledge of author, audience, and context to interpret and create texts with a clear perspective.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how author, audience, and context influence the point of view or perspective in a text.",
+    "comprehension_response": "Interpret texts by identifying the author's purpose and perspective based on context and audience.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.ST.2.b\nDomain primary: Comprehension\nDomain secondary: Writing\nCognitive demand: DOK3_strategic_thinking\nCompetency: Use what you know about the author, audience, and context to identify and express a clear point of view or unique perspective when reading or creating texts.\nSkills:\n- Draw from knowledge of the author to understand texts.\n- Draw from knowledge of the audience to understand texts.\n- Draw from knowledge of the context to understand texts.\n- Use this knowledge to discern a clear point of view or unique perspective when interpreting texts.\n- Use this knowledge to establish a clear point of view or unique perspective when constructing texts.\nObservable behaviors:\n- Explain who the author is writing for and why.\n- Identify the context of a text and how it influences the message.\n- State a clear point of view or perspective about a text.\n- Create a text that shows a unique perspective based on understanding the author, audience, and context.\nPedagogy terms: author, audience, context, point of view, perspective, interpret, construct\nRequired student actions:\n- recognition_identification: Recognize the author, audience, and context in texts.\n- oral_production: Express a clear point of view or perspective orally when discussing texts.\n- written_production: Write texts that show a clear point of view or unique perspective based on author, audience, and context.\n- procedural_application: Apply knowledge of author, audience, and context to interpret and create texts with a clear perspective.\n- reasoning_explanation: Explain how author, audience, and context influence the point of view or perspective in a text.\n- comprehension_response: Interpret texts by identifying the author's purpose and perspective based on context and audience.\nCodes: 1.P.ST.2.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

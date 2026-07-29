@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.AC.3",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Text Design",
+  "raw_text": "Consider the impact of text design on audience and purpose when consuming and producing texts across modes and genres.",
+  "parent_code": "1.P.AC",
+  "ancestor_path": [
+    "1.P",
+    "1.P.AC"
+  ],
+  "child_codes": [
+    "1.P.AC.3.a",
+    "1.P.AC.3.b",
+    "1.P.AC.3.c",
+    "1.P.AC.3.d"
+  ],
+  "child_texts": [
+    "Explore and create texts in various modes and genres, developing and applying knowledge of how specific features impact meaning, tone, style, purpose, and audience. (I/C)",
+    "Apply knowledge of how mode and genre impact what kinds of ideas and information are included in texts. (I/C)",
+    "Apply knowledge of how mode and genre impact how ideas and information are structured and arranged in texts. (I/C)",
+    "Consume and produce multimodal texts, integrating a variety of genres, text features, and craft techniques to influence target audiences and achieve specific purposes. (I/C)"
+  ],
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Comprehension",
+      "Speaking & Listening"
+    ]
+  },
+  "competency_statement": "Understand and use how text design affects audience and purpose when reading and creating texts in different modes and genres.",
+  "observable_behaviors": [
+    "Identify how features of different text modes and genres affect meaning, tone, style, purpose, and audience.",
+    "Create texts in various modes and genres using features that influence meaning and audience.",
+    "Explain how the mode and genre determine the kinds of ideas and information included in a text.",
+    "Explain how the mode and genre affect the structure and arrangement of ideas and information in a text.",
+    "Read and create multimodal texts that combine genres, text features, and craft techniques to influence audiences and achieve purposes."
+  ],
+  "pedagogy_terms": [
+    "text design",
+    "mode",
+    "genre",
+    "text features",
+    "audience",
+    "purpose",
+    "multimodal texts",
+    "author's craft"
+  ],
+  "exact_codes": [
+    "1.P.AC.3"
+  ],
+  "skill_clauses": [
+    "Explore and create texts in various modes and genres, developing and applying knowledge of how specific features impact meaning, tone, style, purpose, and audience.",
+    "Apply knowledge of how mode and genre impact what kinds of ideas and information are included in texts.",
+    "Apply knowledge of how mode and genre impact how ideas and information are structured and arranged in texts.",
+    "Consume and produce multimodal texts, integrating a variety of genres, text features, and craft techniques to influence target audiences and achieve specific purposes."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify how text features in different modes and genres affect meaning and audience.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Create texts in various modes and genres using features that influence meaning and audience.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply knowledge of how mode and genre impact the ideas, information, structure, and arrangement in texts.",
+    "investigation_handson": "Explore and create texts in various modes and genres to understand how features impact meaning, tone, style, purpose, and audience.",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how mode and genre affect the content and structure of texts and how text design influences audience and purpose.",
+    "comprehension_response": "Consume multimodal texts integrating genres, text features, and craft techniques to understand their influence on audience and purpose.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.AC.3\nDomain primary: Writing\nDomain secondary: Comprehension, Speaking & Listening\nCognitive demand: DOK3_strategic_thinking\nCompetency: Understand and use how text design affects audience and purpose when reading and creating texts in different modes and genres.\nSkills:\n- Explore and create texts in various modes and genres, developing and applying knowledge of how specific features impact meaning, tone, style, purpose, and audience.\n- Apply knowledge of how mode and genre impact what kinds of ideas and information are included in texts.\n- Apply knowledge of how mode and genre impact how ideas and information are structured and arranged in texts.\n- Consume and produce multimodal texts, integrating a variety of genres, text features, and craft techniques to influence target audiences and achieve specific purposes.\nObservable behaviors:\n- Identify how features of different text modes and genres affect meaning, tone, style, purpose, and audience.\n- Create texts in various modes and genres using features that influence meaning and audience.\n- Explain how the mode and genre determine the kinds of ideas and information included in a text.\n- Explain how the mode and genre affect the structure and arrangement of ideas and information in a text.\n- Read and create multimodal texts that combine genres, text features, and craft techniques to influence audiences and achieve purposes.\nPedagogy terms: text design, mode, genre, text features, audience, purpose, multimodal texts, author's craft\nRequired student actions:\n- recognition_identification: Identify how text features in different modes and genres affect meaning and audience.\n- written_production: Create texts in various modes and genres using features that influence meaning and audience.\n- procedural_application: Apply knowledge of how mode and genre impact the ideas, information, structure, and arrangement in texts.\n- investigation_handson: Explore and create texts in various modes and genres to understand how features impact meaning, tone, style, purpose, and audience.\n- reasoning_explanation: Explain how mode and genre affect the content and structure of texts and how text design influences audience and purpose.\n- comprehension_response: Consume multimodal texts integrating genres, text features, and craft techniques to understand their influence on audience and purpose.\nCodes: 1.P.AC.3",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

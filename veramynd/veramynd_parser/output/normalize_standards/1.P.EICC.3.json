@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.3",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Comprehension Strategies",
+  "raw_text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals.",
+  "parent_code": "1.P.EICC",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC"
+  ],
+  "child_codes": [
+    "1.P.EICC.3.a",
+    "1.P.EICC.3.b",
+    "1.P.EICC.3.c",
+    "1.P.EICC.3.d",
+    "1.P.EICC.3.e",
+    "1.P.EICC.3.f",
+    "1.P.EICC.3.g"
+  ],
+  "child_texts": [
+    "Establish a purpose and set goals for reading, monitor comprehension, and adjust as needed. (I)",
+    "Scan and skim the text, making note of structures and sections that might be most useful. (I)",
+    "Draw from, compare, build, and integrate prior knowledge with the material in the text, addressing inconsistencies or gaps and adding to knowledge repertoires as appropriate. (I)",
+    "Summarize and visualize sections of the text to maintain understanding. (I)",
+    "Make and track predictions about the events and information likely to come next. (I)",
+    "Make, track, and support inferences about different levels of meaning within the text. (I)",
+    "Determine the meanings of unfamiliar words and concepts by applying knowledge of context and of academic vocabulary and word parts. (I)"
+  ],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Vocabulary"
+    ]
+  },
+  "competency_statement": "Students engage with complex texts for different purposes by using comprehension strategies before, during, and after reading to understand and make meaning.",
+  "observable_behaviors": [
+    "Set a purpose and goals for reading a text",
+    "Monitor understanding while reading and adjust strategies as needed",
+    "Scan and skim texts to identify useful structures and sections",
+    "Connect prior knowledge to new information in the text and resolve inconsistencies",
+    "Summarize and create mental images of text sections to maintain understanding",
+    "Make and track predictions about upcoming events or information in the text",
+    "Make, track, and support inferences about meanings within the text",
+    "Determine meanings of unfamiliar words using context, academic vocabulary, and word parts"
+  ],
+  "pedagogy_terms": [
+    "comprehension strategies",
+    "monitor comprehension",
+    "set reading goals",
+    "scan and skim",
+    "prior knowledge",
+    "summarize",
+    "visualize",
+    "predict",
+    "infer",
+    "context clues",
+    "academic vocabulary",
+    "word parts"
+  ],
+  "exact_codes": [
+    "1.P.EICC.3"
+  ],
+  "skill_clauses": [
+    "Establish a purpose and set goals for reading",
+    "Monitor comprehension and adjust strategies as needed",
+    "Scan and skim the text to note useful structures and sections",
+    "Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps",
+    "Summarize and visualize sections of the text to maintain understanding",
+    "Make and track predictions about upcoming events and information",
+    "Make, track, and support inferences about different levels of meaning",
+    "Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts"
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify text structures and unfamiliar words using context and word parts",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply comprehension strategies such as setting goals, monitoring understanding, scanning, summarizing, predicting, and inferring while reading",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "Visualize and summarize sections of text to support understanding",
+    "reasoning_explanation": "Explain inferences and predictions about text meaning and events",
+    "comprehension_response": "Summarize text sections and track comprehension progress",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.3\nDomain primary: Comprehension\nDomain secondary: Vocabulary\nCognitive demand: DOK3_strategic_thinking\nCompetency: Students engage with complex texts for different purposes by using comprehension strategies before, during, and after reading to understand and make meaning.\nSkills:\n- Establish a purpose and set goals for reading\n- Monitor comprehension and adjust strategies as needed\n- Scan and skim the text to note useful structures and sections\n- Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps\n- Summarize and visualize sections of the text to maintain understanding\n- Make and track predictions about upcoming events and information\n- Make, track, and support inferences about different levels of meaning\n- Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts\nObservable behaviors:\n- Set a purpose and goals for reading a text\n- Monitor understanding while reading and adjust strategies as needed\n- Scan and skim texts to identify useful structures and sections\n- Connect prior knowledge to new information in the text and resolve inconsistencies\n- Summarize and create mental images of text sections to maintain understanding\n- Make and track predictions about upcoming events or information in the text\n- Make, track, and support inferences about meanings within the text\n- Determine meanings of unfamiliar words using context, academic vocabulary, and word parts\nPedagogy terms: comprehension strategies, monitor comprehension, set reading goals, scan and skim, prior knowledge, summarize, visualize, predict, infer, context clues, academic vocabulary, word parts\nRequired student actions:\n- recognition_identification: Identify text structures and unfamiliar words using context and word parts\n- procedural_application: Apply comprehension strategies such as setting goals, monitoring understanding, scanning, summarizing, predicting, and inferring while reading\n- representation_modeling: Visualize and summarize sections of text to support understanding\n- reasoning_explanation: Explain inferences and predictions about text meaning and events\n- comprehension_response: Summarize text sections and track comprehension progress\nCodes: 1.P.EICC.3",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

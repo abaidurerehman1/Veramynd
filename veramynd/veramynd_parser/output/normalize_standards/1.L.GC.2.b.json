@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.GC.2.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Use a variety of simple sentences (including a variety of sentence types) to develop clarity in written texts. (C)",
+  "parent_code": "1.L.GC.2",
+  "ancestor_path": [
+    "1.L",
+    "1.L.GC",
+    "1.L.GC.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Use different types of simple sentences to make writing clear.",
+  "observable_behaviors": [
+    "Write sentences that express complete thoughts.",
+    "Use different sentence types such as statements, questions, and commands in writing.",
+    "Organize simple sentences to improve clarity in written text."
+  ],
+  "pedagogy_terms": [
+    "simple sentences",
+    "sentence types",
+    "clarity",
+    "writing"
+  ],
+  "exact_codes": [
+    "1.L.GC.2.b"
+  ],
+  "skill_clauses": [
+    "Use a variety of simple sentences.",
+    "Include different sentence types in writing.",
+    "Develop clarity in written texts using these sentences."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Write a variety of simple sentence types to express clear ideas in writing.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply different simple sentence types to improve clarity in writing.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how using different simple sentence types helps make writing clearer.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.GC.2.b\nDomain primary: Writing\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Use different types of simple sentences to make writing clear.\nSkills:\n- Use a variety of simple sentences.\n- Include different sentence types in writing.\n- Develop clarity in written texts using these sentences.\nObservable behaviors:\n- Write sentences that express complete thoughts.\n- Use different sentence types such as statements, questions, and commands in writing.\n- Organize simple sentences to improve clarity in written text.\nPedagogy terms: simple sentences, sentence types, clarity, writing\nRequired student actions:\n- written_production: Write a variety of simple sentence types to express clear ideas in writing.\n- procedural_application: Apply different simple sentence types to improve clarity in writing.\n- reasoning_explanation: Explain how using different simple sentence types helps make writing clearer.\nCodes: 1.L.GC.2.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

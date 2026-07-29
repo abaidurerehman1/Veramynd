@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.P.1.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Identify and produce both long and short vowel sounds for A, E, I, O, U, including final -e and vowel digraphs.",
+  "parent_code": "1.F.P.1",
+  "ancestor_path": [
+    "1.F",
+    "1.F.P",
+    "1.F.P.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Phonics",
+    "secondary": []
+  },
+  "competency_statement": "Identify and produce both long and short vowel sounds for the letters A, E, I, O, U, including the final -e and vowel digraphs.",
+  "observable_behaviors": [
+    "Recognize long and short vowel sounds in spoken words.",
+    "Produce long and short vowel sounds when speaking.",
+    "Identify vowel sounds in words with final -e and vowel digraphs.",
+    "Produce vowel sounds in words containing final -e and vowel digraphs."
+  ],
+  "pedagogy_terms": [
+    "long vowel sounds",
+    "short vowel sounds",
+    "vowel digraphs",
+    "final -e",
+    "phoneme-grapheme correspondence"
+  ],
+  "exact_codes": [
+    "1.F.P.1.b"
+  ],
+  "skill_clauses": [
+    "Identify long vowel sounds for A, E, I, O, U.",
+    "Identify short vowel sounds for A, E, I, O, U.",
+    "Identify vowel sounds including final -e and vowel digraphs.",
+    "Produce long vowel sounds for A, E, I, O, U.",
+    "Produce short vowel sounds for A, E, I, O, U.",
+    "Produce vowel sounds including final -e and vowel digraphs."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify long and short vowel sounds in spoken and written words.",
+    "oral_production": "Produce long and short vowel sounds orally, including those with final -e and vowel digraphs.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.P.1.b\nDomain primary: Phonics\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Identify and produce both long and short vowel sounds for the letters A, E, I, O, U, including the final -e and vowel digraphs.\nSkills:\n- Identify long vowel sounds for A, E, I, O, U.\n- Identify short vowel sounds for A, E, I, O, U.\n- Identify vowel sounds including final -e and vowel digraphs.\n- Produce long vowel sounds for A, E, I, O, U.\n- Produce short vowel sounds for A, E, I, O, U.\n- Produce vowel sounds including final -e and vowel digraphs.\nObservable behaviors:\n- Recognize long and short vowel sounds in spoken words.\n- Produce long and short vowel sounds when speaking.\n- Identify vowel sounds in words with final -e and vowel digraphs.\n- Produce vowel sounds in words containing final -e and vowel digraphs.\nPedagogy terms: long vowel sounds, short vowel sounds, vowel digraphs, final -e, phoneme-grapheme correspondence\nRequired student actions:\n- recognition_identification: Identify long and short vowel sounds in spoken and written words.\n- oral_production: Produce long and short vowel sounds orally, including those with final -e and vowel digraphs.\nCodes: 1.F.P.1.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

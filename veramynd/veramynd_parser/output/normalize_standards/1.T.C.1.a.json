@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.C.1.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Identify the general purpose (e.g., to tell stories, to provide information, to share opinions, to explain ideas) and target audience in a variety of texts. (I)",
+  "parent_code": "1.T.C.1",
+  "ancestor_path": [
+    "1.T",
+    "1.T.C",
+    "1.T.C.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": []
+  },
+  "competency_statement": "Identify the general purpose and target audience of different texts.",
+  "observable_behaviors": [
+    "Name the general purpose of a text, such as telling stories, providing information, sharing opinions, or explaining ideas.",
+    "Recognize who the text is intended for, the target audience.",
+    "Distinguish between different purposes and audiences across various texts."
+  ],
+  "pedagogy_terms": [
+    "purpose",
+    "audience",
+    "text types",
+    "identify"
+  ],
+  "exact_codes": [
+    "1.T.C.1.a"
+  ],
+  "skill_clauses": [
+    "Identify the general purpose of a text (e.g., to tell stories, provide information, share opinions, explain ideas).",
+    "Identify the target audience of a text."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify the general purpose and target audience of texts.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "Sort texts by their general purpose or target audience.",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how the purpose and audience relate to the text.",
+    "comprehension_response": "Respond to questions about the purpose and audience of texts.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.C.1.a\nDomain primary: Comprehension\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Identify the general purpose and target audience of different texts.\nSkills:\n- Identify the general purpose of a text (e.g., to tell stories, provide information, share opinions, explain ideas).\n- Identify the target audience of a text.\nObservable behaviors:\n- Name the general purpose of a text, such as telling stories, providing information, sharing opinions, or explaining ideas.\n- Recognize who the text is intended for, the target audience.\n- Distinguish between different purposes and audiences across various texts.\nPedagogy terms: purpose, audience, text types, identify\nRequired student actions:\n- recognition_identification: Identify the general purpose and target audience of texts.\n- matching_sorting_sequencing: Sort texts by their general purpose or target audience.\n- reasoning_explanation: Explain how the purpose and audience relate to the text.\n- comprehension_response: Respond to questions about the purpose and audience of texts.\nCodes: 1.T.C.1.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

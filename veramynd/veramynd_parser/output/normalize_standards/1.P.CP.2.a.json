@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.CP.2.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Communicate clearly to present ideas, information, and texts. (I/C)",
+  "parent_code": "1.P.CP.2",
+  "ancestor_path": [
+    "1.P",
+    "1.P.CP",
+    "1.P.CP.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": []
+  },
+  "competency_statement": "Communicate clearly to present ideas, information, and texts to others.",
+  "observable_behaviors": [
+    "Speak clearly so others can understand the ideas being presented.",
+    "Share information and ideas in an organized way.",
+    "Use appropriate words and sentences to express ideas and information.",
+    "Present texts or information to an audience with clarity."
+  ],
+  "pedagogy_terms": [
+    "presentation skills",
+    "clear communication",
+    "audience awareness",
+    "organizing ideas"
+  ],
+  "exact_codes": [
+    "1.P.CP.2.a"
+  ],
+  "skill_clauses": [
+    "Communicate ideas clearly when presenting.",
+    "Present information in an organized manner.",
+    "Express ideas and information clearly through speech."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Speak clearly to present ideas, information, and texts.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use presentation skills to communicate clearly to an audience.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.CP.2.a\nDomain primary: Speaking & Listening\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Communicate clearly to present ideas, information, and texts to others.\nSkills:\n- Communicate ideas clearly when presenting.\n- Present information in an organized manner.\n- Express ideas and information clearly through speech.\nObservable behaviors:\n- Speak clearly so others can understand the ideas being presented.\n- Share information and ideas in an organized way.\n- Use appropriate words and sentences to express ideas and information.\n- Present texts or information to an audience with clarity.\nPedagogy terms: presentation skills, clear communication, audience awareness, organizing ideas\nRequired student actions:\n- oral_production: Speak clearly to present ideas, information, and texts.\n- procedural_application: Use presentation skills to communicate clearly to an audience.\nCodes: 1.P.CP.2.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.AC.2.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Make decisions about sentence structure and syntax in order to accommodate and influence the audience and achieve a specific purpose. (I/C)",
+  "parent_code": "1.P.AC.2",
+  "ancestor_path": [
+    "1.P",
+    "1.P.AC",
+    "1.P.AC.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Make choices about sentence structure and syntax to suit the audience and achieve a specific purpose when writing.",
+  "observable_behaviors": [
+    "Choose sentence structures that fit the audience's needs.",
+    "Adjust word order and syntax to influence how the audience understands the text.",
+    "Write sentences that help achieve a clear purpose for the audience."
+  ],
+  "pedagogy_terms": [
+    "sentence structure",
+    "syntax",
+    "audience",
+    "purpose",
+    "craft techniques"
+  ],
+  "exact_codes": [
+    "1.P.AC.2.c"
+  ],
+  "skill_clauses": [
+    "Make decisions about sentence structure to accommodate the audience.",
+    "Make decisions about syntax to accommodate the audience.",
+    "Make decisions about sentence structure to influence the audience.",
+    "Make decisions about syntax to influence the audience.",
+    "Make decisions about sentence structure and syntax to achieve a specific purpose."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Make decisions about sentence structure and syntax when writing to influence the audience and purpose.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply knowledge of sentence structure and syntax to shape writing for a specific audience and purpose.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how sentence structure and syntax choices affect the audience and purpose of the text.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.AC.2.c\nDomain primary: Writing\nDomain secondary: Language\nCognitive demand: DOK3_strategic_thinking\nCompetency: Make choices about sentence structure and syntax to suit the audience and achieve a specific purpose when writing.\nSkills:\n- Make decisions about sentence structure to accommodate the audience.\n- Make decisions about syntax to accommodate the audience.\n- Make decisions about sentence structure to influence the audience.\n- Make decisions about syntax to influence the audience.\n- Make decisions about sentence structure and syntax to achieve a specific purpose.\nObservable behaviors:\n- Choose sentence structures that fit the audience's needs.\n- Adjust word order and syntax to influence how the audience understands the text.\n- Write sentences that help achieve a clear purpose for the audience.\nPedagogy terms: sentence structure, syntax, audience, purpose, craft techniques\nRequired student actions:\n- written_production: Make decisions about sentence structure and syntax when writing to influence the audience and purpose.\n- procedural_application: Apply knowledge of sentence structure and syntax to shape writing for a specific audience and purpose.\n- reasoning_explanation: Explain how sentence structure and syntax choices affect the audience and purpose of the text.\nCodes: 1.P.AC.2.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

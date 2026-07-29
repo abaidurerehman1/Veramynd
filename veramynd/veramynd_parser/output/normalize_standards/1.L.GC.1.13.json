@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.GC.1.13",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Mechanics",
+  "raw_text": "Use periods, exclamation marks, and question marks at the end of sentences. (Continue)",
+  "parent_code": "1.L.GC.1",
+  "ancestor_path": [
+    "1.L",
+    "1.L.GC",
+    "1.L.GC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Language",
+    "secondary": []
+  },
+  "competency_statement": "Use periods, exclamation marks, and question marks correctly at the end of sentences.",
+  "observable_behaviors": [
+    "Place a period at the end of a statement sentence.",
+    "Place an exclamation mark at the end of an exclamatory sentence.",
+    "Place a question mark at the end of a question sentence."
+  ],
+  "pedagogy_terms": [
+    "punctuation",
+    "sentence ending marks",
+    "period",
+    "exclamation mark",
+    "question mark"
+  ],
+  "exact_codes": [
+    "1.L.GC.1.13"
+  ],
+  "skill_clauses": [
+    "Use periods at the end of sentences.",
+    "Use exclamation marks at the end of sentences.",
+    "Use question marks at the end of sentences."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify periods, exclamation marks, and question marks at the end of sentences.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Write sentences ending with periods, exclamation marks, or question marks.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use periods, exclamation marks, and question marks correctly at the end of sentences.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK1_recall_reproduction",
+  "notes": "",
+  "embed_text": "Standard: 1.L.GC.1.13\nDomain primary: Language\nDomain secondary: none\nCognitive demand: DOK1_recall_reproduction\nCompetency: Use periods, exclamation marks, and question marks correctly at the end of sentences.\nSkills:\n- Use periods at the end of sentences.\n- Use exclamation marks at the end of sentences.\n- Use question marks at the end of sentences.\nObservable behaviors:\n- Place a period at the end of a statement sentence.\n- Place an exclamation mark at the end of an exclamatory sentence.\n- Place a question mark at the end of a question sentence.\nPedagogy terms: punctuation, sentence ending marks, period, exclamation mark, question mark\nRequired student actions:\n- recognition_identification: Identify periods, exclamation marks, and question marks at the end of sentences.\n- written_production: Write sentences ending with periods, exclamation marks, or question marks.\n- procedural_application: Use periods, exclamation marks, and question marks correctly at the end of sentences.\nCodes: 1.L.GC.1.13",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

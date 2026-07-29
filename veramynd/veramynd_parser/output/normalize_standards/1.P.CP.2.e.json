@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.CP.2.e",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Build background knowledge by reciting all or part of significant poems and speeches as appropriate by grade level. (I/C)",
+  "parent_code": "1.P.CP.2",
+  "ancestor_path": [
+    "1.P",
+    "1.P.CP",
+    "1.P.CP.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": []
+  },
+  "competency_statement": "Recite significant poems and speeches to build background knowledge appropriate for first grade.",
+  "observable_behaviors": [
+    "Recite all or part of a poem aloud.",
+    "Recite all or part of a speech aloud.",
+    "Demonstrate understanding of the poem or speech through recitation."
+  ],
+  "pedagogy_terms": [
+    "recitation",
+    "background knowledge",
+    "poems",
+    "speeches"
+  ],
+  "exact_codes": [
+    "1.P.CP.2.e"
+  ],
+  "skill_clauses": [
+    "Recite all or part of significant poems appropriate for grade level.",
+    "Recite all or part of significant speeches appropriate for grade level."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Recite all or part of significant poems and speeches aloud.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK1_recall_reproduction",
+  "notes": "",
+  "embed_text": "Standard: 1.P.CP.2.e\nDomain primary: Speaking & Listening\nDomain secondary: none\nCognitive demand: DOK1_recall_reproduction\nCompetency: Recite significant poems and speeches to build background knowledge appropriate for first grade.\nSkills:\n- Recite all or part of significant poems appropriate for grade level.\n- Recite all or part of significant speeches appropriate for grade level.\nObservable behaviors:\n- Recite all or part of a poem aloud.\n- Recite all or part of a speech aloud.\n- Demonstrate understanding of the poem or speech through recitation.\nPedagogy terms: recitation, background knowledge, poems, speeches\nRequired student actions:\n- oral_production: Recite all or part of significant poems and speeches aloud.\nCodes: 1.P.CP.2.e",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

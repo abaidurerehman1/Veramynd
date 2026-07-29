@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.2.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Make use of texts to build knowledge, develop skills, make informed decisions, and share information and ideas. (I/C)",
+  "parent_code": "1.P.EICC.2",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Writing",
+      "Speaking & Listening"
+    ]
+  },
+  "competency_statement": "Use texts to gain knowledge, develop skills, make informed decisions, and share information and ideas.",
+  "observable_behaviors": [
+    "Read or listen to texts to learn new information.",
+    "Use information from texts to improve skills or understanding.",
+    "Make decisions based on information gathered from texts.",
+    "Share information and ideas learned from texts with others."
+  ],
+  "pedagogy_terms": [
+    "build knowledge",
+    "develop skills",
+    "make informed decisions",
+    "share information",
+    "use texts"
+  ],
+  "exact_codes": [
+    "1.P.EICC.2.b"
+  ],
+  "skill_clauses": [
+    "Use texts to build knowledge.",
+    "Use texts to develop skills.",
+    "Use texts to make informed decisions.",
+    "Use texts to share information and ideas."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify information and ideas in texts.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use texts to develop skills and make decisions.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how information from texts supports decisions and sharing ideas.",
+    "comprehension_response": "Use texts to build knowledge and share information.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.2.b\nDomain primary: Comprehension\nDomain secondary: Writing, Speaking & Listening\nCognitive demand: DOK2_skills_concepts\nCompetency: Use texts to gain knowledge, develop skills, make informed decisions, and share information and ideas.\nSkills:\n- Use texts to build knowledge.\n- Use texts to develop skills.\n- Use texts to make informed decisions.\n- Use texts to share information and ideas.\nObservable behaviors:\n- Read or listen to texts to learn new information.\n- Use information from texts to improve skills or understanding.\n- Make decisions based on information gathered from texts.\n- Share information and ideas learned from texts with others.\nPedagogy terms: build knowledge, develop skills, make informed decisions, share information, use texts\nRequired student actions:\n- recognition_identification: Identify information and ideas in texts.\n- procedural_application: Use texts to develop skills and make decisions.\n- reasoning_explanation: Explain how information from texts supports decisions and sharing ideas.\n- comprehension_response: Use texts to build knowledge and share information.\nCodes: 1.P.EICC.2.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

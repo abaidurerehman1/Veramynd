@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.3.g",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Determine the meanings of unfamiliar words and concepts by applying knowledge of context and of academic vocabulary and word parts. (I)",
+  "parent_code": "1.P.EICC.3",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.3"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Vocabulary",
+    "secondary": [
+      "Comprehension"
+    ]
+  },
+  "competency_statement": "Determine the meanings of unfamiliar words and concepts by using context clues, academic vocabulary knowledge, and understanding of word parts.",
+  "observable_behaviors": [
+    "Use surrounding text to infer the meaning of unknown words.",
+    "Identify and use academic vocabulary to understand new words.",
+    "Recognize and apply knowledge of prefixes, suffixes, and root words to determine word meanings."
+  ],
+  "pedagogy_terms": [
+    "context clues",
+    "academic vocabulary",
+    "word parts",
+    "prefixes",
+    "suffixes",
+    "root words",
+    "word meaning"
+  ],
+  "exact_codes": [
+    "1.P.EICC.3.g"
+  ],
+  "skill_clauses": [
+    "Determine meanings of unfamiliar words using context clues.",
+    "Use knowledge of academic vocabulary to understand new words.",
+    "Apply understanding of word parts to infer meanings of unfamiliar words."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify unfamiliar words and academic vocabulary in texts.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply knowledge of context clues, academic vocabulary, and word parts to determine word meanings.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how context and word parts help determine the meaning of unfamiliar words.",
+    "comprehension_response": "Use strategies to understand and clarify the meaning of new words and concepts in texts.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.3.g\nDomain primary: Vocabulary\nDomain secondary: Comprehension\nCognitive demand: DOK2_skills_concepts\nCompetency: Determine the meanings of unfamiliar words and concepts by using context clues, academic vocabulary knowledge, and understanding of word parts.\nSkills:\n- Determine meanings of unfamiliar words using context clues.\n- Use knowledge of academic vocabulary to understand new words.\n- Apply understanding of word parts to infer meanings of unfamiliar words.\nObservable behaviors:\n- Use surrounding text to infer the meaning of unknown words.\n- Identify and use academic vocabulary to understand new words.\n- Recognize and apply knowledge of prefixes, suffixes, and root words to determine word meanings.\nPedagogy terms: context clues, academic vocabulary, word parts, prefixes, suffixes, root words, word meaning\nRequired student actions:\n- recognition_identification: Identify unfamiliar words and academic vocabulary in texts.\n- procedural_application: Apply knowledge of context clues, academic vocabulary, and word parts to determine word meanings.\n- reasoning_explanation: Explain how context and word parts help determine the meaning of unfamiliar words.\n- comprehension_response: Use strategies to understand and clarify the meaning of new words and concepts in texts.\nCodes: 1.P.EICC.3.g",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

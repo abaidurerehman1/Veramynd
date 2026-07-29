@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.V.3.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Use context within and beyond a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases. (I)",
+  "parent_code": "1.L.V.3",
+  "ancestor_path": [
+    "1.L",
+    "1.L.V",
+    "1.L.V.3"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Vocabulary",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Use the context around a word or phrase, both inside and outside a sentence, to figure out or clarify its meaning, especially for words that are unknown or have multiple meanings.",
+  "observable_behaviors": [
+    "Look at the words and sentences before and after an unknown or multiple-meaning word to understand its meaning.",
+    "Use clues from the surrounding text to decide what a word or phrase means in that context.",
+    "Explain how the context helps determine the meaning of a word or phrase."
+  ],
+  "pedagogy_terms": [
+    "context clues",
+    "multiple-meaning words",
+    "word meaning",
+    "clarify meaning"
+  ],
+  "exact_codes": [
+    "1.L.V.3.a"
+  ],
+  "skill_clauses": [
+    "Use context within a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases.",
+    "Use context beyond a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify unknown or multiple-meaning words and phrases in text.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use context clues within and beyond a sentence to determine or clarify word meanings.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how context helps determine or clarify the meaning of unknown or multiple-meaning words and phrases.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.V.3.a\nDomain primary: Vocabulary\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Use the context around a word or phrase, both inside and outside a sentence, to figure out or clarify its meaning, especially for words that are unknown or have multiple meanings.\nSkills:\n- Use context within a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases.\n- Use context beyond a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases.\nObservable behaviors:\n- Look at the words and sentences before and after an unknown or multiple-meaning word to understand its meaning.\n- Use clues from the surrounding text to decide what a word or phrase means in that context.\n- Explain how the context helps determine the meaning of a word or phrase.\nPedagogy terms: context clues, multiple-meaning words, word meaning, clarify meaning\nRequired student actions:\n- recognition_identification: Identify unknown or multiple-meaning words and phrases in text.\n- procedural_application: Use context clues within and beyond a sentence to determine or clarify word meanings.\n- reasoning_explanation: Explain how context helps determine or clarify the meaning of unknown or multiple-meaning words and phrases.\nCodes: 1.L.V.3.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

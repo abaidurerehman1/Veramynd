@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.GC.1.21",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Grammar",
+  "raw_text": "Use coordinating conjunctions to join words, phrases, or clauses. (Introduce)",
+  "parent_code": "1.L.GC.1",
+  "ancestor_path": [
+    "1.L",
+    "1.L.GC",
+    "1.L.GC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Language",
+    "secondary": []
+  },
+  "competency_statement": "Use coordinating conjunctions to join words, phrases, or clauses in sentences.",
+  "observable_behaviors": [
+    "Identify coordinating conjunctions in sentences.",
+    "Join two words using a coordinating conjunction.",
+    "Join two phrases using a coordinating conjunction.",
+    "Join two clauses using a coordinating conjunction."
+  ],
+  "pedagogy_terms": [
+    "coordinating conjunctions",
+    "join words",
+    "join phrases",
+    "join clauses"
+  ],
+  "exact_codes": [
+    "1.L.GC.1.21"
+  ],
+  "skill_clauses": [
+    "Use coordinating conjunctions to join two words.",
+    "Use coordinating conjunctions to join two phrases.",
+    "Use coordinating conjunctions to join two clauses."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize coordinating conjunctions in sentences.",
+    "oral_production": "Use coordinating conjunctions orally to join words, phrases, or clauses.",
+    "written_production": "Write sentences that use coordinating conjunctions to join words, phrases, or clauses.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply coordinating conjunctions to join words, phrases, or clauses in sentences.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "Model how to join words, phrases, or clauses using coordinating conjunctions.",
+    "reasoning_explanation": "Explain how coordinating conjunctions join words, phrases, or clauses.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.GC.1.21\nDomain primary: Language\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Use coordinating conjunctions to join words, phrases, or clauses in sentences.\nSkills:\n- Use coordinating conjunctions to join two words.\n- Use coordinating conjunctions to join two phrases.\n- Use coordinating conjunctions to join two clauses.\nObservable behaviors:\n- Identify coordinating conjunctions in sentences.\n- Join two words using a coordinating conjunction.\n- Join two phrases using a coordinating conjunction.\n- Join two clauses using a coordinating conjunction.\nPedagogy terms: coordinating conjunctions, join words, join phrases, join clauses\nRequired student actions:\n- recognition_identification: Recognize coordinating conjunctions in sentences.\n- oral_production: Use coordinating conjunctions orally to join words, phrases, or clauses.\n- written_production: Write sentences that use coordinating conjunctions to join words, phrases, or clauses.\n- procedural_application: Apply coordinating conjunctions to join words, phrases, or clauses in sentences.\n- representation_modeling: Model how to join words, phrases, or clauses using coordinating conjunctions.\n- reasoning_explanation: Explain how coordinating conjunctions join words, phrases, or clauses.\nCodes: 1.L.GC.1.21",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

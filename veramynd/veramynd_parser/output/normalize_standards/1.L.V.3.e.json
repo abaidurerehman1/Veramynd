@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.V.3.e",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Use knowledge of word relationships and learned vocabulary words and phrases when making word choices in speaking and writing. (C)",
+  "parent_code": "1.L.V.3",
+  "ancestor_path": [
+    "1.L",
+    "1.L.V",
+    "1.L.V.3"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Vocabulary",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Use knowledge of word relationships and vocabulary words and phrases to make word choices when speaking and writing.",
+  "observable_behaviors": [
+    "Choose words in speaking that show understanding of word relationships and vocabulary.",
+    "Select words in writing that reflect knowledge of vocabulary and how words relate to each other."
+  ],
+  "pedagogy_terms": [
+    "word relationships",
+    "vocabulary",
+    "word choice",
+    "speaking",
+    "writing"
+  ],
+  "exact_codes": [
+    "1.L.V.3.e"
+  ],
+  "skill_clauses": [
+    "Use knowledge of word relationships when making word choices in speaking and writing.",
+    "Use learned vocabulary words and phrases when making word choices in speaking and writing."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Use vocabulary words and word relationships to choose words when speaking.",
+    "written_production": "Use vocabulary words and word relationships to choose words when writing.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply knowledge of word relationships and vocabulary to make word choices in speaking and writing.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.V.3.e\nDomain primary: Vocabulary\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Use knowledge of word relationships and vocabulary words and phrases to make word choices when speaking and writing.\nSkills:\n- Use knowledge of word relationships when making word choices in speaking and writing.\n- Use learned vocabulary words and phrases when making word choices in speaking and writing.\nObservable behaviors:\n- Choose words in speaking that show understanding of word relationships and vocabulary.\n- Select words in writing that reflect knowledge of vocabulary and how words relate to each other.\nPedagogy terms: word relationships, vocabulary, word choice, speaking, writing\nRequired student actions:\n- oral_production: Use vocabulary words and word relationships to choose words when speaking.\n- written_production: Use vocabulary words and word relationships to choose words when writing.\n- procedural_application: Apply knowledge of word relationships and vocabulary to make word choices in speaking and writing.\nCodes: 1.L.V.3.e",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

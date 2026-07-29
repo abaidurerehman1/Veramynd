@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.T.3.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Use knowledge of opinion techniques to create opinion pieces that introduce the topic, state an opinion about the topic, and provides two or more reasons to support the opinion with linking words and and because. (C)",
+  "parent_code": "1.T.T.3",
+  "ancestor_path": [
+    "1.T",
+    "1.T.T",
+    "1.T.T.3"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Write opinion pieces that introduce a topic, state an opinion, and give two or more reasons to support the opinion using linking words like 'and' and 'because'.",
+  "observable_behaviors": [
+    "Introduce a topic in writing.",
+    "State an opinion about the topic.",
+    "Provide two or more reasons supporting the opinion.",
+    "Use linking words such as 'and' and 'because' to connect reasons to the opinion."
+  ],
+  "pedagogy_terms": [
+    "opinion writing",
+    "topic introduction",
+    "supporting reasons",
+    "linking words",
+    "and",
+    "because"
+  ],
+  "exact_codes": [
+    "1.T.T.3.c"
+  ],
+  "skill_clauses": [
+    "Use knowledge of opinion techniques to create opinion pieces.",
+    "Introduce the topic in the opinion piece.",
+    "State an opinion about the topic.",
+    "Provide two or more reasons to support the opinion.",
+    "Use linking words such as 'and' and 'because' to connect reasons to the opinion."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Write opinion pieces that introduce a topic, state an opinion, and provide reasons with linking words.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use knowledge of opinion techniques to organize and connect ideas in writing.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.T.T.3.c\nDomain primary: Writing\nDomain secondary: Language\nCognitive demand: DOK3_strategic_thinking\nCompetency: Write opinion pieces that introduce a topic, state an opinion, and give two or more reasons to support the opinion using linking words like 'and' and 'because'.\nSkills:\n- Use knowledge of opinion techniques to create opinion pieces.\n- Introduce the topic in the opinion piece.\n- State an opinion about the topic.\n- Provide two or more reasons to support the opinion.\n- Use linking words such as 'and' and 'because' to connect reasons to the opinion.\nObservable behaviors:\n- Introduce a topic in writing.\n- State an opinion about the topic.\n- Provide two or more reasons supporting the opinion.\n- Use linking words such as 'and' and 'because' to connect reasons to the opinion.\nPedagogy terms: opinion writing, topic introduction, supporting reasons, linking words, and, because\nRequired student actions:\n- written_production: Write opinion pieces that introduce a topic, state an opinion, and provide reasons with linking words.\n- procedural_application: Use knowledge of opinion techniques to organize and connect ideas in writing.\nCodes: 1.T.T.3.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.GC.2.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Distinguish between complete and incomplete simple sentences, and identify the sentence type (i.e., declarative, imperative, interrogative, and exclamatory). (I)",
+  "parent_code": "1.L.GC.2",
+  "ancestor_path": [
+    "1.L",
+    "1.L.GC",
+    "1.L.GC.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Language",
+    "secondary": []
+  },
+  "competency_statement": "Identify whether simple sentences are complete or incomplete and recognize their types as declarative, imperative, interrogative, or exclamatory.",
+  "observable_behaviors": [
+    "Determine if a simple sentence expresses a complete thought or is incomplete.",
+    "Identify the type of a simple sentence as declarative, imperative, interrogative, or exclamatory."
+  ],
+  "pedagogy_terms": [
+    "complete sentences",
+    "sentence types",
+    "declarative",
+    "imperative",
+    "interrogative",
+    "exclamatory"
+  ],
+  "exact_codes": [
+    "1.L.GC.2.a"
+  ],
+  "skill_clauses": [
+    "Distinguish between complete and incomplete simple sentences.",
+    "Identify the sentence type as declarative, imperative, interrogative, or exclamatory."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize complete and incomplete simple sentences and identify their types.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "Sort or classify simple sentences by completeness and sentence type.",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain the difference between complete and incomplete sentences and describe sentence types.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.GC.2.a\nDomain primary: Language\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Identify whether simple sentences are complete or incomplete and recognize their types as declarative, imperative, interrogative, or exclamatory.\nSkills:\n- Distinguish between complete and incomplete simple sentences.\n- Identify the sentence type as declarative, imperative, interrogative, or exclamatory.\nObservable behaviors:\n- Determine if a simple sentence expresses a complete thought or is incomplete.\n- Identify the type of a simple sentence as declarative, imperative, interrogative, or exclamatory.\nPedagogy terms: complete sentences, sentence types, declarative, imperative, interrogative, exclamatory\nRequired student actions:\n- recognition_identification: Recognize complete and incomplete simple sentences and identify their types.\n- matching_sorting_sequencing: Sort or classify simple sentences by completeness and sentence type.\n- reasoning_explanation: Explain the difference between complete and incomplete sentences and describe sentence types.\nCodes: 1.L.GC.2.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

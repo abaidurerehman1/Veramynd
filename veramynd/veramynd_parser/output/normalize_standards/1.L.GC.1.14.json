@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.GC.1.14",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Grammar",
+  "raw_text": "Form plural nouns by changing -y to -ies. (Introduce)",
+  "parent_code": "1.L.GC.1",
+  "ancestor_path": [
+    "1.L",
+    "1.L.GC",
+    "1.L.GC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Language",
+    "secondary": []
+  },
+  "competency_statement": "Form plural nouns by changing the ending -y to -ies.",
+  "observable_behaviors": [
+    "Change singular nouns ending in -y to plural nouns ending in -ies.",
+    "Write plural forms of nouns by replacing -y with -ies."
+  ],
+  "pedagogy_terms": [
+    "plural nouns",
+    "noun endings",
+    "word formation"
+  ],
+  "exact_codes": [
+    "1.L.GC.1.14"
+  ],
+  "skill_clauses": [
+    "Form plural nouns by changing the ending -y to -ies."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify singular nouns ending in -y that need to be changed to form plurals.",
+    "oral_production": "Say plural nouns formed by changing -y to -ies.",
+    "written_production": "Write plural nouns by changing the ending -y to -ies.",
+    "matching_sorting_sequencing": "Sort singular and plural nouns based on their endings (-y vs. -ies).",
+    "procedural_application": "Apply the rule of changing -y to -ies to form plural nouns in writing.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "Model the transformation of singular nouns ending in -y to plural nouns ending in -ies.",
+    "reasoning_explanation": "Explain why the ending -y changes to -ies when forming plural nouns.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.GC.1.14\nDomain primary: Language\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Form plural nouns by changing the ending -y to -ies.\nSkills:\n- Form plural nouns by changing the ending -y to -ies.\nObservable behaviors:\n- Change singular nouns ending in -y to plural nouns ending in -ies.\n- Write plural forms of nouns by replacing -y with -ies.\nPedagogy terms: plural nouns, noun endings, word formation\nRequired student actions:\n- recognition_identification: Identify singular nouns ending in -y that need to be changed to form plurals.\n- oral_production: Say plural nouns formed by changing -y to -ies.\n- written_production: Write plural nouns by changing the ending -y to -ies.\n- matching_sorting_sequencing: Sort singular and plural nouns based on their endings (-y vs. -ies).\n- procedural_application: Apply the rule of changing -y to -ies to form plural nouns in writing.\n- representation_modeling: Model the transformation of singular nouns ending in -y to plural nouns ending in -ies.\n- reasoning_explanation: Explain why the ending -y changes to -ies when forming plural nouns.\nCodes: 1.L.GC.1.14",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.4.e",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Construct an initial draft by integrating ideas and information; selecting words, phrases, and sentences; and incorporating craft techniques that will best achieve the purpose of the text and resonate with the target audience. (C)",
+  "parent_code": "1.P.EICC.4",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.4"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": []
+  },
+  "competency_statement": "Create an initial draft by combining ideas and information, choosing appropriate words and sentences, and using writing techniques to effectively achieve the text's purpose and connect with the intended audience.",
+  "observable_behaviors": [
+    "Combine ideas and information to form a draft.",
+    "Select words, phrases, and sentences that fit the purpose of the text.",
+    "Use writing techniques or craft elements to enhance the draft.",
+    "Consider the target audience when drafting the text."
+  ],
+  "pedagogy_terms": [
+    "drafting",
+    "word choice",
+    "writing techniques",
+    "audience awareness",
+    "text purpose"
+  ],
+  "exact_codes": [
+    "1.P.EICC.4.e"
+  ],
+  "skill_clauses": [
+    "Integrate ideas and information to construct an initial draft.",
+    "Select words, phrases, and sentences to include in the draft.",
+    "Incorporate craft techniques to enhance the draft's effectiveness.",
+    "Ensure the draft achieves the purpose of the text and resonates with the target audience."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Write an initial draft by integrating ideas, selecting words and sentences, and applying craft techniques.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply writing processes to plan and compose a draft that fits the purpose and audience.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how chosen words, phrases, and craft techniques help achieve the text's purpose and connect with the audience.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.4.e\nDomain primary: Writing\nDomain secondary: none\nCognitive demand: DOK3_strategic_thinking\nCompetency: Create an initial draft by combining ideas and information, choosing appropriate words and sentences, and using writing techniques to effectively achieve the text's purpose and connect with the intended audience.\nSkills:\n- Integrate ideas and information to construct an initial draft.\n- Select words, phrases, and sentences to include in the draft.\n- Incorporate craft techniques to enhance the draft's effectiveness.\n- Ensure the draft achieves the purpose of the text and resonates with the target audience.\nObservable behaviors:\n- Combine ideas and information to form a draft.\n- Select words, phrases, and sentences that fit the purpose of the text.\n- Use writing techniques or craft elements to enhance the draft.\n- Consider the target audience when drafting the text.\nPedagogy terms: drafting, word choice, writing techniques, audience awareness, text purpose\nRequired student actions:\n- written_production: Write an initial draft by integrating ideas, selecting words and sentences, and applying craft techniques.\n- procedural_application: Apply writing processes to plan and compose a draft that fits the purpose and audience.\n- reasoning_explanation: Explain how chosen words, phrases, and craft techniques help achieve the text's purpose and connect with the audience.\nCodes: 1.P.EICC.4.e",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

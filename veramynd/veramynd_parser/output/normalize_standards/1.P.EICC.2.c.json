@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.2.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)",
+  "parent_code": "1.P.EICC.2",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Writing",
+      "Speaking & Listening"
+    ]
+  },
+  "competency_statement": "Explain ideas and learn new concepts by interpreting and creating texts.",
+  "observable_behaviors": [
+    "Explain ideas based on information from texts.",
+    "Construct texts to demonstrate understanding of concepts and processes.",
+    "Interpret information from texts to learn new concepts."
+  ],
+  "pedagogy_terms": [
+    "interpret texts",
+    "construct texts",
+    "explain concepts",
+    "learn from texts"
+  ],
+  "exact_codes": [
+    "1.P.EICC.2.c"
+  ],
+  "skill_clauses": [
+    "Explain concepts by interpreting texts.",
+    "Learn concepts by interpreting texts.",
+    "Construct texts to demonstrate understanding of concepts and processes."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify concepts and processes in texts.",
+    "oral_production": "Explain concepts and processes orally based on texts.",
+    "written_production": "Write explanations and construct texts to show understanding.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use texts to explain and learn concepts and processes.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "Construct texts to represent understanding of concepts and processes.",
+    "reasoning_explanation": "Explain concepts and processes by interpreting texts.",
+    "comprehension_response": "Respond to texts by explaining and learning concepts and processes.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.2.c\nDomain primary: Comprehension\nDomain secondary: Writing, Speaking & Listening\nCognitive demand: DOK2_skills_concepts\nCompetency: Explain ideas and learn new concepts by interpreting and creating texts.\nSkills:\n- Explain concepts by interpreting texts.\n- Learn concepts by interpreting texts.\n- Construct texts to demonstrate understanding of concepts and processes.\nObservable behaviors:\n- Explain ideas based on information from texts.\n- Construct texts to demonstrate understanding of concepts and processes.\n- Interpret information from texts to learn new concepts.\nPedagogy terms: interpret texts, construct texts, explain concepts, learn from texts\nRequired student actions:\n- recognition_identification: Identify concepts and processes in texts.\n- oral_production: Explain concepts and processes orally based on texts.\n- written_production: Write explanations and construct texts to show understanding.\n- procedural_application: Use texts to explain and learn concepts and processes.\n- representation_modeling: Construct texts to represent understanding of concepts and processes.\n- reasoning_explanation: Explain concepts and processes by interpreting texts.\n- comprehension_response: Respond to texts by explaining and learning concepts and processes.\nCodes: 1.P.EICC.2.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

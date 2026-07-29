@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.1.e",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing individual writing, listening as others share their writing, and offering and responding to feedback. (I/C)",
+  "parent_code": "1.P.EICC.1",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": [
+      "Writing",
+      "Comprehension"
+    ]
+  },
+  "competency_statement": "Participate actively in a community of readers and writers by following group norms, discussing texts, sharing writing, listening to others, and giving and receiving feedback.",
+  "observable_behaviors": [
+    "Follow agreed-upon group norms during reading and writing activities",
+    "Discuss texts with peers by sharing ideas and listening to others",
+    "Share individual writing pieces with the group",
+    "Listen attentively as others share their writing",
+    "Offer constructive feedback on peers' writing",
+    "Respond appropriately to feedback received on own writing"
+  ],
+  "pedagogy_terms": [
+    "community of readers and writers",
+    "group norms",
+    "discussion",
+    "sharing writing",
+    "listening",
+    "feedback"
+  ],
+  "exact_codes": [
+    "1.P.EICC.1.e"
+  ],
+  "skill_clauses": [
+    "Develop group norms for participation in a community of readers and writers",
+    "Discuss texts with others in the group",
+    "Share individual writing with the group",
+    "Listen to others as they share their writing",
+    "Offer feedback on peers' writing",
+    "Respond to feedback received on own writing"
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Discuss texts with peers and share writing aloud",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Follow group norms during reading and writing activities",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Offer and respond to feedback on writing",
+    "comprehension_response": "Listen attentively to others' writing and participate in text discussions",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.1.e\nDomain primary: Speaking & Listening\nDomain secondary: Writing, Comprehension\nCognitive demand: DOK2_skills_concepts\nCompetency: Participate actively in a community of readers and writers by following group norms, discussing texts, sharing writing, listening to others, and giving and receiving feedback.\nSkills:\n- Develop group norms for participation in a community of readers and writers\n- Discuss texts with others in the group\n- Share individual writing with the group\n- Listen to others as they share their writing\n- Offer feedback on peers' writing\n- Respond to feedback received on own writing\nObservable behaviors:\n- Follow agreed-upon group norms during reading and writing activities\n- Discuss texts with peers by sharing ideas and listening to others\n- Share individual writing pieces with the group\n- Listen attentively as others share their writing\n- Offer constructive feedback on peers' writing\n- Respond appropriately to feedback received on own writing\nPedagogy terms: community of readers and writers, group norms, discussion, sharing writing, listening, feedback\nRequired student actions:\n- oral_production: Discuss texts with peers and share writing aloud\n- procedural_application: Follow group norms during reading and writing activities\n- reasoning_explanation: Offer and respond to feedback on writing\n- comprehension_response: Listen attentively to others' writing and participate in text discussions\nCodes: 1.P.EICC.1.e",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

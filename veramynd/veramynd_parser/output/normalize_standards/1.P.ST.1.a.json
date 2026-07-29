@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.ST.1.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Use prior knowledge, formal or informal research, and discussions with others to identify the key components of context that are most relevant. (I/C)",
+  "parent_code": "1.P.ST.1",
+  "ancestor_path": [
+    "1.P",
+    "1.P.ST",
+    "1.P.ST.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening"
+    ]
+  },
+  "competency_statement": "Use prior knowledge, research, and discussions to identify the most relevant key components of context when interpreting or constructing texts.",
+  "observable_behaviors": [
+    "Recall background information related to a text.",
+    "Use formal or informal research to gather information about context.",
+    "Discuss with others to determine important contextual details.",
+    "Identify geographic location, cultural influences, time period, or contemporary events relevant to a text."
+  ],
+  "pedagogy_terms": [
+    "context",
+    "background information",
+    "research",
+    "discussion",
+    "key details"
+  ],
+  "exact_codes": [
+    "1.P.ST.1.a"
+  ],
+  "skill_clauses": [
+    "Use prior knowledge to identify relevant context components.",
+    "Use formal or informal research to find contextual information.",
+    "Engage in discussions with others to determine key context components."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify key components of context relevant to a text.",
+    "oral_production": "Discuss contextual information with others to clarify understanding.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use prior knowledge and research to determine relevant context components.",
+    "investigation_handson": "Conduct informal or formal research to gather contextual information.",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain why certain components of context are most relevant to understanding a text.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.ST.1.a\nDomain primary: Comprehension\nDomain secondary: Speaking & Listening\nCognitive demand: DOK3_strategic_thinking\nCompetency: Use prior knowledge, research, and discussions to identify the most relevant key components of context when interpreting or constructing texts.\nSkills:\n- Use prior knowledge to identify relevant context components.\n- Use formal or informal research to find contextual information.\n- Engage in discussions with others to determine key context components.\nObservable behaviors:\n- Recall background information related to a text.\n- Use formal or informal research to gather information about context.\n- Discuss with others to determine important contextual details.\n- Identify geographic location, cultural influences, time period, or contemporary events relevant to a text.\nPedagogy terms: context, background information, research, discussion, key details\nRequired student actions:\n- recognition_identification: Identify key components of context relevant to a text.\n- oral_production: Discuss contextual information with others to clarify understanding.\n- procedural_application: Use prior knowledge and research to determine relevant context components.\n- investigation_handson: Conduct informal or formal research to gather contextual information.\n- reasoning_explanation: Explain why certain components of context are most relevant to understanding a text.\nCodes: 1.P.ST.1.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

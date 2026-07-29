@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.H.2.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Build handwriting fluency by forming accurate letters and words with increasing speed.",
+  "parent_code": "1.F.H.2",
+  "ancestor_path": [
+    "1.F",
+    "1.F.H",
+    "1.F.H.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Students build handwriting fluency by forming letters and words accurately and with increasing speed.",
+  "observable_behaviors": [
+    "Form letters correctly when writing.",
+    "Write words with accurate letter formation.",
+    "Increase writing speed while maintaining accuracy."
+  ],
+  "pedagogy_terms": [
+    "handwriting",
+    "letter formation",
+    "writing fluency",
+    "transcription"
+  ],
+  "exact_codes": [
+    "1.F.H.2.b"
+  ],
+  "skill_clauses": [
+    "Form letters accurately.",
+    "Form words accurately.",
+    "Increase speed of letter and word formation."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Form letters and words accurately and quickly in writing.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Practice forming letters and words with increasing speed and accuracy.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.H.2.b\nDomain primary: Writing\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Students build handwriting fluency by forming letters and words accurately and with increasing speed.\nSkills:\n- Form letters accurately.\n- Form words accurately.\n- Increase speed of letter and word formation.\nObservable behaviors:\n- Form letters correctly when writing.\n- Write words with accurate letter formation.\n- Increase writing speed while maintaining accuracy.\nPedagogy terms: handwriting, letter formation, writing fluency, transcription\nRequired student actions:\n- written_production: Form letters and words accurately and quickly in writing.\n- procedural_application: Practice forming letters and words with increasing speed and accuracy.\nCodes: 1.F.H.2.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

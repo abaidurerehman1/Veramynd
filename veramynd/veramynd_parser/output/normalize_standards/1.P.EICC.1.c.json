@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.1.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Select, read, and write texts of personal interest and academic relevance to grade-level texts and topics. (I/C)",
+  "parent_code": "1.P.EICC.1",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Writing"
+    ]
+  },
+  "competency_statement": "Select, read, and write texts that are personally interesting and academically relevant at grade level.",
+  "observable_behaviors": [
+    "Choose texts that match personal interests and academic topics appropriate for grade level.",
+    "Read texts that relate to personal and academic interests at grade level.",
+    "Write texts about topics that are personally interesting and academically relevant at grade level."
+  ],
+  "pedagogy_terms": [
+    "text selection",
+    "reading",
+    "writing",
+    "personal interest",
+    "academic relevance",
+    "grade-level texts"
+  ],
+  "exact_codes": [
+    "1.P.EICC.1.c"
+  ],
+  "skill_clauses": [
+    "Select texts of personal interest and academic relevance to grade-level topics.",
+    "Read texts of personal interest and academic relevance to grade-level topics.",
+    "Write texts of personal interest and academic relevance to grade-level topics."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize texts that are personally interesting and academically relevant at grade level.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Write texts on topics of personal interest and academic relevance at grade level.",
+    "matching_sorting_sequencing": "Match texts to personal interests and academic topics at grade level.",
+    "procedural_application": "Select texts based on personal interest and academic relevance at grade level.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain why texts are chosen based on personal interest and academic relevance at grade level.",
+    "comprehension_response": "Read and respond to texts that are personally interesting and academically relevant at grade level.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.1.c\nDomain primary: Comprehension\nDomain secondary: Writing\nCognitive demand: DOK2_skills_concepts\nCompetency: Select, read, and write texts that are personally interesting and academically relevant at grade level.\nSkills:\n- Select texts of personal interest and academic relevance to grade-level topics.\n- Read texts of personal interest and academic relevance to grade-level topics.\n- Write texts of personal interest and academic relevance to grade-level topics.\nObservable behaviors:\n- Choose texts that match personal interests and academic topics appropriate for grade level.\n- Read texts that relate to personal and academic interests at grade level.\n- Write texts about topics that are personally interesting and academically relevant at grade level.\nPedagogy terms: text selection, reading, writing, personal interest, academic relevance, grade-level texts\nRequired student actions:\n- recognition_identification: Recognize texts that are personally interesting and academically relevant at grade level.\n- written_production: Write texts on topics of personal interest and academic relevance at grade level.\n- matching_sorting_sequencing: Match texts to personal interests and academic topics at grade level.\n- procedural_application: Select texts based on personal interest and academic relevance at grade level.\n- reasoning_explanation: Explain why texts are chosen based on personal interest and academic relevance at grade level.\n- comprehension_response: Read and respond to texts that are personally interesting and academically relevant at grade level.\nCodes: 1.P.EICC.1.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

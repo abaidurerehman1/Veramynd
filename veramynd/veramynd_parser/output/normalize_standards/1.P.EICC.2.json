@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.2",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Engagement & Intention",
+  "raw_text": "Engage in written or spoken dialogue as author and audience for a variety of tasks and purposes, making intentional connections within, between, and beyond texts.",
+  "parent_code": "1.P.EICC",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC"
+  ],
+  "child_codes": [
+    "1.P.EICC.2.a",
+    "1.P.EICC.2.b",
+    "1.P.EICC.2.c",
+    "1.P.EICC.2.d",
+    "1.P.EICC.2.e"
+  ],
+  "child_texts": [
+    "Share real or imagined experiences by interpreting and constructing texts that tell or include stories. (I/C)",
+    "Make use of texts to build knowledge, develop skills, make informed decisions, and share information and ideas. (I/C)",
+    "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)",
+    "Interpret and construct texts to aid the analysis and evaluation of texts and ideas. (I/C)",
+    "Consume and produce texts in order to solve problems or influence decisions. (I/C)"
+  ],
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": [
+      "Writing",
+      "Comprehension"
+    ]
+  },
+  "competency_statement": "Engage in written or spoken conversations as both a speaker and listener for different tasks and purposes, making meaningful connections within and across texts and to real life.",
+  "observable_behaviors": [
+    "Participate in dialogues by sharing ideas and responding to others.",
+    "Make connections between different texts during discussions.",
+    "Relate ideas from texts to personal experiences or other knowledge.",
+    "Use spoken or written language intentionally to communicate for various purposes."
+  ],
+  "pedagogy_terms": [
+    "dialogue",
+    "author and audience",
+    "text connections",
+    "purposeful communication"
+  ],
+  "exact_codes": [
+    "1.P.EICC.2"
+  ],
+  "skill_clauses": [
+    "Engage in spoken or written dialogue as an author and audience.",
+    "Make intentional connections within texts.",
+    "Make intentional connections between texts.",
+    "Make intentional connections beyond texts to other knowledge or experiences."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Speak and respond in dialogues for different purposes.",
+    "written_production": "Write to communicate ideas and respond to texts.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use dialogue skills to connect ideas within and between texts.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain connections made between texts and ideas during dialogue.",
+    "comprehension_response": "Respond thoughtfully to texts and peers in spoken or written form.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.2\nDomain primary: Speaking & Listening\nDomain secondary: Writing, Comprehension\nCognitive demand: DOK3_strategic_thinking\nCompetency: Engage in written or spoken conversations as both a speaker and listener for different tasks and purposes, making meaningful connections within and across texts and to real life.\nSkills:\n- Engage in spoken or written dialogue as an author and audience.\n- Make intentional connections within texts.\n- Make intentional connections between texts.\n- Make intentional connections beyond texts to other knowledge or experiences.\nObservable behaviors:\n- Participate in dialogues by sharing ideas and responding to others.\n- Make connections between different texts during discussions.\n- Relate ideas from texts to personal experiences or other knowledge.\n- Use spoken or written language intentionally to communicate for various purposes.\nPedagogy terms: dialogue, author and audience, text connections, purposeful communication\nRequired student actions:\n- oral_production: Speak and respond in dialogues for different purposes.\n- written_production: Write to communicate ideas and respond to texts.\n- procedural_application: Use dialogue skills to connect ideas within and between texts.\n- reasoning_explanation: Explain connections made between texts and ideas during dialogue.\n- comprehension_response: Respond thoughtfully to texts and peers in spoken or written form.\nCodes: 1.P.EICC.2",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

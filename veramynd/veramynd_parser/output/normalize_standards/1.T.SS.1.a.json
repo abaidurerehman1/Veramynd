@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.SS.1.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Identify and use various text features (e.g., diagrams, tables of contents) to locate information and make meaning in texts. (I)",
+  "parent_code": "1.T.SS.1",
+  "ancestor_path": [
+    "1.T",
+    "1.T.SS",
+    "1.T.SS.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Identify and use text features like diagrams and tables of contents to find information and understand texts.",
+  "observable_behaviors": [
+    "Point to and name text features such as diagrams and tables of contents in a book or text.",
+    "Use a table of contents to find a specific section or page in a text.",
+    "Explain how a diagram helps understand information in a text."
+  ],
+  "pedagogy_terms": [
+    "text features",
+    "diagrams",
+    "tables of contents",
+    "locate information",
+    "make meaning"
+  ],
+  "exact_codes": [
+    "1.T.SS.1.a"
+  ],
+  "skill_clauses": [
+    "Identify various text features such as diagrams and tables of contents.",
+    "Use text features to locate information in texts.",
+    "Use text features to make meaning from texts."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize text features such as diagrams and tables of contents in texts.",
+    "oral_production": "Describe how text features help locate information and understand the text.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use text features like diagrams and tables of contents to find information in texts.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how using text features helps make meaning from texts.",
+    "comprehension_response": "Use text features to locate information and understand the text content.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.SS.1.a\nDomain primary: Comprehension\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Identify and use text features like diagrams and tables of contents to find information and understand texts.\nSkills:\n- Identify various text features such as diagrams and tables of contents.\n- Use text features to locate information in texts.\n- Use text features to make meaning from texts.\nObservable behaviors:\n- Point to and name text features such as diagrams and tables of contents in a book or text.\n- Use a table of contents to find a specific section or page in a text.\n- Explain how a diagram helps understand information in a text.\nPedagogy terms: text features, diagrams, tables of contents, locate information, make meaning\nRequired student actions:\n- recognition_identification: Recognize text features such as diagrams and tables of contents in texts.\n- oral_production: Describe how text features help locate information and understand the text.\n- procedural_application: Use text features like diagrams and tables of contents to find information in texts.\n- reasoning_explanation: Explain how using text features helps make meaning from texts.\n- comprehension_response: Use text features to locate information and understand the text content.\nCodes: 1.T.SS.1.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

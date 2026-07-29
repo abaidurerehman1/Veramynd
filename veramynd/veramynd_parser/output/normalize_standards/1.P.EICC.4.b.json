@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.4.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Plan how to organize the text by selecting modes, genres, and structures that will achieve the purpose and meet the needs of the target audience. (C)",
+  "parent_code": "1.P.EICC.4",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.4"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": []
+  },
+  "competency_statement": "Plan how to organize a text by choosing modes, genres, and structures that fit the purpose and audience.",
+  "observable_behaviors": [
+    "Choose a mode (such as narrative, informative, or opinion) for writing.",
+    "Select a genre appropriate to the writing purpose.",
+    "Decide on a text structure that helps communicate the message clearly.",
+    "Explain why the chosen mode, genre, and structure suit the intended audience and purpose."
+  ],
+  "pedagogy_terms": [
+    "writing process",
+    "planning",
+    "text organization",
+    "modes",
+    "genres",
+    "text structures",
+    "audience",
+    "purpose"
+  ],
+  "exact_codes": [
+    "1.P.EICC.4.b"
+  ],
+  "skill_clauses": [
+    "Plan how to organize a text.",
+    "Select modes that will achieve the purpose.",
+    "Select genres that will achieve the purpose.",
+    "Select structures that will achieve the purpose.",
+    "Consider the needs of the target audience when planning."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify different modes, genres, and text structures.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "Sort or categorize modes, genres, and structures by purpose or audience.",
+    "procedural_application": "Plan text organization by selecting appropriate modes, genres, and structures.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how chosen modes, genres, and structures meet the purpose and audience needs.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.4.b\nDomain primary: Writing\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Plan how to organize a text by choosing modes, genres, and structures that fit the purpose and audience.\nSkills:\n- Plan how to organize a text.\n- Select modes that will achieve the purpose.\n- Select genres that will achieve the purpose.\n- Select structures that will achieve the purpose.\n- Consider the needs of the target audience when planning.\nObservable behaviors:\n- Choose a mode (such as narrative, informative, or opinion) for writing.\n- Select a genre appropriate to the writing purpose.\n- Decide on a text structure that helps communicate the message clearly.\n- Explain why the chosen mode, genre, and structure suit the intended audience and purpose.\nPedagogy terms: writing process, planning, text organization, modes, genres, text structures, audience, purpose\nRequired student actions:\n- recognition_identification: Identify different modes, genres, and text structures.\n- matching_sorting_sequencing: Sort or categorize modes, genres, and structures by purpose or audience.\n- procedural_application: Plan text organization by selecting appropriate modes, genres, and structures.\n- reasoning_explanation: Explain how chosen modes, genres, and structures meet the purpose and audience needs.\nCodes: 1.P.EICC.4.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.PA.5",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Onsets & Rimes",
+  "raw_text": "Blend and segment onsets and rimes in spoken words.",
+  "parent_code": "1.F.PA",
+  "ancestor_path": [
+    "1.F",
+    "1.F.PA"
+  ],
+  "child_codes": [
+    "1.F.PA.5.a",
+    "1.F.PA.5.b"
+  ],
+  "child_texts": [
+    "Blend onsets and rimes of spoken one-syllable words with blends, digraphs, and trigraphs in the initial and final positions.",
+    "Segment onsets and rimes of spoken one-syllable words with blends, digraphs, and trigraphs in the initial and final positions."
+  ],
+  "domain": {
+    "primary": "Phonological Awareness",
+    "secondary": []
+  },
+  "competency_statement": "Blend and segment the beginning and ending sound parts (onsets and rimes) of spoken one-syllable words, including those with blends, digraphs, and trigraphs.",
+  "observable_behaviors": [
+    "Blend the beginning sound(s) (onset) and the rest of the word (rime) in spoken one-syllable words.",
+    "Segment the beginning sound(s) (onset) and the rest of the word (rime) in spoken one-syllable words.",
+    "Recognize blends, digraphs, and trigraphs in the initial and final positions of spoken words."
+  ],
+  "pedagogy_terms": [
+    "onsets",
+    "rimes",
+    "blends",
+    "digraphs",
+    "trigraphs",
+    "segmenting",
+    "blending"
+  ],
+  "exact_codes": [
+    "1.F.PA.5"
+  ],
+  "skill_clauses": [
+    "Blend onsets and rimes of spoken one-syllable words with blends, digraphs, and trigraphs in the initial and final positions.",
+    "Segment onsets and rimes of spoken one-syllable words with blends, digraphs, and trigraphs in the initial and final positions."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify onsets and rimes in spoken one-syllable words with blends, digraphs, and trigraphs.",
+    "oral_production": "Blend and segment onsets and rimes orally in spoken one-syllable words with blends, digraphs, and trigraphs.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.PA.5\nDomain primary: Phonological Awareness\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Blend and segment the beginning and ending sound parts (onsets and rimes) of spoken one-syllable words, including those with blends, digraphs, and trigraphs.\nSkills:\n- Blend onsets and rimes of spoken one-syllable words with blends, digraphs, and trigraphs in the initial and final positions.\n- Segment onsets and rimes of spoken one-syllable words with blends, digraphs, and trigraphs in the initial and final positions.\nObservable behaviors:\n- Blend the beginning sound(s) (onset) and the rest of the word (rime) in spoken one-syllable words.\n- Segment the beginning sound(s) (onset) and the rest of the word (rime) in spoken one-syllable words.\n- Recognize blends, digraphs, and trigraphs in the initial and final positions of spoken words.\nPedagogy terms: onsets, rimes, blends, digraphs, trigraphs, segmenting, blending\nRequired student actions:\n- recognition_identification: Identify onsets and rimes in spoken one-syllable words with blends, digraphs, and trigraphs.\n- oral_production: Blend and segment onsets and rimes orally in spoken one-syllable words with blends, digraphs, and trigraphs.\nCodes: 1.F.PA.5",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

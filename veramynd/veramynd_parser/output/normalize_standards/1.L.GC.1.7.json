@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.GC.1.7",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Grammar",
+  "raw_text": "Use action verbs. (Master)",
+  "parent_code": "1.L.GC.1",
+  "ancestor_path": [
+    "1.L",
+    "1.L.GC",
+    "1.L.GC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Language",
+    "secondary": []
+  },
+  "competency_statement": "Use action verbs correctly in writing and speaking.",
+  "observable_behaviors": [
+    "Identify action verbs in sentences.",
+    "Use action verbs when speaking or writing sentences."
+  ],
+  "pedagogy_terms": [
+    "action verbs",
+    "verbs",
+    "grammar",
+    "sentence structure"
+  ],
+  "exact_codes": [
+    "1.L.GC.1.7"
+  ],
+  "skill_clauses": [
+    "Use action verbs in sentences."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify action verbs in sentences or texts.",
+    "oral_production": "Use action verbs when speaking sentences.",
+    "written_production": "Write sentences using action verbs.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use action verbs appropriately in writing and speaking.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK1_recall_reproduction",
+  "notes": "",
+  "embed_text": "Standard: 1.L.GC.1.7\nDomain primary: Language\nDomain secondary: none\nCognitive demand: DOK1_recall_reproduction\nCompetency: Use action verbs correctly in writing and speaking.\nSkills:\n- Use action verbs in sentences.\nObservable behaviors:\n- Identify action verbs in sentences.\n- Use action verbs when speaking or writing sentences.\nPedagogy terms: action verbs, verbs, grammar, sentence structure\nRequired student actions:\n- recognition_identification: Identify action verbs in sentences or texts.\n- oral_production: Use action verbs when speaking sentences.\n- written_production: Write sentences using action verbs.\n- procedural_application: Use action verbs appropriately in writing and speaking.\nCodes: 1.L.GC.1.7",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

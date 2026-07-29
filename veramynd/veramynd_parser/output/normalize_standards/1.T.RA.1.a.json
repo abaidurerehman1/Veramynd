@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.RA.1.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Ask questions about topics of interest for research. (I)",
+  "parent_code": "1.T.RA.1",
+  "ancestor_path": [
+    "1.T",
+    "1.T.RA",
+    "1.T.RA.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": []
+  },
+  "competency_statement": "Ask questions about topics that interest you to learn more through research.",
+  "observable_behaviors": [
+    "Formulate questions related to topics of personal interest.",
+    "Express curiosity by asking questions to guide research."
+  ],
+  "pedagogy_terms": [
+    "ask questions",
+    "research",
+    "topics of interest"
+  ],
+  "exact_codes": [
+    "1.T.RA.1.a"
+  ],
+  "skill_clauses": [
+    "Ask questions about topics of interest for research."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Ask questions aloud about topics of interest for research.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK1_recall_reproduction",
+  "notes": "",
+  "embed_text": "Standard: 1.T.RA.1.a\nDomain primary: Comprehension\nDomain secondary: none\nCognitive demand: DOK1_recall_reproduction\nCompetency: Ask questions about topics that interest you to learn more through research.\nSkills:\n- Ask questions about topics of interest for research.\nObservable behaviors:\n- Formulate questions related to topics of personal interest.\n- Express curiosity by asking questions to guide research.\nPedagogy terms: ask questions, research, topics of interest\nRequired student actions:\n- oral_production: Ask questions aloud about topics of interest for research.\nCodes: 1.T.RA.1.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

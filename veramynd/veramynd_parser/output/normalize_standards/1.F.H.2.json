@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.H.2",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Transcription & Handwriting Fluency",
+  "raw_text": "Use working memory to transcribe oral language to written text and maintain meaning while writing letters, words, and sentences quickly and accurately.",
+  "parent_code": "1.F.H",
+  "ancestor_path": [
+    "1.F",
+    "1.F.H"
+  ],
+  "child_codes": [
+    "1.F.H.2.a",
+    "1.F.H.2.b"
+  ],
+  "child_texts": [
+    "Perform basic transcription skills.",
+    "Build handwriting fluency by forming accurate letters and words with increasing speed."
+  ],
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Use working memory to write letters, words, and sentences quickly and accurately while keeping the meaning of oral language.",
+  "observable_behaviors": [
+    "Write letters and words accurately from memory.",
+    "Write sentences that reflect spoken language meaning.",
+    "Write letters and words with increasing speed and accuracy."
+  ],
+  "pedagogy_terms": [
+    "transcription",
+    "handwriting fluency",
+    "working memory",
+    "letter formation",
+    "word writing",
+    "sentence writing"
+  ],
+  "exact_codes": [
+    "1.F.H.2"
+  ],
+  "skill_clauses": [
+    "Perform basic transcription skills.",
+    "Build handwriting fluency by forming accurate letters and words with increasing speed."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Write letters, words, and sentences accurately and quickly to represent spoken language.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use working memory to transcribe oral language into written text while maintaining meaning.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.H.2\nDomain primary: Writing\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Use working memory to write letters, words, and sentences quickly and accurately while keeping the meaning of oral language.\nSkills:\n- Perform basic transcription skills.\n- Build handwriting fluency by forming accurate letters and words with increasing speed.\nObservable behaviors:\n- Write letters and words accurately from memory.\n- Write sentences that reflect spoken language meaning.\n- Write letters and words with increasing speed and accuracy.\nPedagogy terms: transcription, handwriting fluency, working memory, letter formation, word writing, sentence writing\nRequired student actions:\n- written_production: Write letters, words, and sentences accurately and quickly to represent spoken language.\n- procedural_application: Use working memory to transcribe oral language into written text while maintaining meaning.\nCodes: 1.F.H.2",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.GC.1.11",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Usage",
+  "raw_text": "Use determiners (articles, possessive determiners, demonstrative adjectives). (Continue)",
+  "parent_code": "1.L.GC.1",
+  "ancestor_path": [
+    "1.L",
+    "1.L.GC",
+    "1.L.GC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Language",
+    "secondary": []
+  },
+  "competency_statement": "Use determiners such as articles, possessive determiners, and demonstrative adjectives correctly in sentences.",
+  "observable_behaviors": [
+    "Identify and use articles like 'a', 'an', and 'the' in sentences.",
+    "Use possessive determiners such as 'my', 'your', 'his', 'her', 'its', 'our', and 'their' appropriately.",
+    "Use demonstrative adjectives like 'this', 'that', 'these', and 'those' to specify nouns."
+  ],
+  "pedagogy_terms": [
+    "determiners",
+    "articles",
+    "possessive determiners",
+    "demonstrative adjectives",
+    "grammar usage"
+  ],
+  "exact_codes": [
+    "1.L.GC.1.11"
+  ],
+  "skill_clauses": [
+    "Use articles as determiners in sentences.",
+    "Use possessive determiners in sentences.",
+    "Use demonstrative adjectives as determiners in sentences."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize determiners including articles, possessive determiners, and demonstrative adjectives in sentences.",
+    "oral_production": "Use determiners correctly when speaking.",
+    "written_production": "Use determiners correctly when writing sentences.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply the correct use of articles, possessive determiners, and demonstrative adjectives in sentences.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.GC.1.11\nDomain primary: Language\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Use determiners such as articles, possessive determiners, and demonstrative adjectives correctly in sentences.\nSkills:\n- Use articles as determiners in sentences.\n- Use possessive determiners in sentences.\n- Use demonstrative adjectives as determiners in sentences.\nObservable behaviors:\n- Identify and use articles like 'a', 'an', and 'the' in sentences.\n- Use possessive determiners such as 'my', 'your', 'his', 'her', 'its', 'our', and 'their' appropriately.\n- Use demonstrative adjectives like 'this', 'that', 'these', and 'those' to specify nouns.\nPedagogy terms: determiners, articles, possessive determiners, demonstrative adjectives, grammar usage\nRequired student actions:\n- recognition_identification: Recognize determiners including articles, possessive determiners, and demonstrative adjectives in sentences.\n- oral_production: Use determiners correctly when speaking.\n- written_production: Use determiners correctly when writing sentences.\n- procedural_application: Apply the correct use of articles, possessive determiners, and demonstrative adjectives in sentences.\nCodes: 1.L.GC.1.11",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

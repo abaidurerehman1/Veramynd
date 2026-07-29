@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.4.g",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Make changes to the text based on self-evaluation or external feedback, revising the organization, ideas, information, word choices, and craft techniques in order to increase the text\u2019s effectiveness. (C)",
+  "parent_code": "1.P.EICC.4",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.4"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": []
+  },
+  "competency_statement": "Make changes to your writing by revising its organization, ideas, information, word choices, and craft techniques based on your own evaluation or feedback from others to improve how effective the text is.",
+  "observable_behaviors": [
+    "Revise the order and structure of ideas in a text to make it clearer or more logical.",
+    "Change or add information and details to improve the text's content.",
+    "Select better words to express ideas more clearly or vividly.",
+    "Apply craft techniques to enhance the writing style or impact.",
+    "Use feedback from self or others to guide revisions."
+  ],
+  "pedagogy_terms": [
+    "revision",
+    "organization",
+    "word choice",
+    "craft techniques",
+    "self-evaluation",
+    "feedback"
+  ],
+  "exact_codes": [
+    "1.P.EICC.4.g"
+  ],
+  "skill_clauses": [
+    "Make changes to a text based on self-evaluation or external feedback.",
+    "Revise the organization of the text to improve clarity and flow.",
+    "Revise ideas and information to enhance content and meaning.",
+    "Revise word choices to improve expression and impact.",
+    "Revise craft techniques to increase the text's effectiveness."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Make written changes to a text to improve it based on evaluation or feedback.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply revision strategies to improve organization, ideas, information, word choice, and craft in writing.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how revisions improve the effectiveness of a text based on evaluation or feedback.",
+    "comprehension_response": "Respond to feedback by making appropriate revisions to a text.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.4.g\nDomain primary: Writing\nDomain secondary: none\nCognitive demand: DOK3_strategic_thinking\nCompetency: Make changes to your writing by revising its organization, ideas, information, word choices, and craft techniques based on your own evaluation or feedback from others to improve how effective the text is.\nSkills:\n- Make changes to a text based on self-evaluation or external feedback.\n- Revise the organization of the text to improve clarity and flow.\n- Revise ideas and information to enhance content and meaning.\n- Revise word choices to improve expression and impact.\n- Revise craft techniques to increase the text's effectiveness.\nObservable behaviors:\n- Revise the order and structure of ideas in a text to make it clearer or more logical.\n- Change or add information and details to improve the text's content.\n- Select better words to express ideas more clearly or vividly.\n- Apply craft techniques to enhance the writing style or impact.\n- Use feedback from self or others to guide revisions.\nPedagogy terms: revision, organization, word choice, craft techniques, self-evaluation, feedback\nRequired student actions:\n- written_production: Make written changes to a text to improve it based on evaluation or feedback.\n- procedural_application: Apply revision strategies to improve organization, ideas, information, word choice, and craft in writing.\n- reasoning_explanation: Explain how revisions improve the effectiveness of a text based on evaluation or feedback.\n- comprehension_response: Respond to feedback by making appropriate revisions to a text.\nCodes: 1.P.EICC.4.g",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

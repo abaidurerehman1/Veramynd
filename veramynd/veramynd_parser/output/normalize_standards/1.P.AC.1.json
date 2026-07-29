@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.AC.1",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Reading like a Writer",
+  "raw_text": "Interpret texts through the author\u2019s lens by identifying, analyzing, and evaluating craft techniques that are connected to the responses, thoughts, decisions, and questions triggered by the text.",
+  "parent_code": "1.P.AC",
+  "ancestor_path": [
+    "1.P",
+    "1.P.AC"
+  ],
+  "child_codes": [
+    "1.P.AC.1.a",
+    "1.P.AC.1.b",
+    "1.P.AC.1.c",
+    "1.P.AC.1.d"
+  ],
+  "child_texts": [
+    "Identify, apply, and analyze the literary, expository, and opinion (grades K-5) or rhetorical (grades 6-12) elements in texts, explaining or evaluating how specific elements affect the target audience and support the text's purpose. (I/C)",
+    "Identify, apply, and analyze important, interesting, or effective uses of language, explaining or evaluating how specific word choices affect the target audience and support the text's purpose. (I/C)",
+    "Explain, analyze, and evaluate how the author's use of sentence structure and syntax affects the target audience and supports the text's purpose. (I/C)",
+    "Describe, analyze, and evaluate the design and organization of the text, explaining how specific formats, structures, patterns, and features influence the audience, contribute to the text's accessibility, and support the text's purpose. (I/C)"
+  ],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Students interpret texts by identifying, analyzing, and evaluating how an author's craft techniques influence readers' responses, thoughts, decisions, and questions.",
+  "observable_behaviors": [
+    "Identify literary, expository, opinion, or rhetorical elements in texts.",
+    "Explain how specific elements affect the target audience and support the text's purpose.",
+    "Analyze important or effective uses of language and word choices in texts.",
+    "Evaluate how word choices influence the audience and support the text's purpose.",
+    "Explain how sentence structure and syntax affect the audience and support the text's purpose.",
+    "Describe the design and organization of texts, including formats, structures, patterns, and features.",
+    "Analyze how text design influences the audience and contributes to accessibility.",
+    "Evaluate how text design supports the text's purpose."
+  ],
+  "pedagogy_terms": [
+    "author's craft",
+    "literary elements",
+    "expository elements",
+    "opinion elements",
+    "rhetorical elements",
+    "word choice",
+    "sentence structure",
+    "syntax",
+    "text design",
+    "text organization",
+    "audience",
+    "text purpose"
+  ],
+  "exact_codes": [
+    "1.P.AC.1"
+  ],
+  "skill_clauses": [
+    "Identify literary, expository, opinion, or rhetorical elements in texts.",
+    "Analyze how specific elements affect the target audience and support the text's purpose.",
+    "Identify important or effective uses of language and word choices in texts.",
+    "Explain how word choices affect the target audience and support the text's purpose.",
+    "Explain how sentence structure and syntax affect the target audience and support the text's purpose.",
+    "Describe the design and organization of texts, including formats, structures, patterns, and features.",
+    "Analyze how text design influences the audience and contributes to accessibility.",
+    "Evaluate how text design supports the text's purpose."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify literary, expository, opinion, or rhetorical elements and language uses in texts.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply knowledge of author's craft to interpret texts.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain, analyze, and evaluate how author's craft techniques affect the audience and support the text's purpose.",
+    "comprehension_response": "Interpret texts through the author's lens by connecting craft techniques to reader responses, thoughts, decisions, and questions.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.AC.1\nDomain primary: Comprehension\nDomain secondary: Language\nCognitive demand: DOK3_strategic_thinking\nCompetency: Students interpret texts by identifying, analyzing, and evaluating how an author's craft techniques influence readers' responses, thoughts, decisions, and questions.\nSkills:\n- Identify literary, expository, opinion, or rhetorical elements in texts.\n- Analyze how specific elements affect the target audience and support the text's purpose.\n- Identify important or effective uses of language and word choices in texts.\n- Explain how word choices affect the target audience and support the text's purpose.\n- Explain how sentence structure and syntax affect the target audience and support the text's purpose.\n- Describe the design and organization of texts, including formats, structures, patterns, and features.\n- Analyze how text design influences the audience and contributes to accessibility.\n- Evaluate how text design supports the text's purpose.\nObservable behaviors:\n- Identify literary, expository, opinion, or rhetorical elements in texts.\n- Explain how specific elements affect the target audience and support the text's purpose.\n- Analyze important or effective uses of language and word choices in texts.\n- Evaluate how word choices influence the audience and support the text's purpose.\n- Explain how sentence structure and syntax affect the audience and support the text's purpose.\n- Describe the design and organization of texts, including formats, structures, patterns, and features.\n- Analyze how text design influences the audience and contributes to accessibility.\n- Evaluate how text design supports the text's purpose.\nPedagogy terms: author's craft, literary elements, expository elements, opinion elements, rhetorical elements, word choice, sentence structure, syntax, text design, text organization, audience, text purpose\nRequired student actions:\n- recognition_identification: Identify literary, expository, opinion, or rhetorical elements and language uses in texts.\n- procedural_application: Apply knowledge of author's craft to interpret texts.\n- reasoning_explanation: Explain, analyze, and evaluate how author's craft techniques affect the audience and support the text's purpose.\n- comprehension_response: Interpret texts through the author's lens by connecting craft techniques to reader responses, thoughts, decisions, and questions.\nCodes: 1.P.AC.1",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

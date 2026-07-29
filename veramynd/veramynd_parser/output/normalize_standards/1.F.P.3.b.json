@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.P.3.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Identify and encode irregularly spelled words, including high-frequency words.",
+  "parent_code": "1.F.P.3",
+  "ancestor_path": [
+    "1.F",
+    "1.F.P",
+    "1.F.P.3"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Phonics",
+    "secondary": []
+  },
+  "competency_statement": "Identify and spell irregularly spelled words, including high-frequency words.",
+  "observable_behaviors": [
+    "Recognize irregularly spelled words when reading.",
+    "Spell irregularly spelled words correctly in writing.",
+    "Identify high-frequency words that do not follow common phonics rules."
+  ],
+  "pedagogy_terms": [
+    "irregularly spelled words",
+    "high-frequency words",
+    "encoding",
+    "spelling"
+  ],
+  "exact_codes": [
+    "1.F.P.3.b"
+  ],
+  "skill_clauses": [
+    "Identify irregularly spelled words.",
+    "Identify high-frequency words that are irregularly spelled.",
+    "Encode irregularly spelled words in writing.",
+    "Encode high-frequency words in writing."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify irregularly spelled words and high-frequency words when reading.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Spell irregularly spelled words and high-frequency words correctly in writing.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use phonics knowledge to encode irregularly spelled and high-frequency words.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.P.3.b\nDomain primary: Phonics\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Identify and spell irregularly spelled words, including high-frequency words.\nSkills:\n- Identify irregularly spelled words.\n- Identify high-frequency words that are irregularly spelled.\n- Encode irregularly spelled words in writing.\n- Encode high-frequency words in writing.\nObservable behaviors:\n- Recognize irregularly spelled words when reading.\n- Spell irregularly spelled words correctly in writing.\n- Identify high-frequency words that do not follow common phonics rules.\nPedagogy terms: irregularly spelled words, high-frequency words, encoding, spelling\nRequired student actions:\n- recognition_identification: Identify irregularly spelled words and high-frequency words when reading.\n- written_production: Spell irregularly spelled words and high-frequency words correctly in writing.\n- procedural_application: Use phonics knowledge to encode irregularly spelled and high-frequency words.\nCodes: 1.F.P.3.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

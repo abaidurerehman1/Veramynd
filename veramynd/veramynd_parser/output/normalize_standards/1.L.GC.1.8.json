@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.GC.1.8",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Grammar",
+  "raw_text": "Use adjectives and adverbs. (Continue)",
+  "parent_code": "1.L.GC.1",
+  "ancestor_path": [
+    "1.L",
+    "1.L.GC",
+    "1.L.GC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Language",
+    "secondary": []
+  },
+  "competency_statement": "Use adjectives and adverbs correctly in writing and speaking.",
+  "observable_behaviors": [
+    "Identify adjectives and adverbs in sentences.",
+    "Use adjectives to describe nouns.",
+    "Use adverbs to describe verbs, adjectives, or other adverbs."
+  ],
+  "pedagogy_terms": [
+    "adjectives",
+    "adverbs",
+    "grammar",
+    "word modifiers"
+  ],
+  "exact_codes": [
+    "1.L.GC.1.8"
+  ],
+  "skill_clauses": [
+    "Use adjectives to describe nouns.",
+    "Use adverbs to modify verbs, adjectives, or other adverbs."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize adjectives and adverbs in sentences or texts.",
+    "oral_production": "Use adjectives and adverbs when speaking to describe actions or things.",
+    "written_production": "Write sentences using adjectives and adverbs appropriately.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply the use of adjectives and adverbs to enhance descriptions in writing and speaking.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how adjectives and adverbs modify other words in sentences.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.GC.1.8\nDomain primary: Language\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Use adjectives and adverbs correctly in writing and speaking.\nSkills:\n- Use adjectives to describe nouns.\n- Use adverbs to modify verbs, adjectives, or other adverbs.\nObservable behaviors:\n- Identify adjectives and adverbs in sentences.\n- Use adjectives to describe nouns.\n- Use adverbs to describe verbs, adjectives, or other adverbs.\nPedagogy terms: adjectives, adverbs, grammar, word modifiers\nRequired student actions:\n- recognition_identification: Recognize adjectives and adverbs in sentences or texts.\n- oral_production: Use adjectives and adverbs when speaking to describe actions or things.\n- written_production: Write sentences using adjectives and adverbs appropriately.\n- procedural_application: Apply the use of adjectives and adverbs to enhance descriptions in writing and speaking.\n- reasoning_explanation: Explain how adjectives and adverbs modify other words in sentences.\nCodes: 1.L.GC.1.8",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -14,13 +14,16 @@ report is written) unless ``--allow-block`` is passed. On GO, the report is writ
 only together with the trusted artifacts so a mid-export failure cannot leave a
 fresh GO report beside a stale ``lessons/`` tree.
 ``normalize-lessons`` runs the ELA curriculum normalizer (OpenAI only; resumable, cached).
+``normalize-standards`` normalizes Stage-1 standards.json leaves into retrieval records.
 ``chunk-lessons`` builds production hierarchical chunks (lesson + instructional + evidence pointers).
 ``embed-chunks`` embeds lesson/instructional chunks with OpenAI text-embedding-3-large into Qdrant.
+``embed-standards`` embeds normalized standard leaves into Qdrant collection veramynd_standards.
 """
 
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 import tempfile
 from pathlib import Path
@@ -31,12 +34,18 @@ from .embed.runner import (
     DEFAULT_COLLECTION,
     DEFAULT_DIMENSIONS,
     DEFAULT_EMBEDDING_MODEL,
+    DEFAULT_STANDARDS_COLLECTION,
     EmbedError,
     embed_chunks_to_qdrant,
+    embed_standards_to_qdrant,
+    query_standards_by_text,
 )
 from .normalize.lesson import normalize_lesson, normalize_lessons_dir, repair_normalized_dir
 from .normalize.llm import LlmError
 from .normalize.models import dump_ela_record_json
+from .normalize.standard import normalize_standard, normalize_standards_tree
+from .normalize.standard_models import dump_normalized_standard_json
+from .models import GradeStandards, Standard, StandardLevel
 from .pdf.document import PdfDocument
 from .pdf.teacher_guide import parse_teacher_guide
 from .standards.spreadsheet import SpreadsheetStructureError, parse_standards
@@ -478,6 +487,80 @@ def cmd_normalize_lessons(args: argparse.Namespace) -> int:
         return 1
 
 
+def cmd_normalize_standards(args: argparse.Namespace) -> int:
+    """Normalize Stage-1 standards.json leaves into retrieval records."""
+    cfg = _normalize_config(args)
+    src = Path(args.standards_json)
+    if not src.is_file():
+        print(f"ERROR: standards JSON not found: {src}", file=sys.stderr)
+        return 2
+
+    out = Path(args.out)
+    refresh = bool(args.force or args.no_resume)
+    try:
+        tree = GradeStandards.model_validate_json(src.read_text(encoding="utf-8"))
+        if args.one:
+            code = args.one.strip()
+            matches = [s for s in tree.standards if s.code == code]
+            if not matches:
+                print(f"ERROR: standard code not found: {code}", file=sys.stderr)
+                return 2
+            std = matches[0]
+            if std.level not in (StandardLevel.STANDARD, StandardLevel.SUBSTANDARD):
+                print(
+                    f"ERROR: {code} level={std.level.value} is not a scorable leaf "
+                    "(normalize standard/substandard only)",
+                    file=sys.stderr,
+                )
+                return 2
+            norm = normalize_standard(
+                std,
+                tree,
+                cfg,
+                use_cache=not args.no_cache,
+                refresh_cache=refresh and not args.no_cache,
+            )
+            out.mkdir(parents=True, exist_ok=True)
+            from .normalize.standard import safe_standard_filename
+
+            dest = out / f"{safe_standard_filename(norm.standard_code)}.json"
+            atomic_write_text(dest, dump_normalized_standard_json(norm))
+            print(
+                f"{norm.standard_code}: {norm.domain.primary}; "
+                f"{len(norm.skill_clauses)} skills -> {dest}"
+            )
+            preview = norm.competency_statement[:160]
+            suffix = "..." if len(norm.competency_statement) > 160 else ""
+            print(f"  competency: {preview}{suffix}")
+            return 0
+
+        results = normalize_standards_tree(
+            tree,
+            out,
+            cfg,
+            use_cache=not args.no_cache,
+            resume=not args.no_resume,
+            force=args.force,
+            max_workers=args.max_workers,
+            limit=args.limit,
+        )
+        print(f"Normalized {len(results)} standards -> {out}/")
+        for n in results[:5]:
+            print(
+                f"  {n.standard_code}: {n.domain.primary}; "
+                f"{len(n.skill_clauses)} skills"
+            )
+        if len(results) > 5:
+            print(f"  ... {len(results) - 5} more")
+        return 0 if results else 1
+    except LlmError as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        return 1
+    except (OSError, ValueError, RuntimeError) as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        return 1
+
+
 def cmd_repair_normalized(args: argparse.Namespace) -> int:
     """Re-apply ELA sanitizers to existing normalize JSON (no LLM calls)."""
     lessons = Path(args.lessons_dir)
@@ -547,6 +630,99 @@ def cmd_embed_chunks(args: argparse.Namespace) -> int:
         return 1
     if manifest.get("failed"):
         return 1
+    return 0
+
+
+def cmd_embed_standards(args: argparse.Namespace) -> int:
+    """Embed normalized standards with OpenAI and upsert into Qdrant."""
+    src = Path(args.standards_dir)
+    out = Path(args.out)
+    if not src.is_dir():
+        print(f"ERROR: standards dir not found: {src}", file=sys.stderr)
+        return 2
+    try:
+        manifest = embed_standards_to_qdrant(
+            src,
+            out,
+            model=args.model,
+            dimensions=args.dimensions,
+            collection=args.collection,
+            qdrant_url=args.qdrant_url,
+            qdrant_api_key=args.qdrant_api_key,
+            qdrant_path=args.qdrant_path,
+            recreate=bool(args.recreate),
+            codes=set(args.code) if args.code else None,
+        )
+    except (EmbedError, LlmError) as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        return 1
+    except (OSError, ValueError, RuntimeError) as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        return 1
+    if manifest.get("failed"):
+        return 1
+    return 0
+
+
+def cmd_smoke_retrieve_standards(args: argparse.Namespace) -> int:
+    """Query veramynd_standards with a lesson chunk (or free text) for a smoke check."""
+    query = (args.query or "").strip()
+    if args.chunk_file:
+        path = Path(args.chunk_file)
+        if not path.is_file():
+            print(f"ERROR: chunk file not found: {path}", file=sys.stderr)
+            return 2
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if args.family == "lesson":
+            row = data.get("lesson_chunk") or {}
+            query = (row.get("text") or "").strip()
+            label = row.get("chunk_id") or path.name
+        else:
+            blocks = data.get("instructional_chunks") or []
+            if not blocks:
+                print(f"ERROR: no instructional_chunks in {path}", file=sys.stderr)
+                return 2
+            # Prefer a phonics-ish block when present; else first block.
+            chosen = blocks[0]
+            for b in blocks:
+                text = (b.get("text") or "")
+                if any(
+                    k in text.lower()
+                    for k in ("phon", "syllable", "decode", "blend", "digraph")
+                ):
+                    chosen = b
+                    break
+            query = (chosen.get("text") or "").strip()
+            label = chosen.get("chunk_id") or path.name
+        print(f"Query source: {label} ({args.family})", flush=True)
+    if not query:
+        print("ERROR: provide --query TEXT or --chunk-file PATH", file=sys.stderr)
+        return 2
+    try:
+        hits = query_standards_by_text(
+            query,
+            limit=args.limit,
+            model=args.model,
+            dimensions=args.dimensions,
+            collection=args.collection,
+            qdrant_url=args.qdrant_url,
+            qdrant_api_key=args.qdrant_api_key,
+            qdrant_path=args.qdrant_path,
+        )
+    except (EmbedError, LlmError) as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        return 1
+    except (OSError, ValueError, RuntimeError) as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        return 1
+
+    print(f"Top {len(hits)} standards:", flush=True)
+    for i, h in enumerate(hits, start=1):
+        print(
+            f"  {i}. {h.get('standard_code')}  score={h.get('score'):.4f}  "
+            f"domain={h.get('domain_primary')!r}  label={h.get('label')!r}",
+            flush=True,
+        )
     return 0
 
 
@@ -719,6 +895,72 @@ def build_parser() -> argparse.ArgumentParser:
     )
     n.set_defaults(func=cmd_normalize_lessons)
 
+    ns = sub.add_parser(
+        "normalize-standards",
+        help=(
+            "ELA standards normalizer: Stage-1 standards.json -> schema 1.0-std "
+            "(OpenAI; standard/substandard leaves; resumable, cached)"
+        ),
+    )
+    ns.add_argument(
+        "standards_json",
+        help="Stage-1 standards.json (e.g. output/stage1/standards.json)",
+    )
+    ns.add_argument(
+        "--out",
+        default="output/normalize_standards",
+        help="output folder for NormalizedStandard JSON (default: output/normalize_standards)",
+    )
+    ns.add_argument(
+        "--one",
+        default=None,
+        help="normalize only one code, e.g. 1.F.PA.4 or 1.F.PA.4.d",
+    )
+    ns.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="normalize only the first N scorable leaves (smoke / cost control)",
+    )
+    ns.add_argument(
+        "--model",
+        default=None,
+        help="override OpenAI model id (default: OPENAI_MODEL env or gpt-4.1-mini)",
+    )
+    ns.add_argument(
+        "--cache-dir",
+        default=None,
+        help="content-addressed cache dir (default: .normalize_cache/standards)",
+    )
+    ns.add_argument(
+        "--max-tokens",
+        type=int,
+        default=None,
+        help="response token cap (default: 4096 for standards drafts)",
+    )
+    ns.add_argument(
+        "--no-cache",
+        action="store_true",
+        help="bypass read/write of the content-addressed LLM cache",
+    )
+    ns.add_argument(
+        "--no-resume",
+        action="store_true",
+        help="call the API fresh for every standard (same effect as --force for cache)",
+    )
+    ns.add_argument(
+        "--force",
+        action="store_true",
+        help="re-normalize every standard even if the cache already has a hit",
+    )
+    ns.add_argument(
+        "--max-workers",
+        type=int,
+        default=1,
+        help="standards to normalize concurrently (default: 1)",
+    )
+    ns.set_defaults(func=cmd_normalize_standards)
+
     rp = sub.add_parser(
         "repair-normalized",
         help=(
@@ -821,6 +1063,125 @@ def build_parser() -> argparse.ArgumentParser:
         help="limit embed/upsert to one lesson code (repeatable), e.g. --resource-id G1M2U2L1",
     )
     em.set_defaults(func=cmd_embed_chunks)
+
+    es = sub.add_parser(
+        "embed-standards",
+        help=(
+            "embed normalized standard leaves with OpenAI "
+            f"{DEFAULT_EMBEDDING_MODEL} into Qdrant "
+            f"(default collection {DEFAULT_STANDARDS_COLLECTION})"
+        ),
+    )
+    es.add_argument(
+        "standards_dir",
+        nargs="?",
+        default="output/normalize_standards",
+        help="normalize_standards dir (default: output/normalize_standards)",
+    )
+    es.add_argument(
+        "--out",
+        default="output/embeddings",
+        help="manifest/progress output folder (default: output/embeddings)",
+    )
+    es.add_argument(
+        "--model",
+        default=DEFAULT_EMBEDDING_MODEL,
+        help=f"OpenAI embedding model (default: {DEFAULT_EMBEDDING_MODEL})",
+    )
+    es.add_argument(
+        "--dimensions",
+        type=int,
+        default=DEFAULT_DIMENSIONS,
+        help=f"embedding dimensions (default: {DEFAULT_DIMENSIONS})",
+    )
+    es.add_argument(
+        "--collection",
+        default=None,
+        help=(
+            f"Qdrant collection (default: env QDRANT_STANDARDS_COLLECTION or "
+            f"{DEFAULT_STANDARDS_COLLECTION})"
+        ),
+    )
+    es.add_argument(
+        "--qdrant-url",
+        default=None,
+        help="Qdrant server URL (default: env QDRANT_URL; else local path mode)",
+    )
+    es.add_argument(
+        "--qdrant-api-key",
+        default=None,
+        help="Qdrant API key (default: env QDRANT_API_KEY). Prefer .env over CLI.",
+    )
+    es.add_argument(
+        "--qdrant-path",
+        default=None,
+        help="local Qdrant storage path when URL unset (default: .qdrant_data)",
+    )
+    es.add_argument(
+        "--recreate",
+        action="store_true",
+        help="delete and recreate the collection before upsert",
+    )
+    es.add_argument(
+        "--code",
+        action="append",
+        default=[],
+        help="limit embed/upsert to one standard code (repeatable), e.g. --code 1.F.PA.4",
+    )
+    es.set_defaults(func=cmd_embed_standards)
+
+    sm = sub.add_parser(
+        "smoke-retrieve-standards",
+        help=(
+            "smoke-test: embed a lesson chunk (or free text) and query "
+            f"{DEFAULT_STANDARDS_COLLECTION} for nearest GA codes"
+        ),
+    )
+    sm.add_argument(
+        "--chunk-file",
+        default=None,
+        help="path to a by_lesson/*.json bundle (uses lesson or instructional text)",
+    )
+    sm.add_argument(
+        "--family",
+        choices=("lesson", "instructional"),
+        default="lesson",
+        help="which chunk text to query when --chunk-file is set (default: lesson)",
+    )
+    sm.add_argument(
+        "--query",
+        default=None,
+        help="free-text query (alternative to --chunk-file)",
+    )
+    sm.add_argument(
+        "--limit",
+        type=int,
+        default=8,
+        help="top-k standards to print (default: 8)",
+    )
+    sm.add_argument(
+        "--model",
+        default=DEFAULT_EMBEDDING_MODEL,
+        help=f"OpenAI embedding model (default: {DEFAULT_EMBEDDING_MODEL})",
+    )
+    sm.add_argument(
+        "--dimensions",
+        type=int,
+        default=DEFAULT_DIMENSIONS,
+        help=f"embedding dimensions (default: {DEFAULT_DIMENSIONS})",
+    )
+    sm.add_argument(
+        "--collection",
+        default=None,
+        help=(
+            f"Qdrant collection (default: env QDRANT_STANDARDS_COLLECTION or "
+            f"{DEFAULT_STANDARDS_COLLECTION})"
+        ),
+    )
+    sm.add_argument("--qdrant-url", default=None, help="Qdrant server URL")
+    sm.add_argument("--qdrant-api-key", default=None, help="Qdrant API key")
+    sm.add_argument("--qdrant-path", default=None, help="local Qdrant path")
+    sm.set_defaults(func=cmd_smoke_retrieve_standards)
 
     r = sub.add_parser(
         "remap-pages",

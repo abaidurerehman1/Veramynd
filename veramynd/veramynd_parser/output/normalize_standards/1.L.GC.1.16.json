@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.GC.1.16",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Grammar",
+  "raw_text": "Use frequently occurring prepositions. (Introduce)",
+  "parent_code": "1.L.GC.1",
+  "ancestor_path": [
+    "1.L",
+    "1.L.GC",
+    "1.L.GC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Language",
+    "secondary": []
+  },
+  "competency_statement": "Use common prepositions in speaking and writing.",
+  "observable_behaviors": [
+    "Identify common prepositions in sentences.",
+    "Use common prepositions correctly when speaking.",
+    "Use common prepositions correctly when writing."
+  ],
+  "pedagogy_terms": [
+    "prepositions",
+    "grammar",
+    "usage"
+  ],
+  "exact_codes": [
+    "1.L.GC.1.16"
+  ],
+  "skill_clauses": [
+    "Use frequently occurring prepositions."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize frequently occurring prepositions in spoken or written language.",
+    "oral_production": "Use frequently occurring prepositions correctly in oral language.",
+    "written_production": "Use frequently occurring prepositions correctly in writing.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK1_recall_reproduction",
+  "notes": "",
+  "embed_text": "Standard: 1.L.GC.1.16\nDomain primary: Language\nDomain secondary: none\nCognitive demand: DOK1_recall_reproduction\nCompetency: Use common prepositions in speaking and writing.\nSkills:\n- Use frequently occurring prepositions.\nObservable behaviors:\n- Identify common prepositions in sentences.\n- Use common prepositions correctly when speaking.\n- Use common prepositions correctly when writing.\nPedagogy terms: prepositions, grammar, usage\nRequired student actions:\n- recognition_identification: Recognize frequently occurring prepositions in spoken or written language.\n- oral_production: Use frequently occurring prepositions correctly in oral language.\n- written_production: Use frequently occurring prepositions correctly in writing.\nCodes: 1.L.GC.1.16",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

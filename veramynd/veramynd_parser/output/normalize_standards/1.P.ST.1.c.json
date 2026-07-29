@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.ST.1.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Explore how context shapes the author\u2019s decisions and the audience\u2019s responses during the interpretation and construction of texts. (I/C)",
+  "parent_code": "1.P.ST.1",
+  "ancestor_path": [
+    "1.P",
+    "1.P.ST",
+    "1.P.ST.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening"
+    ]
+  },
+  "competency_statement": "Explore how the context influences the author's choices and how the audience responds when interpreting and creating texts.",
+  "observable_behaviors": [
+    "Discuss how background information or cultural influences affect a story or text.",
+    "Identify ways the time period or location shapes the author's decisions.",
+    "Describe how understanding context helps explain audience reactions to a text."
+  ],
+  "pedagogy_terms": [
+    "context",
+    "author's purpose",
+    "audience response",
+    "interpretation",
+    "text construction"
+  ],
+  "exact_codes": [
+    "1.P.ST.1.c"
+  ],
+  "skill_clauses": [
+    "Explore how context shapes the author's decisions when interpreting texts.",
+    "Explore how context shapes the audience's responses when interpreting texts.",
+    "Explore how context shapes the author's decisions when constructing texts.",
+    "Explore how context shapes the audience's responses when constructing texts."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify elements of context such as background, location, culture, or time period in texts.",
+    "oral_production": "Discuss how context influences author decisions and audience responses.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Explore and apply knowledge of context to interpret and construct texts.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how context shapes author choices and audience reactions.",
+    "comprehension_response": "Respond to texts by considering how context affects meaning and interpretation.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.ST.1.c\nDomain primary: Comprehension\nDomain secondary: Speaking & Listening\nCognitive demand: DOK2_skills_concepts\nCompetency: Explore how the context influences the author's choices and how the audience responds when interpreting and creating texts.\nSkills:\n- Explore how context shapes the author's decisions when interpreting texts.\n- Explore how context shapes the audience's responses when interpreting texts.\n- Explore how context shapes the author's decisions when constructing texts.\n- Explore how context shapes the audience's responses when constructing texts.\nObservable behaviors:\n- Discuss how background information or cultural influences affect a story or text.\n- Identify ways the time period or location shapes the author's decisions.\n- Describe how understanding context helps explain audience reactions to a text.\nPedagogy terms: context, author's purpose, audience response, interpretation, text construction\nRequired student actions:\n- recognition_identification: Identify elements of context such as background, location, culture, or time period in texts.\n- oral_production: Discuss how context influences author decisions and audience responses.\n- procedural_application: Explore and apply knowledge of context to interpret and construct texts.\n- reasoning_explanation: Explain how context shapes author choices and audience reactions.\n- comprehension_response: Respond to texts by considering how context affects meaning and interpretation.\nCodes: 1.P.ST.1.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

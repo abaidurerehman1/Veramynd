@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.T.2",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Expository Techniques",
+  "raw_text": "Identify and use expository techniques to shape understanding.",
+  "parent_code": "1.T.T",
+  "ancestor_path": [
+    "1.T",
+    "1.T.T"
+  ],
+  "child_codes": [
+    "1.T.T.2.a",
+    "1.T.T.2.b",
+    "1.T.T.2.d"
+  ],
+  "child_texts": [
+    "Identify techniques used to craft expository texts, including main topic and supporting details. (I)",
+    "Describe the connection between two individuals, events, ideas, or pieces of information in a text. (I)",
+    "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure. (C)"
+  ],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Writing"
+    ]
+  },
+  "competency_statement": "Identify and use expository techniques to understand and create texts that explain a topic with facts and details.",
+  "observable_behaviors": [
+    "Point out the main topic and supporting details in an expository text.",
+    "Explain how two people, events, ideas, or pieces of information in a text are connected.",
+    "Write a short text that introduces a topic, includes facts about it, and ends with a closing sentence."
+  ],
+  "pedagogy_terms": [
+    "expository text",
+    "main topic",
+    "supporting details",
+    "text connections",
+    "introduce topic",
+    "facts",
+    "closure"
+  ],
+  "exact_codes": [
+    "1.T.T.2"
+  ],
+  "skill_clauses": [
+    "Identify techniques used to craft expository texts, including main topic and supporting details.",
+    "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+    "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify main topic and supporting details in expository texts.",
+    "oral_production": "Describe connections between individuals, events, ideas, or information in a text.",
+    "written_production": "Write an expository text that introduces a topic, provides facts, and includes a sense of closure.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use knowledge of expository techniques to organize and write about a topic.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how two elements in a text are connected.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.T.2\nDomain primary: Comprehension\nDomain secondary: Writing\nCognitive demand: DOK2_skills_concepts\nCompetency: Identify and use expository techniques to understand and create texts that explain a topic with facts and details.\nSkills:\n- Identify techniques used to craft expository texts, including main topic and supporting details.\n- Describe the connection between two individuals, events, ideas, or pieces of information in a text.\n- Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.\nObservable behaviors:\n- Point out the main topic and supporting details in an expository text.\n- Explain how two people, events, ideas, or pieces of information in a text are connected.\n- Write a short text that introduces a topic, includes facts about it, and ends with a closing sentence.\nPedagogy terms: expository text, main topic, supporting details, text connections, introduce topic, facts, closure\nRequired student actions:\n- recognition_identification: Identify main topic and supporting details in expository texts.\n- oral_production: Describe connections between individuals, events, ideas, or information in a text.\n- written_production: Write an expository text that introduces a topic, provides facts, and includes a sense of closure.\n- procedural_application: Use knowledge of expository techniques to organize and write about a topic.\n- reasoning_explanation: Explain how two elements in a text are connected.\nCodes: 1.T.T.2",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

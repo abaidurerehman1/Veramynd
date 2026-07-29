@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.SS.1",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Organization",
+  "raw_text": "Identify and use organizational structures to craft meaning.",
+  "parent_code": "1.T.SS",
+  "ancestor_path": [
+    "1.T",
+    "1.T.SS"
+  ],
+  "child_codes": [
+    "1.T.SS.1.a",
+    "1.T.SS.1.b",
+    "1.T.SS.1.c"
+  ],
+  "child_texts": [
+    "Identify and use various text features (e.g., diagrams, tables of contents) to locate information and make meaning in texts. (I)",
+    "Use text features (e.g., illustrations, page numbers, bold print, headings) to add clarity and meaning to texts. (C)",
+    "Use transition words or phrases, such as once upon a time, next, and last to sequence events and actions. (C)"
+  ],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Identify and use text features and organizational structures to understand and make meaning from texts.",
+  "observable_behaviors": [
+    "Point to and name text features such as diagrams, tables of contents, illustrations, page numbers, bold print, and headings.",
+    "Use text features to find information in a text.",
+    "Use transition words or phrases like 'once upon a time,' 'next,' and 'last' to describe the order of events or actions in a story."
+  ],
+  "pedagogy_terms": [
+    "text features",
+    "organizational structures",
+    "transition words",
+    "sequence events",
+    "make meaning"
+  ],
+  "exact_codes": [
+    "1.T.SS.1"
+  ],
+  "skill_clauses": [
+    "Identify and use various text features to locate information and make meaning in texts.",
+    "Use text features to add clarity and meaning to texts.",
+    "Use transition words or phrases to sequence events and actions."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify various text features and transition words in texts.",
+    "oral_production": "Use transition words or phrases to orally sequence events and actions.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "Use text features and transition words to sequence events and locate information in texts.",
+    "procedural_application": "Use text features to locate information and add clarity to texts.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how text features and transition words help understand and organize information in texts.",
+    "comprehension_response": "Use text features and transition words to make meaning from texts.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.SS.1\nDomain primary: Comprehension\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Identify and use text features and organizational structures to understand and make meaning from texts.\nSkills:\n- Identify and use various text features to locate information and make meaning in texts.\n- Use text features to add clarity and meaning to texts.\n- Use transition words or phrases to sequence events and actions.\nObservable behaviors:\n- Point to and name text features such as diagrams, tables of contents, illustrations, page numbers, bold print, and headings.\n- Use text features to find information in a text.\n- Use transition words or phrases like 'once upon a time,' 'next,' and 'last' to describe the order of events or actions in a story.\nPedagogy terms: text features, organizational structures, transition words, sequence events, make meaning\nRequired student actions:\n- recognition_identification: Identify various text features and transition words in texts.\n- oral_production: Use transition words or phrases to orally sequence events and actions.\n- matching_sorting_sequencing: Use text features and transition words to sequence events and locate information in texts.\n- procedural_application: Use text features to locate information and add clarity to texts.\n- reasoning_explanation: Explain how text features and transition words help understand and organize information in texts.\n- comprehension_response: Use text features and transition words to make meaning from texts.\nCodes: 1.T.SS.1",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

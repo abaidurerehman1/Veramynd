@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.V.1",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "General, Academic, & Specialized Vocabulary: Acquire and use general, academic, and specialized vocabulary words and phrases in a variety of settings.",
+  "parent_code": "1.L.V",
+  "ancestor_path": [
+    "1.L",
+    "1.L.V"
+  ],
+  "child_codes": [
+    "1.L.V.1.a",
+    "1.L.V.1.b"
+  ],
+  "child_texts": [
+    "Acquire and apply general, academic, and specialized vocabulary words and phrases through grade-level texts and content. (I)",
+    "Use grade-level general, academic, and specialized vocabulary words and phrases to communicate in a variety of settings. (C)"
+  ],
+  "domain": {
+    "primary": "Vocabulary",
+    "secondary": [
+      "Speaking & Listening",
+      "Writing"
+    ]
+  },
+  "competency_statement": "Students acquire and use general, academic, and specialized vocabulary words and phrases in different settings.",
+  "observable_behaviors": [
+    "Identify and learn new vocabulary words from grade-level texts and content.",
+    "Use vocabulary words appropriately when speaking and writing in various contexts."
+  ],
+  "pedagogy_terms": [
+    "vocabulary acquisition",
+    "academic vocabulary",
+    "specialized vocabulary",
+    "word usage",
+    "communication"
+  ],
+  "exact_codes": [
+    "1.L.V.1"
+  ],
+  "skill_clauses": [
+    "Acquire general, academic, and specialized vocabulary words and phrases through grade-level texts and content.",
+    "Use grade-level general, academic, and specialized vocabulary words and phrases to communicate in a variety of settings."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize and identify general, academic, and specialized vocabulary words in grade-level texts and content.",
+    "oral_production": "Use general, academic, and specialized vocabulary words correctly when speaking in different settings.",
+    "written_production": "Use general, academic, and specialized vocabulary words correctly when writing in different settings.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply vocabulary knowledge to understand and communicate ideas in various contexts.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.V.1\nDomain primary: Vocabulary\nDomain secondary: Speaking & Listening, Writing\nCognitive demand: DOK2_skills_concepts\nCompetency: Students acquire and use general, academic, and specialized vocabulary words and phrases in different settings.\nSkills:\n- Acquire general, academic, and specialized vocabulary words and phrases through grade-level texts and content.\n- Use grade-level general, academic, and specialized vocabulary words and phrases to communicate in a variety of settings.\nObservable behaviors:\n- Identify and learn new vocabulary words from grade-level texts and content.\n- Use vocabulary words appropriately when speaking and writing in various contexts.\nPedagogy terms: vocabulary acquisition, academic vocabulary, specialized vocabulary, word usage, communication\nRequired student actions:\n- recognition_identification: Recognize and identify general, academic, and specialized vocabulary words in grade-level texts and content.\n- oral_production: Use general, academic, and specialized vocabulary words correctly when speaking in different settings.\n- written_production: Use general, academic, and specialized vocabulary words correctly when writing in different settings.\n- procedural_application: Apply vocabulary knowledge to understand and communicate ideas in various contexts.\nCodes: 1.L.V.1",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.F.1",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Oral & Silent Reading Fluency",
+  "raw_text": "Demonstrate oral and silent reading fluency while reading grade-level texts for understanding, self-correcting as necessary to ensure accuracy and aid comprehension.",
+  "parent_code": "1.F.F",
+  "ancestor_path": [
+    "1.F",
+    "1.F.F"
+  ],
+  "child_codes": [
+    "1.F.F.1.a",
+    "1.F.F.1.b",
+    "1.F.F.1.c",
+    "1.F.F.1.d"
+  ],
+  "child_texts": [
+    "Increase sight word vocabulary using decoding skills by reading grade-appropriate regularly and irregularly spelled words, including high-frequency words, in isolation and context with increasing automaticity.",
+    "Read a wide range of grade-level texts aloud with increasing accuracy.",
+    "Read a wide range of grade-level texts aloud with appropriate prosody (phrasing, expression, juncture/pause, and intonation) to demonstrate understanding.",
+    "Self-correct while reading text (silently or aloud) to improve comprehension and fluency, rereading as necessary."
+  ],
+  "domain": {
+    "primary": "Fluency",
+    "secondary": []
+  },
+  "competency_statement": "Read grade-level texts aloud and silently with accuracy, expression, and self-correction to support understanding.",
+  "observable_behaviors": [
+    "Read grade-appropriate words, including high-frequency and irregularly spelled words, with increasing automaticity.",
+    "Read aloud a variety of grade-level texts accurately.",
+    "Use phrasing, expression, pauses, and intonation appropriately when reading aloud to show understanding.",
+    "Notice and correct mistakes while reading aloud or silently, rereading as needed to improve comprehension and fluency."
+  ],
+  "pedagogy_terms": [
+    "sight words",
+    "decoding",
+    "accuracy",
+    "prosody",
+    "self-correction",
+    "automaticity",
+    "expression",
+    "fluency"
+  ],
+  "exact_codes": [
+    "1.F.F.1"
+  ],
+  "skill_clauses": [
+    "Increase sight word vocabulary using decoding skills by reading grade-appropriate regularly and irregularly spelled words, including high-frequency words, in isolation and context with increasing automaticity.",
+    "Read a wide range of grade-level texts aloud with increasing accuracy.",
+    "Read a wide range of grade-level texts aloud with appropriate prosody (phrasing, expression, juncture/pause, and intonation) to demonstrate understanding.",
+    "Self-correct while reading text (silently or aloud) to improve comprehension and fluency, rereading as necessary."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize grade-appropriate regularly and irregularly spelled words, including high-frequency words, in isolation and context.",
+    "oral_production": "Read a wide range of grade-level texts aloud with increasing accuracy and appropriate prosody.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Self-correct errors while reading aloud or silently to improve accuracy and comprehension.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "Read grade-level texts silently and aloud to demonstrate understanding.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.F.1\nDomain primary: Fluency\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Read grade-level texts aloud and silently with accuracy, expression, and self-correction to support understanding.\nSkills:\n- Increase sight word vocabulary using decoding skills by reading grade-appropriate regularly and irregularly spelled words, including high-frequency words, in isolation and context with increasing automaticity.\n- Read a wide range of grade-level texts aloud with increasing accuracy.\n- Read a wide range of grade-level texts aloud with appropriate prosody (phrasing, expression, juncture/pause, and intonation) to demonstrate understanding.\n- Self-correct while reading text (silently or aloud) to improve comprehension and fluency, rereading as necessary.\nObservable behaviors:\n- Read grade-appropriate words, including high-frequency and irregularly spelled words, with increasing automaticity.\n- Read aloud a variety of grade-level texts accurately.\n- Use phrasing, expression, pauses, and intonation appropriately when reading aloud to show understanding.\n- Notice and correct mistakes while reading aloud or silently, rereading as needed to improve comprehension and fluency.\nPedagogy terms: sight words, decoding, accuracy, prosody, self-correction, automaticity, expression, fluency\nRequired student actions:\n- recognition_identification: Recognize grade-appropriate regularly and irregularly spelled words, including high-frequency words, in isolation and context.\n- oral_production: Read a wide range of grade-level texts aloud with increasing accuracy and appropriate prosody.\n- procedural_application: Self-correct errors while reading aloud or silently to improve accuracy and comprehension.\n- comprehension_response: Read grade-level texts silently and aloud to demonstrate understanding.\nCodes: 1.F.F.1",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

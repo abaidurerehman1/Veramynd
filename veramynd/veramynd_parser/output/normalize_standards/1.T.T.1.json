@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.T.1",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Narrative Techniques",
+  "raw_text": "Identify and use narrative techniques to shape understanding.",
+  "parent_code": "1.T.T",
+  "ancestor_path": [
+    "1.T",
+    "1.T.T"
+  ],
+  "child_codes": [
+    "1.T.T.1.a",
+    "1.T.T.1.b",
+    "1.T.T.1.c",
+    "1.T.T.1.d",
+    "1.T.T.1.e"
+  ],
+  "child_texts": [
+    "Identify techniques used to craft stories, including characters, setting, major events, and dialogue. (I)",
+    "Identify a simple plot with a problem and solution. (I)",
+    "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)",
+    "With adult support, compare and contrast characters and their experiences in stories across diverse cultures. (I)",
+    "Use knowledge of narrative techniques (e.g., characters, settings, events) to create texts that share real or imagined experiences and events with a sense of closure. (C)"
+  ],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Writing"
+    ]
+  },
+  "competency_statement": "Identify and use narrative techniques such as characters, setting, plot, and dialogue to understand and create stories.",
+  "observable_behaviors": [
+    "Identify characters, setting, major events, and dialogue in stories.",
+    "Recognize a simple plot with a problem and solution.",
+    "Describe main characters' traits and explain how their words and actions support the story's central message or moral.",
+    "Compare and contrast characters and their experiences in stories from different cultures with adult support.",
+    "Use knowledge of narrative techniques to create stories that share real or imagined experiences and have a clear ending."
+  ],
+  "pedagogy_terms": [
+    "characters",
+    "setting",
+    "plot",
+    "problem and solution",
+    "dialogue",
+    "central message",
+    "lesson",
+    "moral",
+    "compare and contrast",
+    "narrative techniques",
+    "story creation",
+    "closure"
+  ],
+  "exact_codes": [
+    "1.T.T.1"
+  ],
+  "skill_clauses": [
+    "Identify techniques used to craft stories, including characters, setting, major events, and dialogue.",
+    "Identify a simple plot with a problem and solution.",
+    "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
+    "With adult support, compare and contrast characters and their experiences in stories across diverse cultures.",
+    "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify narrative techniques such as characters, setting, plot, and dialogue in stories.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Create texts using narrative techniques to share experiences and events with a sense of closure.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use knowledge of narrative techniques to create stories with real or imagined experiences and a clear ending.",
+    "investigation_handson": "Compare and contrast characters and their experiences in stories across diverse cultures with adult support.",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Describe traits of main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
+    "comprehension_response": "Identify a simple plot with a problem and solution.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.T.1\nDomain primary: Comprehension\nDomain secondary: Writing\nCognitive demand: DOK2_skills_concepts\nCompetency: Identify and use narrative techniques such as characters, setting, plot, and dialogue to understand and create stories.\nSkills:\n- Identify techniques used to craft stories, including characters, setting, major events, and dialogue.\n- Identify a simple plot with a problem and solution.\n- Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.\n- With adult support, compare and contrast characters and their experiences in stories across diverse cultures.\n- Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure.\nObservable behaviors:\n- Identify characters, setting, major events, and dialogue in stories.\n- Recognize a simple plot with a problem and solution.\n- Describe main characters' traits and explain how their words and actions support the story's central message or moral.\n- Compare and contrast characters and their experiences in stories from different cultures with adult support.\n- Use knowledge of narrative techniques to create stories that share real or imagined experiences and have a clear ending.\nPedagogy terms: characters, setting, plot, problem and solution, dialogue, central message, lesson, moral, compare and contrast, narrative techniques, story creation, closure\nRequired student actions:\n- recognition_identification: Identify narrative techniques such as characters, setting, plot, and dialogue in stories.\n- written_production: Create texts using narrative techniques to share experiences and events with a sense of closure.\n- procedural_application: Use knowledge of narrative techniques to create stories with real or imagined experiences and a clear ending.\n- investigation_handson: Compare and contrast characters and their experiences in stories across diverse cultures with adult support.\n- reasoning_explanation: Describe traits of main characters and explain how their words and actions support the central message, lesson, or moral of the story.\n- comprehension_response: Identify a simple plot with a problem and solution.\nCodes: 1.T.T.1",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

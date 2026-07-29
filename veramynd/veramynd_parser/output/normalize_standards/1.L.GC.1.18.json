@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.GC.1.18",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Mechanics",
+  "raw_text": "Use apostrophes to form contractions and singular possessive nouns. (Introduce)",
+  "parent_code": "1.L.GC.1",
+  "ancestor_path": [
+    "1.L",
+    "1.L.GC",
+    "1.L.GC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Language",
+    "secondary": []
+  },
+  "competency_statement": "Use apostrophes correctly to form contractions and singular possessive nouns.",
+  "observable_behaviors": [
+    "Write contractions using apostrophes to combine two words.",
+    "Write singular possessive nouns using apostrophes to show ownership."
+  ],
+  "pedagogy_terms": [
+    "apostrophes",
+    "contractions",
+    "singular possessive nouns",
+    "mechanics"
+  ],
+  "exact_codes": [
+    "1.L.GC.1.18"
+  ],
+  "skill_clauses": [
+    "Use apostrophes to form contractions.",
+    "Use apostrophes to form singular possessive nouns."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify apostrophes used in contractions and singular possessive nouns in text.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Write contractions and singular possessive nouns using apostrophes.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply the rule of using apostrophes to form contractions and singular possessive nouns in writing.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how apostrophes are used to form contractions and singular possessive nouns.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.GC.1.18\nDomain primary: Language\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Use apostrophes correctly to form contractions and singular possessive nouns.\nSkills:\n- Use apostrophes to form contractions.\n- Use apostrophes to form singular possessive nouns.\nObservable behaviors:\n- Write contractions using apostrophes to combine two words.\n- Write singular possessive nouns using apostrophes to show ownership.\nPedagogy terms: apostrophes, contractions, singular possessive nouns, mechanics\nRequired student actions:\n- recognition_identification: Identify apostrophes used in contractions and singular possessive nouns in text.\n- written_production: Write contractions and singular possessive nouns using apostrophes.\n- procedural_application: Apply the rule of using apostrophes to form contractions and singular possessive nouns in writing.\n- reasoning_explanation: Explain how apostrophes are used to form contractions and singular possessive nouns.\nCodes: 1.L.GC.1.18",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

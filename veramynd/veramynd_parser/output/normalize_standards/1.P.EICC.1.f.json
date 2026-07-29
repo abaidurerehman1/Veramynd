@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.1.f",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Develop independence and autonomy as a reader and writer. (I/C)",
+  "parent_code": "1.P.EICC.1",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Writing"
+    ]
+  },
+  "competency_statement": "Develop independence and autonomy in reading and writing tasks.",
+  "observable_behaviors": [
+    "Choose reading materials without assistance.",
+    "Begin and complete writing tasks independently.",
+    "Make decisions about reading and writing processes on their own."
+  ],
+  "pedagogy_terms": [
+    "reader identity",
+    "writer identity",
+    "independence",
+    "autonomy"
+  ],
+  "exact_codes": [
+    "1.P.EICC.1.f"
+  ],
+  "skill_clauses": [
+    "Develop independence as a reader.",
+    "Develop autonomy as a writer."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Write independently to express ideas.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply reading and writing strategies independently.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain choices made during reading and writing independently.",
+    "comprehension_response": "Respond to texts independently.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.1.f\nDomain primary: Comprehension\nDomain secondary: Writing\nCognitive demand: DOK2_skills_concepts\nCompetency: Develop independence and autonomy in reading and writing tasks.\nSkills:\n- Develop independence as a reader.\n- Develop autonomy as a writer.\nObservable behaviors:\n- Choose reading materials without assistance.\n- Begin and complete writing tasks independently.\n- Make decisions about reading and writing processes on their own.\nPedagogy terms: reader identity, writer identity, independence, autonomy\nRequired student actions:\n- written_production: Write independently to express ideas.\n- procedural_application: Apply reading and writing strategies independently.\n- reasoning_explanation: Explain choices made during reading and writing independently.\n- comprehension_response: Respond to texts independently.\nCodes: 1.P.EICC.1.f",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

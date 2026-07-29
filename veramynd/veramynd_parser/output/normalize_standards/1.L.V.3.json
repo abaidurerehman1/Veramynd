@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.V.3",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Meaning & Purpose",
+  "raw_text": "Make connections between words and phrases and use reference materials to determine or clarify word meanings in a variety of settings and for a variety of purposes.",
+  "parent_code": "1.L.V",
+  "ancestor_path": [
+    "1.L",
+    "1.L.V"
+  ],
+  "child_codes": [
+    "1.L.V.3.a",
+    "1.L.V.3.b",
+    "1.L.V.3.c",
+    "1.L.V.3.d",
+    "1.L.V.3.e"
+  ],
+  "child_texts": [
+    "Use context within and beyond a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases. (I)",
+    "Identify the relationship between words and their synonyms and antonyms. (I)",
+    "Distinguish shades of meaning among verbs that describe the same general action (e.g., walk, march, strut, prance). (I)",
+    "With teacher support, use a picture dictionary or digital resource to clarify the meaning of unknown words and phrases. (I)",
+    "Use knowledge of word relationships and learned vocabulary words and phrases when making word choices in speaking and writing. (C)"
+  ],
+  "domain": {
+    "primary": "Vocabulary",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Students make connections between words and phrases and use reference materials to determine or clarify word meanings in different situations and for various purposes.",
+  "observable_behaviors": [
+    "Use context clues within and beyond sentences to figure out the meaning of unknown or multiple-meaning words and phrases.",
+    "Identify synonyms and antonyms of words.",
+    "Notice and explain subtle differences in meaning among verbs that describe similar actions.",
+    "Use a picture dictionary or digital resource with teacher support to find meanings of unknown words and phrases.",
+    "Apply knowledge of word relationships and vocabulary when choosing words in speaking and writing."
+  ],
+  "pedagogy_terms": [
+    "context clues",
+    "synonyms",
+    "antonyms",
+    "shades of meaning",
+    "reference materials",
+    "picture dictionary",
+    "digital resources",
+    "word relationships",
+    "vocabulary usage"
+  ],
+  "exact_codes": [
+    "1.L.V.3"
+  ],
+  "skill_clauses": [
+    "Use context within and beyond a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases.",
+    "Identify the relationship between words and their synonyms and antonyms.",
+    "Distinguish shades of meaning among verbs that describe the same general action.",
+    "With teacher support, use a picture dictionary or digital resource to clarify the meaning of unknown words and phrases.",
+    "Use knowledge of word relationships and learned vocabulary words and phrases when making word choices in speaking and writing."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify synonyms, antonyms, and multiple-meaning words using context clues.",
+    "oral_production": "Use learned vocabulary and word relationships when speaking.",
+    "written_production": "Use learned vocabulary and word relationships when writing.",
+    "matching_sorting_sequencing": "Distinguish and sort verbs by subtle differences in meaning.",
+    "procedural_application": "Use context clues and reference materials to determine or clarify word meanings.",
+    "investigation_handson": "Use a picture dictionary or digital resource with teacher support to find word meanings.",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain the relationship between words and their synonyms and antonyms and the differences among similar verbs.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.V.3\nDomain primary: Vocabulary\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Students make connections between words and phrases and use reference materials to determine or clarify word meanings in different situations and for various purposes.\nSkills:\n- Use context within and beyond a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases.\n- Identify the relationship between words and their synonyms and antonyms.\n- Distinguish shades of meaning among verbs that describe the same general action.\n- With teacher support, use a picture dictionary or digital resource to clarify the meaning of unknown words and phrases.\n- Use knowledge of word relationships and learned vocabulary words and phrases when making word choices in speaking and writing.\nObservable behaviors:\n- Use context clues within and beyond sentences to figure out the meaning of unknown or multiple-meaning words and phrases.\n- Identify synonyms and antonyms of words.\n- Notice and explain subtle differences in meaning among verbs that describe similar actions.\n- Use a picture dictionary or digital resource with teacher support to find meanings of unknown words and phrases.\n- Apply knowledge of word relationships and vocabulary when choosing words in speaking and writing.\nPedagogy terms: context clues, synonyms, antonyms, shades of meaning, reference materials, picture dictionary, digital resources, word relationships, vocabulary usage\nRequired student actions:\n- recognition_identification: Identify synonyms, antonyms, and multiple-meaning words using context clues.\n- oral_production: Use learned vocabulary and word relationships when speaking.\n- written_production: Use learned vocabulary and word relationships when writing.\n- matching_sorting_sequencing: Distinguish and sort verbs by subtle differences in meaning.\n- procedural_application: Use context clues and reference materials to determine or clarify word meanings.\n- investigation_handson: Use a picture dictionary or digital resource with teacher support to find word meanings.\n- reasoning_explanation: Explain the relationship between words and their synonyms and antonyms and the differences among similar verbs.\nCodes: 1.L.V.3",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

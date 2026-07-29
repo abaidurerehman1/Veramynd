@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.GC.1.5",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Grammar",
+  "raw_text": "Form regular plural nouns by adding -s or -es. (Master)",
+  "parent_code": "1.L.GC.1",
+  "ancestor_path": [
+    "1.L",
+    "1.L.GC",
+    "1.L.GC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Language",
+    "secondary": []
+  },
+  "competency_statement": "Form regular plural nouns by adding -s or -es to singular nouns.",
+  "observable_behaviors": [
+    "Add -s or -es to singular nouns to make them plural.",
+    "Recognize when to add -s versus -es to form plurals."
+  ],
+  "pedagogy_terms": [
+    "plural nouns",
+    "suffixes",
+    "-s",
+    "-es",
+    "noun forms"
+  ],
+  "exact_codes": [
+    "1.L.GC.1.5"
+  ],
+  "skill_clauses": [
+    "Form regular plural nouns by adding -s.",
+    "Form regular plural nouns by adding -es."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify singular nouns and their plural forms with -s or -es.",
+    "oral_production": "Say plural nouns formed by adding -s or -es.",
+    "written_production": "Write plural nouns by adding -s or -es to singular nouns.",
+    "matching_sorting_sequencing": "Sort nouns by singular and plural forms using -s or -es.",
+    "procedural_application": "Apply the rule of adding -s or -es to form regular plural nouns.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "Model the formation of plural nouns by adding -s or -es.",
+    "reasoning_explanation": "Explain why -s or -es is added to form the plural of a noun.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.GC.1.5\nDomain primary: Language\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Form regular plural nouns by adding -s or -es to singular nouns.\nSkills:\n- Form regular plural nouns by adding -s.\n- Form regular plural nouns by adding -es.\nObservable behaviors:\n- Add -s or -es to singular nouns to make them plural.\n- Recognize when to add -s versus -es to form plurals.\nPedagogy terms: plural nouns, suffixes, -s, -es, noun forms\nRequired student actions:\n- recognition_identification: Identify singular nouns and their plural forms with -s or -es.\n- oral_production: Say plural nouns formed by adding -s or -es.\n- written_production: Write plural nouns by adding -s or -es to singular nouns.\n- matching_sorting_sequencing: Sort nouns by singular and plural forms using -s or -es.\n- procedural_application: Apply the rule of adding -s or -es to form regular plural nouns.\n- representation_modeling: Model the formation of plural nouns by adding -s or -es.\n- reasoning_explanation: Explain why -s or -es is added to form the plural of a noun.\nCodes: 1.L.GC.1.5",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

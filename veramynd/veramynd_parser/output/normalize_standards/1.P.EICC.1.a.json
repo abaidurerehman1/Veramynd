@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.1.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Generate, understand, monitor, and discuss personal and academic reading and writing goals, revising as appropriate. (I/C)",
+  "parent_code": "1.P.EICC.1",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Writing"
+    ]
+  },
+  "competency_statement": "Set, understand, check, talk about, and change personal and academic reading and writing goals.",
+  "observable_behaviors": [
+    "State personal and academic goals for reading and writing.",
+    "Check progress toward reading and writing goals.",
+    "Talk about reading and writing goals with others.",
+    "Change reading and writing goals when needed."
+  ],
+  "pedagogy_terms": [
+    "reading goals",
+    "writing goals",
+    "self-monitoring",
+    "goal setting",
+    "goal revision"
+  ],
+  "exact_codes": [
+    "1.P.EICC.1.a"
+  ],
+  "skill_clauses": [
+    "Generate personal and academic reading and writing goals.",
+    "Understand personal and academic reading and writing goals.",
+    "Monitor progress toward reading and writing goals.",
+    "Discuss reading and writing goals.",
+    "Revise reading and writing goals as appropriate."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize personal and academic reading and writing goals.",
+    "oral_production": "Discuss personal and academic reading and writing goals and progress.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Monitor and revise personal and academic reading and writing goals as needed.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain reasons for revising reading and writing goals.",
+    "comprehension_response": "Understand personal and academic reading and writing goals.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.1.a\nDomain primary: Comprehension\nDomain secondary: Writing\nCognitive demand: DOK3_strategic_thinking\nCompetency: Set, understand, check, talk about, and change personal and academic reading and writing goals.\nSkills:\n- Generate personal and academic reading and writing goals.\n- Understand personal and academic reading and writing goals.\n- Monitor progress toward reading and writing goals.\n- Discuss reading and writing goals.\n- Revise reading and writing goals as appropriate.\nObservable behaviors:\n- State personal and academic goals for reading and writing.\n- Check progress toward reading and writing goals.\n- Talk about reading and writing goals with others.\n- Change reading and writing goals when needed.\nPedagogy terms: reading goals, writing goals, self-monitoring, goal setting, goal revision\nRequired student actions:\n- recognition_identification: Recognize personal and academic reading and writing goals.\n- oral_production: Discuss personal and academic reading and writing goals and progress.\n- procedural_application: Monitor and revise personal and academic reading and writing goals as needed.\n- reasoning_explanation: Explain reasons for revising reading and writing goals.\n- comprehension_response: Understand personal and academic reading and writing goals.\nCodes: 1.P.EICC.1.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

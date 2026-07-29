@@ -100,17 +100,18 @@ veramynd-parser normalize-lessons output/stage1/lessons --out output/normalize
 
 ```
 veramynd/
-├── README.md                 ← you are here
-├── LICENSE
-├── docs/                      # design & flow documentation
+├── README.md / LICENSE
+├── docs/                       # design & flow documentation
 ├── data/samples/               # reference PDF + standards spreadsheet
-└── veramynd_parser/            # the implemented package
-    ├── veramynd_parser/        # library code (pdf/, standards/, verify/, normalize/)
+├── _archive/                   # non-production one-offs (do not import)
+└── veramynd_parser/            # installable package + CLI
+    ├── veramynd_parser/        # library (pdf/, normalize/, chunk/, embed/, …)
+    │   ├── prompts/            # runtime LLM prompts
+    │   └── schemas/
     ├── tests/
     ├── examples/
-    ├── prompts/                # the normalization LLM prompt
-    ├── schemas/                # the normalization record's JSON Schema + docs
-    ├── output/                 # pipeline results
+    ├── output/                 # pipeline artifacts (local)
+    ├── docker-compose.yml      # local Qdrant
     ├── .env.example
     ├── pyproject.toml
     └── requirements.lock

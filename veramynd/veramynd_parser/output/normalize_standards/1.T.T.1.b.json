@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.T.1.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Identify a simple plot with a problem and solution. (I)",
+  "parent_code": "1.T.T.1",
+  "ancestor_path": [
+    "1.T",
+    "1.T.T",
+    "1.T.T.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": []
+  },
+  "competency_statement": "Identify the basic plot elements of a story, including the problem and its solution.",
+  "observable_behaviors": [
+    "Point out the problem in a story.",
+    "Point out the solution to the problem in a story.",
+    "Retell the sequence of events focusing on the problem and solution."
+  ],
+  "pedagogy_terms": [
+    "plot",
+    "problem",
+    "solution",
+    "narrative techniques"
+  ],
+  "exact_codes": [
+    "1.T.T.1.b"
+  ],
+  "skill_clauses": [
+    "Identify the problem in a simple plot.",
+    "Identify the solution in a simple plot."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize the problem and solution in a story.",
+    "oral_production": "Describe the problem and solution orally.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "Sequence events to show the problem and solution.",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how the problem is resolved in the story.",
+    "comprehension_response": "Respond to questions about the problem and solution in a story.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.T.1.b\nDomain primary: Comprehension\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Identify the basic plot elements of a story, including the problem and its solution.\nSkills:\n- Identify the problem in a simple plot.\n- Identify the solution in a simple plot.\nObservable behaviors:\n- Point out the problem in a story.\n- Point out the solution to the problem in a story.\n- Retell the sequence of events focusing on the problem and solution.\nPedagogy terms: plot, problem, solution, narrative techniques\nRequired student actions:\n- recognition_identification: Recognize the problem and solution in a story.\n- oral_production: Describe the problem and solution orally.\n- matching_sorting_sequencing: Sequence events to show the problem and solution.\n- reasoning_explanation: Explain how the problem is resolved in the story.\n- comprehension_response: Respond to questions about the problem and solution in a story.\nCodes: 1.T.T.1.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -13,14 +13,19 @@ build/
 .venv/
 venv/
 
-# Test / cache
+# Test / cache / local vector store
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
 .normalize_cache/
+.docling_cache/
 .qdrant_data/
 *.log
 
 # OS
 .DS_Store
 Thumbs.db
+
+# Scratch (local-only dumps; committed archive lives in ../_archive/)
+_scratch/
+*.tmp.py

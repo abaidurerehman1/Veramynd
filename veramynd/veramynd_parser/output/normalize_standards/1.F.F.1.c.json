@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.F.1.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Read a wide range of grade-level texts aloud with appropriate prosody (phrasing, expression, juncture/pause, and intonation) to demonstrate understanding.",
+  "parent_code": "1.F.F.1",
+  "ancestor_path": [
+    "1.F",
+    "1.F.F",
+    "1.F.F.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Fluency",
+    "secondary": []
+  },
+  "competency_statement": "Read aloud a variety of grade-level texts using phrasing, expression, pauses, and intonation to show understanding.",
+  "observable_behaviors": [
+    "Read grade-level texts aloud with natural phrasing and expression",
+    "Use appropriate pauses and intonation while reading aloud",
+    "Demonstrate understanding of the text through oral reading prosody"
+  ],
+  "pedagogy_terms": [
+    "prosody",
+    "expression",
+    "phrasing",
+    "intonation",
+    "pause",
+    "oral reading",
+    "grade-level text"
+  ],
+  "exact_codes": [
+    "1.F.F.1.c"
+  ],
+  "skill_clauses": [
+    "Read a wide range of grade-level texts aloud",
+    "Use appropriate phrasing, expression, juncture/pause, and intonation while reading aloud",
+    "Demonstrate understanding of the text through prosody"
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Read aloud grade-level texts using phrasing, expression, pauses, and intonation",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply appropriate prosody elements when reading aloud to demonstrate understanding",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "Demonstrate understanding of text through oral reading prosody",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.F.1.c\nDomain primary: Fluency\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Read aloud a variety of grade-level texts using phrasing, expression, pauses, and intonation to show understanding.\nSkills:\n- Read a wide range of grade-level texts aloud\n- Use appropriate phrasing, expression, juncture/pause, and intonation while reading aloud\n- Demonstrate understanding of the text through prosody\nObservable behaviors:\n- Read grade-level texts aloud with natural phrasing and expression\n- Use appropriate pauses and intonation while reading aloud\n- Demonstrate understanding of the text through oral reading prosody\nPedagogy terms: prosody, expression, phrasing, intonation, pause, oral reading, grade-level text\nRequired student actions:\n- oral_production: Read aloud grade-level texts using phrasing, expression, pauses, and intonation\n- procedural_application: Apply appropriate prosody elements when reading aloud to demonstrate understanding\n- comprehension_response: Demonstrate understanding of text through oral reading prosody\nCodes: 1.F.F.1.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

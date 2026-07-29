@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.CP.1.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Contribute to discussions and shared projects by offering ideas, listening to the ideas of others, and providing feedback. (I/C)",
+  "parent_code": "1.P.CP.1",
+  "ancestor_path": [
+    "1.P",
+    "1.P.CP",
+    "1.P.CP.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Participate in discussions and shared projects by sharing your ideas, listening to others, and giving feedback.",
+  "observable_behaviors": [
+    "Offer your own ideas during group discussions or projects.",
+    "Listen carefully to the ideas shared by others.",
+    "Give feedback to others about their ideas in a respectful way."
+  ],
+  "pedagogy_terms": [
+    "collaboration",
+    "discussion",
+    "feedback",
+    "listening",
+    "sharing ideas"
+  ],
+  "exact_codes": [
+    "1.P.CP.1.c"
+  ],
+  "skill_clauses": [
+    "Contribute ideas to discussions and shared projects.",
+    "Listen to the ideas of others during discussions and projects.",
+    "Provide feedback to others in discussions and shared projects."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Express ideas clearly during discussions and projects.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Contribute ideas, listen to others, and provide feedback in group settings.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain your ideas and feedback during discussions.",
+    "comprehension_response": "Listen and understand others' ideas during discussions and projects.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.CP.1.c\nDomain primary: Speaking & Listening\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Participate in discussions and shared projects by sharing your ideas, listening to others, and giving feedback.\nSkills:\n- Contribute ideas to discussions and shared projects.\n- Listen to the ideas of others during discussions and projects.\n- Provide feedback to others in discussions and shared projects.\nObservable behaviors:\n- Offer your own ideas during group discussions or projects.\n- Listen carefully to the ideas shared by others.\n- Give feedback to others about their ideas in a respectful way.\nPedagogy terms: collaboration, discussion, feedback, listening, sharing ideas\nRequired student actions:\n- oral_production: Express ideas clearly during discussions and projects.\n- procedural_application: Contribute ideas, listen to others, and provide feedback in group settings.\n- reasoning_explanation: Explain your ideas and feedback during discussions.\n- comprehension_response: Listen and understand others' ideas during discussions and projects.\nCodes: 1.P.CP.1.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

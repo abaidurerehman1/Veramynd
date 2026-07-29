@@ -1,7 +1,8 @@
-"""OpenAI dense embeddings + Qdrant upsert for hierarchical chunks.
+"""OpenAI dense embeddings + Qdrant upsert for hierarchical chunks and standards.
 
 Uses ``text-embedding-3-large`` (best OpenAI embedding model). Evidence pointers
-are not embedded — only ``lesson`` and ``instructional`` chunks.
+are not embedded — only ``lesson`` and ``instructional`` chunks. Standards are
+embedded separately into ``veramynd_standards`` from each leaf ``embed_text``.
 """
 
 from __future__ import annotations
@@ -18,14 +19,19 @@ from ..normalize.llm import load_dotenv, openai_api_key
 from ..paths import resolve_package_relative
 from ..text_utils import atomic_write_text
 from .chunk_io import EmbeddableChunk, load_embeddable_chunks
+from .standard_io import EmbeddableStandard, load_embeddable_standards
 
 DEFAULT_EMBEDDING_MODEL = "text-embedding-3-large"
 DEFAULT_DIMENSIONS = 3072  # full text-embedding-3-large quality
 DEFAULT_COLLECTION = "veramynd_chunks"
+DEFAULT_STANDARDS_COLLECTION = "veramynd_standards"
 DEFAULT_QDRANT_PATH = ".qdrant_data"
 EMBED_SCHEMA_VERSION = "1.0-embed-qdrant"
+STANDARDS_EMBED_SCHEMA_VERSION = "1.0-embed-standards-qdrant"
 PROGRESS_NAME = "embed_progress.json"
 MANIFEST_NAME = "embed_manifest.json"
+STANDARDS_PROGRESS_NAME = "embed_standards_progress.json"
+STANDARDS_MANIFEST_NAME = "embed_standards_manifest.json"
 
 # OpenAI embedding input hard limit for text-embedding-3-*.
 _MAX_INPUT_TOKENS = 8191
@@ -73,30 +79,74 @@ def resolve_qdrant_settings(
     }
 
 
+def resolve_standards_qdrant_settings(
+    *,
+    url: str | None = None,
+    api_key: str | None = None,
+    path: str | None = None,
+    collection: str | None = None,
+) -> dict[str, Any]:
+    """Like ``resolve_qdrant_settings`` but defaults to standards collection.
+
+    Intentionally ignores ``QDRANT_COLLECTION`` (lesson chunks) so standards
+    never land in ``veramynd_chunks`` by accident. Override via explicit
+    ``collection`` or ``QDRANT_STANDARDS_COLLECTION``.
+    """
+    load_dotenv()
+    base = resolve_qdrant_settings(url=url, api_key=api_key, path=path, collection=None)
+    resolved_collection = (
+        (
+            collection
+            or os.environ.get("QDRANT_STANDARDS_COLLECTION")
+            or DEFAULT_STANDARDS_COLLECTION
+        ).strip()
+        or DEFAULT_STANDARDS_COLLECTION
+    )
+    base["collection"] = resolved_collection
+    return base
+
+
 def point_id_for_chunk(chunk_id: str) -> str:
     """Deterministic UUID string for Qdrant point id (stable across re-runs)."""
     return str(uuid.uuid5(_NAMESPACE, chunk_id))
+
+
+def point_id_for_standard(standard_code: str) -> str:
+    """Deterministic UUID for a standard leaf (``std:{code}`` namespace key)."""
+    return point_id_for_chunk(f"std:{standard_code}")
 
 
 def _estimate_tokens(text: str) -> int:
     return max(1, int(len(text) / _CHARS_PER_TOKEN) + 1)
 
 
-def _validate_chunk_lengths(chunks: list[EmbeddableChunk]) -> None:
-    for c in chunks:
+def _item_label(item: Any) -> str:
+    if getattr(item, "chunk_id", None):
+        return str(item.chunk_id)
+    if getattr(item, "standard_code", None):
+        return str(item.standard_code)
+    return repr(item)
+
+
+def _validate_text_lengths(items: list[Any]) -> None:
+    for c in items:
         est = _estimate_tokens(c.text)
         if est > _MAX_INPUT_TOKENS:
             raise EmbedError(
-                f"chunk {c.chunk_id!r} ~{est} tokens exceeds OpenAI embedding "
-                f"limit ({_MAX_INPUT_TOKENS}); shorten chunk text before embedding"
+                f"{_item_label(c)!r} ~{est} tokens exceeds OpenAI embedding "
+                f"limit ({_MAX_INPUT_TOKENS}); shorten text before embedding"
             )
 
 
-def _iter_batches(chunks: list[EmbeddableChunk]) -> list[list[EmbeddableChunk]]:
-    batches: list[list[EmbeddableChunk]] = []
-    current: list[EmbeddableChunk] = []
+def _validate_chunk_lengths(chunks: list[EmbeddableChunk]) -> None:
+    _validate_text_lengths(chunks)
+
+
+def _iter_batches(items: list[Any]) -> list[list[Any]]:
+    batches: list[list[Any]] = []
+    current: list[Any] = []
     tok = 0
-    for c in chunks:
+    for c in items:
         c_tok = _estimate_tokens(c.text)
         if current and (
             len(current) >= _MAX_BATCH_ITEMS or tok + c_tok > _MAX_BATCH_TOKENS
@@ -414,13 +464,283 @@ def embed_chunks_to_qdrant(
     return manifest
 
 
+def upsert_standards(
+    client: Any,
+    collection: str,
+    standards: list[EmbeddableStandard],
+    vectors: list[list[float]],
+    *,
+    model_id: str,
+    dimensions: int,
+    batch_size: int = 64,
+) -> int:
+    from qdrant_client.http import models as qm
+
+    if len(standards) != len(vectors):
+        raise EmbedError("standards/vectors length mismatch")
+
+    points: list[qm.PointStruct] = []
+    for std, vec in zip(standards, vectors, strict=True):
+        if len(vec) != dimensions:
+            raise EmbedError(
+                f"{std.standard_code}: vector length {len(vec)} != {dimensions}"
+            )
+        payload = {
+            "standard_code": std.standard_code,
+            "family": "standard",
+            "level": std.level,
+            "grade": std.grade,
+            "framework": std.framework,
+            "label": std.label,
+            "domain_primary": std.domain_primary,
+            "content_hash": std.content_hash,
+            "text": std.text,
+            "metadata": std.metadata,
+            "model_id": model_id,
+            "dimensions": dimensions,
+        }
+        points.append(
+            qm.PointStruct(
+                id=point_id_for_standard(std.standard_code),
+                vector=vec,
+                payload=payload,
+            )
+        )
+
+    written = 0
+    for i in range(0, len(points), batch_size):
+        batch = points[i : i + batch_size]
+        client.upsert(collection_name=collection, points=batch, wait=True)
+        written += len(batch)
+    return written
+
+
+def embed_standards_to_qdrant(
+    standards_dir: Path | str,
+    out_dir: Path | str,
+    *,
+    model: str | None = None,
+    dimensions: int = DEFAULT_DIMENSIONS,
+    collection: str | None = None,
+    qdrant_url: str | None = None,
+    qdrant_api_key: str | None = None,
+    qdrant_path: str | None = None,
+    recreate: bool = False,
+    openai_key: str | None = None,
+    embed_fn: Callable[..., list[list[float]]] | None = None,
+    qdrant_client: Any | None = None,
+    codes: set[str] | None = None,
+) -> dict:
+    """Embed normalized standard leaves (``embed_text``) into Qdrant."""
+    src = Path(standards_dir)
+    dst = Path(out_dir)
+    dst.mkdir(parents=True, exist_ok=True)
+
+    model_id = resolve_embedding_model(model)
+    settings = resolve_standards_qdrant_settings(
+        url=qdrant_url,
+        api_key=qdrant_api_key,
+        path=qdrant_path,
+        collection=collection,
+    )
+    collection_name = settings["collection"]
+
+    standards = load_embeddable_standards(src, codes=codes)
+    if not standards:
+        raise EmbedError(f"no embeddable standards found under {src}")
+    _validate_text_lengths(standards)
+
+    standards = sorted(standards, key=lambda s: s.standard_code)
+    by_level: dict[str, int] = {}
+    for s in standards:
+        by_level[s.level or "unknown"] = by_level.get(s.level or "unknown", 0) + 1
+
+    progress = {
+        "schema_version": STANDARDS_EMBED_SCHEMA_VERSION,
+        "status": "running",
+        "model_id": model_id,
+        "dimensions": dimensions,
+        "collection": collection_name,
+        "total_standards": len(standards),
+        "by_level": by_level,
+        "upserted": 0,
+        "failed": [],
+    }
+    atomic_write_text(
+        dst / STANDARDS_PROGRESS_NAME, json.dumps(progress, indent=2) + "\n"
+    )
+
+    print(
+        f"Embedding {len(standards)} standards with {model_id} "
+        f"(dim={dimensions}) -> Qdrant collection {collection_name!r}",
+        flush=True,
+    )
+
+    client = qdrant_client or _make_qdrant_client(
+        url=settings["url"],
+        api_key=settings["api_key"],
+        path=settings["path"],
+    )
+    ensure_collection(client, collection_name, dimensions=dimensions, recreate=recreate)
+
+    encode = embed_fn or (
+        lambda texts: openai_embed_texts(
+            texts,
+            model=model_id,
+            dimensions=dimensions,
+            api_key=openai_key,
+        )
+    )
+
+    all_vectors: list[list[float]] = []
+    for bi, batch in enumerate(_iter_batches(standards), start=1):
+        print(f"  OpenAI batch {bi}: {len(batch)} texts...", flush=True)
+        vectors = encode([s.text for s in batch])
+        if len(vectors) != len(batch):
+            raise EmbedError("batch embed returned wrong count")
+        all_vectors.extend(vectors)
+
+    upserted = upsert_standards(
+        client,
+        collection_name,
+        standards,
+        all_vectors,
+        model_id=model_id,
+        dimensions=dimensions,
+    )
+    if upserted != len(standards):
+        raise EmbedError(f"upserted {upserted} != {len(standards)} standards")
+
+    corpus_hash = hashlib.sha256(
+        "\n".join(f"{s.standard_code}:{s.content_hash}" for s in standards).encode(
+            "utf-8"
+        )
+    ).hexdigest()
+
+    count = client.count(collection_name, exact=True).count
+    if count < len(standards):
+        raise EmbedError(
+            f"Qdrant collection count {count} < upserted {len(standards)} "
+            "(collection may have been partially written)"
+        )
+
+    backend = "url" if settings["url"] else "local_path"
+    manifest = {
+        "schema_version": STANDARDS_EMBED_SCHEMA_VERSION,
+        "model_id": model_id,
+        "dimensions": dimensions,
+        "distance": "Cosine",
+        "collection": collection_name,
+        "qdrant_backend": backend,
+        "qdrant_url": settings["url"],
+        "qdrant_path": None if settings["url"] else settings["path"],
+        "by_level": by_level,
+        "total_vectors": len(standards),
+        "qdrant_point_count": count,
+        "corpus_hash": corpus_hash,
+        "failed": [],
+        "source_standards_dir": str(src),
+        "codes_filter": sorted(codes) if codes else None,
+        "note": "one vector per normalized standard/substandard leaf via embed_text",
+    }
+    atomic_write_text(
+        dst / STANDARDS_MANIFEST_NAME, json.dumps(manifest, indent=2) + "\n"
+    )
+    progress["status"] = "complete"
+    progress["upserted"] = upserted
+    progress["qdrant_point_count"] = count
+    atomic_write_text(
+        dst / STANDARDS_PROGRESS_NAME, json.dumps(progress, indent=2) + "\n"
+    )
+
+    print(
+        f"Done. upserted={upserted} collection={collection_name} "
+        f"points={count} model={model_id} -> {dst}/",
+        flush=True,
+    )
+    return manifest
+
+
+def query_standards_by_text(
+    query_text: str,
+    *,
+    limit: int = 8,
+    model: str | None = None,
+    dimensions: int = DEFAULT_DIMENSIONS,
+    collection: str | None = None,
+    qdrant_url: str | None = None,
+    qdrant_api_key: str | None = None,
+    qdrant_path: str | None = None,
+    openai_key: str | None = None,
+    embed_fn: Callable[..., list[list[float]]] | None = None,
+    qdrant_client: Any | None = None,
+) -> list[dict[str, Any]]:
+    """Embed ``query_text`` and return top-k similar standards from Qdrant."""
+    text = (query_text or "").strip()
+    if not text:
+        raise EmbedError("empty query text")
+
+    model_id = resolve_embedding_model(model)
+    settings = resolve_standards_qdrant_settings(
+        url=qdrant_url,
+        api_key=qdrant_api_key,
+        path=qdrant_path,
+        collection=collection,
+    )
+    collection_name = settings["collection"]
+    client = qdrant_client or _make_qdrant_client(
+        url=settings["url"],
+        api_key=settings["api_key"],
+        path=settings["path"],
+    )
+    if not client.collection_exists(collection_name):
+        raise EmbedError(f"Qdrant collection missing: {collection_name!r}")
+
+    encode = embed_fn or (
+        lambda texts: openai_embed_texts(
+            texts,
+            model=model_id,
+            dimensions=dimensions,
+            api_key=openai_key,
+        )
+    )
+    vectors = encode([text])
+    if not vectors:
+        raise EmbedError("embed returned no vector for query")
+
+    hits = client.query_points(
+        collection_name=collection_name,
+        query=vectors[0],
+        limit=limit,
+        with_payload=True,
+    ).points
+    out: list[dict[str, Any]] = []
+    for h in hits:
+        payload = h.payload or {}
+        out.append(
+            {
+                "standard_code": payload.get("standard_code"),
+                "score": float(h.score) if h.score is not None else None,
+                "domain_primary": payload.get("domain_primary"),
+                "label": payload.get("label"),
+                "level": payload.get("level"),
+                "grade": payload.get("grade"),
+            }
+        )
+    return out
+
+
 __all__ = [
     "DEFAULT_COLLECTION",
     "DEFAULT_DIMENSIONS",
     "DEFAULT_EMBEDDING_MODEL",
+    "DEFAULT_STANDARDS_COLLECTION",
     "EmbedError",
     "embed_chunks_to_qdrant",
+    "embed_standards_to_qdrant",
     "openai_embed_texts",
     "point_id_for_chunk",
+    "point_id_for_standard",
+    "query_standards_by_text",
     "resolve_embedding_model",
 ]

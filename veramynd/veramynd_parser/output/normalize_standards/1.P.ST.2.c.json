@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.ST.2.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Draw from knowledge of how authors consider context and audience to determine which information and ideas to highlight, which text design is most accessible, which word choices and language structures are most effective, and which craft techniques are most impactful. (I/C)",
+  "parent_code": "1.P.ST.2",
+  "ancestor_path": [
+    "1.P",
+    "1.P.ST",
+    "1.P.ST.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Comprehension",
+      "Language"
+    ]
+  },
+  "competency_statement": "Use understanding of how authors think about context and audience to choose important information, accessible text design, effective words and language, and impactful craft techniques when creating or interpreting texts.",
+  "observable_behaviors": [
+    "Identify which information and ideas an author highlights based on context and audience.",
+    "Recognize text designs that make information easier to understand for the intended audience.",
+    "Notice word choices and language structures that suit the audience and purpose.",
+    "Observe craft techniques authors use to make their texts more effective."
+  ],
+  "pedagogy_terms": [
+    "author's purpose",
+    "audience",
+    "context",
+    "text design",
+    "word choice",
+    "language structures",
+    "craft techniques"
+  ],
+  "exact_codes": [
+    "1.P.ST.2.c"
+  ],
+  "skill_clauses": [
+    "Draw from knowledge of how authors consider context and audience to determine which information and ideas to highlight.",
+    "Determine which text design is most accessible for the intended audience.",
+    "Decide which word choices and language structures are most effective for the audience and purpose.",
+    "Identify which craft techniques are most impactful in the text."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize how authors select information and design texts for their audience and context.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply knowledge of audience and context to determine effective information, text design, word choice, language, and craft techniques.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how authors consider context and audience to make choices about information, text design, language, and craft techniques.",
+    "comprehension_response": "Respond to texts by identifying how author choices reflect audience and context considerations.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.ST.2.c\nDomain primary: Writing\nDomain secondary: Comprehension, Language\nCognitive demand: DOK3_strategic_thinking\nCompetency: Use understanding of how authors think about context and audience to choose important information, accessible text design, effective words and language, and impactful craft techniques when creating or interpreting texts.\nSkills:\n- Draw from knowledge of how authors consider context and audience to determine which information and ideas to highlight.\n- Determine which text design is most accessible for the intended audience.\n- Decide which word choices and language structures are most effective for the audience and purpose.\n- Identify which craft techniques are most impactful in the text.\nObservable behaviors:\n- Identify which information and ideas an author highlights based on context and audience.\n- Recognize text designs that make information easier to understand for the intended audience.\n- Notice word choices and language structures that suit the audience and purpose.\n- Observe craft techniques authors use to make their texts more effective.\nPedagogy terms: author's purpose, audience, context, text design, word choice, language structures, craft techniques\nRequired student actions:\n- recognition_identification: Recognize how authors select information and design texts for their audience and context.\n- procedural_application: Apply knowledge of audience and context to determine effective information, text design, word choice, language, and craft techniques.\n- reasoning_explanation: Explain how authors consider context and audience to make choices about information, text design, language, and craft techniques.\n- comprehension_response: Respond to texts by identifying how author choices reflect audience and context considerations.\nCodes: 1.P.ST.2.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

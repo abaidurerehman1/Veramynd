@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.V.3.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Distinguish shades of meaning among verbs that describe the same general action (e.g., walk, march, strut, prance). (I)",
+  "parent_code": "1.L.V.3",
+  "ancestor_path": [
+    "1.L",
+    "1.L.V",
+    "1.L.V.3"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Vocabulary",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Identify and explain subtle differences in meaning among verbs that describe similar actions.",
+  "observable_behaviors": [
+    "Compare verbs that describe similar actions and notice differences in meaning.",
+    "Explain how different verbs convey different shades of meaning for the same general action.",
+    "Use examples like walk, march, strut, and prance to distinguish meanings."
+  ],
+  "pedagogy_terms": [
+    "shades of meaning",
+    "verbs",
+    "word meanings",
+    "word comparison"
+  ],
+  "exact_codes": [
+    "1.L.V.3.c"
+  ],
+  "skill_clauses": [
+    "Distinguish shades of meaning among verbs that describe the same general action."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize verbs that describe similar actions and identify differences in their meanings.",
+    "oral_production": "Use verbs with different shades of meaning in speaking to describe actions.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "Sort or group verbs based on their subtle differences in meaning.",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how verbs that describe the same general action differ in meaning.",
+    "comprehension_response": "Respond to questions about the differences in meaning among similar verbs.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.V.3.c\nDomain primary: Vocabulary\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Identify and explain subtle differences in meaning among verbs that describe similar actions.\nSkills:\n- Distinguish shades of meaning among verbs that describe the same general action.\nObservable behaviors:\n- Compare verbs that describe similar actions and notice differences in meaning.\n- Explain how different verbs convey different shades of meaning for the same general action.\n- Use examples like walk, march, strut, and prance to distinguish meanings.\nPedagogy terms: shades of meaning, verbs, word meanings, word comparison\nRequired student actions:\n- recognition_identification: Recognize verbs that describe similar actions and identify differences in their meanings.\n- oral_production: Use verbs with different shades of meaning in speaking to describe actions.\n- matching_sorting_sequencing: Sort or group verbs based on their subtle differences in meaning.\n- reasoning_explanation: Explain how verbs that describe the same general action differ in meaning.\n- comprehension_response: Respond to questions about the differences in meaning among similar verbs.\nCodes: 1.L.V.3.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

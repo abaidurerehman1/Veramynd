@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.GC.1.17",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Mechanics",
+  "raw_text": "Use commas to separate items in a series and to format dates, addresses, salutations, and closings. (Introduce)",
+  "parent_code": "1.L.GC.1",
+  "ancestor_path": [
+    "1.L",
+    "1.L.GC",
+    "1.L.GC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Language",
+    "secondary": []
+  },
+  "competency_statement": "Use commas correctly to separate items in a list and to format dates, addresses, salutations, and closings.",
+  "observable_behaviors": [
+    "Place commas between items in a series when writing.",
+    "Insert commas correctly in dates (e.g., between day and year).",
+    "Use commas properly in addresses (e.g., between city and state).",
+    "Apply commas in salutations (e.g., Dear John,).",
+    "Use commas in closings of letters (e.g., Sincerely,)."
+  ],
+  "pedagogy_terms": [
+    "commas",
+    "punctuation",
+    "series",
+    "dates",
+    "addresses",
+    "salutations",
+    "closings"
+  ],
+  "exact_codes": [
+    "1.L.GC.1.17"
+  ],
+  "skill_clauses": [
+    "Use commas to separate items in a series.",
+    "Use commas to format dates.",
+    "Use commas to format addresses.",
+    "Use commas to format salutations.",
+    "Use commas to format closings."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify commas used to separate items in a series and in dates, addresses, salutations, and closings.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Use commas to separate items in a series and to format dates, addresses, salutations, and closings in writing.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply rules for using commas in lists and in formatting dates, addresses, salutations, and closings.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain why commas are used in lists and in formatting dates, addresses, salutations, and closings.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.GC.1.17\nDomain primary: Language\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Use commas correctly to separate items in a list and to format dates, addresses, salutations, and closings.\nSkills:\n- Use commas to separate items in a series.\n- Use commas to format dates.\n- Use commas to format addresses.\n- Use commas to format salutations.\n- Use commas to format closings.\nObservable behaviors:\n- Place commas between items in a series when writing.\n- Insert commas correctly in dates (e.g., between day and year).\n- Use commas properly in addresses (e.g., between city and state).\n- Apply commas in salutations (e.g., Dear John,).\n- Use commas in closings of letters (e.g., Sincerely,).\nPedagogy terms: commas, punctuation, series, dates, addresses, salutations, closings\nRequired student actions:\n- recognition_identification: Identify commas used to separate items in a series and in dates, addresses, salutations, and closings.\n- written_production: Use commas to separate items in a series and to format dates, addresses, salutations, and closings in writing.\n- procedural_application: Apply rules for using commas in lists and in formatting dates, addresses, salutations, and closings.\n- reasoning_explanation: Explain why commas are used in lists and in formatting dates, addresses, salutations, and closings.\nCodes: 1.L.GC.1.17",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

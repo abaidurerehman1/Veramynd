@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.RA.1.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Work collaboratively or individually to conduct research on a shared or personal topic of interest by gathering and organizing information from provided sources (including print, digital, and personal communication) using graphic organizers or other support aids. (I)",
+  "parent_code": "1.T.RA.1",
+  "ancestor_path": [
+    "1.T",
+    "1.T.RA",
+    "1.T.RA.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening",
+      "Writing"
+    ]
+  },
+  "competency_statement": "Conduct research on a shared or personal topic by gathering and organizing information from provided sources using graphic organizers or other aids, working alone or with others.",
+  "observable_behaviors": [
+    "Gather information from print, digital, and personal communication sources.",
+    "Use graphic organizers or other tools to organize gathered information.",
+    "Work individually or collaboratively to conduct research on a topic."
+  ],
+  "pedagogy_terms": [
+    "research",
+    "information gathering",
+    "graphic organizers",
+    "collaboration",
+    "sources"
+  ],
+  "exact_codes": [
+    "1.T.RA.1.b"
+  ],
+  "skill_clauses": [
+    "Work collaboratively or individually to conduct research on a shared or personal topic of interest.",
+    "Gather information from provided sources including print, digital, and personal communication.",
+    "Organize gathered information using graphic organizers or other support aids."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify relevant information from provided sources.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Organize information using graphic organizers or other support aids.",
+    "matching_sorting_sequencing": "Sort and organize information gathered from sources.",
+    "procedural_application": "Use graphic organizers or other aids to organize research information.",
+    "investigation_handson": "Gather information from print, digital, and personal communication sources.",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.RA.1.b\nDomain primary: Comprehension\nDomain secondary: Speaking & Listening, Writing\nCognitive demand: DOK2_skills_concepts\nCompetency: Conduct research on a shared or personal topic by gathering and organizing information from provided sources using graphic organizers or other aids, working alone or with others.\nSkills:\n- Work collaboratively or individually to conduct research on a shared or personal topic of interest.\n- Gather information from provided sources including print, digital, and personal communication.\n- Organize gathered information using graphic organizers or other support aids.\nObservable behaviors:\n- Gather information from print, digital, and personal communication sources.\n- Use graphic organizers or other tools to organize gathered information.\n- Work individually or collaboratively to conduct research on a topic.\nPedagogy terms: research, information gathering, graphic organizers, collaboration, sources\nRequired student actions:\n- recognition_identification: Identify relevant information from provided sources.\n- written_production: Organize information using graphic organizers or other support aids.\n- matching_sorting_sequencing: Sort and organize information gathered from sources.\n- procedural_application: Use graphic organizers or other aids to organize research information.\n- investigation_handson: Gather information from print, digital, and personal communication sources.\nCodes: 1.T.RA.1.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

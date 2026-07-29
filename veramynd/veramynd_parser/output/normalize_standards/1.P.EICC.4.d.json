@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.4.d",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Link ideas and information to the organization plan, highlighting ideas and information that are most relevant, useful, and impactful. (C)",
+  "parent_code": "1.P.EICC.4",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.4"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": []
+  },
+  "competency_statement": "Link ideas and information according to an organizational plan, emphasizing the most relevant, useful, and impactful points.",
+  "observable_behaviors": [
+    "Identify the organizational plan of a text or writing piece.",
+    "Select ideas and information that best support the main purpose or topic.",
+    "Highlight or emphasize key ideas and information that are most important.",
+    "Connect ideas logically following the chosen organizational structure."
+  ],
+  "pedagogy_terms": [
+    "organization plan",
+    "link ideas",
+    "highlight key information",
+    "relevance",
+    "writing process"
+  ],
+  "exact_codes": [
+    "1.P.EICC.4.d"
+  ],
+  "skill_clauses": [
+    "Link ideas and information to an organizational plan.",
+    "Highlight ideas and information that are most relevant, useful, and impactful."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize the organizational plan in a text or writing.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Link ideas and information in writing following an organizational plan.",
+    "matching_sorting_sequencing": "Sequence ideas and information according to the organizational plan.",
+    "procedural_application": "Apply an organizational plan to link and highlight key ideas and information in writing.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "Model linking ideas and highlighting key information according to an organizational plan.",
+    "reasoning_explanation": "Explain why certain ideas and information are most relevant, useful, and impactful within the organizational plan.",
+    "comprehension_response": "Respond by identifying and emphasizing the most important ideas and information in a text or writing.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.4.d\nDomain primary: Writing\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Link ideas and information according to an organizational plan, emphasizing the most relevant, useful, and impactful points.\nSkills:\n- Link ideas and information to an organizational plan.\n- Highlight ideas and information that are most relevant, useful, and impactful.\nObservable behaviors:\n- Identify the organizational plan of a text or writing piece.\n- Select ideas and information that best support the main purpose or topic.\n- Highlight or emphasize key ideas and information that are most important.\n- Connect ideas logically following the chosen organizational structure.\nPedagogy terms: organization plan, link ideas, highlight key information, relevance, writing process\nRequired student actions:\n- recognition_identification: Recognize the organizational plan in a text or writing.\n- written_production: Link ideas and information in writing following an organizational plan.\n- matching_sorting_sequencing: Sequence ideas and information according to the organizational plan.\n- procedural_application: Apply an organizational plan to link and highlight key ideas and information in writing.\n- representation_modeling: Model linking ideas and highlighting key information according to an organizational plan.\n- reasoning_explanation: Explain why certain ideas and information are most relevant, useful, and impactful within the organizational plan.\n- comprehension_response: Respond by identifying and emphasizing the most important ideas and information in a text or writing.\nCodes: 1.P.EICC.4.d",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

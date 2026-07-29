@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0-embed-standards-qdrant",
+  "status": "complete",
+  "model_id": "text-embedding-3-large",
+  "dimensions": 3072,
+  "collection": "veramynd_standards",
+  "total_standards": 170,
+  "by_level": {
+    "standard": 35,
+    "substandard": 135
+  },
+  "upserted": 170,
+  "failed": [],
+  "qdrant_point_count": 170
+}

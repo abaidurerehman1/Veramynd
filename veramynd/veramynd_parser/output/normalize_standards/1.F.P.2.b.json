@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.P.2.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Identify and decode parts of irregularly spelled words, including high-frequency words.",
+  "parent_code": "1.F.P.2",
+  "ancestor_path": [
+    "1.F",
+    "1.F.P",
+    "1.F.P.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Phonics",
+    "secondary": []
+  },
+  "competency_statement": "Identify and decode parts of irregularly spelled words, including high-frequency words.",
+  "observable_behaviors": [
+    "Recognize parts of irregularly spelled words in text.",
+    "Decode high-frequency words that do not follow regular phonics patterns."
+  ],
+  "pedagogy_terms": [
+    "irregularly spelled words",
+    "high-frequency words",
+    "decoding",
+    "phonics"
+  ],
+  "exact_codes": [
+    "1.F.P.2.b"
+  ],
+  "skill_clauses": [
+    "Identify parts of irregularly spelled words.",
+    "Decode parts of irregularly spelled words.",
+    "Identify high-frequency words that are irregularly spelled.",
+    "Decode high-frequency words that are irregularly spelled."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify parts of irregularly spelled words and high-frequency words in text.",
+    "oral_production": "Decode aloud parts of irregularly spelled words and high-frequency words.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use phonics skills to decode irregularly spelled words and high-frequency words in context and isolation.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.P.2.b\nDomain primary: Phonics\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Identify and decode parts of irregularly spelled words, including high-frequency words.\nSkills:\n- Identify parts of irregularly spelled words.\n- Decode parts of irregularly spelled words.\n- Identify high-frequency words that are irregularly spelled.\n- Decode high-frequency words that are irregularly spelled.\nObservable behaviors:\n- Recognize parts of irregularly spelled words in text.\n- Decode high-frequency words that do not follow regular phonics patterns.\nPedagogy terms: irregularly spelled words, high-frequency words, decoding, phonics\nRequired student actions:\n- recognition_identification: Identify parts of irregularly spelled words and high-frequency words in text.\n- oral_production: Decode aloud parts of irregularly spelled words and high-frequency words.\n- procedural_application: Use phonics skills to decode irregularly spelled words and high-frequency words in context and isolation.\nCodes: 1.F.P.2.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

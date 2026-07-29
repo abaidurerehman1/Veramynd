@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.C.2",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Authors & Speakers",
+  "raw_text": "Investigate the relationships between authors and speakers in texts.",
+  "parent_code": "1.T.C",
+  "ancestor_path": [
+    "1.T",
+    "1.T.C"
+  ],
+  "child_codes": [
+    "1.T.C.2.a"
+  ],
+  "child_texts": [
+    "Identify who is speaking or telling the story at various points in a text. (I)"
+  ],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening"
+    ]
+  },
+  "competency_statement": "Identify who is speaking or telling the story at different points in a text.",
+  "observable_behaviors": [
+    "Point out the speaker or narrator in a story.",
+    "Recognize changes in who is speaking during a text.",
+    "Name the person or character telling the story at various parts."
+  ],
+  "pedagogy_terms": [
+    "speaker identification",
+    "narrator",
+    "point of view",
+    "text roles"
+  ],
+  "exact_codes": [
+    "1.T.C.2"
+  ],
+  "skill_clauses": [
+    "Identify who is speaking at various points in a text."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify the speaker or narrator in a text.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain who is speaking at different points in a text.",
+    "comprehension_response": "Respond to questions about who is telling the story.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.C.2\nDomain primary: Comprehension\nDomain secondary: Speaking & Listening\nCognitive demand: DOK2_skills_concepts\nCompetency: Identify who is speaking or telling the story at different points in a text.\nSkills:\n- Identify who is speaking at various points in a text.\nObservable behaviors:\n- Point out the speaker or narrator in a story.\n- Recognize changes in who is speaking during a text.\n- Name the person or character telling the story at various parts.\nPedagogy terms: speaker identification, narrator, point of view, text roles\nRequired student actions:\n- recognition_identification: Identify the speaker or narrator in a text.\n- reasoning_explanation: Explain who is speaking at different points in a text.\n- comprehension_response: Respond to questions about who is telling the story.\nCodes: 1.T.C.2",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

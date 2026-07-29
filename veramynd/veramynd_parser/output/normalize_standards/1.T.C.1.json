@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.C.1",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Purpose & Audience",
+  "raw_text": "Explain how authors of texts use language for a specific purpose and a target audience.",
+  "parent_code": "1.T.C",
+  "ancestor_path": [
+    "1.T",
+    "1.T.C"
+  ],
+  "child_codes": [
+    "1.T.C.1.a",
+    "1.T.C.1.b",
+    "1.T.C.1.c"
+  ],
+  "child_texts": [
+    "Identify the general purpose (e.g., to tell stories, to provide information, to share opinions, to explain ideas) and target audience in a variety of texts. (I)",
+    "Identify different modes of communication: print, digital, auditory, and visual. (I)",
+    "Create texts in teacher-selected modes (e.g., print, digital, auditory, and/or visual). (C)"
+  ],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Writing",
+      "Speaking & Listening"
+    ]
+  },
+  "competency_statement": "Explain how authors use language to achieve a specific purpose and address a target audience, and create texts in various modes.",
+  "observable_behaviors": [
+    "Identify the general purpose of a text, such as telling stories, providing information, sharing opinions, or explaining ideas.",
+    "Recognize the target audience for different texts.",
+    "Identify different modes of communication including print, digital, auditory, and visual.",
+    "Create texts using teacher-selected modes such as print, digital, auditory, or visual formats."
+  ],
+  "pedagogy_terms": [
+    "purpose",
+    "audience",
+    "modes of communication",
+    "text creation"
+  ],
+  "exact_codes": [
+    "1.T.C.1"
+  ],
+  "skill_clauses": [
+    "Identify the general purpose of a variety of texts.",
+    "Identify the target audience of a variety of texts.",
+    "Identify different modes of communication: print, digital, auditory, and visual.",
+    "Create texts in teacher-selected modes such as print, digital, auditory, and/or visual."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify the general purpose and target audience in various texts and recognize different modes of communication.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Create texts in teacher-selected modes such as print or digital.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "Create texts in teacher-selected modes including auditory and visual formats.",
+    "reasoning_explanation": "Explain how authors use language for a specific purpose and target audience.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.C.1\nDomain primary: Comprehension\nDomain secondary: Writing, Speaking & Listening\nCognitive demand: DOK2_skills_concepts\nCompetency: Explain how authors use language to achieve a specific purpose and address a target audience, and create texts in various modes.\nSkills:\n- Identify the general purpose of a variety of texts.\n- Identify the target audience of a variety of texts.\n- Identify different modes of communication: print, digital, auditory, and visual.\n- Create texts in teacher-selected modes such as print, digital, auditory, and/or visual.\nObservable behaviors:\n- Identify the general purpose of a text, such as telling stories, providing information, sharing opinions, or explaining ideas.\n- Recognize the target audience for different texts.\n- Identify different modes of communication including print, digital, auditory, and visual.\n- Create texts using teacher-selected modes such as print, digital, auditory, or visual formats.\nPedagogy terms: purpose, audience, modes of communication, text creation\nRequired student actions:\n- recognition_identification: Identify the general purpose and target audience in various texts and recognize different modes of communication.\n- written_production: Create texts in teacher-selected modes such as print or digital.\n- representation_modeling: Create texts in teacher-selected modes including auditory and visual formats.\n- reasoning_explanation: Explain how authors use language for a specific purpose and target audience.\nCodes: 1.T.C.1",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

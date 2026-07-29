@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.V.2.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Identify frequently occurring root words (e.g., look) and inflectional endings used to form and comprehend new words (e.g., looks, looked, looking). (I)",
+  "parent_code": "1.L.V.2",
+  "ancestor_path": [
+    "1.L",
+    "1.L.V",
+    "1.L.V.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Vocabulary",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Identify common root words and inflectional endings to understand and form new words.",
+  "observable_behaviors": [
+    "Recognize root words in spoken and written words.",
+    "Identify inflectional endings such as -s, -ed, and -ing in words.",
+    "Explain how adding inflectional endings changes the meaning of root words."
+  ],
+  "pedagogy_terms": [
+    "root words",
+    "inflectional endings",
+    "word analysis",
+    "morphology"
+  ],
+  "exact_codes": [
+    "1.L.V.2.a"
+  ],
+  "skill_clauses": [
+    "Identify frequently occurring root words.",
+    "Identify inflectional endings used to form new words.",
+    "Use root words and inflectional endings to comprehend new words."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify root words and inflectional endings in spoken and written words.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "Sort words by root word and inflectional ending.",
+    "procedural_application": "Use knowledge of root words and inflectional endings to comprehend new words.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how inflectional endings change the meaning of root words.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.V.2.a\nDomain primary: Vocabulary\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Identify common root words and inflectional endings to understand and form new words.\nSkills:\n- Identify frequently occurring root words.\n- Identify inflectional endings used to form new words.\n- Use root words and inflectional endings to comprehend new words.\nObservable behaviors:\n- Recognize root words in spoken and written words.\n- Identify inflectional endings such as -s, -ed, and -ing in words.\n- Explain how adding inflectional endings changes the meaning of root words.\nPedagogy terms: root words, inflectional endings, word analysis, morphology\nRequired student actions:\n- recognition_identification: Identify root words and inflectional endings in spoken and written words.\n- matching_sorting_sequencing: Sort words by root word and inflectional ending.\n- procedural_application: Use knowledge of root words and inflectional endings to comprehend new words.\n- reasoning_explanation: Explain how inflectional endings change the meaning of root words.\nCodes: 1.L.V.2.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

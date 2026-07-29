@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.RA.2.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Explore various sources of information, including print, digital, and personal communication. (I)",
+  "parent_code": "1.T.RA.2",
+  "ancestor_path": [
+    "1.T",
+    "1.T.RA",
+    "1.T.RA.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening"
+    ]
+  },
+  "competency_statement": "Explore different sources of information such as print materials, digital content, and personal communication.",
+  "observable_behaviors": [
+    "Look at books, websites, or other printed materials to find information.",
+    "Use digital tools like computers or tablets to gather information.",
+    "Listen to or talk with people to learn new information."
+  ],
+  "pedagogy_terms": [
+    "sources of information",
+    "print",
+    "digital",
+    "personal communication",
+    "explore"
+  ],
+  "exact_codes": [
+    "1.T.RA.2.b"
+  ],
+  "skill_clauses": [
+    "Explore print sources of information.",
+    "Explore digital sources of information.",
+    "Explore personal communication as a source of information."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify different types of information sources including print, digital, and personal communication.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Explore and use various sources of information to learn about a topic.",
+    "investigation_handson": "Use print, digital, and personal communication sources to gather information.",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "Demonstrate understanding by exploring multiple sources of information.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.RA.2.b\nDomain primary: Comprehension\nDomain secondary: Speaking & Listening\nCognitive demand: DOK2_skills_concepts\nCompetency: Explore different sources of information such as print materials, digital content, and personal communication.\nSkills:\n- Explore print sources of information.\n- Explore digital sources of information.\n- Explore personal communication as a source of information.\nObservable behaviors:\n- Look at books, websites, or other printed materials to find information.\n- Use digital tools like computers or tablets to gather information.\n- Listen to or talk with people to learn new information.\nPedagogy terms: sources of information, print, digital, personal communication, explore\nRequired student actions:\n- recognition_identification: Identify different types of information sources including print, digital, and personal communication.\n- procedural_application: Explore and use various sources of information to learn about a topic.\n- investigation_handson: Use print, digital, and personal communication sources to gather information.\n- comprehension_response: Demonstrate understanding by exploring multiple sources of information.\nCodes: 1.T.RA.2.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

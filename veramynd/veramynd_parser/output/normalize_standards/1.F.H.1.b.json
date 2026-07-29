@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.H.1.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Form words with accuracy and consistency.",
+  "parent_code": "1.F.H.1",
+  "ancestor_path": [
+    "1.F",
+    "1.F.H",
+    "1.F.H.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": []
+  },
+  "competency_statement": "Form words accurately and consistently when writing by hand.",
+  "observable_behaviors": [
+    "Write words clearly and correctly by hand.",
+    "Maintain consistent letter formation within words.",
+    "Demonstrate control of fine motor skills to produce legible words."
+  ],
+  "pedagogy_terms": [
+    "word formation",
+    "legible handwriting",
+    "fine motor skills"
+  ],
+  "exact_codes": [
+    "1.F.H.1.b"
+  ],
+  "skill_clauses": [
+    "Form words with accuracy when writing by hand.",
+    "Form words with consistency when writing by hand."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Form words accurately and consistently in handwriting.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use fine motor skills to write words legibly and consistently.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.H.1.b\nDomain primary: Writing\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Form words accurately and consistently when writing by hand.\nSkills:\n- Form words with accuracy when writing by hand.\n- Form words with consistency when writing by hand.\nObservable behaviors:\n- Write words clearly and correctly by hand.\n- Maintain consistent letter formation within words.\n- Demonstrate control of fine motor skills to produce legible words.\nPedagogy terms: word formation, legible handwriting, fine motor skills\nRequired student actions:\n- written_production: Form words accurately and consistently in handwriting.\n- procedural_application: Use fine motor skills to write words legibly and consistently.\nCodes: 1.F.H.1.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

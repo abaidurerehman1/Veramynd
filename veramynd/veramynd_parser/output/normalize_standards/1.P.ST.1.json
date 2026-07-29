@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.ST.1",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Context",
+  "raw_text": "Develop and apply knowledge of key components of context such as background information, geographic location, cultural influences, time period, and contemporary events when interpreting and constructing texts.",
+  "parent_code": "1.P.ST",
+  "ancestor_path": [
+    "1.P",
+    "1.P.ST"
+  ],
+  "child_codes": [
+    "1.P.ST.1.a",
+    "1.P.ST.1.b",
+    "1.P.ST.1.c"
+  ],
+  "child_texts": [
+    "Use prior knowledge, formal or informal research, and discussions with others to identify the key components of context that are most relevant. (I/C)",
+    "Consider how context impacts the purposes of the author and the audience. (I/C)",
+    "Explore how context shapes the author's decisions and the audience's responses during the interpretation and construction of texts. (I/C)"
+  ],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Speaking & Listening"
+    ]
+  },
+  "competency_statement": "Use knowledge of important context elements like background information, location, culture, time period, and current events to understand and create texts.",
+  "observable_behaviors": [
+    "Identify key context components such as background information, geographic location, cultural influences, time period, and contemporary events when reading or discussing texts.",
+    "Explain how context affects the author's purpose and the audience's understanding.",
+    "Discuss how context influences the author's choices and the audience's reactions during reading and writing."
+  ],
+  "pedagogy_terms": [
+    "context",
+    "author's purpose",
+    "audience",
+    "interpretation",
+    "construction",
+    "background knowledge"
+  ],
+  "exact_codes": [
+    "1.P.ST.1"
+  ],
+  "skill_clauses": [
+    "Use prior knowledge, research, and discussions to identify key context components.",
+    "Consider how context impacts the purposes of the author and the audience.",
+    "Explore how context shapes the author's decisions and the audience's responses during text interpretation and construction."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify key components of context relevant to a text.",
+    "oral_production": "Discuss how context affects author and audience purposes and responses.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply knowledge of context to interpret and construct texts.",
+    "investigation_handson": "Use prior knowledge, research, and discussions to gather context information.",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how context shapes author decisions and audience responses.",
+    "comprehension_response": "Interpret texts using understanding of context components.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.ST.1\nDomain primary: Comprehension\nDomain secondary: Speaking & Listening\nCognitive demand: DOK3_strategic_thinking\nCompetency: Use knowledge of important context elements like background information, location, culture, time period, and current events to understand and create texts.\nSkills:\n- Use prior knowledge, research, and discussions to identify key context components.\n- Consider how context impacts the purposes of the author and the audience.\n- Explore how context shapes the author's decisions and the audience's responses during text interpretation and construction.\nObservable behaviors:\n- Identify key context components such as background information, geographic location, cultural influences, time period, and contemporary events when reading or discussing texts.\n- Explain how context affects the author's purpose and the audience's understanding.\n- Discuss how context influences the author's choices and the audience's reactions during reading and writing.\nPedagogy terms: context, author's purpose, audience, interpretation, construction, background knowledge\nRequired student actions:\n- recognition_identification: Identify key components of context relevant to a text.\n- oral_production: Discuss how context affects author and audience purposes and responses.\n- procedural_application: Apply knowledge of context to interpret and construct texts.\n- investigation_handson: Use prior knowledge, research, and discussions to gather context information.\n- reasoning_explanation: Explain how context shapes author decisions and audience responses.\n- comprehension_response: Interpret texts using understanding of context components.\nCodes: 1.P.ST.1",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

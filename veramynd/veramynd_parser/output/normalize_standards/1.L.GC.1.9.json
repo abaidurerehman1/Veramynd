@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.GC.1.9",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Grammar",
+  "raw_text": "Use common and proper nouns. (Continue)",
+  "parent_code": "1.L.GC.1",
+  "ancestor_path": [
+    "1.L",
+    "1.L.GC",
+    "1.L.GC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Language",
+    "secondary": []
+  },
+  "competency_statement": "Use common and proper nouns correctly in writing and speaking.",
+  "observable_behaviors": [
+    "Identify common and proper nouns in sentences.",
+    "Use common and proper nouns when speaking or writing.",
+    "Distinguish between common and proper nouns in examples."
+  ],
+  "pedagogy_terms": [
+    "common nouns",
+    "proper nouns",
+    "grammar",
+    "nouns"
+  ],
+  "exact_codes": [
+    "1.L.GC.1.9"
+  ],
+  "skill_clauses": [
+    "Use common nouns correctly.",
+    "Use proper nouns correctly."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify common and proper nouns in spoken or written language.",
+    "oral_production": "Use common and proper nouns correctly when speaking.",
+    "written_production": "Use common and proper nouns correctly in writing.",
+    "matching_sorting_sequencing": "Sort words into common and proper noun categories.",
+    "procedural_application": "Apply the rules for using common and proper nouns in sentences.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain the difference between common and proper nouns.",
+    "comprehension_response": "Respond to questions about common and proper nouns in texts.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.GC.1.9\nDomain primary: Language\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Use common and proper nouns correctly in writing and speaking.\nSkills:\n- Use common nouns correctly.\n- Use proper nouns correctly.\nObservable behaviors:\n- Identify common and proper nouns in sentences.\n- Use common and proper nouns when speaking or writing.\n- Distinguish between common and proper nouns in examples.\nPedagogy terms: common nouns, proper nouns, grammar, nouns\nRequired student actions:\n- recognition_identification: Identify common and proper nouns in spoken or written language.\n- oral_production: Use common and proper nouns correctly when speaking.\n- written_production: Use common and proper nouns correctly in writing.\n- matching_sorting_sequencing: Sort words into common and proper noun categories.\n- procedural_application: Apply the rules for using common and proper nouns in sentences.\n- reasoning_explanation: Explain the difference between common and proper nouns.\n- comprehension_response: Respond to questions about common and proper nouns in texts.\nCodes: 1.L.GC.1.9",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

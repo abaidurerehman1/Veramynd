@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.CP.2.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Integrate modes and genres most appropriate to purpose and audience. (I/C)",
+  "parent_code": "1.P.CP.2",
+  "ancestor_path": [
+    "1.P",
+    "1.P.CP",
+    "1.P.CP.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": []
+  },
+  "competency_statement": "Use different ways and types of communication that best fit the purpose and audience when presenting.",
+  "observable_behaviors": [
+    "Choose communication modes (such as speaking, drawing, or using digital media) that suit the audience and purpose.",
+    "Select genres (such as stories, reports, or explanations) appropriate for the presentation context.",
+    "Combine multiple modes or genres effectively to share information with others."
+  ],
+  "pedagogy_terms": [
+    "presentation skills",
+    "modes of communication",
+    "genres",
+    "audience",
+    "purpose"
+  ],
+  "exact_codes": [
+    "1.P.CP.2.b"
+  ],
+  "skill_clauses": [
+    "Integrate modes of communication appropriate to the purpose and audience.",
+    "Integrate genres appropriate to the purpose and audience."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Use appropriate modes and genres to communicate for a specific audience and purpose.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Integrate different communication modes and genres to tailor presentations to the audience and purpose.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain why certain modes and genres are chosen to fit the audience and purpose.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.CP.2.b\nDomain primary: Speaking & Listening\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Use different ways and types of communication that best fit the purpose and audience when presenting.\nSkills:\n- Integrate modes of communication appropriate to the purpose and audience.\n- Integrate genres appropriate to the purpose and audience.\nObservable behaviors:\n- Choose communication modes (such as speaking, drawing, or using digital media) that suit the audience and purpose.\n- Select genres (such as stories, reports, or explanations) appropriate for the presentation context.\n- Combine multiple modes or genres effectively to share information with others.\nPedagogy terms: presentation skills, modes of communication, genres, audience, purpose\nRequired student actions:\n- oral_production: Use appropriate modes and genres to communicate for a specific audience and purpose.\n- procedural_application: Integrate different communication modes and genres to tailor presentations to the audience and purpose.\n- reasoning_explanation: Explain why certain modes and genres are chosen to fit the audience and purpose.\nCodes: 1.P.CP.2.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

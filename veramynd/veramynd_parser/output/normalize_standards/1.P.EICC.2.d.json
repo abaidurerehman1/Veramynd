@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.2.d",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Interpret and construct texts to aid the analysis and evaluation of texts and ideas. (I/C)",
+  "parent_code": "1.P.EICC.2",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Writing",
+      "Speaking & Listening"
+    ]
+  },
+  "competency_statement": "Interpret and create texts to help analyze and evaluate texts and ideas.",
+  "observable_behaviors": [
+    "Explain the meaning of texts in their own words.",
+    "Create texts that express their understanding of ideas.",
+    "Use texts to compare and think critically about ideas."
+  ],
+  "pedagogy_terms": [
+    "interpretation",
+    "text construction",
+    "analysis",
+    "evaluation",
+    "ideas",
+    "author and audience"
+  ],
+  "exact_codes": [
+    "1.P.EICC.2.d"
+  ],
+  "skill_clauses": [
+    "Interpret texts to analyze ideas.",
+    "Construct texts to evaluate ideas."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify ideas and information in texts to support analysis and evaluation.",
+    "oral_production": "Explain interpretations and evaluations of texts orally.",
+    "written_production": "Create written texts that express analysis and evaluation of ideas.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use texts intentionally to analyze and evaluate ideas.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "Construct texts that represent understanding of ideas.",
+    "reasoning_explanation": "Explain reasoning behind interpretations and evaluations of texts.",
+    "comprehension_response": "Respond to texts by interpreting and evaluating ideas.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.2.d\nDomain primary: Comprehension\nDomain secondary: Writing, Speaking & Listening\nCognitive demand: DOK3_strategic_thinking\nCompetency: Interpret and create texts to help analyze and evaluate texts and ideas.\nSkills:\n- Interpret texts to analyze ideas.\n- Construct texts to evaluate ideas.\nObservable behaviors:\n- Explain the meaning of texts in their own words.\n- Create texts that express their understanding of ideas.\n- Use texts to compare and think critically about ideas.\nPedagogy terms: interpretation, text construction, analysis, evaluation, ideas, author and audience\nRequired student actions:\n- recognition_identification: Identify ideas and information in texts to support analysis and evaluation.\n- oral_production: Explain interpretations and evaluations of texts orally.\n- written_production: Create written texts that express analysis and evaluation of ideas.\n- procedural_application: Use texts intentionally to analyze and evaluate ideas.\n- representation_modeling: Construct texts that represent understanding of ideas.\n- reasoning_explanation: Explain reasoning behind interpretations and evaluations of texts.\n- comprehension_response: Respond to texts by interpreting and evaluating ideas.\nCodes: 1.P.EICC.2.d",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.T.4",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Poetic Techniques",
+  "raw_text": "Identify and use poetic techniques to shape understanding.",
+  "parent_code": "1.T.T",
+  "ancestor_path": [
+    "1.T",
+    "1.T.T"
+  ],
+  "child_codes": [
+    "1.T.T.4.a",
+    "1.T.T.4.b"
+  ],
+  "child_texts": [
+    "Identify and describe poetic techniques used to craft texts, including rhyme, alliteration, and repeated lines. (I)",
+    "Use poetic techniques to create poems using simple words and/or phrases that may or may not rhyme. (C)"
+  ],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Writing"
+    ]
+  },
+  "competency_statement": "Identify poetic techniques in texts and use them to create simple poems.",
+  "observable_behaviors": [
+    "Point out examples of rhyme, alliteration, and repeated lines in poems.",
+    "Describe how these poetic techniques contribute to the poem.",
+    "Create simple poems using poetic techniques such as rhyme, alliteration, or repeated lines, using simple words or phrases."
+  ],
+  "pedagogy_terms": [
+    "poetic techniques",
+    "rhyme",
+    "alliteration",
+    "repeated lines",
+    "poems",
+    "create poems"
+  ],
+  "exact_codes": [
+    "1.T.T.4"
+  ],
+  "skill_clauses": [
+    "Identify poetic techniques used to craft texts, including rhyme, alliteration, and repeated lines.",
+    "Use poetic techniques to create poems using simple words and/or phrases that may or may not rhyme."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify poetic techniques such as rhyme, alliteration, and repeated lines in poems.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Use poetic techniques to write simple poems with words or phrases that may rhyme.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use poetic techniques to create poems.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Describe poetic techniques used in poems.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.T.T.4\nDomain primary: Comprehension\nDomain secondary: Writing\nCognitive demand: DOK2_skills_concepts\nCompetency: Identify poetic techniques in texts and use them to create simple poems.\nSkills:\n- Identify poetic techniques used to craft texts, including rhyme, alliteration, and repeated lines.\n- Use poetic techniques to create poems using simple words and/or phrases that may or may not rhyme.\nObservable behaviors:\n- Point out examples of rhyme, alliteration, and repeated lines in poems.\n- Describe how these poetic techniques contribute to the poem.\n- Create simple poems using poetic techniques such as rhyme, alliteration, or repeated lines, using simple words or phrases.\nPedagogy terms: poetic techniques, rhyme, alliteration, repeated lines, poems, create poems\nRequired student actions:\n- recognition_identification: Identify poetic techniques such as rhyme, alliteration, and repeated lines in poems.\n- written_production: Use poetic techniques to write simple poems with words or phrases that may rhyme.\n- procedural_application: Use poetic techniques to create poems.\n- reasoning_explanation: Describe poetic techniques used in poems.\nCodes: 1.T.T.4",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

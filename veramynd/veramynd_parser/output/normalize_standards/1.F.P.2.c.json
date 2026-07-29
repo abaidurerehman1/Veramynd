@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.P.2.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Decode one-syllable nonsense words with a variety of spelling patterns (VC, CV, CVC, CVCe, VCC, CCVC, CVCC, CVVC, CCVCC).",
+  "parent_code": "1.F.P.2",
+  "ancestor_path": [
+    "1.F",
+    "1.F.P",
+    "1.F.P.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Phonics",
+    "secondary": []
+  },
+  "competency_statement": "Decode one-syllable nonsense words using various spelling patterns.",
+  "observable_behaviors": [
+    "Read aloud one-syllable nonsense words with different spelling patterns such as VC, CV, CVC, CVCe, VCC, CCVC, CVCC, CVVC, and CCVCC.",
+    "Identify the sounds in nonsense words and blend them to pronounce the word correctly."
+  ],
+  "pedagogy_terms": [
+    "decoding",
+    "nonsense words",
+    "spelling patterns",
+    "phonics",
+    "one-syllable words"
+  ],
+  "exact_codes": [
+    "1.F.P.2.c"
+  ],
+  "skill_clauses": [
+    "Decode one-syllable nonsense words with VC spelling pattern.",
+    "Decode one-syllable nonsense words with CV spelling pattern.",
+    "Decode one-syllable nonsense words with CVC spelling pattern.",
+    "Decode one-syllable nonsense words with CVCe spelling pattern.",
+    "Decode one-syllable nonsense words with VCC spelling pattern.",
+    "Decode one-syllable nonsense words with CCVC spelling pattern.",
+    "Decode one-syllable nonsense words with CVCC spelling pattern.",
+    "Decode one-syllable nonsense words with CVVC spelling pattern.",
+    "Decode one-syllable nonsense words with CCVCC spelling pattern."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize one-syllable nonsense words with specified spelling patterns.",
+    "oral_production": "Pronounce one-syllable nonsense words with various spelling patterns.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply phonics skills to decode one-syllable nonsense words with different spelling patterns.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.P.2.c\nDomain primary: Phonics\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Decode one-syllable nonsense words using various spelling patterns.\nSkills:\n- Decode one-syllable nonsense words with VC spelling pattern.\n- Decode one-syllable nonsense words with CV spelling pattern.\n- Decode one-syllable nonsense words with CVC spelling pattern.\n- Decode one-syllable nonsense words with CVCe spelling pattern.\n- Decode one-syllable nonsense words with VCC spelling pattern.\n- Decode one-syllable nonsense words with CCVC spelling pattern.\n- Decode one-syllable nonsense words with CVCC spelling pattern.\n- Decode one-syllable nonsense words with CVVC spelling pattern.\n- Decode one-syllable nonsense words with CCVCC spelling pattern.\nObservable behaviors:\n- Read aloud one-syllable nonsense words with different spelling patterns such as VC, CV, CVC, CVCe, VCC, CCVC, CVCC, CVVC, and CCVCC.\n- Identify the sounds in nonsense words and blend them to pronounce the word correctly.\nPedagogy terms: decoding, nonsense words, spelling patterns, phonics, one-syllable words\nRequired student actions:\n- recognition_identification: Recognize one-syllable nonsense words with specified spelling patterns.\n- oral_production: Pronounce one-syllable nonsense words with various spelling patterns.\n- procedural_application: Apply phonics skills to decode one-syllable nonsense words with different spelling patterns.\nCodes: 1.F.P.2.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.P.1",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Phoneme-Grapheme Correspondences",
+  "raw_text": "Identify and produce phoneme-grapheme correspondences.",
+  "parent_code": "1.F.P",
+  "ancestor_path": [
+    "1.F",
+    "1.F.P"
+  ],
+  "child_codes": [
+    "1.F.P.1.a",
+    "1.F.P.1.b"
+  ],
+  "child_texts": [
+    "Identify and produce phoneme-grapheme correspondences for frequently used consonant blends and digraphs.",
+    "Identify and produce both long and short vowel sounds for A, E, I, O, U, including final -e and vowel digraphs."
+  ],
+  "domain": {
+    "primary": "Phonics",
+    "secondary": []
+  },
+  "competency_statement": "Identify and produce the sounds that correspond to letters and letter combinations in words.",
+  "observable_behaviors": [
+    "Recognize and say the sounds of common consonant blends and digraphs.",
+    "Recognize and say the long and short vowel sounds for A, E, I, O, U, including when a final -e or vowel digraph changes the sound.",
+    "Match spoken phonemes to their written graphemes in words.",
+    "Produce the correct sound when shown a letter or letter combination."
+  ],
+  "pedagogy_terms": [
+    "phoneme-grapheme correspondences",
+    "consonant blends",
+    "digraphs",
+    "long vowels",
+    "short vowels",
+    "final -e",
+    "vowel digraphs"
+  ],
+  "exact_codes": [
+    "1.F.P.1"
+  ],
+  "skill_clauses": [
+    "Identify phoneme-grapheme correspondences for frequently used consonant blends and digraphs.",
+    "Produce phoneme-grapheme correspondences for frequently used consonant blends and digraphs.",
+    "Identify long and short vowel sounds for A, E, I, O, U, including final -e and vowel digraphs.",
+    "Produce long and short vowel sounds for A, E, I, O, U, including final -e and vowel digraphs."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify phoneme-grapheme correspondences for common consonant blends, digraphs, and vowel sounds.",
+    "oral_production": "Produce the sounds of consonant blends, digraphs, and both long and short vowels including final -e and vowel digraphs.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "Match sounds to their corresponding letters or letter combinations.",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.P.1\nDomain primary: Phonics\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Identify and produce the sounds that correspond to letters and letter combinations in words.\nSkills:\n- Identify phoneme-grapheme correspondences for frequently used consonant blends and digraphs.\n- Produce phoneme-grapheme correspondences for frequently used consonant blends and digraphs.\n- Identify long and short vowel sounds for A, E, I, O, U, including final -e and vowel digraphs.\n- Produce long and short vowel sounds for A, E, I, O, U, including final -e and vowel digraphs.\nObservable behaviors:\n- Recognize and say the sounds of common consonant blends and digraphs.\n- Recognize and say the long and short vowel sounds for A, E, I, O, U, including when a final -e or vowel digraph changes the sound.\n- Match spoken phonemes to their written graphemes in words.\n- Produce the correct sound when shown a letter or letter combination.\nPedagogy terms: phoneme-grapheme correspondences, consonant blends, digraphs, long vowels, short vowels, final -e, vowel digraphs\nRequired student actions:\n- recognition_identification: Identify phoneme-grapheme correspondences for common consonant blends, digraphs, and vowel sounds.\n- oral_production: Produce the sounds of consonant blends, digraphs, and both long and short vowels including final -e and vowel digraphs.\n- matching_sorting_sequencing: Match sounds to their corresponding letters or letter combinations.\nCodes: 1.F.P.1",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.V.1.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Acquire and apply general, academic, and specialized vocabulary words and phrases through grade-level texts and content. (I)",
+  "parent_code": "1.L.V.1",
+  "ancestor_path": [
+    "1.L",
+    "1.L.V",
+    "1.L.V.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Vocabulary",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Use general, academic, and specialized vocabulary words and phrases from grade-level texts and content.",
+  "observable_behaviors": [
+    "Identify and use vocabulary words from grade-level reading materials.",
+    "Apply vocabulary words in speaking and writing related to grade-level content.",
+    "Recognize academic and specialized words in context."
+  ],
+  "pedagogy_terms": [
+    "vocabulary",
+    "academic vocabulary",
+    "specialized vocabulary",
+    "grade-level texts",
+    "word meaning"
+  ],
+  "exact_codes": [
+    "1.L.V.1.a"
+  ],
+  "skill_clauses": [
+    "Acquire general, academic, and specialized vocabulary words and phrases through grade-level texts and content.",
+    "Apply general, academic, and specialized vocabulary words and phrases in appropriate contexts."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify vocabulary words and phrases in grade-level texts and content.",
+    "oral_production": "Use vocabulary words and phrases appropriately in speaking.",
+    "written_production": "Use vocabulary words and phrases appropriately in writing.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply vocabulary words and phrases in various grade-level contexts.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.V.1.a\nDomain primary: Vocabulary\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Use general, academic, and specialized vocabulary words and phrases from grade-level texts and content.\nSkills:\n- Acquire general, academic, and specialized vocabulary words and phrases through grade-level texts and content.\n- Apply general, academic, and specialized vocabulary words and phrases in appropriate contexts.\nObservable behaviors:\n- Identify and use vocabulary words from grade-level reading materials.\n- Apply vocabulary words in speaking and writing related to grade-level content.\n- Recognize academic and specialized words in context.\nPedagogy terms: vocabulary, academic vocabulary, specialized vocabulary, grade-level texts, word meaning\nRequired student actions:\n- recognition_identification: Identify vocabulary words and phrases in grade-level texts and content.\n- oral_production: Use vocabulary words and phrases appropriately in speaking.\n- written_production: Use vocabulary words and phrases appropriately in writing.\n- procedural_application: Apply vocabulary words and phrases in various grade-level contexts.\nCodes: 1.L.V.1.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

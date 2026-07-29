@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.AC.1.d",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Describe, analyze, and evaluate the design and organization of the text, explaining how specific formats, structures, patterns, and features influence the audience, contribute to the text\u2019s accessibility, and support the text\u2019s purpose. (I/C)",
+  "parent_code": "1.P.AC.1",
+  "ancestor_path": [
+    "1.P",
+    "1.P.AC",
+    "1.P.AC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Describe, analyze, and evaluate how the design and organization of a text affect its audience, accessibility, and purpose.",
+  "observable_behaviors": [
+    "Identify specific text formats, structures, patterns, and features.",
+    "Explain how these text elements influence the audience's understanding.",
+    "Describe how the text's design supports its purpose.",
+    "Analyze how the organization of the text makes it easier or harder to access information."
+  ],
+  "pedagogy_terms": [
+    "text structure",
+    "text features",
+    "text organization",
+    "audience",
+    "purpose",
+    "accessibility"
+  ],
+  "exact_codes": [
+    "1.P.AC.1.d"
+  ],
+  "skill_clauses": [
+    "Describe the design and organization of the text.",
+    "Analyze how specific formats, structures, patterns, and features influence the audience.",
+    "Evaluate how these text elements contribute to the text's accessibility.",
+    "Explain how the text's design supports its purpose."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify specific formats, structures, patterns, and features in a text.",
+    "oral_production": "Explain orally how text design influences the audience and supports the text's purpose.",
+    "written_production": "Write descriptions and evaluations of how text organization affects accessibility and purpose.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Analyze and explain how specific text elements influence audience understanding and support the text's purpose.",
+    "comprehension_response": "Describe and evaluate the design and organization of a text in relation to its audience, accessibility, and purpose.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.AC.1.d\nDomain primary: Comprehension\nDomain secondary: Language\nCognitive demand: DOK3_strategic_thinking\nCompetency: Describe, analyze, and evaluate how the design and organization of a text affect its audience, accessibility, and purpose.\nSkills:\n- Describe the design and organization of the text.\n- Analyze how specific formats, structures, patterns, and features influence the audience.\n- Evaluate how these text elements contribute to the text's accessibility.\n- Explain how the text's design supports its purpose.\nObservable behaviors:\n- Identify specific text formats, structures, patterns, and features.\n- Explain how these text elements influence the audience's understanding.\n- Describe how the text's design supports its purpose.\n- Analyze how the organization of the text makes it easier or harder to access information.\nPedagogy terms: text structure, text features, text organization, audience, purpose, accessibility\nRequired student actions:\n- recognition_identification: Identify specific formats, structures, patterns, and features in a text.\n- oral_production: Explain orally how text design influences the audience and supports the text's purpose.\n- written_production: Write descriptions and evaluations of how text organization affects accessibility and purpose.\n- reasoning_explanation: Analyze and explain how specific text elements influence audience understanding and support the text's purpose.\n- comprehension_response: Describe and evaluate the design and organization of a text in relation to its audience, accessibility, and purpose.\nCodes: 1.P.AC.1.d",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.GC.1.19",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Grammar",
+  "raw_text": "Form and use irregular plural nouns. (Introduce)",
+  "parent_code": "1.L.GC.1",
+  "ancestor_path": [
+    "1.L",
+    "1.L.GC",
+    "1.L.GC.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Language",
+    "secondary": []
+  },
+  "competency_statement": "Form and use irregular plural nouns in writing and speaking.",
+  "observable_behaviors": [
+    "Identify irregular plural nouns in spoken or written language.",
+    "Use irregular plural nouns correctly when speaking.",
+    "Write irregular plural nouns correctly in sentences."
+  ],
+  "pedagogy_terms": [
+    "irregular plural nouns",
+    "noun forms",
+    "grammar conventions"
+  ],
+  "exact_codes": [
+    "1.L.GC.1.19"
+  ],
+  "skill_clauses": [
+    "Form irregular plural nouns from singular nouns.",
+    "Use irregular plural nouns correctly in speaking and writing."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize irregular plural nouns in spoken or written language.",
+    "oral_production": "Use irregular plural nouns correctly when speaking.",
+    "written_production": "Write irregular plural nouns correctly in sentences.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Form irregular plural nouns from singular nouns.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.GC.1.19\nDomain primary: Language\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Form and use irregular plural nouns in writing and speaking.\nSkills:\n- Form irregular plural nouns from singular nouns.\n- Use irregular plural nouns correctly in speaking and writing.\nObservable behaviors:\n- Identify irregular plural nouns in spoken or written language.\n- Use irregular plural nouns correctly when speaking.\n- Write irregular plural nouns correctly in sentences.\nPedagogy terms: irregular plural nouns, noun forms, grammar conventions\nRequired student actions:\n- recognition_identification: Recognize irregular plural nouns in spoken or written language.\n- oral_production: Use irregular plural nouns correctly when speaking.\n- written_production: Write irregular plural nouns correctly in sentences.\n- procedural_application: Form irregular plural nouns from singular nouns.\nCodes: 1.L.GC.1.19",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.L.V.2.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Construct words using frequently occurring roots words and inflectional endings. (C)",
+  "parent_code": "1.L.V.2",
+  "ancestor_path": [
+    "1.L",
+    "1.L.V",
+    "1.L.V.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Vocabulary",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Construct words by combining common root words with inflectional endings.",
+  "observable_behaviors": [
+    "Combine root words with inflectional endings to form new words.",
+    "Recognize how adding inflectional endings changes word meaning or function."
+  ],
+  "pedagogy_terms": [
+    "root words",
+    "inflectional endings",
+    "word construction",
+    "morphology"
+  ],
+  "exact_codes": [
+    "1.L.V.2.c"
+  ],
+  "skill_clauses": [
+    "Construct words using frequently occurring root words.",
+    "Construct words using inflectional endings."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify root words and inflectional endings in written words.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Write words by adding inflectional endings to root words.",
+    "matching_sorting_sequencing": "Sort words by their root words and inflectional endings.",
+    "procedural_application": "Construct new words by applying inflectional endings to root words.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "Model word construction by combining root words and inflectional endings.",
+    "reasoning_explanation": "Explain how inflectional endings change the meaning or grammatical function of root words.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.L.V.2.c\nDomain primary: Vocabulary\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Construct words by combining common root words with inflectional endings.\nSkills:\n- Construct words using frequently occurring root words.\n- Construct words using inflectional endings.\nObservable behaviors:\n- Combine root words with inflectional endings to form new words.\n- Recognize how adding inflectional endings changes word meaning or function.\nPedagogy terms: root words, inflectional endings, word construction, morphology\nRequired student actions:\n- recognition_identification: Identify root words and inflectional endings in written words.\n- written_production: Write words by adding inflectional endings to root words.\n- matching_sorting_sequencing: Sort words by their root words and inflectional endings.\n- procedural_application: Construct new words by applying inflectional endings to root words.\n- representation_modeling: Model word construction by combining root words and inflectional endings.\n- reasoning_explanation: Explain how inflectional endings change the meaning or grammatical function of root words.\nCodes: 1.L.V.2.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

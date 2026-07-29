@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.1",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Reader & Writer Identity",
+  "raw_text": "Build an identity as a reader and writer, developing a repertoire of resources and tools to continuously expand participation as an active consumer and producer of texts.",
+  "parent_code": "1.P.EICC",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC"
+  ],
+  "child_codes": [
+    "1.P.EICC.1.a",
+    "1.P.EICC.1.b",
+    "1.P.EICC.1.c",
+    "1.P.EICC.1.d",
+    "1.P.EICC.1.e",
+    "1.P.EICC.1.f"
+  ],
+  "child_texts": [
+    "Generate, understand, monitor, and discuss personal and academic reading and writing goals, revising as appropriate. (I/C)",
+    "Discuss or write about personal and academic reading and writing preferences, referring to specific techniques, topics, modes, and genres that resonate most. (I/C)",
+    "Select, read, and write texts of personal interest and academic relevance to grade-level texts and topics. (I/C)",
+    "Build a repertoire of comprehension and composition skills, strategies, and techniques, drawing from them as needed to aid the interpretation and construction of texts. (I/C)",
+    "Participate in a community of readers and writers by developing group norms, discussing texts, sharing individual writing, listening as others share their writing, and offering and responding to feedback. (I/C)",
+    "Develop independence and autonomy as a reader and writer. (I/C)"
+  ],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Writing",
+      "Speaking & Listening"
+    ]
+  },
+  "competency_statement": "Build a personal identity as a reader and writer by developing and using a variety of skills, strategies, and tools to actively engage with and create texts.",
+  "observable_behaviors": [
+    "Set and revise personal and academic reading and writing goals.",
+    "Discuss or write about reading and writing preferences with examples of techniques, topics, modes, and genres.",
+    "Choose and engage with texts that interest them and relate to academic topics.",
+    "Use a range of comprehension and composition strategies to understand and create texts.",
+    "Participate in group discussions about texts and writing, share their own writing, listen to others, and give and receive feedback.",
+    "Demonstrate growing independence in reading and writing tasks."
+  ],
+  "pedagogy_terms": [
+    "reading goals",
+    "writing goals",
+    "reading preferences",
+    "writing preferences",
+    "text selection",
+    "comprehension strategies",
+    "composition strategies",
+    "collaborative discussion",
+    "feedback",
+    "reader identity",
+    "writer identity",
+    "independence"
+  ],
+  "exact_codes": [
+    "1.P.EICC.1"
+  ],
+  "skill_clauses": [
+    "Generate, understand, monitor, and revise personal and academic reading and writing goals.",
+    "Discuss or write about personal and academic reading and writing preferences with reference to specific techniques, topics, modes, and genres.",
+    "Select, read, and write texts of personal interest and academic relevance.",
+    "Build and draw from a repertoire of comprehension and composition skills, strategies, and techniques to interpret and construct texts.",
+    "Participate in a community of readers and writers by developing group norms, discussing texts, sharing writing, listening to others, and offering and responding to feedback.",
+    "Develop independence and autonomy as a reader and writer."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Discuss reading and writing preferences and participate in group discussions about texts and writing.",
+    "written_production": "Write about personal and academic reading and writing preferences and share individual writing.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Set, monitor, and revise personal and academic reading and writing goals; select and use comprehension and composition strategies as needed.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain personal and academic reading and writing preferences referring to specific techniques, topics, modes, and genres.",
+    "comprehension_response": "Respond to texts by participating in discussions, sharing writing, and offering and responding to feedback.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.1\nDomain primary: Comprehension\nDomain secondary: Writing, Speaking & Listening\nCognitive demand: DOK3_strategic_thinking\nCompetency: Build a personal identity as a reader and writer by developing and using a variety of skills, strategies, and tools to actively engage with and create texts.\nSkills:\n- Generate, understand, monitor, and revise personal and academic reading and writing goals.\n- Discuss or write about personal and academic reading and writing preferences with reference to specific techniques, topics, modes, and genres.\n- Select, read, and write texts of personal interest and academic relevance.\n- Build and draw from a repertoire of comprehension and composition skills, strategies, and techniques to interpret and construct texts.\n- Participate in a community of readers and writers by developing group norms, discussing texts, sharing writing, listening to others, and offering and responding to feedback.\n- Develop independence and autonomy as a reader and writer.\nObservable behaviors:\n- Set and revise personal and academic reading and writing goals.\n- Discuss or write about reading and writing preferences with examples of techniques, topics, modes, and genres.\n- Choose and engage with texts that interest them and relate to academic topics.\n- Use a range of comprehension and composition strategies to understand and create texts.\n- Participate in group discussions about texts and writing, share their own writing, listen to others, and give and receive feedback.\n- Demonstrate growing independence in reading and writing tasks.\nPedagogy terms: reading goals, writing goals, reading preferences, writing preferences, text selection, comprehension strategies, composition strategies, collaborative discussion, feedback, reader identity, writer identity, independence\nRequired student actions:\n- oral_production: Discuss reading and writing preferences and participate in group discussions about texts and writing.\n- written_production: Write about personal and academic reading and writing preferences and share individual writing.\n- procedural_application: Set, monitor, and revise personal and academic reading and writing goals; select and use comprehension and composition strategies as needed.\n- reasoning_explanation: Explain personal and academic reading and writing preferences referring to specific techniques, topics, modes, and genres.\n- comprehension_response: Respond to texts by participating in discussions, sharing writing, and offering and responding to feedback.\nCodes: 1.P.EICC.1",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

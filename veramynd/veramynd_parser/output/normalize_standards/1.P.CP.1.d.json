@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.CP.1.d",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)",
+  "parent_code": "1.P.CP.1",
+  "ancestor_path": [
+    "1.P",
+    "1.P.CP",
+    "1.P.CP.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": [
+      "Comprehension",
+      "Writing"
+    ]
+  },
+  "competency_statement": "Work together with others to talk about topics, ask and investigate questions, solve problems, and explore and create texts.",
+  "observable_behaviors": [
+    "Participate in group discussions about various topics.",
+    "Ask and investigate questions collaboratively.",
+    "Work with peers to solve problems.",
+    "Explore and create texts together with others."
+  ],
+  "pedagogy_terms": [
+    "collaboration",
+    "discussion",
+    "problem solving",
+    "text exploration",
+    "text creation"
+  ],
+  "exact_codes": [
+    "1.P.CP.1.d"
+  ],
+  "skill_clauses": [
+    "Work with others to discuss topics.",
+    "Work with others to investigate questions.",
+    "Work with others to solve problems.",
+    "Work with others to explore and create texts."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Contribute ideas and questions during group discussions.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Work cooperatively with others to discuss topics, investigate questions, solve problems, and create texts.",
+    "investigation_handson": "Engage in collaborative inquiry and problem solving with peers.",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain ideas and reasoning during group work.",
+    "comprehension_response": "Respond to and build on others' ideas in discussions.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.CP.1.d\nDomain primary: Speaking & Listening\nDomain secondary: Comprehension, Writing\nCognitive demand: DOK3_strategic_thinking\nCompetency: Work together with others to talk about topics, ask and investigate questions, solve problems, and explore and create texts.\nSkills:\n- Work with others to discuss topics.\n- Work with others to investigate questions.\n- Work with others to solve problems.\n- Work with others to explore and create texts.\nObservable behaviors:\n- Participate in group discussions about various topics.\n- Ask and investigate questions collaboratively.\n- Work with peers to solve problems.\n- Explore and create texts together with others.\nPedagogy terms: collaboration, discussion, problem solving, text exploration, text creation\nRequired student actions:\n- oral_production: Contribute ideas and questions during group discussions.\n- procedural_application: Work cooperatively with others to discuss topics, investigate questions, solve problems, and create texts.\n- investigation_handson: Engage in collaborative inquiry and problem solving with peers.\n- reasoning_explanation: Explain ideas and reasoning during group work.\n- comprehension_response: Respond to and build on others' ideas in discussions.\nCodes: 1.P.CP.1.d",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

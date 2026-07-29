@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.T.T.1.e",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Use knowledge of narrative techniques (e.g., characters, settings, events) to create texts that share real or imagined experiences and events with a sense of closure. (C)",
+  "parent_code": "1.T.T.1",
+  "ancestor_path": [
+    "1.T",
+    "1.T.T",
+    "1.T.T.1"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Comprehension"
+    ]
+  },
+  "competency_statement": "Use knowledge of narrative techniques such as characters, settings, and events to create texts that share real or imagined experiences and include a sense of closure.",
+  "observable_behaviors": [
+    "Create stories that include characters, settings, and events.",
+    "Write narratives that describe real or imagined experiences.",
+    "Include a clear ending that provides closure to the story."
+  ],
+  "pedagogy_terms": [
+    "narrative techniques",
+    "characters",
+    "settings",
+    "events",
+    "sense of closure",
+    "narrative writing"
+  ],
+  "exact_codes": [
+    "1.T.T.1.e"
+  ],
+  "skill_clauses": [
+    "Use knowledge of characters in narratives to create texts.",
+    "Use knowledge of settings in narratives to create texts.",
+    "Use knowledge of events in narratives to create texts.",
+    "Create texts that share real or imagined experiences and events.",
+    "Include a sense of closure in created texts."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Write texts that use characters, settings, and events to tell a story with a clear ending.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply knowledge of narrative techniques to create coherent stories.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.T.T.1.e\nDomain primary: Writing\nDomain secondary: Comprehension\nCognitive demand: DOK3_strategic_thinking\nCompetency: Use knowledge of narrative techniques such as characters, settings, and events to create texts that share real or imagined experiences and include a sense of closure.\nSkills:\n- Use knowledge of characters in narratives to create texts.\n- Use knowledge of settings in narratives to create texts.\n- Use knowledge of events in narratives to create texts.\n- Create texts that share real or imagined experiences and events.\n- Include a sense of closure in created texts.\nObservable behaviors:\n- Create stories that include characters, settings, and events.\n- Write narratives that describe real or imagined experiences.\n- Include a clear ending that provides closure to the story.\nPedagogy terms: narrative techniques, characters, settings, events, sense of closure, narrative writing\nRequired student actions:\n- written_production: Write texts that use characters, settings, and events to tell a story with a clear ending.\n- procedural_application: Apply knowledge of narrative techniques to create coherent stories.\nCodes: 1.T.T.1.e",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

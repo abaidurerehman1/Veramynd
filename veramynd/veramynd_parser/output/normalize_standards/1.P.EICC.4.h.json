@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.4.h",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Edit the text, ensuring it adheres to the conventions of written language. (C)",
+  "parent_code": "1.P.EICC.4",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.4"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Edit writing to make sure it follows the rules of written language.",
+  "observable_behaviors": [
+    "Correct spelling errors in a draft.",
+    "Fix punctuation mistakes in sentences.",
+    "Adjust capitalization to follow standard rules.",
+    "Make sure sentences are complete and clear."
+  ],
+  "pedagogy_terms": [
+    "edit",
+    "conventions",
+    "spelling",
+    "punctuation",
+    "capitalization",
+    "writing process"
+  ],
+  "exact_codes": [
+    "1.P.EICC.4.h"
+  ],
+  "skill_clauses": [
+    "Edit text to correct spelling errors.",
+    "Edit text to correct punctuation errors.",
+    "Edit text to correct capitalization errors.",
+    "Ensure text follows conventions of written language."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify errors in spelling, punctuation, and capitalization in a written text.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Make corrections to spelling, punctuation, and capitalization in writing.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply rules of written language conventions to edit text.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain why certain edits are needed to follow writing conventions.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.4.h\nDomain primary: Writing\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Edit writing to make sure it follows the rules of written language.\nSkills:\n- Edit text to correct spelling errors.\n- Edit text to correct punctuation errors.\n- Edit text to correct capitalization errors.\n- Ensure text follows conventions of written language.\nObservable behaviors:\n- Correct spelling errors in a draft.\n- Fix punctuation mistakes in sentences.\n- Adjust capitalization to follow standard rules.\n- Make sure sentences are complete and clear.\nPedagogy terms: edit, conventions, spelling, punctuation, capitalization, writing process\nRequired student actions:\n- recognition_identification: Identify errors in spelling, punctuation, and capitalization in a written text.\n- written_production: Make corrections to spelling, punctuation, and capitalization in writing.\n- procedural_application: Apply rules of written language conventions to edit text.\n- reasoning_explanation: Explain why certain edits are needed to follow writing conventions.\nCodes: 1.P.EICC.4.h",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.EICC.3.f",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Make, track, and support inferences about different levels of meaning within the text. (I)",
+  "parent_code": "1.P.EICC.3",
+  "ancestor_path": [
+    "1.P",
+    "1.P.EICC",
+    "1.P.EICC.3"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": []
+  },
+  "competency_statement": "Make, follow, and explain inferences about different meanings in a text.",
+  "observable_behaviors": [
+    "Make guesses about what the text means beyond the exact words.",
+    "Keep track of these guesses while reading.",
+    "Explain why these guesses make sense based on the text."
+  ],
+  "pedagogy_terms": [
+    "inferences",
+    "meaning",
+    "text comprehension",
+    "evidence"
+  ],
+  "exact_codes": [
+    "1.P.EICC.3.f"
+  ],
+  "skill_clauses": [
+    "Make inferences about different levels of meaning within a text.",
+    "Track inferences while reading.",
+    "Support inferences with evidence from the text."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize when a text suggests meanings not directly stated.",
+    "oral_production": "Explain inferences about the text aloud.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "Track and organize inferences about different levels of meaning in a text.",
+    "procedural_application": "Make and support inferences while reading.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Support inferences with reasons based on the text.",
+    "comprehension_response": "Respond to texts by making and explaining inferences about meanings.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.EICC.3.f\nDomain primary: Comprehension\nDomain secondary: none\nCognitive demand: DOK3_strategic_thinking\nCompetency: Make, follow, and explain inferences about different meanings in a text.\nSkills:\n- Make inferences about different levels of meaning within a text.\n- Track inferences while reading.\n- Support inferences with evidence from the text.\nObservable behaviors:\n- Make guesses about what the text means beyond the exact words.\n- Keep track of these guesses while reading.\n- Explain why these guesses make sense based on the text.\nPedagogy terms: inferences, meaning, text comprehension, evidence\nRequired student actions:\n- recognition_identification: Recognize when a text suggests meanings not directly stated.\n- oral_production: Explain inferences about the text aloud.\n- matching_sorting_sequencing: Track and organize inferences about different levels of meaning in a text.\n- procedural_application: Make and support inferences while reading.\n- reasoning_explanation: Support inferences with reasons based on the text.\n- comprehension_response: Respond to texts by making and explaining inferences about meanings.\nCodes: 1.P.EICC.3.f",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

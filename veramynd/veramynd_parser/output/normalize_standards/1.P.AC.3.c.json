@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.AC.3.c",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Apply knowledge of how mode and genre impact how ideas and information are structured and arranged in texts. (I/C)",
+  "parent_code": "1.P.AC.3",
+  "ancestor_path": [
+    "1.P",
+    "1.P.AC",
+    "1.P.AC.3"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Writing"
+    ]
+  },
+  "competency_statement": "Use what you know about different modes and genres to understand how ideas and information are organized in texts.",
+  "observable_behaviors": [
+    "Identify how the structure of a text changes depending on its mode (e.g., visual, digital, print).",
+    "Recognize how the genre of a text influences the way ideas and information are arranged.",
+    "Explain how the organization of a text helps the audience understand its purpose."
+  ],
+  "pedagogy_terms": [
+    "mode",
+    "genre",
+    "text structure",
+    "organization",
+    "audience",
+    "purpose"
+  ],
+  "exact_codes": [
+    "1.P.AC.3.c"
+  ],
+  "skill_clauses": [
+    "Apply knowledge of how mode impacts the structure of ideas and information in texts.",
+    "Apply knowledge of how genre impacts the structure of ideas and information in texts."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize how mode and genre affect text structure.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "Sort or sequence examples of texts by mode or genre to show differences in structure.",
+    "procedural_application": "Apply knowledge of mode and genre to interpret text organization.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "Model how ideas and information are arranged differently in various modes and genres.",
+    "reasoning_explanation": "Explain how mode and genre impact the structure and arrangement of ideas in texts.",
+    "comprehension_response": "Respond to texts by describing how their mode and genre shape the organization of ideas and information.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.AC.3.c\nDomain primary: Comprehension\nDomain secondary: Writing\nCognitive demand: DOK2_skills_concepts\nCompetency: Use what you know about different modes and genres to understand how ideas and information are organized in texts.\nSkills:\n- Apply knowledge of how mode impacts the structure of ideas and information in texts.\n- Apply knowledge of how genre impacts the structure of ideas and information in texts.\nObservable behaviors:\n- Identify how the structure of a text changes depending on its mode (e.g., visual, digital, print).\n- Recognize how the genre of a text influences the way ideas and information are arranged.\n- Explain how the organization of a text helps the audience understand its purpose.\nPedagogy terms: mode, genre, text structure, organization, audience, purpose\nRequired student actions:\n- recognition_identification: Recognize how mode and genre affect text structure.\n- matching_sorting_sequencing: Sort or sequence examples of texts by mode or genre to show differences in structure.\n- procedural_application: Apply knowledge of mode and genre to interpret text organization.\n- representation_modeling: Model how ideas and information are arranged differently in various modes and genres.\n- reasoning_explanation: Explain how mode and genre impact the structure and arrangement of ideas in texts.\n- comprehension_response: Respond to texts by describing how their mode and genre shape the organization of ideas and information.\nCodes: 1.P.AC.3.c",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

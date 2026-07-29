@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.PA.4",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Syllables",
+  "raw_text": "Identify and manipulate syllables in spoken words.",
+  "parent_code": "1.F.PA",
+  "ancestor_path": [
+    "1.F",
+    "1.F.PA"
+  ],
+  "child_codes": [
+    "1.F.PA.4.d"
+  ],
+  "child_texts": [
+    "Add, delete, and substitute syllables in spoken words."
+  ],
+  "domain": {
+    "primary": "Phonological Awareness",
+    "secondary": []
+  },
+  "competency_statement": "Identify syllables in spoken words and manipulate them by adding, deleting, or substituting syllables.",
+  "observable_behaviors": [
+    "Clap or count the number of syllables in a spoken word",
+    "Add a syllable to a spoken word and say the new word",
+    "Delete a syllable from a spoken word and say the resulting word",
+    "Substitute one syllable in a spoken word with another and say the new word"
+  ],
+  "pedagogy_terms": [
+    "syllables",
+    "manipulate syllables",
+    "add syllables",
+    "delete syllables",
+    "substitute syllables"
+  ],
+  "exact_codes": [
+    "1.F.PA.4"
+  ],
+  "skill_clauses": [
+    "Identify syllables in spoken words.",
+    "Add syllables to spoken words.",
+    "Delete syllables from spoken words.",
+    "Substitute syllables in spoken words."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify syllables in spoken words.",
+    "oral_production": "Add, delete, and substitute syllables in spoken words orally.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "NONE OBSERVED",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.PA.4\nDomain primary: Phonological Awareness\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Identify syllables in spoken words and manipulate them by adding, deleting, or substituting syllables.\nSkills:\n- Identify syllables in spoken words.\n- Add syllables to spoken words.\n- Delete syllables from spoken words.\n- Substitute syllables in spoken words.\nObservable behaviors:\n- Clap or count the number of syllables in a spoken word\n- Add a syllable to a spoken word and say the new word\n- Delete a syllable from a spoken word and say the resulting word\n- Substitute one syllable in a spoken word with another and say the new word\nPedagogy terms: syllables, manipulate syllables, add syllables, delete syllables, substitute syllables\nRequired student actions:\n- recognition_identification: Identify syllables in spoken words.\n- oral_production: Add, delete, and substitute syllables in spoken words orally.\nCodes: 1.F.PA.4",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

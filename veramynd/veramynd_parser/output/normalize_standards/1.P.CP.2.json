@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.CP.2",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Presentation",
+  "raw_text": "Use presentation skills to tailor communication to target audiences for specific purposes.",
+  "parent_code": "1.P.CP",
+  "ancestor_path": [
+    "1.P",
+    "1.P.CP"
+  ],
+  "child_codes": [
+    "1.P.CP.2.a",
+    "1.P.CP.2.b",
+    "1.P.CP.2.c",
+    "1.P.CP.2.d",
+    "1.P.CP.2.e"
+  ],
+  "child_texts": [
+    "Communicate clearly to present ideas, information, and texts. (I/C)",
+    "Integrate modes and genres most appropriate to purpose and audience. (I/C)",
+    "Vary tone, pace, and nonverbal gestures as appropriate to purpose and audience. (I/C)",
+    "Engage in dialogue with audiences by asking and answering questions. (I/C)",
+    "Build background knowledge by reciting all or part of significant poems and speeches as appropriate by grade level. (I/C)"
+  ],
+  "domain": {
+    "primary": "Speaking & Listening",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Use presentation skills to communicate clearly and appropriately to different audiences for specific purposes.",
+  "observable_behaviors": [
+    "Speak clearly to share ideas, information, and texts.",
+    "Choose different ways and types of communication based on the audience and purpose.",
+    "Change tone, speed, and use gestures to match the audience and purpose.",
+    "Ask and answer questions during conversations with an audience.",
+    "Recite poems or speeches to build background knowledge appropriate for grade level."
+  ],
+  "pedagogy_terms": [
+    "presentation skills",
+    "audience awareness",
+    "tone variation",
+    "gesture use",
+    "dialogue",
+    "recitation"
+  ],
+  "exact_codes": [
+    "1.P.CP.2"
+  ],
+  "skill_clauses": [
+    "Communicate clearly to present ideas, information, and texts.",
+    "Integrate modes and genres appropriate to purpose and audience.",
+    "Vary tone, pace, and nonverbal gestures to suit purpose and audience.",
+    "Engage in dialogue by asking and answering questions with audiences.",
+    "Build background knowledge by reciting significant poems and speeches appropriate for grade level."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "Communicate ideas clearly; vary tone, pace, and gestures; recite poems and speeches; ask and answer questions in dialogue.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Use presentation skills to tailor communication to audience and purpose.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "NONE OBSERVED",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.P.CP.2\nDomain primary: Speaking & Listening\nDomain secondary: Language\nCognitive demand: DOK2_skills_concepts\nCompetency: Use presentation skills to communicate clearly and appropriately to different audiences for specific purposes.\nSkills:\n- Communicate clearly to present ideas, information, and texts.\n- Integrate modes and genres appropriate to purpose and audience.\n- Vary tone, pace, and nonverbal gestures to suit purpose and audience.\n- Engage in dialogue by asking and answering questions with audiences.\n- Build background knowledge by reciting significant poems and speeches appropriate for grade level.\nObservable behaviors:\n- Speak clearly to share ideas, information, and texts.\n- Choose different ways and types of communication based on the audience and purpose.\n- Change tone, speed, and use gestures to match the audience and purpose.\n- Ask and answer questions during conversations with an audience.\n- Recite poems or speeches to build background knowledge appropriate for grade level.\nPedagogy terms: presentation skills, audience awareness, tone variation, gesture use, dialogue, recitation\nRequired student actions:\n- oral_production: Communicate ideas clearly; vary tone, pace, and gestures; recite poems and speeches; ask and answer questions in dialogue.\n- procedural_application: Use presentation skills to tailor communication to audience and purpose.\nCodes: 1.P.CP.2",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

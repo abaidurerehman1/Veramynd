@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.AC.2.b",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Craft words and phrases in order to influence the responses, thoughts, decisions, and questions of the target audience and achieve a specific purpose. (I/C)",
+  "parent_code": "1.P.AC.2",
+  "ancestor_path": [
+    "1.P",
+    "1.P.AC",
+    "1.P.AC.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Language"
+    ]
+  },
+  "competency_statement": "Craft words and phrases to influence the audience's responses, thoughts, decisions, and questions to achieve a specific purpose.",
+  "observable_behaviors": [
+    "Choose words and phrases that affect how the audience thinks or feels.",
+    "Use language intentionally to guide the audience's decisions or questions.",
+    "Create text that considers the audience's experience and purpose."
+  ],
+  "pedagogy_terms": [
+    "author's craft",
+    "word choice",
+    "audience awareness",
+    "purpose",
+    "influence"
+  ],
+  "exact_codes": [
+    "1.P.AC.2.b"
+  ],
+  "skill_clauses": [
+    "Craft words and phrases to influence the audience's responses, thoughts, decisions, and questions.",
+    "Achieve a specific purpose through word and phrase choices."
+  ],
+  "student_actions": {
+    "recognition_identification": "NONE OBSERVED",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Use words and phrases intentionally to influence the audience in writing.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply craft techniques to shape audience responses and achieve a purpose in writing.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how chosen words and phrases influence the audience's thoughts and decisions.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.AC.2.b\nDomain primary: Writing\nDomain secondary: Language\nCognitive demand: DOK3_strategic_thinking\nCompetency: Craft words and phrases to influence the audience's responses, thoughts, decisions, and questions to achieve a specific purpose.\nSkills:\n- Craft words and phrases to influence the audience's responses, thoughts, decisions, and questions.\n- Achieve a specific purpose through word and phrase choices.\nObservable behaviors:\n- Choose words and phrases that affect how the audience thinks or feels.\n- Use language intentionally to guide the audience's decisions or questions.\n- Create text that considers the audience's experience and purpose.\nPedagogy terms: author's craft, word choice, audience awareness, purpose, influence\nRequired student actions:\n- written_production: Use words and phrases intentionally to influence the audience in writing.\n- procedural_application: Apply craft techniques to shape audience responses and achieve a purpose in writing.\n- reasoning_explanation: Explain how chosen words and phrases influence the audience's thoughts and decisions.\nCodes: 1.P.AC.2.b",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

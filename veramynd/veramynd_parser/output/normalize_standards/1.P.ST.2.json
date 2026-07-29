@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.ST.2",
+  "level": "standard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "Author, Audience, & Purpose",
+  "raw_text": "Interpret and construct texts by developing and applying knowledge of the strategies and techniques authors use to accommodate the target audience and achieve the text\u2019s purpose.",
+  "parent_code": "1.P.ST",
+  "ancestor_path": [
+    "1.P",
+    "1.P.ST"
+  ],
+  "child_codes": [
+    "1.P.ST.2.a",
+    "1.P.ST.2.b",
+    "1.P.ST.2.c"
+  ],
+  "child_texts": [
+    "Develop and apply knowledge of author, audience, and context to discern and establish the purpose of texts being interpreted or constructed and to evaluate the extent to which those texts achieve those purposes. (I/C)",
+    "Draw from knowledge of author, audience, and context to discern and establish a clear point of view or unique perspective when interpreting and constructing texts. (I/C)",
+    "Draw from knowledge of how authors consider context and audience to determine which information and ideas to highlight, which text design is most accessible, which word choices and language structures are most effective, and which craft techniques are most impactful. (I/C)"
+  ],
+  "domain": {
+    "primary": "Comprehension",
+    "secondary": [
+      "Writing",
+      "Language"
+    ]
+  },
+  "competency_statement": "Interpret and create texts by understanding and using how authors consider their audience and purpose.",
+  "observable_behaviors": [
+    "Identify the author, audience, and context of a text.",
+    "Explain the purpose of a text based on author, audience, and context.",
+    "Evaluate how well a text achieves its purpose.",
+    "Recognize a clear point of view or unique perspective in a text.",
+    "Use knowledge of audience and context to choose information, text design, word choice, and craft techniques when creating texts."
+  ],
+  "pedagogy_terms": [
+    "author",
+    "audience",
+    "context",
+    "purpose",
+    "point of view",
+    "text design",
+    "word choice",
+    "language structures",
+    "craft techniques"
+  ],
+  "exact_codes": [
+    "1.P.ST.2"
+  ],
+  "skill_clauses": [
+    "Develop and apply knowledge of author, audience, and context to determine the purpose of texts.",
+    "Evaluate how well texts achieve their purposes.",
+    "Use knowledge of author, audience, and context to identify a clear point of view or unique perspective in texts.",
+    "Use knowledge of author, audience, and context to select information, text design, word choices, language structures, and craft techniques when creating texts."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify author, audience, context, and purpose in texts.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Use knowledge of author, audience, and context to create texts with clear purpose and perspective.",
+    "matching_sorting_sequencing": "NONE OBSERVED",
+    "procedural_application": "Apply knowledge of author, audience, and context to interpret and construct texts.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "NONE OBSERVED",
+    "reasoning_explanation": "Explain how author, audience, and context influence text purpose and effectiveness.",
+    "comprehension_response": "Evaluate how well texts achieve their intended purposes.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.ST.2\nDomain primary: Comprehension\nDomain secondary: Writing, Language\nCognitive demand: DOK3_strategic_thinking\nCompetency: Interpret and create texts by understanding and using how authors consider their audience and purpose.\nSkills:\n- Develop and apply knowledge of author, audience, and context to determine the purpose of texts.\n- Evaluate how well texts achieve their purposes.\n- Use knowledge of author, audience, and context to identify a clear point of view or unique perspective in texts.\n- Use knowledge of author, audience, and context to select information, text design, word choices, language structures, and craft techniques when creating texts.\nObservable behaviors:\n- Identify the author, audience, and context of a text.\n- Explain the purpose of a text based on author, audience, and context.\n- Evaluate how well a text achieves its purpose.\n- Recognize a clear point of view or unique perspective in a text.\n- Use knowledge of audience and context to choose information, text design, word choice, and craft techniques when creating texts.\nPedagogy terms: author, audience, context, purpose, point of view, text design, word choice, language structures, craft techniques\nRequired student actions:\n- recognition_identification: Identify author, audience, context, and purpose in texts.\n- written_production: Use knowledge of author, audience, and context to create texts with clear purpose and perspective.\n- procedural_application: Apply knowledge of author, audience, and context to interpret and construct texts.\n- reasoning_explanation: Explain how author, audience, and context influence text purpose and effectiveness.\n- comprehension_response: Evaluate how well texts achieve their intended purposes.\nCodes: 1.P.ST.2",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

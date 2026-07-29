@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.P.AC.3.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Explore and create texts in various modes and genres, developing and applying knowledge of how specific features impact meaning, tone, style, purpose, and audience. (I/C)",
+  "parent_code": "1.P.AC.3",
+  "ancestor_path": [
+    "1.P",
+    "1.P.AC",
+    "1.P.AC.3"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Writing",
+    "secondary": [
+      "Comprehension"
+    ]
+  },
+  "competency_statement": "Explore and create different types of texts using various modes and genres, understanding how specific features affect meaning, tone, style, purpose, and audience.",
+  "observable_behaviors": [
+    "Identify different modes and genres of texts.",
+    "Notice how features like layout, images, and text style affect the meaning and tone of a text.",
+    "Create texts using different modes and genres with attention to features that influence purpose and audience."
+  ],
+  "pedagogy_terms": [
+    "text features",
+    "modes",
+    "genres",
+    "meaning",
+    "tone",
+    "style",
+    "purpose",
+    "audience"
+  ],
+  "exact_codes": [
+    "1.P.AC.3.a"
+  ],
+  "skill_clauses": [
+    "Explore texts in various modes and genres to understand how specific features impact meaning, tone, style, purpose, and audience.",
+    "Create texts in various modes and genres applying knowledge of how features affect meaning, tone, style, purpose, and audience."
+  ],
+  "student_actions": {
+    "recognition_identification": "Recognize features of texts in various modes and genres that affect meaning, tone, style, purpose, and audience.",
+    "oral_production": "NONE OBSERVED",
+    "written_production": "Create texts in various modes and genres applying knowledge of features that impact meaning, tone, style, purpose, and audience.",
+    "matching_sorting_sequencing": "Sort or categorize texts by mode, genre, or features that influence meaning and audience.",
+    "procedural_application": "Apply understanding of text features to produce texts suited to specific purposes and audiences.",
+    "investigation_handson": "Explore different text modes and genres to see how features affect meaning and tone.",
+    "representation_modeling": "Model how text features influence meaning, tone, style, purpose, and audience in different modes and genres.",
+    "reasoning_explanation": "Explain how specific features of a text affect its meaning, tone, style, purpose, and audience.",
+    "comprehension_response": "Respond to texts by discussing how their features influence meaning, tone, style, purpose, and audience.",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK3_strategic_thinking",
+  "notes": "",
+  "embed_text": "Standard: 1.P.AC.3.a\nDomain primary: Writing\nDomain secondary: Comprehension\nCognitive demand: DOK3_strategic_thinking\nCompetency: Explore and create different types of texts using various modes and genres, understanding how specific features affect meaning, tone, style, purpose, and audience.\nSkills:\n- Explore texts in various modes and genres to understand how specific features impact meaning, tone, style, purpose, and audience.\n- Create texts in various modes and genres applying knowledge of how features affect meaning, tone, style, purpose, and audience.\nObservable behaviors:\n- Identify different modes and genres of texts.\n- Notice how features like layout, images, and text style affect the meaning and tone of a text.\n- Create texts using different modes and genres with attention to features that influence purpose and audience.\nPedagogy terms: text features, modes, genres, meaning, tone, style, purpose, audience\nRequired student actions:\n- recognition_identification: Recognize features of texts in various modes and genres that affect meaning, tone, style, purpose, and audience.\n- written_production: Create texts in various modes and genres applying knowledge of features that impact meaning, tone, style, purpose, and audience.\n- matching_sorting_sequencing: Sort or categorize texts by mode, genre, or features that influence meaning and audience.\n- procedural_application: Apply understanding of text features to produce texts suited to specific purposes and audiences.\n- investigation_handson: Explore different text modes and genres to see how features affect meaning and tone.\n- representation_modeling: Model how text features influence meaning, tone, style, purpose, and audience in different modes and genres.\n- reasoning_explanation: Explain how specific features of a text affect its meaning, tone, style, purpose, and audience.\n- comprehension_response: Respond to texts by discussing how their features influence meaning, tone, style, purpose, and audience.\nCodes: 1.P.AC.3.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}

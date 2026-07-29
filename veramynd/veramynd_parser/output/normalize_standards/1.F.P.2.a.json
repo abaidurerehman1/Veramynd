@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0-std",
+  "standard_code": "1.F.P.2.a",
+  "level": "substandard",
+  "grade": 1,
+  "framework": "GA ELA",
+  "label": "",
+  "raw_text": "Decode regularly spelled one-syllable words with a variety of spelling patterns (VC, CV, CVC, CVCe, VCC, CCVC, CVCC, CVVC, CCVCC), including high-frequency words.",
+  "parent_code": "1.F.P.2",
+  "ancestor_path": [
+    "1.F",
+    "1.F.P",
+    "1.F.P.2"
+  ],
+  "child_codes": [],
+  "child_texts": [],
+  "domain": {
+    "primary": "Phonics",
+    "secondary": []
+  },
+  "competency_statement": "Decode regularly spelled one-syllable words with various common spelling patterns, including high-frequency words.",
+  "observable_behaviors": [
+    "Read aloud one-syllable words with VC, CV, CVC, CVCe, VCC, CCVC, CVCC, CVVC, and CCVCC spelling patterns.",
+    "Recognize and decode high-frequency one-syllable words.",
+    "Apply phonics knowledge to decode words both in isolation and in context."
+  ],
+  "pedagogy_terms": [
+    "decoding",
+    "one-syllable words",
+    "spelling patterns",
+    "high-frequency words"
+  ],
+  "exact_codes": [
+    "1.F.P.2.a"
+  ],
+  "skill_clauses": [
+    "Decode regularly spelled one-syllable words with VC, CV, CVC, CVCe, VCC, CCVC, CVCC, CVVC, and CCVCC spelling patterns.",
+    "Include decoding of high-frequency one-syllable words."
+  ],
+  "student_actions": {
+    "recognition_identification": "Identify one-syllable words with specified spelling patterns when reading.",
+    "oral_production": "Read aloud one-syllable words with various spelling patterns.",
+    "written_production": "NONE OBSERVED",
+    "matching_sorting_sequencing": "Sort or sequence one-syllable words by their spelling patterns.",
+    "procedural_application": "Apply phonics rules to decode one-syllable words with different spelling patterns.",
+    "investigation_handson": "NONE OBSERVED",
+    "representation_modeling": "Model decoding of one-syllable words with different spelling patterns.",
+    "reasoning_explanation": "Explain how phonics patterns help decode one-syllable words.",
+    "comprehension_response": "NONE OBSERVED",
+    "domain_specific": {}
+  },
+  "cognitive_demand": "DOK2_skills_concepts",
+  "notes": "",
+  "embed_text": "Standard: 1.F.P.2.a\nDomain primary: Phonics\nDomain secondary: none\nCognitive demand: DOK2_skills_concepts\nCompetency: Decode regularly spelled one-syllable words with various common spelling patterns, including high-frequency words.\nSkills:\n- Decode regularly spelled one-syllable words with VC, CV, CVC, CVCe, VCC, CCVC, CVCC, CVVC, and CCVCC spelling patterns.\n- Include decoding of high-frequency one-syllable words.\nObservable behaviors:\n- Read aloud one-syllable words with VC, CV, CVC, CVCe, VCC, CCVC, CVCC, CVVC, and CCVCC spelling patterns.\n- Recognize and decode high-frequency one-syllable words.\n- Apply phonics knowledge to decode words both in isolation and in context.\nPedagogy terms: decoding, one-syllable words, spelling patterns, high-frequency words\nRequired student actions:\n- recognition_identification: Identify one-syllable words with specified spelling patterns when reading.\n- oral_production: Read aloud one-syllable words with various spelling patterns.\n- matching_sorting_sequencing: Sort or sequence one-syllable words by their spelling patterns.\n- procedural_application: Apply phonics rules to decode one-syllable words with different spelling patterns.\n- representation_modeling: Model decoding of one-syllable words with different spelling patterns.\n- reasoning_explanation: Explain how phonics patterns help decode one-syllable words.\nCodes: 1.F.P.2.a",
+  "prompt_version": "normalize_std.v1.0",
+  "provider": "openai",
+  "model": "gpt-4.1-mini"
+}
