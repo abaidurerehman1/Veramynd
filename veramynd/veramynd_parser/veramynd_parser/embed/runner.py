@@ -429,6 +429,11 @@ def embed_chunks_to_qdrant(
             f"Qdrant collection count {count} < upserted {len(chunks)} "
             "(collection may have been partially written)"
         )
+    if resource_ids is None and count > len(chunks):
+        raise EmbedError(
+            f"Qdrant collection count {count} > upserted {len(chunks)} — "
+            "stale points remain from a prior corpus. Re-run with --recreate."
+        )
 
     backend = "url" if settings["url"] else "local_path"
     manifest = {
@@ -622,6 +627,11 @@ def embed_standards_to_qdrant(
         raise EmbedError(
             f"Qdrant collection count {count} < upserted {len(standards)} "
             "(collection may have been partially written)"
+        )
+    if codes is None and count > len(standards):
+        raise EmbedError(
+            f"Qdrant collection count {count} > upserted {len(standards)} — "
+            "stale points remain from a prior corpus. Re-run with --recreate."
         )
 
     backend = "url" if settings["url"] else "local_path"

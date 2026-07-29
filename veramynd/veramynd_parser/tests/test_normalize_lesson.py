@@ -138,6 +138,14 @@ def test_split_vocabulary_still_recognizes_real_review_markers():
     assert block.review == ["observe (R)", "syllable", "This is a review term"]
 
 
+def test_split_vocabulary_bare_review_header_is_not_a_term():
+    block = _split_vocabulary(["Review", "sunrise", "New", "observe (L)"])
+    assert "Review" not in block.review
+    assert "New" not in block.new
+    assert block.review == ["sunrise"]
+    assert block.new == ["observe (L)"]
+
+
 def test_split_vocabulary_respects_section_headers_and_strips_furniture():
     block = _split_vocabulary(
         [
@@ -306,6 +314,18 @@ def test_relative_cache_dir_resolves_to_package_root_not_cwd():
     package_root = Path(__file__).resolve().parents[1]
     resolved = _resolve_cache_dir(".normalize_cache")
     assert resolved == package_root / ".normalize_cache"
+
+
+def test_standards_cache_dir_uses_standards_subdir_not_cwd():
+    from veramynd_parser.normalize.standard import _resolve_cache_dir as resolve_std
+
+    package_root = Path(__file__).resolve().parents[1]
+    # Shared NormalizeConfig default must not collide with the lesson cache.
+    assert resolve_std(".normalize_cache") == package_root / ".normalize_cache" / "standards"
+    assert resolve_std(None) == package_root / ".normalize_cache" / "standards"
+    assert resolve_std(".normalize_cache/standards") == (
+        package_root / ".normalize_cache" / "standards"
+    )
 
 
 def test_absolute_cache_dir_is_used_as_is(tmp_path: Path):

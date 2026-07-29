@@ -2,8 +2,16 @@
 
 from __future__ import annotations
 
+import pytest
+
 from veramynd_parser.models import StandardLevel
-from veramynd_parser.standards.spreadsheet import level_of, parent_of
+from veramynd_parser.standards.spreadsheet import (
+    SpreadsheetStructureError,
+    UngradedCodeError,
+    grade_of,
+    level_of,
+    parent_of,
+)
 
 
 def test_row_count(standards):
@@ -55,3 +63,13 @@ def test_label_split(standards):
     syl = next((s for s in standards.standards if s.code == "1.F.PA.4"), None)
     if syl is not None:
         assert syl.label  # a short prefix label was extracted
+
+
+def test_grade_of_kindergarten_is_zero():
+    assert grade_of("K.F.PA.1") == 0
+    assert grade_of("1.F.PA.4") == 1
+
+
+def test_grade_of_banded_code_still_errors():
+    with pytest.raises(UngradedCodeError):
+        grade_of("6-8.RL.1")

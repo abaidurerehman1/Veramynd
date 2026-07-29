@@ -44,8 +44,10 @@ def split_vocabulary(raw: list[str]) -> VocabularyBlock:
     """Split Stage-1 flat vocab into new/review; drop furniture and prep noise.
 
     Respects source New vs Review when the extractor preserved section headers
-    (standalone ``New:`` / ``Review:`` lines, or ``Review: term`` prefixes) or
-    when a term carries a whole-word ``review`` / ``(R)`` marker.
+    (standalone ``New`` / ``Review`` / ``New:`` / ``Review:`` lines, or
+    ``Review: term`` prefixes) or when a term carries a whole-word ``review`` /
+    ``(R)`` marker. Bare ``New`` / ``Review`` lines switch the section and are
+    never added as vocabulary terms.
 
     Matches the ``(R)``/``Review`` marker as a whole word, not a bare substring —
     a vocabulary term that merely contains ``review`` (e.g. ``preview``,
@@ -80,10 +82,10 @@ def split_vocabulary(raw: list[str]) -> VocabularyBlock:
         if not t:
             continue
 
-        if re.fullmatch(r"New\s*:", t, flags=re.I):
+        if re.fullmatch(r"New\s*:?", t, flags=re.I):
             section = "new"
             continue
-        if re.fullmatch(r"Review\s*:", t, flags=re.I):
+        if re.fullmatch(r"Review\s*:?", t, flags=re.I):
             section = "review"
             continue
 

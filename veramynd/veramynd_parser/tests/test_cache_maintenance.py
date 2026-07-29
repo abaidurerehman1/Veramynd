@@ -17,8 +17,10 @@ from veramynd_parser.cache_maintenance import (
     apply_prune,
     scan_docling_cache,
     scan_normalize_cache,
+    scan_normalize_standards_cache,
 )
 from veramynd_parser.normalize.models import minimal_normalized_lesson
+from veramynd_parser.normalize.standard_models import minimal_normalized_standard
 
 
 def _write_normalized(path: Path, *, prompt_version: str) -> None:
@@ -36,6 +38,26 @@ def test_scan_normalize_cache_classifies_current_vs_stale(tmp_path: Path):
     assert [p.name for p in result.kept] == ["a.json"]
     assert [p.name for p in result.stale] == ["b.json"]
     assert [p.name for p in result.unreadable] == ["corrupt.json"]
+
+
+def test_scan_normalize_standards_cache_classifies_by_std_prompt(tmp_path: Path):
+    current = minimal_normalized_standard(code="1.F.PA.4").model_copy(
+        update={"prompt_version": "normalize_std.v1.0"}
+    )
+    stale = minimal_normalized_standard(code="1.F.PA.5").model_copy(
+        update={"prompt_version": "normalize_std.v0.9"}
+    )
+    (tmp_path / "a.json").write_text(current.model_dump_json(), encoding="utf-8")
+    (tmp_path / "b.json").write_text(stale.model_dump_json(), encoding="utf-8")
+    # Lesson records in the standards dir must not be treated as current.
+    _write_normalized(tmp_path / "lesson.json", prompt_version="normalize_ela.v2.1")
+
+    result = scan_normalize_standards_cache(
+        tmp_path, current_prompt_version="normalize_std.v1.0"
+    )
+    assert [p.name for p in result.kept] == ["a.json"]
+    assert [p.name for p in result.stale] == ["b.json"]
+    assert [p.name for p in result.unreadable] == ["lesson.json"]
 
 
 def test_scan_normalize_cache_missing_dir_returns_empty(tmp_path: Path):

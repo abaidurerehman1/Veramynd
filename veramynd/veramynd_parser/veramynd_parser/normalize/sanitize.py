@@ -30,7 +30,8 @@ from .models import (
 )
 
 # CCSS-style codes (and close cousins) that must not appear in the scorable record.
-_ONE_CODE = r"(?:RL|RI|RF|W|SL|L)\.\d+[a-zA-Z0-9.]*"
+# Grade segment allows digits OR kindergarten ``K`` (aligned with text_utils.STANDARD_CODE).
+_ONE_CODE = r"(?:[A-Z]{1,4})\.(?:K|\d+)\.\d+[a-z]{0,3}"
 # A whole comma/and-joined LIST of codes ("SL.1.1a, SL.1.1b, and SL.1.4"), matched
 # as a single atomic span rather than one code at a time. Real lesson text lists
 # multiple codes per assessment note (e.g. "Gather data on SL.1.1a, SL.1.1b, SL.1.4,
@@ -497,12 +498,18 @@ def ensure_written_production_from_steps(
     evidence = list(norm.evidence)
     if not covered:
         # Prefer an existing verbatim evidence row on this step if present.
+        # Quotes were already code-redacted earlier in sanitize_normalized_lesson;
+        # compare against the redacted step so we tag the existing row instead of
+        # appending a near-duplicate that still carries publisher codes.
+        step_clean = redact_standard_codes(step).strip()
         matched = False
         for i, item in enumerate(evidence):
-            if (item.quote or "").strip() == step:
+            quote = (item.quote or "").strip()
+            if quote == step_clean or quote == step.strip():
                 keys = list(dict.fromkeys([*item.supports_action, "written_production"]))
                 evidence[i] = item.model_copy(
                     update={
+                        "quote": step_clean or quote,
                         "supports_action": keys,
                         "actor": "student"
                         if item.evidence_role
@@ -524,7 +531,7 @@ def ensure_written_production_from_steps(
         if not matched:
             evidence.append(
                 EvidenceItem(
-                    quote=step,
+                    quote=step_clean,
                     location=location,
                     actor="student",
                     evidence_role="directive_prompt",
@@ -609,6 +616,16 @@ def _resolve_stage1_section(hint: str, letter: str, lesson: Lesson) -> str | Non
     return None
 
 
+def _join_location_prefix(exact_id: str, rest: str) -> str:
+    """Join a Stage-1 block id with trailing location text without mangling punctuation."""
+    rest = (rest or "").strip()
+    if not rest:
+        return exact_id
+    if rest[0] in ",;:)]}":
+        return f"{exact_id}{rest}"
+    return f"{exact_id} {rest}"
+
+
 def canonicalize_evidence_locations(
     evidence: list[EvidenceItem],
     lesson: Lesson,
@@ -643,7 +660,7 @@ def canonicalize_evidence_locations(
         exact_id = f"{hint} {letter}"
         if exact_id in ids:
             # Already joins; normalize whitespace / drop stray rest unless needed.
-            canonical = exact_id if not rest else f"{exact_id} {rest}".strip()
+            canonical = exact_id if not rest else _join_location_prefix(exact_id, rest)
             if canonical != loc:
                 warnings.append(
                     f"evidence[{i}] location {loc!r} -> {canonical!r} (whitespace)"
@@ -664,7 +681,7 @@ def canonicalize_evidence_locations(
 
         canonical = f"{resolved} {letter}"
         if rest:
-            canonical = f"{canonical} {rest}".strip()
+            canonical = _join_location_prefix(canonical, rest)
         warnings.append(
             f"evidence[{i}] location {loc!r} -> {canonical!r} (Stage-1 block id)"
         )

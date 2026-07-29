@@ -93,6 +93,23 @@ def test_redact_standard_codes_removes_a_whole_comma_and_list_atomically():
     assert out == "Gather data on using the Speaking and Listening Checklist."
 
 
+def test_redact_standard_codes_removes_kindergarten_ccss():
+    """K-grade codes (RL.K.1) must redact — digit-only patterns leak them."""
+    text = "Ask and answer questions about RL.K.1 and SL.K.1a during talk."
+    out = redact_standard_codes(text)
+    assert "RL.K" not in out
+    assert "SL.K" not in out
+    assert "RL." not in out
+    assert "SL." not in out
+
+
+def test_redact_standard_codes_mixed_k_and_digit_list():
+    text = "Gather data on SL.1.1a, SL.K.1b, and SL.1.4 using the checklist."
+    out = redact_standard_codes(text)
+    assert "SL." not in out
+    assert out == "Gather data on using the checklist."
+
+
 def test_invented_moon_quote_replaced_or_dropped():
     lesson = _lesson_with_steps()
     lines = [
@@ -377,6 +394,60 @@ def test_sanitize_fills_written_production_from_whiteboard_step():
     )
     assert fixed.subject_profile.mode == "both"
     assert any("written_production" in w for w in warnings)
+
+
+def test_written_production_evidence_redacts_standard_codes():
+    """ensure_written_production must not re-introduce CCSS codes after redaction."""
+    step = (
+        "Invite students to write their answer on SL.1.1a, SL.1.1b, and SL.1.4 "
+        "using the checklist."
+    )
+    lesson = _lesson_with_steps(
+        steps=["'What does the sun look like?'", step],
+    )
+    norm = minimal_normalized_lesson(resource_id="G1M2U2L3").model_copy(
+        update={
+            "student_actions": StudentActions(
+                oral_production="Answer questions about the sun.",
+                written_production="NONE OBSERVED",
+            ),
+            "subject_profile": SubjectProfile(mode="interpretation", genre="n/a"),
+            "evidence": [
+                EvidenceItem(
+                    quote="'What does the sun look like?'",
+                    location="Work Time A",
+                    actor="student",
+                    evidence_role="elicitation_check",
+                    support="with_prompting",
+                    supports_action=["oral_production"],
+                ),
+            ],
+        }
+    )
+    fixed, _warnings = sanitize_normalized_lesson(norm, lesson)
+    assert fixed.student_actions.written_production != "NONE OBSERVED"
+    for ev in fixed.evidence:
+        assert "SL." not in ev.quote
+    assert any("written_production" in (e.supports_action or []) for e in fixed.evidence)
+
+
+def test_location_with_comma_rest_does_not_insert_space_before_punctuation():
+    from veramynd_parser.normalize.sanitize import canonicalize_evidence_locations
+
+    lesson = _lesson_with_steps()
+    norm_evidence = [
+        EvidenceItem(
+            quote="'What does the sun look like?'",
+            location="Work Time A, page 5",
+            actor="student",
+            evidence_role="elicitation_check",
+            support="with_prompting",
+            supports_action=["oral_production"],
+        )
+    ]
+    fixed, warnings = canonicalize_evidence_locations(norm_evidence, lesson)
+    assert fixed[0].location == "Work Time A, page 5"
+    assert not any(" , " in w for w in warnings)
 
 
 def test_sanitize_ignores_next_lesson_write_mentions():

@@ -74,12 +74,21 @@ def _ascii_punct(text: str) -> str:
     return text.translate(_TYPOGRAPHIC)
 
 
-def _resolve_cache_dir(explicit: str | None) -> Path:
-    from .llm import package_root
+def _resolve_cache_dir(explicit: str | None = None) -> Path:
+    """Resolve standards cache against the package root (never CWD).
 
-    if explicit:
-        return Path(explicit)
-    return package_root() / ".normalize_cache" / "standards"
+    ``NormalizeConfig.cache_dir`` defaults to ``.normalize_cache`` (the lesson
+    cache). When that shared default is passed, park standards under the
+    documented ``.normalize_cache/standards`` subdir so lesson and standards
+    entries never collide and resume works from any working directory.
+    """
+    from ..paths import resolve_package_relative
+
+    raw = (explicit or "").strip() or ".normalize_cache/standards"
+    normalized = raw.replace("\\", "/").rstrip("/")
+    if normalized == ".normalize_cache":
+        raw = ".normalize_cache/standards"
+    return resolve_package_relative(raw)
 
 
 def _index_standards(tree: GradeStandards) -> dict[str, Standard]:
@@ -404,6 +413,17 @@ def normalize_standards_tree(
     if limit is not None:
         targets = targets[: max(0, limit)]
 
+    seen_codes: dict[str, int] = {}
+    for i, std in enumerate(targets):
+        prev = seen_codes.get(std.code)
+        if prev is not None:
+            raise ValueError(
+                f"duplicate standard code {std.code!r} in tree "
+                f"(index {prev} and {i}) — refusing to normalize "
+                "(would overwrite output)"
+            )
+        seen_codes[std.code] = i
+
     results: list[NormalizedStandard] = []
     progress_path = dst / PROGRESS_NAME
     progress = {
@@ -499,7 +519,8 @@ def normalize_standards_tree(
                     )
                 _write_progress(progress_path, progress)
 
-    progress["status"] = "complete" if not progress["failed"] else "complete_with_errors"
+    n_failed = len(progress["failed"])
+    progress["status"] = "complete" if not n_failed else "complete_with_errors"
     _write_progress(progress_path, progress)
     # Manifest of outputs
     manifest = {
@@ -514,9 +535,19 @@ def normalize_standards_tree(
     }
     atomic_write_text(dst / "normalize_standards_manifest.json", json.dumps(manifest, indent=2) + "\n")
     print(
-        f"Done. normalized={len(results)} failed={len(progress['failed'])} -> {dst}/",
+        f"Done. normalized={len(results)} failed={n_failed} -> {dst}/",
         flush=True,
     )
+    if n_failed:
+        raise RuntimeError(
+            f"normalize-standards: {n_failed} of {len(targets)} failed "
+            f"(succeeded={len(results)}; see {progress_path})"
+        )
+    if not results and targets:
+        raise RuntimeError(
+            f"normalize-standards: no standards normalized "
+            f"(0 of {len(targets)}; see {progress_path})"
+        )
     return results
 
 

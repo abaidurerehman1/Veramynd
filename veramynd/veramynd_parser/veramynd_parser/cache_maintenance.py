@@ -10,6 +10,8 @@ from pydantic import ValidationError
 
 from .normalize.lesson import PROMPT_VERSION
 from .normalize.models import NormalizedLesson
+from .normalize.standard import PROMPT_VERSION as STD_PROMPT_VERSION
+from .normalize.standard_models import NormalizedStandard
 
 # Matches both legacy (`docling210`) and current (`docling-2.10.0-vabcdef`) keys.
 # The `-tablesN` suffix is mandatory for the current form (the running cache-key
@@ -44,7 +46,7 @@ class PruneResult:
 def scan_normalize_cache(
     cache_dir: Path | str, *, current_prompt_version: str = PROMPT_VERSION
 ) -> PruneResult:
-    """Classify ``.normalize_cache/*.json`` entries as current or stale."""
+    """Classify lesson ``.normalize_cache/*.json`` entries as current or stale."""
     cache_dir = Path(cache_dir)
     result = PruneResult()
     if not cache_dir.is_dir():
@@ -56,6 +58,26 @@ def scan_normalize_cache(
             result.unreadable.append(path)
             continue
         (result.kept if norm.prompt_version == current_prompt_version else result.stale).append(path)
+    return result
+
+
+def scan_normalize_standards_cache(
+    cache_dir: Path | str, *, current_prompt_version: str = STD_PROMPT_VERSION
+) -> PruneResult:
+    """Classify standards ``.normalize_cache/standards/*.json`` entries."""
+    cache_dir = Path(cache_dir)
+    result = PruneResult()
+    if not cache_dir.is_dir():
+        return result
+    for path in sorted(cache_dir.glob("*.json")):
+        try:
+            norm = NormalizedStandard.model_validate_json(path.read_text(encoding="utf-8"))
+        except (OSError, ValueError, TypeError, ValidationError):
+            result.unreadable.append(path)
+            continue
+        (
+            result.kept if norm.prompt_version == current_prompt_version else result.stale
+        ).append(path)
     return result
 
 

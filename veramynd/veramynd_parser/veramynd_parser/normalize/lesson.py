@@ -409,7 +409,13 @@ def normalize_lesson(
         if not refresh_cache:
             hit = cache.get(cache_key, NormalizedLesson)
             if hit is not None:
-                return _with_source_provenance(hit, lesson_obj)
+                # Match normalize_lessons_dir: re-run sanitizers on cache hits so
+                # --one and batch paths emit identical bytes after rule changes.
+                hit = _sanitize_normalized(_with_source_provenance(hit, lesson_obj))
+                hit, sanitize_warnings = sanitize_normalized_lesson(hit, lesson_obj)
+                for w in sanitize_warnings:
+                    print(f"WARNING: {lesson_obj.code}: {w}", flush=True)
+                return hit
 
     base_user = (
         "Normalize the following Stage-1 lesson JSON into an ELA curriculum "

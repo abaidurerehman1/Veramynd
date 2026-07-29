@@ -165,8 +165,16 @@ def cmd_guide(args: argparse.Namespace) -> int:
 
 
 def cmd_standards(args: argparse.Namespace) -> int:
-    stds = parse_standards(args.path)
     from .models import StandardLevel
+
+    try:
+        stds = parse_standards(args.path)
+    except SpreadsheetStructureError as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        return 1
+    except (OSError, ValueError) as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        return 1
 
     print(f"Source     : {args.path}")
     print(f"Grade      : {stds.grade}  Framework: {stds.framework}")
@@ -391,7 +399,15 @@ def _require_stage1_go(lessons_dir: Path, *, allow_unverified: bool) -> int | No
             file=sys.stderr,
         )
         return 2
-    last = report.read_text(encoding="utf-8").strip().splitlines()[-1]
+    lines = [ln for ln in report.read_text(encoding="utf-8").splitlines() if ln.strip()]
+    if not lines:
+        print(
+            f"ERROR: Stage 1 verification report is empty ({report}). "
+            f"Re-export until GO, or pass --allow-unverified.",
+            file=sys.stderr,
+        )
+        return 1
+    last = lines[-1]
     normalized = last.replace("→", "->")
     is_go = "BLOCK" not in normalized and (
         normalized.rstrip().endswith("GO") or "-> GO" in normalized
@@ -552,7 +568,7 @@ def cmd_normalize_standards(args: argparse.Namespace) -> int:
             )
         if len(results) > 5:
             print(f"  ... {len(results) - 5} more")
-        return 0 if results else 1
+        return 0
     except LlmError as e:
         print(f"ERROR: {e}", file=sys.stderr)
         return 1
@@ -733,8 +749,13 @@ def cmd_cache_prune(args: argparse.Namespace) -> int:
         installed_docling_version,
         scan_docling_cache,
         scan_normalize_cache,
+        scan_normalize_standards_cache,
     )
     from .normalize.lesson import PROMPT_VERSION, _resolve_cache_dir
+    from .normalize.standard import (
+        PROMPT_VERSION as STD_PROMPT_VERSION,
+        _resolve_cache_dir as _resolve_standards_cache_dir,
+    )
     from .pdf.docling_parser import resolve_docling_cache_dir
 
     defaults = Config()
@@ -743,6 +764,11 @@ def cmd_cache_prune(args: argparse.Namespace) -> int:
         if args.normalize_cache_dir
         else _resolve_cache_dir(defaults.normalize.cache_dir)
     )
+    std_dir = (
+        Path(args.standards_cache_dir)
+        if args.standards_cache_dir
+        else _resolve_standards_cache_dir(defaults.normalize.cache_dir)
+    )
     docling_dir = (
         Path(args.docling_cache_dir)
         if args.docling_cache_dir
@@ -750,6 +776,9 @@ def cmd_cache_prune(args: argparse.Namespace) -> int:
     )
 
     norm_result = scan_normalize_cache(norm_dir, current_prompt_version=PROMPT_VERSION)
+    std_result = scan_normalize_standards_cache(
+        std_dir, current_prompt_version=STD_PROMPT_VERSION
+    )
     docling_version = installed_docling_version()
     docling_result = scan_docling_cache(docling_dir, current_docling_version=docling_version)
 
@@ -762,18 +791,31 @@ def cmd_cache_prune(args: argparse.Namespace) -> int:
             for p in result.unreadable[:5]:
                 print(f"    {p.name}")
 
-    print(f"normalize prompt_version: {PROMPT_VERSION}")
-    _report("normalize cache", norm_dir, norm_result)
-    print(f"docling version: {docling_version or '(not installed -- cannot classify; nothing marked stale)'}")
+    print(f"normalize (lessons) prompt_version: {PROMPT_VERSION}")
+    _report("normalize lessons cache", norm_dir, norm_result)
+    print(f"normalize (standards) prompt_version: {STD_PROMPT_VERSION}")
+    _report("normalize standards cache", std_dir, std_result)
+    print(
+        f"docling version: {docling_version or '(not installed -- cannot classify; nothing marked stale)'}"
+    )
     _report("docling cache", docling_dir, docling_result)
 
-    total_stale = len(norm_result.stale) + len(docling_result.stale)
+    total_stale = (
+        len(norm_result.stale) + len(std_result.stale) + len(docling_result.stale)
+    )
     if not args.apply:
         if total_stale:
-            print(f"\nDry run -- {total_stale} stale file(s) not deleted. Re-run with --apply to delete them.")
+            print(
+                f"\nDry run -- {total_stale} stale file(s) not deleted. "
+                "Re-run with --apply to delete them."
+            )
         return 0
 
-    deleted = apply_prune(norm_result) + apply_prune(docling_result)
+    deleted = (
+        apply_prune(norm_result)
+        + apply_prune(std_result)
+        + apply_prune(docling_result)
+    )
     print(f"\nDeleted {deleted} stale cache file(s).")
     return 0
 
@@ -855,7 +897,7 @@ def build_parser() -> argparse.ArgumentParser:
         type=int,
         default=None,
         help=(
-            "response token cap (default: 8192 for ELA evidence records). "
+            "response token cap (default: 16384 for ELA evidence records). "
             "Raise this if dense lessons hit finish_reason=length "
             "(truncation) -- logged explicitly when it happens."
         ),
@@ -869,8 +911,9 @@ def build_parser() -> argparse.ArgumentParser:
         "--no-resume",
         action="store_true",
         help=(
-            "call the API fresh for every lesson, bypassing the content-addressed "
-            "cache entirely (still writes progress file); same effect as --force"
+            "re-call the API for every lesson even when the content-addressed "
+            "cache already has a hit (same effect as --force). Still writes new "
+            "cache entries unless --no-cache is also set."
         ),
     )
     n.add_argument(
@@ -946,7 +989,10 @@ def build_parser() -> argparse.ArgumentParser:
     ns.add_argument(
         "--no-resume",
         action="store_true",
-        help="call the API fresh for every standard (same effect as --force for cache)",
+        help=(
+            "re-call the API for every standard even on cache hits "
+            "(same as --force). Still writes cache unless --no-cache is set."
+        ),
     )
     ns.add_argument(
         "--force",
@@ -1219,7 +1265,15 @@ def build_parser() -> argparse.ArgumentParser:
     cp.add_argument(
         "--normalize-cache-dir",
         default=None,
-        help="default: NormalizeConfig.cache_dir (.normalize_cache, package-root-relative)",
+        help="lesson normalize cache (default: .normalize_cache, package-root-relative)",
+    )
+    cp.add_argument(
+        "--standards-cache-dir",
+        default=None,
+        help=(
+            "standards normalize cache "
+            "(default: .normalize_cache/standards, package-root-relative)"
+        ),
     )
     cp.add_argument(
         "--docling-cache-dir",

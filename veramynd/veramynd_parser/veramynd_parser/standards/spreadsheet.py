@@ -54,14 +54,16 @@ def parent_of(code: str) -> str | None:
     return code.rsplit(".", 1)[0] if code.count(".") >= 2 else None
 
 
-def grade_of(code: str) -> int | None:
-    """Grade prefix of a code, e.g. '1.F.PA.4' -> 1."""
+def grade_of(code: str) -> int:
+    """Grade prefix of a code, e.g. ``1.F.PA.4`` → 1, ``K.F.PA.1`` → 0 (K)."""
     head = code.split(".", 1)[0]
     if head.isdigit():
         return int(head)
+    if head.upper() == "K":
+        return 0
     raise UngradedCodeError(
         f"standard code {code!r}: leading segment {head!r} is not a single grade "
-        f"integer (a banded code like '6-8.RL.1' needs to be expanded to one row "
+        f"integer or K (a banded code like '6-8.RL.1' needs to be expanded to one row "
         f"per grade before parsing, not silently left ungraded)"
     )
 
@@ -133,6 +135,7 @@ def parse_standards(
         standards: list[Standard] = []
         grades_seen: set[int] = set()
         empty_text_rows: list[int] = []
+        seen_codes: dict[str, int] = {}
 
         for row_idx, row in enumerate(rows_iter, start=2):
             if not row or row[0] is None:
@@ -153,10 +156,16 @@ def parse_standards(
             if not text:
                 empty_text_rows.append(row_idx)
                 continue
+            prev = seen_codes.get(code)
+            if prev is not None:
+                raise SpreadsheetStructureError(
+                    f"{ws.title} row {row_idx}: duplicate standard code {code!r} "
+                    f"(also at row {prev})"
+                )
+            seen_codes[code] = row_idx
             label, body = _split_label(text)
             g = grade_of(code)
-            if g is not None:
-                grades_seen.add(g)
+            grades_seen.add(g)
             standards.append(
                 Standard(
                     code=code,
@@ -193,14 +202,11 @@ def parse_standards(
         )
 
     if empty_text_rows:
-        import warnings
-
         preview = empty_text_rows[:5]
         more = "" if len(empty_text_rows) <= 5 else f" (+{len(empty_text_rows) - 5} more)"
-        warnings.warn(
-            f"{path.name}: skipped {len(empty_text_rows)} row(s) with a code but "
-            f"empty standard text (rows {preview}{more})",
-            stacklevel=2,
+        raise SpreadsheetStructureError(
+            f"{path.name}: {len(empty_text_rows)} row(s) have a code but empty "
+            f"standard text (rows {preview}{more}) — fix or remove them before parsing"
         )
 
     grade = next(iter(grades_seen))
