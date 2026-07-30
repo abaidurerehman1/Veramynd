@@ -1,0 +1,24 @@
+%% Veramynd — Query Funnel Deep Dive
+%% Source for docs/diagrams/flow/03_query_funnel_deep.png
+flowchart TB
+  START["START: one lesson as QUERY<br/>lesson_chunk.text"]
+
+  subgraph ARMS["Hybrid arms"]
+    DENSE["DENSE<br/>embed query → veramynd_standards<br/>Cosine top ~50"]
+    BM25["BM25<br/>word match on embed_text<br/>top ~50"]
+  end
+
+  RRF["RRF fusion → top ~30<br/>recall over-include"]
+  RERANK["Cross-encoder rerank → top ~10<br/>bge-reranker-v2-m3"]
+  JUDGE["Judge each pair<br/>raw lesson + standard raw_text<br/>full / partial / none + quote"]
+  GROUND{"Quote grounded<br/>in lesson text?"}
+  REJECT["NO → force none<br/>keep quote for audit"]
+  SHIP["YES → ship verdict<br/>CSV / HTML report"]
+
+  START --> DENSE
+  START --> BM25
+  DENSE --> RRF
+  BM25 --> RRF
+  RRF --> RERANK --> JUDGE --> GROUND
+  GROUND -->|YES| SHIP
+  GROUND -->|NO| REJECT

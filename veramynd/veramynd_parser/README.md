@@ -245,6 +245,49 @@ Smoke check (lesson chunk → nearest standards):
 veramynd-parser smoke-retrieve-standards --chunk-file output/chunks/by_lesson/G1M2U2L1.json --family lesson
 ```
 
+### Hybrid retrieve + cross-encoder rerank
+
+```bash
+pip install -e '.[retrieve]'   # adds sentence-transformers for local bge-reranker
+veramynd-parser retrieve-standards \
+  --chunk-file output/chunks/by_lesson/G1M2U1L3.json \
+  --top-k 30 --rerank-k 10 \
+  --out output/retrieve/G1M2U1L3.json
+```
+
+Dense (Qdrant) + BM25 → RRF top 30, then `BAAI/bge-reranker-v2-m3` to top 10.
+Pass `--no-rerank` to inspect the hybrid list only.
+
+### Alignment judge + grounding
+
+```bash
+pip install -e '.[judge]'   # openai + dotenv (same as normalize)
+veramynd-parser judge-standards \
+  --retrieve-file output/retrieve/G1M2U1L3.json \
+  --lesson-file output/stage1/lessons/G1M2U1L3.json \
+  --standards-dir output/normalize_standards \
+  --out output/judge/G1M2U1L3.json
+```
+
+Default judge model: `gpt-4.1` (`JUDGE_MODEL`). Pass `--escalate` to re-judge
+`partial` / low-confidence pairs with `JUDGE_ESCALATE_MODEL` (default `gpt-5`).
+Evidence quotes are string-matched against raw lesson steps; ungrounded
+positive claims are rejected to `none`.
+
+### Alignment report (CSV)
+
+```bash
+veramynd-parser report-alignments \
+  --judge-file output/judge/G1M2U1L3.json \
+  --out output/reports/alignments.csv
+```
+
+Or export a whole folder: `--judge-dir output/judge`.  
+Use `--aligned-only` for full+partial rows only (still never drops rows for missing confidence).
+Also writes an HTML audit dashboard next to the CSV (disable with `--no-html`).
+
+**Note:** Gold-set eval harness is next (you fill `eval/gold_set.jsonl`); templates are under `eval/`.
+
 Library:
 
 ```python

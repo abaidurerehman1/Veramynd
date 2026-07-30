@@ -18,6 +18,9 @@ fresh GO report beside a stale ``lessons/`` tree.
 ``chunk-lessons`` builds production hierarchical chunks (lesson + instructional + evidence pointers).
 ``embed-chunks`` embeds lesson/instructional chunks with OpenAI text-embedding-3-large into Qdrant.
 ``embed-standards`` embeds normalized standard leaves into Qdrant collection veramynd_standards.
+``retrieve-standards`` hybrid dense+BM25+RRF (top 30) then cross-encoder rerank.
+``judge-standards`` alignment judge (full/partial/none) + evidence grounding.
+``report-alignments`` export judge verdicts to CSV (+ summary JSON).
 """
 
 from __future__ import annotations
@@ -40,6 +43,23 @@ from .embed.runner import (
     embed_standards_to_qdrant,
     query_standards_by_text,
 )
+from .judge.pipeline import (
+    DEFAULT_ESCALATE_MODEL,
+    DEFAULT_JUDGE_MODEL,
+    JudgeError,
+    JudgeIncompleteError,
+    judge_retrieve_file,
+    write_judge_report,
+)
+from .report.exporter import ReportError, export_alignment_report
+from .report.dashboard import write_html_dashboard
+from .retrieve.pipeline import (
+    DEFAULT_HYBRID_TOP_K,
+    RetrieveError,
+    retrieve_and_rerank,
+)
+from .retrieve.rerank import DEFAULT_RERANK_MODEL, DEFAULT_RERANK_TOP_N
+from .retrieve.io import lesson_query_from_chunk_bundle, lesson_query_from_normalize
 from .normalize.lesson import normalize_lesson, normalize_lessons_dir, repair_normalized_dir
 from .normalize.llm import LlmError
 from .normalize.models import dump_ela_record_json
@@ -698,16 +718,8 @@ def cmd_smoke_retrieve_standards(args: argparse.Namespace) -> int:
             if not blocks:
                 print(f"ERROR: no instructional_chunks in {path}", file=sys.stderr)
                 return 2
-            # Prefer a phonics-ish block when present; else first block.
+            # Document order — no phonics-biased selection.
             chosen = blocks[0]
-            for b in blocks:
-                text = (b.get("text") or "")
-                if any(
-                    k in text.lower()
-                    for k in ("phon", "syllable", "decode", "blend", "digraph")
-                ):
-                    chosen = b
-                    break
             query = (chosen.get("text") or "").strip()
             label = chosen.get("chunk_id") or path.name
         print(f"Query source: {label} ({args.family})", flush=True)
@@ -739,6 +751,227 @@ def cmd_smoke_retrieve_standards(args: argparse.Namespace) -> int:
             f"domain={h.get('domain_primary')!r}  label={h.get('label')!r}",
             flush=True,
         )
+    return 0
+
+
+def cmd_retrieve_standards(args: argparse.Namespace) -> int:
+    """Hybrid dense+BM25+RRF (top ~30) then cross-encoder rerank."""
+    query = (args.query or "").strip()
+    source_label = "query"
+    if args.chunk_file:
+        try:
+            query, source_label = lesson_query_from_chunk_bundle(
+                args.chunk_file, family=args.family
+            )
+        except (OSError, ValueError, json.JSONDecodeError) as e:
+            print(f"ERROR: {e}", file=sys.stderr)
+            return 2
+        print(f"Query source: {source_label} ({args.family})", flush=True)
+    elif args.normalize_file:
+        try:
+            query, source_label = lesson_query_from_normalize(args.normalize_file)
+        except (OSError, ValueError, json.JSONDecodeError) as e:
+            print(f"ERROR: {e}", file=sys.stderr)
+            return 2
+        print(f"Query source: {source_label} (normalize)", flush=True)
+    if not query:
+        print(
+            "ERROR: provide --query, --chunk-file, or --normalize-file",
+            file=sys.stderr,
+        )
+        return 2
+
+    standards_dir = Path(args.standards_dir)
+    if not standards_dir.is_dir():
+        print(f"ERROR: standards dir not found: {standards_dir}", file=sys.stderr)
+        return 2
+
+    try:
+        hits = retrieve_and_rerank(
+            query,
+            standards_dir,
+            top_k=args.top_k,
+            rerank_k=args.rerank_k,
+            skip_rerank=bool(args.no_rerank),
+            rerank_model=args.rerank_model,
+            model=args.model,
+            dimensions=args.dimensions,
+            collection=args.collection,
+            qdrant_url=args.qdrant_url,
+            qdrant_api_key=args.qdrant_api_key,
+            qdrant_path=args.qdrant_path,
+        )
+    except (RetrieveError, EmbedError, LlmError) as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        return 1
+    except (OSError, ValueError, RuntimeError) as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        return 1
+
+    stage = "hybrid-only" if args.no_rerank else "reranked"
+    print(f"Top {len(hits)} standards ({stage}):", flush=True)
+    for i, h in enumerate(hits, start=1):
+        rerank = (
+            f" rerank={h.rerank_score:.4f}" if h.rerank_score is not None else ""
+        )
+        print(
+            f"  {i}. {h.standard_code}  rrf={h.rrf_score:.5f}"
+            f"{rerank}  dense_rank={h.dense_rank} bm25_rank={h.bm25_rank}  "
+            f"domain={h.domain_primary!r}",
+            flush=True,
+        )
+
+    if args.out:
+        out = Path(args.out)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        payload = {
+            "schema_version": "1.0-retrieve-hybrid",
+            "query_source": source_label,
+            "top_k": args.top_k,
+            "rerank_k": args.rerank_k,
+            "skip_rerank": bool(args.no_rerank),
+            "rerank_model": None if args.no_rerank else (args.rerank_model or DEFAULT_RERANK_MODEL),
+            "candidates": [c.to_dict() for c in hits],
+        }
+        atomic_write_text(out, json.dumps(payload, indent=2) + "\n")
+        print(f"Wrote {out}", flush=True)
+    return 0
+
+
+def cmd_judge_standards(args: argparse.Namespace) -> int:
+    """Judge retrieve candidates against raw lesson text + grounding check."""
+    if not args.retrieve_file:
+        print("ERROR: --retrieve-file is required", file=sys.stderr)
+        return 2
+    if not args.lesson_file and not args.chunk_file:
+        print(
+            "ERROR: provide --lesson-file (Stage-1) or --chunk-file for raw lesson text",
+            file=sys.stderr,
+        )
+        return 2
+    standards_dir = Path(args.standards_dir)
+    if not standards_dir.is_dir():
+        print(f"ERROR: standards dir not found: {standards_dir}", file=sys.stderr)
+        return 2
+
+    out = Path(args.out) if args.out else None
+    if out is None:
+        rid = Path(args.retrieve_file).stem
+        out = Path("output/judge") / f"{rid}.json"
+
+    print(
+        f"Judging {args.retrieve_file} with model={args.model or DEFAULT_JUDGE_MODEL}"
+        f"{' + escalate' if args.escalate else ''}"
+        f" mode={'batch' if not args.no_batch else 'pair'}...",
+        flush=True,
+    )
+    try:
+        report = judge_retrieve_file(
+            retrieve_file=args.retrieve_file,
+            standards_dir=standards_dir,
+            lesson_file=args.lesson_file,
+            chunk_file=args.chunk_file,
+            model=args.model,
+            escalate_model=args.escalate_model,
+            escalate=bool(args.escalate),
+            max_tokens=args.max_tokens,
+            use_cache=not bool(args.no_cache),
+            limit=args.limit,
+            batch=not bool(args.no_batch),
+            batch_fallback_pair=not bool(args.no_batch_fallback),
+        )
+    except JudgeIncompleteError as e:
+        incomplete = Path(str(out) + ".incomplete.json")
+        write_judge_report(e.report, incomplete)
+        print(f"ERROR: {e}", file=sys.stderr)
+        print(f"Wrote incomplete debug report: {incomplete}", file=sys.stderr)
+        return 1
+    except (JudgeError, LlmError) as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        return 1
+    except (OSError, ValueError, RuntimeError) as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        return 1
+
+    write_judge_report(report, out)
+    by = report.get("by_status") or {}
+    print(
+        f"Judged {report.get('judged')}/{report.get('candidate_count')}  "
+        f"full={by.get('full', 0)} partial={by.get('partial', 0)} "
+        f"none={by.get('none', 0)}  grounding_rate={report.get('grounding_rate')}",
+        flush=True,
+    )
+    for v in report.get("verdicts") or []:
+        print(
+            f"  {v.get('standard_code')}: {v.get('matched_status')} "
+            f"conf={v.get('confidence')} grounded={v.get('grounded')} "
+            f"model={v.get('judge_model')}"
+            f"{' [escalated]' if v.get('escalated') else ''}",
+            flush=True,
+        )
+    if report.get("failed"):
+        print(f"Failed: {len(report['failed'])}", flush=True)
+        return 1
+    print(f"Wrote {out}", flush=True)
+    return 0
+
+
+def cmd_report_alignments(args: argparse.Namespace) -> int:
+    """Export one or more judge JSON reports to CSV (+ summary JSON)."""
+    paths: list[str] = []
+    if args.judge_file:
+        paths.extend(args.judge_file)
+    if args.judge_dir:
+        paths.append(args.judge_dir)
+    if not paths:
+        print(
+            "ERROR: provide --judge-file and/or --judge-dir",
+            file=sys.stderr,
+        )
+        return 2
+
+    out_csv = Path(args.out) if args.out else Path("output/reports/alignments.csv")
+    out_summary = Path(args.summary) if args.summary else None
+
+    try:
+        summary = export_alignment_report(
+            paths,
+            out_csv=out_csv,
+            out_summary=out_summary,
+            include_none=not bool(args.aligned_only),
+            grounded_only=bool(args.grounded_only),
+        )
+        html_path = None
+        if not args.no_html:
+            html_out = (
+                Path(args.html)
+                if args.html
+                else Path(out_csv).with_suffix(".html")
+            )
+            html_path = write_html_dashboard(
+                paths,
+                html_out,
+                include_none=not bool(args.aligned_only),
+            )
+            summary["html_path"] = str(html_path)
+    except ReportError as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        return 1
+    except (OSError, ValueError, RuntimeError) as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        return 1
+
+    by = summary.get("by_status_all_verdicts") or {}
+    print(
+        f"Report rows={summary.get('row_count')}  "
+        f"(all verdicts: full={by.get('full', 0)} "
+        f"partial={by.get('partial', 0)} none={by.get('none', 0)})",
+        flush=True,
+    )
+    print(f"Wrote {summary.get('csv_path')}", flush=True)
+    print(f"Wrote {summary.get('summary_path')}", flush=True)
+    if summary.get("html_path"):
+        print(f"Wrote {summary.get('html_path')}", flush=True)
     return 0
 
 
@@ -1228,6 +1461,215 @@ def build_parser() -> argparse.ArgumentParser:
     sm.add_argument("--qdrant-api-key", default=None, help="Qdrant API key")
     sm.add_argument("--qdrant-path", default=None, help="local Qdrant path")
     sm.set_defaults(func=cmd_smoke_retrieve_standards)
+
+    rs = sub.add_parser(
+        "retrieve-standards",
+        help=(
+            "hybrid retrieve standards: dense + BM25 → RRF top "
+            f"{DEFAULT_HYBRID_TOP_K}, then cross-encoder rerank top "
+            f"{DEFAULT_RERANK_TOP_N}"
+        ),
+    )
+    rs.add_argument(
+        "--chunk-file",
+        default=None,
+        help="by_lesson/*.json bundle (preferred query source)",
+    )
+    rs.add_argument(
+        "--normalize-file",
+        default=None,
+        help="NormalizedLesson JSON alternative query source",
+    )
+    rs.add_argument(
+        "--family",
+        choices=("lesson", "instructional"),
+        default="lesson",
+        help="chunk family when --chunk-file is set (default: lesson)",
+    )
+    rs.add_argument("--query", default=None, help="free-text query")
+    rs.add_argument(
+        "--standards-dir",
+        default="output/normalize_standards",
+        help="normalized standards dir for BM25 corpus (default: output/normalize_standards)",
+    )
+    rs.add_argument(
+        "--top-k",
+        type=int,
+        default=DEFAULT_HYBRID_TOP_K,
+        help=f"hybrid RRF cutoff (default: {DEFAULT_HYBRID_TOP_K})",
+    )
+    rs.add_argument(
+        "--rerank-k",
+        type=int,
+        default=DEFAULT_RERANK_TOP_N,
+        help=f"cross-encoder top-n after hybrid (default: {DEFAULT_RERANK_TOP_N})",
+    )
+    rs.add_argument(
+        "--no-rerank",
+        action="store_true",
+        help="skip cross-encoder; return full hybrid RRF top-k list",
+    )
+    rs.add_argument(
+        "--rerank-model",
+        default=None,
+        help=f"sentence-transformers CrossEncoder id (default: {DEFAULT_RERANK_MODEL})",
+    )
+    rs.add_argument(
+        "--out",
+        default=None,
+        help="optional JSON output path for candidates",
+    )
+    rs.add_argument(
+        "--model",
+        default=DEFAULT_EMBEDDING_MODEL,
+        help=f"OpenAI embedding model for dense arm (default: {DEFAULT_EMBEDDING_MODEL})",
+    )
+    rs.add_argument(
+        "--dimensions",
+        type=int,
+        default=DEFAULT_DIMENSIONS,
+        help=f"embedding dimensions (default: {DEFAULT_DIMENSIONS})",
+    )
+    rs.add_argument(
+        "--collection",
+        default=None,
+        help=(
+            f"Qdrant standards collection (default: {DEFAULT_STANDARDS_COLLECTION})"
+        ),
+    )
+    rs.add_argument("--qdrant-url", default=None, help="Qdrant server URL")
+    rs.add_argument("--qdrant-api-key", default=None, help="Qdrant API key")
+    rs.add_argument("--qdrant-path", default=None, help="local Qdrant path")
+    rs.set_defaults(func=cmd_retrieve_standards)
+
+    js = sub.add_parser(
+        "judge-standards",
+        help=(
+            "alignment judge: full/partial/none for retrieve candidates "
+            "using raw lesson text + evidence grounding"
+        ),
+    )
+    js.add_argument(
+        "--retrieve-file",
+        required=True,
+        help="retrieve JSON (e.g. output/retrieve/G1M2U1L3.json)",
+    )
+    js.add_argument(
+        "--lesson-file",
+        default=None,
+        help="Stage-1 lesson JSON (preferred raw text source)",
+    )
+    js.add_argument(
+        "--chunk-file",
+        default=None,
+        help="by_lesson chunk bundle alternative raw text source",
+    )
+    js.add_argument(
+        "--standards-dir",
+        default="output/normalize_standards",
+        help="normalized standards dir (default: output/normalize_standards)",
+    )
+    js.add_argument(
+        "--out",
+        default=None,
+        help="judge report JSON (default: output/judge/<retrieve-stem>.json)",
+    )
+    js.add_argument(
+        "--model",
+        default=None,
+        help=f"default judge model (default: env JUDGE_MODEL or {DEFAULT_JUDGE_MODEL})",
+    )
+    js.add_argument(
+        "--escalate",
+        action="store_true",
+        help="re-judge partial/low-confidence pairs with escalate model",
+    )
+    js.add_argument(
+        "--escalate-model",
+        default=None,
+        help=(
+            f"escalate model (default: env JUDGE_ESCALATE_MODEL or "
+            f"{DEFAULT_ESCALATE_MODEL})"
+        ),
+    )
+    js.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="judge only the first N candidates (smoke/debug)",
+    )
+    js.add_argument(
+        "--max-tokens",
+        type=int,
+        default=None,
+        help=(
+            "max output tokens per judge call "
+            "(default: 8192 batch / 2048 pair)"
+        ),
+    )
+    js.add_argument(
+        "--no-cache",
+        action="store_true",
+        help="skip content-addressed judge cache",
+    )
+    js.add_argument(
+        "--no-batch",
+        action="store_true",
+        help="one OpenAI call per candidate (slower/costlier; A/B quality)",
+    )
+    js.add_argument(
+        "--no-batch-fallback",
+        action="store_true",
+        help="do not fall back to per-pair judge if batch JSON is invalid",
+    )
+    js.set_defaults(func=cmd_judge_standards)
+
+    rp = sub.add_parser(
+        "report-alignments",
+        help="export judge verdicts to CSV (+ summary JSON)",
+    )
+    rp.add_argument(
+        "--judge-file",
+        action="append",
+        default=[],
+        help="judge JSON path (repeatable)",
+    )
+    rp.add_argument(
+        "--judge-dir",
+        default=None,
+        help="directory of judge JSON files (e.g. output/judge)",
+    )
+    rp.add_argument(
+        "--out",
+        default="output/reports/alignments.csv",
+        help="CSV output path (default: output/reports/alignments.csv)",
+    )
+    rp.add_argument(
+        "--summary",
+        default=None,
+        help="summary JSON path (default: <out>.summary.json)",
+    )
+    rp.add_argument(
+        "--aligned-only",
+        action="store_true",
+        help="exclude matched_status=none rows (full+partial only)",
+    )
+    rp.add_argument(
+        "--grounded-only",
+        action="store_true",
+        help="drop ungrounded positive claims (status != none and grounded=false)",
+    )
+    rp.add_argument(
+        "--html",
+        default=None,
+        help="HTML audit dashboard path (default: <out>.html)",
+    )
+    rp.add_argument(
+        "--no-html",
+        action="store_true",
+        help="skip HTML dashboard generation",
+    )
+    rp.set_defaults(func=cmd_report_alignments)
 
     r = sub.add_parser(
         "remap-pages",

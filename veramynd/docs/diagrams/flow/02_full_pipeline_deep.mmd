@@ -1,0 +1,76 @@
+%% Veramynd — Full Product Flow (Deep) — Implemented Pipeline
+%% Source for docs/diagrams/flow/02_full_pipeline_deep.png
+flowchart TB
+  subgraph INPUTS["INPUTS"]
+    PDF["Teacher Guide PDF"]
+    XLSX["Standards XLSX"]
+  end
+
+  subgraph S1["STAGE 1 — PARSE ✅"]
+    SEP["Separate lessons<br/>bookmarks → font-header fallback"]
+    DIV["Divide lesson<br/>agenda · steps · materials · vocab"]
+    STD["Parse standards tree"]
+    ENG["Docling primary · PyMuPDF fallback"]
+  end
+
+  VER{"Verifier:<br/>any hard FAIL?"}
+  BLOCK["YES → BLOCK<br/>Do not trust / withhold lessons"]
+
+  subgraph S23["STAGE 2–3 — NORMALIZE ✅"]
+    LN["Lesson normalize gpt-4.1-mini"]
+    SN["Standards normalize + raw_text kept"]
+    LANES["Normalized = retrieval<br/>Raw = judge + grounding"]
+  end
+
+  subgraph SCH["STAGE 3b — CHUNK ✅"]
+    LC["lesson_chunk query text"]
+    IC["instructional_chunks evidence"]
+    EP["evidence_pointers not embedded"]
+  end
+
+  subgraph EMB["STAGE 4 — EMBED + INDEX ✅"]
+    E1["text-embedding-3-large 3072-d"]
+    QS["Qdrant veramynd_standards"]
+    QC["Qdrant veramynd_chunks<br/>future lesson search"]
+    G0["Zero-vector guards · URL/PATH warn"]
+  end
+
+  subgraph RET["STAGE 5 — RETRIEVE ✅ Lesson → Standards"]
+    Q["Query = one lesson text"]
+    D["Dense → standards collection"]
+    B["BM25 → standard embed_text"]
+    RRF["RRF top ~30"]
+    RR["bge-reranker-v2-m3 top ~10"]
+  end
+
+  subgraph JUD["STAGE 6 — JUDGE ✅"]
+    J1["One standard per call"]
+    J2["gpt-4.1 · escalate gpt-5 optional"]
+    J3["full / partial / none + quote"]
+  end
+
+  subgraph GR["STAGE 7a — GROUNDING ✅"]
+    G1["Quote must exist in raw lesson"]
+    G2["Empty/fabricated → force none"]
+  end
+
+  subgraph REP["STAGE 7b — REPORT ✅"]
+    CSV["CSV + summary JSON"]
+    HTML["HTML audit dashboard"]
+  end
+
+  OUT["OUTPUT: trusted alignment artifacts"]
+
+  PDF --> SEP --> DIV --> VER
+  XLSX --> STD --> VER
+  ENG --> DIV
+  VER -->|GO| LN
+  VER -->|BLOCK| BLOCK
+  LN --> SN --> LANES --> LC --> IC --> EP
+  EP --> E1 --> QS
+  E1 --> QC
+  E1 --> G0
+  QS --> Q
+  Q --> D --> RRF
+  Q --> B --> RRF
+  RRF --> RR --> J1 --> J2 --> J3 --> G1 --> G2 --> CSV --> HTML --> OUT

@@ -41,10 +41,58 @@ _CHARS_PER_TOKEN = 3.5
 _MAX_BATCH_TOKENS = 80_000
 _MAX_BATCH_ITEMS = 64
 _NAMESPACE = uuid.UUID("6ba7b810-9dad-11d1-80b4-00c04fd430c8")  # URL namespace
+# Path-mode Qdrant allows only one open client per storage folder.
+_QDRANT_CLIENT_CACHE: dict[str, Any] = {}
 
 
 class EmbedError(RuntimeError):
     pass
+
+
+def _assert_nonzero_vectors(
+    vectors: list[list[float]],
+    *,
+    labels: list[str] | None = None,
+) -> None:
+    """Fail loud if any embedding is all zeros (breaks Cosine dense retrieval)."""
+    for i, vec in enumerate(vectors):
+        if not vec:
+            label = (labels[i] if labels and i < len(labels) else f"index {i}")
+            raise EmbedError(f"{label}: empty embedding vector")
+        if all(float(x) == 0.0 for x in vec):
+            label = (labels[i] if labels and i < len(labels) else f"index {i}")
+            raise EmbedError(
+                f"{label}: all-zero embedding vector "
+                f"(dim={len(vec)}); refusing to upsert — dense Cosine scores "
+                "would be 0.0. Re-run embed after fixing the embedding source."
+            )
+
+
+def _assert_qdrant_vectors_nonzero(
+    client: Any,
+    collection: str,
+    *,
+    sample: int = 5,
+) -> None:
+    """Post-upsert sanity check: sample stored vectors must be non-zero."""
+    points, _next = client.scroll(
+        collection_name=collection,
+        limit=max(1, sample),
+        with_vectors=True,
+        with_payload=False,
+    )
+    if not points:
+        raise EmbedError(f"collection {collection!r}: no points after upsert")
+    for p in points:
+        vec = p.vector
+        if isinstance(vec, dict):
+            vec = next(iter(vec.values()), None) if vec else None
+        if not vec or all(float(x) == 0.0 for x in vec):
+            raise EmbedError(
+                f"collection {collection!r}: stored vector is all zeros "
+                f"(point id={p.id}). Dense retrieval will score 0.0 — "
+                "check Qdrant storage / re-run with --recreate."
+            )
 
 
 def resolve_embedding_model(explicit: str | None = None) -> str:
@@ -65,12 +113,21 @@ def resolve_qdrant_settings(
     load_dotenv()
     resolved_url = (url or os.environ.get("QDRANT_URL") or "").strip() or None
     resolved_key = (api_key or os.environ.get("QDRANT_API_KEY") or "").strip() or None
-    raw_path = (path or os.environ.get("QDRANT_PATH") or DEFAULT_QDRANT_PATH).strip()
+    env_path = (os.environ.get("QDRANT_PATH") or "").strip()
+    raw_path = (path or env_path or DEFAULT_QDRANT_PATH).strip()
     resolved_path = str(resolve_package_relative(raw_path))
     resolved_collection = (
         (collection or os.environ.get("QDRANT_COLLECTION") or DEFAULT_COLLECTION).strip()
         or DEFAULT_COLLECTION
     )
+    # Fail loud on dual-backend ambiguity: URL always wins when set.
+    if resolved_url and (path or env_path):
+        print(
+            "WARNING: QDRANT_URL is set — using Docker/HTTP Qdrant and ignoring "
+            f"QDRANT_PATH ({resolved_path}). Unset QDRANT_URL to use local path "
+            "mode, or unset QDRANT_PATH to silence this warning.",
+            flush=True,
+        )
     return {
         "url": resolved_url,
         "api_key": resolved_key,
@@ -224,6 +281,7 @@ def openai_embed_texts(
 
 
 def _make_qdrant_client(*, url: str | None, api_key: str | None, path: str):
+    """Return a process-cached Qdrant client (path mode cannot open twice)."""
     try:
         from qdrant_client import QdrantClient
     except ImportError as e:
@@ -232,11 +290,26 @@ def _make_qdrant_client(*, url: str | None, api_key: str | None, path: str):
         ) from e
 
     if url:
-        return QdrantClient(url=url, api_key=api_key, prefer_grpc=False)
-    if path in {":memory:", "memory"}:
-        return QdrantClient(location=":memory:")
-    Path(path).mkdir(parents=True, exist_ok=True)
-    return QdrantClient(path=path)
+        cache_key = f"url:{url}|key:{api_key or ''}"
+    elif path in {":memory:", "memory"}:
+        cache_key = "memory"
+    else:
+        cache_key = f"path:{Path(path).resolve()}"
+
+    hit = _QDRANT_CLIENT_CACHE.get(cache_key)
+    if hit is not None:
+        return hit
+
+    if url:
+        client = QdrantClient(url=url, api_key=api_key, prefer_grpc=False)
+    elif path in {":memory:", "memory"}:
+        client = QdrantClient(location=":memory:")
+    else:
+        Path(path).mkdir(parents=True, exist_ok=True)
+        client = QdrantClient(path=path)
+
+    _QDRANT_CLIENT_CACHE[cache_key] = client
+    return client
 
 
 def ensure_collection(
@@ -405,6 +478,7 @@ def embed_chunks_to_qdrant(
         vectors = encode([c.text for c in batch])
         if len(vectors) != len(batch):
             raise EmbedError("batch embed returned wrong count")
+        _assert_nonzero_vectors(vectors, labels=[c.chunk_id for c in batch])
         all_vectors.extend(vectors)
 
     upserted = upsert_chunks(
@@ -434,6 +508,7 @@ def embed_chunks_to_qdrant(
             f"Qdrant collection count {count} > upserted {len(chunks)} — "
             "stale points remain from a prior corpus. Re-run with --recreate."
         )
+    _assert_qdrant_vectors_nonzero(client, collection_name)
 
     backend = "url" if settings["url"] else "local_path"
     manifest = {
@@ -603,6 +678,7 @@ def embed_standards_to_qdrant(
         vectors = encode([s.text for s in batch])
         if len(vectors) != len(batch):
             raise EmbedError("batch embed returned wrong count")
+        _assert_nonzero_vectors(vectors, labels=[s.standard_code for s in batch])
         all_vectors.extend(vectors)
 
     upserted = upsert_standards(
@@ -633,6 +709,7 @@ def embed_standards_to_qdrant(
             f"Qdrant collection count {count} > upserted {len(standards)} — "
             "stale points remain from a prior corpus. Re-run with --recreate."
         )
+    _assert_qdrant_vectors_nonzero(client, collection_name)
 
     backend = "url" if settings["url"] else "local_path"
     manifest = {
@@ -717,25 +794,41 @@ def query_standards_by_text(
     vectors = encode([text])
     if not vectors:
         raise EmbedError("embed returned no vector for query")
+    query_vec = vectors[0]
+    if not query_vec or all(float(x) == 0.0 for x in query_vec):
+        raise EmbedError(
+            "query embedding is all zeros — refusing dense search "
+            "(check OpenAI embed / model dimensions)"
+        )
 
     hits = client.query_points(
         collection_name=collection_name,
-        query=vectors[0],
+        query=query_vec,
         limit=limit,
         with_payload=True,
     ).points
     out: list[dict[str, Any]] = []
+    skipped_missing_code = 0
     for h in hits:
         payload = h.payload or {}
+        code = (payload.get("standard_code") or "").strip()
+        if not code:
+            skipped_missing_code += 1
+            continue
         out.append(
             {
-                "standard_code": payload.get("standard_code"),
+                "standard_code": code,
                 "score": float(h.score) if h.score is not None else None,
                 "domain_primary": payload.get("domain_primary"),
                 "label": payload.get("label"),
                 "level": payload.get("level"),
                 "grade": payload.get("grade"),
             }
+        )
+    if skipped_missing_code:
+        raise EmbedError(
+            f"Qdrant returned {skipped_missing_code} hit(s) without standard_code; "
+            "re-embed standards with --recreate"
         )
     return out
 
