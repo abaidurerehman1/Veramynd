@@ -1,0 +1,451 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U1L7",
+  "lesson_source": "stage1:G1M2U1L7",
+  "retrieve_file": "output\\retrieve\\G1M2U1L7.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 2,
+    "partial": 2,
+    "none": 6
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 4,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L7",
+      "standard_code": "1.T.C.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify who is speaking or telling the story at various points in a text.",
+          "met": false,
+          "note": "No evidence students identify the narrator or speaker at any point in the text."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on retelling events and reflecting on the author's purpose, but there is no activity where students identify the narrator or speaker at any point in the story.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02519288301054952,
+        "dense_rank": 27,
+        "bm25_rank": 13,
+        "dense_score": 0.5062121,
+        "bm25_score": 80.2606126620999,
+        "rerank_score": 0.9956457018852234
+      },
+      "standard_raw_text": "Identify who is speaking or telling the story at various points in a text. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L7",
+      "standard_code": "1.T.C.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify who is speaking at various points in a text.",
+          "met": false,
+          "note": "No evidence students investigate or identify the speaker or narrator."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students do not investigate the relationship between author and speaker or identify who is speaking in the text; the lesson centers on retelling and author purpose.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.025859192525859193,
+        "dense_rank": 14,
+        "bm25_rank": 21,
+        "dense_score": 0.52074796,
+        "bm25_score": 71.18159139889687,
+        "rerank_score": 0.9931747317314148
+      },
+      "standard_raw_text": "Investigate the relationships between authors and speakers in texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L7",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Explain concepts by interpreting texts.",
+          "met": true,
+          "note": "Students interpret the text to explain author’s purpose during Think-Pair-Share."
+        },
+        {
+          "clause": "Learn concepts by interpreting texts.",
+          "met": true,
+          "note": "Students identify nouns, verbs, and pronouns in the class song, and interpret Summer Sun Risin' to retell key events."
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
+          "met": true,
+          "note": "Students collaboratively generate a new line for the song using specified parts of speech and complete a culminating task response sheet."
+        }
+      ],
+      "evidence": "Tell students they are going to use the Think-Pair-Share protocol to address the other two questions. Remind them that they used this protocol in previous lessons, and review as necessary using the Think-Pair-Share Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.) Invite students to Think-Pair-Share with an elbow partner: 'Was it [the text] about the sun or the moon?' 'Why do you think the author wrote the book?' ... As time permits, sing the song one more time or generate a new line for the song in collaboration with students. Include a noun with matching verb and pronoun (Ex. My mom taught me to watch the sky and now we watch it day and night.)",
+      "evidence_page": null,
+      "confidence": "medium",
+      "rationale": "Students interpret texts to explain ideas (author’s purpose and content) and learn concepts (parts of speech). They also construct text by composing a new song line and recording responses, demonstrating understanding.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.027425373134328357,
+        "dense_rank": 7,
+        "bm25_rank": 20,
+        "dense_score": 0.53888136,
+        "bm25_score": 71.69682437721195,
+        "rerank_score": 0.9910579919815063
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L7",
+      "standard_code": "1.T.T.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the problem in a simple plot.",
+          "met": false,
+          "note": "No evidence students identify a problem in the story."
+        },
+        {
+          "clause": "Identify the solution in a simple plot.",
+          "met": false,
+          "note": "No evidence students identify a solution in the story."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on retelling events, not on identifying a problem and solution in the plot.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02736498731424429,
+        "dense_rank": 29,
+        "bm25_rank": 2,
+        "dense_score": 0.5049426,
+        "bm25_score": 115.44032719086081,
+        "rerank_score": 0.9898515939712524
+      },
+      "standard_raw_text": "Identify a simple plot with a problem and solution. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L7",
+      "standard_code": "1.T.T.1",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue.",
+          "met": true,
+          "note": "Students retell important events from the story, identifying major events."
+        },
+        {
+          "clause": "Identify a simple plot with a problem and solution.",
+          "met": false,
+          "note": "No task asks students to identify a problem and solution."
+        },
+        {
+          "clause": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
+          "met": false,
+          "note": "Students discuss what the boy does but do not describe traits or a central message."
+        },
+        {
+          "clause": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures.",
+          "met": false,
+          "note": "Only a single text is used; no comparison across texts/cultures."
+        },
+        {
+          "clause": "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure.",
+          "met": false,
+          "note": "Students do not create their own narratives."
+        }
+      ],
+      "evidence": "Remind students that over the past several lessons they have had a chance to think about events from the beginning, middle, and end of the story. Tell them that today they will focus on retelling the important events of what the boy and the sun do throughout the whole story.",
+      "evidence_page": 109,
+      "confidence": "high",
+      "rationale": "Students retell important events from the story, meeting identification of major events, but they do not analyze problem/solution, character traits and message, compare across texts, or create narratives.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.030886196246139225,
+        "dense_rank": 1,
+        "bm25_rank": 9,
+        "dense_score": 0.5809648,
+        "bm25_score": 84.33829874268278,
+        "rerank_score": 0.9896265268325806
+      },
+      "standard_raw_text": "Identify and use narrative techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L7",
+      "standard_code": "1.T.T.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "met": false,
+          "note": "Lesson is based on a narrative text, not expository."
+        },
+        {
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "met": false,
+          "note": "No explicit description of connections as required by expository standards."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "met": false,
+          "note": "No expository writing or analysis present."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson is focused on a narrative text and does not address expository techniques or tasks.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02297979797979798,
+        "dense_rank": 12,
+        "bm25_rank": 50,
+        "dense_score": 0.52904975,
+        "bm25_score": 55.95692726223981,
+        "rerank_score": 0.9894575476646423
+      },
+      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L7",
+      "standard_code": "1.T.T.1.a",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify characters used to craft a story.",
+          "met": false,
+          "note": "Students focus on retelling events; no explicit task to identify characters."
+        },
+        {
+          "clause": "Identify the setting used to craft a story.",
+          "met": false,
+          "note": "No activity directs students to identify time/place of the story."
+        },
+        {
+          "clause": "Identify major events used to craft a story.",
+          "met": true,
+          "note": "Students retell important events across the story."
+        },
+        {
+          "clause": "Identify dialogue used to craft a story.",
+          "met": false,
+          "note": "Dialogue is not addressed."
+        }
+      ],
+      "evidence": "Tell them that today they will focus on retelling the important events of what the boy and the sun do throughout the whole story.\nGuide students through the close read-aloud for Summer Sun Risin' using the Close Readaloud Guide: Summer Sun Risin' (Session 5; for teacher reference). Consider using the Reading Literature Checklist (see Assessment Overview and Resources).\nDuring Session 5, refer to the guide for the use of Summer Sun Risin', the Summer Sun Risin' anchor chart, and the Summer Sun Risin' Culminating Task response sheet.\nOffer students specific feedback on the close reading skills they used as they answered the focus question: What is the boy doing when the sun is rising, at its highest, and setting in the sky?",
+      "evidence_page": 109,
+      "confidence": "high",
+      "rationale": "The culminating task has students retell important events from the story, but there is no clear student task to identify characters, setting, or dialogue.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.03125,
+        "dense_rank": 4,
+        "bm25_rank": 4,
+        "dense_score": 0.5599817,
+        "bm25_score": 94.03145781085938,
+        "rerank_score": 0.988993227481842
+      },
+      "standard_raw_text": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L7",
+      "standard_code": "1.T.T.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Describe the connection between two individuals in a text.",
+          "met": false,
+          "note": "The lesson uses a literary text and focuses on retelling; it does not have students describe connections between individuals."
+        },
+        {
+          "clause": "Describe the connection between two events in a text.",
+          "met": false,
+          "note": "Students retell events in a literary text, but the standard targets informational text connections."
+        },
+        {
+          "clause": "Describe the connection between two ideas in a text.",
+          "met": false,
+          "note": "No task directs students to identify or explain connections between ideas."
+        },
+        {
+          "clause": "Describe the connection between two pieces of information in a text.",
+          "met": false,
+          "note": "No activity asks students to connect pieces of information in an informational text."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "This is an informational-text standard, but the lesson is a close read and retell of a literary text (Summer Sun Risin'). Students retell events and discuss author purpose without being asked to describe connections between individuals, events, ideas, or pieces of information in an informational text.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.022435897435897436,
+        "dense_rank": 44,
+        "bm25_rank": 18,
+        "dense_score": 0.48958787,
+        "bm25_score": 72.30936682654863,
+        "rerank_score": 0.9884584546089172
+      },
+      "standard_raw_text": "Describe the connection between two individuals, events, ideas, or pieces of information in a text. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L7",
+      "standard_code": "1.P.EICC.3",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Establish a purpose and set goals for reading",
+          "met": false,
+          "note": "Teacher states the learning target; students do not set reading purposes or goals themselves."
+        },
+        {
+          "clause": "Monitor comprehension and adjust strategies as needed",
+          "met": false,
+          "note": "No explicit student monitoring or adjustment of strategies is described."
+        },
+        {
+          "clause": "Scan and skim the text to note useful structures and sections",
+          "met": false,
+          "note": "No scanning/skimming tasks are assigned."
+        },
+        {
+          "clause": "Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps",
+          "met": false,
+          "note": "No activity directs students to use or reconcile prior knowledge with the text."
+        },
+        {
+          "clause": "Summarize and visualize sections of the text to maintain understanding",
+          "met": true,
+          "note": "Students retell important events across the text, which is summarizing."
+        },
+        {
+          "clause": "Make and track predictions about upcoming events and information",
+          "met": false,
+          "note": "No prediction tasks are included."
+        },
+        {
+          "clause": "Make, track, and support inferences about different levels of meaning",
+          "met": false,
+          "note": "Students are asked about author’s purpose, but there is no requirement to track or support inferences with evidence."
+        },
+        {
+          "clause": "Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts",
+          "met": false,
+          "note": "Language work focuses on parts of speech in a song, not determining meanings of unfamiliar words in the text."
+        }
+      ],
+      "evidence": "Explain that when we retell stories, we tell the important parts again to help us understand the story better and to remember the important parts. Remind students that over the past several lessons they have had a chance to think about events from the beginning, middle, and end of the story. Tell them that today they will focus on retelling the important events of what the boy and the sun do throughout the whole story. Guide students through the close read-aloud for Summer Sun Risin' using the Close Readaloud Guide: Summer Sun Risin' (Session 5; for teacher reference). During Session 5, refer to the guide for the use of Summer Sun Risin', the Summer Sun Risin' anchor chart, and the Summer Sun Risin' Culminating Task response sheet. Offer students specific feedback on the close reading skills they used as they answered the focus question: What is the boy doing when the sun is rising, at its highest, and setting in the sky?",
+      "evidence_page": 109,
+      "confidence": "low",
+      "rationale": "Students engage in a close read-aloud culminating task by retelling key events, demonstrating summarizing after reading. Other comprehension strategies from the standard (e.g., predictions, word meaning, scanning, self-set goals) are not evidenced. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.022005772005772008,
+        "dense_rank": 24,
+        "bm25_rank": 39,
+        "dense_score": 0.5087638,
+        "bm25_score": 61.1421400923564,
+        "rerank_score": 0.9878697991371155
+      },
+      "standard_raw_text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L7",
+      "standard_code": "1.P.EICC.3.d",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Summarize sections of the text to maintain understanding.",
+          "met": true,
+          "note": "Students retell important events from the story."
+        },
+        {
+          "clause": "Visualize sections of the text to maintain understanding.",
+          "met": true,
+          "note": "Students are guided to look closely at the pictures and describe what the boy does as the sun changes."
+        }
+      ],
+      "evidence": "Offer students specific feedback on the close reading skills they used as they answered the focus question: What is the boy doing when the sun is rising, at its highest, and setting in the sky? (Example: 'Everyone looked closely at the pictures in the text and listened to the text read aloud to notice and describe all the things the boy does as the sun is changing from sunrise to sunset.')",
+      "evidence_page": 109,
+      "confidence": "high",
+      "rationale": "Students both summarize (retell) and visualize (look closely at pictures and describe) sections of the text to maintain understanding.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.029030910609857977,
+        "dense_rank": 3,
+        "bm25_rank": 16,
+        "dense_score": 0.5609629,
+        "bm25_score": 75.23324473413793,
+        "rerank_score": 0.9876461625099182
+      },
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+    }
+  ]
+}

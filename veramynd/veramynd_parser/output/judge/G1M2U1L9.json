@@ -1,0 +1,446 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U1L9",
+  "lesson_source": "stage1:G1M2U1L9",
+  "retrieve_file": "output\\retrieve\\G1M2U1L9.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 0,
+    "partial": 3,
+    "none": 7
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 3,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Explain concepts by interpreting texts.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Learn concepts by interpreting texts.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "- Invite students to Think-Pair-Share with an elbow partner: 'What was the central message of this story? What do you think the author, Eric Carle, was trying to show and tell us about the moon?' (that the moon changes shape and gets bigger and smaller as time goes by)\n...\n- 'Use words and pictures to show what happened in the story.'\n- Tell students that they may begin writing their response in the Beginning box.\n- Repeat this process with the remaining two boxes, Middle and End.",
+      "evidence_page": 134,
+      "confidence": "low",
+      "rationale": "Students interpret the story to explain and learn its central message, and construct their own texts (words and pictures) to demonstrate understanding of the story's events and concepts. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.015384615384615385,
+        "dense_rank": 5,
+        "bm25_rank": null,
+        "dense_score": 0.5975787,
+        "bm25_score": null,
+        "rerank_score": 0.992176353931427
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.T.C.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify who is speaking or telling the story at various points in a text.",
+          "met": false,
+          "note": "No evidence students identify the narrator or speaker at any point."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "At no point are students asked to identify the narrator or who is telling the story; the focus is on events and message, not narration.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02405167674546454,
+        "dense_rank": 47,
+        "bm25_rank": 8,
+        "dense_score": 0.5258066,
+        "bm25_score": 151.8891351619379,
+        "rerank_score": 0.991438090801239
+      },
+      "standard_raw_text": "Identify who is speaking or telling the story at various points in a text. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.T.T.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "met": false,
+          "note": "Lesson is based on a narrative text, not expository."
+        },
+        {
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "met": false,
+          "note": "No explicit task to describe connections as required by expository standards."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "met": false,
+          "note": "No expository writing or technique use."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson is focused on a narrative text and does not address expository techniques or writing.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.023839931885908897,
+        "dense_rank": 27,
+        "bm25_rank": 21,
+        "dense_score": 0.55060774,
+        "bm25_score": 113.41177202453866,
+        "rerank_score": 0.9906991124153137
+      },
+      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.T.T.1",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Identify a simple plot with a problem and solution.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures.",
+          "met": false,
+          "note": "No comparison across cultures."
+        },
+        {
+          "clause": "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "- Remind students that the characters in Papa, Please Get the Moon for Me are Monica, Papa, and the moon.\n- Say each character name again and invite students to make a 'p' with their hands if the noun is proper, and a 'c' with their hand if the noun is common.\n...\n- Invite students to Think-Pair-Share with an elbow partner: 'What was the central message of this story? What do you think the author, Eric Carle, was trying to show and tell us about the moon?'\n...\n- 'Use words and pictures to show what happened in the story.'\n- Tell students that they may begin writing their response in the Beginning box.\n- Repeat this process with the remaining two boxes, Middle and End.",
+      "evidence_page": 134,
+      "confidence": "low",
+      "rationale": "Students identify characters, major events, and the central message, and create their own narrative retellings. The only clause not met is the cross-cultural comparison, but all other narrative technique clauses are fully addressed. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.03278688524590164,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.6280197,
+        "bm25_score": 251.08136977977233,
+        "rerank_score": 0.9904844760894775
+      },
+      "standard_raw_text": "Identify and use narrative techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.P.EICC.3.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Summarize sections of the text to maintain understanding.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Visualize sections of the text to maintain understanding.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "- 'Use words and pictures to show what happened in the story.'\n- Tell students that they may begin writing their response in the Beginning box.\n- Repeat this process with the remaining two boxes, Middle and End.",
+      "evidence_page": 134,
+      "confidence": "low",
+      "rationale": "Students summarize the beginning, middle, and end of the story and create visual representations (drawings) for each section. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.026916221033868093,
+        "dense_rank": 6,
+        "bm25_rank": 25,
+        "dense_score": 0.5974964,
+        "bm25_score": 110.65589949149242,
+        "rerank_score": 0.9903282523155212
+      },
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.T.C.1",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify the general purpose of a variety of texts.",
+          "met": false,
+          "note": "Students discuss author’s purpose for one text only, not a variety of texts."
+        },
+        {
+          "clause": "Identify the target audience of a variety of texts.",
+          "met": false,
+          "note": "No task asks students to identify a target audience."
+        },
+        {
+          "clause": "Identify different modes of communication: print, digital, auditory, and visual.",
+          "met": false,
+          "note": "Students are not asked to identify communication modes."
+        },
+        {
+          "clause": "Create texts in teacher-selected modes such as print, digital, auditory, and/or visual.",
+          "met": true,
+          "note": "Students create a written/drawn response (print/visual)."
+        }
+      ],
+      "evidence": "- Focus students on Part III and read the prompt aloud, allowing adequate think time:\n- 'Use words and pictures to show what happened in the story.'\n- Direct students' attention to the box labeled Beginning.\n- Invite students to whisper a response into their hands: 'What happened in the beginning of Papa, Please Get the Moon for Me?'\n- Tell students that they may begin writing their response in the Beginning box.\n- Repeat this process with the remaining two boxes, Middle and End.\n- Circulate to support students as they write.",
+      "evidence_page": 134,
+      "confidence": "high",
+      "rationale": "Students create a text using words and pictures, but they do not identify target audience or modes, nor do they identify purpose across multiple texts.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.014705882352941176,
+        "dense_rank": 8,
+        "bm25_rank": null,
+        "dense_score": 0.5834458,
+        "bm25_score": null,
+        "rerank_score": 0.9901600480079651
+      },
+      "standard_raw_text": "Explain how authors of texts use language for a specific purpose and a target audience."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.P.ST.1",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use prior knowledge, research, and discussions to identify key context components.",
+          "met": false,
+          "note": "Students retell events and discuss central message; they do not identify contextual components (e.g., location, culture, time period) or use research."
+        },
+        {
+          "clause": "Consider how context impacts the purposes of the author and the audience.",
+          "met": false,
+          "note": "Author purpose is discussed, but not in relation to contextual factors; no analysis of how context affects purpose or audience."
+        },
+        {
+          "clause": "Explore how context shapes the author's decisions and the audience's responses during text interpretation and construction.",
+          "met": false,
+          "note": "Activities focus on retelling, role-play, and a response sheet; no exploration of context shaping author choices or audience response, nor use of context in students’ own composition."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson centers on retelling events and identifying a central message in a single story. It does not have students identify or apply contextual components (location, culture, time period, etc.) when interpreting or creating texts.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02552166934189406,
+        "dense_rank": 29,
+        "bm25_rank": 10,
+        "dense_score": 0.5478563,
+        "bm25_score": 146.24243123630842,
+        "rerank_score": 0.989628791809082
+      },
+      "standard_raw_text": "Develop and apply knowledge of key components of context such as background information, geographic location, cultural influences, time period, and contemporary events when interpreting and constructing texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.P.ST.2.b",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Draw from knowledge of the author to understand texts.",
+          "met": true,
+          "note": "Students discuss what the author was trying to show/tell and why he wrote the book."
+        },
+        {
+          "clause": "Draw from knowledge of the audience to understand texts.",
+          "met": false,
+          "note": "No discussion or tasks about intended audience."
+        },
+        {
+          "clause": "Draw from knowledge of the context to understand texts.",
+          "met": false,
+          "note": "No analysis of historical/social/contextual factors for the text."
+        },
+        {
+          "clause": "Use this knowledge to discern a clear point of view or unique perspective when interpreting texts.",
+          "met": false,
+          "note": "Students identify central message/author purpose, but not point of view or unique perspective."
+        },
+        {
+          "clause": "Use this knowledge to establish a clear point of view or unique perspective when constructing texts.",
+          "met": false,
+          "note": "Writing task is a retell; students do not craft a text with a distinct perspective."
+        }
+      ],
+      "evidence": "Invite students to Think-Pair-Share with an elbow partner:\n- 'What was the central message of this story? What do you think the author, Eric Carle, was trying to show and tell us about the moon?'",
+      "evidence_page": 130,
+      "confidence": "high",
+      "rationale": "Students consider the author’s purpose to help interpret the text, but there is no work with audience or context, and no task to discern or establish a point of view or unique perspective, nor to construct texts.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02415181138585394,
+        "dense_rank": 34,
+        "bm25_rank": 14,
+        "dense_score": 0.54187393,
+        "bm25_score": 126.39668355492556,
+        "rerank_score": 0.989111602306366
+      },
+      "standard_raw_text": "Draw from knowledge of author, audience, and context to discern and establish a clear point of view or unique perspective when interpreting and constructing texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.P.ST.1.c",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Explore how context shapes the author's decisions when interpreting texts.",
+          "met": true,
+          "note": "Students discuss author’s purpose for writing the text during interpretation."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses when interpreting texts.",
+          "met": false,
+          "note": "Students identify central message but do not examine how audience context affects responses."
+        },
+        {
+          "clause": "Explore how context shapes the author's decisions when constructing texts.",
+          "met": false,
+          "note": "Students write retellings but do not explore how context shapes their authorial choices."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses when constructing texts.",
+          "met": false,
+          "note": "No task asks students to consider audience response during their own text construction."
+        }
+      ],
+      "evidence": "Direct students' attention to the third column and invite students to turn and talk with an elbow partner: 'Why do you think the author wrote the book?' (Responses will vary, but may include: to imagine what it would be like to play with the moon and/or to describe how the moon seems to get bigger and smaller.) If productive, cue students to expand the conversation by saying more: 'Can you say more about that?' (Responses will vary.) Circulate and listen in as students share with their partners. Cold call on two to three students to share out their ideas.",
+      "evidence_page": 135,
+      "confidence": "medium",
+      "rationale": "Students explicitly discuss why the author wrote the book while interpreting the text, but there is no exploration of how context shapes audience responses, nor any attention to context during students’ own text construction.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.024687641125997292,
+        "dense_rank": 31,
+        "bm25_rank": 13,
+        "dense_score": 0.5462548,
+        "bm25_score": 129.98678345018297,
+        "rerank_score": 0.9890199303627014
+      },
+      "standard_raw_text": "Explore how context shapes the author’s decisions and the audience’s responses during the interpretation and construction of texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.T.T.3",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft opinion texts, including the author's opinion and supporting reasons.",
+          "met": false,
+          "note": "No opinion text or techniques identified."
+        },
+        {
+          "clause": "Use knowledge of opinion techniques to create opinion pieces that introduce the topic, state an opinion about the topic, and provide two or more reasons to support the opinion with linking words such as 'and' and 'because'.",
+          "met": false,
+          "note": "No opinion writing or technique use."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "There is no opinion writing or identification of opinion techniques in this lesson.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.01962481962481963,
+        "dense_rank": 39,
+        "bm25_rank": 45,
+        "dense_score": 0.5353123,
+        "bm25_score": 92.2954115725058,
+        "rerank_score": 0.9886956214904785
+      },
+      "standard_raw_text": "Identify and use opinion techniques to shape understanding."
+    }
+  ]
+}

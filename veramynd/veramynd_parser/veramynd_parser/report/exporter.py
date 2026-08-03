@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -157,13 +158,26 @@ def build_rows(
 
 
 def write_csv(rows: list[dict[str, Any]], out: Path | str) -> Path:
+    """Write the CSV via temp-file-then-replace, so a crash or concurrent reader
+    can never observe a truncated/partial report (same pattern as
+    ``text_utils.atomic_write_text``, adapted for a binary/DictWriter target)."""
     path = Path(out)
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=CSV_COLUMNS, extrasaction="ignore")
-        writer.writeheader()
-        for row in rows:
-            writer.writerow(row)
+    tmp = path.with_suffix(f"{path.suffix}.{os.getpid()}.tmp")
+    try:
+        with tmp.open("w", encoding="utf-8", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=CSV_COLUMNS, extrasaction="ignore")
+            writer.writeheader()
+            for row in rows:
+                writer.writerow(row)
+        tmp.replace(path)
+        tmp = None  # type: ignore[assignment]
+    finally:
+        if tmp is not None and tmp.exists():
+            try:
+                tmp.unlink()
+            except OSError:
+                pass
     return path
 
 

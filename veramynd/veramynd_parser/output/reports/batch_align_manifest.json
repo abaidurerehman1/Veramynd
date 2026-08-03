@@ -1,0 +1,53 @@
+{
+  "lessons": [
+    "G1M2U1L1",
+    "G1M2U1L10",
+    "G1M2U1L11",
+    "G1M2U1L12",
+    "G1M2U1L13",
+    "G1M2U1L14",
+    "G1M2U1L15",
+    "G1M2U1L2",
+    "G1M2U1L3",
+    "G1M2U1L4",
+    "G1M2U1L5",
+    "G1M2U1L6",
+    "G1M2U1L7",
+    "G1M2U1L8",
+    "G1M2U1L9",
+    "G1M2U2L1",
+    "G1M2U2L10",
+    "G1M2U2L11",
+    "G1M2U2L12",
+    "G1M2U2L2",
+    "G1M2U2L3",
+    "G1M2U2L4",
+    "G1M2U2L5",
+    "G1M2U2L6",
+    "G1M2U2L7",
+    "G1M2U2L8",
+    "G1M2U2L9",
+    "G1M2U3L1",
+    "G1M2U3L10",
+    "G1M2U3L11",
+    "G1M2U3L12",
+    "G1M2U3L13",
+    "G1M2U3L2",
+    "G1M2U3L3",
+    "G1M2U3L4",
+    "G1M2U3L5",
+    "G1M2U3L6",
+    "G1M2U3L7",
+    "G1M2U3L8",
+    "G1M2U3L9"
+  ],
+  "failed": [
+    {
+      "resource_id": "G1M2U2L6",
+      "stage": "judge",
+      "error": "OpenAI API quota exhausted (insufficient_quota). Add credits or raise limits at https://platform.openai.com/account/billing \u2014 this error is not retryable."
+    }
+  ],
+  "elapsed_sec": 5809.1,
+  "ok_count": 39
+}

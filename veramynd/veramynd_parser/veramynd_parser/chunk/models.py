@@ -74,6 +74,8 @@ class LessonChunkBundle(BaseModel):
     lesson: int | None = None
     title: str = ""
     prompt_version: str = ""
+    # sha256(schema + stage1 JSON + normalize JSON) — incremental skip key
+    source_fingerprint: str = ""
     lesson_chunk: LessonChunk
     instructional_chunks: list[InstructionalChunk] = Field(default_factory=list)
     evidence_pointers: list[EvidencePointer] = Field(default_factory=list)

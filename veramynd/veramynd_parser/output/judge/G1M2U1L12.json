@@ -1,0 +1,426 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U1L12",
+  "lesson_source": "stage1:G1M2U1L12",
+  "retrieve_file": "output\\retrieve\\G1M2U1L12.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 2,
+    "partial": 2,
+    "none": 6
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 4,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L12",
+      "standard_code": "1.T.C.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify who is speaking or telling the story at various points in a text.",
+          "met": false,
+          "note": "Students identify characters, but do not identify the narrator or who is telling the story at various points."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on identifying characters and retelling events, but does not ask students to identify the narrator or who is telling the story at different points.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02285714285714286,
+        "dense_rank": 45,
+        "bm25_rank": 15,
+        "dense_score": 0.5054006,
+        "bm25_score": 143.454952398901,
+        "rerank_score": 0.9925553202629089
+      },
+      "standard_raw_text": "Identify who is speaking or telling the story at various points in a text. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L12",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Explain concepts by interpreting texts.",
+          "met": true,
+          "note": "Students explain causes and details from the story (e.g., why Sun and Moon went into the sky; details showing setting)."
+        },
+        {
+          "clause": "Learn concepts by interpreting texts.",
+          "met": true,
+          "note": "Students use textual and visual details to understand concepts like setting and cause/effect during discussion."
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
+          "met": true,
+          "note": "Students independently write about characters and setting on a response sheet to show understanding."
+        }
+      ],
+      "evidence": "- Tell students that now they are going to write what they know about the characters and setting of Why the Sun and the Moon Live in the Sky, just as they did in Lessons 8 and 10.\n- Distribute prepared clipboards with Why the Sun and the Moon Live in the Sky response sheets and pencils and follow the same routine established in Lessons 8 and 10 to complete Parts I and II.\n- Circulate to support students as they write.",
+      "evidence_page": 164,
+      "confidence": "high",
+      "rationale": "Students interpret a literary text to explain story elements and reasons during discussion, and they construct written responses about characters and setting. These activities meet interpreting-for-understanding and constructing-texts requirements of the standard.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02557544757033248,
+        "dense_rank": 8,
+        "bm25_rank": 32,
+        "dense_score": 0.56316996,
+        "bm25_score": 120.37713831822258,
+        "rerank_score": 0.9924860000610352
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L12",
+      "standard_code": "1.T.C.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify who is speaking at various points in a text.",
+          "met": false,
+          "note": "Students do not identify the narrator or speaker at different points in the text."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson does not include any activity where students identify the speaker or narrator at various points in the story.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.027425373134328357,
+        "dense_rank": 20,
+        "bm25_rank": 7,
+        "dense_score": 0.53958714,
+        "bm25_score": 153.91966437489728,
+        "rerank_score": 0.9912785887718201
+      },
+      "standard_raw_text": "Investigate the relationships between authors and speakers in texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L12",
+      "standard_code": "1.T.RA.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
+          "met": true,
+          "note": "Students cite specific illustration details to discuss the setting and answer questions about the text."
+        },
+        {
+          "clause": "Explore various sources of information, including print, digital, and personal communication.",
+          "met": false,
+          "note": "Lesson uses a single literary text; no exploration of multiple sources or cross-source connections."
+        }
+      ],
+      "evidence": "Invite students to turn and talk with an elbow partner:\n\"As you look carefully at the illustration, what details help you understand the setting?\" (huts or houses made of grass, a pathway, people in costumes, etc.)\nCold call a few students to share details of what they see.",
+      "evidence_page": 161,
+      "confidence": "low",
+      "rationale": "Students reference parts of the text (illustrations) to answer questions, but they do not explore multiple sources or make cross-source connections. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02127659574468085,
+        "dense_rank": 34,
+        "bm25_rank": 34,
+        "dense_score": 0.51637924,
+        "bm25_score": 118.37764193907621,
+        "rerank_score": 0.9912537932395935
+      },
+      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L12",
+      "standard_code": "1.P.EICC.3.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Summarize sections of the text to maintain understanding.",
+          "met": true,
+          "note": "Students recount what has happened so far in the story and explain key events."
+        },
+        {
+          "clause": "Visualize sections of the text to maintain understanding.",
+          "met": false,
+          "note": "Students examine provided illustrations and role-play with puppets, but do not generate their own visualizations or visual representations of the text."
+        }
+      ],
+      "evidence": "Draw students' attention back to the text and read aloud pages 14-19.\n- Ask:\n- 'What has Water done so far in the story? How is that affecting Sun and Moon?' (Water brought friends to the house and they are filling up the house, so Sun and Moon have no space.)",
+      "evidence_page": 161,
+      "confidence": "high",
+      "rationale": "The lesson has students summarize sections of the text through discussion, but it does not include student visualization or creation of visual representations to support understanding.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02728937728937729,
+        "dense_rank": 5,
+        "bm25_rank": 24,
+        "dense_score": 0.5806931,
+        "bm25_score": 130.23518036417647,
+        "rerank_score": 0.9907941222190857
+      },
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L12",
+      "standard_code": "1.T.T.1",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue.",
+          "met": true,
+          "note": "Students identify characters, setting, and major events using discussion and a Story Elements board."
+        },
+        {
+          "clause": "Identify a simple plot with a problem and solution.",
+          "met": true,
+          "note": "Students explain the problem (house overflowing) and resolution (Sun and Moon go to the sky)."
+        },
+        {
+          "clause": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
+          "met": false,
+          "note": "Some trait language appears in supports, but students are not asked to connect traits to a central message."
+        },
+        {
+          "clause": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures.",
+          "met": false,
+          "note": "Only a single story is used; no compare/contrast task across texts or cultures."
+        },
+        {
+          "clause": "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure.",
+          "met": false,
+          "note": "Students write responses about characters/setting, not create narratives with closure."
+        }
+      ],
+      "evidence": "- Pause at page 13 and ask:\n- 'Who are the characters?' (Sun, Moon, and Water)\n- Invite a student volunteer to come up and place the Story Elements Board Icons: Why the Sun and the Moon Live in the Sky for Sun, Moon, Water on the Story Elements board. Refer to Story Elements Board: Why the Sun and the Moon Live in the Sky (answers, for teacher reference) as necessary.\n- Invite students to turn and talk with an elbow partner:\n- 'As you look carefully at the illustration, what details help you understand the setting?' (huts or houses made of grass, a pathway, people in costumes, etc.)\n- Cold call a few students to share details of what they see.\n- Ask:\n- 'Based on these details, when and where is this story taking place?' (a long time ago in a village or small town on earth)\n- Cold call a few students to share out.\n- Invite a student volunteer to come up and place the Story Elements board icon for village on the board.\n- Direct students' attention to the Sun, Moon, and Stars Word Wall.\n- Briefly review the words: sun, moon, sky, and earth.\n- Draw students' attention back to the text and read aloud pages 14-19.\n- Ask:\n- 'What has Water done so far in the story? How is that affecting Sun and Moon?' (Water brought friends to the house and they are filling up the house, so Sun and Moon have no space.)\n- Draw students' attention back to the text and read the remainder of it. Invite students to move their bodies to pretend to be the Moon or the Sun going up in the sky as the read-aloud comes to a close.\n- Invite students to turn and talk with an elbow partner:\n- 'At the end of the story, why did Sun and Moon go up into the sky?' (because their house was overflowed with water and there was no room for them)\n- Cold call a few students to share out.",
+      "evidence_page": 161,
+      "confidence": "high",
+      "rationale": "Students identify characters, setting, major events, and articulate the problem and resolution of the story. They do not compare across texts/cultures, write their own narratives, or connect character traits to a central message.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.03252247488101534,
+        "dense_rank": 1,
+        "bm25_rank": 2,
+        "dense_score": 0.6165505,
+        "bm25_score": 245.99928084341593,
+        "rerank_score": 0.9906612038612366
+      },
+      "standard_raw_text": "Identify and use narrative techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L12",
+      "standard_code": "1.T.T.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "met": false,
+          "note": "Lesson is focused on narrative, not expository, text."
+        },
+        {
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "met": false,
+          "note": "No expository connections are described."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "met": false,
+          "note": "No expository writing or analysis is present."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson is entirely focused on a narrative story, not expository text or techniques.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.026356857985087564,
+        "dense_rank": 19,
+        "bm25_rank": 13,
+        "dense_score": 0.5409965,
+        "bm25_score": 145.5088038970705,
+        "rerank_score": 0.9905567169189453
+      },
+      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L12",
+      "standard_code": "1.T.T.1.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Compare characters in stories from diverse cultures with adult support.",
+          "met": false,
+          "note": "Only one story is discussed."
+        },
+        {
+          "clause": "Contrast characters in stories from diverse cultures with adult support.",
+          "met": false,
+          "note": "Only one story is discussed."
+        },
+        {
+          "clause": "Compare experiences of characters in stories from diverse cultures with adult support.",
+          "met": false,
+          "note": "Only one story is discussed."
+        },
+        {
+          "clause": "Contrast experiences of characters in stories from diverse cultures with adult support.",
+          "met": false,
+          "note": "Only one story is discussed."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "No comparison or contrast across stories or cultures occurs in this lesson.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.027252906976744186,
+        "dense_rank": 4,
+        "bm25_rank": 26,
+        "dense_score": 0.58810854,
+        "bm25_score": 125.94917083390868,
+        "rerank_score": 0.9903576970100403
+      },
+      "standard_raw_text": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L12",
+      "standard_code": "1.P.ST.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Explore how context shapes the author's decisions when interpreting texts.",
+          "met": false,
+          "note": "No exploration of authorial context."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses when interpreting texts.",
+          "met": false,
+          "note": "No explicit discussion of audience response or context."
+        },
+        {
+          "clause": "Explore how context shapes the author's decisions when constructing texts.",
+          "met": false,
+          "note": "No text construction or authorial decision-making is explored."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses when constructing texts.",
+          "met": false,
+          "note": "No construction of texts or audience response is discussed."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson does not address authorial context or audience response in interpretation or construction of texts.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.022893772893772896,
+        "dense_rank": 24,
+        "bm25_rank": 31,
+        "dense_score": 0.52623236,
+        "bm25_score": 121.00829093000713,
+        "rerank_score": 0.9902864694595337
+      },
+      "standard_raw_text": "Explore how context shapes the author’s decisions and the audience’s responses during the interpretation and construction of texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L12",
+      "standard_code": "1.T.T.1.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Describe traits of the main characters.",
+          "met": true,
+          "note": "Students describe character traits in writing and discussion."
+        },
+        {
+          "clause": "Explain how the characters' words support the central message, lesson, or moral.",
+          "met": true,
+          "note": "Students discuss and write about what characters say and how it relates to the story's lesson."
+        },
+        {
+          "clause": "Explain how the characters' actions support the central message, lesson, or moral.",
+          "met": true,
+          "note": "Students discuss and write about what characters do and how it relates to the story's lesson."
+        }
+      ],
+      "evidence": "Tell students that now they are going to write what they know about the characters and setting of Why the Sun and the Moon Live in the Sky, just as they did in Lessons 8 and 10.\n- Distribute prepared clipboards with Why the Sun and the Moon Live in the Sky response sheets and pencils and follow the same routine established in Lessons 8 and 10 to complete Parts I and II.\n- Circulate to support students as they write. Encourage them to use classroom resources (Story Elements board, Word Walls, high-frequency word lists, and alphabet or letter sound combination charts). If students need additional support generating ideas, invite them to work in a small group with support and refer to the Story Elements board from Work Time A.",
+      "evidence_page": 164,
+      "confidence": "high",
+      "rationale": "Students explicitly describe character traits and explain how words and actions relate to the story's message in both discussion and writing.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.03149801587301587,
+        "dense_rank": 3,
+        "bm25_rank": 4,
+        "dense_score": 0.6013668,
+        "bm25_score": 203.69397510479772,
+        "rerank_score": 0.9898228645324707
+      },
+      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)"
+    }
+  ]
+}

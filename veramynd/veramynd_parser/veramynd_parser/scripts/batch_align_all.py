@@ -26,7 +26,7 @@ from veramynd_parser.judge.pipeline import (
     judge_retrieve_file,
     write_judge_report,
 )
-from veramynd_parser.normalize.llm import LlmError
+from veramynd_parser.normalize.llm import LlmError, is_non_retryable_openai_error
 from veramynd_parser.report.dashboard import write_html_dashboard
 from veramynd_parser.report.exporter import export_alignment_report
 from veramynd_parser.retrieve.io import lesson_query_from_chunk_bundle
@@ -50,7 +50,21 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--skip-judge", action="store_true")
     p.add_argument("--skip-report", action="store_true")
     p.add_argument("--no-rerank", action="store_true")
-    p.add_argument("--escalate", action="store_true")
+    p.add_argument(
+        "--escalate",
+        action="store_true",
+        help="deprecated: escalate is ON by default",
+    )
+    p.add_argument(
+        "--no-escalate",
+        action="store_true",
+        help="disable enterprise escalate cascade (cheaper smoke runs)",
+    )
+    p.add_argument(
+        "--force",
+        action="store_true",
+        help="maintenance: force retrieve + judge (and bypass judge LLM cache)",
+    )
     p.add_argument(
         "--force-retrieve",
         action="store_true",
@@ -59,7 +73,12 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument(
         "--force-judge",
         action="store_true",
-        help="re-run judge even if output JSON already exists",
+        help="re-run judge even if output JSON already exists (also bypasses judge cache)",
+    )
+    p.add_argument(
+        "--no-cache",
+        action="store_true",
+        help="disable judge LLM cache reads/writes",
     )
     p.add_argument(
         "--no-batch",
@@ -69,6 +88,11 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--limit-lessons", type=int, default=None)
     p.add_argument("--only", action="append", default=[], help="limit to resource id(s)")
     args = p.parse_args(argv)
+
+    if args.force:
+        args.force_retrieve = True
+        args.force_judge = True
+        args.no_cache = True
 
     lessons_dir = Path(args.lessons_dir)
     chunks_dir = Path(args.chunks_dir)
@@ -147,8 +171,11 @@ def main(argv: list[str] | None = None) -> int:
                     retrieve_file=retrieve_file,
                     standards_dir=standards_dir,
                     lesson_file=lesson_file,
-                    escalate=bool(args.escalate),
+                    escalate=not bool(args.no_escalate),
                     batch=not bool(args.no_batch),
+                    use_cache=not (
+                        bool(args.no_cache) or bool(args.force_judge) or bool(args.force)
+                    ),
                 )
                 write_judge_report(report, out)
                 by = report.get("by_status") or {}
@@ -165,9 +192,17 @@ def main(argv: list[str] | None = None) -> int:
             except (JudgeError, LlmError, OSError, ValueError, RuntimeError) as e:
                 failed.append({"resource_id": rid, "stage": "judge", "error": str(e)})
                 print(f"  ERROR judge {rid}: {e}", flush=True)
+                if is_non_retryable_openai_error(e):
+                    remaining = len(ids) - i
+                    print(
+                        "ABORT: non-retryable OpenAI error "
+                        f"(billing/quota) — skipping {remaining} remaining lesson(s).",
+                        flush=True,
+                    )
+                    break
 
     if not args.skip_report:
-        judge_files = sorted(judge_dir.glob("G*.json"))
+        judge_files = sorted(judge_dir.glob("*.json"))
         judge_files = [f for f in judge_files if not f.name.endswith(".incomplete.json")]
         if not judge_files:
             print("WARN: no judge JSON files — skipping report", flush=True)

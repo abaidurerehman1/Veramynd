@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import pytest
+
 from veramynd_parser.models import InstructionalBlock, Lesson
 from veramynd_parser.normalize.models import (
     DomainBlock,
@@ -151,7 +153,7 @@ def test_sanitize_fixes_pacing_codes_and_bad_quote():
                 ),
                 EvidenceItem(
                     quote="Students discuss using SL.1.1a and SL.1.1b protocols.",
-                    location="Closing",
+                    location="Work Time A",
                     actor="student",
                     evidence_role="directive_prompt",
                     support="with_prompting",
@@ -276,7 +278,7 @@ def test_sanitize_clears_readiness_supports_action():
             "evidence": [
                 EvidenceItem(
                     quote="Invite students to show a thumbs-up if they are ready to begin writing.",
-                    location="Closing",
+                    location="Work Time A",
                     actor="student",
                     evidence_role="directive_prompt",
                     support="with_prompting",
@@ -448,6 +450,24 @@ def test_location_with_comma_rest_does_not_insert_space_before_punctuation():
     fixed, warnings = canonicalize_evidence_locations(norm_evidence, lesson)
     assert fixed[0].location == "Work Time A, page 5"
     assert not any(" , " in w for w in warnings)
+
+
+def test_canonicalize_rejects_unjoinable_location():
+    from veramynd_parser.normalize.sanitize import canonicalize_evidence_locations
+
+    lesson = _lesson_with_steps()
+    bad = [
+        EvidenceItem(
+            quote="'What does the sun look like?'",
+            location="Made Up Section Z",
+            actor="student",
+            evidence_role="elicitation_check",
+            support="with_prompting",
+            supports_action=["oral_production"],
+        )
+    ]
+    with pytest.raises(ValueError, match="does not join"):
+        canonicalize_evidence_locations(bad, lesson)
 
 
 def test_sanitize_ignores_next_lesson_write_mentions():

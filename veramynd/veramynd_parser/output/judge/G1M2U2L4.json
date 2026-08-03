@@ -1,0 +1,486 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U2L4",
+  "lesson_source": "stage1:G1M2U2L4",
+  "retrieve_file": "output\\retrieve\\G1M2U2L4.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 2,
+    "partial": 6,
+    "none": 2
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 8,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L4",
+      "standard_code": "1.T.T.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "met": true,
+          "note": "Students discuss how illustrations and text each contribute information, distinguishing sources of information in an informational text."
+        },
+        {
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "met": false,
+          "note": "Students discuss day/night and model earth’s movement, but there is no explicit task to describe connections between ideas or pieces of information within the text."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "met": false,
+          "note": "Writing is brief descriptive notebook entries using adjectives; students do not produce an explanatory piece with introduction, facts, and closure."
+        }
+      ],
+      "evidence": "Invite students to turn and talk to an elbow partner: 'What do we notice about how the illustrations and the text in the book help us to understand the pattern of light and dark on earth'?",
+      "evidence_page": 245,
+      "confidence": "medium",
+      "rationale": "Students identify how illustrations and text convey information in an informational text, but they do not describe connections between ideas within the text or write an explanatory piece with introduction, facts, and closure.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.025362318840579712,
+        "dense_rank": 9,
+        "bm25_rank": 32,
+        "dense_score": 0.5681991,
+        "bm25_score": 93.11034739600737,
+        "rerank_score": 0.9912443161010742
+      },
+      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L4",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Explain concepts by interpreting texts.",
+          "met": true,
+          "note": "Students discuss and explain concepts from the text."
+        },
+        {
+          "clause": "Learn concepts by interpreting texts.",
+          "met": true,
+          "note": "Students learn about day and night by interpreting the text and illustrations."
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
+          "met": true,
+          "note": "Students write and draw in their Sky notebooks to show understanding."
+        }
+      ],
+      "evidence": "Tell students that today they will answer these two questions using pictures and words to show their thinking. Remind students to use the Adjectives anchor chart to describe what the sun and the moon look like. Remind students to use a complete sentence when answering the question. Invite students to show a thumbs-up or touch their head if they are ready to begin writing and drawing about the sun and moon.",
+      "evidence_page": 249,
+      "confidence": "high",
+      "rationale": "Students interpret texts to learn and explain concepts, and construct their own written and visual responses to demonstrate understanding.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02637768817204301,
+        "dense_rank": 4,
+        "bm25_rank": 33,
+        "dense_score": 0.5763353,
+        "bm25_score": 92.98976319823723,
+        "rerank_score": 0.9900064468383789
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L4",
+      "standard_code": "1.T.RA.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
+          "met": false,
+          "note": "Students discuss illustrations vs. text and re-create illustrations, but they are not explicitly directed to cite or reference specific parts of the text to support an answer."
+        },
+        {
+          "clause": "Explore various sources of information, including print, digital, and personal communication.",
+          "met": true,
+          "note": "Students use a print text (book pages/illustrations), conduct a hands-on experiment, and discuss with partners to connect their understanding of day and night."
+        }
+      ],
+      "evidence": "- Display pages 22-23 of What Makes Day and Night. Say:\n- 'Today you will work in pairs to re-create the illustrations on pages 22 and 23.'\n- Move students into pre-determined pairs and point to the first illustration on page 22. Read the text beneath the illustration aloud.\n- 'Stand so that your left side is toward the lamp. Hold your arms out all the way. Your left hand points toward the lamp. This is sunrise.'\n- Distribute fl ashlights. Tell students that one partner will model being the earth and the other partner will model being the sun by holding a flashlight.\n- Invite students to re-create the first illustration on page 22.\n- Point to the second illustration on page 22. Read the text beneath the illustration aloud.\n- Invite students to re-create the second illustration on page 22.\n- Point to the first illustration on page 23. Read the text beneath the illustration aloud.\n- Invite students to re-create the first illustration on page 23.\n- Point to the second illustration on page 23. Read the text beneath the illustration aloud.\n- Invite students to re-create the second illustration on page 23.\n- Tell students that they will now talk with a partner using the Pinky Partners protocol to discuss what they noticed about how the earth moves from daylight to darkness. Remind students that they used this protocol in Module 1 and review as necessary, using the Pinky Partners Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Guide students through the protocol.\n- As students talk, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group. Document progress toward SL.1.1 using the Speaking and Listening Checklist.\n- Remind students to make a bridge with their arms after both partners have shared.\n- Gather students back together and invite a few students to share out.\n- Tell students that they will use this activity again in the next lesson.\n- If productive, cue students to think about their thinking:\n- 'How does our experiment add to your understanding of what makes day and night? I'll give you time to think and discuss with a partner.' (Responses will vary.)",
+      "evidence_page": 246,
+      "confidence": "medium",
+      "rationale": "Students explore multiple sources (book pages/illustrations, a hands-on experiment, and peer discussion) and connect them, but they are not explicitly required to reference specific parts of the text to support an answer.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02204457364341085,
+        "dense_rank": 26,
+        "bm25_rank": 36,
+        "dense_score": 0.5377301,
+        "bm25_score": 91.33416326658059,
+        "rerank_score": 0.9887154698371887
+      },
+      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L4",
+      "standard_code": "1.P.EICC.2.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Interpret texts to analyze ideas.",
+          "met": true,
+          "note": "Students discuss how the book’s illustrations and text help them understand the pattern of light and dark."
+        },
+        {
+          "clause": "Construct texts to evaluate ideas.",
+          "met": false,
+          "note": "Students write/draw observations (Sky notebook) and supply adjectives, but do not construct texts to evaluate ideas."
+        }
+      ],
+      "evidence": "- Invite students to turn and talk to an elbow partner:\n- 'What do we notice about how the illustrations and the text in the book help us to understand the pattern of light and dark on earth'?",
+      "evidence_page": 245,
+      "confidence": "high",
+      "rationale": "Students interpret an informational text through partner discussion to analyze the concept of day and night. However, their writing tasks focus on describing observations, not constructing texts to evaluate ideas.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.025124843945068663,
+        "dense_rank": 12,
+        "bm25_rank": 29,
+        "dense_score": 0.55638564,
+        "bm25_score": 93.71903770995256,
+        "rerank_score": 0.9863477945327759
+      },
+      "standard_raw_text": "Interpret and construct texts to aid the analysis and evaluation of texts and ideas. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L4",
+      "standard_code": "1.P.ST.1",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use prior knowledge, research, and discussions to identify key context components.",
+          "met": false,
+          "note": "Students discuss scientific content (day/night) but do not identify text-context components like background info, location, culture, time, or events."
+        },
+        {
+          "clause": "Consider how context impacts the purposes of the author and the audience.",
+          "met": false,
+          "note": "No tasks address author’s purpose, audience, or how context affects them."
+        },
+        {
+          "clause": "Explore how context shapes the author's decisions and the audience's responses during text interpretation and construction.",
+          "met": false,
+          "note": "Students do not analyze how contextual factors shape author choices or audience response; writing is descriptive of photos only."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Activities center on understanding scientific content and writing descriptive observations with adjectives. The lesson does not have students identify or apply contextual elements (e.g., background information, geographic location, cultural influences, time period, contemporary events) in interpreting or creating texts.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.020210268449525365,
+        "dense_rank": 41,
+        "bm25_rank": 37,
+        "dense_score": 0.51984715,
+        "bm25_score": 91.14154187703973,
+        "rerank_score": 0.9863173365592957
+      },
+      "standard_raw_text": "Develop and apply knowledge of key components of context such as background information, geographic location, cultural influences, time period, and contemporary events when interpreting and constructing texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L4",
+      "standard_code": "1.P.EICC.3.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Summarize sections of the text to maintain understanding.",
+          "met": false,
+          "note": "Students discuss and model concepts but are not asked to summarize parts of the text."
+        },
+        {
+          "clause": "Visualize sections of the text to maintain understanding.",
+          "met": true,
+          "note": "Students re-create book illustrations and model described positions based on the text."
+        }
+      ],
+      "evidence": "Display pages 22-23 of What Makes Day and Night. Say:\n'Today you will work in pairs to re-create the illustrations on pages 22 and 23.'\nMove students into pre-determined pairs and point to the first illustration on page 22. Read the text beneath the illustration aloud.\n'Stand so that your left side is toward the lamp. Hold your arms out all the way. Your left hand points toward the lamp. This is sunrise.'\nDistribute fl ashlights. Tell students that one partner will model being the earth and the other partner will model being the sun by holding a flashlight.\nInvite students to re-create the first illustration on page 22.",
+      "evidence_page": 246,
+      "confidence": "medium",
+      "rationale": "The lesson has students visualize content by re-creating illustrations/text directions, but it does not include any task where students summarize sections of the text.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.027637721755368813,
+        "dense_rank": 3,
+        "bm25_rank": 25,
+        "dense_score": 0.57695687,
+        "bm25_score": 95.19993399267284,
+        "rerank_score": 0.9862298965454102
+      },
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L4",
+      "standard_code": "1.P.EICC.2.b",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Use texts to build knowledge.",
+          "met": true,
+          "note": "Students use the text to learn about day and night."
+        },
+        {
+          "clause": "Use texts to develop skills.",
+          "met": true,
+          "note": "Students develop descriptive writing and observation skills."
+        },
+        {
+          "clause": "Use texts to make informed decisions.",
+          "met": true,
+          "note": "Students use information from the text to inform their science activity and writing."
+        },
+        {
+          "clause": "Use texts to share information and ideas.",
+          "met": true,
+          "note": "Students share ideas in discussion and through their Sky notebooks."
+        }
+      ],
+      "evidence": "Invite students to turn and talk to an elbow partner: 'What do we notice about how the illustrations and the text in the book help us to understand the pattern of light and dark on earth'? ... Tell students that today they will answer these two questions using pictures and words to show their thinking.",
+      "evidence_page": 245,
+      "confidence": "high",
+      "rationale": "Students use the text to build knowledge, develop skills, make decisions, and share information through discussion and writing.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02285714285714286,
+        "dense_rank": 15,
+        "bm25_rank": 45,
+        "dense_score": 0.5529543,
+        "bm25_score": 85.26645520137902,
+        "rerank_score": 0.9852573275566101
+      },
+      "standard_raw_text": "Make use of texts to build knowledge, develop skills, make informed decisions, and share information and ideas. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L4",
+      "standard_code": "1.P.EICC.3",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Establish a purpose and set goals for reading",
+          "met": true,
+          "note": "Students discuss the learning target and focus question, setting a clear purpose for the read-aloud."
+        },
+        {
+          "clause": "Monitor comprehension and adjust strategies as needed",
+          "met": false,
+          "note": "No explicit student monitoring or adjustment of strategies is described."
+        },
+        {
+          "clause": "Scan and skim the text to note useful structures and sections",
+          "met": false,
+          "note": "No scanning or skimming tasks are included."
+        },
+        {
+          "clause": "Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps",
+          "met": false,
+          "note": "Students discuss concepts and do an experiment, but there is no explicit integration of prior knowledge with the text itself."
+        },
+        {
+          "clause": "Summarize and visualize sections of the text to maintain understanding",
+          "met": false,
+          "note": "No summarizing or visualizing of text sections is directed."
+        },
+        {
+          "clause": "Make and track predictions about upcoming events and information",
+          "met": false,
+          "note": "No prediction tasks are present."
+        },
+        {
+          "clause": "Make, track, and support inferences about different levels of meaning",
+          "met": false,
+          "note": "No inference-making activity is specified."
+        },
+        {
+          "clause": "Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts",
+          "met": false,
+          "note": "Vocabulary (rotate) is defined by the teacher; students do not determine meanings using context or word parts."
+        }
+      ],
+      "evidence": "- Direct their attention to the posted learning targets and read the first one aloud:\n- 'I can distinguish what I learn from the illustrations and what I learn from the text in the book What Makes Day and Night to describe the pattern of light and dark on earth.'\n- Invite students to turn and talk to an elbow partner:\n- 'What do we notice about how the illustrations and the text in the book help us to understand the pattern of light and dark on earth'?",
+      "evidence_page": 245,
+      "confidence": "high",
+      "rationale": "Students set a clear purpose for the read-aloud and discuss how illustrations and text contribute to understanding. Other listed comprehension strategies (monitoring, predicting, summarizing, inferring, determining word meanings) are not explicitly practiced.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.027650648360030512,
+        "dense_rank": 16,
+        "bm25_rank": 9,
+        "dense_score": 0.5492805,
+        "bm25_score": 111.4685468814549,
+        "rerank_score": 0.984332799911499
+      },
+      "standard_raw_text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L4",
+      "standard_code": "1.P.AC.3",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Explore and create texts in various modes and genres, developing and applying knowledge of how specific features impact meaning, tone, style, purpose, and audience.",
+          "met": false,
+          "note": "Students read a poem and an informational text and write brief observations, but they do not analyze or apply text features for audience/purpose nor create texts across modes/genres."
+        },
+        {
+          "clause": "Apply knowledge of how mode and genre impact what kinds of ideas and information are included in texts.",
+          "met": false,
+          "note": "No task asks students to compare or reflect on how genre or mode affects the inclusion of ideas or information."
+        },
+        {
+          "clause": "Apply knowledge of how mode and genre impact how ideas and information are structured and arranged in texts.",
+          "met": false,
+          "note": "Students do not examine or apply structure/arrangement choices related to mode or genre."
+        },
+        {
+          "clause": "Consume and produce multimodal texts, integrating a variety of genres, text features, and craft techniques to influence target audiences and achieve specific purposes.",
+          "met": false,
+          "note": "While students consume texts with images and words, they do not produce multimodal texts or design with a target audience and purpose in mind."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Activities center on content comprehension, vocabulary, and simple descriptive notebook writing. Students are not asked to consider text design for audience/purpose nor to produce multimodal texts across modes/genres.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02964254577157803,
+        "dense_rank": 2,
+        "bm25_rank": 14,
+        "dense_score": 0.5863226,
+        "bm25_score": 106.07864416512919,
+        "rerank_score": 0.9811201691627502
+      },
+      "standard_raw_text": "Consider the impact of text design on audience and purpose when consuming and producing texts across modes and genres."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L4",
+      "standard_code": "1.P.EICC.1",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Generate, understand, monitor, and revise personal and academic reading and writing goals.",
+          "met": false,
+          "note": "No student goal-setting, monitoring, or revising occurs."
+        },
+        {
+          "clause": "Discuss or write about personal and academic reading and writing preferences with reference to specific techniques, topics, modes, and genres.",
+          "met": false,
+          "note": "Students do not discuss their preferences as readers or writers."
+        },
+        {
+          "clause": "Select texts of personal interest and academic relevance.",
+          "met": false,
+          "note": "All texts/activities are teacher-assigned; no student selection."
+        },
+        {
+          "clause": "Read texts of personal interest and academic relevance.",
+          "met": true,
+          "note": "Students engage in shared/choral reading and a close read-aloud of an informational text."
+        },
+        {
+          "clause": "Write texts of personal interest and academic relevance.",
+          "met": true,
+          "note": "Students write observational descriptions in their Sky notebooks (academic relevance)."
+        },
+        {
+          "clause": "Build and draw from a repertoire of comprehension skills, strategies, and techniques to interpret texts.",
+          "met": true,
+          "note": "Students distinguish information from illustrations versus text during the close read-aloud."
+        },
+        {
+          "clause": "Build and draw from a repertoire of composition skills, strategies, and techniques to construct texts.",
+          "met": true,
+          "note": "Students use adjectives and classroom tools (Word Walls, anchor charts) to support writing."
+        },
+        {
+          "clause": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing writing, listening to others, and offering and responding to feedback.",
+          "met": true,
+          "note": "Students use Think-Pair-Share and turn-and-talk to discuss texts and listen to partners."
+        },
+        {
+          "clause": "Develop independence and autonomy as a reader and writer.",
+          "met": true,
+          "note": "Students independently write and draw in their Sky notebooks using available resources."
+        }
+      ],
+      "evidence": "Tell students that today they will answer these two questions using pictures and words to show their thinking. Remind students to use the Adjectives anchor chart to describe what the sun and the moon look like. Remind students to use a complete sentence when answering the question.\nInvite students to show a thumbs-up or touch their head if they are ready to begin writing and drawing about the sun and moon.\nPoint out the Sky notebooks, pencils, colored pencils, and crayons already at student workspaces.\nTransition students to their workspaces and invite them to begin working on page 1.\nAfter 3 minutes of work time, recommend that students begin working on page 2.\nCirculate and support students as necessary. Encourage them to use classroom resources (Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).",
+      "evidence_page": 249,
+      "confidence": "high",
+      "rationale": "Students actively discuss an informational text, read chorally, and independently write observations using classroom tools, which develops comprehension/composition repertoires and community participation. However, they do not set goals, discuss preferences, or select texts, so only part of the standard is met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.027364110201042444,
+        "dense_rank": 19,
+        "bm25_rank": 8,
+        "dense_score": 0.54394865,
+        "bm25_score": 111.62425995862108,
+        "rerank_score": 0.9806493520736694
+      },
+      "standard_raw_text": "Build an identity as a reader and writer, developing a repertoire of resources and tools to continuously expand participation as an active consumer and producer of texts."
+    }
+  ]
+}

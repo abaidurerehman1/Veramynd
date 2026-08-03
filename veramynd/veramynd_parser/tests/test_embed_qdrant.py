@@ -162,3 +162,120 @@ def test_cli_embed_chunks_wires():
     assert args.func.__name__ == "cmd_embed_chunks"
     assert args.model == DEFAULT_EMBEDDING_MODEL
     assert args.recreate is True
+
+
+def test_partial_recreate_does_not_wipe_other_lessons(tmp_path: Path):
+    """--recreate + --resource-id must refresh only that lesson's points."""
+    qdrant = pytest.importorskip("qdrant_client")
+
+    chunks_dir = tmp_path / "chunks"
+    by = chunks_dir / "by_lesson"
+    by.mkdir(parents=True)
+    _bundle(by / "G1M2U1L1.json", "G1M2U1L1")
+    _bundle(by / "G1M2U1L2.json", "G1M2U1L2")
+    out = tmp_path / "embeddings"
+    dims = 8
+
+    def fake_embed(texts: list[str]) -> list[list[float]]:
+        out_vecs = []
+        for i, t in enumerate(texts):
+            v = [float((len(t) + i + j) % 17) for j in range(dims)]
+            n = sum(x * x for x in v) ** 0.5 or 1.0
+            out_vecs.append([x / n for x in v])
+        return out_vecs
+
+    client = qdrant.QdrantClient(location=":memory:")
+    embed_chunks_to_qdrant(
+        chunks_dir,
+        out,
+        dimensions=dims,
+        collection="test_partial",
+        recreate=True,
+        embed_fn=fake_embed,
+        qdrant_client=client,
+    )
+    assert client.count("test_partial", exact=True).count == 4
+
+    # Drop Opening A from L1 and partial re-embed with --recreate.
+    data = json.loads((by / "G1M2U1L1.json").read_text(encoding="utf-8"))
+    data["instructional_chunks"] = []
+    (by / "G1M2U1L1.json").write_text(json.dumps(data), encoding="utf-8")
+
+    embed_chunks_to_qdrant(
+        chunks_dir,
+        out,
+        dimensions=dims,
+        collection="test_partial",
+        recreate=True,
+        embed_fn=fake_embed,
+        qdrant_client=client,
+        resource_ids={"G1M2U1L1"},
+    )
+    # L1 lesson-only (1) + L2 lesson+block (2) = 3; Opening A for L1 must be gone.
+    assert client.count("test_partial", exact=True).count == 3
+    assert not client.retrieve(
+        "test_partial",
+        ids=[point_id_for_chunk("G1M2U1L1#Opening#A")],
+    )
+    assert client.retrieve(
+        "test_partial",
+        ids=[point_id_for_chunk("G1M2U1L2#lesson")],
+    )
+
+
+def test_embed_incremental_skips_unchanged(tmp_path: Path):
+    qdrant = pytest.importorskip("qdrant_client")
+
+    chunks_dir = tmp_path / "chunks"
+    by = chunks_dir / "by_lesson"
+    by.mkdir(parents=True)
+    _bundle(by / "G1M2U1L1.json", "G1M2U1L1")
+    out = tmp_path / "embeddings"
+    dims = 8
+    calls = {"n": 0}
+
+    def fake_embed(texts: list[str]) -> list[list[float]]:
+        calls["n"] += len(texts)
+        out_vecs = []
+        for i, t in enumerate(texts):
+            v = [float((len(t) + i + j) % 17) for j in range(dims)]
+            n = sum(x * x for x in v) ** 0.5 or 1.0
+            out_vecs.append([x / n for x in v])
+        return out_vecs
+
+    client = qdrant.QdrantClient(location=":memory:")
+    first = embed_chunks_to_qdrant(
+        chunks_dir,
+        out,
+        dimensions=dims,
+        collection="test_incr",
+        recreate=True,
+        embed_fn=fake_embed,
+        qdrant_client=client,
+    )
+    assert first["upserted"] == 2
+    assert calls["n"] == 2
+
+    second = embed_chunks_to_qdrant(
+        chunks_dir,
+        out,
+        dimensions=dims,
+        collection="test_incr",
+        embed_fn=fake_embed,
+        qdrant_client=client,
+    )
+    assert second["upserted"] == 0
+    assert second["skipped"] == 2
+    assert calls["n"] == 2
+
+    forced = embed_chunks_to_qdrant(
+        chunks_dir,
+        out,
+        dimensions=dims,
+        collection="test_incr",
+        force=True,
+        embed_fn=fake_embed,
+        qdrant_client=client,
+    )
+    assert forced["upserted"] == 2
+    assert calls["n"] == 4

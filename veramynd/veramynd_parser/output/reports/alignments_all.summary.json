@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0-report",
+  "source_files": [
+    "output\\judge\\G1M2U1L1.json",
+    "output\\judge\\G1M2U1L10.json",
+    "output\\judge\\G1M2U1L11.json",
+    "output\\judge\\G1M2U1L12.json",
+    "output\\judge\\G1M2U1L13.json",
+    "output\\judge\\G1M2U1L14.json",
+    "output\\judge\\G1M2U1L15.json",
+    "output\\judge\\G1M2U1L2.json",
+    "output\\judge\\G1M2U1L3.json",
+    "output\\judge\\G1M2U1L4.json",
+    "output\\judge\\G1M2U1L5.json",
+    "output\\judge\\G1M2U1L6.json",
+    "output\\judge\\G1M2U1L7.json",
+    "output\\judge\\G1M2U1L8.json",
+    "output\\judge\\G1M2U1L9.json",
+    "output\\judge\\G1M2U2L1.json",
+    "output\\judge\\G1M2U2L10.json",
+    "output\\judge\\G1M2U2L11.json",
+    "output\\judge\\G1M2U2L12.json",
+    "output\\judge\\G1M2U2L2.json",
+    "output\\judge\\G1M2U2L3.json",
+    "output\\judge\\G1M2U2L4.json",
+    "output\\judge\\G1M2U2L5.json"
+  ],
+  "row_count": 230,
+  "by_status_all_verdicts": {
+    "full": 49,
+    "partial": 64,
+    "none": 117
+  },
+  "filtered_out_by_status": 0,
+  "filtered_out_ungrounded": 0,
+  "status_filter": null,
+  "grounded_only": false,
+  "csv_path": "output\\reports\\alignments_all.csv"
+}

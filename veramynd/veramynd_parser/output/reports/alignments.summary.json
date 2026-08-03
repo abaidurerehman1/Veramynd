@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0-report",
+  "source_files": [
+    "output\\judge\\G1M2U1L3.json"
+  ],
+  "row_count": 10,
+  "by_status_all_verdicts": {
+    "full": 4,
+    "partial": 1,
+    "none": 5
+  },
+  "filtered_out_by_status": 0,
+  "filtered_out_ungrounded": 0,
+  "status_filter": null,
+  "grounded_only": false,
+  "csv_path": "output\\reports\\alignments.csv"
+}

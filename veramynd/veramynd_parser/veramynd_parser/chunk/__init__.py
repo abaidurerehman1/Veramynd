@@ -2,6 +2,7 @@
 
 from .builder import (
     CANONICAL_SECTIONS,
+    ChunkBuildError,
     KNOWN_EL_SECTIONS,
     block_chunk_id,
     build_lesson_bundle,
@@ -20,6 +21,7 @@ from .models import (
 __all__ = [
     "CANONICAL_SECTIONS",
     "CHUNK_SCHEMA_VERSION",
+    "ChunkBuildError",
     "KNOWN_EL_SECTIONS",
     "EvidencePointer",
     "InstructionalChunk",

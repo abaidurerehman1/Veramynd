@@ -1,0 +1,471 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U1L15",
+  "lesson_source": "stage1:G1M2U1L15",
+  "retrieve_file": "output\\retrieve\\G1M2U1L15.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 4,
+    "partial": 1,
+    "none": 5
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 5,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L15",
+      "standard_code": "1.T.T.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "met": false,
+          "note": "Lesson focuses on a narrative text, not expository."
+        },
+        {
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "met": false,
+          "note": "No explicit expository connections; focus is on story events."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "met": false,
+          "note": "Students do not create or analyze expository texts."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson centers on a narrative (Kitten's First Full Moon) and does not involve identifying or using expository techniques, nor does it require students to create or analyze expository texts.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02454819277108434,
+        "dense_rank": 23,
+        "bm25_rank": 20,
+        "dense_score": 0.6276207,
+        "bm25_score": 91.01081879400842,
+        "rerank_score": 0.9934093952178955
+      },
+      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L15",
+      "standard_code": "1.T.C.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify who is speaking at various points in a text.",
+          "met": false,
+          "note": "No evidence students identify the narrator or speaker."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students do not identify the speaker or narrator at any point; the focus is on story elements and central message.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02661064425770308,
+        "dense_rank": 24,
+        "bm25_rank": 8,
+        "dense_score": 0.61908615,
+        "bm25_score": 116.82610951008675,
+        "rerank_score": 0.9930082559585571
+      },
+      "standard_raw_text": "Investigate the relationships between authors and speakers in texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L15",
+      "standard_code": "1.P.ST.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Explore how context shapes the author's decisions when interpreting texts.",
+          "met": false,
+          "note": "Students discuss what the author did and why, but do not examine how context (e.g., audience, time, culture, situation) shaped those decisions."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses when interpreting texts.",
+          "met": false,
+          "note": "No activity asks students to analyze how audience context affects responses to the story."
+        },
+        {
+          "clause": "Explore how context shapes the author's decisions when constructing texts.",
+          "met": false,
+          "note": "Students write/draw retells and messages but do not consider how context would influence their authorial choices."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses when constructing texts.",
+          "met": false,
+          "note": "There is no examination of how an audience would respond to students’ created texts or how context shapes that response."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on recounting story elements and central message and briefly discusses author purpose, but does not have students explore how context influences author choices or audience responses in either interpretation or text creation.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02564935064935065,
+        "dense_rank": 28,
+        "bm25_rank": 10,
+        "dense_score": 0.6126529,
+        "bm25_score": 106.13591086757457,
+        "rerank_score": 0.9923815131187439
+      },
+      "standard_raw_text": "Explore how context shapes the author’s decisions and the audience’s responses during the interpretation and construction of texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L15",
+      "standard_code": "1.P.ST.2.b",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Draw from knowledge of the author to understand texts.",
+          "met": true,
+          "note": "Students discuss Kevin Henkes’s purpose and how he includes/describes the moon to understand the story."
+        },
+        {
+          "clause": "Draw from knowledge of the audience to understand texts.",
+          "met": false,
+          "note": "No tasks address identifying or using the intended audience."
+        },
+        {
+          "clause": "Draw from knowledge of the context to understand texts.",
+          "met": false,
+          "note": "No work draws on historical/cultural or situational context of the text’s creation."
+        },
+        {
+          "clause": "Use this knowledge to discern a clear point of view or unique perspective when interpreting texts.",
+          "met": true,
+          "note": "Students infer the kitten’s perspective (what the moon looks like to a kitten) in connection with the author’s purpose."
+        },
+        {
+          "clause": "Use this knowledge to establish a clear point of view or unique perspective when constructing texts.",
+          "met": false,
+          "note": "Students write/draw retells; they are not asked to craft text from a distinct POV."
+        }
+      ],
+      "evidence": "- Tell students they are going to use the Back-to-Back and Face-to-Face protocol to discuss why Kevin Henkes, the author of Kitten's First Full Moon, wrote about the moon. Remind them that they used this protocol in previous lessons, and review as necessary using the Back-to-Back and Face-to-Face Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)\n- Guide students through three rounds of the protocol, each time finding a new partner to answer one of the following questions:\n- 'What are some ways that Kevin Henkes included the moon in his story Kitten's First Full Moon?' (Kitten saw the moon in the sky. Kitten thought the moon was a bowl of milk. Kitten thought she could get the moon.)\n- 'How did Kevin Henkes describe the moon in this story, or what did the moon look like in this story?' (The moon was big and round, and it was shining bright. The author made the moon look like a bowl of milk.)\n- 'Why do you think Kevin Henkes wrote about the moon in this story?' (to imagine what the moon looks like to a kitten; to imagine what the kitten thinks when she looks at the moon)",
+      "evidence_page": 190,
+      "confidence": "medium",
+      "rationale": "Students discuss the author’s purpose and infer the kitten’s perspective, but they do not use audience or context, nor do they craft texts with a defined point of view.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02147344374643061,
+        "dense_rank": 43,
+        "bm25_rank": 25,
+        "dense_score": 0.58945155,
+        "bm25_score": 84.601157278933,
+        "rerank_score": 0.9922665953636169
+      },
+      "standard_raw_text": "Draw from knowledge of author, audience, and context to discern and establish a clear point of view or unique perspective when interpreting and constructing texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L15",
+      "standard_code": "1.P.EICC.3",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Establish a purpose and set goals for reading",
+          "met": true,
+          "note": "Learning target and assessment purpose are set."
+        },
+        {
+          "clause": "Monitor comprehension and adjust strategies as needed",
+          "met": true,
+          "note": "Students discuss and clarify story events with partners and teacher support."
+        },
+        {
+          "clause": "Scan and skim the text to note useful structures and sections",
+          "met": true,
+          "note": "Students revisit story sections to answer questions."
+        },
+        {
+          "clause": "Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps",
+          "met": true,
+          "note": "Students recall prior lessons and knowledge about the story."
+        },
+        {
+          "clause": "Summarize and visualize sections of the text to maintain understanding",
+          "met": true,
+          "note": "Students summarize and draw story events."
+        },
+        {
+          "clause": "Make and track predictions about upcoming events and information",
+          "met": true,
+          "note": "Students discuss what happens next at story breaks."
+        },
+        {
+          "clause": "Make, track, and support inferences about different levels of meaning",
+          "met": true,
+          "note": "Students infer the central message and character motivations."
+        },
+        {
+          "clause": "Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts",
+          "met": true,
+          "note": "Teacher and students review language and vocabulary as needed."
+        }
+      ],
+      "evidence": "Invite students to turn and talk with an elbow partner: 'What happened in the beginning of the story?' ... Invite students to point to the first box and write and draw their answers to the prompt: 'What happened in the beginning of the story?' ... Invite students to use pictures and words to show their answer, using the box in Part IV to draw a picture and writing one or two sentences on the lines at the bottom of the box.",
+      "evidence_page": 188,
+      "confidence": "high",
+      "rationale": "Students use a range of comprehension strategies before, during, and after reading, including summarizing, visualizing, predicting, and integrating prior knowledge.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.0259915611814346,
+        "dense_rank": 15,
+        "bm25_rank": 19,
+        "dense_score": 0.64162,
+        "bm25_score": 91.14372239912225,
+        "rerank_score": 0.9919133186340332
+      },
+      "standard_raw_text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L15",
+      "standard_code": "1.T.T.1",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue.",
+          "met": true,
+          "note": "Students identify and describe characters, setting, and major events."
+        },
+        {
+          "clause": "Identify a simple plot with a problem and solution.",
+          "met": true,
+          "note": "Students recount beginning, middle, and end, including problem and solution."
+        },
+        {
+          "clause": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
+          "met": true,
+          "note": "Students discuss character actions and central message."
+        },
+        {
+          "clause": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures.",
+          "met": false,
+          "note": "No evidence of comparing across cultures."
+        },
+        {
+          "clause": "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure.",
+          "met": true,
+          "note": "Students write and draw about story events with closure."
+        }
+      ],
+      "evidence": "Invite students to point to the first box and write and draw their answers to the prompt: 'What happened in the beginning of the story?' ... Repeat this process with the second and third boxes. ... Invite students to use pictures and words to show their answer, using the box in Part IV to draw a picture and writing one or two sentences on the lines at the bottom of the box.",
+      "evidence_page": 188,
+      "confidence": "high",
+      "rationale": "Students identify and use narrative techniques, recount plot, describe characters, and create written/drawn responses about the story.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.03252247488101534,
+        "dense_rank": 2,
+        "bm25_rank": 1,
+        "dense_score": 0.7287614,
+        "bm25_score": 227.4312652159207,
+        "rerank_score": 0.991647481918335
+      },
+      "standard_raw_text": "Identify and use narrative techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L15",
+      "standard_code": "1.T.T.2.b",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Describe the connection between two individuals in a text.",
+          "met": true,
+          "note": "Students discuss Kitten and the moon."
+        },
+        {
+          "clause": "Describe the connection between two events in a text.",
+          "met": true,
+          "note": "Students recount and connect story events (e.g., Kitten sees moon, tries to reach it)."
+        },
+        {
+          "clause": "Describe the connection between two ideas in a text.",
+          "met": true,
+          "note": "Students discuss Kitten's ideas about the moon and milk."
+        },
+        {
+          "clause": "Describe the connection between two pieces of information in a text.",
+          "met": true,
+          "note": "Students connect story elements and details."
+        }
+      ],
+      "evidence": "Invite students to turn and talk with an elbow partner: 'What are one or two things that happened in the middle of the story?' (Kitten ran through a field. Kitten climbed a tree.) ... 'What are some ways that Kevin Henkes included the moon in his story Kitten's First Full Moon?' (Kitten saw the moon in the sky. Kitten thought the moon was a bowl of milk. Kitten thought she could get the moon.)",
+      "evidence_page": 188,
+      "confidence": "high",
+      "rationale": "Students explicitly describe connections between characters, events, and ideas in the story.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02662057044079516,
+        "dense_rank": 29,
+        "bm25_rank": 5,
+        "dense_score": 0.61059046,
+        "bm25_score": 137.18439537868878,
+        "rerank_score": 0.991603672504425
+      },
+      "standard_raw_text": "Describe the connection between two individuals, events, ideas, or pieces of information in a text. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L15",
+      "standard_code": "1.P.EICC.3.d",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Summarize sections of the text to maintain understanding.",
+          "met": true,
+          "note": "Students summarize beginning, middle, and end."
+        },
+        {
+          "clause": "Visualize sections of the text to maintain understanding.",
+          "met": true,
+          "note": "Students draw pictures representing story events."
+        }
+      ],
+      "evidence": "Invite students to point to the first box and write and draw their answers to the prompt: 'What happened in the beginning of the story?' ... Repeat this process with the second and third boxes.",
+      "evidence_page": 188,
+      "confidence": "high",
+      "rationale": "Students summarize and visualize story sections through writing and drawing.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02408450704225352,
+        "dense_rank": 11,
+        "bm25_rank": 40,
+        "dense_score": 0.6496885,
+        "bm25_score": 72.51011673146915,
+        "rerank_score": 0.9914759397506714
+      },
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L15",
+      "standard_code": "1.T.T.3",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft opinion texts, including the author's opinion and supporting reasons.",
+          "met": false,
+          "note": "No opinion texts or techniques addressed."
+        },
+        {
+          "clause": "Use knowledge of opinion techniques to create opinion pieces that introduce the topic, state an opinion about the topic, and provide two or more reasons to support the opinion with linking words such as 'and' and 'because'.",
+          "met": false,
+          "note": "No opinion writing or discussion."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson does not involve opinion writing or analysis of opinion techniques.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.020098482564566374,
+        "dense_rank": 33,
+        "bm25_rank": 47,
+        "dense_score": 0.6044036,
+        "bm25_score": 70.12191963996736,
+        "rerank_score": 0.991474986076355
+      },
+      "standard_raw_text": "Identify and use opinion techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L15",
+      "standard_code": "1.P.ST.1",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use prior knowledge, research, and discussions to identify key context components.",
+          "met": false,
+          "note": "Students recall story elements (characters, setting, events) but do not identify contextual components such as background information, geographic location beyond the story, cultural influences, time period, or contemporary events, nor do they use research."
+        },
+        {
+          "clause": "Consider how context impacts the purposes of the author and the audience.",
+          "met": false,
+          "note": "Students discuss why the author wrote about the moon, but they do not relate this to contextual factors (e.g., culture, time period, background information) affecting purpose or audience."
+        },
+        {
+          "clause": "Explore how context shapes the author's decisions and the audience's responses during text interpretation and construction.",
+          "met": false,
+          "note": "No exploration of how external context shapes author decisions or audience response; students summarize events and central message and give basic author-purpose ideas only."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on story elements, central message, and a basic discussion of author purpose. It does not have students use or analyze contextual information (background, culture, time period, etc.) when interpreting or creating texts.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02260536398467433,
+        "dense_rank": 30,
+        "bm25_rank": 27,
+        "dense_score": 0.6098579,
+        "bm25_score": 82.61691916892843,
+        "rerank_score": 0.9910440444946289
+      },
+      "standard_raw_text": "Develop and apply knowledge of key components of context such as background information, geographic location, cultural influences, time period, and contemporary events when interpreting and constructing texts."
+    }
+  ]
+}

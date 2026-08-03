@@ -1,0 +1,461 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U2L12",
+  "lesson_source": "stage1:G1M2U2L12",
+  "retrieve_file": "output\\retrieve\\G1M2U2L12.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 4,
+    "partial": 4,
+    "none": 2
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 8,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L12",
+      "standard_code": "1.P.EICC.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Engage in spoken or written dialogue as an author and audience.",
+          "met": true,
+          "note": "Students participate in a student-led Science Talk, speaking and listening to peers using sentence frames to build on ideas."
+        },
+        {
+          "clause": "Make intentional connections within texts.",
+          "met": false,
+          "note": "No explicit task requires students to connect parts or ideas within a single text."
+        },
+        {
+          "clause": "Make intentional connections between texts.",
+          "met": false,
+          "note": "Students discuss patterns using notes, but there is no explicit direction to connect or compare across different texts."
+        },
+        {
+          "clause": "Make intentional connections beyond texts to other knowledge or experiences.",
+          "met": false,
+          "note": "Students record observations from images and discuss patterns, but are not directed to relate ideas to personal experiences or outside knowledge."
+        }
+      ],
+      "evidence": "- -Invite group member A to begin the Science Talk protocol:\n- -Circulate as students discuss. Observe students sharing information about their selected pattern in the sky, using sentence frames to add on to the discussion, and using their notes as a resource as they share and discuss. Use the Speaking and Listening Checklist to make note of observations and progress toward SL.1.1a, SL.1.1b, SL.1.4, and SL.1.6.\n- -Allow students to complete the Science Talk protocol without teacher involvement. Only provide reminders about directions.",
+      "evidence_page": 332,
+      "confidence": "high",
+      "rationale": "The lesson clearly has students engage in a student-led Science Talk (speaking and listening), but it does not direct them to make explicit connections within, between, or beyond texts.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02928692699490662,
+        "dense_rank": 2,
+        "bm25_rank": 16,
+        "dense_score": 0.5814947,
+        "bm25_score": 64.7825631617997,
+        "rerank_score": 0.998835027217865
+      },
+      "standard_raw_text": "Engage in written or spoken dialogue as author and audience for a variety of tasks and purposes, making intentional connections within, between, and beyond texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L12",
+      "standard_code": "1.P.EICC.1.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Develop group norms for participation in a community of readers and writers",
+          "met": false,
+          "note": "Students review and use an existing Science Talk protocol; they do not create or establish norms."
+        },
+        {
+          "clause": "Discuss texts with others in the group",
+          "met": false,
+          "note": "Students discuss observable patterns in the sky via a Science Talk, not a specific text; poem recitations are not a text discussion."
+        },
+        {
+          "clause": "Share individual writing with the group",
+          "met": false,
+          "note": "Students write in Sky Notebooks but do not share their writing with peers."
+        },
+        {
+          "clause": "Listen to others as they share their writing",
+          "met": false,
+          "note": "No peer sharing of writing is described."
+        },
+        {
+          "clause": "Offer feedback on peers' writing",
+          "met": false,
+          "note": "There is no activity involving giving feedback on classmates' writing."
+        },
+        {
+          "clause": "Respond to feedback received on own writing",
+          "met": false,
+          "note": "Students do not receive or respond to feedback on their writing in this lesson."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson centers on a Science Talk and independent notebook work. Students neither develop norms nor share writing, listen to peers’ writing, or give/receive feedback; discussion is topic-based rather than discussion of a specific text.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.031054405392392875,
+        "dense_rank": 7,
+        "bm25_rank": 2,
+        "dense_score": 0.55901694,
+        "bm25_score": 99.08008278501248,
+        "rerank_score": 0.9978836178779602
+      },
+      "standard_raw_text": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing individual writing, listening as others share their writing, and offering and responding to feedback. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L12",
+      "standard_code": "1.P.CP.1.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Contribute ideas to discussions and shared projects.",
+          "met": true,
+          "note": "Students share ideas during Science Talk."
+        },
+        {
+          "clause": "Listen to the ideas of others during discussions and projects.",
+          "met": true,
+          "note": "Students listen to each other during Science Talk."
+        },
+        {
+          "clause": "Provide feedback to others in discussions and shared projects.",
+          "met": true,
+          "note": "Students use sentence frames to add on to others' ideas, which constitutes feedback."
+        }
+      ],
+      "evidence": "Invite group member A to begin the Science Talk protocol: -Circulate as students discuss. Observe students sharing information about their selected pattern in the sky, using sentence frames to add on to the discussion, and using their notes as a resource as they share and discuss.",
+      "evidence_page": 332,
+      "confidence": "high",
+      "rationale": "All aspects of contributing, listening, and providing feedback in discussions are clearly present in the Science Talk protocol.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02728937728937729,
+        "dense_rank": 24,
+        "bm25_rank": 5,
+        "dense_score": 0.52379626,
+        "bm25_score": 91.99038325141281,
+        "rerank_score": 0.9974960684776306
+      },
+      "standard_raw_text": "Contribute to discussions and shared projects by offering ideas, listening to the ideas of others, and providing feedback. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L12",
+      "standard_code": "1.P.CP.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Communicate clearly to present ideas, information, and texts.",
+          "met": true,
+          "note": "Students share information and add onto others' ideas during a Science Talk."
+        },
+        {
+          "clause": "Integrate modes and genres appropriate to purpose and audience.",
+          "met": false,
+          "note": "No explicit integration of modes/genres for audience and purpose during presentations."
+        },
+        {
+          "clause": "Vary tone, pace, and nonverbal gestures to suit purpose and audience.",
+          "met": false,
+          "note": "Gestures are mentioned during poem recitation, but not as intentional variation to suit audience/purpose."
+        },
+        {
+          "clause": "Engage in dialogue by asking and answering questions with audiences.",
+          "met": false,
+          "note": "Students discuss and add on to ideas, but asking/answering questions with the audience is not specified."
+        },
+        {
+          "clause": "Build background knowledge by reciting significant poems and speeches appropriate for grade level.",
+          "met": true,
+          "note": "Students recite two unit poems, with student volunteers leading."
+        }
+      ],
+      "evidence": "- Invite a student volunteer to lead the class in reciting the poem and doing any accompanying hand gestures and actions.",
+      "evidence_page": 330,
+      "confidence": "medium",
+      "rationale": "Students recite poems and engage in a Science Talk to share ideas, meeting recitation and clear communication subskills. However, there is no explicit tailoring to audience/purpose, integration of modes, or structured Q&A, so not all clauses are met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.030090497737556562,
+        "dense_rank": 5,
+        "bm25_rank": 8,
+        "dense_score": 0.5633774,
+        "bm25_score": 77.31233648367497,
+        "rerank_score": 0.9974409341812134
+      },
+      "standard_raw_text": "Use presentation skills to tailor communication to target audiences for specific purposes."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L12",
+      "standard_code": "1.P.CP.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Collaborate with others to determine group norms",
+          "met": false,
+          "note": "No evidence of students determining group norms."
+        },
+        {
+          "clause": "Establish goals and procedures for shared projects",
+          "met": false,
+          "note": "No evidence of students establishing goals or procedures."
+        },
+        {
+          "clause": "Facilitate productivity when working on shared projects",
+          "met": false,
+          "note": "No evidence of students facilitating group productivity."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "All group norms, goal-setting, and productivity facilitation are teacher-directed; students do not perform these acts.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.020309278350515464,
+        "dense_rank": 40,
+        "bm25_rank": 37,
+        "dense_score": 0.4999832,
+        "bm25_score": 51.6879147331715,
+        "rerank_score": 0.9965117573738098
+      },
+      "standard_raw_text": "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L12",
+      "standard_code": "1.P.CP.1.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Work with others to discuss topics.",
+          "met": true,
+          "note": "Students participate in a Science Talk to discuss observable patterns in the sky with peers."
+        },
+        {
+          "clause": "Work with others to investigate questions.",
+          "met": true,
+          "note": "Students collaboratively address the Unit 2 guiding question during the Science Talk, using notes and adding on to others’ ideas."
+        },
+        {
+          "clause": "Work with others to solve problems.",
+          "met": false,
+          "note": "No problem-solving task is included in the lesson."
+        },
+        {
+          "clause": "Work with others to explore and create texts.",
+          "met": false,
+          "note": "Students revisit poems together (explore) but text creation occurs individually in Sky notebooks, not with others."
+        }
+      ],
+      "evidence": "- -Tell students in Group 1 that they are going to use the Science Talk protocol to discuss the Unit 2 guiding question. Remind them that they used this protocol in Lesson 10, and review as necessary using the Science Talk Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- -Post and review sentences frames as necessary:\n- 'I think he/she means __________.'\n- 'I'd like to add ________.'\n- 'This makes me think __________ because _________.'\n- -Invite group member A to begin the Science Talk protocol:\n- -Circulate as students discuss. Observe students sharing information about their selected pattern in the sky, using sentence frames to add on to the discussion, and using their notes as a resource as they share and discuss.",
+      "evidence_page": 332,
+      "confidence": "high",
+      "rationale": "Students clearly collaborate to discuss and investigate the guiding question in a Science Talk. There is no collaborative problem-solving or co-creation of texts in this lesson.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.032266458495966696,
+        "dense_rank": 3,
+        "bm25_rank": 1,
+        "dense_score": 0.57383704,
+        "bm25_score": 116.19762052905388,
+        "rerank_score": 0.9964812994003296
+      },
+      "standard_raw_text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L12",
+      "standard_code": "1.P.CP.1",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Arrive prepared to actively participate in group discussions and collaborative meetings.",
+          "met": true,
+          "note": "Students use prepared notes as resources during their Science Talk."
+        },
+        {
+          "clause": "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects.",
+          "met": false,
+          "note": "Norms/procedures are teacher-provided via the Science Talk protocol; students do not co-create them."
+        },
+        {
+          "clause": "Contribute to discussions and shared projects by offering ideas, listening to the ideas of others, and providing feedback.",
+          "met": true,
+          "note": "Students build onto others’ ideas using sentence frames and share information in small-group discussion."
+        },
+        {
+          "clause": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts.",
+          "met": true,
+          "note": "Students work in groups to discuss a topic and investigate the guiding question about sky patterns."
+        }
+      ],
+      "evidence": "- -Circulate as students discuss. Observe students sharing information about their selected pattern in the sky, using sentence frames to add on to the discussion, and using their notes as a resource as they share and discuss.",
+      "evidence_page": 332,
+      "confidence": "high",
+      "rationale": "Students collaboratively engage in a Science Talk, building on peers’ ideas and using notes, which meets most collaboration behaviors. However, they do not co-establish group norms/goals or procedures, which are prescribed by the teacher.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.028373015873015873,
+        "dense_rank": 20,
+        "bm25_rank": 3,
+        "dense_score": 0.5271342,
+        "bm25_score": 96.09262365483467,
+        "rerank_score": 0.9949138164520264
+      },
+      "standard_raw_text": "Collaborate with others to accomplish shared goals and projects."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L12",
+      "standard_code": "1.P.CP.2.e",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Recite all or part of significant poems appropriate for grade level.",
+          "met": true,
+          "note": "Students recite significant poems as a group and individually."
+        },
+        {
+          "clause": "Recite all or part of significant speeches appropriate for grade level.",
+          "met": false,
+          "note": "No evidence of reciting speeches, but poems are recited."
+        }
+      ],
+      "evidence": "Invite a student volunteer to lead the class in reciting the poem and doing any accompanying hand gestures and actions. Repeat as time allows with one or two more student volunteers.",
+      "evidence_page": 330,
+      "confidence": "high",
+      "rationale": "Students recite significant poems, which is the primary expectation for this grade level.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.030776515151515152,
+        "dense_rank": 4,
+        "bm25_rank": 6,
+        "dense_score": 0.5651283,
+        "bm25_score": 87.27916383889384,
+        "rerank_score": 0.9940191507339478
+      },
+      "standard_raw_text": "Build background knowledge by reciting all or part of significant poems and speeches as appropriate by grade level. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L12",
+      "standard_code": "1.T.RA.1.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Share relevant information about a topic.",
+          "met": true,
+          "note": "Students share information about patterns in the sky."
+        },
+        {
+          "clause": "Share accurate information about a topic.",
+          "met": true,
+          "note": "Students use notes and prior learning to share accurate information."
+        },
+        {
+          "clause": "Use a variety of communication modes to share information.",
+          "met": true,
+          "note": "Students use spoken dialogue, recitation, and drawing/writing in Sky notebooks."
+        }
+      ],
+      "evidence": "Invite group member A to begin the Science Talk protocol: -Circulate as students discuss. Observe students sharing information about their selected pattern in the sky, using sentence frames to add on to the discussion, and using their notes as a resource as they share and discuss.",
+      "evidence_page": 332,
+      "confidence": "high",
+      "rationale": "Students share relevant and accurate information using multiple modes (discussion, recitation, drawing/writing).",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.025708635464733027,
+        "dense_rank": 14,
+        "bm25_rank": 22,
+        "dense_score": 0.5343667,
+        "bm25_score": 58.46031264759882,
+        "rerank_score": 0.9915180802345276
+      },
+      "standard_raw_text": "Share relevant and accurate information through a variety of different modes. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L12",
+      "standard_code": "1.P.CP.1.a",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Arrive prepared to participate in group discussions and collaborative meetings.",
+          "met": true,
+          "note": "Students are prepared with notes and prior learning for Science Talk."
+        }
+      ],
+      "evidence": "Remind students: -They have gathered a lot of evidence throughout the unit to help them describe a number of patterns that can be observed in the sky. -They have participated in three Science Talks to discuss different questions related to these patterns in the sky.",
+      "evidence_page": 331,
+      "confidence": "high",
+      "rationale": "Students are explicitly prepared with evidence and prior experience for group discussions.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02470238095238095,
+        "dense_rank": 36,
+        "bm25_rank": 10,
+        "dense_score": 0.50645596,
+        "bm25_score": 74.47240719063464,
+        "rerank_score": 0.9873019456863403
+      },
+      "standard_raw_text": "Arrive to group discussions and collaborative meetings prepared to be an active participant in the work. (I/C)"
+    }
+  ]
+}

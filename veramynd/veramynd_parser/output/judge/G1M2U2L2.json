@@ -1,0 +1,456 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U2L2",
+  "lesson_source": "stage1:G1M2U2L2",
+  "retrieve_file": "output\\retrieve\\G1M2U2L2.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 1,
+    "partial": 2,
+    "none": 7
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 3,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L2",
+      "standard_code": "1.P.EICC.3",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Establish a purpose and set goals for reading",
+          "met": false,
+          "note": "Purpose is provided by the teacher via posted learning targets; students do not set goals themselves."
+        },
+        {
+          "clause": "Monitor comprehension and adjust strategies as needed",
+          "met": false,
+          "note": "No explicit student monitoring or adjustment of strategies is described."
+        },
+        {
+          "clause": "Scan and skim the text to note useful structures and sections",
+          "met": false,
+          "note": "Students listen to a read-aloud; no skimming/scanning task is assigned."
+        },
+        {
+          "clause": "Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps",
+          "met": true,
+          "note": "Students discuss prior observations and connect the new text to a text read yesterday."
+        },
+        {
+          "clause": "Summarize and visualize sections of the text to maintain understanding",
+          "met": true,
+          "note": "Students summarize the poem’s topic and use gestures to represent/visualize content."
+        },
+        {
+          "clause": "Make and track predictions about upcoming events and information",
+          "met": false,
+          "note": "No prediction activity is included."
+        },
+        {
+          "clause": "Make, track, and support inferences about different levels of meaning",
+          "met": false,
+          "note": "No inference-making or support is required of students."
+        },
+        {
+          "clause": "Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts",
+          "met": false,
+          "note": "Vocabulary is defined by the teacher; students do not determine meanings from context."
+        }
+      ],
+      "evidence": "Using a total participation technique, invite responses from the group:\n\"How is this text the same as Does the Sun Sleep? which we began yesterday?\" (they both teach us about day and night)",
+      "evidence_page": 224,
+      "confidence": "low",
+      "rationale": "Students engage with multiple texts and use some comprehension strategies (activating prior knowledge, summarizing/visualizing). However, key strategies such as goal-setting, monitoring, predictions, inferences, and determining word meanings are not clearly performed by students. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.026754075124025514,
+        "dense_rank": 23,
+        "bm25_rank": 8,
+        "dense_score": 0.54141366,
+        "bm25_score": 78.97113953124786,
+        "rerank_score": 0.9905637502670288
+      },
+      "standard_raw_text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L2",
+      "standard_code": "1.T.T.2.b",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Describe the connection between two individuals in a text.",
+          "met": false,
+          "note": "No work with individuals or their relationships is present."
+        },
+        {
+          "clause": "Describe the connection between two events in a text.",
+          "met": true,
+          "note": "Students discuss how day and night relate as part of a pattern after an informational read-aloud."
+        },
+        {
+          "clause": "Describe the connection between two ideas in a text.",
+          "met": false,
+          "note": "Students describe the day/night pattern, but the lesson does not explicitly prompt connecting two abstract ideas."
+        },
+        {
+          "clause": "Describe the connection between two pieces of information in a text.",
+          "met": true,
+          "note": "Students articulate how sunlight on our part of Earth relates to day and shadow to night."
+        }
+      ],
+      "evidence": "'What have you learned about the pattern of light and dark on earth?' (Responses will vary, but may include: that day happens when the sun shines on our part of earth, and night happens when shadow covers our part of earth.)",
+      "evidence_page": 227,
+      "confidence": "medium",
+      "rationale": "After reading an informational text, students describe how day and night relate (cause/effect), meeting connections between events/pieces of information. The lesson does not involve individuals, and explicit connections between two abstract ideas are not targeted.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.021286031042128603,
+        "dense_rank": 50,
+        "bm25_rank": 22,
+        "dense_score": 0.5091497,
+        "bm25_score": 71.01139925400771,
+        "rerank_score": 0.988602876663208
+      },
+      "standard_raw_text": "Describe the connection between two individuals, events, ideas, or pieces of information in a text. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L2",
+      "standard_code": "1.T.T.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the main topic in an expository text.",
+          "met": true,
+          "note": "Students identify the main topic of the informational text about day and night."
+        },
+        {
+          "clause": "Identify supporting details in an expository text.",
+          "met": true,
+          "note": "Students discuss and record details about the sun and moon."
+        },
+        {
+          "clause": "Recognize techniques used to craft expository texts.",
+          "met": true,
+          "note": "Students discuss how the text teaches about patterns and uses details."
+        }
+      ],
+      "evidence": "Direct their attention to the posted learning targets and read the first one aloud: 'I can describe the pattern of light and dark on earth using information from the text What Makes Day and Night.'\n...students will closely read the text while studying the illustrations to describe the pattern of light and dark on earth and to connect this occurrence to our focus question.\n...students share responses, use their ideas to complete page 1. Think aloud how to use the words from the question itself as a cue to formulate the answer using a complete sentence. (Example: The sun looks small and yellow.)",
+      "evidence_page": 224,
+      "confidence": "low",
+      "rationale": "Students identify the main topic, supporting details, and discuss how the text is structured to convey information. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.022296132052229613,
+        "dense_rank": 22,
+        "bm25_rank": 39,
+        "dense_score": 0.541766,
+        "bm25_score": 63.624347297507654,
+        "rerank_score": 0.9879711270332336
+      },
+      "standard_raw_text": "Identify techniques used to craft expository texts, including main topic and supporting details. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L2",
+      "standard_code": "1.T.RA.2",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
+          "met": true,
+          "note": "Students cite specific verses/parts of the poem when answering questions about adjectives in that verse."
+        },
+        {
+          "clause": "Explore various sources of information, including print, digital, and personal communication.",
+          "met": true,
+          "note": "Students work with multiple sources in the lesson: photographs and a poem (and also a read-aloud informational text)."
+        }
+      ],
+      "evidence": "Display sun photograph 1 and then moon photograph 1.\nUsing a total participation technique, invite responses from the group:\n'What words would you use to describe how the sun and moon look like in these photographs?' (The sun is yellow; the moon is round.)\nDirect students' attention back to the poem. Tell students you are going to read the poem again, stopping after each verse to ask them about adjectives they hear that describe how the sun, moon, and stars look.\nRead each verse of the poem aloud and stop at the end of each verse. Using a total participation technique, invite responses from the group:\nWhat adjectives did you find in this verse?' (round and orange)",
+      "evidence_page": 222,
+      "confidence": "high",
+      "rationale": "Students reference specific parts of a text (verses of the poem) to answer questions and work with multiple sources (photographs and a poem) within the lesson.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.022181372549019605,
+        "dense_rank": 25,
+        "bm25_rank": 36,
+        "dense_score": 0.5340556,
+        "bm25_score": 64.6794966717705,
+        "rerank_score": 0.9873069524765015
+      },
+      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L2",
+      "standard_code": "1.T.T.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "met": false,
+          "note": "Students read and discuss an informational text, but there is no task where they identify the main topic and key supporting details as expository techniques."
+        },
+        {
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "met": false,
+          "note": "Students are not directed to describe connections within a single text; a brief comparison across two texts occurs but does not meet this clause."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "met": false,
+          "note": "Shared writing captures student ideas in single sentences, but students do not produce an expository piece with an introduction, facts, and closure."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on listening to an informational read‑aloud, discussing observations and adjectives, and contributing ideas to shared writing. It does not have students identify expository structures or connections within a text, nor compose an expository piece with introduction, facts, and closure.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.029083245521601686,
+        "dense_rank": 13,
+        "bm25_rank": 5,
+        "dense_score": 0.5613843,
+        "bm25_score": 80.0382546102939,
+        "rerank_score": 0.9869089722633362
+      },
+      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L2",
+      "standard_code": "1.P.EICC.3.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Summarize sections of the text to maintain understanding.",
+          "met": true,
+          "note": "Students summarize what they learned about the sun, moon, and patterns of day and night."
+        },
+        {
+          "clause": "Visualize sections of the text to maintain understanding.",
+          "met": true,
+          "note": "Students draw and describe what the sun and moon look like."
+        }
+      ],
+      "evidence": "Tell students that today they will look at images of the sun and moon and then record their observations using pictures and words.\nAs students share responses, use their ideas to complete page 1. Think aloud how to use the words from the question itself as a cue to formulate the answer using a complete sentence. (Example: The sun looks small and yellow.)\nDraw a quick sketch of what the sun looks like.",
+      "evidence_page": 225,
+      "confidence": "low",
+      "rationale": "Students both summarize and visualize sections of the text through discussion and drawing activities. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02758751902587519,
+        "dense_rank": 12,
+        "bm25_rank": 13,
+        "dense_score": 0.56354165,
+        "bm25_score": 75.85105620934364,
+        "rerank_score": 0.9854043126106262
+      },
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L2",
+      "standard_code": "1.T.T.4.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify rhyme used in texts.",
+          "met": false,
+          "note": "Students read and discuss a poem for meaning and adjectives; no task to find rhyme."
+        },
+        {
+          "clause": "Identify alliteration used in texts.",
+          "met": false,
+          "note": "No instruction or student activity addressing alliteration."
+        },
+        {
+          "clause": "Identify repeated lines used in texts.",
+          "met": false,
+          "note": "Students do not look for or name repeated lines."
+        },
+        {
+          "clause": "Describe how rhyme, alliteration, and repeated lines are used to craft texts.",
+          "met": false,
+          "note": "Activities focus on adjectives and informational text; no analysis of poetic techniques."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Although a poem is read, students identify adjectives and discuss content, not rhyme, alliteration, or repeated lines, nor how such techniques craft the text.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.03128054740957967,
+        "dense_rank": 6,
+        "bm25_rank": 2,
+        "dense_score": 0.5759758,
+        "bm25_score": 91.1218684771156,
+        "rerank_score": 0.9847894906997681
+      },
+      "standard_raw_text": "Identify and describe poetic techniques used to craft texts, including rhyme, alliteration, and repeated lines. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L2",
+      "standard_code": "1.T.C.1",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the general purpose of a variety of texts.",
+          "met": true,
+          "note": "Students state that the informational texts teach, indicating purpose."
+        },
+        {
+          "clause": "Identify the target audience of a variety of texts.",
+          "met": false,
+          "note": "No task asks students to name or discuss a text’s intended audience."
+        },
+        {
+          "clause": "Identify different modes of communication: print, digital, auditory, and visual.",
+          "met": false,
+          "note": "Students engage with poems, images, and read-alouds but are not asked to identify modes."
+        },
+        {
+          "clause": "Create texts in teacher-selected modes such as print, digital, auditory, and/or visual.",
+          "met": true,
+          "note": "Students participate in shared writing to record observations with words and pictures (print/visual)."
+        }
+      ],
+      "evidence": "- Using a total participation technique, invite responses from the group:\n- 'How is this text the same as Does the Sun Sleep? which we began yesterday?' (they both teach us about day and night)\n...\n- With excitement, share that today students have a new job: to help record their observations of the sky during a shared writing activity.\n- Tell students that today they will look at images of the sun and moon and then record their observations using pictures and words.\n- Display the Describing the Sun and Moon recording form and tell students that now they will use their ideas of what the sun and moon look like in a class shared writing activity.",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "Students identify that the texts teach (purpose) and collaboratively create a class text with words and pictures. They do not identify target audience or name communication modes. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.014925373134328358,
+        "dense_rank": 7,
+        "bm25_rank": null,
+        "dense_score": 0.57472634,
+        "bm25_score": null,
+        "rerank_score": 0.9840166568756104
+      },
+      "standard_raw_text": "Explain how authors of texts use language for a specific purpose and a target audience."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L2",
+      "standard_code": "1.T.T.4",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify poetic techniques used to craft texts, including rhyme, alliteration, and repeated lines.",
+          "met": false,
+          "note": "Students discuss nouns, verbs, and adjectives in a poem, not poetic techniques like rhyme, alliteration, or repeated lines."
+        },
+        {
+          "clause": "Use poetic techniques to create poems using simple words and/or phrases that may or may not rhyme.",
+          "met": false,
+          "note": "Students participate in shared writing of descriptive sentences about the sun and moon; they do not compose poems or use poetic techniques."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students echo-read a poem and identify adjectives, then write descriptive observations. They neither identify poetic techniques (e.g., rhyme, alliteration, repeated lines) nor use such techniques to create poems.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.030679156908665108,
+        "dense_rank": 1,
+        "bm25_rank": 10,
+        "dense_score": 0.59682006,
+        "bm25_score": 78.41566371710292,
+        "rerank_score": 0.9799944162368774
+      },
+      "standard_raw_text": "Identify and use poetic techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L2",
+      "standard_code": "1.T.C.1.a",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify the general purpose of a text (e.g., to tell stories, provide information, share opinions, explain ideas).",
+          "met": true,
+          "note": "Students identify that the text teaches information about day and night, showing purpose to inform."
+        },
+        {
+          "clause": "Identify the target audience of a text.",
+          "met": false,
+          "note": "No task asks students to determine who the text is written for."
+        }
+      ],
+      "evidence": "- Using a total participation technique, invite responses from the group:\n- 'How is this text the same as Does the Sun Sleep? which we began yesterday?' (they both teach us about day and night)",
+      "evidence_page": 224,
+      "confidence": "medium",
+      "rationale": "Students indicate the text’s informational purpose by stating it teaches about day and night, but there is no activity identifying the target audience.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02116461366181411,
+        "dense_rank": 34,
+        "bm25_rank": 35,
+        "dense_score": 0.5233848,
+        "bm25_score": 65.04615040872797,
+        "rerank_score": 0.9789895415306091
+      },
+      "standard_raw_text": "Identify the general purpose (e.g., to tell stories, to provide information, to share opinions, to explain ideas) and target audience in a variety of texts. (I)"
+    }
+  ]
+}

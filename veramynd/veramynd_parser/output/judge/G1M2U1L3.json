@@ -1,0 +1,436 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U1L3",
+  "lesson_source": "stage1:G1M2U1L3",
+  "retrieve_file": "output\\retrieve\\G1M2U1L3.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 2,
+    "partial": 2,
+    "none": 6
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 4,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L3",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Explain concepts by interpreting texts.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Learn concepts by interpreting texts.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "- Display Summer Sun Risin' response sheet. Point out that this material has two parts. Tell students that today they will complete only Part 1, by writing and drawing about the main character and setting using key details from the text.\n- -Direct students to the top of the page and point to Part 1 and read the title aloud:\n- 'Use words and pictures to answer these questions.'\n- -Point to the table below the title and read the headings of each column aloud:\n- 'Who are the main characters?'\n- 'Where does the story take place?'\n- -Tell students that today they will answer these two questions using pictures and words to show their thinking.",
+      "evidence_page": 70,
+      "confidence": "high",
+      "rationale": "Students interpret the text to learn and explain concepts (main character, setting) and construct their own written and drawn responses, directly meeting all clauses.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.014925373134328358,
+        "dense_rank": 7,
+        "bm25_rank": null,
+        "dense_score": 0.5657892,
+        "bm25_score": null,
+        "rerank_score": 0.9923222661018372
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L3",
+      "standard_code": "1.T.T.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the main topic in an expository text.",
+          "met": false,
+          "note": "Lesson uses narrative/literary texts, not expository."
+        },
+        {
+          "clause": "Identify supporting details in an expository text.",
+          "met": false,
+          "note": "Lesson uses narrative/literary texts, not expository."
+        },
+        {
+          "clause": "Recognize techniques used to craft expository texts.",
+          "met": false,
+          "note": "Lesson uses narrative/literary texts, not expository."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on narrative texts and does not involve expository texts or their techniques, so none of the clauses are met.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02452153110047847,
+        "dense_rank": 28,
+        "bm25_rank": 16,
+        "dense_score": 0.53257674,
+        "bm25_score": 88.90729543578084,
+        "rerank_score": 0.9922829270362854
+      },
+      "standard_raw_text": "Identify techniques used to craft expository texts, including main topic and supporting details. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L3",
+      "standard_code": "1.T.C.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify who is speaking or telling the story at various points in a text.",
+          "met": false,
+          "note": "No evidence students identify the narrator or speaker."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students do not identify the narrator or speaker at any point in the lesson.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.025563671006668783,
+        "dense_rank": 34,
+        "bm25_rank": 7,
+        "dense_score": 0.52839726,
+        "bm25_score": 109.75128041600964,
+        "rerank_score": 0.9922352433204651
+      },
+      "standard_raw_text": "Identify who is speaking or telling the story at various points in a text. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L3",
+      "standard_code": "1.P.EICC.3.d",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Summarize sections of the text to maintain understanding.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Visualize sections of the text to maintain understanding.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "- Invite students to turn and talk to an elbow partner:\n- 'Who is the main character?' (the boy)\n- 'Where does the story take place?' (a farm)\n- Display Summer Sun Risin' response sheet. Point out that this material has two parts. Tell students that today they will complete only Part 1, by writing and drawing about the main character and setting using key details from the text.",
+      "evidence_page": 70,
+      "confidence": "high",
+      "rationale": "Students summarize (orally and in writing) key details about character and setting and visualize by drawing, meeting both clauses.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.025151515151515154,
+        "dense_rank": 6,
+        "bm25_rank": 40,
+        "dense_score": 0.56719756,
+        "bm25_score": 70.03306974701248,
+        "rerank_score": 0.991733193397522
+      },
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L3",
+      "standard_code": "1.T.T.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Describe traits of the main characters.",
+          "met": false,
+          "note": "Students identify the main character but do not describe traits."
+        },
+        {
+          "clause": "Explain how the characters' words support the central message, lesson, or moral.",
+          "met": false,
+          "note": "No analysis of character dialogue or connection to a central message is assigned."
+        },
+        {
+          "clause": "Explain how the characters' actions support the central message, lesson, or moral.",
+          "met": false,
+          "note": "Students note what the boy is doing, but do not explain how actions relate to a central message or moral."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson has students identify the main character, setting, and the boy’s actions, but does not ask them to describe character traits or explain how words/actions support a central message or moral.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.03200204813108039,
+        "dense_rank": 3,
+        "bm25_rank": 2,
+        "dense_score": 0.599799,
+        "bm25_score": 126.46571637175542,
+        "rerank_score": 0.9914947748184204
+      },
+      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L3",
+      "standard_code": "1.T.T.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "met": false,
+          "note": "Lesson uses narrative/literary texts, not expository."
+        },
+        {
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "met": false,
+          "note": "No evidence of this in the lesson."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "met": false,
+          "note": "No expository writing or techniques used."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson does not address expository texts or techniques, nor does it require students to make connections between ideas or write expository texts.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.027730294396961064,
+        "dense_rank": 21,
+        "bm25_rank": 5,
+        "dense_score": 0.5432924,
+        "bm25_score": 118.98695315369027,
+        "rerank_score": 0.9914543628692627
+      },
+      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L3",
+      "standard_code": "1.T.RA.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
+          "met": true,
+          "note": "Students answer questions and complete a response sheet using key details from the text."
+        },
+        {
+          "clause": "Explore various sources of information, including print, digital, and personal communication.",
+          "met": false,
+          "note": "Lesson uses a single story for the close read; students are not directed to explore multiple sources or make cross-source connections."
+        }
+      ],
+      "evidence": "Tell students that today they will complete only Part 1, by writing and drawing about the main character and setting using key details from the text.",
+      "evidence_page": 70,
+      "confidence": "high",
+      "rationale": "Students reference key details from one text to answer questions and complete a response sheet. They do not explore or synthesize across multiple sources.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.020620748299319726,
+        "dense_rank": 38,
+        "bm25_rank": 36,
+        "dense_score": 0.525264,
+        "bm25_score": 73.42503223500252,
+        "rerank_score": 0.9913051128387451
+      },
+      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L3",
+      "standard_code": "1.T.T.1",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue.",
+          "met": true,
+          "note": "Students identify main character(s) and setting from the story."
+        },
+        {
+          "clause": "Identify a simple plot with a problem and solution.",
+          "met": false,
+          "note": "No task asks students to determine problem/solution or overall plot."
+        },
+        {
+          "clause": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
+          "met": false,
+          "note": "Students do not analyze character traits or connect actions/words to a message."
+        },
+        {
+          "clause": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures.",
+          "met": false,
+          "note": "No comparing/contrasting across texts or cultures occurs."
+        },
+        {
+          "clause": "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure.",
+          "met": false,
+          "note": "Students do not create narrative texts; they only identify character and setting."
+        }
+      ],
+      "evidence": "Tell students that today they will complete only Part 1, by writing and drawing about the main character and setting using key details from the text.\n- -Direct students to the top of the page and point to Part 1 and read the title aloud:\n- 'Use words and pictures to answer these questions.'\n- -Point to the table below the title and read the headings of each column aloud:\n- 'Who are the main characters?'\n- 'Where does the story take place?'\n- -Tell students that today they will answer these two questions using pictures and words to show their thinking.\n- -Invite students to show a thumbs-up or to touch their head if they are ready to begin writing and drawing about the main character and setting.\n- -Point out the Summer Sun Risin' response sheets already at their workspaces.\n- -Transition students to their workspaces and invite them to begin working.",
+      "evidence_page": 70,
+      "confidence": "high",
+      "rationale": "Students identify narrative elements (character and setting) through discussion and a written/drawn response. They do not analyze plot/problem-solution, character traits/messages, compare texts, or create a narrative with closure.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.03200204813108039,
+        "dense_rank": 2,
+        "bm25_rank": 3,
+        "dense_score": 0.63071394,
+        "bm25_score": 124.55757173542138,
+        "rerank_score": 0.9912776947021484
+      },
+      "standard_raw_text": "Identify and use narrative techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L3",
+      "standard_code": "1.T.T.1.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Compare characters in stories from diverse cultures with adult support.",
+          "met": false,
+          "note": "No comparison across stories or cultures."
+        },
+        {
+          "clause": "Contrast characters in stories from diverse cultures with adult support.",
+          "met": false,
+          "note": "No comparison across stories or cultures."
+        },
+        {
+          "clause": "Compare experiences of characters in stories from diverse cultures with adult support.",
+          "met": false,
+          "note": "No comparison across stories or cultures."
+        },
+        {
+          "clause": "Contrast experiences of characters in stories from diverse cultures with adult support.",
+          "met": false,
+          "note": "No comparison across stories or cultures."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson uses only one story and does not involve comparing or contrasting characters or experiences across cultures.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.015625,
+        "dense_rank": 4,
+        "bm25_rank": null,
+        "dense_score": 0.57973844,
+        "bm25_score": null,
+        "rerank_score": 0.9906423687934875
+      },
+      "standard_raw_text": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L3",
+      "standard_code": "1.P.ST.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Explore how context shapes the author's decisions when interpreting texts.",
+          "met": false,
+          "note": "No evidence students explore author's decisions or context."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses when interpreting texts.",
+          "met": false,
+          "note": "No evidence students explore audience response or context."
+        },
+        {
+          "clause": "Explore how context shapes the author's decisions when constructing texts.",
+          "met": false,
+          "note": "No evidence students construct texts with attention to context or author's decisions."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses when constructing texts.",
+          "met": false,
+          "note": "No evidence students construct texts with attention to context or audience response."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "There is no exploration of authorial or audience context in the lesson.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02210552027357108,
+        "dense_rank": 29,
+        "bm25_rank": 32,
+        "dense_score": 0.53039384,
+        "bm25_score": 75.45982400090185,
+        "rerank_score": 0.9901977777481079
+      },
+      "standard_raw_text": "Explore how context shapes the author’s decisions and the audience’s responses during the interpretation and construction of texts. (I/C)"
+    }
+  ]
+}

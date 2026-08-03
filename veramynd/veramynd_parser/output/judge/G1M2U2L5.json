@@ -1,0 +1,436 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U2L5",
+  "lesson_source": "stage1:G1M2U2L5",
+  "retrieve_file": "output\\retrieve\\G1M2U2L5.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 2,
+    "partial": 1,
+    "none": 7
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 3,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L5",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Explain concepts by interpreting texts.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Learn concepts by interpreting texts.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "- Display the What Makes Day and Night notes sheet and tell students that today they will take notes on the text What Makes Day and Night.\n- Direct students to the prompts at top of the page and read them aloud:\n- -'What makes day?'\n- -'What makes night?'\n- Tell students they will use their own notes sheet to capture quick notes about the pattern of light and dark that we call day and night. Tell students that they will use these notes in the next lesson during the Science Talk protocol. Students can use pictures and words to record their notes.\n- Invite students to show a thumbs-up or touch their head if they are ready to begin writing and drawing their notes.\n- Distribute:\n- -Prepared clipboards with the What Makes Day and Night notes sheet\n- -Pencils\n- -Crayons\n- -Colored pencils\n- Invite students to begin working.",
+      "evidence_page": 257,
+      "confidence": "high",
+      "rationale": "Students interpret the text and illustrations to learn and explain the concept of day and night, and construct their own notes (texts) to demonstrate understanding.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02530334418467002,
+        "dense_rank": 2,
+        "bm25_rank": 49,
+        "dense_score": 0.59849966,
+        "bm25_score": 100.21543662553282,
+        "rerank_score": 0.9931260347366333
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L5",
+      "standard_code": "1.T.T.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "met": true,
+          "note": "Students help identify the main topic (the pattern of day/night) and supply supporting information for an anchor chart."
+        },
+        {
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "met": true,
+          "note": "Students contribute explanations linking Earth’s rotation to day and night during shared writing."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "met": false,
+          "note": "Students take notes and contribute to shared writing but do not produce their own full expository piece with introduction and closure."
+        }
+      ],
+      "evidence": "Ask students to assist in filling out the first column of the anchor chart. Ask: 'What is the pattern?' (light and dark on earth, which we call day and night)\n-Add 'light and dark (day and night)' to the chart.\n-Ask students to help fill out the second column of the anchor chart. Ask:\n'What information should we record about this pattern?'\n-Using a total participation technique, invite responses from the group.\n-As students share responses, use their ideas to complete the second column. Example: 'The earth rotates each day. When the earth faces the sun we have day; when the earth turns away from the sun we have night.'",
+      "evidence_page": 259,
+      "confidence": "low",
+      "rationale": "Students identify the main topic and related details and explain connections between ideas from the informational text, but they do not write an independent expository piece with an introduction and closure. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.030536130536130537,
+        "dense_rank": 5,
+        "bm25_rank": 6,
+        "dense_score": 0.5900986,
+        "bm25_score": 128.66237084648967,
+        "rerank_score": 0.9923893809318542
+      },
+      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L5",
+      "standard_code": "1.P.EICC.3.d",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Summarize sections of the text to maintain understanding.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Visualize sections of the text to maintain understanding.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "- Tell students they will use their own notes sheet to capture quick notes about the pattern of light and dark that we call day and night. Tell students that they will use these notes in the next lesson during the Science Talk protocol. Students can use pictures and words to record their notes.\n...\n- Invite students to begin working.\n- As students write and draw, circulate to offer support. Prompt students by referencing the What Makes Day and Night anchor chart and asking students to think about the close readaloud sessions. Remind students that they can draw and write to record their notes.",
+      "evidence_page": 257,
+      "confidence": "high",
+      "rationale": "Students summarize what they learned from the text and visualize it through drawing and writing notes.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02625745950554135,
+        "dense_rank": 9,
+        "bm25_rank": 25,
+        "dense_score": 0.58423805,
+        "bm25_score": 109.60607587066018,
+        "rerank_score": 0.9914804697036743
+      },
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L5",
+      "standard_code": "1.T.RA.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
+          "met": true,
+          "note": "Students identify what in the illustrations or the text supports their understanding during discussion and note-taking."
+        },
+        {
+          "clause": "Explore various sources of information, including print, digital, and personal communication.",
+          "met": false,
+          "note": "Students primarily work from a single informational text; while a poem and photograph are used, there is no explicit task to explore multiple sources to make connections."
+        }
+      ],
+      "evidence": "What, in the illustrations, help you understand that information? What, in the text, helps you understand that information?",
+      "evidence_page": 256,
+      "confidence": "medium",
+      "rationale": "Students explicitly reference illustrations versus text to support their understanding and notes. However, the lesson does not have students explore multiple sources to make connections; activities center on a single informational text with separate poem/photo work.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.022616917965755177,
+        "dense_rank": 26,
+        "bm25_rank": 31,
+        "dense_score": 0.550933,
+        "bm25_score": 108.63407363204593,
+        "rerank_score": 0.9911167621612549
+      },
+      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L5",
+      "standard_code": "1.P.ST.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Draw from knowledge of the author to understand texts.",
+          "met": false,
+          "note": "No evidence students consider the author."
+        },
+        {
+          "clause": "Draw from knowledge of the audience to understand texts.",
+          "met": false,
+          "note": "No evidence students consider the audience."
+        },
+        {
+          "clause": "Draw from knowledge of the context to understand texts.",
+          "met": false,
+          "note": "No evidence students consider context beyond content."
+        },
+        {
+          "clause": "Use this knowledge to discern a clear point of view or unique perspective when interpreting texts.",
+          "met": false,
+          "note": "No evidence of point of view analysis."
+        },
+        {
+          "clause": "Use this knowledge to establish a clear point of view or unique perspective when constructing texts.",
+          "met": false,
+          "note": "No evidence of establishing a point of view in student writing."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students do not engage with author, audience, or context in a way that addresses point of view or perspective.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.020210268449525365,
+        "dense_rank": 41,
+        "bm25_rank": 37,
+        "dense_score": 0.53230184,
+        "bm25_score": 105.6420260704474,
+        "rerank_score": 0.989815354347229
+      },
+      "standard_raw_text": "Draw from knowledge of author, audience, and context to discern and establish a clear point of view or unique perspective when interpreting and constructing texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L5",
+      "standard_code": "1.P.ST.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Explore how context shapes the author's decisions when interpreting texts.",
+          "met": false,
+          "note": "No evidence students discuss author's decisions or context."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses when interpreting texts.",
+          "met": false,
+          "note": "No evidence students discuss audience response or context."
+        },
+        {
+          "clause": "Explore how context shapes the author's decisions when constructing texts.",
+          "met": false,
+          "note": "No evidence students consider context in their own writing."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses when constructing texts.",
+          "met": false,
+          "note": "No evidence students consider audience in their own writing."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "There is no exploration of how context shapes author or audience decisions or responses.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.020792932557638442,
+        "dense_rank": 31,
+        "bm25_rank": 42,
+        "dense_score": 0.5456798,
+        "bm25_score": 104.3166955663347,
+        "rerank_score": 0.9897463321685791
+      },
+      "standard_raw_text": "Explore how context shapes the author’s decisions and the audience’s responses during the interpretation and construction of texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L5",
+      "standard_code": "1.T.T.3",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft opinion texts, including the author's opinion and supporting reasons.",
+          "met": false,
+          "note": "No opinion texts or techniques discussed."
+        },
+        {
+          "clause": "Use knowledge of opinion techniques to create opinion pieces that introduce the topic, state an opinion about the topic, and provide two or more reasons to support the opinion with linking words such as 'and' and 'because'.",
+          "met": false,
+          "note": "No opinion writing or techniques used."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson does not involve opinion writing or analysis of opinion techniques.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.021691473404869044,
+        "dense_rank": 21,
+        "bm25_rank": 47,
+        "dense_score": 0.55608714,
+        "bm25_score": 100.5089385729705,
+        "rerank_score": 0.9892538785934448
+      },
+      "standard_raw_text": "Identify and use opinion techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L5",
+      "standard_code": "1.P.ST.1",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use prior knowledge, research, and discussions to identify key context components.",
+          "met": false,
+          "note": "No explicit identification of context components."
+        },
+        {
+          "clause": "Consider how context impacts the purposes of the author and the audience.",
+          "met": false,
+          "note": "No evidence students consider context's impact on author/audience."
+        },
+        {
+          "clause": "Explore how context shapes the author's decisions and the audience's responses during text interpretation and construction.",
+          "met": false,
+          "note": "No evidence of this exploration."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students do not identify or discuss context components or their impact on author/audience.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.025158227848101268,
+        "dense_rank": 20,
+        "bm25_rank": 19,
+        "dense_score": 0.5572647,
+        "bm25_score": 113.80255574931807,
+        "rerank_score": 0.988066554069519
+      },
+      "standard_raw_text": "Develop and apply knowledge of key components of context such as background information, geographic location, cultural influences, time period, and contemporary events when interpreting and constructing texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L5",
+      "standard_code": "1.P.ST.1.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use prior knowledge to identify relevant context components.",
+          "met": false,
+          "note": "Students recall prior lessons to support comprehension of content, but they are not asked to identify contextual components of a text or situation."
+        },
+        {
+          "clause": "Use formal or informal research to find contextual information.",
+          "met": false,
+          "note": "No research task is present; students work from a single read-aloud text and a photo, not multiple sources or an inquiry activity."
+        },
+        {
+          "clause": "Engage in discussions with others to determine key context components.",
+          "met": false,
+          "note": "Students discuss content (poem meaning, science patterns), not to determine key contextual components."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson centers on a close read-aloud, note-taking, and descriptive writing about sun images. It does not include research or tasks to identify contextual components; discussions focus on content understanding rather than context.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.020098482564566374,
+        "dense_rank": 47,
+        "bm25_rank": 33,
+        "dense_score": 0.52778596,
+        "bm25_score": 107.28112113111771,
+        "rerank_score": 0.9874847531318665
+      },
+      "standard_raw_text": "Use prior knowledge, formal or informal research, and discussions with others to identify the key components of context that are most relevant. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L5",
+      "standard_code": "1.T.RA.1",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Ask questions about topics of interest for research.",
+          "met": false,
+          "note": "No student-generated research questions."
+        },
+        {
+          "clause": "Conduct research individually or collaboratively by gathering and organizing information from multiple sources using graphic organizers or support aids.",
+          "met": false,
+          "note": "No research or use of multiple sources."
+        },
+        {
+          "clause": "Share relevant and accurate information through different communication modes.",
+          "met": false,
+          "note": "Students share notes, but not as part of a research process."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson does not involve research, multiple sources, or student-generated questions for research.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.015873015873015872,
+        "dense_rank": null,
+        "bm25_rank": 3,
+        "dense_score": null,
+        "bm25_score": 134.68328529979865,
+        "rerank_score": 0.9873324036598206
+      },
+      "standard_raw_text": "Build knowledge about the world by asking or generating questions about topics of interest, researching the answers, using multiple sources, and communicating relevant and accurate information about the topic."
+    }
+  ]
+}

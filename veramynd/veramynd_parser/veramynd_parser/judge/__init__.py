@@ -5,6 +5,7 @@ from .models import AlignmentVerdict, JudgeBatchDraft, JudgeLlmDraft
 from .pipeline import (
     DEFAULT_ESCALATE_MODEL,
     DEFAULT_JUDGE_MODEL,
+    JUDGE_QUALITY_PROFILE,
     JudgeError,
     PROMPT_VERSION,
     judge_lesson_batch,
@@ -17,6 +18,7 @@ __all__ = [
     "AlignmentVerdict",
     "DEFAULT_ESCALATE_MODEL",
     "DEFAULT_JUDGE_MODEL",
+    "JUDGE_QUALITY_PROFILE",
     "JudgeBatchDraft",
     "JudgeError",
     "JudgeLlmDraft",

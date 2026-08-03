@@ -1,0 +1,471 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U2L11",
+  "lesson_source": "stage1:G1M2U2L11",
+  "retrieve_file": "output\\retrieve\\G1M2U2L11.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 3,
+    "partial": 4,
+    "none": 3
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 7,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.P.EICC.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Engage in spoken or written dialogue as an author and audience.",
+          "met": true,
+          "note": "Students engage in turn-and-talk and a structured partner protocol, taking speaker and listener roles to share their own notes."
+        },
+        {
+          "clause": "Make intentional connections within texts.",
+          "met": false,
+          "note": "Students review notes and share information but are not directed to connect parts within a single text."
+        },
+        {
+          "clause": "Make intentional connections between texts.",
+          "met": false,
+          "note": "The lesson does not ask students to relate or compare ideas across different texts."
+        },
+        {
+          "clause": "Make intentional connections beyond texts to other knowledge or experiences.",
+          "met": true,
+          "note": "Students link learned sky patterns to real-world actions by devising motions that represent day/night and other patterns."
+        }
+      ],
+      "evidence": "Ask students to turn and talk, and use equity sticks to select students to share their responses with the whole group: \"What is something we can do safely and respectfully with our hands or bodies to show the pattern of light and dark and how it makes day and night on earth?\"",
+      "evidence_page": 322,
+      "confidence": "low",
+      "rationale": "Students clearly participate in spoken dialogue and connect content to real-life experiences through movement. However, they are not asked to make explicit connections within or between texts in this lesson. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.016129032258064516,
+        "dense_rank": 2,
+        "bm25_rank": null,
+        "dense_score": 0.58325714,
+        "bm25_score": null,
+        "rerank_score": 0.9989055395126343
+      },
+      "standard_raw_text": "Engage in written or spoken dialogue as author and audience for a variety of tasks and purposes, making intentional connections within, between, and beyond texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.P.EICC.1.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Develop group norms for participation in a community of readers and writers",
+          "met": false,
+          "note": "Students review an existing protocol; they do not co-create norms."
+        },
+        {
+          "clause": "Discuss texts with others in the group",
+          "met": false,
+          "note": "Students discuss patterns in the sky and share information from notes, not specific texts."
+        },
+        {
+          "clause": "Share individual writing with the group",
+          "met": false,
+          "note": "Students do independent notebook writing but do not share their writing with peers."
+        },
+        {
+          "clause": "Listen to others as they share their writing",
+          "met": false,
+          "note": "Peers share information orally; no sharing of writing is described."
+        },
+        {
+          "clause": "Offer feedback on peers' writing",
+          "met": false,
+          "note": "No peer feedback on writing occurs."
+        },
+        {
+          "clause": "Respond to feedback received on own writing",
+          "met": false,
+          "note": "No opportunity to receive/respond to feedback on writing is included."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson includes oral sharing about content and independent notebook writing, but students do not share their writing, listen to others’ writing, develop norms, or give/receive feedback on writing. Discussions are about patterns, not specific texts.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.027673192771084338,
+        "dense_rank": 23,
+        "bm25_rank": 4,
+        "dense_score": 0.54362357,
+        "bm25_score": 104.2644255772536,
+        "rerank_score": 0.9979037046432495
+      },
+      "standard_raw_text": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing individual writing, listening as others share their writing, and offering and responding to feedback. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.P.CP.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Communicate clearly to present ideas, information, and texts.",
+          "met": true,
+          "note": "Students share information about a selected sky pattern with partners using their notes."
+        },
+        {
+          "clause": "Integrate modes and genres appropriate to purpose and audience.",
+          "met": true,
+          "note": "Students use visual notes with pictures/labels while orally sharing; they also use gestures to represent patterns."
+        },
+        {
+          "clause": "Vary tone, pace, and nonverbal gestures to suit purpose and audience.",
+          "met": false,
+          "note": "Students use gestures, but there is no explicit instruction to vary tone or pace for audience/purpose."
+        },
+        {
+          "clause": "Engage in dialogue by asking and answering questions with audiences.",
+          "met": false,
+          "note": "Students answer prompts; the lesson does not direct them to ask questions of their audience."
+        },
+        {
+          "clause": "Build background knowledge by reciting significant poems and speeches appropriate for grade level.",
+          "met": true,
+          "note": "Students lead the class in reciting the unit poem with accompanying motions."
+        }
+      ],
+      "evidence": "- Tell them they are going to use the Back-to-Back and Face-to-Face protocol to share information about their selected pattern. Remind them that they used this protocol in Unit 1, and review as necessary using the Back-to-Back and Face-to-Face Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Lead students through three rounds of the Back-to-Back and Face-to-Face protocol, reminding them to use their notes sheet as they answer the following questions:\n- 'What pattern in the sky are you sharing about?' (Responses will vary, depending on chosen pattern.)\n- 'What are one or two pieces of information you learned about this pattern in the sky?' (Responses will vary, depending on chosen pattern.)\n- 'What is one thing you still wonder about for this pattern in the sky?' (Responses will vary, depending on chosen pattern.)",
+      "evidence_page": 324,
+      "confidence": "medium",
+      "rationale": "Students practice presentation by sharing information using notes with partners and recite a poem, but there is no explicit direction to modulate tone/pace or to ask questions of an audience, so not all presentation-skill clauses are met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.027777777777777776,
+        "dense_rank": 3,
+        "bm25_rank": 24,
+        "dense_score": 0.5822419,
+        "bm25_score": 81.93686198769996,
+        "rerank_score": 0.9978280663490295
+      },
+      "standard_raw_text": "Use presentation skills to tailor communication to target audiences for specific purposes."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.P.CP.1.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Work with others to discuss topics.",
+          "met": true,
+          "note": "Students engage in partner discussions using a structured protocol to share information about sky patterns."
+        },
+        {
+          "clause": "Work with others to investigate questions.",
+          "met": false,
+          "note": "Students answer prompts and share wonders but do not collaboratively investigate or pursue answers."
+        },
+        {
+          "clause": "Work with others to solve problems.",
+          "met": true,
+          "note": "Students collaborate to devise gestures/motions to represent patterns in the sky."
+        },
+        {
+          "clause": "Work with others to explore and create texts.",
+          "met": false,
+          "note": "Students participate in shared reading (exploring a text) but text creation is done independently, not with others."
+        }
+      ],
+      "evidence": "- Lead students through three rounds of the Back-to-Back and Face-to-Face protocol, reminding them to use their notes sheet as they answer the following questions:\n- 'What pattern in the sky are you sharing about?' (Responses will vary, depending on chosen pattern.)\n- 'What are one or two pieces of information you learned about this pattern in the sky?' (Responses will vary, depending on chosen pattern.)\n- 'What is one thing you still wonder about for this pattern in the sky?' (Responses will vary, depending on chosen pattern.)",
+      "evidence_page": 324,
+      "confidence": "medium",
+      "rationale": "Students work with partners to discuss a content topic and collaboratively decide on motions to represent concepts. However, they do not conduct collaborative investigation or co-create texts in this lesson.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02363150867823765,
+        "dense_rank": 10,
+        "bm25_rank": 47,
+        "dense_score": 0.5641159,
+        "bm25_score": 68.40951617166012,
+        "rerank_score": 0.9969592094421387
+      },
+      "standard_raw_text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.P.CP.1",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Arrive prepared to actively participate in group discussions and collaborative meetings.",
+          "met": true,
+          "note": "Students reviewed and used their notes to participate in the discussion protocol."
+        },
+        {
+          "clause": "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects.",
+          "met": false,
+          "note": "Procedures were teacher-provided; no shared project or student-determined norms/goals evident."
+        },
+        {
+          "clause": "Contribute to discussions and shared projects by offering ideas, listening to the ideas of others, and providing feedback.",
+          "met": true,
+          "note": "Students share information with partners and listen/clarify during the protocol."
+        },
+        {
+          "clause": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts.",
+          "met": true,
+          "note": "Students work with partners to discuss the topic (patterns in the sky) using a structured protocol."
+        }
+      ],
+      "evidence": "Lead students through three rounds of the Back-to-Back and Face-to-Face protocol, reminding them to use their notes sheet as they answer the following questions:",
+      "evidence_page": 324,
+      "confidence": "high",
+      "rationale": "Students engage in structured partner discussion using notes, meeting collaboration in discussion. They do not co-create norms/procedures or complete a shared project, so not all aspects are met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.019924662965900078,
+        "dense_rank": 37,
+        "bm25_rank": 44,
+        "dense_score": 0.52873826,
+        "bm25_score": 70.15410040186198,
+        "rerank_score": 0.9956700801849365
+      },
+      "standard_raw_text": "Collaborate with others to accomplish shared goals and projects."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.T.RA.1.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Share relevant information about a topic.",
+          "met": true,
+          "note": "Students share information about sky patterns."
+        },
+        {
+          "clause": "Share accurate information about a topic.",
+          "met": true,
+          "note": "Students use notes and observations to share accurate information."
+        },
+        {
+          "clause": "Use a variety of communication modes to share information.",
+          "met": true,
+          "note": "Students use oral, written, and gesture-based communication."
+        }
+      ],
+      "evidence": "Lead students through three rounds of the Back-to-Back and Face-to-Face protocol, reminding them to use their notes sheet as they answer the following questions: 'What pattern in the sky are you sharing about?' ... 'What are one or two pieces of information you learned about this pattern in the sky?' ... 'What is one thing you still wonder about for this pattern in the sky?'",
+      "evidence_page": 324,
+      "confidence": "high",
+      "rationale": "Students share relevant and accurate information about sky patterns using oral, written, and gesture-based modes.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.027984344422700584,
+        "dense_rank": 13,
+        "bm25_rank": 10,
+        "dense_score": 0.56148136,
+        "bm25_score": 100.84294392810725,
+        "rerank_score": 0.9941923022270203
+      },
+      "standard_raw_text": "Share relevant and accurate information through a variety of different modes. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.T.RA.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
+          "met": true,
+          "note": "Students use their notes sheets to answer questions and share information about a selected pattern."
+        },
+        {
+          "clause": "Explore various sources of information, including print, digital, and personal communication.",
+          "met": false,
+          "note": "In this lesson, students review their own notes and a single photograph; they do not actively explore multiple sources or make cross-topic connections."
+        }
+      ],
+      "evidence": "Lead students through three rounds of the Back-to-Back and Face-to-Face protocol, reminding them to use their notes sheet as they answer the following questions:\n- 'What pattern in the sky are you sharing about?' (Responses will vary, depending on chosen pattern.)\n- 'What are one or two pieces of information you learned about this pattern in the sky?' (Responses will vary, depending on chosen pattern.)\n- 'What is one thing you still wonder about for this pattern in the sky?' (Responses will vary, depending on chosen pattern.)\n- Circulate to support students as they use their notes, prompting them to use the pictures and labels on their notes sheets to help recall information about their selected pattern in the sky.",
+      "evidence_page": 324,
+      "confidence": "high",
+      "rationale": "Students refer to their notes (a text) to answer specific questions, but they do not explore multiple sources or make broad connections in this lesson.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.027149321266968326,
+        "dense_rank": 25,
+        "bm25_rank": 5,
+        "dense_score": 0.5411061,
+        "bm25_score": 103.84253087349362,
+        "rerank_score": 0.9883124232292175
+      },
+      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Explain concepts by interpreting texts.",
+          "met": true,
+          "note": "Students use notes and anchor charts to explain patterns in the sky."
+        },
+        {
+          "clause": "Learn concepts by interpreting texts.",
+          "met": true,
+          "note": "Students review notes and anchor charts to reinforce learning."
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
+          "met": true,
+          "note": "Students write in their Sky notebook to demonstrate understanding."
+        }
+      ],
+      "evidence": "Invite students to review and reread each of their notes sheets. ... Tell students that now they will have a chance to complete another entry in their Sky notebook, this time focusing on the moon. ... Guide students to complete this page. ... Circulate to support students as they write.",
+      "evidence_page": 325,
+      "confidence": "high",
+      "rationale": "Students interpret notes and anchor charts to explain and learn concepts, and construct texts in their Sky notebook.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.0242296918767507,
+        "dense_rank": 8,
+        "bm25_rank": 45,
+        "dense_score": 0.56655455,
+        "bm25_score": 70.01470206357162,
+        "rerank_score": 0.9866757988929749
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.P.CP.2.d",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Engage in dialogue with audiences.",
+          "met": true,
+          "note": "Students conduct three rounds of Back-to-Back and Face-to-Face sharing with partners."
+        },
+        {
+          "clause": "Ask questions during dialogue.",
+          "met": true,
+          "note": "Students are cued to ask clarifying questions to partners (e.g., “So, do you mean ___?”)."
+        },
+        {
+          "clause": "Answer questions during dialogue.",
+          "met": true,
+          "note": "Students answer partner-share questions using their notes about sky patterns."
+        }
+      ],
+      "evidence": "Lead students through three rounds of the Back-to-Back and Face-to-Face protocol, reminding them to use their notes sheet as they answer the following questions: 'What pattern in the sky are you sharing about?' ... 'What is one thing you still wonder about for this pattern in the sky?' ... If productive, cue students to clarify the conversation by confirming what they mean and to listen carefully and seek to understand: 'So, do you mean _____?'",
+      "evidence_page": 324,
+      "confidence": "high",
+      "rationale": "Students participate in structured partner dialogue, answer multiple questions using notes, and are prompted to ask clarifying questions during the exchange.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.015873015873015872,
+        "dense_rank": null,
+        "bm25_rank": 3,
+        "dense_score": null,
+        "bm25_score": 105.52252390327253,
+        "rerank_score": 0.9859931468963623
+      },
+      "standard_raw_text": "Engage in dialogue with audiences by asking and answering questions. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.T.RA.1",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Ask questions about topics of interest for research.",
+          "met": true,
+          "note": "Students state something they still wonder about their chosen sky pattern during sharing."
+        },
+        {
+          "clause": "Conduct research individually or collaboratively by gathering and organizing information from multiple sources using graphic organizers or support aids.",
+          "met": false,
+          "note": "In this lesson, students only review prior notes and complete an observation entry; they do not gather information from multiple sources."
+        },
+        {
+          "clause": "Share relevant and accurate information through different communication modes.",
+          "met": true,
+          "note": "Students orally share one or two pieces of information about their selected pattern using their notes."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Although students generate a wondering and share information orally, the lesson does not have them conduct research or gather information from multiple sources. Because the standard centrally requires research using multiple sources, this lesson does not meet it.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02750455373406193,
+        "dense_rank": 30,
+        "bm25_rank": 1,
+        "dense_score": 0.5319809,
+        "bm25_score": 136.9023519112262,
+        "rerank_score": 0.985356867313385
+      },
+      "standard_raw_text": "Build knowledge about the world by asking or generating questions about topics of interest, researching the answers, using multiple sources, and communicating relevant and accurate information about the topic."
+    }
+  ]
+}

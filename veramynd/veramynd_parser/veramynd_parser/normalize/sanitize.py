@@ -634,7 +634,8 @@ def canonicalize_evidence_locations(
 
     Chunk / retrieval joins must use Stage-1 block IDs as ground truth. The LLM
     sometimes shortens section names (observed: ``Closing A`` instead of
-    ``Closing and Assessment A``), which orphans the pointer.
+    ``Closing and Assessment A``), which orphans the pointer. Locations that
+    cannot be joined raise ``ValueError`` (fail loud at sanitize time).
     """
     warnings: list[str] = []
     ids = stage1_block_ids(lesson)
@@ -642,17 +643,17 @@ def canonicalize_evidence_locations(
     for i, item in enumerate(evidence):
         loc = (item.location or "").strip()
         if not loc:
-            warnings.append(f"evidence[{i}] location is empty — cannot join to Stage-1")
-            out.append(item)
-            continue
+            raise ValueError(
+                f"evidence[{i}] location is empty — cannot join to Stage-1 "
+                f"(known: {sorted(ids)})"
+            )
 
         m = _LOCATION_BLOCK.match(loc)
         if not m:
-            warnings.append(
-                f"evidence[{i}] location {loc!r} has no '{{section}} {{letter}}' prefix"
+            raise ValueError(
+                f"evidence[{i}] location {loc!r} has no '{{section}} {{letter}}' "
+                f"prefix (known: {sorted(ids)})"
             )
-            out.append(item)
-            continue
 
         hint = m.group("section").strip()
         letter = m.group("letter").strip()
@@ -672,12 +673,10 @@ def canonicalize_evidence_locations(
 
         resolved = _resolve_stage1_section(hint, letter, lesson)
         if resolved is None:
-            warnings.append(
+            raise ValueError(
                 f"evidence[{i}] location {loc!r} does not join any Stage-1 block "
                 f"(known: {sorted(ids)})"
             )
-            out.append(item)
-            continue
 
         canonical = f"{resolved} {letter}"
         if rest:

@@ -268,12 +268,71 @@ def test_chunk_lessons_dir_writes_bundles(tmp_path: Path):
     assert bundle.resource_id == "G1M2U1L1"
     assert "oral_production" in bundle.lesson_chunk.text
     assert not hasattr(bundle.lesson_chunk, "embed") or "embed" not in bundle.lesson_chunk.model_dump()
-
     assert not (out_dir / "embed_lesson.jsonl").exists()
     assert not (out_dir / "embed_block.jsonl").exists()
-
     progress = json.loads((out_dir / "chunk_progress.json").read_text(encoding="utf-8"))
     assert progress["status"] == "complete"
+
+
+def test_chunk_lessons_dir_incremental_skip(tmp_path: Path):
+    lessons_dir = tmp_path / "lessons"
+    normalize_dir = tmp_path / "normalize"
+    out_dir = tmp_path / "chunks"
+    lessons_dir.mkdir()
+    normalize_dir.mkdir()
+
+    lesson = _sample_lesson("G1M2U1L1")
+    (lessons_dir / "G1M2U1L1.json").write_text(
+        lesson.model_dump_json(indent=2) + "\n", encoding="utf-8"
+    )
+    (normalize_dir / "G1M2U1L1.json").write_text(
+        dump_ela_record_json(minimal_normalized_lesson(resource_id="G1M2U1L1")),
+        encoding="utf-8",
+    )
+
+    first = chunk_lessons_dir(lessons_dir, normalize_dir, out_dir)
+    assert first["built"] == 1
+    assert first["skipped"] == []
+
+    second = chunk_lessons_dir(lessons_dir, normalize_dir, out_dir)
+    assert second["built"] == 0
+    assert second["skipped"] == ["G1M2U1L1"]
+
+    forced = chunk_lessons_dir(lessons_dir, normalize_dir, out_dir, force=True)
+    assert forced["built"] == 1
+    assert forced["mode"] == "force"
+
+
+def test_chunk_lessons_dir_continues_after_corrupt_json(tmp_path: Path):
+    """One invalid Stage-1 JSON must not abort the batch or skip the manifest."""
+    from veramynd_parser.chunk.builder import ChunkBuildError, PROGRESS_NAME, MANIFEST_NAME
+
+    lessons_dir = tmp_path / "lessons"
+    normalize_dir = tmp_path / "normalize"
+    out_dir = tmp_path / "chunks"
+    lessons_dir.mkdir()
+    normalize_dir.mkdir()
+
+    good = _sample_lesson("G1M2U1L1")
+    (lessons_dir / "G1M2U1L1.json").write_text(
+        good.model_dump_json(indent=2) + "\n", encoding="utf-8"
+    )
+    (normalize_dir / "G1M2U1L1.json").write_text(
+        dump_ela_record_json(minimal_normalized_lesson(resource_id="G1M2U1L1")),
+        encoding="utf-8",
+    )
+    (lessons_dir / "G1M2U1L2.json").write_text("{not-valid-json", encoding="utf-8")
+
+    with pytest.raises(ChunkBuildError, match="1 lesson"):
+        chunk_lessons_dir(lessons_dir, normalize_dir, out_dir)
+
+    assert (out_dir / "by_lesson" / "G1M2U1L1.json").is_file()
+    assert (out_dir / PROGRESS_NAME).is_file()
+    assert (out_dir / MANIFEST_NAME).is_file()
+    progress = json.loads((out_dir / PROGRESS_NAME).read_text(encoding="utf-8"))
+    assert "G1M2U1L1" in progress["completed"]
+    assert any(f["code"] == "G1M2U1L2" for f in progress["failed"])
+    assert progress["status"] == "partial"
 
 
 def test_cli_chunk_lessons_wires():

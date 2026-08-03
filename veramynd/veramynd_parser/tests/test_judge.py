@@ -5,11 +5,15 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import pytest
+
 from veramynd_parser.cli import build_parser
 from veramynd_parser.judge.grounding import is_grounded, normalize_for_grounding
 from veramynd_parser.judge.io import (
+    JudgeIoError,
     lesson_raw_text_from_stage1,
     load_retrieve_candidates,
+    load_standard_raw_text,
 )
 from veramynd_parser.judge.models import ClauseJudgment, JudgeLlmDraft
 from veramynd_parser.judge.pipeline import judge_pair, judge_retrieve_file
@@ -96,6 +100,63 @@ def test_escalate_changes_cache_key():
         PROMPT_VERSION, "openai", "gpt-4.1", "escalate=1", "gpt-5", "sys", "{}"
     )
     assert k0 != k1
+
+
+def test_should_escalate_enterprise_triggers():
+    from veramynd_parser.judge.pipeline import _should_escalate
+
+    clause = ClauseJudgment(clause="c", met=True, note="")
+
+    assert _should_escalate(
+        JudgeLlmDraft(
+            matched_status="partial",
+            clauses=[clause],
+            evidence="x",
+            evidence_page=1,
+            confidence="high",
+            rationale="r",
+        )
+    )
+    assert _should_escalate(
+        JudgeLlmDraft(
+            matched_status="full",
+            clauses=[clause],
+            evidence="x",
+            evidence_page=1,
+            confidence="medium",
+            rationale="r",
+        )
+    )
+    assert _should_escalate(
+        JudgeLlmDraft(
+            matched_status="full",
+            clauses=[clause],
+            evidence="",
+            evidence_page=1,
+            confidence="high",
+            rationale="r",
+        )
+    )
+    assert not _should_escalate(
+        JudgeLlmDraft(
+            matched_status="full",
+            clauses=[clause],
+            evidence="grounded quote",
+            evidence_page=1,
+            confidence="high",
+            rationale="r",
+        )
+    )
+    assert not _should_escalate(
+        JudgeLlmDraft(
+            matched_status="none",
+            clauses=[clause],
+            evidence="",
+            evidence_page=1,
+            confidence="high",
+            rationale="r",
+        )
+    )
 
 
 def test_lesson_raw_text_joins_steps():
@@ -445,6 +506,143 @@ def test_batch_falls_back_to_pair_on_code_mismatch(tmp_path: Path):
     assert report["judged"] == 1
 
 
+def test_judge_aborts_on_billing_without_pair_fallback(tmp_path):
+    """Non-retryable OpenAI errors must not fall back to N pair calls."""
+    from veramynd_parser.judge.pipeline import JudgeError
+
+    lesson_path = tmp_path / "G1M2U1L1.json"
+    lesson_path.write_text(
+        json.dumps(
+            {
+                "code": "G1M2U1L1",
+                "instructional_blocks": [
+                    {
+                        "section": "Work Time",
+                        "letter": "A",
+                        "title": "T",
+                        "page": 1,
+                        "steps": ["Students identify characters and the setting in the story."],
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    retrieve_path = tmp_path / "retrieve.json"
+    retrieve_path.write_text(
+        json.dumps(
+            {
+                "candidates": [
+                    {"standard_code": "1.T.T.1.a"},
+                    {"standard_code": "1.T.T.2"},
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    std_dir = tmp_path / "normalize_standards"
+    std_dir.mkdir()
+    for code in ("1.T.T.1.a", "1.T.T.2"):
+        (std_dir / f"{code}.json").write_text(
+            json.dumps({"standard_code": code, "raw_text": "Identify setting."}),
+            encoding="utf-8",
+        )
+
+    pair_calls = {"n": 0}
+
+    def billing_batch(**kwargs):
+        raise JudgeError(
+            "OpenAI account billing is not active (billing_not_active). "
+            "Activate billing — this error is not retryable."
+        )
+
+    def pair_fn(**kwargs):
+        pair_calls["n"] += 1
+        return JudgeLlmDraft(
+            matched_status="none",
+            clauses=[ClauseJudgment(clause="identify setting", met=False, note="")],
+            evidence="",
+            evidence_page=None,
+            confidence="high",
+            rationale="none",
+        )
+
+    with pytest.raises(JudgeError, match="billing_not_active"):
+        judge_retrieve_file(
+            retrieve_file=retrieve_path,
+            standards_dir=std_dir,
+            lesson_file=lesson_path,
+            use_cache=False,
+            batch=True,
+            batch_fallback_pair=True,
+            batch_complete_fn=billing_batch,
+            complete_fn=pair_fn,
+        )
+    assert pair_calls["n"] == 0
+
+
+def test_judge_pair_mode_aborts_on_insufficient_quota(tmp_path):
+    from veramynd_parser.judge.pipeline import JudgeError
+
+    lesson_path = tmp_path / "G1M2U1L1.json"
+    lesson_path.write_text(
+        json.dumps(
+            {
+                "code": "G1M2U1L1",
+                "instructional_blocks": [
+                    {
+                        "section": "Work Time",
+                        "letter": "A",
+                        "title": "T",
+                        "page": 1,
+                        "steps": ["Students identify characters and the setting in the story."],
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    retrieve_path = tmp_path / "retrieve.json"
+    retrieve_path.write_text(
+        json.dumps(
+            {
+                "candidates": [
+                    {"standard_code": "1.T.T.1.a"},
+                    {"standard_code": "1.T.T.2"},
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    std_dir = tmp_path / "normalize_standards"
+    std_dir.mkdir()
+    for code in ("1.T.T.1.a", "1.T.T.2"):
+        (std_dir / f"{code}.json").write_text(
+            json.dumps({"standard_code": code, "raw_text": "Identify setting."}),
+            encoding="utf-8",
+        )
+
+    calls = {"n": 0}
+
+    def quota_pair(**kwargs):
+        calls["n"] += 1
+        raise JudgeError(
+            "OpenAI API quota exhausted (insufficient_quota). "
+            "Add credits — this error is not retryable."
+        )
+
+    with pytest.raises(JudgeError, match="insufficient_quota"):
+        judge_retrieve_file(
+            retrieve_file=retrieve_path,
+            standards_dir=std_dir,
+            lesson_file=lesson_path,
+            use_cache=False,
+            batch=False,
+            complete_fn=quota_pair,
+        )
+    assert calls["n"] == 1
+
+
 def test_cli_registers_judge_standards():
     parser = build_parser()
     args = parser.parse_args(
@@ -458,3 +656,33 @@ def test_cli_registers_judge_standards():
     )
     assert args.func.__name__ == "cmd_judge_standards"
     assert args.no_batch is False
+    assert args.no_escalate is False
+
+
+def test_cli_judge_no_escalate_opt_out():
+    parser = build_parser()
+    args = parser.parse_args(
+        [
+            "judge-standards",
+            "--retrieve-file",
+            "output/retrieve/G1M2U1L3.json",
+            "--lesson-file",
+            "output/stage1/lessons/G1M2U1L3.json",
+            "--no-escalate",
+        ]
+    )
+    assert args.no_escalate is True
+
+
+def test_load_standard_raw_text_rejects_path_traversal(tmp_path: Path):
+    standards = tmp_path / "standards"
+    standards.mkdir()
+    secret = tmp_path / "secret.json"
+    secret.write_text(
+        json.dumps({"raw_text": "leaked", "standard_code": "secret"}),
+        encoding="utf-8",
+    )
+    with pytest.raises(JudgeIoError, match="unsafe"):
+        load_standard_raw_text(standards, "../secret")
+    with pytest.raises(JudgeIoError, match="unsafe"):
+        load_standard_raw_text(standards, "..\\secret")

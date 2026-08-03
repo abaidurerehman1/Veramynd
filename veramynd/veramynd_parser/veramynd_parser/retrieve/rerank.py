@@ -7,7 +7,7 @@ from typing import Any, Callable
 
 from .models import Candidate
 
-DEFAULT_RERANK_MODEL = "BAAI/bge-reranker-v2-m3"
+DEFAULT_RERANK_MODEL = "BAAI/bge-reranker-base"
 DEFAULT_RERANK_TOP_N = 10
 
 # Process-local CrossEncoder cache (model load is expensive).

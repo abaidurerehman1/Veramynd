@@ -107,7 +107,6 @@ def extract_footer_page_number(page: fitz.Page) -> int | None:
         if any(
             key in nearby
             for key in (
-                "sun, moon",
                 "unit ",
                 "grade ",
                 "curriculum",

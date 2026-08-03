@@ -1,0 +1,431 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U1L13",
+  "lesson_source": "stage1:G1M2U1L13",
+  "retrieve_file": "output\\retrieve\\G1M2U1L13.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 1,
+    "partial": 5,
+    "none": 4
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 6,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L13",
+      "standard_code": "1.T.C.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify who is speaking or telling the story at various points in a text.",
+          "met": false,
+          "note": "No evidence students identify the speaker or narrator at any point."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on retelling events and identifying the central message, but there is no activity or prompt where students are asked to identify who is speaking or telling the story.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.023985497141263423,
+        "dense_rank": 41,
+        "bm25_rank": 11,
+        "dense_score": 0.5054978,
+        "bm25_score": 117.4556527446986,
+        "rerank_score": 0.9978508949279785
+      },
+      "standard_raw_text": "Identify who is speaking or telling the story at various points in a text. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L13",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Explain concepts by interpreting texts.",
+          "met": true,
+          "note": "Students discuss and write about the story’s central message, explaining ideas from the text."
+        },
+        {
+          "clause": "Learn concepts by interpreting texts.",
+          "met": true,
+          "note": "Students interpret the story to identify and discuss its central message, demonstrating learning from the text."
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
+          "met": true,
+          "note": "Students independently write responses (Parts III and IV) about major events and central message."
+        }
+      ],
+      "evidence": "- Tell students that now they are going to write what they know about the major events and central message of Why the Sun and the Moon Live in the Sky, just as they did in Lessons 9 and 11.\n- Distribute prepared clipboards with Why the Sun and the Moon Live in the Sky response sheets and pencils and follow the same routine established in Lessons 9 and 11 to complete Parts III and IV.\n- Circulate to support students as they write. Encourage them to use classroom resources (Story Elements board, Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).",
+      "evidence_page": 173,
+      "confidence": "high",
+      "rationale": "Students interpret the text to explain and discuss the central message and then construct written responses demonstrating their understanding of key concepts and events.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.025451688923802042,
+        "dense_rank": 7,
+        "bm25_rank": 35,
+        "dense_score": 0.56904817,
+        "bm25_score": 76.63934234995887,
+        "rerank_score": 0.99378502368927
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L13",
+      "standard_code": "1.T.T.1.a",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify characters used to craft a story.",
+          "met": false,
+          "note": "Students are not explicitly tasked with identifying characters."
+        },
+        {
+          "clause": "Identify the setting used to craft a story.",
+          "met": false,
+          "note": "No activity directs students to identify setting."
+        },
+        {
+          "clause": "Identify major events used to craft a story.",
+          "met": true,
+          "note": "Students signal and write about important events from the story."
+        },
+        {
+          "clause": "Identify dialogue used to craft a story.",
+          "met": false,
+          "note": "Dialogue is not addressed."
+        }
+      ],
+      "evidence": "- Display Why the Sun and the Moon Live in the Sky and remind students to use the signal, as in previous lessons, to show when they see or hear an important event from the beginning, middle, and end of the story.\n- Draw students' attention back to the text and read aloud pages 1-13 slowly, fluently, with expression, and without interruption, paying attention to when students show the signal for an important event.",
+      "evidence_page": 171,
+      "confidence": "high",
+      "rationale": "Students clearly identify major events through signaling and discussion/writing, but there is no explicit work identifying characters, setting, or dialogue.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.03200204813108039,
+        "dense_rank": 3,
+        "bm25_rank": 2,
+        "dense_score": 0.58198106,
+        "bm25_score": 211.1448853248869,
+        "rerank_score": 0.9931579232215881
+      },
+      "standard_raw_text": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L13",
+      "standard_code": "1.T.C.1",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the general purpose of a variety of texts.",
+          "met": false,
+          "note": "Students discuss the central message of a single story, not the purpose across a variety of texts."
+        },
+        {
+          "clause": "Identify the target audience of a variety of texts.",
+          "met": false,
+          "note": "No task asks students to determine or discuss the target audience."
+        },
+        {
+          "clause": "Identify different modes of communication: print, digital, auditory, and visual.",
+          "met": false,
+          "note": "Students experience read-aloud, illustrations, and song, but do not identify or name the modes."
+        },
+        {
+          "clause": "Create texts in teacher-selected modes such as print, digital, auditory, and/or visual.",
+          "met": true,
+          "note": "Students write responses on a worksheet, creating a print-mode text."
+        }
+      ],
+      "evidence": "Tell students that now they are going to write what they know about the major events and central message of Why the Sun and the Moon Live in the Sky, just as they did in Lessons 9 and 11. - Distribute prepared clipboards with Why the Sun and the Moon Live in the Sky response sheets and pencils and follow the same routine established in Lessons 9 and 11 to complete Parts III and IV. - Circulate to support students as they write. Encourage them to use classroom resources (Story Elements board, Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).",
+      "evidence_page": 173,
+      "confidence": "low",
+      "rationale": "The lesson focuses on retelling and determining the central message of one story. It does not address author purpose, audience, or identifying modes, but students do create a short print text in their written responses. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.015151515151515152,
+        "dense_rank": 6,
+        "bm25_rank": null,
+        "dense_score": 0.5694776,
+        "bm25_score": null,
+        "rerank_score": 0.9922177791595459
+      },
+      "standard_raw_text": "Explain how authors of texts use language for a specific purpose and a target audience."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L13",
+      "standard_code": "1.T.C.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify who is speaking at various points in a text.",
+          "met": false,
+          "note": "No evidence students identify the speaker or narrator."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson does not include any activity where students identify the speaker or narrator at any point in the story.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.0261986301369863,
+        "dense_rank": 20,
+        "bm25_rank": 13,
+        "dense_score": 0.5333757,
+        "bm25_score": 114.40952314883494,
+        "rerank_score": 0.9920469522476196
+      },
+      "standard_raw_text": "Investigate the relationships between authors and speakers in texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L13",
+      "standard_code": "1.P.EICC.3.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Summarize sections of the text to maintain understanding.",
+          "met": true,
+          "note": "Students retell major events by beginning, middle, and end and write about them on a response sheet."
+        },
+        {
+          "clause": "Visualize sections of the text to maintain understanding.",
+          "met": false,
+          "note": "Students reference illustrations and role-play, but there is no clear task where they visualize or create visual representations of text sections."
+        }
+      ],
+      "evidence": "- Display Why the Sun and the Moon Live in the Sky and remind students to use the signal, as in previous lessons, to show when they see or hear an important event from the beginning, middle, and end of the story.\n- Draw students' attention back to the text and read aloud pages 1-13 slowly, fluently, with expression, and without interruption, paying attention to when students show the signal for an important event.\n- Ask:\n- 'What did you hear that helped you understand the important events from the beginning of the story?'",
+      "evidence_page": 171,
+      "confidence": "high",
+      "rationale": "Students summarize sections by identifying and discussing important events in the beginning, middle, and end, and by writing about major events. However, the lesson does not have students visualize or create visual representations of text sections.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02724014336917563,
+        "dense_rank": 2,
+        "bm25_rank": 30,
+        "dense_score": 0.5858848,
+        "bm25_score": 83.48636219948325,
+        "rerank_score": 0.9920186400413513
+      },
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L13",
+      "standard_code": "1.T.RA.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
+          "met": true,
+          "note": "Students cite what they heard and saw in the text/illustrations to explain key events."
+        },
+        {
+          "clause": "Explore various sources of information, including print, digital, and personal communication.",
+          "met": false,
+          "note": "Lesson focuses on a single literary text; no exploration of multiple sources to make connections."
+        }
+      ],
+      "evidence": "Ask:\n'What did you hear that helped you understand the important events from the beginning of the story?' (Sun wants Water to visit his and Moon's house, but Water says the house is too small for all of his people. Sun and Moon decide to build a larger house.)\n'What did you see in the illustrations that helped you understand the beginning of the story?' (Sun had a small house and was talking with Water. Sun and Moon started building a bigger house.)",
+      "evidence_page": 171,
+      "confidence": "high",
+      "rationale": "Students reference specific parts of the text and illustrations to support their answers, but they do not explore multiple sources of information.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.01905453225660103,
+        "dense_rank": 43,
+        "bm25_rank": 47,
+        "dense_score": 0.5041892,
+        "bm25_score": 68.97324308023049,
+        "rerank_score": 0.9917471408843994
+      },
+      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L13",
+      "standard_code": "1.P.ST.1.c",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Explore how context shapes the author's decisions when interpreting texts.",
+          "met": true,
+          "note": "Students discuss the central message that people create stories to explain nature, indicating context influencing author purpose."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses when interpreting texts.",
+          "met": false,
+          "note": "Students share ideas but do not analyze how audience context affects responses."
+        },
+        {
+          "clause": "Explore how context shapes the author's decisions when constructing texts.",
+          "met": false,
+          "note": "Students write responses about the story, not construct texts with attention to context shaping author choices."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses when constructing texts.",
+          "met": false,
+          "note": "No task involves considering audience response while constructing texts."
+        }
+      ],
+      "evidence": "Invite students to turn and talk with an elbow partner:\n- 'What was the central message we learned from Why the Sun and the Moon Live in the Sky?' (We learned that people create stories to try to explain things in nature.)",
+      "evidence_page": 171,
+      "confidence": "medium",
+      "rationale": "Students interpret the story’s central message as explaining natural phenomena, touching on how context influences an author’s purpose. However, there is no exploration of audience responses or of context in text construction.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.024184149184149184,
+        "dense_rank": 28,
+        "bm25_rank": 18,
+        "dense_score": 0.52314425,
+        "bm25_score": 95.90941333619166,
+        "rerank_score": 0.9916700124740601
+      },
+      "standard_raw_text": "Explore how context shapes the author’s decisions and the audience’s responses during the interpretation and construction of texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L13",
+      "standard_code": "1.T.T.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "met": false,
+          "note": "Lesson is focused on narrative, not expository, text."
+        },
+        {
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "met": false,
+          "note": "No explicit expository connections described."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "met": false,
+          "note": "No expository writing or analysis."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson is centered on a narrative story and does not address expository techniques or writing.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02649122807017544,
+        "dense_rank": 16,
+        "bm25_rank": 15,
+        "dense_score": 0.5389733,
+        "bm25_score": 107.50056385142987,
+        "rerank_score": 0.9916384816169739
+      },
+      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L13",
+      "standard_code": "1.T.T.1",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue.",
+          "met": true,
+          "note": "Students identify major events and reference characters while tracking story elements; dialogue/setting are not emphasized."
+        },
+        {
+          "clause": "Identify a simple plot with a problem and solution.",
+          "met": true,
+          "note": "Students retell beginning/middle/end and discuss events that convey the problem and outcome (e.g., house too small, overflow, moving to the sky)."
+        },
+        {
+          "clause": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
+          "met": false,
+          "note": "Students discuss the central message but are not asked to describe character traits or link words/actions to that message."
+        },
+        {
+          "clause": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures.",
+          "met": false,
+          "note": "Only a single story is used; no cross-text comparison."
+        },
+        {
+          "clause": "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure.",
+          "met": false,
+          "note": "Writing is a response about events and message, not creation of a narrative with closure."
+        }
+      ],
+      "evidence": "- Display Why the Sun and the Moon Live in the Sky and remind students to use the signal, as in previous lessons, to show when they see or hear an important event from the beginning, middle, and end of the story.\n- Draw students' attention back to the text and read aloud pages 1-13 slowly, fluently, with expression, and without interruption, paying attention to when students show the signal for an important event.\n- Ask:\n- 'What did you hear that helped you understand the important events from the beginning of the story?' (Sun wants Water to visit his and Moon's house, but Water says the house is too small for all of his people. Sun and Moon decide to build a larger house.)\n- 'What did you see in the illustrations that helped you understand the beginning of the story?' (Sun had a small house and was talking with Water. Sun and Moon started building a bigger house.)",
+      "evidence_page": 171,
+      "confidence": "medium",
+      "rationale": "Students actively identify and retell major events (and thus the simple plot) of the story, but the lesson does not include character trait analysis tied to the message, cross-text comparisons, or narrative creation.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.03278688524590164,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.6041312,
+        "bm25_score": 243.28684477810197,
+        "rerank_score": 0.9912248253822327
+      },
+      "standard_raw_text": "Identify and use narrative techniques to shape understanding."
+    }
+  ]
+}

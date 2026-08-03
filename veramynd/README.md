@@ -13,60 +13,52 @@ the standard's clauses precisely and finding real evidence in the lesson that th
 student actually performed the act. Veramynd's goal is to apply one rubric
 identically, at scale, with a paper trail.
 
-## What's implemented
+## Project status (honest)
+
+This repo is a **working end-to-end pipeline** for the reference EL Education G1M2
+guide + Georgia Grade 1 ELA standards. It is **not** a finished product: there is no
+gold-set evaluation gate yet, the agentic/graph track is design-only, and production
+packaging (hosted Qdrant compose in-tree, eval harness, multi-publisher hardening) is
+still open.
 
 | Stage | Status | Location |
 |---|---|---|
-| **Parse & verify** — turn a teacher-guide PDF into structured lessons, parse a standards spreadsheet into a grade-indexed tree, and pass both through a layered safety-net verifier | **Implemented** | [`veramynd_parser/`](veramynd_parser/) |
-| **Pedagogical normalization** — distill each parsed lesson into what the student actually does, standards-agnostic, evidence-backed | **Implemented** | [`veramynd_parser/veramynd_parser/normalize/`](veramynd_parser/veramynd_parser/normalize/) |
-| **Retrieval, alignment judge, reporting** | Designed, not built | [`docs/architecture.md`](docs/architecture.md) |
+| **Parse & verify** — teacher-guide PDF → structured lessons; standards spreadsheet → grade tree; layered safety-net verifier | **Implemented** | [`veramynd_parser/`](veramynd_parser/) |
+| **Pedagogical normalize (lessons)** — distill each lesson into what the student does, evidence-backed | **Implemented** | [`veramynd_parser/veramynd_parser/normalize/`](veramynd_parser/veramynd_parser/normalize/) |
+| **Standards normalize** — retrieval-ready standard leaves (`embed_text`) | **Implemented** | [`normalize/standard.py`](veramynd_parser/veramynd_parser/normalize/standard.py) |
+| **Chunk** — hierarchical lesson / instructional / evidence-pointer bundles | **Implemented** | [`chunk/`](veramynd_parser/veramynd_parser/chunk/) |
+| **Embed → Qdrant** — OpenAI dense vectors for chunks + standards | **Implemented** | [`embed/`](veramynd_parser/veramynd_parser/embed/) |
+| **Hybrid retrieve + rerank** — dense + BM25 → RRF → cross-encoder | **Implemented** | [`retrieve/`](veramynd_parser/veramynd_parser/retrieve/) |
+| **Alignment judge + grounding** — LLM rubric; ungrounded claims rejected | **Implemented** | [`judge/`](veramynd_parser/veramynd_parser/judge/) |
+| **Report** — CSV + HTML audit dashboard | **Implemented** | [`report/`](veramynd_parser/veramynd_parser/report/) |
+| **Gold-set eval harness** — expert-labeled pairs, recall/accuracy gates | **Not built** | Designed in [`docs/architecture.md`](docs/architecture.md) §16 (`eval/` not in repo yet) |
+| **Agentic + standards-graph track** — alternate Stages 2–7 (no vector DB) | **Design only** | [`docs/architecture-agentic-graph.md`](docs/architecture-agentic-graph.md) |
 
 ## How it works
 
-**1. Parse.** The teacher guide is an untagged PDF, so lesson structure has to be
-recovered from the document's own signals, not markup. Two independent PDF engines
-run against each other:
+**1. Parse.** The teacher guide is an untagged PDF, so lesson structure is recovered
+from the document's own signals. Two PDF engines run against each other:
 
-- **Docling** (primary) — layout analysis and table-structure recovery. Produces
-  semantically labeled elements (headings, list items, tables) with page provenance.
-- **PyMuPDF** (outline + fallback) — reads the PDF's embedded bookmarks to find lesson
-  boundaries, and independently re-derives each lesson's structure from font-size
-  tiers as a lightweight, dependency-free path and a cross-check on Docling's output.
+- **Docling** (primary) — layout analysis and table-structure recovery.
+- **PyMuPDF** (outline + fallback) — bookmarks for lesson boundaries, font-tier
+  cross-check, and verifier input.
 
-Every parse is content-addressed and cached, so a 440-page document parses once
-(~100s) and is instant after.
+**2. Verify.** Hard checks block a bad load (separation, headers, division,
+cross-engine standards). Soft checks flag review without blocking `GO`.
 
-**2. Verify.** No parsed lesson set is trusted until it clears a four-layer safety
-net — separation integrity (page counts, contiguity, unique IDs), a cross-signal
-check (does the running header on each lesson's first page agree with its bookmark?),
-division completeness (are all required sections and instructional steps present?),
-and cross-engine agreement (does PyMuPDF's independent read confirm every standard
-code Docling reported?). A hard-check failure blocks the load outright rather than
-silently shipping a corrupted parse.
+**3. Normalize → chunk → embed.** Lessons and standards become retrieval-ready text;
+chunks land in Qdrant (`text-embedding-3-large`).
 
-**3. Normalize.** Each verified lesson is distilled by an LLM into a
-standards-agnostic pedagogical record — what's taught, what the student does, and
-verbatim evidence quotes for every claim — validated against a strict schema and
-grounded against the real lesson text so a claim with no matching source quote is
-either repaired against the real source or dropped, never fabricated.
+**4. Retrieve → judge → report.** Hybrid retrieval proposes candidates; the judge
+scores `full` / `partial` / `none` with grounded evidence; CSV/HTML reports export
+the audit trail.
 
 ## Design principles
 
-- **Fail loud, never silently.** A structural problem blocks the pipeline with a
-  clear reason; nothing downstream ever trusts data that hasn't passed verification.
-- **Content-addressed caching**, not existence-based — a prompt or model change
-  invalidates exactly the affected cached results, nothing more; a failed call is
-  never cached as if it succeeded.
-- **Evidence is mandatory and checked.** Every claim in the normalized output must be
-  backed by a verbatim quote from the source lesson; quotes that can't be grounded
-  are repaired against the real text or dropped, never left un-checked.
-- **Two vocabularies, kept apart.** A teacher guide declares standards in one
-  framework (e.g. CCSS codes like `RL.1.1`); the target standards spreadsheet may use
-  another (e.g. state-specific codes). Veramynd preserves the publisher's *claim* and
-  the target framework's tree side by side and never silently joins them.
-
-See [`docs/architecture.md`](docs/architecture.md) for the full design spec, including
-the roadmap for retrieval, the alignment judge, and reporting.
+- **Fail loud, never silently.** Structural problems block the pipeline.
+- **Content-addressed caching** for Docling parses and LLM normalizations.
+- **Evidence is mandatory and checked** — fabricated quotes are rejected.
+- **Two vocabularies, kept apart** (publisher claims vs target framework codes).
 
 ## Quick start
 
@@ -74,13 +66,10 @@ the roadmap for retrieval, the alignment judge, and reporting.
 cd veramynd_parser
 pip install -e '.[test]'          # Python >= 3.11
 
-# Parse + verify a teacher guide (expects 40 lessons in this example)
+# Parse + verify (expects 40 lessons for the sample guide)
 veramynd-parser verify "../data/samples/ELA Grade 1 Module 2 Teacher Guide.pdf" --expect 40
 
-# Parse a standards spreadsheet
-veramynd-parser stds "../data/samples/Grade 1 GA ELA Standards.xlsx" --json output/stage1/standards.json
-
-# Full export: lessons + standards + verification report
+# Full Stage-1 export
 veramynd-parser export "../data/samples/ELA Grade 1 Module 2 Teacher Guide.pdf" \
   --out output/stage1 --expect 40 \
   --standards "../data/samples/Grade 1 GA ELA Standards.xlsx"
@@ -88,13 +77,34 @@ veramynd-parser export "../data/samples/ELA Grade 1 Module 2 Teacher Guide.pdf" 
 pytest
 ```
 
-Pedagogical normalization (OpenAI only, resumable, cached):
+Downstream (needs OpenAI key; extras as noted):
 
 ```bash
-pip install -e '.[normalize]'
+pip install -e '.[normalize,embed,retrieve,judge]'
 cp .env.example .env               # set OPENAI_API_KEY — never commit .env
+
 veramynd-parser normalize-lessons output/stage1/lessons --out output/normalize
+veramynd-parser normalize-standards output/stage1/standards.json --out output/normalize_standards
+veramynd-parser chunk-lessons output/stage1/lessons --normalize-dir output/normalize --out output/chunks
+veramynd-parser embed-chunks output/chunks --out output/embeddings --recreate
+veramynd-parser embed-standards output/normalize_standards --out output/embeddings --recreate
+veramynd-parser retrieve-standards --chunk-file output/chunks/by_lesson/G1M2U1L3.json --out output/retrieve/G1M2U1L3.json
+veramynd-parser judge-standards --retrieve-file output/retrieve/G1M2U1L3.json \
+  --lesson-file output/stage1/lessons/G1M2U1L3.json \
+  --standards-dir output/normalize_standards --out output/judge/G1M2U1L3.json
+veramynd-parser report-alignments --judge-file output/judge/G1M2U1L3.json --out output/reports/alignments.csv
 ```
+
+Partial embeds (`--resource-id` / `--code`) refresh only those points.
+`--recreate` rebuilds the embedding index for the requested scope; if no scope
+is specified, it rebuilds the entire collection (a filtered run never deletes
+the rest of the collection).
+
+**Incremental by default / force for maintenance:** day-to-day runs skip unchanged
+chunk fingerprints and matching Qdrant `content_hash` values. Use `--force`
+(and embed `--recreate` when rebuilding the index for a scope or the full
+collection) for full recomputation when onboarding the next publisher or after
+a model/schema change. See [`veramynd_parser/README.md`](veramynd_parser/README.md).
 
 ## Repository map
 
@@ -106,35 +116,33 @@ veramynd/
 ├── _archive/                   # non-production one-offs (do not import)
 └── veramynd_parser/            # installable package + CLI
     ├── veramynd_parser/        # library (pdf/, normalize/, chunk/, embed/, …)
-    │   ├── prompts/            # runtime LLM prompts
-    │   └── schemas/
     ├── tests/
     ├── examples/
     ├── output/                 # pipeline artifacts (local)
-    ├── docker-compose.yml      # local Qdrant
     ├── .env.example
     ├── pyproject.toml
     └── requirements.lock
 ```
 
+Local Qdrant: path mode (`.qdrant_data`) by default, or set `QDRANT_URL`. A Docker
+compose file lives under [`_archive/docker/`](_archive/docker/) for optional HTTP mode.
+
 ## Docs
 
 | Doc | Use it for |
 |---|---|
-| [docs/flow.md](docs/flow.md) | How the implemented pipeline works end-to-end |
-| [docs/architecture.md](docs/architecture.md) | Full product design, including unimplemented stages (hybrid RAG track) |
-| [docs/architecture-agentic-graph.md](docs/architecture-agentic-graph.md) | Alternative design for Stages 2-7 — agentic + standards-graph, no vector DB (parallel track) |
+| [docs/flow.md](docs/flow.md) | Pipeline flow (some stage tables may lag the code — prefer this README for status) |
+| [docs/architecture.md](docs/architecture.md) | Full product design + gold-set / roadmap |
+| [docs/architecture-agentic-graph.md](docs/architecture-agentic-graph.md) | Parallel agentic design (not coded) |
 | [docs/complete-project-flow.md](docs/complete-project-flow.md) | Deep onboarding walkthrough |
-| [docs/lesson-segmentation.md](docs/lesson-segmentation.md) | Separation + division design detail |
-| [docs/ingestion.md](docs/ingestion.md) | Ingestion pipeline detail |
 | [veramynd_parser/README.md](veramynd_parser/README.md) | Install, CLI reference, package layout |
-| [veramynd_parser/veramynd_parser/schemas/ela_schema_README.md](veramynd_parser/veramynd_parser/schemas/ela_schema_README.md) | Why each field in the normalized record is required |
 
 ## Requirements
 
 - Python >= 3.11
 - Primary path: Docling + PyMuPDF + openpyxl + pydantic
 - Lite path (no Docling): `pip install -e '.[lite]'`, then `Config(engine="pymupdf")`
+- Embed / retrieve / judge: OpenAI API key + optional `sentence-transformers` for rerank
 
 ## License
 

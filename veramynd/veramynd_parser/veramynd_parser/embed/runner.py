@@ -15,7 +15,12 @@ import uuid
 from pathlib import Path
 from typing import Any, Callable
 
-from ..normalize.llm import load_dotenv, openai_api_key
+from ..normalize.llm import (
+    format_non_retryable_openai_error,
+    is_non_retryable_openai_error,
+    load_dotenv,
+    openai_api_key,
+)
 from ..paths import resolve_package_relative
 from ..text_utils import atomic_write_text
 from .chunk_io import EmbeddableChunk, load_embeddable_chunks
@@ -264,7 +269,15 @@ def openai_embed_texts(
                     )
                 vectors.append(vec)
             return vectors
-        except (RateLimitError, APIConnectionError) as e:
+        except RateLimitError as e:
+            if is_non_retryable_openai_error(e):
+                raise EmbedError(format_non_retryable_openai_error(e)) from e
+            last_err = e
+            if attempt + 1 >= max_retries:
+                break
+            time.sleep(delay)
+            delay = min(delay * 2, 60.0)
+        except APIConnectionError as e:
             last_err = e
             if attempt + 1 >= max_retries:
                 break
@@ -272,8 +285,12 @@ def openai_embed_texts(
             delay = min(delay * 2, 60.0)
         except APIStatusError as e:
             last_err = e
-            # Retry transient 5xx only.
-            if e.status_code < 500 or attempt + 1 >= max_retries:
+            if is_non_retryable_openai_error(e):
+                raise EmbedError(format_non_retryable_openai_error(e)) from e
+            # Retry transient 5xx only (and retryable 429s that arrived as APIStatusError).
+            status = getattr(e, "status_code", None)
+            retryable = status == 429 or (isinstance(status, int) and status >= 500)
+            if not retryable or attempt + 1 >= max_retries:
                 raise EmbedError(f"OpenAI embeddings API error: {e}") from e
             time.sleep(delay)
             delay = min(delay * 2, 60.0)
@@ -349,6 +366,101 @@ def ensure_collection(
     )
 
 
+def delete_points_by_payload_match(
+    client: Any,
+    collection: str,
+    *,
+    key: str,
+    values: set[str],
+) -> None:
+    """Delete all points whose payload ``key`` is in ``values`` (partial refresh)."""
+    from qdrant_client.http import models as qm
+
+    if not values or not client.collection_exists(collection):
+        return
+    client.delete(
+        collection_name=collection,
+        points_selector=qm.FilterSelector(
+            filter=qm.Filter(
+                must=[
+                    qm.FieldCondition(
+                        key=key,
+                        match=qm.MatchAny(any=sorted(values)),
+                    )
+                ]
+            )
+        ),
+        wait=True,
+    )
+
+
+def delete_points_by_ids(client: Any, collection: str, point_ids: list[str]) -> None:
+    """Delete points by Qdrant point id (batched)."""
+    if not point_ids or not client.collection_exists(collection):
+        return
+    for i in range(0, len(point_ids), 256):
+        client.delete(
+            collection_name=collection,
+            points_selector=point_ids[i : i + 256],
+            wait=True,
+        )
+
+
+def scroll_embed_payload_index(
+    client: Any,
+    collection: str,
+    *,
+    id_key: str,
+) -> dict[str, dict[str, Any]]:
+    """Map payload id → {content_hash, model_id, dimensions, point_id}."""
+    out: dict[str, dict[str, Any]] = {}
+    if not client.collection_exists(collection):
+        return out
+    offset = None
+    while True:
+        points, offset = client.scroll(
+            collection_name=collection,
+            limit=256,
+            offset=offset,
+            with_payload=True,
+            with_vectors=False,
+        )
+        for p in points:
+            payload = p.payload or {}
+            kid = (payload.get(id_key) or "").strip()
+            if not kid:
+                continue
+            out[kid] = {
+                "content_hash": (payload.get("content_hash") or "").strip(),
+                "model_id": (payload.get("model_id") or "").strip(),
+                "dimensions": payload.get("dimensions"),
+                "point_id": p.id,
+            }
+        if offset is None:
+            break
+    return out
+
+
+def _needs_reembed(
+    item_id: str,
+    content_hash: str,
+    *,
+    existing: dict[str, dict[str, Any]],
+    model_id: str,
+    dimensions: int,
+) -> bool:
+    hit = existing.get(item_id)
+    if hit is None:
+        return True
+    if hit.get("content_hash") != content_hash:
+        return True
+    if hit.get("model_id") != model_id:
+        return True
+    if hit.get("dimensions") != dimensions:
+        return True
+    return False
+
+
 def upsert_chunks(
     client: Any,
     collection: str,
@@ -407,12 +519,22 @@ def embed_chunks_to_qdrant(
     qdrant_api_key: str | None = None,
     qdrant_path: str | None = None,
     recreate: bool = False,
+    force: bool = False,
     openai_key: str | None = None,
     embed_fn: Callable[..., list[list[float]]] | None = None,
     qdrant_client: Any | None = None,
     resource_ids: set[str] | None = None,
 ) -> dict:
-    """Embed lesson+instructional chunks and upsert into Qdrant."""
+    """Embed lesson+instructional chunks and upsert into Qdrant.
+
+    **Incremental (default):** skip OpenAI calls when Qdrant already has the same
+    ``content_hash`` + ``model_id`` + ``dimensions``. Removed chunk ids in scope
+    are deleted.
+
+    **Maintenance:** ``force=True`` re-embeds everything in scope;
+    ``recreate=True`` rebuilds the embedding index for the requested scope
+    (entire collection when no ``resource_ids`` filter is set).
+    """
     src = Path(chunks_dir)
     dst = Path(out_dir)
     dst.mkdir(parents=True, exist_ok=True)
@@ -435,10 +557,12 @@ def embed_chunks_to_qdrant(
     chunks = sorted(chunks, key=lambda c: (c.family, c.resource_id, c.chunk_id))
     lesson_n = sum(1 for c in chunks if c.family == "lesson")
     block_n = sum(1 for c in chunks if c.family == "instructional")
+    mode = "force" if (force or recreate) else "incremental"
 
     progress = {
         "schema_version": EMBED_SCHEMA_VERSION,
         "status": "running",
+        "mode": mode,
         "model_id": model_id,
         "dimensions": dimensions,
         "collection": collection_name,
@@ -446,22 +570,88 @@ def embed_chunks_to_qdrant(
         "lesson_chunks": lesson_n,
         "instructional_chunks": block_n,
         "upserted": 0,
+        "skipped": 0,
         "failed": [],
     }
     atomic_write_text(dst / PROGRESS_NAME, json.dumps(progress, indent=2) + "\n")
-
-    print(
-        f"Embedding {len(chunks)} chunks with {model_id} "
-        f"(dim={dimensions}) -> Qdrant collection {collection_name!r}",
-        flush=True,
-    )
 
     client = qdrant_client or _make_qdrant_client(
         url=settings["url"],
         api_key=settings["api_key"],
         path=settings["path"],
     )
-    ensure_collection(client, collection_name, dimensions=dimensions, recreate=recreate)
+    # Partial filters must never wipe the whole collection. --recreate only
+    # deletes the full collection when embedding the entire corpus.
+    full_recreate = bool(recreate) and resource_ids is None
+    if recreate and resource_ids is not None:
+        print(
+            "NOTE: --recreate with --resource-id refreshes only those lessons "
+            "(does not delete the whole collection).",
+            flush=True,
+        )
+    ensure_collection(
+        client, collection_name, dimensions=dimensions, recreate=full_recreate
+    )
+
+    existing = (
+        {}
+        if full_recreate
+        else scroll_embed_payload_index(client, collection_name, id_key="chunk_id")
+    )
+
+    # Maintenance with a lesson filter: drop those lessons' points, then re-embed all.
+    if resource_ids is not None and (recreate or force):
+        delete_points_by_payload_match(
+            client,
+            collection_name,
+            key="resource_id",
+            values=resource_ids,
+        )
+        existing = scroll_embed_payload_index(
+            client, collection_name, id_key="chunk_id"
+        )
+
+    if force or recreate:
+        to_embed = list(chunks)
+    else:
+        to_embed = [
+            c
+            for c in chunks
+            if _needs_reembed(
+                c.chunk_id,
+                c.content_hash,
+                existing=existing,
+                model_id=model_id,
+                dimensions=dimensions,
+            )
+        ]
+    skipped_n = len(chunks) - len(to_embed)
+
+    # Drop vectors for chunk_ids removed from the current corpus (in scope).
+    current_ids = {c.chunk_id for c in chunks}
+    if resource_ids is None:
+        stale_point_ids = [
+            str(meta["point_id"])
+            for cid, meta in existing.items()
+            if cid not in current_ids
+        ]
+    else:
+        stale_point_ids = [
+            str(meta["point_id"])
+            for cid, meta in existing.items()
+            if cid not in current_ids
+            and any(cid.startswith(f"{rid}#") for rid in resource_ids)
+        ]
+    if stale_point_ids and not (resource_ids is not None and (recreate or force)):
+        delete_points_by_ids(client, collection_name, stale_point_ids)
+        print(f"Pruned {len(stale_point_ids)} stale point(s).", flush=True)
+
+    print(
+        f"Embedding {len(to_embed)}/{len(chunks)} chunks with {model_id} "
+        f"(dim={dimensions}, skipped={skipped_n}, mode={mode}) "
+        f"-> Qdrant collection {collection_name!r}",
+        flush=True,
+    )
 
     encode = embed_fn or (
         lambda texts: openai_embed_texts(
@@ -472,25 +662,27 @@ def embed_chunks_to_qdrant(
         )
     )
 
-    all_vectors: list[list[float]] = []
-    for bi, batch in enumerate(_iter_batches(chunks), start=1):
-        print(f"  OpenAI batch {bi}: {len(batch)} texts...", flush=True)
-        vectors = encode([c.text for c in batch])
-        if len(vectors) != len(batch):
-            raise EmbedError("batch embed returned wrong count")
-        _assert_nonzero_vectors(vectors, labels=[c.chunk_id for c in batch])
-        all_vectors.extend(vectors)
+    upserted = 0
+    if to_embed:
+        all_vectors: list[list[float]] = []
+        for bi, batch in enumerate(_iter_batches(to_embed), start=1):
+            print(f"  OpenAI batch {bi}: {len(batch)} texts...", flush=True)
+            vectors = encode([c.text for c in batch])
+            if len(vectors) != len(batch):
+                raise EmbedError("batch embed returned wrong count")
+            _assert_nonzero_vectors(vectors, labels=[c.chunk_id for c in batch])
+            all_vectors.extend(vectors)
 
-    upserted = upsert_chunks(
-        client,
-        collection_name,
-        chunks,
-        all_vectors,
-        model_id=model_id,
-        dimensions=dimensions,
-    )
-    if upserted != len(chunks):
-        raise EmbedError(f"upserted {upserted} != {len(chunks)} chunks")
+        upserted = upsert_chunks(
+            client,
+            collection_name,
+            to_embed,
+            all_vectors,
+            model_id=model_id,
+            dimensions=dimensions,
+        )
+        if upserted != len(to_embed):
+            raise EmbedError(f"upserted {upserted} != {len(to_embed)} chunks")
 
     # Content fingerprint of embedded corpus for audit.
     corpus_hash = hashlib.sha256(
@@ -498,21 +690,23 @@ def embed_chunks_to_qdrant(
     ).hexdigest()
 
     count = client.count(collection_name, exact=True).count
-    if count < len(chunks):
+    if resource_ids is None and count < len(chunks):
         raise EmbedError(
-            f"Qdrant collection count {count} < upserted {len(chunks)} "
+            f"Qdrant collection count {count} < corpus {len(chunks)} "
             "(collection may have been partially written)"
         )
     if resource_ids is None and count > len(chunks):
         raise EmbedError(
-            f"Qdrant collection count {count} > upserted {len(chunks)} — "
+            f"Qdrant collection count {count} > corpus {len(chunks)} — "
             "stale points remain from a prior corpus. Re-run with --recreate."
         )
-    _assert_qdrant_vectors_nonzero(client, collection_name)
+    if count > 0:
+        _assert_qdrant_vectors_nonzero(client, collection_name)
 
     backend = "url" if settings["url"] else "local_path"
     manifest = {
         "schema_version": EMBED_SCHEMA_VERSION,
+        "mode": mode,
         "model_id": model_id,
         "dimensions": dimensions,
         "distance": "Cosine",
@@ -523,21 +717,24 @@ def embed_chunks_to_qdrant(
         "lesson_vectors": lesson_n,
         "instructional_vectors": block_n,
         "total_vectors": len(chunks),
+        "upserted": upserted,
+        "skipped": skipped_n,
         "qdrant_point_count": count,
         "corpus_hash": corpus_hash,
         "failed": [],
         "source_chunks_dir": str(src),
         "resource_ids_filter": sorted(resource_ids) if resource_ids else None,
-        "note": "evidence_pointer chunks are not embedded",
+        "note": "evidence_pointer chunks are not embedded; incremental skips matching content_hash",
     }
     atomic_write_text(dst / MANIFEST_NAME, json.dumps(manifest, indent=2) + "\n")
     progress["status"] = "complete"
     progress["upserted"] = upserted
+    progress["skipped"] = skipped_n
     progress["qdrant_point_count"] = count
     atomic_write_text(dst / PROGRESS_NAME, json.dumps(progress, indent=2) + "\n")
 
     print(
-        f"Done. upserted={upserted} collection={collection_name} "
+        f"Done. upserted={upserted} skipped={skipped_n} collection={collection_name} "
         f"points={count} model={model_id} -> {dst}/",
         flush=True,
     )
@@ -606,12 +803,18 @@ def embed_standards_to_qdrant(
     qdrant_api_key: str | None = None,
     qdrant_path: str | None = None,
     recreate: bool = False,
+    force: bool = False,
     openai_key: str | None = None,
     embed_fn: Callable[..., list[list[float]]] | None = None,
     qdrant_client: Any | None = None,
     codes: set[str] | None = None,
 ) -> dict:
-    """Embed normalized standard leaves (``embed_text``) into Qdrant."""
+    """Embed normalized standard leaves (``embed_text``) into Qdrant.
+
+    Incremental by default (skip matching content_hash/model/dims).
+    ``force`` re-embeds the selected scope. ``recreate`` rebuilds the embedding
+    index for the requested scope (entire collection when no ``codes`` filter).
+    """
     src = Path(standards_dir)
     dst = Path(out_dir)
     dst.mkdir(parents=True, exist_ok=True)
@@ -634,26 +837,23 @@ def embed_standards_to_qdrant(
     by_level: dict[str, int] = {}
     for s in standards:
         by_level[s.level or "unknown"] = by_level.get(s.level or "unknown", 0) + 1
+    mode = "force" if (force or recreate) else "incremental"
 
     progress = {
         "schema_version": STANDARDS_EMBED_SCHEMA_VERSION,
         "status": "running",
+        "mode": mode,
         "model_id": model_id,
         "dimensions": dimensions,
         "collection": collection_name,
         "total_standards": len(standards),
         "by_level": by_level,
         "upserted": 0,
+        "skipped": 0,
         "failed": [],
     }
     atomic_write_text(
         dst / STANDARDS_PROGRESS_NAME, json.dumps(progress, indent=2) + "\n"
-    )
-
-    print(
-        f"Embedding {len(standards)} standards with {model_id} "
-        f"(dim={dimensions}) -> Qdrant collection {collection_name!r}",
-        flush=True,
     )
 
     client = qdrant_client or _make_qdrant_client(
@@ -661,7 +861,74 @@ def embed_standards_to_qdrant(
         api_key=settings["api_key"],
         path=settings["path"],
     )
-    ensure_collection(client, collection_name, dimensions=dimensions, recreate=recreate)
+    full_recreate = bool(recreate) and codes is None
+    if recreate and codes is not None:
+        print(
+            "NOTE: --recreate with --code refreshes only those standards "
+            "(does not delete the whole collection).",
+            flush=True,
+        )
+    ensure_collection(
+        client, collection_name, dimensions=dimensions, recreate=full_recreate
+    )
+
+    existing = (
+        {}
+        if full_recreate
+        else scroll_embed_payload_index(
+            client, collection_name, id_key="standard_code"
+        )
+    )
+    if codes is not None and (recreate or force):
+        delete_points_by_payload_match(
+            client,
+            collection_name,
+            key="standard_code",
+            values=codes,
+        )
+        existing = scroll_embed_payload_index(
+            client, collection_name, id_key="standard_code"
+        )
+
+    if force or recreate:
+        to_embed = list(standards)
+    else:
+        to_embed = [
+            s
+            for s in standards
+            if _needs_reembed(
+                s.standard_code,
+                s.content_hash,
+                existing=existing,
+                model_id=model_id,
+                dimensions=dimensions,
+            )
+        ]
+    skipped_n = len(standards) - len(to_embed)
+
+    current_ids = {s.standard_code for s in standards}
+    if codes is None:
+        stale_point_ids = [
+            str(meta["point_id"])
+            for cid, meta in existing.items()
+            if cid not in current_ids
+        ]
+    else:
+        stale_point_ids = [
+            str(meta["point_id"])
+            for cid, meta in existing.items()
+            if cid in codes and cid not in current_ids
+        ]
+    if stale_point_ids and not (codes is not None and (recreate or force)):
+        delete_points_by_ids(client, collection_name, stale_point_ids)
+        print(f"Pruned {len(stale_point_ids)} stale standard point(s).", flush=True)
+
+    print(
+        f"Embedding {len(to_embed)}/{len(standards)} standards with {model_id} "
+        f"(dim={dimensions}, skipped={skipped_n}, mode={mode}) "
+        f"-> Qdrant collection {collection_name!r}",
+        flush=True,
+    )
 
     encode = embed_fn or (
         lambda texts: openai_embed_texts(
@@ -672,25 +939,27 @@ def embed_standards_to_qdrant(
         )
     )
 
-    all_vectors: list[list[float]] = []
-    for bi, batch in enumerate(_iter_batches(standards), start=1):
-        print(f"  OpenAI batch {bi}: {len(batch)} texts...", flush=True)
-        vectors = encode([s.text for s in batch])
-        if len(vectors) != len(batch):
-            raise EmbedError("batch embed returned wrong count")
-        _assert_nonzero_vectors(vectors, labels=[s.standard_code for s in batch])
-        all_vectors.extend(vectors)
+    upserted = 0
+    if to_embed:
+        all_vectors: list[list[float]] = []
+        for bi, batch in enumerate(_iter_batches(to_embed), start=1):
+            print(f"  OpenAI batch {bi}: {len(batch)} texts...", flush=True)
+            vectors = encode([s.text for s in batch])
+            if len(vectors) != len(batch):
+                raise EmbedError("batch embed returned wrong count")
+            _assert_nonzero_vectors(vectors, labels=[s.standard_code for s in batch])
+            all_vectors.extend(vectors)
 
-    upserted = upsert_standards(
-        client,
-        collection_name,
-        standards,
-        all_vectors,
-        model_id=model_id,
-        dimensions=dimensions,
-    )
-    if upserted != len(standards):
-        raise EmbedError(f"upserted {upserted} != {len(standards)} standards")
+        upserted = upsert_standards(
+            client,
+            collection_name,
+            to_embed,
+            all_vectors,
+            model_id=model_id,
+            dimensions=dimensions,
+        )
+        if upserted != len(to_embed):
+            raise EmbedError(f"upserted {upserted} != {len(to_embed)} standards")
 
     corpus_hash = hashlib.sha256(
         "\n".join(f"{s.standard_code}:{s.content_hash}" for s in standards).encode(
@@ -699,21 +968,23 @@ def embed_standards_to_qdrant(
     ).hexdigest()
 
     count = client.count(collection_name, exact=True).count
-    if count < len(standards):
+    if codes is None and count < len(standards):
         raise EmbedError(
-            f"Qdrant collection count {count} < upserted {len(standards)} "
+            f"Qdrant collection count {count} < corpus {len(standards)} "
             "(collection may have been partially written)"
         )
     if codes is None and count > len(standards):
         raise EmbedError(
-            f"Qdrant collection count {count} > upserted {len(standards)} — "
+            f"Qdrant collection count {count} > corpus {len(standards)} — "
             "stale points remain from a prior corpus. Re-run with --recreate."
         )
-    _assert_qdrant_vectors_nonzero(client, collection_name)
+    if count > 0:
+        _assert_qdrant_vectors_nonzero(client, collection_name)
 
     backend = "url" if settings["url"] else "local_path"
     manifest = {
         "schema_version": STANDARDS_EMBED_SCHEMA_VERSION,
+        "mode": mode,
         "model_id": model_id,
         "dimensions": dimensions,
         "distance": "Cosine",
@@ -723,25 +994,28 @@ def embed_standards_to_qdrant(
         "qdrant_path": None if settings["url"] else settings["path"],
         "by_level": by_level,
         "total_vectors": len(standards),
+        "upserted": upserted,
+        "skipped": skipped_n,
         "qdrant_point_count": count,
         "corpus_hash": corpus_hash,
         "failed": [],
         "source_standards_dir": str(src),
         "codes_filter": sorted(codes) if codes else None,
-        "note": "one vector per normalized standard/substandard leaf via embed_text",
+        "note": "incremental skips matching content_hash; one vector per leaf via embed_text",
     }
     atomic_write_text(
         dst / STANDARDS_MANIFEST_NAME, json.dumps(manifest, indent=2) + "\n"
     )
     progress["status"] = "complete"
     progress["upserted"] = upserted
+    progress["skipped"] = skipped_n
     progress["qdrant_point_count"] = count
     atomic_write_text(
         dst / STANDARDS_PROGRESS_NAME, json.dumps(progress, indent=2) + "\n"
     )
 
     print(
-        f"Done. upserted={upserted} collection={collection_name} "
+        f"Done. upserted={upserted} skipped={skipped_n} collection={collection_name} "
         f"points={count} model={model_id} -> {dst}/",
         flush=True,
     )

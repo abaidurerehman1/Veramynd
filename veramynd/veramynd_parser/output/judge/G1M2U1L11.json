@@ -1,0 +1,426 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U1L11",
+  "lesson_source": "stage1:G1M2U1L11",
+  "retrieve_file": "output\\retrieve\\G1M2U1L11.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 4,
+    "partial": 2,
+    "none": 4
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 6,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L11",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Explain concepts by interpreting texts.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Learn concepts by interpreting texts.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "Tell students that now they are going to write what they know about the major events and central message in Sun and Moon.\n- Display the Sun and Moon response sheet.\n- Distribute prepared clipboards and pencils.\n- Focus students on Part III and read the prompt aloud, allowing adequate think time: 'Use words and pictures to show what happened in the story.'\n- Direct students' attention to the box labeled Beginning.\n- Invite students to whisper a response into their hands:\n- Tell students that they may begin writing their response in the Beginning box.\n- Repeat this process with the remaining two boxes, Middle and End.\n- Circulate to support students as they write.",
+      "evidence_page": 154,
+      "confidence": "high",
+      "rationale": "Students interpret the story to explain and learn its concepts (major events, central message) and construct their own written and visual texts to demonstrate understanding.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.014925373134328358,
+        "dense_rank": 7,
+        "bm25_rank": null,
+        "dense_score": 0.55516887,
+        "bm25_score": null,
+        "rerank_score": 0.994702160358429
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L11",
+      "standard_code": "1.T.C.1",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify the general purpose of a variety of texts.",
+          "met": true,
+          "note": "Students discuss why the author wrote Sun and Moon (author’s purpose) for this text."
+        },
+        {
+          "clause": "Identify the target audience of a variety of texts.",
+          "met": false,
+          "note": "No task asks students to identify or discuss the intended audience."
+        },
+        {
+          "clause": "Identify different modes of communication: print, digital, auditory, and visual.",
+          "met": false,
+          "note": "While multiple modes are used (read-aloud, visuals), students are not directed to identify modes."
+        },
+        {
+          "clause": "Create texts in teacher-selected modes such as print, digital, auditory, and/or visual.",
+          "met": true,
+          "note": "Students write and draw on a response sheet (print/visual mode) to show events and central message."
+        }
+      ],
+      "evidence": "- Tell students they are now going to consider why the author may have written Sun and Moon.\n- Direct students' attention to the Unit 1 Guiding Question anchor chart and complete the first column with the book title.\n- Follow the same routine established in Lesson 9 to complete the three columns, culminating in a Think-Pair-Share for the third column:\n- 'Why do you think the author wrote the book?' (Responses will vary, but may include: to imagine what the sun and moon might think about, and/or to describe the wonderful things that happen on earth at night.)\n- If productive, cue students to expand the conversation by saying more:\n- 'Can you say more about that?' (Responses will vary.)\n- Cold call two or three students to share out their ideas.\n- As students share out, capture their responses on the anchor chart.",
+      "evidence_page": 155,
+      "confidence": "medium",
+      "rationale": "Students identify the author’s purpose for the text and create a written/drawn response, but they do not identify target audience or modes of communication.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.015384615384615385,
+        "dense_rank": 5,
+        "bm25_rank": null,
+        "dense_score": 0.56668186,
+        "bm25_score": null,
+        "rerank_score": 0.9939811825752258
+      },
+      "standard_raw_text": "Explain how authors of texts use language for a specific purpose and a target audience."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L11",
+      "standard_code": "1.P.ST.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Explore how context shapes the author's decisions when interpreting texts.",
+          "met": false,
+          "note": "No evidence students explore context's influence on author decisions."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses when interpreting texts.",
+          "met": false,
+          "note": "No evidence students explore context's influence on audience responses."
+        },
+        {
+          "clause": "Explore how context shapes the author's decisions when constructing texts.",
+          "met": false,
+          "note": "No evidence students explore context's influence on their own writing."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses when constructing texts.",
+          "met": false,
+          "note": "No evidence students explore context's influence on audience for their own writing."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students do not discuss or explore how context influences author or audience decisions or responses.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.021988643228222787,
+        "dense_rank": 33,
+        "bm25_rank": 29,
+        "dense_score": 0.5073475,
+        "bm25_score": 103.00122818511299,
+        "rerank_score": 0.9935168027877808
+      },
+      "standard_raw_text": "Explore how context shapes the author’s decisions and the audience’s responses during the interpretation and construction of texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L11",
+      "standard_code": "1.T.C.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify who is speaking at various points in a text.",
+          "met": false,
+          "note": "No evidence students identify the narrator or speaker."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "There is no activity where students identify the speaker or narrator in the story.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.026687875574407917,
+        "dense_rank": 22,
+        "bm25_rank": 9,
+        "dense_score": 0.524059,
+        "bm25_score": 153.36867889894282,
+        "rerank_score": 0.9934989213943481
+      },
+      "standard_raw_text": "Investigate the relationships between authors and speakers in texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L11",
+      "standard_code": "1.T.T.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "met": false,
+          "note": "Lesson is focused on narrative, not expository, text."
+        },
+        {
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "met": false,
+          "note": "No expository connections described."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "met": false,
+          "note": "No expository writing or analysis."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson is focused on a narrative text and does not address expository techniques or writing.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02631578947368421,
+        "dense_rank": 16,
+        "bm25_rank": 16,
+        "dense_score": 0.53404766,
+        "bm25_score": 132.7882029876727,
+        "rerank_score": 0.9932317733764648
+      },
+      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L11",
+      "standard_code": "1.P.EICC.3.d",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Summarize sections of the text to maintain understanding.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Visualize sections of the text to maintain understanding.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "Focus students on Part III and read the prompt aloud, allowing adequate think time: 'Use words and pictures to show what happened in the story.'\n- Direct students' attention to the box labeled Beginning.\n- Invite students to whisper a response into their hands:\n- Tell students that they may begin writing their response in the Beginning box.\n- Repeat this process with the remaining two boxes, Middle and End.",
+      "evidence_page": 154,
+      "confidence": "high",
+      "rationale": "Students summarize (retell) and visualize (draw) the beginning, middle, and end of the story to support understanding.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.027056277056277056,
+        "dense_rank": 6,
+        "bm25_rank": 24,
+        "dense_score": 0.5570852,
+        "bm25_score": 110.24347603558115,
+        "rerank_score": 0.9930875897407532
+      },
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L11",
+      "standard_code": "1.T.C.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify who is speaking or telling the story at various points in a text.",
+          "met": false,
+          "note": "No evidence students identify the narrator or speaker."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students do not identify the speaker or narrator at any point in the lesson.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02369281045751634,
+        "dense_rank": 42,
+        "bm25_rank": 12,
+        "dense_score": 0.49558634,
+        "bm25_score": 148.73971452737518,
+        "rerank_score": 0.9930760860443115
+      },
+      "standard_raw_text": "Identify who is speaking or telling the story at various points in a text. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L11",
+      "standard_code": "1.P.EICC.2.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Interpret texts to analyze ideas.",
+          "met": true,
+          "note": "Students interpret the story and analyze ideas by discussing why Moon changed its mind and identifying the central message."
+        },
+        {
+          "clause": "Construct texts to evaluate ideas.",
+          "met": false,
+          "note": "Students construct brief written/drawn retells and note the central message, but they do not create texts to evaluate ideas."
+        }
+      ],
+      "evidence": "Invite students to Think-Pair-Share with an elbow partner:\n- 'Why did Moon change its mind? What was the central message or lesson that Moon learned?' (Moon realized that the world is beautiful no matter if it's day or night, and Moon learned to appreciate his place in the night sky.)\n- As students discuss, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group.\n- Cold call a few selected students to share out.",
+      "evidence_page": 151,
+      "confidence": "high",
+      "rationale": "Students analyze the text’s ideas (central message and character change) through discussion, but the writing tasks focus on retelling and identifying message, not constructing texts to evaluate ideas.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.022658227848101266,
+        "dense_rank": 19,
+        "bm25_rank": 40,
+        "dense_score": 0.5316322,
+        "bm25_score": 82.95979378192855,
+        "rerank_score": 0.9930127263069153
+      },
+      "standard_raw_text": "Interpret and construct texts to aid the analysis and evaluation of texts and ideas. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L11",
+      "standard_code": "1.T.T.1",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Identify a simple plot with a problem and solution.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures.",
+          "met": false,
+          "note": "No comparison across texts or cultures."
+        },
+        {
+          "clause": "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "Tell students that now they are going to write what they know about the major events and central message in Sun and Moon.\n- Display the Sun and Moon response sheet.\n- Distribute prepared clipboards and pencils.\n- Focus students on Part III and read the prompt aloud, allowing adequate think time: 'Use words and pictures to show what happened in the story.'\n- Direct students' attention to the box labeled Beginning.\n- Invite students to whisper a response into their hands:\n- Tell students that they may begin writing their response in the Beginning box.\n- Repeat this process with the remaining two boxes, Middle and End.",
+      "evidence_page": 154,
+      "confidence": "high",
+      "rationale": "Students identify story elements (characters, setting, events, plot), describe character traits and actions, and create narrative texts with a sense of closure. No cross-text comparison, but all other clauses are met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.03278688524590164,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.5904808,
+        "bm25_score": 328.34762260300465,
+        "rerank_score": 0.9928644895553589
+      },
+      "standard_raw_text": "Identify and use narrative techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L11",
+      "standard_code": "1.T.T.1.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Describe traits of the main characters.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Explain how the characters' words support the central message, lesson, or moral.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Explain how the characters' actions support the central message, lesson, or moral.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "Invite students to Think-Pair-Share with an elbow partner:\n- 'Why did Moon change its mind? What was the central message or lesson that Moon learned?' (Moon realized that the world is beautiful no matter if it's day or night, and Moon learned to appreciate his place in the night sky.)\n- As students discuss, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group.",
+      "evidence_page": 151,
+      "confidence": "high",
+      "rationale": "Students describe the main character's traits and explain how Moon's words and actions support the story's central message.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.03225806451612903,
+        "dense_rank": 2,
+        "bm25_rank": 2,
+        "dense_score": 0.57911193,
+        "bm25_score": 322.21843745899696,
+        "rerank_score": 0.9922797679901123
+      },
+      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)"
+    }
+  ]
+}

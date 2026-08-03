@@ -1,0 +1,471 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U2L3",
+  "lesson_source": "stage1:G1M2U2L3",
+  "retrieve_file": "output\\retrieve\\G1M2U2L3.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 3,
+    "partial": 3,
+    "none": 4
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 6,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.T.T.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "met": false,
+          "note": "Students distinguish information from illustrations vs. text, but do not identify main topic/supporting details or other expository techniques."
+        },
+        {
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "met": true,
+          "note": "Students connect what illustrations show with what the text states about day and night."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "met": false,
+          "note": "Shared writing focuses on adjectives/descriptions; students do not produce an expository piece with introduction, facts, and closure."
+        }
+      ],
+      "evidence": "Invite students to turn and talk with an elbow partner:\n\"What is something you learned from an illustration to describe the pattern of light and dark on earth?\" ... \"What did you read in the text that confirmed what you saw in the illustration?\"",
+      "evidence_page": 237,
+      "confidence": "low",
+      "rationale": "Students explicitly describe how information in the text confirms what is shown in illustrations, meeting the connection clause. They do not identify expository techniques (e.g., main topic/supporting details) or produce expository writing with intro, facts, and closure. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02946912242686891,
+        "dense_rank": 5,
+        "bm25_rank": 11,
+        "dense_score": 0.5903237,
+        "bm25_score": 78.8216600137239,
+        "rerank_score": 0.9936670660972595
+      },
+      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.T.T.2.a",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Identify the main topic in an expository text.",
+          "met": true,
+          "note": "Students discuss the main topic of day and night patterns."
+        },
+        {
+          "clause": "Identify supporting details in an expository text.",
+          "met": true,
+          "note": "Students cite details from text and illustrations."
+        },
+        {
+          "clause": "Recognize techniques used to craft expository texts.",
+          "met": true,
+          "note": "Students distinguish between information from text and illustrations."
+        }
+      ],
+      "evidence": "Invite students to turn and talk with an elbow partner:\n- 'What is something you learned from an illustration to describe the pattern of light and dark on earth?' (I saw a picture of the earth spinning. Half of the earth faces the sun, and the other half faces away from the sun.)\n- 'What did you read in the text that confirmed what you saw in the illustration?' (The text said that the earth spins around and light from the sun falls on one-half of the spinning earth.)",
+      "evidence_page": 237,
+      "confidence": "high",
+      "rationale": "Students explicitly identify main topic and supporting details, and distinguish between information from text and illustrations, meeting all clauses.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.023527793065492568,
+        "dense_rank": 19,
+        "bm25_rank": 32,
+        "dense_score": 0.56892204,
+        "bm25_score": 64.52649087198975,
+        "rerank_score": 0.9931868314743042
+      },
+      "standard_raw_text": "Identify techniques used to craft expository texts, including main topic and supporting details. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.T.RA.2",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
+          "met": true,
+          "note": "Students cite what they learned from illustrations and what the text says to confirm it."
+        },
+        {
+          "clause": "Explore various sources of information, including print, digital, and personal communication.",
+          "met": true,
+          "note": "Students use a video, a poem, photographs, and the informational text while discussing and writing."
+        }
+      ],
+      "evidence": "Tell students you have a video of the earth to show them. As they watch the video, they should look carefully to see what they notice about how the earth moves and rotates, and think about the questions they have. ... Invite students to turn and talk with an elbow partner:\n-'What is something you learned from an illustration to describe the pattern of light and dark on earth?' ... 'What did you read in the text that confirmed what you saw in the illustration?'",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students reference specific parts of the text and illustrations to answer questions, and they engage with multiple sources (print text, poem, photographs, and a video) to build understanding and make connections.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.027402402402402402,
+        "dense_rank": 14,
+        "bm25_rank": 12,
+        "dense_score": 0.5775989,
+        "bm25_score": 78.5310149707227,
+        "rerank_score": 0.9931063055992126
+      },
+      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Explain concepts by interpreting texts.",
+          "met": true,
+          "note": "Students explain the day/night pattern using information from illustrations and confirming with text during partner discussion."
+        },
+        {
+          "clause": "Learn concepts by interpreting texts.",
+          "met": true,
+          "note": "Students identify what they learned from illustrations and from the text about the pattern of light and dark on earth."
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
+          "met": true,
+          "note": "In shared writing, students help record observations with words and pictures, collaboratively constructing a text."
+        }
+      ],
+      "evidence": "- Tell them that today they will look at a new image of the sun and moon and help record their observations using pictures and words during shared writing. ... - Invite students to turn and talk with an elbow partner:\n- 'What is something you learned from an illustration to describe the pattern of light and dark on earth?' (I saw a picture of the earth spinning. Half of the earth faces the sun, and the other half faces away from the sun.)\n- 'What did you read in the text that confirmed what you saw in the illustration?' (The text said that the earth spins around and light from the sun falls on one-half of the spinning earth.)",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "Students interpret an informational text and its illustrations to learn and explain the day/night pattern and collaboratively construct a written record of observations in shared writing. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.026862026862026864,
+        "dense_rank": 3,
+        "bm25_rank": 31,
+        "dense_score": 0.60119396,
+        "bm25_score": 64.99530289108225,
+        "rerank_score": 0.9924496412277222
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.P.EICC.3.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Summarize sections of the text to maintain understanding.",
+          "met": false,
+          "note": "Students identify what they learned from illustrations versus text and discuss a video, but there is no task where students summarize sections of the text."
+        },
+        {
+          "clause": "Visualize sections of the text to maintain understanding.",
+          "met": false,
+          "note": "Students look at photos and a video and the teacher draws quick sketches during shared writing; students are not asked to visualize sections of the text themselves."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on distinguishing information from illustrations vs. text and on discussing a video. It does not have students summarize text sections or create visualizations of the text.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02815814850530376,
+        "dense_rank": 1,
+        "bm25_rank": 25,
+        "dense_score": 0.6065014,
+        "bm25_score": 68.47828058555847,
+        "rerank_score": 0.9922270774841309
+      },
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.T.T.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Describe the connection between two individuals in a text.",
+          "met": false,
+          "note": "No evidence of describing connections between individuals."
+        },
+        {
+          "clause": "Describe the connection between two events in a text.",
+          "met": false,
+          "note": "No evidence of describing connections between events."
+        },
+        {
+          "clause": "Describe the connection between two ideas in a text.",
+          "met": false,
+          "note": "No evidence of describing connections between ideas."
+        },
+        {
+          "clause": "Describe the connection between two pieces of information in a text.",
+          "met": false,
+          "note": "No evidence of describing connections between pieces of information."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students do not explicitly describe connections between two individuals, events, ideas, or pieces of information in the text.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.023234323432343235,
+        "dense_rank": 41,
+        "bm25_rank": 15,
+        "dense_score": 0.5419189,
+        "bm25_score": 74.50638803531496,
+        "rerank_score": 0.9908298254013062
+      },
+      "standard_raw_text": "Describe the connection between two individuals, events, ideas, or pieces of information in a text. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.P.EICC.2.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Interpret texts to analyze ideas.",
+          "met": true,
+          "note": "Students interpret illustrations and text from an informational book to explain the pattern of day and night."
+        },
+        {
+          "clause": "Construct texts to evaluate ideas.",
+          "met": false,
+          "note": "Students participate in teacher-led shared writing to describe observations, but they do not create texts to evaluate ideas."
+        }
+      ],
+      "evidence": "- Invite students to turn and talk with an elbow partner:\n- 'What is something you learned from an illustration to describe the pattern of light and dark on earth?' (I saw a picture of the earth spinning. Half of the earth faces the sun, and the other half faces away from the sun.)\n- 'What did you read in the text that confirmed what you saw in the illustration?' (The text said that the earth spins around and light from the sun falls on one-half of the spinning earth.)",
+      "evidence_page": 237,
+      "confidence": "high",
+      "rationale": "Students interpret and discuss information from text and illustrations to analyze the day/night pattern. They do not construct their own texts to evaluate ideas; the shared writing is descriptive and teacher-scribed.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02279093455564044,
+        "dense_rank": 17,
+        "bm25_rank": 42,
+        "dense_score": 0.5726552,
+        "bm25_score": 60.94472479073085,
+        "rerank_score": 0.9904226064682007
+      },
+      "standard_raw_text": "Interpret and construct texts to aid the analysis and evaluation of texts and ideas. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.P.EICC.3",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Establish a purpose and set goals for reading",
+          "met": true,
+          "note": "Students discuss the meaning of the learning target before the read-aloud, setting a purpose."
+        },
+        {
+          "clause": "Monitor comprehension and adjust strategies as needed",
+          "met": true,
+          "note": "Students check that what they saw in illustrations is confirmed by the text, indicating monitoring."
+        },
+        {
+          "clause": "Scan and skim the text to note useful structures and sections",
+          "met": false,
+          "note": "No scanning/skimming of text features or sections is assigned to students."
+        },
+        {
+          "clause": "Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps",
+          "met": true,
+          "note": "Students recall personal experiences with shadows to support understanding during the lesson."
+        },
+        {
+          "clause": "Summarize and visualize sections of the text to maintain understanding",
+          "met": false,
+          "note": "Students share takeaways but are not explicitly directed to summarize or visualize sections."
+        },
+        {
+          "clause": "Make and track predictions about upcoming events and information",
+          "met": false,
+          "note": "No prediction tasks are included."
+        },
+        {
+          "clause": "Make, track, and support inferences about different levels of meaning",
+          "met": false,
+          "note": "Discussion focuses on observed information rather than making and supporting inferences from text."
+        },
+        {
+          "clause": "Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts",
+          "met": false,
+          "note": "Key terms are defined by the teacher; students are not asked to derive meanings from context or word parts."
+        }
+      ],
+      "evidence": "Invite students to turn and talk with an elbow partner:\n- 'What is something you learned from an illustration to describe the pattern of light and dark on earth?' (I saw a picture of the earth spinning. Half of the earth faces the sun, and the other half faces away from the sun.)\n- 'What did you read in the text that confirmed what you saw in the illustration?' (The text said that the earth spins around and light from the sun falls on one-half of the spinning earth.)",
+      "evidence_page": 237,
+      "confidence": "medium",
+      "rationale": "Students set a purpose, activate prior knowledge, and monitor comprehension by confirming illustrations with text. However, there is no student work on scanning/skimming, predictions, inference tracking, or independent vocabulary strategy use.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.026547116736990152,
+        "dense_rank": 12,
+        "bm25_rank": 19,
+        "dense_score": 0.5826424,
+        "bm25_score": 70.46511335046793,
+        "rerank_score": 0.9898702502250671
+      },
+      "standard_raw_text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.P.EICC.2.b",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Use texts to build knowledge.",
+          "met": true,
+          "note": "Students use text and illustrations to learn about day and night."
+        },
+        {
+          "clause": "Use texts to develop skills.",
+          "met": true,
+          "note": "Students develop skills in distinguishing information from text and illustrations."
+        },
+        {
+          "clause": "Use texts to make informed decisions.",
+          "met": true,
+          "note": "Students use information from texts to answer questions and share ideas."
+        },
+        {
+          "clause": "Use texts to share information and ideas.",
+          "met": true,
+          "note": "Students share what they learned with partners and the group."
+        }
+      ],
+      "evidence": "Invite students to turn and talk with an elbow partner:\n- 'What is something you learned from an illustration to describe the pattern of light and dark on earth?' ...\n- 'What did you read in the text that confirmed what you saw in the illustration?' ...\nAs students talk, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group.",
+      "evidence_page": 237,
+      "confidence": "high",
+      "rationale": "Students use texts to build knowledge, develop skills, make decisions, and share information and ideas as part of the lesson activities.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.027252906976744186,
+        "dense_rank": 4,
+        "bm25_rank": 26,
+        "dense_score": 0.59185815,
+        "bm25_score": 68.43935947121726,
+        "rerank_score": 0.9890130758285522
+      },
+      "standard_raw_text": "Make use of texts to build knowledge, develop skills, make informed decisions, and share information and ideas. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.P.EICC.1",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Generate, understand, monitor, and revise personal and academic reading and writing goals.",
+          "met": false,
+          "note": "Students work toward posted learning targets but do not generate or monitor their own goals."
+        },
+        {
+          "clause": "Discuss or write about personal and academic reading and writing preferences with reference to specific techniques, topics, modes, and genres.",
+          "met": false,
+          "note": "No tasks ask students to share personal reading/writing preferences."
+        },
+        {
+          "clause": "Select, read, and write texts of personal interest and academic relevance.",
+          "met": false,
+          "note": "Text is teacher-selected and writing is shared/scribed; no student text selection or independent writing."
+        },
+        {
+          "clause": "Build and draw from a repertoire of comprehension and composition skills, strategies, and techniques to interpret and construct texts.",
+          "met": true,
+          "note": "Students distinguish information from illustrations vs. text and contribute ideas to compose descriptions using resources."
+        },
+        {
+          "clause": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing writing, listening to others, and offering and responding to feedback.",
+          "met": true,
+          "note": "Students engage in partner protocols, discuss text/video, and use sentence frames to respond to peers."
+        },
+        {
+          "clause": "Develop independence and autonomy as a reader and writer.",
+          "met": false,
+          "note": "Activities are heavily teacher-directed; autonomy is not evidenced."
+        }
+      ],
+      "evidence": "Invite students to turn and talk with an elbow partner: 'What is something you learned from an illustration to describe the pattern of light and dark on earth?' (I saw a picture of the earth spinning. Half of the earth faces the sun, and the other half faces away from the sun.) 'What did you read in the text that confirmed what you saw in the illustration?' (The text said that the earth spins around and light from the sun falls on one-half of the spinning earth.) As students talk, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group.",
+      "evidence_page": 237,
+      "confidence": "high",
+      "rationale": "Students practice comprehension strategies (distinguishing information from text vs. illustrations) and participate in structured discussions, partially addressing the standard’s focus on building a repertoire and community participation. However, there is no evidence of student goal setting, preference discussion, text selection, or independent/autonomous writing, so alignment is partial.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.021762270845653457,
+        "dense_rank": 35,
+        "bm25_rank": 29,
+        "dense_score": 0.5487659,
+        "bm25_score": 67.04690317876974,
+        "rerank_score": 0.9878020882606506
+      },
+      "standard_raw_text": "Build an identity as a reader and writer, developing a repertoire of resources and tools to continuously expand participation as an active consumer and producer of texts."
+    }
+  ]
+}

@@ -1,0 +1,451 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U1L14",
+  "lesson_source": "stage1:G1M2U1L14",
+  "retrieve_file": "output\\retrieve\\G1M2U1L14.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 1,
+    "partial": 3,
+    "none": 6
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 4,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.T.C.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify who is speaking at various points in a text.",
+          "met": false,
+          "note": "No evidence students identify the narrator or speaker at any point."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on story elements, not on identifying the narrator or speaker. There is no student activity or prompt about who is telling the story.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.028814262023217248,
+        "dense_rank": 12,
+        "bm25_rank": 7,
+        "dense_score": 0.610669,
+        "bm25_score": 188.74634862526167,
+        "rerank_score": 0.9942639470100403
+      },
+      "standard_raw_text": "Investigate the relationships between authors and speakers in texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.P.EICC.3.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Summarize sections of the text to maintain understanding.",
+          "met": false,
+          "note": "Students identify character/setting and role-play events, but they are not asked to summarize sections."
+        },
+        {
+          "clause": "Visualize sections of the text to maintain understanding.",
+          "met": true,
+          "note": "Students act out specific sections of the text using a role-play protocol and puppets to support understanding."
+        }
+      ],
+      "evidence": "- Move students into pre-determined pairs and tell them they are going to use the Role-Play protocol to act out a few of the major events of Kitten's First Full Moon. Remind them that they have been using this protocol in the past few lessons, and review as necessary using the Role-Play Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)\n- Distribute Kitten's First Full Moon puppets and guide students through the protocol for the following sections of text:\n- -Pages 1-2\n- -Pages 7-8\n- -Pages 11-12\n- -Pages 19-22\n- -Pages 27-28",
+      "evidence_page": 182,
+      "confidence": "high",
+      "rationale": "Students visualize sections by enacting specific page ranges with puppets, which supports understanding. However, no task directs students to summarize sections of the text.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.022424242424242423,
+        "dense_rank": 15,
+        "bm25_rank": 50,
+        "dense_score": 0.603637,
+        "bm25_score": 107.68536448808204,
+        "rerank_score": 0.9932098984718323
+      },
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.T.T.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the main topic in an expository text.",
+          "met": false,
+          "note": "Lesson is based on a narrative text, not expository."
+        },
+        {
+          "clause": "Identify supporting details in an expository text.",
+          "met": false,
+          "note": "No expository text or related activity."
+        },
+        {
+          "clause": "Recognize techniques used to craft expository texts.",
+          "met": false,
+          "note": "No expository text or related activity."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson is focused on a narrative (Kitten's First Full Moon), not expository texts, so none of the clauses are addressed.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.021604938271604937,
+        "dense_rank": 48,
+        "bm25_rank": 21,
+        "dense_score": 0.55776864,
+        "bm25_score": 137.77775078664416,
+        "rerank_score": 0.9931303858757019
+      },
+      "standard_raw_text": "Identify techniques used to craft expository texts, including main topic and supporting details. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.T.RA.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
+          "met": true,
+          "note": "Students cite details from the book’s pictures to justify their description of the character."
+        },
+        {
+          "clause": "Explore various sources of information, including print, digital, and personal communication.",
+          "met": false,
+          "note": "Students work with a single story; no exploration or connections across multiple sources are required."
+        }
+      ],
+      "evidence": "Direct students' attention to the blank lines in Part II. Tell students to write one or two sentences to describe how Kitten is acting and to explain what, from the pictures, helped them.",
+      "evidence_page": 180,
+      "confidence": "high",
+      "rationale": "Students reference parts of the text (illustrations) to support their answers, but they do not explore multiple sources or make cross-source connections.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.018265221017514596,
+        "dense_rank": 50,
+        "bm25_rank": 49,
+        "dense_score": 0.55219346,
+        "bm25_score": 107.94596681897039,
+        "rerank_score": 0.9921091198921204
+      },
+      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.P.ST.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Explore how context shapes the author's decisions when interpreting texts.",
+          "met": false,
+          "note": "No discussion or activity about author's decisions or context."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses when interpreting texts.",
+          "met": false,
+          "note": "No activity about audience response or context."
+        },
+        {
+          "clause": "Explore how context shapes the author's decisions when constructing texts.",
+          "met": false,
+          "note": "No text creation or author context discussion."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses when constructing texts.",
+          "met": false,
+          "note": "No text creation or audience context discussion."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "There is no exploration of author or audience context in the lesson.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.023411829134720702,
+        "dense_rank": 28,
+        "bm25_rank": 23,
+        "dense_score": 0.5829326,
+        "bm25_score": 131.5728307194158,
+        "rerank_score": 0.9917804598808289
+      },
+      "standard_raw_text": "Explore how context shapes the author’s decisions and the audience’s responses during the interpretation and construction of texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.T.T.1",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue.",
+          "met": true,
+          "note": "Students identify character and setting and act out major events; dialogue is not addressed but key techniques are identified."
+        },
+        {
+          "clause": "Identify a simple plot with a problem and solution.",
+          "met": false,
+          "note": "Students act out and discuss events, but do not explicitly identify the story’s problem and solution."
+        },
+        {
+          "clause": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
+          "met": false,
+          "note": "Students describe how Kitten is acting, but do not explain how words/actions support the central message."
+        },
+        {
+          "clause": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures.",
+          "met": false,
+          "note": "No compare/contrast task across texts is assigned in this lesson."
+        },
+        {
+          "clause": "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure.",
+          "met": false,
+          "note": "Students write brief responses about character/setting, not a narrative text with closure."
+        }
+      ],
+      "evidence": "- Stop after reading page 10 and invite students to turn and talk with an elbow partner:\n- 'Who is the main character of this story? How would you describe the character?' (Kitten; curious, adventurous, brave, a cat with white fur)\n- Refocus students whole group and call one or two students to share out.\n- Direct students' attention to the Story Elements board and place the Story Elements Board Icon: Kitten's First Full Moon for character on the Story Elements board. Refer to Story Elements Board: Kitten's First Full Moon (answers, for teacher reference) as necessary.\n- Draw students' attention back to the text and continue reading through page 16.\n- Invite students to turn and talk with an elbow partner:\n- 'What is the setting of this story? Where and when does the story take place?' (It takes place outside, on Kitten's front porch. It takes place in the garden and fields. It takes place at night.)\n- Refocus students whole group and call one or two students to share out.\n- Place the Story Elements Board Icon: Kitten's First Full Moon for setting on the Story Elements board.",
+      "evidence_page": 180,
+      "confidence": "high",
+      "rationale": "Students clearly identify narrative elements (character and setting) and act out major events, but do not identify problem/solution, compare across texts, or produce a narrative with closure, nor link traits to the central message.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.03278688524590164,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.7179803,
+        "bm25_score": 298.9517943363162,
+        "rerank_score": 0.9917550086975098
+      },
+      "standard_raw_text": "Identify and use narrative techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.T.T.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "met": false,
+          "note": "No expository text or related activity."
+        },
+        {
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "met": false,
+          "note": "No such activity; focus is on narrative."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "met": false,
+          "note": "No expository writing or instruction."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson is based on a narrative text and does not address expository techniques or writing.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.026916221033868093,
+        "dense_rank": 25,
+        "bm25_rank": 6,
+        "dense_score": 0.58431,
+        "bm25_score": 196.34440808799263,
+        "rerank_score": 0.9913613200187683
+      },
+      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.T.T.3",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft opinion texts, including the author's opinion and supporting reasons.",
+          "met": false,
+          "note": "No opinion text or related activity."
+        },
+        {
+          "clause": "Use knowledge of opinion techniques to create opinion pieces that introduce the topic, state an opinion about the topic, and provide two or more reasons to support the opinion with linking words such as 'and' and 'because'.",
+          "met": false,
+          "note": "No opinion writing or instruction."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "No opinion writing or analysis is present in the lesson.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.018874643874643875,
+        "dense_rank": 44,
+        "bm25_rank": 48,
+        "dense_score": 0.56148225,
+        "bm25_score": 108.27614141817949,
+        "rerank_score": 0.9910128712654114
+      },
+      "standard_raw_text": "Identify and use opinion techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.T.T.1.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Describe traits of the main characters.",
+          "met": true,
+          "note": "Students describe Kitten's traits."
+        },
+        {
+          "clause": "Explain how the characters' words support the central message, lesson, or moral.",
+          "met": true,
+          "note": "Students explain how Kitten's actions and words relate to the story's message."
+        },
+        {
+          "clause": "Explain how the characters' actions support the central message, lesson, or moral.",
+          "met": true,
+          "note": "Students connect Kitten's actions to the story's message."
+        }
+      ],
+      "evidence": "Invite students to point to Part II on the Unit 1 Assessment response sheet and read the prompt aloud: 'Based on the pictures on the Kitten's First Full Moon chart, which word would you use to describe how kitten is acting? Circle one.' ... Tell students to write one or two sentences to describe how Kitten is acting and to explain what, from the pictures, helped them.",
+      "evidence_page": 180,
+      "confidence": "high",
+      "rationale": "Students explicitly describe character traits and connect actions and words to the story's central message.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.031746031746031744,
+        "dense_rank": 3,
+        "bm25_rank": 3,
+        "dense_score": 0.68195635,
+        "bm25_score": 285.4859538392846,
+        "rerank_score": 0.9908038377761841
+      },
+      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.P.EICC.3",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Establish a purpose and set goals for reading",
+          "met": false,
+          "note": "Teacher states purposes via learning targets; students do not set goals."
+        },
+        {
+          "clause": "Monitor comprehension and adjust strategies as needed",
+          "met": false,
+          "note": "No student monitoring or adjustment of strategies is directed."
+        },
+        {
+          "clause": "Scan and skim the text to note useful structures and sections",
+          "met": false,
+          "note": "No scanning or skimming tasks are assigned to students."
+        },
+        {
+          "clause": "Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps",
+          "met": false,
+          "note": "Students recall earlier texts, but do not integrate prior knowledge to make sense of this text."
+        },
+        {
+          "clause": "Summarize and visualize sections of the text to maintain understanding",
+          "met": true,
+          "note": "Students role-play major events, which serves as visualization/summarization."
+        },
+        {
+          "clause": "Make and track predictions about upcoming events and information",
+          "met": false,
+          "note": "No prediction activity is included."
+        },
+        {
+          "clause": "Make, track, and support inferences about different levels of meaning",
+          "met": true,
+          "note": "Students choose a trait for Kitten and justify it with picture evidence."
+        },
+        {
+          "clause": "Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts",
+          "met": false,
+          "note": "Definitions are provided; students do not derive meanings from context."
+        }
+      ],
+      "evidence": "Invite students to point to Part II on the Unit 1 Assessment response sheet and read the prompt aloud:\n- \"Based on the pictures on the Kitten's First Full Moon chart, which word would you use to describe how kitten is acting? Circle one.\"\n- Read the four word choices aloud and review their definitions as necessary.\n- Invite students to circle the word they think best describes how Kitten is acting in the pictures displayed on the Kitten's First Full Moon chart.\n- Direct students' attention to the blank lines in Part II. Tell students to write one or two sentences to describe how Kitten is acting and to explain what, from the pictures, helped them.",
+      "evidence_page": 180,
+      "confidence": "low",
+      "rationale": "Students infer and justify character behavior from pictures and role-play major events, but do not set purposes, monitor comprehension, scan/skim, predict, or determine word meanings via context. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.027598020555767037,
+        "dense_rank": 14,
+        "bm25_rank": 11,
+        "dense_score": 0.6060908,
+        "bm25_score": 163.01787951253513,
+        "rerank_score": 0.990797758102417
+      },
+      "standard_raw_text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals."
+    }
+  ]
+}

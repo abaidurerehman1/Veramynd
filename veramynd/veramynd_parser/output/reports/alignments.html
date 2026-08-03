@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Veramynd Alignment Audit</title>
+<style>
+body { font-family: Georgia, "Times New Roman", serif; margin: 2rem; background: #f7f4ef; color: #1c1a17; }
+h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+h2 { font-size: 1.2rem; margin: 0 0 0.35rem; }
+.meta { color: #5c564c; font-size: 0.95rem; }
+.card { background: #fff; border: 1px solid #ddd4c6; padding: 1rem 1.1rem; margin: 1rem 0; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th, td { border-bottom: 1px solid #ece4d8; text-align: left; vertical-align: top; padding: 0.45rem 0.35rem; }
+th { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; color: #6a6258; }
+tr.ok td:nth-child(2) { color: #1f6b3a; font-weight: 700; }
+tr.warn td:nth-child(2) { color: #9a5b00; font-weight: 700; }
+tr.bad td:nth-child(2) { color: #8a1f1f; font-weight: 700; }
+.ev, .rat { max-width: 22rem; }
+</style>
+</head>
+<body>
+<h1>Veramynd Alignment Audit</h1>
+<p class='meta'>prompt=align_judge.batch.v1 model=gpt-4.1 sources=1</p>
+<p class="meta">rows=10 ·
+full=4 ·
+partial=1 ·
+none=5</p>
+<section class='card'><h2>G1M2U1L3</h2><p class='meta'>full=4 partial=1 none=5</p><table><thead><tr><th>Standard</th><th>Status</th><th>Conf</th><th>Grounded</th><th>Page</th><th>Evidence</th><th>Rationale</th></tr></thead><tbody><tr class='ok'><td>1.P.CP.1.d</td><td>full</td><td>high</td><td>True</td><td>70</td><td class='ev'>Invite students to turn and talk to an elbow partner:
+- &#x27;What does it look like to look closely at the illustrations?&#x27; (Look for students to mimic studying and looking deeply at imaginary pictures.)
+- &#x27;What does it look like to reread the text?&#x27; (Look for students to mimic reread</td><td class='rat'>Students work with partners to discuss topics and investigate questions about the text, and collaboratively explore and create texts through discussion and shared writing/drawing activities. There is no explicit evidence</td></tr><tr class='ok'><td>1.P.EICC.3.d</td><td>full</td><td>high</td><td>True</td><td>70</td><td class='ev'>Remind students of the work they did thinking about key details relating to the main character and setting in Summer Sun Risin&#x27; during the close read-aloud.
+Invite students to turn and talk to an elbow partner:
+- &#x27;Who is the main character?&#x27; (the boy)
+- &#x27;Where does the story take</td><td class='rat'>Students summarize sections of the text by identifying and discussing key details about the main character and setting, and visualize by drawing about these elements to support understanding.</td></tr><tr class='bad'><td>1.T.RA.1</td><td>none</td><td>high</td><td>True</td><td></td><td class='ev'></td><td class='rat'>The lesson focuses on close reading and discussion of a single literary text, not on research or using multiple sources as required by the standard.</td></tr><tr class='ok'><td>1.T.T.1.a</td><td>full</td><td>high</td><td>True</td><td>70</td><td class='ev'>Remind students of the work they did thinking about key details relating to the main character and setting in Summer Sun Risin&#x27; during the close read-aloud.
+Invite students to turn and talk to an elbow partner:
+- &#x27;Who is the main character?&#x27; (the boy)
+- &#x27;Where does the story take</td><td class='rat'>Students identify characters, setting, and major events through discussion and written/drawn responses about the story. Dialogue is referenced in the close read-aloud and song activities.</td></tr><tr class='warn'><td>1.T.T.1.c</td><td>partial</td><td>medium</td><td>True</td><td>67</td><td class='ev'>Share with students that today, they will begin reading a new book called Summer Sun Risin&#x27; and will get to practice the things close readers do as they answer the focus question: &#x27;What is the boy doing when the sun is rising, at its highest, and setting in the sky?&#x27;</td><td class='rat'>Students discuss the actions of the main character but do not explicitly describe character traits or connect words/actions to the story&#x27;s message or moral.</td></tr><tr class='bad'><td>1.P.ST.1.c</td><td>none</td><td>high</td><td>True</td><td></td><td class='ev'></td><td class='rat'>The lesson does not address how context influences author or audience decisions in interpreting or constructing texts.</td></tr><tr class='bad'><td>1.T.T.1.d</td><td>none</td><td>high</td><td>True</td><td></td><td class='ev'></td><td class='rat'>The lesson focuses on a single story and does not involve comparing or contrasting characters or experiences across diverse cultures.</td></tr><tr class='ok'><td>1.P.CP.2.d</td><td>full</td><td>high</td><td>True</td><td>70</td><td class='ev'>Invite students to turn and talk to an elbow partner:
+- &#x27;Who is the main character?&#x27; (the boy)
+- &#x27;Where does the story take place?&#x27; (a farm)
+...
+Invite students to turn and talk to an elbow partner:
+- &#x27;What does it look like to look closely at the illustrations?&#x27; (Look for studen</td><td class='rat'>Students engage in dialogue with peers, asking and answering questions about the text and their understanding.</td></tr><tr class='bad'><td>1.T.C.2</td><td>none</td><td>high</td><td>True</td><td></td><td class='ev'></td><td class='rat'>The lesson does not include activities where students identify the narrator or speaker at different points in the text.</td></tr><tr class='bad'><td>1.P.ST.1</td><td>none</td><td>low</td><td>False</td><td>67</td><td class='ev'>To activate background knowledge, link each bullet on the anchor chart to printed photographs of students closely reading. (MMR)
+Remind students of the definition of character (person, animal, or object in a story, play, or movie)
+Using a total participation technique, invite res</td><td class='rat'>Students use prior knowledge and discussion to identify context elements like setting, but do not explicitly consider author/audience purposes or how context shapes decisions. [REJECTED: evidence missing or not found in </td></tr></tbody></table></section>
+<script type="application/json" id="summary">{"schema_version": "1.0-report", "source_files": ["output\\judge\\G1M2U1L3.json"], "row_count": 10, "by_status_all_verdicts": {"full": 4, "partial": 1, "none": 5}, "filtered_out_by_status": 0, "filtered_out_ungrounded": 0, "status_filter": null, "grounded_only": false}</script>
+</body>
+</html>

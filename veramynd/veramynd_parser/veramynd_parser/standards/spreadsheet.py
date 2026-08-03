@@ -109,13 +109,19 @@ def _validate_header(row: tuple[object, ...] | None, *, sheet: str) -> None:
 
 def parse_standards(
     path: str | Path,
-    framework: str = "GA ELA",
+    framework: str = "",
     sheet: str | None = None,
 ) -> GradeStandards:
     """Parse a standards spreadsheet into a ``GradeStandards`` tree.
 
     Expects a header row with a code column first and standard text second. Validates
     structure up front. Raises if the sheet mixes multiple grade prefixes.
+
+    ``framework`` is not guessed from the file's content by default (a prior
+    hardcoded ``"GA ELA"`` default silently mislabeled every other state's
+    standards) -- callers should pass it explicitly (the CLI's ``--framework``).
+    If omitted, the workbook's own "Subject" document property is used when
+    present; otherwise the framework is left empty.
     """
     path = Path(path)
     try:
@@ -123,8 +129,10 @@ def parse_standards(
     except Exception as e:
         raise SpreadsheetStructureError(f"cannot open workbook {path.name}: {e}") from e
 
+    framework_hint = ""
     try:
         ws = wb[sheet] if sheet else wb.worksheets[0]
+        framework_hint = (getattr(wb.properties, "subject", None) or "").strip()
         rows_iter = ws.iter_rows(values_only=True)
         try:
             header = next(rows_iter)
@@ -210,4 +218,4 @@ def parse_standards(
         )
 
     grade = next(iter(grades_seen))
-    return GradeStandards(grade=grade, framework=framework, standards=standards)
+    return GradeStandards(grade=grade, framework=framework or framework_hint, standards=standards)

@@ -118,6 +118,73 @@ _MAX_ATTEMPTS = 8
 # (qualifiers, actor examples, secondary foci); 16k was truncating long lessons.
 _MAX_TOKENS_CAP = 32_768
 
+# Models that reject ``max_tokens`` on chat.completions (require max_completion_tokens).
+_MAX_COMPLETION_PREFIXES = ("gpt-5", "o1", "o3", "o4")
+
+# 429 / RateLimitError codes that need user action — never sleep-and-retry.
+_NON_RETRYABLE_OPENAI_CODES = frozenset(
+    {
+        "billing_not_active",
+        "insufficient_quota",
+    }
+)
+# Explicit rate-limit signals (informational; unknown 429s still retry).
+_RETRYABLE_OPENAI_RATE_LIMIT_CODES = frozenset(
+    {
+        "rate_limit_exceeded",
+        "requests_per_minute",
+        "tokens_per_minute",
+    }
+)
+
+
+def uses_max_completion_tokens(model: str) -> bool:
+    """True when the chat Completions API requires ``max_completion_tokens``."""
+    mid = (model or "").strip().lower()
+    return any(mid.startswith(p) for p in _MAX_COMPLETION_PREFIXES)
+
+
+def build_chat_completion_request(
+    *,
+    model: str,
+    messages: list[dict[str, str]],
+    max_tokens: int,
+    schema_model: type[BaseModel],
+    temperature: float = 0,
+) -> dict:
+    """Build kwargs for ``client.chat.completions.create`` (single source of truth).
+
+    All judge modes (batch / pair / escalation / fallback) and normalize paths
+    must go through this helper so GPT-5-class models never receive ``max_tokens``.
+    """
+    schema = _strict_openai_schema(schema_model)
+    kwargs: dict = {
+        "model": model,
+        "messages": messages,
+        "response_format": {
+            "type": "json_schema",
+            "json_schema": {
+                "name": schema_model.__name__,
+                "schema": schema,
+                "strict": True,
+            },
+        },
+    }
+    if uses_max_completion_tokens(model):
+        kwargs["max_completion_tokens"] = max_tokens
+        # Reasoning / GPT-5 chat models reject temperature on some accounts.
+        # Omit it rather than sending an unsupported parameter.
+    else:
+        kwargs["max_tokens"] = max_tokens
+        kwargs["temperature"] = temperature
+    return kwargs
+
+
+def _token_budget_from_request(kwargs: dict) -> int:
+    if "max_completion_tokens" in kwargs:
+        return int(kwargs["max_completion_tokens"])
+    return int(kwargs["max_tokens"])
+
 
 def _next_max_tokens(current: int) -> int | None:
     """Return a higher budget after truncation, or ``None`` if already at the cap."""
@@ -165,7 +232,6 @@ def _complete_openai(
         ) from e
 
     client = OpenAI(api_key=openai_api_key(api_key))
-    schema = _strict_openai_schema(schema_model)
     messages = [
         {"role": "system", "content": system},
         {"role": "user", "content": user},
@@ -173,22 +239,17 @@ def _complete_openai(
 
     last_err: Exception | None = None
     for attempt in range(_MAX_ATTEMPTS):
+        request = build_chat_completion_request(
+            model=model,
+            messages=messages,
+            max_tokens=max_tokens,
+            schema_model=schema_model,
+        )
         try:
-            resp = client.chat.completions.create(
-                model=model,
-                temperature=0,
-                max_tokens=max_tokens,
-                response_format={
-                    "type": "json_schema",
-                    "json_schema": {
-                        "name": schema_model.__name__,
-                        "schema": schema,
-                        "strict": True,
-                    },
-                },
-                messages=messages,
-            )
+            resp = client.chat.completions.create(**request)
         except RateLimitError as e:
+            if is_non_retryable_openai_error(e):
+                raise LlmError(format_non_retryable_openai_error(e)) from e
             last_err = e
             wait_s = _retry_wait_seconds(str(e), default=30.0)
             print(
@@ -200,6 +261,8 @@ def _complete_openai(
             continue
         except APIStatusError as e:
             last_err = e
+            if is_non_retryable_openai_error(e):
+                raise LlmError(format_non_retryable_openai_error(e)) from e
             if getattr(e, "status_code", None) in (429, 500, 502, 503, 529):
                 wait_s = _retry_wait_seconds(str(e), default=20.0)
                 print(
@@ -257,6 +320,58 @@ def _retry_wait_seconds(message: str, *, default: float) -> float:
     if m:
         return min(float(m.group(1)) + 1.0, 300.0)
     return default
+
+
+def openai_error_code(exc: BaseException) -> str | None:
+    """Best-effort provider ``code`` (or ``type``) from an OpenAI SDK exception."""
+    for attr in ("code", "type"):
+        value = getattr(exc, attr, None)
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+
+    body = getattr(exc, "body", None)
+    if isinstance(body, dict):
+        err = body.get("error") if isinstance(body.get("error"), dict) else body
+        if isinstance(err, dict):
+            for key in ("code", "type"):
+                value = err.get(key)
+                if isinstance(value, str) and value.strip():
+                    return value.strip()
+
+    text = str(exc)
+    for code in _NON_RETRYABLE_OPENAI_CODES | _RETRYABLE_OPENAI_RATE_LIMIT_CODES:
+        if re.search(rf"\b{re.escape(code)}\b", text, re.I):
+            return code
+    return None
+
+
+def is_non_retryable_openai_error(exc: BaseException) -> bool:
+    """True for 429s that need user action (billing/quota), not transient rate limits."""
+    code = (openai_error_code(exc) or "").strip().lower()
+    if code in _NON_RETRYABLE_OPENAI_CODES:
+        return True
+    text = str(exc).lower()
+    return any(c in text for c in _NON_RETRYABLE_OPENAI_CODES)
+
+
+def format_non_retryable_openai_error(exc: BaseException) -> str:
+    """Clear operator-facing message for billing/quota failures."""
+    code = (openai_error_code(exc) or "").strip().lower()
+    billing_url = "https://platform.openai.com/account/billing"
+    if code == "billing_not_active" or "billing_not_active" in str(exc).lower():
+        return (
+            "OpenAI account billing is not active (billing_not_active). "
+            f"Activate billing at {billing_url} — this error is not retryable."
+        )
+    if code == "insufficient_quota" or "insufficient_quota" in str(exc).lower():
+        return (
+            "OpenAI API quota exhausted (insufficient_quota). "
+            f"Add credits or raise limits at {billing_url} — this error is not retryable."
+        )
+    return (
+        f"OpenAI rejected the request with a non-retryable error "
+        f"({code or 'unknown'}): {exc}"
+    )
 
 
 # Backward-compatible aliases used by older tests / call sites during migration.

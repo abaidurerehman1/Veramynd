@@ -166,9 +166,16 @@ veramynd_parser/
 │   └── spreadsheet.py     # xlsx -> GradeStandards tree
 ├── verify/
 │   └── verifier.py        # the 4-layer safety net (incl. cross-engine)
-├── cli.py                 # guide / stds / verify / export commands
+├── cli.py                 # guide / stds / verify / export / normalize / chunk /
+│                          # embed / retrieve / judge / report commands
 └── .docling_cache/        # content-addressed Docling parse cache
 ```
+
+## What's still incomplete
+
+- **Gold-set evaluation** — no `eval/` harness in-repo yet; judge/retrieve quality is unmeasured against expert labels.
+- **Agentic graph track** — design doc only (`docs/architecture-agentic-graph.md`).
+- Validated primarily on the two sample documents under `../data/samples/`.
 
 ## Tests
 
@@ -176,10 +183,9 @@ veramynd_parser/
 pytest
 ```
 
-31 tests run against the real documents (skipped automatically if the source files
-are absent): 40-lesson separation, clean page partition, per-lesson division, all
-agendas in band, the 188→4/14/35/135 standards tree, and the verifier passing on
-good input while blocking corrupted input.
+Tests cover Stage-1 parse/verify, normalize sanitizers, chunk/embed (mocked OpenAI +
+in-memory Qdrant), retrieve, and judge grounding. Integration cases that need the
+real PDF/xlsx are skipped automatically if those files are absent.
 
 ## Pedagogical normalizer (Stage 3 — lessons)
 
@@ -211,6 +217,36 @@ API keys are loaded only from `veramynd_parser/.env` or the process environment
 
 Progress is written to `output/normalize/normalize_progress.json`.
 
+## Incremental vs maintenance (enterprise)
+
+Default runs are **incremental** so adding the next publisher/grade does not
+recompute an entire corpus. Pass **`--force`** (and/or embed `--recreate`) for
+maintenance recomputation.
+
+| Stage | Incremental default | Maintenance |
+|---|---|---|
+| `normalize-*` | content-addressed LLM cache | `--force` / `--no-cache` |
+| `chunk-lessons` | skip when `source_fingerprint` matches | `--force` |
+| `embed-*` | skip when Qdrant `content_hash`+model+dims match | `--force` / `--recreate` |
+
+`--recreate`: rebuild the embedding index for the **requested scope**. If no
+scope is specified (`--resource-id` / `--code`), rebuild the **entire** collection.
+A filtered `--recreate` never deletes points outside that scope.
+| `batch_align_all` | skip existing retrieve/judge JSON | `--force` (or `--force-retrieve` / `--force-judge`) |
+
+Examples:
+
+```bash
+# Day-to-day: only changed lessons are rebuilt / re-embedded
+veramynd-parser chunk-lessons output/stage1/lessons --normalize-dir output/normalize --out output/chunks
+veramynd-parser embed-chunks output/chunks --out output/embeddings
+
+# Maintenance: full recompute
+veramynd-parser chunk-lessons output/stage1/lessons --normalize-dir output/normalize --out output/chunks --force
+veramynd-parser embed-chunks output/chunks --out output/embeddings --force --recreate
+python -m veramynd_parser.scripts.batch_align_all --force
+```
+
 ### Chunk (hierarchical, no LLM)
 
 ```bash
@@ -218,16 +254,22 @@ veramynd-parser chunk-lessons output/stage1/lessons --normalize-dir output/norma
 ```
 
 Writes lesson + instructional chunks plus evidence join pointers under `output/chunks/`.
+Re-runs skip unchanged lessons unless `--force`.
 
 ### Embed → Qdrant (OpenAI text-embedding-3-large)
 
 ```bash
 pip install -e '.[embed]'
-veramynd-parser embed-chunks output/chunks --out output/embeddings --recreate
+veramynd-parser embed-chunks output/chunks --out output/embeddings
 ```
 
 Uses `OPENAI_API_KEY` from `.env`. Default model: `text-embedding-3-large` (3072-d).  
 Stores vectors in Qdrant (`QDRANT_URL` or local `.qdrant_data`). Evidence pointers are not embedded.
+
+Incremental by default (skips unchanged `content_hash`). `--force` re-embeds the
+selected scope. `--recreate` rebuilds the embedding index for the requested scope;
+with no scope, it rebuilds the entire collection (filtered runs never wipe other
+lessons/standards).
 
 ### Embed standards → Qdrant
 
@@ -255,10 +297,10 @@ veramynd-parser retrieve-standards \
   --out output/retrieve/G1M2U1L3.json
 ```
 
-Dense (Qdrant) + BM25 → RRF top 30, then `BAAI/bge-reranker-v2-m3` to top 10.
+Dense (Qdrant) + BM25 → RRF top 30, then `BAAI/bge-reranker-base` to top 10.
 Pass `--no-rerank` to inspect the hybrid list only.
 
-### Alignment judge + grounding
+### Alignment judge + grounding (enterprise K–12)
 
 ```bash
 pip install -e '.[judge]'   # openai + dotenv (same as normalize)
@@ -269,10 +311,21 @@ veramynd-parser judge-standards \
   --out output/judge/G1M2U1L3.json
 ```
 
-Default judge model: `gpt-4.1` (`JUDGE_MODEL`). Pass `--escalate` to re-judge
-`partial` / low-confidence pairs with `JUDGE_ESCALATE_MODEL` (default `gpt-5`).
-Evidence quotes are string-matched against raw lesson steps; ungrounded
-positive claims are rejected to `none`.
+**Quality profile `enterprise_k12` (default):**
+1. **Batch** — one LLM call for all retrieve candidates (`gpt-4.1`)
+2. **Escalate** — re-judge `partial`, low/medium confidence, or empty-evidence
+   positives with `JUDGE_ESCALATE_MODEL` (default `gpt-5`)
+3. **Pair fallback** — if batch JSON is invalid
+4. **Grounding** — ungrounded positive claims are rejected to `none`
+
+Opt out of escalate for smoke/cost: `--no-escalate`.  
+Force pair-only A/B: `--no-batch`.
+
+Batch all lessons:
+
+```bash
+python -m veramynd_parser.scripts.batch_align_all --skip-retrieve
+```
 
 ### Alignment report (CSV)
 
@@ -286,7 +339,9 @@ Or export a whole folder: `--judge-dir output/judge`.
 Use `--aligned-only` for full+partial rows only (still never drops rows for missing confidence).
 Also writes an HTML audit dashboard next to the CSV (disable with `--no-html`).
 
-**Note:** Gold-set eval harness is next (you fill `eval/gold_set.jsonl`); templates are under `eval/`.
+**Still incomplete:** gold-set eval harness (`eval/gold_set.jsonl`) is designed in
+`docs/architecture.md` but not shipped in this repo yet — treat judge accuracy as
+unmeasured until that exists.
 
 Library:
 

@@ -1,0 +1,471 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U1L2",
+  "lesson_source": "stage1:G1M2U1L2",
+  "retrieve_file": "output\\retrieve\\G1M2U1L2.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 0,
+    "partial": 5,
+    "none": 5
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 5,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.T.C.1",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify the general purpose of a variety of texts.",
+          "met": false,
+          "note": "Students infer the purpose for one story, not for a variety of texts."
+        },
+        {
+          "clause": "Identify the target audience of a variety of texts.",
+          "met": false,
+          "note": "Target audience is not discussed or identified."
+        },
+        {
+          "clause": "Identify different modes of communication: print, digital, auditory, and visual.",
+          "met": false,
+          "note": "Students are not asked to identify modes of communication."
+        },
+        {
+          "clause": "Create texts in teacher-selected modes such as print, digital, auditory, and/or visual.",
+          "met": true,
+          "note": "Students create a response sheet using pictures and words (print/visual)."
+        }
+      ],
+      "evidence": "Invite students to use the response sheet to capture their ideas about why this author wrote about the sun and moon. Tell students that they can use pictures and words to show their thinking.",
+      "evidence_page": 59,
+      "confidence": "high",
+      "rationale": "Students create a short text using pictures and words, but they do not identify purposes across multiple texts, determine target audience, or identify communication modes.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.03028233151183971,
+        "dense_rank": 1,
+        "bm25_rank": 12,
+        "dense_score": 0.60497177,
+        "bm25_score": 80.21507955769793,
+        "rerank_score": 0.9937011003494263
+      },
+      "standard_raw_text": "Explain how authors of texts use language for a specific purpose and a target audience."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.P.EICC.2.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Interpret texts to analyze ideas.",
+          "met": true,
+          "note": "Students discuss and infer why the author wrote the story, analyzing ideas from the text."
+        },
+        {
+          "clause": "Construct texts to evaluate ideas.",
+          "met": false,
+          "note": "Students create brief written/drawn responses to explain author’s purpose, but they do not evaluate ideas."
+        }
+      ],
+      "evidence": "Review the guiding question by reading it aloud: 'Why do authors write stories about the sun, moon, and stars?' Invite students to use the response sheet to capture their ideas about why this author wrote about the sun and moon. Tell students that they can use pictures and words to show their thinking.",
+      "evidence_page": 59,
+      "confidence": "medium",
+      "rationale": "Students interpret the text to analyze the author’s purpose and record their ideas, but there is no task requiring evaluation of ideas.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.026709401709401708,
+        "dense_rank": 12,
+        "bm25_rank": 18,
+        "dense_score": 0.561701,
+        "bm25_score": 73.55153265033418,
+        "rerank_score": 0.9932768940925598
+      },
+      "standard_raw_text": "Interpret and construct texts to aid the analysis and evaluation of texts and ideas. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.P.EICC.3.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Summarize sections of the text to maintain understanding.",
+          "met": false,
+          "note": "Students discuss a literary folk tale, not an informational text, and do not summarize sections specifically."
+        },
+        {
+          "clause": "Visualize sections of the text to maintain understanding.",
+          "met": false,
+          "note": "No activity has students visualize parts of the text; drawing focuses on author’s purpose, and the text is literary, not informational."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The standard targets summarizing and visualizing sections of informational text. This lesson centers on a literary folk tale and author-purpose discussion, with no visualization task; thus it does not meet the standard.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.024652147610405323,
+        "dense_rank": 16,
+        "bm25_rank": 27,
+        "dense_score": 0.5583094,
+        "bm25_score": 66.84520509679659,
+        "rerank_score": 0.99298095703125
+      },
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.T.RA.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
+          "met": true,
+          "note": "Students discuss and write about why the author wrote the story, using details from Why the Sun and the Moon Live in the Sky."
+        },
+        {
+          "clause": "Explore various sources of information, including print, digital, and personal communication.",
+          "met": false,
+          "note": "In this lesson, students primarily use a single read-aloud text; there is no explicit exploration of multiple sources to make connections."
+        }
+      ],
+      "evidence": "Direct students' attention to the posted learning target and read it aloud:\n'I can infer why authors write about the sun, moon, and stars using details from Why the Sun the and Moon Live in the Sky. '\nPoint out the word infer and define it as making a guess based on facts and observations.\nTell students they are now going to use the Think-Pair-Share protocol to discuss why Elphinstone Dayrell, the author of Why the Sun and the Moon Live in the Sky, wrote about the sun and moon. Remind them that they used this protocol in Module 1, and review as necessary using the Think-Pair-Share anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)\nMove students into pre-determined pairs and invite them to Think-Pair-Share:\n'Why do authors write about the sun, moon, and stars?'\nAs students talk, circulate and listen in.",
+      "evidence_page": 58,
+      "confidence": "medium",
+      "rationale": "Students use details from a specific text to discuss and write about a guiding question, satisfying the text-referencing clause. However, they do not explore multiple sources to make connections in this single lesson.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.01835016835016835,
+        "dense_rank": 48,
+        "bm25_rank": 50,
+        "dense_score": 0.5121677,
+        "bm25_score": 60.31772402709661,
+        "rerank_score": 0.992883563041687
+      },
+      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.T.T.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the main topic in an expository text.",
+          "met": false,
+          "note": "Lesson focuses on a folk tale, not expository text."
+        },
+        {
+          "clause": "Identify supporting details in an expository text.",
+          "met": false,
+          "note": "No expository text is analyzed."
+        },
+        {
+          "clause": "Recognize techniques used to craft expository texts.",
+          "met": false,
+          "note": "No expository techniques are discussed."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson centers on a folk tale (literature), not expository text, so none of the clauses are met.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.01960972796308757,
+        "dense_rank": 43,
+        "bm25_rank": 41,
+        "dense_score": 0.51798576,
+        "bm25_score": 63.02217625083649,
+        "rerank_score": 0.9928481578826904
+      },
+      "standard_raw_text": "Identify techniques used to craft expository texts, including main topic and supporting details. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.P.EICC.3",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Establish a purpose and set goals for reading",
+          "met": true,
+          "note": "Students are told the purpose and guiding question."
+        },
+        {
+          "clause": "Monitor comprehension and adjust strategies as needed",
+          "met": true,
+          "note": "Students discuss and clarify understanding throughout."
+        },
+        {
+          "clause": "Scan and skim the text to note useful structures and sections",
+          "met": true,
+          "note": "Students are directed to notice and wonder about the text."
+        },
+        {
+          "clause": "Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps",
+          "met": true,
+          "note": "Students connect prior knowledge and family stories to the text."
+        },
+        {
+          "clause": "Summarize and visualize sections of the text to maintain understanding",
+          "met": true,
+          "note": "Students summarize and draw about the story."
+        },
+        {
+          "clause": "Make and track predictions about upcoming events and information",
+          "met": true,
+          "note": "Students are prompted to wonder and predict about the sun and moon."
+        },
+        {
+          "clause": "Make, track, and support inferences about different levels of meaning",
+          "met": true,
+          "note": "Students infer author's purpose using text details."
+        },
+        {
+          "clause": "Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts",
+          "met": true,
+          "note": "Vocabulary such as 'infer' is explicitly taught and discussed."
+        }
+      ],
+      "evidence": "Direct students' attention to the posted learning target and read it aloud: 'I can infer why authors write about the sun, moon, and stars using details from Why the Sun and the Moon Live in the Sky.' ... Invite students to use the response sheet to capture their ideas about why this author wrote about the sun and moon. Tell students that they can use pictures and words to show their thinking.",
+      "evidence_page": 59,
+      "confidence": "low",
+      "rationale": "Students engage in a full range of before, during, and after reading comprehension strategies as described in the standard. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.03007688828584351,
+        "dense_rank": 6,
+        "bm25_rank": 7,
+        "dense_score": 0.5723351,
+        "bm25_score": 84.73001795864288,
+        "rerank_score": 0.9922868013381958
+      },
+      "standard_raw_text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.T.T.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "met": false,
+          "note": "No expository text is analyzed."
+        },
+        {
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "met": false,
+          "note": "Connections are discussed in a narrative, not expository, context."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "met": false,
+          "note": "No expository writing or analysis occurs."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson is focused on a folk tale and narrative comprehension, not expository text or techniques.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.025003906860446942,
+        "dense_rank": 21,
+        "bm25_rank": 19,
+        "dense_score": 0.5533428,
+        "bm25_score": 72.42073631044109,
+        "rerank_score": 0.9921160340309143
+      },
+      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.P.ST.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Draw from knowledge of the author to understand texts.",
+          "met": false,
+          "note": "Students discuss why the author wrote the story but are not given or asked to use knowledge about the author to interpret the text."
+        },
+        {
+          "clause": "Draw from knowledge of the audience to understand texts.",
+          "met": false,
+          "note": "The lesson never addresses intended audience or has students use audience knowledge to make meaning."
+        },
+        {
+          "clause": "Draw from knowledge of the context to understand texts.",
+          "met": false,
+          "note": "Nigeria/folktale context is briefly introduced, but students are not directed to use that context to interpret the story."
+        },
+        {
+          "clause": "Use this knowledge to discern a clear point of view or unique perspective when interpreting texts.",
+          "met": false,
+          "note": "Students infer author purpose, not point of view/unique perspective, and do not apply author/audience/context knowledge to do so."
+        },
+        {
+          "clause": "Use this knowledge to establish a clear point of view or unique perspective when constructing texts.",
+          "met": false,
+          "note": "The independent writing is a brief response about why the author wrote the story; it does not require establishing a clear POV/unique perspective using author/audience/context."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students listen to a folktale and discuss/write about why the author wrote it (author’s purpose). They are not asked to use knowledge of the author, audience, or context to discern point of view, nor to establish a clear perspective in their own writing.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.025245441795231416,
+        "dense_rank": 33,
+        "bm25_rank": 9,
+        "dense_score": 0.53748757,
+        "bm25_score": 82.67316623879222,
+        "rerank_score": 0.9917553663253784
+      },
+      "standard_raw_text": "Draw from knowledge of author, audience, and context to discern and establish a clear point of view or unique perspective when interpreting and constructing texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.T.T.1",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue.",
+          "met": true,
+          "note": "Students identify characters (sun and moon) and major events from the story."
+        },
+        {
+          "clause": "Identify a simple plot with a problem and solution.",
+          "met": false,
+          "note": "Students summarize events but do not identify a problem and solution."
+        },
+        {
+          "clause": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
+          "met": false,
+          "note": "No task asks students to describe character traits or link them to a message."
+        },
+        {
+          "clause": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures.",
+          "met": false,
+          "note": "Only one text is discussed; no comparison across stories."
+        },
+        {
+          "clause": "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure.",
+          "met": false,
+          "note": "Independent writing is about author purpose, not creating a narrative."
+        }
+      ],
+      "evidence": "Using a total participation technique, invite responses from the group:\n- 'What was this story mostly about?' (The sun wanted the water to visit his house. The water brought a lot of friends, and then the sun and moon got pushed out of the house and into the sky.)\n- 'How did the author include the sun and moon in this story?' (The sun and moon were characters in the story. The story is about how the sun and moon got into the sky.)",
+      "evidence_page": 56,
+      "confidence": "high",
+      "rationale": "Students identify characters and main events from the folktale but do not address problem/solution, character traits tied to message, cross-text comparisons, or narrative writing.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.031024531024531024,
+        "dense_rank": 3,
+        "bm25_rank": 6,
+        "dense_score": 0.59222853,
+        "bm25_score": 86.70805622105682,
+        "rerank_score": 0.9917114973068237
+      },
+      "standard_raw_text": "Identify and use narrative techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.P.ST.1",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Use prior knowledge, research, and discussions to identify key context components.",
+          "met": true,
+          "note": "Students discuss geographic and cultural context (Nigeria, West Africa; folktale) and share family stories, using prior knowledge in discussion."
+        },
+        {
+          "clause": "Consider how context impacts the purposes of the author and the audience.",
+          "met": false,
+          "note": "Students infer author’s purpose, but do not connect it to cultural/geographic context or audience considerations."
+        },
+        {
+          "clause": "Explore how context shapes the author's decisions and the audience's responses during text interpretation and construction.",
+          "met": false,
+          "note": "No task asks students to analyze how cultural/geographic context shaped author choices or audience response, nor to apply context in their own composition."
+        }
+      ],
+      "evidence": "Tell students that the story is a folk tale from Nigeria in West Africa. Locate Nigeria on a map, and invite any students to share if they are from, or have family in, West Africa. Invite students to share any stories about the sun and moon that they have learned from their families.",
+      "evidence_page": 56,
+      "confidence": "high",
+      "rationale": "Students identify and discuss cultural and geographic context through sharing and mapping, but they do not analyze how that context affects author purpose/choices or audience response, nor apply it in their own writing.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.0207597645799893,
+        "dense_rank": 29,
+        "bm25_rank": 45,
+        "dense_score": 0.54025143,
+        "bm25_score": 62.16383285456641,
+        "rerank_score": 0.9909160733222961
+      },
+      "standard_raw_text": "Develop and apply knowledge of key components of context such as background information, geographic location, cultural influences, time period, and contemporary events when interpreting and constructing texts."
+    }
+  ]
+}

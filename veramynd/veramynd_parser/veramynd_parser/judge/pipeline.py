@@ -1,7 +1,12 @@
 """Alignment judge: lesson × standard(s) → verdicts + grounding.
 
-Default path: **one OpenAI call per lesson** (all retrieve candidates batched).
-Pair mode remains available for A/B, escalate, and batch fallback.
+Enterprise K–12 default:
+  - **Batch** first (one OpenAI call per lesson) for throughput
+  - **Escalate** hard/borderline cases with a stronger model (on by default)
+  - **Pair fallback** if batch JSON is invalid
+  - **Grounding** rejects ungrounded positive claims
+
+Pass ``escalate=False`` / ``--no-escalate`` for cheap smoke runs.
 """
 
 from __future__ import annotations
@@ -13,7 +18,12 @@ from pathlib import Path
 from typing import Any, Callable
 
 from ..normalize.cache import ContentAddressedCache, canonical_json
-from ..normalize.llm import LlmError, load_dotenv, structured_complete
+from ..normalize.llm import (
+    LlmError,
+    is_non_retryable_openai_error,
+    load_dotenv,
+    structured_complete,
+)
 from ..paths import resolve_package_relative
 from ..text_utils import atomic_write_text
 from .grounding import grounding_note, is_grounded
@@ -36,6 +46,7 @@ BATCH_PROMPT_VERSION = "align_judge.batch.v1"
 DEFAULT_JUDGE_MODEL = "gpt-4.1"
 DEFAULT_ESCALATE_MODEL = "gpt-5"
 JUDGE_SCHEMA_VERSION = "1.0-judge"
+JUDGE_QUALITY_PROFILE = "enterprise_k12"
 DEFAULT_BATCH_MAX_TOKENS = 8192
 _PROMPT_PATH = Path(__file__).resolve().parent.parent / "prompts" / "align_judge_v1.md"
 _BATCH_ADDENDUM_PATH = (
@@ -97,7 +108,14 @@ def _resolve_cache_dir(cache_dir: Path | str | None) -> Path:
 
 
 def _should_escalate(draft: JudgeLlmDraft) -> bool:
-    return draft.matched_status == "partial" or draft.confidence == "low"
+    """Enterprise cascade: re-judge borderline / hard / weakly evidenced claims."""
+    if draft.matched_status == "partial":
+        return True
+    if draft.confidence in {"low", "medium"}:
+        return True
+    if draft.matched_status in {"full", "partial"} and not (draft.evidence or "").strip():
+        return True
+    return False
 
 
 def _call_judge(
@@ -207,14 +225,18 @@ def judge_pair(
     retrieval: dict[str, Any] | None = None,
     model: str | None = None,
     escalate_model: str | None = None,
-    escalate: bool = False,
+    escalate: bool = True,
     api_key: str | None = None,
     max_tokens: int = 2048,
     cache_dir: Path | str | None = None,
     use_cache: bool = True,
     complete_fn: Callable[..., JudgeLlmDraft] | None = None,
 ) -> AlignmentVerdict:
-    """Judge one (lesson, standard) pair. One standard per LLM call."""
+    """Judge one (lesson, standard) pair. One standard per LLM call.
+
+    Enterprise default ``escalate=True`` re-judges borderline cases with the
+    escalate model (partial / low|medium confidence / empty evidence).
+    """
     code = (standard.get("standard_code") or "").strip()
     raw = (standard.get("raw_text") or "").strip()
     if not code or not raw:
@@ -348,7 +370,7 @@ def judge_lesson_batch(
     retrieval_by_code: dict[str, dict[str, Any]] | None = None,
     model: str | None = None,
     escalate_model: str | None = None,
-    escalate: bool = False,
+    escalate: bool = True,
     api_key: str | None = None,
     max_tokens: int = DEFAULT_BATCH_MAX_TOKENS,
     cache_dir: Path | str | None = None,
@@ -358,8 +380,9 @@ def judge_lesson_batch(
 ) -> list[AlignmentVerdict]:
     """Judge all standards for one lesson in a single LLM call.
 
-    On invalid/incomplete batch JSON (after structured retries), raises
-    ``JudgeError`` so the caller can fall back to per-pair judging.
+    Enterprise default escalates borderline batch items via a targeted pair
+    call on the escalate model. On invalid batch JSON, raises ``JudgeError``
+    so the caller can fall back to per-pair judging.
     """
     lesson = (lesson_raw_text or "").strip()
     if not lesson:
@@ -522,6 +545,7 @@ def _build_report(
 
     return {
         "schema_version": JUDGE_SCHEMA_VERSION,
+        "quality_profile": JUDGE_QUALITY_PROFILE,
         "prompt_version": (
             BATCH_PROMPT_VERSION if judge_mode == "batch" else PROMPT_VERSION
         ),
@@ -552,7 +576,7 @@ def judge_retrieve_file(
     chunk_file: Path | str | None = None,
     model: str | None = None,
     escalate_model: str | None = None,
-    escalate: bool = False,
+    escalate: bool = True,
     api_key: str | None = None,
     max_tokens: int | None = None,
     cache_dir: Path | str | None = None,
@@ -565,9 +589,10 @@ def judge_retrieve_file(
 ) -> dict[str, Any]:
     """Judge all candidates in a retrieve JSON against one lesson's raw text.
 
-    Default ``batch=True``: one LLM call for all candidates (cost/time).
-    If the batch call fails validation and ``batch_fallback_pair``, falls back
-    to per-pair calls so quality is preserved for that lesson.
+    Enterprise K–12 defaults:
+      - ``batch=True`` — one LLM call for all candidates
+      - ``escalate=True`` — re-judge partial / low|medium / empty-evidence cases
+      - ``batch_fallback_pair=True`` — pair mode if batch JSON is invalid
     """
     try:
         resource_id, lesson_raw, source = load_lesson_context(
@@ -628,6 +653,9 @@ def judge_retrieve_file(
             )
             judge_mode = "batch"
         except (JudgeError, LlmError) as e:
+            # Billing/quota need operator action — do not thrash pair fallback.
+            if is_non_retryable_openai_error(e):
+                raise
             log.warning("batch judge failed for %s: %s", resource_id, e)
             print(f"  WARN batch judge failed: {e}", flush=True)
             if not batch_fallback_pair:
@@ -660,6 +688,8 @@ def judge_retrieve_file(
                 )
                 verdicts.append(v)
             except (JudgeError, JudgeIoError, LlmError) as e:
+                if is_non_retryable_openai_error(e):
+                    raise
                 failed.append({"standard_code": code, "error": str(e)})
                 print(f"    ERROR {code}: {e}", flush=True)
 
@@ -698,6 +728,7 @@ __all__ = [
     "DEFAULT_BATCH_MAX_TOKENS",
     "DEFAULT_ESCALATE_MODEL",
     "DEFAULT_JUDGE_MODEL",
+    "JUDGE_QUALITY_PROFILE",
     "JUDGE_SCHEMA_VERSION",
     "JudgeError",
     "JudgeIncompleteError",

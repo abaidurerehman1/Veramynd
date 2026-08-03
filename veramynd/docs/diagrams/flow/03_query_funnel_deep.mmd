@@ -9,7 +9,7 @@ flowchart TB
   end
 
   RRF["RRF fusion → top ~30<br/>recall over-include"]
-  RERANK["Cross-encoder rerank → top ~10<br/>bge-reranker-v2-m3"]
+  RERANK["Cross-encoder rerank → top ~10<br/>bge-reranker-base"]
   JUDGE["Judge each pair<br/>raw lesson + standard raw_text<br/>full / partial / none + quote"]
   GROUND{"Quote grounded<br/>in lesson text?"}
   REJECT["NO → force none<br/>keep quote for audit"]

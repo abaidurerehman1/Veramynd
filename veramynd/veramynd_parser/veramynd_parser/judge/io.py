@@ -121,7 +121,16 @@ def load_retrieve_candidates(retrieve_file: Path | str) -> list[dict[str, Any]]:
 
 def load_standard_raw_text(standards_dir: Path | str, code: str) -> dict[str, Any]:
     """Load normalized standard leaf; prefer ``raw_text`` for the judge."""
-    path = Path(standards_dir) / f"{code}.json"
+    from ..normalize.standard import safe_standard_filename
+
+    try:
+        safe = safe_standard_filename(code)
+    except ValueError as e:
+        raise JudgeIoError(str(e)) from e
+    root = Path(standards_dir).resolve()
+    path = (root / f"{safe}.json").resolve()
+    if not path.is_relative_to(root):
+        raise JudgeIoError(f"unsafe standard code for use as a filename: {code!r}")
     if not path.is_file():
         raise JudgeIoError(f"standard not found: {path}")
     data = load_json(path)

@@ -1,0 +1,461 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U1L4",
+  "lesson_source": "stage1:G1M2U1L4",
+  "retrieve_file": "output\\retrieve\\G1M2U1L4.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 4,
+    "partial": 2,
+    "none": 4
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 6,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L4",
+      "standard_code": "1.P.EICC.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Engage in spoken or written dialogue as an author and audience.",
+          "met": true,
+          "note": "Students engage in structured partner discussions, speaking and listening to each other."
+        },
+        {
+          "clause": "Make intentional connections within texts.",
+          "met": false,
+          "note": "Students discuss and role-play events from one text, but no explicit within-text connection task is directed."
+        },
+        {
+          "clause": "Make intentional connections between texts.",
+          "met": false,
+          "note": "Only a single text is used; there is no comparison or connection across texts."
+        },
+        {
+          "clause": "Make intentional connections beyond texts to other knowledge or experiences.",
+          "met": true,
+          "note": "Students discuss their own experiences of sunrise, connecting beyond the text."
+        }
+      ],
+      "evidence": "- Gather students together whole group. Tell them that they just finished role-playing what the boy in Summer Sun Risin' experiences when the sun is rising. They now get to talk with a partner about what they experience when the sun is rising. Define experience (to feel or know).\n- Tell students they are going to discuss their experience when the sun is rising with a pinky partner. Remind them that they used this protocol in Module 1 and review as necessary, using the Pinky Partners anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)\n- -Guide students through the protocol to discuss their experience when the sun is rising.\n- -As students talk, circulate and listen in. Take note of the ideas students are sharing and target a few students to share out with the whole group. Consider documenting progress toward SL.1.1 using the Speaking and Listening Checklist.\n- -Remind students to make a bridge with their arms after both partners have shared.\n- -Gather students back together and invite a few students to share with the whole group.",
+      "evidence_page": 82,
+      "confidence": "high",
+      "rationale": "Students engage in partner dialogue and connect the text’s theme to their own experiences, but there is no multi-text comparison and no explicit task to make within-text connections.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.027651515151515153,
+        "dense_rank": 6,
+        "bm25_rank": 20,
+        "dense_score": 0.52852964,
+        "bm25_score": 73.45129346091747,
+        "rerank_score": 0.9984439015388489
+      },
+      "standard_raw_text": "Engage in written or spoken dialogue as author and audience for a variety of tasks and purposes, making intentional connections within, between, and beyond texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L4",
+      "standard_code": "1.P.CP.1.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Contribute ideas to discussions and shared projects.",
+          "met": true,
+          "note": "Students share ideas during protocols and role-play."
+        },
+        {
+          "clause": "Listen to the ideas of others during discussions and projects.",
+          "met": true,
+          "note": "Students listen to partners and share out what classmates said."
+        },
+        {
+          "clause": "Provide feedback to others in discussions and shared projects.",
+          "met": true,
+          "note": "Students are prompted to provide feedback and reflect on respect during collaboration."
+        }
+      ],
+      "evidence": "Invite students to turn and talk to an elbow partner: 'How will you show respect during our Role-Play protocol?' ... Invite students to Think-Pair-Share with an elbow partner: 'What did it look and sound like when you were showing respect during the Role-Play protocol?' ... If productive, cue students to listen carefully and seek to understand: 'Who can tell us what your classmate said in your own words?'",
+      "evidence_page": 81,
+      "confidence": "high",
+      "rationale": "Students contribute ideas, listen to others, and provide feedback during structured discussions and collaborative activities.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02427116752685172,
+        "dense_rank": 47,
+        "bm25_rank": 7,
+        "dense_score": 0.46885794,
+        "bm25_score": 90.79823176697337,
+        "rerank_score": 0.9975956082344055
+      },
+      "standard_raw_text": "Contribute to discussions and shared projects by offering ideas, listening to the ideas of others, and providing feedback. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L4",
+      "standard_code": "1.P.EICC.1.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Develop group norms for participation in a community of readers and writers",
+          "met": false,
+          "note": "Teacher reviews respect and captures ideas, but students do not clearly co-develop explicit group norms for readers/writers."
+        },
+        {
+          "clause": "Discuss texts with others in the group",
+          "met": true,
+          "note": "Students think and talk with partners about characters during role-play of the text."
+        },
+        {
+          "clause": "Share individual writing with the group",
+          "met": false,
+          "note": "No student writing is produced or shared in this lesson."
+        },
+        {
+          "clause": "Listen to others as they share their writing",
+          "met": false,
+          "note": "No peer writing is shared."
+        },
+        {
+          "clause": "Offer feedback on peers' writing",
+          "met": false,
+          "note": "No feedback on writing occurs."
+        },
+        {
+          "clause": "Respond to feedback received on own writing",
+          "met": false,
+          "note": "No feedback cycle on writing is present."
+        }
+      ],
+      "evidence": "\"Tell students that with their partners, they will think and talk about what each character is saying and doing.\" ... \"Invite students to begin the Role-Play protocol. All students should first act out pages 3-4, then pages 5-6.\"",
+      "evidence_page": 79,
+      "confidence": "low",
+      "rationale": "Students engage in partner discussion about the text during role-play, but the lesson does not include sharing or feedback on writing and does not clearly have students co-create group norms. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.027205882352941177,
+        "dense_rank": 20,
+        "bm25_rank": 8,
+        "dense_score": 0.49294227,
+        "bm25_score": 88.52018898321873,
+        "rerank_score": 0.995976984500885
+      },
+      "standard_raw_text": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing individual writing, listening as others share their writing, and offering and responding to feedback. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L4",
+      "standard_code": "1.P.CP.1.d",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Work with others to discuss topics.",
+          "met": true,
+          "note": "Students discuss respect and story events with partners."
+        },
+        {
+          "clause": "Work with others to investigate questions.",
+          "met": true,
+          "note": "Students investigate questions about the story and respect."
+        },
+        {
+          "clause": "Work with others to solve problems.",
+          "met": true,
+          "note": "Students are prompted to resolve disagreements respectfully during role-play."
+        },
+        {
+          "clause": "Work with others to explore and create texts.",
+          "met": true,
+          "note": "Students explore the text through role-play and discussion."
+        }
+      ],
+      "evidence": "As you give directions for the partner role-play, foster collaboration by soliciting strategies for resolving a disagreement. (Example: 'My partner and I might both want to pretend to be the boy's mother. What can we do or say to respectfully resolve our problem?') ... Invite students to begin the Role-Play protocol. All students should first act out pages 3-4, then pages 5-6.",
+      "evidence_page": 79,
+      "confidence": "high",
+      "rationale": "Students work together to discuss, investigate, solve problems, and explore the text through collaborative activities.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.028370221327967807,
+        "dense_rank": 10,
+        "bm25_rank": 11,
+        "dense_score": 0.5147964,
+        "bm25_score": 84.29735125436675,
+        "rerank_score": 0.995725154876709
+      },
+      "standard_raw_text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L4",
+      "standard_code": "1.P.CP.1",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Arrive prepared to actively participate in group discussions and collaborative meetings.",
+          "met": true,
+          "note": "Students are prepared and participate in group discussions and protocols."
+        },
+        {
+          "clause": "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects.",
+          "met": true,
+          "note": "Students review anchor charts and group norms for collaboration."
+        },
+        {
+          "clause": "Contribute to discussions and shared projects by offering ideas, listening to the ideas of others, and providing feedback.",
+          "met": true,
+          "note": "Students share ideas, listen, and provide feedback during discussions."
+        },
+        {
+          "clause": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts.",
+          "met": true,
+          "note": "Students collaborate to discuss, investigate, and role-play story events."
+        }
+      ],
+      "evidence": "Direct students' attention to the posted Working to Become Effective Learners anchor chart and review what is written on it by reading it aloud. ... Invite students to Think-Pair-Share with an elbow partner: 'What did it look and sound like when you were showing respect during the Role-Play protocol?' ... Invite students to begin the Role-Play protocol. All students should first act out pages 3-4, then pages 5-6.",
+      "evidence_page": 81,
+      "confidence": "high",
+      "rationale": "All aspects of collaboration, group norms, and participation in shared projects are present in the lesson.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.024934585193166076,
+        "dense_rank": 29,
+        "bm25_rank": 13,
+        "dense_score": 0.4856122,
+        "bm25_score": 81.78966321222937,
+        "rerank_score": 0.9943094253540039
+      },
+      "standard_raw_text": "Collaborate with others to accomplish shared goals and projects."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L4",
+      "standard_code": "1.T.RA.1.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Share relevant information about a topic.",
+          "met": true,
+          "note": "Students share relevant information about their experiences and the story."
+        },
+        {
+          "clause": "Share accurate information about a topic.",
+          "met": true,
+          "note": "Students accurately describe events from the story and their own experiences."
+        },
+        {
+          "clause": "Use a variety of communication modes to share information.",
+          "met": true,
+          "note": "Students use discussion, role-play, and Think-Pair-Share protocols."
+        }
+      ],
+      "evidence": "Invite students to Think-Pair-Share with an elbow partner: 'What did it look and sound like when you were showing respect during the Role-Play protocol?' ... Guide students through the protocol to discuss their experience when the sun is rising.",
+      "evidence_page": 81,
+      "confidence": "high",
+      "rationale": "Students share relevant and accurate information using multiple communication modes (discussion, role-play, partner talk).",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.021464646464646464,
+        "dense_rank": 28,
+        "bm25_rank": 39,
+        "dense_score": 0.48761368,
+        "bm25_score": 56.67227606798601,
+        "rerank_score": 0.9906043410301208
+      },
+      "standard_raw_text": "Share relevant and accurate information through a variety of different modes. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L4",
+      "standard_code": "1.T.C.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify who is speaking at various points in a text.",
+          "met": false,
+          "note": "No evidence students identify the speaker at different points in the text."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson does not include identifying the narrator or speaker at different points in the text.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.026742734890354787,
+        "dense_rank": 11,
+        "bm25_rank": 19,
+        "dense_score": 0.5123936,
+        "bm25_score": 74.9510759748467,
+        "rerank_score": 0.9901277422904968
+      },
+      "standard_raw_text": "Investigate the relationships between authors and speakers in texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L4",
+      "standard_code": "1.P.ST.1",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use prior knowledge, research, and discussions to identify key context components.",
+          "met": false,
+          "note": "Students describe and role-play actions in the story and share personal sunrise experiences, but they are not guided to identify contextual components of the text (e.g., background information, location, culture, time period)."
+        },
+        {
+          "clause": "Consider how context impacts the purposes of the author and the audience.",
+          "met": false,
+          "note": "No tasks address author purpose or audience in relation to contextual factors."
+        },
+        {
+          "clause": "Explore how context shapes the author's decisions and the audience's responses during text interpretation and construction.",
+          "met": false,
+          "note": "Students neither analyze authorial decisions in context nor construct texts using contextual considerations."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on close reading for events, role-playing, and discussing respect and personal experiences, without directing students to use or analyze contextual elements (background, culture, location, time period) in interpreting or creating texts.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02341091602014428,
+        "dense_rank": 19,
+        "bm25_rank": 33,
+        "dense_score": 0.49725148,
+        "bm25_score": 58.967877323009525,
+        "rerank_score": 0.9863558411598206
+      },
+      "standard_raw_text": "Develop and apply knowledge of key components of context such as background information, geographic location, cultural influences, time period, and contemporary events when interpreting and constructing texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L4",
+      "standard_code": "1.T.T.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Describe traits of the main characters.",
+          "met": false,
+          "note": "Students talk about what the boy and the sun do and act out events, but do not describe character traits."
+        },
+        {
+          "clause": "Explain how the characters' words support the central message, lesson, or moral.",
+          "met": false,
+          "note": "Students discuss quoted lines to determine actions, not how the words relate to a central message or moral."
+        },
+        {
+          "clause": "Explain how the characters' actions support the central message, lesson, or moral.",
+          "met": false,
+          "note": "Students identify and role-play actions without connecting them to any central message, lesson, or moral."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on identifying and acting out what the boy and sun do at the beginning of the story, with no tasks asking for character traits or linking words/actions to a central message or moral.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.030621785881252923,
+        "dense_rank": 2,
+        "bm25_rank": 9,
+        "dense_score": 0.5515414,
+        "bm25_score": 88.50147310806922,
+        "rerank_score": 0.9847372174263
+      },
+      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L4",
+      "standard_code": "1.T.T.1.a",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify characters used to craft a story.",
+          "met": true,
+          "note": "Students discuss and role-play what each character (boy, mother, Pa, sun) is saying and doing."
+        },
+        {
+          "clause": "Identify the setting used to craft a story.",
+          "met": false,
+          "note": "No explicit task asks students to identify the story’s setting."
+        },
+        {
+          "clause": "Identify major events used to craft a story.",
+          "met": true,
+          "note": "Students act out and discuss beginning events from the text."
+        },
+        {
+          "clause": "Identify dialogue used to craft a story.",
+          "met": false,
+          "note": "Students think about what characters might say, but do not identify dialogue in the text."
+        }
+      ],
+      "evidence": "- Referring to the Role-Play Protocol anchor chart, explain the steps:\n- -Point to the image of the book. Tell students they will listen to a certain part of the text again. (Example: Today students will listen to the beginning events.)\n- -Point to the image of the two people talking. Tell students that with their partners, they will think and talk about what each character is saying and doing. (Example: One partner could be the boy, and the other partner could be the boy's mother.)\n- -Point to the image of the director's slate. Tell students that when they hear, 'Action!' they will take on the role of their character and act out that part of the text as you read it aloud. (Example: On pages 3-4, students might role-play the boy being awakened by his mother.)",
+      "evidence_page": 79,
+      "confidence": "medium",
+      "rationale": "Students identify characters and major beginning events through discussion and role-play. The lesson does not have students identify the setting or dialogue from the text.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.031009615384615385,
+        "dense_rank": 5,
+        "bm25_rank": 4,
+        "dense_score": 0.53556854,
+        "bm25_score": 97.7891165374061,
+        "rerank_score": 0.9840594530105591
+      },
+      "standard_raw_text": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue. (I)"
+    }
+  ]
+}

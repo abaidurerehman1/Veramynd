@@ -187,8 +187,9 @@ def cmd_guide(args: argparse.Namespace) -> int:
 def cmd_standards(args: argparse.Namespace) -> int:
     from .models import StandardLevel
 
+    framework = getattr(args, "framework", None) or ""
     try:
-        stds = parse_standards(args.path)
+        stds = parse_standards(args.path, framework=framework)
     except SpreadsheetStructureError as e:
         print(f"ERROR: {e}", file=sys.stderr)
         return 1
@@ -196,6 +197,12 @@ def cmd_standards(args: argparse.Namespace) -> int:
         print(f"ERROR: {e}", file=sys.stderr)
         return 1
 
+    if not stds.framework:
+        print(
+            "WARNING: no standards framework set -- pass --framework "
+            "(e.g. 'GA ELA') so downstream output isn't unlabeled.",
+            file=sys.stderr,
+        )
     print(f"Source     : {args.path}")
     print(f"Grade      : {stds.grade}  Framework: {stds.framework}")
     print(f"Standards  : {len(stds.standards)}")
@@ -254,10 +261,16 @@ def cmd_export(args: argparse.Namespace) -> int:
     stds = None
     if args.standards:
         try:
-            stds = parse_standards(args.standards)
+            stds = parse_standards(args.standards, framework=getattr(args, "framework", None) or "")
         except (SpreadsheetStructureError, ValueError, OSError) as e:
             print(f"ERROR: failed to parse standards file: {e}", file=sys.stderr)
             return 1
+        if not stds.framework:
+            print(
+                "WARNING: no standards framework set -- pass --framework "
+                "(e.g. 'GA ELA') so standards.json isn't unlabeled.",
+                file=sys.stderr,
+            )
 
     try:
         exported = _guide_for_json_export(guide, args.path, cfg)
@@ -629,7 +642,13 @@ def cmd_chunk_lessons(args: argparse.Namespace) -> int:
         print(f"ERROR: normalize dir not found: {normalize_dir}", file=sys.stderr)
         return 2
     try:
-        manifest = chunk_lessons_dir(lessons, normalize_dir, out)
+        manifest = chunk_lessons_dir(
+            lessons,
+            normalize_dir,
+            out,
+            force=bool(args.force),
+            resource_ids=set(args.resource_id) if args.resource_id else None,
+        )
     except (OSError, ValueError, RuntimeError) as e:
         print(f"ERROR: {e}", file=sys.stderr)
         return 1
@@ -656,6 +675,7 @@ def cmd_embed_chunks(args: argparse.Namespace) -> int:
             qdrant_api_key=args.qdrant_api_key,
             qdrant_path=args.qdrant_path,
             recreate=bool(args.recreate),
+            force=bool(args.force),
             resource_ids=set(args.resource_id) if args.resource_id else None,
         )
     except (EmbedError, LlmError) as e:
@@ -687,6 +707,7 @@ def cmd_embed_standards(args: argparse.Namespace) -> int:
             qdrant_api_key=args.qdrant_api_key,
             qdrant_path=args.qdrant_path,
             recreate=bool(args.recreate),
+            force=bool(args.force),
             codes=set(args.code) if args.code else None,
         )
     except (EmbedError, LlmError) as e:
@@ -861,7 +882,7 @@ def cmd_judge_standards(args: argparse.Namespace) -> int:
 
     print(
         f"Judging {args.retrieve_file} with model={args.model or DEFAULT_JUDGE_MODEL}"
-        f"{' + escalate' if args.escalate else ''}"
+        f"{'' if args.no_escalate else ' + escalate'}"
         f" mode={'batch' if not args.no_batch else 'pair'}...",
         flush=True,
     )
@@ -873,7 +894,7 @@ def cmd_judge_standards(args: argparse.Namespace) -> int:
             chunk_file=args.chunk_file,
             model=args.model,
             escalate_model=args.escalate_model,
-            escalate=bool(args.escalate),
+            escalate=not bool(args.no_escalate),
             max_tokens=args.max_tokens,
             use_cache=not bool(args.no_cache),
             limit=args.limit,
@@ -1065,6 +1086,13 @@ def build_parser() -> argparse.ArgumentParser:
 
     s = sub.add_parser("stds", help="parse a standards spreadsheet")
     s.add_argument("path")
+    s.add_argument(
+        "--framework",
+        default=None,
+        help="standards framework label (e.g. 'GA ELA'); not guessed from the "
+        "file by default -- falls back to the workbook's Subject property, "
+        "else empty",
+    )
     s.add_argument("--json", help="write full result as JSON")
     s.set_defaults(func=cmd_standards)
 
@@ -1082,6 +1110,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="Stage 1 output folder (default: output/stage1)",
     )
     e.add_argument("--standards", default=None, help="also parse a standards spreadsheet")
+    e.add_argument(
+        "--framework",
+        default=None,
+        help="standards framework label for --standards (e.g. 'GA ELA'); falls "
+        "back to the workbook's Subject property, else empty",
+    )
     e.add_argument("--expect", type=int, default=None, help="expected lesson count")
     e.add_argument(
         "--allow-block",
@@ -1279,6 +1313,17 @@ def build_parser() -> argparse.ArgumentParser:
         default="output/chunks",
         help="chunk output folder (default: output/chunks)",
     )
+    ch.add_argument(
+        "--force",
+        action="store_true",
+        help="maintenance: rebuild all selected lessons (default is incremental skip)",
+    )
+    ch.add_argument(
+        "--resource-id",
+        action="append",
+        default=[],
+        help="limit to one lesson code (repeatable)",
+    )
     ch.set_defaults(func=cmd_chunk_lessons)
 
     em = sub.add_parser(
@@ -1333,7 +1378,18 @@ def build_parser() -> argparse.ArgumentParser:
     em.add_argument(
         "--recreate",
         action="store_true",
-        help="delete and recreate the collection before upsert",
+        help=(
+            "rebuild the embedding index for the requested scope; "
+            "if no --resource-id is set, rebuild the entire collection"
+        ),
+    )
+    em.add_argument(
+        "--force",
+        action="store_true",
+        help=(
+            "maintenance: re-embed all selected chunks even when content_hash matches "
+            "(default is incremental skip)"
+        ),
     )
     em.add_argument(
         "--resource-id",
@@ -1399,7 +1455,18 @@ def build_parser() -> argparse.ArgumentParser:
     es.add_argument(
         "--recreate",
         action="store_true",
-        help="delete and recreate the collection before upsert",
+        help=(
+            "rebuild the embedding index for the requested scope; "
+            "if no --code is set, rebuild the entire collection"
+        ),
+    )
+    es.add_argument(
+        "--force",
+        action="store_true",
+        help=(
+            "maintenance: re-embed all selected standards even when content_hash matches "
+            "(default is incremental skip)"
+        ),
     )
     es.add_argument(
         "--code",
@@ -1582,7 +1649,15 @@ def build_parser() -> argparse.ArgumentParser:
     js.add_argument(
         "--escalate",
         action="store_true",
-        help="re-judge partial/low-confidence pairs with escalate model",
+        help="deprecated: escalate is ON by default for enterprise K-12 quality",
+    )
+    js.add_argument(
+        "--no-escalate",
+        action="store_true",
+        help=(
+            "disable escalate cascade (partial / low|medium confidence / "
+            "empty evidence). Default is enterprise escalate ON."
+        ),
     )
     js.add_argument(
         "--escalate-model",

@@ -172,11 +172,11 @@ def _load_or_convert(path: Path, cfg: Config, ocr: bool):
     cache_file = cache_dir / f"{_cache_key(path, ocr, cfg, cache_dir)}.docling.json"
     lock_path = cache_file.with_suffix(cache_file.suffix + ".lock")
 
-    if cache_file.exists():
-        return DoclingDocument.load_from_json(cache_file)
-
+    # The existence check must happen under the lock (P3): an unlocked read here
+    # could race a concurrent writer that has claimed the lock but not yet
+    # completed its atomic tmp-file-then-replace, leading two callers to both
+    # decide the cache is missing and duplicate the (slow) conversion work.
     with _file_lock(lock_path):
-        # Another writer may have finished while we waited.
         if cache_file.exists():
             return DoclingDocument.load_from_json(cache_file)
 
@@ -210,22 +210,55 @@ def _convert(path: Path, cfg: Config, ocr: bool):
     return converter.convert(str(path)).document
 
 
+def _docling_pages_are_zero_based(doc) -> bool:
+    """True when any Docling provenance page is 0 → treat the doc as 0-based."""
+    pages: list[int] = []
+    for item in getattr(doc, "texts", None) or []:
+        if item.prov:
+            pages.append(int(item.prov[0].page_no))
+    for tb in getattr(doc, "tables", None) or []:
+        if tb.prov:
+            pages.append(int(tb.prov[0].page_no))
+    return bool(pages) and min(pages) <= 0
+
+
+def _normalize_docling_page(page_no: int, *, zero_based: bool) -> int:
+    """Convert a Docling provenance page number to a 1-based PDF page index.
+
+    The rest of this codebase treats page numbers as 1-based PDF page indices
+    (fitz/PyMuPDF, bookmarks, the printed-page map). Some Docling versions /
+    documents emit 0-based provenance. Detection is document-wide: if *any*
+    provenance page is ``0``, every page is shifted by ``+1``; otherwise pages
+    are already 1-based and left unchanged.
+    """
+    return page_no + 1 if zero_based else page_no
+
+
 def _extract_elements(doc) -> list[Element]:
     """Flatten a DoclingDocument's text items into labeled, page-tagged elements."""
+    zero_based = _docling_pages_are_zero_based(doc)
     out: list[Element] = []
     for item in doc.texts:
         if not item.prov:
             continue
         label = item.label.value if hasattr(item.label, "value") else str(item.label)
-        out.append(Element(label=label, text=item.text or "", page=item.prov[0].page_no))
+        page = _normalize_docling_page(int(item.prov[0].page_no), zero_based=zero_based)
+        out.append(Element(label=label, text=item.text or "", page=page))
     return out
 
 
 def _extract_tables(doc) -> list[DoclingTable]:
     """Extract structured tables, row-major, with page provenance."""
+    zero_based = _docling_pages_are_zero_based(doc)
     out: list[DoclingTable] = []
     for tb in doc.tables:
-        page = tb.prov[0].page_no if tb.prov else 0
+        # 0 is the deliberate "no provenance" sentinel here, not a 0-based page —
+        # only normalize when provenance actually exists.
+        page = (
+            _normalize_docling_page(int(tb.prov[0].page_no), zero_based=zero_based)
+            if tb.prov
+            else 0
+        )
         cells: list[list[str]] = []
         try:
             df = tb.export_to_dataframe(doc)

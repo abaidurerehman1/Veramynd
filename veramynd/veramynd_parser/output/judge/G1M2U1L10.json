@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U1L10",
+  "lesson_source": "stage1:G1M2U1L10",
+  "retrieve_file": "output\\retrieve\\G1M2U1L10.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 1,
+    "partial": 1,
+    "none": 8
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 2,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L10",
+      "standard_code": "1.T.C.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify who is speaking or telling the story at various points in a text.",
+          "met": false,
+          "note": "Students discuss characters and setting, but there is no evidence they identify the narrator or speaker at different points in the text."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on characters and setting, not on identifying the narrator or who is telling the story.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.01994047619047619,
+        "dense_rank": 45,
+        "bm25_rank": 36,
+        "dense_score": 0.5036238,
+        "bm25_score": 62.11206133345006,
+        "rerank_score": 0.9966135621070862
+      },
+      "standard_raw_text": "Identify who is speaking or telling the story at various points in a text. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L10",
+      "standard_code": "1.T.C.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify who is speaking at various points in a text.",
+          "met": false,
+          "note": "No activity or prompt asks students to identify the speaker or narrator."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students do not investigate the relationship between author and speaker or identify the speaker at any point.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.027051561365286855,
+        "dense_rank": 21,
+        "bm25_rank": 8,
+        "dense_score": 0.5363983,
+        "bm25_score": 95.83182316010515,
+        "rerank_score": 0.9939804077148438
+      },
+      "standard_raw_text": "Investigate the relationships between authors and speakers in texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L10",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Explain concepts by interpreting texts.",
+          "met": true,
+          "note": "Students explain characters, setting, and Moon’s decision using text/illustrations during turn-and-talk."
+        },
+        {
+          "clause": "Learn concepts by interpreting texts.",
+          "met": true,
+          "note": "Students identify details from illustrations to understand the setting and discuss ideas, supporting concept learning through interpretation."
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
+          "met": true,
+          "note": "Students independently write on a response sheet about characters and setting, producing a text to show understanding."
+        }
+      ],
+      "evidence": "Pause after reading page 11 and invite students to turn and talk with an elbow partner: \"Look carefully at the illustration. Tell me what details you see that help you understand the setting.\" ... Invite students to turn and talk with an elbow partner: \"Why do you think Moon decided to remain in the night sky? What made him change his mind?\" ... Tell students that now they are going to write what they know about the characters and setting in Sun and Moon.",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "Students interpret the read-aloud to discuss/explain characters, setting, and reasons, and then construct written responses demonstrating their understanding. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.025151515151515154,
+        "dense_rank": 6,
+        "bm25_rank": 40,
+        "dense_score": 0.56365824,
+        "bm25_score": 59.171301531196484,
+        "rerank_score": 0.9934461712837219
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L10",
+      "standard_code": "1.T.T.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the main topic in an expository text.",
+          "met": false,
+          "note": "Lesson uses a narrative text, not expository."
+        },
+        {
+          "clause": "Identify supporting details in an expository text.",
+          "met": false,
+          "note": "No expository text or related activity."
+        },
+        {
+          "clause": "Recognize techniques used to craft expository texts.",
+          "met": false,
+          "note": "No expository text or discussion of expository techniques."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson is based on a narrative text and does not address expository techniques or main topic/supporting details in expository texts.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02007992007992008,
+        "dense_rank": 31,
+        "bm25_rank": 50,
+        "dense_score": 0.5205308,
+        "bm25_score": 53.657720474235376,
+        "rerank_score": 0.9930311441421509
+      },
+      "standard_raw_text": "Identify techniques used to craft expository texts, including main topic and supporting details. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L10",
+      "standard_code": "1.T.RA.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
+          "met": true,
+          "note": "Students use illustrations as evidence to answer questions about the story."
+        },
+        {
+          "clause": "Explore various sources of information, including print, digital, and personal communication.",
+          "met": false,
+          "note": "Lesson uses a single literary text; no exploration of multiple sources."
+        }
+      ],
+      "evidence": "- Invite students to turn and talk with an elbow partner:\n- 'Based on the illustrations for evidence, what did Moon see when he paid attention to the world during the night?' (beautiful things such as children dreaming, foxes, flowers blooming, fireworks, etc.)",
+      "evidence_page": 141,
+      "confidence": "high",
+      "rationale": "Students reference parts of the text (illustrations) to answer questions, but they do not explore multiple sources or make broad connections across topics.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.021395881006864986,
+        "dense_rank": 35,
+        "bm25_rank": 32,
+        "dense_score": 0.513408,
+        "bm25_score": 65.52850302354929,
+        "rerank_score": 0.9925552010536194
+      },
+      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L10",
+      "standard_code": "1.P.ST.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Explore how context shapes the author's decisions when interpreting texts.",
+          "met": false,
+          "note": "No discussion of author decisions or context."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses when interpreting texts.",
+          "met": false,
+          "note": "No explicit exploration of how context shapes audience response."
+        },
+        {
+          "clause": "Explore how context shapes the author's decisions when constructing texts.",
+          "met": false,
+          "note": "No text construction or authorial decision-making discussed."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses when constructing texts.",
+          "met": false,
+          "note": "No construction of texts with attention to audience/context."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson does not address how context shapes author or audience decisions in interpretation or construction of texts.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.023973585989089864,
+        "dense_rank": 26,
+        "bm25_rank": 21,
+        "dense_score": 0.52651805,
+        "bm25_score": 74.89267937561264,
+        "rerank_score": 0.9922149777412415
+      },
+      "standard_raw_text": "Explore how context shapes the author’s decisions and the audience’s responses during the interpretation and construction of texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L10",
+      "standard_code": "1.T.T.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "met": false,
+          "note": "No expository text or techniques discussed."
+        },
+        {
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "met": false,
+          "note": "No explicit activity describing connections between individuals, events, or ideas."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "met": false,
+          "note": "No expository writing or use of expository techniques."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson is focused on narrative, not expository, texts and techniques.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.024695121951219513,
+        "dense_rank": 20,
+        "bm25_rank": 22,
+        "dense_score": 0.5402451,
+        "bm25_score": 74.79558802032939,
+        "rerank_score": 0.9920538663864136
+      },
+      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L10",
+      "standard_code": "1.T.T.1",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue.",
+          "met": true,
+          "note": "Students identify and discuss characters and setting."
+        },
+        {
+          "clause": "Identify a simple plot with a problem and solution.",
+          "met": true,
+          "note": "Students discuss why Moon is bored and what changes his mind."
+        },
+        {
+          "clause": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
+          "met": true,
+          "note": "Students describe Moon as bored and discuss his feelings and actions."
+        },
+        {
+          "clause": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures.",
+          "met": false,
+          "note": "No comparison across stories or cultures."
+        },
+        {
+          "clause": "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure.",
+          "met": true,
+          "note": "Students write about the characters and setting, using narrative elements."
+        }
+      ],
+      "evidence": "Pause after reading page 10 and ask:\n- 'Who are the characters in this story? How does the author describe (not physical descriptions) Sun and Moon?' (Sun and Moon are the characters. They are friends. Moon is bored with his place in the sky at night.)\n...\nTell students that now they are going to write what they know about the characters and setting in Sun and Moon.\n- Distribute prepared clipboards with Sun and Moon response sheet and pencils and follow the same routine established in Lesson 8 to complete Parts I and II.",
+      "evidence_page": 141,
+      "confidence": "low",
+      "rationale": "Students identify and discuss narrative elements, describe character traits, and write about the story, fully meeting the standard except for the cross-cultural comparison, which is not required for full credit here. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.03252247488101534,
+        "dense_rank": 1,
+        "bm25_rank": 2,
+        "dense_score": 0.60791826,
+        "bm25_score": 173.9000130287852,
+        "rerank_score": 0.9919158816337585
+      },
+      "standard_raw_text": "Identify and use narrative techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L10",
+      "standard_code": "1.P.EICC.3.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Summarize sections of the text to maintain understanding.",
+          "met": false,
+          "note": "Students answer questions, identify characters/setting, and role-play, but they are not directed to summarize any section."
+        },
+        {
+          "clause": "Visualize sections of the text to maintain understanding.",
+          "met": false,
+          "note": "Students examine existing illustrations and discuss details; they do not create visualizations or engage in explicit visualization activities."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on answering questions about details, identifying characters and setting, role-playing, and brief written responses. There is no task where students summarize sections of the text or create/engage in explicit visualization to support comprehension.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.025816993464052286,
+        "dense_rank": 8,
+        "bm25_rank": 30,
+        "dense_score": 0.56061685,
+        "bm25_score": 65.98219607939834,
+        "rerank_score": 0.9918524622917175
+      },
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L10",
+      "standard_code": "1.T.T.1.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Describe traits of the main characters.",
+          "met": true,
+          "note": "Students describe Moon as bored, curious, etc."
+        },
+        {
+          "clause": "Explain how the characters' words support the central message, lesson, or moral.",
+          "met": true,
+          "note": "Students discuss what Moon says and how it relates to his feelings and the story's message."
+        },
+        {
+          "clause": "Explain how the characters' actions support the central message, lesson, or moral.",
+          "met": true,
+          "note": "Students discuss Moon's actions and how they lead to his decision."
+        }
+      ],
+      "evidence": "Pause after reading page 10 and ask:\n- 'Who are the characters in this story? How does the author describe (not physical descriptions) Sun and Moon?' (Sun and Moon are the characters. They are friends. Moon is bored with his place in the sky at night.)\n...\nInvite students to turn and talk with an elbow partner:\n- 'Why do you think Moon decided to remain in the night sky? What made him change his mind?' (He paid attention to all the beautiful things he sees at night.)",
+      "evidence_page": 141,
+      "confidence": "high",
+      "rationale": "Students describe character traits and discuss how words and actions relate to the story's message, fully meeting the standard.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.031746031746031744,
+        "dense_rank": 3,
+        "bm25_rank": 3,
+        "dense_score": 0.58369106,
+        "bm25_score": 143.27266698945476,
+        "rerank_score": 0.9918489456176758
+      },
+      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)"
+    }
+  ]
+}

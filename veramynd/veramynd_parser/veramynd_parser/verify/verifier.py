@@ -214,8 +214,6 @@ def verify(
     missing: list[str] = []
     for lesson in lessons:
         present = {b.section for b in lesson.instructional_blocks}
-        if lesson.declared_standards:
-            present.add("CCS Standards")
         need = set(cfg.required_sections)
         if not need <= present:
             missing.append(f"{lesson.code}:{sorted(need - present)}")

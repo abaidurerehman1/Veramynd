@@ -1,0 +1,476 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U1L6",
+  "lesson_source": "stage1:G1M2U1L6",
+  "retrieve_file": "output\\retrieve\\G1M2U1L6.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 2,
+    "partial": 1,
+    "none": 7
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 3,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.P.EICC.3.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Summarize sections of the text to maintain understanding.",
+          "met": true,
+          "note": "Students retell and write about the ending events of the story."
+        },
+        {
+          "clause": "Visualize sections of the text to maintain understanding.",
+          "met": true,
+          "note": "Students draw about the ending events, and role-play to visualize the story."
+        }
+      ],
+      "evidence": "Remind students that yesterday they began Part II by writing and drawing about the beginning and middle events using key details from the text. Tell them that today they will complete the response sheet by writing and drawing about the ending events of the story.\n...\nInvite students to begin the Role-Play protocol for the following sections of text:\n-Pages 21-22\n-Pages 23-24\n-Pages 25-26",
+      "evidence_page": 102,
+      "confidence": "low",
+      "rationale": "Students both summarize (retell in writing and discussion) and visualize (draw and role-play) sections of the text to support understanding. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.0277569392348087,
+        "dense_rank": 2,
+        "bm25_rank": 26,
+        "dense_score": 0.5770726,
+        "bm25_score": 109.75495045626256,
+        "rerank_score": 0.992681086063385
+      },
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.T.RA.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
+          "met": true,
+          "note": "Students discuss and justify answers by citing earlier parts of the story and key details."
+        },
+        {
+          "clause": "Explore various sources of information, including print, digital, and personal communication.",
+          "met": false,
+          "note": "Lesson uses a single literary text with discussion; no multiple or varied sources are explored."
+        }
+      ],
+      "evidence": "To activate background knowledge before students discuss what the boy and sun do in the end of Summer Sun Risin', invite students to reflect on the relationship based on what they know about the beginning and middle of the story. (Example: 'Think back to what the boy and sun were doing at the beginning and middle of the story. With your partner, discuss why you think the sun will be at one corner of the page at the end of the story. What have you learned from the story so far that makes you think this might be the case?') (MMR)",
+      "evidence_page": 99,
+      "confidence": "high",
+      "rationale": "Students reference parts of the text to support their ideas, but the lesson does not have them explore multiple sources of information or make cross-source connections.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.019523809523809527,
+        "dense_rank": 40,
+        "bm25_rank": 45,
+        "dense_score": 0.49476433,
+        "bm25_score": 82.76712161866905,
+        "rerank_score": 0.9924991726875305
+      },
+      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.P.ST.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Explore how context shapes the author's decisions when interpreting texts.",
+          "met": false,
+          "note": "No exploration of authorial decisions or context."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses when interpreting texts.",
+          "met": false,
+          "note": "No explicit discussion of how context affects audience response."
+        },
+        {
+          "clause": "Explore how context shapes the author's decisions when constructing texts.",
+          "met": false,
+          "note": "No construction of texts with attention to context or authorial decisions."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses when constructing texts.",
+          "met": false,
+          "note": "No construction of texts with attention to audience response."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on retelling and understanding story events, not on exploring context or author/audience dynamics.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02224694104560623,
+        "dense_rank": 27,
+        "bm25_rank": 33,
+        "dense_score": 0.5156776,
+        "bm25_score": 95.68671742333234,
+        "rerank_score": 0.9924511313438416
+      },
+      "standard_raw_text": "Explore how context shapes the author’s decisions and the audience’s responses during the interpretation and construction of texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.T.C.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify who is speaking at various points in a text.",
+          "met": false,
+          "note": "No activity or discussion about identifying the speaker or narrator."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students do not identify or discuss the speaker or narrator in the text.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.024527186761229315,
+        "dense_rank": 34,
+        "bm25_rank": 12,
+        "dense_score": 0.507857,
+        "bm25_score": 146.23474239662931,
+        "rerank_score": 0.9923837780952454
+      },
+      "standard_raw_text": "Investigate the relationships between authors and speakers in texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.T.T.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "met": false,
+          "note": "Lesson is based on a narrative text, not expository."
+        },
+        {
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "met": false,
+          "note": "No expository connections described; focus is on narrative events."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "met": false,
+          "note": "No expository writing or analysis."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson is focused on a narrative text and does not address expository techniques or structures.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.026013513513513515,
+        "dense_rank": 14,
+        "bm25_rank": 20,
+        "dense_score": 0.52859557,
+        "bm25_score": 131.57224244434963,
+        "rerank_score": 0.992026150226593
+      },
+      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.T.T.1",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue.",
+          "met": true,
+          "note": "Students discuss and write about characters, setting, and events."
+        },
+        {
+          "clause": "Identify a simple plot with a problem and solution.",
+          "met": true,
+          "note": "Students retell the sequence of events, including the ending."
+        },
+        {
+          "clause": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
+          "met": true,
+          "note": "Students discuss what the boy and sun do and their experiences."
+        },
+        {
+          "clause": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures.",
+          "met": false,
+          "note": "No comparison across diverse cultures."
+        },
+        {
+          "clause": "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure.",
+          "met": true,
+          "note": "Students write and draw about the ending events, showing closure."
+        }
+      ],
+      "evidence": "Remind students that yesterday they began Part II by writing and drawing about the beginning and middle events using key details from the text. Tell them that today they will complete the response sheet by writing and drawing about the ending events of the story.\n...\nInvite students to Think-Pair-Share with an elbow partner:\n'What does the boy experience when the sun is setting?' (The boy is reading a book with his dad and getting ready for bed.)",
+      "evidence_page": 102,
+      "confidence": "low",
+      "rationale": "Students identify and use narrative techniques (characters, setting, events, closure) in both discussion and writing, though no cross-cultural comparison is present. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.03252247488101534,
+        "dense_rank": 1,
+        "bm25_rank": 2,
+        "dense_score": 0.58989584,
+        "bm25_score": 221.04801628714637,
+        "rerank_score": 0.9917340278625488
+      },
+      "standard_raw_text": "Identify and use narrative techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.P.EICC.3",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Establish a purpose and set goals for reading",
+          "met": true,
+          "note": "Learning target is posted and referenced."
+        },
+        {
+          "clause": "Monitor comprehension and adjust strategies as needed",
+          "met": true,
+          "note": "Students discuss and clarify understanding with partners and teacher."
+        },
+        {
+          "clause": "Scan and skim the text to note useful structures and sections",
+          "met": true,
+          "note": "Students revisit and discuss specific sections (beginning, middle, end)."
+        },
+        {
+          "clause": "Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps",
+          "met": true,
+          "note": "Students reflect on what they know about the story to discuss the ending."
+        },
+        {
+          "clause": "Summarize and visualize sections of the text to maintain understanding",
+          "met": true,
+          "note": "Students retell and draw about events."
+        },
+        {
+          "clause": "Make and track predictions about upcoming events and information",
+          "met": true,
+          "note": "Students predict what will happen at the end of the story."
+        },
+        {
+          "clause": "Make, track, and support inferences about different levels of meaning",
+          "met": true,
+          "note": "Students infer what the boy and sun are doing and why."
+        },
+        {
+          "clause": "Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts",
+          "met": true,
+          "note": "Students discuss meanings of words like 'overhead' and 'setting.'"
+        }
+      ],
+      "evidence": "Invite students to turn and talk to an elbow partner:\n'What time of day do you think the end of the story takes place?' (at the end of the day)\n...\n'What does the word by mean in this chunk?' (next to)\n...\n'What two words do you see in overhead? What do you think overhead means? Point to something overhead.' (over + head; up above our heads)'\n...\nRemind students that yesterday they began Part II by writing and drawing about the beginning and middle events using key details from the text. Tell them that today they will complete the response sheet by writing and drawing about the ending events of the story.",
+      "evidence_page": 99,
+      "confidence": "high",
+      "rationale": "Students engage in a wide range of comprehension strategies before, during, and after reading, including predicting, summarizing, visualizing, inferring, and vocabulary work.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.029877369007803793,
+        "dense_rank": 5,
+        "bm25_rank": 9,
+        "dense_score": 0.5502606,
+        "bm25_score": 156.1615288999838,
+        "rerank_score": 0.9914918541908264
+      },
+      "standard_raw_text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.T.T.2.b",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Describe the connection between two individuals in a text.",
+          "met": true,
+          "note": "Students discuss the relationship between the boy and the sun."
+        },
+        {
+          "clause": "Describe the connection between two events in a text.",
+          "met": true,
+          "note": "Students retell and write about the sequence of events at the end of the story."
+        },
+        {
+          "clause": "Describe the connection between two ideas in a text.",
+          "met": true,
+          "note": "Students connect the sun setting to the boy getting ready for bed."
+        },
+        {
+          "clause": "Describe the connection between two pieces of information in a text.",
+          "met": true,
+          "note": "Students link textual details (sun's position, boy's actions) in discussion and writing."
+        }
+      ],
+      "evidence": "Invite students to Think-Pair-Share with an elbow partner:\n'Where is the sun at sunset?' (The sun is starting to disappear in the sky.)\n'What does the boy experience when the sun is setting?' (The boy is reading a book with his dad and getting ready for bed.)\n'What do you experience when the sun is setting?' (I get ready for bed.)",
+      "evidence_page": 102,
+      "confidence": "high",
+      "rationale": "Students explicitly describe connections between individuals (boy, sun), events (sun setting, bedtime), and ideas (sunset, bedtime routines) in the text.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02564935064935065,
+        "dense_rank": 28,
+        "bm25_rank": 10,
+        "dense_score": 0.5114725,
+        "bm25_score": 151.94195317813185,
+        "rerank_score": 0.9909522533416748
+      },
+      "standard_raw_text": "Describe the connection between two individuals, events, ideas, or pieces of information in a text. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.T.T.1.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Compare characters in stories from diverse cultures with adult support.",
+          "met": false,
+          "note": "Only one story from one culture is discussed."
+        },
+        {
+          "clause": "Contrast characters in stories from diverse cultures with adult support.",
+          "met": false,
+          "note": "No contrasting of characters from diverse cultures."
+        },
+        {
+          "clause": "Compare experiences of characters in stories from diverse cultures with adult support.",
+          "met": false,
+          "note": "No comparison of experiences across cultures."
+        },
+        {
+          "clause": "Contrast experiences of characters in stories from diverse cultures with adult support.",
+          "met": false,
+          "note": "No contrasting of experiences across cultures."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on a single story and does not involve comparing or contrasting characters or experiences across diverse cultures.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.015625,
+        "dense_rank": 4,
+        "bm25_rank": null,
+        "dense_score": 0.55638564,
+        "bm25_score": null,
+        "rerank_score": 0.9909279942512512
+      },
+      "standard_raw_text": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.P.ST.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Draw from knowledge of the author to understand texts.",
+          "met": false,
+          "note": "Students do not discuss or use information about the author."
+        },
+        {
+          "clause": "Draw from knowledge of the audience to understand texts.",
+          "met": false,
+          "note": "No tasks involve identifying or using intended audience."
+        },
+        {
+          "clause": "Draw from knowledge of the context to understand texts.",
+          "met": false,
+          "note": "Students use story events to retell, not broader author/audience/context to interpret."
+        },
+        {
+          "clause": "Use this knowledge to discern a clear point of view or unique perspective when interpreting texts.",
+          "met": false,
+          "note": "Activities focus on retelling and describing events, not analyzing POV via author/audience/context."
+        },
+        {
+          "clause": "Use this knowledge to establish a clear point of view or unique perspective when constructing texts.",
+          "met": false,
+          "note": "Writing task is a simple event retell; no requirement to craft a POV using author/audience/context."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students retell, role-play, and write about ending events, but do not use knowledge of author, audience, or context to discern or establish a point of view.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.01879964695498676,
+        "dense_rank": 43,
+        "bm25_rank": 50,
+        "dense_score": 0.49401,
+        "bm25_score": 79.50946233965928,
+        "rerank_score": 0.9905960559844971
+      },
+      "standard_raw_text": "Draw from knowledge of author, audience, and context to discern and establish a clear point of view or unique perspective when interpreting and constructing texts. (I/C)"
+    }
+  ]
+}

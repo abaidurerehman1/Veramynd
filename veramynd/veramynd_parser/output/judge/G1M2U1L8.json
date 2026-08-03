@@ -1,0 +1,471 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U1L8",
+  "lesson_source": "stage1:G1M2U1L8",
+  "retrieve_file": "output\\retrieve\\G1M2U1L8.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 4,
+    "partial": 2,
+    "none": 4
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 6,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Explain concepts by interpreting texts.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Learn concepts by interpreting texts.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "Invite students to show a thumbs-up if they are ready to begin writing and drawing about the characters and setting from Papa, Please Get the Moon for Me.\n- Tell students that they may begin writing their responses to Part I.\n...\n- Invite students to show a thumbs-up if they are ready to begin writing about Papa from Papa, Please Get the Moon for Me.\n- Tell students that they may begin writing their responses to Part II.",
+      "evidence_page": 121,
+      "confidence": "high",
+      "rationale": "Students interpret the story to learn and explain concepts (character, setting, traits) and construct written responses, fully meeting the standard.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.015151515151515152,
+        "dense_rank": 6,
+        "bm25_rank": null,
+        "dense_score": 0.5955845,
+        "bm25_score": null,
+        "rerank_score": 0.992238461971283
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.T.T.1",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Identify a simple plot with a problem and solution.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "As you discuss character and setting in Papa, Please Get the Moon for Me, maximize generalization by reminding students that they have already learned about these story elements in Summer Sun Risin'. Help students make this text-to-text connection by prompting them to share what they remember about character and setting in Summer Sun Risin'. Invite students to reflect on how this is similar to or different from character and setting in Papa, Please Get the Moon for Me. (MMR)\n...\nInvite students to show a thumbs-up if they are ready to begin writing and drawing about the characters and setting from Papa, Please Get the Moon for Me.\n- Tell students that they may begin writing their responses to Part I.",
+      "evidence_page": 121,
+      "confidence": "high",
+      "rationale": "Students identify and discuss narrative techniques (character, setting, plot), compare across texts, and use this knowledge to create their own written responses.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.03225806451612903,
+        "dense_rank": 2,
+        "bm25_rank": 2,
+        "dense_score": 0.6383466,
+        "bm25_score": 189.43204548387692,
+        "rerank_score": 0.9885827302932739
+      },
+      "standard_raw_text": "Identify and use narrative techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.P.EICC.2.b",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Use texts to build knowledge.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Use texts to develop skills.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Use texts to make informed decisions.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Use texts to share information and ideas.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "Invite students to turn and talk with an elbow partner:\n- 'What does the author tell us about Papa? How would you describe him?' (He works hard to get Monica the moon. He is kind, caring, generous, hardworking, etc.)\n...\nInvite students to show a thumbs-up if they are ready to begin writing and drawing about the characters and setting from Papa, Please Get the Moon for Me.\n- Tell students that they may begin writing their responses to Part I.",
+      "evidence_page": 121,
+      "confidence": "high",
+      "rationale": "Students use the text to build knowledge (about story elements), develop skills (discussion, writing), make decisions (choosing traits), and share ideas (partner talk, writing).",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.022254475084663765,
+        "dense_rank": 18,
+        "bm25_rank": 46,
+        "dense_score": 0.56485444,
+        "bm25_score": 70.49417583684969,
+        "rerank_score": 0.9885780811309814
+      },
+      "standard_raw_text": "Make use of texts to build knowledge, develop skills, make informed decisions, and share information and ideas. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.T.T.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "met": false,
+          "note": "Lesson focuses on narrative, not expository, text."
+        },
+        {
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "met": false,
+          "note": "No expository text or informational connections described."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "met": false,
+          "note": "No expository writing or analysis present."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson is centered on a narrative text and does not address expository techniques or texts.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.024322344322344324,
+        "dense_rank": 31,
+        "bm25_rank": 15,
+        "dense_score": 0.5505073,
+        "bm25_score": 94.64190881935704,
+        "rerank_score": 0.9884745478630066
+      },
+      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.T.C.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify who is speaking at various points in a text.",
+          "met": false,
+          "note": "No explicit identification of narrator or speaker in the text."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students do not identify the narrator or speaker at different points in the story.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02428613482484545,
+        "dense_rank": 26,
+        "bm25_rank": 19,
+        "dense_score": 0.55604887,
+        "bm25_score": 87.05099307418185,
+        "rerank_score": 0.9881388545036316
+      },
+      "standard_raw_text": "Investigate the relationships between authors and speakers in texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.T.T.1.d",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Compare characters in stories from diverse cultures with adult support.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Contrast characters in stories from diverse cultures with adult support.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Compare experiences of characters in stories from diverse cultures with adult support.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Contrast experiences of characters in stories from diverse cultures with adult support.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "As you discuss character and setting in Papa, Please Get the Moon for Me, maximize generalization by reminding students that they have already learned about these story elements in Summer Sun Risin'. Help students make this text-to-text connection by prompting them to share what they remember about character and setting in Summer Sun Risin'. Invite students to reflect on how this is similar to or different from character and setting in Papa, Please Get the Moon for Me. (MMR)",
+      "evidence_page": 121,
+      "confidence": "high",
+      "rationale": "Students are prompted to compare and contrast characters and experiences between two stories from different cultures with teacher support.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.030330882352941176,
+        "dense_rank": 4,
+        "bm25_rank": 8,
+        "dense_score": 0.6124764,
+        "bm25_score": 104.4066153431079,
+        "rerank_score": 0.9880896210670471
+      },
+      "standard_raw_text": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.T.T.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Describe the connection between two individuals in a text.",
+          "met": false,
+          "note": "Students identify and describe characters (e.g., Papa, Monica) but do not describe how two individuals are connected."
+        },
+        {
+          "clause": "Describe the connection between two events in a text.",
+          "met": false,
+          "note": "No task asks students to relate or connect events; role-play and discussion focus on character/setting."
+        },
+        {
+          "clause": "Describe the connection between two ideas in a text.",
+          "met": false,
+          "note": "Students do not analyze or connect ideas within the text."
+        },
+        {
+          "clause": "Describe the connection between two pieces of information in a text.",
+          "met": false,
+          "note": "No activity involves linking pieces of information; lesson centers on literary elements."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson is a literature read-aloud focused on character and setting and does not ask students to describe connections between individuals, events, ideas, or pieces of information. Additionally, the standard targets informational text, whereas the lesson uses a fictional story.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.014925373134328358,
+        "dense_rank": null,
+        "bm25_rank": 7,
+        "dense_score": null,
+        "bm25_score": 106.93322692913117,
+        "rerank_score": 0.9868201613426208
+      },
+      "standard_raw_text": "Describe the connection between two individuals, events, ideas, or pieces of information in a text. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.T.T.1.c",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Describe traits of the main characters.",
+          "met": true,
+          "note": "Students choose an adjective to describe Papa and write a sentence explaining the trait."
+        },
+        {
+          "clause": "Explain how the characters' words support the central message, lesson, or moral.",
+          "met": false,
+          "note": "No task asks students to connect any character’s words to a central message or moral."
+        },
+        {
+          "clause": "Explain how the characters' actions support the central message, lesson, or moral.",
+          "met": false,
+          "note": "Students may reference actions when justifying a trait, but they are not asked to link actions to a central message or moral."
+        }
+      ],
+      "evidence": "- Focus students on Part II and read the prompt aloud, allowing adequate think time:\n- 'Based on the pictures, which of these words best describes Papa?' Read four options aloud and model selecting one and circling it.\n- Tell students that there is more than one correct answer, so they should choose the one that makes sense to them.\n- Provide the following sentence frame:\n- 'I think Papa is __________ because ________________________.'\n- Remind students that in the first blank they will write the descriptive word they circled above. In the second blank they will write why they think Papa is best described that way.\n- Invite students to show a thumbs-up if they are ready to begin writing about Papa from Papa, Please Get the Moon for Me.\n- Tell students that they may begin writing their responses to Part II.",
+      "evidence_page": 121,
+      "confidence": "high",
+      "rationale": "Students describe a character trait for Papa and justify it, but they do not explain how any character’s words or actions support the story’s central message or moral.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.031746031746031744,
+        "dense_rank": 3,
+        "bm25_rank": 3,
+        "dense_score": 0.6221289,
+        "bm25_score": 142.65450303101105,
+        "rerank_score": 0.9862478375434875
+      },
+      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.P.EICC.3",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Establish a purpose and set goals for reading",
+          "met": false,
+          "note": "Teacher states the purpose; students do not set goals themselves."
+        },
+        {
+          "clause": "Monitor comprehension and adjust strategies as needed",
+          "met": false,
+          "note": "No explicit student monitoring or adjustment strategies are used."
+        },
+        {
+          "clause": "Scan and skim the text to note useful structures and sections",
+          "met": false,
+          "note": "Students listen to a read-aloud; no scanning/skimming task."
+        },
+        {
+          "clause": "Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps",
+          "met": true,
+          "note": "Students are prompted to connect to a previously read text and reflect on similarities/differences."
+        },
+        {
+          "clause": "Summarize and visualize sections of the text to maintain understanding",
+          "met": false,
+          "note": "Students describe characters/setting but do not summarize or explicitly visualize."
+        },
+        {
+          "clause": "Make and track predictions about upcoming events and information",
+          "met": false,
+          "note": "No prediction activity is present."
+        },
+        {
+          "clause": "Make, track, and support inferences about different levels of meaning",
+          "met": true,
+          "note": "Students select a character trait for Papa and justify it in writing."
+        },
+        {
+          "clause": "Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts",
+          "met": false,
+          "note": "Vocabulary meanings are provided by the teacher rather than determined by students."
+        }
+      ],
+      "evidence": "- Focus students on Part II and read the prompt aloud, allowing adequate think time:\n- 'Based on the pictures, which of these words best describes Papa?' Read four options aloud and model selecting one and circling it.\n- Tell students that there is more than one correct answer, so they should choose the one that makes sense to them.\n- Provide the following sentence frame:\n- 'I think Papa is __________ because ________________________.'\n- Remind students that in the first blank they will write the descriptive word they circled above. In the second blank they will write why they think Papa is best described that way.\n- Invite students to show a thumbs-up if they are ready to begin writing about Papa from Papa, Please Get the Moon for Me.\n- Tell students that they may begin writing their responses to Part II.",
+      "evidence_page": 121,
+      "confidence": "medium",
+      "rationale": "Students engage with the text and apply at least two comprehension strategies: integrating prior knowledge and making/supporting inferences about a character. However, many other strategies (goal setting, monitoring, predicting, summarizing, determining word meanings) are not carried out by students in this lesson.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02625745950554135,
+        "dense_rank": 9,
+        "bm25_rank": 25,
+        "dense_score": 0.58035433,
+        "bm25_score": 83.30585649246586,
+        "rerank_score": 0.9858875870704651
+      },
+      "standard_raw_text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.T.T.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the problem in a simple plot.",
+          "met": false,
+          "note": "Lesson activities center on characters, setting, role-play, and describing Papa; no task asks students to identify a story problem."
+        },
+        {
+          "clause": "Identify the solution in a simple plot.",
+          "met": false,
+          "note": "Students are not prompted to determine how the problem is resolved; no solution identification occurs."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson targets character and setting and descriptive writing about a character. It does not ask students to identify a problem or a solution in the story’s plot.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.026050420168067225,
+        "dense_rank": 25,
+        "bm25_rank": 10,
+        "dense_score": 0.55752355,
+        "bm25_score": 101.24286999163049,
+        "rerank_score": 0.9857960939407349
+      },
+      "standard_raw_text": "Identify a simple plot with a problem and solution. (I)"
+    }
+  ]
+}

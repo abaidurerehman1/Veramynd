@@ -7,6 +7,8 @@ import json
 import re
 from pathlib import Path
 
+from pydantic import ValidationError
+
 from ..models import Lesson
 from ..normalize.models import NONE_OBSERVED, NormalizedLesson, parse_ela_record
 from ..paths import iter_lesson_json_files
@@ -34,8 +36,25 @@ PROGRESS_NAME = "chunk_progress.json"
 MANIFEST_NAME = "chunk_manifest.json"
 
 
+class ChunkBuildError(RuntimeError):
+    """Raised when one or more lessons failed to chunk.
+
+    The manifest/progress files are still written for diagnostics, but this is
+    raised afterward so a caller (the CLI, or embed) cannot silently proceed
+    with an incomplete chunk set just because it forgot to inspect
+    ``manifest["failed"]``.
+    """
+
+
 def _sha256_text(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def source_fingerprint(stage1_text: str, normalize_text: str) -> str:
+    """Lineage key: schema + Stage-1 JSON + normalize JSON (byte-stable)."""
+    return _sha256_text(
+        f"{CHUNK_SCHEMA_VERSION}\0{stage1_text}\0{normalize_text}"
+    )
 
 
 def normalize_section_label(section: str) -> str:
@@ -269,8 +288,17 @@ def chunk_lessons_dir(
     lessons_dir: Path | str,
     normalize_dir: Path | str,
     out_dir: Path | str,
+    *,
+    force: bool = False,
+    resource_ids: set[str] | None = None,
 ) -> dict:
-    """Chunk every paired Stage-1 + normalize lesson into ``out_dir``."""
+    """Chunk Stage-1 + normalize lessons into ``out_dir``.
+
+    **Incremental (default):** skip a lesson when ``by_lesson/{code}.json`` already
+    exists with a matching ``source_fingerprint`` (Stage-1 + normalize + schema).
+
+    **Maintenance (``force=True``):** rebuild every selected lesson.
+    """
     src = Path(lessons_dir)
     norm_dir = Path(normalize_dir)
     dst = Path(out_dir)
@@ -278,10 +306,15 @@ def chunk_lessons_dir(
     by_lesson.mkdir(parents=True, exist_ok=True)
 
     lesson_files = iter_lesson_json_files(src)
+    if resource_ids is not None:
+        lesson_files = [p for p in lesson_files if p.stem in resource_ids]
+
     progress = {
         "schema_version": CHUNK_SCHEMA_VERSION,
+        "mode": "force" if force else "incremental",
         "total": len(lesson_files),
         "completed": [],
+        "skipped": [],
         "failed": [],
         "status": "running",
         "lesson_chunks": 0,
@@ -291,16 +324,48 @@ def chunk_lessons_dir(
 
     bundles: list[LessonChunkBundle] = []
     failed: list[dict] = []
+    skipped: list[str] = []
 
     for path in lesson_files:
-        lesson = Lesson.model_validate_json(path.read_text(encoding="utf-8"))
-        norm_path = norm_dir / f"{safe_code_filename(lesson.code)}.json"
+        code_hint = path.stem
         try:
+            stage1_text = path.read_text(encoding="utf-8")
+            lesson = Lesson.model_validate_json(stage1_text)
+            code_hint = lesson.code
+            if resource_ids is not None and lesson.code not in resource_ids:
+                continue
+            norm_path = norm_dir / f"{safe_code_filename(lesson.code)}.json"
             if not norm_path.is_file():
                 raise FileNotFoundError(f"normalize record missing: {norm_path}")
-            norm = parse_ela_record(norm_path.read_text(encoding="utf-8"))
-            bundle = build_lesson_bundle(lesson, norm)
+            norm_text = norm_path.read_text(encoding="utf-8")
+            fp = source_fingerprint(stage1_text, norm_text)
             out_path = by_lesson / f"{safe_code_filename(lesson.code)}.json"
+
+            if not force and out_path.is_file():
+                try:
+                    existing = json.loads(out_path.read_text(encoding="utf-8"))
+                except json.JSONDecodeError:
+                    existing = {}
+                if (
+                    isinstance(existing, dict)
+                    and existing.get("source_fingerprint") == fp
+                    and existing.get("schema_version") == CHUNK_SCHEMA_VERSION
+                ):
+                    bundle = LessonChunkBundle.model_validate(existing)
+                    bundles.append(bundle)
+                    skipped.append(lesson.code)
+                    progress["skipped"].append(lesson.code)
+                    progress["completed"].append(lesson.code)
+                    progress["lesson_chunks"] += 1
+                    progress["instructional_chunks"] += len(bundle.instructional_chunks)
+                    progress["evidence_pointers"] += len(bundle.evidence_pointers)
+                    print(f"{lesson.code}: SKIP (unchanged fingerprint)", flush=True)
+                    continue
+
+            norm = parse_ela_record(norm_text)
+            bundle = build_lesson_bundle(lesson, norm).model_copy(
+                update={"source_fingerprint": fp}
+            )
             atomic_write_text(out_path, dump_bundle_json(bundle))
             bundles.append(bundle)
             progress["completed"].append(lesson.code)
@@ -312,14 +377,28 @@ def chunk_lessons_dir(
                 f"evidence={len(bundle.evidence_pointers)}",
                 flush=True,
             )
-        except (OSError, ValueError, TypeError, json.JSONDecodeError) as e:
-            failed.append({"code": lesson.code, "error": str(e)})
-            progress["failed"].append({"code": lesson.code, "error": str(e)})
-            print(f"ERROR {lesson.code}: {e}", flush=True)
+        except (
+            OSError,
+            ValueError,
+            TypeError,
+            json.JSONDecodeError,
+            ValidationError,
+        ) as e:
+            failed.append({"code": code_hint, "error": str(e)})
+            progress["failed"].append({"code": code_hint, "error": str(e)})
+            print(f"ERROR {code_hint}: {e}", flush=True)
+
+    if resource_ids is not None and not bundles and not failed:
+        raise ChunkBuildError(
+            f"no lessons matched resource_ids={sorted(resource_ids)} under {src}"
+        )
 
     manifest = {
         "schema_version": CHUNK_SCHEMA_VERSION,
+        "mode": "force" if force else "incremental",
         "lessons": len(bundles),
+        "built": len(bundles) - len(skipped),
+        "skipped": skipped,
         "lesson_chunks": progress["lesson_chunks"],
         "instructional_chunks": progress["instructional_chunks"],
         "evidence_pointers": progress["evidence_pointers"],
@@ -337,6 +416,10 @@ def chunk_lessons_dir(
                 "section labels are publisher-agnostic from Stage-1"
             ),
             "evidence_pointer": "join metadata; string-match quote inside block",
+            "incremental": (
+                "skip when source_fingerprint matches existing bundle "
+                "(unless --force)"
+            ),
         },
     }
     atomic_write_text(dst / MANIFEST_NAME, json.dumps(manifest, indent=2) + "\n")
@@ -344,16 +427,25 @@ def chunk_lessons_dir(
     atomic_write_text(dst / PROGRESS_NAME, json.dumps(progress, indent=2) + "\n")
 
     print(
-        f"Done. lessons={len(bundles)} lesson_chunks={progress['lesson_chunks']} "
-        f"blocks={progress['instructional_chunks']} evidence={progress['evidence_pointers']} "
-        f"failed={len(failed)} -> {dst}/",
+        f"Done. lessons={len(bundles)} built={len(bundles) - len(skipped)} "
+        f"skipped={len(skipped)} blocks={progress['instructional_chunks']} "
+        f"evidence={progress['evidence_pointers']} failed={len(failed)} -> {dst}/",
         flush=True,
     )
+    if failed:
+        codes = [f["code"] for f in failed]
+        preview = codes[:5]
+        more = "" if len(codes) <= 5 else f" (+{len(codes) - 5} more)"
+        raise ChunkBuildError(
+            f"{len(failed)} lesson(s) failed to chunk: {preview}{more} -- "
+            f"see {dst}/{PROGRESS_NAME} for details"
+        )
     return manifest
 
 
 __all__ = [
     "CANONICAL_SECTIONS",
+    "ChunkBuildError",
     "KNOWN_EL_SECTIONS",
     "PROGRESS_NAME",
     "MANIFEST_NAME",
@@ -365,6 +457,7 @@ __all__ = [
     "evidence_pointer_id",
     "lesson_chunk_id",
     "normalize_section_label",
+    "source_fingerprint",
     "validate_block_identity",
 ]
 

@@ -1,0 +1,471 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U2L10",
+  "lesson_source": "stage1:G1M2U2L10",
+  "retrieve_file": "output\\retrieve\\G1M2U2L10.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 1,
+    "partial": 4,
+    "none": 5
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 5,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L10",
+      "standard_code": "1.P.EICC.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Engage in spoken or written dialogue as an author and audience.",
+          "met": true,
+          "note": "Students participate in turn-and-talks and a small-group Science Talk, speaking and listening to peers."
+        },
+        {
+          "clause": "Make intentional connections within texts.",
+          "met": false,
+          "note": "Lesson does not direct students to connect ideas within a single text."
+        },
+        {
+          "clause": "Make intentional connections between texts.",
+          "met": false,
+          "note": "Students use notes/anchor charts and a book as resources, but no explicit task to connect or compare across texts."
+        },
+        {
+          "clause": "Make intentional connections beyond texts to other knowledge or experiences.",
+          "met": false,
+          "note": "No explicit instruction to make text-to-self or text-to-world connections related to content."
+        }
+      ],
+      "evidence": "- Invite students to turn and talk with an elbow partner:\n- 'What information do you think is most important to know when answering the question 'Why can't we see stars during the day?''",
+      "evidence_page": 311,
+      "confidence": "high",
+      "rationale": "Students clearly engage in spoken dialogue through partner talk and a structured Science Talk. However, the lesson does not explicitly require making connections within, between, or beyond texts.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.030886196246139225,
+        "dense_rank": 1,
+        "bm25_rank": 9,
+        "dense_score": 0.59619296,
+        "bm25_score": 89.28659284274198,
+        "rerank_score": 0.9981330037117004
+      },
+      "standard_raw_text": "Engage in written or spoken dialogue as author and audience for a variety of tasks and purposes, making intentional connections within, between, and beyond texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L10",
+      "standard_code": "1.P.EICC.1.e",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Develop group norms for participation in a community of readers and writers",
+          "met": false,
+          "note": "Students review an existing Science Talk protocol; they do not create norms."
+        },
+        {
+          "clause": "Discuss texts with others in the group",
+          "met": false,
+          "note": "Students discuss a science question using notes; no clear discussion of a text."
+        },
+        {
+          "clause": "Share individual writing with the group",
+          "met": true,
+          "note": "Students use and show their written notes/diagrams during the Science Talk."
+        },
+        {
+          "clause": "Listen to others as they share their writing",
+          "met": false,
+          "note": "Listening is implied in Science Talk, but not specifically to peers’ writing."
+        },
+        {
+          "clause": "Offer feedback on peers' writing",
+          "met": false,
+          "note": "No student-to-student feedback on writing is included."
+        },
+        {
+          "clause": "Respond to feedback received on own writing",
+          "met": false,
+          "note": "Students do not receive or respond to feedback on their writing."
+        }
+      ],
+      "evidence": "Provide specific, positive feedback about students' use of evidence during the Science Talk protocol. (Example: 'Aisha, I saw you show a diagram that you had drawn to your group members to demonstrate how the sun is close to earth and other stars are very far away.')",
+      "evidence_page": 313,
+      "confidence": "medium",
+      "rationale": "Students share their own written notes/diagrams during a small-group Science Talk, but they do not develop norms, explicitly discuss texts, or engage in giving/receiving feedback on writing.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.030330882352941176,
+        "dense_rank": 8,
+        "bm25_rank": 4,
+        "dense_score": 0.55918276,
+        "bm25_score": 109.17479677772104,
+        "rerank_score": 0.9973617196083069
+      },
+      "standard_raw_text": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing individual writing, listening as others share their writing, and offering and responding to feedback. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L10",
+      "standard_code": "1.P.CP.1.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Work with others to discuss topics.",
+          "met": true,
+          "note": "Students discuss the topic of why we can't see stars during the day in groups."
+        },
+        {
+          "clause": "Work with others to investigate questions.",
+          "met": true,
+          "note": "Students investigate the question about stars together."
+        },
+        {
+          "clause": "Work with others to solve problems.",
+          "met": true,
+          "note": "Students collaboratively explore and explain the phenomenon."
+        },
+        {
+          "clause": "Work with others to explore and create texts.",
+          "met": true,
+          "note": "Students create notes and Sky notebook entries, sometimes with peer support."
+        }
+      ],
+      "evidence": "Tell students they will now use their notes to participate in a Science Talk in small groups to answer the question: 'Why can't we see stars during the day?' ... Invite students to turn and talk with an elbow partner ... Remind students that as they record their notes, they should draw quick sketches that will help them explain why we can't see stars during the day, and write words that are clear and easy to reread.",
+      "evidence_page": 313,
+      "confidence": "low",
+      "rationale": "Students work together to discuss, investigate, solve, and create texts related to the lesson topic. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.03252247488101534,
+        "dense_rank": 2,
+        "bm25_rank": 1,
+        "dense_score": 0.59583974,
+        "bm25_score": 112.66468526946478,
+        "rerank_score": 0.9963678121566772
+      },
+      "standard_raw_text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L10",
+      "standard_code": "1.P.CP.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Communicate clearly to present ideas, information, and texts.",
+          "met": true,
+          "note": "Students orally share ideas using their notes to answer the discussion question during a Science Talk."
+        },
+        {
+          "clause": "Integrate modes and genres appropriate to purpose and audience.",
+          "met": true,
+          "note": "Students create and use quick sketches/diagrams in their notes to help explain ideas to classmates."
+        },
+        {
+          "clause": "Vary tone, pace, and nonverbal gestures to suit purpose and audience.",
+          "met": false,
+          "note": "No explicit instruction or practice in varying tone, pace, or gestures."
+        },
+        {
+          "clause": "Engage in dialogue by asking and answering questions with audiences.",
+          "met": true,
+          "note": "Students answer the driving question and teacher prompts; supports encourage students to ask peers to repeat or slow down during the discussion."
+        },
+        {
+          "clause": "Build background knowledge by reciting significant poems and speeches appropriate for grade level.",
+          "met": false,
+          "note": "No poems or speeches are recited."
+        }
+      ],
+      "evidence": "- Tell students they will now use their notes to participate in a Science Talk in small groups to answer the question:\n- -'Why can't we see stars during the day?'\n- Remind them that they used this protocol in Lessons 6 and 8 and review as necessary using the Science Talk Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Direct students' attention to the learning targets and read the first one aloud:\n- Remind students of the sentence frames during the previous Science Talks:\n- 'I think he/she means __________.'\n- 'I'd like to add ________.'\n- 'This makes me think __________.'\n- Invite students to repeat each sentence frame as you read it aloud.\n- Invite students to take their Patterns of the Stars notes sheets and move into pre-determined groups, assigning each group to a different area of the room.\n- Guide students through the protocol. Circulate and use the Speaking and Listening Checklist to track student progress. Prompt students with questions to help them expand on their ideas. (Examples: 'Do stars disappear during the day?' 'Why is starlight so dim compared to the sun?' 'Why is sunlight so bright?')",
+      "evidence_page": 313,
+      "confidence": "medium",
+      "rationale": "Students prepare and participate in a Science Talk, sharing ideas clearly from notes and engaging in Q&A with peers/teacher; they also use visual sketches/diagrams to explain ideas. However, there is no explicit practice varying tone/pace/gestures, and no recitation of poems or speeches.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.028612012987012988,
+        "dense_rank": 4,
+        "bm25_rank": 17,
+        "dense_score": 0.57772166,
+        "bm25_score": 72.95839416303859,
+        "rerank_score": 0.9962455630302429
+      },
+      "standard_raw_text": "Use presentation skills to tailor communication to target audiences for specific purposes."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L10",
+      "standard_code": "1.P.CP.1.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Contribute ideas to discussions and shared projects.",
+          "met": true,
+          "note": "Students share ideas during Turn-and-Talk and the small-group Science Talk to answer the question."
+        },
+        {
+          "clause": "Listen to the ideas of others during discussions and projects.",
+          "met": true,
+          "note": "Science Talk sentence frames (e.g., “I think he/she means…”) require listening to peers’ contributions."
+        },
+        {
+          "clause": "Provide feedback to others in discussions and shared projects.",
+          "met": true,
+          "note": "Students respond to peers using frames such as “I think he/she means…” and “I’d like to add…,” which function as feedback on classmates’ ideas."
+        }
+      ],
+      "evidence": "Tell students they will now use their notes to participate in a Science Talk in small groups to answer the question:\n- -'Why can't we see stars during the day?'\n- Remind them that they used this protocol in Lessons 6 and 8 and review as necessary using the Science Talk Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Direct students' attention to the learning targets and read the first one aloud:\n- Remind students of the sentence frames during the previous Science Talks:\n- 'I think he/she means __________.'\n- 'I'd like to add ________.'\n- 'This makes me think __________.'\n- Invite students to repeat each sentence frame as you read it aloud.\n- Invite students to take their Patterns of the Stars notes sheets and move into pre-determined groups, assigning each group to a different area of the room.\n- Guide students through the protocol. Circulate and use the Speaking and Listening Checklist to track student progress. Prompt students with questions to help them expand on their ideas.",
+      "evidence_page": 313,
+      "confidence": "medium",
+      "rationale": "Students actively engage in a structured small-group discussion where they share ideas, attend to peers’ ideas, and respond/build on them using provided sentence frames.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02871794871794872,
+        "dense_rank": 15,
+        "bm25_rank": 5,
+        "dense_score": 0.55172384,
+        "bm25_score": 106.1341653396864,
+        "rerank_score": 0.9960319399833679
+      },
+      "standard_raw_text": "Contribute to discussions and shared projects by offering ideas, listening to the ideas of others, and providing feedback. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L10",
+      "standard_code": "1.P.CP.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Collaborate with others to determine group norms",
+          "met": false,
+          "note": "Students follow the existing Science Talk Protocol and teacher-provided sentence frames; they do not create or decide norms."
+        },
+        {
+          "clause": "Establish goals and procedures for shared projects",
+          "met": false,
+          "note": "The teacher sets the discussion goal/question and reviews the protocol; students do not establish goals or procedures."
+        },
+        {
+          "clause": "Facilitate productivity when working on shared projects",
+          "met": false,
+          "note": "No student actions to manage roles, time, or keep the group productive are directed; the teacher facilitates and prompts."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students participate in a teacher-structured Science Talk using preset norms and procedures. The lesson does not have students determine norms, set goals/procedures, or take responsibility for facilitating group productivity.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.025859192525859193,
+        "dense_rank": 21,
+        "bm25_rank": 14,
+        "dense_score": 0.5410602,
+        "bm25_score": 76.8886027955362,
+        "rerank_score": 0.994366466999054
+      },
+      "standard_raw_text": "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L10",
+      "standard_code": "1.P.CP.1",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Arrive prepared to actively participate in group discussions and collaborative meetings.",
+          "met": true,
+          "note": "Students create notes specifically to use as evidence during the Science Talk, preparing to participate."
+        },
+        {
+          "clause": "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects.",
+          "met": false,
+          "note": "Norms/procedures are provided by the teacher via the Science Talk protocol and pre-determined groups; students do not co-establish them."
+        },
+        {
+          "clause": "Contribute to discussions and shared projects by offering ideas, listening to the ideas of others, and providing feedback.",
+          "met": true,
+          "note": "Science Talk with sentence frames to add on and respond demonstrates contributing and listening."
+        },
+        {
+          "clause": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts.",
+          "met": true,
+          "note": "Students work in small groups to discuss and investigate the question about why we can’t see stars during the day."
+        }
+      ],
+      "evidence": "- Tell students they will now use their notes to participate in a Science Talk in small groups to answer the question:\n- -'Why can't we see stars during the day?'\n- Remind them that they used this protocol in Lessons 6 and 8 and review as necessary using the Science Talk Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Direct students' attention to the learning targets and read the first one aloud:\n- Remind students of the sentence frames during the previous Science Talks:\n- 'I think he/she means __________.'\n- 'I'd like to add ________.'\n- 'This makes me think __________.'\n- Invite students to repeat each sentence frame as you read it aloud.\n- Invite students to take their Patterns of the Stars notes sheets and move into pre-determined groups, assigning each group to a different area of the room.\n- Guide students through the protocol. Circulate and use the Speaking and Listening Checklist to track student progress. Prompt students with questions to help them expand on their ideas. (Examples: 'Do stars disappear during the day?' 'Why is starlight so dim compared to the sun?' 'Why is sunlight so bright?')",
+      "evidence_page": 313,
+      "confidence": "high",
+      "rationale": "Students prepare notes and then collaboratively engage in a small-group Science Talk to answer a shared question, building on peers’ ideas. However, students do not co-create group norms or procedures, so not all collaboration expectations are met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.029386529386529386,
+        "dense_rank": 14,
+        "bm25_rank": 3,
+        "dense_score": 0.5537543,
+        "bm25_score": 109.95151501895752,
+        "rerank_score": 0.9941737055778503
+      },
+      "standard_raw_text": "Collaborate with others to accomplish shared goals and projects."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L10",
+      "standard_code": "1.P.CP.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Integrate modes of communication appropriate to the purpose and audience.",
+          "met": true,
+          "note": "Students use speech, notes, and drawings to communicate."
+        },
+        {
+          "clause": "Integrate genres appropriate to the purpose and audience.",
+          "met": true,
+          "note": "Students use both oral discussion and written notes/sketches."
+        }
+      ],
+      "evidence": "Remind students that as they record their notes, they should draw quick sketches that will help them explain why we can't see stars during the day, and write words that are clear and easy to reread. ... Tell students they will now use their notes to participate in a Science Talk in small groups.",
+      "evidence_page": 312,
+      "confidence": "low",
+      "rationale": "Students use multiple modes and genres (oral, written, visual) to communicate ideas. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.021202990737640887,
+        "dense_rank": 27,
+        "bm25_rank": 43,
+        "dense_score": 0.5344536,
+        "bm25_score": 55.40898589809119,
+        "rerank_score": 0.9921603798866272
+      },
+      "standard_raw_text": "Integrate modes and genres most appropriate to purpose and audience. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L10",
+      "standard_code": "1.T.RA.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Share relevant information about a topic.",
+          "met": true,
+          "note": "Students share information about why stars are not visible during the day."
+        },
+        {
+          "clause": "Share accurate information about a topic.",
+          "met": true,
+          "note": "Students use anchor charts and notes to ensure accuracy."
+        },
+        {
+          "clause": "Use a variety of communication modes to share information.",
+          "met": true,
+          "note": "Students use speech, writing, and drawings."
+        }
+      ],
+      "evidence": "Tell students they will now use their notes to participate in a Science Talk in small groups to answer the question: 'Why can't we see stars during the day?' ... Remind students that as they record their notes, they should draw quick sketches that will help them explain why we can't see stars during the day, and write words that are clear and easy to reread.",
+      "evidence_page": 312,
+      "confidence": "low",
+      "rationale": "Students share relevant and accurate information using multiple communication modes. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.029957522915269395,
+        "dense_rank": 3,
+        "bm25_rank": 11,
+        "dense_score": 0.59275454,
+        "bm25_score": 81.76588828504299,
+        "rerank_score": 0.9921521544456482
+      },
+      "standard_raw_text": "Share relevant and accurate information through a variety of different modes. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L10",
+      "standard_code": "1.P.CP.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Communicate ideas clearly when presenting.",
+          "met": true,
+          "note": "Students present ideas clearly in Science Talk."
+        },
+        {
+          "clause": "Present information in an organized manner.",
+          "met": true,
+          "note": "Students use notes and sentence frames to organize their presentations."
+        },
+        {
+          "clause": "Express ideas and information clearly through speech.",
+          "met": true,
+          "note": "Students use speech to express their ideas during Science Talk."
+        }
+      ],
+      "evidence": "Remind students of the sentence frames during the previous Science Talks: 'I think he/she means __________.' 'I'd like to add ________.' 'This makes me think __________.' ... Tell students they will now use their notes to participate in a Science Talk in small groups.",
+      "evidence_page": 313,
+      "confidence": "low",
+      "rationale": "Students clearly communicate and organize their ideas through speech and notes during Science Talk. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02128623188405797,
+        "dense_rank": 36,
+        "bm25_rank": 32,
+        "dense_score": 0.52143604,
+        "bm25_score": 60.81411460328743,
+        "rerank_score": 0.9895403981208801
+      },
+      "standard_raw_text": "Communicate clearly to present ideas, information, and texts. (I/C)"
+    }
+  ]
+}
