@@ -1,0 +1,501 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U3L11",
+  "lesson_source": "stage1:G1M2U3L11",
+  "retrieve_file": "output\\retrieve\\G1M2U3L11.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 1,
+    "partial": 4,
+    "none": 5
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 5,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L11",
+      "standard_code": "1.P.EICC.4.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Generate ideas for writing by assessing prior knowledge.",
+          "met": false,
+          "note": "Lesson focuses on revising/editing, not idea generation."
+        },
+        {
+          "clause": "Generate ideas for writing by gathering information from texts.",
+          "met": false,
+          "note": "No evidence of gathering information from texts."
+        },
+        {
+          "clause": "Generate ideas for writing by engaging in discussions with others.",
+          "met": false,
+          "note": "No evidence of idea generation through discussion; discussion is about revision."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson centers on revising and editing previously written poems, not on generating ideas for content. There is no evidence that students are generating ideas by assessing prior knowledge, gathering from texts, or through discussion.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02552166934189406,
+        "dense_rank": 29,
+        "bm25_rank": 10,
+        "dense_score": 0.5349995,
+        "bm25_score": 62.075838155471985,
+        "rerank_score": 0.9948732256889343
+      },
+      "standard_raw_text": "Generate ideas for content by assessing prior knowledge, gathering information from texts, and engaging in discussions with others. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L11",
+      "standard_code": "1.P.ST.2.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Draw from knowledge of how authors consider context and audience to determine which information and ideas to highlight.",
+          "met": false,
+          "note": "Students revise for details but are not directed to select information based on audience or context."
+        },
+        {
+          "clause": "Determine which text design is most accessible for the intended audience.",
+          "met": false,
+          "note": "No instruction on layout, format, or design choices for accessibility."
+        },
+        {
+          "clause": "Decide which word choices and language structures are most effective for the audience and purpose.",
+          "met": true,
+          "note": "Students revise adjectives and edit sentences/punctuation using a checklist that emphasizes creating a picture for the reader."
+        },
+        {
+          "clause": "Identify which craft techniques are most impactful in the text.",
+          "met": false,
+          "note": "No analysis or identification of craft techniques is required."
+        }
+      ],
+      "evidence": "- Direct students' attention to the table labeled 'Includes details' and read the detailed criteria aloud:\n- -'The descriptions make sense and create a picture in my reader's mind.'\n- -'The adjectives are used correctly in each verse.'\n- Repeat this process with the table labeled 'Follows conventions':\n- -'Words from the Word Wall are spelled correctly.'\n- -'Complete sentences'\n- -'End punctuation'\n- Tell students that the High-Quality Narrative Poem Checklist provides feedback to the writer regarding which parts of his or her writing need revision or editing. They will see a\n- check mark in the 'yes' column for each detailed criteria if they included it in their poem and a 'no' in the column if it is missing and they need to revise or edit for this criteria.\n- -The table labeled 'Includes details' provides information about any revisions that need to be made.\n- -The table labeled 'Follows conventions' provides information about any edits that need to be made.\n- Tell students that now they will have a chance to review their own High-Quality Narrative Poem Checklist that includes feedback from the teacher as they revise and edit their 'What the Sun Sees' poem.",
+      "evidence_page": 445,
+      "confidence": "low",
+      "rationale": "Students revise and edit their poems to improve word choice and language conventions, with criteria tied to impact on the reader. However, they are not asked to make audience/context-driven choices about information, text design, or craft techniques. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.018524871355060035,
+        "dense_rank": 46,
+        "bm25_rank": 50,
+        "dense_score": 0.51184684,
+        "bm25_score": 40.75636024711425,
+        "rerank_score": 0.9945154786109924
+      },
+      "standard_raw_text": "Draw from knowledge of how authors consider context and audience to determine which information and ideas to highlight, which text design is most accessible, which word choices and language structures are most effective, and which craft techniques are most impactful. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L11",
+      "standard_code": "1.P.EICC.4",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Establish a purpose and goals for writing and identify a target audience.",
+          "met": false,
+          "note": "Audience is mentioned (end-of-module celebration), but students do not establish purpose/goals or identify audience themselves in this lesson."
+        },
+        {
+          "clause": "Plan how to organize the text by selecting modes, genres, and structures that will achieve the purpose and meet the needs of the target audience.",
+          "met": false,
+          "note": "No planning or selection of mode/structure occurs; the poem was already written."
+        },
+        {
+          "clause": "Generate ideas for content by assessing prior knowledge, gathering information from texts, and engaging in discussions with others.",
+          "met": false,
+          "note": "Idea generation is not part of this session."
+        },
+        {
+          "clause": "Link ideas and information to the organization plan, highlighting ideas and information that are most relevant, useful, and impactful.",
+          "met": false,
+          "note": "No organizing or linking to a plan occurs in this lesson."
+        },
+        {
+          "clause": "Construct an initial draft by integrating ideas and information; selecting words, phrases, and sentences; and incorporating craft techniques that will best achieve the purpose of the text and resonate with the target audience.",
+          "met": false,
+          "note": "Drafting happened in prior lessons, not this one."
+        },
+        {
+          "clause": "Evaluate the text's effectiveness based on self-review or feedback from others, determining whether the text matches the purpose and goals for writing.",
+          "met": true,
+          "note": "Students review a checklist with teacher feedback to determine needed changes."
+        },
+        {
+          "clause": "Make changes to the text based on self-evaluation or external feedback, revising the organization, ideas, information, word choices, and craft techniques in order to increase the text's effectiveness.",
+          "met": true,
+          "note": "Students revise details in their poems using the checklist and feedback."
+        },
+        {
+          "clause": "Edit the text, ensuring it adheres to the conventions of written language.",
+          "met": true,
+          "note": "Students edit for conventions (complete sentences, punctuation, spelling)."
+        }
+      ],
+      "evidence": "- Today students will revise and edit their poems based on teacher feedback. Remind them that this is the final step in preparing the poems for the end of module celebration.\n- Direct students' attention to the High-Quality Narrative Poem Checklist example. Remind students that this checklist provides feedback to the writer about revisions and edits that need to be made.\n- Tell students that you read each of their poems and used the High-Quality Narrative Poem Checklist to provide feedback to each student that they can use to revise and edit their poems.\n- Review the High-Quality Narrative Poem Checklist as necessary and remind students that they will be making revisions based on whether or not they included details in their writing and will be making edits based on whether or not their writing followed conventions.\n- As students revise and edit their poems, they should use the following procedure:\n- Begin by reviewing the High-Quality Narrative Poem Checklist.\n- Identify criteria on the checklist that need to be revised or edited.\n- Reread the poem and locate places in the poem that need to be revised or edited.\n- Make revisions and edits directly on the template, making sure to show craftsmanship.\n- Reread the poem one last time to catch any revisions or edits that may have been missed the first time.",
+      "evidence_page": 447,
+      "confidence": "high",
+      "rationale": "Students evaluate their poems using a checklist and teacher feedback, then revise for details and edit for conventions. Planning, drafting, and establishing purpose/audience are not undertaken in this lesson.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.03225806451612903,
+        "dense_rank": 2,
+        "bm25_rank": 2,
+        "dense_score": 0.627981,
+        "bm25_score": 116.53397786628365,
+        "rerank_score": 0.9943061470985413
+      },
+      "standard_raw_text": "Compose a range of texts for a variety of purposes and audiences, flexibly engaging in writing processes to plan, draft, evaluate, revise, and edit texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L11",
+      "standard_code": "1.P.AC.3",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Explore and create texts in various modes and genres, developing and applying knowledge of how specific features impact meaning, tone, style, purpose, and audience.",
+          "met": false,
+          "note": "Students revise a single narrative poem for details and conventions; they do not explore or create across multiple modes/genres or explicitly consider audience/purpose effects of features."
+        },
+        {
+          "clause": "Apply knowledge of how mode and genre impact what kinds of ideas and information are included in texts.",
+          "met": false,
+          "note": "No task asks students to consider how being a poem shapes content choices; they simply add descriptive details."
+        },
+        {
+          "clause": "Apply knowledge of how mode and genre impact how ideas and information are structured and arranged in texts.",
+          "met": false,
+          "note": "There is no instruction to analyze or adjust structure/arrangement due to genre or mode."
+        },
+        {
+          "clause": "Consume and produce multimodal texts, integrating a variety of genres, text features, and craft techniques to influence target audiences and achieve specific purposes.",
+          "met": false,
+          "note": "Students produce only a poem; they do not consume/produce multimodal texts or integrate multiple genres/features for a target audience."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on revising and editing a single narrative poem for details and conventions. It does not engage students in considering text design for audience and purpose across modes/genres or in producing multimodal texts.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.026190476190476188,
+        "dense_rank": 10,
+        "bm25_rank": 24,
+        "dense_score": 0.57693017,
+        "bm25_score": 47.11550045593945,
+        "rerank_score": 0.9941785335540771
+      },
+      "standard_raw_text": "Consider the impact of text design on audience and purpose when consuming and producing texts across modes and genres."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L11",
+      "standard_code": "1.T.T.1.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use knowledge of characters in narratives to create texts.",
+          "met": false,
+          "note": "Lesson focuses on revising details and conventions; characters are not developed or used explicitly."
+        },
+        {
+          "clause": "Use knowledge of settings in narratives to create texts.",
+          "met": false,
+          "note": "No task asks students to develop setting; revision targets adjectives and conventions only."
+        },
+        {
+          "clause": "Use knowledge of events in narratives to create texts.",
+          "met": false,
+          "note": "Students are not directed to add or structure events; only to revise wording and conventions."
+        },
+        {
+          "clause": "Create texts that share real or imagined experiences and events.",
+          "met": false,
+          "note": "Students revise previously written poems; no explicit creation/composition of experiences or events occurs in this lesson."
+        },
+        {
+          "clause": "Include a sense of closure in created texts.",
+          "met": false,
+          "note": "Closure is not mentioned or practiced in the lesson tasks."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "This lesson centers on revising and editing an already-written poem for details and conventions. It does not have students develop characters, settings, events, or a sense of closure, nor does it direct them to create a narrative text in this session.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.023558758314855877,
+        "dense_rank": 28,
+        "bm25_rank": 22,
+        "dense_score": 0.5371198,
+        "bm25_score": 48.46540157456526,
+        "rerank_score": 0.993323028087616
+      },
+      "standard_raw_text": "Use knowledge of narrative techniques (e.g., characters, settings, events) to create texts that share real or imagined experiences and events with a sense of closure. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L11",
+      "standard_code": "1.T.SS.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify descriptive words in texts.",
+          "met": false,
+          "note": "Students revise for details but are not explicitly directed to identify descriptive words in a text."
+        },
+        {
+          "clause": "Explain the use of descriptive words in texts.",
+          "met": false,
+          "note": "There is general discussion of details, but no explicit student task explaining how descriptive words function in a text."
+        },
+        {
+          "clause": "Use descriptive words to craft engaging texts.",
+          "met": true,
+          "note": "Students revise their poems for details and adjective precision using a checklist, improving descriptive language."
+        }
+      ],
+      "evidence": "Today students will revise and edit their poems based on teacher feedback. Remind them that this is the final step in preparing the poems for the end of module celebration. Direct students' attention to the High-Quality Narrative Poem Checklist example. Remind students that this checklist provides feedback to the writer about revisions and edits that need to be made. Tell students that you read each of their poems and used the High-Quality Narrative Poem Checklist to provide feedback to each student that they can use to revise and edit their poems. Review the High-Quality Narrative Poem Checklist as necessary and remind students that they will be making revisions based on whether or not they included details in their writing and will be making edits based on whether or not their writing followed conventions.",
+      "evidence_page": 447,
+      "confidence": "medium",
+      "rationale": "Students actively revise their poems to improve details and adjective use, meeting the “use” aspect. However, there is no explicit student task to identify or explain descriptive words in texts.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.01951265943270512,
+        "dense_rank": 42,
+        "bm25_rank": 43,
+        "dense_score": 0.5159001,
+        "bm25_score": 42.13883434669035,
+        "rerank_score": 0.9929608702659607
+      },
+      "standard_raw_text": "Identify and use descriptive and engaging language."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L11",
+      "standard_code": "1.P.EICC.2.a",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Share real experiences by telling or writing stories.",
+          "met": false,
+          "note": "Students work with and share a narrative poem, but it is not clearly about their own real experiences."
+        },
+        {
+          "clause": "Share imagined experiences by telling or writing stories.",
+          "met": true,
+          "note": "Students revise a narrative poem (What the Sun Sees) and share it aloud with a partner."
+        },
+        {
+          "clause": "Interpret stories that tell or include real or imagined experiences.",
+          "met": false,
+          "note": "No task asks students to interpret a story; the focus is on revising/editing their own poem."
+        }
+      ],
+      "evidence": "- Tell the writers that they are going to use the Pinky Partners protocol to share their revised poem with a partner. Remind them that they used this protocol in Lessons 8-10 and review as necessary using the Pinky Partners Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Guide students through the protocol and circulate to support them as necessary.",
+      "evidence_page": 448,
+      "confidence": "medium",
+      "rationale": "Students revise and then orally share their narrative poems, satisfying sharing of an imagined story they constructed. The lesson does not include interpreting stories or clearly sharing real personal experiences.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02632034632034632,
+        "dense_rank": 17,
+        "bm25_rank": 15,
+        "dense_score": 0.5583104,
+        "bm25_score": 58.84596967666644,
+        "rerank_score": 0.9914013743400574
+      },
+      "standard_raw_text": "Share real or imagined experiences by interpreting and constructing texts that tell or include stories. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L11",
+      "standard_code": "1.P.EICC.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Engage in spoken or written dialogue as an author and audience.",
+          "met": true,
+          "note": "Students share their revised poems with partners using a dialogue-based protocol, acting as author and audience."
+        },
+        {
+          "clause": "Make intentional connections within texts.",
+          "met": false,
+          "note": "No activity directs students to make within-text connections."
+        },
+        {
+          "clause": "Make intentional connections between texts.",
+          "met": false,
+          "note": "Lesson focuses on a single poem; no cross-text connection task is included."
+        },
+        {
+          "clause": "Make intentional connections beyond texts to other knowledge or experiences.",
+          "met": false,
+          "note": "Students revise/edit and share poems but are not prompted to connect to real-life or other knowledge."
+        }
+      ],
+      "evidence": "- Tell the writers that they are going to use the Pinky Partners protocol to share their revised poem with a partner. Remind them that they used this protocol in Lessons 8-10 and review as necessary using the Pinky Partners Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Guide students through the protocol and circulate to support them as necessary.",
+      "evidence_page": 448,
+      "confidence": "high",
+      "rationale": "Students engage in partner sharing of their poems, which supports spoken interaction as authors and audiences. However, there is no task asking students to make intentional connections within, between, or beyond texts.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.025007766387076732,
+        "dense_rank": 14,
+        "bm25_rank": 27,
+        "dense_score": 0.56662637,
+        "bm25_score": 47.03324789043516,
+        "rerank_score": 0.9913849830627441
+      },
+      "standard_raw_text": "Engage in written or spoken dialogue as author and audience for a variety of tasks and purposes, making intentional connections within, between, and beyond texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L11",
+      "standard_code": "1.P.EICC.1.e",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Develop group norms for participation in a community of readers and writers",
+          "met": true,
+          "note": "Pinky Partners protocol and anchor chart referenced."
+        },
+        {
+          "clause": "Discuss texts with others in the group",
+          "met": true,
+          "note": "Students discuss their poems and revision process."
+        },
+        {
+          "clause": "Share individual writing with the group",
+          "met": true,
+          "note": "Students share their revised poems with partners."
+        },
+        {
+          "clause": "Listen to others as they share their writing",
+          "met": true,
+          "note": "Students listen to partners share poems."
+        },
+        {
+          "clause": "Offer feedback on peers' writing",
+          "met": true,
+          "note": "Protocol includes offering and responding to feedback."
+        },
+        {
+          "clause": "Respond to feedback received on own writing",
+          "met": true,
+          "note": "Students revise and edit based on teacher feedback."
+        }
+      ],
+      "evidence": "Tell the writers that they are going to use the Pinky Partners protocol to share their revised poem with a partner. Remind them that they used this protocol in Lessons 8-10 and review as necessary using the Pinky Partners Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Guide students through the protocol and circulate to support them as necessary.\n... Tell students that you read each of their poems and used the High-Quality Narrative Poem Checklist to provide feedback to each student that they can use to revise and edit their poems.",
+      "evidence_page": 448,
+      "confidence": "high",
+      "rationale": "Students participate in a community of writers by following group protocols, sharing writing, listening, and giving/responding to feedback.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.03055037313432836,
+        "dense_rank": 7,
+        "bm25_rank": 4,
+        "dense_score": 0.57905674,
+        "bm25_score": 91.55893363114862,
+        "rerank_score": 0.9913036823272705
+      },
+      "standard_raw_text": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing individual writing, listening as others share their writing, and offering and responding to feedback. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L11",
+      "standard_code": "1.T.T.2.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic.",
+          "met": false,
+          "note": "Lesson is focused on narrative poetry, not expository writing."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to supply facts about the topic.",
+          "met": false,
+          "note": "No expository writing or factual information supplied."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to provide a sense of closure.",
+          "met": false,
+          "note": "No expository closure; closure is in narrative poem."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson is focused on narrative poetry, not expository writing. None of the expository techniques required by the standard are present.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.019904931669637554,
+        "dense_rank": 39,
+        "bm25_rank": 42,
+        "dense_score": 0.5230552,
+        "bm25_score": 42.18785142446837,
+        "rerank_score": 0.9905894994735718
+      },
+      "standard_raw_text": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure. (C)"
+    }
+  ]
+}

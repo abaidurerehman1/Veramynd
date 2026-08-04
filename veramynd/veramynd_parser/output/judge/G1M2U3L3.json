@@ -1,0 +1,496 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U3L3",
+  "lesson_source": "stage1:G1M2U3L3",
+  "retrieve_file": "output\\retrieve\\G1M2U3L3.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 1,
+    "partial": 3,
+    "none": 6
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 4,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.P.EICC.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Engage in spoken or written dialogue as an author and audience.",
+          "met": true,
+          "note": "Students engage in structured spoken dialogue (turn-and-talk; Back-to-Back and Face-to-Face), taking roles as speaker and listener."
+        },
+        {
+          "clause": "Make intentional connections within texts.",
+          "met": true,
+          "note": "Students discuss features and evidence within a single model text (e.g., how sentences start/end, what in the model makes it high quality)."
+        },
+        {
+          "clause": "Make intentional connections between texts.",
+          "met": false,
+          "note": "Students analyze two texts but are not asked to relate or compare them; no explicit between-text connections are made."
+        },
+        {
+          "clause": "Make intentional connections beyond texts to other knowledge or experiences.",
+          "met": false,
+          "note": "No clear task for students to connect the texts to personal experiences or outside knowledge."
+        }
+      ],
+      "evidence": "- Ask students to turn and talk with an elbow partner:\n- 'What do you notice about this writing that makes it high quality? What do you notice about how the sentences start and end?'",
+      "evidence_page": 371,
+      "confidence": "high",
+      "rationale": "Students participate in spoken dialogue and make within-text observations using evidence from the model. However, they are not prompted to make explicit connections between different texts or to connect beyond the texts to real-life experiences.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.021904761904761906,
+        "dense_rank": 24,
+        "bm25_rank": 40,
+        "dense_score": 0.6006923,
+        "bm25_score": 79.08876746897937,
+        "rerank_score": 0.9988307356834412
+      },
+      "standard_raw_text": "Engage in written or spoken dialogue as author and audience for a variety of tasks and purposes, making intentional connections within, between, and beyond texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.P.AC.3.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Consume multimodal texts that integrate various genres, text features, and craft techniques.",
+          "met": true,
+          "note": "Students listen to and analyze a model text with words and illustrations, discussing its features."
+        },
+        {
+          "clause": "Produce multimodal texts that combine genres, text features, and craft techniques to influence target audiences and achieve specific purposes.",
+          "met": false,
+          "note": "Students do not create any multimodal texts in this lesson; production is planned for later."
+        }
+      ],
+      "evidence": "- Flip back through the pages of Model of Excellence #1 and invite students to give a thumbsup when they notice something that makes this writing high quality, or excellent.\n- Ask students to turn and talk with an elbow partner:\n- 'What do you notice about this writing that makes it high quality? What do you notice about how the sentences start and end?' (Responses will vary, but may include: It has complete sentences. The words explain the pictures. The words are written carefully.)",
+      "evidence_page": 371,
+      "confidence": "high",
+      "rationale": "Students consume and analyze a multimodal model (text with illustrations), but they do not produce any multimodal texts in this lesson.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.014705882352941176,
+        "dense_rank": 8,
+        "bm25_rank": null,
+        "dense_score": 0.638336,
+        "bm25_score": null,
+        "rerank_score": 0.9980910420417786
+      },
+      "standard_raw_text": "Consume and produce multimodal texts, integrating a variety of genres, text features, and craft techniques to influence target audiences and achieve specific purposes. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.P.EICC.1.e",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Develop group norms for participation in a community of readers and writers",
+          "met": false,
+          "note": "Protocols are reviewed by the teacher; students do not co-create norms."
+        },
+        {
+          "clause": "Discuss texts with others in the group",
+          "met": true,
+          "note": "Students discuss model texts using structured discussion protocols."
+        },
+        {
+          "clause": "Share individual writing with the group",
+          "met": false,
+          "note": "No student writing is shared; only models from other classes are read."
+        },
+        {
+          "clause": "Listen to others as they share their writing",
+          "met": false,
+          "note": "Students listen to teacher read models, not peers sharing their own writing."
+        },
+        {
+          "clause": "Offer feedback on peers' writing",
+          "met": false,
+          "note": "Students analyze models but do not give feedback on classmates' writing."
+        },
+        {
+          "clause": "Respond to feedback received on own writing",
+          "met": false,
+          "note": "No student writing or feedback cycle occurs in this lesson."
+        }
+      ],
+      "evidence": "Tell students they are going to use the Back-to-Back and Face-to-Face protocol to discuss what makes this writing high quality. Remind them that they used this protocol in past lessons and review as necessary using the Back-to-Back and Face-to-Face Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
+      "evidence_page": 373,
+      "confidence": "high",
+      "rationale": "Students actively discuss texts using protocols, but they neither develop group norms nor share/listen to peers’ own writing or engage in feedback cycles.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.027757078986587184,
+        "dense_rank": 28,
+        "bm25_rank": 1,
+        "dense_score": 0.59516823,
+        "bm25_score": 139.62354766310338,
+        "rerank_score": 0.9977214932441711
+      },
+      "standard_raw_text": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing individual writing, listening as others share their writing, and offering and responding to feedback. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.P.CP.1.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Work with others to discuss topics.",
+          "met": true,
+          "note": "Students frequently turn and talk and use a discussion protocol to analyze writing quality."
+        },
+        {
+          "clause": "Work with others to investigate questions.",
+          "met": true,
+          "note": "Students ask and consider \"What do you notice?\" and \"What do you wonder?\" about model texts, citing evidence together."
+        },
+        {
+          "clause": "Work with others to solve problems.",
+          "met": false,
+          "note": "No explicit collaborative problem-solving task is present; activities focus on analysis and discussion."
+        },
+        {
+          "clause": "Work with others to explore and create texts.",
+          "met": true,
+          "note": "Students explore models and collaboratively create a High-Quality Work anchor chart through shared writing."
+        }
+      ],
+      "evidence": "- Flip back through the pages of Model of Excellence #1 and invite students to give a thumbsup when they notice something that makes this writing high quality, or excellent. - Ask students to turn and talk with an elbow partner: - 'What do you notice about this writing that makes it high quality? What do you notice about how the sentences start and end?' ... - Flip back through the pages of Model of Excellence #1 and invite students to give a thumbsup if they see or hear something that makes them wonder or question. - Ask students to turn and talk with an elbow partner: - 'What do you wonder about this writing?' ... - Tell students that now they will use what they've noticed and wondered to create a HighQuality Work anchor chart that they can use when doing their own excellent writing!",
+      "evidence_page": 371,
+      "confidence": "low",
+      "rationale": "Students collaborate to discuss and investigate questions about model texts and co-create an anchor chart, but there is no clear collaborative problem-solving task. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.015625,
+        "dense_rank": null,
+        "bm25_rank": 4,
+        "dense_score": null,
+        "bm25_score": 111.93853502868471,
+        "rerank_score": 0.997569739818573
+      },
+      "standard_raw_text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.T.C.1",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the general purpose of a variety of texts.",
+          "met": false,
+          "note": "Students analyze features of high-quality writing (details, conventions) but do not identify authors’ purposes."
+        },
+        {
+          "clause": "Identify the target audience of a variety of texts.",
+          "met": false,
+          "note": "No tasks ask students to determine or discuss intended audience."
+        },
+        {
+          "clause": "Identify different modes of communication: print, digital, auditory, and visual.",
+          "met": false,
+          "note": "Modes of communication are not identified or compared."
+        },
+        {
+          "clause": "Create texts in teacher-selected modes such as print, digital, auditory, and/or visual.",
+          "met": false,
+          "note": "Students do not create texts in this lesson; they discuss and co-construct an anchor chart."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on noticing details and conventions in model texts to define high-quality work, not on explaining author purpose/audience, identifying modes, or creating texts.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.014492753623188406,
+        "dense_rank": 9,
+        "bm25_rank": null,
+        "dense_score": 0.6380741,
+        "bm25_score": null,
+        "rerank_score": 0.9801920652389526
+      },
+      "standard_raw_text": "Explain how authors of texts use language for a specific purpose and a target audience."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.P.EICC.2.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Interpret texts to analyze ideas.",
+          "met": true,
+          "note": "Students closely examine model texts and discuss what makes the writing high quality, citing observations and questions."
+        },
+        {
+          "clause": "Construct texts to evaluate ideas.",
+          "met": true,
+          "note": "Students co-construct a High-Quality Work anchor chart to use in evaluating writing."
+        }
+      ],
+      "evidence": "- Tell students that now they are going to analyze the writing, or examine it closely, to determine what makes it high quality.\n- If productive, cue students to provide evidence and to listen carefully and seek to understand: \"What, in the Model of Excellence #1, makes you think so?\" (Responses will vary.) \"Who can tell us what your classmate said in your own words?\" (Responses will vary.)\n- Flip back through the pages of Model of Excellence #1 and invite students to give a thumbsup when they notice something that makes this writing high quality, or excellent.\n- Ask students to turn and talk with an elbow partner:\n- \"What do you notice about this writing that makes it high quality? What do you notice about how the sentences start and end?\" (Responses will vary, but may include: It has complete sentences. The words explain the pictures. The words are written carefully.)\n- Flip back through the pages of Model of Excellence #1 and invite students to give a thumbsup if they see or hear something that makes them wonder or question.\n- Ask students to turn and talk with an elbow partner:\n- \"What do you wonder about this writing?\" (Responses will vary.)\n- Synthesize students' noticings and wonderings by paraphrasing important aspects of highquality work that were unearthed during the discussion. Clarify with students as needed.\n- Give students specific, positive feedback on their ability to notice and wonder about what made that writing high quality. (Example: \"Lamar noticed that the illustrations were beautiful, with lots of colors. Valeria wonders why the writing was done on purple paper.\")\n- Tell students that now they will use what they've noticed and wondered to create a HighQuality Work anchor chart that they can use when doing their own excellent writing!",
+      "evidence_page": 371,
+      "confidence": "low",
+      "rationale": "Students analyze model texts through discussion and questioning, then co-create an anchor chart to support evaluating writing quality. Both interpreting texts and constructing a text to aid evaluation are explicitly undertaken. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.029437229437229435,
+        "dense_rank": 6,
+        "bm25_rank": 10,
+        "dense_score": 0.6397681,
+        "bm25_score": 98.70343852118407,
+        "rerank_score": 0.9801244735717773
+      },
+      "standard_raw_text": "Interpret and construct texts to aid the analysis and evaluation of texts and ideas. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.P.EICC.4.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Generate ideas for writing by assessing prior knowledge.",
+          "met": true,
+          "note": "Students draw on what they know about high-quality work."
+        },
+        {
+          "clause": "Generate ideas for writing by gathering information from texts.",
+          "met": true,
+          "note": "Students analyze model texts to gather ideas."
+        },
+        {
+          "clause": "Generate ideas for writing by engaging in discussions with others.",
+          "met": true,
+          "note": "Students discuss ideas with partners and the group."
+        }
+      ],
+      "evidence": "Tell students that now they will use what they've noticed and wondered to create a High-Quality Work anchor chart that they can use when doing their own excellent writing! ... Direct students' attention to the High-Quality Work anchor chart and invite them to turn and talk with an elbow partner: Circulate and listen in as students share ideas with one another. As you listen, select three or four students to share out their ideas.",
+      "evidence_page": 372,
+      "confidence": "low",
+      "rationale": "Students generate ideas for writing by drawing on prior knowledge, analyzing texts, and discussing with peers. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.025904203323558164,
+        "dense_rank": 33,
+        "bm25_rank": 6,
+        "dense_score": 0.5862434,
+        "bm25_score": 103.97008237541074,
+        "rerank_score": 0.978702187538147
+      },
+      "standard_raw_text": "Generate ideas for content by assessing prior knowledge, gathering information from texts, and engaging in discussions with others. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.L.V.1",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Acquire general, academic, and specialized vocabulary words and phrases through grade-level texts and content.",
+          "met": true,
+          "note": "Students engage in the Interactive Word Wall protocol to learn vocabulary."
+        },
+        {
+          "clause": "Use grade-level general, academic, and specialized vocabulary words and phrases to communicate in a variety of settings.",
+          "met": true,
+          "note": "Students use vocabulary in discussions and sentence creation."
+        }
+      ],
+      "evidence": "Tell students they are going to use the Interactive Word Wall protocol with new words added to the set to continue strengthening their comprehension and build their knowledge of vocabulary. ... Provide support and guidance as needed by reminding students of the definitions and encouraging them to use the word in a sentence.",
+      "evidence_page": 369,
+      "confidence": "high",
+      "rationale": "Students acquire and use vocabulary through explicit instruction and practice in multiple settings.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02487789987789988,
+        "dense_rank": 31,
+        "bm25_rank": 12,
+        "dense_score": 0.59296167,
+        "bm25_score": 96.00000216284722,
+        "rerank_score": 0.9771305322647095
+      },
+      "standard_raw_text": "General, Academic, & Specialized Vocabulary: Acquire and use general, academic, and specialized vocabulary words and phrases in a variety of settings."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.P.EICC.1",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Generate, understand, monitor, and revise personal and academic reading and writing goals.",
+          "met": false,
+          "note": "No goal-setting or reflection on goals occurs."
+        },
+        {
+          "clause": "Discuss or write about personal and academic reading and writing preferences with reference to specific techniques, topics, modes, and genres.",
+          "met": false,
+          "note": "Students analyze quality, not their own preferences."
+        },
+        {
+          "clause": "Select, read, and write texts of personal interest and academic relevance.",
+          "met": false,
+          "note": "Teacher provides model texts; students do not select or write texts in this lesson."
+        },
+        {
+          "clause": "Build a repertoire of comprehension and composition skills, strategies, and techniques.",
+          "met": true,
+          "note": "Students co-construct a High-Quality Work anchor chart about details and conventions."
+        },
+        {
+          "clause": "Draw from a repertoire of strategies to interpret texts.",
+          "met": true,
+          "note": "Students use the High-Quality Work anchor chart to analyze a second model text."
+        },
+        {
+          "clause": "Draw from a repertoire of strategies to construct texts.",
+          "met": false,
+          "note": "Application to their own writing is deferred to later lessons."
+        },
+        {
+          "clause": "Participate in a community of readers and writers by developing group norms.",
+          "met": false,
+          "note": "Protocols are reviewed by the teacher; students do not develop norms."
+        },
+        {
+          "clause": "Participate in a community of readers and writers by discussing texts.",
+          "met": true,
+          "note": "Students discuss what makes model writing high quality using class protocols."
+        },
+        {
+          "clause": "Participate in a community of readers and writers by sharing writing.",
+          "met": false,
+          "note": "Students do not share their own writing in this lesson."
+        },
+        {
+          "clause": "Participate in a community of readers and writers by listening to others and paraphrasing peers.",
+          "met": true,
+          "note": "Students are cued to listen carefully and restate classmates' ideas."
+        },
+        {
+          "clause": "Participate in a community of readers and writers by offering and responding to feedback.",
+          "met": false,
+          "note": "Feedback is given by the teacher, not students."
+        },
+        {
+          "clause": "Develop independence and autonomy as a reader and writer.",
+          "met": false,
+          "note": "Lesson is largely guided; independence as readers/writers is not the focus."
+        }
+      ],
+      "evidence": "Tell students that now they will use what they've noticed and wondered to create a High-Quality Work anchor chart that they can use when doing their own excellent writing!",
+      "evidence_page": 371,
+      "confidence": "low",
+      "rationale": "Students build and use a class anchor chart to analyze model texts and engage in structured discussion, but they do not set goals, choose texts, or produce their own writing in this lesson. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.030158730158730156,
+        "dense_rank": 10,
+        "bm25_rank": 3,
+        "dense_score": 0.6351067,
+        "bm25_score": 114.75989643114517,
+        "rerank_score": 0.9768929481506348
+      },
+      "standard_raw_text": "Build an identity as a reader and writer, developing a repertoire of resources and tools to continuously expand participation as an active consumer and producer of texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.P.EICC.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Share real experiences by telling or writing stories.",
+          "met": false,
+          "note": "Students do not tell or write stories in this lesson; they analyze models for high-quality features."
+        },
+        {
+          "clause": "Share imagined experiences by telling or writing stories.",
+          "met": false,
+          "note": "No student storytelling (oral or written) of imagined experiences occurs."
+        },
+        {
+          "clause": "Interpret stories that tell or include real or imagined experiences.",
+          "met": false,
+          "note": "Students discuss conventions and quality of model texts, not the narrative content or meaning of stories."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students analyze models to define high-quality work and create an anchor chart. They neither compose or share stories nor interpret the narrative content of stories in this lesson.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.019075302025615408,
+        "dense_rank": 41,
+        "bm25_rank": 49,
+        "dense_score": 0.57579863,
+        "bm25_score": 73.65597128798458,
+        "rerank_score": 0.9425207376480103
+      },
+      "standard_raw_text": "Share real or imagined experiences by interpreting and constructing texts that tell or include stories. (I/C)"
+    }
+  ]
+}

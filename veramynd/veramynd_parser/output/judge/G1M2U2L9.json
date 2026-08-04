@@ -1,0 +1,511 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U2L9",
+  "lesson_source": "stage1:G1M2U2L9",
+  "retrieve_file": "output\\retrieve\\G1M2U2L9.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 3,
+    "partial": 3,
+    "none": 4
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 6,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L9",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Explain concepts by interpreting texts.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Learn concepts by interpreting texts.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "- Invite students to turn and talk with an elbow partner:\n- 'Why can't we see stars during the day? What new information does the text teach us?' (because stars are very far away their light is dim; the sun shines so bright that you cannot see the starlight during the day)\n- As students share out, clarify and capture their responses on the Patterns of the Stars anchor chart.\n...\n- Direct students' attention to the second posted learning target and read it aloud: 'I can record my observations of videos/images of the sky in the Sky notebook.'\n- Remind students that they will be writing in their Sky notebooks to reach this target.",
+      "evidence_page": 301,
+      "confidence": "high",
+      "rationale": "Students interpret information from text and illustrations, explain concepts orally and in writing, and construct texts (Sky notebook entries) to demonstrate understanding of star patterns.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.027637721755368813,
+        "dense_rank": 3,
+        "bm25_rank": 25,
+        "dense_score": 0.58069956,
+        "bm25_score": 87.75294204857346,
+        "rerank_score": 0.9877431392669678
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L9",
+      "standard_code": "1.T.RA.2",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
+          "met": true,
+          "note": "Students answer questions about specific sentences and illustrations, using them to explain what they learned."
+        },
+        {
+          "clause": "Explore various sources of information, including print, digital, and personal communication.",
+          "met": true,
+          "note": "Students read a print text, watch a digital time-lapse video, and observe a teacher demonstration to build understanding."
+        }
+      ],
+      "evidence": "Return to pages 18-19 and invite students to look closely at the illustrations. Ask: 'What new information can we learn from the illustration on this page? What new information can we learn from the text?'",
+      "evidence_page": 301,
+      "confidence": "high",
+      "rationale": "Students refer to specific parts of the text and illustrations to answer questions, and they explore multiple sources (print text, video, demonstration) to build understanding.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.025516795865633074,
+        "dense_rank": 26,
+        "bm25_rank": 12,
+        "dense_score": 0.5402328,
+        "bm25_score": 100.85422828371112,
+        "rerank_score": 0.9852613806724548
+      },
+      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L9",
+      "standard_code": "1.P.EICC.3",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Establish a purpose and set goals for reading",
+          "met": false,
+          "note": "Teacher states the purpose; students are not asked to set or articulate it."
+        },
+        {
+          "clause": "Monitor comprehension and adjust strategies as needed",
+          "met": false,
+          "note": "Students answer questions after teacher rereads; no explicit student monitoring or strategy adjustment."
+        },
+        {
+          "clause": "Scan and skim the text to note useful structures and sections",
+          "met": false,
+          "note": "Teacher models using the table of contents; students do not perform this."
+        },
+        {
+          "clause": "Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps",
+          "met": false,
+          "note": "Some recall is prompted, but explicit integration of prior knowledge with the text is not evident."
+        },
+        {
+          "clause": "Summarize and visualize sections of the text to maintain understanding",
+          "met": true,
+          "note": "Students identify new information learned (summary) and attend to illustrations (visual information)."
+        },
+        {
+          "clause": "Make and track predictions about upcoming events and information",
+          "met": false,
+          "note": "No prediction task is included."
+        },
+        {
+          "clause": "Make, track, and support inferences about different levels of meaning",
+          "met": false,
+          "note": "Questions focus on explicitly stated information; no tracked or supported inferences."
+        },
+        {
+          "clause": "Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts",
+          "met": true,
+          "note": "Students use text and illustrations to define constellation."
+        }
+      ],
+      "evidence": "Return to pages 18-19 and invite students to look closely at the illustrations. Ask:\n\"What new information can we learn from the illustration on this page? What new information can we learn from the text?\" (The stars can form shapes, and those shapes are called constellations.)\nConfirm students' thinking by showing them the Sun, Moon, and Stars Word Wall card for constellation.\nUsing a total participation technique, invite responses from the group:\n\"Based on the information from both the text and the illustrations, what is a constellation?\" (a group of stars that forms a shape)\nConfirm students' thinking and place constellation on the Sun, Moon, and Stars Word Wall.\nWith excitement, tell students that they have learned about another pattern they can observe in the sky.\nInvite students to turn and talk with an elbow partner:\n\"What is one piece of new information you have learned about patterns of the stars?\"",
+      "evidence_page": 301,
+      "confidence": "low",
+      "rationale": "Students use comprehension strategies during/after reading (distinguishing information from text vs. illustrations, summarizing new information, and determining the meaning of constellation). However, they do not set their own reading purpose, scan/skim, predict, or explicitly monitor and adjust strategies. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02854251012145749,
+        "dense_rank": 16,
+        "bm25_rank": 5,
+        "dense_score": 0.5510138,
+        "bm25_score": 112.7510872465843,
+        "rerank_score": 0.9832643866539001
+      },
+      "standard_raw_text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L9",
+      "standard_code": "1.P.EICC.3.d",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Summarize sections of the text to maintain understanding.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Visualize sections of the text to maintain understanding.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "- Reread the information added to the Patterns of the Stars anchor chart.\n...\n- Return to pages 18-19 and invite students to look closely at the illustrations. Ask:\n- 'What new information can we learn from the illustration on this page? What new information can we learn from the text?' (The stars can form shapes, and those shapes are called constellations.)",
+      "evidence_page": 301,
+      "confidence": "high",
+      "rationale": "Students summarize information from the text and visualize through discussion of illustrations and anchor charts.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02438307873090482,
+        "dense_rank": 14,
+        "bm25_rank": 32,
+        "dense_score": 0.554353,
+        "bm25_score": 84.57905234835296,
+        "rerank_score": 0.9830827713012695
+      },
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L9",
+      "standard_code": "1.P.EICC.2.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Interpret texts to analyze ideas.",
+          "met": true,
+          "note": "Students discuss and analyze information from the text and illustrations during the read-aloud."
+        },
+        {
+          "clause": "Construct texts to evaluate ideas.",
+          "met": false,
+          "note": "Students write observations in Sky notebooks and do shared descriptive writing, but they do not construct texts to evaluate ideas."
+        }
+      ],
+      "evidence": "Reread the next two sentences on page 17 and invite students to turn and talk with an elbow partner: 'Why can't we see stars during the day? What new information does the text teach us?'",
+      "evidence_page": 301,
+      "confidence": "high",
+      "rationale": "Students interpret and discuss ideas from the informational text and illustrations. However, their writing is observational/descriptive rather than constructing texts to evaluate ideas.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.023343766301512782,
+        "dense_rank": 11,
+        "bm25_rank": 48,
+        "dense_score": 0.5570697,
+        "bm25_score": 78.94270433934476,
+        "rerank_score": 0.9817312955856323
+      },
+      "standard_raw_text": "Interpret and construct texts to aid the analysis and evaluation of texts and ideas. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L9",
+      "standard_code": "1.T.T.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "met": false,
+          "note": "Students identify information/details from sentences and illustrations, but they do not explicitly identify the main topic or expository techniques/structure."
+        },
+        {
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "met": true,
+          "note": "Students explain the cause-and-effect relationship (distance/brightness; sunlight outshining starlight) drawn from the text."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "met": false,
+          "note": "Students write brief observations and a shared sentence, not an expository piece with topic introduction, facts, and closure."
+        }
+      ],
+      "evidence": "- Reread the next two sentences on page 17 and invite students to turn and talk with an elbow partner:\n- 'Why can't we see stars during the day? What new information does the text teach us?' (because stars are very far away their light is dim; the sun shines so bright that you cannot see the starlight during the day)\n- As students share out, clarify and capture their responses on the Patterns of the Stars anchor chart.",
+      "evidence_page": 301,
+      "confidence": "medium",
+      "rationale": "Students describe cause-and-effect relationships between ideas in the informational text, but they do not explicitly identify main topic/expository techniques nor produce an expository writing piece with topic, facts, and closure.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.030090497737556562,
+        "dense_rank": 5,
+        "bm25_rank": 8,
+        "dense_score": 0.5698186,
+        "bm25_score": 107.2169510163699,
+        "rerank_score": 0.9807049632072449
+      },
+      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L9",
+      "standard_code": "1.T.T.1",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue.",
+          "met": false,
+          "note": "Lesson focuses on informational text, not narrative."
+        },
+        {
+          "clause": "Identify a simple plot with a problem and solution.",
+          "met": false,
+          "note": "No narrative plot present."
+        },
+        {
+          "clause": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
+          "met": false,
+          "note": "No narrative characters or moral."
+        },
+        {
+          "clause": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures.",
+          "met": false,
+          "note": "No comparison of characters or cultures."
+        },
+        {
+          "clause": "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure.",
+          "met": false,
+          "note": "No narrative writing or creation."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson is focused on informational text and science concepts, not narrative techniques or story elements.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.026333789329685362,
+        "dense_rank": 8,
+        "bm25_rank": 26,
+        "dense_score": 0.5642692,
+        "bm25_score": 87.54850856709231,
+        "rerank_score": 0.9804419279098511
+      },
+      "standard_raw_text": "Identify and use narrative techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L9",
+      "standard_code": "1.T.T.4.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify rhyme used in texts.",
+          "met": false,
+          "note": "Students work with prepositions and content about stars; they are not asked to find or name rhyme."
+        },
+        {
+          "clause": "Identify alliteration used in texts.",
+          "met": false,
+          "note": "No task directs students to notice or identify alliteration in the poem or any text."
+        },
+        {
+          "clause": "Identify repeated lines used in texts.",
+          "met": false,
+          "note": "Students do not identify or discuss repeated lines; the poem is used only to act out prepositions."
+        },
+        {
+          "clause": "Describe how rhyme, alliteration, and repeated lines are used to craft texts.",
+          "met": false,
+          "note": "There is no analysis or description of poetic techniques; instruction centers on informational text features and movement."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "A poem is included, but students use it to practice prepositions and study star patterns. They never identify or describe rhyme, alliteration, or repeated lines.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.019843597262952102,
+        "dense_rank": 50,
+        "bm25_rank": 33,
+        "dense_score": 0.5119978,
+        "bm25_score": 84.55919909747834,
+        "rerank_score": 0.9776371717453003
+      },
+      "standard_raw_text": "Identify and describe poetic techniques used to craft texts, including rhyme, alliteration, and repeated lines. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L9",
+      "standard_code": "1.T.RA.1",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Ask questions about topics of interest for research.",
+          "met": false,
+          "note": "Questions are asked about the text, not for research."
+        },
+        {
+          "clause": "Conduct research individually or collaboratively by gathering and organizing information from multiple sources using graphic organizers or support aids.",
+          "met": false,
+          "note": "No research using multiple sources."
+        },
+        {
+          "clause": "Share relevant and accurate information through different communication modes.",
+          "met": false,
+          "note": "No evidence of sharing research findings."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson does not involve research or use of multiple sources; it is a close read and discussion of a single text and video.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02582908163265306,
+        "dense_rank": 38,
+        "bm25_rank": 4,
+        "dense_score": 0.52749467,
+        "bm25_score": 113.69559266160958,
+        "rerank_score": 0.9762747883796692
+      },
+      "standard_raw_text": "Build knowledge about the world by asking or generating questions about topics of interest, researching the answers, using multiple sources, and communicating relevant and accurate information about the topic."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L9",
+      "standard_code": "1.P.EICC.1",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Generate, understand, monitor, and revise personal and academic reading and writing goals.",
+          "met": false,
+          "note": "Students are shown teacher-posted targets but do not set or monitor personal goals."
+        },
+        {
+          "clause": "Discuss or write about personal and academic reading and writing preferences with reference to specific techniques, topics, modes, and genres.",
+          "met": false,
+          "note": "No activity invites students to reflect on or share their preferences."
+        },
+        {
+          "clause": "Select texts of personal interest and academic relevance.",
+          "met": false,
+          "note": "Texts and media are teacher-selected."
+        },
+        {
+          "clause": "Read texts of personal interest and academic relevance.",
+          "met": false,
+          "note": "The teacher conducts a read-aloud; students do not read the text themselves."
+        },
+        {
+          "clause": "Write texts of personal interest and academic relevance.",
+          "met": true,
+          "note": "Students independently record observations in Sky notebooks tied to science content."
+        },
+        {
+          "clause": "Build and draw from a repertoire of comprehension skills, strategies, and techniques to interpret texts.",
+          "met": true,
+          "note": "Students distinguish information from illustrations versus text and discuss what each conveys."
+        },
+        {
+          "clause": "Build and draw from a repertoire of composition skills, strategies, and techniques to construct texts.",
+          "met": true,
+          "note": "Students are prompted to use anchor charts and a word wall while writing."
+        },
+        {
+          "clause": "Participate in a community of readers and writers by developing group norms.",
+          "met": false,
+          "note": "Classroom respect norms are reviewed, but no explicit co-construction of reader/writer norms occurs."
+        },
+        {
+          "clause": "Participate in a community of readers and writers by discussing texts.",
+          "met": true,
+          "note": "Multiple turn-and-talks and whole-group discussions about the informational text occur."
+        },
+        {
+          "clause": "Participate in a community of readers and writers by sharing writing.",
+          "met": false,
+          "note": "Students do not share their individual notebook writing with peers."
+        },
+        {
+          "clause": "Participate in a community of readers and writers by listening to others.",
+          "met": true,
+          "note": "Turn-and-talk and whole-group share-outs require students to listen to partners and peers."
+        },
+        {
+          "clause": "Participate in a community of readers and writers by offering and responding to feedback.",
+          "met": false,
+          "note": "No peer feedback or response routines for writing/reading are described."
+        },
+        {
+          "clause": "Develop independence and autonomy as a reader and writer.",
+          "met": true,
+          "note": "Students write independently in notebooks and draw on classroom resources."
+        }
+      ],
+      "evidence": "Remind students that they will be writing in their Sky notebooks to reach this target.\n- Display page 8 of the Sky notebook as well as moon photograph 6.\n- -Tell students that similar to previous lessons, they will use the moon photograph to complete this page in their Sky notebook\n- -Follow the same process as in previous lessons to distribute notebooks and pencils and to guide students to complete this page. Remind students to use the Prepositions anchor chart, the Adjectives anchor chart, and the Sun, Moon, and Stars Word Wall as necessary.",
+      "evidence_page": 305,
+      "confidence": "medium",
+      "rationale": "Students actively write academically relevant observations, use classroom tools to compose, discuss text features to interpret information, and engage in partner discussion. The lesson does not include personal goal-setting, preference reflection, student text selection, sharing of individual writing, or structured peer feedback.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02749719416386083,
+        "dense_rank": 21,
+        "bm25_rank": 6,
+        "dense_score": 0.54458374,
+        "bm25_score": 111.80637031372088,
+        "rerank_score": 0.975222647190094
+      },
+      "standard_raw_text": "Build an identity as a reader and writer, developing a repertoire of resources and tools to continuously expand participation as an active consumer and producer of texts."
+    }
+  ]
+}

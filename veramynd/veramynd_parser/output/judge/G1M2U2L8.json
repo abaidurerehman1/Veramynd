@@ -1,0 +1,461 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U2L8",
+  "lesson_source": "stage1:G1M2U2L8",
+  "retrieve_file": "output\\retrieve\\G1M2U2L8.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 4,
+    "partial": 1,
+    "none": 5
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 5,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L8",
+      "standard_code": "1.P.EICC.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Engage in spoken or written dialogue as an author and audience.",
+          "met": true,
+          "note": "Students participate in a Science Talk, take turns, listen, and build onto others’ ideas using sentence frames."
+        },
+        {
+          "clause": "Make intentional connections within texts.",
+          "met": false,
+          "note": "No explicit student task to connect ideas within a single text is described."
+        },
+        {
+          "clause": "Make intentional connections between texts.",
+          "met": false,
+          "note": "Students are not directed to compare or connect two texts or sources."
+        },
+        {
+          "clause": "Make intentional connections beyond texts to other knowledge or experiences.",
+          "met": true,
+          "note": "Students discuss what people are doing when the sun looks a certain way, connecting an image to real-life experiences."
+        }
+      ],
+      "evidence": "Invite students to take out their Patterns of the Moon notes sheets. Remind them that they will use these notes and take turns responding to their group members' ideas. Direct students' attention to the learning targets and read the first one aloud: 'I can build onto others' ideas while participating in a Science Talk about patterns of the moon.' Remind students that in order to work toward this target, they should try using a sentence frame as they respond to their classmates. Review the previously taught sentence frames: 'I think he/she means __________.' 'I'd like to add ________.' 'This makes me think __________ because ___________.'",
+      "evidence_page": 291,
+      "confidence": "high",
+      "rationale": "Students clearly engage in spoken dialogue as speakers and listeners and make connections to real-life contexts, but there is no explicit activity requiring connections within a single text or between multiple texts.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.031099324975891997,
+        "dense_rank": 1,
+        "bm25_rank": 8,
+        "dense_score": 0.5714042,
+        "bm25_score": 71.51907615083435,
+        "rerank_score": 0.9987855553627014
+      },
+      "standard_raw_text": "Engage in written or spoken dialogue as author and audience for a variety of tasks and purposes, making intentional connections within, between, and beyond texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L8",
+      "standard_code": "1.P.EICC.1.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Develop group norms for participation in a community of readers and writers",
+          "met": false,
+          "note": "Students review an existing Science Talk protocol; they do not co-create norms."
+        },
+        {
+          "clause": "Discuss texts with others in the group",
+          "met": false,
+          "note": "Students discuss a science question using notes; there is no explicit group discussion of a text."
+        },
+        {
+          "clause": "Share individual writing with the group",
+          "met": false,
+          "note": "Students write personal notes and in Sky notebooks, but do not share their writing with the group."
+        },
+        {
+          "clause": "Listen to others as they share their writing",
+          "met": false,
+          "note": "Listening occurs in a Science Talk, not to peers sharing written work."
+        },
+        {
+          "clause": "Offer feedback on peers' writing",
+          "met": false,
+          "note": "No peer feedback on writing is included."
+        },
+        {
+          "clause": "Respond to feedback received on own writing",
+          "met": false,
+          "note": "No opportunities to receive or respond to feedback on writing are described."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson centers on a Science Talk about moon patterns and independent note-taking, not on sharing writing or giving/receiving feedback. Norms are reviewed, not developed, and there is no explicit discussion of texts as such.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.0315136476426799,
+        "dense_rank": 5,
+        "bm25_rank": 2,
+        "dense_score": 0.55504966,
+        "bm25_score": 122.65729101278679,
+        "rerank_score": 0.9981203675270081
+      },
+      "standard_raw_text": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing individual writing, listening as others share their writing, and offering and responding to feedback. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L8",
+      "standard_code": "1.P.CP.1.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Work with others to discuss topics.",
+          "met": true,
+          "note": "Students discuss the moon's patterns in groups."
+        },
+        {
+          "clause": "Work with others to investigate questions.",
+          "met": true,
+          "note": "Students investigate 'Why does the moon seem to change?' together."
+        },
+        {
+          "clause": "Work with others to solve problems.",
+          "met": true,
+          "note": "Students collaboratively explore and explain the moon's changing appearance."
+        },
+        {
+          "clause": "Work with others to explore and create texts.",
+          "met": true,
+          "note": "Students create notes and participate in shared writing activities."
+        }
+      ],
+      "evidence": "Tell students they will now participate in a Science Talk in small groups to answer the question: 'Why does the moon seem to change?' ... Remind them that they will use these notes and take turns responding to their group members' ideas. ... Guide students through the protocol. ... [Closing and Assessment B] Shared Writing: Describing What People Do during the Day (page 294) ... Ask: 'What are people doing when the sun looks like this?' (People are cooking dinner; people are walking home from school; etc.) ... Cold call on one to two students to share out. Select one response to record on the paper. Draw a quick sketch to match the written response.",
+      "evidence_page": 291,
+      "confidence": "low",
+      "rationale": "Students work together to discuss, investigate, solve, and create texts through Science Talk, note-taking, and shared writing. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.03252247488101534,
+        "dense_rank": 2,
+        "bm25_rank": 1,
+        "dense_score": 0.56840134,
+        "bm25_score": 123.44431720536474,
+        "rerank_score": 0.9979338645935059
+      },
+      "standard_raw_text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L8",
+      "standard_code": "1.P.CP.1.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Contribute ideas to discussions and shared projects.",
+          "met": true,
+          "note": "Students participate in a small-group Science Talk to answer a question and share ideas using their notes."
+        },
+        {
+          "clause": "Listen to the ideas of others during discussions and projects.",
+          "met": true,
+          "note": "They take turns and respond to group members' ideas, which requires listening; teacher cues listening behaviors."
+        },
+        {
+          "clause": "Provide feedback to others in discussions and shared projects.",
+          "met": true,
+          "note": "Students are prompted to respond to classmates and use frames like adding on or clarifying, which constitutes feedback."
+        }
+      ],
+      "evidence": "Invite students to take out their Patterns of the Moon notes sheets. Remind them that they will use these notes and take turns responding to their group members' ideas.",
+      "evidence_page": 291,
+      "confidence": "high",
+      "rationale": "Students engage in a structured Science Talk where they share ideas, listen, and respond to peers using sentence frames. The protocol explicitly requires taking turns and responding to others' ideas, satisfying all clauses.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.026736111111111113,
+        "dense_rank": 30,
+        "bm25_rank": 4,
+        "dense_score": 0.51078063,
+        "bm25_score": 104.811022725864,
+        "rerank_score": 0.9977908134460449
+      },
+      "standard_raw_text": "Contribute to discussions and shared projects by offering ideas, listening to the ideas of others, and providing feedback. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L8",
+      "standard_code": "1.P.CP.1",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Arrive prepared to actively participate in group discussions and collaborative meetings.",
+          "met": true,
+          "note": "Students prepare notes to use as evidence and bring them to the Science Talk to participate."
+        },
+        {
+          "clause": "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects.",
+          "met": false,
+          "note": "The teacher provides the protocol and norms; students do not co-determine goals or procedures."
+        },
+        {
+          "clause": "Contribute to discussions and shared projects by offering ideas, listening to the ideas of others, and providing feedback.",
+          "met": true,
+          "note": "Students take turns responding to group members’ ideas and use sentence frames to add on and clarify."
+        },
+        {
+          "clause": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts.",
+          "met": true,
+          "note": "Students work in small groups to discuss the topic and investigate the question about why the moon seems to change."
+        }
+      ],
+      "evidence": "Tell students they will now participate in a Science Talk in small groups to answer the question:\n- -'Why does the moon seem to change?'\n- Invite students to take out their Patterns of the Moon notes sheets. Remind them that they will use these notes and take turns responding to their group members' ideas.",
+      "evidence_page": 291,
+      "confidence": "low",
+      "rationale": "Students collaboratively prepare and then engage in a small-group Science Talk, building on peers’ ideas to address a shared question. However, they do not co-create norms or procedures for the collaboration, which leaves that clause unmet. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.028373015873015873,
+        "dense_rank": 20,
+        "bm25_rank": 3,
+        "dense_score": 0.5214155,
+        "bm25_score": 109.42674993129975,
+        "rerank_score": 0.9972407817840576
+      },
+      "standard_raw_text": "Collaborate with others to accomplish shared goals and projects."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L8",
+      "standard_code": "1.P.CP.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Collaborate with others to determine group norms",
+          "met": false,
+          "note": "No evidence students determine group norms."
+        },
+        {
+          "clause": "Establish goals and procedures for shared projects",
+          "met": false,
+          "note": "No evidence students establish goals or procedures."
+        },
+        {
+          "clause": "Facilitate productivity when working on shared projects",
+          "met": false,
+          "note": "No evidence students facilitate group productivity."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "There is no evidence that students themselves set group norms, establish goals, or facilitate productivity; these are teacher-directed.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02523465148484382,
+        "dense_rank": 37,
+        "bm25_rank": 7,
+        "dense_score": 0.5007627,
+        "bm25_score": 77.83088971282127,
+        "rerank_score": 0.9969263672828674
+      },
+      "standard_raw_text": "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L8",
+      "standard_code": "1.T.RA.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Share relevant information about a topic.",
+          "met": true,
+          "note": "Students share information about the moon's patterns."
+        },
+        {
+          "clause": "Share accurate information about a topic.",
+          "met": true,
+          "note": "Students use notes and anchor charts to share accurate information."
+        },
+        {
+          "clause": "Use a variety of communication modes to share information.",
+          "met": true,
+          "note": "Students share through speaking, writing, drawing, and group discussion."
+        }
+      ],
+      "evidence": "Remind students that they will use these notes and take turns responding to their group members' ideas. ... Remind them to use the Patterns of the Moon anchor chart and Sun, Moon, and Stars Word Wall to help them while writing. ... Invite students to take their Patterns of the Moon notes sheet and move into pre-determined groups ... Guide students through the protocol. ... [Closing and Assessment B] Shared Writing: Describing What People Do during the Day (page 294) ... Select one response to record on the paper. Draw a quick sketch to match the written response.",
+      "evidence_page": 291,
+      "confidence": "low",
+      "rationale": "Students share relevant and accurate information about the moon using speaking, writing, and drawing. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.029571646010002173,
+        "dense_rank": 3,
+        "bm25_rank": 13,
+        "dense_score": 0.5631174,
+        "bm25_score": 62.22285202347361,
+        "rerank_score": 0.9931760430335999
+      },
+      "standard_raw_text": "Share relevant and accurate information through a variety of different modes. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L8",
+      "standard_code": "1.T.RA.1.b",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Work collaboratively or individually to conduct research on a shared or personal topic of interest.",
+          "met": true,
+          "note": "Students individually create notes to answer a shared research question and then discuss in small groups."
+        },
+        {
+          "clause": "Gather information from provided sources including print, digital, and personal communication.",
+          "met": true,
+          "note": "Students are directed to use an anchor chart and a print book to inform their notes."
+        },
+        {
+          "clause": "Organize gathered information using graphic organizers or other support aids.",
+          "met": true,
+          "note": "Students record information on a structured notes sheet, using sketches and key words."
+        }
+      ],
+      "evidence": "- Distribute pencils and the prepared clipboards with Patterns of the Moon notes sheets.\n- Focus students on the prompt. Reread it aloud and invite them to begin writing their individual notes.\n- Circulate and support students as they write. Remind them to use the Patterns of the Moon anchor chart and Sun, Moon, and Stars Word Wall to help them while writing. If students are having a difficult time explaining their ideas, invite them to look again at Does the Sun Sleep?: Noticing Sun, Moon, and Stars Patterns and jot down what they see or hear that they want to record.",
+      "evidence_page": 290,
+      "confidence": "high",
+      "rationale": "Students research a shared question by gathering information from provided sources and organizing it on a notes sheet, then use it in collaborative discussion.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.020347035736418093,
+        "dense_rank": 43,
+        "bm25_rank": 34,
+        "dense_score": 0.48988,
+        "bm25_score": 50.63539178750092,
+        "rerank_score": 0.9901019334793091
+      },
+      "standard_raw_text": "Work collaboratively or individually to conduct research on a shared or personal topic of interest by gathering and organizing information from provided sources (including print, digital, and personal communication) using graphic organizers or other support aids. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L8",
+      "standard_code": "1.P.EICC.4.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Generate ideas for writing by assessing prior knowledge.",
+          "met": true,
+          "note": "Students discuss and reflect on what they already know about the moon."
+        },
+        {
+          "clause": "Generate ideas for writing by gathering information from texts.",
+          "met": true,
+          "note": "Students use anchor charts and a book as sources for information."
+        },
+        {
+          "clause": "Generate ideas for writing by engaging in discussions with others.",
+          "met": true,
+          "note": "Students discuss ideas with partners and in groups before writing."
+        }
+      ],
+      "evidence": "Tell students that today they will use the information from this anchor chart to write their own personal notes about why the moon's shape seems to change. ... Invite students to turn and talk with an elbow partner: 'What information do you think is most important to know when answering the question 'Why does the moon seem to change shape?'' ... Remind them to use the Patterns of the Moon anchor chart and Sun, Moon, and Stars Word Wall to help them while writing. If students are having a difficult time explaining their ideas, invite them to look again at Does the Sun Sleep?: Noticing Sun, Moon, and Stars Patterns and jot down what they see or hear that they want to record.",
+      "evidence_page": 289,
+      "confidence": "high",
+      "rationale": "Students generate ideas for writing by reflecting on prior knowledge, gathering information from texts, and discussing with others.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.028991596638655463,
+        "dense_rank": 8,
+        "bm25_rank": 10,
+        "dense_score": 0.54382914,
+        "bm25_score": 64.68218679968635,
+        "rerank_score": 0.9892177581787109
+      },
+      "standard_raw_text": "Generate ideas for content by assessing prior knowledge, gathering information from texts, and engaging in discussions with others. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L8",
+      "standard_code": "1.T.RA.2",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
+          "met": true,
+          "note": "Students are directed to read from their notes and use them as evidence during the Science Talk."
+        },
+        {
+          "clause": "Explore various sources of information, including print, digital, and personal communication.",
+          "met": true,
+          "note": "Students consult an anchor chart, a print book, images/videos, a photograph, and engage in a Science Talk."
+        }
+      ],
+      "evidence": "Remind students that they need to record their notes in a way that is useful to them, maybe with pictures and only a few words, so they can read from their notes and use them as evidence in the Science Talk. They should record only the information that they think is most important.",
+      "evidence_page": 290,
+      "confidence": "medium",
+      "rationale": "Students use their own written notes as textual evidence to answer the driving question in a Science Talk and draw on multiple sources (anchor chart, book, images/videos, photograph, and peers) across the lesson.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02214960058097313,
+        "dense_rank": 21,
+        "bm25_rank": 42,
+        "dense_score": 0.5211249,
+        "bm25_score": 47.91715142045637,
+        "rerank_score": 0.9891325831413269
+      },
+      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+    }
+  ]
+}

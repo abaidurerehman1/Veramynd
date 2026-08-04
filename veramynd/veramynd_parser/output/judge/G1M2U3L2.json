@@ -1,0 +1,456 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U3L2",
+  "lesson_source": "stage1:G1M2U3L2",
+  "retrieve_file": "output\\retrieve\\G1M2U3L2.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 3,
+    "partial": 2,
+    "none": 5
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 5,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L2",
+      "standard_code": "1.L.V.1",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Acquire general, academic, and specialized vocabulary words and phrases through grade-level texts and content.",
+          "met": true,
+          "note": "Students acquire adjectives and vocabulary from the text and anchor charts."
+        },
+        {
+          "clause": "Use grade-level general, academic, and specialized vocabulary words and phrases to communicate in a variety of settings.",
+          "met": true,
+          "note": "Students use vocabulary in discussion, role-play, and partner talk."
+        }
+      ],
+      "evidence": "Invite students to begin the Interactive Word Wall protocol.\n- Circulate and listen in as students discuss the vocabulary. Provide support and guidance as needed by reminding students of the definitions and encouraging them to use the word in a sentence.\n...\nAs students explain the connections between words, provide sentence frames to support oral language processing. (Example: 'I connected ___ and ___ because they ___.')\n...\nInvite students to turn and talk with an elbow partner:\n- 'What could the moon 'see' or observe?' (a raccoon; dark, leafy trees)\nCirculate and listen in as students share with each other. Record a selection of their ideas on the What the Moon Sees anchor chart.",
+      "evidence_page": 360,
+      "confidence": "high",
+      "rationale": "Students both acquire and use vocabulary from grade-level texts and content in multiple settings, including group discussion, partner talk, and role-play.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.026919758412424506,
+        "dense_rank": 1,
+        "bm25_rank": 35,
+        "dense_score": 0.6104796,
+        "bm25_score": 102.13529096810169,
+        "rerank_score": 0.9953849911689758
+      },
+      "standard_raw_text": "General, Academic, & Specialized Vocabulary: Acquire and use general, academic, and specialized vocabulary words and phrases in a variety of settings."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L2",
+      "standard_code": "1.L.V.1.a",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Acquire general, academic, and specialized vocabulary words and phrases through grade-level texts and content.",
+          "met": true,
+          "note": "Students acquire adjectives and vocabulary from the text and anchor charts."
+        },
+        {
+          "clause": "Apply general, academic, and specialized vocabulary words and phrases in appropriate contexts.",
+          "met": true,
+          "note": "Students use vocabulary in discussion, role-play, and partner talk."
+        }
+      ],
+      "evidence": "Invite students to begin the Interactive Word Wall protocol.\n- Circulate and listen in as students discuss the vocabulary. Provide support and guidance as needed by reminding students of the definitions and encouraging them to use the word in a sentence.\n...\nAs students explain the connections between words, provide sentence frames to support oral language processing. (Example: 'I connected ___ and ___ because they ___.')\n...\nInvite students to turn and talk with an elbow partner:\n- 'What could the moon 'see' or observe?' (a raccoon; dark, leafy trees)\nCirculate and listen in as students share with each other. Record a selection of their ideas on the What the Moon Sees anchor chart.",
+      "evidence_page": 360,
+      "confidence": "high",
+      "rationale": "Students acquire and apply vocabulary from grade-level texts and use it in context during discussions and activities.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.023642611683848798,
+        "dense_rank": 15,
+        "bm25_rank": 37,
+        "dense_score": 0.55073124,
+        "bm25_score": 100.4679505054134,
+        "rerank_score": 0.994070827960968
+      },
+      "standard_raw_text": "Acquire and apply general, academic, and specialized vocabulary words and phrases through grade-level texts and content. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L2",
+      "standard_code": "1.L.V.3",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use context within and beyond a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases.",
+          "met": true,
+          "note": "Students use illustrations and discussion to determine meanings of adjectives like quiet, empty, and silent."
+        },
+        {
+          "clause": "Identify the relationship between words and their synonyms and antonyms.",
+          "met": false,
+          "note": "Students connect words, but do not identify synonym/antonym relationships explicitly."
+        },
+        {
+          "clause": "Distinguish shades of meaning among verbs that describe the same general action.",
+          "met": false,
+          "note": "No activity distinguishing verb nuances."
+        },
+        {
+          "clause": "With teacher support, use a picture dictionary or digital resource to clarify the meaning of unknown words and phrases.",
+          "met": false,
+          "note": "No reference materials (picture dictionaries or digital resources) are used."
+        },
+        {
+          "clause": "Use knowledge of word relationships and learned vocabulary words and phrases when making word choices in speaking and writing.",
+          "met": true,
+          "note": "Students use learned adjectives in speaking during Interactive Word Wall, role-play, and turn-and-talk descriptions."
+        }
+      ],
+      "evidence": "Pause at page 18. Using a total participation technique, invite responses from the group:\n\"What do you see in the illustrations that helps you know it is a quiet barnyard?\" (Animals are sleeping; the animals are not moving.)\n\"What does quiet mean?\" (There is very little noise.)\nConfirm students' definition of quiet and point out how it is being used as an adjective because it describes a sound.",
+      "evidence_page": 361,
+      "confidence": "low",
+      "rationale": "Students use context from illustrations to determine meanings and apply learned adjectives in speaking, but they do not use reference materials, identify synonyms/antonyms, or distinguish verb shades of meaning. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.03200204813108039,
+        "dense_rank": 3,
+        "bm25_rank": 2,
+        "dense_score": 0.577449,
+        "bm25_score": 159.91462010110848,
+        "rerank_score": 0.9934338331222534
+      },
+      "standard_raw_text": "Make connections between words and phrases and use reference materials to determine or clarify word meanings in a variety of settings and for a variety of purposes."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L2",
+      "standard_code": "1.P.EICC.3",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Establish a purpose and set goals for reading",
+          "met": false,
+          "note": "Teacher posts/reads learning targets; students do not set their own purposes or goals."
+        },
+        {
+          "clause": "Monitor comprehension and adjust strategies as needed",
+          "met": false,
+          "note": "No explicit student monitoring or adjustment of strategies is described."
+        },
+        {
+          "clause": "Scan and skim the text to note useful structures and sections",
+          "met": false,
+          "note": "Teacher models finding the moon section; students are not directed to skim/scan themselves."
+        },
+        {
+          "clause": "Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps",
+          "met": true,
+          "note": "Students are invited to recall prior read-aloud learning to connect with the current text."
+        },
+        {
+          "clause": "Summarize and visualize sections of the text to maintain understanding",
+          "met": false,
+          "note": "Students role-play (visualize) but do not summarize sections of the text."
+        },
+        {
+          "clause": "Make and track predictions about upcoming events and information",
+          "met": false,
+          "note": "No prediction task is included."
+        },
+        {
+          "clause": "Make, track, and support inferences about different levels of meaning",
+          "met": true,
+          "note": "Students cite illustration evidence (e.g., sleeping animals) to infer meanings like \"quiet barnyard.\""
+        },
+        {
+          "clause": "Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts",
+          "met": true,
+          "note": "Students discuss meanings of adjectives (quiet, empty, silent) using illustration/text context; teacher confirms."
+        }
+      ],
+      "evidence": "Pause at page 18. Using a total participation technique, invite responses from the group:\n\"What do you see in the illustrations that helps you know it is a quiet barnyard?\" (Animals are sleeping; the animals are not moving.)\n\"What does quiet mean?\" (There is very little noise.)",
+      "evidence_page": 361,
+      "confidence": "low",
+      "rationale": "Students use comprehension strategies during/after reading (infer from illustrations and determine word meanings) and connect to prior knowledge. However, they do not set their own purpose, monitor/adjust strategies, skim/scan, summarize, or make predictions. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02886002886002886,
+        "dense_rank": 17,
+        "bm25_rank": 3,
+        "dense_score": 0.5485552,
+        "bm25_score": 155.08006236270782,
+        "rerank_score": 0.9929385781288147
+      },
+      "standard_raw_text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L2",
+      "standard_code": "1.L.V.1.b",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Use grade-level general vocabulary words and phrases to communicate.",
+          "met": true,
+          "note": "Students use general vocabulary in discussion and partner talk."
+        },
+        {
+          "clause": "Use grade-level academic vocabulary words and phrases to communicate.",
+          "met": true,
+          "note": "Students use academic vocabulary such as 'adjective,' 'connect,' and 'observe.'"
+        },
+        {
+          "clause": "Use grade-level specialized vocabulary words and phrases to communicate.",
+          "met": true,
+          "note": "Students use specialized vocabulary related to the moon and night (e.g., 'crescent,' 'sliver')."
+        }
+      ],
+      "evidence": "As students explain the connections between words, provide sentence frames to support oral language processing. (Example: 'I connected ___ and ___ because they ___.')\n...\nInvite students to turn and talk with an elbow partner:\n- 'What could the moon 'see' or observe?' (a raccoon; dark, leafy trees)\nCirculate and listen in as students share with each other. Record a selection of their ideas on the What the Moon Sees anchor chart.",
+      "evidence_page": 360,
+      "confidence": "high",
+      "rationale": "Students use general, academic, and specialized vocabulary in oral communication during multiple lesson activities.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.025003906860446942,
+        "dense_rank": 19,
+        "bm25_rank": 21,
+        "dense_score": 0.5466264,
+        "bm25_score": 114.49535908305943,
+        "rerank_score": 0.9920415282249451
+      },
+      "standard_raw_text": "Use grade-level general, academic, and specialized vocabulary words and phrases to communicate in a variety of settings. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L2",
+      "standard_code": "1.L.V.3.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Distinguish shades of meaning among verbs that describe the same general action.",
+          "met": false,
+          "note": "No evidence of students distinguishing shades of meaning among verbs."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on adjectives and their meanings, not on distinguishing shades of meaning among verbs.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.023137254901960787,
+        "dense_rank": 42,
+        "bm25_rank": 15,
+        "dense_score": 0.5182501,
+        "bm25_score": 118.93055092663411,
+        "rerank_score": 0.9894389510154724
+      },
+      "standard_raw_text": "Distinguish shades of meaning among verbs that describe the same general action (e.g., walk, march, strut, prance). (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L2",
+      "standard_code": "1.P.EICC.2.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Interpret texts to analyze ideas.",
+          "met": true,
+          "note": "Students interpret illustrations and discuss what the moon sees, using evidence and adjectives from the text and images."
+        },
+        {
+          "clause": "Construct texts to evaluate ideas.",
+          "met": false,
+          "note": "Students do not create a text in this lesson; writing a class poem is planned for the next lesson and no evaluation task occurs."
+        }
+      ],
+      "evidence": "- Display the What the Moon Sees anchor chart and tell students that they are now going to look back at the illustrations to generate ideas of what the moon sees at night during this story.\n- Flip through the illustrations on pages 15-28. Pause at each page and invite students to say out loud what the moon sees on that page and add it to the What the Moon Sees anchor chart. Refer to What the Moon Sees anchor chart (answers, for teacher reference) as necessary.",
+      "evidence_page": 361,
+      "confidence": "high",
+      "rationale": "Students interpret a literary text and visual media to articulate ideas, but they do not construct any texts nor engage in evaluation in this lesson. Writing is explicitly deferred to the next lesson.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02058516196447231,
+        "dense_rank": 27,
+        "bm25_rank": 50,
+        "dense_score": 0.53739816,
+        "bm25_score": 92.74430952168483,
+        "rerank_score": 0.9878266453742981
+      },
+      "standard_raw_text": "Interpret and construct texts to aid the analysis and evaluation of texts and ideas. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L2",
+      "standard_code": "1.P.EICC.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Engage in spoken or written dialogue as an author and audience.",
+          "met": true,
+          "note": "Students frequently engage in partner and group discussions (turn-and-talk, role-play, Pinky Partners), speaking and listening to one another."
+        },
+        {
+          "clause": "Make intentional connections within texts.",
+          "met": true,
+          "note": "Students use illustrations to support understanding of descriptive words and identify what the moon sees on specific pages."
+        },
+        {
+          "clause": "Make intentional connections between texts.",
+          "met": false,
+          "note": "Students view photos and videos after the read-aloud, but they are not asked to relate or compare these to the book."
+        },
+        {
+          "clause": "Make intentional connections beyond texts to other knowledge or experiences.",
+          "met": false,
+          "note": "No explicit prompt for students to connect to personal experiences or real-life knowledge."
+        }
+      ],
+      "evidence": "- Pause at page 18. Using a total participation technique, invite responses from the group:\n- 'What do you see in the illustrations that helps you know it is a quiet barnyard?' (Animals are sleeping; the animals are not moving.)",
+      "evidence_page": 361,
+      "confidence": "high",
+      "rationale": "Students participate in spoken dialogue and make within-text connections by using illustrations to justify understanding. The lesson does not direct students to make explicit connections between texts or beyond texts to personal experiences.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.028665028665028666,
+        "dense_rank": 6,
+        "bm25_rank": 14,
+        "dense_score": 0.56929797,
+        "bm25_score": 119.11054002214058,
+        "rerank_score": 0.9874919652938843
+      },
+      "standard_raw_text": "Engage in written or spoken dialogue as author and audience for a variety of tasks and purposes, making intentional connections within, between, and beyond texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L2",
+      "standard_code": "1.P.CP.1.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Work with others to discuss topics.",
+          "met": true,
+          "note": "Students discuss vocabulary in small groups, turn-and-talk with partners, and use partner protocols to discuss guiding questions."
+        },
+        {
+          "clause": "Work with others to investigate questions.",
+          "met": true,
+          "note": "Students, in partners, investigate what the moon could see by viewing photographs/videos and answering questions together."
+        },
+        {
+          "clause": "Work with others to solve problems.",
+          "met": false,
+          "note": "No explicit problem-solving task is assigned to students."
+        },
+        {
+          "clause": "Work with others to explore texts.",
+          "met": true,
+          "note": "Students collaboratively explore the book’s illustrations and role-play selected pages to deepen understanding."
+        },
+        {
+          "clause": "Work with others to create texts.",
+          "met": false,
+          "note": "Text creation is deferred to the next lesson; no collaborative composing occurs in this lesson."
+        }
+      ],
+      "evidence": "Invite students to turn and talk with an elbow partner:\n\"What could the moon 'see' or observe?\" (a raccoon; dark, leafy trees)\nCirculate and listen in as students share with each other. Record a selection of their ideas on the What the Moon Sees anchor chart.",
+      "evidence_page": 364,
+      "confidence": "low",
+      "rationale": "Students collaborate to discuss and investigate questions and explore a text, but they do not collaboratively solve problems or create texts in this lesson. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02661401098901099,
+        "dense_rank": 31,
+        "bm25_rank": 4,
+        "dense_score": 0.5340289,
+        "bm25_score": 148.96751362096325,
+        "rerank_score": 0.9858455657958984
+      },
+      "standard_raw_text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L2",
+      "standard_code": "1.T.RA.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
+          "met": true,
+          "note": "Students cite specific illustration details to justify answers during the read-aloud."
+        },
+        {
+          "clause": "Explore various sources of information, including print, digital, and personal communication.",
+          "met": true,
+          "note": "Students examine a print text, photographs, and videos to gather observations about night."
+        }
+      ],
+      "evidence": "Pause at page 18. Using a total participation technique, invite responses from the group:\n\"What do you see in the illustrations that helps you know it is a quiet barnyard?\" (Animals are sleeping; the animals are not moving.) ... With excitement, tell students that they will now participate in a close viewing of some photographs and videos to brainstorm more ideas of what the moon might \"see\" throughout the night. ... Display night photograph 1 and provide time for students to silently view it. ... Play \"Wildlife in the Backyard at Night.\" ... Play \"Downtown Boston at Night.\"",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "Students reference parts of the text (illustrations) to support answers and explore multiple sources (book, photos, videos) to develop ideas about the topic. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02844163539403516,
+        "dense_rank": 23,
+        "bm25_rank": 1,
+        "dense_score": 0.5412383,
+        "bm25_score": 178.32871200859043,
+        "rerank_score": 0.9855624437332153
+      },
+      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+    }
+  ]
+}

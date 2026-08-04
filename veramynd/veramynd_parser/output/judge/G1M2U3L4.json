@@ -1,0 +1,501 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U3L4",
+  "lesson_source": "stage1:G1M2U3L4",
+  "retrieve_file": "output\\retrieve\\G1M2U3L4.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 1,
+    "partial": 3,
+    "none": 6
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 4,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L4",
+      "standard_code": "1.P.EICC.4",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Establish a purpose and goals for writing and identify a target audience.",
+          "met": false,
+          "note": "Purpose/genre are teacher-assigned; no student identification of audience or goals."
+        },
+        {
+          "clause": "Plan how to organize the text by selecting modes, genres, and structures that will achieve the purpose and meet the needs of the target audience.",
+          "met": true,
+          "note": "Students use a verse planner to determine structural elements (time, what the moon looks like/does/sees)."
+        },
+        {
+          "clause": "Generate ideas for content by assessing prior knowledge, gathering information from texts, and engaging in discussions with others.",
+          "met": true,
+          "note": "Students discuss ideas with partners and draw on anchor charts/previous texts."
+        },
+        {
+          "clause": "Link ideas and information to the organization plan, highlighting ideas and information that are most relevant, useful, and impactful.",
+          "met": true,
+          "note": "Students decide which ideas to add and record the most important parts on the planner."
+        },
+        {
+          "clause": "Construct an initial draft by integrating ideas and information; selecting words, phrases, and sentences; and incorporating craft techniques that will best achieve the purpose of the text and resonate with the target audience.",
+          "met": false,
+          "note": "Teacher conducts shared writing; students do not independently draft sentences."
+        },
+        {
+          "clause": "Evaluate the text's effectiveness based on self-review or feedback from others, determining whether the text matches the purpose and goals for writing.",
+          "met": true,
+          "note": "Students analyze the class verses for high-quality features and discuss why."
+        },
+        {
+          "clause": "Make changes to the text based on self-evaluation or external feedback, revising the organization, ideas, information, word choices, and craft techniques in order to increase the text's effectiveness.",
+          "met": false,
+          "note": "No revising step is described."
+        },
+        {
+          "clause": "Edit the text, ensuring it adheres to the conventions of written language.",
+          "met": false,
+          "note": "Conventions are discussed, but students do not edit a text."
+        }
+      ],
+      "evidence": "Tell students that they will first work with a partner to talk about and write their ideas for the 'What the Moon Sees' verse planner for verse 2. Move students into pre-determined pairs and ask them to remain in the whole group meeting area. Invite students to turn and talk with their partner: Circulate and listen in as students discuss. As needed, remind students to show respect for one another's ideas by listening intently and taking turns to speak. Direct students' attention back to the 'What the Moon Sees' verse planner. Tell them that now they will decide on which ideas to add to the verse planner as they fill it out. Tell students that at their workspace, they will find the 'What the Moon Sees' verse planner and pencils. Dismiss students to their workspaces and invite them to begin writing.",
+      "evidence_page": 381,
+      "confidence": "low",
+      "rationale": "Students plan, generate, and organize ideas collaboratively and evaluate the class text, but they do not independently draft, revise, or edit. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.030834914611005692,
+        "dense_rank": 8,
+        "bm25_rank": 2,
+        "dense_score": 0.5931696,
+        "bm25_score": 77.18027754599295,
+        "rerank_score": 0.9961884617805481
+      },
+      "standard_raw_text": "Compose a range of texts for a variety of purposes and audiences, flexibly engaging in writing processes to plan, draft, evaluate, revise, and edit texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L4",
+      "standard_code": "1.P.EICC.4.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Generate ideas for writing by assessing prior knowledge.",
+          "met": true,
+          "note": "Students use prior knowledge and anchor charts to generate ideas."
+        },
+        {
+          "clause": "Generate ideas for writing by gathering information from texts.",
+          "met": true,
+          "note": "Students use information from books read throughout the module and anchor charts."
+        },
+        {
+          "clause": "Generate ideas for writing by engaging in discussions with others.",
+          "met": true,
+          "note": "Students discuss ideas with partners and in groups."
+        }
+      ],
+      "evidence": "Tell students that they will first work with a partner to talk about and write their ideas for the 'What the Moon Sees' verse planner for verse 2.\nMove students into pre-determined pairs and ask them to remain in the whole group meeting area.\nInvite students to turn and talk with their partner:\nCirculate and listen in as students discuss. As needed, remind students to show respect for one another's ideas by listening intently and taking turns to speak.",
+      "evidence_page": 381,
+      "confidence": "high",
+      "rationale": "All three ways of generating ideas (prior knowledge, information from texts, and discussion) are explicitly practiced by students in the lesson.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.024725274725274724,
+        "dense_rank": 24,
+        "bm25_rank": 18,
+        "dense_score": 0.5448268,
+        "bm25_score": 65.41007633661839,
+        "rerank_score": 0.9952149391174316
+      },
+      "standard_raw_text": "Generate ideas for content by assessing prior knowledge, gathering information from texts, and engaging in discussions with others. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L4",
+      "standard_code": "1.P.EICC.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Share real experiences by telling or writing stories.",
+          "met": false,
+          "note": "Lesson focuses on imagined experiences."
+        },
+        {
+          "clause": "Share imagined experiences by telling or writing stories.",
+          "met": true,
+          "note": "Students write a narrative poem about what the moon sees (imagined)."
+        },
+        {
+          "clause": "Interpret stories that tell or include real or imagined experiences.",
+          "met": true,
+          "note": "Students read and discuss a model narrative poem."
+        }
+      ],
+      "evidence": "Tell students they will write a class narrative poem titled 'What the Moon Sees.'\nInvite students to turn and talk with an elbow partner as you point to each line of the verse and ask:\nCold call two or three students to share out.\nTell students that they will first work with a partner to talk about and write their ideas for the 'What the Moon Sees' verse planner for verse 2.\nDismiss students to their workspaces and invite them to begin writing.",
+      "evidence_page": 380,
+      "confidence": "low",
+      "rationale": "Students interpret a model narrative poem and collaboratively write their own imagined narrative, meeting the standard's requirements. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.0239010989010989,
+        "dense_rank": 10,
+        "bm25_rank": 44,
+        "dense_score": 0.5769429,
+        "bm25_score": 54.53906719355701,
+        "rerank_score": 0.9951733946800232
+      },
+      "standard_raw_text": "Share real or imagined experiences by interpreting and constructing texts that tell or include stories. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L4",
+      "standard_code": "1.P.AC.3",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Explore and create texts in various modes and genres, developing and applying knowledge of how specific features impact meaning, tone, style, purpose, and audience.",
+          "met": false,
+          "note": "Students work with a single narrative poem; there is no explicit consideration of audience/purpose or features' impact across modes/genres."
+        },
+        {
+          "clause": "Apply knowledge of how mode and genre impact what kinds of ideas and information are included in texts.",
+          "met": true,
+          "note": "Students identify what information belongs in this poem (time, appearance, actions, observations) and plan accordingly using the model."
+        },
+        {
+          "clause": "Apply knowledge of how mode and genre impact how ideas and information are structured and arranged in texts.",
+          "met": true,
+          "note": "Students recognize and use the poem’s organizational parts from the model to plan their verse with a structured planner."
+        },
+        {
+          "clause": "Consume and produce multimodal texts, integrating a variety of genres, text features, and craft techniques to influence target audiences and achieve specific purposes.",
+          "met": false,
+          "note": "The lesson involves a single written poem; no multimodal production or targeting of a specific audience/purpose is present."
+        }
+      ],
+      "evidence": "Invite students to turn and talk with an elbow partner:\n\"What do you notice about the information included on the verse planner?\"(It asks for the time, what the moon looks like, what the moon does, and what the moon sees, just like the parts of verse 1.)\nConfirm students' understanding that the verse planner is just to plan the writing, and point out that it does not contain complete sentences.\nTell them that they should record the most important part of the idea, just as they did when taking notes in Unit 2.\nTell students that they will first work with a partner to talk about and write their ideas for the 'What the Moon Sees' verse planner for verse 2.",
+      "evidence_page": 381,
+      "confidence": "low",
+      "rationale": "Students analyze and plan a narrative poem using the model’s structural parts and then write ideas into a verse planner. However, they do not address audience or purpose, do not work across modes/genres, and do not produce multimodal texts. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.014925373134328358,
+        "dense_rank": 7,
+        "bm25_rank": null,
+        "dense_score": 0.5937269,
+        "bm25_score": null,
+        "rerank_score": 0.9950957894325256
+      },
+      "standard_raw_text": "Consider the impact of text design on audience and purpose when consuming and producing texts across modes and genres."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L4",
+      "standard_code": "1.T.T.1.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use knowledge of characters in narratives to create texts.",
+          "met": false,
+          "note": "Students discuss ideas and fill a planner; the teacher writes the class verse. No student-authored narrative text is created."
+        },
+        {
+          "clause": "Use knowledge of settings in narratives to create texts.",
+          "met": false,
+          "note": "Setting words are discussed and planned, but students do not write the narrative text themselves."
+        },
+        {
+          "clause": "Use knowledge of events in narratives to create texts.",
+          "met": false,
+          "note": "Students note ideas (e.g., what the moon sees/does) but the teacher composes the verse."
+        },
+        {
+          "clause": "Create texts that share real or imagined experiences and events.",
+          "met": false,
+          "note": "The final narrative poem verse is written through teacher shared writing; students do not produce their own text."
+        },
+        {
+          "clause": "Include a sense of closure in created texts.",
+          "met": false,
+          "note": "Only verse 2 of a poem is composed; no closure is planned or written by students."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students plan ideas and participate in shared writing led by the teacher, but they do not independently create a narrative text, and no sense of closure is included.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.026397515527950312,
+        "dense_rank": 9,
+        "bm25_rank": 24,
+        "dense_score": 0.582503,
+        "bm25_score": 63.525419566776,
+        "rerank_score": 0.9947052597999573
+      },
+      "standard_raw_text": "Use knowledge of narrative techniques (e.g., characters, settings, events) to create texts that share real or imagined experiences and events with a sense of closure. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L4",
+      "standard_code": "1.T.T.3.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use knowledge of opinion techniques to create opinion pieces.",
+          "met": false,
+          "note": "Lesson is focused on narrative poetry, not opinion writing."
+        },
+        {
+          "clause": "Introduce the topic in the opinion piece.",
+          "met": false,
+          "note": "No opinion pieces are written."
+        },
+        {
+          "clause": "State an opinion about the topic.",
+          "met": false,
+          "note": "No opinion stated."
+        },
+        {
+          "clause": "Provide two or more reasons to support the opinion.",
+          "met": false,
+          "note": "No reasons given for an opinion."
+        },
+        {
+          "clause": "Use linking words such as 'and' and 'because' to connect reasons to the opinion.",
+          "met": false,
+          "note": "No opinion writing or linking words used for reasons."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson does not involve opinion writing or any of the required elements for this standard.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.019378393559258564,
+        "dense_rank": 49,
+        "bm25_rank": 38,
+        "dense_score": 0.510577,
+        "bm25_score": 55.54456069769386,
+        "rerank_score": 0.9944039583206177
+      },
+      "standard_raw_text": "Use knowledge of opinion techniques to create opinion pieces that introduce the topic, state an opinion about the topic, and provides two or more reasons to support the opinion with linking words and and because. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L4",
+      "standard_code": "1.T.T.2.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic.",
+          "met": false,
+          "note": "No expository writing is produced."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to supply facts about the topic.",
+          "met": false,
+          "note": "No facts are supplied in an expository format."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to provide a sense of closure.",
+          "met": false,
+          "note": "No expository closure present."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson is focused on narrative poetry, not expository writing.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.023684210526315787,
+        "dense_rank": 35,
+        "bm25_rank": 16,
+        "dense_score": 0.5357228,
+        "bm25_score": 65.70827509379762,
+        "rerank_score": 0.9934142827987671
+      },
+      "standard_raw_text": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L4",
+      "standard_code": "1.P.EICC.1.e",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Develop group norms for participation in a community of readers and writers",
+          "met": false,
+          "note": "Students follow established protocols and teacher reminders; they do not develop norms themselves."
+        },
+        {
+          "clause": "Discuss texts with others in the group",
+          "met": true,
+          "note": "Students turn and talk to discuss lines of the model poem."
+        },
+        {
+          "clause": "Share individual writing with the group",
+          "met": false,
+          "note": "Students plan and write notes, but there is no sharing of individual writing."
+        },
+        {
+          "clause": "Listen to others as they share their writing",
+          "met": false,
+          "note": "No peer sharing of writing occurs for students to listen to."
+        },
+        {
+          "clause": "Offer feedback on peers' writing",
+          "met": false,
+          "note": "Students analyze class writing but do not give feedback to peers’ individual writing."
+        },
+        {
+          "clause": "Respond to feedback received on own writing",
+          "met": false,
+          "note": "No activity has students respond to feedback on their own writing."
+        }
+      ],
+      "evidence": "- Invite students to turn and talk with an elbow partner as you point to each line of the verse and ask:",
+      "evidence_page": 380,
+      "confidence": "high",
+      "rationale": "Students discuss the model poem with partners, but they neither develop norms nor share, listen to, or exchange feedback on individual writing. Only the discussion component is clearly present.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02470238095238095,
+        "dense_rank": 36,
+        "bm25_rank": 10,
+        "dense_score": 0.5352297,
+        "bm25_score": 68.39564727229977,
+        "rerank_score": 0.9925812482833862
+      },
+      "standard_raw_text": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing individual writing, listening as others share their writing, and offering and responding to feedback. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L4",
+      "standard_code": "1.P.AC.3.a",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Explore texts in various modes and genres to understand how specific features impact meaning, tone, style, purpose, and audience.",
+          "met": true,
+          "note": "Students analyze a model poem’s features (e.g., adjectives and prepositional phrases) and discuss how they add detail and meaning."
+        },
+        {
+          "clause": "Create texts in various modes and genres applying knowledge of how features affect meaning, tone, style, purpose, and audience.",
+          "met": false,
+          "note": "Students plan ideas and participate in shared writing, but the teacher composes the poem; students do not independently create the text in this lesson."
+        }
+      ],
+      "evidence": "For ELLs: Mini Language Dive. Ask students about the meaning of chunks from the 'What the Moon Sees' poem. Write and display student responses next to the chunks. Examples:\n- -Point to the chunk The thin, silver moon. Ask:\n'What are thin and silver, and what are they doing?' (adjectives describing moon; details)\n'Can we say The moon thin, silver? Why?' (No. The adjectives should come before the thing/noun.)\n'Can we say silver, thin moon? Why?' (No. The shape adjective should come before the color adjective.)\n- -Read and point to the chunk above the hill and sketch a hill.\n'Can you sketch the moon above the hill?' (Look for students to sketch the moon above the hill.)\n- -Read and point to the chunk on the kitchen table and sketch a kitchen table.\n'Can you sketch dinner on the kitchen table?' (Look for students to sketch as much.)\n- -Reread both prepositional phrases and say:\n'Why did the writer use the words above and on?' (to tell us where the moon and dinner are; to add detail)\n'How can you use words like above and on when you write?' (to tell readers where things are; to add detail)",
+      "evidence_page": 380,
+      "confidence": "medium",
+      "rationale": "Students closely examine a model poem’s features and their effects, satisfying the exploration component. However, they only plan and contribute ideas while the teacher writes the poem, so the creation component is not met in this lesson.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.015625,
+        "dense_rank": 4,
+        "bm25_rank": null,
+        "dense_score": 0.6084237,
+        "bm25_score": null,
+        "rerank_score": 0.992283046245575
+      },
+      "standard_raw_text": "Explore and create texts in various modes and genres, developing and applying knowledge of how specific features impact meaning, tone, style, purpose, and audience. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L4",
+      "standard_code": "1.P.EICC.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Engage in spoken or written dialogue as an author and audience.",
+          "met": true,
+          "note": "Students discuss and plan writing with partners and share ideas, engaging as speakers and listeners while authoring."
+        },
+        {
+          "clause": "Make intentional connections within texts.",
+          "met": false,
+          "note": "Students read and discuss a poem, but there is no explicit task directing them to make connections within a text."
+        },
+        {
+          "clause": "Make intentional connections between texts.",
+          "met": false,
+          "note": "Only one text is used; no student task compares or connects across multiple texts."
+        },
+        {
+          "clause": "Make intentional connections beyond texts to other knowledge or experiences.",
+          "met": false,
+          "note": "No explicit text-to-self or text-to-world connection task is assigned to students."
+        }
+      ],
+      "evidence": "Tell students that they will first work with a partner to talk about and write their ideas for the 'What the Moon Sees' verse planner for verse 2. Move students into pre-determined pairs and ask them to remain in the whole group meeting area. Invite students to turn and talk with their partner:",
+      "evidence_page": 381,
+      "confidence": "medium",
+      "rationale": "Students clearly engage in spoken dialogue to plan and share writing, but the lesson does not require students to make intentional connections within, between, or beyond texts.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02072594501718213,
+        "dense_rank": 37,
+        "bm25_rank": 36,
+        "dense_score": 0.5348124,
+        "bm25_score": 56.08108595629399,
+        "rerank_score": 0.9905334711074829
+      },
+      "standard_raw_text": "Engage in written or spoken dialogue as author and audience for a variety of tasks and purposes, making intentional connections within, between, and beyond texts."
+    }
+  ]
+}

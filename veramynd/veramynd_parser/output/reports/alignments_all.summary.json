@@ -23,13 +23,25 @@
     "output\\judge\\G1M2U2L2.json",
     "output\\judge\\G1M2U2L3.json",
     "output\\judge\\G1M2U2L4.json",
-    "output\\judge\\G1M2U2L5.json"
+    "output\\judge\\G1M2U2L5.json",
+    "output\\judge\\G1M2U2L6.json",
+    "output\\judge\\G1M2U2L7.json",
+    "output\\judge\\G1M2U2L8.json",
+    "output\\judge\\G1M2U2L9.json",
+    "output\\judge\\G1M2U3L1.json",
+    "output\\judge\\G1M2U3L10.json",
+    "output\\judge\\G1M2U3L11.json",
+    "output\\judge\\G1M2U3L12.json",
+    "output\\judge\\G1M2U3L13.json",
+    "output\\judge\\G1M2U3L2.json",
+    "output\\judge\\G1M2U3L3.json",
+    "output\\judge\\G1M2U3L4.json"
   ],
-  "row_count": 230,
+  "row_count": 350,
   "by_status_all_verdicts": {
-    "full": 49,
-    "partial": 64,
-    "none": 117
+    "full": 76,
+    "partial": 97,
+    "none": 177
   },
   "filtered_out_by_status": 0,
   "filtered_out_ungrounded": 0,

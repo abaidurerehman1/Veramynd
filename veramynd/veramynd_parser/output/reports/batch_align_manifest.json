@@ -43,11 +43,11 @@
   ],
   "failed": [
     {
-      "resource_id": "G1M2U2L6",
+      "resource_id": "G1M2U3L5",
       "stage": "judge",
       "error": "OpenAI API quota exhausted (insufficient_quota). Add credits or raise limits at https://platform.openai.com/account/billing \u2014 this error is not retryable."
     }
   ],
-  "elapsed_sec": 5809.1,
+  "elapsed_sec": 2152.9,
   "ok_count": 39
 }

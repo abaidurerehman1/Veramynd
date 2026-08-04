@@ -1,0 +1,451 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U2L6",
+  "lesson_source": "stage1:G1M2U2L6",
+  "retrieve_file": "output\\retrieve\\G1M2U2L6.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 2,
+    "partial": 3,
+    "none": 5
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 5,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L6",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Explain concepts by interpreting texts.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Learn concepts by interpreting texts.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "Guide students through the close read-aloud for What Makes Day and Night... During the culminating task, refer to the guide for the use of: What Makes Day and Night... What Makes Day and Night Culminating Task diagram... Offer students specific, positive feedback on the close reading skills they used as they answered the focus question: 'What makes day and night on earth?'... students will write independently in their Sky notebook to describe a new moon photograph... opportunity to describe the location of the moon in the picture through shared writing.",
+      "evidence_page": 267,
+      "confidence": "low",
+      "rationale": "Students interpret the text 'What Makes Day and Night' to learn and explain the concept of day and night, and construct diagrams and written responses to demonstrate their understanding. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.016129032258064516,
+        "dense_rank": 2,
+        "bm25_rank": null,
+        "dense_score": 0.5752274,
+        "bm25_score": null,
+        "rerank_score": 0.9927065968513489
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L6",
+      "standard_code": "1.T.T.2.a",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify the main topic in an expository text.",
+          "met": false,
+          "note": "Students answer content questions about the text but are not explicitly asked to identify the main topic of the expository text."
+        },
+        {
+          "clause": "Identify supporting details in an expository text.",
+          "met": true,
+          "note": "Students consult notes and provide details/evidence when responding during the Science Talk."
+        },
+        {
+          "clause": "Recognize techniques used to craft expository texts.",
+          "met": false,
+          "note": "Lesson does not ask students to identify or recognize expository text features/techniques."
+        }
+      ],
+      "evidence": "Point to the image of a person holding a paper. Tell students that they should consult their notes to find evidence to answer the question. Point to the image of one group member talking. Tell students that one group member should start by offering an answer to the question with some details. Point to the image of many group members talking. Tell students that they will use their notes to take turns responding to their group member's answer. Each time they respond, they should try using a sentence starter.",
+      "evidence_page": 268,
+      "confidence": "medium",
+      "rationale": "Students use notes to provide evidence and details from the informational text, but the lesson does not explicitly require identifying the main topic or recognizing expository text techniques.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.023403679653679656,
+        "dense_rank": 17,
+        "bm25_rank": 36,
+        "dense_score": 0.5404657,
+        "bm25_score": 71.55939291500228,
+        "rerank_score": 0.9913936257362366
+      },
+      "standard_raw_text": "Identify techniques used to craft expository texts, including main topic and supporting details. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L6",
+      "standard_code": "1.T.T.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "met": false,
+          "note": "Students answer content questions and make a diagram, but they are not explicitly identifying main topic/supporting details or expository techniques."
+        },
+        {
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "met": true,
+          "note": "In Science Talk, students discuss what makes night/day, explaining causal connections using ideas drawn from the informational text and notes."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "met": false,
+          "note": "No student-created explanatory writing with introduction, facts, and closure; activities are discussion, diagramming, and brief descriptive sentences."
+        }
+      ],
+      "evidence": "Guide students through each step of the Science Talk protocol using the question: 'What makes night?' Circulate to observe students as they discuss. Gather data on SL.1.1a, SL.1.1b, SL.1.4, and SL.1.6 using the Speaking and Listening Checklist. Prompt students with questions to help them expand on their ideas.",
+      "evidence_page": 268,
+      "confidence": "high",
+      "rationale": "Students engage in a discussion explaining what makes night/day, describing connections between ideas from an informational text. They do not explicitly identify expository techniques nor produce an explanatory piece with introduction, facts, and closure.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.030536130536130537,
+        "dense_rank": 5,
+        "bm25_rank": 6,
+        "dense_score": 0.5689946,
+        "bm25_score": 96.19303716397609,
+        "rerank_score": 0.990799605846405
+      },
+      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L6",
+      "standard_code": "1.T.RA.2",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
+          "met": true,
+          "note": "Students use specific parts of the informational text (pictures and read-aloud) to answer the focus question and create a diagram; they also consult notes as evidence during discussion."
+        },
+        {
+          "clause": "Explore various sources of information, including print, digital, and personal communication.",
+          "met": true,
+          "note": "Lesson engages students with an informational book, a poem, photographs/videos of the sky, and a Science Talk with peers, representing multiple sources and modes."
+        }
+      ],
+      "evidence": "Offer students specific, positive feedback on the close reading skills they used as they answered the focus question: 'What makes day and night on earth?' (Example: 'Everyone looked closely at the pictures in the text and listened to the text read aloud to answer the focus question and create their final diagram of day and night on earth.')",
+      "evidence_page": 267,
+      "confidence": "medium",
+      "rationale": "Students reference parts of an informational text to answer a science question and construct a diagram, and they work with multiple sources (text, images/videos, and peer discussion/notes).",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.025989268947015427,
+        "dense_rank": 24,
+        "bm25_rank": 11,
+        "dense_score": 0.5313273,
+        "bm25_score": 91.5565832666394,
+        "rerank_score": 0.9902021884918213
+      },
+      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L6",
+      "standard_code": "1.P.EICC.2.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Interpret texts to analyze ideas.",
+          "met": true,
+          "note": "Students use an informational text to answer the focus question about what makes day and night and create a diagram based on the text."
+        },
+        {
+          "clause": "Construct texts to evaluate ideas.",
+          "met": false,
+          "note": "Students construct a diagram and descriptive writing, but these are used to explain/describe, not to evaluate ideas."
+        }
+      ],
+      "evidence": "Offer students specific, positive feedback on the close reading skills they used as they answered the focus question: \"What makes day and night on earth?\" (Example: \"Everyone looked closely at the pictures in the text and listened to the text read aloud to answer the focus question and create their final diagram of day and night on earth.\")",
+      "evidence_page": 267,
+      "confidence": "low",
+      "rationale": "The lesson has students interpret an informational text to answer a focus question and create a related diagram, meeting the interpretation/analysis demand. However, students do not construct texts for the purpose of evaluating ideas, so that clause is not met. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02441520467836257,
+        "dense_rank": 12,
+        "bm25_rank": 35,
+        "dense_score": 0.54824203,
+        "bm25_score": 72.32359220373445,
+        "rerank_score": 0.9889752864837646
+      },
+      "standard_raw_text": "Interpret and construct texts to aid the analysis and evaluation of texts and ideas. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L6",
+      "standard_code": "1.P.ST.1",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use prior knowledge, research, and discussions to identify key context components.",
+          "met": false,
+          "note": "No explicit focus on context components such as geographic location, culture, or time period."
+        },
+        {
+          "clause": "Consider how context impacts the purposes of the author and the audience.",
+          "met": false,
+          "note": "No evidence students consider author/audience purpose in context."
+        },
+        {
+          "clause": "Explore how context shapes the author's decisions and the audience's responses during text interpretation and construction.",
+          "met": false,
+          "note": "No evidence students explore how context shapes author/audience decisions."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson does not address context components such as background, location, culture, or time period in interpreting or constructing texts.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.022149202872094438,
+        "dense_rank": 23,
+        "bm25_rank": 39,
+        "dense_score": 0.5316975,
+        "bm25_score": 71.25358257222598,
+        "rerank_score": 0.9872884750366211
+      },
+      "standard_raw_text": "Develop and apply knowledge of key components of context such as background information, geographic location, cultural influences, time period, and contemporary events when interpreting and constructing texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L6",
+      "standard_code": "1.P.EICC.3.d",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Summarize sections of the text to maintain understanding.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Visualize sections of the text to maintain understanding.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "Offer students specific, positive feedback on the close reading skills they used as they answered the focus question: 'What makes day and night on earth?' (Example: 'Everyone looked closely at the pictures in the text and listened to the text read aloud to answer the focus question and create their final diagram of day and night on earth.')",
+      "evidence_page": 267,
+      "confidence": "high",
+      "rationale": "Students summarize what makes day and night and create diagrams to visualize their understanding.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.024451318309029312,
+        "dense_rank": 13,
+        "bm25_rank": 33,
+        "dense_score": 0.54645807,
+        "bm25_score": 73.45431561943028,
+        "rerank_score": 0.987143337726593
+      },
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L6",
+      "standard_code": "1.P.ST.1.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use prior knowledge to identify relevant context components.",
+          "met": false,
+          "note": "Students reference prior notes, but they are not identifying components of context; they are explaining scientific content (day/night)."
+        },
+        {
+          "clause": "Use formal or informal research to find contextual information.",
+          "met": false,
+          "note": "Students observe a single moon photograph and write observations, but there is no research to find contextual information nor identification of context components."
+        },
+        {
+          "clause": "Engage in discussions with others to determine key context components.",
+          "met": false,
+          "note": "Science Talk focuses on answering what makes day/night, not on determining key components of context for interpreting or constructing texts."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson centers on content understanding of day/night, a Science Talk, and descriptive writing from a photograph. It does not have students identify key components of context through prior knowledge, research, or discussion.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.023088023088023088,
+        "dense_rank": 39,
+        "bm25_rank": 17,
+        "dense_score": 0.5088785,
+        "bm25_score": 83.63525561494048,
+        "rerank_score": 0.9866536259651184
+      },
+      "standard_raw_text": "Use prior knowledge, formal or informal research, and discussions with others to identify the key components of context that are most relevant. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L6",
+      "standard_code": "1.T.C.1",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify the general purpose of a variety of texts.",
+          "met": false,
+          "note": "Students read/observe texts but are not asked to identify author purpose."
+        },
+        {
+          "clause": "Identify the target audience of a variety of texts.",
+          "met": false,
+          "note": "No activity addresses identifying a text's audience."
+        },
+        {
+          "clause": "Identify different modes of communication: print, digital, auditory, and visual.",
+          "met": false,
+          "note": "Modes are used (poem read-aloud, images), but students do not identify or classify modes."
+        },
+        {
+          "clause": "Create texts in teacher-selected modes such as print, digital, auditory, and/or visual.",
+          "met": true,
+          "note": "Students create a diagram (visual) and write in a Sky notebook (print)."
+        }
+      ],
+      "evidence": "Tell students that today they will write independently in their Sky notebook to describe a new moon photograph using adjectives from the Adjectives anchor chart.\n- Display moon photograph 4.\n- Invite students to turn and talk to an elbow partner:\n- Display page 4 of the Sky notebook and follow the same process established in Lesson 5 by reading the prompt aloud, encouraging students to use pictures and words to show their thinking, and reminding them to use the Adjectives anchor chart for their descriptions.",
+      "evidence_page": 270,
+      "confidence": "high",
+      "rationale": "Students produce texts (print/visual), but do not identify author purpose, audience, or modes. Thus only the creation clause is met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.014925373134328358,
+        "dense_rank": 7,
+        "bm25_rank": null,
+        "dense_score": 0.56411684,
+        "bm25_score": null,
+        "rerank_score": 0.9864805340766907
+      },
+      "standard_raw_text": "Explain how authors of texts use language for a specific purpose and a target audience."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L6",
+      "standard_code": "1.P.EICC.3",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Establish a purpose and set goals for reading",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Monitor comprehension and adjust strategies as needed",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Scan and skim the text to note useful structures and sections",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Summarize and visualize sections of the text to maintain understanding",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Make and track predictions about upcoming events and information",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Make, track, and support inferences about different levels of meaning",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "Direct students' attention to the learning targets and read the first one aloud: 'I can participate in a Science Talk about what makes day and night on earth using information from my notes as evidence.'... Guide students through the close read-aloud for What Makes Day and Night... Offer students specific, positive feedback on the close reading skills they used as they answered the focus question: 'What makes day and night on earth?'... students will write independently in their Sky notebook to describe a new moon photograph... opportunity to describe the location of the moon in the picture through shared writing.",
+      "evidence_page": 267,
+      "confidence": "low",
+      "rationale": "Students engage with the text for a clear purpose, use comprehension strategies before, during, and after reading, and demonstrate understanding through discussion, writing, and visualization. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02797339593114241,
+        "dense_rank": 11,
+        "bm25_rank": 12,
+        "dense_score": 0.55075,
+        "bm25_score": 90.86633158227954,
+        "rerank_score": 0.9853244423866272
+      },
+      "standard_raw_text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals."
+    }
+  ]
+}

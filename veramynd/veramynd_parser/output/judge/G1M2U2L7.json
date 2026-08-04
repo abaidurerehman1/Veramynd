@@ -1,0 +1,486 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U2L7",
+  "lesson_source": "stage1:G1M2U2L7",
+  "retrieve_file": "output\\retrieve\\G1M2U2L7.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 3,
+    "partial": 4,
+    "none": 3
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 7,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L7",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Explain concepts by interpreting texts.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Learn concepts by interpreting texts.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "- Invite students to turn and talk with an elbow partner: 'What is one piece of new information you learned about patterns of the moon?' (Responses will vary, but may include: the moon seems to change shape, the moon isn't actually changing.)\n...\n- Direct students to their seats and tell them to begin writing in their Sky notebooks.",
+      "evidence_page": 283,
+      "confidence": "high",
+      "rationale": "Students interpret the informational text and visuals to learn and explain moon patterns, and then construct their own written observations in the Sky notebook, fully meeting all clauses.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02486025301559282,
+        "dense_rank": 6,
+        "bm25_rank": 43,
+        "dense_score": 0.5581444,
+        "bm25_score": 85.79926557318525,
+        "rerank_score": 0.9947577118873596
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L7",
+      "standard_code": "1.P.EICC.3.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Summarize sections of the text to maintain understanding.",
+          "met": false,
+          "note": "Students discuss and identify information but are not asked to summarize sections of the text."
+        },
+        {
+          "clause": "Visualize sections of the text to maintain understanding.",
+          "met": false,
+          "note": "Students view diagrams, a video, and perform a simulation; they do not create visualizations of the text."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson involves listening to a read-aloud, discussing content, and recording observations from images, but students are not directed to summarize parts of the text or to create their own visualizations of the text.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02185211433971179,
+        "dense_rank": 23,
+        "bm25_rank": 42,
+        "dense_score": 0.5301768,
+        "bm25_score": 86.32398110972204,
+        "rerank_score": 0.9935041069984436
+      },
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L7",
+      "standard_code": "1.T.RA.2",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
+          "met": true,
+          "note": "Students examine the diagram and a note on page 12 and answer questions about what they learned from those text features."
+        },
+        {
+          "clause": "Explore various sources of information, including print, digital, and personal communication.",
+          "met": true,
+          "note": "Students read a print text, watch a video demonstration, discuss with partners, and participate in a simulation, connecting information across sources."
+        }
+      ],
+      "evidence": "- Share with students that now that they have read about the patterns of the moon and why the moon's shape seems to change, they will watch a video demonstration about the phases of the moon and do a simulation.\n- Review the Sun, Moon, and Stars Word Wall cards for full moon, half-moon, and crescent moon.\n- Play ' Moon Phases Demonstration.'\n- Invite students to turn and talk with an elbow partner: 'What did you notice about the appearance of the moon as it circled around?'",
+      "evidence_page": 281,
+      "confidence": "high",
+      "rationale": "Students use specific text features (diagram and note) to answer questions and then explore multiple sources (print text, video, simulation, and partner talk), meeting both clauses of the standard.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.021627308861351415,
+        "dense_rank": 34,
+        "bm25_rank": 31,
+        "dense_score": 0.5177993,
+        "bm25_score": 89.49329842964151,
+        "rerank_score": 0.9934396147727966
+      },
+      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L7",
+      "standard_code": "1.T.C.1",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify the general purpose of a variety of texts.",
+          "met": true,
+          "note": "Students discuss that both this book and a prior text are informational and teach about the sun and moon (identifying purpose across two texts)."
+        },
+        {
+          "clause": "Identify the target audience of a variety of texts.",
+          "met": false,
+          "note": "No discussion of intended audience."
+        },
+        {
+          "clause": "Identify different modes of communication: print, digital, auditory, and visual.",
+          "met": false,
+          "note": "Students engage with multiple modes (book, poem, video) but are not asked to identify or classify modes."
+        },
+        {
+          "clause": "Create texts in teacher-selected modes such as print, digital, auditory, and/or visual.",
+          "met": true,
+          "note": "Students write and draw in Sky notebooks, creating a print/visual text with adjectives and prepositions."
+        }
+      ],
+      "evidence": "Remind them that they should include an adjective to describe the sun and moon, and a preposition to state the precise location. Remind students to use the Sun, Moon, and Stars Word Wall, the Prepositions anchor chart, and the Adjectives anchor chart while writing.\nBriefly review the instructions on pages 5 and 6 of the Sky notebook. Invite students to circle the moon on page 6 that looks most like the moon in the photograph.\nTell students that if they would like to take a closer look at the photographs, they are welcome to quietly get up and move closer during writing time, taking care to be respectful of their classmates.\nDirect students to their seats and tell them to begin writing in their Sky notebooks.\nCirculate and listen in as students write.\nWhen 2 minutes remain, give students a time reminder.\nSignal all students to stop writing through a designated sound. Ask students to put away their Sky notebooks in the designated turn-in area.\nCollect the Sky notebooks.",
+      "evidence_page": 283,
+      "confidence": "medium",
+      "rationale": "Students identify the purpose of two texts (both teach about the sun/moon) and create a written/visual product in their Sky notebooks. They do not identify target audience or explicitly identify modes of communication.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.014925373134328358,
+        "dense_rank": 7,
+        "bm25_rank": null,
+        "dense_score": 0.5578705,
+        "bm25_score": null,
+        "rerank_score": 0.9932488203048706
+      },
+      "standard_raw_text": "Explain how authors of texts use language for a specific purpose and a target audience."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L7",
+      "standard_code": "1.T.T.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "met": true,
+          "note": "Students extract information from a diagram and a note to learn details about moon phases that support the topic of moon patterns."
+        },
+        {
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "met": true,
+          "note": "Students explain the cause-and-effect relationship between the sun’s light and the apparent changing shape of the moon as presented in the text."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "met": false,
+          "note": "Students write brief observations in a notebook, not a full explanatory piece with an introduction, facts, and closure."
+        }
+      ],
+      "evidence": "Draw students' attention back to the text and reread the last two sentences of page 15 and ask:\n- 'Is the moon changing shape?' (We only see what is lit up by the sun, so what we see from earth looks different if the whole moon is not in the light from the sun. The moon isn't actually changing, but what we can see looks different.).\n- As students share out, capture their responses on the Patterns of the Moon anchor chart. Refer to Patterns of the Moon anchor chart (answers, for teacher reference) as necessary.",
+      "evidence_page": 279,
+      "confidence": "high",
+      "rationale": "Students use details from text features to build understanding and describe a cause-and-effect connection in the text, but they do not produce an explanatory writing with introduction, facts, and closure.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.025503573749187783,
+        "dense_rank": 16,
+        "bm25_rank": 21,
+        "dense_score": 0.5454255,
+        "bm25_score": 94.03150039029823,
+        "rerank_score": 0.9926827549934387
+      },
+      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L7",
+      "standard_code": "1.P.EICC.2.b",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Use texts to build knowledge.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Use texts to develop skills.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Use texts to make informed decisions.",
+          "met": true,
+          "note": ""
+        },
+        {
+          "clause": "Use texts to share information and ideas.",
+          "met": true,
+          "note": ""
+        }
+      ],
+      "evidence": "- Read pages 12-13 slowly, fluently, with expression, and without interruption.\n...\n- Invite students to turn and talk with an elbow partner: 'What is one piece of new information you learned about patterns of the moon?'\n...\n- Direct students to their seats and tell them to begin writing in their Sky notebooks.",
+      "evidence_page": 283,
+      "confidence": "high",
+      "rationale": "Students use texts to build knowledge, develop skills (observation, writing), make decisions (selecting the correct moon phase), and share ideas orally and in writing.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02541827541827542,
+        "dense_rank": 14,
+        "bm25_rank": 24,
+        "dense_score": 0.54787064,
+        "bm25_score": 93.66099919499425,
+        "rerank_score": 0.9910751581192017
+      },
+      "standard_raw_text": "Make use of texts to build knowledge, develop skills, make informed decisions, and share information and ideas. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L7",
+      "standard_code": "1.P.EICC.3",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Establish a purpose and set goals for reading",
+          "met": false,
+          "note": "Teacher states the purpose; students do not set goals or purpose themselves."
+        },
+        {
+          "clause": "Monitor comprehension and adjust strategies as needed",
+          "met": false,
+          "note": "No explicit student monitoring or strategy adjustment is directed."
+        },
+        {
+          "clause": "Scan and skim the text to note useful structures and sections",
+          "met": false,
+          "note": "Teacher models using the table of contents; students do not perform this."
+        },
+        {
+          "clause": "Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps",
+          "met": true,
+          "note": "Students compare the current text to a previously read text."
+        },
+        {
+          "clause": "Summarize and visualize sections of the text to maintain understanding",
+          "met": true,
+          "note": "Students explain what the diagram shows and share new information learned."
+        },
+        {
+          "clause": "Make and track predictions about upcoming events and information",
+          "met": false,
+          "note": "No prediction task is included."
+        },
+        {
+          "clause": "Make, track, and support inferences about different levels of meaning",
+          "met": true,
+          "note": "Students reason that the moon only appears to change shape based on the text."
+        },
+        {
+          "clause": "Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts",
+          "met": false,
+          "note": "Vocabulary meanings are provided by the teacher and word wall, not derived by students using context."
+        }
+      ],
+      "evidence": "Draw students' attention back to the text and reread the last two sentences of page 15 and ask:\n- 'Is the moon changing shape?' (We only see what is lit up by the sun, so what we see from earth looks different if the whole moon is not in the light from the sun. The moon isn't actually changing, but what we can see looks different.).\n- As students share out, capture their responses on the Patterns of the Moon anchor chart.",
+      "evidence_page": 279,
+      "confidence": "high",
+      "rationale": "Students engage in comprehension during/after reading by interpreting a diagram, summarizing new information, and making an inference about apparent moon phases. However, key strategies like student-set purpose, scanning/skim, monitoring comprehension, predictions, and student-driven vocabulary determination are not present.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.028958333333333336,
+        "dense_rank": 15,
+        "bm25_rank": 4,
+        "dense_score": 0.5456978,
+        "bm25_score": 120.59089455860871,
+        "rerank_score": 0.989953339099884
+      },
+      "standard_raw_text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L7",
+      "standard_code": "1.P.EICC.1",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Generate, understand, monitor, and revise personal and academic reading and writing goals.",
+          "met": false,
+          "note": "No goal-setting or revising goals occurs."
+        },
+        {
+          "clause": "Discuss or write about personal and academic reading and writing preferences with reference to specific techniques, topics, modes, and genres.",
+          "met": false,
+          "note": "Students do not discuss their preferences."
+        },
+        {
+          "clause": "Select, read, and write texts of personal interest and academic relevance.",
+          "met": false,
+          "note": "Texts and tasks are teacher-assigned; no student selection."
+        },
+        {
+          "clause": "Build and draw from a repertoire of comprehension and composition skills, strategies, and techniques to interpret and construct texts.",
+          "met": true,
+          "note": "Students interpret diagrams/text and use word walls/anchor charts to compose observations."
+        },
+        {
+          "clause": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing writing, listening to others, and offering and responding to feedback.",
+          "met": true,
+          "note": "Students discuss the text and diagrams with partners and share out."
+        },
+        {
+          "clause": "Develop independence and autonomy as a reader and writer.",
+          "met": true,
+          "note": "Students independently write observations in their Sky notebooks."
+        }
+      ],
+      "evidence": "- Remind them that they should include an adjective to describe the sun and moon, and a preposition to state the precise location. Remind students to use the Sun, Moon, and Stars Word Wall, the Prepositions anchor chart, and the Adjectives anchor chart while writing.\n- Briefly review the instructions on pages 5 and 6 of the Sky notebook. Invite students to circle the moon on page 6 that looks most like the moon in the photograph.\n- Tell students that if they would like to take a closer look at the photographs, they are welcome to quietly get up and move closer during writing time, taking care to be respectful of their classmates.\n- Direct students to their seats and tell them to begin writing in their Sky notebooks.",
+      "evidence_page": 283,
+      "confidence": "high",
+      "rationale": "Students use strategies and tools to interpret text/diagrams and compose writing, participate in partner discussions, and write independently, but there is no goal-setting, preference discussion, or student selection of texts.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.026992753623188405,
+        "dense_rank": 20,
+        "bm25_rank": 9,
+        "dense_score": 0.53471655,
+        "bm25_score": 104.33848617770663,
+        "rerank_score": 0.9892431497573853
+      },
+      "standard_raw_text": "Build an identity as a reader and writer, developing a repertoire of resources and tools to continuously expand participation as an active consumer and producer of texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L7",
+      "standard_code": "1.T.T.4.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify rhyme used in texts.",
+          "met": false,
+          "note": "Students work with a poem but only to find and supply prepositions; rhyme is not addressed."
+        },
+        {
+          "clause": "Identify alliteration used in texts.",
+          "met": false,
+          "note": "No tasks ask students to notice or name alliteration."
+        },
+        {
+          "clause": "Identify repeated lines used in texts.",
+          "met": false,
+          "note": "Repeated lines are not mentioned or identified by students."
+        },
+        {
+          "clause": "Describe how rhyme, alliteration, and repeated lines are used to craft texts.",
+          "met": false,
+          "note": "There is no discussion or description of poetic techniques; focus is on grammar (prepositions) and science content."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Although a poem is read, students only identify and use prepositions. There is no student work identifying or describing rhyme, alliteration, or repeated lines.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.025987006496751626,
+        "dense_rank": 9,
+        "bm25_rank": 27,
+        "dense_score": 0.55650693,
+        "bm25_score": 91.5571006232172,
+        "rerank_score": 0.9867831468582153
+      },
+      "standard_raw_text": "Identify and describe poetic techniques used to craft texts, including rhyme, alliteration, and repeated lines. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L7",
+      "standard_code": "1.P.AC.3",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Explore and create texts in various modes and genres, developing and applying knowledge of how specific features impact meaning, tone, style, purpose, and audience.",
+          "met": false,
+          "note": "Students read an informational text, poem, and watch a video, but they do not analyze how design features affect audience/purpose, nor create texts with attention to those features."
+        },
+        {
+          "clause": "Apply knowledge of how mode and genre impact what kinds of ideas and information are included in texts.",
+          "met": false,
+          "note": "Students identify that texts are informational but do not consider how mode/genre shapes included ideas."
+        },
+        {
+          "clause": "Apply knowledge of how mode and genre impact how ideas and information are structured and arranged in texts.",
+          "met": false,
+          "note": "Students use a table of contents and diagram to find information, but do not analyze structure as a function of mode/genre."
+        },
+        {
+          "clause": "Consume and produce multimodal texts, integrating a variety of genres, text features, and craft techniques to influence target audiences and achieve specific purposes.",
+          "met": false,
+          "note": "While they consume multimodal materials, they do not produce multimodal texts or design for a target audience/purpose."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on content learning about moon phases, prepositions, and simple observational notebook writing. Students do not consider how text design affects audience or purpose, nor do they produce texts with design choices aimed at a target audience.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.015625,
+        "dense_rank": 4,
+        "bm25_rank": null,
+        "dense_score": 0.5626075,
+        "bm25_score": null,
+        "rerank_score": 0.9861407279968262
+      },
+      "standard_raw_text": "Consider the impact of text design on audience and purpose when consuming and producing texts across modes and genres."
+    }
+  ]
+}

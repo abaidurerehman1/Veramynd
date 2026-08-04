@@ -1,0 +1,501 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U3L10",
+  "lesson_source": "stage1:G1M2U3L10",
+  "retrieve_file": "output\\retrieve\\G1M2U3L10.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 4,
+    "partial": 2,
+    "none": 4
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 6,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L10",
+      "standard_code": "1.P.AC.2.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Make decisions about sentence structure to accommodate the audience.",
+          "met": false,
+          "note": "Students write a poem and share with partners, but there is no instruction or task to adjust sentence structure for an audience."
+        },
+        {
+          "clause": "Make decisions about syntax to accommodate the audience.",
+          "met": false,
+          "note": "No evidence that students consider or modify syntax to suit an audience."
+        },
+        {
+          "clause": "Make decisions about sentence structure to influence the audience.",
+          "met": false,
+          "note": "Activities focus on composing verses and a closing, not on using sentence structures to influence readers."
+        },
+        {
+          "clause": "Make decisions about syntax to influence the audience.",
+          "met": false,
+          "note": "No explicit work on syntactic choices to affect the reader."
+        },
+        {
+          "clause": "Make decisions about sentence structure and syntax to achieve a specific purpose.",
+          "met": false,
+          "note": "While students write a closing to make the poem feel complete, there is no direction to make sentence-level structural or syntactic decisions for that purpose."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students plan and write verse 3 and a closing for a poem and give peer feedback, but the lesson does not ask them to make sentence-structure or syntax choices for an audience or explicit purpose.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.019655072743038828,
+        "dense_rank": 47,
+        "bm25_rank": 37,
+        "dense_score": 0.46163082,
+        "bm25_score": 52.39487943063549,
+        "rerank_score": 0.9963339567184448
+      },
+      "standard_raw_text": "Make decisions about sentence structure and syntax in order to accommodate and influence the audience and achieve a specific purpose. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L10",
+      "standard_code": "1.P.AC.3",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Explore and create texts in various modes and genres, developing and applying knowledge of how specific features impact meaning, tone, style, purpose, and audience.",
+          "met": false,
+          "note": "Students write one poem but do not explicitly consider how features impact audience or purpose, nor do they work across modes/genres."
+        },
+        {
+          "clause": "Apply knowledge of how mode and genre impact what kinds of ideas and information are included in texts.",
+          "met": false,
+          "note": "Planning focuses on content about the sun, not on how poetry as a genre dictates inclusion of ideas."
+        },
+        {
+          "clause": "Apply knowledge of how mode and genre impact how ideas and information are structured and arranged in texts.",
+          "met": true,
+          "note": "Students analyze and apply the structural feature of a poem’s closing to make their own poem feel complete."
+        },
+        {
+          "clause": "Consume and produce multimodal texts, integrating a variety of genres, text features, and craft techniques to influence target audiences and achieve specific purposes.",
+          "met": false,
+          "note": "Students produce a single written poem; no multimodal production or explicit targeting of audience/purpose."
+        }
+      ],
+      "evidence": "- Using a total participation technique, invite responses from the group:\n- 'When we wrote our poem about the moon, what did you notice about the closing in the 'What the Moon Sees' poem?' (The poem doesn't just end. The moon goes to sleep, and the sun comes up.)\n- 'What do you need to remember as you write the closing?' (I need to make sure the poem feels complete. I need to think about what happens when the sun goes away.)\n- Follow the same process used in Lessons 8-9 to guide students through completing verse 3 and the closing at their workspaces.",
+      "evidence_page": 438,
+      "confidence": "medium",
+      "rationale": "Students examine and apply a structural feature of poetry (the closing) when composing their own poem, but there is no explicit attention to audience/purpose or multimodal/genre variety.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.026916221033868093,
+        "dense_rank": 6,
+        "bm25_rank": 25,
+        "dense_score": 0.5395936,
+        "bm25_score": 58.08405036977458,
+        "rerank_score": 0.9960160851478577
+      },
+      "standard_raw_text": "Consider the impact of text design on audience and purpose when consuming and producing texts across modes and genres."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L10",
+      "standard_code": "1.P.AC.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Integrate literary elements to appeal to target audiences.",
+          "met": false,
+          "note": "Students write a narrative poem, but there is no direction to identify or appeal to a target audience."
+        },
+        {
+          "clause": "Integrate expository elements to appeal to target audiences.",
+          "met": false,
+          "note": "The task is literary (poem); students do not incorporate expository elements."
+        },
+        {
+          "clause": "Integrate opinion elements to appeal to target audiences.",
+          "met": false,
+          "note": "No opinion writing or opinion elements are included."
+        },
+        {
+          "clause": "Use these integrated elements to achieve specific purposes in writing.",
+          "met": false,
+          "note": "Students are not guided to integrate multiple text-type elements or to write for a specific communicative purpose/audience."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students compose a narrative poem and share with a partner, but they do not integrate expository or opinion elements nor write to a defined audience or purpose. The lesson focuses on completing verse 3 and a closing, not on integrating multiple text-type elements to appeal to a target audience.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.025155279503105588,
+        "dense_rank": 10,
+        "bm25_rank": 32,
+        "dense_score": 0.52296156,
+        "bm25_score": 54.78372251986432,
+        "rerank_score": 0.9957106113433838
+      },
+      "standard_raw_text": "Integrate literary, expository, and opinion (grades K-5) or rhetorical (grades 6-12) elements to appeal to target audiences and achieve specific purposes. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L10",
+      "standard_code": "1.P.EICC.4",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Establish a purpose and goals for writing and identify a target audience.",
+          "met": true,
+          "note": "Students write poems with a clear purpose and implied audience."
+        },
+        {
+          "clause": "Plan how to organize the text by selecting modes, genres, and structures that will achieve the purpose and meet the needs of the target audience.",
+          "met": true,
+          "note": "Students use planners and discuss structure and closing."
+        },
+        {
+          "clause": "Generate ideas for content by assessing prior knowledge, gathering information from texts, and engaging in discussions with others.",
+          "met": true,
+          "note": "Students discuss, use anchor charts, and prior knowledge."
+        },
+        {
+          "clause": "Link ideas and information to the organization plan, highlighting ideas and information that are most relevant, useful, and impactful.",
+          "met": true,
+          "note": "Students use planners to organize and select ideas for their poems."
+        },
+        {
+          "clause": "Construct an initial draft by integrating ideas and information; selecting words, phrases, and sentences; and incorporating craft techniques that will best achieve the purpose of the text and resonate with the target audience.",
+          "met": true,
+          "note": "Students draft their poems using planners and anchor charts."
+        },
+        {
+          "clause": "Evaluate the text's effectiveness based on self-review or feedback from others, determining whether the text matches the purpose and goals for writing.",
+          "met": true,
+          "note": "Students give and receive peer feedback."
+        },
+        {
+          "clause": "Make changes to the text based on self-evaluation or external feedback, revising the organization, ideas, information, word choices, and craft techniques in order to increase the text's effectiveness.",
+          "met": true,
+          "note": "Students reflect on feedback and are told they will revise in the next lesson."
+        },
+        {
+          "clause": "Edit the text, ensuring it adheres to the conventions of written language.",
+          "met": true,
+          "note": "Editing is implied as part of the revision process in the next lesson."
+        }
+      ],
+      "evidence": "Tell the writers that today they will share verse 3 and the closing of their poem with a partner using the Pinky Partner protocol. Remind students that they used this protocol in Lessons 8-9 and review using the Pinky Partners Protocol anchor chart as necessary. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Guide students through the protocol using the following sentence frames:\n- -'You did a good job of _____________.'\n- -'I think you should ________ because _________.'\n- Circulate as students share; prompt them to use the criteria on the High-Quality Work anchor chart when providing feedback. Take note of how students are interacting with one another using the Speaking and Listening Checklist.\n- Refocus whole group and collect students' poems. Share with students that you will spend time reading their poems and will provide kind, helpful, and specific feedback to each student to use during the next lesson.",
+      "evidence_page": 438,
+      "confidence": "high",
+      "rationale": "Students engage in the full writing process: planning, drafting, peer feedback, and are told they will revise and edit in the next lesson.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.03200204813108039,
+        "dense_rank": 3,
+        "bm25_rank": 2,
+        "dense_score": 0.5563462,
+        "bm25_score": 121.58140938740402,
+        "rerank_score": 0.9956516623497009
+      },
+      "standard_raw_text": "Compose a range of texts for a variety of purposes and audiences, flexibly engaging in writing processes to plan, draft, evaluate, revise, and edit texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L10",
+      "standard_code": "1.P.EICC.4.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Generate ideas for writing by assessing prior knowledge.",
+          "met": true,
+          "note": "Students use prior knowledge about the sun and their experiences."
+        },
+        {
+          "clause": "Generate ideas for writing by gathering information from texts.",
+          "met": true,
+          "note": "Students use anchor charts and modeled poems as texts."
+        },
+        {
+          "clause": "Generate ideas for writing by engaging in discussions with others.",
+          "met": true,
+          "note": "Students discuss ideas with partners and in whole group."
+        }
+      ],
+      "evidence": "Move students into pairs and invite them to turn and talk:\n- 'After closely examining the closing sentence of the poem, what ideas do you have for how to end your own poem?' (Responses will vary.)\n- Distribute Sky notebooks and 'What the Sun Sees' verse planners.\n- Follow the same process used in Lessons 8-9 to guide students through planning their final verse and closing with their partner. Prompt them to use the following resources as necessary:\n- -Time of Day anchor chart\n- -Adjectives anchor chart\n- -What the Sun Sees anchor chart\n- -Pages in Sky notebooks that describe the sun at dusk",
+      "evidence_page": 436,
+      "confidence": "high",
+      "rationale": "Students generate ideas using prior knowledge, information from anchor charts and modeled texts, and through discussion with peers.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.023258904837852208,
+        "dense_rank": 39,
+        "bm25_rank": 16,
+        "dense_score": 0.47067505,
+        "bm25_score": 71.19378818369137,
+        "rerank_score": 0.9955405592918396
+      },
+      "standard_raw_text": "Generate ideas for content by assessing prior knowledge, gathering information from texts, and engaging in discussions with others. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L10",
+      "standard_code": "1.T.T.3.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use knowledge of opinion techniques to create opinion pieces.",
+          "met": false,
+          "note": "No opinion writing present."
+        },
+        {
+          "clause": "Introduce the topic in the opinion piece.",
+          "met": false,
+          "note": "No opinion pieces written."
+        },
+        {
+          "clause": "State an opinion about the topic.",
+          "met": false,
+          "note": "No opinion stated."
+        },
+        {
+          "clause": "Provide two or more reasons to support the opinion.",
+          "met": false,
+          "note": "No reasons given for an opinion."
+        },
+        {
+          "clause": "Use linking words such as 'and' and 'because' to connect reasons to the opinion.",
+          "met": false,
+          "note": "No opinion writing or linking words for reasons."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on narrative poetry, not opinion writing. None of the required acts for this standard are present.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.021061869240895127,
+        "dense_rank": 46,
+        "bm25_rank": 26,
+        "dense_score": 0.4619137,
+        "bm25_score": 57.95271557185106,
+        "rerank_score": 0.9952654838562012
+      },
+      "standard_raw_text": "Use knowledge of opinion techniques to create opinion pieces that introduce the topic, state an opinion about the topic, and provides two or more reasons to support the opinion with linking words and and because. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L10",
+      "standard_code": "1.T.T.1.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use knowledge of characters in narratives to create texts.",
+          "met": true,
+          "note": "Students write about the sun as a character in their poems."
+        },
+        {
+          "clause": "Use knowledge of settings in narratives to create texts.",
+          "met": true,
+          "note": "Students describe the setting (time of day, what the sun sees)."
+        },
+        {
+          "clause": "Use knowledge of events in narratives to create texts.",
+          "met": true,
+          "note": "Students describe events (what happens at dusk, what the sun sees)."
+        },
+        {
+          "clause": "Create texts that share real or imagined experiences and events.",
+          "met": true,
+          "note": "Students write narrative poems sharing imagined experiences of the sun."
+        },
+        {
+          "clause": "Include a sense of closure in created texts.",
+          "met": true,
+          "note": "Students are explicitly guided to write a closing for their poem."
+        }
+      ],
+      "evidence": "Tell students that in the previous lessons, they wrote verses 1 and 2 of their 'What the Sun Sees' poem. Tell students that today they will write the final verse and closing of their poem.\n- Using a total participation technique, invite responses from the group:\n- 'When we wrote our poem about the moon, what did you notice about the closing in the 'What the Moon Sees' poem?' (The poem doesn't just end. The moon goes to sleep, and the sun comes up.)\n- 'What do you need to remember as you write the closing?' (I need to make sure the poem feels complete. I need to think about what happens when the sun goes away.)",
+      "evidence_page": 438,
+      "confidence": "low",
+      "rationale": "Students use narrative techniques (character, setting, events) to write poems about real or imagined experiences and are guided to include a sense of closure. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.029513888888888888,
+        "dense_rank": 4,
+        "bm25_rank": 12,
+        "dense_score": 0.5561098,
+        "bm25_score": 77.14476553556432,
+        "rerank_score": 0.9948883652687073
+      },
+      "standard_raw_text": "Use knowledge of narrative techniques (e.g., characters, settings, events) to create texts that share real or imagined experiences and events with a sense of closure. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L10",
+      "standard_code": "1.P.AC.3.a",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Explore texts in various modes and genres to understand how specific features impact meaning, tone, style, purpose, and audience.",
+          "met": true,
+          "note": "Students examine the model poem’s closing and discuss how that feature makes the poem feel complete."
+        },
+        {
+          "clause": "Create texts in various modes and genres applying knowledge of how features affect meaning, tone, style, purpose, and audience.",
+          "met": true,
+          "note": "Students write the final verse and closing of a narrative poem, applying knowledge of closings and descriptive features."
+        }
+      ],
+      "evidence": "- Remind students that in the previous lessons, they wrote verses 1 and 2 of their 'What the Sun Sees' poem. Tell students that today they will write the final verse and closing of their poem.\n- Using a total participation technique, invite responses from the group:\n- 'When we wrote our poem about the moon, what did you notice about the closing in the 'What the Moon Sees' poem?' (The poem doesn't just end. The moon goes to sleep, and the sun comes up.)\n- 'What do you need to remember as you write the closing?' (I need to make sure the poem feels complete. I need to think about what happens when the sun goes away.)\n- Follow the same process used in Lessons 8-9 to guide students through completing verse 3 and the closing at their workspaces. Circulate to support them as they work and refer them to their verse planners and the High-Quality Work anchor chart as necessary.",
+      "evidence_page": 438,
+      "confidence": "medium",
+      "rationale": "Students analyze a model poem’s closing to understand a feature’s effect, then compose the final verse and closing of their own poem applying that understanding. Although work centers on one genre, the lesson has students both explore text features and create text using them.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.023752012882447666,
+        "dense_rank": 9,
+        "bm25_rank": 48,
+        "dense_score": 0.53473324,
+        "bm25_score": 48.85161459736889,
+        "rerank_score": 0.9945539236068726
+      },
+      "standard_raw_text": "Explore and create texts in various modes and genres, developing and applying knowledge of how specific features impact meaning, tone, style, purpose, and audience. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L10",
+      "standard_code": "1.P.AC.2",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Integrate literary, expository, and opinion or rhetorical elements to appeal to target audiences and achieve specific purposes.",
+          "met": false,
+          "note": "Students write a narrative poem only; no integration of expository or opinion elements is described."
+        },
+        {
+          "clause": "Craft words and phrases to influence the responses, thoughts, decisions, and questions of the target audience and achieve a specific purpose.",
+          "met": false,
+          "note": "Students use descriptive adjectives, but there is no explicit focus on influencing an audience’s response."
+        },
+        {
+          "clause": "Make decisions about sentence structure and syntax to accommodate and influence the audience and achieve a specific purpose.",
+          "met": false,
+          "note": "No student decision-making about sentence structure is required; sentence frames are provided for support."
+        },
+        {
+          "clause": "Organize texts by incorporating specific formats, structures, patterns, and features to influence the audience, facilitate accessibility, and support the text's purpose.",
+          "met": true,
+          "note": "Students plan and write Verse 3 and a closing, using planners and guidance to make the poem feel complete."
+        }
+      ],
+      "evidence": "Follow the same process used in Lessons 8-9 to guide students through completing verse 3 and the closing at their workspaces. Circulate to support them as they work and refer them to their verse planners and the High-Quality Work anchor chart as necessary.",
+      "evidence_page": 438,
+      "confidence": "medium",
+      "rationale": "Students organize and complete their poem with a structured closing, supporting the text’s purpose, but the lesson does not ask them to make audience-focused craft choices about words, syntax, or integrate multiple text types.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.025793650793650792,
+        "dense_rank": 12,
+        "bm25_rank": 24,
+        "dense_score": 0.51061904,
+        "bm25_score": 59.08742678888495,
+        "rerank_score": 0.9936516284942627
+      },
+      "standard_raw_text": "Construct texts with the audience’s experience in mind, basing decisions about craft techniques on context and purpose."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L10",
+      "standard_code": "1.P.EICC.2.a",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Share real experiences by telling or writing stories.",
+          "met": true,
+          "note": "Students may draw on real experiences in their poems."
+        },
+        {
+          "clause": "Share imagined experiences by telling or writing stories.",
+          "met": true,
+          "note": "Students write imagined experiences of what the sun sees."
+        },
+        {
+          "clause": "Interpret stories that tell or include real or imagined experiences.",
+          "met": true,
+          "note": "Students discuss and analyze modeled poems before writing their own."
+        }
+      ],
+      "evidence": "Display the ' What the Moon Sees' example.\n- Move students into pairs and invite them to turn and talk:\n- 'After closely examining the closing sentence of the poem, what ideas do you have for how to end your own poem?' (Responses will vary.)\n- Distribute Sky notebooks and 'What the Sun Sees' verse planners.\n- Follow the same process used in Lessons 8-9 to guide students through planning their final verse and closing with their partner.",
+      "evidence_page": 436,
+      "confidence": "high",
+      "rationale": "Students interpret modeled poems and write their own narrative poems sharing real or imagined experiences.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.023306233062330622,
+        "dense_rank": 30,
+        "bm25_rank": 22,
+        "dense_score": 0.48341215,
+        "bm25_score": 62.92503008130695,
+        "rerank_score": 0.9928494691848755
+      },
+      "standard_raw_text": "Share real or imagined experiences by interpreting and constructing texts that tell or include stories. (I/C)"
+    }
+  ]
+}

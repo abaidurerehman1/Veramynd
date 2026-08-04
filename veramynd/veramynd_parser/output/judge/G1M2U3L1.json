@@ -1,0 +1,446 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U3L1",
+  "lesson_source": "stage1:G1M2U3L1",
+  "retrieve_file": "output\\retrieve\\G1M2U3L1.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 3,
+    "partial": 0,
+    "none": 7
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 3,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L1",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Explain concepts by interpreting texts.",
+          "met": true,
+          "note": "Students interpret a read-aloud and videos to describe what people and animals do during day and night."
+        },
+        {
+          "clause": "Learn concepts by interpreting texts.",
+          "met": true,
+          "note": "Students observe and discuss information from texts and videos to build understanding of day vs. night."
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
+          "met": false,
+          "note": "Students discuss and sort pictures but do not create written or other constructed texts to show understanding."
+        }
+      ],
+      "evidence": "Tell students that as they watch the videos, they should look carefully to see what they notice and observe about the sky, the sun, the moon, and what animals and people are doing during the daytime and during the nighttime. Tell students they should also think about the questions they have as they watch the videos.\nInform students that after they watch each video, they will have a chance to share their thinking with a partner using the Back-to-Back and Face-to-Face protocol. Remind them that they used this protocol in Module 1 and review as necessary using the Back-to-Back and Face-to-Face Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\nPlay 'City Street Time Lapse Stock Video.'\nGuide students through the Back-to-Back and Face-to-Face protocol using this question:\n'What is one thing you noticed about what people and animals do during the day?'\nProvide a sentence frame if necessary:\n-'I noticed that during the day, people and animals __________.'",
+      "evidence_page": 352,
+      "confidence": "low",
+      "rationale": "Students interpret and discuss information from a book and videos to explain and learn about day and night, but they do not construct texts to demonstrate their understanding. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.016129032258064516,
+        "dense_rank": 2,
+        "bm25_rank": null,
+        "dense_score": 0.60883504,
+        "bm25_score": null,
+        "rerank_score": 0.993159294128418
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L1",
+      "standard_code": "1.T.RA.2.b",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Explore print sources of information.",
+          "met": true,
+          "note": "Students explore print sources through read-alouds."
+        },
+        {
+          "clause": "Explore digital sources of information.",
+          "met": true,
+          "note": "Students watch videos as digital sources."
+        },
+        {
+          "clause": "Explore personal communication as a source of information.",
+          "met": true,
+          "note": "Students discuss and share observations with peers and teacher."
+        }
+      ],
+      "evidence": "- With excitement, reveal and then display What the Sun Sees, What the Moon Sees.\n... Tell students you have a couple videos of the daytime and nighttime to show them.\n... Invite students to turn and talk with an elbow partner: 'What did the sun 'see' animals and people doing during the daytime?' ... As students share, circulate and continue to use the Speaking and Listening Checklist to assess their progress toward the learning target.",
+      "evidence_page": 350,
+      "confidence": "high",
+      "rationale": "Students explore information from print (books), digital (videos), and personal communication (discussions), fully meeting the standard.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.018614718614718615,
+        "dense_rank": 50,
+        "bm25_rank": 45,
+        "dense_score": 0.5302718,
+        "bm25_score": 72.69128177948183,
+        "rerank_score": 0.9922845363616943
+      },
+      "standard_raw_text": "Explore various sources of information, including print, digital, and personal communication. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L1",
+      "standard_code": "1.T.C.1",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the general purpose of a variety of texts.",
+          "met": false,
+          "note": "Students discuss content of a single story and videos but do not identify purposes across texts."
+        },
+        {
+          "clause": "Identify the target audience of a variety of texts.",
+          "met": false,
+          "note": "No task asks students to consider who the text is written for."
+        },
+        {
+          "clause": "Identify different modes of communication: print, digital, auditory, and visual.",
+          "met": false,
+          "note": "Students experience print and video but are not asked to identify or name modes."
+        },
+        {
+          "clause": "Create texts in teacher-selected modes such as print, digital, auditory, and/or visual.",
+          "met": false,
+          "note": "Students do not produce any texts."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on comprehension of day/night, sorting images, and sharing observations. It does not ask students to identify text purpose or audience, distinguish communication modes, or create texts.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.015625,
+        "dense_rank": 4,
+        "bm25_rank": null,
+        "dense_score": 0.60316145,
+        "bm25_score": null,
+        "rerank_score": 0.9905912280082703
+      },
+      "standard_raw_text": "Explain how authors of texts use language for a specific purpose and a target audience."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L1",
+      "standard_code": "1.T.T.1",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue.",
+          "met": true,
+          "note": "Students identify the setting (day vs. night) and events/actions in the text; they discuss what the sun/moon see."
+        },
+        {
+          "clause": "Identify a simple plot with a problem and solution.",
+          "met": false,
+          "note": "No task asks students to find a problem and solution or outline a plot."
+        },
+        {
+          "clause": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
+          "met": false,
+          "note": "Students do not analyze character traits or connect actions/words to a central message."
+        },
+        {
+          "clause": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures.",
+          "met": false,
+          "note": "No comparison of characters across texts/cultures occurs."
+        },
+        {
+          "clause": "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure.",
+          "met": false,
+          "note": "Students do not write or create narratives in this lesson."
+        }
+      ],
+      "evidence": "Using a total participation technique, invite responses from the group:\n\"When the author wrote about what the sun sees, was she writing about daytime or nighttime?\" (daytime)\nInvite students to turn and talk with an elbow partner:\n\"What did the sun \"see\" animals and people doing during the daytime?\" (busy children, crowded streets, animals in the barn)",
+      "evidence_page": 350,
+      "confidence": "low",
+      "rationale": "Students identify elements like time of day (setting) and actions/events in a literary text, but they do not analyze plot, character traits, compare characters, or produce narrative writing. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.028438886647841874,
+        "dense_rank": 7,
+        "bm25_rank": 14,
+        "dense_score": 0.5957648,
+        "bm25_score": 102.78455501718285,
+        "rerank_score": 0.9904850721359253
+      },
+      "standard_raw_text": "Identify and use narrative techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L1",
+      "standard_code": "1.T.RA.2",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
+          "met": true,
+          "note": "Students refer to specific parts of the text when answering questions."
+        },
+        {
+          "clause": "Explore various sources of information, including print, digital, and personal communication.",
+          "met": true,
+          "note": "Students use books, videos, and discussion as sources."
+        }
+      ],
+      "evidence": "Invite students to turn and talk with an elbow partner: 'What did the sun 'see' animals and people doing during the daytime?' ... Tell students you have a couple videos of the daytime and nighttime to show them.\n... As students share, circulate and continue to use the Speaking and Listening Checklist to assess their progress toward the learning target.",
+      "evidence_page": 350,
+      "confidence": "high",
+      "rationale": "Students refer to text parts to answer questions and explore multiple sources (print, digital, personal communication).",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.026470588235294117,
+        "dense_rank": 25,
+        "bm25_rank": 8,
+        "dense_score": 0.5634557,
+        "bm25_score": 107.12533040909626,
+        "rerank_score": 0.9900734424591064
+      },
+      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L1",
+      "standard_code": "1.P.EICC.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Select texts of personal interest and academic relevance to grade-level topics.",
+          "met": false,
+          "note": "Texts are teacher-selected; students do not choose texts."
+        },
+        {
+          "clause": "Read texts of personal interest and academic relevance to grade-level topics.",
+          "met": false,
+          "note": "The teacher reads aloud; students do not read the text."
+        },
+        {
+          "clause": "Write texts of personal interest and academic relevance to grade-level topics.",
+          "met": false,
+          "note": "No writing task is assigned; students speak, sort, and view videos only."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students listen to teacher read-alouds, discuss, sort pictures, and observe videos. There is no student selection of texts, independent reading, or writing of texts.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.021910919540229883,
+        "dense_rank": 36,
+        "bm25_rank": 27,
+        "dense_score": 0.545515,
+        "bm25_score": 83.3497775770709,
+        "rerank_score": 0.9900496006011963
+      },
+      "standard_raw_text": "Select, read, and write texts of personal interest and academic relevance to grade-level texts and topics. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L1",
+      "standard_code": "1.T.T.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "met": false,
+          "note": "Students listen to and discuss a literary picture book and videos; they do not identify expository structures like main topic/supporting details or techniques of expository writing."
+        },
+        {
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "met": false,
+          "note": "Students sort pictures and share observations about day vs. night, but they are not asked to describe connections within an informational text."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "met": false,
+          "note": "There is no student expository writing or creation task in the lesson."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson centers on a literary read-aloud, sorting activities, and observations from videos; students neither analyze expository text features nor produce expository writing. This is a genre/type mismatch for an expository-techniques standard.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.025657894736842105,
+        "dense_rank": 16,
+        "bm25_rank": 20,
+        "dense_score": 0.5701828,
+        "bm25_score": 92.97493692785596,
+        "rerank_score": 0.9899551868438721
+      },
+      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L1",
+      "standard_code": "1.T.T.1.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Compare characters in stories from diverse cultures with adult support.",
+          "met": false,
+          "note": "No comparison of characters across cultures."
+        },
+        {
+          "clause": "Contrast characters in stories from diverse cultures with adult support.",
+          "met": false,
+          "note": "No contrast of characters across cultures."
+        },
+        {
+          "clause": "Compare experiences of characters in stories from diverse cultures with adult support.",
+          "met": false,
+          "note": "No comparison of experiences across cultures."
+        },
+        {
+          "clause": "Contrast experiences of characters in stories from diverse cultures with adult support.",
+          "met": false,
+          "note": "No contrast of experiences across cultures."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson does not involve comparing or contrasting characters or experiences across diverse cultures.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.024877149877149878,
+        "dense_rank": 14,
+        "bm25_rank": 28,
+        "dense_score": 0.57690746,
+        "bm25_score": 82.22337637531771,
+        "rerank_score": 0.9895631670951843
+      },
+      "standard_raw_text": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L1",
+      "standard_code": "1.P.EICC.2.b",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Use texts to build knowledge.",
+          "met": true,
+          "note": "Students use texts and videos to learn about day and night."
+        },
+        {
+          "clause": "Use texts to develop skills.",
+          "met": true,
+          "note": "Students develop skills in observation, categorization, and discussion."
+        },
+        {
+          "clause": "Use texts to make informed decisions.",
+          "met": true,
+          "note": "Students use information from texts to sort activities into day/night categories."
+        },
+        {
+          "clause": "Use texts to share information and ideas.",
+          "met": true,
+          "note": "Students share their ideas and observations based on texts."
+        }
+      ],
+      "evidence": "Invite students to begin the Sorting protocol.\nAs students circulate and share, prompt them to explain the categories they chose by asking: 'Can you explain what is the same about the pictures in this categories?' ... Tell students that as they watch the videos, they should look carefully to see what they notice and observe about the sky, the sun, the moon, and what animals and people are doing during the daytime and during the nighttime. Tell students they should also think about the questions they have as they watch the videos.",
+      "evidence_page": 351,
+      "confidence": "high",
+      "rationale": "Students use texts to build knowledge, develop skills, make decisions, and share information through sorting and discussion activities.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.025384615384615387,
+        "dense_rank": 5,
+        "bm25_rank": 40,
+        "dense_score": 0.6021924,
+        "bm25_score": 73.52753783980697,
+        "rerank_score": 0.9890093207359314
+      },
+      "standard_raw_text": "Make use of texts to build knowledge, develop skills, make informed decisions, and share information and ideas. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L1",
+      "standard_code": "1.T.C.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify who is speaking at various points in a text.",
+          "met": false,
+          "note": "Students discuss what the sun and moon see and the author’s imaginative choice, but they are not asked to identify the narrator/speaker at different points in the text."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on asking/answering questions about day/night content, sorting activities, and discussing the author’s imaginative framing. It does not have students identify who is speaking or telling the story at various points.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.020495214315439034,
+        "dense_rank": 29,
+        "bm25_rank": 48,
+        "dense_score": 0.5576054,
+        "bm25_score": 71.06038048276478,
+        "rerank_score": 0.9888914823532104
+      },
+      "standard_raw_text": "Investigate the relationships between authors and speakers in texts."
+    }
+  ]
+}

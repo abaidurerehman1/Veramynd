@@ -1,0 +1,501 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U3L13",
+  "lesson_source": "stage1:G1M2U3L13",
+  "retrieve_file": "output\\retrieve\\G1M2U3L13.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "gpt-4.1",
+  "escalate": true,
+  "escalate_model": "gpt-5",
+  "candidate_count": 10,
+  "judged": 10,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 0,
+    "partial": 4,
+    "none": 6
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 4,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L13",
+      "standard_code": "1.P.EICC.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Engage in spoken or written dialogue as an author and audience.",
+          "met": true,
+          "note": "Students present, answer visitors’ questions, and listen while peers share, acting as both speakers (authors) and audience."
+        },
+        {
+          "clause": "Make intentional connections within texts.",
+          "met": false,
+          "note": "No task asks students to connect parts or ideas within a single text."
+        },
+        {
+          "clause": "Make intentional connections between texts.",
+          "met": false,
+          "note": "Students share songs, poems, and notebooks but are not directed to connect or compare texts."
+        },
+        {
+          "clause": "Make intentional connections beyond texts to other knowledge or experiences.",
+          "met": true,
+          "note": "Students explicitly connect their work to what astronomers do, linking learning to real-world roles."
+        }
+      ],
+      "evidence": "- Using a total participation technique, invite responses from the group:\n- 'What did we do that is similar to what astronomers do?' (We observed pictures and videos of the sun, moon, and stars; we wrote about our observations; we wrote about and\n- Tell students that now they get to share the work they did that is similar to astronomers by sharing information they have learned throughout the module!\n- Direct students' attention to the posted learning targets and read the first one aloud:\n- 'I can present information about the sun, moon, and stars to others.'\n- Using a total participation technique, invite responses from the group:\n- 'When you are answering questions from the visitors, what is it important that you remember to do?' (speak clearly and loudly, make eye contact with visitors, listen as others share)\n- Tell students they now will share information about the sun, moon, and stars with the visitors, and they will answer questions from the visitors:\n- Tell students that they will gather in small presentation groups with a few other classmates and one or two visitors.\n- Once in their groups, they will take turns answering questions from the visitors.\n- Once groups are settled in designated areas, direct visitors' attention to the Questions sheet in front of them.\n- Tell visitors that they should take turns asking each of the questions on the sheet. Remind students that they will take turns answering the questions in the order in which the students are listed on the Presentation Groups chart.",
+      "evidence_page": 463,
+      "confidence": "low",
+      "rationale": "Students engage in spoken dialogue as both presenters and listeners and make beyond-text connections to astronomers. The lesson does not require connections within or between texts. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.0266900790166813,
+        "dense_rank": 7,
+        "bm25_rank": 25,
+        "dense_score": 0.56445,
+        "bm25_score": 60.983544674511364,
+        "rerank_score": 0.9987485408782959
+      },
+      "standard_raw_text": "Engage in written or spoken dialogue as author and audience for a variety of tasks and purposes, making intentional connections within, between, and beyond texts."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L13",
+      "standard_code": "1.P.EICC.1.e",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Develop group norms for participation in a community of readers and writers",
+          "met": false,
+          "note": "Students review existing sharing expectations; they do not develop norms in this lesson."
+        },
+        {
+          "clause": "Discuss texts with others in the group",
+          "met": false,
+          "note": "Students present information and read their writing, but there is no discussion of texts."
+        },
+        {
+          "clause": "Share individual writing with the group",
+          "met": true,
+          "note": "Students read their own poems and share Sky notebook entries in small groups."
+        },
+        {
+          "clause": "Listen to others as they share their writing",
+          "met": true,
+          "note": "Students are explicitly directed to listen while peers share, and teacher notes listening behavior."
+        },
+        {
+          "clause": "Offer feedback on peers' writing",
+          "met": false,
+          "note": "No opportunities for students to give feedback on peers' writing are included."
+        },
+        {
+          "clause": "Respond to feedback received on own writing",
+          "met": false,
+          "note": "No student response to feedback is described."
+        }
+      ],
+      "evidence": "Direct students' attention to the posted learning targets and read the second one aloud: 'I can read my writing aloud using a strong and clear voice.'\nTell students that they now will share their 'What the Sun Sees' poems with the visitors. Remind them that they practiced reading their poems during the last lesson.\nBriefly review the Ways We Share Our Work anchor chart.\nUsing a total participation technique, invite responses from the group:\n'While other students are sharing, what should you do?' (keep voices off, listen carefully, look at the speaker)\nTell students they will remain in the same small groups and follow the same order for sharing their poems as they did for answering questions.\nRemind students that once the first reader has shared, they should move to the second reader, and so on until all the students in the group have shared.\nAsk the visitors to help keep the group moving along and offer support as needed.\nDirect students' attention to their 'What the Sun Sees' poems and encourage the first student to stand up and begin sharing.\nCirculate as students share and offer guidance and support as necessary.",
+      "evidence_page": 465,
+      "confidence": "high",
+      "rationale": "Students share their own writing and listen as peers share, but they do not co-create norms, discuss texts, or engage in giving/receiving feedback on writing in this lesson.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02815814850530376,
+        "dense_rank": 25,
+        "bm25_rank": 1,
+        "dense_score": 0.52843344,
+        "bm25_score": 109.76144252655025,
+        "rerank_score": 0.9979526996612549
+      },
+      "standard_raw_text": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing individual writing, listening as others share their writing, and offering and responding to feedback. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L13",
+      "standard_code": "1.P.CP.2",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Communicate clearly to present ideas, information, and texts.",
+          "met": true,
+          "note": "Students present information about the sun, moon, and stars."
+        },
+        {
+          "clause": "Integrate modes and genres appropriate to purpose and audience.",
+          "met": true,
+          "note": "Students sing songs, read poems, and share notebooks."
+        },
+        {
+          "clause": "Vary tone, pace, and nonverbal gestures to suit purpose and audience.",
+          "met": true,
+          "note": "Students are encouraged to speak clearly, loudly, and use hand motions."
+        },
+        {
+          "clause": "Engage in dialogue by asking and answering questions with audiences.",
+          "met": true,
+          "note": "Students answer questions from visitors."
+        },
+        {
+          "clause": "Build background knowledge by reciting significant poems and speeches appropriate for grade level.",
+          "met": true,
+          "note": "Students recite and sing songs and poems."
+        }
+      ],
+      "evidence": "Tell students that now they get to share the work they did that is similar to astronomers by sharing information they have learned throughout the module! Tell students they now will share information about the sun, moon, and stars with the visitors, and they will answer questions from the visitors: Tell students that they will gather in small presentation groups with a few other classmates and one or two visitors. Once in their groups, they will take turns answering questions from the visitors. Invite students to stand up. Display the 'Sun, Moon, and Stars' song. Invite students to join you as sing the song and complete the accompanying hand motions. Tell students that they now will share their 'What the Sun Sees' poems with the visitors.",
+      "evidence_page": 463,
+      "confidence": "low",
+      "rationale": "Students present information using multiple modes, answer questions, and recite poems and songs, fully meeting the standard. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.03009207275993712,
+        "dense_rank": 1,
+        "bm25_rank": 13,
+        "dense_score": 0.61248344,
+        "bm25_score": 70.51560842672639,
+        "rerank_score": 0.9974215030670166
+      },
+      "standard_raw_text": "Use presentation skills to tailor communication to target audiences for specific purposes."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L13",
+      "standard_code": "1.P.CP.1.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Work with others to discuss topics.",
+          "met": true,
+          "note": "Students discuss the sun, moon, and stars in small groups and during Q&A with visitors, and also turn-and-talk during reflection."
+        },
+        {
+          "clause": "Work with others to investigate questions.",
+          "met": false,
+          "note": "Students answer visitors’ questions but do not investigate or inquire into questions during this lesson."
+        },
+        {
+          "clause": "Work with others to solve problems.",
+          "met": false,
+          "note": "No collaborative problem-solving task is included."
+        },
+        {
+          "clause": "Work with others to explore and create texts.",
+          "met": false,
+          "note": "Students share previously created poems/notebooks and write individual reflections; no collaborative exploration or creation of texts is directed."
+        }
+      ],
+      "evidence": "Tell students that they will gather in small presentation groups with a few other classmates and one or two visitors. Once in their groups, they will take turns answering questions from the visitors.",
+      "evidence_page": 463,
+      "confidence": "high",
+      "rationale": "Students collaborate to discuss their learning in small groups, but the lesson does not include investigating questions, solving problems, or collaboratively exploring/creating texts.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.026515151515151516,
+        "dense_rank": 28,
+        "bm25_rank": 6,
+        "dense_score": 0.5248049,
+        "bm25_score": 84.59343706390057,
+        "rerank_score": 0.9970472455024719
+      },
+      "standard_raw_text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L13",
+      "standard_code": "1.P.CP.1.c",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Contribute ideas to discussions and shared projects.",
+          "met": true,
+          "note": "Students present information and answer visitors’ questions in small-group discussions."
+        },
+        {
+          "clause": "Listen to the ideas of others during discussions and projects.",
+          "met": true,
+          "note": "Students are prompted and observed to listen while others share."
+        },
+        {
+          "clause": "Provide feedback to others in discussions and shared projects.",
+          "met": false,
+          "note": "No activity has students giving feedback to peers; feedback is given by the teacher and visitors, not students."
+        }
+      ],
+      "evidence": "- Direct students' attention to the posted learning targets and read the first one aloud:\n- 'I can present information about the sun, moon, and stars to others.'\n- Using a total participation technique, invite responses from the group:\n- 'When you are answering questions from the visitors, what is it important that you remember to do?' (speak clearly and loudly, make eye contact with visitors, listen as others share)\n- Tell students they now will share information about the sun, moon, and stars with the visitors, and they will answer questions from the visitors:\n- Tell students that they will gather in small presentation groups with a few other classmates and one or two visitors.\n- Once in their groups, they will take turns answering questions from the visitors.",
+      "evidence_page": 463,
+      "confidence": "high",
+      "rationale": "Students share ideas and actively listen in small-group presentations, but there is no component where students provide feedback to others’ ideas or work.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.02482636323333826,
+        "dense_rank": 41,
+        "bm25_rank": 7,
+        "dense_score": 0.50798905,
+        "bm25_score": 79.6489249104489,
+        "rerank_score": 0.9963604807853699
+      },
+      "standard_raw_text": "Contribute to discussions and shared projects by offering ideas, listening to the ideas of others, and providing feedback. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L13",
+      "standard_code": "1.P.CP.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Integrate modes of communication appropriate to the purpose and audience.",
+          "met": true,
+          "note": "Students sing, present, and read aloud to an audience."
+        },
+        {
+          "clause": "Integrate genres appropriate to the purpose and audience.",
+          "met": true,
+          "note": "Students share songs, poems, and informational writing."
+        }
+      ],
+      "evidence": "Invite students to join you as sing the song and complete the accompanying hand motions. Tell students that they now will share their 'What the Sun Sees' poems with the visitors. Tell students that now they get to share the work they did making and writing and drawing about observations of videos and pictures of the sun and moon by sharing their Sky notebooks!",
+      "evidence_page": 463,
+      "confidence": "low",
+      "rationale": "Students use multiple modes and genres (songs, poems, informational writing) to communicate to an audience. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.023157894736842106,
+        "dense_rank": 16,
+        "bm25_rank": 40,
+        "dense_score": 0.5438583,
+        "bm25_score": 52.707400250268336,
+        "rerank_score": 0.9946422576904297
+      },
+      "standard_raw_text": "Integrate modes and genres most appropriate to purpose and audience. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L13",
+      "standard_code": "1.P.CP.2.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Recite all or part of significant poems appropriate for grade level.",
+          "met": true,
+          "note": "Students recite and sing poems and songs."
+        },
+        {
+          "clause": "Recite all or part of significant speeches appropriate for grade level.",
+          "met": true,
+          "note": "Students recite poems and songs, which serve as speeches for this age group."
+        }
+      ],
+      "evidence": "Invite students to join you as sing the song and complete the accompanying hand motions. Repeat this process with the 'Moon' song. Tell students that they now will share their 'What the Sun Sees' poems with the visitors.",
+      "evidence_page": 463,
+      "confidence": "low",
+      "rationale": "Students recite poems and songs, fully meeting the standard. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.02332285115303983,
+        "dense_rank": 12,
+        "bm25_rank": 46,
+        "dense_score": 0.54950273,
+        "bm25_score": 50.79316337665025,
+        "rerank_score": 0.9936929941177368
+      },
+      "standard_raw_text": "Build background knowledge by reciting all or part of significant poems and speeches as appropriate by grade level. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L13",
+      "standard_code": "1.P.CP.1",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Arrive prepared to actively participate in group discussions and collaborative meetings.",
+          "met": true,
+          "note": "Students previously practiced and come prepared to participate in small-group Q&A."
+        },
+        {
+          "clause": "Collaborate with others to determine group norms when working on shared projects.",
+          "met": false,
+          "note": "Teacher/visitors set procedures; students do not co-create norms."
+        },
+        {
+          "clause": "Collaborate with others to establish goals and procedures when working on shared projects.",
+          "met": false,
+          "note": "Procedures (turn-taking, order) are assigned, not student-determined."
+        },
+        {
+          "clause": "Collaborate with others to facilitate productivity when working on shared projects.",
+          "met": false,
+          "note": "Visitors are asked to keep groups moving; no student-led facilitation."
+        },
+        {
+          "clause": "Contribute to discussions and shared projects by offering ideas.",
+          "met": true,
+          "note": "Students present information and answer questions in small groups."
+        },
+        {
+          "clause": "Contribute to discussions and shared projects by listening to the ideas of others.",
+          "met": true,
+          "note": "Students are directed to listen as others share."
+        },
+        {
+          "clause": "Contribute to discussions and shared projects by providing feedback.",
+          "met": false,
+          "note": "No peer feedback is elicited or exchanged."
+        },
+        {
+          "clause": "Work with others to discuss topics.",
+          "met": true,
+          "note": "Small-group Q&A with visitors involves discussing module topics."
+        },
+        {
+          "clause": "Work with others to investigate questions.",
+          "met": false,
+          "note": "Students answer prepared questions; no collaborative investigation occurs."
+        },
+        {
+          "clause": "Work with others to solve problems.",
+          "met": false,
+          "note": "No problem-solving task is present."
+        },
+        {
+          "clause": "Work with others to explore and create texts.",
+          "met": false,
+          "note": "Students share prewritten texts; no collaborative exploration/creation."
+        }
+      ],
+      "evidence": "- Using a total participation technique, invite responses from the group:\n- 'When you are answering questions from the visitors, what is it important that you remember to do?' (speak clearly and loudly, make eye contact with visitors, listen as others share)\n- Tell students they now will share information about the sun, moon, and stars with the visitors, and they will answer questions from the visitors:\n- Tell students that they will gather in small presentation groups with a few other classmates and one or two visitors.\n- Once in their groups, they will take turns answering questions from the visitors.\n- Remind students that they practiced answering these questions in the previous lesson.",
+      "evidence_page": 463,
+      "confidence": "high",
+      "rationale": "Students collaborate in small groups to present and answer questions, demonstrating preparation, turn-taking, and listening. However, they do not co-establish norms/goals, provide peer feedback, investigate or solve problems, or create texts collaboratively.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "gpt-5",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.021869488536155203,
+        "dense_rank": 45,
+        "bm25_rank": 21,
+        "dense_score": 0.5033727,
+        "bm25_score": 65.60204327347256,
+        "rerank_score": 0.9936732053756714
+      },
+      "standard_raw_text": "Collaborate with others to accomplish shared goals and projects."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L13",
+      "standard_code": "1.P.CP.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Communicate ideas clearly when presenting.",
+          "met": true,
+          "note": "Students are directed to speak clearly and loudly when presenting."
+        },
+        {
+          "clause": "Present information in an organized manner.",
+          "met": true,
+          "note": "Students present in a set order within groups."
+        },
+        {
+          "clause": "Express ideas and information clearly through speech.",
+          "met": true,
+          "note": "Students share information and poems aloud to an audience."
+        }
+      ],
+      "evidence": "Tell students that they now will share information about the sun, moon, and stars with the visitors, and they will answer questions from the visitors: Tell students that they will gather in small presentation groups with a few other classmates and one or two visitors. Once in their groups, they will take turns answering questions from the visitors. Tell students that they now will share their 'What the Sun Sees' poems with the visitors.",
+      "evidence_page": 463,
+      "confidence": "low",
+      "rationale": "Students clearly present information and poems in an organized manner to an audience. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.026540946394272742,
+        "dense_rank": 9,
+        "bm25_rank": 23,
+        "dense_score": 0.55547357,
+        "bm25_score": 63.49218941024592,
+        "rerank_score": 0.9929748773574829
+      },
+      "standard_raw_text": "Communicate clearly to present ideas, information, and texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L13",
+      "standard_code": "1.T.RA.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Share relevant information about a topic.",
+          "met": true,
+          "note": "Students share information about the sun, moon, and stars."
+        },
+        {
+          "clause": "Share accurate information about a topic.",
+          "met": true,
+          "note": "Students share accurate facts and observations from their study."
+        },
+        {
+          "clause": "Use a variety of communication modes to share information.",
+          "met": true,
+          "note": "Students use songs, poems, and oral presentations."
+        }
+      ],
+      "evidence": "Tell students that now they get to share the work they did that is similar to astronomers by sharing information they have learned throughout the module! Tell students that they now will share their 'What the Sun Sees' poems with the visitors. Tell students that now they get to share the work they did making and writing and drawing about observations of videos and pictures of the sun and moon by sharing their Sky notebooks!",
+      "evidence_page": 463,
+      "confidence": "low",
+      "rationale": "Students share relevant and accurate information about the sun, moon, and stars using multiple modes (songs, poems, oral presentations). [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1",
+      "judge_model": "gpt-4.1",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.03125763125763126,
+        "dense_rank": 3,
+        "bm25_rank": 5,
+        "dense_score": 0.5884917,
+        "bm25_score": 85.37087222648151,
+        "rerank_score": 0.9919551014900208
+      },
+      "standard_raw_text": "Share relevant and accurate information through a variety of different modes. (C)"
+    }
+  ]
+}
