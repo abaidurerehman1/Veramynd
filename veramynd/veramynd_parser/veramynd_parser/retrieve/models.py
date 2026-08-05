@@ -8,7 +8,7 @@ from typing import Any
 
 @dataclass
 class StandardDoc:
-    """One embeddable standard leaf used by BM25 / dense fusion."""
+    """One embeddable / searchable standard (leaf after filter)."""
 
     standard_code: str
     text: str

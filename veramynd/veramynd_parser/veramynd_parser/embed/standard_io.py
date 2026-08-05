@@ -1,4 +1,4 @@
-"""Load embeddable normalized standards (one vector per leaf via ``embed_text``)."""
+"""Load embeddable normalized standards (one vector per alignable leaf)."""
 
 from __future__ import annotations
 
@@ -7,6 +7,11 @@ import json
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
+
+from .standard_text import build_retrieval_text
+
+# Hierarchy folders are never alignment / embed targets.
+_NON_ALIGNABLE_LEVELS = frozenset({"domain", "big_idea"})
 
 
 @dataclass(frozen=True)
@@ -41,14 +46,44 @@ def content_hash_for_text(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
+def _filter_alignable_leaves(
+    rows: list[EmbeddableStandard],
+) -> list[EmbeddableStandard]:
+    """Keep terminal standards only (codes that are not parents of others)."""
+    parent_codes: set[str] = set()
+    for r in rows:
+        raw = ""
+        if isinstance(r.metadata, dict):
+            raw = (r.metadata.get("parent_code") or "").strip()
+        if raw:
+            parent_codes.add(raw)
+    out: list[EmbeddableStandard] = []
+    for r in rows:
+        level = (r.level or "").strip().lower()
+        if level in _NON_ALIGNABLE_LEVELS:
+            continue
+        code = (r.standard_code or "").strip()
+        if not code or code in parent_codes:
+            continue
+        out.append(r)
+    return out
+
+
 def load_embeddable_standards(
     standards_dir: Path | str,
     *,
     codes: set[str] | None = None,
+    leaves_only: bool = True,
+    use_rich_text: bool = True,
 ) -> list[EmbeddableStandard]:
-    """Read ``normalize_standards/*.json`` leaves; skip progress/manifest sidecars.
+    """Read ``normalize_standards/*.json`` for dense embed / BM25.
 
-    If ``codes`` is set, only those ``standard_code`` values are loaded.
+    Enterprise defaults:
+    - ``leaves_only=True`` — embed/retrieve terminal codes only (parents stay on disk)
+    - ``use_rich_text=True`` — embed competency/skills/verbs/keywords, not a thin sentence
+
+    If ``codes`` is set, only those ``standard_code`` values are loaded (then
+    leaf-filtered when ``leaves_only``).
     """
     root = Path(standards_dir)
     if not root.is_dir():
@@ -82,9 +117,12 @@ def load_embeddable_standards(
         if codes is not None and code not in codes:
             continue
 
-        text = (data.get("embed_text") or "").strip()
+        if use_rich_text:
+            text = build_retrieval_text(data).strip()
+        else:
+            text = (data.get("embed_text") or "").strip()
         if not text:
-            raise ValueError(f"{path}: empty embed_text for {code}")
+            raise ValueError(f"{path}: empty retrieval/embed text for {code}")
 
         if code in seen:
             raise ValueError(f"duplicate standard_code across files: {code}")
@@ -117,13 +155,21 @@ def load_embeddable_standards(
                     "cognitive_demand": (data.get("cognitive_demand") or "").strip()
                     or None,
                     "prompt_version": (data.get("prompt_version") or "").strip() or None,
+                    "embed_text_mode": "rich_leaf" if use_rich_text else "embed_text",
                 },
             )
         )
 
+    if leaves_only:
+        out = _filter_alignable_leaves(out)
+
     if codes is not None and not out:
         raise FileNotFoundError(
             f"no embeddable standards for codes={sorted(codes)} under {root}"
+        )
+    if not out:
+        raise FileNotFoundError(
+            f"no alignable leaf standards under {root} (leaves_only={leaves_only})"
         )
     return out
 

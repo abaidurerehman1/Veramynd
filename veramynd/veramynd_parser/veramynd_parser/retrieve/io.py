@@ -9,9 +9,23 @@ from ..embed.standard_io import load_embeddable_standards
 from .models import StandardDoc
 
 
-def load_standard_docs(standards_dir: Path | str) -> list[StandardDoc]:
-    """Load normalized standard leaves as BM25/dense fusion docs."""
-    rows = load_embeddable_standards(standards_dir)
+def load_standard_docs(
+    standards_dir: Path | str,
+    *,
+    leaves_only: bool = True,
+) -> list[StandardDoc]:
+    """Load normalized standards for BM25 / hybrid fusion.
+
+    Default ``leaves_only=True`` keeps terminal (alignable) codes only —
+    parent folders are excluded from the retrieve funnel.
+
+    Document ``text`` matches dense embed text (rich leaf representation).
+    """
+    rows = load_embeddable_standards(
+        standards_dir,
+        leaves_only=leaves_only,
+        use_rich_text=True,
+    )
     return [
         StandardDoc(
             standard_code=r.standard_code,
@@ -24,6 +38,7 @@ def load_standard_docs(standards_dir: Path | str) -> list[StandardDoc]:
         )
         for r in rows
     ]
+
 
 
 def lesson_query_from_chunk_bundle(
@@ -52,6 +67,38 @@ def lesson_query_from_chunk_bundle(
     if not text:
         raise ValueError(f"{p}: empty instructional chunk text")
     return text, label
+
+
+def instructional_queries_from_chunk_bundle(
+    path: Path | str,
+) -> list[tuple[str, str]]:
+    """Return ``[(query_text, chunk_id), ...]`` for each instructional chunk.
+
+    Falls back to the single lesson-level chunk when instructional sections
+    are missing (keeps retrieve runnable on older bundles).
+    """
+    p = Path(path)
+    data = json.loads(p.read_text(encoding="utf-8"))
+    out: list[tuple[str, str]] = []
+    for block in data.get("instructional_chunks") or []:
+        if not isinstance(block, dict):
+            continue
+        text = (block.get("text") or "").strip()
+        if not text:
+            continue
+        label = (block.get("chunk_id") or "").strip() or f"{p.stem}#instructional"
+        out.append((text, label))
+    if out:
+        return out
+    # Fallback: whole-lesson query.
+    text, label = lesson_query_from_chunk_bundle(p, family="lesson")
+    return [(text, label)]
+
+
+def rerank_query_from_chunk_bundle(path: Path | str) -> str:
+    """Lesson-level text for cross-encoder rerank (broader context than one section)."""
+    text, _ = lesson_query_from_chunk_bundle(path, family="lesson")
+    return text
 
 
 def lesson_query_from_normalize(path: Path | str) -> tuple[str, str]:
@@ -94,7 +141,9 @@ def lesson_query_from_normalize(path: Path | str) -> tuple[str, str]:
 
 
 __all__ = [
+    "instructional_queries_from_chunk_bundle",
     "lesson_query_from_chunk_bundle",
     "lesson_query_from_normalize",
     "load_standard_docs",
+    "rerank_query_from_chunk_bundle",
 ]

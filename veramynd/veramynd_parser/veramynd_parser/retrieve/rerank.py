@@ -64,12 +64,26 @@ def rerank_candidates(
     top_n: int = DEFAULT_RERANK_TOP_N,
     model_id: str | None = None,
     score_fn: Callable[[str, list[str]], list[float]] | None = None,
+    blend_rrf: float = 0.0,
+    preserve_rrf_top: int = 0,
 ) -> list[Candidate]:
-    """Rerank hybrid candidates with a cross-encoder; return top_n."""
+    """Rerank hybrid candidates with a cross-encoder; return top_n.
+
+    ``blend_rrf`` in [0,1] mixes normalized RRF rank-score with cross-encoder
+    scores so strong first-stage hits are less likely to be dropped.
+
+    ``preserve_rrf_top`` forces the first N RRF-ordered candidates into the
+    output (then fills remaining slots by blended/rerank score).
+    """
     if top_n < 1:
         raise ValueError(f"top_n must be >= 1, got {top_n}")
     if not candidates:
         return []
+    if not 0.0 <= float(blend_rrf) <= 1.0:
+        raise ValueError(f"blend_rrf must be in [0,1], got {blend_rrf}")
+    if preserve_rrf_top < 0:
+        raise ValueError(f"preserve_rrf_top must be >= 0, got {preserve_rrf_top}")
+
     q = (query or "").strip()
     if not q:
         raise RerankError("empty query for rerank")
@@ -87,13 +101,84 @@ def rerank_candidates(
             f"rerank returned {len(scores)} scores for {len(candidates)} candidates"
         )
 
-    ranked = sorted(
-        zip(candidates, scores, strict=True),
-        key=lambda pair: (-pair[1], pair[0].standard_code),
+    # Normalize cross-encoder scores to [0,1] for blending.
+    lo = min(scores)
+    hi = max(scores)
+    span = (hi - lo) or 1.0
+    norm_ce = [(s - lo) / span for s in scores]
+
+    # RRF rank prior: earlier list order = stronger first-stage (merge) rank.
+    n = len(candidates)
+    norm_rrf = [1.0 - (i / max(n - 1, 1)) for i in range(n)]
+    alpha = float(blend_rrf)
+    blended = [
+        (1.0 - alpha) * ce + alpha * rr for ce, rr in zip(norm_ce, norm_rrf, strict=True)
+    ]
+
+    scored: list[tuple[Candidate, float, float]] = [
+        (cand, float(raw), float(blend))
+        for cand, raw, blend in zip(candidates, scores, blended, strict=True)
+    ]
+    by_blend = sorted(
+        scored,
+        key=lambda row: (-row[2], -row[1], row[0].standard_code),
     )
-    out: list[Candidate] = []
-    for cand, score in ranked[:top_n]:
-        out.append(
+    score_by_code = {c.standard_code: (raw, blend) for c, raw, blend in scored}
+
+    # Preserve = must appear in the final top_n set (not pinned in raw RRF order).
+    must_keep = {
+        c.standard_code for c in candidates[: min(int(preserve_rrf_top), len(candidates))]
+    }
+    selected_codes: list[str] = []
+    seen: set[str] = set()
+
+    # First take best blended scores.
+    for cand, _raw, _blend in by_blend:
+        if len(selected_codes) >= top_n:
+            break
+        if cand.standard_code in seen:
+            continue
+        selected_codes.append(cand.standard_code)
+        seen.add(cand.standard_code)
+
+    # If a preserved RRF hit was crowded out, swap in the worst blended slot.
+    for code in must_keep:
+        if code in seen or len(selected_codes) < top_n:
+            if code not in seen and len(selected_codes) < top_n:
+                selected_codes.append(code)
+                seen.add(code)
+            continue
+        # Replace lowest-blend selected item that is not itself preserved.
+        replace_at = None
+        worst_blend = None
+        for i, sel in enumerate(selected_codes):
+            if sel in must_keep:
+                continue
+            b = score_by_code[sel][1]
+            if worst_blend is None or b < worst_blend:
+                worst_blend = b
+                replace_at = i
+        if replace_at is not None:
+            old = selected_codes[replace_at]
+            selected_codes[replace_at] = code
+            seen.discard(old)
+            seen.add(code)
+
+    # Final order: blended score desc (enterprise judge still sees best first).
+    cand_by_code = {c.standard_code: c for c in candidates}
+    ordered = sorted(
+        selected_codes,
+        key=lambda code: (
+            -score_by_code[code][1],
+            -score_by_code[code][0],
+            code,
+        ),
+    )
+    selected: list[Candidate] = []
+    for code in ordered:
+        cand = cand_by_code[code]
+        raw = score_by_code[code][0]
+        selected.append(
             Candidate(
                 standard_code=cand.standard_code,
                 text=cand.text,
@@ -102,14 +187,14 @@ def rerank_candidates(
                 bm25_rank=cand.bm25_rank,
                 dense_score=cand.dense_score,
                 bm25_score=cand.bm25_score,
-                rerank_score=float(score),
+                rerank_score=float(raw),
                 domain_primary=cand.domain_primary,
                 label=cand.label,
                 level=cand.level,
                 grade=cand.grade,
             )
         )
-    return out
+    return selected
 
 
 __all__ = [

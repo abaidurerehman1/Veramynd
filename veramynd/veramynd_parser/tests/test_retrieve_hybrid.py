@@ -10,7 +10,12 @@ import pytest
 from veramynd_parser.cli import build_parser
 from veramynd_parser.retrieve.bm25 import StandardsBm25Index, tokenize
 from veramynd_parser.retrieve.models import Candidate, StandardDoc
-from veramynd_parser.retrieve.pipeline import hybrid_retrieve_standards, retrieve_and_rerank
+from veramynd_parser.retrieve.pipeline import (
+    build_judge_shortlist,
+    hybrid_retrieve_standards,
+    multi_query_hybrid_retrieve,
+    retrieve_and_rerank,
+)
 from veramynd_parser.retrieve.rerank import rerank_candidates
 from veramynd_parser.retrieve.rrf import reciprocal_rank_fusion
 
@@ -19,6 +24,253 @@ def test_tokenize_keeps_dotted_codes():
     toks = tokenize("Standard 1.F.PA.4 syllables in spoken words")
     assert "1.f.pa.4" in toks
     assert "syllables" in toks
+
+
+def test_judge_shortlist_fuses_rerank_and_first_stage_rrf():
+    reranked = [
+        Candidate(standard_code="A", text="a", rerank_score=0.9),
+        Candidate(standard_code="B", text="b", rerank_score=0.8),
+        Candidate(standard_code="C", text="c", rerank_score=0.7),
+    ]
+    merged = [
+        Candidate(standard_code="C", text="c", rrf_score=0.3),
+        Candidate(standard_code="D", text="d", rrf_score=0.2),
+        Candidate(standard_code="A", text="a", rrf_score=0.1),
+    ]
+    out = build_judge_shortlist(reranked, merged, top_n=3, rrf_weight=0.5)
+    assert len(out) == 3
+    assert len({c.standard_code for c in out}) == 3
+    assert "C" in {c.standard_code for c in out}
+
+
+def test_filter_alignable_leaves_drops_parents():
+    from veramynd_parser.retrieve.leaves import filter_alignable_leaves
+
+    docs = [
+        StandardDoc(
+            standard_code="1.T.RA.1",
+            text="parent folder",
+            level="standard",
+            metadata={},
+        ),
+        StandardDoc(
+            standard_code="1.T.RA.1.a",
+            text="ask questions leaf",
+            level="substandard",
+            metadata={"parent_code": "1.T.RA.1"},
+        ),
+        StandardDoc(
+            standard_code="1.T.RA.1.b",
+            text="research leaf",
+            level="substandard",
+            metadata={"parent_code": "1.T.RA.1"},
+        ),
+        StandardDoc(
+            standard_code="1.T",
+            text="domain",
+            level="domain",
+            metadata={},
+        ),
+    ]
+    leaves = filter_alignable_leaves(docs)
+    assert {d.standard_code for d in leaves} == {"1.T.RA.1.a", "1.T.RA.1.b"}
+
+
+def test_multi_query_rrf_merge_prefers_codes_seen_across_queries(tmp_path: Path):
+    """Two instructional queries; code strong in both should rank above one-hit noise."""
+    qdrant = pytest.importorskip("qdrant_client")
+    from qdrant_client.http import models as qm
+
+    src = tmp_path / "normalize_standards"
+    src.mkdir()
+    rows = [
+        {
+            "standard_code": "1.T.RA.1.a",
+            "level": "substandard",
+            "parent_code": "1.T.RA.1",
+            "grade": 1,
+            "framework": "GA ELA",
+            "label": "Ask",
+            "domain": {"primary": "Comprehension", "secondary": []},
+            "embed_text": "ask questions topics interest research",
+        },
+        {
+            "standard_code": "1.F.PA.4.d",
+            "level": "substandard",
+            "parent_code": "1.F.PA.4",
+            "grade": 1,
+            "framework": "GA ELA",
+            "label": "Syllables",
+            "domain": {"primary": "Foundations", "secondary": []},
+            "embed_text": "syllables spoken words phonological",
+        },
+        {
+            "standard_code": "1.L.V.1.a",
+            "level": "substandard",
+            "parent_code": "1.L.V.1",
+            "grade": 1,
+            "framework": "GA ELA",
+            "label": "Vocab",
+            "domain": {"primary": "Language", "secondary": []},
+            "embed_text": "vocabulary words phrases grade-level texts",
+        },
+    ]
+    for row in rows:
+        (src / f"{row['standard_code']}.json").write_text(
+            json.dumps(row), encoding="utf-8"
+        )
+
+    dims = 6
+    client = qdrant.QdrantClient(location=":memory:")
+    client.create_collection(
+        "test_multi",
+        vectors_config=qm.VectorParams(size=dims, distance=qm.Distance.COSINE),
+    )
+    # Vectors: ask≈[1,0,...], syllables≈[0,1,...], vocab≈[0,0,1,...]
+    vecs = {
+        "1.T.RA.1.a": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+        "1.F.PA.4.d": [0.0, 1.0, 0.0, 0.0, 0.0, 0.0],
+        "1.L.V.1.a": [0.0, 0.0, 1.0, 0.0, 0.0, 0.0],
+    }
+    for i, row in enumerate(rows):
+        client.upsert(
+            "test_multi",
+            points=[
+                qm.PointStruct(
+                    id=i + 1,
+                    vector=vecs[row["standard_code"]],
+                    payload={
+                        "standard_code": row["standard_code"],
+                        "text": row["embed_text"],
+                        "domain_primary": row["domain"]["primary"],
+                        "label": row["label"],
+                        "level": row["level"],
+                        "grade": 1,
+                    },
+                )
+            ],
+        )
+
+    def fake_embed(texts: list[str]) -> list[list[float]]:
+        out = []
+        for t in texts:
+            tl = t.lower()
+            if "question" in tl or "research" in tl:
+                out.append([0.95, 0.05, 0.0, 0.0, 0.0, 0.0])
+            elif "syllable" in tl:
+                out.append([0.05, 0.95, 0.0, 0.0, 0.0, 0.0])
+            else:
+                out.append([0.1, 0.1, 0.8, 0.0, 0.0, 0.0])
+        return out
+
+    merged, _diag = multi_query_hybrid_retrieve(
+        [
+            "students ask questions about topics for research",
+            "students ask and generate research questions",
+        ],
+        src,
+        per_query_top_k=3,
+        merge_top_k=3,
+        arm_limit=5,
+        collection="test_multi",
+        dimensions=dims,
+        embed_fn=fake_embed,
+        qdrant_client=client,
+    )
+    assert merged[0].standard_code == "1.T.RA.1.a"
+    assert all(c.level == "substandard" for c in merged)
+
+
+def test_hybrid_excludes_parent_even_if_dense_ranks_it_first(tmp_path: Path):
+    qdrant = pytest.importorskip("qdrant_client")
+    from qdrant_client.http import models as qm
+
+    src = tmp_path / "normalize_standards"
+    src.mkdir()
+    rows = [
+        {
+            "standard_code": "1.T.RA.1",
+            "level": "standard",
+            "grade": 1,
+            "framework": "GA ELA",
+            "label": "Research",
+            "parent_code": "1.T.RA",
+            "domain": {"primary": "Comprehension", "secondary": []},
+            "embed_text": "ask questions research topics of interest",
+        },
+        {
+            "standard_code": "1.T.RA.1.a",
+            "level": "substandard",
+            "grade": 1,
+            "framework": "GA ELA",
+            "label": "Ask",
+            "parent_code": "1.T.RA.1",
+            "domain": {"primary": "Comprehension", "secondary": []},
+            "embed_text": "Ask questions about topics of interest for research",
+        },
+        {
+            "standard_code": "1.F.PA.4.d",
+            "level": "substandard",
+            "grade": 1,
+            "framework": "GA ELA",
+            "label": "Syllables",
+            "parent_code": "1.F.PA.4",
+            "domain": {"primary": "Foundations", "secondary": []},
+            "embed_text": "Add delete substitute syllables in spoken words",
+        },
+    ]
+    for row in rows:
+        (src / f"{row['standard_code']}.json").write_text(
+            json.dumps(row), encoding="utf-8"
+        )
+
+    dims = 8
+    client = qdrant.QdrantClient(location=":memory:")
+    client.create_collection(
+        collection_name="test_stds_leaf",
+        vectors_config=qm.VectorParams(size=dims, distance=qm.Distance.COSINE),
+    )
+    # Parent vector closest to query — leaf-only must still drop it.
+    for i, row in enumerate(rows):
+        vec = [0.05] * dims
+        vec[0] = 1.0 if i == 0 else (0.8 if i == 1 else 0.1)
+        client.upsert(
+            collection_name="test_stds_leaf",
+            points=[
+                qm.PointStruct(
+                    id=i + 1,
+                    vector=vec,
+                    payload={
+                        "standard_code": row["standard_code"],
+                        "text": row["embed_text"],
+                        "domain_primary": row["domain"]["primary"],
+                        "label": row["label"],
+                        "level": row["level"],
+                        "grade": row["grade"],
+                    },
+                )
+            ],
+        )
+
+    def fake_embed(texts: list[str]) -> list[list[float]]:
+        v = [0.05] * dims
+        v[0] = 0.99
+        return [v for _ in texts]
+
+    hits = hybrid_retrieve_standards(
+        "ask questions about topics of interest for research",
+        src,
+        top_k=5,
+        arm_limit=5,
+        collection="test_stds_leaf",
+        dimensions=dims,
+        embed_fn=fake_embed,
+        qdrant_client=client,
+    )
+    codes = [c.standard_code for c in hits]
+    assert "1.T.RA.1" not in codes
+    assert "1.T.RA.1.a" in codes
+    assert all(c.level == "substandard" for c in hits)
 
 
 def test_rrf_prefers_items_ranked_high_in_both_lists():

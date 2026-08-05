@@ -16,10 +16,10 @@ identically, at scale, with a paper trail.
 ## Project status (honest)
 
 This repo is a **working end-to-end pipeline** for the reference EL Education G1M2
-guide + Georgia Grade 1 ELA standards. It is **not** a finished product: there is no
-gold-set evaluation gate yet, the agentic/graph track is design-only, and production
-packaging (hosted Qdrant compose in-tree, eval harness, multi-publisher hardening) is
-still open.
+guide + Georgia Grade 1 ELA standards. Enterprise bar (~90% leaf recall @ judge
+cutoff + ~90% judge agreement vs gold) is **not met yet**: retrieve is close at
+rerank@30 on the gold set; judge/partial rubric is the main gap. The agentic/graph
+track remains design-only.
 
 | Stage | Status | Location |
 |---|---|---|
@@ -27,11 +27,11 @@ still open.
 | **Pedagogical normalize (lessons)** — distill each lesson into what the student does, evidence-backed | **Implemented** | [`veramynd_parser/veramynd_parser/normalize/`](veramynd_parser/veramynd_parser/normalize/) |
 | **Standards normalize** — retrieval-ready standard leaves (`embed_text`) | **Implemented** | [`normalize/standard.py`](veramynd_parser/veramynd_parser/normalize/standard.py) |
 | **Chunk** — hierarchical lesson / instructional / evidence-pointer bundles | **Implemented** | [`chunk/`](veramynd_parser/veramynd_parser/chunk/) |
-| **Embed → Qdrant** — OpenAI dense vectors for chunks + standards | **Implemented** | [`embed/`](veramynd_parser/veramynd_parser/embed/) |
-| **Hybrid retrieve + rerank** — dense + BM25 → RRF → cross-encoder | **Implemented** | [`retrieve/`](veramynd_parser/veramynd_parser/retrieve/) |
+| **Embed → Qdrant** — leaf-only standards + rich retrieval text; chunk vectors | **Implemented** | [`embed/`](veramynd_parser/veramynd_parser/embed/) |
+| **Hybrid retrieve + rerank** — multi-query enterprise funnel (dense + BM25 → RRF → cross-encoder) | **Implemented** | [`retrieve/`](veramynd_parser/veramynd_parser/retrieve/) |
 | **Alignment judge + grounding** — LLM rubric; ungrounded claims rejected | **Implemented** | [`judge/`](veramynd_parser/veramynd_parser/judge/) |
 | **Report** — CSV + HTML audit dashboard | **Implemented** | [`report/`](veramynd_parser/veramynd_parser/report/) |
-| **Gold-set eval harness** — expert-labeled pairs, recall/accuracy gates | **Not built** | Designed in [`docs/architecture.md`](docs/architecture.md) §16 (`eval/` not in repo yet) |
+| **Gold-set metrics** — leaf recall @k + judge agreement vs SME labels (JSONL) | **Partial** | [`retrieve/gold_metrics.py`](veramynd_parser/veramynd_parser/retrieve/gold_metrics.py); reports under `output/reports/` |
 | **Agentic + standards-graph track** — alternate Stages 2–7 (no vector DB) | **Design only** | [`docs/architecture-agentic-graph.md`](docs/architecture-agentic-graph.md) |
 
 ## How it works
@@ -49,9 +49,9 @@ cross-engine standards). Soft checks flag review without blocking `GO`.
 **3. Normalize → chunk → embed.** Lessons and standards become retrieval-ready text;
 chunks land in Qdrant (`text-embedding-3-large`).
 
-**4. Retrieve → judge → report.** Hybrid retrieval proposes candidates; the judge
-scores `full` / `partial` / `none` with grounded evidence; CSV/HTML reports export
-the audit trail.
+**4. Retrieve → judge → report.** Leaf-only standards index; enterprise multi-query
+retrieve builds a wide shortlist, then the judge scores `full` / `partial` / `none`
+with grounded evidence. CSV/HTML reports export the audit trail.
 
 ## Design principles
 
@@ -87,8 +87,14 @@ veramynd-parser normalize-lessons output/stage1/lessons --out output/normalize
 veramynd-parser normalize-standards output/stage1/standards.json --out output/normalize_standards
 veramynd-parser chunk-lessons output/stage1/lessons --normalize-dir output/normalize --out output/chunks
 veramynd-parser embed-chunks output/chunks --out output/embeddings --recreate
+# Leaf-only + rich text (defaults); recreate after switching modes
 veramynd-parser embed-standards output/normalize_standards --out output/embeddings --recreate
+
+# Single-query hybrid (CLI) or enterprise multi-query batch:
 veramynd-parser retrieve-standards --chunk-file output/chunks/by_lesson/G1M2U1L3.json --out output/retrieve/G1M2U1L3.json
+python -m veramynd_parser.scripts.batch_align_all \
+  --multi-query --from-gold path/to/gold_set.jsonl --no-escalate --force-retrieve
+
 veramynd-parser judge-standards --retrieve-file output/retrieve/G1M2U1L3.json \
   --lesson-file output/stage1/lessons/G1M2U1L3.json \
   --standards-dir output/normalize_standards --out output/judge/G1M2U1L3.json

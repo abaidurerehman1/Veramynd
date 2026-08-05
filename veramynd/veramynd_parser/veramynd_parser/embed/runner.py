@@ -809,7 +809,10 @@ def embed_standards_to_qdrant(
     qdrant_client: Any | None = None,
     codes: set[str] | None = None,
 ) -> dict:
-    """Embed normalized standard leaves (``embed_text``) into Qdrant.
+    """Embed normalized **alignable leaf** standards into Qdrant.
+
+    Uses rich retrieval text (competency, skills, verbs, keywords). Parents are
+    not embedded — they remain on disk for hierarchy/UI only.
 
     Incremental by default (skip matching content_hash/model/dims).
     ``force`` re-embeds the selected scope. ``recreate`` rebuilds the embedding
@@ -828,7 +831,9 @@ def embed_standards_to_qdrant(
     )
     collection_name = settings["collection"]
 
-    standards = load_embeddable_standards(src, codes=codes)
+    standards = load_embeddable_standards(
+        src, codes=codes, leaves_only=True, use_rich_text=True
+    )
     if not standards:
         raise EmbedError(f"no embeddable standards found under {src}")
     _validate_text_lengths(standards)

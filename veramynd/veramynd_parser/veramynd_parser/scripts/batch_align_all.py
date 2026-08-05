@@ -29,8 +29,36 @@ from veramynd_parser.judge.pipeline import (
 from veramynd_parser.normalize.llm import LlmError, is_non_retryable_openai_error
 from veramynd_parser.report.dashboard import write_html_dashboard
 from veramynd_parser.report.exporter import export_alignment_report
-from veramynd_parser.retrieve.io import lesson_query_from_chunk_bundle
-from veramynd_parser.retrieve.pipeline import RetrieveError, retrieve_and_rerank
+from veramynd_parser.retrieve.diagnostics import (
+    build_diagnostics_payload,
+    write_diagnostics,
+)
+from veramynd_parser.retrieve.gold_metrics import (
+    report_leaf_recall,
+    resource_ids_from_gold,
+)
+from veramynd_parser.retrieve.io import (
+    instructional_queries_from_chunk_bundle,
+    lesson_query_from_chunk_bundle,
+    rerank_query_from_chunk_bundle,
+)
+from veramynd_parser.retrieve.pipeline import (
+    DEFAULT_ARM_LIMIT,
+    DEFAULT_JUDGE_SHORTLIST_K,
+    DEFAULT_MERGE_TOP_K,
+    DEFAULT_PRESERVE_RRF_TOP,
+    DEFAULT_RERANK_BLEND_RRF,
+    DEFAULT_RERANK_TOP_N_ENTERPRISE,
+    DEFAULT_SHORTLIST_RRF_WEIGHT,
+    RetrieveError,
+    build_judge_shortlist,
+    multi_query_retrieve_and_rerank,
+    retrieve_and_rerank,
+)
+from veramynd_parser.retrieve.queries import (
+    focused_queries_from_normalize,
+    rerank_context_from_normalize,
+)
 from veramynd_parser.text_utils import atomic_write_text
 
 
@@ -38,10 +66,31 @@ def _lesson_ids(lessons_dir: Path) -> list[str]:
     return sorted(p.stem for p in lessons_dir.glob("*.json"))
 
 
+def _gold_codes_by_lesson(gold_jsonl: Path) -> dict[str, list[str]]:
+    out: dict[str, list[str]] = {}
+    for line in gold_jsonl.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        row = json.loads(line)
+        status = (row.get("matched_status") or "").strip().lower()
+        if status not in {"full", "partial"}:
+            continue
+        rid = (row.get("resource_id") or "").strip()
+        code = (row.get("standard_code") or "").strip()
+        if not rid or not code:
+            continue
+        out.setdefault(rid, [])
+        if code not in out[rid]:
+            out[rid].append(code)
+    return out
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description="Batch retrieve+judge+report for all lessons")
     p.add_argument("--lessons-dir", default="output/stage1/lessons")
     p.add_argument("--chunks-dir", default="output/chunks/by_lesson")
+    p.add_argument("--normalize-dir", default="output/normalize")
     p.add_argument("--standards-dir", default="output/normalize_standards")
     p.add_argument("--retrieve-dir", default="output/retrieve")
     p.add_argument("--judge-dir", default="output/judge")
@@ -87,6 +136,39 @@ def main(argv: list[str] | None = None) -> int:
     )
     p.add_argument("--limit-lessons", type=int, default=None)
     p.add_argument("--only", action="append", default=[], help="limit to resource id(s)")
+    p.add_argument(
+        "--multi-query",
+        action="store_true",
+        help="enterprise multi-query retrieve (normalize-focused queries + wide funnel)",
+    )
+    p.add_argument(
+        "--from-gold",
+        default=None,
+        help="limit retrieve to resource_ids listed in this gold JSONL (no hard-coded IDs)",
+    )
+    p.add_argument(
+        "--diag-dir",
+        default="output/reports/retrieve_diag",
+        help="write per-lesson retrieval diagnostics when --multi-query",
+    )
+    p.add_argument("--arm-limit", type=int, default=DEFAULT_ARM_LIMIT)
+    p.add_argument("--merge-top-k", type=int, default=DEFAULT_MERGE_TOP_K)
+    p.add_argument("--per-query-top-k", type=int, default=40)
+    p.add_argument("--rerank-k", type=int, default=DEFAULT_RERANK_TOP_N_ENTERPRISE)
+    p.add_argument("--blend-rrf", type=float, default=DEFAULT_RERANK_BLEND_RRF)
+    p.add_argument("--preserve-rrf-top", type=int, default=DEFAULT_PRESERVE_RRF_TOP)
+    p.add_argument(
+        "--judge-shortlist-k",
+        type=int,
+        default=DEFAULT_JUDGE_SHORTLIST_K,
+        help="cost-aware final candidates[] size sent to judge",
+    )
+    p.add_argument(
+        "--shortlist-rrf-weight",
+        type=float,
+        default=DEFAULT_SHORTLIST_RRF_WEIGHT,
+        help="first-stage RRF weight in rerank+RRF shortlist fusion",
+    )
     args = p.parse_args(argv)
 
     if args.force:
@@ -96,13 +178,24 @@ def main(argv: list[str] | None = None) -> int:
 
     lessons_dir = Path(args.lessons_dir)
     chunks_dir = Path(args.chunks_dir)
+    normalize_dir = Path(args.normalize_dir)
     standards_dir = Path(args.standards_dir)
     retrieve_dir = Path(args.retrieve_dir)
     judge_dir = Path(args.judge_dir)
+    diag_dir = Path(args.diag_dir)
     retrieve_dir.mkdir(parents=True, exist_ok=True)
     judge_dir.mkdir(parents=True, exist_ok=True)
 
     ids = _lesson_ids(lessons_dir)
+    gold_by_lesson: dict[str, list[str]] = {}
+    if args.from_gold:
+        gold_path = Path(args.from_gold)
+        if not gold_path.is_file():
+            print(f"ERROR: gold file not found: {gold_path}", file=sys.stderr)
+            return 2
+        want_gold = set(resource_ids_from_gold(gold_path))
+        ids = [i for i in ids if i in want_gold]
+        gold_by_lesson = _gold_codes_by_lesson(gold_path)
     if args.only:
         want = set(args.only)
         ids = [i for i in ids if i in want]
@@ -121,7 +214,7 @@ def main(argv: list[str] | None = None) -> int:
         for i, rid in enumerate(ids, start=1):
             chunk = chunks_dir / f"{rid}.json"
             out = retrieve_dir / f"{rid}.json"
-            if not chunk.is_file():
+            if not chunk.is_file() and not args.multi_query:
                 failed.append({"resource_id": rid, "stage": "retrieve", "error": "missing chunk"})
                 print(f"[{i}/{len(ids)}] SKIP retrieve {rid}: missing chunk", flush=True)
                 continue
@@ -130,24 +223,123 @@ def main(argv: list[str] | None = None) -> int:
                 continue
             print(f"[{i}/{len(ids)}] retrieve {rid}...", flush=True)
             try:
-                query, source = lesson_query_from_chunk_bundle(chunk, family="lesson")
-                hits = retrieve_and_rerank(
-                    query,
-                    standards_dir,
-                    skip_rerank=bool(args.no_rerank),
-                )
-                payload = {
-                    "schema_version": "1.0-retrieve-hybrid",
-                    "query_source": source,
-                    "top_k": 30,
-                    "rerank_k": 10,
-                    "skip_rerank": bool(args.no_rerank),
-                    "candidates": [c.to_dict() for c in hits],
-                }
-                atomic_write_text(out, json.dumps(payload, indent=2) + "\n")
+                if args.multi_query:
+                    norm = normalize_dir / f"{rid}.json"
+                    query_meta: list[dict[str, str]] = []
+                    if norm.is_file():
+                        query_meta = focused_queries_from_normalize(norm)
+                        rerank_q = rerank_context_from_normalize(norm)
+                        query_mode = "multi_normalize_focused"
+                    else:
+                        # Fallback: instructional chunks (still multi-query).
+                        qpairs = instructional_queries_from_chunk_bundle(chunk)
+                        query_meta = [
+                            {
+                                "query_id": label,
+                                "source": "instructional_chunk",
+                                "text": text,
+                            }
+                            for text, label in qpairs
+                        ]
+                        rerank_q = rerank_query_from_chunk_bundle(chunk)
+                        query_mode = "multi_instructional_fallback"
+                    queries = [q["text"] for q in query_meta]
+                    sources = [q["query_id"] for q in query_meta]
+                    hits, rrf_hits, per_q = multi_query_retrieve_and_rerank(
+                        queries,
+                        standards_dir,
+                        rerank_query=rerank_q,
+                        per_query_top_k=int(args.per_query_top_k),
+                        merge_top_k=int(args.merge_top_k),
+                        arm_limit=int(args.arm_limit),
+                        rerank_k=int(args.rerank_k),
+                        skip_rerank=bool(args.no_rerank),
+                        blend_rrf=float(args.blend_rrf),
+                        preserve_rrf_top=int(args.preserve_rrf_top),
+                        collect_diagnostics=True,
+                    )
+                    shortlist = build_judge_shortlist(
+                        hits,
+                        rrf_hits,
+                        top_n=int(args.judge_shortlist_k),
+                        rrf_weight=float(args.shortlist_rrf_weight),
+                    )
+                    # Attach query metadata onto diagnostics rows.
+                    for row, meta in zip(per_q, query_meta):
+                        row["query_id"] = meta.get("query_id")
+                        row["source"] = meta.get("source")
+                        row["text_preview"] = (meta.get("text") or "")[:240]
+                    payload = {
+                        "schema_version": "1.2-retrieve-enterprise",
+                        "query_mode": query_mode,
+                        "query_source": ";".join(sources),
+                        "query_sources": sources,
+                        "n_queries": len(queries),
+                        "arm_limit": int(args.arm_limit),
+                        "per_query_top_k": int(args.per_query_top_k),
+                        "merge_top_k": int(args.merge_top_k),
+                        "rerank_k": int(args.rerank_k),
+                        "blend_rrf": float(args.blend_rrf),
+                        "preserve_rrf_top": int(args.preserve_rrf_top),
+                        "judge_shortlist_k": int(args.judge_shortlist_k),
+                        "shortlist_rrf_weight": float(args.shortlist_rrf_weight),
+                        "skip_rerank": bool(args.no_rerank),
+                        "candidates": [c.to_dict() for c in shortlist],
+                        "reranked_candidates": [c.to_dict() for c in hits],
+                        "rrf_candidates": [c.to_dict() for c in rrf_hits],
+                    }
+                    atomic_write_text(out, json.dumps(payload, indent=2) + "\n")
+                    diag = build_diagnostics_payload(
+                        resource_id=rid,
+                        queries=query_meta,
+                        per_query=per_q,
+                        merged=rrf_hits,
+                        reranked=shortlist,
+                        gold_codes=gold_by_lesson.get(rid),
+                        extra={
+                            "query_mode": query_mode,
+                            "arm_limit": int(args.arm_limit),
+                            "merge_top_k": int(args.merge_top_k),
+                            "rerank_k": int(args.rerank_k),
+                            "judge_shortlist_k": int(args.judge_shortlist_k),
+                        },
+                    )
+                    write_diagnostics(diag_dir / f"{rid}.json", diag)
+                else:
+                    if not chunk.is_file():
+                        raise FileNotFoundError(f"missing chunk: {chunk}")
+                    query, source = lesson_query_from_chunk_bundle(
+                        chunk, family="lesson"
+                    )
+                    hits = retrieve_and_rerank(
+                        query,
+                        standards_dir,
+                        skip_rerank=bool(args.no_rerank),
+                    )
+                    payload = {
+                        "schema_version": "1.0-retrieve-hybrid",
+                        "query_mode": "lesson",
+                        "query_source": source,
+                        "top_k": 30,
+                        "rerank_k": 10,
+                        "skip_rerank": bool(args.no_rerank),
+                        "candidates": [c.to_dict() for c in hits],
+                    }
+                    atomic_write_text(out, json.dumps(payload, indent=2) + "\n")
             except (RetrieveError, OSError, ValueError, RuntimeError) as e:
                 failed.append({"resource_id": rid, "stage": "retrieve", "error": str(e)})
                 print(f"  ERROR retrieve {rid}: {e}", flush=True)
+
+        if args.from_gold and args.multi_query:
+            metrics = report_leaf_recall(Path(args.from_gold), retrieve_dir)
+            metrics_path = Path("output/reports/retrieve_gold_metrics.json")
+            metrics_path.parent.mkdir(parents=True, exist_ok=True)
+            atomic_write_text(metrics_path, json.dumps(metrics, indent=2) + "\n")
+            print(
+                "Gold leaf recall (retrieve-side report, eval pipeline untouched):",
+                flush=True,
+            )
+            print(json.dumps(metrics, indent=2), flush=True)
 
     if not args.skip_judge:
         for i, rid in enumerate(ids, start=1):

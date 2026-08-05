@@ -173,7 +173,8 @@ veramynd_parser/
 
 ## What's still incomplete
 
-- **Gold-set evaluation** — no `eval/` harness in-repo yet; judge/retrieve quality is unmeasured against expert labels.
+- **Enterprise quality bar** — gold leaf recall@30 is near target; judge exact agreement vs SME gold is not (~full OK, partial weak). Rubric/prompt work remains.
+- **Gold-set harness** — metrics helpers live under `retrieve/gold_metrics.py` + batch `--from-gold`; a full packaged `eval/` gate is not shipped yet.
 - **Agentic graph track** — design doc only (`docs/architecture-agentic-graph.md`).
 - Validated primarily on the two sample documents under `../data/samples/`.
 
@@ -281,6 +282,12 @@ Same model (`text-embedding-3-large`). Collection default: `veramynd_standards`
 (does not use `QDRANT_COLLECTION`; override with `--collection` or
 `QDRANT_STANDARDS_COLLECTION`).
 
+**Defaults (enterprise):** embed **leaf codes only** (`leaves_only=True`) with
+**rich retrieval text** from normalize (`use_rich_text=True` via
+`embed/standard_text.py`). Parent standards stay on disk for hierarchy/context
+but are out of the retrieve funnel. Re-run with `--recreate` after changing these
+modes.
+
 Smoke check (lesson chunk → nearest standards):
 
 ```bash
@@ -297,8 +304,32 @@ veramynd-parser retrieve-standards \
   --out output/retrieve/G1M2U1L3.json
 ```
 
-Dense (Qdrant) + BM25 → RRF top 30, then `BAAI/bge-reranker-base` to top 10.
+Dense (Qdrant) + BM25 → RRF, then `BAAI/bge-reranker-base`.
 Pass `--no-rerank` to inspect the hybrid list only.
+
+**Enterprise multi-query** (preferred for gold / production runs) uses focused
+queries from normalize, a wider funnel (per-arm ~100 → merge ~80 → rerank 30),
+RRF+rerank blend, and a cost-aware judge shortlist. Diagnostics and leaf-recall
+reports write under `output/reports/`.
+
+```bash
+# Gold lessons only (IDs come from the gold JSONL — no hard-coded lesson codes)
+python -m veramynd_parser.scripts.batch_align_all \
+  --multi-query \
+  --from-gold path/to/gold_set.jsonl \
+  --judge-shortlist-k 20 \
+  --no-escalate \
+  --force-retrieve
+
+# Optional: widen what the judge sees
+python -m veramynd_parser.scripts.batch_align_all \
+  --multi-query --from-gold path/to/gold_set.jsonl \
+  --judge-shortlist-k 30 --no-escalate --force-retrieve --force-judge
+```
+
+Key flags: `--multi-query`, `--from-gold`, `--arm-limit`, `--merge-top-k`,
+`--rerank-k`, `--blend-rrf`, `--preserve-rrf-top`, `--judge-shortlist-k`,
+`--shortlist-rrf-weight`, `--diag-dir`.
 
 ### Alignment judge + grounding (enterprise K–12)
 
@@ -325,6 +356,8 @@ Batch all lessons:
 
 ```bash
 python -m veramynd_parser.scripts.batch_align_all --skip-retrieve
+# cheaper smoke: --no-escalate
+# gold-scoped multi-query: see retrieve section above
 ```
 
 ### Alignment report (CSV)
@@ -339,9 +372,9 @@ Or export a whole folder: `--judge-dir output/judge`.
 Use `--aligned-only` for full+partial rows only (still never drops rows for missing confidence).
 Also writes an HTML audit dashboard next to the CSV (disable with `--no-html`).
 
-**Still incomplete:** gold-set eval harness (`eval/gold_set.jsonl`) is designed in
-`docs/architecture.md` but not shipped in this repo yet — treat judge accuracy as
-unmeasured until that exists.
+**Gold metrics:** with `--multi-query --from-gold`, batch writes leaf-recall
+summaries (`output/reports/retrieve_gold_metrics.json`). Judge agreement vs SME
+labels is measured offline against gold JSONL — enterprise bar not claimed yet.
 
 Library:
 
