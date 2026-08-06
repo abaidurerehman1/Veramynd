@@ -173,16 +173,14 @@ veramynd_parser/
 
 ## What's still incomplete
 
-- **Enterprise quality bar** — the production-cost funnel scores the full
-  grade-scoped leaf corpus locally, applies parent diversity, and sends only 20
-  candidates to GPT. Current Batch-1 recall at that judge cutoff is **65%**
-  (13/20), so the ~90% target is not met. A 50-candidate shortlist reached 90%
-  on this small evaluation but is intentionally not the production default.
-  The next quality dependency is a pedagogy-trained local reranker validated on
-  a larger multi-grade, multi-publisher set. Judge agreement vs SME gold is also
-  below target, especially for `partial`.
-- **Gold-set quality** — a packaged gate now checks recall@10/@20, per-class
-  judge accuracy, and stale artifacts; current artifacts do not pass 90%.
+- **Enterprise quality bar** — Batch-1 retrieve with `top_k_sum` +
+  `--shortlist-rescue-slots 8` reaches **Recall@50 = 100%** and **Recall@10 ≈ 45%**
+  (9/20). Pool coverage is no longer the bottleneck; **top-10 fused ranking** is
+  (merge rank still dominates final rank; CE wins are often buried). Target remains
+  ~90% Recall@10 on a larger multi-grade / multi-publisher gold set. Judge agreement
+  vs SME gold is a separate gap, especially for `partial`.
+- **Gold-set quality** — a packaged gate checks recall@10/@20, per-class judge
+  accuracy, and stale artifacts; current artifacts do not pass the 90% gate.
 - **Agentic graph track** — design doc only (`docs/architecture-agentic-graph.md`).
 - Validated primarily on the two sample documents under `../data/samples/`.
 
@@ -317,38 +315,53 @@ Pass `--no-rerank` to inspect the hybrid list only.
 
 **Enterprise multi-query** (preferred for gold / production runs) uses focused
 queries from normalized learning targets, objectives, purpose, skills, actions,
-tasks, vocabulary, and evidence. It uses a wide RRF merge, grade-scoped local
-CE scoring, robust CE/RRF score blending (multi-query RRF remains the stronger
-prior), and parent-aware interleaving that never deletes selected siblings.
+tasks, vocabulary, and evidence. Funnel:
+
+1. Per query: dense (Qdrant) + BM25 → RRF  
+2. Multi-query merge (`--merge-aggregation`: `sum` default | `max` | `top_k_sum` |
+   `log_dampened`) into `merge_top_k`  
+3. Local CE (`BAAI/bge-reranker-base`), often grade-exhaustive below
+   `--exhaustive-ceiling`  
+4. Shortlist fusion (CE + merge RRF, parent-cap diversity) →
+   `--judge-shortlist-k` (default 50)  
+5. Optional `--shortlist-rescue-slots N` (default **0**): keep fused core of
+   size `50−N`, fill the tail with best classic-`sum` candidates not already in
+   core (`rescued_via: "sum"`). Does not reorder the core; N=0 is unchanged.
+
 Batch retrieval uses this multi-query path by default (`--single-query` is the
-legacy opt-out). The recall-first default retains 50 final candidates so Recall@10/20/30/50 and
-MRR are meaningful; lower-budget consumers can explicitly set
-`--judge-shortlist-k`. Diagnostics under `output/reports/retrieve_diag/`
-record dense, BM25, merge-RRF, reranker, and final rank for every candidate.
+legacy opt-out). Diagnostics under `output/reports/retrieve_diag/` record dense,
+BM25, merge-RRF, reranker, and final rank for every candidate.
 
 ```bash
-# Gold lessons only (IDs come from the gold JSONL — no hard-coded lesson codes)
+# Recommended Batch-1 retrieve profile (offline-validated):
+#   Recall@10 ≈ 45% (held), Recall@50 = 100% (sum rescue recovers ~3 golds)
 python -m veramynd_parser.scripts.batch_align_all \
   --multi-query \
-  --from-gold path/to/gold_set.jsonl \
+  --from-gold output/reports/gold_set_batch1.jsonl \
+  --merge-aggregation top_k_sum \
+  --merge-top-arms 2 \
+  --shortlist-rescue-slots 8 \
   --judge-shortlist-k 50 \
-  --no-escalate \
+  --skip-judge --skip-report \
   --force-retrieve
 
-# Optional: widen what the judge sees
-python -m veramynd_parser.scripts.batch_align_all \
-  --multi-query --from-gold path/to/gold_set.jsonl \
-  --judge-shortlist-k 30 --no-escalate --force-retrieve --force-judge
+# Offline sweeps (no re-embed / no CE re-run — uses cached diag / retrieve JSON)
+python -m veramynd_parser.scripts.eval_merge_aggregation \
+  --gold output/reports/gold_set_batch1.jsonl \
+  --diag-dir output/reports/retrieve_diag
+python -m veramynd_parser.scripts.eval_shortlist_rescue \
+  --gold output/reports/gold_set_batch1.jsonl \
+  --retrieve-dir output/retrieve
 ```
 
 Key flags: `--multi-query`, `--from-gold`, `--arm-limit`, `--merge-top-k`,
-`--rerank-k`, `--exhaustive-ceiling`, `--parent-cap`, `--blend-rrf`,
-`--preserve-rrf-top`, `--judge-shortlist-k`, `--shortlist-rrf-weight`,
-`--diag-dir`.
+`--merge-aggregation`, `--merge-top-arms`, `--merge-log-dampen-base`,
+`--pool-membership-mode`, `--rerank-k`, `--exhaustive-ceiling`, `--parent-cap`,
+`--blend-rrf`, `--preserve-rrf-top`, `--judge-shortlist-k`,
+`--shortlist-rrf-weight`, `--shortlist-rescue-slots`, `--diag-dir`.
 
-The reranker is an unchanged pretrained CrossEncoder. Retrieval quality comes
-from focused queries, rich leaf representations, hybrid fusion, conservative
-rank blending, and parent-aware diversity.
+The reranker is an unchanged pretrained CrossEncoder. No gold labels enter
+ranking or shortlist rescue — gold is eval-only.
 
 ### Alignment judge + grounding (enterprise K–12)
 

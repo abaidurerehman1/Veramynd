@@ -16,10 +16,20 @@ identically, at scale, with a paper trail.
 ## Project status (honest)
 
 This repo is a **working end-to-end pipeline** for the reference EL Education G1M2
-guide + Georgia Grade 1 ELA standards. Enterprise bar (~90% leaf recall @ judge
-cutoff + ~90% judge agreement vs gold) is **not met yet**: retrieve is close at
-rerank@30 on the gold set; judge/partial rubric is the main gap. The agentic/graph
-track remains design-only.
+guide + Georgia Grade 1 ELA standards. The enterprise bar (~**90% Recall@10** on
+the judge shortlist + ~90% judge agreement vs gold) is **not met yet**.
+
+**Batch-1 retrieve snapshot** (4 gold lessons, 20 positives; eval-only gold):
+
+| Config | Recall@10 | Recall@50 |
+|---|---|---|
+| `top_k_sum` (n=2) + `--shortlist-rescue-slots 8` | **~45%** | **100%** |
+
+Coverage into the top-50 shortlist is solved for this gold slice. The remaining
+retrieve bottleneck is **top-10 ranking**: many true standards are found and
+CE-scored, but fused final rank still tracks merge rank too closely. Judge /
+`partial` agreement vs SME gold remains a separate gap. The agentic/graph track
+is design-only.
 
 | Stage | Status | Location |
 |---|---|---|
@@ -28,7 +38,7 @@ track remains design-only.
 | **Standards normalize** — retrieval-ready standard leaves (`embed_text`) | **Implemented** | [`normalize/standard.py`](veramynd_parser/veramynd_parser/normalize/standard.py) |
 | **Chunk** — hierarchical lesson / instructional / evidence-pointer bundles | **Implemented** | [`chunk/`](veramynd_parser/veramynd_parser/chunk/) |
 | **Embed → Qdrant** — leaf-only standards + rich retrieval text; chunk vectors | **Implemented** | [`embed/`](veramynd_parser/veramynd_parser/embed/) |
-| **Hybrid retrieve + rerank** — multi-query enterprise funnel (dense + BM25 → RRF → cross-encoder) | **Implemented** | [`retrieve/`](veramynd_parser/veramynd_parser/retrieve/) |
+| **Hybrid retrieve + rerank** — multi-query funnel, merge aggregation, CE, shortlist fusion + optional sum-rescue | **Implemented** | [`retrieve/`](veramynd_parser/veramynd_parser/retrieve/) |
 | **Alignment judge + grounding** — LLM rubric; ungrounded claims rejected | **Implemented** | [`judge/`](veramynd_parser/veramynd_parser/judge/) |
 | **Report** — CSV + HTML audit dashboard | **Implemented** | [`report/`](veramynd_parser/veramynd_parser/report/) |
 | **Gold-set metrics** — leaf recall @k + judge agreement vs SME labels (JSONL) | **Partial** | [`retrieve/gold_metrics.py`](veramynd_parser/veramynd_parser/retrieve/gold_metrics.py); reports under `output/reports/` |
@@ -49,9 +59,12 @@ cross-engine standards). Soft checks flag review without blocking `GO`.
 **3. Normalize → chunk → embed.** Lessons and standards become retrieval-ready text;
 chunks land in Qdrant (`text-embedding-3-large`).
 
-**4. Retrieve → judge → report.** Leaf-only standards index; enterprise multi-query
-retrieve builds a wide shortlist, then the judge scores `full` / `partial` / `none`
-with grounded evidence. CSV/HTML reports export the audit trail.
+**4. Retrieve → judge → report.** Leaf-only standards index. Enterprise multi-query
+retrieve: per-query dense+BM25 → RRF → multi-arm merge (default `sum`; gold runs
+often use `top_k_sum`) → local CE → fused shortlist (`judge_shortlist_k=50`), with
+optional `--shortlist-rescue-slots` to reserve the fused tail for classic-sum
+breadth. The judge scores `full` / `partial` / `none` with grounded evidence;
+CSV/HTML reports export the audit trail.
 
 ## Design principles
 
@@ -92,8 +105,12 @@ veramynd-parser embed-standards output/normalize_standards --out output/embeddin
 
 # Single-query hybrid (CLI) or enterprise multi-query batch:
 veramynd-parser retrieve-standards --chunk-file output/chunks/by_lesson/G1M2U1L3.json --out output/retrieve/G1M2U1L3.json
+# Recommended Batch-1 retrieve profile (keeps @10; recovers @50 via sum rescue):
 python -m veramynd_parser.scripts.batch_align_all \
-  --multi-query --from-gold path/to/gold_set.jsonl --no-escalate --force-retrieve
+  --multi-query --from-gold output/reports/gold_set_batch1.jsonl \
+  --merge-aggregation top_k_sum --merge-top-arms 2 \
+  --shortlist-rescue-slots 8 \
+  --skip-judge --skip-report --force-retrieve
 
 veramynd-parser judge-standards --retrieve-file output/retrieve/G1M2U1L3.json \
   --lesson-file output/stage1/lessons/G1M2U1L3.json \
