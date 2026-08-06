@@ -15,7 +15,11 @@ from veramynd_parser.judge.io import (
     load_retrieve_candidates,
     load_standard_raw_text,
 )
-from veramynd_parser.judge.models import ClauseJudgment, JudgeLlmDraft
+from veramynd_parser.judge.models import (
+    ClauseJudgment,
+    JudgeLlmDraft,
+    status_from_clauses,
+)
 from veramynd_parser.judge.pipeline import judge_pair, judge_retrieve_file
 
 
@@ -61,6 +65,56 @@ def test_grounding_requires_all_ellipsis_segments():
         "Students invent research across multiple digital sources today."
     )
     assert not is_grounded(bad, lesson)
+
+
+def test_status_from_clauses_aggregates():
+    assert status_from_clauses([]) == "none"
+    assert (
+        status_from_clauses([ClauseJudgment(clause="a", met=True, note="")]) == "full"
+    )
+    assert (
+        status_from_clauses(
+            [
+                ClauseJudgment(clause="a", met=True, note=""),
+                ClauseJudgment(clause="b", met=False, note=""),
+            ]
+        )
+        == "partial"
+    )
+    assert (
+        status_from_clauses([ClauseJudgment(clause="a", met=False, note="")]) == "none"
+    )
+
+
+def test_judge_pair_overwrites_status_from_clauses():
+    lesson = "Students identify the setting of the story."
+
+    def fake_complete(**kwargs):
+        return JudgeLlmDraft(
+            matched_status="full",
+            clauses=[
+                ClauseJudgment(clause="identify setting", met=True, note=""),
+                ClauseJudgment(clause="identify characters", met=False, note=""),
+            ],
+            evidence=lesson,
+            evidence_page=1,
+            confidence="high",
+            rationale="LLM claimed full.",
+        )
+
+    v = judge_pair(
+        resource_id="G1M2U1L3",
+        lesson_raw_text=lesson,
+        standard={
+            "standard_code": "1.T.T.1.a",
+            "raw_text": "Identify characters and setting.",
+        },
+        use_cache=False,
+        escalate=False,
+        complete_fn=fake_complete,
+    )
+    assert v.matched_status == "partial"
+    assert "STATUS DERIVED FROM CLAUSES" in v.rationale
 
 
 def test_judge_pair_rejects_empty_evidence_full():
@@ -150,8 +204,21 @@ def test_should_escalate_enterprise_triggers():
     assert not _should_escalate(
         JudgeLlmDraft(
             matched_status="none",
-            clauses=[clause],
+            clauses=[ClauseJudgment(clause="c", met=False, note="")],
             evidence="",
+            evidence_page=1,
+            confidence="high",
+            rationale="r",
+        )
+    )
+    assert _should_escalate(
+        JudgeLlmDraft(
+            matched_status="full",
+            clauses=[
+                ClauseJudgment(clause="a", met=True, note=""),
+                ClauseJudgment(clause="b", met=False, note=""),
+            ],
+            evidence="grounded quote",
             evidence_page=1,
             confidence="high",
             rationale="r",

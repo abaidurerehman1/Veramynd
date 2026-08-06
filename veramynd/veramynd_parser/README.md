@@ -173,8 +173,16 @@ veramynd_parser/
 
 ## What's still incomplete
 
-- **Enterprise quality bar** — gold leaf recall@30 is near target; judge exact agreement vs SME gold is not (~full OK, partial weak). Rubric/prompt work remains.
-- **Gold-set harness** — metrics helpers live under `retrieve/gold_metrics.py` + batch `--from-gold`; a full packaged `eval/` gate is not shipped yet.
+- **Enterprise quality bar** — the production-cost funnel scores the full
+  grade-scoped leaf corpus locally, applies parent diversity, and sends only 20
+  candidates to GPT. Current Batch-1 recall at that judge cutoff is **65%**
+  (13/20), so the ~90% target is not met. A 50-candidate shortlist reached 90%
+  on this small evaluation but is intentionally not the production default.
+  The next quality dependency is a pedagogy-trained local reranker validated on
+  a larger multi-grade, multi-publisher set. Judge agreement vs SME gold is also
+  below target, especially for `partial`.
+- **Gold-set quality** — a packaged gate now checks recall@10/@20, per-class
+  judge accuracy, and stale artifacts; current artifacts do not pass 90%.
 - **Agentic graph track** — design doc only (`docs/architecture-agentic-graph.md`).
 - Validated primarily on the two sample documents under `../data/samples/`.
 
@@ -308,16 +316,22 @@ Dense (Qdrant) + BM25 → RRF, then `BAAI/bge-reranker-base`.
 Pass `--no-rerank` to inspect the hybrid list only.
 
 **Enterprise multi-query** (preferred for gold / production runs) uses focused
-queries from normalize, a wider funnel (per-arm ~100 → merge ~80 → rerank 30),
-RRF+rerank blend, and a cost-aware judge shortlist. Diagnostics and leaf-recall
-reports write under `output/reports/`.
+queries from normalized learning targets, objectives, purpose, skills, actions,
+tasks, vocabulary, and evidence. It uses a wide RRF merge, grade-scoped local
+CE scoring, robust CE/RRF score blending (multi-query RRF remains the stronger
+prior), and parent-aware interleaving that never deletes selected siblings.
+Batch retrieval uses this multi-query path by default (`--single-query` is the
+legacy opt-out). The recall-first default retains 50 final candidates so Recall@10/20/30/50 and
+MRR are meaningful; lower-budget consumers can explicitly set
+`--judge-shortlist-k`. Diagnostics under `output/reports/retrieve_diag/`
+record dense, BM25, merge-RRF, reranker, and final rank for every candidate.
 
 ```bash
 # Gold lessons only (IDs come from the gold JSONL — no hard-coded lesson codes)
 python -m veramynd_parser.scripts.batch_align_all \
   --multi-query \
   --from-gold path/to/gold_set.jsonl \
-  --judge-shortlist-k 20 \
+  --judge-shortlist-k 50 \
   --no-escalate \
   --force-retrieve
 
@@ -328,8 +342,13 @@ python -m veramynd_parser.scripts.batch_align_all \
 ```
 
 Key flags: `--multi-query`, `--from-gold`, `--arm-limit`, `--merge-top-k`,
-`--rerank-k`, `--blend-rrf`, `--preserve-rrf-top`, `--judge-shortlist-k`,
-`--shortlist-rrf-weight`, `--diag-dir`.
+`--rerank-k`, `--exhaustive-ceiling`, `--parent-cap`, `--blend-rrf`,
+`--preserve-rrf-top`, `--judge-shortlist-k`, `--shortlist-rrf-weight`,
+`--diag-dir`.
+
+The reranker is an unchanged pretrained CrossEncoder. Retrieval quality comes
+from focused queries, rich leaf representations, hybrid fusion, conservative
+rank blending, and parent-aware diversity.
 
 ### Alignment judge + grounding (enterprise K–12)
 
@@ -343,14 +362,15 @@ veramynd-parser judge-standards \
 ```
 
 **Quality profile `enterprise_k12` (default):**
-1. **Batch** — one LLM call for all retrieve candidates (`gpt-4.1`)
+1. **Pair depth** — one focused call per lesson-standard pair (`gpt-4.1`)
 2. **Escalate** — re-judge `partial`, low/medium confidence, or empty-evidence
    positives with `JUDGE_ESCALATE_MODEL` (default `gpt-5`)
-3. **Pair fallback** — if batch JSON is invalid
+3. **Clause aggregation** — `partial` means at least one required clause met
+   and at least one unmet; it is not a confidence label
 4. **Grounding** — ungrounded positive claims are rejected to `none`
 
 Opt out of escalate for smoke/cost: `--no-escalate`.  
-Force pair-only A/B: `--no-batch`.
+Opt into the cheaper batch judge with `--batch`.
 
 Batch all lessons:
 
@@ -373,8 +393,16 @@ Use `--aligned-only` for full+partial rows only (still never drops rows for miss
 Also writes an HTML audit dashboard next to the CSV (disable with `--no-html`).
 
 **Gold metrics:** with `--multi-query --from-gold`, batch writes leaf-recall
-summaries (`output/reports/retrieve_gold_metrics.json`). Judge agreement vs SME
-labels is measured offline against gold JSONL — enterprise bar not claimed yet.
+summaries (`output/reports/retrieve_gold_metrics.json`). Run the immutable
+quality gate after regenerating retrieve + judge artifacts:
+
+```bash
+python -m veramynd_parser.scripts.eval_gate \
+  --gold output/reports/gold_set_batch1.jsonl
+```
+
+The command exits nonzero when recall@10/@20, per-class judge accuracy, or
+artifact integrity is below the configured thresholds.
 
 Library:
 

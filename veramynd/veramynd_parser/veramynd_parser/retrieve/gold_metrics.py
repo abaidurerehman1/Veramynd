@@ -58,7 +58,7 @@ def report_leaf_recall(
     gold_jsonl: Path | str,
     retrieve_dir: Path | str,
     *,
-    cutoffs: tuple[int, ...] = (10, 15, 20, 30),
+    cutoffs: tuple[int, ...] = (10, 15, 20, 30, 40, 50),
 ) -> dict[str, Any]:
     """Compute leaf recall@k + MRR from retrieve artifacts vs gold positives."""
     gold = _load_gold_pairs(gold_jsonl)

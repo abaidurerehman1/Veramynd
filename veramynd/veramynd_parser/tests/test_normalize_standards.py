@@ -97,7 +97,7 @@ def test_assemble_and_sanitize_builds_embed_text():
     assert fixed.standard_code == "1.F.PA.4"
     assert "1.F.PA.4" in fixed.exact_codes
     assert fixed.embed_text
-    assert "Competency:" in fixed.embed_text
+    assert "Students can:" in fixed.embed_text
     assert "Required student actions:" in fixed.embed_text
     assert fixed.child_codes == ["1.F.PA.4.d"]
 
@@ -107,3 +107,4 @@ def test_minimal_embed_text_helper():
     text = build_standard_embed_text(n)
     assert "1.F.PA.4" in text
     assert "Phonological Awareness" in text
+    assert "Students can:" in text

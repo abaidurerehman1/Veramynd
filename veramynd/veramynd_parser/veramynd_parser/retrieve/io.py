@@ -31,6 +31,7 @@ def load_standard_docs(
             standard_code=r.standard_code,
             text=r.text,
             domain_primary=r.domain_primary,
+            parent_code=str(r.metadata.get("parent_code") or ""),
             label=r.label,
             level=r.level,
             grade=r.grade,

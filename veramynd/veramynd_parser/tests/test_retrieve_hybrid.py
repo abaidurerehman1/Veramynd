@@ -12,11 +12,15 @@ from veramynd_parser.retrieve.bm25 import StandardsBm25Index, tokenize
 from veramynd_parser.retrieve.models import Candidate, StandardDoc
 from veramynd_parser.retrieve.pipeline import (
     build_judge_shortlist,
+    build_local_rerank_pool,
     hybrid_retrieve_standards,
     multi_query_hybrid_retrieve,
     retrieve_and_rerank,
 )
-from veramynd_parser.retrieve.rerank import rerank_candidates
+from veramynd_parser.retrieve.rerank import (
+    format_rerank_query,
+    rerank_candidates,
+)
 from veramynd_parser.retrieve.rrf import reciprocal_rank_fusion
 
 
@@ -41,6 +45,70 @@ def test_judge_shortlist_fuses_rerank_and_first_stage_rrf():
     assert len(out) == 3
     assert len({c.standard_code for c in out}) == 3
     assert "C" in {c.standard_code for c in out}
+
+
+def test_judge_shortlist_defers_consecutive_siblings_without_dropping_budget():
+    reranked = [
+        Candidate(
+            standard_code=f"1.X.1.{suffix}",
+            text=suffix,
+            parent_code="1.X.1",
+            rerank_score=1.0 - i / 10,
+        )
+        for i, suffix in enumerate(("a", "b", "c", "d", "e"))
+    ] + [
+        Candidate(
+            standard_code=f"1.Y.{i}.a",
+            text=str(i),
+            parent_code=f"1.Y.{i}",
+            rerank_score=0.4 - i / 100,
+        )
+        for i in range(1, 6)
+    ]
+    out = build_judge_shortlist(
+        reranked,
+        reranked,
+        top_n=6,
+        rrf_weight=0.0,
+        preserve_rrf_top=0,
+        parent_cap=3,
+    )
+    assert len(out) == 6
+    families = [c.parent_code for c in out]
+    max_streak = 1
+    streak = 1
+    for prior, current in zip(families, families[1:]):
+        streak = streak + 1 if current == prior else 1
+        max_streak = max(max_streak, streak)
+    assert max_streak <= 3
+    assert [c.final_rank for c in out] == list(range(1, 7))
+
+
+def test_local_rerank_pool_is_grade_exhaustive_below_ceiling(tmp_path: Path):
+    src = tmp_path / "normalize_standards"
+    src.mkdir()
+    for code, grade in (("1.A.1.a", 1), ("1.B.1.a", 1), ("2.A.1.a", 2)):
+        (src / f"{code}.json").write_text(
+            json.dumps(
+                {
+                    "standard_code": code,
+                    "level": "substandard",
+                    "grade": grade,
+                    "framework": "test",
+                    "parent_code": code.rsplit(".", 1)[0],
+                    "domain": {"primary": "Comprehension", "secondary": []},
+                    "embed_text": f"Students understand {code}.",
+                }
+            ),
+            encoding="utf-8",
+        )
+    merged = [Candidate(standard_code="1.A.1.a", text="a")]
+    pool, mode = build_local_rerank_pool(
+        src, merged, grade=1, exhaustive_ceiling=10
+    )
+    assert mode == "grade_exhaustive"
+    assert {c.standard_code for c in pool} == {"1.A.1.a", "1.B.1.a"}
+    assert next(c for c in pool if c.standard_code == "1.B.1.a").parent_code == "1.B.1"
 
 
 def test_filter_alignable_leaves_drops_parents():
@@ -396,13 +464,16 @@ def test_rerank_orders_by_injected_scores():
     ]
 
     def fake_scores(query: str, docs: list[str]) -> list[float]:
-        assert query == "q"
+        assert query == format_rerank_query("q")
+        assert docs == ["alpha", "beta", "gamma"]
         # Prefer B over A over C
         return [0.2, 0.9, 0.1]
 
     out = rerank_candidates("q", cands, top_n=2, score_fn=fake_scores)
     assert [c.standard_code for c in out] == ["B", "A"]
     assert out[0].rerank_score == 0.9
+    assert out[0].rerank_rank == 1
+    assert out[0].blended_score is not None
 
 
 def test_retrieve_and_rerank_pipeline_mocked(tmp_path: Path):

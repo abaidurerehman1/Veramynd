@@ -44,20 +44,34 @@ from veramynd_parser.retrieve.io import (
 )
 from veramynd_parser.retrieve.pipeline import (
     DEFAULT_ARM_LIMIT,
+    DEFAULT_EXHAUSTIVE_CEILING,
     DEFAULT_JUDGE_SHORTLIST_K,
+    DEFAULT_MERGE_AGGREGATION,
+    DEFAULT_MERGE_LOG_DAMPEN_BASE,
+    DEFAULT_MERGE_TOP_ARMS,
     DEFAULT_MERGE_TOP_K,
+    DEFAULT_PER_QUERY_TOP_K,
+    DEFAULT_PARENT_CAP,
+    DEFAULT_POOL_MEMBERSHIP_MODE,
     DEFAULT_PRESERVE_RRF_TOP,
     DEFAULT_RERANK_BLEND_RRF,
     DEFAULT_RERANK_TOP_N_ENTERPRISE,
     DEFAULT_SHORTLIST_RRF_WEIGHT,
+    DEFAULT_SHORTLIST_RESCUE_SLOTS,
     RetrieveError,
     build_judge_shortlist,
     multi_query_retrieve_and_rerank,
     retrieve_and_rerank,
 )
+from veramynd_parser.retrieve.rrf import MERGE_AGGREGATIONS, POOL_MEMBERSHIP_MODES
 from veramynd_parser.retrieve.queries import (
+    domains_from_normalize,
     focused_queries_from_normalize,
+    grade_from_normalize,
+    query_arm_weight,
+    query_counts_for_coverage,
     rerank_context_from_normalize,
+    skill_focus_text_from_normalize,
 )
 from veramynd_parser.text_utils import atomic_write_text
 
@@ -129,17 +143,32 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="disable judge LLM cache reads/writes",
     )
-    p.add_argument(
+    judge_mode = p.add_mutually_exclusive_group()
+    judge_mode.add_argument(
+        "--batch",
+        action="store_true",
+        help="opt into one judge call per lesson (cheaper, lower pair depth)",
+    )
+    judge_mode.add_argument(
         "--no-batch",
         action="store_true",
-        help="per-candidate judge calls instead of one call per lesson",
+        help="deprecated: pair-depth judging is already the default",
     )
     p.add_argument("--limit-lessons", type=int, default=None)
     p.add_argument("--only", action="append", default=[], help="limit to resource id(s)")
-    p.add_argument(
+    retrieve_mode = p.add_mutually_exclusive_group()
+    retrieve_mode.add_argument(
         "--multi-query",
+        dest="multi_query",
         action="store_true",
-        help="enterprise multi-query retrieve (normalize-focused queries + wide funnel)",
+        default=True,
+        help="enterprise multi-query retrieve (default)",
+    )
+    retrieve_mode.add_argument(
+        "--single-query",
+        dest="multi_query",
+        action="store_false",
+        help="legacy single lesson-blob retrieval (disables stage diagnostics)",
     )
     p.add_argument(
         "--from-gold",
@@ -149,12 +178,18 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument(
         "--diag-dir",
         default="output/reports/retrieve_diag",
-        help="write per-lesson retrieval diagnostics when --multi-query",
+        help="write per-lesson multi-query retrieval diagnostics",
     )
     p.add_argument("--arm-limit", type=int, default=DEFAULT_ARM_LIMIT)
     p.add_argument("--merge-top-k", type=int, default=DEFAULT_MERGE_TOP_K)
-    p.add_argument("--per-query-top-k", type=int, default=40)
+    p.add_argument("--per-query-top-k", type=int, default=DEFAULT_PER_QUERY_TOP_K)
     p.add_argument("--rerank-k", type=int, default=DEFAULT_RERANK_TOP_N_ENTERPRISE)
+    p.add_argument(
+        "--exhaustive-ceiling",
+        type=int,
+        default=DEFAULT_EXHAUSTIVE_CEILING,
+        help="score all grade leaves locally when corpus size is at or below this limit",
+    )
     p.add_argument("--blend-rrf", type=float, default=DEFAULT_RERANK_BLEND_RRF)
     p.add_argument("--preserve-rrf-top", type=int, default=DEFAULT_PRESERVE_RRF_TOP)
     p.add_argument(
@@ -168,6 +203,45 @@ def main(argv: list[str] | None = None) -> int:
         type=float,
         default=DEFAULT_SHORTLIST_RRF_WEIGHT,
         help="first-stage RRF weight in rerank+RRF shortlist fusion",
+    )
+    p.add_argument(
+        "--parent-cap",
+        type=int,
+        default=DEFAULT_PARENT_CAP,
+        help="maximum siblings from one standard parent in the GPT shortlist",
+    )
+    p.add_argument(
+        "--merge-aggregation",
+        choices=list(MERGE_AGGREGATIONS),
+        default=DEFAULT_MERGE_AGGREGATION,
+        help="multi-query merge aggregation: sum (default) | max | top_k_sum | log_dampened",
+    )
+    p.add_argument(
+        "--merge-top-arms",
+        type=int,
+        default=DEFAULT_MERGE_TOP_ARMS,
+        help="for top_k_sum: how many strongest arms to keep",
+    )
+    p.add_argument(
+        "--merge-log-dampen-base",
+        type=float,
+        default=DEFAULT_MERGE_LOG_DAMPEN_BASE,
+        help="for log_dampened: log base (>1) in log_b(1+n_hits)/n_hits",
+    )
+    p.add_argument(
+        "--pool-membership-mode",
+        choices=list(POOL_MEMBERSHIP_MODES),
+        default=DEFAULT_POOL_MEMBERSHIP_MODE,
+        help="single=top by primary aggregation; union=primary top ∪ sum top",
+    )
+    p.add_argument(
+        "--shortlist-rescue-slots",
+        type=int,
+        default=DEFAULT_SHORTLIST_RESCUE_SLOTS,
+        help=(
+            "reserve N final shortlist slots for classic-sum rescue "
+            "(0=default fused top_n only; core=top_n-N unchanged)"
+        ),
     )
     args = p.parse_args(argv)
 
@@ -226,9 +300,13 @@ def main(argv: list[str] | None = None) -> int:
                 if args.multi_query:
                     norm = normalize_dir / f"{rid}.json"
                     query_meta: list[dict[str, str]] = []
+                    lesson_grade: int | None = None
                     if norm.is_file():
                         query_meta = focused_queries_from_normalize(norm)
                         rerank_q = rerank_context_from_normalize(norm)
+                        lesson_grade = grade_from_normalize(norm)
+                        lesson_domains = domains_from_normalize(norm)
+                        lesson_skill_focus = skill_focus_text_from_normalize(norm)
                         query_mode = "multi_normalize_focused"
                     else:
                         # Fallback: instructional chunks (still multi-query).
@@ -242,9 +320,19 @@ def main(argv: list[str] | None = None) -> int:
                             for text, label in qpairs
                         ]
                         rerank_q = rerank_query_from_chunk_bundle(chunk)
+                        lesson_domains = []
+                        lesson_skill_focus = ""
                         query_mode = "multi_instructional_fallback"
                     queries = [q["text"] for q in query_meta]
                     sources = [q["query_id"] for q in query_meta]
+                    arm_weights = [
+                        query_arm_weight(str(q.get("source") or "")) for q in query_meta
+                    ]
+                    coverage_mask = [
+                        query_counts_for_coverage(str(q.get("source") or ""))
+                        for q in query_meta
+                    ]
+                    query_sources = [str(q.get("source") or "") for q in query_meta]
                     hits, rrf_hits, per_q = multi_query_retrieve_and_rerank(
                         queries,
                         standards_dir,
@@ -256,13 +344,26 @@ def main(argv: list[str] | None = None) -> int:
                         skip_rerank=bool(args.no_rerank),
                         blend_rrf=float(args.blend_rrf),
                         preserve_rrf_top=int(args.preserve_rrf_top),
+                        exhaustive_ceiling=int(args.exhaustive_ceiling),
                         collect_diagnostics=True,
+                        grade=lesson_grade,
+                        query_weights=arm_weights,
+                        query_coverage_mask=coverage_mask,
+                        query_sources=query_sources,
+                        merge_aggregation=str(args.merge_aggregation),
+                        merge_top_arms=int(args.merge_top_arms),
+                        merge_log_dampen_base=float(args.merge_log_dampen_base),
+                        pool_membership_mode=str(args.pool_membership_mode),
                     )
                     shortlist = build_judge_shortlist(
                         hits,
                         rrf_hits,
                         top_n=int(args.judge_shortlist_k),
                         rrf_weight=float(args.shortlist_rrf_weight),
+                        parent_cap=int(args.parent_cap),
+                        lesson_domains=lesson_domains,
+                        lesson_skill_focus=lesson_skill_focus,
+                        rescue_slots=int(args.shortlist_rescue_slots),
                     )
                     # Attach query metadata onto diagnostics rows.
                     for row, meta in zip(per_q, query_meta):
@@ -275,14 +376,22 @@ def main(argv: list[str] | None = None) -> int:
                         "query_source": ";".join(sources),
                         "query_sources": sources,
                         "n_queries": len(queries),
+                        "grade_filter": lesson_grade,
                         "arm_limit": int(args.arm_limit),
                         "per_query_top_k": int(args.per_query_top_k),
                         "merge_top_k": int(args.merge_top_k),
                         "rerank_k": int(args.rerank_k),
+                        "exhaustive_ceiling": int(args.exhaustive_ceiling),
                         "blend_rrf": float(args.blend_rrf),
                         "preserve_rrf_top": int(args.preserve_rrf_top),
                         "judge_shortlist_k": int(args.judge_shortlist_k),
                         "shortlist_rrf_weight": float(args.shortlist_rrf_weight),
+                        "shortlist_rescue_slots": int(args.shortlist_rescue_slots),
+                        "parent_cap": int(args.parent_cap),
+                        "merge_aggregation": str(args.merge_aggregation),
+                        "merge_top_arms": int(args.merge_top_arms),
+                        "merge_log_dampen_base": float(args.merge_log_dampen_base),
+                        "pool_membership_mode": str(args.pool_membership_mode),
                         "skip_rerank": bool(args.no_rerank),
                         "candidates": [c.to_dict() for c in shortlist],
                         "reranked_candidates": [c.to_dict() for c in hits],
@@ -294,14 +403,21 @@ def main(argv: list[str] | None = None) -> int:
                         queries=query_meta,
                         per_query=per_q,
                         merged=rrf_hits,
-                        reranked=shortlist,
+                        reranked=hits,
+                        shortlist=shortlist,
+                        # Evaluation-only annotation written after ranking.
+                        # Gold codes never enter query generation, fusion,
+                        # reranking, diversity, or candidate selection.
                         gold_codes=gold_by_lesson.get(rid),
                         extra={
                             "query_mode": query_mode,
                             "arm_limit": int(args.arm_limit),
                             "merge_top_k": int(args.merge_top_k),
                             "rerank_k": int(args.rerank_k),
+                            "exhaustive_ceiling": int(args.exhaustive_ceiling),
                             "judge_shortlist_k": int(args.judge_shortlist_k),
+                            "shortlist_rescue_slots": int(args.shortlist_rescue_slots),
+                            "parent_cap": int(args.parent_cap),
                         },
                     )
                     write_diagnostics(diag_dir / f"{rid}.json", diag)
@@ -364,7 +480,7 @@ def main(argv: list[str] | None = None) -> int:
                     standards_dir=standards_dir,
                     lesson_file=lesson_file,
                     escalate=not bool(args.no_escalate),
-                    batch=not bool(args.no_batch),
+                    batch=bool(args.batch),
                     use_cache=not (
                         bool(args.no_cache) or bool(args.force_judge) or bool(args.force)
                     ),
