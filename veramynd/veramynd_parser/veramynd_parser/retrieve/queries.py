@@ -522,28 +522,35 @@ def focused_queries_from_normalize(
         "writing_task": [],
         "reading_task": [],
     }
-    for item in data.get("evidence") or []:
+    # Task classification scans ALL evidence (bounded); only the generic
+    # evidence_bits list is capped by max_evidence. Breaking the whole loop at
+    # max_evidence=1 meant a writing quote sitting at evidence[1] never got its
+    # writing_task arm despite the [:2] slice below expecting up to two.
+    for item in (data.get("evidence") or [])[:12]:
         if not isinstance(item, dict):
             continue
         quote = _clean(item.get("quote") or item.get("text"))
-        if quote:
+        if not quote:
+            continue
+        if len(evidence_bits) < max_evidence:
             evidence_bits.append(quote)
-            role = _clean(item.get("evidence_role")).lower()
-            supported = {
-                _clean(x).lower() for x in (item.get("supports_action") or []) if _clean(x)
-            }
-            if role == "elicitation_check" or "oral_production" in supported:
-                evidence_tasks["discussion_prompt"].append(quote)
-            if "written_production" in supported:
-                evidence_tasks["writing_task"].append(quote)
-            if "comprehension_response" in supported:
-                evidence_tasks["reading_task"].append(quote)
-        if len(evidence_bits) >= max_evidence:
-            break
+        role = _clean(item.get("evidence_role")).lower()
+        supported = {
+            _clean(x).lower() for x in (item.get("supports_action") or []) if _clean(x)
+        }
+        if role == "elicitation_check" or "oral_production" in supported:
+            evidence_tasks["discussion_prompt"].append(quote)
+        if "written_production" in supported:
+            evidence_tasks["writing_task"].append(quote)
+        if "comprehension_response" in supported:
+            evidence_tasks["reading_task"].append(quote)
     for source, values in evidence_tasks.items():
         for i, value in enumerate(values[:2], start=1):
+            # "_evidence_" keeps these labels distinct from the task-field arms
+            # above (both used to emit discussion_prompt_1, making per-arm
+            # diagnostics ambiguous); _source_priority matches by prefix.
             add(
-                f"{source}_{i}",
+                f"{source}_evidence_{i}",
                 f"{source.replace('_', ' ').title()}: {value}",
             )
     for i, quote in enumerate(evidence_bits, start=1):
@@ -560,14 +567,19 @@ def focused_queries_from_normalize(
     ):
         add("teacher_action", f"Teacher action — {line}")
 
+    # Last-resort cascade. Each `add` can silently drop too-short text, so
+    # re-check `queries` after every attempt — an `elif` chain here used to
+    # return [] for a record whose only field was a short objective, producing
+    # a misleading "no non-empty queries" error far downstream instead of the
+    # diagnostic below.
     if not queries:
         title = _clean(data.get("title"))
         if title:
             add("title", f"Lesson: {title}")
-        elif objective:
-            add("objective", objective)
-        else:
-            raise ValueError(f"{p}: no usable fields for focused retrieval queries")
+    if not queries and objective:
+        add("objective", objective)
+    if not queries:
+        raise ValueError(f"{p}: no usable fields for focused retrieval queries")
 
     ranked = sorted(
         enumerate(queries),

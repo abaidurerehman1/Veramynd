@@ -19,6 +19,7 @@ from veramynd_parser.pdf.separator import (
     SeparationError,
     _segments,
     _top_level,
+    overview_spans,
     separate,
     synthesize_overview_spans,
 )
@@ -123,3 +124,42 @@ def test_synthesize_overview_spans_fills_gaps_between_units():
     mid = [o for o in overs if o.page_start == 16 and o.page_end == 19]
     assert mid and "U2" in mid[0].title
     assert overs[-1].page_start == 26 and overs[-1].page_end == 30
+
+
+def test_separate_raises_on_duplicate_lesson_code():
+    """Regression: separate() (the primary, outline-based path) had no
+    duplicate-code detection, unlike separate_by_font() — two bookmarks
+    titled the same lesson code silently produced two spans sharing one
+    identity, bisecting that lesson's true page range."""
+    outline = [
+        OutlineEntry(level=1, title="G1M2U1L1", page=1),
+        OutlineEntry(level=1, title="G1M2U1L1", page=10),  # duplicate identity
+        OutlineEntry(level=1, title="G1M2U1L2", page=20),
+    ]
+    with pytest.raises(SeparationError, match="duplicate lesson bookmark"):
+        separate(_FakeOutlineDoc(outline, page_count=30))
+
+
+def test_overview_spans_raises_on_inverted_overview_bookmark():
+    """Regression: _segments()'s inverted-span validation only ran for
+    lesson bookmarks inside separate() — a non-lesson (unit overview)
+    segment with page_end < page_start (duplicate/out-of-order overview
+    bookmarks) flowed unvalidated into Unit.overview_page_start/end, silently
+    contributing zero pages to coverage instead of raising."""
+    outline = [
+        OutlineEntry(level=1, title="G1M2U1 Overview", page=12),
+        OutlineEntry(level=1, title="G1M2U1L1", page=12),  # overview span inverts
+    ]
+    with pytest.raises(SeparationError, match="inverted page span"):
+        overview_spans(_FakeOutlineDoc(outline, page_count=30))
+
+
+def test_separate_raises_on_inverted_overview_bookmark_too():
+    """The same guard, exercised through separate() itself (which now
+    validates every segment's span before filtering to lesson-only)."""
+    outline = [
+        OutlineEntry(level=1, title="G1M2U1 Overview", page=12),
+        OutlineEntry(level=1, title="G1M2U1L1", page=12),
+    ]
+    with pytest.raises(SeparationError, match="inverted page span"):
+        separate(_FakeOutlineDoc(outline, page_count=30))

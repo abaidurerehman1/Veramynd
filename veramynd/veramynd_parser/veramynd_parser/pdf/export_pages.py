@@ -95,7 +95,10 @@ def _remap_provenance(
     if prov is None:
         return None
     updates: dict = {}
-    if prov.page_start is not None:
+    # page_start=0 is the "no provenance" sentinel (a Docling table without
+    # prov) — 0 is never a valid PDF page, and printed_of(0) would raise
+    # PageMapError and kill the whole export over one unattributed table.
+    if prov.page_start is not None and prov.page_start > 0:
         # provenance may store a single page or a span
         if prov.page_end is not None and prov.page_end != prov.page_start:
             ps, pe = page_map.range_to_printed(prov.page_start, prov.page_end)

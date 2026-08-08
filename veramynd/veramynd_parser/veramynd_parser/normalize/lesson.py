@@ -114,8 +114,16 @@ def _cache_plan(lesson_obj: Lesson, cfg: Config) -> tuple[str, str, str, dict]:
     prompt = load_prompt()
     model = resolve_openai_model(cfg.normalize.model or None)
     payload = lesson_normalize_payload(lesson_obj)
+    # The draft schema is part of what the model is asked to produce — hashing
+    # it means an ElaLlmDraft field change invalidates stale cache entries
+    # even when nobody remembered to bump PROMPT_VERSION.
     cache_key = ContentAddressedCache.key(
-        PROMPT_VERSION, "openai", model, prompt, canonical_json(payload)
+        PROMPT_VERSION,
+        "openai",
+        model,
+        prompt,
+        canonical_json(ElaLlmDraft.model_json_schema()),
+        canonical_json(payload),
     )
     return cache_key, model, prompt, payload
 
@@ -135,9 +143,11 @@ def _ascii_punct(text: str) -> str:
 def _sanitize_normalized(norm: NormalizedLesson) -> NormalizedLesson:
     """Normalize typographic punctuation in free text.
 
-    Evidence quotes are left untouched here — ``sanitize_normalized_lesson``
-    already rewrites them to Stage-1 verbatim spans; re-folding quotes would
-    break exact string-matching against source steps.
+    Evidence quotes and locations are left untouched here.
+    ``sanitize_normalized_lesson`` rewrites quotes to Stage-1 verbatim spans
+    and locations to Stage-1 block IDs; folding either would break exact
+    string-matching against source when a section name or step contains
+    typographic punctuation (e.g. ``Students’ Work Time``).
     """
 
     def _skills(items):
@@ -149,10 +159,7 @@ def _sanitize_normalized(norm: NormalizedLesson) -> NormalizedLesson:
     def _evidence(items):
         return [
             e.model_copy(
-                update={
-                    "location": _ascii_punct(e.location),
-                    "qualifiers": [_ascii_punct(q) for q in e.qualifiers],
-                }
+                update={"qualifiers": [_ascii_punct(q) for q in e.qualifiers]}
             )
             for e in items
         ]
@@ -185,6 +192,22 @@ def _sanitize_normalized(norm: NormalizedLesson) -> NormalizedLesson:
             "notes": _ascii_punct(norm.notes),
         }
     )
+
+
+def _apply_sanitizers(
+    norm: NormalizedLesson, lesson: Lesson
+) -> tuple[NormalizedLesson, list[str]]:
+    """Run all sanitizers in the one canonical order, for every path.
+
+    Fold typographic punctuation in LLM free text first, then repair against
+    Stage-1 source (verbatim quotes, block-ID locations) so ground truth is
+    applied last and stays byte-exact. Fresh normalization and cache hits must
+    both go through this function — a per-path order re-introduces the bug
+    where a cached record's folded location no longer joins Stage-1 block IDs
+    and every resume run fails at the same lesson.
+    """
+    norm = _sanitize_normalized(norm)
+    return sanitize_normalized_lesson(norm, lesson)
 
 
 # Public alias kept for tests / callers that imported the old private helper.
@@ -411,8 +434,9 @@ def normalize_lesson(
             if hit is not None:
                 # Match normalize_lessons_dir: re-run sanitizers on cache hits so
                 # --one and batch paths emit identical bytes after rule changes.
-                hit = _sanitize_normalized(_with_source_provenance(hit, lesson_obj))
-                hit, sanitize_warnings = sanitize_normalized_lesson(hit, lesson_obj)
+                hit, sanitize_warnings = _apply_sanitizers(
+                    _with_source_provenance(hit, lesson_obj), lesson_obj
+                )
                 for w in sanitize_warnings:
                     print(f"WARNING: {lesson_obj.code}: {w}", flush=True)
                 return hit
@@ -451,9 +475,7 @@ def normalize_lesson(
         draft = _enforce_evidence_coverage(draft)
         try:
             assembled = _assemble_record(lesson_obj, draft)
-            assembled, sanitize_warnings = sanitize_normalized_lesson(
-                assembled, lesson_obj
-            )
+            assembled, sanitize_warnings = _apply_sanitizers(assembled, lesson_obj)
             for w in sanitize_warnings:
                 print(f"WARNING: {lesson_obj.code}: {w}", flush=True)
             result = assembled.model_copy(
@@ -463,7 +485,6 @@ def normalize_lesson(
                     "model": model,
                 }
             )
-            result = _sanitize_normalized(result)
             break
         except (ValidationError, ValueError) as e:
             last_err = e
@@ -544,51 +565,56 @@ def normalize_lessons_dir(
 
     refresh_cache = effective_force
 
+    def _record_failure(code: str, e: Exception) -> None:
+        """One bookkeeping path for every per-lesson failure — cache hits
+        included, so a re-sanitize crash can never leave progress at
+        \"running\" with nothing recorded."""
+        failed.append(code)
+        progress["failed"].append({"code": code, "error": str(e)})
+        progress["status"] = "interrupted"
+        _write_progress(progress_path, progress)
+        print(f"ERROR on {code}: {e}", flush=True)
+        print(
+            "Progress saved. Re-run the same command to resume remaining lessons.",
+            flush=True,
+        )
+
     if max_workers == 1:
         for i, path in enumerate(files, 1):
             lesson = Lesson.model_validate_json(path.read_text(encoding="utf-8"))
             out_path = dst / f"{safe_code_filename(lesson.code)}.json"
 
             cached = None if refresh_cache else _peek_cache(lesson, cfg, use_cache)
-            if cached is not None:
-                cached = _sanitize_normalized(_with_source_provenance(cached, lesson))
-                cached, sw = sanitize_normalized_lesson(cached, lesson)
-                for w in sw:
-                    print(f"WARNING: {lesson.code}: {w}", flush=True)
-                atomic_write_text(out_path, dump_ela_record_json(cached))
-                results.append(cached)
-                skipped += 1
-                progress["skipped"].append(lesson.code)
-                progress["completed"].append(lesson.code)
-                print(
-                    f"[{i}/{len(files)}] {lesson.code} - resume skip "
-                    f"(cache hit, source unchanged)",
-                    flush=True,
-                )
-                _write_progress(progress_path, progress)
-                continue
-
-            print(f"[{i}/{len(files)}] {lesson.code}...", flush=True)
             try:
-                norm = normalize_lesson(
-                    lesson,
-                    cfg,
-                    use_cache=use_cache,
-                    refresh_cache=refresh_cache,
-                )
-                atomic_write_text(out_path, dump_ela_record_json(norm))
-                results.append(norm)
-                progress["completed"].append(lesson.code)
+                if cached is not None:
+                    cached, sw = _apply_sanitizers(
+                        _with_source_provenance(cached, lesson), lesson
+                    )
+                    for w in sw:
+                        print(f"WARNING: {lesson.code}: {w}", flush=True)
+                    atomic_write_text(out_path, dump_ela_record_json(cached))
+                    results.append(cached)
+                    skipped += 1
+                    progress["skipped"].append(lesson.code)
+                    progress["completed"].append(lesson.code)
+                    print(
+                        f"[{i}/{len(files)}] {lesson.code} - resume skip "
+                        f"(cache hit, source unchanged)",
+                        flush=True,
+                    )
+                else:
+                    print(f"[{i}/{len(files)}] {lesson.code}...", flush=True)
+                    norm = normalize_lesson(
+                        lesson,
+                        cfg,
+                        use_cache=use_cache,
+                        refresh_cache=refresh_cache,
+                    )
+                    atomic_write_text(out_path, dump_ela_record_json(norm))
+                    results.append(norm)
+                    progress["completed"].append(lesson.code)
             except (LlmError, ValueError, OSError, TypeError, RuntimeError) as e:
-                failed.append(lesson.code)
-                progress["failed"].append({"code": lesson.code, "error": str(e)})
-                progress["status"] = "interrupted"
-                _write_progress(progress_path, progress)
-                print(f"ERROR on {lesson.code}: {e}", flush=True)
-                print(
-                    "Progress saved. Re-run the same command to resume remaining lessons.",
-                    flush=True,
-                )
+                _record_failure(lesson.code, e)
                 raise
 
             _write_progress(progress_path, progress)
@@ -600,8 +626,13 @@ def normalize_lessons_dir(
             out_path = dst / f"{safe_code_filename(lesson.code)}.json"
             cached = None if refresh_cache else _peek_cache(lesson, cfg, use_cache)
             if cached is not None:
-                cached = _sanitize_normalized(_with_source_provenance(cached, lesson))
-                cached, sw = sanitize_normalized_lesson(cached, lesson)
+                try:
+                    cached, sw = _apply_sanitizers(
+                        _with_source_provenance(cached, lesson), lesson
+                    )
+                except (ValueError, TypeError, OSError, RuntimeError) as e:
+                    _record_failure(lesson.code, e)
+                    raise
                 for w in sw:
                     print(f"WARNING: {lesson.code}: {w}", flush=True)
                 atomic_write_text(out_path, dump_ela_record_json(cached))

@@ -47,7 +47,11 @@ def _lists_from_diag(diag: dict[str, Any]) -> tuple[list[list[str]], list[float]
         if not codes:
             continue
         ranked_lists.append(codes)
-        weights.append(float(row.get("query_weight") or 1.0))
+        # Explicit None check: a stored weight of 0.0 must replay as 0.0
+        # (the live aggregator skips zero-weight arms entirely), not be
+        # silently swapped for 1.0 by `or`.
+        raw_w = row.get("query_weight")
+        weights.append(float(raw_w) if raw_w is not None else 1.0)
         sources.append(str(row.get("source") or ""))
     return ranked_lists, weights, sources
 

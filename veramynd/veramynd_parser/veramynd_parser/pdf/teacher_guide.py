@@ -127,7 +127,19 @@ def parse_teacher_guide(path: str | Path, cfg: Config | None = None) -> TeacherG
                 for span in spans:
                     try:
                         lessons.append(divide_docling(docling, span, cfg))
-                    except (OSError, RuntimeError, ValueError, KeyError, IndexError) as e:
+                    except (
+                        OSError,
+                        RuntimeError,
+                        ValueError,
+                        KeyError,
+                        IndexError,
+                        # Unexpected Docling object shapes surface as these two
+                        # more often than any of the above — without them, one
+                        # odd element crashes the whole parse instead of
+                        # degrading that lesson to PyMuPDF.
+                        AttributeError,
+                        TypeError,
+                    ) as e:
                         lessons.append(divide_pymupdf(doc, span, cfg))
                         note = (
                             f"{span.code}: Docling division failed "
@@ -148,6 +160,9 @@ def parse_teacher_guide(path: str | Path, cfg: Config | None = None) -> TeacherG
                 # the coarser failure mode.
                 if lessons and all(lesson.parsed_by == "pymupdf" for lesson in lessons):
                     effective_engine = "pymupdf"
+                    # OCR belonged to the abandoned Docling parse — claiming it
+                    # for an all-PyMuPDF result would be false provenance.
+                    ocr_used = False
             else:
                 lessons = [divide_pymupdf(doc, span, cfg) for span in spans]
         else:

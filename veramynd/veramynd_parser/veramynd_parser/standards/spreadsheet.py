@@ -45,8 +45,19 @@ class UngradedCodeError(ValueError):
 
 
 def level_of(code: str) -> StandardLevel:
-    """Derive the hierarchy level from the code's dot-depth (not the Notes column)."""
-    return _LEVEL_BY_DEPTH.get(code.count("."), StandardLevel.SUBSTANDARD)
+    """Derive the hierarchy level from the code's dot-depth (not the Notes column).
+
+    Depths beyond the deepest known level stay SUBSTANDARD (deeper leaves);
+    a depth-0 code (no dots, e.g. a bare ``1``) is malformed and must fail
+    loud — it would otherwise flow downstream as a bogus alignable leaf.
+    """
+    depth = code.count(".")
+    if depth == 0:
+        raise SpreadsheetStructureError(
+            f"standard code {code!r} has no dotted segments — not a valid "
+            f"hierarchy code"
+        )
+    return _LEVEL_BY_DEPTH.get(depth, StandardLevel.SUBSTANDARD)
 
 
 def parent_of(code: str) -> str | None:
@@ -145,12 +156,19 @@ def parse_standards(
         empty_text_rows: list[int] = []
         seen_codes: dict[str, int] = {}
 
+        codeless_text_rows: list[int] = []
+
+        def _row_has_text(r: tuple) -> bool:
+            return len(r) > 1 and r[1] is not None and str(r[1]).strip() != ""
+
         for row_idx, row in enumerate(rows_iter, start=2):
-            if not row or row[0] is None:
+            if not row or row[0] is None or not str(row[0]).strip():
+                # Vertically merged Code cells read as None on non-anchor rows —
+                # a row with standard text but no code must not vanish silently.
+                if row and _row_has_text(row):
+                    codeless_text_rows.append(row_idx)
                 continue
             code = str(row[0]).strip()
-            if not code:
-                continue
             # data_only=True leaves uncached formula cells as None — treat as error
             # when the cell looks like a formula string was expected.
             raw_text = row[1] if len(row) > 1 else None
@@ -215,6 +233,14 @@ def parse_standards(
         raise SpreadsheetStructureError(
             f"{path.name}: {len(empty_text_rows)} row(s) have a code but empty "
             f"standard text (rows {preview}{more}) — fix or remove them before parsing"
+        )
+    if codeless_text_rows:
+        preview = codeless_text_rows[:5]
+        more = "" if len(codeless_text_rows) <= 5 else f" (+{len(codeless_text_rows) - 5} more)"
+        raise SpreadsheetStructureError(
+            f"{path.name}: {len(codeless_text_rows)} row(s) have standard text but "
+            f"no code (rows {preview}{more}) — likely a vertically merged Code "
+            f"cell; unmerge so every row carries its code"
         )
 
     grade = next(iter(grades_seen))

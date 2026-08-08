@@ -94,3 +94,64 @@ def test_collect_skips_incomplete_sidecars(tmp_path: Path):
     bad.write_text(good.read_text(encoding="utf-8"), encoding="utf-8")
     files = collect_judge_files([tmp_path])
     assert files == [good]
+
+
+def test_collect_skips_non_judge_json_in_dir(tmp_path: Path):
+    """Regression: the exporter's own summary JSON written into the judge dir
+    made every subsequent --judge-dir run hard-fail."""
+    from veramynd_parser.report.exporter import collect_judge_files
+
+    good = _judge_file(tmp_path)
+    (tmp_path / "alignments.summary.json").write_text(
+        json.dumps({"row_count": 2}), encoding="utf-8"
+    )
+    (tmp_path / "stray.json").write_text("[1, 2]", encoding="utf-8")
+    files = collect_judge_files([tmp_path])
+    assert files == [good]
+
+
+def test_explicit_file_is_never_silently_dropped(tmp_path: Path):
+    from veramynd_parser.report.exporter import collect_judge_files
+
+    good = _judge_file(tmp_path)
+    sidecar = tmp_path / "G1M2U1L3.json.incomplete.json"
+    sidecar.write_text(good.read_text(encoding="utf-8"), encoding="utf-8")
+    # Explicitly requested sidecars pass through instead of vanishing.
+    assert collect_judge_files([sidecar]) == [sidecar]
+
+
+def test_csv_formula_injection_guard(tmp_path: Path):
+    path = tmp_path / "G1M2U1L9.json"
+    path.write_text(
+        json.dumps(
+            {
+                "resource_id": "G1M2U1L9",
+                "verdicts": [
+                    {
+                        "resource_id": "G1M2U1L9",
+                        "standard_code": "1.T.T.1.a",
+                        "matched_status": "partial",
+                        "confidence": "high",
+                        "grounded": True,
+                        "evidence": "=HYPERLINK(\"http://evil\",\"click\")",
+                        "evidence_page": 1,
+                        "rationale": "@cmd payload",
+                        "standard_raw_text": "+SUM(1,2)",
+                        "judge_model": "gpt-4.1",
+                        "prompt_version": "align_judge.v1.0",
+                        "escalated": False,
+                        "grounding_note": "ok",
+                        "retrieval": {},
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    out_csv = tmp_path / "alignments.csv"
+    export_alignment_report([path], out_csv=out_csv, out_summary=None)
+    with out_csv.open(newline="", encoding="utf-8") as f:
+        row = list(csv.DictReader(f))[0]
+    assert row["evidence"].startswith("'=")
+    assert row["rationale"].startswith("'@")
+    assert row["standard_raw_text"].startswith("'+")

@@ -1,22 +1,33 @@
 # Pinned dependency lock for reproducible installs (Dep1).
 # Install: pip install -r requirements.lock
-# Generated to match pyproject.toml pins (2026-07-23).
+# Kept in sync with pyproject.toml pins (2026-08-08).
+#
+# NOTE: this file pins DIRECT dependencies only — transitive dependencies
+# (httpx, torch via sentence-transformers, docling's chain, ...) float.
+# For a fully reproducible environment, generate a true transitive lock:
+#   uv pip compile pyproject.toml --all-extras --generate-hashes -o requirements.lock
 
 pymupdf==1.25.5
 openpyxl==3.1.5
 pydantic==2.10.6
 
-# Optional: normalize
+# Optional: normalize / judge (OpenAI + dotenv)
 # openai==1.70.0
 # python-dotenv==1.1.0
 
-# Optional: docling
+# Optional: docling (Stage 1 production engine)
 # docling==2.114.0
 
-# Optional: embed
+# Optional: embed (OpenAI embeddings + Qdrant upsert)
+# openai==1.70.0
+# python-dotenv==1.1.0
+# qdrant-client==1.13.3
+
+# Optional: retrieve (hybrid dense+BM25 + cross-encoder rerank)
+# openai==1.70.0
+# python-dotenv==1.1.0
+# qdrant-client==1.13.3
 # sentence-transformers==3.4.1
-# numpy==2.2.4
 
 # Optional: test
 # pytest==8.3.5
-# numpy==2.2.4

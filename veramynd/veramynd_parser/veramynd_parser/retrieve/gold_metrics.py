@@ -44,9 +44,17 @@ def resource_ids_from_gold(gold_jsonl: Path | str) -> list[str]:
     return out
 
 
-def _codes_from_retrieve(path: Path, *, field: str) -> list[str]:
+def _codes_from_retrieve(path: Path, *, field: str) -> list[str] | None:
+    """Codes stored under exactly ``field``; ``None`` when the artifact lacks it.
+
+    No fallback to ``candidates``: silently substituting the after-rerank list
+    made before/after metrics identical and faked a "rerank changed nothing"
+    signal for artifacts that never stored the pre-rerank funnel.
+    """
     data = json.loads(path.read_text(encoding="utf-8"))
-    rows = data.get(field) or data.get("candidates") or []
+    rows = data.get(field)
+    if rows is None:
+        return None
     return [
         (c.get("standard_code") or "").strip()
         for c in rows
@@ -70,6 +78,7 @@ def report_leaf_recall(
         rr_sum = 0.0
         n = 0
         missing_files = 0
+        missing_field = 0
         for g in gold:
             n += 1
             path = root / f"{g['resource_id']}.json"
@@ -77,6 +86,9 @@ def report_leaf_recall(
                 missing_files += 1
                 continue
             codes = _codes_from_retrieve(path, field=field)
+            if codes is None:
+                missing_field += 1
+                continue
             code = g["standard_code"]
             if code in codes:
                 rank = codes.index(code) + 1
@@ -87,6 +99,7 @@ def report_leaf_recall(
         return {
             "n_positives": n,
             "missing_retrieve_files": missing_files,
+            "files_missing_field": missing_field,
             "mrr": round(rr_sum / n, 4) if n else 0.0,
             "recall": {
                 f"@{k}": {
@@ -100,7 +113,21 @@ def report_leaf_recall(
 
     # After-rerank list + pre-rerank funnel when present.
     after = _eval("candidates")
-    before = _eval("rrf_candidates")
+    before: dict[str, Any] = _eval("rrf_candidates")
+    evaluated_before = (
+        before["n_positives"]
+        - before["missing_retrieve_files"]
+        - before["files_missing_field"]
+    )
+    if evaluated_before <= 0:
+        before = {
+            "available": False,
+            "reason": (
+                "no evaluable retrieve artifact with rrf_candidates (files "
+                "missing, gold empty, or field absent) — before-rerank "
+                "metrics cannot be computed"
+            ),
+        }
 
     # Candidate counts from first available gold lesson file.
     before_n = after_n = None
@@ -110,7 +137,8 @@ def report_leaf_recall(
             continue
         data = json.loads(path.read_text(encoding="utf-8"))
         after_n = len(data.get("candidates") or [])
-        before_n = len(data.get("rrf_candidates") or data.get("candidates") or [])
+        rrf_rows = data.get("rrf_candidates")
+        before_n = len(rrf_rows) if rrf_rows is not None else None
         break
 
     return {

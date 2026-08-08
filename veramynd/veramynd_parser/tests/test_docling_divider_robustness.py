@@ -146,4 +146,58 @@ def test_vocabulary_excludes_legend_even_when_docling_tags_it_as_plain_text():
     ]
     lesson = divide(DoclingParse("test.pdf", elements, []), _span(), Config())
 
-    assert lesson.vocabulary == ["sun, moon, stars (L)", "observe (L)"]
+    # The "Review: " prefix is the Stage-1 contract shared by both dividers
+    # (see test_pymupdf_divider / test_docling); normalize's split_vocabulary
+    # strips it when bucketing New vs Review.
+    assert lesson.vocabulary == ["sun, moon, stars (L)", "Review: observe (L)"]
+
+
+def test_agenda_stops_on_teaching_notes_arriving_as_plain_text():
+    """Regression: 'Teaching Notes' mislabeled as text used to be absorbed as a
+    fabricated agenda item — which then became a fabricated instructional block
+    competing for body steps."""
+    elements = [
+        Element("section_header", "Lesson 1: Sample Title", 1),
+        Element("section_header", "Agenda", 1),
+        Element("section_header", "1. Closing and Assessment", 1),
+        Element("list_item", "A. Debrief (10 minutes)", 1),
+        Element("text", "Teaching Notes", 1),
+        Element("list_item", "Purpose of lesson and alignment to standards:", 1),
+    ]
+    lesson = divide(DoclingParse("test.pdf", elements, []), _span(), Config())
+    assert [(a.section, a.letter, a.title) for a in lesson.agenda] == [
+        ("Closing and Assessment", "A", "Debrief"),
+    ]
+
+
+def test_bare_section_restart_requires_the_section_name_itself():
+    """Regression: an agenda item starting with a section word ('Closing
+    Circle') whose minutes Docling split into a separate element used to
+    restart the section and vanish as an item."""
+    elements = [
+        Element("section_header", "Lesson 1: Sample Title", 1),
+        Element("section_header", "Agenda", 1),
+        Element("section_header", "1. Work Time", 1),
+        Element("list_item", "A. Shared Writing (10 minutes)", 1),
+        Element("list_item", "Closing Circle", 1),  # item, minutes split away
+        Element("text", "(10 minutes)", 1),
+    ]
+    lesson = divide(DoclingParse("test.pdf", elements, []), _span(), Config())
+    sections = [(a.section, a.title) for a in lesson.agenda]
+    assert ("Work Time", "Shared Writing") in sections
+    # 'Closing Circle' stays a Work Time item — it must not restart a section.
+    assert all(s == "Work Time" for s, _ in sections)
+
+
+def test_learning_targets_do_not_duplicate_body_restatements():
+    """Regression: targets restated in the body after a mislabeled boundary
+    ('Ongoing Assessment' arriving as text) were collected twice."""
+    elements = [
+        Element("section_header", "Lesson 1: Sample Title", 1),
+        Element("section_header", "Daily Learning Targets", 1),
+        Element("list_item", "I can describe weather. (W.1.8)", 1),
+        Element("text", "Ongoing Assessment", 1),  # boundary mislabeled
+        Element("text", "I can describe weather.", 1),  # body restatement
+    ]
+    lesson = divide(DoclingParse("test.pdf", elements, []), _span(), Config())
+    assert [t.text for t in lesson.learning_targets] == ["I can describe weather."]

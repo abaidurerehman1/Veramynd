@@ -36,8 +36,9 @@ def test_scan_normalize_cache_classifies_current_vs_stale(tmp_path: Path):
     result = scan_normalize_cache(tmp_path, current_prompt_version="normalize_ela.v1")
 
     assert [p.name for p in result.kept] == ["a.json"]
-    assert [p.name for p in result.stale] == ["b.json"]
-    assert [p.name for p in result.unreadable] == ["corrupt.json"]
+    # Corrupt JSON is a guaranteed cache miss — reclaimable, not keep-forever.
+    assert [p.name for p in result.stale] == ["b.json", "corrupt.json"]
+    assert result.unreadable == []
 
 
 def test_scan_normalize_standards_cache_classifies_by_std_prompt(tmp_path: Path):
@@ -56,8 +57,10 @@ def test_scan_normalize_standards_cache_classifies_by_std_prompt(tmp_path: Path)
         tmp_path, current_prompt_version="normalize_std.v1.0"
     )
     assert [p.name for p in result.kept] == ["a.json"]
-    assert [p.name for p in result.stale] == ["b.json"]
-    assert [p.name for p in result.unreadable] == ["lesson.json"]
+    # A lesson record can never validate as a NormalizedStandard — it is a
+    # guaranteed miss in this cache, hence reclaimable.
+    assert [p.name for p in result.stale] == ["b.json", "lesson.json"]
+    assert result.unreadable == []
 
 
 def test_scan_normalize_cache_missing_dir_returns_empty(tmp_path: Path):
@@ -80,16 +83,18 @@ def test_apply_prune_deletes_only_stale_entries(tmp_path: Path):
 
 
 def test_scan_docling_cache_classifies_by_filename_version(tmp_path: Path):
-    (tmp_path / "abc123-docling210-ocr0-tables1.docling.json").write_text("{}")
-    (tmp_path / "def456-docling200-ocr0-tables1.docling.json").write_text("{}")
+    current = "aa11-docling-2.10.0-vabcdef012345-ocr0-tables1.docling.json"
+    old = "bb22-docling-2.9.0-vabcdef012345-ocr0-tables1.docling.json"
+    (tmp_path / current).write_text("{}")
+    (tmp_path / old).write_text("{}")
     # matches the *.docling.json glob but not the internal version-encoding regex
     (tmp_path / "weird-name.docling.json").write_text("{}")
     (tmp_path / "not-a-cache-file.txt").write_text("junk")  # not even glob-matched
 
-    result = scan_docling_cache(tmp_path, current_docling_version="2.10")
+    result = scan_docling_cache(tmp_path, current_docling_version="2.10.0")
 
-    assert [p.name for p in result.kept] == ["abc123-docling210-ocr0-tables1.docling.json"]
-    assert [p.name for p in result.stale] == ["def456-docling200-ocr0-tables1.docling.json"]
+    assert [p.name for p in result.kept] == [current]
+    assert [p.name for p in result.stale] == [old]
     assert [p.name for p in result.unreadable] == ["weird-name.docling.json"]
 
 
@@ -123,24 +128,32 @@ def test_scan_docling_cache_recognizes_legacy_filenames_without_tables_suffix(tm
     }
 
 
-def test_scan_docling_cache_matches_legacy_compressed_form(tmp_path: Path):
-    """A no-`-tablesN` legacy filename still matches its *current* installed
-    version via the dot-stripped compressed comparison (`2.114.0` -> `21140`)."""
+def test_scan_docling_cache_legacy_names_are_stale_even_at_current_version(tmp_path: Path):
+    """Legacy-named entries are unreachable regardless of version: the current
+    reader only ever builds full `-docling-{version}-v{tag}-` filenames, so a
+    version match on the compressed legacy form used to keep dead weight that
+    `cache-prune --apply` could never reclaim."""
     (tmp_path / "74c6b2d5ca19cffd-docling21140-ocr1.docling.json").write_text("{}")
 
     result = scan_docling_cache(tmp_path, current_docling_version="2.114.0")
 
     assert result.unreadable == []
-    assert result.stale == []
-    assert [p.name for p in result.kept] == ["74c6b2d5ca19cffd-docling21140-ocr1.docling.json"]
+    assert result.kept == []
+    assert [p.name for p in result.stale] == [
+        "74c6b2d5ca19cffd-docling21140-ocr1.docling.json"
+    ]
 
 
-def test_scan_docling_cache_unknown_current_version_keeps_everything(tmp_path: Path):
-    """Docling not being installed right now says nothing about whether its
-    cache is still valid for whoever installs it next -- must not guess stale."""
-    (tmp_path / "abc123-docling210-ocr0-tables1.docling.json").write_text("{}")
+def test_scan_docling_cache_unknown_current_version_keeps_full_form_entries(tmp_path: Path):
+    """Docling not being installed right now says nothing about whether a
+    full-form entry is still valid for whoever installs it next -- must not
+    guess stale. Legacy-named entries stay stale regardless (unreachable by
+    the current reader under ANY installed version)."""
+    full = "aa11-docling-2.10.0-vabcdef012345-ocr0-tables1.docling.json"
+    (tmp_path / full).write_text("{}")
+    (tmp_path / "abc123-docling210-ocr0.docling.json").write_text("{}")
 
     result = scan_docling_cache(tmp_path, current_docling_version=None)
 
-    assert len(result.kept) == 1
-    assert result.stale == []
+    assert [p.name for p in result.kept] == [full]
+    assert [p.name for p in result.stale] == ["abc123-docling210-ocr0.docling.json"]

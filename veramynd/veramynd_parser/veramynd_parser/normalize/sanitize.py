@@ -31,7 +31,10 @@ from .models import (
 
 # CCSS-style codes (and close cousins) that must not appear in the scorable record.
 # Grade segment allows digits OR kindergarten ``K`` (aligned with text_utils.STANDARD_CODE).
-_ONE_CODE = r"(?:[A-Z]{1,4})\.(?:K|\d+)\.\d+[a-z]{0,3}"
+# Prefix discipline: a lone letter is only a real strand for W/L, and pure
+# roman-numeral prefixes are outline references, not standards — "section
+# A.1.2" and "II.3.4" in a quote must survive redaction.
+_ONE_CODE = r"(?:W|L|(?![IVX]{2,4}\.)[A-Z]{2,4})\.(?:K|\d+)\.\d+[a-z]{0,3}"
 # A whole comma/and-joined LIST of codes ("SL.1.1a, SL.1.1b, and SL.1.4"), matched
 # as a single atomic span rather than one code at a time. Real lesson text lists
 # multiple codes per assessment note (e.g. "Gather data on SL.1.1a, SL.1.1b, SL.1.4,
@@ -174,10 +177,18 @@ def agenda_pacing(lesson: Lesson) -> str:
 
 
 def redact_standard_codes(text: str) -> str:
-    """Remove standard codes; collapse leftover whitespace/punctuation debris."""
+    """Remove standard codes; collapse leftover whitespace/punctuation debris.
+
+    The debris cleanup runs ONLY when a code was actually removed — running it
+    unconditionally corrupted code-free text ("with and without" lost its
+    "and", trailing commas were stripped), breaking the verbatim contract for
+    quotes that never contained a code in the first place.
+    """
     if not text:
         return text
-    cleaned = _STANDARD_CODE_RE.sub("", text)
+    cleaned, n_codes = _STANDARD_CODE_RE.subn("", text)
+    if n_codes == 0:
+        return text
     cleaned = re.sub(r"\s{2,}", " ", cleaned)
     cleaned = re.sub(r"\s+([,;:.])", r"\1", cleaned)
     cleaned = re.sub(r"\(\s*[,;]*\s*\)", "", cleaned)
@@ -195,32 +206,43 @@ def _norm_ws(text: str) -> str:
 
 def lesson_source_lines(lesson: Lesson) -> list[str]:
     """Candidate verbatim spans from the Stage-1 lesson."""
-    lines: list[str] = []
+    return [line for line, _block in lesson_source_lines_with_block(lesson)]
+
+
+def lesson_source_lines_with_block(lesson: Lesson) -> list[tuple[str, str | None]]:
+    """Candidate spans tagged with their instructional block key ("{section}
+    {letter}"), or None for title/target/agenda/vocabulary lines that live
+    outside any block. Lets quote resolution prefer a candidate from the
+    evidence's own claimed location instead of picking the globally shortest
+    (or longest) match regardless of which part of the lesson it came from.
+    """
+    lines: list[tuple[str, str | None]] = []
     if lesson.title:
-        lines.append(lesson.title)
+        lines.append((lesson.title, None))
     for t in lesson.learning_targets:
         if t.text:
-            lines.append(t.text)
+            lines.append((t.text, None))
     for a in lesson.agenda:
         if a.title:
-            lines.append(a.title)
+            lines.append((a.title, None))
     for b in lesson.instructional_blocks:
+        block_key = f"{b.section} {b.letter}" if b.section and b.letter else None
         if b.title:
-            lines.append(b.title)
+            lines.append((b.title, block_key))
         for step in b.steps:
             if step and step.strip():
-                lines.append(step.strip())
+                lines.append((step.strip(), block_key))
     for term in lesson.vocabulary:
         if term and term.strip():
-            lines.append(term.strip())
-    # Deduplicate while preserving order.
+            lines.append((term.strip(), None))
+    # Deduplicate while preserving order (first block tag seen wins).
     seen: set[str] = set()
-    out: list[str] = []
-    for line in lines:
+    out: list[tuple[str, str | None]] = []
+    for line, block in lines:
         key = _norm_ws(line).lower()
         if key and key not in seen:
             seen.add(key)
-            out.append(line)
+            out.append((line, block))
     return out
 
 
@@ -247,16 +269,31 @@ def quote_is_verbatim(quote: str, corpus: str) -> bool:
     return bool(sf) and sf in cf
 
 
-def resolve_verbatim_quote(quote: str, source_lines: list[str], corpus: str) -> str | None:
+def resolve_verbatim_quote(
+    quote: str,
+    source_lines: list[str],
+    corpus: str,
+    *,
+    source_blocks: list[str | None] | None = None,
+    preferred_block: str | None = None,
+) -> str | None:
     """Return an exact Stage-1 source line (preferred) for grounding.
 
     Never keeps the LLM's paraphrase/truncation / quote-style rewrite when a
     Stage-1 line can be recovered — production engines exact-match quotes.
+
+    Containment matching (quote is a span of a line, or vice versa) is
+    otherwise location-blind: the globally shortest/longest candidate wins
+    even when it comes from a different block than the evidence claims. When
+    ``source_blocks``/``preferred_block`` are given, a candidate from
+    ``preferred_block`` is chosen over an equally-valid candidate from
+    elsewhere in the lesson.
     """
     del corpus  # matching is line-based; corpus kept for call-site compatibility
     redacted = redact_standard_codes(quote)
     if not _norm_ws(redacted):
         return None
+    blocks = source_blocks if source_blocks is not None else [None] * len(source_lines)
 
     qn = _norm_ws(redacted).lower()
     qn_stripped = qn.strip(_QUOTE_CHARS)
@@ -265,9 +302,13 @@ def resolve_verbatim_quote(quote: str, source_lines: list[str], corpus: str) -> 
 
     best_line = ""
     best_ratio = 0.0
-    contained: str | None = None
+    # Every candidate is collected (not greedily picked mid-scan) so the final
+    # choice among a tied category can prefer preferred_block over "whichever
+    # line happened to be shortest/longest/first across the whole lesson".
+    contained: list[str] = []
+    reverse_contained: list[str] = []
 
-    for line in source_lines:
+    for line, block in zip(source_lines, blocks):
         ln = _norm_ws(line)
         ln_l = ln.lower()
         if not ln_l:
@@ -285,15 +326,13 @@ def resolve_verbatim_quote(quote: str, source_lines: list[str], corpus: str) -> 
             or qn_fold in ln_fold
             or (qn_fold_stripped and qn_fold_stripped in ln_fold)
         ):
-            if contained is None or len(line) < len(contained):
-                contained = line
+            contained.append(line)
             continue
 
         # Source line is a contiguous span of a longer LLM quote.
-        if ln_l in qn and len(ln_l) >= 24:
-            return line
-        if ln_fold in qn_fold and len(ln_fold) >= 24:
-            return line
+        if (ln_l in qn and len(ln_l) >= 24) or (ln_fold in qn_fold and len(ln_fold) >= 24):
+            reverse_contained.append(line)
+            continue
 
         # Also compare against code-redacted source (LLM often drops CCSS codes).
         ln_redacted = _norm_ws(redact_standard_codes(line)).lower()
@@ -301,8 +340,7 @@ def resolve_verbatim_quote(quote: str, source_lines: list[str], corpus: str) -> 
             if qn == ln_redacted or qn_stripped == ln_redacted.strip(_QUOTE_CHARS):
                 return line
             if qn in ln_redacted or _fold_quotes(qn) in _fold_quotes(ln_redacted):
-                if contained is None or len(line) < len(contained):
-                    contained = line
+                contained.append(line)
                 continue
             ratio_red = SequenceMatcher(None, qn, ln_redacted).ratio()
             if ratio_red > best_ratio:
@@ -314,8 +352,30 @@ def resolve_verbatim_quote(quote: str, source_lines: list[str], corpus: str) -> 
             best_ratio = ratio
             best_line = line
 
-    if contained is not None:
-        return contained
+    # First-wins (not dict(zip(...)), which is last-wins): if the same line
+    # text appears in two different blocks, the FIRST occurrence's block is
+    # what a caller most likely means by "this line" — a last-wins mapping
+    # would silently pick the wrong block's tag for it.
+    line_to_block: dict[str, str | None] = {}
+    for ln, blk in zip(source_lines, blocks):
+        line_to_block.setdefault(ln, blk)
+
+    def _select(candidates: list[str], *, prefer_longest: bool) -> str | None:
+        if not candidates:
+            return None
+        pool = candidates
+        if preferred_block is not None:
+            in_block = [c for c in candidates if line_to_block.get(c) == preferred_block]
+            if in_block:
+                pool = in_block
+        return max(pool, key=len) if prefer_longest else min(pool, key=len)
+
+    picked = _select(contained, prefer_longest=False)
+    if picked is not None:
+        return picked
+    picked = _select(reverse_contained, prefer_longest=True)
+    if picked is not None:
+        return picked
     if best_ratio >= _VERBATIM_RATIO and best_line:
         return best_line
     return None
@@ -357,17 +417,45 @@ def scrub_contradicted_not_taught(
     return kept, warnings
 
 
+def _guess_preferred_block(location: str, lesson: Lesson) -> str | None:
+    """Best-effort Stage-1 block id from the evidence's own (not yet
+    canonicalized) location, used only to break ties in verbatim-quote
+    resolution — never raises, and is not the source of truth for the
+    location field itself (canonicalize_evidence_locations still owns that,
+    later in the pipeline).
+    """
+    m = _LOCATION_BLOCK.match((location or "").strip())
+    if not m:
+        return None
+    hint = m.group("section").strip()
+    letter = m.group("letter").strip()
+    exact = f"{hint} {letter}"
+    if exact in stage1_block_ids(lesson):
+        return exact
+    resolved = _resolve_stage1_section(hint, letter, lesson)
+    return f"{resolved} {letter}" if resolved else None
+
+
 def sanitize_evidence_against_source(
     evidence: list[EvidenceItem],
     lesson: Lesson,
 ) -> tuple[list[EvidenceItem], list[str]]:
     """Redact codes + enforce verbatim quotes. Returns (kept, warnings)."""
-    lines = lesson_source_lines(lesson)
+    tagged = lesson_source_lines_with_block(lesson)
+    lines = [line for line, _block in tagged]
+    blocks = [block for _line, block in tagged]
     corpus = "\n".join(lines)
     kept: list[EvidenceItem] = []
     warnings: list[str] = []
     for i, item in enumerate(evidence):
-        resolved = resolve_verbatim_quote(item.quote, lines, corpus)
+        preferred_block = _guess_preferred_block(item.location, lesson)
+        resolved = resolve_verbatim_quote(
+            item.quote,
+            lines,
+            corpus,
+            source_blocks=blocks,
+            preferred_block=preferred_block,
+        )
         if resolved is None:
             warnings.append(
                 f"dropped evidence[{i}] — not verbatim in source: {item.quote[:80]!r}"

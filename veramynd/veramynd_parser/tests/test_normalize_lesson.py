@@ -135,7 +135,9 @@ def test_split_vocabulary_does_not_misfire_on_a_substring():
 def test_split_vocabulary_still_recognizes_real_review_markers():
     block = _split_vocabulary(["observe (R)", "Review: syllable", "This is a review term"])
     assert block.new == []
-    assert block.review == ["observe (R)", "syllable", "This is a review term"]
+    # The (R) routing marker is stripped from the emitted term — downstream
+    # matching expects clean term text (unlike (L)/(T)/(W) type markers).
+    assert block.review == ["observe", "syllable", "This is a review term"]
 
 
 def test_split_vocabulary_bare_review_header_is_not_a_term():
@@ -259,6 +261,56 @@ def test_normalize_lesson_uses_cache(tmp_path: Path):
     assert first.objective == fake_draft.objective
     assert second.resource_id == "G1M2U1L1"
     assert list((tmp_path / "cache").glob("*.json"))
+
+
+def test_cache_round_trip_with_typographic_section_name(tmp_path: Path):
+    """Cache hits must re-join Stage-1 blocks whose names have typographic chars.
+
+    Regression: the fresh path used to ASCII-fold evidence locations after
+    canonicalizing them, so a section like "Students’ Work Time" was cached as
+    "Students' Work Time" and every resume run raised ValueError at the same
+    lesson. Locations are Stage-1 join keys and must stay byte-exact.
+    """
+    section = "Students’ Work Time"  # curly apostrophe
+    lesson = _sample_lesson().model_copy(
+        update={
+            "instructional_blocks": [
+                InstructionalBlock(
+                    section=section,
+                    letter="A",
+                    title="Reading Aloud",
+                    page=16,
+                    steps=[
+                        "Invite students to the rug.",
+                        "Students turn and talk about their wonders.",
+                    ],
+                )
+            ],
+            "agenda": [
+                AgendaItem(section=section, letter="A", title="Reading Aloud", minutes=15),
+            ],
+        }
+    )
+    draft = _sample_draft().model_copy(
+        update={
+            "evidence": [
+                _sample_draft().evidence[0].model_copy(
+                    update={"location": f"{section} A"}
+                )
+            ]
+        }
+    )
+    cfg = Config(normalize=NormalizeConfig(cache_dir=str(tmp_path / "cache")))
+
+    with patch(
+        "veramynd_parser.normalize.lesson.structured_complete", return_value=draft
+    ) as mocked:
+        fresh = normalize_lesson(lesson, cfg)
+        resumed = normalize_lesson(lesson, cfg)  # must not raise on the cache hit
+
+    assert mocked.call_count == 1
+    assert fresh.evidence[0].location == f"{section} A"  # byte-exact Stage-1 id
+    assert dump_ela_record(resumed) == dump_ela_record(fresh)
 
 
 def test_normalize_lesson_stamps_source_provenance(tmp_path: Path):
@@ -434,6 +486,39 @@ def test_resume_recomputes_when_lesson_content_changed(tmp_path: Path):
         normalize_lessons_dir(src, out, cfg, use_cache=True)
 
     assert mocked.call_count == 1
+
+
+@pytest.mark.parametrize("max_workers", [1, 2])
+def test_cache_hit_sanitize_failure_is_recorded_in_progress(
+    tmp_path: Path, max_workers: int
+):
+    """Regression: a cache-hit re-sanitize crash (rules tightened since the
+    record was cached) used to escape the failure bookkeeping — batch died
+    with progress stuck at "running" and nothing in failed[]."""
+    src, out = tmp_path / "lessons", tmp_path / "normalized"
+    src.mkdir()
+    _write_lessons(src, ["G1M2U1L1"])
+
+    cfg = Config(normalize=NormalizeConfig(cache_dir=str(tmp_path / "cache")))
+    lesson1 = _sample_lesson("G1M2U1L1")
+    cache_key, *_ = _cache_plan(lesson1, cfg)
+    cache = ContentAddressedCache(_resolve_cache_dir(cfg.normalize.cache_dir))
+    cache.put(cache_key, _fake_normalize(lesson1, cfg))
+
+    with patch(
+        "veramynd_parser.normalize.lesson.sanitize_normalized_lesson",
+        side_effect=ValueError("tightened sanitizer rule"),
+    ):
+        with pytest.raises(ValueError, match="tightened sanitizer rule"):
+            normalize_lessons_dir(
+                src, out, cfg, use_cache=True, max_workers=max_workers
+            )
+
+    progress = json.loads((out / "normalize_progress.json").read_text())
+    assert progress["status"] == "interrupted"
+    assert [f["code"] for f in progress["failed"]] == ["G1M2U1L1"]
+    assert "tightened sanitizer rule" in progress["failed"][0]["error"]
+    assert "G1M2U1L1" not in progress["completed"]
 
 
 def test_normalize_lessons_dir_sequential_raises_immediately_on_first_failure(tmp_path: Path):

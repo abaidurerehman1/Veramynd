@@ -651,7 +651,14 @@ def multi_query_hybrid_retrieve(
                     0.55 * float(base.query_hit_weight) / float(rrf_k)
                 )
 
-    primary_ranked = sorted(merge_scores.items(), key=lambda kv: (-kv[1], kv[0]))
+    # The arm-level extras above can score codes that never made any per-query
+    # *hybrid* top-k (no ``best`` row). Those phantoms can't be emitted, and
+    # letting them occupy ``merge_top_k`` slots in select_merge_pool silently
+    # shrinks the pool below its budget, displacing real candidates.
+    primary_ranked = sorted(
+        ((code, score) for code, score in merge_scores.items() if code in best),
+        key=lambda kv: (-kv[1], kv[0]),
+    )
     secondary_sum_ranked: list[tuple[str, float]] | None = None
     effective_membership = membership
     if membership == "union" and mode == "sum":

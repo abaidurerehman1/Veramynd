@@ -5,7 +5,7 @@
 |---|---|
 | **Document** | Veramynd Complete Project Flow |
 | **Audience** | New developers, AI engineers, software engineers, reviewers, interviewers |
-| **Scope today** | Stage 1 (`veramynd_parser`) is **implemented**. Stages 2–7 are **Planned** (see `docs/architecture.md`). |
+| **Scope today** | The full pipeline is **implemented**: Stage 1 parse/verify/export, normalize (lessons + standards), chunk, embed (Qdrant), hybrid retrieve + rerank, LLM judge with grounding, and reports. Sections below that still label later stages "Planned" predate this and are superseded by `docs/pipeline-review.md` and `veramynd_parser/README.md`. |
 | **Reference corpus** | EL Education *ELA Grade 1 Module 2 Teacher Guide* (440 pages, 40 lessons); *Grade 1 GA ELA Standards.xlsx* (188 standards) |
 | **Related** | `docs/architecture.md`, `docs/lesson-segmentation.md`, `docs/ingestion.md`, `veramynd_parser/README.md`, `docs/diagrams/flow/*.png` |
 
@@ -48,7 +48,7 @@
 
 the long-term product decides, for each lesson, **which academic standards that lesson actually teaches**, with auditable evidence.
 
-This repository currently ships **Stage 1 — Document parsing and verification**: a structure-aware Python package (`veramynd_parser`) that turns messy publisher PDFs and spreadsheets into typed, verified JSON contracts. Downstream alignment (retrieval, LLM judge, reports) is designed but **not implemented** here yet.
+This repository ships the full path: **Stage 1 — Document parsing and verification** (a structure-aware Python package, `veramynd_parser`, that turns messy publisher PDFs and spreadsheets into typed, verified JSON contracts) **and** the downstream alignment stages — normalize, chunk, embed (Qdrant), hybrid retrieve + cross-encoder rerank, LLM judge with evidence grounding, and CSV/HTML reports.
 
 ### Why Stage 1 matters
 
@@ -324,10 +324,10 @@ End-to-end product pipeline: two inputs -> Stage 1 parse/verify/(optional normal
 | Stage | Role | Status in this repo |
 |---|---|---|
 | 1 Parse + prep | Separate + divide lessons; standards tree; verify; export; lesson normalize / chunk / embed | **Implemented** |
-| 2–3 Product extract / normalize | Standards-side normalize + shared pedagogy vocab for the judge | **Planned** |
-| 4–5 KB / retrieve | Hybrid RAG + rerank | **Planned** |
-| 6 Judge | Alignment rubric (LLM) | **Planned** |
-| 7 Report | Evidence CSV / dashboard | **Planned** |
+| 2–3 Product extract / normalize | Standards-side normalize (`normalize-standards`) + shared pedagogy vocab | **Implemented** |
+| 4–5 KB / retrieve | Qdrant embed + hybrid dense/BM25/RRF retrieve + cross-encoder rerank (`embed-*`, `retrieve-standards`) | **Implemented** |
+| 6 Judge | Alignment judge with clause aggregation, escalation, and evidence grounding (`judge-standards`) | **Implemented** |
+| 7 Report | Evidence CSV + HTML dashboard (`report-alignments`) | **Implemented** |
 
 ## 6.9 Why not a simpler “one LLM reads the PDF” approach?
 
@@ -944,7 +944,7 @@ For each lesson JSON:
 | System | Confidence |
 |---|---|
 | **Stage 1 verifier** | Does **not** compute a numeric confidence. Uses discrete `PASS` / `WARN` / `FAIL` and verdict `GO` / `BLOCK`. |
-| **Planned Stage 6/7 judge** | `ARCHITECTURE.md` specifies per-alignment `confidence`: `high` / `medium` / `low` with evidence quotes — **not implemented** in this package. |
+| **Stage 6/7 judge** | Implemented in `veramynd_parser/judge/`: per-alignment `confidence` (`high` / `medium` / `low`) with verbatim evidence quotes, verified by a local grounding check. |
 
 ## 13.5 How failures are detected
 

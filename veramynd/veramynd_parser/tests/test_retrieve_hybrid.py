@@ -573,3 +573,16 @@ def test_cli_retrieve_standards_wires():
     assert args.top_k == 30
     assert args.rerank_k == 10
     assert args.no_rerank is True
+
+
+def test_robust_minmax_survives_a_nan_score():
+    """Regression: one NaN CE logit poisoned lo/hi/span, collapsing EVERY
+    normalized score to 1.0 and degrading the blend to undefined ordering."""
+    from veramynd_parser.retrieve.rerank import _robust_minmax
+
+    scores = _robust_minmax([2.0, float("nan"), 1.0, 3.0])
+    assert scores[3] == 1.0
+    assert scores[2] == 0.0
+    assert 0.0 < scores[0] < 1.0
+    assert scores[1] == 0.0  # NaN ranks last, others unaffected
+    assert _robust_minmax([float("nan"), float("nan")]) == [0.5, 0.5]

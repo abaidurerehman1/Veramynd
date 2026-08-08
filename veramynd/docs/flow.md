@@ -5,7 +5,7 @@ How the system works end-to-end: techniques used, fallbacks, and where they appl
 > **Official expanded documentation:** see [`complete-project-flow.md`](complete-project-flow.md)  
 > (architecture, Stage 1 deep dive, validation, install, troubleshooting — suitable for GitHub / onboarding / interviews).
 
-**Scope today:** Stage 1 (`veramynd_parser`) is implemented. Stages 2–7 are designed in [`architecture.md`](architecture.md) and not coded in this repo yet.
+**Scope today:** the full pipeline is implemented in this repo — Stage 1 parse/verify/export plus normalize (lessons + standards), chunk, embed (Qdrant), hybrid retrieve + rerank, LLM judge with grounding, and CSV/HTML reporting, all wired as `veramynd-parser` CLI subcommands. [`docs/pipeline-review.md`](pipeline-review.md) describes the shipped path; [`architecture.md`](architecture.md) is the original design doc and differs from the code in places (notably it proposed Postgres+pgvector where the code ships Qdrant).
 
 ---
 

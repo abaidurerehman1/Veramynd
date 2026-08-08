@@ -330,7 +330,14 @@ Keep both. Never let the normalized version reach the judge.
 
 ## 8. Stage 4 — Knowledge base (hybrid RAG)
 
-### 8.1 Postgres + pgvector, not Qdrant
+> **SUPERSEDED BY THE CODE.** This section proposed Postgres + pgvector; the
+> shipped implementation went the other way: **Qdrant** (local embedded path
+> mode by default, Docker/HTTP for shared runs — see `embed/runner.py`), with
+> file-based JSON as the system of record, no Postgres and no SQLAlchemy. The
+> hybrid dense+BM25 design in §8.2 *was* implemented as specified. Kept for
+> the reasoning record.
+
+### 8.1 Postgres + pgvector, not Qdrant (superseded — code ships Qdrant)
 
 **Corpus size reality check:** one grade's standards ≈ a few hundred items. All of K–12 ELA ≈ low thousands. This is **small**.
 
@@ -513,6 +520,10 @@ If the quote is not there, **the model fabricated it.**
 Ungrounded verdicts → flag and escalate (or reject outright). Never ship them silently.
 
 ### 11.2 Output
+
+> **SUPERSEDED BY THE CODE:** the shipped system of record is file-based JSON
+> under `output/` (judge verdicts, reports), with the HTML dashboard generated
+> from files (`report/dashboard.py`) — no Postgres.
 
 - **Postgres** — system of record. Enables diffing prompt versions, funnel diagnostics, incremental re-runs.
 - **CSV export** — the client deliverable. Preserve iter_1's parent-row/child-row structure, **but fix**:

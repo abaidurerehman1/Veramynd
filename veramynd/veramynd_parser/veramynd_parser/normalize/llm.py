@@ -99,6 +99,11 @@ def _strip_for_strict_schema(node: object) -> None:
                     _strip_for_strict_schema(sub)
         if "items" in node:
             _strip_for_strict_schema(node["items"])
+        # Optional/union fields emit anyOf/oneOf/allOf branches whose object
+        # arms need the same treatment, or strict mode 400s at request time.
+        for combo_key in ("anyOf", "oneOf", "allOf"):
+            for sub in node.get(combo_key) or []:
+                _strip_for_strict_schema(sub)
         for defs_key in ("$defs", "definitions"):
             for sub in node.get(defs_key, {}).values():
                 _strip_for_strict_schema(sub)
@@ -114,6 +119,11 @@ def _strict_schema(schema_model: type[BaseModel]) -> dict:
 _strict_openai_schema = _strict_schema
 
 _MAX_ATTEMPTS = 8
+# Validation failures worth retrying before failing fast. Temperature-0 models
+# get 2 (the request is deterministic — a bad response never improves);
+# gpt-5/o-series omit temperature and sample, so retries genuinely can succeed.
+_MAX_VALIDATION_ATTEMPTS_DETERMINISTIC = 2
+_MAX_VALIDATION_ATTEMPTS_SAMPLED = 4
 # Cap for automatic truncation bumps (output tokens). v2 evidence is denser
 # (qualifiers, actor examples, secondary foci); 16k was truncating long lessons.
 _MAX_TOKENS_CAP = 32_768
@@ -238,6 +248,7 @@ def _complete_openai(
     ]
 
     last_err: Exception | None = None
+    validation_failures = 0
     for attempt in range(_MAX_ATTEMPTS):
         request = build_chat_completion_request(
             model=model,
@@ -296,6 +307,9 @@ def _complete_openai(
                 flush=True,
             )
             max_tokens = nxt
+            # The next request has a genuinely different token budget — earlier
+            # validation failures don't predict its outcome.
+            validation_failures = 0
             continue
 
         content = choice.message.content or ""
@@ -303,6 +317,21 @@ def _complete_openai(
             return schema_model.model_validate(_extract_json_object(content))
         except (LlmError, ValueError, TypeError, json.JSONDecodeError) as e:
             last_err = e
+            validation_failures += 1
+            # Deterministic (temperature-0) requests can't improve on retry —
+            # fail fast instead of burning up to 8 paid identical calls.
+            # Sampled models (gpt-5/o-series, temperature omitted) get more
+            # attempts since a re-draw genuinely can parse.
+            cap = (
+                _MAX_VALIDATION_ATTEMPTS_SAMPLED
+                if uses_max_completion_tokens(model)
+                else _MAX_VALIDATION_ATTEMPTS_DETERMINISTIC
+            )
+            if validation_failures >= cap:
+                raise LlmError(
+                    f"OpenAI response failed schema validation "
+                    f"{validation_failures}x for model {model}: {e}"
+                ) from e
             print(
                 f"OpenAI response failed validation, retrying "
                 f"(attempt {attempt + 1}/{_MAX_ATTEMPTS}): {e}",

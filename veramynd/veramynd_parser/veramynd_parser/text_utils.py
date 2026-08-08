@@ -69,7 +69,29 @@ def dehyphenate(text: str) -> str:
     The PDF wraps words at line ends with a hyphen ('min-' / 'utes'). Left as-is,
     this splits '(5 minutes)' so the timing regex misses it and a lesson's agenda
     under-counts. This is the fix the safety-net verifier's timing check surfaced.
+
+    Real compounds wrapped at their own hyphen ('read-\\naloud',
+    'self-\\nselected') must KEEP it: when the hyphenated form also appears
+    unwrapped elsewhere in the same text, that is direct evidence the hyphen is
+    lexical, so it is preserved. Without such evidence we join (soft-wrap is by
+    far the common case) — a heuristic, not a dictionary.
     """
+
+    def _join(m: re.Match[str]) -> str:
+        left, right = m.group(1), m.group(2)
+        hyphened = f"{left}-{right}"
+        if left.isdigit() and right.isdigit():
+            # A wrapped numeric range ("42-\n43") is structural, not an
+            # optional compound-word hyphen — always keep it. The no-evidence
+            # fallback below is for words ("min-\nutes" -> "minutes"), where
+            # merging without the hyphen is usually right; for digits it would
+            # silently produce a different number ("4243").
+            return hyphened
+        if hyphened in text:
+            return hyphened
+        return left + right
+
+    text = re.sub(r"(\w+)-\s*\n\s*(\w+)", _join, text)
     return re.sub(r"-\s*\n\s*", "", text)
 
 
@@ -224,8 +246,13 @@ def parse_lesson_code(title: str) -> tuple[int, int, int, int] | None:
 
 
 def strip_trailing_codes(text: str) -> str:
-    """Remove a trailing '(RL.1.1, ...)' code tail from a learning-target line."""
-    return re.split(r"\s*\(?[A-Z]{1,3}\.\d", text)[0].strip()
+    """Remove a trailing '(RL.1.1, ...)' code tail from a learning-target line.
+
+    The split pattern must accept everything STANDARD_CODE accepts — K grades
+    and 4-letter prefixes included — or a K-code like '(RL.K.1)' splits on the
+    inner 'K.1' and leaves a stranded '(RL.' fragment on the target text.
+    """
+    return re.split(r"\s*\(?[A-Z]{1,4}\.(?:K|\d)", text)[0].strip()
 
 
 def is_page_furniture(text: str) -> bool:

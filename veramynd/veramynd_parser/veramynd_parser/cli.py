@@ -70,7 +70,7 @@ from .pdf.document import PdfDocument
 from .pdf.teacher_guide import parse_teacher_guide
 from .standards.spreadsheet import SpreadsheetStructureError, parse_standards
 from .text_utils import atomic_replace_dir, atomic_write_text, safe_code_filename
-from .verify.verifier import verify
+from .verify.verifier import VERDICT_FILENAME, verify
 
 
 def _config(args: argparse.Namespace) -> Config:
@@ -156,6 +156,11 @@ def _print_guide_summary(guide) -> None:
     print(f"Lessons    : {len(guide.lessons)}")
     print(f"Tables     : {n_tables} (Docling)")
     for unit in guide.units:
+        if not unit.lessons:
+            # Structurally bad parses are allowed at model level (invariants
+            # live in the verifier) — summarize loudly instead of crashing.
+            print(f"  Unit {unit.unit}:  0 lessons (EMPTY — run `verify`)")
+            continue
         first, last = unit.lessons[0], unit.lessons[-1]
         print(
             f"  Unit {unit.unit}: {len(unit.lessons):>2} lessons "
@@ -243,8 +248,11 @@ def cmd_export(args: argparse.Namespace) -> int:
         report = verify(guide, doc=doc, cfg=cfg, expected_count=args.expect)
 
     if not report.passed and not args.allow_block:
-        # BLOCK path: report only — never imply GO next to old lessons.
+        # BLOCK path: report + verdict only — never imply GO next to old lessons.
         atomic_write_text(out / "verification_report.txt", report.render())
+        atomic_write_text(
+            out / VERDICT_FILENAME, json.dumps(report.to_json_dict(), indent=2) + "\n"
+        )
         print(
             f"BLOCK: verification failed ({len(report.fails)} hard check(s)) -- "
             f"trusted output withheld. See {out}/verification_report.txt.",
@@ -284,6 +292,9 @@ def cmd_export(args: argparse.Namespace) -> int:
         lessons_dir.mkdir(parents=True, exist_ok=True)
 
         atomic_write_text(tmp / "verification_report.txt", report.render())
+        atomic_write_text(
+            tmp / VERDICT_FILENAME, json.dumps(report.to_json_dict(), indent=2) + "\n"
+        )
         atomic_write_text(tmp / "teacher_guide.json", exported.model_dump_json(indent=2))
 
         for lesson in exported.lessons:
@@ -308,6 +319,7 @@ def cmd_export(args: argparse.Namespace) -> int:
         atomic_replace_dir(lessons_dir, out / "lessons")
         for name in (
             "verification_report.txt",
+            VERDICT_FILENAME,
             "teacher_guide.json",
             "lessons_index.tsv",
             "standards.json",
@@ -323,6 +335,7 @@ def cmd_export(args: argparse.Namespace) -> int:
 
     print(f"Detected {len(guide.lessons)} lessons -> {out}/")
     print(f"  verification_report.txt      ({report.verdict})")
+    print(f"  {VERDICT_FILENAME}    (machine-readable gate verdict)")
     print(f"  teacher_guide.json           (full parse)")
     print(f"  lessons/                     ({len(guide.lessons)} files, one per lesson)")
     print(f"  lessons_index.tsv            (summary table)")
@@ -411,27 +424,79 @@ def cmd_verify(args: argparse.Namespace) -> int:
     return 0 if report.passed else 1
 
 
-def _require_stage1_go(lessons_dir: Path, *, allow_unverified: bool) -> int | None:
-    """Refuse to normalize unless Stage 1 verification reported GO.
+def _legacy_report_verdict(report_path: Path) -> bool | None:
+    """Best-effort GO/BLOCK read from a legacy text verification report
+    (exports made before ``verification_verdict.json`` existed). Returns
+    True (GO), False (BLOCK), or None if the file is missing/empty/unreadable.
+    """
+    if not report_path.is_file():
+        return None
+    lines = [ln for ln in report_path.read_text(encoding="utf-8").splitlines() if ln.strip()]
+    if not lines:
+        return None
+    last = lines[-1].replace("→", "->")
+    if "BLOCK" in last:
+        return False
+    if last.rstrip().endswith("GO") or "-> GO" in last:
+        return True
+    return None
 
-    Looks for ``verification_report.txt`` next to ``lessons/``
-    (``…/stage1/lessons`` → ``…/stage1/verification_report.txt``).
-    Returns an exit code on failure, else None.
+
+def _require_stage1_go(lessons_dir: Path, *, allow_unverified: bool) -> int | None:
+    """Refuse to consume Stage-1 lessons unless verification reported GO.
+
+    Reads the machine-readable ``verification_verdict.json`` next to
+    ``lessons/`` (``…/stage1/lessons`` → ``…/stage1/verification_verdict.json``).
+    Falls back to parsing the legacy text report only when the verdict file is
+    absent (exports made before it existed). Returns an exit code on failure,
+    else None.
     """
     if allow_unverified:
         print(
-            "WARNING: --allow-unverified set — normalizing without a Stage 1 GO gate",
+            "WARNING: --allow-unverified set — proceeding without a Stage 1 GO gate",
             flush=True,
         )
         return None
+
+    verdict_path = lessons_dir.parent / VERDICT_FILENAME
+    if verdict_path.is_file():
+        try:
+            data = json.loads(verdict_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as e:
+            print(
+                f"ERROR: unreadable Stage 1 verdict ({verdict_path}): {e}. "
+                f"Re-export, or pass --allow-unverified.",
+                file=sys.stderr,
+            )
+            return 1
+        if not isinstance(data, dict):
+            data = {}
+        verdict = data.get("verdict")
+        if verdict != "GO":
+            print(
+                f"ERROR: Stage 1 is not GO ({verdict_path}: verdict={verdict!r}, "
+                f"{data.get('fail_count', '?')} hard check(s) failed). "
+                f"Re-export, or pass --allow-unverified.",
+                file=sys.stderr,
+            )
+            return 1
+        return None
+
+    # Legacy fallback: exports made before verification_verdict.json existed.
     report = lessons_dir.parent / "verification_report.txt"
     if not report.is_file():
         print(
-            f"ERROR: no Stage 1 verification report at {report}. "
-            f"Run export until GO, or pass --allow-unverified (not for production).",
+            f"ERROR: no Stage 1 verdict at {verdict_path} and no legacy report at "
+            f"{report}. Run export until GO, or pass --allow-unverified "
+            f"(not for production).",
             file=sys.stderr,
         )
         return 2
+    print(
+        f"WARNING: no {VERDICT_FILENAME} next to {lessons_dir} — falling back to "
+        f"parsing the legacy text report. Re-export to write the verdict file.",
+        flush=True,
+    )
     lines = [ln for ln in report.read_text(encoding="utf-8").splitlines() if ln.strip()]
     if not lines:
         print(
@@ -449,6 +514,124 @@ def _require_stage1_go(lessons_dir: Path, *, allow_unverified: bool) -> int | No
         print(
             f"ERROR: Stage 1 is not GO ({report}). "
             f"Last line: {last!r}. Re-export, or pass --allow-unverified.",
+            file=sys.stderr,
+        )
+        return 1
+    return None
+
+
+def _require_chunks_trusted(chunks_dir: Path, *, allow_unverified: bool) -> int | None:
+    """Refuse to embed chunks whose manifest says Stage 1 was not GO.
+
+    ``chunk-lessons`` stamps ``stage1_verdict`` into ``chunk_manifest.json``.
+    Manifests written before that field existed are tolerated with a warning.
+    Returns an exit code on failure, else None.
+    """
+    if allow_unverified:
+        print(
+            "WARNING: --allow-unverified set — embedding without a Stage 1 GO gate",
+            flush=True,
+        )
+        return None
+    manifest_path = chunks_dir / "chunk_manifest.json"
+    if not manifest_path.is_file():
+        print(
+            f"WARNING: no chunk_manifest.json under {chunks_dir} — cannot confirm "
+            f"Stage 1 verification. Re-run chunk-lessons to stamp provenance.",
+            flush=True,
+        )
+        return None
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as e:
+        print(f"ERROR: unreadable chunk manifest ({manifest_path}): {e}", file=sys.stderr)
+        return 1
+    verdict = manifest.get("stage1_verdict") if isinstance(manifest, dict) else None
+    if verdict is None:
+        print(
+            f"WARNING: {manifest_path} predates stage1_verdict stamping — cannot "
+            f"confirm Stage 1 verification. Re-run chunk-lessons to stamp it.",
+            flush=True,
+        )
+        return None
+    if verdict != "GO":
+        print(
+            f"ERROR: chunks were built from unverified Stage 1 output "
+            f"({manifest_path}: stage1_verdict={verdict!r}). Re-export until GO and "
+            f"re-run chunk-lessons, or pass --allow-unverified (not for production).",
+            file=sys.stderr,
+        )
+        return 1
+    return None
+
+
+def _warn_untrusted_input_file(path: str | None, kind: str) -> int | None:
+    """Soft gate for single-file inputs to retrieve/judge.
+
+    For a Stage-1 lesson file (``…/lessons/X.json``) checks the sibling
+    ``verification_verdict.json``; for a chunk bundle (``…/by_lesson/X.json``)
+    checks ``chunk_manifest.json``'s ``stage1_verdict``. Ad-hoc files with no
+    provenance artifact are allowed (debugging is legitimate); a provenance
+    artifact that says BLOCK/unverified is a hard error. Returns an exit code
+    on failure, else None.
+    """
+    if not path:
+        return None
+    # Resolve so symlinked/relative inputs are judged by their real location,
+    # and only apply the check when the file sits in the expected layout
+    # (…/lessons/X.json, …/by_lesson/X.json). A bare relative name would
+    # otherwise walk up to cwd lexically and match whatever provenance file
+    # happens to live there — hard-failing on genuinely ad-hoc inputs.
+    p = Path(path).resolve()
+    expected_parent = "lessons" if kind == "lesson" else "by_lesson"
+    if p.parent.name != expected_parent:
+        return None
+    if kind == "lesson":
+        verdict_path = p.parent.parent / VERDICT_FILENAME
+        if not verdict_path.is_file():
+            # Legacy exports (made before verification_verdict.json existed)
+            # still have a text report next to lessons/ — a BLOCK there used
+            # to pass this gate silently because only the JSON verdict's
+            # absence was checked, treating a real legacy BLOCK the same as
+            # a genuinely ad-hoc file with no provenance at all.
+            legacy = p.parent.parent / "verification_report.txt"
+            if _legacy_report_verdict(legacy) is False:
+                print(
+                    f"ERROR: {p} comes from a Stage 1 export that is not GO "
+                    f"(legacy report {legacy} says BLOCK). Re-export until GO, "
+                    f"or pass --allow-unverified.",
+                    file=sys.stderr,
+                )
+                return 1
+            return None
+        try:
+            data = json.loads(verdict_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            return None
+        verdict = data.get("verdict") if isinstance(data, dict) else None
+        if verdict is not None and verdict != "GO":
+            print(
+                f"ERROR: {p} comes from a Stage 1 export that is not GO "
+                f"({verdict_path}: verdict={verdict!r}). Re-export until GO, "
+                f"or pass --allow-unverified.",
+                file=sys.stderr,
+            )
+            return 1
+        return None
+    # chunk bundle
+    manifest_path = p.parent.parent / "chunk_manifest.json"
+    if not manifest_path.is_file():
+        return None
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return None
+    verdict = manifest.get("stage1_verdict") if isinstance(manifest, dict) else None
+    if verdict is not None and verdict != "GO":
+        print(
+            f"ERROR: {p} was chunked from unverified Stage 1 output "
+            f"({manifest_path}: stage1_verdict={verdict!r}). Re-export until GO and "
+            f"re-run chunk-lessons, or pass --allow-unverified.",
             file=sys.stderr,
         )
         return 1
@@ -641,6 +824,12 @@ def cmd_chunk_lessons(args: argparse.Namespace) -> int:
     if not normalize_dir.is_dir():
         print(f"ERROR: normalize dir not found: {normalize_dir}", file=sys.stderr)
         return 2
+
+    allow_unverified = bool(getattr(args, "allow_unverified", False))
+    gate = _require_stage1_go(lessons, allow_unverified=allow_unverified)
+    if gate is not None:
+        return gate
+
     try:
         manifest = chunk_lessons_dir(
             lessons,
@@ -648,6 +837,7 @@ def cmd_chunk_lessons(args: argparse.Namespace) -> int:
             out,
             force=bool(args.force),
             resource_ids=set(args.resource_id) if args.resource_id else None,
+            stage1_verdict="unverified" if allow_unverified else "GO",
         )
     except (OSError, ValueError, RuntimeError) as e:
         print(f"ERROR: {e}", file=sys.stderr)
@@ -664,6 +854,13 @@ def cmd_embed_chunks(args: argparse.Namespace) -> int:
     if not chunks.is_dir():
         print(f"ERROR: chunks dir not found: {chunks}", file=sys.stderr)
         return 2
+
+    gate = _require_chunks_trusted(
+        chunks, allow_unverified=bool(getattr(args, "allow_unverified", False))
+    )
+    if gate is not None:
+        return gate
+
     try:
         manifest = embed_chunks_to_qdrant(
             chunks,
@@ -672,7 +869,6 @@ def cmd_embed_chunks(args: argparse.Namespace) -> int:
             dimensions=args.dimensions,
             collection=args.collection,
             qdrant_url=args.qdrant_url,
-            qdrant_api_key=args.qdrant_api_key,
             qdrant_path=args.qdrant_path,
             recreate=bool(args.recreate),
             force=bool(args.force),
@@ -704,7 +900,6 @@ def cmd_embed_standards(args: argparse.Namespace) -> int:
             dimensions=args.dimensions,
             collection=args.collection,
             qdrant_url=args.qdrant_url,
-            qdrant_api_key=args.qdrant_api_key,
             qdrant_path=args.qdrant_path,
             recreate=bool(args.recreate),
             force=bool(args.force),
@@ -729,7 +924,14 @@ def cmd_smoke_retrieve_standards(args: argparse.Namespace) -> int:
         if not path.is_file():
             print(f"ERROR: chunk file not found: {path}", file=sys.stderr)
             return 2
-        data = json.loads(path.read_text(encoding="utf-8"))
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as e:
+            print(f"ERROR: invalid chunk JSON ({path}): {e}", file=sys.stderr)
+            return 2
+        if not isinstance(data, dict):
+            print(f"ERROR: expected JSON object in {path}", file=sys.stderr)
+            return 2
         if args.family == "lesson":
             row = data.get("lesson_chunk") or {}
             query = (row.get("text") or "").strip()
@@ -755,7 +957,6 @@ def cmd_smoke_retrieve_standards(args: argparse.Namespace) -> int:
             dimensions=args.dimensions,
             collection=args.collection,
             qdrant_url=args.qdrant_url,
-            qdrant_api_key=args.qdrant_api_key,
             qdrant_path=args.qdrant_path,
         )
     except (EmbedError, LlmError) as e:
@@ -767,8 +968,10 @@ def cmd_smoke_retrieve_standards(args: argparse.Namespace) -> int:
 
     print(f"Top {len(hits)} standards:", flush=True)
     for i, h in enumerate(hits, start=1):
+        score = h.get("score")
+        score_txt = f"{score:.4f}" if isinstance(score, (int, float)) else "n/a"
         print(
-            f"  {i}. {h.get('standard_code')}  score={h.get('score'):.4f}  "
+            f"  {i}. {h.get('standard_code')}  score={score_txt}  "
             f"domain={h.get('domain_primary')!r}  label={h.get('label')!r}",
             flush=True,
         )
@@ -802,6 +1005,11 @@ def cmd_retrieve_standards(args: argparse.Namespace) -> int:
         )
         return 2
 
+    if not getattr(args, "allow_unverified", False):
+        gate = _warn_untrusted_input_file(args.chunk_file, "chunk")
+        if gate is not None:
+            return gate
+
     standards_dir = Path(args.standards_dir)
     if not standards_dir.is_dir():
         print(f"ERROR: standards dir not found: {standards_dir}", file=sys.stderr)
@@ -819,7 +1027,6 @@ def cmd_retrieve_standards(args: argparse.Namespace) -> int:
             dimensions=args.dimensions,
             collection=args.collection,
             qdrant_url=args.qdrant_url,
-            qdrant_api_key=args.qdrant_api_key,
             qdrant_path=args.qdrant_path,
         )
     except (RetrieveError, EmbedError, LlmError) as e:
@@ -874,6 +1081,12 @@ def cmd_judge_standards(args: argparse.Namespace) -> int:
     if not standards_dir.is_dir():
         print(f"ERROR: standards dir not found: {standards_dir}", file=sys.stderr)
         return 2
+
+    if not getattr(args, "allow_unverified", False):
+        for path, kind in ((args.lesson_file, "lesson"), (args.chunk_file, "chunk")):
+            gate = _warn_untrusted_input_file(path, kind)
+            if gate is not None:
+                return gate
 
     out = Path(args.out) if args.out else None
     if out is None:
@@ -973,6 +1186,7 @@ def cmd_report_alignments(args: argparse.Namespace) -> int:
                 paths,
                 html_out,
                 include_none=not bool(args.aligned_only),
+                grounded_only=bool(args.grounded_only),
             )
             summary["html_path"] = str(html_path)
     except ReportError as e:
@@ -1324,6 +1538,14 @@ def build_parser() -> argparse.ArgumentParser:
         default=[],
         help="limit to one lesson code (repeatable)",
     )
+    ch.add_argument(
+        "--allow-unverified",
+        action="store_true",
+        help=(
+            "allow chunking without a Stage 1 GO verdict "
+            "(debug only — not for production; stamps stage1_verdict=unverified)"
+        ),
+    )
     ch.set_defaults(func=cmd_chunk_lessons)
 
     em = sub.add_parser(
@@ -1366,11 +1588,6 @@ def build_parser() -> argparse.ArgumentParser:
         help="Qdrant server URL (default: env QDRANT_URL; else local path mode)",
     )
     em.add_argument(
-        "--qdrant-api-key",
-        default=None,
-        help="Qdrant API key (default: env QDRANT_API_KEY). Prefer .env over CLI.",
-    )
-    em.add_argument(
         "--qdrant-path",
         default=None,
         help="local Qdrant storage path when URL unset (default: .qdrant_data)",
@@ -1396,6 +1613,14 @@ def build_parser() -> argparse.ArgumentParser:
         action="append",
         default=[],
         help="limit embed/upsert to one lesson code (repeatable), e.g. --resource-id G1M2U2L1",
+    )
+    em.add_argument(
+        "--allow-unverified",
+        action="store_true",
+        help=(
+            "allow embedding chunks whose manifest lacks a Stage 1 GO verdict "
+            "(debug only — not for production)"
+        ),
     )
     em.set_defaults(func=cmd_embed_chunks)
 
@@ -1441,11 +1666,6 @@ def build_parser() -> argparse.ArgumentParser:
         "--qdrant-url",
         default=None,
         help="Qdrant server URL (default: env QDRANT_URL; else local path mode)",
-    )
-    es.add_argument(
-        "--qdrant-api-key",
-        default=None,
-        help="Qdrant API key (default: env QDRANT_API_KEY). Prefer .env over CLI.",
     )
     es.add_argument(
         "--qdrant-path",
@@ -1525,7 +1745,6 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     sm.add_argument("--qdrant-url", default=None, help="Qdrant server URL")
-    sm.add_argument("--qdrant-api-key", default=None, help="Qdrant API key")
     sm.add_argument("--qdrant-path", default=None, help="local Qdrant path")
     sm.set_defaults(func=cmd_smoke_retrieve_standards)
 
@@ -1605,8 +1824,15 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     rs.add_argument("--qdrant-url", default=None, help="Qdrant server URL")
-    rs.add_argument("--qdrant-api-key", default=None, help="Qdrant API key")
     rs.add_argument("--qdrant-path", default=None, help="local Qdrant path")
+    rs.add_argument(
+        "--allow-unverified",
+        action="store_true",
+        help=(
+            "allow retrieving from a chunk file whose manifest says Stage 1 "
+            "was not GO (debug only)"
+        ),
+    )
     rs.set_defaults(func=cmd_retrieve_standards)
 
     js = sub.add_parser(
@@ -1696,6 +1922,14 @@ def build_parser() -> argparse.ArgumentParser:
         "--no-batch-fallback",
         action="store_true",
         help="do not fall back to per-pair judge if batch JSON is invalid",
+    )
+    js.add_argument(
+        "--allow-unverified",
+        action="store_true",
+        help=(
+            "allow judging inputs whose provenance says Stage 1 was not GO "
+            "(debug only)"
+        ),
     )
     js.set_defaults(func=cmd_judge_standards)
 

@@ -17,6 +17,7 @@ source document for the cross-signal check. It never mutates its input.
 
 from __future__ import annotations
 
+from collections import defaultdict
 from dataclasses import dataclass, field
 from enum import Enum
 
@@ -24,6 +25,11 @@ from ..config import Config
 from ..models import TeacherGuide
 from ..pdf.document import PdfDocument
 from .. import text_utils as tu
+
+
+# Machine-readable verdict written next to verification_report.txt by export.
+VERDICT_FILENAME = "verification_verdict.json"
+VERDICT_SCHEMA_VERSION = "1.0-verify"
 
 
 class Severity(str, Enum):
@@ -77,6 +83,31 @@ class VerificationReport:
     def verdict(self) -> str:
         return "GO" if self.passed else "BLOCK"
 
+    def to_json_dict(self) -> dict:
+        """Machine-readable verdict for downstream gates.
+
+        The rendered text report is for humans; gating decisions must read
+        this structure (written as ``verification_verdict.json`` by export)
+        so a cosmetic change to :meth:`render` can never flip a gate.
+        """
+        return {
+            "schema_version": VERDICT_SCHEMA_VERSION,
+            "verdict": self.verdict,
+            "passed": self.passed,
+            "checks_total": len(self.checks),
+            "fail_count": len(self.fails),
+            "warn_count": len(self.warns),
+            "checks": [
+                {
+                    "name": c.name,
+                    "status": c.status.value,
+                    "severity": c.severity.value,
+                    "detail": c.detail,
+                }
+                for c in self.checks
+            ],
+        }
+
     def render(self) -> str:
         # show the check's severity as its gating role, so a passing hard check
         # reads "PASS  hard" rather than the alarming "PASS  FAIL".
@@ -105,13 +136,30 @@ def _derive_expected_lesson_count(doc: PdfDocument) -> int | None:
     silently merged/missing lesson could pass with a clean partition (see V2) and
     no expected-count check at all.
     """
-    seen: set[tuple[int, int]] = set()
+    # Group by (unit, lesson) first, then count distinct (grade, module) pairs
+    # WITHIN each group — not distinct (grade, module, unit, lesson) tuples
+    # overall. The latter double-counted a single real lesson whenever its
+    # genuine running header (with grade/module) coexisted with a partial
+    # match elsewhere in its span (e.g. a bare prose cross-reference with no
+    # grade/module) — the same lesson then contributed both a full and a
+    # partial tuple to the set. Two distinct MODULES sharing a (unit, lesson)
+    # numbering still count as 2, since that's a real difference this
+    # grouping preserves.
+    groups: dict[tuple[int, int], set[tuple[str, str]]] = defaultdict(set)
+    seen_any = False
     for page in range(1, doc.page_count + 1):
         m = tu.RUNNING_HEADER.search(doc.page_text(page))
-        if m:
-            # groups: grade?, module?, unit, lesson
-            seen.add((int(m.group(3)), int(m.group(4))))
-    return len(seen) if seen else None
+        if not m:
+            continue
+        seen_any = True
+        key = (int(m.group(3)), int(m.group(4)))
+        if m.group(1) is not None and m.group(2) is not None:
+            groups[key].add((m.group(1), m.group(2)))
+        else:
+            groups.setdefault(key, set())
+    if not seen_any:
+        return None
+    return sum(len(gm) or 1 for gm in groups.values())
 
 
 def verify(
@@ -154,6 +202,22 @@ def verify(
         detail += ", derived from running headers)" if derived_count else ")"
         rep.add("V1 lesson count matches expected", n == expected_count,
                 Severity.FAIL, detail)
+    elif doc is not None:
+        # Silently omitting V1 is a false-GO shape: an unfamiliar header
+        # format must be visible in the report, not just absent from it.
+        rep.add("V1 lesson count check skipped", False, Severity.WARN,
+                "could not derive an expected count from running headers; "
+                "pass --expect to enforce one")
+
+    if doc is not None and guide.page_count != doc.page_count:
+        # A stale/cached guide JSON verified against a different PDF would
+        # otherwise pass V2 (which partitions against the guide's own count)
+        # with every span pointing at the wrong pages.
+        # Numbered V16 (not V2) — a genuinely separate check, not a second
+        # "V2 ..." row that would be indistinguishable from the pre-existing
+        # partition check in the rendered report or by any name-prefix tooling.
+        rep.add("V16 guide page count matches document", False, Severity.FAIL,
+                f"guide says {guide.page_count}, document has {doc.page_count}")
 
     # coverage: lessons + overviews partition every page with no gap/overlap.
     # Every segment (each unit's overview AND each lesson) is checked against the
@@ -201,8 +265,23 @@ def verify(
         confirmed = 0
         mismatched: list[str] = []
         for lesson in lessons:
-            m = tu.RUNNING_HEADER.search(doc.page_text(lesson.page_start))
-            if m and (int(m.group(3)), int(m.group(4))) == (lesson.unit, lesson.lesson):
+            page_text = doc.page_text(lesson.page_start)
+            ok = False
+            # Any matching header on the page counts — a prose cross-reference
+            # ("See Unit 2: Lesson 7") extracted before the real running header
+            # must not fail a correct lesson. Grade/module are checked when the
+            # header prints them: "Grade 5: Module 9: Unit 1: Lesson 1" must
+            # NOT confirm bookmark G1M2U1L1.
+            for m in tu.RUNNING_HEADER.finditer(page_text):
+                if (int(m.group(3)), int(m.group(4))) != (lesson.unit, lesson.lesson):
+                    continue
+                if m.group(1) is not None and int(m.group(1)) != lesson.grade:
+                    continue
+                if m.group(2) is not None and int(m.group(2)) != lesson.module:
+                    continue
+                ok = True
+                break
+            if ok:
                 confirmed += 1
             else:
                 mismatched.append(lesson.code)
@@ -210,15 +289,31 @@ def verify(
                 Severity.FAIL,
                 f"{confirmed}/{n} confirmed" + (f"; off: {mismatched[:3]}" if mismatched else ""))
 
-    # ---- Layer 3: division completeness (WARN) ----------------------------- #
+    # ---- Layer 3: division completeness ------------------------------------ #
+    # Block sections can only ever be the canonical instructional names (they
+    # come 1:1 from the agenda), so required_sections entries like
+    # "CCS Standards" must be checked against their own field — comparing them
+    # against block sections made V8 a permanent, information-free WARN.
+    instructional_need = set(cfg.required_sections) & set(cfg.instructional_sections)
+    wants_ccs = "CCS Standards" in cfg.required_sections
     missing: list[str] = []
+    hollow: list[str] = []
     for lesson in lessons:
         present = {b.section for b in lesson.instructional_blocks}
-        need = set(cfg.required_sections)
-        if not need <= present:
-            missing.append(f"{lesson.code}:{sorted(need - present)}")
+        gaps = sorted(instructional_need - present)
+        if wants_ccs and not lesson.declared_standards:
+            gaps.append("CCS Standards")
+        if gaps:
+            missing.append(f"{lesson.code}:{gaps}")
+        if not lesson.instructional_blocks:
+            hollow.append(lesson.code)
     rep.add("V8 every lesson has required blocks", not missing, Severity.WARN,
-            f"{len(missing)} missing" if missing else "all present")
+            f"{len(missing)} missing: {missing[:3]}" if missing else "all present")
+    # Total content loss is a hard stop, not a WARN: with zero blocks, V13 and
+    # V14 iterate nothing and pass — this was the one path where a lesson with
+    # no evidence-bearing steps at all still got a GO.
+    rep.add("V8 no lesson lost all instructional content", not hollow, Severity.FAIL,
+            f"{len(hollow)} with zero blocks: {hollow[:3]}" if hollow else "all have blocks")
 
     # plan vs execution: every agenda-derived block must have actually been located
     # in the body (page != 0 means its title was found and matched during division).
@@ -266,8 +361,12 @@ def verify(
         ungrounded: list[str] = []
         for lesson in docling_lessons:
             raw = tu.normalize_block(doc.text_range(lesson.page_start, lesson.page_end))
+            # Boundary-aware: a raw substring test let RL.1.10 "ground" a
+            # declared RL.1.1 — exactly the truncated/hallucinated code this
+            # check exists to catch.
+            found = set(tu.STANDARD_CODE.findall(raw))
             for code in lesson.declared_standards:
-                if code not in raw:
+                if code not in found:
                     ungrounded.append(f"{lesson.code}:{code}")
         detail = (
             f"{len(ungrounded)} ungrounded: {ungrounded[:3]}"
@@ -288,6 +387,13 @@ def verify(
         from ..pdf.divider import divide as divide_pymupdf
         from ..pdf.separator import SeparationError, separate
 
+        # The safety net must never crash out of verify(): an unexpected
+        # exception here would abort export with no report and no verdict
+        # artifact at all. Record a FAIL instead.
+        _V15_CRASH = (
+            OSError, RuntimeError, ValueError, KeyError, IndexError,
+            AttributeError, TypeError,
+        )
         try:
             spans = separate(doc)
         except SeparationError as e:
@@ -298,15 +404,34 @@ def verify(
                 f"skipped: outline separation failed ({e})",
             )
             spans = None
+        except _V15_CRASH as e:
+            rep.add(
+                "V15 cross-engine structural agreement (opt-in)",
+                False,
+                Severity.FAIL,
+                f"skipped: cross-engine separation crashed ({type(e).__name__}: {e})",
+            )
+            spans = None
 
         if spans is not None:
             # Build the PyMuPDF re-division once per unique code (P2).
             needed = {lesson.code for lesson in docling_lessons}
-            by_code = {
-                span.code: divide_pymupdf(doc, span, cfg)
-                for span in spans
-                if span.code in needed
-            }
+            try:
+                by_code = {
+                    span.code: divide_pymupdf(doc, span, cfg)
+                    for span in spans
+                    if span.code in needed
+                }
+            except _V15_CRASH as e:
+                rep.add(
+                    "V15 cross-engine structural agreement (opt-in)",
+                    False,
+                    Severity.FAIL,
+                    f"skipped: PyMuPDF re-division crashed ({type(e).__name__}: {e})",
+                )
+                spans = None
+
+        if spans is not None:
             mismatched: list[str] = []
             for lesson in docling_lessons:
                 other = by_code.get(lesson.code)

@@ -1,0 +1,14 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/
+*.swp
+
+# Python scratch at repo root (the package has its own .gitignore)
+__pycache__/
+*.py[cod]
+.venv/
+venv/

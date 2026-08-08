@@ -19,6 +19,7 @@ from veramynd_parser.normalize.sanitize import (
     agenda_pacing,
     redact_standard_codes,
     resolve_verbatim_quote,
+    sanitize_evidence_against_source,
     sanitize_normalized_lesson,
 )
 from veramynd_parser.text_utils import parse_lesson_code
@@ -110,6 +111,39 @@ def test_redact_standard_codes_mixed_k_and_digit_list():
     out = redact_standard_codes(text)
     assert "SL." not in out
     assert out == "Gather data on using the checklist."
+
+
+def test_redact_standard_codes_no_op_when_nothing_to_redact():
+    """Regression: the cleanup passes used to run unconditionally, so
+    code-free text lost real words ("with and without" -> "with without")
+    and trailing punctuation even when no code was present."""
+    assert (
+        redact_standard_codes("Compare texts with and without illustrations.")
+        == "Compare texts with and without illustrations."
+    )
+    assert (
+        redact_standard_codes("Sort the words using and matching picture cards.")
+        == "Sort the words using and matching picture cards."
+    )
+    assert redact_standard_codes("Finish the sentence,") == "Finish the sentence,"
+
+
+def test_redact_standard_codes_preserves_non_ccss_dotted_references():
+    """Regression: the code regex over-matched outline/section references
+    that merely look like CCSS codes (LETTERS.digits.digits), silently
+    deleting legitimate text like 'section A.1.2' or roman-numeral outlines."""
+    assert (
+        redact_standard_codes("Turn to section A.1.2 of the workbook.")
+        == "Turn to section A.1.2 of the workbook."
+    )
+    assert (
+        redact_standard_codes("See outline II.3.4 for details.")
+        == "See outline II.3.4 for details."
+    )
+    # A real code alongside a section reference: only the real code goes.
+    out = redact_standard_codes("See section A.1.2 and RL.K.1 for details.")
+    assert "A.1.2" in out
+    assert "RL." not in out
 
 
 def test_invented_moon_quote_replaced_or_dropped():
@@ -664,3 +698,95 @@ def test_resolve_quote_recovers_line_after_standard_code_redaction():
     )
     resolved = resolve_verbatim_quote(llm_quote, [source], source)
     assert resolved == source
+
+
+def test_resolve_verbatim_quote_reverse_containment_prefers_the_full_line():
+    """Regression: reverse-containment (a short source line that's a PREFIX of
+    the LLM's longer quote) used to return on the first hit, so an early short
+    line beat a later, more complete/exact line for the same quote."""
+    lines = [
+        "Direct students to reread the text",
+        "Direct students to reread the text and underline the words that rhyme.",
+    ]
+    corpus = "\n".join(lines)
+    quote = "Direct students to reread the text and underline the words that rhyme."
+    resolved = resolve_verbatim_quote(quote, lines, corpus)
+    assert resolved == lines[1]
+
+
+def test_sanitize_evidence_prefers_quote_from_its_own_claimed_block():
+    """Regression: containment resolution picked the globally shortest
+    matching line with no regard for which block the evidence claims —
+    a short line from Opening could beat the actual step in Work Time."""
+    from veramynd_parser.models import AgendaItem
+
+    lesson = Lesson(
+        code="G1M2U2L3",
+        grade=1,
+        module=2,
+        unit=2,
+        lesson=3,
+        title="Lesson",
+        page_start=1,
+        page_end=2,
+        agenda=[
+            AgendaItem(
+                section="Opening", letter="A",
+                title="Invite students to share and discuss", minutes=10,
+            ),
+            AgendaItem(section="Work Time", letter="A", title="B", minutes=50),
+        ],
+        instructional_blocks=[
+            InstructionalBlock(
+                section="Work Time",
+                letter="A",
+                title="Shared writing",
+                page=1,
+                steps=["Invite students to share their observations about the moon."],
+            )
+        ],
+    )
+    # Shorter than the Work Time step, so the OLD "globally shortest wins"
+    # logic would pick this Opening-side line instead of the claimed block.
+    assert len("Invite students to share and discuss") < len(
+        "Invite students to share their observations about the moon."
+    )
+    evidence = [
+        EvidenceItem(
+            quote="invite students to share",
+            location="Work Time A",
+            actor="student",
+            evidence_role="directive_prompt",
+            support="with_prompting",
+            supports_action=["oral_production"],
+        )
+    ]
+    kept, _warnings = sanitize_evidence_against_source(evidence, lesson)
+    assert len(kept) == 1
+    # Must resolve to the Work Time step it was claimed from, not the shorter
+    # Opening agenda title that also contains the same words.
+    assert kept[0].quote == "Invite students to share their observations about the moon."
+
+
+def test_resolve_verbatim_quote_block_preference_is_first_wins_on_duplicate_lines():
+    """Regression: the block-preference lookup was dict(zip(source_lines,
+    blocks)) — last-wins on a duplicate line. If the same line text appears
+    in two different blocks, its FIRST occurrence's block must win the
+    lookup — a last-wins mapping makes the duplicate text unmatchable against
+    its true (first) block, silently falling back to the globally shortest
+    candidate from an unrelated block instead."""
+    long_line = "Turn and talk to a partner about your observations."
+    short_line = "Turn and talk more."
+    lines = [long_line, long_line, short_line]  # long_line appears twice
+    blocks = ["Opening A", "Work Time A", "Work Time A"]
+    corpus = "\n".join(lines)
+    resolved = resolve_verbatim_quote(
+        "turn and talk",
+        lines,
+        corpus,
+        source_blocks=blocks,
+        preferred_block="Opening A",
+    )
+    # long_line's FIRST occurrence is tagged "Opening A" — first-wins must
+    # resolve to it despite short_line being the globally shortest candidate.
+    assert resolved == long_line

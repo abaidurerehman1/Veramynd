@@ -108,3 +108,48 @@ def test_query_arm_weight_prefers_objective_and_vocab():
     assert query_counts_for_coverage("objective")
     assert not query_counts_for_coverage("domain_bridge")
     assert not query_counts_for_coverage("teacher_action")
+
+
+def test_focused_queries_short_objective_fails_loud_not_empty(tmp_path: Path):
+    """Regression: a record whose only field was a too-short title slipped past
+    the fallback's elif chain (add() silently drops <12-char texts) and
+    returned [] — surfacing far downstream as a misleading "no non-empty
+    queries" error instead of this diagnostic."""
+    import pytest
+
+    path = tmp_path / "sparse.json"
+    path.write_text(
+        json.dumps({"resource_id": "G1M2U1L9", "title": "Cat"}),
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="no usable fields"):
+        focused_queries_from_normalize(path)
+
+
+def test_writing_task_arm_found_beyond_first_evidence_item(tmp_path: Path):
+    """Regression: evidence scanning broke at max_evidence (default 1), so a
+    writing quote at evidence[1] never produced its writing_task arm."""
+    path = tmp_path / "norm.json"
+    path.write_text(
+        json.dumps(
+            {
+                "resource_id": "G1M2U1L9",
+                "objective": "Students write and draw one observation carefully.",
+                "evidence": [
+                    {
+                        "quote": "Turn and tell your partner what you notice today.",
+                        "evidence_role": "elicitation_check",
+                        "supports_action": ["oral_production"],
+                    },
+                    {
+                        "quote": "Students write one sentence about the moon phases.",
+                        "supports_action": ["written_production"],
+                    },
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    queries = focused_queries_from_normalize(path)
+    sources = [q["source"] for q in queries]
+    assert any(s.startswith("writing_task_evidence_") for s in sources)

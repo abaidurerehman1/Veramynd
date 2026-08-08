@@ -55,18 +55,36 @@ def load_judge_report(path: Path | str) -> dict[str, Any]:
     return data
 
 
+def _looks_like_judge_report(p: Path) -> bool:
+    try:
+        data = json.loads(p.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return False
+    return isinstance(data, dict) and isinstance(data.get("verdicts"), list)
+
+
 def collect_judge_files(paths: Iterable[Path | str]) -> list[Path]:
     files: list[Path] = []
     for raw in paths:
         p = Path(raw)
         if p.is_dir():
-            files.extend(sorted(p.glob("*.json")))
+            for f in sorted(p.glob("*.json")):
+                # Dir globs must tolerate neighbors: incomplete-run sidecars
+                # and non-judge JSON — including this exporter's own
+                # alignments.summary.json when --out points into the judge dir,
+                # which used to hard-fail every run after the first.
+                if f.name.endswith(".incomplete.json"):
+                    continue
+                if not _looks_like_judge_report(f):
+                    print(f"skipping non-judge JSON: {f}", flush=True)
+                    continue
+                files.append(f)
         elif p.is_file():
+            # Explicitly named files always pass through — a user asking for a
+            # specific .incomplete.json gets it (or a loud error), not silence.
             files.append(p)
         else:
             raise ReportError(f"path not found: {p}")
-    # Sidecars from incomplete judge runs: ``G1….json.incomplete.json``
-    files = [f for f in files if not f.name.endswith(".incomplete.json")]
     if not files:
         raise ReportError("no judge JSON files found")
     return files
@@ -164,12 +182,25 @@ def write_csv(rows: list[dict[str, Any]], out: Path | str) -> Path:
     path = Path(out)
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(f"{path.suffix}.{os.getpid()}.tmp")
+
+    def _guard(row: dict[str, Any]) -> dict[str, Any]:
+        # Formula-injection guard for the client-facing CSV: PDF/LLM-derived
+        # text starting with =, +, -, or @ would execute as a formula when
+        # opened in Excel/Sheets. Prefix with a quote (standard mitigation);
+        # numeric/score columns are untouched.
+        guarded = dict(row)
+        for col in ("evidence", "rationale", "standard_raw_text", "grounding_note"):
+            v = guarded.get(col)
+            if isinstance(v, str) and v[:1] in ("=", "+", "-", "@"):
+                guarded[col] = "'" + v
+        return guarded
+
     try:
         with tmp.open("w", encoding="utf-8", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=CSV_COLUMNS, extrasaction="ignore")
             writer.writeheader()
             for row in rows:
-                writer.writerow(row)
+                writer.writerow(_guard(row))
         tmp.replace(path)
         tmp = None  # type: ignore[assignment]
     finally:

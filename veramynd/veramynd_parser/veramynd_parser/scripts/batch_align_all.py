@@ -53,8 +53,10 @@ from veramynd_parser.retrieve.pipeline import (
     DEFAULT_PER_QUERY_TOP_K,
     DEFAULT_PARENT_CAP,
     DEFAULT_POOL_MEMBERSHIP_MODE,
+    DEFAULT_HYBRID_TOP_K,
     DEFAULT_PRESERVE_RRF_TOP,
     DEFAULT_RERANK_BLEND_RRF,
+    DEFAULT_RERANK_TOP_N,
     DEFAULT_RERANK_TOP_N_ENTERPRISE,
     DEFAULT_SHORTLIST_RRF_WEIGHT,
     DEFAULT_SHORTLIST_RESCUE_SLOTS,
@@ -273,7 +275,14 @@ def main(argv: list[str] | None = None) -> int:
     if args.only:
         want = set(args.only)
         ids = [i for i in ids if i in want]
-    if args.limit_lessons:
+    if args.limit_lessons is not None:
+        if args.limit_lessons < 0:
+            print(
+                f"ERROR: --limit-lessons must be >= 0, got {args.limit_lessons}",
+                file=sys.stderr,
+            )
+            return 2
+        # 0 means "zero lessons" (an explicit smoke no-op), not "no limit".
         ids = ids[: args.limit_lessons]
     if not ids:
         print("ERROR: no lessons found", file=sys.stderr)
@@ -436,8 +445,9 @@ def main(argv: list[str] | None = None) -> int:
                         "schema_version": "1.0-retrieve-hybrid",
                         "query_mode": "lesson",
                         "query_source": source,
-                        "top_k": 30,
-                        "rerank_k": 10,
+                        # Record the defaults retrieve_and_rerank actually used.
+                        "top_k": DEFAULT_HYBRID_TOP_K,
+                        "rerank_k": DEFAULT_RERANK_TOP_N,
                         "skip_rerank": bool(args.no_rerank),
                         "candidates": [c.to_dict() for c in hits],
                     }

@@ -18,7 +18,6 @@ from veramynd_parser.judge.io import (
 from veramynd_parser.judge.models import (
     ClauseJudgment,
     JudgeLlmDraft,
-    status_from_clauses,
 )
 from veramynd_parser.judge.pipeline import judge_pair, judge_retrieve_file
 
@@ -67,31 +66,12 @@ def test_grounding_requires_all_ellipsis_segments():
     assert not is_grounded(bad, lesson)
 
 
-def test_status_from_clauses_aggregates():
-    assert status_from_clauses([]) == "none"
-    assert (
-        status_from_clauses([ClauseJudgment(clause="a", met=True, note="")]) == "full"
-    )
-    assert (
-        status_from_clauses(
-            [
-                ClauseJudgment(clause="a", met=True, note=""),
-                ClauseJudgment(clause="b", met=False, note=""),
-            ]
-        )
-        == "partial"
-    )
-    assert (
-        status_from_clauses([ClauseJudgment(clause="a", met=False, note="")]) == "none"
-    )
-
-
-def test_judge_pair_overwrites_status_from_clauses():
+def test_judge_pair_keeps_llm_status_and_clauses_when_grounded():
     lesson = "Students identify the setting of the story."
 
     def fake_complete(**kwargs):
         return JudgeLlmDraft(
-            matched_status="full",
+            matched_status="partial",
             clauses=[
                 ClauseJudgment(clause="identify setting", met=True, note=""),
                 ClauseJudgment(clause="identify characters", met=False, note=""),
@@ -99,7 +79,7 @@ def test_judge_pair_overwrites_status_from_clauses():
             evidence=lesson,
             evidence_page=1,
             confidence="high",
-            rationale="LLM claimed full.",
+            rationale="Setting is practiced; characters are not.",
         )
 
     v = judge_pair(
@@ -114,7 +94,8 @@ def test_judge_pair_overwrites_status_from_clauses():
         complete_fn=fake_complete,
     )
     assert v.matched_status == "partial"
-    assert "STATUS DERIVED FROM CLAUSES" in v.rationale
+    assert v.grounded
+    assert [c.met for c in v.clauses] == [True, False]
 
 
 def test_judge_pair_rejects_empty_evidence_full():

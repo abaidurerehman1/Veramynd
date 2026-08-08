@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
 class FontThresholds(BaseModel):
@@ -26,6 +26,24 @@ class FontThresholds(BaseModel):
     runin_min_size: float = 9.0
     runin_max_size: float = 9.9
     major_font_hint: str = "MarkPro"
+
+    # Same contract as Config/NormalizeConfig: a typo'd threshold key must fail
+    # loud, and inverted min/max bands are a silent mis-tier waiting to happen.
+    model_config = ConfigDict(extra="forbid")
+
+    @model_validator(mode="after")
+    def _bands_ordered(self) -> "FontThresholds":
+        if self.section_min_size > self.section_max_size:
+            raise ValueError(
+                f"section_min_size ({self.section_min_size}) > "
+                f"section_max_size ({self.section_max_size})"
+            )
+        if self.runin_min_size > self.runin_max_size:
+            raise ValueError(
+                f"runin_min_size ({self.runin_min_size}) > "
+                f"runin_max_size ({self.runin_max_size})"
+            )
+        return self
 
 
 class NormalizeConfig(BaseModel):

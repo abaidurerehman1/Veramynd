@@ -105,7 +105,9 @@ veramynd-parser embed-standards output/normalize_standards --out output/embeddin
 
 # Single-query hybrid (CLI) or enterprise multi-query batch:
 veramynd-parser retrieve-standards --chunk-file output/chunks/by_lesson/G1M2U1L3.json --out output/retrieve/G1M2U1L3.json
-# Recommended Batch-1 retrieve profile (keeps @10; recovers @50 via sum rescue):
+# Recommended Batch-1 retrieve profile (keeps @10; recovers @50 via sum rescue).
+# NOTE: the gold set (gold_set_batch1.jsonl) is NOT committed — obtain it
+# separately before running gold-scoped commands:
 python -m veramynd_parser.scripts.batch_align_all \
   --multi-query --from-gold output/reports/gold_set_batch1.jsonl \
   --merge-aggregation top_k_sum --merge-top-arms 2 \

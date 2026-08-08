@@ -14,6 +14,7 @@ import time
 import uuid
 from pathlib import Path
 from typing import Any, Callable
+from urllib.parse import urlparse
 
 from ..normalize.llm import (
     format_non_retryable_openai_error,
@@ -118,6 +119,25 @@ def resolve_qdrant_settings(
     load_dotenv()
     resolved_url = (url or os.environ.get("QDRANT_URL") or "").strip() or None
     resolved_key = (api_key or os.environ.get("QDRANT_API_KEY") or "").strip() or None
+    if resolved_key and resolved_url:
+        # Schemeless URLs ("host:6333") default to http in qdrant-client, and
+        # urlparse would misread "host:6333" as scheme="host" — normalize so
+        # anything that isn't explicitly https counts as plaintext.
+        probe = resolved_url if "://" in resolved_url else f"http://{resolved_url}"
+        parsed = urlparse(probe)
+        host = (parsed.hostname or "").lower()
+        if parsed.scheme != "https" and host not in {"localhost", "127.0.0.1", "::1"}:
+            if (os.environ.get("QDRANT_ALLOW_INSECURE") or "").strip() != "1":
+                raise EmbedError(
+                    f"refusing to send the Qdrant API key over plaintext http "
+                    f"to {host!r} ({resolved_url}). Use https://, or set "
+                    f"QDRANT_ALLOW_INSECURE=1 to override (not for production)."
+                )
+            print(
+                f"WARNING: QDRANT_ALLOW_INSECURE=1 — sending the Qdrant API key "
+                f"over plaintext http to {host!r}",
+                flush=True,
+            )
     env_path = (os.environ.get("QDRANT_PATH") or "").strip()
     raw_path = (path or env_path or DEFAULT_QDRANT_PATH).strip()
     resolved_path = str(resolve_package_relative(raw_path))

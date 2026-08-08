@@ -115,6 +115,12 @@ def _should_escalate(draft: JudgeLlmDraft) -> bool:
         return True
     if draft.matched_status in {"full", "partial"} and not (draft.evidence or "").strip():
         return True
+    if draft.matched_status == "full" and (
+        not draft.clauses or any(not c.met for c in draft.clauses)
+    ):
+        # A "full" claim with an unmet clause — or no clause analysis at all —
+        # is internally inconsistent; exactly what escalation should re-check.
+        return True
     return False
 
 
@@ -182,10 +188,12 @@ def _finalize_verdict(
     rationale = draft.rationale
 
     if status == "none":
-        grounded = is_grounded(evidence, lesson_raw_text, allow_empty=True)
-        gnote = grounding_note(evidence, grounded=True, allow_empty=True)
+        # No evidence is required for a "none" verdict: drop any quote the
+        # model returned and note exactly that. The note must never claim a
+        # quote was "found in lesson raw text" for a check that never ran.
         evidence = ""
         grounded = True
+        gnote = grounding_note(evidence, grounded=True, allow_empty=True)
     else:
         grounded = is_grounded(evidence, lesson_raw_text, allow_empty=False)
         gnote = grounding_note(evidence, grounded=grounded, allow_empty=False)
@@ -277,7 +285,10 @@ def judge_pair(
         )
         hit = cache.get(cache_key, AlignmentVerdict)
         if hit is not None:
-            return hit
+            # The cache key excludes retrieval scores by design (retrieval
+            # must not bias judging) — so re-stamp the CURRENT run's scores
+            # rather than persisting the cached run's stale provenance.
+            return hit.model_copy(update={"retrieval": dict(retrieval or {})})
 
     draft = _call_judge(
         system=system,
@@ -440,7 +451,15 @@ def judge_lesson_batch(
         )
         hit = cache.get(cache_key, CachedBatchVerdicts)
         if hit is not None:
-            return list(hit.verdicts)
+            # Same as the pair path: refresh retrieval provenance to the
+            # current run's scores instead of serving the cached run's.
+            rbc = retrieval_by_code or {}
+            return [
+                v.model_copy(
+                    update={"retrieval": dict(rbc.get(v.standard_code) or {})}
+                )
+                for v in hit.verdicts
+            ]
 
     print(
         f"  batch-judging {len(codes)} standards in one call "

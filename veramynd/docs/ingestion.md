@@ -4,7 +4,11 @@
 structured, linked, queryable knowledge base — the foundation every downstream
 stage (normalization, retrieval, the alignment judge) stands on.
 
-**Status:** Proposed · companion to [architecture.md](architecture.md) §5–§8, §12
+**Status:** Historical design — largely superseded by the shipped code. The
+implemented ingestion path is Stage-1 export → normalize → chunk → **Qdrant**
+embed (see [pipeline-review.md](pipeline-review.md)); the format-router /
+graph-loader / Postgres design below was not built. Companion to
+[architecture.md](architecture.md) §5–§8, §12.
 **Last updated:** 20 July 2026
 
 ---

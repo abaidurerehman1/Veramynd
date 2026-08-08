@@ -91,11 +91,13 @@ def load_lesson_context(
     """Return ``(resource_id, lesson_raw_text, source_label)``."""
     if lesson_file:
         data = load_json(lesson_file)
-        rid = (data.get("code") or data.get("resource_id") or Path(lesson_file).stem).strip()
+        rid = str(
+            data.get("code") or data.get("resource_id") or Path(lesson_file).stem
+        ).strip()
         return rid, lesson_raw_text_from_stage1(data), f"stage1:{rid}"
     if chunk_file:
         data = load_json(chunk_file)
-        rid = (
+        rid = str(
             data.get("resource_id") or data.get("code") or Path(chunk_file).stem
         ).strip()
         return rid, lesson_raw_text_from_chunks(data), f"chunks:{rid}"
@@ -141,7 +143,11 @@ def load_standard_raw_text(standards_dir: Path | str, code: str) -> dict[str, An
         "standard_code": (data.get("standard_code") or code).strip(),
         "raw_text": raw,
         "competency_statement": (data.get("competency_statement") or "").strip(),
-        "domain_primary": ((data.get("domain") or {}).get("primary") or "").strip(),
+        "domain_primary": (
+            (domain.get("primary") or "").strip()
+            if isinstance(domain := data.get("domain"), dict)
+            else ""
+        ),
         "label": (data.get("label") or "").strip(),
         "level": (data.get("level") or "").strip(),
         "grade": data.get("grade"),

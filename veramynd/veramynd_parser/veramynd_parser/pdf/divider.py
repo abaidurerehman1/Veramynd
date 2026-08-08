@@ -26,6 +26,13 @@ from .division import fill_steps
 from .document import Line, PdfDocument
 from .separator import LessonSpan
 
+# A body/title line ending in a soft-hyphen word-wrap ("Ques-", "sup-").
+# clean_line() has already collapsed each Line's own internal whitespace by
+# the time callers see this text, so the join must happen where two adjacent
+# Line objects meet — dehyphenate() only fires on an actual "-\n" boundary,
+# which only exists here, before it gets flattened to "-  " by a plain join.
+_HYPHEN_WRAP = re.compile(r"\w-$")
+
 
 class _Divider:
     """Holds the per-lesson parsing state. One instance per lesson."""
@@ -57,7 +64,9 @@ class _Divider:
                 parts.append(text)
             elif started:
                 break
-        return " ".join(parts)
+        # dehyphenate() needs a real newline to find the wrap point — join with
+        # "\n" first, then collapse whatever it leaves behind to a single space.
+        return tu.dehyphenate("\n".join(parts)).replace("\n", " ")
 
     def declared_standards(self) -> list[str]:
         """Standard codes listed under the 'CCS Standards' section (the publisher's claim).
@@ -175,7 +184,15 @@ class _Divider:
             elif tier == TIER_RUNIN and tu.AGENDA_ITEM.match(text):
                 body.append(("section_header", text, line.page))  # a sub-block header
             elif tier == TIER_BODY:
-                body.append(("list_item", text, line.page))
+                # A mid-word line wrap must not become two separate steps (or
+                # leave "sup-" / "porting" straddling fill_steps' key match) —
+                # merge into the previous list_item instead.
+                if body and body[-1][0] == "list_item" and _HYPHEN_WRAP.search(body[-1][1]):
+                    prev_label, prev_text, prev_page = body[-1]
+                    merged = tu.dehyphenate(f"{prev_text}\n{text}").replace("\n", " ")
+                    body[-1] = (prev_label, merged, prev_page)
+                else:
+                    body.append(("list_item", text, line.page))
         return fill_steps(blocks, body, self.cfg)
 
     def _section_body(self, header: str) -> list[str]:
@@ -203,8 +220,14 @@ class _Divider:
                 if is_stop:
                     break
                 if tier in (TIER_BODY, TIER_RUNIN) and text and not tu.is_page_furniture(text):
-                    if out and out[-1].count("(") > out[-1].count(")"):
-                        out[-1] = f"{out[-1]} {text}"
+                    if out and _HYPHEN_WRAP.search(out[-1]):
+                        # Mid-word line wrap: join without the space the
+                        # open-paren rule below would insert.
+                        out[-1] = tu.dehyphenate(f"{out[-1]}\n{text}").replace("\n", " ")
+                    elif out and out[-1].count("(") > out[-1].count(")"):
+                        # Not a hyphen wrap, so dehyphenate() leaves the "\n" I
+                        # inserted untouched — still need the plain-space join.
+                        out[-1] = tu.dehyphenate(f"{out[-1]}\n{text}").replace("\n", " ")
                     else:
                         out.append(text)
         return out

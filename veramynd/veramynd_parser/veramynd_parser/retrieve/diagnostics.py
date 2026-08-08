@@ -117,15 +117,20 @@ def gold_rank_movements(
         m = merged_rank.get(code)
         r = rerank_rank.get(code)
         s = shortlist_rank.get(code)
-        lost_at = None
-        if not q_hits:
-            lost_at = "never_retrieved"
-        elif m is None:
-            lost_at = "merge_rrf"
-        elif r is None:
-            lost_at = "rerank"
-        elif s is None:
+        # A code in the final shortlist is not lost, even when it skipped a
+        # middle stage (rescue slots and grade-exhaustive CE candidates enter
+        # the shortlist without passing merge or rerank). When it IS lost,
+        # blame the first stage after the deepest one it reached.
+        if s is not None:
+            lost_at = None
+        elif r is not None:
             lost_at = "shortlist"
+        elif m is not None:
+            lost_at = "rerank"
+        elif q_hits:
+            lost_at = "merge_rrf"
+        else:
+            lost_at = "never_retrieved"
         out.append(
             {
                 "standard_code": code,

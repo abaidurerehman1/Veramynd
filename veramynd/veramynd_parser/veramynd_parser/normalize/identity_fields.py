@@ -14,6 +14,10 @@ from ..text_utils import is_page_furniture, is_prep_or_tip_noise
 from .models import VocabularyBlock
 
 _REVIEW_MARKER = re.compile(r"\(r\)|\breview\b", re.I)
+# The inline "(R)" review marker is routing metadata, never term content —
+# unlike the (L)/(T)/(W) type markers, which are kept on the term. Match it
+# only as a standalone token so "(R)eading" / "p(r)int" stay intact.
+_INLINE_R = re.compile(r"(^|\s)\(r\)(?=$|\s|[,;.])", re.I)
 _SECTION_REVIEW = re.compile(r"^\s*Review\s*:\s*(.*)$", re.I)
 _SECTION_NEW = re.compile(r"^\s*New\s*:\s*(.*)$", re.I)
 _LEGEND_OR_HEADER = re.compile(
@@ -65,6 +69,7 @@ def split_vocabulary(raw: list[str]) -> VocabularyBlock:
         if is_page_furniture(raw) or is_prep_or_tip_noise(raw):
             return
         t = raw.strip("-–—•").strip()
+        t = " ".join(_INLINE_R.sub(r"\1", t).split()).strip()
         if not t:
             return
         if _LEGEND_OR_HEADER.match(t):

@@ -291,6 +291,7 @@ def chunk_lessons_dir(
     *,
     force: bool = False,
     resource_ids: set[str] | None = None,
+    stage1_verdict: str | None = None,
 ) -> dict:
     """Chunk Stage-1 + normalize lessons into ``out_dir``.
 
@@ -396,6 +397,9 @@ def chunk_lessons_dir(
     manifest = {
         "schema_version": CHUNK_SCHEMA_VERSION,
         "mode": "force" if force else "incremental",
+        # Trust provenance: "GO" when the Stage-1 gate passed, "unverified"
+        # when the caller bypassed it. Downstream (embed-chunks) gates on this.
+        "stage1_verdict": stage1_verdict or "unverified",
         "lessons": len(bundles),
         "built": len(bundles) - len(skipped),
         "skipped": skipped,

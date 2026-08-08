@@ -148,8 +148,16 @@ def _cache_plan(
     prompt = load_prompt()
     model = resolve_openai_model(cfg.normalize.model or None)
     payload = standard_normalize_payload(std, tree)
+    # The draft schema is part of what the model is asked to produce — hashing
+    # it means a StandardLlmDraft field change invalidates stale cache entries
+    # even when nobody remembered to bump PROMPT_VERSION.
     cache_key = ContentAddressedCache.key(
-        PROMPT_VERSION, "openai", model, prompt, canonical_json(payload)
+        PROMPT_VERSION,
+        "openai",
+        model,
+        prompt,
+        canonical_json(StandardLlmDraft.model_json_schema()),
+        canonical_json(payload),
     )
     return cache_key, model, prompt, payload
 
@@ -300,7 +308,9 @@ def normalize_standard(
         if not refresh_cache:
             hit = cache.get(cache_key, NormalizedStandard)
             if hit is not None:
-                fixed, _ = sanitize_normalized_standard(hit)
+                fixed, sanitize_warnings = sanitize_normalized_standard(hit)
+                for w in sanitize_warnings:
+                    print(f"WARNING: {std.code}: {w}", flush=True)
                 return fixed.model_copy(
                     update={
                         "prompt_version": PROMPT_VERSION,

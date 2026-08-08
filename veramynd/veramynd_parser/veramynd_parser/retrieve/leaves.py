@@ -30,8 +30,11 @@ def filter_alignable_leaves(docs: list[StandardDoc]) -> list[StandardDoc]:
     """
     parent_codes: set[str] = set()
     for d in docs:
-        raw = ""
-        if isinstance(d.metadata, dict):
+        # First-class field first, metadata fallback second — callers building
+        # docs with only the dataclass field (the documented shape) must not
+        # silently keep parents in the retrieval corpus.
+        raw = (getattr(d, "parent_code", None) or "").strip()
+        if not raw and isinstance(d.metadata, dict):
             raw = (d.metadata.get("parent_code") or "").strip()
         if raw:
             parent_codes.add(raw)

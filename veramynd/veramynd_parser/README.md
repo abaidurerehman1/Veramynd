@@ -179,8 +179,10 @@ veramynd_parser/
   (merge rank still dominates final rank; CE wins are often buried). Target remains
   ~90% Recall@10 on a larger multi-grade / multi-publisher gold set. Judge agreement
   vs SME gold is a separate gap, especially for `partial`.
-- **Gold-set quality** — a packaged gate checks recall@10/@20, per-class judge
-  accuracy, and stale artifacts; current artifacts do not pass the 90% gate.
+- **Gold-set quality** — the gold set (`output/reports/gold_set_batch1.jsonl`)
+  is SME-labeled and **not committed to this repo**; the gold-scoped commands
+  below require obtaining or rebuilding it first. A packaged quality gate is
+  planned but not yet shipped.
 - **Agentic graph track** — design doc only (`docs/architecture-agentic-graph.md`).
 - Validated primarily on the two sample documents under `../data/samples/`.
 
@@ -335,6 +337,10 @@ BM25, merge-RRF, reranker, and final rank for every candidate.
 ```bash
 # Recommended Batch-1 retrieve profile (offline-validated):
 #   Recall@10 ≈ 45% (held), Recall@50 = 100% (sum rescue recovers ~3 golds)
+# NOTE: gold_set_batch1.jsonl is an SME-labeled artifact NOT committed to this
+# repo — obtain it separately (or build your own gold JSONL with rows of
+# {resource_id, standard_code, matched_status}) before running gold-scoped
+# commands.
 python -m veramynd_parser.scripts.batch_align_all \
   --multi-query \
   --from-gold output/reports/gold_set_batch1.jsonl \
@@ -406,16 +412,10 @@ Use `--aligned-only` for full+partial rows only (still never drops rows for miss
 Also writes an HTML audit dashboard next to the CSV (disable with `--no-html`).
 
 **Gold metrics:** with `--multi-query --from-gold`, batch writes leaf-recall
-summaries (`output/reports/retrieve_gold_metrics.json`). Run the immutable
-quality gate after regenerating retrieve + judge artifacts:
-
-```bash
-python -m veramynd_parser.scripts.eval_gate \
-  --gold output/reports/gold_set_batch1.jsonl
-```
-
-The command exits nonzero when recall@10/@20, per-class judge accuracy, or
-artifact integrity is below the configured thresholds.
+summaries (`output/reports/retrieve_gold_metrics.json`). The offline sweeps
+(`eval_merge_aggregation`, `eval_shortlist_rescue` — see the retrieve section)
+replay cached artifacts against the gold set; a packaged pass/fail quality
+gate is planned but not yet shipped.
 
 Library:
 

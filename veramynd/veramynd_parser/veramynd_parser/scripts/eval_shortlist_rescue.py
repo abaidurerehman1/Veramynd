@@ -84,9 +84,17 @@ def _load_lists(
 ) -> tuple[list[Candidate], list[Candidate], int, float, int]:
     reranked = [_candidate_from_dict(r) for r in (payload.get("reranked_candidates") or [])]
     merged = [_candidate_from_dict(r) for r in (payload.get("rrf_candidates") or [])]
-    top_n = int(payload.get("judge_shortlist_k") or DEFAULT_JUDGE_SHORTLIST_K)
-    rrf_weight = float(payload.get("shortlist_rrf_weight") or DEFAULT_SHORTLIST_RRF_WEIGHT)
-    parent_cap = int(payload.get("parent_cap") or DEFAULT_PARENT_CAP)
+    # Explicit None checks: a run made with e.g. --shortlist-rrf-weight 0 stores
+    # a falsy 0.0 that `or DEFAULT` would silently replace, so the sweep would
+    # no longer replay the live shortlist it claims to replay.
+    raw_top_n = payload.get("judge_shortlist_k")
+    top_n = int(raw_top_n) if raw_top_n is not None else DEFAULT_JUDGE_SHORTLIST_K
+    raw_weight = payload.get("shortlist_rrf_weight")
+    rrf_weight = (
+        float(raw_weight) if raw_weight is not None else DEFAULT_SHORTLIST_RRF_WEIGHT
+    )
+    raw_cap = payload.get("parent_cap")
+    parent_cap = int(raw_cap) if raw_cap is not None else DEFAULT_PARENT_CAP
     return reranked, merged, top_n, rrf_weight, parent_cap
 
 
@@ -129,6 +137,7 @@ def main(argv: list[str] | None = None) -> int:
         per_lesson: dict[str, Any] = {}
         recovered_via_rescue = 0
         recovered_already_in_core = 0
+        recovered_via_filler = 0
         still_missing = 0
         rescue_marker_ok = 0
         recall10_flat_check: list[bool] = []
@@ -194,31 +203,32 @@ def main(argv: list[str] | None = None) -> int:
                 )
                 recall10_flat_check.append(bool(recall10_vs_baseline))
 
-                if n == sweep[0] or True:
-                    # Track recovery of golds that missed @50 at N=0.
-                    if rid not in baseline_misses:
-                        baseline_misses[rid] = [
-                            code
-                            for code, rank in base_m["gold_ranks"].items()
-                            if rank is None or rank > 50
-                        ]
-                    for code in baseline_misses.get(rid, []):
-                        new_rank = metrics["gold_ranks"].get(code)
-                        if new_rank is not None and new_rank <= 50:
-                            # Confirm it entered via rescue slot, not core.
-                            cand = next(
-                                (c for c in shortlist if c.standard_code == code),
-                                None,
-                            )
-                            if cand is not None and cand.rescued_via == "sum":
-                                recovered_via_rescue += 1
-                                rescue_marker_ok += 1
-                            elif cand is not None and (cand.final_rank or 999) <= (top_n - n):
-                                recovered_already_in_core += 1
-                            else:
-                                recovered_via_rescue += 1  # in shortlist but unmarked?
+                # Track recovery of golds that missed @50 at N=0.
+                if rid not in baseline_misses:
+                    baseline_misses[rid] = [
+                        code
+                        for code, rank in base_m["gold_ranks"].items()
+                        if rank is None or rank > 50
+                    ]
+                for code in baseline_misses.get(rid, []):
+                    new_rank = metrics["gold_ranks"].get(code)
+                    if new_rank is not None and new_rank <= 50:
+                        # Credit rescue only when the marker proves it —
+                        # unmarked re-entries are fused-tail fillers, and
+                        # counting them inflated the rescue headline number.
+                        cand = next(
+                            (c for c in shortlist if c.standard_code == code),
+                            None,
+                        )
+                        if cand is not None and cand.rescued_via == "sum":
+                            recovered_via_rescue += 1
+                            rescue_marker_ok += 1
+                        elif cand is not None and (cand.final_rank or 999) <= (top_n - n):
+                            recovered_already_in_core += 1
                         else:
-                            still_missing += 1
+                            recovered_via_filler += 1
+                    else:
+                        still_missing += 1
 
             for code in gold_codes:
                 n_pos += 1
@@ -256,6 +266,7 @@ def main(argv: list[str] | None = None) -> int:
                     "baseline_miss_n": n0_miss_total,
                     "recovered_via_sum_rescue": recovered_via_rescue,
                     "recovered_already_in_core": recovered_already_in_core,
+                    "recovered_via_fused_tail_filler": recovered_via_filler,
                     "still_missing": still_missing,
                     "rescue_marker_confirmed": rescue_marker_ok,
                 }

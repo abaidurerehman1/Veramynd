@@ -80,3 +80,37 @@ def test_atomic_replace_dir_swaps_without_empty_window(tmp_path: Path):
     assert not (dest / "old.json").exists()
     leftovers = [p.name for p in tmp_path.iterdir() if p.name.startswith(".")]
     assert leftovers == []
+
+
+def test_strip_trailing_codes_handles_k_grades():
+    """Regression: the split pattern missed 'RL.K' and split on the inner 'K.1',
+    leaving a stranded '(RL.' fragment on every kindergarten target."""
+    from veramynd_parser.text_utils import strip_trailing_codes
+
+    assert (
+        strip_trailing_codes("I can describe characters. (RL.K.1)")
+        == "I can describe characters."
+    )
+    assert (
+        strip_trailing_codes("I can describe what I observe. (W.1.8, SL.1.1)")
+        == "I can describe what I observe."
+    )
+
+
+def test_dehyphenate_preserves_compounds_seen_elsewhere():
+    """A wrap at a real compound's hyphen keeps it when the unwrapped form
+    appears elsewhere in the same text; plain soft wraps still join."""
+    from veramynd_parser.text_utils import dehyphenate
+
+    text = "Begin the read-\naloud now. Yesterday's read-aloud went well."
+    assert "read-aloud now" in dehyphenate(text)
+    assert dehyphenate("Count the min-\nutes carefully.") == "Count the minutes carefully."
+
+
+def test_dehyphenate_preserves_a_wrapped_numeric_range():
+    """Regression: a page-range citation wrapped at the hyphen ('42-\\n43')
+    was silently merged into a different number ('4243') by the same
+    no-evidence-found fallback meant for compound words."""
+    from veramynd_parser.text_utils import dehyphenate
+
+    assert dehyphenate("See pages 42-\n43 for details.") == "See pages 42-43 for details."

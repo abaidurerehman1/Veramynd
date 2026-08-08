@@ -82,8 +82,10 @@ def load_embeddable_standards(
     - ``leaves_only=True`` — embed/retrieve terminal codes only (parents stay on disk)
     - ``use_rich_text=True`` — embed competency/skills/verbs/keywords, not a thin sentence
 
-    If ``codes`` is set, only those ``standard_code`` values are loaded (then
-    leaf-filtered when ``leaves_only``).
+    All files are always parsed and validated (leaf detection needs the full
+    corpus to know which codes are parents); when ``codes`` is set, the result
+    is filtered to those ``standard_code`` values AFTER leaf filtering — so
+    requesting a non-leaf parent fails loud instead of embedding it.
     """
     root = Path(standards_dir)
     if not root.is_dir():
@@ -114,8 +116,6 @@ def load_embeddable_standards(
         code = (data.get("standard_code") or "").strip()
         if not code:
             raise ValueError(f"{path}: missing standard_code")
-        if codes is not None and code not in codes:
-            continue
 
         if use_rich_text:
             text = build_retrieval_text(data).strip()
@@ -160,8 +160,13 @@ def load_embeddable_standards(
             )
         )
 
+    # Leaf-filter over the FULL corpus before any codes subsetting: computing
+    # parenthood from a requested subset can't see a parent's children, so
+    # ``--code <parent>`` used to embed a non-leaf standard as a "leaf".
     if leaves_only:
         out = _filter_alignable_leaves(out)
+    if codes is not None:
+        out = [r for r in out if r.standard_code in codes]
 
     if codes is not None and not out:
         raise FileNotFoundError(

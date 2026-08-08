@@ -113,17 +113,29 @@ def separate(doc: PdfDocument) -> list[LessonSpan]:
         raise SeparationError(f"{doc.source_id}: PDF has no outline/bookmarks")
 
     spans: list[LessonSpan] = []
+    seen_codes: set[str] = set()
     for seg in _segments(outline, doc.page_count):
-        parsed = tu.parse_lesson_code(seg.title)
-        if parsed is None:
-            continue  # unit overview or other non-lesson bookmark — held out
+        # Validate every segment's span, not just lesson ones — an inverted
+        # unit-overview bookmark (duplicate/out-of-order outline entries)
+        # used to slip through as Unit.overview_page_start > overview_page_end
+        # with no error anywhere downstream.
         if seg.page_end < seg.page_start:
             raise SeparationError(
-                f"{doc.source_id}: lesson bookmark '{seg.title}' has an inverted "
+                f"{doc.source_id}: bookmark '{seg.title}' has an inverted "
                 f"page span ({seg.page_start}-{seg.page_end}) — likely duplicate or "
                 f"out-of-order bookmarks in the PDF outline"
             )
+        parsed = tu.parse_lesson_code(seg.title)
+        if parsed is None:
+            continue  # unit overview or other non-lesson bookmark — held out
         g, m, u, l = parsed
+        code = f"G{g}M{m}U{u}L{l}"
+        if code in seen_codes:
+            raise SeparationError(
+                f"{doc.source_id}: duplicate lesson bookmark '{code}' — the "
+                f"outline has two entries with the same lesson code"
+            )
+        seen_codes.add(code)
         spans.append(
             _make_span(
                 grade=g,
@@ -147,7 +159,20 @@ def separate(doc: PdfDocument) -> list[LessonSpan]:
 def overview_spans(doc: PdfDocument) -> list[Segment]:
     """The non-lesson (unit overview) segments — useful for coverage checks."""
     outline = doc.outline()
-    return [s for s in _segments(outline, doc.page_count) if not s.is_lesson]
+    overviews = [s for s in _segments(outline, doc.page_count) if not s.is_lesson]
+    for seg in overviews:
+        # Same guard as separate()'s lesson-span check: an inverted overview
+        # bookmark (duplicate/out-of-order outline entries) used to flow into
+        # Unit.overview_page_start > overview_page_end with no error raised
+        # anywhere — it silently contributed zero pages to coverage checks
+        # instead of surfacing the real cause.
+        if seg.page_end < seg.page_start:
+            raise SeparationError(
+                f"{doc.source_id}: overview bookmark '{seg.title}' has an "
+                f"inverted page span ({seg.page_start}-{seg.page_end}) — likely "
+                f"duplicate or out-of-order bookmarks in the PDF outline"
+            )
+    return overviews
 
 
 def synthesize_overview_spans(

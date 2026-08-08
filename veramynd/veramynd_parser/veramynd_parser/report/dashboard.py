@@ -20,11 +20,12 @@ def write_html_dashboard(
     out_html: Path | str,
     *,
     include_none: bool = True,
+    grounded_only: bool = False,
 ) -> Path:
     """Build a single-file HTML audit view for enterprise ops review."""
     files = collect_judge_files(judge_paths)
     statuses = None if include_none else {"full", "partial"}
-    rows, summary = build_rows(files, statuses=statuses)
+    rows, summary = build_rows(files, statuses=statuses, grounded_only=grounded_only)
 
     lessons: dict[str, list[dict[str, Any]]] = {}
     for row in rows:

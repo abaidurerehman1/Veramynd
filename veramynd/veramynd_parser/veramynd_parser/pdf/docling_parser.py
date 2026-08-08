@@ -262,8 +262,16 @@ def _extract_tables(doc) -> list[DoclingTable]:
         cells: list[list[str]] = []
         try:
             df = tb.export_to_dataframe(doc)
-            cells = [[str(c) for c in df.columns]]
-            cells += [[("" if v is None else str(v)) for v in row] for row in df.values.tolist()]
+
+            def _cell(v: object) -> str:
+                # None and float NaN are empty cells — str(nan) would leak the
+                # literal "nan" into materials/vocabulary via _lines().
+                if v is None or (isinstance(v, float) and v != v):
+                    return ""
+                return str(v)
+
+            cells = [[_cell(c) for c in df.columns]]
+            cells += [[_cell(v) for v in row] for row in df.values.tolist()]
         except (AttributeError, TypeError, ValueError, KeyError):
             try:
                 grid = tb.data.grid

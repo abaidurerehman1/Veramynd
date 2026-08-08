@@ -104,8 +104,13 @@ def fill_steps(blocks: list[InstructionalBlock], body, cfg) -> list[Instructiona
         best: tuple[int, int, int] | None = None  # (rank, -shared, nxt)
         for lookahead in range(1, LOOKAHEAD + 1):
             nxt = idx + lookahead
-            if nxt >= len(blocks) or not block_keys[nxt]:
+            if nxt >= len(blocks):
                 break
+            if not block_keys[nxt]:
+                # An empty agenda title can't be matched, but blocks past it
+                # still can — breaking here disabled resync for the rest of
+                # the lesson (the exact cascade LOOKAHEAD exists to prevent).
+                continue
             bk = block_keys[nxt]
             shared = shared_prefix_len(text_key, bk)
             if text_key == bk:

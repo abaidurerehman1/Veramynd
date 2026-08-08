@@ -1,6 +1,9 @@
 # output/ — production pipeline artifacts
 
-Do not commit secrets. This folder is gitignored.
+Do not commit secrets. This folder is **tracked in git** as a reference-run
+snapshot of the Grade 1 Module 2 sample corpus — regenerating changes these
+files, so keep committed snapshots deliberate (or gitignore the folder if the
+churn stops being worth it).
 
 ```text
 output/
@@ -19,7 +22,8 @@ output/
 
 | Path | Role |
 |------|------|
-| `verification_report.txt` | GO / BLOCK gate — required before trusting anything else |
+| `verification_report.txt` | Human-readable GO / BLOCK report |
+| `verification_verdict.json` | Machine-readable gate verdict — downstream commands check this |
 | `lessons/*.json` | Per-lesson contracts (primary Stage 1 product) |
 | `standards.json` | Standards tree from the XLSX |
 | `teacher_guide.json` | Full guide parse (audit / reload) |

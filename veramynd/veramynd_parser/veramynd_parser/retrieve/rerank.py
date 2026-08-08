@@ -79,7 +79,15 @@ def _robust_minmax(values: list[float]) -> list[float]:
     """Deterministic clipped normalization that limits one outlier's influence."""
     if not values:
         return []
-    ordered = sorted(float(v) for v in values)
+    # A single NaN logit would poison lo/hi/span and collapse EVERY normalized
+    # score to 1.0 (min(1.0, nan) == 1.0 in CPython). Substitute the finite
+    # minimum — a NaN score ranks that candidate last without touching others.
+    finite = [float(v) for v in values if float(v) == float(v)]
+    if not finite:
+        return [0.5] * len(values)
+    floor = min(finite)
+    values = [float(v) if float(v) == float(v) else floor for v in values]
+    ordered = sorted(values)
     if ordered[0] == ordered[-1]:
         return [0.5] * len(values)
 

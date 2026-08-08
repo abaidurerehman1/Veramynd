@@ -81,11 +81,18 @@ class _DoclingDivider:
         # text-based header detection — Docling doesn't always tag a run-in label
         # (e.g. 'Key:') as section_header, and without this a mislabeled 'Key:'
         # would collect straight into materials/vocabulary as if it were content.
-        lines: list[tuple[str, str]] = []
-        for el in self.elements:
+        #
+        # Table rows are merged at their page position, not appended after the
+        # whole element stream: collector state (current section) carries across
+        # lines, so an out-of-order table absorbed from page N would otherwise
+        # inherit whatever section happened to be open at the END of the lesson —
+        # cross-section contamination (e.g. Materials rows landing in Vocabulary).
+        entries: list[tuple[int, int, int, tuple[str, str]]] = []
+        for i, el in enumerate(self.elements):
             text = _clean(el.text)
             is_header = el.label == "section_header" or self._is_header_text(text)
-            lines.append(("header" if is_header else "item", text))
+            entries.append((el.page or 0, 0, i, ("header" if is_header else "item", text)))
+        seq = 0
         for tb in self._raw_tables:
             if tb.n_cols != 1:
                 continue  # a real table, not a mis-detected list
@@ -93,8 +100,14 @@ class _DoclingDivider:
                 text = _clean(row[0]) if row else ""
                 if not text or text == "0":
                     continue
-                lines.append(("header" if self._is_header_text(text) else "item", text))
-        return lines
+                # Page 0 = no provenance: keep the old append-at-end behavior.
+                page_key = tb.page if tb.page > 0 else 10**9
+                entries.append(
+                    (page_key, 1, seq, ("header" if self._is_header_text(text) else "item", text))
+                )
+                seq += 1
+        entries.sort(key=lambda e: (e[0], e[1], e[2]))
+        return [e[3] for e in entries]
 
     def _collect_under(self, headers: tuple[str, ...]) -> list[str]:
         """Items directly under any of ``headers``, stopping at the next section."""
@@ -211,7 +224,15 @@ class _DoclingDivider:
 
     def learning_targets(self) -> list[LearningTarget]:
         targets: list[LearningTarget] = []
+        seen: set[str] = set()
         collecting = False
+        # Cover/body boundaries can arrive as list_item/text (same quirk as
+        # _codes_under); without a non-header stop, targets restated verbatim in
+        # the Opening body were collected a second time.
+        stop_texts = (
+            (set(self.cfg.section_headers) | {"Teaching Notes"})
+            - {"Daily Learning Target"}
+        ) | set(self.cfg.instructional_sections)
         for el in self.elements:
             text = _clean(el.text)
             if el.label == "section_header":
@@ -220,11 +241,18 @@ class _DoclingDivider:
                     continue
                 if collecting and self._is_section(text):
                     break
+            elif collecting and text.rstrip(":") in stop_texts:
+                break
             # See _codes_under: a lone target can arrive as `text`, not `list_item`.
             if collecting and el.label in ("list_item", "text") and text.startswith("I can"):
+                cleaned = tu.strip_trailing_codes(text)
+                key = " ".join(cleaned.split()).lower()
+                if key in seen:
+                    continue
+                seen.add(key)
                 targets.append(
                     LearningTarget(
-                        text=tu.strip_trailing_codes(text),
+                        text=cleaned,
                         codes=tu.extract_standard_codes(text),
                     )
                 )
@@ -308,17 +336,38 @@ class _DoclingDivider:
             if el.label not in ("list_item", "text"):
                 continue
 
+            # Cover/body boundary arriving as list_item/text (the same Docling
+            # quirk _codes_under works around): 'Teaching Notes' etc. must END
+            # the agenda, not become fabricated agenda items — those would turn
+            # into fabricated instructional blocks that steal body steps.
+            if text.rstrip(":") in self._agenda_stop_texts():
+                phase = _AgendaPhase.OUTSIDE
+                section = None
+                continue
+
             # Docling labels agenda entries inconsistently: multi-item sections come
             # as `list_item`, a lone item as `text`, and sometimes a bare section
             # name ('Opening', 'Closing and Assessment') itself arrives as a
-            # `list_item` rather than a numbered `section_header`.
+            # `list_item` rather than a numbered `section_header`. Accept a bare
+            # restart only when the text IS the section name (or a leading
+            # fragment of it) — 'Closing Circle' must stay an item, not restart
+            # 'Closing and Assessment' and orphan the current section.
             bare = tu.canonical_agenda_section(text)
-            if bare and not tu.MINUTES.search(text) and len(text) <= 25:
+            t = text.strip().rstrip(":")
+            if (
+                bare
+                and not tu.MINUTES.search(text)
+                and (bare == t or bare.startswith(t + " "))
+            ):
                 start_section(bare)
             elif section:
                 emit(text)
 
         return items
+
+    def _agenda_stop_texts(self) -> set[str]:
+        """Cover headers that end the agenda when mislabeled as plain text."""
+        return (set(self.cfg.section_headers) | {"Teaching Notes"}) - {"Agenda"}
 
     def instructional_blocks(self) -> list[InstructionalBlock]:
         """The body sub-blocks (Opening/Work Time/Closing A/B/C) with their steps.

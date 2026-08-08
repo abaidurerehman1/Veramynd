@@ -64,6 +64,56 @@ def test_load_embeddable_standards_skips_progress(tmp_path: Path):
     assert "syllables" in rows[0].text
 
 
+def test_partial_embed_by_code_refuses_non_leaf_parent(tmp_path: Path):
+    """Regression: parenthood was computed from the loaded subset, so
+    --code <parent> loaded only that record, saw no children, and embedded a
+    non-leaf standard as a "leaf" into the retrieval collection."""
+    _std_file(tmp_path / "1.F.PA.4.json", code="1.F.PA.4")
+    # Child that marks 1.F.PA.4 as a parent.
+    _std_file(tmp_path / "1.F.PA.4.d.json", code="1.F.PA.4.d")
+    data = json.loads((tmp_path / "1.F.PA.4.d.json").read_text(encoding="utf-8"))
+    data["parent_code"] = "1.F.PA.4"
+    (tmp_path / "1.F.PA.4.d.json").write_text(json.dumps(data), encoding="utf-8")
+
+    # Full load: only the leaf survives.
+    rows = load_embeddable_standards(tmp_path)
+    assert [r.standard_code for r in rows] == ["1.F.PA.4.d"]
+
+    # Partial load of the parent alone must refuse, not embed it as a leaf.
+    with pytest.raises(FileNotFoundError, match="no embeddable standards"):
+        load_embeddable_standards(tmp_path, codes={"1.F.PA.4"})
+
+    # Partial load of the actual leaf still works.
+    rows = load_embeddable_standards(tmp_path, codes={"1.F.PA.4.d"})
+    assert [r.standard_code for r in rows] == ["1.F.PA.4.d"]
+
+
+def test_qdrant_api_key_refused_over_plaintext_http(monkeypatch):
+    from veramynd_parser.embed.runner import EmbedError, resolve_qdrant_settings
+
+    monkeypatch.delenv("QDRANT_URL", raising=False)
+    monkeypatch.delenv("QDRANT_API_KEY", raising=False)
+    monkeypatch.delenv("QDRANT_ALLOW_INSECURE", raising=False)
+
+    # Key over plaintext http to a non-local host: refused.
+    with pytest.raises(EmbedError, match="plaintext http"):
+        resolve_qdrant_settings(url="http://qdrant.example.com:6333", api_key="k")
+    # Schemeless URLs default to http in qdrant-client — equally refused.
+    with pytest.raises(EmbedError, match="plaintext http"):
+        resolve_qdrant_settings(url="qdrant.example.com:6333", api_key="k")
+    assert resolve_qdrant_settings(url="localhost:6333", api_key="k")["api_key"] == "k"
+    # localhost, https, and key-less http are all fine.
+    assert resolve_qdrant_settings(url="http://localhost:6333", api_key="k")["api_key"] == "k"
+    assert resolve_qdrant_settings(url="https://qdrant.example.com", api_key="k")["api_key"] == "k"
+    assert resolve_qdrant_settings(url="http://qdrant.example.com")["api_key"] is None
+    # Explicit override escape hatch.
+    monkeypatch.setenv("QDRANT_ALLOW_INSECURE", "1")
+    assert (
+        resolve_qdrant_settings(url="http://qdrant.example.com", api_key="k")["api_key"]
+        == "k"
+    )
+
+
 def test_point_id_for_standard_stable():
     a = point_id_for_standard("1.F.PA.4")
     b = point_id_for_standard("1.F.PA.4")
@@ -133,13 +183,18 @@ def test_embed_standards_to_qdrant_mocked(tmp_path: Path):
     assert results[0]["standard_code"] in {"1.F.PA.4", "1.L.V.1"}
 
 
-def test_rejects_empty_embed_text(tmp_path: Path):
+def test_rejects_empty_embed_text_in_thin_mode(tmp_path: Path):
     _std_file(tmp_path / "1.F.PA.4.json")
     data = json.loads((tmp_path / "1.F.PA.4.json").read_text(encoding="utf-8"))
     data["embed_text"] = "   "
     (tmp_path / "1.F.PA.4.json").write_text(json.dumps(data), encoding="utf-8")
-    with pytest.raises(ValueError, match="empty embed_text"):
-        load_embeddable_standards(tmp_path)
+    # Thin mode embeds embed_text directly — a blank one must fail loud.
+    with pytest.raises(ValueError, match="empty retrieval/embed text"):
+        load_embeddable_standards(tmp_path, use_rich_text=False)
+    # Rich mode (default) rebuilds text from competency/skills/behaviors,
+    # so a blank embed_text is tolerated by design.
+    rows = load_embeddable_standards(tmp_path)
+    assert rows and rows[0].text
 
 
 def test_cli_embed_standards_wires():

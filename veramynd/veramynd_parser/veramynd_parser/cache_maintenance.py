@@ -53,9 +53,17 @@ def scan_normalize_cache(
         return result
     for path in sorted(cache_dir.glob("*.json")):
         try:
-            norm = NormalizedLesson.model_validate_json(path.read_text(encoding="utf-8"))
-        except (OSError, ValueError, TypeError, ValidationError):
+            raw = path.read_text(encoding="utf-8")
+        except OSError:
             result.unreadable.append(path)
+            continue
+        try:
+            norm = NormalizedLesson.model_validate_json(raw)
+        except (ValueError, TypeError, ValidationError):
+            # Parsed-but-invalid (old schema, corrupt JSON): cache.get treats
+            # these as misses, so they are unreachable dead weight — stale,
+            # not "unreadable, keep forever".
+            result.stale.append(path)
             continue
         (result.kept if norm.prompt_version == current_prompt_version else result.stale).append(path)
     return result
@@ -71,9 +79,16 @@ def scan_normalize_standards_cache(
         return result
     for path in sorted(cache_dir.glob("*.json")):
         try:
-            norm = NormalizedStandard.model_validate_json(path.read_text(encoding="utf-8"))
-        except (OSError, ValueError, TypeError, ValidationError):
+            raw = path.read_text(encoding="utf-8")
+        except OSError:
             result.unreadable.append(path)
+            continue
+        try:
+            norm = NormalizedStandard.model_validate_json(raw)
+        except (ValueError, TypeError, ValidationError):
+            # See scan_normalize_cache: schema-invalid entries are cache
+            # misses by definition — reclaimable, not keep-forever.
+            result.stale.append(path)
             continue
         (
             result.kept if norm.prompt_version == current_prompt_version else result.stale
@@ -94,13 +109,18 @@ def scan_docling_cache(
         if not m:
             result.unreadable.append(path)
             continue
-        file_version = m.group("version_full") or m.group("version_legacy")
+        if m.group("version_legacy") is not None:
+            # Legacy-named entries are unreachable regardless of version: the
+            # current reader (pdf/docling_parser.py) only ever builds the full
+            # `-docling-{version}-v{tag}-` filenames, so a version match here
+            # kept dead weight that prune could never reclaim.
+            result.stale.append(path)
+            continue
+        file_version = m.group("version_full")
         if current_docling_version is None:
             result.kept.append(path)
             continue
-        # Compare exact version string, or legacy compressed form.
-        legacy_current = current_docling_version.replace(".", "")
-        if file_version in (current_docling_version, legacy_current):
+        if file_version == current_docling_version:
             result.kept.append(path)
         else:
             result.stale.append(path)

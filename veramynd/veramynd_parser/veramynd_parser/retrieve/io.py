@@ -124,7 +124,7 @@ def lesson_query_from_normalize(path: Path | str) -> tuple[str, str]:
             if key == "domain_specific":
                 continue
             v = (val or "").strip() if isinstance(val, str) else ""
-            if v and v != "NONE OBSERVED":
+            if v and v.upper() != "NONE OBSERVED":
                 action_lines.append(f"{key}: {v}")
     lines = [
         f"Domain primary: {primary or 'unknown'}",
