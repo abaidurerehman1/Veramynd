@@ -15,7 +15,7 @@ import json
 import logging
 import os
 from pathlib import Path
-from typing import Any, Callable
+from typing import TYPE_CHECKING, Any, Callable
 
 from ..normalize.cache import ContentAddressedCache, canonical_json
 from ..normalize.llm import (
@@ -40,6 +40,9 @@ from .models import (
     JudgeBatchItem,
     JudgeLlmDraft,
 )
+
+if TYPE_CHECKING:
+    from ..config import JudgeConfig
 
 PROMPT_VERSION = "align_judge.v1.1"
 BATCH_PROMPT_VERSION = "align_judge.batch.v1"
@@ -69,20 +72,24 @@ class JudgeIncompleteError(JudgeError):
         self.report = report
 
 
-def resolve_judge_model(explicit: str | None = None) -> str:
+def resolve_judge_model(explicit: str | None = None, cfg: "JudgeConfig | None" = None) -> str:
     load_dotenv()
     if explicit and explicit.strip():
         return explicit.strip()
+    if cfg and cfg.judge_model and cfg.judge_model.strip():
+        return cfg.judge_model.strip()
     env = (os.environ.get("JUDGE_MODEL") or "").strip()
     if env:
         return env
     return DEFAULT_JUDGE_MODEL
 
 
-def resolve_escalate_model(explicit: str | None = None) -> str:
+def resolve_escalate_model(explicit: str | None = None, cfg: "JudgeConfig | None" = None) -> str:
     load_dotenv()
     if explicit and explicit.strip():
         return explicit.strip()
+    if cfg and cfg.escalate_model and cfg.escalate_model.strip():
+        return cfg.escalate_model.strip()
     env = (os.environ.get("JUDGE_ESCALATE_MODEL") or "").strip()
     if env:
         return env

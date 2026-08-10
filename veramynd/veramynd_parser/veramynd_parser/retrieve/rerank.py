@@ -3,9 +3,12 @@
 from __future__ import annotations
 
 import os
-from typing import Any, Callable
+from typing import TYPE_CHECKING, Any, Callable
 
 from .models import Candidate
+
+if TYPE_CHECKING:
+    from ..config import RetrieveConfig
 
 DEFAULT_RERANK_MODEL = "BAAI/bge-reranker-base"
 DEFAULT_RERANK_TOP_N = 10
@@ -20,9 +23,11 @@ class RerankError(RuntimeError):
     pass
 
 
-def resolve_rerank_model(explicit: str | None = None) -> str:
+def resolve_rerank_model(explicit: str | None = None, cfg: "RetrieveConfig | None" = None) -> str:
     if explicit and explicit.strip():
         return explicit.strip()
+    if cfg and cfg.rerank_model and cfg.rerank_model.strip():
+        return cfg.rerank_model.strip()
     return (os.environ.get("RERANK_MODEL") or DEFAULT_RERANK_MODEL).strip()
 
 

@@ -13,7 +13,7 @@ import os
 import time
 import uuid
 from pathlib import Path
-from typing import Any, Callable
+from typing import TYPE_CHECKING, Any, Callable
 from urllib.parse import urlparse
 
 from ..normalize.llm import (
@@ -26,6 +26,9 @@ from ..paths import resolve_package_relative
 from ..text_utils import atomic_write_text
 from .chunk_io import EmbeddableChunk, load_embeddable_chunks
 from .standard_io import EmbeddableStandard, load_embeddable_standards
+
+if TYPE_CHECKING:
+    from ..config import EmbedConfig
 
 DEFAULT_EMBEDDING_MODEL = "text-embedding-3-large"
 DEFAULT_DIMENSIONS = 3072  # full text-embedding-3-large quality
@@ -101,10 +104,12 @@ def _assert_qdrant_vectors_nonzero(
             )
 
 
-def resolve_embedding_model(explicit: str | None = None) -> str:
+def resolve_embedding_model(explicit: str | None = None, cfg: "EmbedConfig | None" = None) -> str:
     load_dotenv()
     if explicit and explicit.strip():
         return explicit.strip()
+    if cfg and cfg.embedding_model and cfg.embedding_model.strip():
+        return cfg.embedding_model.strip()
     env = (os.environ.get("OPENAI_EMBEDDING_MODEL") or "").strip()
     return env or DEFAULT_EMBEDDING_MODEL
 
@@ -115,10 +120,15 @@ def resolve_qdrant_settings(
     api_key: str | None = None,
     path: str | None = None,
     collection: str | None = None,
+    cfg: "EmbedConfig | None" = None,
 ) -> dict[str, Any]:
     load_dotenv()
-    resolved_url = (url or os.environ.get("QDRANT_URL") or "").strip() or None
-    resolved_key = (api_key or os.environ.get("QDRANT_API_KEY") or "").strip() or None
+    resolved_url = (
+        url or (cfg.qdrant_url if cfg else None) or os.environ.get("QDRANT_URL") or ""
+    ).strip() or None
+    resolved_key = (
+        api_key or (cfg.qdrant_api_key if cfg else None) or os.environ.get("QDRANT_API_KEY") or ""
+    ).strip() or None
     if resolved_key and resolved_url:
         # Schemeless URLs ("host:6333") default to http in qdrant-client, and
         # urlparse would misread "host:6333" as scheme="host" — normalize so
@@ -127,7 +137,10 @@ def resolve_qdrant_settings(
         parsed = urlparse(probe)
         host = (parsed.hostname or "").lower()
         if parsed.scheme != "https" and host not in {"localhost", "127.0.0.1", "::1"}:
-            if (os.environ.get("QDRANT_ALLOW_INSECURE") or "").strip() != "1":
+            allow_insecure = (cfg.qdrant_allow_insecure if cfg else False) or (
+                os.environ.get("QDRANT_ALLOW_INSECURE") or ""
+            ).strip() == "1"
+            if not allow_insecure:
                 raise EmbedError(
                     f"refusing to send the Qdrant API key over plaintext http "
                     f"to {host!r} ({resolved_url}). Use https://, or set "
@@ -139,14 +152,20 @@ def resolve_qdrant_settings(
                 flush=True,
             )
     env_path = (os.environ.get("QDRANT_PATH") or "").strip()
-    raw_path = (path or env_path or DEFAULT_QDRANT_PATH).strip()
+    cfg_path = (cfg.qdrant_path if cfg else None) or ""
+    raw_path = (path or cfg_path or env_path or DEFAULT_QDRANT_PATH).strip()
     resolved_path = str(resolve_package_relative(raw_path))
     resolved_collection = (
-        (collection or os.environ.get("QDRANT_COLLECTION") or DEFAULT_COLLECTION).strip()
+        (
+            collection
+            or (cfg.qdrant_collection if cfg else None)
+            or os.environ.get("QDRANT_COLLECTION")
+            or DEFAULT_COLLECTION
+        ).strip()
         or DEFAULT_COLLECTION
     )
     # Fail loud on dual-backend ambiguity: URL always wins when set.
-    if resolved_url and (path or env_path):
+    if resolved_url and (path or cfg_path or env_path):
         print(
             "WARNING: QDRANT_URL is set — using Docker/HTTP Qdrant and ignoring "
             f"QDRANT_PATH ({resolved_path}). Unset QDRANT_URL to use local path "
@@ -167,18 +186,21 @@ def resolve_standards_qdrant_settings(
     api_key: str | None = None,
     path: str | None = None,
     collection: str | None = None,
+    cfg: "EmbedConfig | None" = None,
 ) -> dict[str, Any]:
     """Like ``resolve_qdrant_settings`` but defaults to standards collection.
 
-    Intentionally ignores ``QDRANT_COLLECTION`` (lesson chunks) so standards
-    never land in ``veramynd_chunks`` by accident. Override via explicit
-    ``collection`` or ``QDRANT_STANDARDS_COLLECTION``.
+    Intentionally ignores ``QDRANT_COLLECTION``/``cfg.qdrant_collection``
+    (lesson chunks) so standards never land in ``veramynd_chunks`` by
+    accident. Override via explicit ``collection``, ``cfg.qdrant_standards_collection``,
+    or ``QDRANT_STANDARDS_COLLECTION``.
     """
     load_dotenv()
-    base = resolve_qdrant_settings(url=url, api_key=api_key, path=path, collection=None)
+    base = resolve_qdrant_settings(url=url, api_key=api_key, path=path, collection=None, cfg=cfg)
     resolved_collection = (
         (
             collection
+            or (cfg.qdrant_standards_collection if cfg else None)
             or os.environ.get("QDRANT_STANDARDS_COLLECTION")
             or DEFAULT_STANDARDS_COLLECTION
         ).strip()

@@ -59,6 +59,44 @@ class NormalizeConfig(BaseModel):
     openai_api_key: str | None = None
 
 
+class EmbedConfig(BaseModel):
+    """Stage-4 embedding + Qdrant settings.
+
+    Every field mirrors one env var read by ``embed/runner.py`` (documented
+    here as the single typed source of truth instead of a bare string literal
+    at each ``os.environ.get(...)`` call site). A field left ``None`` falls
+    through to that env var, then to the module's own default constant --
+    passing a resolver an explicit keyword argument still wins over both.
+    """
+
+    model_config = ConfigDict(extra="forbid")
+
+    embedding_model: str | None = None  # OPENAI_EMBEDDING_MODEL
+    qdrant_url: str | None = None  # QDRANT_URL
+    qdrant_api_key: str | None = None  # QDRANT_API_KEY
+    qdrant_path: str | None = None  # QDRANT_PATH
+    qdrant_collection: str | None = None  # QDRANT_COLLECTION
+    qdrant_standards_collection: str | None = None  # QDRANT_STANDARDS_COLLECTION
+    qdrant_allow_insecure: bool = False  # QDRANT_ALLOW_INSECURE=1
+
+
+class RetrieveConfig(BaseModel):
+    """Stage-5 hybrid retrieve + rerank settings."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    rerank_model: str | None = None  # RERANK_MODEL
+
+
+class JudgeConfig(BaseModel):
+    """Stage-6 alignment-judge settings."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    judge_model: str | None = None  # JUDGE_MODEL
+    escalate_model: str | None = None  # JUDGE_ESCALATE_MODEL
+
+
 class Config(BaseModel):
     """Top-level parser configuration."""
 
