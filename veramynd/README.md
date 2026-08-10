@@ -16,20 +16,32 @@ identically, at scale, with a paper trail.
 ## Project status (honest)
 
 This repo is a **working end-to-end pipeline** for the reference EL Education G1M2
-guide + Georgia Grade 1 ELA standards. The enterprise bar (~**90% Recall@10** on
-the judge shortlist + ~90% judge agreement vs gold) is **not met yet**.
+teacher guide + Georgia Grade 1 ELA standards. Retrieve for Batch-1 gold now meets
+the **product shortlist bar** (judge/operator cut = top-20):
 
-**Batch-1 retrieve snapshot** (4 gold lessons, 20 positives; eval-only gold):
+**Batch-1 retrieve (live, enterprise defaults)** — 4 gold lessons
+(`G1M2U1L1`, `U1L3`, `U1L6`, `U3L5`), **20** FULL+PARTIAL positives
+(`docs/_ga_g1_module2_goldset.md`; gold is **eval-only**, never used in ranking):
 
-| Config | Recall@10 | Recall@50 |
+| Metric | Result | Role |
 |---|---|---|
-| `top_k_sum` (n=2) + `--shortlist-rescue-slots 8` | **~45%** | **100%** |
+| **Recall@20** | **90% (18/20)** | Product cut → judge shortlist |
+| **Recall@50** | **100% (20/20)** | SME / diagnostic shortlist |
+| Recall@30 | 100% (20/20) | — |
+| Recall@10 | 35% (7/20) | Head precision still open |
 
-Coverage into the top-50 shortlist is solved for this gold slice. The remaining
-retrieve bottleneck is **top-10 ranking**: many true standards are found and
-CE-scored, but fused final rank still tracks merge rank too closely. Judge /
-`partial` agreement vs SME gold remains a separate gap. The agentic/graph track
-is design-only.
+Remaining misses @20 (both still in top 30): `1.P.CP.2.d` (U1L3) and
+`1.P.EICC.3.f` (U1L6). Multi-grade / multi-publisher scale-up and ~90% judge
+agreement vs SME labels are **not** claimed yet. The agentic/graph track is
+design-only.
+
+**Retrieve design (current defaults):** multi-query competency bridges from
+lesson text → per-query dense+BM25 RRF → multi-arm merge (`top_k_sum`,
+`top_arms=3`, `max_blend=1.0`) → local CE → shortlist fusion with RRF head lock
+(1–12) + mild mid-list CE dual-agreement polish (`mid_ce_boost=3`,
+`mid_ce_max=26`). Rescue slots / arm–skill–domain priors off by default.
+Artifacts: `output/retrieve_gold4/`, Liz package
+`output/reports/liz_top50_review/`, eval `output/reports/_eval_r20.py`.
 
 | Stage | Status | Location |
 |---|---|---|
@@ -38,10 +50,10 @@ is design-only.
 | **Standards normalize** — retrieval-ready standard leaves (`embed_text`) | **Implemented** | [`normalize/standard.py`](veramynd_parser/veramynd_parser/normalize/standard.py) |
 | **Chunk** — hierarchical lesson / instructional / evidence-pointer bundles | **Implemented** | [`chunk/`](veramynd_parser/veramynd_parser/chunk/) |
 | **Embed → Qdrant** — leaf-only standards + rich retrieval text; chunk vectors | **Implemented** | [`embed/`](veramynd_parser/veramynd_parser/embed/) |
-| **Hybrid retrieve + rerank** — multi-query funnel, merge aggregation, CE, shortlist fusion + optional sum-rescue | **Implemented** | [`retrieve/`](veramynd_parser/veramynd_parser/retrieve/) |
+| **Hybrid retrieve + rerank** — multi-query competency funnel, max-blend merge, CE, mid-CE shortlist fusion | **Implemented (Batch-1 R@20/R@50 bar met)** | [`retrieve/`](veramynd_parser/veramynd_parser/retrieve/) |
 | **Alignment judge + grounding** — LLM rubric; ungrounded claims rejected | **Implemented** | [`judge/`](veramynd_parser/veramynd_parser/judge/) |
 | **Report** — CSV + HTML audit dashboard | **Implemented** | [`report/`](veramynd_parser/veramynd_parser/report/) |
-| **Gold-set metrics** — leaf recall @k + judge agreement vs SME labels (JSONL) | **Partial** | [`retrieve/gold_metrics.py`](veramynd_parser/veramynd_parser/retrieve/gold_metrics.py); reports under `output/reports/` |
+| **Gold-set metrics** — leaf recall @k + SME review package | **Partial** | gold: [`docs/_ga_g1_module2_goldset.md`](docs/_ga_g1_module2_goldset.md); [`retrieve/gold_metrics.py`](veramynd_parser/veramynd_parser/retrieve/gold_metrics.py); Liz CSVs under `output/reports/liz_top50_review/` |
 | **Agentic + standards-graph track** — alternate Stages 2–7 (no vector DB) | **Design only** | [`docs/architecture-agentic-graph.md`](docs/architecture-agentic-graph.md) |
 
 ## How it works
@@ -60,11 +72,11 @@ cross-engine standards). Soft checks flag review without blocking `GO`.
 chunks land in Qdrant (`text-embedding-3-large`).
 
 **4. Retrieve → judge → report.** Leaf-only standards index. Enterprise multi-query
-retrieve: per-query dense+BM25 → RRF → multi-arm merge (default `sum`; gold runs
-often use `top_k_sum`) → local CE → fused shortlist (`judge_shortlist_k=50`), with
-optional `--shortlist-rescue-slots` to reserve the fused tail for classic-sum
-breadth. The judge scores `full` / `partial` / `none` with grounded evidence;
-CSV/HTML reports export the audit trail.
+retrieve: lesson-driven query arms (targets, skills, **competency bridges**) →
+per-query dense+BM25 → RRF → multi-arm merge (`top_k_sum` + depth `max_blend`) →
+local CE → fused shortlist (`judge_shortlist_k=50`, product cut **top-20**).
+The judge scores `full` / `partial` / `none` with grounded evidence; CSV/HTML
+reports export the audit trail.
 
 ## Design principles
 
@@ -105,16 +117,20 @@ veramynd-parser embed-standards output/normalize_standards --out output/embeddin
 
 # Single-query hybrid (CLI) or enterprise multi-query batch:
 veramynd-parser retrieve-standards --chunk-file output/chunks/by_lesson/G1M2U1L3.json --out output/retrieve/G1M2U1L3.json
-# Recommended Batch-1 retrieve profile (keeps @10; recovers @50 via sum rescue).
-# NOTE: the gold set (gold_set_batch1.jsonl) is NOT committed — obtain it
-# separately before running gold-scoped commands:
-python -m veramynd_parser.scripts.batch_align_all \
-  --multi-query --from-gold output/reports/gold_set_batch1.jsonl \
-  --merge-aggregation top_k_sum --merge-top-arms 2 \
-  --shortlist-rescue-slots 8 \
-  --skip-judge --skip-report --force-retrieve
 
-veramynd-parser judge-standards --retrieve-file output/retrieve/G1M2U1L3.json \
+# Batch-1 gold lessons (enterprise defaults: R@20≈90%, R@50=100% on live re-run)
+# Gold list: docs/_ga_g1_module2_goldset.md (FULL+PARTIAL = positives)
+python -m veramynd_parser.scripts.batch_align_all \
+  --retrieve-dir output/retrieve_gold4 \
+  --diag-dir output/reports/retrieve_diag_gold4 \
+  --only G1M2U1L1 --only G1M2U1L3 --only G1M2U1L6 --only G1M2U3L5 \
+  --skip-judge --skip-report --force-retrieve
+python output/reports/_eval_r20.py
+
+# Optional SME package (rank, code, official standard raw_text only)
+python output/reports/_export_liz_top50.py
+
+veramynd-parser judge-standards --retrieve-file output/retrieve_gold4/G1M2U1L3.json \
   --lesson-file output/stage1/lessons/G1M2U1L3.json \
   --standards-dir output/normalize_standards --out output/judge/G1M2U1L3.json
 veramynd-parser report-alignments --judge-file output/judge/G1M2U1L3.json --out output/reports/alignments.csv

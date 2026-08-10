@@ -173,16 +173,19 @@ veramynd_parser/
 
 ## What's still incomplete
 
-- **Enterprise quality bar** — Batch-1 retrieve with `top_k_sum` +
-  `--shortlist-rescue-slots 8` reaches **Recall@50 = 100%** and **Recall@10 ≈ 45%**
-  (9/20). Pool coverage is no longer the bottleneck; **top-10 fused ranking** is
-  (merge rank still dominates final rank; CE wins are often buried). Target remains
-  ~90% Recall@10 on a larger multi-grade / multi-publisher gold set. Judge agreement
-  vs SME gold is a separate gap, especially for `partial`.
-- **Gold-set quality** — the gold set (`output/reports/gold_set_batch1.jsonl`)
-  is SME-labeled and **not committed to this repo**; the gold-scoped commands
-  below require obtaining or rebuilding it first. A packaged quality gate is
-  planned but not yet shipped.
+- **Batch-1 retrieve product bar (met)** — live enterprise defaults on 4 gold
+  lessons / 20 FULL+PARTIAL positives:
+  **Recall@20 = 90% (18/20)**, **Recall@50 = 100% (20/20)**, R@10 = 35%.
+  Product cut for the judge is **top-20**; top-50 is shortlist coverage for SME
+  review (`output/reports/liz_top50_review/`). Gold label:
+  [`docs/_ga_g1_module2_goldset.md`](../docs/_ga_g1_module2_goldset.md)
+  (eval-only — never enters ranking). Residual @20:
+  `1.P.CP.2.d` (U1L3), `1.P.EICC.3.f` (U1L6).
+- **Scale / head precision** — multi-grade, multi-publisher validation and
+  stronger **R@10** are still open. Do not treat Batch-1 R@20 as “solved for all
+  curricula.”
+- **Judge agreement vs SME gold** — separate gap (especially `partial`); run
+  judge after shortlist quality is locked.
 - **Agentic graph track** — design doc only (`docs/architecture-agentic-graph.md`).
 - Validated primarily on the two sample documents under `../data/samples/`.
 
@@ -315,49 +318,47 @@ veramynd-parser retrieve-standards \
 Dense (Qdrant) + BM25 → RRF, then `BAAI/bge-reranker-base`.
 Pass `--no-rerank` to inspect the hybrid list only.
 
-**Enterprise multi-query** (preferred for gold / production runs) uses focused
-queries from normalized learning targets, objectives, purpose, skills, actions,
-tasks, vocabulary, and evidence. Funnel:
+**Enterprise multi-query** (preferred for gold / production runs) builds focused
+query arms from normalized learning targets, objectives, purpose, skills, actions,
+tasks, vocabulary, evidence, and **curriculum-agnostic competency bridges**
+(e.g. predict, infer, dialogue Q&A, context clues, create poem — signal-matched
+from lesson text, not hard-coded lesson IDs). Funnel:
 
 1. Per query: dense (Qdrant) + BM25 → RRF  
-2. Multi-query merge (`--merge-aggregation`: `sum` default | `max` | `top_k_sum` |
-   `log_dampened`) into `merge_top_k`  
+2. Multi-query merge (`top_k_sum` + optional **max_blend** depth term; also
+   `sum` / `max` / `log_dampened`) into `merge_top_k`  
 3. Local CE (`BAAI/bge-reranker-base`), often grade-exhaustive below
    `--exhaustive-ceiling`  
-4. Shortlist fusion (CE + merge RRF, parent-cap diversity) →
-   `--judge-shortlist-k` (default 50)  
-5. Optional `--shortlist-rescue-slots N` (default **0**): keep fused core of
-   size `50−N`, fill the tail with best classic-`sum` candidates not already in
-   core (`rescued_via: "sum"`). Does not reorder the core; N=0 is unchanged.
+4. Shortlist fusion (CE + merge RRF, parent-cap diversity, **RRF head lock**,
+   mild **mid-CE dual-agreement** boost) → `--judge-shortlist-k` (default 50;
+   product cut **Recall@20**)  
+5. Optional `--shortlist-rescue-slots N` (default **0**): classic-sum tail
+   injection when needed; Batch-1 enterprise path keeps rescue off.
 
 Batch retrieval uses this multi-query path by default (`--single-query` is the
-legacy opt-out). Diagnostics under `output/reports/retrieve_diag/` record dense,
-BM25, merge-RRF, reranker, and final rank for every candidate.
+legacy opt-out). Diagnostics under `output/reports/retrieve_diag_gold4/` (or
+`--diag-dir`) record dense, BM25, merge-RRF, reranker, and final rank.
 
 ```bash
-# Recommended Batch-1 retrieve profile (offline-validated):
-#   Recall@10 ≈ 45% (held), Recall@50 = 100% (sum rescue recovers ~3 golds)
-# NOTE: gold_set_batch1.jsonl is an SME-labeled artifact NOT committed to this
-# repo — obtain it separately (or build your own gold JSONL with rows of
-# {resource_id, standard_code, matched_status}) before running gold-scoped
-# commands.
+# Batch-1 gold retrieve (enterprise library defaults; live: R@20=90%, R@50=100%)
+# Requires local Qdrant standards collection + chunk/normalize artifacts.
 python -m veramynd_parser.scripts.batch_align_all \
-  --multi-query \
-  --from-gold output/reports/gold_set_batch1.jsonl \
-  --merge-aggregation top_k_sum \
-  --merge-top-arms 2 \
-  --shortlist-rescue-slots 8 \
+  --retrieve-dir output/retrieve_gold4 \
+  --diag-dir output/reports/retrieve_diag_gold4 \
+  --only G1M2U1L1 --only G1M2U1L3 --only G1M2U1L6 --only G1M2U3L5 \
   --judge-shortlist-k 50 \
   --skip-judge --skip-report \
   --force-retrieve
 
-# Offline sweeps (no re-embed / no CE re-run — uses cached diag / retrieve JSON)
+# Recall@10/20/30/50 vs committed gold prose
+python output/reports/_eval_r20.py
+# SME package: rank, standard_code, official raw_text only
+python output/reports/_export_liz_top50.py
+
+# Optional offline merge / rescue sweeps (older tooling still available)
 python -m veramynd_parser.scripts.eval_merge_aggregation \
-  --gold output/reports/gold_set_batch1.jsonl \
-  --diag-dir output/reports/retrieve_diag
-python -m veramynd_parser.scripts.eval_shortlist_rescue \
-  --gold output/reports/gold_set_batch1.jsonl \
-  --retrieve-dir output/retrieve
+  --gold output/reports/gold_set_batch1_from_md.jsonl \
+  --diag-dir output/reports/retrieve_diag_gold4
 ```
 
 Key flags: `--multi-query`, `--from-gold`, `--arm-limit`, `--merge-top-k`,
@@ -366,8 +367,8 @@ Key flags: `--multi-query`, `--from-gold`, `--arm-limit`, `--merge-top-k`,
 `--blend-rrf`, `--preserve-rrf-top`, `--judge-shortlist-k`,
 `--shortlist-rrf-weight`, `--shortlist-rescue-slots`, `--diag-dir`.
 
-The reranker is an unchanged pretrained CrossEncoder. No gold labels enter
-ranking or shortlist rescue — gold is eval-only.
+The reranker is an unchanged pretrained CrossEncoder. **No gold labels enter
+query generation, merge, CE, or shortlist fusion** — gold is eval-only.
 
 ### Alignment judge + grounding (enterprise K–12)
 
@@ -411,11 +412,12 @@ Or export a whole folder: `--judge-dir output/judge`.
 Use `--aligned-only` for full+partial rows only (still never drops rows for missing confidence).
 Also writes an HTML audit dashboard next to the CSV (disable with `--no-html`).
 
-**Gold metrics:** with `--multi-query --from-gold`, batch writes leaf-recall
-summaries (`output/reports/retrieve_gold_metrics.json`). The offline sweeps
-(`eval_merge_aggregation`, `eval_shortlist_rescue` — see the retrieve section)
-replay cached artifacts against the gold set; a packaged pass/fail quality
-gate is planned but not yet shipped.
+**Gold metrics:** Batch-1 positives live in
+[`docs/_ga_g1_module2_goldset.md`](../docs/_ga_g1_module2_goldset.md). Use
+`output/reports/_eval_r20.py` against `output/retrieve_gold4/` for R@10/20/30/50.
+With `--from-gold` JSONL, batch also writes leaf-recall summaries
+(`output/reports/retrieve_gold_metrics.json`). Offline sweeps
+(`eval_merge_aggregation`, `eval_shortlist_rescue`) still replay cached diags.
 
 Library:
 
