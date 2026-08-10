@@ -72,6 +72,8 @@ def test_judge_shortlist_defers_consecutive_siblings_without_dropping_budget():
         rrf_weight=0.0,
         preserve_rrf_top=0,
         parent_cap=3,
+        mid_ce_boost=0.0,
+        rrf_head_lock=0,
     )
     assert len(out) == 6
     families = [c.parent_code for c in out]

@@ -104,10 +104,163 @@ def test_query_arm_weight_prefers_objective_and_vocab():
     assert query_arm_weight("objective") > query_arm_weight("evidence_1")
     assert query_arm_weight("vocabulary") > query_arm_weight("teacher_action")
     assert query_arm_weight("skill_1") > query_arm_weight("domain_bridge")
+    assert query_arm_weight("competency_present_ideas") >= query_arm_weight("skill_1")
     assert query_counts_for_coverage("skill_1")
     assert query_counts_for_coverage("objective")
+    assert query_counts_for_coverage("competency_word_parts")
     assert not query_counts_for_coverage("domain_bridge")
     assert not query_counts_for_coverage("teacher_action")
+
+
+def test_competency_bridges_fire_for_oral_poem_and_word_parts(tmp_path: Path):
+    """Standards-language arms inject when lesson signals imply understated acts."""
+    oral = tmp_path / "oral.json"
+    oral.write_text(
+        json.dumps(
+            {
+                "resource_id": "L_ORAL",
+                "objective": "Students share observations orally with sentence frames.",
+                "student_actions": {
+                    "oral_production": "share ideas with partners using sentence frames"
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+    qs = focused_queries_from_normalize(oral)
+    sources = [q["source"] for q in qs]
+    assert "competency_present_ideas" in sources
+    assert any("communicate clearly to present ideas" in q["text"].lower() for q in qs)
+
+    poem = tmp_path / "poem.json"
+    poem.write_text(
+        json.dumps(
+            {
+                "resource_id": "L_POEM",
+                "objective": "Write verse 3 of a narrative poem independently.",
+                "what_is_taught": [{"skill": "write a narrative poem using a model"}],
+            }
+        ),
+        encoding="utf-8",
+    )
+    qs = focused_queries_from_normalize(poem)
+    assert "competency_create_poem" in [q["source"] for q in qs]
+
+    words = tmp_path / "words.json"
+    words.write_text(
+        json.dumps(
+            {
+                "resource_id": "L_WORDS",
+                "objective": "Students use context clues and word parts.",
+                "vocabulary": {"new": ["overhead"], "review": []},
+                "student_actions": {
+                    "reasoning_explanation": "explain vocabulary using word parts"
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+    qs = focused_queries_from_normalize(words)
+    assert "competency_word_parts" in [q["source"] for q in qs]
+
+    predict = tmp_path / "predict.json"
+    predict.write_text(
+        json.dumps(
+            {
+                "resource_id": "L_PRED",
+                "objective": "Students make predictions about what happens next.",
+                "learning_targets": [
+                    {"text": "make and track predictions during read-aloud"}
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    qs = focused_queries_from_normalize(predict)
+    assert "competency_make_predictions" in [q["source"] for q in qs]
+
+    # Classroom language often says "what do you think" instead of "predict".
+    predict_oral = tmp_path / "predict_oral.json"
+    predict_oral.write_text(
+        json.dumps(
+            {
+                "resource_id": "L_PRED_ORAL",
+                "objective": "Close read-aloud about the sun.",
+                "evidence": [
+                    {
+                        "quote": "Based on the title of the story, what do you think this story will be about?",
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    qs = focused_queries_from_normalize(predict_oral)
+    assert "competency_make_predictions" in [q["source"] for q in qs]
+
+    infer = tmp_path / "infer.json"
+    infer.write_text(
+        json.dumps(
+            {
+                "resource_id": "L_INFER",
+                "objective": "Students discuss poems.",
+                "evidence": [
+                    {
+                        "quote": "What does this verse mean? Now what do you think the verse means?",
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    qs = focused_queries_from_normalize(infer)
+    assert "competency_make_inferences" in [q["source"] for q in qs]
+
+    dialogue = tmp_path / "dialogue.json"
+    dialogue.write_text(
+        json.dumps(
+            {
+                "resource_id": "L_QA",
+                "objective": "Students ask and answer questions about the text.",
+                "learning_targets": [
+                    {"text": "I can ask and answer questions using key details."}
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    qs = focused_queries_from_normalize(dialogue)
+    assert "competency_dialogue_qa" in [q["source"] for q in qs]
+
+    clues = tmp_path / "clues.json"
+    clues.write_text(
+        json.dumps(
+            {
+                "resource_id": "L_CLUES",
+                "objective": "Mini language dive on a poem chunk.",
+                "evidence": [
+                    {"quote": "What does the word by mean in this chunk? (next to)"}
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    qs = focused_queries_from_normalize(clues)
+    assert "competency_context_clues" in [q["source"] for q in qs]
+
+    story = tmp_path / "story.json"
+    story.write_text(
+        json.dumps(
+            {
+                "resource_id": "L_STORY",
+                "objective": "Describe main characters and retell major events.",
+                "what_is_taught": [{"skill": "describe character traits using key details"}],
+            }
+        ),
+        encoding="utf-8",
+    )
+    qs = focused_queries_from_normalize(story)
+    assert "competency_story_elements" in [q["source"] for q in qs]
 
 
 def test_focused_queries_short_objective_fails_loud_not_empty(tmp_path: Path):

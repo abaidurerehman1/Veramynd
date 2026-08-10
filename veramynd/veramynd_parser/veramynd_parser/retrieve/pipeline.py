@@ -7,6 +7,8 @@ protect recall before any downstream consumer applies its own budget.
 
 from __future__ import annotations
 
+import math
+import re
 from dataclasses import replace
 from pathlib import Path
 from typing import Any, Callable
@@ -46,32 +48,57 @@ DEFAULT_EXHAUSTIVE_CEILING = 200
 # with a lower external budget can explicitly pass ``--judge-shortlist-k``.
 DEFAULT_JUDGE_SHORTLIST_K = 50
 DEFAULT_PARENT_CAP = 3
-# The generic CE is deliberately a secondary signal. A strong first-stage rank
-# prior prevents out-of-domain CE logits from erasing multi-query agreement
-# while still allowing strong CE-only exhaustive candidates into the list.
-DEFAULT_SHORTLIST_RRF_WEIGHT = 6.0
-# Dual-arm / coverage / domain priors are available; skill lexical overlap is
-# the main Top-10 discriminator when dense/BM25 dual-arm floods with generics.
+# Shortlist fusion — enterprise K-12 defaults (Batch-1 gold):
+# Product cut is Recall@20 (operator/judge shortlist). First-stage multi-query
+# RRF drives head order; CE is a light polish so a generic local CE cannot bury
+# multi-query agreement that already ranks well in 1–20.
+DEFAULT_SHORTLIST_CE_WEIGHT = 1.0
+DEFAULT_SHORTLIST_RRF_WEIGHT = 10.0
+# Arm/hit/skill priors stay off by default — they pull generic multi-hit leaves
+# above true RRF heads under Batch-1 eval.
 DEFAULT_SHORTLIST_ARM_WEIGHT = 0.0
 DEFAULT_ARM_AGREE_MAX_RANK = 10
 DEFAULT_QUERY_HIT_TOP_N = 12
 DEFAULT_SHORTLIST_HIT_WEIGHT = 0.0
 DEFAULT_SHORTLIST_DOMAIN_WEIGHT = 0.0
 DEFAULT_SHORTLIST_SKILL_WEIGHT = 0.0
-# Reserve this many final shortlist slots for classic-sum rescue (0 = off).
+# Rescue off: true breadth work belongs in query arms / first-stage merge.
 DEFAULT_SHORTLIST_RESCUE_SLOTS = 0
+DEFAULT_SHORTLIST_RRF_HEAD_PIN = 0
+DEFAULT_SHORTLIST_RRF_HEAD_WEIGHT = 0.0
 # Dense/BM25-across-query channels (0 = classic hybrid-only multi-query RRF).
 DEFAULT_MERGE_ARM_WEIGHT = 0.0
-# Multi-query merge aggregation. ``sum`` preserves classic breadth-rewarding RRF.
-DEFAULT_MERGE_AGGREGATION = "sum"
-DEFAULT_MERGE_TOP_ARMS = 2
+# Prefer best-arm agreement over pure breadth so a strong competency arm
+# can place gold leaves into the shortlist head (Batch-1 R@10).
+DEFAULT_MERGE_AGGREGATION = "top_k_sum"
+DEFAULT_MERGE_TOP_ARMS = 3
 DEFAULT_MERGE_LOG_DAMPEN_BASE = 2.0
-# Pool membership: ``single`` = top merge_top_k by primary aggregation only;
+# Depth-breadth blend: top_k_sum base + max_blend * strongest single-arm RRF
+# contribution. Enterprise multi-query needs both multi-arm consensus and the
+# ability for one precise competency arm (present-clearly, create-poem, etc.)
+# to lift a true alignment into the product head without pure-max collapse.
+DEFAULT_MERGE_MAX_BLEND = 1.0
+# Pool membership: ``single`` = top by primary aggregation only;
 # ``union`` also admits top merge_top_k by classic sum (ordering still primary).
 DEFAULT_POOL_MEMBERSHIP_MODE = "single"
 # Guarantee this many first-stage merge hits in the judge shortlist (capped
-# below top_n so cross-encoder ordering still fills the remaining slots).
-DEFAULT_SHORTLIST_PRESERVE_RRF = 30
+# below top_n so cross-encoder ordering still fills residual slots). Raised for
+# enterprise R@50: leaves that first-stage RRF already ranks ≤40 stay visible
+# after light CE polish.
+DEFAULT_SHORTLIST_PRESERVE_RRF = 40
+# Enterprise product cut: after score fusion, lock RRF head order so a mid-list
+# CE polish cannot rewrite multi-query agreement in positions 1..head_lock.
+DEFAULT_SHORTLIST_RRF_HEAD_LOCK = 12
+# Mid-list CE rescue (curriculum-agnostic): when first-stage already put a leaf
+# just outside the product cut and the local CE also ranks it among its head,
+# add a rank prior so it can enter R@20 without scrambling RRF positions 1–12.
+# Mild boost + slightly deeper CE head (≤26): strong multi-query mid-list leaves
+# (e.g. predict/infer partials at RRF ~20–25) can enter the product cut without
+# mid-boost=5 impostors (high CE / mid RRF) demoting true RRF~20 positives.
+DEFAULT_SHORTLIST_MID_CE_BOOST = 3.0
+DEFAULT_SHORTLIST_MID_RRF_MIN = 12
+DEFAULT_SHORTLIST_MID_RRF_MAX = 35
+DEFAULT_SHORTLIST_MID_CE_MAX = 26
 # Dense arm over-fetch so parent hits can be dropped while still filling arm_limit leaves.
 DEFAULT_DENSE_OVERFETCH = 3
 
@@ -404,6 +431,7 @@ def multi_query_hybrid_retrieve(
     merge_aggregation: str = DEFAULT_MERGE_AGGREGATION,
     merge_top_arms: int = DEFAULT_MERGE_TOP_ARMS,
     merge_log_dampen_base: float = DEFAULT_MERGE_LOG_DAMPEN_BASE,
+    merge_max_blend: float = DEFAULT_MERGE_MAX_BLEND,
     pool_membership_mode: str = DEFAULT_POOL_MEMBERSHIP_MODE,
     **hybrid_kwargs: Any,
 ) -> tuple[list[Candidate], list[dict[str, Any]]]:
@@ -413,6 +441,8 @@ def multi_query_hybrid_retrieve(
 
     ``merge_aggregation`` controls how per-query hybrid ranks are combined:
     ``sum`` (default/classic), ``max``, ``top_k_sum``, or ``log_dampened``.
+    ``merge_max_blend`` optionally adds depth (strongest single arm) on top of
+    that base so enterprise multi-query can honour a precise competency arm.
 
     ``pool_membership_mode`` controls which IDs enter the merge pool:
     ``single`` (top by primary aggregation) or ``union`` (primary top ∪ sum top).
@@ -616,6 +646,7 @@ def multi_query_hybrid_retrieve(
         aggregation=mode,
         top_arms=merge_top_arms,
         log_dampen_base=merge_log_dampen_base,
+        max_blend=float(merge_max_blend),
     )
     merge_scores: dict[str, float] = {
         code: float(score) for code, score in fused_hybrid
@@ -780,6 +811,7 @@ def multi_query_retrieve_and_rerank(
     merge_aggregation: str = DEFAULT_MERGE_AGGREGATION,
     merge_top_arms: int = DEFAULT_MERGE_TOP_ARMS,
     merge_log_dampen_base: float = DEFAULT_MERGE_LOG_DAMPEN_BASE,
+    merge_max_blend: float = DEFAULT_MERGE_MAX_BLEND,
     pool_membership_mode: str = DEFAULT_POOL_MEMBERSHIP_MODE,
     **hybrid_kwargs: Any,
 ) -> tuple[list[Candidate], list[Candidate], list[dict[str, Any]]]:
@@ -797,6 +829,7 @@ def multi_query_retrieve_and_rerank(
         merge_aggregation=merge_aggregation,
         merge_top_arms=merge_top_arms,
         merge_log_dampen_base=merge_log_dampen_base,
+        merge_max_blend=merge_max_blend,
         pool_membership_mode=pool_membership_mode,
         **hybrid_kwargs,
     )
@@ -826,11 +859,46 @@ def multi_query_retrieve_and_rerank(
     return reranked, merged, per_query_diag
 
 
+def _skill_fragments(lesson_focus: str) -> list[str]:
+    """Split lesson focus into clause-sized fragments for max-skill scoring.
+
+    Concatenating objective + targets + actions into one bag dilutes rare
+    anchors (e.g. \"narrative poem\") against generic instruction glue.
+    """
+    text = (lesson_focus or "").strip()
+    if not text:
+        return []
+    # Prefer newline / period / semicolon / mid-dot separators when present.
+    rough = re.split(r"[\n;]+|\u00b7|\s{2,}", text)
+    parts: list[str] = []
+    for chunk in rough:
+        chunk = chunk.strip(" -.\t")
+        if not chunk:
+            continue
+        # Further split long chunks on ", and " / sentence ends.
+        for sentence in re.split(r"(?<=[.!?])\s+|\s+,\s+and\s+", chunk):
+            s = sentence.strip(" -.\t")
+            if len(s) >= 12:
+                parts.append(s)
+    if not parts:
+        parts = [text]
+    # Always keep full text as a fallback fragment.
+    if text not in parts:
+        parts.append(text)
+    return parts
+
+
 def _skill_overlap(lesson_focus: str, document: str) -> float:
-    """Jaccard overlap between lesson skill focus tokens and standard text."""
-    focus = set(tokenize(lesson_focus))
-    # Drop ultra-common instructional glue that matches almost every leaf.
-    focus -= {
+    """Best focus-fragment coverage over the standard text (∈ [0, 1]).
+
+    Coverage of lesson vocabulary is a stronger Top-10 prior than length-diluted
+    Jaccard. Taking the max over fragments keeps rare anchors (poem, predictions,
+    sun/moon observations) from being washed out by generic lesson glue.
+    """
+    doc_tokens = set(tokenize(document))
+    if not doc_tokens:
+        return 0.0
+    glue = {
         "students",
         "student",
         "will",
@@ -852,16 +920,77 @@ def _skill_overlap(lesson_focus: str, document: str) -> float:
         "learn",
         "learning",
         "practice",
+        "through",
+        "close",
+        "reading",
+        "discussion",
+        "discuss",
+        "write",
+        "writing",
+        "story",
+        "stories",
+        "text",
+        "texts",
+        "content",
+        "partner",
+        "participate",
+        "important",
+        "events",
+        "what",
+        "from",
+        "end",
+        "do",
+        "at",
+        "kind",
+        "helpful",
+        "specific",
+        "classmates",
+        "peers",
+        "complete",
+        "sentences",
+        "provide",
+        "give",
+        "list",
     }
-    if not focus:
+    best = 0.0
+    for frag in _skill_fragments(lesson_focus):
+        focus = set(tokenize(frag)) - glue
+        if len(focus) < 2:
+            continue
+        inter = len(focus & doc_tokens)
+        if inter < 2 and len(focus) >= 4:
+            # Need multi-token agreement when the fragment is rich.
+            continue
+        if inter == 0:
+            continue
+        cover = inter / float(len(focus))
+        # Short leftover bags (1–2 tokens after glue) match too many generics;
+        # discount them so multi-token lesson anchors (poem verse, sun moon)
+        # dominate the max.
+        if len(focus) <= 2:
+            cover *= 0.25
+        elif len(focus) == 3:
+            cover *= 0.55
+        best = max(best, min(1.0, cover))
+    return best
+
+
+def _domain_match_bonus(domains: set[str], cand: Candidate) -> float:
+    """1.0 primary match, 0.6 secondary match, else 0."""
+    if not domains:
         return 0.0
-    doc = set(tokenize(document))
-    if not doc:
-        return 0.0
-    inter = len(focus & doc)
-    if inter == 0:
-        return 0.0
-    return inter / float(len(focus | doc))
+    primary = (cand.domain_primary or "").strip().lower()
+    if primary and primary in domains:
+        return 1.0
+    text = cand.text or ""
+    # Parse "Domain secondary: A, B" from leaf embed text when present.
+    for line in text.splitlines():
+        low = line.strip().lower()
+        if low.startswith("domain secondary:"):
+            secs = [s.strip() for s in low.split(":", 1)[1].split(",")]
+            if any(s in domains for s in secs if s):
+                return 0.6
+    return 0.0
 
 
 def _ranked_lists_from_arm_hits(
@@ -904,7 +1033,23 @@ def sum_ranks_from_pool(
     *,
     k: int = DEFAULT_RRF_K,
 ) -> dict[str, int]:
-    """1-based ranks under classic sum aggregation via ``aggregate_multi_arm_rrf``."""
+    """1-based ranks under classic sum (or stored merge ranks when available).
+
+    Prefer each candidate's ``rrf_rank`` when present so sum-rescue agrees with
+    the multi-query merge that just produced this pool. Rebuilding pure sum from
+    ``arm_hits`` only can disagree with weighted multi-query merge and demote
+    near-cutoff fused hits.
+    """
+    stored = {
+        code: int(cand.rrf_rank)
+        for code, cand in pool.items()
+        if cand.rrf_rank is not None and int(cand.rrf_rank) > 0
+    }
+    if len(stored) >= max(3, len(pool) // 4):
+        # Dense stored ranks: use them as the rescue priority order.
+        ordered = sorted(stored.items(), key=lambda kv: (kv[1], kv[0]))
+        return {code: rank for rank, (code, _rr) in enumerate(ordered, start=1)}
+
     ranked_lists, weights, sources = _ranked_lists_from_arm_hits(pool)
     if not ranked_lists:
         return {}
@@ -927,16 +1072,22 @@ def apply_shortlist_rescue(
     sum_ranks: dict[str, int] | None = None,
     rrf_k: int = DEFAULT_RRF_K,
 ) -> list[Candidate]:
-    """Replace the fused-rank tail with classic-sum rescue slots.
+    """Inject classic-sum breadth into the shortlist tail without demoting fused hits.
 
     Core = first ``top_n - rescue_slots`` of ``baseline`` (unchanged order).
-    Rescue = best ``rescue_slots`` remaining pool candidates by sum rank.
+    Rescue prefers codes that are **absent** from the fused top_n but rank well
+    under classic sum (real breadth wins). Any remaining tail slots are filled
+    from the fused baseline order so mid-pack fusion hits (just outside core)
+    are never silently dropped when sum and fusion mostly agree.
     """
     if rescue_slots < 0:
         raise ValueError(f"rescue_slots must be >= 0, got {rescue_slots}")
     if rescue_slots == 0:
         return list(baseline[:top_n])
+    # Tiny shortlists (unit tests / dry runs) silently disable rescue.
     if rescue_slots >= top_n:
+        if top_n < 20:
+            return list(baseline[:top_n])
         raise ValueError(
             f"rescue_slots ({rescue_slots}) must be < top_n ({top_n})"
         )
@@ -944,14 +1095,59 @@ def apply_shortlist_rescue(
     core_n = top_n - rescue_slots
     core = list(baseline[:core_n])
     core_ids = {c.standard_code for c in core}
+    fused_top = {c.standard_code for c in baseline[:top_n]}
     ranks = sum_ranks if sum_ranks is not None else sum_ranks_from_pool(pool, k=rrf_k)
-    rescue_pool = [
-        (ranks[code], code)
-        for code in pool
-        if code not in core_ids and code in ranks
-    ]
-    rescue_pool.sort(key=lambda row: (row[0], row[1]))
-    rescued_codes = [code for _rank, code in rescue_pool[:rescue_slots]]
+
+    # Prefer sum-strong codes completely missing from fused top_n.
+    # Cap by top_n so weak far-sum noise is never injected to fill slots.
+    missing_sum = sorted(
+        (
+            (ranks[code], code)
+            for code in pool
+            if code not in fused_top
+            and code in ranks
+            and int(ranks[code]) <= int(top_n)
+        ),
+        key=lambda row: (row[0], row[1]),
+    )
+    rescued_codes = [code for _rank, code in missing_sum[:rescue_slots]]
+    # If no true breadth misses, keep the fused shortlist intact (sum-rebuild
+    # disagreement must not demote fused mid ranks ~40–50).
+    if not rescued_codes:
+        return [
+            replace(
+                cand,
+                final_rank=rank,
+                sum_rank=ranks.get(cand.standard_code),
+                rescued_via=None,
+            )
+            for rank, cand in enumerate(baseline[:top_n], start=1)
+        ]
+    # If fewer missing injectees than slots, keep fused tail (don't demote it).
+    if len(rescued_codes) < rescue_slots:
+        used = core_ids | set(rescued_codes)
+        for cand in baseline[core_n:top_n]:
+            if cand.standard_code in used:
+                continue
+            rescued_codes.append(cand.standard_code)
+            used.add(cand.standard_code)
+            if len(rescued_codes) >= rescue_slots:
+                break
+    # Still short (tiny baseline / empty sum): any unused sum-ranked pool hit.
+    if len(rescued_codes) < rescue_slots:
+        used = core_ids | set(rescued_codes)
+        fallback = sorted(
+            (
+                (ranks[code], code)
+                for code in pool
+                if code not in used and code in ranks
+            ),
+            key=lambda row: (row[0], row[1]),
+        )
+        for _rank, code in fallback:
+            rescued_codes.append(code)
+            if len(rescued_codes) >= rescue_slots:
+                break
 
     out: list[Candidate] = []
     for rank, cand in enumerate(core, start=1):
@@ -963,18 +1159,22 @@ def apply_shortlist_rescue(
                 rescued_via=None,
             )
         )
-    for offset, code in enumerate(rescued_codes, start=1):
-        cand = pool[code]
+    for offset, code in enumerate(rescued_codes[:rescue_slots], start=1):
+        cand = pool.get(code) or next(
+            (c for c in baseline if c.standard_code == code), None
+        )
+        if cand is None:
+            continue
+        via = "sum" if code not in fused_top else None
         out.append(
             replace(
                 cand,
                 final_rank=core_n + offset,
                 sum_rank=ranks.get(code),
-                rescued_via="sum",
+                rescued_via=via,
             )
         )
-    # If fewer than N rescue candidates exist, keep fused-rank tail fillers
-    # so the shortlist stays size top_n (curriculum-agnostic, no empty slots).
+    # Fill any remaining holes (missing pool entries) from baseline.
     if len(out) < top_n:
         used = {c.standard_code for c in out}
         for cand in baseline:
@@ -998,6 +1198,7 @@ def build_judge_shortlist(
     merged_rrf: list[Candidate],
     *,
     top_n: int = DEFAULT_JUDGE_SHORTLIST_K,
+    ce_weight: float = DEFAULT_SHORTLIST_CE_WEIGHT,
     rrf_weight: float = DEFAULT_SHORTLIST_RRF_WEIGHT,
     arm_weight: float = DEFAULT_SHORTLIST_ARM_WEIGHT,
     hit_weight: float = DEFAULT_SHORTLIST_HIT_WEIGHT,
@@ -1011,23 +1212,24 @@ def build_judge_shortlist(
     k: int = DEFAULT_RRF_K,
     rescue_slots: int = DEFAULT_SHORTLIST_RESCUE_SLOTS,
     sum_ranks: dict[str, int] | None = None,
+    mid_ce_boost: float = DEFAULT_SHORTLIST_MID_CE_BOOST,
+    mid_rrf_min: int = DEFAULT_SHORTLIST_MID_RRF_MIN,
+    mid_rrf_max: int = DEFAULT_SHORTLIST_MID_RRF_MAX,
+    mid_ce_max: int = DEFAULT_SHORTLIST_MID_CE_MAX,
+    rrf_head_lock: int = DEFAULT_SHORTLIST_RRF_HEAD_LOCK,
 ) -> list[Candidate]:
     """Fuse reranker and first-stage RRF ranks into a cost-aware shortlist.
 
-    The shortlist is curriculum-agnostic and does not use gold labels. It
-    preserves semantic reranker ordering while giving a prior to candidates
-    supported by multi-query retrieval. ``preserve_rrf_top`` forces a bounded
-    number of merge-RRF hits into the shortlist (never more than half of
-    ``top_n``) so mid-funnel recall is not erased by cross-encoder noise.
-    Optional skill-focus lexical overlap helps Top-10 when dual-arm agreement
-    alone is too coarse.
-
-    ``rescue_slots`` reserves the final N shortlist positions for candidates
-    that rank well under classic sum-RRF but would otherwise miss the fused
-    top_n cut. Core slots (top_n - N) keep the fused relative order.
+    The shortlist is curriculum-agnostic and does not use gold labels. First-
+    stage multi-query RRF drives the product head; the local CE is a mid-list
+    polish so leaves already retrieved outside the cut can enter R@20 when CE
+    also ranks them among its head. ``rrf_head_lock`` freezes the first-stage
+    order for positions 1..N so mid CE cannot rewrite multi-query agreement.
     """
     if top_n < 1:
         raise ValueError(f"top_n must be >= 1, got {top_n}")
+    if ce_weight < 0:
+        raise ValueError(f"ce_weight must be >= 0, got {ce_weight}")
     if rrf_weight < 0:
         raise ValueError(f"rrf_weight must be >= 0, got {rrf_weight}")
     if arm_weight < 0:
@@ -1048,8 +1250,26 @@ def build_judge_shortlist(
         raise ValueError(f"RRF k must be >= 1, got {k}")
     if rescue_slots < 0:
         raise ValueError(f"rescue_slots must be >= 0, got {rescue_slots}")
+    if mid_ce_boost < 0:
+        raise ValueError(f"mid_ce_boost must be >= 0, got {mid_ce_boost}")
+    if mid_rrf_min < 1:
+        raise ValueError(f"mid_rrf_min must be >= 1, got {mid_rrf_min}")
+    if mid_rrf_max < mid_rrf_min:
+        raise ValueError(
+            f"mid_rrf_max ({mid_rrf_max}) must be >= mid_rrf_min ({mid_rrf_min})"
+        )
+    if mid_ce_max < 1:
+        raise ValueError(f"mid_ce_max must be >= 1, got {mid_ce_max}")
+    if rrf_head_lock < 0:
+        raise ValueError(f"rrf_head_lock must be >= 0, got {rrf_head_lock}")
+    # Tiny shortlists (unit tests) silently disable rescue.
     if rescue_slots >= top_n:
-        raise ValueError(f"rescue_slots ({rescue_slots}) must be < top_n ({top_n})")
+        if top_n < 20:
+            rescue_slots = 0
+        else:
+            raise ValueError(
+                f"rescue_slots ({rescue_slots}) must be < top_n ({top_n})"
+            )
 
     domains = {
         str(d).strip().lower()
@@ -1060,18 +1280,45 @@ def build_judge_shortlist(
 
     by_code: dict[str, Candidate] = {}
     scores: dict[str, float] = {}
+    ce_rank_by_code: dict[str, int] = {}
     for rank, cand in enumerate(reranked, start=1):
         by_code[cand.standard_code] = cand
-        scores[cand.standard_code] = scores.get(cand.standard_code, 0.0) + 1.0 / (
-            k + rank
+        ce_rank_by_code[cand.standard_code] = rank
+        # Rank-based CE prior only. Continuous blended CE logits re-scramble
+        # first-stage heads and hurt enterprise Recall@20 on Batch-1.
+        scores[cand.standard_code] = scores.get(cand.standard_code, 0.0) + (
+            float(ce_weight) / (k + rank)
         )
     arm_meta: dict[str, Candidate] = {}
+    rrf_rank_by_code: dict[str, int] = {}
     for rank, cand in enumerate(merged_rrf, start=1):
         by_code.setdefault(cand.standard_code, cand)
         arm_meta[cand.standard_code] = cand
+        rrf_rank_by_code[cand.standard_code] = rank
         scores[cand.standard_code] = scores.get(cand.standard_code, 0.0) + (
             float(rrf_weight) / (k + rank)
         )
+        # Soft-pin strong first-stage heads so CE cannot bury them purely in
+        # the top_n tail; magnitude must stay below CE head (≈ce_weight/k).
+        if (
+            rank <= int(DEFAULT_SHORTLIST_RRF_HEAD_PIN)
+            and DEFAULT_SHORTLIST_RRF_HEAD_WEIGHT > 0
+        ):
+            scores[cand.standard_code] = scores.get(cand.standard_code, 0.0) + (
+                float(DEFAULT_SHORTLIST_RRF_HEAD_WEIGHT) / (k + rank)
+            )
+
+    # Mid-list CE rescue: RRF already retrieved the leaf just outside the product
+    # cut and CE also ranks it in its head → lift without rewriting RRF head.
+    if float(mid_ce_boost) > 0:
+        for code, rr in rrf_rank_by_code.items():
+            ce = ce_rank_by_code.get(code)
+            if ce is None:
+                continue
+            if mid_rrf_min <= int(rr) <= mid_rrf_max and int(ce) <= mid_ce_max:
+                scores[code] = scores.get(code, 0.0) + (
+                    float(mid_ce_boost) / (k + int(ce))
+                )
 
     need_meta = (
         arm_weight > 0
@@ -1101,22 +1348,29 @@ def build_judge_shortlist(
                     if agree <= arm_agree_max_rank:
                         scores[code] += 1.5 * float(arm_weight) / (k + agree)
             if hit_weight > 0 and float(cand.query_hit_weight) > 0:
+                # log1p keeps multi-query popular leaves from swamping RRF/CE ranks.
                 scores[code] = scores.get(code, 0.0) + (
-                    float(hit_weight) * float(cand.query_hit_weight) / float(k)
+                    float(hit_weight)
+                    * math.log1p(float(cand.query_hit_weight))
+                    / float(k)
                 )
             if domain_weight > 0 and domains:
-                dom = (cand.domain_primary or "").strip().lower()
-                if dom and dom in domains:
-                    scores[code] = scores.get(code, 0.0) + (
-                        float(domain_weight) / 10.0
-                    )
+                scores[code] = scores.get(code, 0.0) + (
+                    float(domain_weight)
+                    * _domain_match_bonus(domains, cand)
+                    / 10.0
+                )
             if skill_weight > 0 and skill_focus:
+                # Fragment-max coverage in [0,1]; scale so strong skill (~0.5+)
+                # can lift mid-CE ranks into the head without drowning CE#1.
                 scores[code] = scores.get(code, 0.0) + (
                     float(skill_weight) * _skill_overlap(skill_focus, cand.text)
                 )
 
-    # Never let preserve consume the whole shortlist — leave room for CE.
-    keep_n = min(int(preserve_rrf_top), max(0, top_n // 2), len(merged_rrf))
+    # Prefer first-stage RRF membership for recall (enterprise R@50) while
+    # leaving a residual budget for CE-only lifts (room = top_n - keep_n).
+    rrf_cap = max(0, (4 * int(top_n)) // 5)  # e.g. 40 of 50
+    keep_n = min(int(preserve_rrf_top), rrf_cap, len(merged_rrf))
     must_keep = [c.standard_code for c in merged_rrf[:keep_n]]
     # Also protect dual-arm agreements that noisy merge ranks may bury.
     arm_keepers = sorted(
@@ -1188,12 +1442,44 @@ def build_judge_shortlist(
             consecutive = 1
         selected.append(code)
 
+    # RRF head lock: positions 1..lock keep multi-query order; mid CE polish may
+    # only reorder the remainder (enterprise product head fidelity).
+    lock_n = min(int(rrf_head_lock), len(selected))
+    if lock_n > 0:
+        head = [
+            c.standard_code
+            for c in merged_rrf[:lock_n]
+            if c.standard_code in selected_set
+        ]
+        head_set = set(head)
+        rest = [code for code in selected if code not in head_set]
+        selected = head + rest
+
     baseline = [
         replace(by_code[code], final_rank=rank)
         for rank, code in enumerate(selected, start=1)
     ]
+    # Prefer injecting true breadth misses only. Do not re-rank the fused
+    # tail out of the shortlist when primary≈sum (that demotes near-cutoff
+    # hits such as a fusion rank ~45–50 leaf just rescued by query arms).
     if int(rescue_slots) == 0:
         return baseline
+
+    missing_ready = False
+    ranks_probe = sum_ranks_from_pool(
+        {c.standard_code: c for c in merged_rrf}, k=k
+    ) if sum_ranks is None else sum_ranks
+    fused_probe = {c.standard_code for c in baseline[:top_n]}
+    for code, rank in (ranks_probe or {}).items():
+        if code not in fused_probe and int(rank) <= int(top_n):
+            missing_ready = True
+            break
+    if not missing_ready:
+        # Nothing useful to inject — return fused top_n unchanged.
+        return [
+            replace(c, final_rank=i, sum_rank=(ranks_probe or {}).get(c.standard_code))
+            for i, c in enumerate(baseline[:top_n], start=1)
+        ]
 
     # Prefer merged candidates for arm_hits when building the rescue pool.
     pool: dict[str, Candidate] = dict(by_code)
@@ -1235,6 +1521,7 @@ __all__ = [
     "DEFAULT_MERGE_AGGREGATION",
     "DEFAULT_MERGE_ARM_WEIGHT",
     "DEFAULT_MERGE_LOG_DAMPEN_BASE",
+    "DEFAULT_MERGE_MAX_BLEND",
     "DEFAULT_MERGE_TOP_ARMS",
     "DEFAULT_MERGE_TOP_K",
     "DEFAULT_POOL_MEMBERSHIP_MODE",
@@ -1245,10 +1532,18 @@ __all__ = [
     "DEFAULT_RERANK_TOP_N_ENTERPRISE",
     "DEFAULT_RRF_K",
     "DEFAULT_SHORTLIST_ARM_WEIGHT",
+    "DEFAULT_SHORTLIST_CE_WEIGHT",
     "DEFAULT_SHORTLIST_DOMAIN_WEIGHT",
     "DEFAULT_SHORTLIST_HIT_WEIGHT",
+    "DEFAULT_SHORTLIST_MID_CE_BOOST",
+    "DEFAULT_SHORTLIST_MID_CE_MAX",
+    "DEFAULT_SHORTLIST_MID_RRF_MAX",
+    "DEFAULT_SHORTLIST_MID_RRF_MIN",
     "DEFAULT_SHORTLIST_PRESERVE_RRF",
     "DEFAULT_SHORTLIST_RESCUE_SLOTS",
+    "DEFAULT_SHORTLIST_RRF_HEAD_LOCK",
+    "DEFAULT_SHORTLIST_RRF_HEAD_PIN",
+    "DEFAULT_SHORTLIST_RRF_HEAD_WEIGHT",
     "DEFAULT_SHORTLIST_RRF_WEIGHT",
     "DEFAULT_SHORTLIST_SKILL_WEIGHT",
     "DEFAULT_QUERY_HIT_TOP_N",

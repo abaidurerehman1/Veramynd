@@ -40,6 +40,7 @@ def aggregate_multi_arm_rrf(
     aggregation: str = "sum",
     top_arms: int = 2,
     log_dampen_base: float = 2.0,
+    max_blend: float = 0.0,
 ) -> tuple[list[tuple[str, float]], dict[str, list[dict[str, Any]]]]:
     """Fuse ranked ID lists with selectable multi-arm aggregation.
 
@@ -49,6 +50,11 @@ def aggregate_multi_arm_rrf(
     - ``max``: keep only the strongest single-arm contribution (rewards depth)
     - ``top_k_sum``: sum the best ``top_arms`` contributions only
     - ``log_dampened``: ``(sum contributions) * log_b(1+n_hits) / n_hits``
+
+    Optional ``max_blend`` adds ``max_blend * max_arm_contribution`` after the
+    primary aggregation. Enterprise K-12 multi-query uses this so a single
+    high-precision competency arm (depth) can promote a leaf that also has a
+    moderate multi-arm mid-list score (breadth) without switching to pure max.
 
     Returns ``(sorted (id, score), arm_provenance_by_id)``. Provenance entries
     include query index, optional source label, rank, weight, and contribution.
@@ -64,6 +70,8 @@ def aggregate_multi_arm_rrf(
         raise ValueError(f"top_arms must be >= 1, got {top_arms}")
     if log_dampen_base <= 1.0:
         raise ValueError(f"log_dampen_base must be > 1, got {log_dampen_base}")
+    if max_blend < 0:
+        raise ValueError(f"max_blend must be >= 0, got {max_blend}")
 
     if weights is None:
         weights = [1.0] * len(ranked_id_lists)
@@ -108,21 +116,26 @@ def aggregate_multi_arm_rrf(
     for doc_id, arms in contributions.items():
         ordered = sorted(
             arms,
-            key=lambda row: (-float(row["contribution"]), int(row["rank"]), int(row["query_index"])),
+            key=lambda row: (
+                -float(row["contribution"]),
+                int(row["rank"]),
+                int(row["query_index"]),
+            ),
         )
         if mode == "sum":
-            scores[doc_id] = sum(float(row["contribution"]) for row in ordered)
+            base = sum(float(row["contribution"]) for row in ordered)
         elif mode == "max":
-            scores[doc_id] = float(ordered[0]["contribution"]) if ordered else 0.0
+            base = float(ordered[0]["contribution"]) if ordered else 0.0
         elif mode == "top_k_sum":
-            scores[doc_id] = sum(
-                float(row["contribution"]) for row in ordered[:top_arms]
-            )
+            base = sum(float(row["contribution"]) for row in ordered[:top_arms])
         else:  # log_dampened
             raw = sum(float(row["contribution"]) for row in ordered)
             n_hits = len(ordered)
             dampen = math.log(1.0 + n_hits, log_dampen_base) / float(n_hits)
-            scores[doc_id] = raw * dampen
+            base = raw * dampen
+        if float(max_blend) > 0.0 and ordered:
+            base = float(base) + float(max_blend) * float(ordered[0]["contribution"])
+        scores[doc_id] = float(base)
 
     ranked = sorted(scores.items(), key=lambda kv: (-kv[1], kv[0]))
     return ranked, contributions

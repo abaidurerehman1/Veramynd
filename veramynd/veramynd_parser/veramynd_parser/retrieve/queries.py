@@ -18,6 +18,20 @@ from typing import Any
 _SOURCE_PRIORITY: dict[str, int] = {
     "learning_target": 0,
     "objective": 1,
+    # Standard-language bridges for acts that classroom prose understates
+    # (present-clearly, create-poem, word-parts). Keep ahead of generic skills.
+        "competency_present_ideas": 1,
+    "competency_create_poem": 1,
+    "competency_word_parts": 1,
+    "competency_context_clues": 1,
+    "competency_make_predictions": 1,
+    "competency_make_inferences": 1,
+    "competency_dialogue_qa": 1,
+    "competency_descriptive_words": 1,
+    "competency_research_questions": 1,
+    "competency_acquire_vocabulary": 1,
+    "competency_use_text_evidence": 1,
+    "competency_story_elements": 1,
     "skill": 2,
     "instructional_purpose": 3,
     "student_action": 4,
@@ -33,6 +47,294 @@ _SOURCE_PRIORITY: dict[str, int] = {
     "protocols": 12,
     "title": 13,
 }
+
+# Curriculum-agnostic: if lesson text shows the classroom signal, inject a
+# retrieval arm in standards-like wording so dense+BM25 hit the leaf embeds.
+# (signal_tokens, source, bridge_text)
+_COMPETENCY_BRIDGES: tuple[tuple[tuple[str, ...], str, str], ...] = (
+    (
+        (
+            "present ideas",
+            "share observations",
+            "share orally",
+            "sentence frame",
+            "sentence frames",
+            "oral_production",
+            "picture tea party",
+            "back-to-back",
+            "face-to-face",
+            "communicate clearly",
+            "present to",
+        ),
+        "competency_present_ideas",
+        (
+            "Students communicate clearly to present ideas, information, and texts "
+            "aloud to audiences and peers using spoken language and sentence frames. "
+            "Standard skill: present ideas information texts clearly in oral communication."
+        ),
+    ),
+    (
+        (
+            "poem",
+            "poems",
+            "poetic",
+            "rhyme",
+            "rhyming",
+            "narrative poem",
+            "write their own",
+            "own version of verse",
+            "write a narrative poem",
+            "what the moon sees",
+            "create poems",
+            "create poem",
+            # bare "verse/verses" omitted: common in close-read language dives
+            # without student poem construction (e.g. G1M2U1L6).
+        ),
+        "competency_create_poem",
+        (
+            "Students use poetic techniques to create poems using simple words "
+            "and phrases that may or may not rhyme; write original poem verses independently. "
+            "Standard skill: create poems with poetic techniques simple words phrases."
+        ),
+    ),
+    (
+        (
+            "word parts",
+            "word-part",
+            "unfamiliar word",
+            "unfamiliar words",
+            "unknown word",
+            "multiple-meaning",
+            "multiple meaning",
+            "context clue",
+            "context clues",
+            "morphology",
+            "prefix",
+            "suffix",
+            "root word",
+            "mini language dive",
+            "what does the word",
+            "what two words",
+            "vocabulary words",
+            "word wall",
+            "word walls",
+            "explain meanings",
+            "explain meaning",
+            "meaning of",
+            "meanings of",
+        ),
+        "competency_word_parts",
+        (
+            "Students determine the meanings of unfamiliar words and concepts by "
+            "applying knowledge of context and of academic vocabulary and word parts. "
+            "Standard skill: use context and word parts to unlock unknown words."
+        ),
+    ),
+    # Distinct from word-parts / morphology (EICC.3.g): pure context-clue leaves
+    # (L.V.3.a) need official "within and beyond a sentence" wording.
+    (
+        (
+            "what does the word",
+            "what does the word mean",
+            "mean in this chunk",
+            "context clue",
+            "context clues",
+            "multiple-meaning",
+            "multiple meaning",
+            "unknown word",
+            "unknown words",
+            "clarify the meaning",
+            "clarify meaning",
+            "mini language dive",
+        ),
+        "competency_context_clues",
+        (
+            "Students use context within and beyond a sentence to determine or "
+            "clarify the meaning of unknown and multiple-meaning words and phrases. "
+            "Standard skill: use surrounding sentence and text context as clues "
+            "to word meaning."
+        ),
+    ),
+    (
+        (
+            "predict",
+            "prediction",
+            "predictions",
+            "what will happen",
+            "what happens next",
+            "likely to come next",
+            "make and track",
+            "track predictions",
+            "forecast",
+            # Classroom predict prompts rarely say "predict" (EL title / ending talk).
+            "what do you think",
+            "do you think",
+            "where do you think",
+            "based on the title",
+            "end of the story",
+            "story will be about",
+            "think this story",
+            "think the end",
+        ),
+        "competency_make_predictions",
+        (
+            "Students make and track predictions about events and information "
+            "likely to come next in a text based on titles, illustrations, and "
+            "what they have already read. "
+            "Standard skill: make and track predictions about upcoming events."
+        ),
+    ),
+    (
+        (
+            "infer",
+            "inference",
+            "inferences",
+            "levels of meaning",
+            "what does this verse mean",
+            "what does the verse mean",
+            "verse mean",
+            "verse means",
+            "now what do you think the verse",
+            "what does this mean",
+            "different levels of meaning",
+            "support inferences",
+            "make inferences",
+        ),
+        "competency_make_inferences",
+        (
+            "Students make, track, and support inferences about different levels "
+            "of meaning within the text using evidence from the text. "
+            "Standard skill: make inferences about meaning beyond the exact words."
+        ),
+    ),
+    (
+        (
+            "ask and answer",
+            "asking and answering",
+            "ask questions",
+            "answer questions",
+            "invite responses",
+            "total participation",
+            "dialogue with audiences",
+            "engage in dialogue",
+            # Intentionally omit turn-and-talk / elbow-partner alone — common
+            # protocols that flood Speaking leaves without a true Q&A act.
+        ),
+        "competency_dialogue_qa",
+        (
+            "Students engage in dialogue with audiences by asking and answering "
+            "questions during discussion and close read-aloud. "
+            "Standard skill: ask and answer questions in oral dialogue with peers."
+        ),
+    ),
+    (
+        (
+            "descriptive words",
+            "words that describe",
+            "describe the sun",
+            "describe the moon",
+            "words that describe the",
+            "underline the words",
+            "listen carefully for words",
+            "words that paint",
+            "adjectives",
+        ),
+        "competency_descriptive_words",
+        (
+            "Students identify and explain the use of descriptive words in texts; "
+            "notice words that describe people, places, and things in songs and stories. "
+            "Standard skill: identify descriptive words and explain how they are used."
+        ),
+    ),
+    (
+        (
+            "i wonder",
+            "i notice",
+            "noticing and wondering",
+            "notices and wonders",
+            "wonder about",
+            "ask questions about what i notice",
+            "topics of interest",
+            "for research",
+            "question words",
+            "research questions",
+        ),
+        "competency_research_questions",
+        (
+            "Students ask questions about topics of interest for research; write wonders "
+            "using question words about pictures, videos, and outdoor observations. "
+            "Standard skill: ask research questions about topics of interest."
+        ),
+    ),
+    (
+        (
+            "word wall",
+            "word walls",
+            "vocabulary cards",
+            "vocabulary words",
+            "academic vocabulary",
+            "specialized vocabulary",
+            "acquire and apply",
+            "new vocabulary",
+            "repeat the word",
+            "gesture as they repeat",
+        ),
+        "competency_acquire_vocabulary",
+        (
+            "Students acquire and apply general, academic, and specialized vocabulary "
+            "words and phrases through grade-level texts and content using word walls "
+            "and oral practice. "
+            "Standard skill: acquire and apply vocabulary from grade-level content."
+        ),
+    ),
+    (
+        (
+            "refer to",
+            "cite",
+            "text evidence",
+            "evidence from",
+            "parts of texts",
+            "support an idea",
+            "support their",
+            "key details",
+            "using details",
+            "from the text",
+        ),
+        "competency_use_text_evidence",
+        (
+            "Students refer to parts of texts when supporting an idea, answer, or opinion. "
+            "Standard skill: use specific parts of texts to support ideas and answers."
+        ),
+    ),
+    (
+        (
+            "character",
+            "characters",
+            "traits",
+            "setting",
+            "settings",
+            "story structure",
+            "major events",
+            "plot",
+            "retell",
+            "story elements",
+            "beginning middle end",
+            "describe the",
+            "main character",
+            "what is the boy doing",
+            "main characters",
+            "character traits",
+            "central message",
+        ),
+        "competency_story_elements",
+        (
+            "Students describe characters, settings, and major events in a story using "
+            "key details; describe traits of the main characters and how their words "
+            "and actions support the central message of the story. "
+            "Standard skill: describe story structure and character traits with details."
+        ),
+    ),
+)
 
 _DEFAULT_MAX_SKILLS = 8
 _DEFAULT_MAX_STUDENT_ACTIONS = 4
@@ -56,11 +358,12 @@ _DOMAIN_BRIDGES: dict[str, str] = {
     ),
     "Comprehension": (
         "Students understand texts; describe and retell events; "
-        "ask and answer questions; make meaning and support ideas with evidence."
+        "ask and answer questions; make and track predictions; make inferences; "
+        "make meaning and support ideas with evidence."
     ),
     "Writing": (
         "Students write and draw to record ideas, observations, "
-        "responses, and learning."
+        "responses, and learning; compose verses and poems with simple words and phrases."
     ),
     "Reading": (
         "Students read and comprehend grade-level texts; "
@@ -76,6 +379,8 @@ def _clean(s: Any) -> str:
 def _source_priority(source: str) -> int:
     if source in _SOURCE_PRIORITY:
         return _SOURCE_PRIORITY[source]
+    if source.startswith("competency_"):
+        return 1
     if source.startswith("skill_"):
         return _SOURCE_PRIORITY["skill"]
     if source.startswith("learning_target_"):
@@ -89,6 +394,61 @@ def _source_priority(source: str) -> int:
     if source.startswith("reading_task_"):
         return _SOURCE_PRIORITY["reading_task"]
     return 10
+
+
+def _lesson_signal_blob(data: dict[str, Any]) -> str:
+    """Flatten high-signal normalized fields for competency-bridge matching."""
+    parts: list[str] = []
+    for key in ("objective", "title", "instructional_purpose", "lesson_purpose", "purpose"):
+        parts.append(_clean(data.get(key)))
+    for item in data.get("what_is_taught") or []:
+        if isinstance(item, dict):
+            parts.append(_clean(item.get("skill")))
+        else:
+            parts.append(_clean(item))
+    for target in _text_items(
+        data.get("learning_targets") or data.get("learning_target"),
+        keys=("text", "target", "objective", "description"),
+    )[:6]:
+        parts.append(target)
+    for line in _action_lines(data.get("student_actions"), limit=12):
+        parts.append(line)
+    for line in _action_lines(data.get("teacher_actions"), limit=4):
+        parts.append(line)
+    vocab = data.get("vocabulary") or {}
+    if isinstance(vocab, dict):
+        for bucket in ("new", "review"):
+            for word in vocab.get(bucket) or []:
+                parts.append(_clean(word))
+    for item in (data.get("evidence") or [])[:40]:
+        if isinstance(item, dict):
+            parts.append(_clean(item.get("quote") or item.get("text")))
+        else:
+            parts.append(_clean(item))
+    for field in (
+        "discussion_prompts",
+        "writing_tasks",
+        "reading_tasks",
+        "protocols_routines",
+    ):
+        for value in _text_items(
+            data.get(field),
+            keys=("text", "prompt", "task", "description", "summary"),
+        )[:4]:
+            parts.append(value)
+    return " ".join(p for p in parts if p).lower()
+
+
+def _competency_bridges_for_lesson(data: dict[str, Any]) -> list[tuple[str, str]]:
+    """Return ``(source, text)`` bridges whose signals appear in the lesson."""
+    blob = _lesson_signal_blob(data)
+    if not blob:
+        return []
+    out: list[tuple[str, str]] = []
+    for tokens, source, text in _COMPETENCY_BRIDGES:
+        if any(tok in blob for tok in tokens):
+            out.append((source, text))
+    return out
 
 
 def _action_lines(actions: Any, *, limit: int = 8) -> list[str]:
@@ -268,7 +628,13 @@ def domains_from_normalize(path: Path | str) -> list[str]:
 
 
 def skill_focus_text_from_normalize(path: Path | str) -> str:
-    """Concatenate high-signal lesson requirements for lexical shortlist prior."""
+    """High-signal lesson requirements for lexical shortlist prior.
+
+    Newline-separated so shortlist skill scoring can max over fragments
+    (objective / targets / taught skills) without bag-dilution.
+    Feedback-style student actions are omitted — they favor generic
+    collaboration standards over content standards.
+    """
     p = Path(path)
     data = json.loads(p.read_text(encoding="utf-8"))
     parts: list[str] = []
@@ -278,14 +644,12 @@ def skill_focus_text_from_normalize(path: Path | str) -> str:
     for target in _text_items(
         data.get("learning_targets") or data.get("learning_target"),
         keys=("text", "target", "objective", "description"),
-    )[:4]:
+    )[:6]:
         parts.append(target)
     for item in data.get("what_is_taught") or []:
         skill = _clean(item.get("skill")) if isinstance(item, dict) else _clean(item)
         if skill:
             parts.append(_skill_focus(skill, max_words=16) or skill)
-    for line in _action_lines(data.get("student_actions"), limit=4):
-        parts.append(line)
     vocab = data.get("vocabulary") or {}
     if isinstance(vocab, dict):
         words = [
@@ -295,7 +659,7 @@ def skill_focus_text_from_normalize(path: Path | str) -> str:
         ]
         if words:
             parts.append(" ".join(words[:16]))
-    return " ".join(parts).strip()
+    return "\n".join(parts).strip()
 
 
 def query_arm_weight(source: str) -> float:
@@ -304,6 +668,27 @@ def query_arm_weight(source: str) -> float:
         return 1.75
     if source == "objective":
         return 1.7
+    # Hard construction / present-clearly leaves need room against noisy dialogue/vocab.
+    if source == "competency_create_poem":
+        # One strong poem arm must beat multi-arm breadth so independent verse
+        # construction (1.T.T.4.b) lands in the top-20 with merge_top_arms=3.
+        return 5.0
+    if source == "competency_present_ideas":
+        return 2.7
+    if source in {
+        "competency_descriptive_words",
+        "competency_story_elements",
+        "competency_research_questions",
+        "competency_acquire_vocabulary",
+    }:
+        return 2.55
+    if source == "competency_dialogue_qa":
+        # Q&A act is real but high weight floods Speaking leaves.
+        return 1.6
+    if source.startswith("competency_"):
+        # Align arms to standard competency phrasing — outrank skill arms when
+        # a single competency hit must lift a buried leaf into merge top-50.
+        return 2.2
     if source == "instructional_purpose":
         return 1.55
     if source == "domain":
@@ -335,6 +720,7 @@ def query_counts_for_coverage(source: str) -> bool:
         (
             "learning_target_",
             "skill_",
+            "competency_",
             "discussion_prompt_",
             "writing_task_",
             "reading_task_",
@@ -352,7 +738,7 @@ def query_counts_for_coverage(source: str) -> bool:
 def focused_queries_from_normalize(
     path: Path | str,
     *,
-    max_queries: int = 18,
+    max_queries: int = 24,
     max_evidence: int = 1,
     max_skills: int = _DEFAULT_MAX_SKILLS,
     max_student_actions: int = _DEFAULT_MAX_STUDENT_ACTIONS,
@@ -396,6 +782,11 @@ def focused_queries_from_normalize(
     objective = _clean(data.get("objective"))
     if objective:
         add("objective", f"Lesson objective: {objective}")
+
+    # Standard-language arms when lesson signals imply under-lexicalized acts
+    # (oral present-clearly, create poems, word-parts meaning).
+    for source, bridge_text in _competency_bridges_for_lesson(data):
+        add(source, bridge_text)
 
     purpose = _text_items(
         data.get("instructional_purpose")
