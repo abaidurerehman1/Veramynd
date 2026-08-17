@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0-report",
+  "source_files": [
+    "output\\judge\\G1M2U1L1.json",
+    "output\\judge\\G1M2U1L3.json",
+    "output\\judge\\G1M2U1L6.json",
+    "output\\judge\\G1M2U3L5.json"
+  ],
+  "row_count": 100,
+  "by_status_all_verdicts": {
+    "full": 21,
+    "partial": 36,
+    "none": 43
+  },
+  "filtered_out_by_status": 0,
+  "filtered_out_ungrounded": 0,
+  "status_filter": null,
+  "grounded_only": false,
+  "csv_path": "output\\reports\\gold4_alignments.csv"
+}

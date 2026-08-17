@@ -1,0 +1,13 @@
+metric,value
+lessons,4
+gold_unique_pairs,22
+judged_in_top25,19
+exact_match_n,18
+exact_match_pct,94.7
+binary_recall_pct,94.4
+binary_precision_pct,100.0
+binary_tp,17
+binary_fn,1
+binary_fp,0
+binary_tn,1
+retrieve_r25_gold_positives,100% (20/20 FULL+PARTIAL rows)

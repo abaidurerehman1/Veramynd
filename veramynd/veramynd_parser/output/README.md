@@ -7,21 +7,23 @@ churn stops being worth it).
 
 ```text
 output/
-├── stage1/                 # Stage 1 — parse + verify + export (trusted on GO)
-│   ├── verification_report.txt
-│   ├── teacher_guide.json
-│   ├── lessons_index.tsv
-│   ├── standards.json
-│   └── lessons/            # one JSON file per lesson
-├── normalize/              # ELA curriculum normalize (OpenAI) — schema 2.0-ela
+├── stage1/                 # Batch-1 EL G1M2 — parse + verify (GO, locked stack)
+├── stage1_ssmanual/        # Shared Story L1 manual — Stage-1 GO (2nd publisher)
+├── normalize/              # Batch-1 ELA normalize — schema 2.0-ela
+├── normalize_standards/    # GA leaf normalize (shared by retrieve)
+├── retrieve_gold4/         # Batch-1 gold retrieve (R@25 bar)
+├── judge/                  # alignment verdicts (gold-4 on align_judge.v1.1)
+├── reports/                # gold4_alignments.csv, gold_judge_*.csv, client/
 ├── chunks/                 # hierarchical chunks for grounding / judge
 └── embeddings/             # embed run manifest (vectors live in Qdrant)
 ```
 
-## Stage 1 (`stage1/`)
+## Stage 1 (`stage1/` and `stage1_ssmanual/`)
 
 | Path | Role |
 |------|------|
+| `stage1/` | EL Module 2 — **Batch-1 locked** (40 lessons) |
+| `stage1_ssmanual/` | `21111_RBtL_SSManual_L1.pdf` — **Stage-1 GO** (14 lessons: L01–L02 Start-Up, L04–L15 Shared Stories; no L03 — Story 3 absent in source) |
 | `verification_report.txt` | Human-readable GO / BLOCK report |
 | `verification_verdict.json` | Machine-readable gate verdict — downstream commands check this |
 | `lessons/*.json` | Per-lesson contracts (primary Stage 1 product) |
@@ -29,12 +31,23 @@ output/
 | `teacher_guide.json` | Full guide parse (audit / reload) |
 | `lessons_index.tsv` | Human-readable lesson summary |
 
+Normalize → retrieve for `stage1_ssmanual/` is **not** production-locked yet.
+
 ## Normalize (`normalize/`)
 
 | Path | Role |
 |------|------|
 | `*.json` | Per-lesson ELA curriculum-normalization records |
 | `normalize_progress.json` | Resume / status sidecar |
+
+**Reuse:** content-addressed LLM cache (`.normalize_cache/`) + versioned
+**artifact registry** (`.normalize_cache/artifact_registry.json`). Same Stage-1
+input + prompt + model → reuse; do not `--force` unless intentional.
+
+```bash
+veramynd-parser artifact-status
+veramynd-parser artifact-register --lessons-dir output/stage1/lessons --out output/normalize
+```
 
 ## Chunks (`chunks/`)
 

@@ -1,0 +1,10 @@
+Item,Result
+Lessons evaluated,4
+Expert labels (unique lesson + standard),22
+Compared in top 25,19
+Not in top 25 (expert said none; does not affect recall),3
+Exact agreement (Full / Partial / None),18 of 19 (94.7%)
+Coverage agreement (Full or Partial vs None),17 of 18 positives matched; 1 miss
+False positives,0
+Retrieve recall at 25 (Full + Partial expert labels),20 of 20 (100%)
+Disagreement,"Unit 1 Lesson 6, standard 1.T.T.1.c — expert Partial, Veramynd None"

@@ -15,9 +15,19 @@ identically, at scale, with a paper trail.
 
 ## Project status (honest)
 
-This repo is a **working end-to-end pipeline** for the reference EL Education G1M2
-teacher guide + Georgia Grade 1 ELA standards. Retrieve for Batch-1 gold now meets
-the **product shortlist bar** (judge/operator cut = top-20):
+Working **end-to-end through judge + report** on the Batch-1 gold set:
+**EL Education G1M2** + **Georgia Grade 1 ELA**. Design stays
+**publisher- and framework-agnostic** via **shared structural patterns**
+(Lesson / Day / Session / Shared Story / Start-Up, acts + meaning) — **not**
+a per-publisher `if Success for All / elif Publisher B` tree.
+
+| Proof point | Status |
+|---|---|
+| Batch-1 EL → normalize → retrieve (gold R@25) | **Locked** |
+| Batch-1 gold-4 judge vs SME (`align_judge.v1.1`) | **Measured** — 18/19 exact (94.7%) on unique pairs in top 25 |
+| Second publisher Stage-1 GO (`21111_RBtL_SSManual_L1.pdf`, Reading Roots Shared Story Level 1) | **Done** — 14 lessons in `output/stage1_ssmanual/` |
+| Second publisher normalize → retrieve → judge | **Not locked yet** |
+| Any PDF / any publisher / any grade with zero pattern work | **Not claimed** — new heading languages may need a small generic-pattern add |
 
 **Batch-1 retrieve (live, enterprise defaults)** — 4 gold lessons
 (`G1M2U1L1`, `U1L3`, `U1L6`, `U3L5`), **20** FULL+PARTIAL positives
@@ -25,65 +35,102 @@ the **product shortlist bar** (judge/operator cut = top-20):
 
 | Metric | Result | Role |
 |---|---|---|
-| **Recall@20** | **90% (18/20)** | Product cut → judge shortlist |
+| **Recall@25** | **100% (20/20)** | Protected QA bar (do not tune retrieve to hide normalize/parser regressions) |
+| **Recall@20** | **85% (17/20)** | Product cut → judge shortlist |
 | **Recall@50** | **100% (20/20)** | SME / diagnostic shortlist |
 | Recall@30 | 100% (20/20) | — |
-| Recall@10 | 35% (7/20) | Head precision still open |
+| Recall@10 | 40% (8/20) | Head precision still open |
 
-Remaining misses @20 (both still in top 30): `1.P.CP.2.d` (U1L3) and
-`1.P.EICC.3.f` (U1L6). Multi-grade / multi-publisher scale-up and ~90% judge
-agreement vs SME labels are **not** claimed yet. The agentic/graph track is
-design-only.
+Residual @20 (all still ≤25): `1.P.EICC.3.e`, `1.P.EICC.3.f`, `1.T.RA.2.a`
+(U1L6). Three gold **none** rows sit outside top 25 and do **not** count against
+R@25.
 
-**Retrieve design (current defaults):** multi-query competency bridges from
-lesson text → per-query dense+BM25 RRF → multi-arm merge (`top_k_sum`,
-`top_arms=3`, `max_blend=1.0`) → local CE → shortlist fusion with RRF head lock
-(1–12) + mild mid-list CE dual-agreement polish (`mid_ce_boost=3`,
-`mid_ce_max=26`). Rescue slots / arm–skill–domain priors off by default.
-Artifacts: `output/retrieve_gold4/`, Liz package
-`output/reports/liz_top50_review/`, eval `output/reports/_eval_r20.py`.
+**Batch-1 judge (gold-4, `prompts/align_judge_v1.md`)** — unique
+`(lesson, standard)` pairs; FULL wins if both FULL and PARTIAL exist; 3-class
+exact only on pairs in the top-25 shortlist (19 judged / 22 unique gold pairs):
+
+| Metric | Result |
+|---|---|
+| **3-class exact** | **18/19 (94.7%)** |
+| Binary recall (FULL+PARTIAL vs NONE) | 94.4% |
+| Binary precision | 100% (0 false positives) |
+| Leftover miss | U1L6 `1.T.T.1.c` — gold **partial**, judge **none** |
+
+Per lesson (judged pairs): L1 7/7, L3 4/4, L6 6/7, U3L5 1/1. Live judge run:
+Sonnet batch + Opus escalate. Broader multi-publisher / all-40-lesson judge
+scale is **not** claimed. Agentic/graph track is design-only.
+
+**Through-retrieve design (current):**
+- Stage-1 routes **EL-like** vs **unknown/generic**; steps carry **page** +
+  `kind: procedure | scaffold`
+- Generic boundaries recognize shared curriculum headings (incl. **Shared Story N**,
+  **Start-Up Lesson**); letter-spacing repair for display headings (`You will need`)
+- Lesson normalize **`normalize_ela.v2.3`** + `repair-normalized` sanitizers
+  restore under-extracted literacy acts from Stage-1 — publisher-safe cues,
+  not gold hard-codes
+- Gold retrieve query mode: **`multi_normalize_focused`** (arms from normalize,
+  not lesson chunks)
+- Funnel: competency bridges → per-query dense+BM25 RRF → merge (`top_k_sum`) →
+  local CE → shortlist fusion; rescue slots **off**. Artifacts:
+  `output/retrieve_gold4/`, eval `python -m veramynd_parser.scripts.eval_r20`
 
 | Stage | Status | Location |
 |---|---|---|
-| **Parse & verify** — teacher-guide PDF → structured lessons; standards spreadsheet → grade tree; layered safety-net verifier | **Implemented** | [`veramynd_parser/`](veramynd_parser/) |
-| **Pedagogical normalize (lessons)** — distill each lesson into what the student does, evidence-backed | **Implemented** | [`veramynd_parser/veramynd_parser/normalize/`](veramynd_parser/veramynd_parser/normalize/) |
-| **Standards normalize** — retrieval-ready standard leaves (`embed_text`) | **Implemented** | [`normalize/standard.py`](veramynd_parser/veramynd_parser/normalize/standard.py) |
-| **Chunk** — hierarchical lesson / instructional / evidence-pointer bundles | **Implemented** | [`chunk/`](veramynd_parser/veramynd_parser/chunk/) |
-| **Embed → Qdrant** — leaf-only standards + rich retrieval text; chunk vectors | **Implemented** | [`embed/`](veramynd_parser/veramynd_parser/embed/) |
-| **Hybrid retrieve + rerank** — multi-query competency funnel, max-blend merge, CE, mid-CE shortlist fusion | **Implemented (Batch-1 R@20/R@50 bar met)** | [`retrieve/`](veramynd_parser/veramynd_parser/retrieve/) |
-| **Alignment judge + grounding** — LLM rubric; ungrounded claims rejected | **Implemented** | [`judge/`](veramynd_parser/veramynd_parser/judge/) |
-| **Report** — CSV + HTML audit dashboard | **Implemented** | [`report/`](veramynd_parser/veramynd_parser/report/) |
-| **Gold-set metrics** — leaf recall @k + SME review package | **Partial** | gold: [`docs/_ga_g1_module2_goldset.md`](docs/_ga_g1_module2_goldset.md); [`retrieve/gold_metrics.py`](veramynd_parser/veramynd_parser/retrieve/gold_metrics.py); Liz CSVs under `output/reports/liz_top50_review/` |
-| **Agentic + standards-graph track** — alternate Stages 2–7 (no vector DB) | **Design only** | [`docs/architecture-agentic-graph.md`](docs/architecture-agentic-graph.md) |
+| **Parse & verify (PDF)** — EL path locked; generic Stage-1 GO on Shared Story L1 manual; per-step page + scaffold; GO/REVIEW/BLOCK | **Implemented (EL locked; 2nd publisher Stage-1 proven)** | [`veramynd_parser/`](veramynd_parser/) |
+| **Parse & verify (standards)** — column detection, GA/generic adapters, hierarchy, GO/REVIEW/BLOCK | **Implemented (GA validated)** | [`standards/`](veramynd_parser/veramynd_parser/standards/) |
+| **Pedagogical normalize (lessons)** — `normalize_ela.v2.3` + sanitize / `repair-normalized` | **Implemented** (Batch-1 locked; SSManual not locked) | [`normalize/`](veramynd_parser/veramynd_parser/normalize/) |
+| **Standards normalize** — retrieval-ready leaves (`embed_text`) | **Implemented** | [`normalize/standard.py`](veramynd_parser/veramynd_parser/normalize/standard.py) |
+| **Chunk** — hierarchical lesson / instructional / evidence-pointer bundles | **Implemented** (optional for gold R@25; normalize drives queries) | [`chunk/`](veramynd_parser/veramynd_parser/chunk/) |
+| **Embed → Qdrant** — leaf-only standards + rich retrieval text | **Implemented** | [`embed/`](veramynd_parser/veramynd_parser/embed/) |
+| **Hybrid retrieve + rerank** — `multi_normalize_focused` competency funnel | **Implemented (Batch-1 R@25/R@50 met)** | [`retrieve/`](veramynd_parser/veramynd_parser/retrieve/) |
+| **Alignment judge + grounding** — `align_judge.v1.1`; `(scaffold)` = supplemental; ungrounded quotes rejected | **Implemented** (gold-4 measured) | [`judge/`](veramynd_parser/veramynd_parser/judge/), [`prompts/align_judge_v1.md`](veramynd_parser/veramynd_parser/prompts/align_judge_v1.md) |
+| **Report** — CSV + HTML; gold-4 + client (no retrieve scores) | **Implemented** | [`report/`](veramynd_parser/veramynd_parser/report/), `output/reports/` |
+| **Gold-set metrics** — leaf recall @k + judge exact vs SME | **Retrieve locked; judge 94.7% on gold-4** | gold: [`docs/_ga_g1_module2_goldset.md`](docs/_ga_g1_module2_goldset.md) |
+| **Agentic + standards-graph track** | **Design only** | [`docs/architecture-agentic-graph.md`](docs/architecture-agentic-graph.md) |
 
 ## How it works
 
-**1. Parse.** The teacher guide is an untagged PDF, so lesson structure is recovered
-from the document's own signals. Two PDF engines run against each other:
+**1. Parse (PDF).** Structure detection routes **EL-like** guides to the EL path
+and **unknown** layouts to a generic divider (pattern-based lesson starts —
+Lesson/Day/Session/Shared Story/Start-Up — not publisher name switches). Steps
+keep **page provenance** and `procedure` vs in-block **scaffold** (ELL/UDL/support).
+Docling is layout-only; optional GPT-4.1-mini classifies ambiguous section roles
+only. Same upload shape → re-run without code changes; brand-new heading language
+may need one generic pattern extension.
 
-- **Docling** (primary) — layout analysis and table-structure recovery.
-- **PyMuPDF** (outline + fallback) — bookmarks for lesson boundaries, font-tier
-  cross-check, and verifier input.
+**2. Parse (standards).** Column-role detection → GA or generic adapter →
+hierarchy → `GradeStandards`. Optional LLM assists **structure only** — never
+invents codes/text/parents.
 
-**2. Verify.** Hard checks block a bad load (separation, headers, division,
-cross-engine standards). Soft checks flag review without blocking `GO`.
+**3. Verify.** Teacher-guide and standards each emit **GO / REVIEW / BLOCK**.
+Only **GO** is production-trusted unless explicitly overridden.
 
-**3. Normalize → chunk → embed.** Lessons and standards become retrieval-ready text;
-chunks land in Qdrant (`text-embedding-3-large`).
+**4. Normalize → (chunk) → embed.** Lessons become standards-agnostic
+`NormalizedLesson` records; standards become leaf `embed_text`. Sanitizers
+re-apply literacy signals from Stage-1 after LLM normalize. Standards leaves
+embed into Qdrant (`text-embedding-3-large`).
 
-**4. Retrieve → judge → report.** Leaf-only standards index. Enterprise multi-query
-retrieve: lesson-driven query arms (targets, skills, **competency bridges**) →
-per-query dense+BM25 → RRF → multi-arm merge (`top_k_sum` + depth `max_blend`) →
-local CE → fused shortlist (`judge_shortlist_k=50`, product cut **top-20**).
-The judge scores `full` / `partial` / `none` with grounded evidence; CSV/HTML
-reports export the audit trail.
+**5. Retrieve → judge → report.** Enterprise path builds focused query arms from
+**normalize** (objective, skills, actions, evidence, competency bridges) →
+dense+BM25 → RRF → CE → fused shortlist (`judge_shortlist_k=50`, product cut
+**top-20**, protected bar **Recall@25**). Judge (`align_judge.v1.1`) scores
+`full` / `partial` / `none` from **student acts** in Stage-1 steps
+(`(scaffold)` never yields `full`); ungrounded quotes become `none`. CSV/HTML
+reports export the audit trail (`output/reports/gold4_alignments.csv`;
+client-facing CSVs under `output/reports/client/`).
 
 ## Design principles
 
 - **Fail loud, never silently.** Structural problems block the pipeline.
+- **Pattern-based publishers, not name switches.** Extend shared heading /
+  section signals — do not grow `if publisher == "…" / elif …` trees.
 - **Content-addressed caching** for Docling parses and LLM normalizations.
 - **Evidence is mandatory and checked** — fabricated quotes are rejected.
 - **Two vocabularies, kept apart** (publisher claims vs target framework codes).
+- **Gold is eval-only** — never enters query generation, merge, CE, or fusion.
+- **Do not tune retrieve to hide normalize/parser regressions** — protect R@25.
+- **Normalize once per input version** — artifact registry + content-addressed
+  cache; same upload → reuse; `--force` only when intentionally refreshing.
 
 ## Quick start
 
@@ -94,12 +141,20 @@ pip install -e '.[test]'          # Python >= 3.11
 # Parse + verify (expects 40 lessons for the sample guide)
 veramynd-parser verify "../data/samples/ELA Grade 1 Module 2 Teacher Guide.pdf" --expect 40
 
-# Full Stage-1 export
+# Full Stage-1 export (PDF + standards; pass --framework for trusted standards GO)
 veramynd-parser export "../data/samples/ELA Grade 1 Module 2 Teacher Guide.pdf" \
   --out output/stage1 --expect 40 \
-  --standards "../data/samples/Grade 1 GA ELA Standards.xlsx"
+  --standards "../data/samples/Grade 1 GA ELA Standards.xlsx" \
+  --framework "GA ELA"
+
+# Standards-only parse + GO/REVIEW/BLOCK gate
+veramynd-parser stds "../data/samples/Grade 1 GA ELA Standards.xlsx" \
+  --framework "GA ELA" --json output/stage1/standards.json
 
 pytest
+# Protected recall bar (gold4 artifacts):
+python -m veramynd_parser.scripts.eval_r20          # includes R@25
+python -m veramynd_parser.scripts.phase8_regression # GA GO + R@25 gate
 ```
 
 Downstream (needs OpenAI key; extras as noted):
@@ -118,22 +173,31 @@ veramynd-parser embed-standards output/normalize_standards --out output/embeddin
 # Single-query hybrid (CLI) or enterprise multi-query batch:
 veramynd-parser retrieve-standards --chunk-file output/chunks/by_lesson/G1M2U1L3.json --out output/retrieve/G1M2U1L3.json
 
-# Batch-1 gold lessons (enterprise defaults: R@20≈90%, R@50=100% on live re-run)
+# After normalize changes: re-apply sanitizers without a full LLM re-run
+veramynd-parser repair-normalized output/stage1/lessons --normalize-dir output/normalize
+
+# Batch-1 gold retrieve (live: R@25=100%, R@20=85%, R@50=100%)
 # Gold list: docs/_ga_g1_module2_goldset.md (FULL+PARTIAL = positives)
 python -m veramynd_parser.scripts.batch_align_all \
   --retrieve-dir output/retrieve_gold4 \
   --diag-dir output/reports/retrieve_diag_gold4 \
-  --only G1M2U1L1 --only G1M2U1L3 --only G1M2U1L6 --only G1M2U3L5 \
+  --from-gold output/reports/gold_set_batch1_from_md.jsonl \
+  --judge-shortlist-k 50 \
   --skip-judge --skip-report --force-retrieve
-python output/reports/_eval_r20.py
+python -m veramynd_parser.scripts.eval_r20
 
-# Optional SME package (rank, code, official standard raw_text only)
-python output/reports/_export_liz_top50.py
-
+# Gold-4 judge (limit 25 = protected shortlist). Set JUDGE_MODEL / ANTHROPIC_API_KEY
+# in .env for Claude (claude-sonnet-4-5 + claude-opus-4-6 escalate).
 veramynd-parser judge-standards --retrieve-file output/retrieve_gold4/G1M2U1L3.json \
   --lesson-file output/stage1/lessons/G1M2U1L3.json \
-  --standards-dir output/normalize_standards --out output/judge/G1M2U1L3.json
-veramynd-parser report-alignments --judge-file output/judge/G1M2U1L3.json --out output/reports/alignments.csv
+  --standards-dir output/normalize_standards --out output/judge/G1M2U1L3.json \
+  --limit 25
+veramynd-parser report-alignments \
+  --judge-file output/judge/G1M2U1L1.json \
+  --judge-file output/judge/G1M2U1L3.json \
+  --judge-file output/judge/G1M2U1L6.json \
+  --judge-file output/judge/G1M2U3L5.json \
+  --out output/reports/gold4_alignments.csv
 ```
 
 Partial embeds (`--resource-id` / `--code`) refresh only those points.
@@ -183,7 +247,8 @@ compose file lives under [`_archive/docker/`](_archive/docker/) for optional HTT
 - Python >= 3.11
 - Primary path: Docling + PyMuPDF + openpyxl + pydantic
 - Lite path (no Docling): `pip install -e '.[lite]'`, then `Config(engine="pymupdf")`
-- Embed / retrieve / judge: OpenAI API key + optional `sentence-transformers` for rerank
+- Embed / retrieve: OpenAI API key + optional `sentence-transformers` for rerank
+- Judge: OpenAI (`gpt-*`) or Anthropic (`claude-*` + `ANTHROPIC_API_KEY`)
 
 ## License
 

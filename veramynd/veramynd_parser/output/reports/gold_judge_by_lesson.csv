@@ -1,0 +1,5 @@
+resource_id,prompt_version,gold_unique_pairs,judged_in_top25,absent_from_top25,exact_match_n,exact_match_pct,binary_tp,binary_fn,binary_fp,binary_tn,binary_recall_pct,binary_precision_pct
+G1M2U1L1,align_judge.batch.v1.1,8,7,1,7,100.0,7,0,0,0,100.0,100.0
+G1M2U1L3,align_judge.batch.v1.1,6,4,2,4,100.0,3,0,0,1,100.0,100.0
+G1M2U1L6,align_judge.batch.v1.1,7,7,0,6,85.7,6,1,0,0,85.7,100.0
+G1M2U3L5,align_judge.batch.v1.1,1,1,0,1,100.0,1,0,0,0,100.0,100.0
