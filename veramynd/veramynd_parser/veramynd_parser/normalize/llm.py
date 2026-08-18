@@ -6,6 +6,7 @@ import json
 import os
 import re
 import time
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import TypeVar
 
@@ -400,6 +401,347 @@ def format_non_retryable_openai_error(exc: BaseException) -> str:
     return (
         f"OpenAI rejected the request with a non-retryable error "
         f"({code or 'unknown'}): {exc}"
+    )
+
+
+_NON_RETRYABLE_ANTHROPIC_MARKERS = (
+    "authentication_error",
+    "invalid x-api-key",
+    "invalid api key",
+    "permission_error",
+    "credit balance is too low",
+    "billing",
+)
+
+
+def anthropic_api_key(explicit: str | None = None) -> str:
+    """Resolve Anthropic API key from override or ``ANTHROPIC_API_KEY`` env."""
+    load_dotenv()
+    if explicit and explicit.strip():
+        return explicit.strip()
+    key = (os.environ.get("ANTHROPIC_API_KEY") or "").strip()
+    if not key:
+        raise LlmError(
+            "ANTHROPIC_API_KEY is not set. Copy .env.example to .env and set "
+            "ANTHROPIC_API_KEY (never pass keys on the command line)."
+        )
+    return key
+
+
+def is_non_retryable_anthropic_error(exc: BaseException) -> bool:
+    """True for auth / billing failures that must not fall back to N pair calls."""
+    text = str(exc).lower()
+    status = getattr(exc, "status_code", None)
+    if status in (401, 403):
+        return True
+    return any(m in text for m in _NON_RETRYABLE_ANTHROPIC_MARKERS)
+
+
+def format_non_retryable_anthropic_error(exc: BaseException) -> str:
+    return (
+        "Anthropic API rejected the request (authentication or billing). "
+        "Check ANTHROPIC_API_KEY and https://console.anthropic.com — "
+        f"this error is not retryable. ({exc})"
+    )
+
+
+def is_non_retryable_llm_error(exc: BaseException) -> bool:
+    """Billing/auth failures for OpenAI or Anthropic — do not retry or pair-fallback."""
+    return is_non_retryable_openai_error(exc) or is_non_retryable_anthropic_error(exc)
+
+
+def build_anthropic_message_request(
+    *,
+    model: str,
+    system: str,
+    user: str,
+    max_tokens: int,
+    schema_model: type[BaseModel],
+    temperature: float = 0,
+) -> dict:
+    """Kwargs for ``Anthropic.messages.create`` (forced tool = structured JSON)."""
+    schema = _strict_schema(schema_model)
+    schema.pop("$schema", None)
+    name = schema_model.__name__[:64]
+    return {
+        "model": model,
+        "max_tokens": max_tokens,
+        "temperature": temperature,
+        "system": system,
+        "messages": [{"role": "user", "content": user}],
+        "tools": [
+            {
+                "name": name,
+                "description": "Return the structured result as tool input.",
+                "input_schema": schema,
+            }
+        ],
+        "tool_choice": {"type": "tool", "name": name},
+    }
+
+
+@dataclass
+class AnthropicUsageTotals:
+    calls: int = 0
+    input_tokens: int = 0
+    output_tokens: int = 0
+    by_model: dict[str, dict[str, int]] = field(default_factory=dict)
+
+    def record(self, model: str, input_tokens: int, output_tokens: int) -> None:
+        self.calls += 1
+        self.input_tokens += input_tokens
+        self.output_tokens += output_tokens
+        bucket = self.by_model.setdefault(
+            model,
+            {"calls": 0, "input_tokens": 0, "output_tokens": 0},
+        )
+        bucket["calls"] += 1
+        bucket["input_tokens"] += input_tokens
+        bucket["output_tokens"] += output_tokens
+
+
+_anthropic_usage = AnthropicUsageTotals()
+
+
+def reset_anthropic_usage() -> None:
+    global _anthropic_usage
+    _anthropic_usage = AnthropicUsageTotals()
+
+
+def anthropic_usage_totals() -> AnthropicUsageTotals:
+    return _anthropic_usage
+
+
+def _anthropic_model_rates(model: str) -> tuple[float, float]:
+    name = (model or "").lower()
+    if "opus" in name:
+        return 5.0, 25.0
+    if "haiku" in name:
+        return 1.0, 5.0
+    return 3.0, 15.0
+
+
+def _record_anthropic_usage(resp: object, model: str) -> None:
+    usage = getattr(resp, "usage", None)
+    if usage is None:
+        return
+    in_tok = int(getattr(usage, "input_tokens", 0) or 0)
+    out_tok = int(getattr(usage, "output_tokens", 0) or 0)
+    _anthropic_usage.record(model, in_tok, out_tok)
+
+
+def anthropic_usage_report() -> dict[str, object]:
+    totals = _anthropic_usage
+    by_model: dict[str, dict[str, int | float]] = {}
+    cost = 0.0
+    for model, bucket in totals.by_model.items():
+        in_rate, out_rate = _anthropic_model_rates(model)
+        model_cost = (
+            bucket["input_tokens"] * in_rate + bucket["output_tokens"] * out_rate
+        ) / 1_000_000
+        cost += model_cost
+        by_model[model] = {
+            **bucket,
+            "estimated_cost_usd": round(model_cost, 6),
+        }
+    return {
+        "calls": totals.calls,
+        "input_tokens": totals.input_tokens,
+        "output_tokens": totals.output_tokens,
+        "estimated_cost_usd": round(cost, 6),
+        "by_model": by_model,
+    }
+
+
+def format_anthropic_usage_summary() -> str:
+    totals = _anthropic_usage
+    if totals.calls == 0:
+        return "Anthropic usage: no API calls recorded"
+    cost = 0.0
+    lines = [
+        (
+            f"Anthropic usage: {totals.calls} call(s), "
+            f"{totals.input_tokens:,} input + {totals.output_tokens:,} output tokens"
+        )
+    ]
+    for model, bucket in sorted(totals.by_model.items()):
+        in_rate, out_rate = _anthropic_model_rates(model)
+        model_cost = (
+            bucket["input_tokens"] * in_rate + bucket["output_tokens"] * out_rate
+        ) / 1_000_000
+        cost += model_cost
+        lines.append(
+            f"  {model}: {bucket['calls']} call(s), "
+            f"{bucket['input_tokens']:,} in + {bucket['output_tokens']:,} out "
+            f"~ ${model_cost:.4f}"
+        )
+    lines.append(f"Estimated total cost: ${cost:.4f}")
+    return "\n".join(lines)
+
+
+def _coerce_json_encoded_lists(payload: dict) -> dict:
+    """Parse list fields that arrived as JSON strings (Anthropic tool quirk)."""
+    out = dict(payload)
+    for key, value in out.items():
+        if not isinstance(value, str):
+            continue
+        text = value.strip()
+        if not text.startswith("["):
+            continue
+        try:
+            parsed = json.loads(text)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(parsed, list):
+            out[key] = parsed
+    return out
+
+
+def _anthropic_tool_input(resp: object) -> dict:
+    content = getattr(resp, "content", None) or []
+    for block in content:
+        if getattr(block, "type", None) == "tool_use":
+            inp = getattr(block, "input", None)
+            if isinstance(inp, dict):
+                return _coerce_json_encoded_lists(inp)
+            if inp is not None:
+                return _coerce_json_encoded_lists(dict(inp))
+    texts: list[str] = []
+    for block in content:
+        if getattr(block, "type", None) == "text":
+            texts.append(getattr(block, "text", "") or "")
+    if texts:
+        extracted = _extract_json_object("\n".join(texts))
+        return _coerce_json_encoded_lists(extracted)
+    raise LlmError("Anthropic response had no tool_use JSON payload")
+
+
+def structured_complete_anthropic(
+    *,
+    system: str,
+    user: str,
+    schema_model: type[T],
+    model: str | None = None,
+    api_key: str | None = None,
+    max_tokens: int = 2048,
+) -> T:
+    """Call Anthropic Messages API and validate into ``schema_model``."""
+    if not (model or "").strip():
+        raise LlmError("Anthropic judge call requires an explicit model id")
+    return _complete_anthropic(
+        system=system,
+        user=user,
+        schema_model=schema_model,
+        model=model.strip(),
+        api_key=api_key,
+        max_tokens=max_tokens,
+    )
+
+
+def _complete_anthropic(
+    *,
+    system: str,
+    user: str,
+    schema_model: type[T],
+    model: str,
+    api_key: str | None,
+    max_tokens: int,
+) -> T:
+    try:
+        from anthropic import (
+            APIConnectionError,
+            APIStatusError,
+            APITimeoutError,
+            Anthropic,
+            RateLimitError,
+        )
+    except ImportError as e:  # pragma: no cover
+        raise LlmError(
+            "anthropic package not installed. Run: pip install 'veramynd-parser[judge]'"
+        ) from e
+
+    client = Anthropic(api_key=anthropic_api_key(api_key))
+    last_err: Exception | None = None
+    validation_failures = 0
+    for attempt in range(_MAX_ATTEMPTS):
+        request = build_anthropic_message_request(
+            model=model,
+            system=system,
+            user=user,
+            max_tokens=max_tokens,
+            schema_model=schema_model,
+        )
+        try:
+            resp = client.messages.create(**request)
+            _record_anthropic_usage(resp, model)
+        except RateLimitError as e:
+            if is_non_retryable_anthropic_error(e):
+                raise LlmError(format_non_retryable_anthropic_error(e)) from e
+            last_err = e
+            wait_s = _retry_wait_seconds(str(e), default=30.0)
+            print(
+                f"Anthropic rate limit - sleeping {wait_s:.0f}s "
+                f"(attempt {attempt + 1}/{_MAX_ATTEMPTS})...",
+                flush=True,
+            )
+            time.sleep(wait_s)
+            continue
+        except APIStatusError as e:
+            last_err = e
+            if is_non_retryable_anthropic_error(e):
+                raise LlmError(format_non_retryable_anthropic_error(e)) from e
+            if getattr(e, "status_code", None) in (429, 500, 502, 503, 529):
+                wait_s = _retry_wait_seconds(str(e), default=20.0)
+                print(
+                    f"Anthropic HTTP {e.status_code} - sleeping {wait_s:.0f}s "
+                    f"(attempt {attempt + 1}/{_MAX_ATTEMPTS})...",
+                    flush=True,
+                )
+                time.sleep(wait_s)
+                continue
+            raise LlmError(f"Anthropic call failed: {e}") from e
+        except (APIConnectionError, APITimeoutError, OSError, TimeoutError) as e:
+            raise LlmError(f"Anthropic call failed: {e}") from e
+
+        if getattr(resp, "stop_reason", None) == "max_tokens":
+            nxt = _next_max_tokens(max_tokens)
+            last_err = LlmError(
+                f"response truncated at max_tokens={max_tokens} (stop_reason="
+                f"'max_tokens')"
+            )
+            if nxt is None:
+                raise LlmError(
+                    f"Anthropic response truncated at max_tokens={max_tokens} and "
+                    f"the cap ({_MAX_TOKENS_CAP}) is already reached; raise "
+                    f"--max-tokens or shrink the lesson payload."
+                ) from last_err
+            print(
+                f"Anthropic response truncated at max_tokens={max_tokens} - raising "
+                f"to {nxt} and retrying (attempt {attempt + 1}/{_MAX_ATTEMPTS})...",
+                flush=True,
+            )
+            max_tokens = nxt
+            validation_failures = 0
+            continue
+
+        try:
+            return schema_model.model_validate(_anthropic_tool_input(resp))
+        except (LlmError, ValueError, TypeError, json.JSONDecodeError) as e:
+            last_err = e
+            validation_failures += 1
+            if validation_failures >= _MAX_VALIDATION_ATTEMPTS_DETERMINISTIC:
+                raise LlmError(
+                    f"Anthropic response failed schema validation "
+                    f"{validation_failures}x for model {model}: {e}"
+                ) from e
+            print(
+                f"Anthropic response failed validation, retrying "
+                f"(attempt {attempt + 1}/{_MAX_ATTEMPTS}): {e}",
+                flush=True,
+            )
+
+    raise LlmError(
+        f"Anthropic call did not succeed after {_MAX_ATTEMPTS} attempts: {last_err}"
     )
 
 

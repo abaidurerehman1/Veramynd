@@ -76,6 +76,8 @@ def test_export_can_drop_none(tmp_path: Path):
     with csv_path.open(encoding="utf-8", newline="") as f:
         rows = list(csv.DictReader(f))
     assert rows[0]["standard_code"] == "1.T.T.1.a"
+    assert "input_scope_caveat" in rows[0]
+    assert rows[0]["input_scope_caveat"] == ""
 
 
 def test_cli_registers_report():

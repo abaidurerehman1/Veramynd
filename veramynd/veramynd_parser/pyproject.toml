@@ -36,9 +36,9 @@ retrieve = [
     "qdrant-client==1.13.3",
     "sentence-transformers==3.4.1",
 ]
-# Alignment judge (OpenAI structured JSON + local grounding check).
+# Alignment judge (Anthropic structured JSON + local grounding check).
 judge = [
-    "openai==1.70.0",
+    "anthropic==0.49.0",
     "python-dotenv==1.1.0",
     "pydantic==2.10.6",
 ]

@@ -62,7 +62,12 @@ from .retrieve.pipeline import (
 from .retrieve.rerank import DEFAULT_RERANK_MODEL, DEFAULT_RERANK_TOP_N
 from .retrieve.io import lesson_query_from_chunk_bundle, lesson_query_from_normalize
 from .normalize.lesson import normalize_lesson, normalize_lessons_dir, repair_normalized_dir
-from .normalize.llm import LlmError
+from .normalize.llm import (
+    LlmError,
+    anthropic_usage_report,
+    format_anthropic_usage_summary,
+    reset_anthropic_usage,
+)
 from .normalize.models import dump_ela_record_json
 from .normalize.standard import normalize_standard, normalize_standards_tree
 from .normalize.standard_models import dump_normalized_standard_json
@@ -886,6 +891,7 @@ def cmd_judge_standards(args: argparse.Namespace) -> int:
         f" mode={'batch' if not args.no_batch else 'pair'}...",
         flush=True,
     )
+    reset_anthropic_usage()
     try:
         report = judge_retrieve_file(
             retrieve_file=args.retrieve_file,
@@ -900,6 +906,7 @@ def cmd_judge_standards(args: argparse.Namespace) -> int:
             limit=args.limit,
             batch=not bool(args.no_batch),
             batch_fallback_pair=not bool(args.no_batch_fallback),
+            coverage_pass=not bool(args.no_coverage_pass),
         )
     except JudgeIncompleteError as e:
         incomplete = Path(str(out) + ".incomplete.json")
@@ -914,6 +921,8 @@ def cmd_judge_standards(args: argparse.Namespace) -> int:
         print(f"ERROR: {e}", file=sys.stderr)
         return 1
 
+    write_judge_report(report, out)
+    report["usage"] = anthropic_usage_report()
     write_judge_report(report, out)
     by = report.get("by_status") or {}
     print(
@@ -934,6 +943,7 @@ def cmd_judge_standards(args: argparse.Namespace) -> int:
         print(f"Failed: {len(report['failed'])}", flush=True)
         return 1
     print(f"Wrote {out}", flush=True)
+    print(format_anthropic_usage_summary(), flush=True)
     return 0
 
 
@@ -1684,7 +1694,15 @@ def build_parser() -> argparse.ArgumentParser:
         "--limit",
         type=int,
         default=None,
-        help="judge only the first N candidates (smoke/debug)",
+        help="judge only the first N retrieve candidates (smoke/debug)",
+    )
+    js.add_argument(
+        "--no-coverage-pass",
+        action="store_true",
+        help=(
+            "do not inject activity-driven feedback/present codes that "
+            "missed the retrieve shortlist (P6 off)"
+        ),
     )
     js.add_argument(
         "--max-tokens",
@@ -1692,7 +1710,7 @@ def build_parser() -> argparse.ArgumentParser:
         default=None,
         help=(
             "max output tokens per judge call "
-            "(default: 8192 batch / 2048 pair)"
+            "(default: 16384 batch / 2048 pair)"
         ),
     )
     js.add_argument(

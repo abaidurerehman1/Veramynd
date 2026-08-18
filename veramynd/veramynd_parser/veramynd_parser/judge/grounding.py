@@ -22,6 +22,8 @@ _TRANS = str.maketrans(
 
 # Positive claims need a real quote of usable length.
 _MIN_EVIDENCE_CHARS = 24
+_PAGE_HEADER_RE = re.compile(r"(?i)\(\s*page\s+(\d+)\s*\)")
+_STITCH_RE = re.compile(r"\s+/\s+")
 
 
 def normalize_for_grounding(text: str) -> str:
@@ -83,6 +85,76 @@ def is_grounded(
     return False
 
 
+def _quote_candidates(*quotes: str) -> list[str]:
+    """Expand stitched quotes into verbatim pieces without loosening the check."""
+    out: list[str] = []
+    seen: set[str] = set()
+    for raw in quotes:
+        text = (raw or "").strip()
+        if not text:
+            continue
+        pieces = [text]
+        if _STITCH_RE.search(text):
+            pieces.extend(p.strip() for p in _STITCH_RE.split(text) if p.strip())
+        for piece in pieces:
+            key = normalize_for_grounding(piece)
+            if not key or key in seen:
+                continue
+            seen.add(key)
+            out.append(piece)
+    return out
+
+
+def first_grounded_evidence(*quotes: str, lesson_raw_text: str) -> str | None:
+    """Return the first candidate quote that is present in lesson text."""
+    for piece in _quote_candidates(*quotes):
+        if is_grounded(piece, lesson_raw_text, allow_empty=False):
+            return piece
+    return None
+
+
+def page_from_evidence(evidence: str, lesson_raw_text: str) -> int | None:
+    """Return the Stage-1 block page that contains ``evidence``, if any.
+
+    Lesson raw text already carries publisher-agnostic ``(page N)`` headers
+    from instructional blocks. This does not ask the LLM for a page and does
+    not parse publisher-specific location strings.
+    """
+    needle = normalize_for_grounding(evidence)
+    if not needle:
+        return None
+    if "..." in needle or "…" in needle:
+        segments = _segment_evidence(needle)
+        if not segments:
+            return None
+        needle = normalize_for_grounding(segments[0])
+        if not needle:
+            return None
+
+    current_page: int | None = None
+    current_parts: list[str] = []
+
+    def _section_hit() -> int | None:
+        if current_page is None or not current_parts:
+            return None
+        hay = normalize_for_grounding("\n".join(current_parts))
+        if needle in hay:
+            return current_page
+        return None
+
+    for line in (lesson_raw_text or "").splitlines():
+        m = _PAGE_HEADER_RE.search(line)
+        if m:
+            hit = _section_hit()
+            if hit is not None:
+                return hit
+            current_page = int(m.group(1))
+            current_parts = [line]
+        else:
+            current_parts.append(line)
+    return _section_hit()
+
+
 def grounding_note(evidence: str, *, grounded: bool, allow_empty: bool = False) -> str:
     if not (evidence or "").strip():
         if allow_empty:
@@ -93,4 +165,10 @@ def grounding_note(evidence: str, *, grounded: bool, allow_empty: bool = False) 
     return "evidence quote NOT found in lesson raw text (possible fabrication)"
 
 
-__all__ = ["grounding_note", "is_grounded", "normalize_for_grounding"]
+__all__ = [
+    "first_grounded_evidence",
+    "grounding_note",
+    "is_grounded",
+    "normalize_for_grounding",
+    "page_from_evidence",
+]

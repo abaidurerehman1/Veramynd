@@ -16,8 +16,11 @@ Built against real documents (in `../data/samples/`):
   retrieve **not** locked yet)
 
 Batch-1 gold retrieve (protected bar): **R@25 = 100%** on
-`output/retrieve_gold4/`. Gold-4 judge (`prompts/align_judge_v1.md`,
-`align_judge.v1.1`): **18/19 = 94.7%** 3-class exact — see
+`output/retrieve_gold4/`. Live gold-4 judge uses
+[`prompts/assembled_judge_prompt.md`](veramynd_parser/prompts/assembled_judge_prompt.md)
+(engine + GA Grade 1 overlay), Anthropic Sonnet batch + Opus escalate,
+`--limit 25`. Prior OpenAI `align_judge.v1.1` baseline was **18/19 = 94.7%**.
+Assembled re-judge of L3/L6/U3L5 is still open — see
 [What's still incomplete](#whats-still-incomplete).
 
 **Dynamic Stage-1 (honest):** routes EL vs generic from document signals; generic
@@ -242,11 +245,19 @@ veramynd_parser/
   (eval-only — never enters ranking). Residual @20 (all still ≤25, U1L6):
   `1.P.EICC.3.e`, `1.P.EICC.3.f`, `1.T.RA.2.a`. Gold **none** rows outside
   top 25 do not count against R@25.
-- **Batch-1 gold-4 judge (measured, not closed)** — `align_judge.v1.1` on the
-  same 4 lessons, unique pairs, 3-class exact on the 19 judged in top 25:
-  **18/19 (94.7%)**, binary precision 100%. Leftover: U1L6 `1.T.T.1.c`
-  (gold partial, judge none). All 40 EL lessons on this prompt, and Shared
-  Story through judge, are **not** claimed.
+- **Batch-1 gold-4 judge (measured, not closed)** — live prompt is
+  `assembled_judge_prompt.md` (GA overlay includes SME fences F1–F4 / F8).
+  Gold eval is always `--limit 25` (do not retune retrieve to hide judge
+  misses). After retrieve, a coverage pass can still judge activity-driven
+  feedback/present codes that missed top 25. **L1** on the assembled prompt
+  (Anthropic batch, `--no-cache --limit 25`): **6/7** gold overlap; leftover
+  overlap miss `1.P.EICC.4.c` (gold full / json partial); `1.P.EICC.4.e`
+  is outside top 25. **L3 / L6 / U3L5** are not yet re-judged on this prompt
+  (current JSON may be older v1 / GPT runs). Prior OpenAI `align_judge.v1.1`
+  baseline on unique top-25 pairs: **18/19 (94.7%)**. All 40 EL lessons, and
+  Shared Story through judge, are **not** claimed. Close-read comprehension
+  can be understated until Read-aloud Guides are in Stage-1 (P4 caveat;
+  do not hand-edit labels).
 - **Any-publisher / any-framework claim** — architecture is
   curriculum-agnostic (acts + competency bridges + **shared heading patterns**,
   not per-publisher `if/elif` trees or hard-coded lesson IDs).
@@ -358,6 +369,7 @@ maintenance recomputation.
 | `repair-normalized` | re-sanitizes existing JSON in place | re-run after Stage-1/sanitize changes |
 | `chunk-lessons` | skip when `source_fingerprint` matches | `--force` |
 | `embed-*` | skip when Qdrant `content_hash`+model+dims match | `--force` / `--recreate` |
+| `judge-standards` | content-addressed judge cache | `--no-cache` after prompt/parser changes |
 | `batch_align_all` | skip existing retrieve/judge JSON | `--force` (or `--force-retrieve` / `--force-judge`) |
 
 `--recreate`: rebuild the embedding index for the **requested scope**. If no
@@ -490,41 +502,56 @@ query generation, merge, CE, or shortlist fusion** — gold is eval-only.
 
 ### Alignment judge + grounding (enterprise K–12)
 
-Live prompt: [`prompts/align_judge_v1.md`](veramynd_parser/prompts/align_judge_v1.md)
-(`align_judge.v1.1`). Scores **student acts** in Stage-1 steps. Tagged
-`(scaffold)` evidence is **partial** (never `full`); ungrounded quotes become
-`none`. Gold-4 result: **18/19 exact**.
+Live prompt: [`prompts/assembled_judge_prompt.md`](veramynd_parser/prompts/assembled_judge_prompt.md)
+(framework-neutral **engine** + GA Grade 1 **overlay**). Overlay-only SME
+fences F1–F4 / F8 are encoded there; do not rewrite the engine. Scores
+**student acts** in Stage-1 steps. Ungrounded quotes become `none`.
+`align_judge_v1.md` is unused.
+
+Gold-4 eval: `--limit 25` on `output/retrieve_gold4/` (R@25 bar stays;
+do not retune retrieve for judge misses). After the retrieve shortlist, a
+**coverage pass** appends activity-driven feedback/present codes when the
+lesson has those tasks (`1.P.EICC.4.f`, `1.P.CP.1.c`, `1.P.CP.2.a`) even if
+they missed top 25. Opt out: `--no-coverage-pass`.
+
+Close-read lessons that only *cite* a supporting Read-aloud Guide (guide body
+not in Stage-1) get `input_scope_caveat` on named comprehension codes — scores
+are likely understated; **do not hand-edit labels**. Re-run those lessons only
+if the client shares the guides.
 
 ```bash
 pip install -e '.[judge]'   # openai + anthropic + dotenv
 veramynd-parser judge-standards \
-  --retrieve-file output/retrieve_gold4/G1M2U1L3.json \
-  --lesson-file output/stage1/lessons/G1M2U1L3.json \
+  --retrieve-file output/retrieve_gold4/G1M2U1L1.json \
+  --lesson-file output/stage1/lessons/G1M2U1L1.json \
   --standards-dir output/normalize_standards \
-  --out output/judge/G1M2U1L3.json \
-  --limit 25
+  --out output/judge/G1M2U1L1.json \
+  --limit 25 --no-cache
 ```
 
 **Quality profile `enterprise_k12` (default):**
-1. **Pair depth** — one focused call per lesson-standard pair
-2. **Escalate** — re-judge `partial`, low/medium confidence, or empty-evidence
-   positives with `JUDGE_ESCALATE_MODEL`
+1. **Batch first** — one Sonnet call for the shortlist (default `max_tokens`
+   16384). If Anthropic returns `results` as a JSON string, it is coerced to a
+   list. Pair mode is `--no-batch` or automatic fallback if batch JSON is
+   invalid.
+2. **Escalate** — re-judge `partial`, `needs_review`, or empty-evidence
+   positives with `JUDGE_ESCALATE_MODEL` (Opus)
 3. **Clause aggregation** — `partial` means at least one required clause met
    and at least one unmet; it is not a confidence label
 4. **Grounding** — ungrounded positive claims are rejected to `none`
 
 Provider is chosen from the model id (no extra flag):
-- `gpt-*` / `o*` → OpenAI (`OPENAI_API_KEY`); defaults `gpt-4.1` + `gpt-5`
-- `claude-*` → Anthropic (`ANTHROPIC_API_KEY`), e.g. `claude-sonnet-4-5` +
-  `claude-opus-4-6` escalate
+- `gpt-*` / `o*` → OpenAI (`OPENAI_API_KEY`)
+- `claude-*` → Anthropic (`ANTHROPIC_API_KEY`); live gold-4 defaults:
 
 ```
 JUDGE_MODEL=claude-sonnet-4-5
 JUDGE_ESCALATE_MODEL=claude-opus-4-6
 ```
 
-Opt out of escalate for smoke/cost: `--no-escalate`.  
-Opt into the cheaper batch judge with `--batch`.
+Opt out of escalate for smoke/cost: `--no-escalate`.
+Opt out of coverage extras: `--no-coverage-pass` (saves judge cost; U3L5
+feedback/present codes then stay unjudged if they missed top 25).
 
 Batch all lessons:
 
@@ -548,6 +575,7 @@ veramynd-parser report-alignments \
 Or export a whole folder: `--judge-dir output/judge`.  
 Use `--aligned-only` for full+partial rows only (still never drops rows for missing confidence).
 Also writes an HTML audit dashboard next to the CSV (disable with `--no-html`).
+CSV columns include `needs_review`, `coverage_pass`, and `input_scope_caveat`.
 
 Client-facing CSVs (no retrieve scores; includes expert-vs-system compare) live
 under `output/reports/client/`.

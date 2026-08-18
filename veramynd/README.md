@@ -24,7 +24,7 @@ a per-publisher `if Success for All / elif Publisher B` tree.
 | Proof point | Status |
 |---|---|
 | Batch-1 EL → normalize → retrieve (gold R@25) | **Locked** |
-| Batch-1 gold-4 judge vs SME (`align_judge.v1.1`) | **Measured** — 18/19 exact (94.7%) on unique pairs in top 25 |
+| Batch-1 gold-4 judge vs SME (live assembled prompt) | **Measured, not closed** — L1 **6/7** overlap; L3/L6/U3L5 not yet re-judged on assembled. Prior OpenAI `align_judge.v1.1`: 18/19 exact (94.7%) |
 | Second publisher Stage-1 GO (`21111_RBtL_SSManual_L1.pdf`, Reading Roots Shared Story Level 1) | **Done** — 14 lessons in `output/stage1_ssmanual/` |
 | Second publisher normalize → retrieve → judge | **Not locked yet** |
 | Any PDF / any publisher / any grade with zero pattern work | **Not claimed** — new heading languages may need a small generic-pattern add |
@@ -45,20 +45,24 @@ Residual @20 (all still ≤25): `1.P.EICC.3.e`, `1.P.EICC.3.f`, `1.T.RA.2.a`
 (U1L6). Three gold **none** rows sit outside top 25 and do **not** count against
 R@25.
 
-**Batch-1 judge (gold-4, `prompts/align_judge_v1.md`)** — unique
-`(lesson, standard)` pairs; FULL wins if both FULL and PARTIAL exist; 3-class
-exact only on pairs in the top-25 shortlist (19 judged / 22 unique gold pairs):
+**Batch-1 judge (gold-4, live `prompts/assembled_judge_prompt.md`)** — engine +
+GA Grade 1 overlay (SME fences F1–F4 / F8). Gold eval is always `--limit 25`
+(do not retune retrieve to hide judge misses). Anthropic Sonnet batch + Opus
+escalate; default `max_tokens` 16384. A coverage pass after top 25 can still
+judge activity-driven feedback/present codes. Close-read comprehension can be
+understated until Read-aloud Guides are in Stage-1 (`input_scope_caveat`; do
+not hand-edit labels).
 
 | Metric | Result |
 |---|---|
-| **3-class exact** | **18/19 (94.7%)** |
-| Binary recall (FULL+PARTIAL vs NONE) | 94.4% |
-| Binary precision | 100% (0 false positives) |
-| Leftover miss | U1L6 `1.T.T.1.c` — gold **partial**, judge **none** |
+| **L1 assembled (Anthropic batch, `--no-cache --limit 25`)** | **6/7** gold overlap |
+| L1 leftover overlap miss | `1.P.EICC.4.c` — gold **full**, json **partial** |
+| L1 unjudged gold | `1.P.EICC.4.e` — outside top 25 (L1 has no coverage inject) |
+| **L3 / L6 / U3L5 assembled** | **Not yet re-judged** (JSON may still be older v1 / GPT) |
+| Prior OpenAI `align_judge.v1.1` (unused) | **18/19 (94.7%)** 3-class exact on unique top-25 pairs |
 
-Per lesson (judged pairs): L1 7/7, L3 4/4, L6 6/7, U3L5 1/1. Live judge run:
-Sonnet batch + Opus escalate. Broader multi-publisher / all-40-lesson judge
-scale is **not** claimed. Agentic/graph track is design-only.
+Broader multi-publisher / all-40-lesson judge scale is **not** claimed.
+Agentic/graph track is design-only.
 
 **Through-retrieve design (current):**
 - Stage-1 routes **EL-like** vs **unknown/generic**; steps carry **page** +
@@ -83,9 +87,9 @@ scale is **not** claimed. Agentic/graph track is design-only.
 | **Chunk** — hierarchical lesson / instructional / evidence-pointer bundles | **Implemented** (optional for gold R@25; normalize drives queries) | [`chunk/`](veramynd_parser/veramynd_parser/chunk/) |
 | **Embed → Qdrant** — leaf-only standards + rich retrieval text | **Implemented** | [`embed/`](veramynd_parser/veramynd_parser/embed/) |
 | **Hybrid retrieve + rerank** — `multi_normalize_focused` competency funnel | **Implemented (Batch-1 R@25/R@50 met)** | [`retrieve/`](veramynd_parser/veramynd_parser/retrieve/) |
-| **Alignment judge + grounding** — `align_judge.v1.1`; `(scaffold)` = supplemental; ungrounded quotes rejected | **Implemented** (gold-4 measured) | [`judge/`](veramynd_parser/veramynd_parser/judge/), [`prompts/align_judge_v1.md`](veramynd_parser/veramynd_parser/prompts/align_judge_v1.md) |
+| **Alignment judge + grounding** — assembled prompt; ungrounded quotes rejected; P4 caveat + P6 coverage pass | **Implemented** (L1 assembled measured; gold-4 re-judge open) | [`judge/`](veramynd_parser/veramynd_parser/judge/), [`prompts/assembled_judge_prompt.md`](veramynd_parser/veramynd_parser/prompts/assembled_judge_prompt.md) |
 | **Report** — CSV + HTML; gold-4 + client (no retrieve scores) | **Implemented** | [`report/`](veramynd_parser/veramynd_parser/report/), `output/reports/` |
-| **Gold-set metrics** — leaf recall @k + judge exact vs SME | **Retrieve locked; judge 94.7% on gold-4** | gold: [`docs/_ga_g1_module2_goldset.md`](docs/_ga_g1_module2_goldset.md) |
+| **Gold-set metrics** — leaf recall @k + judge exact vs SME | **Retrieve locked; assembled judge L1 6/7, gold-4 not closed** | gold: [`docs/_ga_g1_module2_goldset.md`](docs/_ga_g1_module2_goldset.md) |
 | **Agentic + standards-graph track** | **Design only** | [`docs/architecture-agentic-graph.md`](docs/architecture-agentic-graph.md) |
 
 ## How it works
@@ -113,11 +117,12 @@ embed into Qdrant (`text-embedding-3-large`).
 **5. Retrieve → judge → report.** Enterprise path builds focused query arms from
 **normalize** (objective, skills, actions, evidence, competency bridges) →
 dense+BM25 → RRF → CE → fused shortlist (`judge_shortlist_k=50`, product cut
-**top-20**, protected bar **Recall@25**). Judge (`align_judge.v1.1`) scores
-`full` / `partial` / `none` from **student acts** in Stage-1 steps
-(`(scaffold)` never yields `full`); ungrounded quotes become `none`. CSV/HTML
-reports export the audit trail (`output/reports/gold4_alignments.csv`;
-client-facing CSVs under `output/reports/client/`).
+**top-20**, protected bar **Recall@25**). Judge (assembled engine + overlay)
+scores `full` / `partial` / `none` from **student acts** in Stage-1 steps;
+ungrounded quotes become `none`. Coverage pass can add feedback/present codes
+after top 25. CSV/HTML reports export the audit trail
+(`output/reports/gold4_alignments.csv`; client-facing CSVs under
+`output/reports/client/`).
 
 ## Design principles
 
@@ -157,7 +162,7 @@ python -m veramynd_parser.scripts.eval_r20          # includes R@25
 python -m veramynd_parser.scripts.phase8_regression # GA GO + R@25 gate
 ```
 
-Downstream (needs OpenAI key; extras as noted):
+Downstream (needs OpenAI key for normalize/embed; Anthropic key for live judge):
 
 ```bash
 pip install -e '.[normalize,embed,retrieve,judge]'
@@ -186,12 +191,13 @@ python -m veramynd_parser.scripts.batch_align_all \
   --skip-judge --skip-report --force-retrieve
 python -m veramynd_parser.scripts.eval_r20
 
-# Gold-4 judge (limit 25 = protected shortlist). Set JUDGE_MODEL / ANTHROPIC_API_KEY
-# in .env for Claude (claude-sonnet-4-5 + claude-opus-4-6 escalate).
-veramynd-parser judge-standards --retrieve-file output/retrieve_gold4/G1M2U1L3.json \
-  --lesson-file output/stage1/lessons/G1M2U1L3.json \
-  --standards-dir output/normalize_standards --out output/judge/G1M2U1L3.json \
-  --limit 25
+# Gold-4 judge (limit 25 = protected shortlist). Assembled prompt is live.
+# Set JUDGE_MODEL / ANTHROPIC_API_KEY in .env (claude-sonnet-4-5 + opus escalate).
+# --no-cache after prompt/parser changes; extra judge cost if coverage pass injects.
+veramynd-parser judge-standards --retrieve-file output/retrieve_gold4/G1M2U1L1.json \
+  --lesson-file output/stage1/lessons/G1M2U1L1.json \
+  --standards-dir output/normalize_standards --out output/judge/G1M2U1L1.json \
+  --limit 25 --no-cache
 veramynd-parser report-alignments \
   --judge-file output/judge/G1M2U1L1.json \
   --judge-file output/judge/G1M2U1L3.json \
@@ -248,7 +254,7 @@ compose file lives under [`_archive/docker/`](_archive/docker/) for optional HTT
 - Primary path: Docling + PyMuPDF + openpyxl + pydantic
 - Lite path (no Docling): `pip install -e '.[lite]'`, then `Config(engine="pymupdf")`
 - Embed / retrieve: OpenAI API key + optional `sentence-transformers` for rerank
-- Judge: OpenAI (`gpt-*`) or Anthropic (`claude-*` + `ANTHROPIC_API_KEY`)
+- Judge: Anthropic (`claude-*` + `ANTHROPIC_API_KEY`) is the live gold-4 path; OpenAI (`gpt-*`) still works if `JUDGE_MODEL` is a GPT id
 
 ## License
 

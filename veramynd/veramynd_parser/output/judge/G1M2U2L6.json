@@ -292,7 +292,8 @@
         "bm25_score": 73.45431561943028,
         "rerank_score": 0.987143337726593
       },
-      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)",
+      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
     },
     {
       "schema_version": "1.0-judge",

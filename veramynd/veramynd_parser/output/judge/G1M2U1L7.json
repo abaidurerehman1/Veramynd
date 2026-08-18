@@ -51,7 +51,8 @@
         "bm25_score": 80.2606126620999,
         "rerank_score": 0.9956457018852234
       },
-      "standard_raw_text": "Identify who is speaking or telling the story at various points in a text. (I)"
+      "standard_raw_text": "Identify who is speaking or telling the story at various points in a text. (I)",
+      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
     },
     {
       "schema_version": "1.0-judge",
@@ -159,7 +160,8 @@
         "bm25_score": 115.44032719086081,
         "rerank_score": 0.9898515939712524
       },
-      "standard_raw_text": "Identify a simple plot with a problem and solution. (I)"
+      "standard_raw_text": "Identify a simple plot with a problem and solution. (I)",
+      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
     },
     {
       "schema_version": "1.0-judge",
@@ -297,7 +299,8 @@
         "bm25_score": 94.03145781085938,
         "rerank_score": 0.988993227481842
       },
-      "standard_raw_text": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue. (I)"
+      "standard_raw_text": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue. (I)",
+      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
     },
     {
       "schema_version": "1.0-judge",
@@ -445,7 +448,8 @@
         "bm25_score": 75.23324473413793,
         "rerank_score": 0.9876461625099182
       },
-      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)",
+      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
     }
   ]
 }

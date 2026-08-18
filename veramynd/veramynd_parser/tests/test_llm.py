@@ -210,6 +210,30 @@ def test_openai_api_key_requires_env(monkeypatch):
         openai_api_key(None)
 
 
+def test_anthropic_api_key_requires_env(monkeypatch):
+    from veramynd_parser.normalize.llm import anthropic_api_key
+
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    monkeypatch.setattr("veramynd_parser.normalize.llm.load_dotenv", lambda: None)
+    with pytest.raises(LlmError, match="ANTHROPIC_API_KEY"):
+        anthropic_api_key(None)
+
+
+def test_is_non_retryable_anthropic_auth_and_billing():
+    from veramynd_parser.normalize.llm import is_non_retryable_anthropic_error
+
+    class E(Exception):
+        pass
+
+    auth = E("authentication_error: invalid x-api-key")
+    assert is_non_retryable_anthropic_error(auth) is True
+    billing = E("Your credit balance is too low to access the Anthropic API")
+    assert is_non_retryable_anthropic_error(billing) is True
+    rate = E("rate_limit_error: 429")
+    rate.status_code = 429
+    assert is_non_retryable_anthropic_error(rate) is False
+
+
 def test_strict_openai_schema_requires_every_property_and_forbids_extras():
     schema = _strict_openai_schema(_Target)
     assert schema["additionalProperties"] is False
@@ -275,6 +299,57 @@ def _make_openai_module(create_impl) -> types.ModuleType:
 def _install_fake_openai(monkeypatch, create_impl):
     monkeypatch.setitem(sys.modules, "openai", _make_openai_module(create_impl))
     monkeypatch.setenv("OPENAI_API_KEY", "sk-test")
+
+
+def _make_anthropic_module(create_impl) -> types.ModuleType:
+    mod = types.ModuleType("anthropic")
+
+    class APIStatusError(Exception):
+        def __init__(self, message="", *, status_code=500, body=None):
+            super().__init__(message)
+            self.status_code = status_code
+            self.body = body
+
+    class RateLimitError(APIStatusError):
+        pass
+
+    class APIConnectionError(Exception):
+        pass
+
+    class APITimeoutError(Exception):
+        pass
+
+    class _Block:
+        def __init__(self, payload: dict):
+            self.type = "tool_use"
+            self.input = payload
+
+    class _Resp:
+        def __init__(self, payload: dict, stop_reason: str = "tool_use"):
+            self.stop_reason = stop_reason
+            self.content = [_Block(payload)]
+
+    class _Messages:
+        def create(self, **kwargs):
+            return create_impl(**kwargs)
+
+    class Anthropic:
+        def __init__(self, api_key: str | None = None) -> None:
+            self.api_key = api_key
+            self.messages = _Messages()
+
+    mod.Anthropic = Anthropic
+    mod.APIStatusError = APIStatusError
+    mod.RateLimitError = RateLimitError
+    mod.APIConnectionError = APIConnectionError
+    mod.APITimeoutError = APITimeoutError
+    mod._Resp = _Resp
+    return mod
+
+
+def _install_fake_anthropic(monkeypatch, create_impl):
+    monkeypatch.setitem(sys.modules, "anthropic", _make_anthropic_module(create_impl))
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-test")
 
 
 def test_uses_max_completion_tokens_for_gpt5_family():
@@ -419,10 +494,8 @@ def _judge_token_key(kwargs: dict) -> str:
     return "max_tokens"
 
 
-def test_judge_modes_share_openai_token_param_helper(tmp_path, monkeypatch):
-    """Batch, pair, escalation, and pair-fallback must all go through the shared
-    request builder — GPT-5 escalate must never send max_tokens.
-    """
+def test_judge_modes_use_anthropic_messages_api(tmp_path, monkeypatch):
+    """Batch, pair, escalation, and pair-fallback all call Anthropic.messages.create."""
     import json
     from pathlib import Path
 
@@ -467,114 +540,101 @@ def test_judge_modes_share_openai_token_param_helper(tmp_path, monkeypatch):
         encoding="utf-8",
     )
 
-    recorded: list[tuple[str, str, str]] = []  # (path_label, model, token_key)
+    recorded: list[tuple[str, str]] = []
     mode = {"path": "batch", "fail_batch": False}
 
-    def _pair_json(*, status: str = "full", confidence: str = "high") -> str:
-        return json.dumps(
-            {
-                "matched_status": status,
-                "clauses": [{"clause": "identify setting", "met": True, "note": ""}],
-                "evidence": quote if status != "none" else "",
-                "evidence_page": 70,
-                "confidence": confidence,
-                "rationale": "ok",
-            }
-        )
+    def _pair_payload(*, status: str = "full", confidence: str = "high") -> dict:
+        needs_review = confidence in {"low", "medium"}
+        return {
+            "candidate_id": "G1M2U1L3",
+            "location": "page 70",
+            "standard_code": "1.T.T.1.a",
+            "clauses": [
+                {
+                    "clause": "identify setting",
+                    "judgment": "met" if status != "none" else "not_met",
+                    "actor": "student" if status != "none" else "none",
+                    "student_quote": quote if status != "none" else "",
+                    "teacher_quote": "",
+                    "why": "ok" if status != "none" else "",
+                }
+            ],
+            "alignment": status,
+            "needs_review": needs_review,
+            "review_reason": "partial-or-full" if needs_review else "",
+            "evidence": quote if status != "none" else "",
+            "anchor_note": "",
+        }
 
-    def _batch_json(*, status: str = "full", confidence: str = "high") -> str:
-        return json.dumps(
-            {
-                "results": [
-                    {
-                        "standard_code": "1.T.T.1.a",
-                        "matched_status": status,
-                        "clauses": [
-                            {"clause": "identify setting", "met": True, "note": ""}
-                        ],
-                        "evidence": quote if status != "none" else "",
-                        "evidence_page": 70,
-                        "confidence": confidence,
-                        "rationale": "ok",
-                    }
-                ]
-            }
-        )
+    def _batch_payload(*, status: str = "full", confidence: str = "high") -> dict:
+        item = _pair_payload(status=status, confidence=confidence)
+        return {"results": [item]}
 
     def create(**kwargs):
+        assert "max_tokens" in kwargs
+        assert "max_completion_tokens" not in kwargs
         model = kwargs["model"]
-        key = _judge_token_key(kwargs)
-        recorded.append((mode["path"], model, key))
-        mod = sys.modules["openai"]
-        schema_name = (
-            kwargs.get("response_format", {})
-            .get("json_schema", {})
-            .get("name", "")
-        )
+        recorded.append((mode["path"], model))
+        mod = sys.modules["anthropic"]
+        tools = kwargs.get("tools") or []
+        schema_name = tools[0]["name"] if tools else ""
 
-        if mode["fail_batch"] and schema_name == "JudgeBatchDraft":
-            err = mod.APIStatusError("batch boom", status_code=400)
-            raise err
+        if mode["fail_batch"] and schema_name == "JudgeClientBatchDraft":
+            raise mod.APIStatusError("batch boom", status_code=400)
 
-        if schema_name == "JudgeBatchDraft":
-            # Escalation path: return partial so escalate fires.
+        if schema_name == "JudgeClientBatchDraft":
             if mode["path"] == "escalate":
                 return mod._Resp(
-                    content=_batch_json(status="partial", confidence="medium")
+                    _batch_payload(status="partial", confidence="medium")
                 )
-            return mod._Resp(content=_batch_json())
-        # Pair / escalate pair / fallback pair
-        return mod._Resp(content=_pair_json())
+            return mod._Resp(_batch_payload())
+        return mod._Resp(_pair_payload())
 
-    _install_fake_openai(monkeypatch, create)
+    _install_fake_anthropic(monkeypatch, create)
 
-    # 1) Batch (no escalate) → gpt-4.1 uses max_tokens
     mode["path"] = "batch"
     report = judge_retrieve_file(
         retrieve_file=retrieve_path,
         standards_dir=std_dir,
         lesson_file=lesson_path,
-        model="gpt-4.1",
+        model="claude-sonnet-4-5",
         escalate=False,
         use_cache=False,
         batch=True,
     )
     assert report["judge_mode"] == "batch"
-    assert ("batch", "gpt-4.1", "max_tokens") in recorded
+    assert ("batch", "claude-sonnet-4-5") in recorded
 
-    # 2) Pair-only → gpt-4.1 uses max_tokens
     recorded.clear()
     mode["path"] = "pair"
     report = judge_retrieve_file(
         retrieve_file=retrieve_path,
         standards_dir=std_dir,
         lesson_file=lesson_path,
-        model="gpt-4.1",
+        model="claude-sonnet-4-5",
         escalate=False,
         use_cache=False,
         batch=False,
     )
     assert report["judge_mode"] == "pair"
-    assert ("pair", "gpt-4.1", "max_tokens") in recorded
+    assert ("pair", "claude-sonnet-4-5") in recorded
 
-    # 3) Escalation → gpt-5 must use max_completion_tokens
     recorded.clear()
     mode["path"] = "escalate"
     report = judge_retrieve_file(
         retrieve_file=retrieve_path,
         standards_dir=std_dir,
         lesson_file=lesson_path,
-        model="gpt-4.1",
-        escalate_model="gpt-5",
+        model="claude-sonnet-4-5",
+        escalate_model="claude-opus-4-6",
         escalate=True,
         use_cache=False,
         batch=True,
     )
-    assert any(m == "gpt-5" and k == "max_completion_tokens" for _, m, k in recorded), recorded
-    assert any(m == "gpt-4.1" and k == "max_tokens" for _, m, k in recorded), recorded
+    assert any(m == "claude-opus-4-6" for _, m in recorded), recorded
+    assert any(m == "claude-sonnet-4-5" for _, m in recorded), recorded
     assert any(v.get("escalated") for v in report["verdicts"])
 
-    # 4) Batch failure → pair fallback (still shared helper; gpt-4.1 max_tokens)
     recorded.clear()
     mode["path"] = "fallback"
     mode["fail_batch"] = True
@@ -582,12 +642,25 @@ def test_judge_modes_share_openai_token_param_helper(tmp_path, monkeypatch):
         retrieve_file=retrieve_path,
         standards_dir=std_dir,
         lesson_file=lesson_path,
-        model="gpt-4.1",
+        model="claude-sonnet-4-5",
         escalate=False,
         use_cache=False,
         batch=True,
         batch_fallback_pair=True,
     )
     assert report["judge_mode"] == "pair"
-    assert ("fallback", "gpt-4.1", "max_tokens") in recorded
-    assert all(k != "max_tokens" or m != "gpt-5" for _, m, k in recorded)
+    assert ("fallback", "claude-sonnet-4-5") in recorded
+
+
+def test_anthropic_tool_input_parses_json_string_results():
+    from veramynd_parser.normalize.llm import _anthropic_tool_input
+
+    class _Block:
+        type = "tool_use"
+        input = {"results": '[{"standard_code": "1.T.T.1.a"}]'}
+
+    class _Resp:
+        content = [_Block()]
+
+    payload = _anthropic_tool_input(_Resp())
+    assert payload["results"] == [{"standard_code": "1.T.T.1.a"}]

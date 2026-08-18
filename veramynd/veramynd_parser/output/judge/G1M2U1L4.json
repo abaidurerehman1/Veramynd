@@ -409,7 +409,8 @@
         "bm25_score": 88.50147310806922,
         "rerank_score": 0.9847372174263
       },
-      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)"
+      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)",
+      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
     },
     {
       "schema_version": "1.0-judge",
@@ -455,7 +456,8 @@
         "bm25_score": 97.7891165374061,
         "rerank_score": 0.9840594530105591
       },
-      "standard_raw_text": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue. (I)"
+      "standard_raw_text": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue. (I)",
+      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
     }
   ]
 }

@@ -12,7 +12,7 @@ output/
 ├── normalize/              # Batch-1 ELA normalize — schema 2.0-ela
 ├── normalize_standards/    # GA leaf normalize (shared by retrieve)
 ├── retrieve_gold4/         # Batch-1 gold retrieve (R@25 bar)
-├── judge/                  # alignment verdicts (gold-4 on align_judge.v1.1)
+├── judge/                  # alignment verdicts (live assembled prompt; L1 current, L3/L6/U3L5 pending re-judge)
 ├── reports/                # gold4_alignments.csv, gold_judge_*.csv, client/
 ├── chunks/                 # hierarchical chunks for grounding / judge
 └── embeddings/             # embed run manifest (vectors live in Qdrant)
@@ -69,6 +69,43 @@ Hierarchy: **lesson** (normalize competency text) → **instructional** (Stage-1
 
 Default: OpenAI **`text-embedding-3-large`** (3072-d, Cosine) → collection `veramynd_chunks`.
 Standards: same model → collection `veramynd_standards` (`embed-standards`).
+
+## Judge (`judge/`)
+
+Live prompt: [`../veramynd_parser/prompts/assembled_judge_prompt.md`](../veramynd_parser/prompts/assembled_judge_prompt.md)
+(engine + GA Grade 1 overlay). `align_judge.v1.1` / `align_judge_v1.md` is unused.
+
+Gold eval is always `--limit 25` on `output/retrieve_gold4/` (do not retune
+retrieve). After the retrieve shortlist, a coverage pass may append
+feedback/present codes that missed top 25 (`coverage_pass_injected` in the
+JSON). Close-read rows that cite a missing Read-aloud Guide get
+`input_scope_caveat` — scores are likely understated; **do not hand-edit
+labels**. Re-run those lessons only if the client shares the guides.
+
+| Artifact | Honest status |
+|----------|----------------|
+| `G1M2U1L1.json` | Assembled Anthropic batch, `--limit 25` — **6/7** gold overlap |
+| `G1M2U1L3.json`, `G1M2U1L6.json`, `G1M2U3L5.json` | **Not yet** re-judged on assembled + F1–F4/F8 (may still be older v1 / GPT) |
+
+```bash
+veramynd-parser judge-standards \
+  --retrieve-file output/retrieve_gold4/G1M2U1L1.json \
+  --lesson-file output/stage1/lessons/G1M2U1L1.json \
+  --standards-dir output/normalize_standards \
+  --out output/judge/G1M2U1L1.json \
+  --limit 25 --no-cache
+# opt out of coverage extras: --no-coverage-pass
+```
+
+## Reports (`reports/`)
+
+CSV/HTML from `report-alignments`. Columns include `needs_review`,
+`coverage_pass`, and `input_scope_caveat`. Mix of gold-4 JSON: L1 is the
+current assembled run; L3/L6/U3L5 may still be older until re-judged.
+
+```bash
+veramynd-parser report-alignments --judge-dir output/judge --out output/reports/gold4_alignments.csv
+```
 
 ## Regenerate
 

@@ -16,10 +16,13 @@ from veramynd_parser.judge.io import (
     load_standard_raw_text,
 )
 from veramynd_parser.judge.models import (
+    ClauseClientDraft,
     ClauseJudgment,
+    JudgeClientBatchDraft,
+    JudgeClientDraft,
     JudgeLlmDraft,
 )
-from veramynd_parser.judge.pipeline import judge_pair, judge_retrieve_file
+from veramynd_parser.judge.pipeline import DEFAULT_BATCH_MAX_TOKENS, judge_pair, judge_retrieve_file
 
 
 def test_grounding_finds_quote_with_quote_normalization():
@@ -96,6 +99,7 @@ def test_judge_pair_keeps_llm_status_and_clauses_when_grounded():
     assert v.matched_status == "partial"
     assert v.grounded
     assert [c.met for c in v.clauses] == [True, False]
+    assert v.input_scope_caveat == ""
 
 
 def test_judge_pair_rejects_empty_evidence_full():
@@ -205,6 +209,18 @@ def test_should_escalate_enterprise_triggers():
             rationale="r",
         )
     )
+    assert _should_escalate(
+        JudgeLlmDraft(
+            matched_status="full",
+            clauses=[clause],
+            evidence="grounded quote",
+            evidence_page=1,
+            confidence="high",
+            rationale="r",
+            needs_review=True,
+            review_reason="partial-or-full",
+        )
+    )
 
 
 def test_lesson_raw_text_joins_steps():
@@ -228,6 +244,84 @@ def test_lesson_raw_text_joins_steps():
     assert "Close Read" in text
     assert "ask and answer questions" in text
     assert "page 70" in text
+
+
+def test_page_from_evidence_uses_block_page_not_location():
+    from veramynd_parser.judge.grounding import page_from_evidence
+
+    lesson = {
+        "title": "Lesson 1",
+        "instructional_blocks": [
+            {
+                "section": "Opening",
+                "letter": "B",
+                "title": "Picture Tea Party",
+                "page": 45,
+                "steps": ["Share using the frame In my picture, I see the sun."],
+            },
+            {
+                "section": "Work Time",
+                "letter": "B",
+                "title": "Back-to-Back",
+                "page": 48,
+                "steps": [
+                    "Guide students: I noticed that the sun is bright today."
+                ],
+            },
+        ],
+    }
+    text = lesson_raw_text_from_stage1(lesson)
+    assert page_from_evidence("I noticed that the sun is bright today.", text) == 48
+    assert page_from_evidence("In my picture, I see the sun.", text) == 45
+    assert page_from_evidence("", text) is None
+
+
+def test_judge_pair_fills_evidence_page_from_lesson_blocks():
+    lesson = {
+        "title": "Lesson 1",
+        "instructional_blocks": [
+            {
+                "section": "Work Time",
+                "letter": "C",
+                "title": "Independent Writing",
+                "page": 49,
+                "steps": [
+                    "Invite students to use the response sheet to capture "
+                    "the things they noticed and wondered about the sun."
+                ],
+            }
+        ],
+    }
+    text = lesson_raw_text_from_stage1(lesson)
+    quote = (
+        "Invite students to use the response sheet to capture "
+        "the things they noticed and wondered about the sun."
+    )
+
+    def fake_complete(**kwargs):
+        return JudgeLlmDraft(
+            matched_status="full",
+            clauses=[
+                ClauseJudgment(clause="generate ideas", met=True, note=""),
+            ],
+            evidence=quote,
+            evidence_page=None,
+            confidence="high",
+            rationale="Students generate ideas on the response sheet.",
+        )
+
+    v = judge_pair(
+        resource_id="G1M2U1L1",
+        lesson_raw_text=text,
+        standard={
+            "standard_code": "1.P.EICC.4.c",
+            "raw_text": "Generate ideas for content.",
+        },
+        use_cache=False,
+        complete_fn=fake_complete,
+    )
+    assert v.matched_status == "full"
+    assert v.evidence_page == 49
 
 
 def test_judge_pair_full_when_grounded(tmp_path: Path):
@@ -294,6 +388,92 @@ def test_judge_pair_rejects_ungrounded_full():
     assert v.matched_status == "none"
     assert v.grounded is False
     assert "REJECTED" in v.rationale
+
+
+def test_judge_pair_uses_grounded_piece_of_stitched_quote():
+    lesson = (
+        "Guide students through the protocol using the sentence frame: "
+        "I noticed that the sun __________. Then they share."
+    )
+    stitched = (
+        "In my picture, I see_______. / I noticed that the sun __________. / "
+        "One thing I wonder about the moon/stars is ____________."
+    )
+
+    def fake_complete(**kwargs):
+        return JudgeLlmDraft(
+            matched_status="full",
+            clauses=[ClauseJudgment(clause="present ideas clearly", met=True, note="")],
+            evidence=stitched,
+            evidence_page=None,
+            confidence="high",
+            rationale="Students present observations aloud.",
+            evidence_candidates=[stitched],
+        )
+
+    v = judge_pair(
+        resource_id="G1M2U1L1",
+        lesson_raw_text=lesson,
+        standard={
+            "standard_code": "1.P.CP.2.a",
+            "raw_text": "Communicate clearly to present ideas.",
+        },
+        use_cache=False,
+        complete_fn=fake_complete,
+    )
+    assert v.matched_status == "full"
+    assert v.grounded is True
+    assert v.evidence == "I noticed that the sun __________."
+    assert "REJECTED" not in v.rationale
+
+
+def test_judge_pair_uses_later_student_quote_when_first_not_in_lesson():
+    good = "Invite students to use the response sheet to capture notices."
+    lesson = f"Work Time C. {good} Students write and draw."
+
+    def fake_complete(**kwargs):
+        return JudgeClientDraft(
+            candidate_id="G1M2U1L1",
+            location="Work Time C",
+            standard_code="1.P.EICC.4.c",
+            clauses=[
+                ClauseClientDraft(
+                    clause="prior knowledge",
+                    judgment="met",
+                    actor="student",
+                    student_quote="This fabricated quote is not in the lesson text.",
+                    teacher_quote="",
+                    why="wrong quote",
+                ),
+                ClauseClientDraft(
+                    clause="from texts",
+                    judgment="met",
+                    actor="student",
+                    student_quote=good,
+                    teacher_quote="",
+                    why="response sheet",
+                ),
+            ],
+            alignment="full",
+            needs_review=False,
+            review_reason="",
+            evidence="Prose write-up that is not a lesson quote.",
+            anchor_note="",
+        )
+
+    v = judge_pair(
+        resource_id="G1M2U1L1",
+        lesson_raw_text=lesson,
+        standard={
+            "standard_code": "1.P.EICC.4.c",
+            "raw_text": "Generate ideas for content.",
+        },
+        use_cache=False,
+        complete_fn=fake_complete,
+    )
+    assert v.matched_status == "full"
+    assert v.grounded is True
+    assert v.evidence == good
 
 
 def test_judge_retrieve_file_mocked(tmp_path: Path):
@@ -691,6 +871,148 @@ def test_judge_pair_mode_aborts_on_insufficient_quota(tmp_path):
     assert calls["n"] == 1
 
 
+def test_live_prompt_is_client_assembled_not_v1():
+    from veramynd_parser.judge.pipeline import (
+        BATCH_PROMPT_VERSION,
+        PROMPT_VERSION,
+        _PROMPT_PATH,
+        _load_batch_prompt,
+        _load_prompt,
+    )
+
+    assert _PROMPT_PATH.name == "assembled_judge_prompt.md"
+    assert PROMPT_VERSION == "align_judge.assembled.v1"
+    assert BATCH_PROMPT_VERSION == "align_judge.assembled.batch.v1"
+    text = _load_prompt()
+    assert "END OF ENGINE" in text
+    assert "Georgia K" in text
+    assert "ELA Alignment Judge (align_judge.v1.1)" not in text
+    batch = _load_batch_prompt()
+    assert batch == text
+    assert "overrides the single-object Output section" not in batch
+
+
+def test_client_draft_maps_alignment_and_student_quote():
+    quote = "Have students point to the title page."
+    draft = JudgeClientDraft(
+        candidate_id="G1M2U1L1",
+        location="Work Time A (page 12)",
+        standard_code="1.T.SS.1.a",
+        clauses=[
+            ClauseClientDraft(
+                clause="identify text features",
+                judgment="met",
+                actor="student",
+                student_quote=quote,
+                teacher_quote="",
+                why="directive elicitation",
+            )
+        ],
+        alignment="full",
+        needs_review=False,
+        review_reason="",
+        evidence="",
+        anchor_note="",
+    ).to_llm_draft()
+    assert draft.matched_status == "full"
+    assert draft.evidence == quote
+    assert draft.evidence_candidates == [quote]
+    assert draft.evidence_page == 12
+    assert draft.confidence == "high"
+    assert draft.clauses[0].met is True
+
+
+def test_client_batch_draft_coerces_results_json_string():
+    item = {
+        "candidate_id": "G1M2U1L1",
+        "location": "",
+        "standard_code": "1.T.SS.1.a",
+        "clauses": [
+            {
+                "clause": "identify text features",
+                "judgment": "met",
+                "actor": "student",
+                "student_quote": "Have students point to the title page.",
+                "teacher_quote": "",
+                "why": "directive",
+            }
+        ],
+        "alignment": "full",
+        "needs_review": False,
+        "review_reason": "",
+        "evidence": "Students identify the title page.",
+        "anchor_note": "",
+    }
+    draft = JudgeClientBatchDraft.model_validate({"results": json.dumps([item])})
+    assert len(draft.results) == 1
+    assert draft.results[0].standard_code == "1.T.SS.1.a"
+    assert draft.results[0].alignment == "full"
+
+
+def test_batch_default_max_tokens_starts_high_enough():
+    assert DEFAULT_BATCH_MAX_TOKENS >= 16384
+
+
+def test_client_draft_uses_student_quote_for_evidence_not_writeup():
+    quote = "Have students point to the title page."
+    writeup = (
+        "Students identify the title page when directed. "
+        "The lesson uses a structured read-aloud protocol."
+    )
+    draft = JudgeClientDraft(
+        candidate_id="G1M2U1L1",
+        location="Work Time A (page 12)",
+        standard_code="1.T.SS.1.a",
+        clauses=[
+            ClauseClientDraft(
+                clause="identify text features",
+                judgment="met",
+                actor="student",
+                student_quote=quote,
+                teacher_quote="",
+                why="directive elicitation",
+            )
+        ],
+        alignment="full",
+        needs_review=False,
+        review_reason="",
+        evidence=writeup,
+        anchor_note="",
+    ).to_llm_draft()
+    assert draft.evidence == quote
+    assert draft.rationale == writeup
+
+
+def test_client_needs_review_maps_to_low_confidence():
+    draft = JudgeClientDraft(
+        candidate_id="L",
+        location="",
+        standard_code="1.L.GC.1.16",
+        clauses=[
+            ClauseClientDraft(
+                clause="use prepositions",
+                judgment="met",
+                actor="student",
+                student_quote="Students complete the frame.",
+                teacher_quote="",
+                why="introduce tag",
+            )
+        ],
+        alignment="full",
+        needs_review=True,
+        review_reason="partial-or-full — Introduce-tagged convention",
+        evidence="Students complete the frame.",
+        anchor_note="",
+    ).to_llm_draft()
+    assert draft.needs_review is True
+    assert draft.confidence == "low"
+    assert draft.evidence == "Students complete the frame."
+    assert draft.rationale == "Students complete the frame."
+    from veramynd_parser.judge.pipeline import _should_escalate
+
+    assert _should_escalate(draft)
+
+
 def test_cli_registers_judge_standards():
     parser = build_parser()
     args = parser.parse_args(
@@ -720,6 +1042,21 @@ def test_cli_judge_no_escalate_opt_out():
         ]
     )
     assert args.no_escalate is True
+
+
+def test_cli_judge_no_coverage_pass_opt_out():
+    parser = build_parser()
+    args = parser.parse_args(
+        [
+            "judge-standards",
+            "--retrieve-file",
+            "output/retrieve/G1M2U3L5.json",
+            "--lesson-file",
+            "output/stage1/lessons/G1M2U3L5.json",
+            "--no-coverage-pass",
+        ]
+    )
+    assert args.no_coverage_pass is True
 
 
 def test_load_standard_raw_text_rejects_path_traversal(tmp_path: Path):

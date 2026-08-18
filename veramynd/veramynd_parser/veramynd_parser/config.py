@@ -89,7 +89,7 @@ class RetrieveConfig(BaseModel):
 
 
 class JudgeConfig(BaseModel):
-    """Stage-6 alignment-judge settings."""
+    """Stage-6 alignment-judge settings (Anthropic models)."""
 
     model_config = ConfigDict(extra="forbid")
 

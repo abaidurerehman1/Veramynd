@@ -133,7 +133,8 @@
         "bm25_score": 109.75128041600964,
         "rerank_score": 0.9922352433204651
       },
-      "standard_raw_text": "Identify who is speaking or telling the story at various points in a text. (I)"
+      "standard_raw_text": "Identify who is speaking or telling the story at various points in a text. (I)",
+      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
     },
     {
       "schema_version": "1.0-judge",
@@ -169,7 +170,8 @@
         "bm25_score": 70.03306974701248,
         "rerank_score": 0.991733193397522
       },
-      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)",
+      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
     },
     {
       "schema_version": "1.0-judge",
@@ -210,7 +212,8 @@
         "bm25_score": 126.46571637175542,
         "rerank_score": 0.9914947748184204
       },
-      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)"
+      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)",
+      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
     },
     {
       "schema_version": "1.0-judge",

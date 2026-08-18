@@ -17,6 +17,8 @@ CSV_COLUMNS = [
     "resource_id",
     "standard_code",
     "matched_status",
+    "needs_review",
+    "review_reason",
     "confidence",
     "grounded",
     "evidence",
@@ -26,6 +28,7 @@ CSV_COLUMNS = [
     "judge_model",
     "prompt_version",
     "escalated",
+    "coverage_pass",
     "rerank_score",
     "rrf_score",
     "dense_score",
@@ -33,6 +36,7 @@ CSV_COLUMNS = [
     "dense_rank",
     "bm25_rank",
     "grounding_note",
+    "input_scope_caveat",
 ]
 
 
@@ -97,6 +101,8 @@ def verdict_to_row(v: dict[str, Any], *, resource_id: str | None = None) -> dict
         "resource_id": rid,
         "standard_code": (v.get("standard_code") or "").strip(),
         "matched_status": (v.get("matched_status") or "").strip(),
+        "needs_review": v.get("needs_review"),
+        "review_reason": v.get("review_reason") or "",
         "confidence": (v.get("confidence") or "").strip(),
         "grounded": v.get("grounded"),
         "evidence": v.get("evidence") or "",
@@ -112,7 +118,9 @@ def verdict_to_row(v: dict[str, Any], *, resource_id: str | None = None) -> dict
         "bm25_score": retrieval.get("bm25_score"),
         "dense_rank": retrieval.get("dense_rank"),
         "bm25_rank": retrieval.get("bm25_rank"),
+        "coverage_pass": bool(retrieval.get("coverage_pass")),
         "grounding_note": v.get("grounding_note") or "",
+        "input_scope_caveat": v.get("input_scope_caveat") or "",
     }
 
 
@@ -189,7 +197,14 @@ def write_csv(rows: list[dict[str, Any]], out: Path | str) -> Path:
         # opened in Excel/Sheets. Prefix with a quote (standard mitigation);
         # numeric/score columns are untouched.
         guarded = dict(row)
-        for col in ("evidence", "rationale", "standard_raw_text", "grounding_note"):
+        for col in (
+            "evidence",
+            "rationale",
+            "standard_raw_text",
+            "grounding_note",
+            "review_reason",
+            "input_scope_caveat",
+        ):
             v = guarded.get(col)
             if isinstance(v, str) and v[:1] in ("=", "+", "-", "@"):
                 guarded[col] = "'" + v

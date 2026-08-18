@@ -1,0 +1,1016 @@
+{
+  "schema_version": "1.0-judge",
+  "quality_profile": "enterprise_k12",
+  "prompt_version": "align_judge.batch.v1.1",
+  "judge_mode": "batch",
+  "resource_id": "G1M2U3L5",
+  "lesson_source": "stage1:G1M2U3L5",
+  "retrieve_file": "output/retrieve_gold4/G1M2U3L5.json",
+  "standards_dir": "output\\normalize_standards",
+  "judge_model": "claude-sonnet-4-5",
+  "escalate": true,
+  "escalate_model": "claude-opus-4-6",
+  "candidate_count": 25,
+  "judged": 25,
+  "failed": [],
+  "complete": true,
+  "by_status": {
+    "full": 9,
+    "partial": 3,
+    "none": 13
+  },
+  "grounding_rate": 1.0,
+  "grounding_positive_n": 12,
+  "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.T.T.4.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify rhyme used in texts.",
+          "met": false,
+          "note": "Students do not identify rhyme in the lesson."
+        },
+        {
+          "clause": "Identify alliteration used in texts.",
+          "met": false,
+          "note": "Students do not identify alliteration in the lesson."
+        },
+        {
+          "clause": "Identify repeated lines used in texts.",
+          "met": false,
+          "note": "Students do not identify repeated lines in the lesson."
+        },
+        {
+          "clause": "Describe how rhyme, alliteration, and repeated lines are used to craft texts.",
+          "met": false,
+          "note": "Students do not describe how these techniques are used."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "Students look and listen for high-quality writing in the poem and discuss what they noticed, but they do not identify or describe specific poetic techniques such as rhyme, alliteration, or repeated lines. The focus is on general high-quality writing features, not the specific techniques required by this standard.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.23079877112135178,
+        "dense_rank": 1,
+        "bm25_rank": 2,
+        "dense_score": 0.5487084,
+        "bm25_score": 43.46224086352618,
+        "rerank_score": 0.06198066473007202
+      },
+      "standard_raw_text": "Identify and describe poetic techniques used to craft texts, including rhyme, alliteration, and repeated lines. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.T.T.1.e",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Use knowledge of characters to create texts.",
+          "met": false,
+          "note": "The poem is about what the moon sees; students plan and write verse 3 describing what the moon sees (e.g., a howling wolf), but there is no explicit focus on developing characters as a narrative technique."
+        },
+        {
+          "clause": "Use knowledge of settings to create texts.",
+          "met": true,
+          "note": "Students use knowledge of settings (time of night, what the moon sees in the sky/landscape) when planning and writing verse 3, referencing the Time of Night anchor chart."
+        },
+        {
+          "clause": "Use knowledge of events to create texts.",
+          "met": true,
+          "note": "Students plan and write about events the moon sees (e.g., 'the moon saw a howling wolf') and sequence them across verses, constituting events in the narrative poem."
+        },
+        {
+          "clause": "Create texts that share real or imagined experiences.",
+          "met": true,
+          "note": "Students independently write verse 3 of 'What the Moon Sees,' sharing imagined experiences of what the moon sees at night."
+        },
+        {
+          "clause": "Create texts that have a sense of closure.",
+          "met": true,
+          "note": "Students are explicitly instructed to write a closing sentence that tells the reader night is coming to an end, providing a sense of closure."
+        }
+      ],
+      "evidence": "Explain that the closing is a sentence to end the poem. It should tell the reader that night is coming to an end.",
+      "evidence_page": 389,
+      "confidence": "medium",
+      "rationale": "Students independently write verse 3 and a closing for a narrative poem (\"What the Moon Sees\"), demonstrating use of settings, events, imagined experiences, and closure. However, there is no clear evidence that students use knowledge of characters as a narrative technique in their writing. Since the standard lists characters, settings, and events as complementary story-craft components, the missing character element makes this partial rather than full.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.2238305410436558,
+        "dense_rank": 2,
+        "bm25_rank": 2,
+        "dense_score": 0.5529068,
+        "bm25_score": 50.94764687626903,
+        "rerank_score": 0.12897241115570068
+      },
+      "standard_raw_text": "Use knowledge of narrative techniques (e.g., characters, settings, events) to create texts that share real or imagined experiences and events with a sense of closure. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.T.T.4.b",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Use poetic techniques to create poems.",
+          "met": true,
+          "note": "Students use a model poem and apply techniques to create their own verse."
+        },
+        {
+          "clause": "Use simple words and/or phrases in poems.",
+          "met": true,
+          "note": "Students write verse 3 using simple words and phrases."
+        },
+        {
+          "clause": "Create poems that may or may not rhyme.",
+          "met": true,
+          "note": "Students create a poem; rhyming is not required."
+        }
+      ],
+      "evidence": "Tell students that now they will write their own version of verse 3 and the closing independently on the 'What the Moon Sees' poem verse 3.",
+      "evidence_page": 390,
+      "confidence": "high",
+      "rationale": "Students use poetic techniques from the model 'What the Moon Sees' poem to create their own verse 3 using simple words and phrases. The standard allows for poems that may or may not rhyme, and all clauses are met through the independent writing activity.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.22199894235854045,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.7420326,
+        "bm25_score": 135.63259691644893,
+        "rerank_score": 0.08191002905368805
+      },
+      "standard_raw_text": "Use poetic techniques to create poems using simple words and/or phrases that may or may not rhyme. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.P.CP.2.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Build background knowledge by reciting all or part of significant poems as appropriate by grade level.",
+          "met": false,
+          "note": "Students do not recite the poem; the teacher reads it aloud."
+        },
+        {
+          "clause": "Build background knowledge by reciting all or part of significant speeches as appropriate by grade level.",
+          "met": false,
+          "note": "No speeches are recited in this lesson."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The teacher reads the poem aloud to students, but students do not recite the poem or any speeches themselves. Teacher read-aloud does not meet the student act of reciting.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.22021376491383118,
+        "dense_rank": 2,
+        "bm25_rank": 8,
+        "dense_score": 0.47339624,
+        "bm25_score": 27.73203939667178,
+        "rerank_score": 0.11719785630702972
+      },
+      "standard_raw_text": "Build background knowledge by reciting all or part of significant poems and speeches as appropriate by grade level. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.T.SS.2.b",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Use descriptive words in writing.",
+          "met": true,
+          "note": "Students use adjectives from the anchor chart to describe the moon."
+        },
+        {
+          "clause": "Craft texts that engage readers using descriptive language.",
+          "met": true,
+          "note": "Students craft a poem using descriptive words to make it engaging."
+        }
+      ],
+      "evidence": "As students write, circulate and provide guidance by referring students to look at verses 1 and 2, the Time of Night anchor chart, the Adjectives anchor chart, the Sun, Moon, and Stars Word Wall, etc.",
+      "evidence_page": 390,
+      "confidence": "high",
+      "rationale": "Students use descriptive words (adjectives) from anchor charts to craft their poem verse 3, making their writing engaging. Both clauses are met through the planning and writing activities.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.21874887618225625,
+        "dense_rank": 2,
+        "bm25_rank": 2,
+        "dense_score": 0.6142457,
+        "bm25_score": 31.61964868196785,
+        "rerank_score": 0.0676564872264862
+      },
+      "standard_raw_text": "Use descriptive words to craft engaging texts. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.P.EICC.4.e",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Integrate ideas and information to construct an initial draft.",
+          "met": true,
+          "note": "Students plan and write verse 3 integrating their ideas."
+        },
+        {
+          "clause": "Select words, phrases, and sentences to include in the draft.",
+          "met": true,
+          "note": "Students select words and phrases from anchor charts and planners."
+        },
+        {
+          "clause": "Incorporate craft techniques to enhance the draft's effectiveness.",
+          "met": true,
+          "note": "Students use poetic techniques from the model poem."
+        },
+        {
+          "clause": "Ensure the draft achieves the purpose of the text and resonates with the target audience.",
+          "met": true,
+          "note": "Students write a narrative poem with closure for their audience."
+        }
+      ],
+      "evidence": "Tell students that now they will write their own version of verse 3 and the closing independently on the 'What the Moon Sees' poem verse 3.",
+      "evidence_page": 390,
+      "confidence": "high",
+      "rationale": "Students construct an initial draft of verse 3 by integrating ideas from their planner, selecting words and phrases from anchor charts, incorporating poetic craft techniques from the model, and creating a poem with a specific purpose (narrative poem about what the moon sees) and closure. All clauses are met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.21668800756736803,
+        "dense_rank": 5,
+        "bm25_rank": 3,
+        "dense_score": 0.4525496,
+        "bm25_score": 36.59364511130442,
+        "rerank_score": 0.03681986778974533
+      },
+      "standard_raw_text": "Construct an initial draft by integrating ideas and information; selecting words, phrases, and sentences; and incorporating craft techniques that will best achieve the purpose of the text and resonate with the target audience. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.P.AC.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Craft words and phrases to influence the audience's responses, thoughts, decisions, and questions.",
+          "met": false,
+          "note": "Students write a narrative poem, not persuasive or influencing text."
+        },
+        {
+          "clause": "Achieve a specific purpose through word and phrase choices.",
+          "met": false,
+          "note": "The purpose is to share experiences, not to influence audience responses."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "This standard requires crafting words and phrases to influence the audience's responses, thoughts, decisions, and questions. Students are writing a narrative poem to share imagined experiences, not to influence or persuade the audience. The purpose does not align with this standard.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.21405947775628625,
+        "dense_rank": 8,
+        "bm25_rank": 10,
+        "dense_score": 0.44399568,
+        "bm25_score": 24.211989693427,
+        "rerank_score": 0.06441276520490646
+      },
+      "standard_raw_text": "Craft words and phrases in order to influence the responses, thoughts, decisions, and questions of the target audience and achieve a specific purpose. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.T.T.3.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the author's opinion in an opinion text.",
+          "met": false,
+          "note": "Students work with a narrative poem, not an opinion text."
+        },
+        {
+          "clause": "Identify supporting reasons the author uses to back up the opinion.",
+          "met": false,
+          "note": "No opinion text is analyzed in this lesson."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "This standard requires identifying techniques in opinion texts. The lesson focuses on a narrative poem, not opinion texts. There is no work with author's opinion or supporting reasons.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.20936886292223095,
+        "dense_rank": 12,
+        "bm25_rank": 5,
+        "dense_score": 0.45501864,
+        "bm25_score": 27.422183754030314,
+        "rerank_score": 0.05599053204059601
+      },
+      "standard_raw_text": "Identify techniques used to craft opinion texts, including the author’s opinion and supporting reasons. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.L.GC.2.b",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Use a variety of simple sentences in writing.",
+          "met": true,
+          "note": "Students write complete sentences in their verse 3."
+        },
+        {
+          "clause": "Include different sentence types to develop clarity in written texts.",
+          "met": true,
+          "note": "Students turn planner ideas into complete sentences for clarity."
+        }
+      ],
+      "evidence": "Give students specific, positive feedback on their ability to turn their ideas from the verse planner into complete sentences on the 'What the Moon Sees' poem verse 3.",
+      "evidence_page": 391,
+      "confidence": "high",
+      "rationale": "Students write verse 3 using complete sentences, turning their planner ideas into clear written text. The feedback confirms they are using simple sentences to develop clarity in their writing.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.20841487279843443,
+        "dense_rank": 4,
+        "bm25_rank": 2,
+        "dense_score": 0.4598364,
+        "bm25_score": 21.232473429504097,
+        "rerank_score": 0.08911115676164627
+      },
+      "standard_raw_text": "Use a variety of simple sentences (including a variety of sentence types) to develop clarity in written texts. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.P.EICC.1.d",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Build a repertoire of comprehension skills, strategies, and techniques.",
+          "met": true,
+          "note": "Students use comprehension skills to analyze high-quality writing."
+        },
+        {
+          "clause": "Build a repertoire of composition skills, strategies, and techniques.",
+          "met": true,
+          "note": "Students use composition skills to plan and write verse 3."
+        },
+        {
+          "clause": "Draw from these skills, strategies, and techniques as needed to interpret texts.",
+          "met": true,
+          "note": "Students interpret the model poem to understand high-quality writing."
+        },
+        {
+          "clause": "Draw from these skills, strategies, and techniques as needed to construct texts.",
+          "met": true,
+          "note": "Students draw from the model and anchor charts to construct their verse."
+        }
+      ],
+      "evidence": "As students write, circulate and provide guidance by referring students to look at verses 1 and 2, the Time of Night anchor chart, the Adjectives anchor chart, the Sun, Moon, and Stars Word Wall, etc.",
+      "evidence_page": 390,
+      "confidence": "high",
+      "rationale": "Students build and draw from comprehension skills (analyzing high-quality writing in the model poem) and composition skills (using planners, anchor charts, and model verses) to interpret the model text and construct their own verse 3. All clauses are met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.2037878297633685,
+        "dense_rank": 6,
+        "bm25_rank": 15,
+        "dense_score": 0.48076326,
+        "bm25_score": 19.29928504855855,
+        "rerank_score": 0.03459799289703369
+      },
+      "standard_raw_text": "Build a repertoire of comprehension and composition skills, strategies, and techniques, drawing from them as needed to aid the interpretation and construction of texts. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.L.V.2.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Construct words using frequently occurring root words.",
+          "met": false,
+          "note": "Students do not construct words from root words in this lesson."
+        },
+        {
+          "clause": "Construct words using inflectional endings.",
+          "met": false,
+          "note": "Students do not construct words using inflectional endings."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "This standard requires students to construct words by combining root words with inflectional endings. The lesson focuses on writing a narrative poem using descriptive words, not on word construction with roots and endings.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.2006257631257631,
+        "dense_rank": 5,
+        "bm25_rank": 4,
+        "dense_score": 0.51696485,
+        "bm25_score": 32.2427087459796,
+        "rerank_score": 0.0664353147149086
+      },
+      "standard_raw_text": "Construct words using frequently occurring roots words and inflectional endings. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.P.EICC.2.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Interpret texts to understand ideas.",
+          "met": true,
+          "note": "Students interpret the model poem to identify high-quality writing."
+        },
+        {
+          "clause": "Construct texts to express analysis of ideas.",
+          "met": true,
+          "note": "Students construct verse 3 applying their analysis of the model."
+        },
+        {
+          "clause": "Use texts to aid analysis and evaluation of ideas.",
+          "met": true,
+          "note": "Students use the model poem and anchor charts to analyze and evaluate writing quality."
+        }
+      ],
+      "evidence": "Tell students that in the previous lesson, they analyzed these verses for evidence of highquality writing.",
+      "evidence_page": 389,
+      "confidence": "low",
+      "rationale": "Students interpret the model poem to understand high-quality writing ideas, construct their own verse 3 applying this analysis, and use the model text and anchor charts to analyze and evaluate writing quality. All clauses are met. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.19906990695455662,
+        "dense_rank": 11,
+        "bm25_rank": 15,
+        "dense_score": 0.47902653,
+        "bm25_score": 19.54035412365398,
+        "rerank_score": 0.06405425071716309
+      },
+      "standard_raw_text": "Interpret and construct texts to aid the analysis and evaluation of texts and ideas. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.L.GC.1.10",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Form simple verb tenses correctly.",
+          "met": false,
+          "note": "No explicit instruction or student practice on forming simple verb tenses (past, present, future). Students write poetry but there is no focus on verb tense formation."
+        },
+        {
+          "clause": "Use simple verb tenses appropriately in communication.",
+          "met": true,
+          "note": "Students write verse 3 independently and give oral peer feedback, which inherently involves using verb tenses in communication. However, there is no explicit focus on verb tenses. The ELL scaffold about checking subjects and what characters 'do' touches on verbs but not tenses specifically. The standard requires intentional forming and using of simple verb tenses, not incidental use."
+        }
+      ],
+      "evidence": "Answer clarifying questions and invite students to begin writing.",
+      "evidence_page": 390,
+      "confidence": "medium",
+      "rationale": "Students write poetry independently and engage in peer feedback, which involves incidental use of verb tenses. However, the lesson never explicitly teaches, practices, or focuses on forming or using simple verb tenses. The standard requires intentional work with verb tenses, not merely writing that happens to contain verbs. At best, one clause (use) is marginally met through the writing activity, but forming verb tenses is not addressed at all.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.19592105263157894,
+        "dense_rank": 8,
+        "bm25_rank": 6,
+        "dense_score": 0.4457264,
+        "bm25_score": 23.332454375065115,
+        "rerank_score": 0.07195780426263809
+      },
+      "standard_raw_text": "Form and use the simple verb tenses. (Continue)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.L.V.3.e",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Use knowledge of word relationships when making word choices in speaking and writing.",
+          "met": true,
+          "note": "Students use anchor charts showing word relationships to make choices."
+        },
+        {
+          "clause": "Use learned vocabulary words and phrases when making word choices in speaking and writing.",
+          "met": true,
+          "note": "Students use vocabulary from the Sun, Moon, and Stars Word Wall."
+        }
+      ],
+      "evidence": "As students write, circulate and provide guidance by referring students to look at verses 1 and 2, the Time of Night anchor chart, the Adjectives anchor chart, the Sun, Moon, and Stars Word Wall, etc.",
+      "evidence_page": 390,
+      "confidence": "high",
+      "rationale": "Students use knowledge of word relationships (from anchor charts showing adjectives and related words) and learned vocabulary (from the Sun, Moon, and Stars Word Wall) when making word choices in their writing. Both clauses are met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.19429887185984746,
+        "dense_rank": 6,
+        "bm25_rank": 9,
+        "dense_score": 0.49602288,
+        "bm25_score": 25.778286556069222,
+        "rerank_score": 0.08208046853542328
+      },
+      "standard_raw_text": "Use knowledge of word relationships and learned vocabulary words and phrases when making word choices in speaking and writing. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.T.T.3.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use knowledge of opinion techniques to create opinion pieces",
+          "met": false,
+          "note": "Students write a narrative poem, not an opinion piece."
+        },
+        {
+          "clause": "Introduce the topic in the opinion piece",
+          "met": false,
+          "note": "No opinion piece is created."
+        },
+        {
+          "clause": "State an opinion about the topic",
+          "met": false,
+          "note": "No opinion is stated."
+        },
+        {
+          "clause": "Provide two or more reasons to support the opinion",
+          "met": false,
+          "note": "No reasons supporting an opinion are provided."
+        },
+        {
+          "clause": "Use linking words such as 'and' and 'because' to connect reasons",
+          "met": false,
+          "note": "No linking words for opinion writing are used."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "This standard requires creating opinion pieces with specific components. Students write a narrative poem, not an opinion piece. None of the required clauses for opinion writing are met.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.19471074206432626,
+        "dense_rank": 7,
+        "bm25_rank": 3,
+        "dense_score": 0.40835768,
+        "bm25_score": 28.654797437453936,
+        "rerank_score": 0.07839865982532501
+      },
+      "standard_raw_text": "Use knowledge of opinion techniques to create opinion pieces that introduce the topic, state an opinion about the topic, and provides two or more reasons to support the opinion with linking words and and because. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.T.C.1.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Create texts using teacher-selected modes (e.g., print, digital, auditory, and/or visual)",
+          "met": true,
+          "note": "Students independently write verse 3 of 'What the Moon Sees' poem in print mode (using pencils and verse planners at their workspaces), which is a teacher-selected mode. The standard lists modes as examples with 'e.g.' — any one mode suffices."
+        }
+      ],
+      "evidence": "Tell students that now they will write their own version of verse 3 and the closing independently on the 'What the Moon Sees' poem verse 3.",
+      "evidence_page": 390,
+      "confidence": "high",
+      "rationale": "Students independently write their own verse 3 and closing of a narrative poem in print mode (pencil and paper), which constitutes creating a text in a teacher-selected mode. The standard uses \"e.g.\" to list modes, meaning any one mode satisfies the requirement. This is a core, untagged step where students perform the act of creating text.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.19826155505767157,
+        "dense_rank": 10,
+        "bm25_rank": 22,
+        "dense_score": 0.45599702,
+        "bm25_score": 18.208482704982014,
+        "rerank_score": 0.04924454540014267
+      },
+      "standard_raw_text": "Create texts in teacher-selected modes (e.g., print, digital, auditory, and/or visual). (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.P.EICC.2.a",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Share real experiences by telling or writing stories.",
+          "met": false,
+          "note": "Students write a narrative poem about 'What the Moon Sees,' which is an imagined/creative experience, not a real personal experience."
+        },
+        {
+          "clause": "Share imagined experiences by telling or writing stories.",
+          "met": true,
+          "note": "Students independently write verse 3 and a closing of the narrative poem 'What the Moon Sees,' which is an imagined experience told through a story/poem."
+        },
+        {
+          "clause": "Interpret texts that tell or include stories.",
+          "met": true,
+          "note": "Students listen to and analyze the 'What the Moon Sees' poem for high-quality writing elements, identifying aspects of the poem during turn-and-talk, which involves interpreting a text that tells a story."
+        }
+      ],
+      "evidence": "Tell students that now they will write their own version of verse 3 and the closing independently on the 'What the Moon Sees' poem verse 3.",
+      "evidence_page": 390,
+      "confidence": "medium",
+      "rationale": "The standard requires sharing real OR imagined experiences by interpreting and constructing texts that tell or include stories. The skill_clauses list three items, but the standard text uses \"real or imagined\" as an OR construction (object list with same verb), meaning either real or imagined suffices. Students write an imagined narrative poem (constructing texts) and interpret the model poem. However, re-reading the skill_clauses: they are listed as three separate clauses. The first two share the same verb pattern with \"real\" vs \"imagined\" — these are interchangeable (OR in the standard text). The third clause (interpret) is also met. Since the standard says \"interpreting AND constructing,\" both verbs apply. Students both interpret (analyze the model poem) and construct (write verse 3). All required acts are met. Actually, reconsidering: the standard says \"real or imagined\" — this is an OR, so meeting imagined suffices. Students construct (write verse 3) and interpret (analyze the poem). Both independent verbs are met. This should be full.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.18501360865555477,
+        "dense_rank": 4,
+        "bm25_rank": 6,
+        "dense_score": 0.50208867,
+        "bm25_score": 19.37839670912259,
+        "rerank_score": 0.11706123501062393
+      },
+      "standard_raw_text": "Share real or imagined experiences by interpreting and constructing texts that tell or include stories. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.T.T.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the main topic in an expository text.",
+          "met": false,
+          "note": "Students work with a narrative poem, not an expository text."
+        },
+        {
+          "clause": "Identify supporting details that relate to the main topic.",
+          "met": false,
+          "note": "No expository text is analyzed."
+        },
+        {
+          "clause": "Recognize techniques used to craft expository texts.",
+          "met": false,
+          "note": "The focus is on narrative poetry, not expository techniques."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "This standard requires identifying techniques in expository texts. The lesson focuses on a narrative poem, not expository texts. None of the clauses are met.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.19794506304456552,
+        "dense_rank": 6,
+        "bm25_rank": 8,
+        "dense_score": 0.51619613,
+        "bm25_score": 36.29378321158673,
+        "rerank_score": 0.04894352704286575
+      },
+      "standard_raw_text": "Identify techniques used to craft expository texts, including main topic and supporting details. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.T.T.2.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use expository techniques to introduce a topic.",
+          "met": false,
+          "note": "Students write a narrative poem, not an expository text."
+        },
+        {
+          "clause": "Use expository techniques to supply facts about the topic.",
+          "met": false,
+          "note": "No facts are supplied; students write imagined experiences."
+        },
+        {
+          "clause": "Use expository techniques to provide a sense of closure.",
+          "met": false,
+          "note": "Closure is provided in a narrative poem, not expository writing."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "This standard requires using expository writing techniques to introduce a topic, supply facts, and provide closure. Students write a narrative poem about imagined experiences, not an expository text with facts. None of the clauses are met.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.18792892156862745,
+        "dense_rank": 6,
+        "bm25_rank": 2,
+        "dense_score": 0.41670877,
+        "bm25_score": 17.911862861231434,
+        "rerank_score": 0.07750255614519119
+      },
+      "standard_raw_text": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.L.V.1.b",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Use grade-level general vocabulary words and phrases to communicate.",
+          "met": true,
+          "note": "Students use general vocabulary in their writing."
+        },
+        {
+          "clause": "Use grade-level academic vocabulary words and phrases to communicate.",
+          "met": true,
+          "note": "Students use academic vocabulary from anchor charts."
+        },
+        {
+          "clause": "Use grade-level specialized vocabulary words and phrases to communicate.",
+          "met": true,
+          "note": "Students use specialized vocabulary from the Sun, Moon, and Stars Word Wall."
+        }
+      ],
+      "evidence": "As students write, circulate and provide guidance by referring students to look at verses 1 and 2, the Time of Night anchor chart, the Adjectives anchor chart, the Sun, Moon, and Stars Word Wall, etc.",
+      "evidence_page": 390,
+      "confidence": "high",
+      "rationale": "Students use grade-level general, academic, and specialized vocabulary from anchor charts and word walls to communicate in their writing. The standard treats these as interchangeable targets (any one satisfies), and students use all three types. All clauses are met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.19019437551695617,
+        "dense_rank": 2,
+        "bm25_rank": 2,
+        "dense_score": 0.60151213,
+        "bm25_score": 71.69595899095886,
+        "rerank_score": 0.061734236776828766
+      },
+      "standard_raw_text": "Use grade-level general, academic, and specialized vocabulary words and phrases to communicate in a variety of settings. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.T.SS.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use transition words or phrases to sequence events.",
+          "met": false,
+          "note": "No lesson step directs students to use transition words or phrases (such as 'once upon a time,' 'next,' 'last') to sequence events in their writing or speaking."
+        },
+        {
+          "clause": "Use transition words or phrases to sequence actions.",
+          "met": false,
+          "note": "Students write verse 3 and a closing of a poem, but there is no instruction or student activity focused on using transition words or phrases to sequence actions."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "The lesson focuses on writing a narrative poem verse and providing peer feedback. There is no step where students are directed to use transition words or phrases (e.g., \"once upon a time,\" \"next,\" \"last\") to sequence events or actions. The standard's skill is not addressed in any core or scaffold step.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.18459288537549406,
+        "dense_rank": 2,
+        "bm25_rank": 3,
+        "dense_score": 0.46890402,
+        "bm25_score": 37.59329237840535,
+        "rerank_score": 0.07217282056808472
+      },
+      "standard_raw_text": "Use transition words or phrases, such as once upon a time, next, and last to sequence events and actions. (C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.P.AC.3.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Explore texts in various modes and genres to understand how specific features impact meaning, tone, style, purpose, and audience.",
+          "met": true,
+          "note": "Students explore the model poem to understand high-quality writing features."
+        },
+        {
+          "clause": "Create texts in various modes and genres applying knowledge of how specific features impact meaning, tone, style, purpose, and audience.",
+          "met": true,
+          "note": "Students create a narrative poem applying knowledge from the model."
+        }
+      ],
+      "evidence": "Tell students that in the previous lesson, they analyzed these verses for evidence of highquality writing.",
+      "evidence_page": 389,
+      "confidence": "low",
+      "rationale": "Students explore the model poem to understand how specific features create high-quality writing, and they create their own narrative poem verse applying this knowledge. Both clauses are met. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1980980980980981,
+        "dense_rank": 3,
+        "bm25_rank": 6,
+        "dense_score": 0.5054994,
+        "bm25_score": 15.639500367433213,
+        "rerank_score": 0.02447672188282013
+      },
+      "standard_raw_text": "Explore and create texts in various modes and genres, developing and applying knowledge of how specific features impact meaning, tone, style, purpose, and audience. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.P.AC.3.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Consume multimodal texts that integrate a variety of genres, text features, and craft techniques.",
+          "met": false,
+          "note": "Students listen to and view the 'What the Moon Sees' poem (a single genre—narrative poetry). There is no evidence of consuming texts that integrate a variety of genres, text features, or craft techniques in a multimodal format combining multiple modes (e.g., audio, video, images, digital elements). The poem is read aloud and displayed, but this is a single-mode, single-genre text."
+        },
+        {
+          "clause": "Produce multimodal texts that integrate a variety of genres, text features, and craft techniques.",
+          "met": false,
+          "note": "Students write verse 3 of a narrative poem and provide peer feedback. This is production of a single-genre written text (narrative poem), not a multimodal text integrating a variety of genres, text features, and craft techniques."
+        },
+        {
+          "clause": "Use multimodal texts to influence target audiences and achieve specific purposes.",
+          "met": false,
+          "note": "There is no evidence that students use multimodal texts to influence a target audience or achieve a specific purpose beyond completing the poem assignment. The peer feedback activity addresses quality but not audience influence or purposeful multimodal communication."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "The standard requires consuming and producing multimodal texts that integrate a variety of genres, text features, and craft techniques to influence audiences and achieve purposes. This lesson involves reading/listening to a single poem and writing a verse of that poem—a single-genre, single-mode activity. While students do produce writing and engage in peer feedback, there is no multimodal integration (combining different media/modes), no variety of genres, and no purposeful audience influence. None of the three clauses are met. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "empty evidence quote rejected for positive claim",
+      "prompt_version": "align_judge.v1.1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.1919983654189966,
+        "dense_rank": 11,
+        "bm25_rank": 4,
+        "dense_score": 0.45102066,
+        "bm25_score": 17.8462997406339,
+        "rerank_score": 0.0373246856033802
+      },
+      "standard_raw_text": "Consume and produce multimodal texts, integrating a variety of genres, text features, and craft techniques to influence target audiences and achieve specific purposes. (I/C)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.L.V.1.a",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Acquire general, academic, and specialized vocabulary words and phrases through grade-level texts and content.",
+          "met": true,
+          "note": "Students acquire vocabulary from the model poem and anchor charts."
+        },
+        {
+          "clause": "Apply acquired vocabulary words and phrases in appropriate contexts.",
+          "met": true,
+          "note": "Students apply vocabulary in their writing of verse 3."
+        }
+      ],
+      "evidence": "As students write, circulate and provide guidance by referring students to look at verses 1 and 2, the Time of Night anchor chart, the Adjectives anchor chart, the Sun, Moon, and Stars Word Wall, etc.",
+      "evidence_page": 390,
+      "confidence": "high",
+      "rationale": "Students acquire vocabulary from grade-level texts (the model poem) and content resources (anchor charts and word walls), and they apply this vocabulary in their writing. Both clauses are met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1850267219119678,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.7187258,
+        "bm25_score": 111.5200787273344,
+        "rerank_score": 0.057471733540296555
+      },
+      "standard_raw_text": "Acquire and apply general, academic, and specialized vocabulary words and phrases through grade-level texts and content. (I)"
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L5",
+      "standard_code": "1.P.EICC.3.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Summarize sections of the text to maintain understanding.",
+          "met": false,
+          "note": "Students do not summarize sections of text."
+        },
+        {
+          "clause": "Visualize sections of the text to maintain understanding.",
+          "met": false,
+          "note": "Students do not create visual representations of text sections."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "This standard requires students to summarize or visualize sections of text to maintain understanding. While students read and analyze the model poem, they do not summarize or create visual representations of text sections. Neither clause is met.",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1847146009781701,
+        "dense_rank": 11,
+        "bm25_rank": 1,
+        "dense_score": 0.48272726,
+        "bm25_score": 27.171607713903533,
+        "rerank_score": 0.06008100509643555
+      },
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+    }
+  ]
+}

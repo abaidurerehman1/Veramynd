@@ -104,21 +104,29 @@ def load_lesson_context(
     raise JudgeIoError("provide --lesson-file or --chunk-file for raw lesson text")
 
 
-def load_retrieve_candidates(retrieve_file: Path | str) -> list[dict[str, Any]]:
+def load_retrieve_document(retrieve_file: Path | str) -> dict[str, Any]:
     data = load_json(retrieve_file)
     cands = data.get("candidates")
     if not isinstance(cands, list) or not cands:
         raise JudgeIoError(f"{retrieve_file}: no candidates[] to judge")
+    return data
+
+
+def candidates_from_retrieve_document(data: dict[str, Any]) -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
-    for c in cands:
+    for c in data.get("candidates") or []:
         if not isinstance(c, dict):
             continue
         code = (c.get("standard_code") or "").strip()
         if code:
             out.append(c)
     if not out:
-        raise JudgeIoError(f"{retrieve_file}: candidates missing standard_code")
+        raise JudgeIoError("candidates missing standard_code")
     return out
+
+
+def load_retrieve_candidates(retrieve_file: Path | str) -> list[dict[str, Any]]:
+    return candidates_from_retrieve_document(load_retrieve_document(retrieve_file))
 
 
 def load_standard_raw_text(standards_dir: Path | str, code: str) -> dict[str, Any]:
@@ -159,8 +167,10 @@ __all__ = [
     "JudgeIoError",
     "lesson_raw_text_from_chunks",
     "lesson_raw_text_from_stage1",
+    "candidates_from_retrieve_document",
     "load_json",
     "load_lesson_context",
     "load_retrieve_candidates",
+    "load_retrieve_document",
     "load_standard_raw_text",
 ]
