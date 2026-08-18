@@ -1,27 +1,803 @@
 {
   "schema_version": "1.0-judge",
   "quality_profile": "enterprise_k12",
-  "prompt_version": "align_judge.batch.v1",
+  "prompt_version": "align_judge.assembled.batch.v1",
   "judge_mode": "batch",
   "resource_id": "G1M2U1L9",
   "lesson_source": "stage1:G1M2U1L9",
-  "retrieve_file": "output\\retrieve\\G1M2U1L9.json",
+  "retrieve_file": "output/retrieve/G1M2U1L9.json",
   "standards_dir": "output\\normalize_standards",
-  "judge_model": "gpt-4.1",
+  "judge_model": "claude-sonnet-4-5",
   "escalate": true,
-  "escalate_model": "gpt-5",
-  "candidate_count": 10,
-  "judged": 10,
+  "escalate_model": "claude-opus-4-6",
+  "candidate_count": 25,
+  "coverage_pass_injected": [],
+  "judged": 25,
   "failed": [],
   "complete": true,
   "by_status": {
-    "full": 0,
-    "partial": 3,
-    "none": 7
+    "full": 2,
+    "partial": 6,
+    "none": 17
   },
   "grounding_rate": 1.0,
-  "grounding_positive_n": 3,
+  "grounding_positive_n": 8,
+  "escalated_count": 10,
+  "escalation_rate": 0.4,
+  "escalated_codes": [
+    "1.T.C.1.c",
+    "1.P.ST.2.a",
+    "1.P.CP.1.b",
+    "1.P.EICC.1.e",
+    "1.T.RA.2.a",
+    "1.T.SS.1.b",
+    "1.T.C.1.a",
+    "1.P.ST.1.c",
+    "1.P.CP.1.d",
+    "1.P.ST.2.c"
+  ],
+  "input_scope_caveat_count": 0,
+  "input_scope_caveat_codes": [],
+  "prescreen_auto_none_count": 0,
+  "prescreen_auto_none_codes": [],
   "verdicts": [
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.T.RA.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Share relevant information about a topic.",
+          "met": true,
+          "note": "Students share relevant information about the author's purpose"
+        },
+        {
+          "clause": "Share accurate information about a topic.",
+          "met": true,
+          "note": "Students share accurate story events"
+        },
+        {
+          "clause": "Use a variety of communication modes to share information.",
+          "met": true,
+          "note": "Students use both oral (turn-and-talk, share-out) and written/visual (response sheet) modes"
+        }
+      ],
+      "evidence": "Cold call on two or three students to share out their ideas [about why the author wrote the book].",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "Students share relevant and accurate information through multiple modes. In Work Time A, students turn and talk about story events and the central message, then cold-called students share out their ideas (e.g., 'Cold call on two or three students to share out their ideas' about why the author wrote the book). In Work Time C, students complete Part III of the response sheet using 'words and pictures to show what happened in the story,' demonstrating both oral and written/visual communication modes. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.16608219385057038,
+        "dense_rank": 11,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 58.77123520133727,
+        "rerank_score": 0.051717035472393036,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Share relevant and accurate information through a variety of different modes. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.T.C.1.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Create texts in teacher-selected modes (e.g., print, digital, auditory, and/or visual). (C) — The student creates a text in at least one mode selected by the teacher; the listed modes (print, digital, auditory, visual) are illustrative examples joined by 'and/or,' so any one mode suffices.",
+          "met": true,
+          "note": "Students create a text (words and pictures on a response sheet) in a teacher-selected print/visual mode, satisfying the (C) construction act."
+        }
+      ],
+      "evidence": "'Use words and pictures to show what happened in the story.' … Tell students that they may begin writing their response in the Beginning box. Repeat this process with the remaining two boxes, Middle and End.",
+      "evidence_page": 134,
+      "confidence": "high",
+      "rationale": "The standard requires students to create texts in a teacher-selected mode; the parenthetical list (print, digital, auditory, visual) is illustrative and joined by \"and/or,\" so any one mode suffices. In Work Time C, the teacher distributes response sheets and directs students: \"Use words and pictures to show what happened in the story.\" Students then write and draw their responses in the Beginning, Middle, and End boxes — creating a text in a teacher-selected print/visual mode. The student is the actor (they write and draw independently on their own sheets), and the mode (print response sheet with pencils) is explicitly selected by the teacher. All components of the single clause are met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.15738013253638253,
+        "dense_rank": 2,
+        "bm25_rank": 9,
+        "dense_score": 0.0,
+        "bm25_score": 29.628492128613033,
+        "rerank_score": 0.04679522663354874,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Create texts in teacher-selected modes (e.g., print, digital, auditory, and/or visual). (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.P.EICC.4.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Link ideas and information to an organizational plan.",
+          "met": true,
+          "note": "Students link story events to the Beginning/Middle/End organizational structure"
+        },
+        {
+          "clause": "Highlight ideas and information that are most relevant, useful, and impactful.",
+          "met": true,
+          "note": "Students select and record the major events (most relevant information) for each story section"
+        }
+      ],
+      "evidence": "Use words and pictures to show what happened in the story [in boxes labeled Beginning, Middle, and End].",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "Students link ideas and information to an organizational plan and highlight relevant information. In Work Time C, students complete Part III of the response sheet, using 'words and pictures to show what happened in the story' in boxes labeled Beginning, Middle, and End. Students whisper responses about what happened in each section, then write and draw the major events, linking their ideas to the Beginning/Middle/End organizational structure and selecting the most relevant story information for each section. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1573164621855593,
+        "dense_rank": 4,
+        "bm25_rank": 14,
+        "dense_score": 0.0,
+        "bm25_score": 23.29276108082989,
+        "rerank_score": 0.03722605109214783,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Link ideas and information to the organization plan, highlighting ideas and information that are most relevant, useful, and impactful. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.P.EICC.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use texts to build knowledge.",
+          "met": true,
+          "note": "Students use the text to build knowledge about the moon's changing shape"
+        }
+      ],
+      "evidence": "What was the central message of this story? What do you think the author, Eric Carle, was trying to show and tell us about the moon? [students Think-Pair-Share and share out]",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "Students use the text to build knowledge. In Work Time A, after listening to Papa, Please Get the Moon for Me, students Think-Pair-Share about 'What was the central message of this story? What do you think the author, Eric Carle, was trying to show and tell us about the moon?' Students share out ideas such as 'that the moon changes shape and gets bigger and smaller as time goes by,' demonstrating that they used the text to build knowledge about the moon. (The OR-list rule applies: any one student-performed purpose satisfies the clause.) [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.15534926175573743,
+        "dense_rank": 7,
+        "bm25_rank": 4,
+        "dense_score": 0.0,
+        "bm25_score": 21.722702700637374,
+        "rerank_score": 0.05098392069339752,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Make use of texts to build knowledge, develop skills, make informed decisions, and share information and ideas. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.P.ST.2.a",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Develop and apply knowledge of author, audience, and context to discern the purpose of texts being interpreted or constructed (I/C)",
+          "met": false,
+          "note": "Students discern the author's purpose for writing the text via Turn and Talk, applying knowledge of the author (Eric Carle) and context (the moon) to identify why the book was written. However, 'audience' is never addressed, and students do not establish purpose for a text they are constructing — only interpreting."
+        },
+        {
+          "clause": "Evaluate the extent to which texts achieve their purposes based on author, audience, and context",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "'Why do you think the author wrote the book?' (Responses will vary, but may include: to imagine what it would be like to play with the moon and/or to describe how the moon seems to get bigger and smaller.)",
+      "evidence_page": 135,
+      "confidence": "high",
+      "rationale": "The Closing activity directs students to consider why the author wrote the book: \"'Why do you think the author wrote the book?' (Responses will vary, but may include: to imagine what it would be like to play with the moon and/or to describe how the moon seems to get bigger and smaller.)\" Students discern the author's purpose through Turn and Talk, partially meeting the \"discern the purpose\" clause. However, the lesson never addresses audience, never has students establish purpose for a text they are constructing, and never asks students to evaluate how well the text achieves its purpose. The evaluate clause is entirely absent.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.15254427051234642,
+        "dense_rank": 13,
+        "bm25_rank": 4,
+        "dense_score": 0.0,
+        "bm25_score": 28.410493725605736,
+        "rerank_score": 0.04094111546874046,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Develop and apply knowledge of author, audience, and context to discern and establish the purpose of texts being interpreted or constructed and to evaluate the extent to which those texts achieve those purposes. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.T.RA.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Work collaboratively or individually to conduct research on a shared or personal topic of interest.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Gather information from provided sources including print, digital, and personal communication.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Organize gathered information using graphic organizers or other support aids.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.15125207790706977,
+        "dense_rank": 5,
+        "bm25_rank": 15,
+        "dense_score": 0.0,
+        "bm25_score": 15.745653829227155,
+        "rerank_score": 0.02614721469581127,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Work collaboratively or individually to conduct research on a shared or personal topic of interest by gathering and organizing information from provided sources (including print, digital, and personal communication) using graphic organizers or other support aids. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.P.EICC.4.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Generate ideas for writing by assessing prior knowledge.",
+          "met": true,
+          "note": "Students recall what they know from the read-aloud to generate writing ideas"
+        },
+        {
+          "clause": "Generate ideas for writing by gathering information from texts.",
+          "met": true,
+          "note": "Students gather information from the Story Elements board and other text resources"
+        },
+        {
+          "clause": "Generate ideas for writing by engaging in discussions with others.",
+          "met": true,
+          "note": "Students discuss their thinking with partners to generate writing ideas"
+        }
+      ],
+      "evidence": "Encourage them to use classroom resources (Story Elements board, Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).",
+      "evidence_page": 134,
+      "confidence": "high",
+      "rationale": "Students generate ideas for writing through all three methods. In Work Time C, students whisper responses about what happened in each story section, assessing their prior knowledge from the read-aloud. The lesson directs students to 'use classroom resources (Story Elements board, Word Walls, high-frequency word lists)' to gather information from texts. The ELL note states 'Students may benefit from orally rehearsing their writing with peers... encourage them to tell a partner their thinking,' showing students engage in discussions to generate ideas.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.14987373737373738,
+        "dense_rank": 26,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 22.902441863664965,
+        "rerank_score": 0.05886201933026314,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Generate ideas for content by assessing prior knowledge, gathering information from texts, and engaging in discussions with others. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.P.CP.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Communicate ideas clearly when presenting.",
+          "met": true,
+          "note": "Students present their ideas aloud to the class"
+        },
+        {
+          "clause": "Present information in an organized manner.",
+          "met": true,
+          "note": "Students use sentence frames to organize their oral presentations of story events"
+        },
+        {
+          "clause": "Express ideas and information clearly through speech.",
+          "met": true,
+          "note": "Students express story information clearly through speech"
+        }
+      ],
+      "evidence": "Cold call on two or three students to share out [their ideas about the central message and author's purpose].",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "Students communicate clearly to present ideas and information. Throughout Work Time A, students turn and talk, then are cold-called to 'share out' their ideas about story events and the central message. Students use sentence frames ('In the beginning, _____________') to organize their oral presentations. The manner-modifier principle applies: students genuinely present aloud to communicate ideas, satisfying both the clarity manner and the present-ideas act. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.14984482429335372,
+        "dense_rank": 21,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 56.95235547972655,
+        "rerank_score": 0.04930654540657997,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Communicate clearly to present ideas, information, and texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.P.EICC.4.g",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Make changes to a text based on self-evaluation or external feedback.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise the organization of the text to improve clarity and flow.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise ideas and information to enhance content and meaning.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise word choices to improve expression and impact.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise craft techniques to increase the text's effectiveness.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.14765546796796797,
+        "dense_rank": 38,
+        "bm25_rank": 9,
+        "dense_score": 0.0,
+        "bm25_score": 22.277963733981736,
+        "rerank_score": 0.04198767989873886,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Make changes to the text based on self-evaluation or external feedback, revising the organization, ideas, information, word choices, and craft techniques in order to increase the text’s effectiveness. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.P.CP.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Collaborate with others to determine group norms",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Establish goals and procedures for shared projects",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Facilitate productivity when working on shared projects",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.1472579185520362,
+        "dense_rank": 1,
+        "bm25_rank": 3,
+        "dense_score": 0.0,
+        "bm25_score": 14.262337277764153,
+        "rerank_score": 0.050041988492012024,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.P.CP.2.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Recite all or part of significant poems appropriate for grade level.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Recite all or part of significant speeches appropriate for grade level.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.14679983468797353,
+        "dense_rank": 6,
+        "bm25_rank": 7,
+        "dense_score": 0.0,
+        "bm25_score": 31.003063122384187,
+        "rerank_score": 0.042598381638526917,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Build background knowledge by reciting all or part of significant poems and speeches as appropriate by grade level. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.P.EICC.1.e",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Develop group norms for participation in a community of readers and writers",
+          "met": false,
+          "note": "Students are invited to articulate how they will show respect (a norm) during the role-play, but this is recalling/applying an existing norm, not developing new group norms for a community of readers and writers."
+        },
+        {
+          "clause": "Discuss texts with others in the group",
+          "met": true,
+          "note": "Students discuss the text repeatedly via Turn and Talk and Think-Pair-Share, sharing their ideas about story events and central message with partners and the whole group."
+        },
+        {
+          "clause": "Share individual writing with the group",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Listen to others as they share their writing",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Offer feedback on peers' writing",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Respond to feedback received on own writing",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "How will you show respect toward others during our Role-Play protocol today?",
+      "evidence_page": 133,
+      "confidence": "high",
+      "rationale": "The resource partially meets 1.P.EICC.1.e. Students discuss the text with peers through multiple Turn and Talk and Think-Pair-Share exchanges (e.g., \"What happened in the beginning of the story?\" with student responses like \"Monica wants to play with the moon, so she asks her Papa to get it for her\"), meeting the discuss-texts clause. Students are also prompted to articulate how they will show respect during role-play (\"How will you show respect toward others during our Role-Play protocol today?\"), which touches on group norms but is applying an existing norm rather than developing new ones, so that clause is partially met. However, the lesson does not include any activity in which students share their own writing with the group, listen to peers share writing, offer feedback on peers' writing, or respond to feedback on their own writing — the independent writing (response sheet) is collected by the teacher with no sharing or peer feedback component. Four of six clauses are not met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.1457142857142857,
+        "dense_rank": 10,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 26.123657531435896,
+        "rerank_score": 0.035554442554712296,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing individual writing, listening as others share their writing, and offering and responding to feedback. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.T.T.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Describe traits of the main characters.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Explain how the characters' words support the central message, lesson, or moral.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Explain how the characters' actions support the central message, lesson, or moral.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.13834108147785662,
+        "dense_rank": 18,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 111.78717459595762,
+        "rerank_score": 0.09929514676332474,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.T.RA.2.a",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion. (I)",
+          "met": false,
+          "note": "Students are directed to look at illustrations (a part of the text) as evidence to support their answer about middle events, which is referring to a part of the text to support an answer. However, the directive is a single instance and the referencing is teacher-prompted to illustrations only; other turn-and-talk prompts (beginning, end, central message) do not explicitly ask students to refer to parts of the text as support — students retell events but are not directed to cite or point to specific text/illustrations as evidence for those answers."
+        }
+      ],
+      "evidence": "'Looking at the illustrations for evidence, describe what happened in the middle of the story.'",
+      "evidence_page": 130,
+      "confidence": "high",
+      "rationale": "The standard requires students to refer to parts of texts when supporting an idea, answer, or opinion. During the middle-of-story discussion, the teacher directs students: \"Looking at the illustrations for evidence, describe what happened in the middle of the story.\" This is a student-directed imperative that asks students to use a part of the text (illustrations) as evidence to support their answer, satisfying the clause in a narrow way. However, this explicit text-referencing directive occurs only once; the remaining turn-and-talk prompts (beginning, end, central message, author's purpose) ask students to recall or describe events without directing them to cite or point to specific parts of the text as support. Because the student performs the act of referring to text evidence in only one instance and the broader pattern of the lesson does not systematically require text-referencing to support answers, the clause is partially met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.1377801425714139,
+        "dense_rank": 27,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 73.16883663497647,
+        "rerank_score": 0.0716487318277359,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Refer to parts of texts when supporting an idea, answer, or opinion. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.T.T.1.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use knowledge of characters in narratives to create texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use knowledge of settings in narratives to create texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use knowledge of events in narratives to create texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Create texts that share real or imagined experiences and events.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Include a sense of closure in created texts.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.13895449308755758,
+        "dense_rank": 15,
+        "bm25_rank": 3,
+        "dense_score": 0.0,
+        "bm25_score": 55.56888117930904,
+        "rerank_score": 0.05591318756341934,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use knowledge of narrative techniques (e.g., characters, settings, events) to create texts that share real or imagined experiences and events with a sense of closure. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.T.SS.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use text features (e.g., illustrations, page numbers, bold print, headings) to add clarity and meaning to texts. (C) — The student uses text features in their own constructed texts to add clarity and meaning.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.14476164680390036,
+        "dense_rank": 3,
+        "bm25_rank": 6,
+        "dense_score": 0.0,
+        "bm25_score": 23.820548243336702,
+        "rerank_score": 0.036978643387556076,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use text features (e.g., illustrations, page numbers, bold print, headings) to add clarity and meaning to texts. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.T.SS.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use transition words or phrases to sequence events.",
+          "met": true,
+          "note": "Students use transition phrases (In the beginning, In the middle, At the end) to sequence story events"
+        },
+        {
+          "clause": "Use transition words or phrases to sequence actions.",
+          "met": true,
+          "note": "Students use transition phrases to sequence the actions/events in the story"
+        }
+      ],
+      "evidence": "Encourage students to use the sentence frame: 'In the beginning, _____________.' [and 'In the middle, _______________.' and 'At the end, ________________.']",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "Students use transition phrases to sequence events and actions. Throughout Work Time A, students are encouraged to use sentence frames with transition phrases: 'In the beginning, _____________,' 'In the middle, _______________,' and 'At the end, ________________' when describing story events. In Work Time C, students write their responses in boxes labeled Beginning, Middle, and End, using these transition phrases to sequence the story's events and actions. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.14024028210595374,
+        "dense_rank": 30,
+        "bm25_rank": 3,
+        "dense_score": 0.0,
+        "bm25_score": 53.45987464005604,
+        "rerank_score": 0.04734354466199875,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use transition words or phrases, such as once upon a time, next, and last to sequence events and actions. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L9",
@@ -31,334 +807,165 @@
         {
           "clause": "Explain concepts by interpreting texts.",
           "met": true,
-          "note": ""
+          "note": "Students explain the concept of the moon's changing shape by interpreting the text"
         },
         {
           "clause": "Learn concepts by interpreting texts.",
           "met": true,
-          "note": ""
+          "note": "Students learn the concept of the moon's phases by interpreting the text"
         },
         {
           "clause": "Construct texts to demonstrate understanding of concepts and processes.",
           "met": true,
-          "note": ""
+          "note": "Students construct texts (written and visual) to demonstrate understanding of story events"
         }
       ],
-      "evidence": "- Invite students to Think-Pair-Share with an elbow partner: 'What was the central message of this story? What do you think the author, Eric Carle, was trying to show and tell us about the moon?' (that the moon changes shape and gets bigger and smaller as time goes by)\n...\n- 'Use words and pictures to show what happened in the story.'\n- Tell students that they may begin writing their response in the Beginning box.\n- Repeat this process with the remaining two boxes, Middle and End.",
-      "evidence_page": 134,
+      "evidence": "What was the central message of this story? What do you think the author, Eric Carle, was trying to show and tell us about the moon? [students Think-Pair-Share and share out, e.g., 'that the moon changes shape and gets bigger and smaller as time goes by']",
+      "evidence_page": null,
       "confidence": "low",
-      "rationale": "Students interpret the story to explain and learn its central message, and construct their own texts (words and pictures) to demonstrate understanding of the story's events and concepts. [REJECTED: evidence missing or not found in lesson raw text]",
+      "rationale": "Students explain and learn concepts by interpreting texts and construct texts to demonstrate understanding. In Work Time A, students Think-Pair-Share about 'What was the central message... what do you think the author was trying to show and tell us about the moon?' and share out ideas such as 'that the moon changes shape and gets bigger and smaller,' explaining and learning the concept by interpreting the text. In Work Time C, students 'use words and pictures to show what happened in the story' on the response sheet, constructing texts to demonstrate their understanding of story events. [REJECTED: evidence missing or not found in lesson raw text]",
       "grounded": false,
       "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
-        "rrf_score": 0.015384615384615385,
-        "dense_rank": 5,
-        "bm25_rank": null,
-        "dense_score": 0.5975787,
-        "bm25_score": null,
-        "rerank_score": 0.992176353931427
-      },
-      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L9",
-      "standard_code": "1.T.C.2.a",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Identify who is speaking or telling the story at various points in a text.",
-          "met": false,
-          "note": "No evidence students identify the narrator or speaker at any point."
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "At no point are students asked to identify the narrator or who is telling the story; the focus is on events and message, not narration.",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.02405167674546454,
-        "dense_rank": 47,
-        "bm25_rank": 8,
-        "dense_score": 0.5258066,
-        "bm25_score": 151.8891351619379,
-        "rerank_score": 0.991438090801239
-      },
-      "standard_raw_text": "Identify who is speaking or telling the story at various points in a text. (I)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L9",
-      "standard_code": "1.T.T.2",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
-          "met": false,
-          "note": "Lesson is based on a narrative text, not expository."
-        },
-        {
-          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
-          "met": false,
-          "note": "No explicit task to describe connections as required by expository standards."
-        },
-        {
-          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
-          "met": false,
-          "note": "No expository writing or technique use."
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "The lesson is focused on a narrative text and does not address expository techniques or writing.",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.023839931885908897,
-        "dense_rank": 27,
-        "bm25_rank": 21,
-        "dense_score": 0.55060774,
-        "bm25_score": 113.41177202453866,
-        "rerank_score": 0.9906991124153137
-      },
-      "standard_raw_text": "Identify and use expository techniques to shape understanding."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L9",
-      "standard_code": "1.T.T.1",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue.",
-          "met": true,
-          "note": ""
-        },
-        {
-          "clause": "Identify a simple plot with a problem and solution.",
-          "met": true,
-          "note": ""
-        },
-        {
-          "clause": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
-          "met": true,
-          "note": ""
-        },
-        {
-          "clause": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures.",
-          "met": false,
-          "note": "No comparison across cultures."
-        },
-        {
-          "clause": "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure.",
-          "met": true,
-          "note": ""
-        }
-      ],
-      "evidence": "- Remind students that the characters in Papa, Please Get the Moon for Me are Monica, Papa, and the moon.\n- Say each character name again and invite students to make a 'p' with their hands if the noun is proper, and a 'c' with their hand if the noun is common.\n...\n- Invite students to Think-Pair-Share with an elbow partner: 'What was the central message of this story? What do you think the author, Eric Carle, was trying to show and tell us about the moon?'\n...\n- 'Use words and pictures to show what happened in the story.'\n- Tell students that they may begin writing their response in the Beginning box.\n- Repeat this process with the remaining two boxes, Middle and End.",
-      "evidence_page": 134,
-      "confidence": "low",
-      "rationale": "Students identify characters, major events, and the central message, and create their own narrative retellings. The only clause not met is the cross-cultural comparison, but all other narrative technique clauses are fully addressed. [REJECTED: evidence missing or not found in lesson raw text]",
-      "grounded": false,
-      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.03278688524590164,
-        "dense_rank": 1,
+        "rrf_score": 0.13420369102730256,
+        "dense_rank": 16,
         "bm25_rank": 1,
-        "dense_score": 0.6280197,
-        "bm25_score": 251.08136977977233,
-        "rerank_score": 0.9904844760894775
+        "dense_score": 0.0,
+        "bm25_score": 18.139315447588963,
+        "rerank_score": 0.06538105756044388,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Identify and use narrative techniques to shape understanding."
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L9",
-      "standard_code": "1.P.EICC.3.d",
+      "standard_code": "1.T.SS.2.a",
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Summarize sections of the text to maintain understanding.",
-          "met": true,
-          "note": ""
+          "clause": "Identify descriptive words in texts.",
+          "met": false,
+          "note": "Teacher identifies and presents descriptive words; students do not identify them"
         },
         {
-          "clause": "Visualize sections of the text to maintain understanding.",
-          "met": true,
-          "note": ""
-        }
-      ],
-      "evidence": "- 'Use words and pictures to show what happened in the story.'\n- Tell students that they may begin writing their response in the Beginning box.\n- Repeat this process with the remaining two boxes, Middle and End.",
-      "evidence_page": 134,
-      "confidence": "low",
-      "rationale": "Students summarize the beginning, middle, and end of the story and create visual representations (drawings) for each section. [REJECTED: evidence missing or not found in lesson raw text]",
-      "grounded": false,
-      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.026916221033868093,
-        "dense_rank": 6,
-        "bm25_rank": 25,
-        "dense_score": 0.5974964,
-        "bm25_score": 110.65589949149242,
-        "rerank_score": 0.9903282523155212
-      },
-      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L9",
-      "standard_code": "1.T.C.1",
-      "matched_status": "partial",
-      "clauses": [
-        {
-          "clause": "Identify the general purpose of a variety of texts.",
+          "clause": "Explain the use of descriptive words in texts.",
           "met": false,
-          "note": "Students discuss author’s purpose for one text only, not a variety of texts."
-        },
-        {
-          "clause": "Identify the target audience of a variety of texts.",
-          "met": false,
-          "note": "No task asks students to identify a target audience."
-        },
-        {
-          "clause": "Identify different modes of communication: print, digital, auditory, and visual.",
-          "met": false,
-          "note": "Students are not asked to identify communication modes."
-        },
-        {
-          "clause": "Create texts in teacher-selected modes such as print, digital, auditory, and/or visual.",
-          "met": true,
-          "note": "Students create a written/drawn response (print/visual)."
-        }
-      ],
-      "evidence": "- Focus students on Part III and read the prompt aloud, allowing adequate think time:\n- 'Use words and pictures to show what happened in the story.'\n- Direct students' attention to the box labeled Beginning.\n- Invite students to whisper a response into their hands: 'What happened in the beginning of Papa, Please Get the Moon for Me?'\n- Tell students that they may begin writing their response in the Beginning box.\n- Repeat this process with the remaining two boxes, Middle and End.\n- Circulate to support students as they write.",
-      "evidence_page": 134,
-      "confidence": "high",
-      "rationale": "Students create a text using words and pictures, but they do not identify target audience or modes, nor do they identify purpose across multiple texts.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.014705882352941176,
-        "dense_rank": 8,
-        "bm25_rank": null,
-        "dense_score": 0.5834458,
-        "bm25_score": null,
-        "rerank_score": 0.9901600480079651
-      },
-      "standard_raw_text": "Explain how authors of texts use language for a specific purpose and a target audience."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L9",
-      "standard_code": "1.P.ST.1",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Use prior knowledge, research, and discussions to identify key context components.",
-          "met": false,
-          "note": "Students retell events and discuss central message; they do not identify contextual components (e.g., location, culture, time period) or use research."
-        },
-        {
-          "clause": "Consider how context impacts the purposes of the author and the audience.",
-          "met": false,
-          "note": "Author purpose is discussed, but not in relation to contextual factors; no analysis of how context affects purpose or audience."
-        },
-        {
-          "clause": "Explore how context shapes the author's decisions and the audience's responses during text interpretation and construction.",
-          "met": false,
-          "note": "Activities focus on retelling, role-play, and a response sheet; no exploration of context shaping author choices or audience response, nor use of context in students’ own composition."
+          "note": "Teacher explains the use of descriptive words; students do not explain"
         }
       ],
       "evidence": "",
       "evidence_page": null,
       "confidence": "high",
-      "rationale": "The lesson centers on retelling events and identifying a central message in a single story. It does not have students identify or apply contextual components (location, culture, time period, etc.) when interpreting or creating texts.",
+      "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
       "retrieval": {
-        "rrf_score": 0.02552166934189406,
-        "dense_rank": 29,
-        "bm25_rank": 10,
-        "dense_score": 0.5478563,
-        "bm25_score": 146.24243123630842,
-        "rerank_score": 0.989628791809082
+        "rrf_score": 0.13771478521478522,
+        "dense_rank": 17,
+        "bm25_rank": 13,
+        "dense_score": 0.0,
+        "bm25_score": 32.39228075016754,
+        "rerank_score": 0.05024215206503868,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Develop and apply knowledge of key components of context such as background information, geographic location, cultural influences, time period, and contemporary events when interpreting and constructing texts."
+      "standard_raw_text": "Identify and explain the use of descriptive words in texts. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L9",
-      "standard_code": "1.P.ST.2.b",
+      "standard_code": "1.T.SS.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use descriptive words.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Craft texts that engage readers.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.12927859811421455,
+        "dense_rank": 9,
+        "bm25_rank": 24,
+        "dense_score": 0.0,
+        "bm25_score": 13.572265105994116,
+        "rerank_score": 0.057005077600479126,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use descriptive words to craft engaging texts. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.T.C.1.a",
       "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Draw from knowledge of the author to understand texts.",
-          "met": true,
-          "note": "Students discuss what the author was trying to show/tell and why he wrote the book."
+          "clause": "Identify the general purpose of a text (e.g., to tell stories, to provide information, to share opinions, to explain ideas).",
+          "met": false,
+          "note": "Students identify a reason the author wrote the book (author's purpose), which is the general purpose of the text; however the task is brief, occurs only once, and students are not asked to categorize the purpose into a named type (e.g., to tell a story, to provide information), making the identification thin/partial."
         },
         {
-          "clause": "Draw from knowledge of the audience to understand texts.",
+          "clause": "Identify the target audience of a text.",
           "met": false,
-          "note": "No discussion or tasks about intended audience."
-        },
-        {
-          "clause": "Draw from knowledge of the context to understand texts.",
-          "met": false,
-          "note": "No analysis of historical/social/contextual factors for the text."
-        },
-        {
-          "clause": "Use this knowledge to discern a clear point of view or unique perspective when interpreting texts.",
-          "met": false,
-          "note": "Students identify central message/author purpose, but not point of view or unique perspective."
-        },
-        {
-          "clause": "Use this knowledge to establish a clear point of view or unique perspective when constructing texts.",
-          "met": false,
-          "note": "Writing task is a retell; students do not craft a text with a distinct perspective."
+          "note": "not met"
         }
       ],
-      "evidence": "Invite students to Think-Pair-Share with an elbow partner:\n- 'What was the central message of this story? What do you think the author, Eric Carle, was trying to show and tell us about the moon?'",
-      "evidence_page": 130,
+      "evidence": "'Why do you think the author wrote the book?' (Responses will vary, but may include: to imagine what it would be like to play with the moon and/or to describe how the moon seems to get bigger and smaller.)",
+      "evidence_page": 135,
       "confidence": "high",
-      "rationale": "Students consider the author’s purpose to help interpret the text, but there is no work with audience or context, and no task to discern or establish a point of view or unique perspective, nor to construct texts.",
+      "rationale": "The purpose clause is partially met: in the Closing, students are asked \"Why do you think the author wrote the book?\" and respond with ideas such as \"to imagine what it would be like to play with the moon and/or to describe how the moon seems to get bigger and smaller.\" This is a student-performed act of identifying the general purpose of the text, but it is a single, lightly scaffolded turn-and-talk rather than a substantive instructional focus, and students are not guided to categorize the purpose into one of the standard's named types (to tell stories, to provide information, etc.), making the identification thin. The target-audience clause is not met: no activity in the lesson asks students to identify or consider who the intended audience of the text is.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.02415181138585394,
-        "dense_rank": 34,
-        "bm25_rank": 14,
-        "dense_score": 0.54187393,
-        "bm25_score": 126.39668355492556,
-        "rerank_score": 0.989111602306366
+        "rrf_score": 0.1333816201777367,
+        "dense_rank": 29,
+        "bm25_rank": 7,
+        "dense_score": 0.0,
+        "bm25_score": 21.804778521505828,
+        "rerank_score": 0.04847688600420952,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Draw from knowledge of author, audience, and context to discern and establish a clear point of view or unique perspective when interpreting and constructing texts. (I/C)"
+      "standard_raw_text": "Identify the general purpose (e.g., to tell stories, to provide information, to share opinions, to explain ideas) and target audience in a variety of texts. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
@@ -367,80 +974,221 @@
       "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Explore how context shapes the author's decisions when interpreting texts.",
-          "met": true,
-          "note": "Students discuss author’s purpose for writing the text during interpretation."
+          "clause": "Explore how context shapes the author's decisions during the interpretation and/or construction of texts.",
+          "met": false,
+          "note": "Students explore why the author wrote the book (an author's decision), touching on context shaping the author's choices, but the exploration is thin — a single Turn-and-Talk prompt with no sustained inquiry into how context (audience, purpose, time period, culture) shaped the author's decisions."
         },
         {
-          "clause": "Explore how context shapes the audience's responses when interpreting texts.",
+          "clause": "Explore how context shapes the audience's responses during the interpretation and/or construction of texts.",
           "met": false,
-          "note": "Students identify central message but do not examine how audience context affects responses."
-        },
-        {
-          "clause": "Explore how context shapes the author's decisions when constructing texts.",
-          "met": false,
-          "note": "Students write retellings but do not explore how context shapes their authorial choices."
-        },
-        {
-          "clause": "Explore how context shapes the audience's responses when constructing texts.",
-          "met": false,
-          "note": "No task asks students to consider audience response during their own text construction."
+          "note": "not met"
         }
       ],
-      "evidence": "Direct students' attention to the third column and invite students to turn and talk with an elbow partner: 'Why do you think the author wrote the book?' (Responses will vary, but may include: to imagine what it would be like to play with the moon and/or to describe how the moon seems to get bigger and smaller.) If productive, cue students to expand the conversation by saying more: 'Can you say more about that?' (Responses will vary.) Circulate and listen in as students share with their partners. Cold call on two to three students to share out their ideas.",
+      "evidence": "'Why do you think the author wrote the book?' (Responses will vary, but may include: to imagine what it would be like to play with the moon and/or to describe how the moon seems to get bigger and smaller.)",
       "evidence_page": 135,
-      "confidence": "medium",
-      "rationale": "Students explicitly discuss why the author wrote the book while interpreting the text, but there is no exploration of how context shapes audience responses, nor any attention to context during students’ own text construction.",
+      "confidence": "high",
+      "rationale": "The standard requires students to explore how context shapes both the author's decisions and the audience's responses when interpreting or constructing texts. In the Closing, students are asked via Turn-and-Talk: \"Why do you think the author wrote the book?\" and they generate responses about the author's purpose (e.g., \"to imagine what it would be like to play with the moon\"), which is a thin but genuine student exploration of how context shaped the author's decisions — partially met because the exploration is a single prompt with no sustained or explicit connection to contextual factors. The second clause — exploring how context shapes the audience's responses — is not addressed anywhere in the lesson; no activity asks students to consider how their own or others' responses are shaped by context.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.024687641125997292,
+        "rrf_score": 0.13174132630654367,
         "dense_rank": 31,
-        "bm25_rank": 13,
-        "dense_score": 0.5462548,
-        "bm25_score": 129.98678345018297,
-        "rerank_score": 0.9890199303627014
+        "bm25_rank": 5,
+        "dense_score": 0.0,
+        "bm25_score": 41.49876907448125,
+        "rerank_score": 0.049874331802129745,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Explore how context shapes the author’s decisions and the audience’s responses during the interpretation and construction of texts. (I/C)"
+      "standard_raw_text": "Explore how context shapes the author’s decisions and the audience’s responses during the interpretation and construction of texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L9",
-      "standard_code": "1.T.T.3",
+      "standard_code": "1.P.CP.1.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Work with others to discuss topics (I/C)",
+          "met": true,
+          "note": "Students work in pairs (Turn and Talk, Think-Pair-Share) to discuss the story's events and central message — collaborative discussion of a topic."
+        },
+        {
+          "clause": "Work with others to investigate questions (I/C)",
+          "met": true,
+          "note": "Students collaboratively investigate the guiding question about why the author wrote about the moon, sharing and building on ideas with partners."
+        },
+        {
+          "clause": "Work with others to solve problems (I/C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Work with others to explore and create texts (I/C)",
+          "met": false,
+          "note": "Students work in pairs to role-play/explore the text collaboratively, which is exploring a text with others; however, there is no collaborative creation of a text — the independent writing is done individually, not with others."
+        }
+      ],
+      "evidence": "Invite students to Think-Pair-Share with an elbow partner: 'What was the central message of this story? What do you think the author, Eric Carle, was trying to show and tell us about the moon?'",
+      "evidence_page": 130,
+      "confidence": "high",
+      "rationale": "The standard requires students to work with others to (a) discuss topics, (b) investigate questions, (c) solve problems, and (d) explore and create texts. Clauses (a) and (b) are met: students engage in multiple Turn-and-Talk and Think-Pair-Share exchanges to discuss story events (\"What happened in the beginning of the story?\") and investigate the central message (\"What was the central message of this story?\"). Clause (d) is partially met: students work in pairs to role-play/explore the text (\"use the Role-Play protocol to act out the key details\"), but the writing task is independent, so collaborative text creation is absent. Clause (c) — working with others to solve problems — is not met; no collaborative problem-solving activity appears in the lesson.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.1280652665995976,
+        "dense_rank": 20,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 21.63190240773808,
+        "rerank_score": 0.056404802948236465,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.P.ST.2.c",
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Identify techniques used to craft opinion texts, including the author's opinion and supporting reasons.",
+          "clause": "Draw from knowledge of how authors consider context and audience to determine which information and ideas to highlight (I/C)",
           "met": false,
-          "note": "No opinion text or techniques identified."
+          "note": "not met"
         },
         {
-          "clause": "Use knowledge of opinion techniques to create opinion pieces that introduce the topic, state an opinion about the topic, and provide two or more reasons to support the opinion with linking words such as 'and' and 'because'.",
+          "clause": "Determine which text design is most accessible (I/C)",
           "met": false,
-          "note": "No opinion writing or technique use."
+          "note": "not met"
+        },
+        {
+          "clause": "Decide which word choices and language structures are most effective (I/C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Identify which craft techniques are most impactful (I/C)",
+          "met": false,
+          "note": "not met"
         }
       ],
       "evidence": "",
       "evidence_page": null,
       "confidence": "high",
-      "rationale": "There is no opinion writing or identification of opinion techniques in this lesson.",
+      "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.12961020437272042,
+        "dense_rank": 50,
+        "bm25_rank": 5,
+        "dense_score": 0.0,
+        "bm25_score": 35.60780730107418,
+        "rerank_score": 0.04752599075436592,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Draw from knowledge of how authors consider context and audience to determine which information and ideas to highlight, which text design is most accessible, which word choices and language structures are most effective, and which craft techniques are most impactful. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L9",
+      "standard_code": "1.P.EICC.3.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Scan a text to find useful structures and sections.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Skim a text to quickly note parts that might help with comprehension or tasks.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
-        "rrf_score": 0.01962481962481963,
-        "dense_rank": 39,
-        "bm25_rank": 45,
-        "dense_score": 0.5353123,
-        "bm25_score": 92.2954115725058,
-        "rerank_score": 0.9886956214904785
+        "rrf_score": 0.1265690985874472,
+        "dense_rank": 22,
+        "bm25_rank": 5,
+        "dense_score": 0.0,
+        "bm25_score": 20.44402690297639,
+        "rerank_score": 0.05057476460933685,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Identify and use opinion techniques to shape understanding."
+      "standard_raw_text": "Scan and skim the text, making note of structures and sections that might be most useful. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     }
-  ]
+  ],
+  "usage": {
+    "calls": 11,
+    "input_tokens": 55051,
+    "output_tokens": 16738,
+    "cache_write_tokens": 19401,
+    "cache_read_tokens": 192830,
+    "batch_calls": 0,
+    "batch_input_tokens": 0,
+    "batch_output_tokens": 0,
+    "estimated_cost_usd": 0.732034,
+    "by_model": {
+      "claude-sonnet-4-5": {
+        "calls": 1,
+        "input_tokens": 9225,
+        "output_tokens": 11239,
+        "cache_write_tokens": 19401,
+        "cache_read_tokens": 0,
+        "batch_calls": 0,
+        "batch_input_tokens": 0,
+        "batch_output_tokens": 0,
+        "batch_cache_write_tokens": 0,
+        "batch_cache_read_tokens": 0,
+        "estimated_cost_usd": 0.269014
+      },
+      "claude-opus-4-6": {
+        "calls": 10,
+        "input_tokens": 45826,
+        "output_tokens": 5499,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 192830,
+        "batch_calls": 0,
+        "batch_input_tokens": 0,
+        "batch_output_tokens": 0,
+        "batch_cache_write_tokens": 0,
+        "batch_cache_read_tokens": 0,
+        "estimated_cost_usd": 0.46302
+      }
+    }
+  }
 }

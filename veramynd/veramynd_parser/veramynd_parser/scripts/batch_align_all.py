@@ -167,6 +167,36 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="deprecated: pair-depth judging is already the default",
     )
+    p.add_argument(
+        "--use-batch-api",
+        action="store_true",
+        help=(
+            "execute each lesson's judge call(s) through Anthropic's async "
+            "Message Batches API (flat 50%% off, stacks with prompt caching); "
+            "blocks per lesson until that lesson's batch job ends"
+        ),
+    )
+    p.add_argument(
+        "--self-consistency-n",
+        type=int,
+        default=1,
+        help=(
+            "sample escalated (hard/borderline) verdicts N times at nonzero "
+            "temperature and majority-vote instead of one deterministic "
+            "escalate call (default 1 = off)"
+        ),
+    )
+    p.add_argument(
+        "--prescreen-min-rerank-score",
+        type=float,
+        default=None,
+        help=(
+            "Tier-1 cost lever: candidates with retrieval rerank_score below "
+            "this value are judged 'none' with no LLM call (default: off). "
+            "NOT calibrated automatically — verify against the gold set "
+            "before using this in production."
+        ),
+    )
     p.add_argument("--limit-lessons", type=int, default=None)
     p.add_argument("--only", action="append", default=[], help="limit to resource id(s)")
     retrieve_mode = p.add_mutually_exclusive_group()
@@ -430,9 +460,15 @@ def main(argv: list[str] | None = None) -> int:
                         "shortlist_mid_ce_max": int(DEFAULT_SHORTLIST_MID_CE_MAX),
                         "shortlist_rrf_head_lock": int(DEFAULT_SHORTLIST_RRF_HEAD_LOCK),
                         "skip_rerank": bool(args.no_rerank),
-                        "candidates": [c.to_dict() for c in shortlist],
-                        "reranked_candidates": [c.to_dict() for c in hits],
-                        "rrf_candidates": [c.to_dict() for c in rrf_hits],
+                        "candidate_count": len(shortlist),
+                        "candidates": [
+                            {
+                                k: v
+                                for k, v in c.to_dict().items()
+                                if k not in {"text", "arm_hits"}
+                            }
+                            for c in shortlist
+                        ],
                     }
                     atomic_write_text(out, json.dumps(payload, indent=2) + "\n")
                     diag = build_diagnostics_payload(
@@ -522,6 +558,9 @@ def main(argv: list[str] | None = None) -> int:
                     use_cache=not (
                         bool(args.no_cache) or bool(args.force_judge) or bool(args.force)
                     ),
+                    use_batch_api=bool(args.use_batch_api),
+                    self_consistency_n=int(args.self_consistency_n),
+                    prescreen_min_rerank_score=args.prescreen_min_rerank_score,
                 )
                 write_judge_report(report, out)
                 by = report.get("by_status") or {}

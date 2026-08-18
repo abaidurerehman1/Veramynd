@@ -1,370 +1,601 @@
 {
   "schema_version": "1.0-judge",
   "quality_profile": "enterprise_k12",
-  "prompt_version": "align_judge.batch.v1",
+  "prompt_version": "align_judge.assembled.batch.v1",
   "judge_mode": "batch",
   "resource_id": "G1M2U2L3",
   "lesson_source": "stage1:G1M2U2L3",
-  "retrieve_file": "output\\retrieve\\G1M2U2L3.json",
+  "retrieve_file": "output/retrieve/G1M2U2L3.json",
   "standards_dir": "output\\normalize_standards",
-  "judge_model": "gpt-4.1",
+  "judge_model": "claude-sonnet-4-5",
   "escalate": true,
-  "escalate_model": "gpt-5",
-  "candidate_count": 10,
-  "judged": 10,
+  "escalate_model": "claude-opus-4-6",
+  "candidate_count": 25,
+  "coverage_pass_injected": [],
+  "judged": 25,
   "failed": [],
   "complete": true,
   "by_status": {
-    "full": 3,
-    "partial": 3,
-    "none": 4
+    "full": 1,
+    "partial": 5,
+    "none": 19
   },
   "grounding_rate": 1.0,
   "grounding_positive_n": 6,
+  "escalated_count": 10,
+  "escalation_rate": 0.4,
+  "escalated_codes": [
+    "1.T.RA.1.c",
+    "1.T.SS.2.b",
+    "1.P.EICC.1.d",
+    "1.T.RA.1.b",
+    "1.P.EICC.4.e",
+    "1.P.CP.1.d",
+    "1.T.SS.2.a",
+    "1.P.EICC.2.d",
+    "1.T.SS.1.b",
+    "1.P.AC.3.d"
+  ],
+  "input_scope_caveat_count": 2,
+  "input_scope_caveat_codes": [
+    "1.T.T.1.c",
+    "1.T.T.1.b"
+  ],
+  "prescreen_auto_none_count": 0,
+  "prescreen_auto_none_codes": [],
   "verdicts": [
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U2L3",
-      "standard_code": "1.T.T.2",
+      "standard_code": "1.T.T.1.e",
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "clause": "Use knowledge of narrative techniques (characters, settings, events) to create texts that share real or imagined experiences and events with a sense of closure.",
           "met": false,
-          "note": "Students distinguish information from illustrations vs. text, but do not identify main topic/supporting details or other expository techniques."
-        },
-        {
-          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
-          "met": true,
-          "note": "Students connect what illustrations show with what the text states about day and night."
-        },
-        {
-          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
-          "met": false,
-          "note": "Shared writing focuses on adjectives/descriptions; students do not produce an expository piece with introduction, facts, and closure."
+          "note": "not met"
         }
       ],
-      "evidence": "Invite students to turn and talk with an elbow partner:\n\"What is something you learned from an illustration to describe the pattern of light and dark on earth?\" ... \"What did you read in the text that confirmed what you saw in the illustration?\"",
-      "evidence_page": 237,
-      "confidence": "low",
-      "rationale": "Students explicitly describe how information in the text confirms what is shown in illustrations, meeting the connection clause. They do not identify expository techniques (e.g., main topic/supporting details) or produce expository writing with intro, facts, and closure. [REJECTED: evidence missing or not found in lesson raw text]",
-      "grounded": false,
-      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.02946912242686891,
-        "dense_rank": 5,
-        "bm25_rank": 11,
-        "dense_score": 0.5903237,
-        "bm25_score": 78.8216600137239,
-        "rerank_score": 0.9936670660972595
-      },
-      "standard_raw_text": "Identify and use expository techniques to shape understanding."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U2L3",
-      "standard_code": "1.T.T.2.a",
-      "matched_status": "full",
-      "clauses": [
-        {
-          "clause": "Identify the main topic in an expository text.",
-          "met": true,
-          "note": "Students discuss the main topic of day and night patterns."
-        },
-        {
-          "clause": "Identify supporting details in an expository text.",
-          "met": true,
-          "note": "Students cite details from text and illustrations."
-        },
-        {
-          "clause": "Recognize techniques used to craft expository texts.",
-          "met": true,
-          "note": "Students distinguish between information from text and illustrations."
-        }
-      ],
-      "evidence": "Invite students to turn and talk with an elbow partner:\n- 'What is something you learned from an illustration to describe the pattern of light and dark on earth?' (I saw a picture of the earth spinning. Half of the earth faces the sun, and the other half faces away from the sun.)\n- 'What did you read in the text that confirmed what you saw in the illustration?' (The text said that the earth spins around and light from the sun falls on one-half of the spinning earth.)",
-      "evidence_page": 237,
-      "confidence": "high",
-      "rationale": "Students explicitly identify main topic and supporting details, and distinguish between information from text and illustrations, meeting all clauses.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.023527793065492568,
-        "dense_rank": 19,
-        "bm25_rank": 32,
-        "dense_score": 0.56892204,
-        "bm25_score": 64.52649087198975,
-        "rerank_score": 0.9931868314743042
-      },
-      "standard_raw_text": "Identify techniques used to craft expository texts, including main topic and supporting details. (I)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U2L3",
-      "standard_code": "1.T.RA.2",
-      "matched_status": "full",
-      "clauses": [
-        {
-          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
-          "met": true,
-          "note": "Students cite what they learned from illustrations and what the text says to confirm it."
-        },
-        {
-          "clause": "Explore various sources of information, including print, digital, and personal communication.",
-          "met": true,
-          "note": "Students use a video, a poem, photographs, and the informational text while discussing and writing."
-        }
-      ],
-      "evidence": "Tell students you have a video of the earth to show them. As they watch the video, they should look carefully to see what they notice about how the earth moves and rotates, and think about the questions they have. ... Invite students to turn and talk with an elbow partner:\n-'What is something you learned from an illustration to describe the pattern of light and dark on earth?' ... 'What did you read in the text that confirmed what you saw in the illustration?'",
+      "evidence": "",
       "evidence_page": null,
       "confidence": "high",
-      "rationale": "Students reference specific parts of the text and illustrations to answer questions, and they engage with multiple sources (print text, poem, photographs, and a video) to build understanding and make connections.",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.2416501240694789,
+        "dense_rank": 15,
+        "bm25_rank": 3,
+        "dense_score": 0.0,
+        "bm25_score": 55.56888117930904,
+        "rerank_score": 0.014556406997144222,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use knowledge of narrative techniques (e.g., characters, settings, events) to create texts that share real or imagined experiences and events with a sense of closure. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.T.C.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Create texts in teacher-selected modes (print, digital, auditory, and/or visual).",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.24011237026862026,
+        "dense_rank": 2,
+        "bm25_rank": 9,
+        "dense_score": 0.0,
+        "bm25_score": 18.227435670435842,
+        "rerank_score": 0.00798536092042923,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Create texts in teacher-selected modes (e.g., print, digital, auditory, and/or visual). (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.P.CP.2.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Recite all or part of significant poems appropriate for grade level.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.2375024108003857,
+        "dense_rank": 6,
+        "bm25_rank": 5,
+        "dense_score": 0.0,
+        "bm25_score": 31.003063122384187,
+        "rerank_score": 0.0049081649631261826,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Build background knowledge by reciting all or part of significant poems and speeches as appropriate by grade level. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.T.RA.1.c",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Share relevant information about a topic (C)",
+          "met": true,
+          "note": "Students share relevant observations and ideas about Earth's rotation and the pattern of day/night with a partner during the Back-to-Back and Face-to-Face protocol, communicating topic-relevant information."
+        },
+        {
+          "clause": "Share accurate information about a topic (C)",
+          "met": true,
+          "note": "Students share accurate descriptive information about the sun, moon, and stars drawn from photographs and the poem, providing factually grounded observations."
+        },
+        {
+          "clause": "Use a variety of communication modes to share information (C)",
+          "met": false,
+          "note": "Students share information orally (partner protocol, whole-group responses), but the written mode is teacher-scribed shared writing rather than independent student writing. The lesson uses oral sharing as the primary student mode; a second distinct student-performed mode is not clearly evidenced, so 'variety of different modes' is only partially met."
+        }
+      ],
+      "evidence": "'What were some adjectives that you heard to describe the sun, moon, or stars?' (sun: hot, moon: full, stars: twinkling) … 'How would you describe the sun in this photograph? What adjectives could you use to describe it?' (yellow, hidden) … 'How would you describe the moon in this photograph? What adjectives could you use to describe it?' (sliver, white)",
+      "evidence_page": 233,
+      "confidence": "high",
+      "rationale": "The standard requires students to share relevant and accurate information through a variety of different modes (C). Students share relevant, accurate information about the sun, moon, stars, and Earth's rotation orally during the Back-to-Back and Face-to-Face protocol (\"I would like to add _____\") and during whole-group responses describing photographs (\"yellow, hidden\"; \"sliver, white\"). The relevance and accuracy clauses are met by these student-performed oral contributions grounded in the text, poem, and video. However, the \"variety of different modes\" clause is only partially met: the dominant student mode is oral sharing (partner talk, whole-group responses), while the written component is teacher-scribed shared writing where the teacher completes the recording form using student ideas — the students do not independently produce written text as a second mode. A future lesson where students write in their own Sky notebooks would likely strengthen this clause.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.027402402402402402,
-        "dense_rank": 14,
+        "rrf_score": 0.23245015086944348,
+        "dense_rank": 11,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 58.77123520133727,
+        "rerank_score": 0.01144840195775032,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Share relevant and accurate information through a variety of different modes. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.T.SS.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use descriptive words (in constructing texts). (C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Craft engaging texts. (C)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.2305809393839935,
+        "dense_rank": 9,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 31.249842707524326,
+        "rerank_score": 0.021840568631887436,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use descriptive words to craft engaging texts. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.P.EICC.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Discuss or write about personal and academic reading and writing preferences, referring to specific techniques, topics, modes, and genres that resonate most.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.22561775553213909,
+        "dense_rank": 8,
+        "bm25_rank": 9,
+        "dense_score": 0.0,
+        "bm25_score": 15.644837691661277,
+        "rerank_score": 0.0027632468845695257,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Discuss or write about personal and academic reading and writing preferences, referring to specific techniques, topics, modes, and genres that resonate most. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.T.SS.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use transition words or phrases to sequence events and actions.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.2237420042643923,
+        "dense_rank": 30,
+        "bm25_rank": 10,
+        "dense_score": 0.0,
+        "bm25_score": 25.662677121791972,
+        "rerank_score": 0.007070306688547134,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use transition words or phrases, such as once upon a time, next, and last to sequence events and actions. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.P.ST.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Develop knowledge of author, audience, and context to discern the purpose of texts being interpreted or constructed.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Apply knowledge of author, audience, and context to establish the purpose of texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Evaluate the extent to which texts achieve their purposes based on author, audience, and context.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.21984126984126984,
+        "dense_rank": 13,
+        "bm25_rank": 6,
+        "dense_score": 0.0,
+        "bm25_score": 28.410493725605736,
+        "rerank_score": 0.009019102901220322,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Develop and apply knowledge of author, audience, and context to discern and establish the purpose of texts being interpreted or constructed and to evaluate the extent to which those texts achieve those purposes. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.P.EICC.1.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Build a repertoire of comprehension skills, strategies, and techniques (I)",
+          "met": true,
+          "note": "Students practice multiple comprehension skills — distinguishing information from illustrations vs. text, activating background knowledge (shadow recall), and discussing observations from a video — building a repertoire of comprehension strategies across the lesson."
+        },
+        {
+          "clause": "Build a repertoire of composition skills, strategies, and techniques (C)",
+          "met": false,
+          "note": "Students contribute ideas and vocabulary for shared writing (a composition technique), but the teacher scribes and models sentence formulation — students generate content but do not independently draft or construct the text, so the composition repertoire-building is thin."
+        },
+        {
+          "clause": "Draw from these skills and strategies as needed to interpret texts (I)",
+          "met": true,
+          "note": "Students draw from prior comprehension work (Word Wall, poem, close read-aloud) to interpret photographs and video of the earth, sun, and moon — they apply previously built strategies (vocabulary, distinguishing illustration from text) to new content."
+        },
+        {
+          "clause": "Draw from these skills and strategies as needed to construct texts (C)",
+          "met": false,
+          "note": "Students draw from previously learned adjectives and Word Wall vocabulary to contribute to a shared writing piece, but the teacher performs the actual construction (scribing, formulating sentences), so the student's drawing-from-repertoire to construct is limited to oral contribution of content."
+        }
+      ],
+      "evidence": "'What is something you learned from an illustration to describe the pattern of light and dark on earth?' (I saw a picture of the earth spinning. Half of the earth faces the sun, and the other half faces away from the sun.) 'What did you read in the text that confirmed what you saw in the illustration?' (The text said that the earth spins around and light from the sun falls on one-half of the spinning earth.)",
+      "evidence_page": 237,
+      "confidence": "low",
+      "rationale": "⚑ REVIEW: none-or-partial — The comprehension (I) clauses are met: students practice multiple comprehension strategies across the lesson, including distinguishing information from illustrations vs. text (\"What is something you learned from an illustration … I saw a picture of the earth spinning\"), activating background knowledge (recalling sitting in a shadow), identifying adjectives in a poem (\"What were some adjectives that you heard to describe the sun, moon, or stars?\" — \"sun: hot, moon: full, stars: twinkling\"), and discussing observations from a video via the Back-to-Back and Face-to-Face protocol. Students also draw from previously built strategies (Word Wall, poem) to interpret new photographs. The composition (C) clauses are only partially met: during shared writing, students contribute adjectives and descriptive ideas (\"yellow, hidden,\" \"sliver, white\"), but the teacher scribes and models sentence formulation (\"Think aloud how to use the words from the question itself as a cue to formulate the answer\"), so students do not independently construct text. The lesson builds toward independent Sky notebook writing in the next lesson but does not reach it here.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.2092074592074592,
+        "dense_rank": 23,
         "bm25_rank": 12,
-        "dense_score": 0.5775989,
-        "bm25_score": 78.5310149707227,
-        "rerank_score": 0.9931063055992126
+        "dense_score": 0.0,
+        "bm25_score": 21.523757562060165,
+        "rerank_score": 0.00870295986533165,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+      "standard_raw_text": "Build a repertoire of comprehension and composition skills, strategies, and techniques, drawing from them as needed to aid the interpretation and construction of texts. (I/C)",
+      "needs_review": true,
+      "review_reason": "none-or-partial — Oral co-composition against a (C) construction substandard: students contribute verbatim adjectives/descriptions during shared writing while the teacher scribes, raising the question of whether the student's oral contribution constitutes construction.",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U2L3",
-      "standard_code": "1.P.EICC.2.c",
+      "standard_code": "1.T.RA.1.b",
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Explain concepts by interpreting texts.",
-          "met": true,
-          "note": "Students explain the day/night pattern using information from illustrations and confirming with text during partner discussion."
-        },
-        {
-          "clause": "Learn concepts by interpreting texts.",
-          "met": true,
-          "note": "Students identify what they learned from illustrations and from the text about the pattern of light and dark on earth."
-        },
-        {
-          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
-          "met": true,
-          "note": "In shared writing, students help record observations with words and pictures, collaboratively constructing a text."
-        }
-      ],
-      "evidence": "- Tell them that today they will look at a new image of the sun and moon and help record their observations using pictures and words during shared writing. ... - Invite students to turn and talk with an elbow partner:\n- 'What is something you learned from an illustration to describe the pattern of light and dark on earth?' (I saw a picture of the earth spinning. Half of the earth faces the sun, and the other half faces away from the sun.)\n- 'What did you read in the text that confirmed what you saw in the illustration?' (The text said that the earth spins around and light from the sun falls on one-half of the spinning earth.)",
-      "evidence_page": null,
-      "confidence": "low",
-      "rationale": "Students interpret an informational text and its illustrations to learn and explain the day/night pattern and collaboratively construct a written record of observations in shared writing. [REJECTED: evidence missing or not found in lesson raw text]",
-      "grounded": false,
-      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.026862026862026864,
-        "dense_rank": 3,
-        "bm25_rank": 31,
-        "dense_score": 0.60119396,
-        "bm25_score": 64.99530289108225,
-        "rerank_score": 0.9924496412277222
-      },
-      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U2L3",
-      "standard_code": "1.P.EICC.3.d",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Summarize sections of the text to maintain understanding.",
+          "clause": "Work collaboratively or individually to conduct research on a shared or personal topic of interest.",
           "met": false,
-          "note": "Students identify what they learned from illustrations versus text and discuss a video, but there is no task where students summarize sections of the text."
+          "note": "not met"
         },
         {
-          "clause": "Visualize sections of the text to maintain understanding.",
+          "clause": "Gather information from provided sources (including print, digital, and personal communication).",
           "met": false,
-          "note": "Students look at photos and a video and the teacher draws quick sketches during shared writing; students are not asked to visualize sections of the text themselves."
+          "note": "not met"
+        },
+        {
+          "clause": "Organize gathered information using graphic organizers or other support aids.",
+          "met": false,
+          "note": "not met"
         }
       ],
       "evidence": "",
       "evidence_page": null,
       "confidence": "high",
-      "rationale": "The lesson focuses on distinguishing information from illustrations vs. text and on discussing a video. It does not have students summarize text sections or create visualizations of the text.",
+      "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.02815814850530376,
-        "dense_rank": 1,
-        "bm25_rank": 25,
-        "dense_score": 0.6065014,
-        "bm25_score": 68.47828058555847,
-        "rerank_score": 0.9922270774841309
+        "rrf_score": 0.2053952644802742,
+        "dense_rank": 5,
+        "bm25_rank": 5,
+        "dense_score": 0.0,
+        "bm25_score": 15.745653829227155,
+        "rerank_score": 0.00275921612046659,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)",
-      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
+      "standard_raw_text": "Work collaboratively or individually to conduct research on a shared or personal topic of interest by gathering and organizing information from provided sources (including print, digital, and personal communication) using graphic organizers or other support aids. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U2L3",
-      "standard_code": "1.T.T.2.b",
+      "standard_code": "1.T.T.4.a",
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Describe the connection between two individuals in a text.",
+          "clause": "Identify rhyme used in texts.",
           "met": false,
-          "note": "No evidence of describing connections between individuals."
+          "note": "not met"
         },
         {
-          "clause": "Describe the connection between two events in a text.",
+          "clause": "Identify alliteration used in texts.",
           "met": false,
-          "note": "No evidence of describing connections between events."
+          "note": "not met"
         },
         {
-          "clause": "Describe the connection between two ideas in a text.",
+          "clause": "Identify repeated lines used in texts.",
           "met": false,
-          "note": "No evidence of describing connections between ideas."
+          "note": "not met"
         },
         {
-          "clause": "Describe the connection between two pieces of information in a text.",
+          "clause": "Describe how rhyme, alliteration, and repeated lines are used to craft texts.",
           "met": false,
-          "note": "No evidence of describing connections between pieces of information."
+          "note": "not met"
         }
       ],
       "evidence": "",
       "evidence_page": null,
       "confidence": "high",
-      "rationale": "Students do not explicitly describe connections between two individuals, events, ideas, or pieces of information in the text.",
+      "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
-        "rrf_score": 0.023234323432343235,
-        "dense_rank": 41,
-        "bm25_rank": 15,
-        "dense_score": 0.5419189,
-        "bm25_score": 74.50638803531496,
-        "rerank_score": 0.9908298254013062
+        "rrf_score": 0.20349396857619811,
+        "dense_rank": 62,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 43.20487792546285,
+        "rerank_score": 0.008239397779107094,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Describe the connection between two individuals, events, ideas, or pieces of information in a text. (I)"
+      "standard_raw_text": "Identify and describe poetic techniques used to craft texts, including rhyme, alliteration, and repeated lines. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U2L3",
-      "standard_code": "1.P.EICC.2.d",
-      "matched_status": "partial",
+      "standard_code": "1.P.EICC.4.e",
+      "matched_status": "none",
       "clauses": [
         {
-          "clause": "Interpret texts to analyze ideas.",
-          "met": true,
-          "note": "Students interpret illustrations and text from an informational book to explain the pattern of day and night."
+          "clause": "Construct an initial draft by integrating ideas and information (C)",
+          "met": false,
+          "note": "not met"
         },
         {
-          "clause": "Construct texts to evaluate ideas.",
+          "clause": "Select words, phrases, and sentences to include in the draft (C)",
           "met": false,
-          "note": "Students participate in teacher-led shared writing to describe observations, but they do not create texts to evaluate ideas."
+          "note": "not met"
+        },
+        {
+          "clause": "Incorporate craft techniques that will best achieve the purpose of the text and resonate with the target audience (C)",
+          "met": false,
+          "note": "not met"
         }
       ],
-      "evidence": "- Invite students to turn and talk with an elbow partner:\n- 'What is something you learned from an illustration to describe the pattern of light and dark on earth?' (I saw a picture of the earth spinning. Half of the earth faces the sun, and the other half faces away from the sun.)\n- 'What did you read in the text that confirmed what you saw in the illustration?' (The text said that the earth spins around and light from the sun falls on one-half of the spinning earth.)",
-      "evidence_page": 237,
+      "evidence": "",
+      "evidence_page": null,
       "confidence": "high",
-      "rationale": "Students interpret and discuss information from text and illustrations to analyze the day/night pattern. They do not construct their own texts to evaluate ideas; the shared writing is descriptive and teacher-scribed.",
+      "rationale": "alignment=none",
       "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.02279093455564044,
-        "dense_rank": 17,
-        "bm25_rank": 42,
-        "dense_score": 0.5726552,
-        "bm25_score": 60.94472479073085,
-        "rerank_score": 0.9904226064682007
+        "rrf_score": 0.1998902473527439,
+        "dense_rank": 56,
+        "bm25_rank": 3,
+        "dense_score": 0.0,
+        "bm25_score": 35.93235539628303,
+        "rerank_score": 0.0034367123153060675,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Interpret and construct texts to aid the analysis and evaluation of texts and ideas. (I/C)"
+      "standard_raw_text": "Construct an initial draft by integrating ideas and information; selecting words, phrases, and sentences; and incorporating craft techniques that will best achieve the purpose of the text and resonate with the target audience. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U2L3",
-      "standard_code": "1.P.EICC.3",
-      "matched_status": "partial",
+      "standard_code": "1.P.CP.1.b",
+      "matched_status": "none",
       "clauses": [
         {
-          "clause": "Establish a purpose and set goals for reading",
-          "met": true,
-          "note": "Students discuss the meaning of the learning target before the read-aloud, setting a purpose."
-        },
-        {
-          "clause": "Monitor comprehension and adjust strategies as needed",
-          "met": true,
-          "note": "Students check that what they saw in illustrations is confirmed by the text, indicating monitoring."
-        },
-        {
-          "clause": "Scan and skim the text to note useful structures and sections",
+          "clause": "Collaborate with others to determine group norms.",
           "met": false,
-          "note": "No scanning/skimming of text features or sections is assigned to students."
+          "note": "not met"
         },
         {
-          "clause": "Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps",
-          "met": true,
-          "note": "Students recall personal experiences with shadows to support understanding during the lesson."
-        },
-        {
-          "clause": "Summarize and visualize sections of the text to maintain understanding",
+          "clause": "Establish goals and procedures for shared projects.",
           "met": false,
-          "note": "Students share takeaways but are not explicitly directed to summarize or visualize sections."
+          "note": "not met"
         },
         {
-          "clause": "Make and track predictions about upcoming events and information",
+          "clause": "Facilitate productivity when working on shared projects.",
           "met": false,
-          "note": "No prediction tasks are included."
-        },
-        {
-          "clause": "Make, track, and support inferences about different levels of meaning",
-          "met": false,
-          "note": "Discussion focuses on observed information rather than making and supporting inferences from text."
-        },
-        {
-          "clause": "Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts",
-          "met": false,
-          "note": "Key terms are defined by the teacher; students are not asked to derive meanings from context or word parts."
+          "note": "not met"
         }
       ],
-      "evidence": "Invite students to turn and talk with an elbow partner:\n- 'What is something you learned from an illustration to describe the pattern of light and dark on earth?' (I saw a picture of the earth spinning. Half of the earth faces the sun, and the other half faces away from the sun.)\n- 'What did you read in the text that confirmed what you saw in the illustration?' (The text said that the earth spins around and light from the sun falls on one-half of the spinning earth.)",
-      "evidence_page": 237,
-      "confidence": "medium",
-      "rationale": "Students set a purpose, activate prior knowledge, and monitor comprehension by confirming illustrations with text. However, there is no student work on scanning/skimming, predictions, inference tracking, or independent vocabulary strategy use.",
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
       "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
       "retrieval": {
-        "rrf_score": 0.026547116736990152,
-        "dense_rank": 12,
-        "bm25_rank": 19,
-        "dense_score": 0.5826424,
-        "bm25_score": 70.46511335046793,
-        "rerank_score": 0.9898702502250671
+        "rrf_score": 0.19870588235294118,
+        "dense_rank": 1,
+        "bm25_rank": 4,
+        "dense_score": 0.0,
+        "bm25_score": 14.387430409210737,
+        "rerank_score": 0.00989342387765646,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals."
+      "standard_raw_text": "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
@@ -373,100 +604,549 @@
       "matched_status": "full",
       "clauses": [
         {
-          "clause": "Use texts to build knowledge.",
+          "clause": "Use texts to build knowledge, develop skills, make informed decisions, or share information and ideas (any one purpose).",
           "met": true,
-          "note": "Students use text and illustrations to learn about day and night."
-        },
-        {
-          "clause": "Use texts to develop skills.",
-          "met": true,
-          "note": "Students develop skills in distinguishing information from text and illustrations."
-        },
-        {
-          "clause": "Use texts to make informed decisions.",
-          "met": true,
-          "note": "Students use information from texts to answer questions and share ideas."
-        },
-        {
-          "clause": "Use texts to share information and ideas.",
-          "met": true,
-          "note": "Students share what they learned with partners and the group."
+          "note": "Students use What Makes Day and Night to build knowledge about day/night patterns"
         }
       ],
-      "evidence": "Invite students to turn and talk with an elbow partner:\n- 'What is something you learned from an illustration to describe the pattern of light and dark on earth?' ...\n- 'What did you read in the text that confirmed what you saw in the illustration?' ...\nAs students talk, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group.",
+      "evidence": "Invite students to turn and talk with an elbow partner: 'What is something you learned from an illustration to describe the pattern of light and dark on earth?' (I saw a picture of the earth spinning. Half of the earth faces the sun, and the other half faces away from the sun.)",
       "evidence_page": 237,
       "confidence": "high",
-      "rationale": "Students use texts to build knowledge, develop skills, make decisions, and share information and ideas as part of the lesson activities.",
+      "rationale": "Students use the text What Makes Day and Night to build knowledge about the pattern of light and dark on earth (Closing B, page 237). They discuss what they learned from illustrations and text: 'I saw a picture of the earth spinning. Half of the earth faces the sun, and the other half faces away from the sun.' The student performs the build-knowledge purpose → full. (Any one of the four purposes satisfies the OR-list clause.)",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
-        "rrf_score": 0.027252906976744186,
-        "dense_rank": 4,
-        "bm25_rank": 26,
-        "dense_score": 0.59185815,
-        "bm25_score": 68.43935947121726,
-        "rerank_score": 0.9890130758285522
+        "rrf_score": 0.19390758249907303,
+        "dense_rank": 7,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 21.722702700637374,
+        "rerank_score": 0.008934466168284416,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Make use of texts to build knowledge, develop skills, make informed decisions, and share information and ideas. (I/C)"
+      "standard_raw_text": "Make use of texts to build knowledge, develop skills, make informed decisions, and share information and ideas. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U2L3",
-      "standard_code": "1.P.EICC.1",
+      "standard_code": "1.T.T.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Describe traits of the main characters.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Explain how the characters' words support the central message, lesson, or moral.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Explain how the characters' actions support the central message, lesson, or moral.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.18065692967862357,
+        "dense_rank": 18,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 111.78717459595762,
+        "rerank_score": 0.04487660899758339,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.P.CP.1.d",
       "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Generate, understand, monitor, and revise personal and academic reading and writing goals.",
-          "met": false,
-          "note": "Students work toward posted learning targets but do not generate or monitor their own goals."
-        },
-        {
-          "clause": "Discuss or write about personal and academic reading and writing preferences with reference to specific techniques, topics, modes, and genres.",
-          "met": false,
-          "note": "No tasks ask students to share personal reading/writing preferences."
-        },
-        {
-          "clause": "Select, read, and write texts of personal interest and academic relevance.",
-          "met": false,
-          "note": "Text is teacher-selected and writing is shared/scribed; no student text selection or independent writing."
-        },
-        {
-          "clause": "Build and draw from a repertoire of comprehension and composition skills, strategies, and techniques to interpret and construct texts.",
+          "clause": "Work with others to discuss topics",
           "met": true,
-          "note": "Students distinguish information from illustrations vs. text and contribute ideas to compose descriptions using resources."
+          "note": "Students discuss the topic of Earth's rotation with a partner using the Back-to-Back and Face-to-Face protocol, and also turn and talk with elbow partners during Closing A to discuss what they learned from illustrations and text."
         },
         {
-          "clause": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing writing, listening to others, and offering and responding to feedback.",
+          "clause": "Work with others to investigate questions",
           "met": true,
-          "note": "Students engage in partner protocols, discuss text/video, and use sentence frames to respond to peers."
+          "note": "Students investigate questions about Earth's rotation collaboratively through the Back-to-Back and Face-to-Face protocol, watching a video and then discussing investigative questions with partners."
         },
         {
-          "clause": "Develop independence and autonomy as a reader and writer.",
+          "clause": "Work with others to solve problems",
           "met": false,
-          "note": "Activities are heavily teacher-directed; autonomy is not evidenced."
+          "note": "not met"
+        },
+        {
+          "clause": "Work with others to explore and create texts",
+          "met": false,
+          "note": "Students contribute ideas collaboratively during shared writing of the Describing the Sun and Moon recording form, but the teacher scribes — students explore/create the text content collaboratively but do not individually produce the text themselves, capping at partial."
         }
       ],
-      "evidence": "Invite students to turn and talk with an elbow partner: 'What is something you learned from an illustration to describe the pattern of light and dark on earth?' (I saw a picture of the earth spinning. Half of the earth faces the sun, and the other half faces away from the sun.) 'What did you read in the text that confirmed what you saw in the illustration?' (The text said that the earth spins around and light from the sun falls on one-half of the spinning earth.) As students talk, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group.",
-      "evidence_page": 237,
-      "confidence": "high",
-      "rationale": "Students practice comprehension strategies (distinguishing information from text vs. illustrations) and participate in structured discussions, partially addressing the standard’s focus on building a repertoire and community participation. However, there is no evidence of student goal setting, preference discussion, text selection, or independent/autonomous writing, so alignment is partial.",
+      "evidence": "Guide students through Round 1 of the protocol using the following question: ... Guide students through Round 2 of the protocol using the following question: 'As the earth rotates, which side of the earth has day and which side has night?'",
+      "evidence_page": 235,
+      "confidence": "low",
+      "rationale": "⚑ REVIEW: none-or-partial — The standard requires students to work with others to discuss topics, investigate questions, solve problems, and explore and create texts. The \"discuss topics\" clause is met: students engage in the Back-to-Back and Face-to-Face protocol to discuss Earth's rotation with partners (\"As the earth rotates, which side of the earth has day and which side has night?\") and turn-and-talk with elbow partners during reflection. The \"investigate questions\" clause is met: students collaboratively investigate questions about Earth's movement through the video-and-protocol sequence. The \"solve problems\" clause is not met — no problem-solving activity is present. The \"explore and create texts\" clause is partially met: during shared writing students contribute ideas collaboratively (\"As students share responses, use their ideas to complete page 1\"), but the teacher scribes, so individual student text creation is absent. Because at least one clause is fully met but not all are, alignment is partial.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.021762270845653457,
-        "dense_rank": 35,
-        "bm25_rank": 29,
-        "dense_score": 0.5487659,
-        "bm25_score": 67.04690317876974,
-        "rerank_score": 0.9878020882606506
+        "rrf_score": 0.19005638770896988,
+        "dense_rank": 20,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 41.19836427899136,
+        "rerank_score": 0.010152454487979412,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Build an identity as a reader and writer, developing a repertoire of resources and tools to continuously expand participation as an active consumer and producer of texts."
+      "standard_raw_text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)",
+      "needs_review": true,
+      "review_reason": "none-or-partial — oral co-composition against a (C) construction substandard: students contribute verbatim ideas during shared writing while teacher scribes (explore and create texts clause)",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.T.SS.2.a",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify descriptive words in texts.",
+          "met": true,
+          "note": "Students identify specific adjectives (hot, full, twinkling, orange, round) from the poem, naming the descriptive words they heard in the text."
+        },
+        {
+          "clause": "Explain the use of descriptive words in texts.",
+          "met": false,
+          "note": "Students supply adjectives to describe the sun and moon, demonstrating understanding of how descriptive words are used, but the activity asks students to generate/apply adjectives rather than explicitly explain how or why descriptive words function in the text. The explain act is only partially performed — students show use but do not articulate the purpose or effect of descriptive words."
+        }
+      ],
+      "evidence": "'What were some adjectives that you heard to describe the sun, moon, or stars?' (sun: hot, moon: full, stars: twinkling)",
+      "evidence_page": 233,
+      "confidence": "high",
+      "rationale": "The identify clause is met: students identify adjectives in the poem during Opening A, naming specific descriptive words they heard (e.g., \"sun: hot, moon: full, stars: twinkling\") and recalling previously circled adjectives (\"orange, round\"). The explain clause is partially met: students demonstrate understanding of how adjectives are used by generating adjectives to describe photographs (\"yellow, hidden,\" \"sliver, white\") and by connecting adjectives to real-world objects (\"What is something at home or at school that we could describe using this adjective?\" — \"a bowl of soup; the nightlight\"), but no activity explicitly asks students to explain the purpose, effect, or function of descriptive words within the text. The student performance stays at the level of identifying and applying adjectives rather than articulating why or how they are used in the text.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.19271935205063148,
+        "dense_rank": 17,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 48.60091971396399,
+        "rerank_score": 0.008159262128174305,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify and explain the use of descriptive words in texts. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.T.T.3.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the author's opinion in opinion texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Identify supporting reasons used in opinion texts.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.18375088850932003,
+        "dense_rank": 61,
+        "bm25_rank": 6,
+        "dense_score": 0.0,
+        "bm25_score": 27.213068021370724,
+        "rerank_score": 0.00960475206375122,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify techniques used to craft opinion texts, including the author’s opinion and supporting reasons. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.P.EICC.4.g",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Make changes to a text based on self-evaluation or external feedback.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise the organization of the text to improve clarity and flow.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise ideas and information to enhance content and meaning.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise word choices to improve expression and impact.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise craft techniques to increase the text's effectiveness.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1838571182069166,
+        "dense_rank": 38,
+        "bm25_rank": 9,
+        "dense_score": 0.0,
+        "bm25_score": 21.033802545200004,
+        "rerank_score": 0.007771853823214769,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Make changes to the text based on self-evaluation or external feedback, revising the organization, ideas, information, word choices, and craft techniques in order to increase the text’s effectiveness. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.P.EICC.2.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Interpret texts to aid the analysis and evaluation of texts and ideas (I)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Construct texts to aid the analysis and evaluation of texts and ideas (C)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.1803862126245847,
+        "dense_rank": 34,
+        "bm25_rank": 10,
+        "dense_score": 0.0,
+        "bm25_score": 18.791558374015555,
+        "rerank_score": 0.009188061580061913,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Interpret and construct texts to aid the analysis and evaluation of texts and ideas. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.P.AC.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Craft words and phrases to influence the audience's responses, thoughts, decisions, and questions.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Achieve a specific purpose through word and phrase choices.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1793823929693495,
+        "dense_rank": 70,
+        "bm25_rank": 4,
+        "dense_score": 0.0,
+        "bm25_score": 30.14038884486301,
+        "rerank_score": 0.009259737096726894,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Craft words and phrases in order to influence the responses, thoughts, decisions, and questions of the target audience and achieve a specific purpose. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.P.EICC.4.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Link ideas and information to an organizational plan.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Highlight ideas and information that are most relevant, useful, and impactful.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1998223169864961,
+        "dense_rank": 4,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 23.29276108082989,
+        "rerank_score": 0.0028697990346699953,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Link ideas and information to the organization plan, highlighting ideas and information that are most relevant, useful, and impactful. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.T.T.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the problem in a simple plot.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Identify the solution in a simple plot.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1991236114475551,
+        "dense_rank": 35,
+        "bm25_rank": 7,
+        "dense_score": 0.0,
+        "bm25_score": 37.85944788642521,
+        "rerank_score": 0.004875151440501213,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify a simple plot with a problem and solution. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.T.SS.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use text features (e.g., illustrations, page numbers, bold print, headings) to add clarity and meaning to texts. (C) — the student uses text features in their OWN constructed texts to add clarity and meaning.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.19493844944997382,
+        "dense_rank": 3,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 22.383876993279884,
+        "rerank_score": 0.0060050529427826405,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use text features (e.g., illustrations, page numbers, bold print, headings) to add clarity and meaning to texts. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L3",
+      "standard_code": "1.P.AC.3.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Consume multimodal texts that integrate various genres, text features, and craft techniques (I)",
+          "met": false,
+          "note": "Students consume multiple modes (poem text, photographs, video), but there is no explicit integration of genres, text features, or craft techniques across those modes — students encounter them separately rather than as an integrated multimodal text."
+        },
+        {
+          "clause": "Produce multimodal texts that combine genres, text features, and craft techniques to influence target audiences and achieve specific purposes (C)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "Tell students you have a video of the earth to show them. As they watch the video, they should look carefully to see what they notice about how the earth moves and rotates, and think about the questions they have.",
+      "evidence_page": 235,
+      "confidence": "high",
+      "rationale": "The consume clause is partially met: students engage with multiple modes — a poem (\"Display the 'What We See: The Sun, Moon, and Stars' poem\"), photographs (\"Display sun photograph 2 and moon photograph 2\"), and a video (\"As they watch the video, they should look carefully to see what they notice\") — but these are consumed as separate resources rather than as an integrated multimodal text that deliberately combines genres, text features, and craft techniques. The produce clause is not met: the only production activity is shared writing in which the teacher scribes students' oral contributions (\"As students share responses, use their ideas to complete page 1. Think aloud how to use the words from the question itself as a cue to formulate the answer\"), so the teacher performs the composing act and students do not produce a multimodal text of their own.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.19437984496124033,
+        "dense_rank": 37,
+        "bm25_rank": 13,
+        "dense_score": 0.0,
+        "bm25_score": 19.212689895821157,
+        "rerank_score": 0.0015956099377945065,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Consume and produce multimodal texts, integrating a variety of genres, text features, and craft techniques to influence target audiences and achieve specific purposes. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     }
-  ]
+  ],
+  "usage": {
+    "calls": 11,
+    "input_tokens": 44521,
+    "output_tokens": 14395,
+    "cache_write_tokens": 19401,
+    "cache_read_tokens": 192830,
+    "batch_calls": 0,
+    "batch_input_tokens": 0,
+    "batch_output_tokens": 0,
+    "estimated_cost_usd": 0.650453,
+    "by_model": {
+      "claude-sonnet-4-5": {
+        "calls": 1,
+        "input_tokens": 8248,
+        "output_tokens": 8470,
+        "cache_write_tokens": 19401,
+        "cache_read_tokens": 0,
+        "batch_calls": 0,
+        "batch_input_tokens": 0,
+        "batch_output_tokens": 0,
+        "batch_cache_write_tokens": 0,
+        "batch_cache_read_tokens": 0,
+        "estimated_cost_usd": 0.224548
+      },
+      "claude-opus-4-6": {
+        "calls": 10,
+        "input_tokens": 36273,
+        "output_tokens": 5925,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 192830,
+        "batch_calls": 0,
+        "batch_input_tokens": 0,
+        "batch_output_tokens": 0,
+        "batch_cache_write_tokens": 0,
+        "batch_cache_read_tokens": 0,
+        "estimated_cost_usd": 0.425905
+      }
+    }
+  }
 }

@@ -24,7 +24,8 @@ a per-publisher `if Success for All / elif Publisher B` tree.
 | Proof point | Status |
 |---|---|
 | Batch-1 EL → normalize → retrieve (gold R@25) | **Locked** |
-| Batch-1 gold-4 judge vs SME (live assembled prompt) | **Measured, not closed** — **16/20 (80%)** 3-class exact on judged unique pairs. Prior OpenAI `align_judge.v1.1`: 18/19 exact (94.7%) |
+| Batch-1 gold-4 judge vs SME (live assembled prompt) | **Measured, not closed** — **15/20 (75%)** 3-class exact on judged unique pairs. Prior OpenAI `align_judge.v1.1`: 18/19 exact (94.7%) |
+| Batch-1 all 40 EL lessons retrieve → judge (top 25) | **Run** — `output/retrieve/` (50-standard shortlist) + `output/judge/` + per-lesson CSVs in `output/result/`. SME exact is gold-4 only |
 | Second publisher Stage-1 GO (`21111_RBtL_SSManual_L1.pdf`, Reading Roots Shared Story Level 1) | **Done** — 14 lessons in `output/stage1_ssmanual/` |
 | Second publisher normalize → retrieve → judge | **Not locked yet** |
 | Any PDF / any publisher / any grade with zero pattern work | **Not claimed** — new heading languages may need a small generic-pattern add |
@@ -55,15 +56,14 @@ not hand-edit labels).
 
 | Metric | Result |
 |---|---|
-| **3-class exact** (unique pairs, judged shortlist + coverage pass) | **16/20 (80.0%)** |
-| Binary precision / recall | **100%** / **88.9%** |
-| Per lesson | L1 **6/7**, L3 **4/5**, L6 **5/7**, U3L5 **1/1** |
-| Leftover misses | L1 `1.P.EICC.4.c` gold full / json partial; L3 `1.T.SS.2.a` gold partial / json none; L6 `1.L.V.3.a` gold partial / json full; L6 `1.T.T.1.c` gold partial / json none |
+| **3-class exact** (unique pairs, judged shortlist + coverage pass) | **15/20 (75.0%)** |
+| Binary precision / recall | **100%** / **77.8%** |
+| Per lesson | L1 **6/7**, L3 **4/5**, L6 **4/7**, U3L5 **1/1** |
+| Leftover misses | L1 `1.P.EICC.4.c` gold full / json none; L3 `1.P.CP.2.d` gold partial / json none; L6 `1.L.V.3.a` gold partial / json full; L6 `1.T.RA.2.a` gold partial / json none; L6 `1.T.T.1.c` gold partial / json none |
 | Unjudged gold | L1 + L3 `1.P.EICC.4.e` (gold none, outside top 25) |
 | Prior OpenAI `align_judge.v1.1` (unused) | **18/19 (94.7%)** 3-class exact |
 
-Broader multi-publisher / all-40-lesson judge scale is **not** claimed.
-Agentic/graph track is design-only.
+All **40** EL G1M2 lessons have live assembled verdicts (`--limit 25`); SME exact is **gold-4 only**. Multi-publisher / Shared Story through judge is **not** claimed. Agentic/graph track is design-only.
 
 **Through-retrieve design (current):**
 - Stage-1 routes **EL-like** vs **unknown/generic**; steps carry **page** +
@@ -88,9 +88,9 @@ Agentic/graph track is design-only.
 | **Chunk** — hierarchical lesson / instructional / evidence-pointer bundles | **Implemented** (optional for gold R@25; normalize drives queries) | [`chunk/`](veramynd_parser/veramynd_parser/chunk/) |
 | **Embed → Qdrant** — leaf-only standards + rich retrieval text | **Implemented** | [`embed/`](veramynd_parser/veramynd_parser/embed/) |
 | **Hybrid retrieve + rerank** — `multi_normalize_focused` competency funnel | **Implemented (Batch-1 R@25/R@50 met)** | [`retrieve/`](veramynd_parser/veramynd_parser/retrieve/) |
-| **Alignment judge + grounding** — assembled prompt; ungrounded quotes rejected; P4 caveat + P6 coverage pass | **Implemented** (gold-4 assembled: 16/20) | [`judge/`](veramynd_parser/veramynd_parser/judge/), [`prompts/assembled_judge_prompt.md`](veramynd_parser/veramynd_parser/prompts/assembled_judge_prompt.md) |
-| **Report** — CSV + HTML; gold-4 + client (no retrieve scores) | **Implemented** | [`report/`](veramynd_parser/veramynd_parser/report/), `output/reports/` |
-| **Gold-set metrics** — leaf recall @k + judge exact vs SME | **Retrieve locked; assembled gold-4 16/20 (80%), not closed** | gold: [`docs/_ga_g1_module2_goldset.md`](docs/_ga_g1_module2_goldset.md) |
+| **Alignment judge + grounding** — assembled prompt; ungrounded quotes rejected; P4 caveat + P6 coverage pass | **Implemented** (gold-4 assembled: 15/20; all 40 EL judged) | [`judge/`](veramynd_parser/veramynd_parser/judge/), [`prompts/assembled_judge_prompt.md`](veramynd_parser/veramynd_parser/prompts/assembled_judge_prompt.md) |
+| **Report** — CSV + HTML; gold-4 + per-lesson CSVs | **Implemented** | [`report/`](veramynd_parser/veramynd_parser/report/), `output/reports/`, `output/result/` |
+| **Gold-set metrics** — leaf recall @k + judge exact vs SME | **Retrieve locked; assembled gold-4 15/20 (75%), not closed** | gold: [`docs/_ga_g1_module2_goldset.md`](docs/_ga_g1_module2_goldset.md) |
 | **Agentic + standards-graph track** | **Design only** | [`docs/architecture-agentic-graph.md`](docs/architecture-agentic-graph.md) |
 
 ## How it works
@@ -122,8 +122,8 @@ dense+BM25 → RRF → CE → fused shortlist (`judge_shortlist_k=50`, product c
 scores `full` / `partial` / `none` from **student acts** in Stage-1 steps;
 ungrounded quotes become `none`. Coverage pass can add feedback/present codes
 after top 25. CSV/HTML reports export the audit trail
-(`output/reports/gold4_alignments.csv`; client-facing CSVs under
-`output/reports/client/`).
+(`output/reports/gold4_alignments.csv`; per-lesson CSVs under
+`output/result/`; client-facing CSVs under `output/reports/client/`).
 
 ## Design principles
 
@@ -195,7 +195,7 @@ python -m veramynd_parser.scripts.eval_r20
 # Gold-4 judge (limit 25 = protected shortlist). Assembled prompt is live.
 # Set JUDGE_MODEL / ANTHROPIC_API_KEY in .env (claude-sonnet-4-5 + opus escalate).
 # --no-cache after prompt/parser changes; extra judge cost if coverage pass injects.
-veramynd-parser judge-standards --retrieve-file output/retrieve_gold4/G1M2U1L1.json \
+veramynd-parser judge-standards --retrieve-file output/retrieve/G1M2U1L1.json \
   --lesson-file output/stage1/lessons/G1M2U1L1.json \
   --standards-dir output/normalize_standards --out output/judge/G1M2U1L1.json \
   --limit 25 --no-cache
@@ -205,6 +205,8 @@ veramynd-parser report-alignments \
   --judge-file output/judge/G1M2U1L6.json \
   --judge-file output/judge/G1M2U3L5.json \
   --out output/reports/gold4_alignments.csv
+# Per-lesson CSVs for the full 40-lesson run:
+veramynd-parser report-alignments --judge-dir output/judge --out output/result/alignments.csv --no-html
 ```
 
 Partial embeds (`--resource-id` / `--code`) refresh only those points.

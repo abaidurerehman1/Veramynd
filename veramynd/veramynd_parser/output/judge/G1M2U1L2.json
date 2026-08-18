@@ -1,471 +1,1212 @@
 {
   "schema_version": "1.0-judge",
   "quality_profile": "enterprise_k12",
-  "prompt_version": "align_judge.batch.v1",
+  "prompt_version": "align_judge.assembled.batch.v1",
   "judge_mode": "batch",
   "resource_id": "G1M2U1L2",
   "lesson_source": "stage1:G1M2U1L2",
-  "retrieve_file": "output\\retrieve\\G1M2U1L2.json",
+  "retrieve_file": "output/retrieve/G1M2U1L2.json",
   "standards_dir": "output\\normalize_standards",
-  "judge_model": "gpt-4.1",
+  "judge_model": "claude-sonnet-4-5",
   "escalate": true,
-  "escalate_model": "gpt-5",
-  "candidate_count": 10,
-  "judged": 10,
+  "escalate_model": "claude-opus-4-6",
+  "candidate_count": 25,
+  "coverage_pass_injected": [],
+  "judged": 25,
   "failed": [],
   "complete": true,
   "by_status": {
-    "full": 0,
+    "full": 5,
     "partial": 5,
-    "none": 5
+    "none": 15
   },
   "grounding_rate": 1.0,
-  "grounding_positive_n": 5,
+  "grounding_positive_n": 10,
+  "escalated_count": 8,
+  "escalation_rate": 0.32,
+  "escalated_codes": [
+    "1.T.C.1.c",
+    "1.P.ST.2.a",
+    "1.P.EICC.1.e",
+    "1.P.CP.1.d",
+    "1.T.RA.2.a",
+    "1.T.C.1.a",
+    "1.P.ST.1.c",
+    "1.P.ST.2.c"
+  ],
+  "input_scope_caveat_count": 0,
+  "input_scope_caveat_codes": [],
+  "prescreen_auto_none_count": 0,
+  "prescreen_auto_none_codes": [],
   "verdicts": [
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L2",
-      "standard_code": "1.T.C.1",
-      "matched_status": "partial",
+      "standard_code": "1.T.RA.1.c",
+      "matched_status": "full",
       "clauses": [
         {
-          "clause": "Identify the general purpose of a variety of texts.",
-          "met": false,
-          "note": "Students infer the purpose for one story, not for a variety of texts."
-        },
-        {
-          "clause": "Identify the target audience of a variety of texts.",
-          "met": false,
-          "note": "Target audience is not discussed or identified."
-        },
-        {
-          "clause": "Identify different modes of communication: print, digital, auditory, and visual.",
-          "met": false,
-          "note": "Students are not asked to identify modes of communication."
-        },
-        {
-          "clause": "Create texts in teacher-selected modes such as print, digital, auditory, and/or visual.",
+          "clause": "Share relevant information about a topic.",
           "met": true,
-          "note": "Students create a response sheet using pictures and words (print/visual)."
+          "note": "Students share their inferences about why the author wrote the story with the whole group"
+        },
+        {
+          "clause": "Share accurate information about a topic.",
+          "met": true,
+          "note": "Teacher clarifies and captures student responses, indicating students share accurate information about the text"
+        },
+        {
+          "clause": "Use a variety of communication modes to share information.",
+          "met": true,
+          "note": "Students share information using both visual (pictures) and written (words) modes"
+        }
+      ],
+      "evidence": "As students share out, clarify and capture their response on the Unit 1 Guiding Question anchor chart, making sure to frame the idea of why the author wrote the story about the sun and moon with the word explain.",
+      "evidence_page": 59,
+      "confidence": "high",
+      "rationale": "Students share relevant and accurate information through multiple modes. In Work Time B and C, students Think-Pair-Share to discuss why the author wrote about the sun and moon, then share their ideas with the whole group (spoken mode). In Work Time C, students independently capture their ideas using pictures and words on a response sheet (visual and written modes). The teacher clarifies and captures student responses on the anchor chart, confirming accuracy.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1701298128981894,
+        "dense_rank": 11,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 58.77123520133727,
+        "rerank_score": 0.059715691953897476,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Share relevant and accurate information through a variety of different modes. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.T.RA.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Work collaboratively or individually to conduct research on a shared or personal topic of interest.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Gather information from provided sources including print, digital, and personal communication.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Organize gathered information using graphic organizers or other support aids.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.16079669365219518,
+        "dense_rank": 5,
+        "bm25_rank": 4,
+        "dense_score": 0.0,
+        "bm25_score": 31.603581921492587,
+        "rerank_score": 0.02424631454050541,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Work collaboratively or individually to conduct research on a shared or personal topic of interest by gathering and organizing information from provided sources (including print, digital, and personal communication) using graphic organizers or other support aids. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.P.EICC.2.b",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Use texts to build knowledge (OR develop skills OR make informed decisions OR share information and ideas).",
+          "met": true,
+          "note": "Students use the folk tale text to build knowledge about why authors write about the sun and moon, then share their ideas through pictures and words"
         }
       ],
       "evidence": "Invite students to use the response sheet to capture their ideas about why this author wrote about the sun and moon. Tell students that they can use pictures and words to show their thinking.",
       "evidence_page": 59,
       "confidence": "high",
-      "rationale": "Students create a short text using pictures and words, but they do not identify purposes across multiple texts, determine target audience, or identify communication modes.",
+      "rationale": "Students use the text Why the Sun and the Moon Live in the Sky to build knowledge about why authors write about the sun and moon (Work Time A). After listening to the read-aloud, students discuss the text in Think-Pair-Share (Work Time B) and then independently use pictures and words to share their ideas about the author's purpose on a response sheet (Work Time C). The student performs the use-text-to-share-information purpose.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.03028233151183971,
-        "dense_rank": 1,
-        "bm25_rank": 12,
-        "dense_score": 0.60497177,
-        "bm25_score": 80.21507955769793,
-        "rerank_score": 0.9937011003494263
-      },
-      "standard_raw_text": "Explain how authors of texts use language for a specific purpose and a target audience."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L2",
-      "standard_code": "1.P.EICC.2.d",
-      "matched_status": "partial",
-      "clauses": [
-        {
-          "clause": "Interpret texts to analyze ideas.",
-          "met": true,
-          "note": "Students discuss and infer why the author wrote the story, analyzing ideas from the text."
-        },
-        {
-          "clause": "Construct texts to evaluate ideas.",
-          "met": false,
-          "note": "Students create brief written/drawn responses to explain author’s purpose, but they do not evaluate ideas."
-        }
-      ],
-      "evidence": "Review the guiding question by reading it aloud: 'Why do authors write stories about the sun, moon, and stars?' Invite students to use the response sheet to capture their ideas about why this author wrote about the sun and moon. Tell students that they can use pictures and words to show their thinking.",
-      "evidence_page": 59,
-      "confidence": "medium",
-      "rationale": "Students interpret the text to analyze the author’s purpose and record their ideas, but there is no task requiring evaluation of ideas.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.026709401709401708,
-        "dense_rank": 12,
-        "bm25_rank": 18,
-        "dense_score": 0.561701,
-        "bm25_score": 73.55153265033418,
-        "rerank_score": 0.9932768940925598
-      },
-      "standard_raw_text": "Interpret and construct texts to aid the analysis and evaluation of texts and ideas. (I/C)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L2",
-      "standard_code": "1.P.EICC.3.d",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Summarize sections of the text to maintain understanding.",
-          "met": false,
-          "note": "Students discuss a literary folk tale, not an informational text, and do not summarize sections specifically."
-        },
-        {
-          "clause": "Visualize sections of the text to maintain understanding.",
-          "met": false,
-          "note": "No activity has students visualize parts of the text; drawing focuses on author’s purpose, and the text is literary, not informational."
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "The standard targets summarizing and visualizing sections of informational text. This lesson centers on a literary folk tale and author-purpose discussion, with no visualization task; thus it does not meet the standard.",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.024652147610405323,
-        "dense_rank": 16,
-        "bm25_rank": 27,
-        "dense_score": 0.5583094,
-        "bm25_score": 66.84520509679659,
-        "rerank_score": 0.99298095703125
-      },
-      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L2",
-      "standard_code": "1.T.RA.2",
-      "matched_status": "partial",
-      "clauses": [
-        {
-          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
-          "met": true,
-          "note": "Students discuss and write about why the author wrote the story, using details from Why the Sun and the Moon Live in the Sky."
-        },
-        {
-          "clause": "Explore various sources of information, including print, digital, and personal communication.",
-          "met": false,
-          "note": "In this lesson, students primarily use a single read-aloud text; there is no explicit exploration of multiple sources to make connections."
-        }
-      ],
-      "evidence": "Direct students' attention to the posted learning target and read it aloud:\n'I can infer why authors write about the sun, moon, and stars using details from Why the Sun the and Moon Live in the Sky. '\nPoint out the word infer and define it as making a guess based on facts and observations.\nTell students they are now going to use the Think-Pair-Share protocol to discuss why Elphinstone Dayrell, the author of Why the Sun and the Moon Live in the Sky, wrote about the sun and moon. Remind them that they used this protocol in Module 1, and review as necessary using the Think-Pair-Share anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)\nMove students into pre-determined pairs and invite them to Think-Pair-Share:\n'Why do authors write about the sun, moon, and stars?'\nAs students talk, circulate and listen in.",
-      "evidence_page": 58,
-      "confidence": "medium",
-      "rationale": "Students use details from a specific text to discuss and write about a guiding question, satisfying the text-referencing clause. However, they do not explore multiple sources to make connections in this single lesson.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.01835016835016835,
-        "dense_rank": 48,
-        "bm25_rank": 50,
-        "dense_score": 0.5121677,
-        "bm25_score": 60.31772402709661,
-        "rerank_score": 0.992883563041687
-      },
-      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L2",
-      "standard_code": "1.T.T.2.a",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Identify the main topic in an expository text.",
-          "met": false,
-          "note": "Lesson focuses on a folk tale, not expository text."
-        },
-        {
-          "clause": "Identify supporting details in an expository text.",
-          "met": false,
-          "note": "No expository text is analyzed."
-        },
-        {
-          "clause": "Recognize techniques used to craft expository texts.",
-          "met": false,
-          "note": "No expository techniques are discussed."
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "The lesson centers on a folk tale (literature), not expository text, so none of the clauses are met.",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
-        "rrf_score": 0.01960972796308757,
-        "dense_rank": 43,
-        "bm25_rank": 41,
-        "dense_score": 0.51798576,
-        "bm25_score": 63.02217625083649,
-        "rerank_score": 0.9928481578826904
+        "rrf_score": 0.15857901463070687,
+        "dense_rank": 7,
+        "bm25_rank": 3,
+        "dense_score": 0.0,
+        "bm25_score": 22.35781010430744,
+        "rerank_score": 0.061550822108983994,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Identify techniques used to craft expository texts, including main topic and supporting details. (I)"
+      "standard_raw_text": "Make use of texts to build knowledge, develop skills, make informed decisions, and share information and ideas. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L2",
-      "standard_code": "1.P.EICC.3",
+      "standard_code": "1.T.C.1.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Create texts in a teacher-selected mode (e.g., print, digital, auditory, and/or visual)",
+          "met": true,
+          "note": "Students create a text (pictures and words on a response sheet) in a teacher-selected print/visual mode, satisfying the (C) construction requirement."
+        }
+      ],
+      "evidence": "Invite students to use the response sheet to capture their ideas about why this author wrote about the sun and moon. Tell students that they can use pictures and words to show their thinking.",
+      "evidence_page": 59,
+      "confidence": "high",
+      "rationale": "The standard requires students to create texts in a teacher-selected mode; the parenthetical list (print, digital, auditory, visual) is illustrative, and satisfying any one mode suffices. In Work Time C, students independently write and draw on a teacher-provided \"Unit 1 Guiding Question response sheet\" using pictures and words: \"Invite students to use the response sheet to capture their ideas about why this author wrote about the sun and moon. Tell students that they can use pictures and words to show their thinking.\" The mode (print/visual on paper) is teacher-selected, and the student is the one creating the text. All components of the single clause are met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.15833733974358974,
+        "dense_rank": 2,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 18.227435670435842,
+        "rerank_score": 0.05110505595803261,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Create texts in teacher-selected modes (e.g., print, digital, auditory, and/or visual). (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.P.EICC.4.d",
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Establish a purpose and set goals for reading",
-          "met": true,
-          "note": "Students are told the purpose and guiding question."
+          "clause": "Link ideas and information to an organizational plan.",
+          "met": false,
+          "note": "not met"
         },
         {
-          "clause": "Monitor comprehension and adjust strategies as needed",
-          "met": true,
-          "note": "Students discuss and clarify understanding throughout."
-        },
-        {
-          "clause": "Scan and skim the text to note useful structures and sections",
-          "met": true,
-          "note": "Students are directed to notice and wonder about the text."
-        },
-        {
-          "clause": "Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps",
-          "met": true,
-          "note": "Students connect prior knowledge and family stories to the text."
-        },
-        {
-          "clause": "Summarize and visualize sections of the text to maintain understanding",
-          "met": true,
-          "note": "Students summarize and draw about the story."
-        },
-        {
-          "clause": "Make and track predictions about upcoming events and information",
-          "met": true,
-          "note": "Students are prompted to wonder and predict about the sun and moon."
-        },
-        {
-          "clause": "Make, track, and support inferences about different levels of meaning",
-          "met": true,
-          "note": "Students infer author's purpose using text details."
-        },
-        {
-          "clause": "Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts",
-          "met": true,
-          "note": "Vocabulary such as 'infer' is explicitly taught and discussed."
+          "clause": "Highlight ideas and information that are most relevant, useful, and impactful.",
+          "met": false,
+          "note": "not met"
         }
       ],
-      "evidence": "Direct students' attention to the posted learning target and read it aloud: 'I can infer why authors write about the sun, moon, and stars using details from Why the Sun and the Moon Live in the Sky.' ... Invite students to use the response sheet to capture their ideas about why this author wrote about the sun and moon. Tell students that they can use pictures and words to show their thinking.",
-      "evidence_page": 59,
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1573164621855593,
+        "dense_rank": 4,
+        "bm25_rank": 14,
+        "dense_score": 0.0,
+        "bm25_score": 23.29276108082989,
+        "rerank_score": 0.03714253753423691,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Link ideas and information to the organization plan, highlighting ideas and information that are most relevant, useful, and impactful. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.P.EICC.4.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Generate ideas for writing by assessing prior knowledge.",
+          "met": true,
+          "note": "Students think about and discuss their ideas before writing, drawing on their understanding of the text"
+        },
+        {
+          "clause": "Generate ideas for writing by gathering information from texts.",
+          "met": true,
+          "note": "Students generate ideas from the read-aloud text Why the Sun and the Moon Live in the Sky"
+        },
+        {
+          "clause": "Generate ideas for writing by engaging in discussions with others.",
+          "met": true,
+          "note": "Students engage in Think-Pair-Share discussion before independent writing"
+        }
+      ],
+      "evidence": "Tell students they are now going to use the Think-Pair-Share protocol to discuss why Elphinstone Dayrell, the author of Why the Sun and the Moon Live in the Sky, wrote about the sun and moon. … Move students into pre-determined pairs and invite them to Think-Pair-Share: 'Why do authors write about the sun, moon, and stars?'",
+      "evidence_page": 58,
+      "confidence": "high",
+      "rationale": "Students generate ideas for writing through all three pathways in Work Time B and C. They assess prior knowledge by thinking about the text they just heard (Work Time A read-aloud), gather information from Why the Sun and the Moon Live in the Sky, and engage in Think-Pair-Share discussions about why the author wrote the story. The teacher then directs students to use what they discussed to independently reflect and write/draw on the response sheet.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.15574675324675324,
+        "dense_rank": 26,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 22.902441863664965,
+        "rerank_score": 0.06390062719583511,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Generate ideas for content by assessing prior knowledge, gathering information from texts, and engaging in discussions with others. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.P.ST.2.a",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Develop and apply knowledge of author, audience, and context to discern the purpose of texts being interpreted or constructed (I/C)",
+          "met": true,
+          "note": "Students use knowledge of the author and the story's content (context) to discern/infer the author's purpose for writing, discussing it in pairs and sharing out."
+        },
+        {
+          "clause": "Evaluate the extent to which texts achieve their purposes based on author, audience, and context (I/C)",
+          "met": false,
+          "note": "Students identify the author's purpose and give a reason, which edges toward evaluating how the text achieves that purpose, but the task never explicitly asks students to judge how well or to what extent the text achieves its purpose — the evaluation component is only implicitly touched."
+        }
+      ],
+      "evidence": "'Why do authors write about the sun, moon, and stars?' … Move students into pre-determined pairs and invite them to Think-Pair-Share: 'Why do authors write about the sun, moon, and stars?'",
+      "evidence_page": 58,
+      "confidence": "high",
+      "rationale": "The standard requires students to (a) develop and apply knowledge of author, audience, and context to discern the purpose of texts, and (b) evaluate the extent to which texts achieve those purposes. Clause (a) is met: students engage in Think-Pair-Share discussing \"Why do authors write about the sun, moon, and stars?\" and then independently write responses using the sentence frame \"I think the author wrote about the ______ because __________,\" demonstrating that they discern the author's purpose using details from the text. Clause (b) is only partially met: while students articulate the author's purpose and connect it to story content (e.g., the author wanted to explain how the sun and moon got into the sky), the lesson never explicitly asks students to evaluate how well or to what extent the text achieves that purpose — the evaluative judgment component is only implicitly present through the purpose-identification work, not directly practiced.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.15507765621541006,
+        "dense_rank": 13,
+        "bm25_rank": 4,
+        "dense_score": 0.0,
+        "bm25_score": 28.410493725605736,
+        "rerank_score": 0.06767632067203522,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Develop and apply knowledge of author, audience, and context to discern and establish the purpose of texts being interpreted or constructed and to evaluate the extent to which those texts achieve those purposes. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.P.EICC.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Discuss personal and academic reading and writing preferences.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Refer to specific techniques, topics, modes, and genres that resonate most in discussion or writing.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.15482216708023158,
+        "dense_rank": 8,
+        "bm25_rank": 5,
+        "dense_score": 0.0,
+        "bm25_score": 26.368410022307838,
+        "rerank_score": 0.026316499337553978,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Discuss or write about personal and academic reading and writing preferences, referring to specific techniques, topics, modes, and genres that resonate most. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.P.CP.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Communicate ideas clearly when presenting.",
+          "met": true,
+          "note": "Students present their ideas about why the author wrote the story to the whole group"
+        },
+        {
+          "clause": "Present information in an organized manner.",
+          "met": true,
+          "note": "Students present information about the author's purpose in an organized manner that the teacher can capture on the anchor chart"
+        },
+        {
+          "clause": "Express ideas and information clearly through speech.",
+          "met": true,
+          "note": "Students express their ideas clearly through speech in whole-group sharing and partner talk"
+        }
+      ],
+      "evidence": "Refocus students whole group and invite a few students to share out their ideas with the whole group. … Refocus students whole group and invite two or three students to share out with the whole group.",
+      "evidence_page": null,
       "confidence": "low",
-      "rationale": "Students engage in a full range of before, during, and after reading comprehension strategies as described in the standard. [REJECTED: evidence missing or not found in lesson raw text]",
+      "rationale": "Students communicate clearly to present ideas and information in Work Time B and Closing A. After Think-Pair-Share discussions, students share their ideas about why the author wrote the story with the whole group, speaking clearly enough that the teacher can capture their responses on the anchor chart. In Closing A, students turn and talk with partners about what helped them meet the learning target, then share with the whole group. The manner-modifier principle applies: students genuinely present aloud, satisfying both the clarity manner and the present-ideas act. [REJECTED: evidence missing or not found in lesson raw text]",
       "grounded": false,
       "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
-        "rrf_score": 0.03007688828584351,
+        "rrf_score": 0.14984482429335372,
+        "dense_rank": 21,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 56.95235547972655,
+        "rerank_score": 0.050905607640743256,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Communicate clearly to present ideas, information, and texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.P.EICC.4.g",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Make changes to a text based on self-evaluation or external feedback.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise the organization of the text to improve clarity and flow.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise ideas and information to enhance content and meaning.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise word choices to improve expression and impact.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise craft techniques to increase the text's effectiveness.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1495073198198198,
+        "dense_rank": 38,
+        "bm25_rank": 7,
+        "dense_score": 0.0,
+        "bm25_score": 21.30434199295302,
+        "rerank_score": 0.045393332839012146,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Make changes to the text based on self-evaluation or external feedback, revising the organization, ideas, information, word choices, and craft techniques in order to increase the text’s effectiveness. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.P.CP.2.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Recite all or part of significant poems appropriate for grade level.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Recite all or part of significant speeches appropriate for grade level.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1484881463762852,
         "dense_rank": 6,
         "bm25_rank": 7,
-        "dense_score": 0.5723351,
-        "bm25_score": 84.73001795864288,
-        "rerank_score": 0.9922868013381958
+        "dense_score": 0.0,
+        "bm25_score": 31.003063122384187,
+        "rerank_score": 0.04470663517713547,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals."
+      "standard_raw_text": "Build background knowledge by reciting all or part of significant poems and speeches as appropriate by grade level. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L2",
-      "standard_code": "1.T.T.2",
+      "standard_code": "1.P.EICC.1.e",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Develop group norms for participation in a community of readers and writers",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Discuss texts with others in the group",
+          "met": true,
+          "note": "Students discuss the text with a partner using Think-Pair-Share, then share ideas with the whole group."
+        },
+        {
+          "clause": "Share individual writing with the group",
+          "met": true,
+          "note": "After independent writing on the response sheet, students share their written ideas with the whole group."
+        },
+        {
+          "clause": "Listen to others as they share their writing",
+          "met": true,
+          "note": "Students are cued to listen carefully to classmates sharing and repeat what was said, demonstrating active listening."
+        },
+        {
+          "clause": "Offer feedback on peers' writing",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Respond to feedback received on own writing",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "Move students into pre-determined pairs and invite them to Think-Pair-Share: 'Why do authors write about the sun, moon, and stars?'",
+      "evidence_page": 58,
+      "confidence": "high",
+      "rationale": "Three of six clauses are met. Students discuss the text via Think-Pair-Share (\"invite them to Think-Pair-Share: 'Why do authors write about the sun, moon, and stars?'\"), share their individual writing with the whole group after independent writing (\"invite a few to share out their ideas with the whole group\"), and listen as others share (\"'Who can repeat what your classmate said?'\"). However, there is no activity in which students develop group norms, offer feedback on a peer's writing, or respond to feedback on their own writing. The only feedback offered is teacher-to-student (\"Offer students specific, positive feedback on their writing\"), not peer-to-peer. Three unmet clauses prevent a full rating.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.1481448412698413,
+        "dense_rank": 10,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 25.875808769392744,
+        "rerank_score": 0.03697698563337326,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing individual writing, listening as others share their writing, and offering and responding to feedback. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.P.CP.1.b",
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "clause": "Collaborate with others to determine group norms",
           "met": false,
-          "note": "No expository text is analyzed."
+          "note": "not met"
         },
         {
-          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "clause": "Establish goals and procedures for shared projects",
           "met": false,
-          "note": "Connections are discussed in a narrative, not expository, context."
+          "note": "not met"
         },
         {
-          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
+          "clause": "Facilitate productivity when working on shared projects",
           "met": false,
-          "note": "No expository writing or analysis occurs."
+          "note": "not met"
         }
       ],
       "evidence": "",
       "evidence_page": null,
       "confidence": "high",
-      "rationale": "The lesson is focused on a folk tale and narrative comprehension, not expository text or techniques.",
+      "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
-        "rrf_score": 0.025003906860446942,
-        "dense_rank": 21,
-        "bm25_rank": 19,
-        "dense_score": 0.5533428,
-        "bm25_score": 72.42073631044109,
-        "rerank_score": 0.9921160340309143
+        "rrf_score": 0.14787122416534182,
+        "dense_rank": 1,
+        "bm25_rank": 5,
+        "dense_score": 0.0,
+        "bm25_score": 18.208983160215553,
+        "rerank_score": 0.0568142831325531,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Identify and use expository techniques to shape understanding."
+      "standard_raw_text": "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L2",
-      "standard_code": "1.P.ST.2.b",
+      "standard_code": "1.T.T.1.e",
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Draw from knowledge of the author to understand texts.",
+          "clause": "Use knowledge of characters in narratives to create texts.",
           "met": false,
-          "note": "Students discuss why the author wrote the story but are not given or asked to use knowledge about the author to interpret the text."
+          "note": "not met"
         },
         {
-          "clause": "Draw from knowledge of the audience to understand texts.",
+          "clause": "Use knowledge of settings in narratives to create texts.",
           "met": false,
-          "note": "The lesson never addresses intended audience or has students use audience knowledge to make meaning."
+          "note": "not met"
         },
         {
-          "clause": "Draw from knowledge of the context to understand texts.",
+          "clause": "Use knowledge of events in narratives to create texts.",
           "met": false,
-          "note": "Nigeria/folktale context is briefly introduced, but students are not directed to use that context to interpret the story."
+          "note": "not met"
         },
         {
-          "clause": "Use this knowledge to discern a clear point of view or unique perspective when interpreting texts.",
+          "clause": "Create texts that share real or imagined experiences and events.",
           "met": false,
-          "note": "Students infer author purpose, not point of view/unique perspective, and do not apply author/audience/context knowledge to do so."
+          "note": "not met"
         },
         {
-          "clause": "Use this knowledge to establish a clear point of view or unique perspective when constructing texts.",
+          "clause": "Include a sense of closure in created texts.",
           "met": false,
-          "note": "The independent writing is a brief response about why the author wrote the story; it does not require establishing a clear POV/unique perspective using author/audience/context."
+          "note": "not met"
         }
       ],
       "evidence": "",
       "evidence_page": null,
       "confidence": "high",
-      "rationale": "Students listen to a folktale and discuss/write about why the author wrote it (author’s purpose). They are not asked to use knowledge of the author, audience, or context to discern point of view, nor to establish a clear perspective in their own writing.",
+      "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
       "retrieval": {
-        "rrf_score": 0.025245441795231416,
-        "dense_rank": 33,
-        "bm25_rank": 9,
-        "dense_score": 0.53748757,
-        "bm25_score": 82.67316623879222,
-        "rerank_score": 0.9917553663253784
+        "rrf_score": 0.14232407111678907,
+        "dense_rank": 15,
+        "bm25_rank": 3,
+        "dense_score": 0.0,
+        "bm25_score": 55.56888117930904,
+        "rerank_score": 0.08154825121164322,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Draw from knowledge of author, audience, and context to discern and establish a clear point of view or unique perspective when interpreting and constructing texts. (I/C)"
+      "standard_raw_text": "Use knowledge of narrative techniques (e.g., characters, settings, events) to create texts that share real or imagined experiences and events with a sense of closure. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L2",
-      "standard_code": "1.T.T.1",
+      "standard_code": "1.T.T.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Describe traits of the main characters.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Explain how the characters' words support the central message, lesson, or moral.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Explain how the characters' actions support the central message, lesson, or moral.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.13843878562699893,
+        "dense_rank": 18,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 111.78717459595762,
+        "rerank_score": 0.15697459876537323,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.P.CP.1.d",
       "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue.",
+          "clause": "Work with others to discuss topics (I/C)",
           "met": true,
-          "note": "Students identify characters (sun and moon) and major events from the story."
+          "note": "Students work in pairs to discuss the guiding question topic (why authors write about the sun, moon, and stars), which is collaborative discussion of a topic."
         },
         {
-          "clause": "Identify a simple plot with a problem and solution.",
-          "met": false,
-          "note": "Students summarize events but do not identify a problem and solution."
+          "clause": "Work with others to investigate questions (I/C)",
+          "met": true,
+          "note": "Students collaboratively investigate the unit guiding question through the Think-Pair-Share protocol, using text details to build an answer to the question."
         },
         {
-          "clause": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
+          "clause": "Work with others to solve problems (I/C)",
           "met": false,
-          "note": "No task asks students to describe character traits or link them to a message."
+          "note": "not met"
         },
         {
-          "clause": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures.",
+          "clause": "Work with others to explore and create texts (I/C)",
           "met": false,
-          "note": "Only one text is discussed; no comparison across stories."
-        },
-        {
-          "clause": "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure.",
-          "met": false,
-          "note": "Independent writing is about author purpose, not creating a narrative."
+          "note": "not met"
         }
       ],
-      "evidence": "Using a total participation technique, invite responses from the group:\n- 'What was this story mostly about?' (The sun wanted the water to visit his house. The water brought a lot of friends, and then the sun and moon got pushed out of the house and into the sky.)\n- 'How did the author include the sun and moon in this story?' (The sun and moon were characters in the story. The story is about how the sun and moon got into the sky.)",
-      "evidence_page": 56,
+      "evidence": "Move students into pre-determined pairs and invite them to Think-Pair-Share: 'Why do authors write about the sun, moon, and stars?'",
+      "evidence_page": 58,
       "confidence": "high",
-      "rationale": "Students identify characters and main events from the folktale but do not address problem/solution, character traits tied to message, cross-text comparisons, or narrative writing.",
+      "rationale": "The standard decomposes into four collaborative acts joined by commas (an OR-like list of collaborative purposes under one \"work with others\" umbrella, but each names a distinct collaborative act). Two are met: students work with partners to discuss a topic and investigate a question via Think-Pair-Share (\"Move students into pre-determined pairs and invite them to Think-Pair-Share: 'Why do authors write about the sun, moon, and stars?'\"), satisfying the discuss-topics and investigate-questions clauses. However, there is no collaborative problem-solving activity, and the text-creation task (the response sheet) is completed independently, not collaboratively — \"they will use what they have discussed with their partner to help them independently reflect on the unit's guiding question.\" Therefore the solve-problems and explore/create-texts clauses are not met.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.031024531024531024,
+        "rrf_score": 0.14498839628681176,
+        "dense_rank": 20,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 43.799162333537254,
+        "rerank_score": 0.05512331426143646,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.T.RA.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion. (I)",
+          "met": false,
+          "note": "Students are prompted to reflect on the guiding question using details from the text and complete a sentence frame tying their idea to the text ('I think the author wrote about the ___ because ___'), and teacher prompts direct them back to the story's content. However, the lesson never explicitly directs students to point to, cite, or refer to a specific part/page/sentence/illustration of the text to support their answer. The support is drawn from recalled impressions of the story rather than referencing specific text parts, making this a narrower/thinner version of the clause's act."
+        }
+      ],
+      "evidence": "'I think the author wrote about the ______ because __________.'\n\nPrompt students by asking questions to focus their thinking: 'How did the author include the sun and moon in this story? Why do you think the author included the sun and moon in this way?' 'What is this story mostly about? Why do you think the author chose to write this story?'",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "The standard requires students to refer to parts of texts when supporting an idea, answer, or opinion. During Work Time C, students independently write and draw responses to the guiding question using the sentence frame \"I think the author wrote about the ______ because __________,\" and teacher prompts direct them to think about how the author included the sun and moon and what the story is mostly about. This shows students forming text-based ideas. However, the lesson never explicitly asks students to point to, cite, or reference a specific part of the text (a page, sentence, illustration, or passage) to support their answer; the support is drawn from general recall of the read-aloud rather than from locating and referring to specific text evidence. Because the student performs a version of the act (supporting an idea with text-derived reasoning) but in a narrower form than the standard requires (no explicit reference to a specific part of the text), the clause is partially met. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.1377801425714139,
+        "dense_rank": 27,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 73.16883663497647,
+        "rerank_score": 0.0962681919336319,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Refer to parts of texts when supporting an idea, answer, or opinion. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.T.C.1.a",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify the general purpose of a text (e.g., to tell stories, to provide information, to share opinions, to explain ideas).",
+          "met": true,
+          "note": "Students identify the author's purpose (to explain why the sun and moon live in the sky) through Think-Pair-Share discussion and independent written response, directly identifying the general purpose of the text."
+        },
+        {
+          "clause": "Identify the target audience of a text.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "'Why do authors write about the sun, moon, and stars?' … Move students into pre-determined pairs and invite them to Think-Pair-Share: 'Why do authors write about the sun, moon, and stars?' … Invite students to use the response sheet to capture their ideas about why this author wrote about the sun and moon. … 'I think the author wrote about the ______ because __________.'\n… clarify and capture their response on the Unit 1 Guiding Question anchor chart, making sure to frame the idea of why the author wrote the story about the sun and moon with the word explain.",
+      "evidence_page": 58,
+      "confidence": "high",
+      "rationale": "The purpose clause is met: students identify the general purpose of Why the Sun and the Moon Live in the Sky through a Think-Pair-Share discussion (\"Why do authors write about the sun, moon, and stars?\") and an independent written response using the sentence frame \"I think the author wrote about the ______ because __________.\" The teacher then captures student responses on the anchor chart, framing the purpose with the word \"explain.\" However, the target-audience clause is not met: no activity in the lesson asks students to identify or discuss who the intended audience of the text is. The lesson addresses only purpose, not audience.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.14612433862433863,
+        "dense_rank": 29,
+        "bm25_rank": 7,
+        "dense_score": 0.0,
+        "bm25_score": 21.804778521505828,
+        "rerank_score": 0.04847877845168114,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify the general purpose (e.g., to tell stories, to provide information, to share opinions, to explain ideas) and target audience in a variety of texts. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Explain concepts by interpreting texts.",
+          "met": true,
+          "note": "Students explain the concept of author's purpose by interpreting Why the Sun and the Moon Live in the Sky"
+        },
+        {
+          "clause": "Learn concepts by interpreting texts.",
+          "met": true,
+          "note": "Students learn the concept of author's purpose by interpreting the folk tale"
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
+          "met": true,
+          "note": "Students construct texts (pictures and words) to demonstrate their understanding of why the author wrote the story"
+        }
+      ],
+      "evidence": "Invite students to use the response sheet to capture their ideas about why this author wrote about the sun and moon. Tell students that they can use pictures and words to show their thinking.",
+      "evidence_page": 59,
+      "confidence": "high",
+      "rationale": "Students explain and learn the concept of author's purpose by interpreting Why the Sun and the Moon Live in the Sky (Work Time A & B). They discuss why the author wrote the story in Think-Pair-Share, and the teacher frames the purpose as 'to explain.' Students then construct texts using pictures and words on a response sheet to demonstrate their understanding of the concept (Work Time C). All three clauses are met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.13568140979894883,
+        "dense_rank": 16,
+        "bm25_rank": 4,
+        "dense_score": 0.0,
+        "bm25_score": 18.139315447588963,
+        "rerank_score": 0.062033068388700485,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.T.T.2.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use knowledge of expository techniques to supply facts about the topic.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use knowledge of expository techniques to provide a sense of closure.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.12643328893328895,
+        "dense_rank": 60,
+        "bm25_rank": 6,
+        "dense_score": 0.0,
+        "bm25_score": 23.693304732610056,
+        "rerank_score": 0.1866580694913864,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.P.ST.1.c",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Explore how context shapes the author's decisions during the interpretation and/or construction of texts.",
+          "met": false,
+          "note": "Students explore why the author made the decision to write about the sun and moon (author's purpose/decisions shaped by context), but the exploration is scaffolded through sentence frames and teacher prompting, and the 'context' dimension (cultural, historical, situational factors shaping the author) is only thinly touched — the folk-tale origin in Nigeria is mentioned but students do not explore how that context shaped the author's decisions."
+        },
+        {
+          "clause": "Explore how context shapes the audience's responses during the interpretation and/or construction of texts.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "'Why do authors write about the sun, moon, and stars?' … 'I think the author wrote about the ______ because __________.'",
+      "evidence_page": 58,
+      "confidence": "high",
+      "rationale": "The standard requires students to explore how context shapes both the author's decisions AND the audience's responses. For the author's-decisions clause, students engage in a Think-Pair-Share discussing \"Why do authors write about the sun, moon, and stars?\" and independently write responses using the frame \"I think the author wrote about the ______ because __________.\" This has students exploring the author's purpose/decisions, though the contextual dimension (how cultural or situational context shaped those decisions) is only lightly touched (the Nigerian folk-tale origin is mentioned but not explored by students as a shaping context), so the clause is partially met. The audience's-responses clause is not met: no activity asks students to explore how context shapes how readers/audiences respond to the text — students share personal reactions but are never directed to consider how context influences audience response.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.1314685990338164,
+        "dense_rank": 31,
+        "bm25_rank": 8,
+        "dense_score": 0.0,
+        "bm25_score": 24.08939896925803,
+        "rerank_score": 0.06978263705968857,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Explore how context shapes the author’s decisions and the audience’s responses during the interpretation and construction of texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.P.EICC.3.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Scan a text to find useful structures and sections.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Skim a text to quickly note parts that might help with comprehension or tasks.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1354530841872614,
+        "dense_rank": 22,
+        "bm25_rank": 3,
+        "dense_score": 0.0,
+        "bm25_score": 20.44402690297639,
+        "rerank_score": 0.05730095133185387,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Scan and skim the text, making note of structures and sections that might be most useful. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.P.ST.2.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Draw from knowledge of how authors consider context and audience to determine which information and ideas to highlight",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Determine which text design is most accessible for the intended audience",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Decide which word choices and language structures are most effective for the audience and purpose",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Identify which craft techniques are most impactful in the text",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.13171546753061517,
+        "dense_rank": 50,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 31.03517923445603,
+        "rerank_score": 0.06518970429897308,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Draw from knowledge of how authors consider context and audience to determine which information and ideas to highlight, which text design is most accessible, which word choices and language structures are most effective, and which craft techniques are most impactful. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.T.SS.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use descriptive words.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Craft texts that engage readers.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.13388992881250178,
+        "dense_rank": 9,
+        "bm25_rank": 38,
+        "dense_score": 0.0,
+        "bm25_score": 9.65963241009802,
+        "rerank_score": 0.05534526705741882,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use descriptive words to craft engaging texts. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L2",
+      "standard_code": "1.T.SS.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use illustrations to add clarity and meaning to texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use page numbers to add clarity and meaning to texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use bold print to add clarity and meaning to texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use headings to add clarity and meaning to texts.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1469810667282383,
         "dense_rank": 3,
         "bm25_rank": 6,
-        "dense_score": 0.59222853,
-        "bm25_score": 86.70805622105682,
-        "rerank_score": 0.9917114973068237
+        "dense_score": 0.0,
+        "bm25_score": 19.927238814368973,
+        "rerank_score": 0.03952435776591301,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Identify and use narrative techniques to shape understanding."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L2",
-      "standard_code": "1.P.ST.1",
-      "matched_status": "partial",
-      "clauses": [
-        {
-          "clause": "Use prior knowledge, research, and discussions to identify key context components.",
-          "met": true,
-          "note": "Students discuss geographic and cultural context (Nigeria, West Africa; folktale) and share family stories, using prior knowledge in discussion."
-        },
-        {
-          "clause": "Consider how context impacts the purposes of the author and the audience.",
-          "met": false,
-          "note": "Students infer author’s purpose, but do not connect it to cultural/geographic context or audience considerations."
-        },
-        {
-          "clause": "Explore how context shapes the author's decisions and the audience's responses during text interpretation and construction.",
-          "met": false,
-          "note": "No task asks students to analyze how cultural/geographic context shaped author choices or audience response, nor to apply context in their own composition."
-        }
-      ],
-      "evidence": "Tell students that the story is a folk tale from Nigeria in West Africa. Locate Nigeria on a map, and invite any students to share if they are from, or have family in, West Africa. Invite students to share any stories about the sun and moon that they have learned from their families.",
-      "evidence_page": 56,
-      "confidence": "high",
-      "rationale": "Students identify and discuss cultural and geographic context through sharing and mapping, but they do not analyze how that context affects author purpose/choices or audience response, nor apply it in their own writing.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.0207597645799893,
-        "dense_rank": 29,
-        "bm25_rank": 45,
-        "dense_score": 0.54025143,
-        "bm25_score": 62.16383285456641,
-        "rerank_score": 0.9909160733222961
-      },
-      "standard_raw_text": "Develop and apply knowledge of key components of context such as background information, geographic location, cultural influences, time period, and contemporary events when interpreting and constructing texts."
+      "standard_raw_text": "Use text features (e.g., illustrations, page numbers, bold print, headings) to add clarity and meaning to texts. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     }
-  ]
+  ],
+  "usage": {
+    "calls": 9,
+    "input_tokens": 45930,
+    "output_tokens": 16584,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 173665,
+    "batch_calls": 0,
+    "batch_input_tokens": 0,
+    "batch_output_tokens": 0,
+    "estimated_cost_usd": 0.594252,
+    "by_model": {
+      "claude-sonnet-4-5": {
+        "calls": 1,
+        "input_tokens": 9300,
+        "output_tokens": 11435,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 19401,
+        "batch_calls": 0,
+        "batch_input_tokens": 0,
+        "batch_output_tokens": 0,
+        "batch_cache_write_tokens": 0,
+        "batch_cache_read_tokens": 0,
+        "estimated_cost_usd": 0.205245
+      },
+      "claude-opus-4-6": {
+        "calls": 8,
+        "input_tokens": 36630,
+        "output_tokens": 5149,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 154264,
+        "batch_calls": 0,
+        "batch_input_tokens": 0,
+        "batch_output_tokens": 0,
+        "batch_cache_write_tokens": 0,
+        "batch_cache_read_tokens": 0,
+        "estimated_cost_usd": 0.389007
+      }
+    }
+  }
 }

@@ -12,7 +12,9 @@ output/
 ├── normalize/              # Batch-1 ELA normalize — schema 2.0-ela
 ├── normalize_standards/    # GA leaf normalize (shared by retrieve)
 ├── retrieve_gold4/         # Batch-1 gold retrieve (R@25 bar)
-├── judge/                  # alignment verdicts (live assembled prompt; gold-4 16/20)
+├── retrieve/               # all 40 EL lessons — 50-standard shortlist
+├── judge/                  # alignment verdicts (assembled prompt; all 40; gold-4 15/20)
+├── result/                 # per-lesson CSVs (G1M2U1L1.csv …)
 ├── reports/                # gold4_alignments.csv, gold_judge_*.csv, client/
 ├── chunks/                 # hierarchical chunks for grounding / judge
 └── embeddings/             # embed run manifest (vectors live in Qdrant)
@@ -75,8 +77,9 @@ Standards: same model → collection `veramynd_standards` (`embed-standards`).
 Live prompt: [`../veramynd_parser/prompts/assembled_judge_prompt.md`](../veramynd_parser/prompts/assembled_judge_prompt.md)
 (engine + GA Grade 1 overlay). `align_judge.v1.1` / `align_judge_v1.md` is unused.
 
-Gold eval is always `--limit 25` on `output/retrieve_gold4/` (do not retune
-retrieve). After the retrieve shortlist, a coverage pass may append
+Gold eval is always `--limit 25` on `output/retrieve/` (R@25 bar still lives
+on `output/retrieve_gold4/`; do not retune retrieve). After the retrieve
+shortlist, a coverage pass may append
 feedback/present codes that missed top 25 (`coverage_pass_injected` in the
 JSON). Close-read rows that cite a missing Read-aloud Guide get
 `input_scope_caveat` — scores are likely understated; **do not hand-edit
@@ -84,15 +87,16 @@ labels**. Re-run those lessons only if the client shares the guides.
 
 | Artifact | Honest status |
 |----------|----------------|
-| Gold-4 overall | Assembled Anthropic batch `--limit 25` — **16/20 (80%)** unique 3-class |
-| `G1M2U1L1.json` | **6/7** — miss `1.P.EICC.4.c` (gold full / json partial) |
-| `G1M2U1L3.json` | **4/5** — miss `1.T.SS.2.a` (gold partial / json none); P4 caveats |
-| `G1M2U1L6.json` | **5/7** — miss `1.L.V.3.a` (gold partial / json full), `1.T.T.1.c` (gold partial / json none); P4 caveats; coverage `1.P.CP.2.a` |
+| All 40 EL lessons | Assembled Anthropic batch `--limit 25` — run; SME exact is gold-4 only |
+| Gold-4 overall | Assembled Anthropic batch `--no-cache --limit 25` — **15/20 (75%)** unique 3-class |
+| `G1M2U1L1.json` | **6/7** — miss `1.P.EICC.4.c` (gold full / json none) |
+| `G1M2U1L3.json` | **4/5** — miss `1.P.CP.2.d` (gold partial / json none) |
+| `G1M2U1L6.json` | **4/7** — miss `1.L.V.3.a` (gold partial / json full), `1.T.RA.2.a` (gold partial / json none), `1.T.T.1.c` (gold partial / json none); coverage `1.P.CP.2.a` |
 | `G1M2U3L5.json` | **1/1**; coverage `1.P.EICC.4.f`, `1.P.CP.1.c`, `1.P.CP.2.a` |
 
 ```bash
 veramynd-parser judge-standards \
-  --retrieve-file output/retrieve_gold4/G1M2U1L1.json \
+  --retrieve-file output/retrieve/G1M2U1L1.json \
   --lesson-file output/stage1/lessons/G1M2U1L1.json \
   --standards-dir output/normalize_standards \
   --out output/judge/G1M2U1L1.json \
@@ -100,13 +104,12 @@ veramynd-parser judge-standards \
 # opt out of coverage extras: --no-coverage-pass
 ```
 
-## Reports (`reports/`)
+## Reports (`reports/` and `result/`)
 
 CSV/HTML from `report-alignments`. Columns include `needs_review`,
-`coverage_pass`, and `input_scope_caveat`. Per-lesson judge CSVs (no
-retrieve scores, with `page`): `G1M2U1L1_judge.csv`, `G1M2U1L3_judge.csv`,
-`G1M2U1L6_judge.csv`, `G1M2U3L5_judge.csv` (and `*_judge_aligned.csv` for
-full+partial only). All four gold JSON files are the live assembled run.
+`coverage_pass`, and `input_scope_caveat`. Per-lesson CSVs for the live
+40-lesson run: `output/result/G1M2U*.csv`. Gold-4 combined export:
+`output/reports/gold4_alignments.csv`.
 
 ```bash
 veramynd-parser report-alignments --judge-dir output/judge --out output/reports/gold4_alignments.csv

@@ -1,435 +1,534 @@
 {
   "schema_version": "1.0-judge",
   "quality_profile": "enterprise_k12",
-  "prompt_version": "align_judge.batch.v1",
+  "prompt_version": "align_judge.assembled.batch.v1",
   "judge_mode": "batch",
   "resource_id": "G1M2U1L8",
   "lesson_source": "stage1:G1M2U1L8",
-  "retrieve_file": "output\\retrieve\\G1M2U1L8.json",
+  "retrieve_file": "output/retrieve/G1M2U1L8.json",
   "standards_dir": "output\\normalize_standards",
-  "judge_model": "gpt-4.1",
+  "judge_model": "claude-sonnet-4-5",
   "escalate": true,
-  "escalate_model": "gpt-5",
-  "candidate_count": 10,
-  "judged": 10,
+  "escalate_model": "claude-opus-4-6",
+  "candidate_count": 26,
+  "coverage_pass_injected": [
+    "1.P.CP.2.a"
+  ],
+  "judged": 26,
   "failed": [],
   "complete": true,
   "by_status": {
-    "full": 4,
-    "partial": 2,
-    "none": 4
+    "full": 5,
+    "partial": 4,
+    "none": 17
   },
   "grounding_rate": 1.0,
-  "grounding_positive_n": 6,
+  "grounding_positive_n": 9,
+  "escalated_count": 11,
+  "escalation_rate": 0.4230769230769231,
+  "escalated_codes": [
+    "1.P.CP.2.e",
+    "1.T.RA.1.c",
+    "1.T.SS.2.b",
+    "1.P.ST.2.a",
+    "1.P.EICC.4.e",
+    "1.P.EICC.4.d",
+    "1.P.CP.1.b",
+    "1.P.CP.1.d",
+    "1.T.SS.1.b",
+    "1.T.T.1.c",
+    "1.P.ST.2.c"
+  ],
+  "input_scope_caveat_count": 0,
+  "input_scope_caveat_codes": [],
+  "prescreen_auto_none_count": 0,
+  "prescreen_auto_none_codes": [],
   "verdicts": [
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L8",
-      "standard_code": "1.P.EICC.2.c",
+      "standard_code": "1.T.C.1.c",
       "matched_status": "full",
       "clauses": [
         {
-          "clause": "Explain concepts by interpreting texts.",
+          "clause": "Create texts in teacher-selected modes (print, digital, auditory, visual).",
           "met": true,
-          "note": ""
-        },
-        {
-          "clause": "Learn concepts by interpreting texts.",
-          "met": true,
-          "note": ""
-        },
-        {
-          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
-          "met": true,
-          "note": ""
+          "note": "Students create texts in print mode (writing on response sheets) as selected by the teacher."
         }
       ],
-      "evidence": "Invite students to show a thumbs-up if they are ready to begin writing and drawing about the characters and setting from Papa, Please Get the Moon for Me.\n- Tell students that they may begin writing their responses to Part I.\n...\n- Invite students to show a thumbs-up if they are ready to begin writing about Papa from Papa, Please Get the Moon for Me.\n- Tell students that they may begin writing their responses to Part II.",
+      "evidence": "Tell students that they may begin writing their responses to Part I. … Tell students that they may begin writing their responses to Part II.",
       "evidence_page": 121,
       "confidence": "high",
-      "rationale": "Students interpret the story to learn and explain concepts (character, setting, traits) and construct written responses, fully meeting the standard.",
+      "rationale": "In Work Time C, students create texts in the teacher-selected print mode. The teacher distributes response sheets and directs students to write their responses: 'Tell students that they may begin writing their responses to Part I' and 'Tell students that they may begin writing their responses to Part II.' Students write about characters, setting, and Papa's traits on the response sheets. The standard requires creating texts in teacher-selected modes; the lesson provides print mode and students produce written text.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
-        "rrf_score": 0.015151515151515152,
-        "dense_rank": 6,
-        "bm25_rank": null,
-        "dense_score": 0.5955845,
-        "bm25_score": null,
-        "rerank_score": 0.992238461971283
-      },
-      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L8",
-      "standard_code": "1.T.T.1",
-      "matched_status": "full",
-      "clauses": [
-        {
-          "clause": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue.",
-          "met": true,
-          "note": ""
-        },
-        {
-          "clause": "Identify a simple plot with a problem and solution.",
-          "met": true,
-          "note": ""
-        },
-        {
-          "clause": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
-          "met": true,
-          "note": ""
-        },
-        {
-          "clause": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures.",
-          "met": true,
-          "note": ""
-        },
-        {
-          "clause": "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure.",
-          "met": true,
-          "note": ""
-        }
-      ],
-      "evidence": "As you discuss character and setting in Papa, Please Get the Moon for Me, maximize generalization by reminding students that they have already learned about these story elements in Summer Sun Risin'. Help students make this text-to-text connection by prompting them to share what they remember about character and setting in Summer Sun Risin'. Invite students to reflect on how this is similar to or different from character and setting in Papa, Please Get the Moon for Me. (MMR)\n...\nInvite students to show a thumbs-up if they are ready to begin writing and drawing about the characters and setting from Papa, Please Get the Moon for Me.\n- Tell students that they may begin writing their responses to Part I.",
-      "evidence_page": 121,
-      "confidence": "high",
-      "rationale": "Students identify and discuss narrative techniques (character, setting, plot), compare across texts, and use this knowledge to create their own written responses.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.03225806451612903,
+        "rrf_score": 0.24011237026862026,
         "dense_rank": 2,
-        "bm25_rank": 2,
-        "dense_score": 0.6383466,
-        "bm25_score": 189.43204548387692,
-        "rerank_score": 0.9885827302932739
-      },
-      "standard_raw_text": "Identify and use narrative techniques to shape understanding."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L8",
-      "standard_code": "1.P.EICC.2.b",
-      "matched_status": "full",
-      "clauses": [
-        {
-          "clause": "Use texts to build knowledge.",
-          "met": true,
-          "note": ""
-        },
-        {
-          "clause": "Use texts to develop skills.",
-          "met": true,
-          "note": ""
-        },
-        {
-          "clause": "Use texts to make informed decisions.",
-          "met": true,
-          "note": ""
-        },
-        {
-          "clause": "Use texts to share information and ideas.",
-          "met": true,
-          "note": ""
-        }
-      ],
-      "evidence": "Invite students to turn and talk with an elbow partner:\n- 'What does the author tell us about Papa? How would you describe him?' (He works hard to get Monica the moon. He is kind, caring, generous, hardworking, etc.)\n...\nInvite students to show a thumbs-up if they are ready to begin writing and drawing about the characters and setting from Papa, Please Get the Moon for Me.\n- Tell students that they may begin writing their responses to Part I.",
-      "evidence_page": 121,
-      "confidence": "high",
-      "rationale": "Students use the text to build knowledge (about story elements), develop skills (discussion, writing), make decisions (choosing traits), and share ideas (partner talk, writing).",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.022254475084663765,
-        "dense_rank": 18,
-        "bm25_rank": 46,
-        "dense_score": 0.56485444,
-        "bm25_score": 70.49417583684969,
-        "rerank_score": 0.9885780811309814
-      },
-      "standard_raw_text": "Make use of texts to build knowledge, develop skills, make informed decisions, and share information and ideas. (I/C)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L8",
-      "standard_code": "1.T.T.2",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
-          "met": false,
-          "note": "Lesson focuses on narrative, not expository, text."
-        },
-        {
-          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
-          "met": false,
-          "note": "No expository text or informational connections described."
-        },
-        {
-          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
-          "met": false,
-          "note": "No expository writing or analysis present."
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "The lesson is centered on a narrative text and does not address expository techniques or texts.",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.024322344322344324,
-        "dense_rank": 31,
-        "bm25_rank": 15,
-        "dense_score": 0.5505073,
-        "bm25_score": 94.64190881935704,
-        "rerank_score": 0.9884745478630066
-      },
-      "standard_raw_text": "Identify and use expository techniques to shape understanding."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L8",
-      "standard_code": "1.T.C.2",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Identify who is speaking at various points in a text.",
-          "met": false,
-          "note": "No explicit identification of narrator or speaker in the text."
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "Students do not identify the narrator or speaker at different points in the story.",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.02428613482484545,
-        "dense_rank": 26,
-        "bm25_rank": 19,
-        "dense_score": 0.55604887,
-        "bm25_score": 87.05099307418185,
-        "rerank_score": 0.9881388545036316
-      },
-      "standard_raw_text": "Investigate the relationships between authors and speakers in texts."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L8",
-      "standard_code": "1.T.T.1.d",
-      "matched_status": "full",
-      "clauses": [
-        {
-          "clause": "Compare characters in stories from diverse cultures with adult support.",
-          "met": true,
-          "note": ""
-        },
-        {
-          "clause": "Contrast characters in stories from diverse cultures with adult support.",
-          "met": true,
-          "note": ""
-        },
-        {
-          "clause": "Compare experiences of characters in stories from diverse cultures with adult support.",
-          "met": true,
-          "note": ""
-        },
-        {
-          "clause": "Contrast experiences of characters in stories from diverse cultures with adult support.",
-          "met": true,
-          "note": ""
-        }
-      ],
-      "evidence": "As you discuss character and setting in Papa, Please Get the Moon for Me, maximize generalization by reminding students that they have already learned about these story elements in Summer Sun Risin'. Help students make this text-to-text connection by prompting them to share what they remember about character and setting in Summer Sun Risin'. Invite students to reflect on how this is similar to or different from character and setting in Papa, Please Get the Moon for Me. (MMR)",
-      "evidence_page": 121,
-      "confidence": "high",
-      "rationale": "Students are prompted to compare and contrast characters and experiences between two stories from different cultures with teacher support.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.030330882352941176,
-        "dense_rank": 4,
-        "bm25_rank": 8,
-        "dense_score": 0.6124764,
-        "bm25_score": 104.4066153431079,
-        "rerank_score": 0.9880896210670471
-      },
-      "standard_raw_text": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures. (I)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L8",
-      "standard_code": "1.T.T.2.b",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Describe the connection between two individuals in a text.",
-          "met": false,
-          "note": "Students identify and describe characters (e.g., Papa, Monica) but do not describe how two individuals are connected."
-        },
-        {
-          "clause": "Describe the connection between two events in a text.",
-          "met": false,
-          "note": "No task asks students to relate or connect events; role-play and discussion focus on character/setting."
-        },
-        {
-          "clause": "Describe the connection between two ideas in a text.",
-          "met": false,
-          "note": "Students do not analyze or connect ideas within the text."
-        },
-        {
-          "clause": "Describe the connection between two pieces of information in a text.",
-          "met": false,
-          "note": "No activity involves linking pieces of information; lesson centers on literary elements."
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "The lesson is a literature read-aloud focused on character and setting and does not ask students to describe connections between individuals, events, ideas, or pieces of information. Additionally, the standard targets informational text, whereas the lesson uses a fictional story.",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.014925373134328358,
-        "dense_rank": null,
-        "bm25_rank": 7,
-        "dense_score": null,
-        "bm25_score": 106.93322692913117,
-        "rerank_score": 0.9868201613426208
-      },
-      "standard_raw_text": "Describe the connection between two individuals, events, ideas, or pieces of information in a text. (I)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L8",
-      "standard_code": "1.T.T.1.c",
-      "matched_status": "partial",
-      "clauses": [
-        {
-          "clause": "Describe traits of the main characters.",
-          "met": true,
-          "note": "Students choose an adjective to describe Papa and write a sentence explaining the trait."
-        },
-        {
-          "clause": "Explain how the characters' words support the central message, lesson, or moral.",
-          "met": false,
-          "note": "No task asks students to connect any character’s words to a central message or moral."
-        },
-        {
-          "clause": "Explain how the characters' actions support the central message, lesson, or moral.",
-          "met": false,
-          "note": "Students may reference actions when justifying a trait, but they are not asked to link actions to a central message or moral."
-        }
-      ],
-      "evidence": "- Focus students on Part II and read the prompt aloud, allowing adequate think time:\n- 'Based on the pictures, which of these words best describes Papa?' Read four options aloud and model selecting one and circling it.\n- Tell students that there is more than one correct answer, so they should choose the one that makes sense to them.\n- Provide the following sentence frame:\n- 'I think Papa is __________ because ________________________.'\n- Remind students that in the first blank they will write the descriptive word they circled above. In the second blank they will write why they think Papa is best described that way.\n- Invite students to show a thumbs-up if they are ready to begin writing about Papa from Papa, Please Get the Moon for Me.\n- Tell students that they may begin writing their responses to Part II.",
-      "evidence_page": 121,
-      "confidence": "high",
-      "rationale": "Students describe a character trait for Papa and justify it, but they do not explain how any character’s words or actions support the story’s central message or moral.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.031746031746031744,
-        "dense_rank": 3,
         "bm25_rank": 3,
-        "dense_score": 0.6221289,
-        "bm25_score": 142.65450303101105,
-        "rerank_score": 0.9862478375434875
+        "dense_score": 0.0,
+        "bm25_score": 20.55944021571606,
+        "rerank_score": 0.07751639932394028,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)"
+      "standard_raw_text": "Create texts in teacher-selected modes (e.g., print, digital, auditory, and/or visual). (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L8",
-      "standard_code": "1.P.EICC.3",
+      "standard_code": "1.P.CP.2.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Recite all or part of significant poems appropriate for grade level to build background knowledge.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Recite all or part of significant speeches appropriate for grade level to build background knowledge.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.2375024108003857,
+        "dense_rank": 6,
+        "bm25_rank": 7,
+        "dense_score": 0.0,
+        "bm25_score": 31.003063122384187,
+        "rerank_score": 0.04387203976511955,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Build background knowledge by reciting all or part of significant poems and speeches as appropriate by grade level. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.T.RA.1.c",
       "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Establish a purpose and set goals for reading",
+          "clause": "Share relevant information about a topic (C)",
           "met": false,
-          "note": "Teacher states the purpose; students do not set goals themselves."
+          "note": "Students write responses about characters and setting — relevant information about the story — but the sharing is limited to a written response sheet collected by the teacher, not shared through varied modes."
         },
         {
-          "clause": "Monitor comprehension and adjust strategies as needed",
+          "clause": "Share accurate information about a topic (C)",
           "met": false,
-          "note": "No explicit student monitoring or adjustment strategies are used."
+          "note": "Students write accurate character descriptions supported by text evidence (selecting an adjective and giving a reason), demonstrating accuracy, but again only through a single written mode."
         },
         {
-          "clause": "Scan and skim the text to note useful structures and sections",
+          "clause": "Use a variety of communication modes to share information (C)",
           "met": false,
-          "note": "Students listen to a read-aloud; no scanning/skimming task."
-        },
-        {
-          "clause": "Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps",
-          "met": true,
-          "note": "Students are prompted to connect to a previously read text and reflect on similarities/differences."
-        },
-        {
-          "clause": "Summarize and visualize sections of the text to maintain understanding",
-          "met": false,
-          "note": "Students describe characters/setting but do not summarize or explicitly visualize."
-        },
-        {
-          "clause": "Make and track predictions about upcoming events and information",
-          "met": false,
-          "note": "No prediction activity is present."
-        },
-        {
-          "clause": "Make, track, and support inferences about different levels of meaning",
-          "met": true,
-          "note": "Students select a character trait for Papa and justify it in writing."
-        },
-        {
-          "clause": "Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts",
-          "met": false,
-          "note": "Vocabulary meanings are provided by the teacher rather than determined by students."
+          "note": "not met"
         }
       ],
-      "evidence": "- Focus students on Part II and read the prompt aloud, allowing adequate think time:\n- 'Based on the pictures, which of these words best describes Papa?' Read four options aloud and model selecting one and circling it.\n- Tell students that there is more than one correct answer, so they should choose the one that makes sense to them.\n- Provide the following sentence frame:\n- 'I think Papa is __________ because ________________________.'\n- Remind students that in the first blank they will write the descriptive word they circled above. In the second blank they will write why they think Papa is best described that way.\n- Invite students to show a thumbs-up if they are ready to begin writing about Papa from Papa, Please Get the Moon for Me.\n- Tell students that they may begin writing their responses to Part II.",
+      "evidence": "'I think Papa is __________ because ________________________.' ... Tell students that they may begin writing their responses to Part II.",
       "evidence_page": 121,
-      "confidence": "medium",
-      "rationale": "Students engage with the text and apply at least two comprehension strategies: integrating prior knowledge and making/supporting inferences about a character. However, many other strategies (goal setting, monitoring, predicting, summarizing, determining word meanings) are not carried out by students in this lesson.",
+      "confidence": "high",
+      "rationale": "Students share relevant and accurate information about the story's characters and setting through written responses on the Papa, Please Get the Moon for Me response sheet (Parts I and II): \"Tell students that they may begin writing their responses to Part I\" (characters and setting) and Part II using the sentence frame \"I think Papa is __________ because ________________________.\" Students also share orally during Turn and Talks and the Pinky Partners protocol (\"What do you imagine when you look up at the night sky?\"). However, the \"variety of different modes\" clause is not fully met: while students do use oral sharing (Turn and Talk, Pinky Partners) and written responses, the lesson does not intentionally set out to have students share information through a deliberate variety of communication modes (e.g., digital, visual presentation, etc.) as the standard's construction purpose requires. The oral sharing moments are primarily comprehension discussions rather than constructed sharing of researched/accurate information through varied modes. The written response is the only substantive (C) sharing act, capping the variety-of-modes clause at not met.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.02625745950554135,
-        "dense_rank": 9,
-        "bm25_rank": 25,
-        "dense_score": 0.58035433,
-        "bm25_score": 83.30585649246586,
-        "rerank_score": 0.9858875870704651
+        "rrf_score": 0.23245015086944348,
+        "dense_rank": 11,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 58.77123520133727,
+        "rerank_score": 0.08633487671613693,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals."
+      "standard_raw_text": "Share relevant and accurate information through a variety of different modes. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.T.T.1.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use knowledge of characters in narratives to create texts.",
+          "met": false,
+          "note": "Students identify and describe characters from a read story, not create their own narrative with characters."
+        },
+        {
+          "clause": "Use knowledge of settings in narratives to create texts.",
+          "met": false,
+          "note": "Students identify the setting of a read story, not create their own narrative with a setting."
+        },
+        {
+          "clause": "Use knowledge of events in narratives to create texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Create texts that share real or imagined experiences and events.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Include a sense of closure in created texts.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.2314516129032258,
+        "dense_rank": 15,
+        "bm25_rank": 3,
+        "dense_score": 0.0,
+        "bm25_score": 55.56888117930904,
+        "rerank_score": 0.10191479325294495,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use knowledge of narrative techniques (e.g., characters, settings, events) to create texts that share real or imagined experiences and events with a sense of closure. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.P.EICC.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Discuss personal and academic reading and writing preferences.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Refer to specific techniques, topics, modes, and genres that resonate most in discussion or writing.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.22881410256410256,
+        "dense_rank": 8,
+        "bm25_rank": 13,
+        "dense_score": 0.0,
+        "bm25_score": 15.644837691661277,
+        "rerank_score": 0.023439595475792885,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Discuss or write about personal and academic reading and writing preferences, referring to specific techniques, topics, modes, and genres that resonate most. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.T.SS.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use transition words or phrases to sequence events.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use transition words or phrases to sequence actions.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.2237420042643923,
+        "dense_rank": 30,
+        "bm25_rank": 10,
+        "dense_score": 0.0,
+        "bm25_score": 25.662677121791972,
+        "rerank_score": 0.0760883167386055,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use transition words or phrases, such as once upon a time, next, and last to sequence events and actions. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.T.SS.2.b",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Use descriptive words to craft/create texts (C — student constructs a text using descriptive words)",
+          "met": false,
+          "note": "Students select a descriptive word (tired, sneaky, scared, kind) and use it in a sentence frame to craft a written response, which is a (C) construction act using descriptive words. However, the student is choosing from a pre-supplied word bank and completing a scaffolded sentence frame rather than independently crafting an engaging text — the descriptive-word use is real but narrow and frame-bound, and the product is a single-sentence response rather than a crafted, engaging text."
+        }
+      ],
+      "evidence": "'I think Papa is __________ because ________________________.' Remind students that in the first blank they will write the descriptive word they circled above. In the second blank they will write why they think Papa is best described that way.",
+      "evidence_page": 121,
+      "confidence": "high",
+      "rationale": "The standard requires students to use descriptive words to craft engaging texts (a Construction act). In Work Time C, Part II, students select a descriptive word from a word bank (tired, sneaky, scared, kind) and complete the sentence frame \"I think Papa is __________ because __________,\" writing a descriptive word and a reason. This is a genuine (C) act — the student writes using a descriptive word. However, the descriptive-word use is constrained to a single pre-supplied adjective placed into a scaffolded frame, and the resulting product is a one-sentence response sheet answer rather than a crafted, engaging text. The narrow scope of descriptive-word deployment and the frame-bound nature of the writing cap this at partially met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.22092051783832606,
+        "dense_rank": 9,
+        "bm25_rank": 9,
+        "dense_score": 0.0,
+        "bm25_score": 15.733582704441442,
+        "rerank_score": 0.10844474285840988,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use descriptive words to craft engaging texts. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.P.ST.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Develop and apply knowledge of author, audience, and context to discern the purpose of texts being interpreted or constructed.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Establish the purpose of texts being interpreted or constructed based on knowledge of author, audience, and context.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Evaluate the extent to which texts achieve their purposes based on author, audience, and context.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.21543065313557117,
+        "dense_rank": 13,
+        "bm25_rank": 7,
+        "dense_score": 0.0,
+        "bm25_score": 28.410493725605736,
+        "rerank_score": 0.06724461168050766,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Develop and apply knowledge of author, audience, and context to discern and establish the purpose of texts being interpreted or constructed and to evaluate the extent to which those texts achieve those purposes. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.P.EICC.1.d",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Build a repertoire of comprehension skills, strategies, and techniques.",
+          "met": true,
+          "note": "Students build comprehension skills by answering questions about key details and describing characters and setting during the read-aloud."
+        },
+        {
+          "clause": "Build a repertoire of composition skills, strategies, and techniques.",
+          "met": true,
+          "note": "Students build composition skills by writing responses using classroom resources and sentence frames."
+        },
+        {
+          "clause": "Draw from these skills and strategies as needed to interpret texts.",
+          "met": true,
+          "note": "Students draw from comprehension strategies to interpret the text by answering questions about characters, setting, and character traits."
+        },
+        {
+          "clause": "Draw from these skills and strategies as needed to construct texts.",
+          "met": true,
+          "note": "Students draw from composition strategies and classroom resources to construct their written responses."
+        }
+      ],
+      "evidence": "Tell students that they may begin writing their responses to Part I. … Tell students that they may begin writing their responses to Part II.",
+      "evidence_page": 121,
+      "confidence": "high",
+      "rationale": "Throughout the lesson, students build and draw from both comprehension and composition skills. For comprehension, they answer questions about key details and describe characters and setting during the read-aloud: 'Who are the characters in this story?' and 'What does the author tell us about Papa?' For composition, they write responses on the response sheet in Work Time C, using classroom resources like the Story Elements board, Word Walls, and sentence frames. The teacher directs: 'Tell students that they may begin writing their responses' and 'Encourage them to use classroom resources.' Students actively build their repertoire and draw from it to both interpret and construct texts.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.2092074592074592,
+        "dense_rank": 23,
+        "bm25_rank": 12,
+        "dense_score": 0.0,
+        "bm25_score": 21.523757562060165,
+        "rerank_score": 0.05564085766673088,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Build a repertoire of comprehension and composition skills, strategies, and techniques, drawing from them as needed to aid the interpretation and construction of texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.T.RA.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Work collaboratively or individually to conduct research on a shared or personal topic of interest.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Gather information from provided sources including print, digital, and personal communication.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Organize gathered information using graphic organizers or other support aids.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.2053952644802742,
+        "dense_rank": 5,
+        "bm25_rank": 28,
+        "dense_score": 0.0,
+        "bm25_score": 15.745653829227155,
+        "rerank_score": 0.05004393681883812,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Work collaboratively or individually to conduct research on a shared or personal topic of interest by gathering and organizing information from provided sources (including print, digital, and personal communication) using graphic organizers or other support aids. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.P.EICC.4.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Construct an initial draft by integrating ideas and information (C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Select words, phrases, and sentences to include in the draft (C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Incorporate craft techniques that will best achieve the purpose of the text and resonate with the target audience (C)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.1998902473527439,
+        "dense_rank": 56,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 35.93235539628303,
+        "rerank_score": 0.045713651925325394,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Construct an initial draft by integrating ideas and information; selecting words, phrases, and sentences; and incorporating craft techniques that will best achieve the purpose of the text and resonate with the target audience. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
@@ -440,32 +539,735 @@
         {
           "clause": "Identify the problem in a simple plot.",
           "met": false,
-          "note": "Lesson activities center on characters, setting, role-play, and describing Papa; no task asks students to identify a story problem."
+          "note": "not met"
         },
         {
           "clause": "Identify the solution in a simple plot.",
           "met": false,
-          "note": "Students are not prompted to determine how the problem is resolved; no solution identification occurs."
+          "note": "not met"
         }
       ],
       "evidence": "",
       "evidence_page": null,
       "confidence": "high",
-      "rationale": "The lesson targets character and setting and descriptive writing about a character. It does not ask students to identify a problem or a solution in the story’s plot.",
+      "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1998584552932379,
+        "dense_rank": 35,
+        "bm25_rank": 3,
+        "dense_score": 0.0,
+        "bm25_score": 37.85944788642521,
+        "rerank_score": 0.09613834321498871,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify a simple plot with a problem and solution. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.P.EICC.4.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Link ideas and information to an organizational plan. (C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Highlight ideas and information that are most relevant, useful, and impactful. (C)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.026050420168067225,
-        "dense_rank": 25,
-        "bm25_rank": 10,
-        "dense_score": 0.55752355,
-        "bm25_score": 101.24286999163049,
-        "rerank_score": 0.9857960939407349
+        "rrf_score": 0.1998223169864961,
+        "dense_rank": 4,
+        "bm25_rank": 14,
+        "dense_score": 0.0,
+        "bm25_score": 23.29276108082989,
+        "rerank_score": 0.06065924093127251,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Identify a simple plot with a problem and solution. (I)"
+      "standard_raw_text": "Link ideas and information to the organization plan, highlighting ideas and information that are most relevant, useful, and impactful. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.P.EICC.2.b",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Use texts to build knowledge.",
+          "met": true,
+          "note": "Students use the text Papa, Please Get the Moon for Me to build knowledge about characters, setting, and story elements."
+        },
+        {
+          "clause": "Use texts to develop skills.",
+          "met": true,
+          "note": "Students develop comprehension and description skills by answering questions about the text."
+        },
+        {
+          "clause": "Use texts to make informed decisions.",
+          "met": true,
+          "note": "Students make an informed decision about which descriptive word best describes Papa based on the text and illustrations."
+        },
+        {
+          "clause": "Use texts to share information and ideas.",
+          "met": true,
+          "note": "Students share their ideas and information about the text by writing responses about characters, setting, and Papa's traits."
+        }
+      ],
+      "evidence": "Who are the characters in this story? … Where is this story taking place? … What does the author tell us about Papa? How would you describe him?",
+      "evidence_page": 118,
+      "confidence": "high",
+      "rationale": "Students use the text Papa, Please Get the Moon for Me for all four purposes. They build knowledge by learning about characters and setting through the read-aloud and answering questions: 'Who are the characters in this story?' and 'Where is this story taking place?' They develop comprehension and description skills by responding to questions about Papa: 'What does the author tell us about Papa? How would you describe him?' They make informed decisions by selecting which descriptive word best fits Papa based on the text: 'Based on the pictures, which of these words best describes Papa?' They share information and ideas by writing their responses on the response sheet in Work Time C. All four purposes are met through student performance.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.19390758249907303,
+        "dense_rank": 7,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 20.573231969581187,
+        "rerank_score": 0.06507384032011032,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Make use of texts to build knowledge, develop skills, make informed decisions, and share information and ideas. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.P.CP.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Collaborate with others to determine group norms",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Establish goals and procedures for shared projects",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Facilitate productivity when working on shared projects",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.19870588235294118,
+        "dense_rank": 1,
+        "bm25_rank": 13,
+        "dense_score": 0.0,
+        "bm25_score": 14.387430409210737,
+        "rerank_score": 0.059469468891620636,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.P.CP.1.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Work with others to discuss topics (I/C)",
+          "met": true,
+          "note": "Students work in pairs (Turn and Talk) to discuss the topic of the story's characters and setting — a collaborative discussion with others."
+        },
+        {
+          "clause": "Work with others to investigate questions (I/C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Work with others to solve problems (I/C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Work with others to explore and create texts (I/C)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "Invite students to turn and talk with an elbow partner: 'What does the author tell us about Papa? How would you describe him?'",
+      "evidence_page": 118,
+      "confidence": "high",
+      "rationale": "The standard decomposes into four collaborative acts joined by commas (an AND list): discuss topics, investigate questions, solve problems, and explore and create texts. The \"discuss topics\" clause is met: students work with elbow partners in multiple Turn and Talk exchanges to discuss story characters and setting (e.g., \"Invite students to turn and talk with an elbow partner: 'What does the author tell us about Papa? How would you describe him?'\") and share with Pinky Partners about what they imagine about the night sky. However, no activity has students collaboratively investigate a question, solve a problem, or jointly explore/create a text — the independent writing (response sheet) is done individually, and the role-play is dramatization of an existing text rather than collaborative text creation or investigation. Three of four clauses are unmet.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.19051721720205742,
+        "dense_rank": 20,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 41.19836427899136,
+        "rerank_score": 0.07994644343852997,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.T.SS.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use text features (e.g., illustrations, page numbers, bold print, headings) to add clarity and meaning to their own texts. (C)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.19389742066858986,
+        "dense_rank": 3,
+        "bm25_rank": 16,
+        "dense_score": 0.0,
+        "bm25_score": 11.109248979335648,
+        "rerank_score": 0.06377729028463364,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use text features (e.g., illustrations, page numbers, bold print, headings) to add clarity and meaning to texts. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.T.T.4.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify rhyme used in texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Identify alliteration used in texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Identify repeated lines used in texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Describe how rhyme, alliteration, and repeated lines are used to craft texts.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.19239423742781764,
+        "dense_rank": 62,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 43.20487792546285,
+        "rerank_score": 0.06240613013505936,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify and describe poetic techniques used to craft texts, including rhyme, alliteration, and repeated lines. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.T.SS.2.a",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Identify descriptive words in texts.",
+          "met": true,
+          "note": "Students identify which descriptive word (tired, sneaky, scared, kind) best describes Papa from the text."
+        },
+        {
+          "clause": "Explain the use of descriptive words in texts.",
+          "met": true,
+          "note": "Students explain why the descriptive word they chose fits Papa by providing a reason in the sentence frame."
+        }
+      ],
+      "evidence": "Based on the pictures, which of these words best describes Papa?",
+      "evidence_page": 121,
+      "confidence": "high",
+      "rationale": "In Work Time C, students identify and explain descriptive words. The teacher presents four descriptive word options (tired, sneaky, scared, kind) and asks: 'Based on the pictures, which of these words best describes Papa?' Students select one descriptive word. Then they explain its use by completing the sentence frame: 'I think Papa is __________ because ________________________.' Students both identify the descriptive word that fits and explain why it describes Papa, meeting both clauses of the standard.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.18227213797438516,
+        "dense_rank": 17,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 20.97462238572294,
+        "rerank_score": 0.08387323468923569,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify and explain the use of descriptive words in texts. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.T.T.4.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use poetic techniques to create poems.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use simple words and/or phrases in poems.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Create poems that may or may not rhyme.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.18880494505494505,
+        "dense_rank": 64,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 128.80972343603884,
+        "rerank_score": 0.06908424943685532,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use poetic techniques to create poems using simple words and/or phrases that may or may not rhyme. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.P.EICC.4.g",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Make changes to a text based on self-evaluation or external feedback.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise the organization of the text to improve clarity and flow.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise ideas and information to enhance content and meaning.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise word choices to improve expression and impact.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise craft techniques to increase the text's effectiveness.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1838571182069166,
+        "dense_rank": 38,
+        "bm25_rank": 9,
+        "dense_score": 0.0,
+        "bm25_score": 21.033802545200004,
+        "rerank_score": 0.07407616078853607,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Make changes to the text based on self-evaluation or external feedback, revising the organization, ideas, information, word choices, and craft techniques in order to increase the text’s effectiveness. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.T.T.3.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use knowledge of opinion techniques to create opinion pieces.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Introduce the topic in the opinion piece.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "State an opinion about the topic.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Provide two or more reasons to support the opinion.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use linking words such as 'and' and 'because' to connect reasons to the opinion.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.18903008068636962,
+        "dense_rank": 63,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 27.239981180231666,
+        "rerank_score": 0.0651848092675209,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use knowledge of opinion techniques to create opinion pieces that introduce the topic, state an opinion about the topic, and provides two or more reasons to support the opinion with linking words and and because. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.T.T.1.c",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Describe traits of the main characters (I)",
+          "met": true,
+          "note": "Students describe Papa's character traits (kind, caring, generous, hardworking) in a Turn and Talk, performing the describe-traits act."
+        },
+        {
+          "clause": "Explain how the characters' words support the central message, lesson, or moral of the story (I)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Explain how the characters' actions support the central message, lesson, or moral of the story (I)",
+          "met": false,
+          "note": "Students select a trait and provide a reason using the sentence frame, linking a trait to a reason (action-based evidence), but the task asks why Papa is described that way — not explicitly how his actions support the story's central message/lesson/moral. The connection to a central message is not required by the prompt, so the explain-how-actions-support-message act is only thinly performed."
+        }
+      ],
+      "evidence": "'What does the author tell us about Papa? How would you describe him?' (He works hard to get Monica the moon. He is kind, caring, generous, hardworking, etc.)",
+      "evidence_page": 118,
+      "confidence": "high",
+      "rationale": "The describe-traits clause is met: during the Turn and Talk, students describe Papa as \"kind, caring, generous, hardworking\" in response to \"How would you describe him?\" The explain-how-actions-support-the-central-message clause is only partially met: in Part II of the response sheet, students complete \"I think Papa is __________ because __________,\" selecting a trait and giving a reason, which thinly connects a character trait to an action/reason but does not explicitly require students to identify or explain a central message, lesson, or moral of the story. The explain-how-words-support-the-central-message clause is not met: no activity asks students to connect characters' dialogue/words to a central message or moral.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.17032137639993505,
+        "dense_rank": 18,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 111.78717459595762,
+        "rerank_score": 0.2077179253101349,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.P.EICC.3.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Summarize sections of the text to maintain understanding.",
+          "met": false,
+          "note": "The teacher mentions that students will retell in the next lesson, but no summarizing occurs in this lesson."
+        },
+        {
+          "clause": "Visualize sections of the text to maintain understanding.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.17002709619147977,
+        "dense_rank": 41,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 19.120886707335654,
+        "rerank_score": 0.12226181477308273,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.P.ST.2.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Draw from knowledge of how authors consider context and audience to determine which information and ideas to highlight (I/C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Determine which text design is most accessible for the intended audience (I/C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Decide which word choices and language structures are most effective for the audience and purpose (I/C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Identify which craft techniques are most impactful in the text (I/C)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.17311062208366446,
+        "dense_rank": 50,
+        "bm25_rank": 5,
+        "dense_score": 0.0,
+        "bm25_score": 31.03517923445603,
+        "rerank_score": 0.08315727859735489,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Draw from knowledge of how authors consider context and audience to determine which information and ideas to highlight, which text design is most accessible, which word choices and language structures are most effective, and which craft techniques are most impactful. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L8",
+      "standard_code": "1.P.CP.2.a",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Communicate ideas clearly when presenting.",
+          "met": true,
+          "note": "Students communicate ideas clearly when sharing with partners and when called on to share with the whole group, receiving feedback on clear communication."
+        },
+        {
+          "clause": "Present information in an organized manner.",
+          "met": true,
+          "note": "Students present information using sentence stems, which provides organization to their oral presentations."
+        },
+        {
+          "clause": "Express ideas and information clearly through speech.",
+          "met": true,
+          "note": "Students express ideas clearly through speech in multiple turn-and-talk and sharing opportunities throughout the lesson."
+        }
+      ],
+      "evidence": "Cold call two to three students to share what they discussed with their partner. Encourage students to use the sentence stem 'The song is telling us _________.' … Encourage students to use the sentence stem 'The moon is described as __________.'",
+      "evidence_page": 117,
+      "confidence": "high",
+      "rationale": "Throughout the lesson, students communicate clearly to present ideas and information orally. In Opening A, they share using sentence stems: 'The song is telling us _________' and 'The moon is described as __________.' They participate in turn-and-talk discussions about verb tenses and moon descriptions. In Work Time A, they answer questions about characters and setting. In Closing A, they share imaginatively using the Pinky Partners protocol: 'What do you imagine when you look up at the night sky?' The teacher gives feedback on clear communication: 'Kaylee, I heard you sharing in a loud and proud voice.' Students present ideas clearly, use organized sentence stems, and express information through speech across multiple contexts.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1763144841269841,
+        "dense_rank": 21,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 56.95235547972655,
+        "rerank_score": 0.07583804428577423,
+        "coverage_pass": true,
+        "coverage_family": "present"
+      },
+      "standard_raw_text": "Communicate clearly to present ideas, information, and texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     }
-  ]
+  ],
+  "usage": {
+    "calls": 12,
+    "input_tokens": 65455,
+    "output_tokens": 17333,
+    "cache_write_tokens": 19401,
+    "cache_read_tokens": 212113,
+    "batch_calls": 0,
+    "batch_input_tokens": 0,
+    "batch_output_tokens": 0,
+    "estimated_cost_usd": 0.793648,
+    "by_model": {
+      "claude-sonnet-4-5": {
+        "calls": 1,
+        "input_tokens": 9941,
+        "output_tokens": 12588,
+        "cache_write_tokens": 19401,
+        "cache_read_tokens": 0,
+        "batch_calls": 0,
+        "batch_input_tokens": 0,
+        "batch_output_tokens": 0,
+        "batch_cache_write_tokens": 0,
+        "batch_cache_read_tokens": 0,
+        "estimated_cost_usd": 0.291397
+      },
+      "claude-opus-4-6": {
+        "calls": 11,
+        "input_tokens": 55514,
+        "output_tokens": 4745,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 212113,
+        "batch_calls": 0,
+        "batch_input_tokens": 0,
+        "batch_output_tokens": 0,
+        "batch_cache_write_tokens": 0,
+        "batch_cache_read_tokens": 0,
+        "estimated_cost_usd": 0.502251
+      }
+    }
+  }
 }

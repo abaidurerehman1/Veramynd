@@ -1,496 +1,1266 @@
 {
   "schema_version": "1.0-judge",
   "quality_profile": "enterprise_k12",
-  "prompt_version": "align_judge.batch.v1",
+  "prompt_version": "align_judge.assembled.batch.v1",
   "judge_mode": "batch",
   "resource_id": "G1M2U3L3",
   "lesson_source": "stage1:G1M2U3L3",
-  "retrieve_file": "output\\retrieve\\G1M2U3L3.json",
+  "retrieve_file": "output/retrieve/G1M2U3L3.json",
   "standards_dir": "output\\normalize_standards",
-  "judge_model": "gpt-4.1",
+  "judge_model": "claude-sonnet-4-5",
   "escalate": true,
-  "escalate_model": "gpt-5",
-  "candidate_count": 10,
-  "judged": 10,
+  "escalate_model": "claude-opus-4-6",
+  "candidate_count": 26,
+  "coverage_pass_injected": [
+    "1.P.CP.2.a"
+  ],
+  "judged": 26,
   "failed": [],
   "complete": true,
   "by_status": {
     "full": 1,
     "partial": 3,
-    "none": 6
+    "none": 22
   },
   "grounding_rate": 1.0,
   "grounding_positive_n": 4,
+  "escalated_count": 9,
+  "escalation_rate": 0.34615384615384615,
+  "escalated_codes": [
+    "1.T.RA.1.c",
+    "1.P.ST.2.a",
+    "1.P.EICC.1.d",
+    "1.P.CP.1.d",
+    "1.P.CP.1.b",
+    "1.P.EICC.2.b",
+    "1.T.SS.2.a",
+    "1.P.EICC.4.d",
+    "1.P.AC.3.d"
+  ],
+  "input_scope_caveat_count": 0,
+  "input_scope_caveat_codes": [],
+  "prescreen_auto_none_count": 0,
+  "prescreen_auto_none_codes": [],
   "verdicts": [
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U3L3",
-      "standard_code": "1.P.EICC.2",
-      "matched_status": "partial",
+      "standard_code": "1.P.CP.2.e",
+      "matched_status": "none",
       "clauses": [
         {
-          "clause": "Engage in spoken or written dialogue as an author and audience.",
-          "met": true,
-          "note": "Students engage in structured spoken dialogue (turn-and-talk; Back-to-Back and Face-to-Face), taking roles as speaker and listener."
-        },
-        {
-          "clause": "Make intentional connections within texts.",
-          "met": true,
-          "note": "Students discuss features and evidence within a single model text (e.g., how sentences start/end, what in the model makes it high quality)."
-        },
-        {
-          "clause": "Make intentional connections between texts.",
+          "clause": "Recite all or part of significant poems appropriate for grade level.",
           "met": false,
-          "note": "Students analyze two texts but are not asked to relate or compare them; no explicit between-text connections are made."
+          "note": "not met"
         },
         {
-          "clause": "Make intentional connections beyond texts to other knowledge or experiences.",
+          "clause": "Recite all or part of significant speeches appropriate for grade level.",
           "met": false,
-          "note": "No clear task for students to connect the texts to personal experiences or outside knowledge."
+          "note": "not met"
         }
       ],
-      "evidence": "- Ask students to turn and talk with an elbow partner:\n- 'What do you notice about this writing that makes it high quality? What do you notice about how the sentences start and end?'",
-      "evidence_page": 371,
+      "evidence": "",
+      "evidence_page": null,
       "confidence": "high",
-      "rationale": "Students participate in spoken dialogue and make within-text observations using evidence from the model. However, they are not prompted to make explicit connections between different texts or to connect beyond the texts to real-life experiences.",
+      "rationale": "alignment=none",
       "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
       "retrieval": {
-        "rrf_score": 0.021904761904761906,
-        "dense_rank": 24,
-        "bm25_rank": 40,
-        "dense_score": 0.6006923,
-        "bm25_score": 79.08876746897937,
-        "rerank_score": 0.9988307356834412
+        "rrf_score": 0.23885458803491588,
+        "dense_rank": 6,
+        "bm25_rank": 7,
+        "dense_score": 0.0,
+        "bm25_score": 31.003063122384187,
+        "rerank_score": 0.13526608049869537,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Engage in written or spoken dialogue as author and audience for a variety of tasks and purposes, making intentional connections within, between, and beyond texts."
+      "standard_raw_text": "Build background knowledge by reciting all or part of significant poems and speeches as appropriate by grade level. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U3L3",
-      "standard_code": "1.P.AC.3.d",
-      "matched_status": "partial",
+      "standard_code": "1.P.EICC.1.b",
+      "matched_status": "none",
       "clauses": [
         {
-          "clause": "Consume multimodal texts that integrate various genres, text features, and craft techniques.",
-          "met": true,
-          "note": "Students listen to and analyze a model text with words and illustrations, discussing its features."
+          "clause": "Discuss personal and academic reading and writing preferences.",
+          "met": false,
+          "note": "not met"
         },
         {
-          "clause": "Produce multimodal texts that combine genres, text features, and craft techniques to influence target audiences and achieve specific purposes.",
+          "clause": "Refer to specific techniques, topics, modes, and genres that resonate most in discussion or writing.",
           "met": false,
-          "note": "Students do not create any multimodal texts in this lesson; production is planned for later."
+          "note": "not met"
         }
       ],
-      "evidence": "- Flip back through the pages of Model of Excellence #1 and invite students to give a thumbsup when they notice something that makes this writing high quality, or excellent.\n- Ask students to turn and talk with an elbow partner:\n- 'What do you notice about this writing that makes it high quality? What do you notice about how the sentences start and end?' (Responses will vary, but may include: It has complete sentences. The words explain the pictures. The words are written carefully.)",
-      "evidence_page": 371,
+      "evidence": "",
+      "evidence_page": null,
       "confidence": "high",
-      "rationale": "Students consume and analyze a multimodal model (text with illustrations), but they do not produce any multimodal texts in this lesson.",
+      "rationale": "alignment=none",
       "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
       "retrieval": {
-        "rrf_score": 0.014705882352941176,
+        "rrf_score": 0.23660980148883373,
         "dense_rank": 8,
-        "bm25_rank": null,
-        "dense_score": 0.638336,
-        "bm25_score": null,
-        "rerank_score": 0.9980910420417786
+        "bm25_rank": 5,
+        "dense_score": 0.0,
+        "bm25_score": 26.368410022307838,
+        "rerank_score": 0.03184078261256218,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Consume and produce multimodal texts, integrating a variety of genres, text features, and craft techniques to influence target audiences and achieve specific purposes. (I/C)"
+      "standard_raw_text": "Discuss or write about personal and academic reading and writing preferences, referring to specific techniques, topics, modes, and genres that resonate most. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U3L3",
-      "standard_code": "1.P.EICC.1.e",
+      "standard_code": "1.T.C.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Create texts in teacher-selected modes (print, digital, auditory, or visual).",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.23568528693528693,
+        "dense_rank": 2,
+        "bm25_rank": 22,
+        "dense_score": 0.0,
+        "bm25_score": 18.227435670435842,
+        "rerank_score": 0.033468663692474365,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Create texts in teacher-selected modes (e.g., print, digital, auditory, and/or visual). (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.T.RA.1.c",
       "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Develop group norms for participation in a community of readers and writers",
+          "clause": "Share relevant information through a variety of different modes (C)",
           "met": false,
-          "note": "Protocols are reviewed by the teacher; students do not co-create norms."
+          "note": "Students share observations about high-quality writing features during protocols, which is relevant information about the topic of high-quality work."
         },
         {
-          "clause": "Discuss texts with others in the group",
-          "met": true,
-          "note": "Students discuss model texts using structured discussion protocols."
+          "clause": "Share accurate information through a variety of different modes (C)",
+          "met": false,
+          "note": "Students share accurate observations about writing quality features (complete sentences, careful writing), which constitutes accurate information about the topic."
         },
         {
-          "clause": "Share individual writing with the group",
+          "clause": "Use a variety of different modes to share information (C)",
           "met": false,
-          "note": "No student writing is shared; only models from other classes are read."
-        },
-        {
-          "clause": "Listen to others as they share their writing",
-          "met": false,
-          "note": "Students listen to teacher read models, not peers sharing their own writing."
-        },
-        {
-          "clause": "Offer feedback on peers' writing",
-          "met": false,
-          "note": "Students analyze models but do not give feedback on classmates' writing."
-        },
-        {
-          "clause": "Respond to feedback received on own writing",
-          "met": false,
-          "note": "No student writing or feedback cycle occurs in this lesson."
+          "note": "Students share orally via turn-and-talk, Back-to-Back and Face-to-Face protocol, and whole-group sharing, but all modes are oral/spoken; no evidence of a genuine variety of different communication modes (e.g., written, visual, digital alongside oral)."
         }
       ],
-      "evidence": "Tell students they are going to use the Back-to-Back and Face-to-Face protocol to discuss what makes this writing high quality. Remind them that they used this protocol in past lessons and review as necessary using the Back-to-Back and Face-to-Face Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)",
+      "evidence": "'What did you see and hear in the writing that makes it high quality?' (Responses will vary, but may include: 'The writer told us exactly what each person liked to play with. Each sentence starts with a capital letter.')",
       "evidence_page": 373,
       "confidence": "high",
-      "rationale": "Students actively discuss texts using protocols, but they neither develop group norms nor share/listen to peers’ own writing or engage in feedback cycles.",
+      "rationale": "Students share relevant and accurate information about what makes writing high quality during multiple oral protocols (turn-and-talk, Back-to-Back and Face-to-Face, whole-group share). For example, students respond: \"The writer told us exactly what each person liked to play with. Each sentence starts with a capital letter.\" and \"It has complete sentences. The words explain the pictures.\" These responses are both relevant and accurate observations about the topic of high-quality work. However, the \"variety of different modes\" clause is only partially met: all sharing occurs through oral discussion formats (partner talk, protocol-based discussion, whole-group response). There is no evidence of students sharing information through written, visual, or other non-oral modes, so the variety-of-modes requirement is not fully satisfied.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.027757078986587184,
-        "dense_rank": 28,
+        "rrf_score": 0.23245015086944348,
+        "dense_rank": 11,
         "bm25_rank": 1,
-        "dense_score": 0.59516823,
-        "bm25_score": 139.62354766310338,
-        "rerank_score": 0.9977214932441711
+        "dense_score": 0.0,
+        "bm25_score": 58.77123520133727,
+        "rerank_score": 0.11494748294353485,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing individual writing, listening as others share their writing, and offering and responding to feedback. (I/C)"
+      "standard_raw_text": "Share relevant and accurate information through a variety of different modes. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.T.SS.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use descriptive words.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Craft texts that engage readers.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.2305809393839935,
+        "dense_rank": 9,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 31.249842707524326,
+        "rerank_score": 0.06421836465597153,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use descriptive words to craft engaging texts. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.T.T.1.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use knowledge of characters in narratives to create texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use knowledge of settings in narratives to create texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use knowledge of events in narratives to create texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Create texts that share real or imagined experiences and events.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Include a sense of closure in created texts.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.22725376507874112,
+        "dense_rank": 15,
+        "bm25_rank": 8,
+        "dense_score": 0.0,
+        "bm25_score": 25.20173815109071,
+        "rerank_score": 0.08388690650463104,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use knowledge of narrative techniques (e.g., characters, settings, events) to create texts that share real or imagined experiences and events with a sense of closure. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.P.ST.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Develop and apply knowledge of author, audience, and context to discern the purpose of texts being interpreted or constructed.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Establish the purpose of texts being interpreted or constructed based on knowledge of author, audience, and context.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Evaluate the extent to which texts achieve their purposes based on author, audience, and context.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.21984126984126984,
+        "dense_rank": 13,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 29.891237362203327,
+        "rerank_score": 0.03416381776332855,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Develop and apply knowledge of author, audience, and context to discern and establish the purpose of texts being interpreted or constructed and to evaluate the extent to which those texts achieve those purposes. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.T.SS.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use transition words or phrases to sequence events.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use transition words or phrases to sequence actions.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.21796078378451322,
+        "dense_rank": 30,
+        "bm25_rank": 11,
+        "dense_score": 0.0,
+        "bm25_score": 27.016111453029417,
+        "rerank_score": 0.05049098655581474,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use transition words or phrases, such as once upon a time, next, and last to sequence events and actions. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.P.EICC.1.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Build a repertoire of comprehension skills, strategies, and techniques (I)",
+          "met": false,
+          "note": "Students practice analyzing/noticing qualities of a model text, which is a comprehension-adjacent strategy (close examination of text), building toward a repertoire of comprehension skills."
+        },
+        {
+          "clause": "Build a repertoire of composition skills, strategies, and techniques (C)",
+          "met": false,
+          "note": "Students identify qualities of high-quality writing (details, conventions) that will guide their own composition, building composition knowledge; however, students do not actually compose in this lesson."
+        },
+        {
+          "clause": "Draw from these skills, strategies, and techniques as needed to interpret texts (I)",
+          "met": true,
+          "note": "Students draw on the newly built High-Quality Work anchor chart (a comprehension/analysis tool) to interpret Model of Excellence #2, applying the criteria they developed to evaluate a new text."
+        },
+        {
+          "clause": "Draw from these skills, strategies, and techniques as needed to construct texts (C)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "'What do you notice about this writing that makes it high quality? What do you notice about how the sentences start and end?' (Responses will vary, but may include: It has complete sentences. The words explain the pictures. The words are written carefully.)",
+      "evidence_page": 371,
+      "confidence": "high",
+      "rationale": "The lesson partially meets 1.P.EICC.1.d. Students build comprehension and composition repertoire by analyzing two Models of Excellence, noticing and wondering about qualities of high-quality writing (\"It has complete sentences. The words explain the pictures\"), and co-constructing a High-Quality Work anchor chart with criteria (\"includes details,\" \"follows conventions\"). Students then draw from these newly built strategies to interpret a second model text during the Back-to-Back and Face-to-Face protocol, where they apply the anchor chart criteria to evaluate Model of Excellence #2 (\"The writer told us exactly what each person liked to play with. Each sentence starts with a capital letter.\"). However, the composition-building clause is only partially met because students identify composition qualities but never actually compose a text in this lesson, and the \"draw from skills to construct texts\" clause is not met — the teacher states students will use the chart \"later in the unit\" but no construction occurs here.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.21076995920745922,
+        "dense_rank": 23,
+        "bm25_rank": 7,
+        "dense_score": 0.0,
+        "bm25_score": 21.523757562060165,
+        "rerank_score": 0.06321749836206436,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Build a repertoire of comprehension and composition skills, strategies, and techniques, drawing from them as needed to aid the interpretation and construction of texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.T.RA.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Work collaboratively or individually to conduct research on a shared or personal topic of interest.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Gather information from provided sources including print, digital, and personal communication.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Organize gathered information using graphic organizers or other support aids.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.20913884167626148,
+        "dense_rank": 5,
+        "bm25_rank": 4,
+        "dense_score": 0.0,
+        "bm25_score": 31.603581921492587,
+        "rerank_score": 0.03916102647781372,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Work collaboratively or individually to conduct research on a shared or personal topic of interest by gathering and organizing information from provided sources (including print, digital, and personal communication) using graphic organizers or other support aids. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U3L3",
       "standard_code": "1.P.CP.1.d",
-      "matched_status": "none",
+      "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Work with others to discuss topics.",
+          "clause": "Work with others to discuss topics (I/C)",
           "met": true,
-          "note": "Students frequently turn and talk and use a discussion protocol to analyze writing quality."
+          "note": "Students work in pairs (elbow partners) and small groups to discuss the topic of what makes writing high quality, satisfying the 'work with others to discuss topics' clause."
         },
         {
-          "clause": "Work with others to investigate questions.",
+          "clause": "Work with others to investigate questions (I/C)",
           "met": true,
-          "note": "Students ask and consider \"What do you notice?\" and \"What do you wonder?\" about model texts, citing evidence together."
+          "note": "Students collaboratively investigate the question of whether Model of Excellence #2 is high quality, using the anchor chart criteria and the Back-to-Back and Face-to-Face protocol to discuss and decide."
         },
         {
-          "clause": "Work with others to solve problems.",
+          "clause": "Work with others to solve problems (I/C)",
           "met": false,
-          "note": "No explicit collaborative problem-solving task is present; activities focus on analysis and discussion."
+          "note": "not met"
         },
         {
-          "clause": "Work with others to explore and create texts.",
-          "met": true,
-          "note": "Students explore models and collaboratively create a High-Quality Work anchor chart through shared writing."
+          "clause": "Work with others to explore and create texts (I/C)",
+          "met": false,
+          "note": "Students explore texts (analyzing Models of Excellence #1 and #2 collaboratively) but the 'create texts' component is teacher-led shared writing where the teacher scribes the anchor chart; students contribute ideas but do not themselves create a text collaboratively."
         }
       ],
-      "evidence": "- Flip back through the pages of Model of Excellence #1 and invite students to give a thumbsup when they notice something that makes this writing high quality, or excellent. - Ask students to turn and talk with an elbow partner: - 'What do you notice about this writing that makes it high quality? What do you notice about how the sentences start and end?' ... - Flip back through the pages of Model of Excellence #1 and invite students to give a thumbsup if they see or hear something that makes them wonder or question. - Ask students to turn and talk with an elbow partner: - 'What do you wonder about this writing?' ... - Tell students that now they will use what they've noticed and wondered to create a HighQuality Work anchor chart that they can use when doing their own excellent writing!",
-      "evidence_page": 371,
-      "confidence": "low",
-      "rationale": "Students collaborate to discuss and investigate questions about model texts and co-create an anchor chart, but there is no clear collaborative problem-solving task. [REJECTED: evidence missing or not found in lesson raw text]",
-      "grounded": false,
-      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
+      "evidence": "Tell students that you have one more piece of writing to share with them today, but that now they have a job to do! They are going to use the High-Quality Work anchor chart to analyze the work and decide if it is of high quality.",
+      "evidence_page": 373,
+      "confidence": "high",
+      "rationale": "The standard requires students to work with others to (a) discuss topics, (b) investigate questions, (c) solve problems, and (d) explore and create texts. Clauses (a) and (b) are met: students discuss what makes writing high quality in turn-and-talk pairs (\"Ask students to turn and talk with an elbow partner: 'What do you notice about this writing that makes it high quality?'\") and collaboratively investigate whether Model of Excellence #2 meets quality criteria using the Back-to-Back and Face-to-Face protocol. Clause (d) is partially met: students explore texts collaboratively (analyzing models) but the text-creation component is a teacher-led shared writing of the anchor chart where the teacher scribes. Clause (c), solving problems, is not met — no problem-solving task is present in the lesson.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.015625,
-        "dense_rank": null,
-        "bm25_rank": 4,
-        "dense_score": null,
-        "bm25_score": 111.93853502868471,
-        "rerank_score": 0.997569739818573
+        "rrf_score": 0.2013287091375413,
+        "dense_rank": 20,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 43.799162333537254,
+        "rerank_score": 0.08124986290931702,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)"
+      "standard_raw_text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U3L3",
-      "standard_code": "1.T.C.1",
+      "standard_code": "1.P.EICC.4.e",
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Identify the general purpose of a variety of texts.",
+          "clause": "Integrate ideas and information to construct an initial draft.",
           "met": false,
-          "note": "Students analyze features of high-quality writing (details, conventions) but do not identify authors’ purposes."
+          "note": "not met"
         },
         {
-          "clause": "Identify the target audience of a variety of texts.",
+          "clause": "Select words, phrases, and sentences to include in the draft.",
           "met": false,
-          "note": "No tasks ask students to determine or discuss intended audience."
+          "note": "not met"
         },
         {
-          "clause": "Identify different modes of communication: print, digital, auditory, and visual.",
+          "clause": "Incorporate craft techniques to enhance the draft's effectiveness.",
           "met": false,
-          "note": "Modes of communication are not identified or compared."
+          "note": "not met"
         },
         {
-          "clause": "Create texts in teacher-selected modes such as print, digital, auditory, and/or visual.",
+          "clause": "Ensure the draft achieves the purpose of the text and resonates with the target audience.",
           "met": false,
-          "note": "Students do not create texts in this lesson; they discuss and co-construct an anchor chart."
+          "note": "not met"
         }
       ],
       "evidence": "",
       "evidence_page": null,
       "confidence": "high",
-      "rationale": "The lesson focuses on noticing details and conventions in model texts to define high-quality work, not on explaining author purpose/audience, identifying modes, or creating texts.",
+      "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.014492753623188406,
-        "dense_rank": 9,
-        "bm25_rank": null,
-        "dense_score": 0.6380741,
-        "bm25_score": null,
-        "rerank_score": 0.9801920652389526
-      },
-      "standard_raw_text": "Explain how authors of texts use language for a specific purpose and a target audience."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U3L3",
-      "standard_code": "1.P.EICC.2.d",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Interpret texts to analyze ideas.",
-          "met": true,
-          "note": "Students closely examine model texts and discuss what makes the writing high quality, citing observations and questions."
-        },
-        {
-          "clause": "Construct texts to evaluate ideas.",
-          "met": true,
-          "note": "Students co-construct a High-Quality Work anchor chart to use in evaluating writing."
-        }
-      ],
-      "evidence": "- Tell students that now they are going to analyze the writing, or examine it closely, to determine what makes it high quality.\n- If productive, cue students to provide evidence and to listen carefully and seek to understand: \"What, in the Model of Excellence #1, makes you think so?\" (Responses will vary.) \"Who can tell us what your classmate said in your own words?\" (Responses will vary.)\n- Flip back through the pages of Model of Excellence #1 and invite students to give a thumbsup when they notice something that makes this writing high quality, or excellent.\n- Ask students to turn and talk with an elbow partner:\n- \"What do you notice about this writing that makes it high quality? What do you notice about how the sentences start and end?\" (Responses will vary, but may include: It has complete sentences. The words explain the pictures. The words are written carefully.)\n- Flip back through the pages of Model of Excellence #1 and invite students to give a thumbsup if they see or hear something that makes them wonder or question.\n- Ask students to turn and talk with an elbow partner:\n- \"What do you wonder about this writing?\" (Responses will vary.)\n- Synthesize students' noticings and wonderings by paraphrasing important aspects of highquality work that were unearthed during the discussion. Clarify with students as needed.\n- Give students specific, positive feedback on their ability to notice and wonder about what made that writing high quality. (Example: \"Lamar noticed that the illustrations were beautiful, with lots of colors. Valeria wonders why the writing was done on purple paper.\")\n- Tell students that now they will use what they've noticed and wondered to create a HighQuality Work anchor chart that they can use when doing their own excellent writing!",
-      "evidence_page": 371,
-      "confidence": "low",
-      "rationale": "Students analyze model texts through discussion and questioning, then co-create an anchor chart to support evaluating writing quality. Both interpreting texts and constructing a text to aid evaluation are explicitly undertaken. [REJECTED: evidence missing or not found in lesson raw text]",
-      "grounded": false,
-      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.029437229437229435,
-        "dense_rank": 6,
-        "bm25_rank": 10,
-        "dense_score": 0.6397681,
-        "bm25_score": 98.70343852118407,
-        "rerank_score": 0.9801244735717773
-      },
-      "standard_raw_text": "Interpret and construct texts to aid the analysis and evaluation of texts and ideas. (I/C)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U3L3",
-      "standard_code": "1.P.EICC.4.c",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Generate ideas for writing by assessing prior knowledge.",
-          "met": true,
-          "note": "Students draw on what they know about high-quality work."
-        },
-        {
-          "clause": "Generate ideas for writing by gathering information from texts.",
-          "met": true,
-          "note": "Students analyze model texts to gather ideas."
-        },
-        {
-          "clause": "Generate ideas for writing by engaging in discussions with others.",
-          "met": true,
-          "note": "Students discuss ideas with partners and the group."
-        }
-      ],
-      "evidence": "Tell students that now they will use what they've noticed and wondered to create a High-Quality Work anchor chart that they can use when doing their own excellent writing! ... Direct students' attention to the High-Quality Work anchor chart and invite them to turn and talk with an elbow partner: Circulate and listen in as students share ideas with one another. As you listen, select three or four students to share out their ideas.",
-      "evidence_page": 372,
-      "confidence": "low",
-      "rationale": "Students generate ideas for writing by drawing on prior knowledge, analyzing texts, and discussing with peers. [REJECTED: evidence missing or not found in lesson raw text]",
-      "grounded": false,
-      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
-        "rrf_score": 0.025904203323558164,
-        "dense_rank": 33,
-        "bm25_rank": 6,
-        "dense_score": 0.5862434,
-        "bm25_score": 103.97008237541074,
-        "rerank_score": 0.978702187538147
+        "rrf_score": 0.1998902473527439,
+        "dense_rank": 56,
+        "bm25_rank": 3,
+        "dense_score": 0.0,
+        "bm25_score": 35.93235539628303,
+        "rerank_score": 0.02345472201704979,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Generate ideas for content by assessing prior knowledge, gathering information from texts, and engaging in discussions with others. (C)"
+      "standard_raw_text": "Construct an initial draft by integrating ideas and information; selecting words, phrases, and sentences; and incorporating craft techniques that will best achieve the purpose of the text and resonate with the target audience. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U3L3",
-      "standard_code": "1.L.V.1",
+      "standard_code": "1.T.T.4.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify rhyme used in texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Identify alliteration used in texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Identify repeated lines used in texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Describe how rhyme, alliteration, and repeated lines are used to craft texts.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.19960835297278484,
+        "dense_rank": 62,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 43.20487792546285,
+        "rerank_score": 0.22922319173812866,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify and describe poetic techniques used to craft texts, including rhyme, alliteration, and repeated lines. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.P.CP.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Collaborate with others to determine group norms",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Establish goals and procedures for shared projects",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Facilitate productivity when working on shared projects",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.19916534181240064,
+        "dense_rank": 1,
+        "bm25_rank": 4,
+        "dense_score": 0.0,
+        "bm25_score": 14.387430409210737,
+        "rerank_score": 0.17882978916168213,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.T.T.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the problem in a simple plot.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Identify the solution in a simple plot.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.19039497765482016,
+        "dense_rank": 35,
+        "bm25_rank": 17,
+        "dense_score": 0.0,
+        "bm25_score": 19.133424191099056,
+        "rerank_score": 0.24514053761959076,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify a simple plot with a problem and solution. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.P.EICC.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Make use of texts to build knowledge, develop skills, make informed decisions, and/or share information and ideas (any one purpose suffices — OR list)",
+          "met": true,
+          "note": "Students actively use two texts (Model of Excellence #1 and #2) to build knowledge about what constitutes high-quality writing; they analyze the models, discuss noticings/wonderings with partners, and co-construct an anchor chart of criteria — this is making use of texts to build knowledge."
+        }
+      ],
+      "evidence": "Flip back through the pages of Model of Excellence #1 and invite students to give a thumbsup when they notice something that makes this writing high quality, or excellent. Ask students to turn and talk with an elbow partner: 'What do you notice about this writing that makes it high quality?'",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "The standard's four purposes (build knowledge, develop skills, make informed decisions, share information and ideas) form an OR list; any one student-performed purpose satisfies the clause. Students make use of texts (Model of Excellence #1 and #2) to build knowledge about high-quality writing. In Work Time B, students analyze Model of Excellence #1 through a notice-and-wonder protocol: \"invite students to give a thumbs-up when they notice something that makes this writing high quality\" and \"Ask students to turn and talk with an elbow partner: 'What do you notice about this writing that makes it high quality?'\" In the Closing, students use the Back-to-Back and Face-to-Face protocol to analyze Model of Excellence #2 against the High-Quality Work anchor chart, sharing observations such as \"The writer told us exactly what each person liked to play with.\" These are student-performed acts of using texts to build knowledge about writing quality, satisfying the substandard. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.19390758249907303,
+        "dense_rank": 7,
+        "bm25_rank": 12,
+        "dense_score": 0.0,
+        "bm25_score": 20.13999027829767,
+        "rerank_score": 0.11890106648206711,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Make use of texts to build knowledge, develop skills, make informed decisions, and share information and ideas. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.T.T.3.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use knowledge of opinion techniques to create opinion pieces.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Introduce the topic in the opinion piece.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "State an opinion about the topic.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Provide two or more reasons to support the opinion.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use linking words such as 'and' and 'because' to connect reasons to the opinion.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.19602637592717895,
+        "dense_rank": 63,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 28.48384541421513,
+        "rerank_score": 0.0714835450053215,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use knowledge of opinion techniques to create opinion pieces that introduce the topic, state an opinion about the topic, and provides two or more reasons to support the opinion with linking words and and because. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.T.SS.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify descriptive words in texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Explain the use of descriptive words in texts.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.18417040100168044,
+        "dense_rank": 17,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 48.60091971396399,
+        "rerank_score": 0.17635877430438995,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify and explain the use of descriptive words in texts. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.P.AC.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Craft words and phrases to influence the audience's responses, thoughts, decisions, and questions.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Achieve a specific purpose through word and phrase choices.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1811986322855888,
+        "dense_rank": 70,
+        "bm25_rank": 4,
+        "dense_score": 0.0,
+        "bm25_score": 30.14038884486301,
+        "rerank_score": 0.5854500532150269,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Craft words and phrases in order to influence the responses, thoughts, decisions, and questions of the target audience and achieve a specific purpose. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.T.T.3.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the author's opinion in opinion texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Identify supporting reasons used in opinion texts.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.19200984167736412,
+        "dense_rank": 61,
+        "bm25_rank": 3,
+        "dense_score": 0.0,
+        "bm25_score": 27.213068021370724,
+        "rerank_score": 0.09711815416812897,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify techniques used to craft opinion texts, including the author’s opinion and supporting reasons. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.P.EICC.4.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Link ideas and information to an organizational plan. (C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Highlight ideas and information that are most relevant, useful, and impactful. (C)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.19577469793887703,
+        "dense_rank": 4,
+        "bm25_rank": 20,
+        "dense_score": 0.0,
+        "bm25_score": 16.119228026539663,
+        "rerank_score": 0.040136780589818954,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Link ideas and information to the organization plan, highlighting ideas and information that are most relevant, useful, and impactful. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.T.SS.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use illustrations to add clarity and meaning to texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use page numbers to add clarity and meaning to texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use bold print to add clarity and meaning to texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use headings to add clarity and meaning to texts.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.19493844944997382,
+        "dense_rank": 3,
+        "bm25_rank": 8,
+        "dense_score": 0.0,
+        "bm25_score": 11.172890368492311,
+        "rerank_score": 0.04245159402489662,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use text features (e.g., illustrations, page numbers, bold print, headings) to add clarity and meaning to texts. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.P.AC.3.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Consume multimodal texts that integrate various genres, text features, and craft techniques (I)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Produce multimodal texts that combine genres, text features, and craft techniques to influence target audiences and achieve specific purposes (C)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.19437984496124033,
+        "dense_rank": 37,
+        "bm25_rank": 11,
+        "dense_score": 0.0,
+        "bm25_score": 19.212689895821157,
+        "rerank_score": 0.031157145276665688,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Consume and produce multimodal texts, integrating a variety of genres, text features, and craft techniques to influence target audiences and achieve specific purposes. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.T.T.4.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use poetic techniques to create poems.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use simple words and/or phrases in poems.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Create poems that may or may not rhyme.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.18845075379166287,
+        "dense_rank": 64,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 128.80972343603884,
+        "rerank_score": 0.04857776686549187,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use poetic techniques to create poems using simple words and/or phrases that may or may not rhyme. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.P.EICC.4.g",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Make changes to a text based on self-evaluation or external feedback.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise the organization of the text to improve clarity and flow.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise ideas and information to enhance content and meaning.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise word choices to improve expression and impact.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise craft techniques to increase the text's effectiveness.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1838571182069166,
+        "dense_rank": 38,
+        "bm25_rank": 7,
+        "dense_score": 0.0,
+        "bm25_score": 21.033802545200004,
+        "rerank_score": 0.04308939352631569,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Make changes to the text based on self-evaluation or external feedback, revising the organization, ideas, information, word choices, and craft techniques in order to increase the text’s effectiveness. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U3L3",
+      "standard_code": "1.P.CP.2.a",
       "matched_status": "full",
       "clauses": [
         {
-          "clause": "Acquire general, academic, and specialized vocabulary words and phrases through grade-level texts and content.",
+          "clause": "Communicate ideas clearly when presenting.",
           "met": true,
-          "note": "Students engage in the Interactive Word Wall protocol to learn vocabulary."
+          "note": "Students communicate ideas clearly about high-quality writing features"
         },
         {
-          "clause": "Use grade-level general, academic, and specialized vocabulary words and phrases to communicate in a variety of settings.",
+          "clause": "Present information in an organized manner.",
           "met": true,
-          "note": "Students use vocabulary in discussions and sentence creation."
+          "note": "Students present organized observations about writing quality"
+        },
+        {
+          "clause": "Express ideas and information clearly through speech.",
+          "met": true,
+          "note": "Students express ideas clearly through speech during the protocol"
         }
       ],
-      "evidence": "Tell students they are going to use the Interactive Word Wall protocol with new words added to the set to continue strengthening their comprehension and build their knowledge of vocabulary. ... Provide support and guidance as needed by reminding students of the definitions and encouraging them to use the word in a sentence.",
-      "evidence_page": 369,
+      "evidence": "Using a total participation technique, invite responses from the group: 'What did you see and hear in the writing that makes it high quality?' (Responses will vary, but may include: 'The writer told us exactly what each person liked to play with. Each sentence starts with a capital letter.')",
+      "evidence_page": 373,
       "confidence": "high",
-      "rationale": "Students acquire and use vocabulary through explicit instruction and practice in multiple settings.",
+      "rationale": "Students communicate clearly to present ideas and information throughout the lesson. In Closing and Assessment A, students use the Back-to-Back and Face-to-Face protocol to discuss what makes writing high quality, presenting organized observations such as 'The writer told us exactly what each person liked to play with. Each sentence starts with a capital letter.' Students express their ideas clearly through speech during whole-group and partner discussions.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
-        "rrf_score": 0.02487789987789988,
-        "dense_rank": 31,
-        "bm25_rank": 12,
-        "dense_score": 0.59296167,
-        "bm25_score": 96.00000216284722,
-        "rerank_score": 0.9771305322647095
+        "rrf_score": 0.1763144841269841,
+        "dense_rank": 21,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 56.95235547972655,
+        "rerank_score": 0.08275311440229416,
+        "coverage_pass": true,
+        "coverage_family": "present"
       },
-      "standard_raw_text": "General, Academic, & Specialized Vocabulary: Acquire and use general, academic, and specialized vocabulary words and phrases in a variety of settings."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U3L3",
-      "standard_code": "1.P.EICC.1",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Generate, understand, monitor, and revise personal and academic reading and writing goals.",
-          "met": false,
-          "note": "No goal-setting or reflection on goals occurs."
-        },
-        {
-          "clause": "Discuss or write about personal and academic reading and writing preferences with reference to specific techniques, topics, modes, and genres.",
-          "met": false,
-          "note": "Students analyze quality, not their own preferences."
-        },
-        {
-          "clause": "Select, read, and write texts of personal interest and academic relevance.",
-          "met": false,
-          "note": "Teacher provides model texts; students do not select or write texts in this lesson."
-        },
-        {
-          "clause": "Build a repertoire of comprehension and composition skills, strategies, and techniques.",
-          "met": true,
-          "note": "Students co-construct a High-Quality Work anchor chart about details and conventions."
-        },
-        {
-          "clause": "Draw from a repertoire of strategies to interpret texts.",
-          "met": true,
-          "note": "Students use the High-Quality Work anchor chart to analyze a second model text."
-        },
-        {
-          "clause": "Draw from a repertoire of strategies to construct texts.",
-          "met": false,
-          "note": "Application to their own writing is deferred to later lessons."
-        },
-        {
-          "clause": "Participate in a community of readers and writers by developing group norms.",
-          "met": false,
-          "note": "Protocols are reviewed by the teacher; students do not develop norms."
-        },
-        {
-          "clause": "Participate in a community of readers and writers by discussing texts.",
-          "met": true,
-          "note": "Students discuss what makes model writing high quality using class protocols."
-        },
-        {
-          "clause": "Participate in a community of readers and writers by sharing writing.",
-          "met": false,
-          "note": "Students do not share their own writing in this lesson."
-        },
-        {
-          "clause": "Participate in a community of readers and writers by listening to others and paraphrasing peers.",
-          "met": true,
-          "note": "Students are cued to listen carefully and restate classmates' ideas."
-        },
-        {
-          "clause": "Participate in a community of readers and writers by offering and responding to feedback.",
-          "met": false,
-          "note": "Feedback is given by the teacher, not students."
-        },
-        {
-          "clause": "Develop independence and autonomy as a reader and writer.",
-          "met": false,
-          "note": "Lesson is largely guided; independence as readers/writers is not the focus."
-        }
-      ],
-      "evidence": "Tell students that now they will use what they've noticed and wondered to create a High-Quality Work anchor chart that they can use when doing their own excellent writing!",
-      "evidence_page": 371,
-      "confidence": "low",
-      "rationale": "Students build and use a class anchor chart to analyze model texts and engage in structured discussion, but they do not set goals, choose texts, or produce their own writing in this lesson. [REJECTED: evidence missing or not found in lesson raw text]",
-      "grounded": false,
-      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.030158730158730156,
-        "dense_rank": 10,
-        "bm25_rank": 3,
-        "dense_score": 0.6351067,
-        "bm25_score": 114.75989643114517,
-        "rerank_score": 0.9768929481506348
-      },
-      "standard_raw_text": "Build an identity as a reader and writer, developing a repertoire of resources and tools to continuously expand participation as an active consumer and producer of texts."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U3L3",
-      "standard_code": "1.P.EICC.2.a",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Share real experiences by telling or writing stories.",
-          "met": false,
-          "note": "Students do not tell or write stories in this lesson; they analyze models for high-quality features."
-        },
-        {
-          "clause": "Share imagined experiences by telling or writing stories.",
-          "met": false,
-          "note": "No student storytelling (oral or written) of imagined experiences occurs."
-        },
-        {
-          "clause": "Interpret stories that tell or include real or imagined experiences.",
-          "met": false,
-          "note": "Students discuss conventions and quality of model texts, not the narrative content or meaning of stories."
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "Students analyze models to define high-quality work and create an anchor chart. They neither compose or share stories nor interpret the narrative content of stories in this lesson.",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.019075302025615408,
-        "dense_rank": 41,
-        "bm25_rank": 49,
-        "dense_score": 0.57579863,
-        "bm25_score": 73.65597128798458,
-        "rerank_score": 0.9425207376480103
-      },
-      "standard_raw_text": "Share real or imagined experiences by interpreting and constructing texts that tell or include stories. (I/C)"
+      "standard_raw_text": "Communicate clearly to present ideas, information, and texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     }
-  ]
+  ],
+  "usage": {
+    "calls": 10,
+    "input_tokens": 39113,
+    "output_tokens": 15236,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 192948,
+    "batch_calls": 0,
+    "batch_input_tokens": 0,
+    "batch_output_tokens": 0,
+    "estimated_cost_usd": 0.548407,
+    "by_model": {
+      "claude-sonnet-4-5": {
+        "calls": 1,
+        "input_tokens": 8261,
+        "output_tokens": 10413,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 19401,
+        "batch_calls": 0,
+        "batch_input_tokens": 0,
+        "batch_output_tokens": 0,
+        "batch_cache_write_tokens": 0,
+        "batch_cache_read_tokens": 0,
+        "estimated_cost_usd": 0.186798
+      },
+      "claude-opus-4-6": {
+        "calls": 9,
+        "input_tokens": 30852,
+        "output_tokens": 4823,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 173547,
+        "batch_calls": 0,
+        "batch_input_tokens": 0,
+        "batch_output_tokens": 0,
+        "batch_cache_write_tokens": 0,
+        "batch_cache_read_tokens": 0,
+        "estimated_cost_usd": 0.361608
+      }
+    }
+  }
 }

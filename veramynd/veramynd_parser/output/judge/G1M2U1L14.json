@@ -1,170 +1,897 @@
 {
   "schema_version": "1.0-judge",
   "quality_profile": "enterprise_k12",
-  "prompt_version": "align_judge.batch.v1",
+  "prompt_version": "align_judge.assembled.batch.v1",
   "judge_mode": "batch",
   "resource_id": "G1M2U1L14",
   "lesson_source": "stage1:G1M2U1L14",
-  "retrieve_file": "output\\retrieve\\G1M2U1L14.json",
+  "retrieve_file": "output/retrieve/G1M2U1L14.json",
   "standards_dir": "output\\normalize_standards",
-  "judge_model": "gpt-4.1",
+  "judge_model": "claude-sonnet-4-5",
   "escalate": true,
-  "escalate_model": "gpt-5",
-  "candidate_count": 10,
-  "judged": 10,
+  "escalate_model": "claude-opus-4-6",
+  "candidate_count": 25,
+  "coverage_pass_injected": [],
+  "judged": 25,
   "failed": [],
   "complete": true,
   "by_status": {
-    "full": 1,
-    "partial": 3,
-    "none": 6
+    "full": 6,
+    "partial": 4,
+    "none": 15
   },
   "grounding_rate": 1.0,
-  "grounding_positive_n": 4,
+  "grounding_positive_n": 10,
+  "escalated_count": 8,
+  "escalation_rate": 0.32,
+  "escalated_codes": [
+    "1.T.C.1.c",
+    "1.P.EICC.1.e",
+    "1.T.SS.1.b",
+    "1.P.EICC.4.c",
+    "1.T.T.1.c",
+    "1.T.RA.2.a",
+    "1.T.T.1.a",
+    "1.T.SS.2.b"
+  ],
+  "input_scope_caveat_count": 0,
+  "input_scope_caveat_codes": [],
+  "prescreen_auto_none_count": 0,
+  "prescreen_auto_none_codes": [],
   "verdicts": [
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L14",
-      "standard_code": "1.T.C.2",
-      "matched_status": "none",
+      "standard_code": "1.T.RA.1.c",
+      "matched_status": "full",
       "clauses": [
         {
-          "clause": "Identify who is speaking at various points in a text.",
-          "met": false,
-          "note": "No evidence students identify the narrator or speaker at any point."
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "The lesson focuses on story elements, not on identifying the narrator or speaker. There is no student activity or prompt about who is telling the story.",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.028814262023217248,
-        "dense_rank": 12,
-        "bm25_rank": 7,
-        "dense_score": 0.610669,
-        "bm25_score": 188.74634862526167,
-        "rerank_score": 0.9942639470100403
-      },
-      "standard_raw_text": "Investigate the relationships between authors and speakers in texts."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L14",
-      "standard_code": "1.P.EICC.3.d",
-      "matched_status": "partial",
-      "clauses": [
-        {
-          "clause": "Summarize sections of the text to maintain understanding.",
-          "met": false,
-          "note": "Students identify character/setting and role-play events, but they are not asked to summarize sections."
-        },
-        {
-          "clause": "Visualize sections of the text to maintain understanding.",
+          "clause": "Share relevant information about a topic.",
           "met": true,
-          "note": "Students act out specific sections of the text using a role-play protocol and puppets to support understanding."
-        }
-      ],
-      "evidence": "- Move students into pre-determined pairs and tell them they are going to use the Role-Play protocol to act out a few of the major events of Kitten's First Full Moon. Remind them that they have been using this protocol in the past few lessons, and review as necessary using the Role-Play Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)\n- Distribute Kitten's First Full Moon puppets and guide students through the protocol for the following sections of text:\n- -Pages 1-2\n- -Pages 7-8\n- -Pages 11-12\n- -Pages 19-22\n- -Pages 27-28",
-      "evidence_page": 182,
-      "confidence": "high",
-      "rationale": "Students visualize sections by enacting specific page ranges with puppets, which supports understanding. However, no task directs students to summarize sections of the text.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.022424242424242423,
-        "dense_rank": 15,
-        "bm25_rank": 50,
-        "dense_score": 0.603637,
-        "bm25_score": 107.68536448808204,
-        "rerank_score": 0.9932098984718323
-      },
-      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L14",
-      "standard_code": "1.T.T.2.a",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Identify the main topic in an expository text.",
-          "met": false,
-          "note": "Lesson is based on a narrative text, not expository."
+          "note": "Students share their thinking about the character aloud to the whole group."
         },
         {
-          "clause": "Identify supporting details in an expository text.",
-          "met": false,
-          "note": "No expository text or related activity."
-        },
-        {
-          "clause": "Recognize techniques used to craft expository texts.",
-          "met": false,
-          "note": "No expository text or related activity."
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "The lesson is focused on a narrative (Kitten's First Full Moon), not expository texts, so none of the clauses are addressed.",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.021604938271604937,
-        "dense_rank": 48,
-        "bm25_rank": 21,
-        "dense_score": 0.55776864,
-        "bm25_score": 137.77775078664416,
-        "rerank_score": 0.9931303858757019
-      },
-      "standard_raw_text": "Identify techniques used to craft expository texts, including main topic and supporting details. (I)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L14",
-      "standard_code": "1.T.RA.2",
-      "matched_status": "partial",
-      "clauses": [
-        {
-          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
+          "clause": "Share accurate information about a topic.",
           "met": true,
-          "note": "Students cite details from the book’s pictures to justify their description of the character."
+          "note": "Students share accurate details about the setting to the whole group."
         },
         {
-          "clause": "Explore various sources of information, including print, digital, and personal communication.",
-          "met": false,
-          "note": "Students work with a single story; no exploration or connections across multiple sources are required."
+          "clause": "Use a variety of communication modes to share information.",
+          "met": true,
+          "note": "Students use both visual (pictures) and print (words) modes to share information about character and setting."
         }
       ],
-      "evidence": "Direct students' attention to the blank lines in Part II. Tell students to write one or two sentences to describe how Kitten is acting and to explain what, from the pictures, helped them.",
+      "evidence": "Invite students to complete Part I of the Unit 1 Assessment response sheet. Remind them that they should use pictures and words to show their thinking.",
       "evidence_page": 180,
       "confidence": "high",
-      "rationale": "Students reference parts of the text (illustrations) to support their answers, but they do not explore multiple sources or make cross-source connections.",
+      "rationale": "Students share relevant and accurate information through multiple modes. In Work Time A (page 180), after turn-and-talk, students share out their thinking about the character and setting to the whole group. On the Unit 1 Assessment response sheet, students are directed to 'use pictures and words to show their thinking' about the main character and setting, demonstrating use of both visual and print modes to communicate information.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.15932816159250587,
+        "dense_rank": 11,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 58.77123520133727,
+        "rerank_score": 0.10534600168466568,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Share relevant and accurate information through a variety of different modes. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.P.EICC.4.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Link ideas and information to an organizational plan.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Highlight ideas and information that are most relevant, useful, and impactful.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1573164621855593,
+        "dense_rank": 4,
+        "bm25_rank": 11,
+        "dense_score": 0.0,
+        "bm25_score": 23.29276108082989,
+        "rerank_score": 0.07351923733949661,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Link ideas and information to the organization plan, highlighting ideas and information that are most relevant, useful, and impactful. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.P.EICC.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use texts to build knowledge (any one of the four purposes suffices).",
+          "met": true,
+          "note": "Students use the text Kitten's First Full Moon to build knowledge about story elements (character, setting) by listening, discussing, and writing about them."
+        }
+      ],
+      "evidence": "Invite students to complete Part I of the Unit 1 Assessment response sheet. [writing about character and setting after listening to the text]",
+      "evidence_page": 180,
+      "confidence": "low",
+      "rationale": "Students make use of the text Kitten's First Full Moon to build knowledge about story elements. In Work Time A (page 180), students listen to the text read aloud, then identify and describe the character and setting through turn-and-talk, whole-group discussion, and written responses on the assessment sheet. This demonstrates using the text to build knowledge, satisfying the OR-list purpose requirement. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.15599816885956258,
+        "dense_rank": 7,
+        "bm25_rank": 5,
+        "dense_score": 0.0,
+        "bm25_score": 22.35781010430744,
+        "rerank_score": 0.09150131046772003,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Make use of texts to build knowledge, develop skills, make informed decisions, and share information and ideas. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.T.C.1.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Create texts in a teacher-selected mode (e.g., print, digital, auditory, and/or visual)",
+          "met": true,
+          "note": "Students create a text (written responses with pictures and words) in a teacher-selected print mode on the assessment response sheet."
+        }
+      ],
+      "evidence": "Invite students to complete Part I of the Unit 1 Assessment response sheet. Remind them that they should use pictures and words to show their thinking.",
+      "evidence_page": 180,
+      "confidence": "high",
+      "rationale": "The standard requires students to create texts in a teacher-selected mode. The modes listed (print, digital, auditory, visual) are parenthetical examples joined by \"and/or,\" forming an interchangeable OR-list; any one mode suffices. In this lesson the teacher selects the print mode: students complete the Unit 1 Assessment response sheet using \"pictures and words to show their thinking,\" and later \"write one or two sentences to describe how Kitten is acting and to explain what, from the pictures, helped them.\" The student creates a text in a teacher-selected print mode, satisfying the clause.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.018265221017514596,
-        "dense_rank": 50,
-        "bm25_rank": 49,
-        "dense_score": 0.55219346,
-        "bm25_score": 107.94596681897039,
-        "rerank_score": 0.9921091198921204
+        "rrf_score": 0.15390658856988082,
+        "dense_rank": 2,
+        "bm25_rank": 17,
+        "dense_score": 0.0,
+        "bm25_score": 18.227435670435842,
+        "rerank_score": 0.13755792379379272,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+      "standard_raw_text": "Create texts in teacher-selected modes (e.g., print, digital, auditory, and/or visual). (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.P.EICC.1.e",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Develop group norms for participation in a community of readers and writers",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Discuss texts with others in the group",
+          "met": true,
+          "note": "Students discuss the text with an elbow partner via turn-and-talk, sharing their thinking about character and setting."
+        },
+        {
+          "clause": "Share individual writing with the group",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Listen to others as they share their writing",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Offer feedback on peers' writing",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Respond to feedback received on own writing",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "Invite students to turn and talk with an elbow partner: 'Who is the main character of this story? How would you describe the character?'",
+      "evidence_page": 180,
+      "confidence": "high",
+      "rationale": "The \"discuss texts\" clause is met: students engage in turn-and-talk with elbow partners about the character and setting of Kitten's First Full Moon (\"Invite students to turn and talk with an elbow partner: 'Who is the main character of this story? How would you describe the character?'\"), and later share out whole group. However, the remaining five clauses are not met. There is no activity in which students develop group norms, share their own writing with the group, listen to peers share writing, offer feedback on peers' writing, or respond to feedback on their own writing. The lesson focuses on an assessment and role-play, not on a writing-community sharing/feedback cycle.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.1481448412698413,
+        "dense_rank": 10,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 32.14994449396263,
+        "rerank_score": 0.09538844972848892,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing individual writing, listening as others share their writing, and offering and responding to feedback. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.T.SS.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use text features (e.g., illustrations, page numbers, bold print, headings) to add clarity and meaning to texts (C — the student uses text features in their own constructed texts)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.1463993639254884,
+        "dense_rank": 3,
+        "bm25_rank": 7,
+        "dense_score": 0.0,
+        "bm25_score": 19.069584663409508,
+        "rerank_score": 0.10122963786125183,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use text features (e.g., illustrations, page numbers, bold print, headings) to add clarity and meaning to texts. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.P.EICC.4.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Generate ideas for content by assessing prior knowledge",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Generate ideas for content by gathering information from texts",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Generate ideas for content by engaging in discussions with others",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.14520955826925977,
+        "dense_rank": 26,
+        "bm25_rank": 4,
+        "dense_score": 0.0,
+        "bm25_score": 22.902441863664965,
+        "rerank_score": 0.09451666474342346,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Generate ideas for content by assessing prior knowledge, gathering information from texts, and engaging in discussions with others. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.T.T.1.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use knowledge of characters in narratives to create texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use knowledge of settings in narratives to create texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use knowledge of events in narratives to create texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Create texts that share real or imagined experiences and events.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Include a sense of closure in created texts.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.14509959457077382,
+        "dense_rank": 15,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 55.56888117930904,
+        "rerank_score": 0.22627881169319153,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use knowledge of narrative techniques (e.g., characters, settings, events) to create texts that share real or imagined experiences and events with a sense of closure. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.P.CP.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Collaborate with others to determine group norms.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Establish goals and procedures for shared projects.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Facilitate productivity when working on shared projects.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1448403361344538,
+        "dense_rank": 1,
+        "bm25_rank": 9,
+        "dense_score": 0.0,
+        "bm25_score": 25.2920845034624,
+        "rerank_score": 0.06310169398784637,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.T.RA.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Work collaboratively or individually to conduct research on a shared or personal topic of interest.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Gather information from provided sources including print, digital, and personal communication.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Organize gathered information using graphic organizers or other support aids.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1446209478431039,
+        "dense_rank": 5,
+        "bm25_rank": 22,
+        "dense_score": 0.0,
+        "bm25_score": 20.793684829187352,
+        "rerank_score": 0.08326485753059387,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Work collaboratively or individually to conduct research on a shared or personal topic of interest by gathering and organizing information from provided sources (including print, digital, and personal communication) using graphic organizers or other support aids. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.T.T.1.c",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Describe traits of the main characters (I)",
+          "met": true,
+          "note": "Students circle a trait word and write sentences describing how Kitten is acting, which is describing a trait of the main character."
+        },
+        {
+          "clause": "Explain how the characters' words and/or actions support the central message, lesson, or moral of the story (I)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "'Based on the pictures on the Kitten's First Full Moon chart, which word would you use to describe how kitten is acting? Circle one.' ... Direct students' attention to the blank lines in Part II. Tell students to write one or two sentences to describe how Kitten is acting and to explain what, from the pictures, helped them.",
+      "evidence_page": 180,
+      "confidence": "high",
+      "rationale": "The first clause (describe traits of the main characters) is met: students circle a word describing how Kitten is acting and write sentences explaining their choice (\"Tell students to write one or two sentences to describe how Kitten is acting and to explain what, from the pictures, helped them\"). The second clause (explain how the characters' words and actions support the central message/lesson/moral) is not met: although the teacher mentions that students \"will think about how these events convey the story's central message,\" no student activity requires students to connect the character's words or actions to a central message. The role-play and discussion focus on recounting major events and noticing details about the moon, not on explaining how the character's behavior supports a moral or lesson. The teacher performs the central-message framing; students never produce the explanatory link.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.14167107350608144,
+        "dense_rank": 18,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 111.78717459595762,
+        "rerank_score": 0.24198146164417267,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.P.ST.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Develop knowledge of author, audience, and context to discern the purpose of texts being interpreted or constructed.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Apply knowledge of author, audience, and context to establish the purpose of texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Evaluate the extent to which texts achieve their purposes based on author, audience, and context.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.14138993316624895,
+        "dense_rank": 13,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 26.031975591242528,
+        "rerank_score": 0.1171637699007988,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Develop and apply knowledge of author, audience, and context to discern and establish the purpose of texts being interpreted or constructed and to evaluate the extent to which those texts achieve those purposes. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.P.EICC.4.g",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Make changes to a text based on self-evaluation or external feedback.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise the organization of the text to improve clarity and flow.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise ideas and information to enhance content and meaning.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise word choices to improve expression and impact.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Revise craft techniques to increase the text's effectiveness.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.13680739563092503,
+        "dense_rank": 38,
+        "bm25_rank": 7,
+        "dense_score": 0.0,
+        "bm25_score": 21.30434199295302,
+        "rerank_score": 0.15738341212272644,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Make changes to the text based on self-evaluation or external feedback, revising the organization, ideas, information, word choices, and craft techniques in order to increase the text’s effectiveness. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.T.RA.2.a",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion. (I)",
+          "met": true,
+          "note": "Students are directed to refer to specific parts of the text (the pictures on the Kitten's First Full Moon chart) to support their answer about how Kitten is acting, citing visual evidence from the text as the basis for their word choice."
+        }
+      ],
+      "evidence": "Tell students to write one or two sentences to describe how Kitten is acting and to explain what, from the pictures, helped them. ... 'I think Kitten is acting ______ because I see _____.'",
+      "evidence_page": 180,
+      "confidence": "high",
+      "rationale": "The standard 1.T.RA.2.a requires students to refer to parts of texts when supporting an idea, answer, or opinion (I). This is an OR-list: supporting an idea, an answer, or an opinion — any one suffices. In Part II of the Unit 1 Assessment, students are directed to circle a word describing how Kitten is acting based on pictures from the text, and then \"write one or two sentences to describe how Kitten is acting and to explain what, from the pictures, helped them,\" using the sentence frame \"I think Kitten is acting ______ because I see _____.\" This directs students to refer to a specific part of the text (the pictures) to support their answer. The student performs the act of citing textual evidence to justify a response.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.1339986299663719,
+        "dense_rank": 27,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 73.16883663497647,
+        "rerank_score": 0.1766122579574585,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Refer to parts of texts when supporting an idea, answer, or opinion. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.T.SS.2.a",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Identify descriptive words in texts.",
+          "met": true,
+          "note": "Students identify which descriptive word best describes how Kitten is acting by circling one of four word choices."
+        },
+        {
+          "clause": "Explain the use of descriptive words in texts.",
+          "met": true,
+          "note": "Students explain the use of the descriptive word they chose by writing how it describes Kitten's actions and what evidence from the pictures supports it."
+        }
+      ],
+      "evidence": "Read the four word choices aloud and review their definitions as necessary. Invite students to circle the word they think best describes how Kitten is acting in the pictures displayed on the Kitten's First Full Moon chart.",
+      "evidence_page": 180,
+      "confidence": "high",
+      "rationale": "Students identify and explain the use of descriptive words in the text. In Work Time A (page 180-182), students circle one of four descriptive word choices that best describes how Kitten is acting in the pictures from Kitten's First Full Moon. They then write one or two sentences explaining how Kitten is acting and what from the pictures helped them choose that descriptive word, using the sentence frame 'I think Kitten is acting ______ because I see _____.'",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.13928034294472652,
+        "dense_rank": 17,
+        "bm25_rank": 6,
+        "dense_score": 0.0,
+        "bm25_score": 20.97462238572294,
+        "rerank_score": 0.10067540407180786,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify and explain the use of descriptive words in texts. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.T.SS.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use transition words or phrases to sequence events.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use transition words or phrases to sequence actions.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.13765786452353618,
+        "dense_rank": 30,
+        "bm25_rank": 3,
+        "dense_score": 0.0,
+        "bm25_score": 29.10574706741969,
+        "rerank_score": 0.10145854949951172,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use transition words or phrases, such as once upon a time, next, and last to sequence events and actions. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.P.CP.2.a",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Communicate ideas clearly when presenting.",
+          "met": true,
+          "note": "Students communicate their ideas clearly when presenting to the whole group about the character and setting."
+        },
+        {
+          "clause": "Present information in an organized manner.",
+          "met": true,
+          "note": "Students present information in an organized manner when responding to questions about the text during whole-group discussion."
+        },
+        {
+          "clause": "Express ideas and information clearly through speech.",
+          "met": true,
+          "note": "Students express ideas and information clearly through speech during turn-and-talk and whole-group sharing."
+        }
+      ],
+      "evidence": "Invite students to turn and talk with an elbow partner: 'Who is the main character of this story? How would you describe the character?'",
+      "evidence_page": 180,
+      "confidence": "high",
+      "rationale": "Students communicate clearly to present ideas and information throughout the lesson. In Work Time A (page 180-182), students turn and talk with partners about the character and setting, then share out to the whole group. In Work Time B (page 182-183), students respond to questions about the moon and Kitten's actions using a total participation technique. These spoken presentations demonstrate clear communication of ideas and information.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.13909636222910216,
+        "dense_rank": 21,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 56.95235547972655,
+        "rerank_score": 0.08810634166002274,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Communicate clearly to present ideas, information, and texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.T.T.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Describe the connection between two individuals in a text.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Describe the connection between two events in a text.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Describe the connection between two ideas in a text.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Describe the connection between two pieces of information in a text.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.12209529259096528,
+        "dense_rank": 65,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 43.382740253533775,
+        "rerank_score": 0.27712076902389526,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Describe the connection between two individuals, events, ideas, or pieces of information in a text. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Explain concepts by interpreting texts.",
+          "met": true,
+          "note": "Students explain the concept of character traits by interpreting the text and pictures, writing about how Kitten is acting."
+        },
+        {
+          "clause": "Learn concepts by interpreting texts.",
+          "met": true,
+          "note": "Students learn the concepts of character and setting by interpreting Kitten's First Full Moon through discussion and identification."
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
+          "met": true,
+          "note": "Students construct texts (written responses with pictures) to demonstrate their understanding of character and setting concepts."
+        }
+      ],
+      "evidence": "Tell students to write one or two sentences to describe how Kitten is acting and to explain what, from the pictures, helped them.",
+      "evidence_page": 180,
+      "confidence": "high",
+      "rationale": "Students explain and learn concepts by interpreting and constructing texts. In Work Time A (page 180-182), students learn the concepts of character and setting by interpreting Kitten's First Full Moon through turn-and-talk discussions and whole-group sharing. They construct texts on the Unit 1 Assessment response sheet using 'pictures and words to show their thinking' about the character and setting. In Part II, students explain the concept of character traits by writing sentences about how Kitten is acting and what evidence from the pictures supports their thinking.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1339907762971999,
+        "dense_rank": 16,
+        "bm25_rank": 4,
+        "dense_score": 0.0,
+        "bm25_score": 29.515290904811064,
+        "rerank_score": 0.1064487025141716,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
@@ -175,277 +902,306 @@
         {
           "clause": "Explore how context shapes the author's decisions when interpreting texts.",
           "met": false,
-          "note": "No discussion or activity about author's decisions or context."
+          "note": "not met"
         },
         {
           "clause": "Explore how context shapes the audience's responses when interpreting texts.",
           "met": false,
-          "note": "No activity about audience response or context."
+          "note": "not met"
         },
         {
           "clause": "Explore how context shapes the author's decisions when constructing texts.",
           "met": false,
-          "note": "No text creation or author context discussion."
+          "note": "not met"
         },
         {
           "clause": "Explore how context shapes the audience's responses when constructing texts.",
           "met": false,
-          "note": "No text creation or audience context discussion."
+          "note": "not met"
         }
       ],
       "evidence": "",
       "evidence_page": null,
       "confidence": "high",
-      "rationale": "There is no exploration of author or audience context in the lesson.",
+      "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
-        "rrf_score": 0.023411829134720702,
-        "dense_rank": 28,
-        "bm25_rank": 23,
-        "dense_score": 0.5829326,
-        "bm25_score": 131.5728307194158,
-        "rerank_score": 0.9917804598808289
+        "rrf_score": 0.12903804347826087,
+        "dense_rank": 31,
+        "bm25_rank": 3,
+        "dense_score": 0.0,
+        "bm25_score": 24.08939896925803,
+        "rerank_score": 0.1083284318447113,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Explore how context shapes the author’s decisions and the audience’s responses during the interpretation and construction of texts. (I/C)"
+      "standard_raw_text": "Explore how context shapes the author’s decisions and the audience’s responses during the interpretation and construction of texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L14",
-      "standard_code": "1.T.T.1",
+      "standard_code": "1.T.T.1.a",
       "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue.",
+          "clause": "Identify characters used to craft a story.",
           "met": true,
-          "note": "Students identify character and setting and act out major events; dialogue is not addressed but key techniques are identified."
+          "note": "Students identify and describe the main character (Kitten) through turn-and-talk and written response ('Who is the main character?')."
         },
         {
-          "clause": "Identify a simple plot with a problem and solution.",
-          "met": false,
-          "note": "Students act out and discuss events, but do not explicitly identify the story’s problem and solution."
+          "clause": "Identify the setting used to craft a story.",
+          "met": true,
+          "note": "Students identify the setting through turn-and-talk and written response ('Where does the story take place?')."
         },
         {
-          "clause": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
+          "clause": "Identify major events used to craft a story.",
           "met": false,
-          "note": "Students describe how Kitten is acting, but do not explain how words/actions support the central message."
+          "note": "Students role-play sections of the story (acting out events), which involves engaging with major events, but they are never explicitly asked to identify or name the major events themselves — the identification/writing about major events is deferred to the next lesson. The role-play is a student act that touches major events but does not complete the 'identify' operation."
         },
         {
-          "clause": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures.",
+          "clause": "Identify dialogue used to craft a story.",
           "met": false,
-          "note": "No compare/contrast task across texts is assigned in this lesson."
-        },
-        {
-          "clause": "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure.",
-          "met": false,
-          "note": "Students write brief responses about character/setting, not a narrative text with closure."
+          "note": "not met"
         }
       ],
-      "evidence": "- Stop after reading page 10 and invite students to turn and talk with an elbow partner:\n- 'Who is the main character of this story? How would you describe the character?' (Kitten; curious, adventurous, brave, a cat with white fur)\n- Refocus students whole group and call one or two students to share out.\n- Direct students' attention to the Story Elements board and place the Story Elements Board Icon: Kitten's First Full Moon for character on the Story Elements board. Refer to Story Elements Board: Kitten's First Full Moon (answers, for teacher reference) as necessary.\n- Draw students' attention back to the text and continue reading through page 16.\n- Invite students to turn and talk with an elbow partner:\n- 'What is the setting of this story? Where and when does the story take place?' (It takes place outside, on Kitten's front porch. It takes place in the garden and fields. It takes place at night.)\n- Refocus students whole group and call one or two students to share out.\n- Place the Story Elements Board Icon: Kitten's First Full Moon for setting on the Story Elements board.",
+      "evidence": "'Who is the main character of this story? How would you describe the character?' (Kitten; curious, adventurous, brave, a cat with white fur)",
       "evidence_page": 180,
       "confidence": "high",
-      "rationale": "Students clearly identify narrative elements (character and setting) and act out major events, but do not identify problem/solution, compare across texts, or produce a narrative with closure, nor link traits to the central message.",
+      "rationale": "Students identify the character (Kitten) via turn-and-talk and a written response: \"'Who is the main character of this story? How would you describe the character?' (Kitten; curious, adventurous, brave, a cat with white fur).\" Students identify the setting via turn-and-talk and a written response: \"'What is the setting of this story? Where and when does the story take place?' (It takes place outside, on Kitten's front porch…at night.).\" Major events are partially addressed: students role-play sections of the text using puppets, engaging with events physically, but the lesson explicitly defers the identification and writing about major events to the next lesson — students never name or list the major events themselves in this lesson. Dialogue is never addressed; no activity asks students to identify dialogue in the story.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.03278688524590164,
-        "dense_rank": 1,
+        "rrf_score": 0.12608695652173912,
+        "dense_rank": 48,
         "bm25_rank": 1,
-        "dense_score": 0.7179803,
-        "bm25_score": 298.9517943363162,
-        "rerank_score": 0.9917550086975098
+        "dense_score": 0.0,
+        "bm25_score": 61.87149159619326,
+        "rerank_score": 0.11973544955253601,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Identify and use narrative techniques to shape understanding."
+      "standard_raw_text": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L14",
-      "standard_code": "1.T.T.2",
-      "matched_status": "none",
+      "standard_code": "1.T.SS.2.b",
+      "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
+          "clause": "Use descriptive words (C) — the student selects and employs descriptive words in their own composed text",
           "met": false,
-          "note": "No expository text or related activity."
+          "note": "Students choose a descriptive word (e.g., from four word choices) and insert it into a sentence frame they write, so they do use a descriptive word in writing — but the task is a single scaffolded sentence frame selecting from provided options, not crafting an engaging text."
         },
         {
-          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "clause": "Craft engaging texts (C) — the student produces a text that is crafted to engage readers",
           "met": false,
-          "note": "No such activity; focus is on narrative."
-        },
-        {
-          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
-          "met": false,
-          "note": "No expository writing or instruction."
+          "note": "not met"
         }
       ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "The lesson is based on a narrative text and does not address expository techniques or writing.",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.026916221033868093,
-        "dense_rank": 25,
-        "bm25_rank": 6,
-        "dense_score": 0.58431,
-        "bm25_score": 196.34440808799263,
-        "rerank_score": 0.9913613200187683
-      },
-      "standard_raw_text": "Identify and use expository techniques to shape understanding."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L14",
-      "standard_code": "1.T.T.3",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Identify techniques used to craft opinion texts, including the author's opinion and supporting reasons.",
-          "met": false,
-          "note": "No opinion text or related activity."
-        },
-        {
-          "clause": "Use knowledge of opinion techniques to create opinion pieces that introduce the topic, state an opinion about the topic, and provide two or more reasons to support the opinion with linking words such as 'and' and 'because'.",
-          "met": false,
-          "note": "No opinion writing or instruction."
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "No opinion writing or analysis is present in the lesson.",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.018874643874643875,
-        "dense_rank": 44,
-        "bm25_rank": 48,
-        "dense_score": 0.56148225,
-        "bm25_score": 108.27614141817949,
-        "rerank_score": 0.9910128712654114
-      },
-      "standard_raw_text": "Identify and use opinion techniques to shape understanding."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L14",
-      "standard_code": "1.T.T.1.c",
-      "matched_status": "full",
-      "clauses": [
-        {
-          "clause": "Describe traits of the main characters.",
-          "met": true,
-          "note": "Students describe Kitten's traits."
-        },
-        {
-          "clause": "Explain how the characters' words support the central message, lesson, or moral.",
-          "met": true,
-          "note": "Students explain how Kitten's actions and words relate to the story's message."
-        },
-        {
-          "clause": "Explain how the characters' actions support the central message, lesson, or moral.",
-          "met": true,
-          "note": "Students connect Kitten's actions to the story's message."
-        }
-      ],
-      "evidence": "Invite students to point to Part II on the Unit 1 Assessment response sheet and read the prompt aloud: 'Based on the pictures on the Kitten's First Full Moon chart, which word would you use to describe how kitten is acting? Circle one.' ... Tell students to write one or two sentences to describe how Kitten is acting and to explain what, from the pictures, helped them.",
+      "evidence": "'I think Kitten is acting ______ because I see _____.'",
       "evidence_page": 180,
       "confidence": "high",
-      "rationale": "Students explicitly describe character traits and connect actions and words to the story's central message.",
+      "rationale": "The standard requires students to use descriptive words to craft engaging texts (a Construction act). In Part II of the assessment, students circle a descriptive word and write one or two sentences using the frame \"I think Kitten is acting ______ because I see _____,\" inserting their chosen descriptive word. This shows the student selecting and deploying a descriptive word in writing, partially meeting the \"use descriptive words\" clause — but the task is a single scaffolded sentence-frame completion with a pre-selected word, not the crafting of an engaging text. The \"craft engaging texts\" clause is not met because the student is completing an assessment response sheet, not composing a text designed to engage a reader. The lesson's primary objective is identifying and describing story elements (character, setting), not composition with descriptive language.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
       "retrieval": {
-        "rrf_score": 0.031746031746031744,
-        "dense_rank": 3,
-        "bm25_rank": 3,
-        "dense_score": 0.68195635,
-        "bm25_score": 285.4859538392846,
-        "rerank_score": 0.9908038377761841
+        "rrf_score": 0.11941964285714288,
+        "dense_rank": 9,
+        "bm25_rank": 46,
+        "dense_score": 0.0,
+        "bm25_score": 10.155209649870024,
+        "rerank_score": 0.1908097118139267,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)"
+      "standard_raw_text": "Use descriptive words to craft engaging texts. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L14",
-      "standard_code": "1.P.EICC.3",
+      "standard_code": "1.P.EICC.1.b",
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Establish a purpose and set goals for reading",
+          "clause": "Discuss personal and academic reading and writing preferences.",
           "met": false,
-          "note": "Teacher states purposes via learning targets; students do not set goals."
+          "note": "not met"
         },
         {
-          "clause": "Monitor comprehension and adjust strategies as needed",
+          "clause": "Refer to specific techniques, topics, modes, and genres that resonate most in discussion or writing.",
           "met": false,
-          "note": "No student monitoring or adjustment of strategies is directed."
-        },
-        {
-          "clause": "Scan and skim the text to note useful structures and sections",
-          "met": false,
-          "note": "No scanning or skimming tasks are assigned to students."
-        },
-        {
-          "clause": "Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps",
-          "met": false,
-          "note": "Students recall earlier texts, but do not integrate prior knowledge to make sense of this text."
-        },
-        {
-          "clause": "Summarize and visualize sections of the text to maintain understanding",
-          "met": true,
-          "note": "Students role-play major events, which serves as visualization/summarization."
-        },
-        {
-          "clause": "Make and track predictions about upcoming events and information",
-          "met": false,
-          "note": "No prediction activity is included."
-        },
-        {
-          "clause": "Make, track, and support inferences about different levels of meaning",
-          "met": true,
-          "note": "Students choose a trait for Kitten and justify it with picture evidence."
-        },
-        {
-          "clause": "Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts",
-          "met": false,
-          "note": "Definitions are provided; students do not derive meanings from context."
+          "note": "not met"
         }
       ],
-      "evidence": "Invite students to point to Part II on the Unit 1 Assessment response sheet and read the prompt aloud:\n- \"Based on the pictures on the Kitten's First Full Moon chart, which word would you use to describe how kitten is acting? Circle one.\"\n- Read the four word choices aloud and review their definitions as necessary.\n- Invite students to circle the word they think best describes how Kitten is acting in the pictures displayed on the Kitten's First Full Moon chart.\n- Direct students' attention to the blank lines in Part II. Tell students to write one or two sentences to describe how Kitten is acting and to explain what, from the pictures, helped them.",
-      "evidence_page": 180,
-      "confidence": "low",
-      "rationale": "Students infer and justify character behavior from pictures and role-play major events, but do not set purposes, monitor comprehension, scan/skim, predict, or determine word meanings via context. [REJECTED: evidence missing or not found in lesson raw text]",
-      "grounded": false,
-      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
       "retrieval": {
-        "rrf_score": 0.027598020555767037,
-        "dense_rank": 14,
-        "bm25_rank": 11,
-        "dense_score": 0.6060908,
-        "bm25_score": 163.01787951253513,
-        "rerank_score": 0.990797758102417
+        "rrf_score": 0.12171768707482994,
+        "dense_rank": 8,
+        "bm25_rank": 12,
+        "dense_score": 0.0,
+        "bm25_score": 18.160712078634763,
+        "rerank_score": 0.1315556913614273,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals."
+      "standard_raw_text": "Discuss or write about personal and academic reading and writing preferences, referring to specific techniques, topics, modes, and genres that resonate most. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.T.T.2.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use knowledge of expository techniques to supply facts about the topic.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use knowledge of expository techniques to provide a sense of closure.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.11642139361211529,
+        "dense_rank": 60,
+        "bm25_rank": 6,
+        "dense_score": 0.0,
+        "bm25_score": 22.333770391262888,
+        "rerank_score": 0.17195560038089752,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L14",
+      "standard_code": "1.P.CP.2.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Recite all or part of significant poems appropriate for grade level.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Recite all or part of significant speeches appropriate for grade level.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.11664928040181591,
+        "dense_rank": 6,
+        "bm25_rank": 15,
+        "dense_score": 0.0,
+        "bm25_score": 12.269144520984206,
+        "rerank_score": 0.13230673968791962,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Build background knowledge by reciting all or part of significant poems and speeches as appropriate by grade level. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     }
-  ]
+  ],
+  "usage": {
+    "calls": 9,
+    "input_tokens": 36952,
+    "output_tokens": 15345,
+    "cache_write_tokens": 19401,
+    "cache_read_tokens": 154264,
+    "batch_calls": 0,
+    "batch_input_tokens": 0,
+    "batch_output_tokens": 0,
+    "estimated_cost_usd": 0.590643,
+    "by_model": {
+      "claude-sonnet-4-5": {
+        "calls": 1,
+        "input_tokens": 8219,
+        "output_tokens": 11119,
+        "cache_write_tokens": 19401,
+        "cache_read_tokens": 0,
+        "batch_calls": 0,
+        "batch_input_tokens": 0,
+        "batch_output_tokens": 0,
+        "batch_cache_write_tokens": 0,
+        "batch_cache_read_tokens": 0,
+        "estimated_cost_usd": 0.264196
+      },
+      "claude-opus-4-6": {
+        "calls": 8,
+        "input_tokens": 28733,
+        "output_tokens": 4226,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 154264,
+        "batch_calls": 0,
+        "batch_input_tokens": 0,
+        "batch_output_tokens": 0,
+        "batch_cache_write_tokens": 0,
+        "batch_cache_read_tokens": 0,
+        "estimated_cost_usd": 0.326447
+      }
+    }
+  }
 }

@@ -1,446 +1,1211 @@
 {
   "schema_version": "1.0-judge",
   "quality_profile": "enterprise_k12",
-  "prompt_version": "align_judge.batch.v1",
+  "prompt_version": "align_judge.assembled.batch.v1",
   "judge_mode": "batch",
   "resource_id": "G1M2U2L1",
   "lesson_source": "stage1:G1M2U2L1",
-  "retrieve_file": "output\\retrieve\\G1M2U2L1.json",
+  "retrieve_file": "output/retrieve/G1M2U2L1.json",
   "standards_dir": "output\\normalize_standards",
-  "judge_model": "gpt-4.1",
+  "judge_model": "claude-sonnet-4-5",
   "escalate": true,
-  "escalate_model": "gpt-5",
-  "candidate_count": 10,
-  "judged": 10,
+  "escalate_model": "claude-opus-4-6",
+  "candidate_count": 25,
+  "coverage_pass_injected": [],
+  "judged": 25,
   "failed": [],
   "complete": true,
   "by_status": {
-    "full": 1,
-    "partial": 4,
-    "none": 5
+    "full": 4,
+    "partial": 3,
+    "none": 18
   },
   "grounding_rate": 1.0,
-  "grounding_positive_n": 5,
+  "grounding_positive_n": 7,
+  "escalated_count": 7,
+  "escalation_rate": 0.28,
+  "escalated_codes": [
+    "1.P.ST.2.a",
+    "1.T.C.1.c",
+    "1.P.EICC.4.d",
+    "1.P.CP.1.d",
+    "1.P.EICC.1.e",
+    "1.P.EICC.2.c",
+    "1.P.EICC.1.d"
+  ],
+  "input_scope_caveat_count": 0,
+  "input_scope_caveat_codes": [],
+  "prescreen_auto_none_count": 0,
+  "prescreen_auto_none_codes": [],
   "verdicts": [
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U2L1",
-      "standard_code": "1.T.C.2",
-      "matched_status": "none",
+      "standard_code": "1.T.RA.1.c",
+      "matched_status": "full",
       "clauses": [
         {
-          "clause": "Identify who is speaking at various points in a text.",
-          "met": false,
-          "note": "Students do not identify the speaker or narrator at any point in the lesson."
+          "clause": "Share relevant information about a topic.",
+          "met": true,
+          "note": "Students share their new observations and questions about the sun, which are captured on the anchor chart."
+        },
+        {
+          "clause": "Share accurate information about a topic.",
+          "met": true,
+          "note": "Students share accurate information about sun patterns drawn from the text, captured on the anchor chart."
+        },
+        {
+          "clause": "Use a variety of communication modes to share information.",
+          "met": true,
+          "note": "Students share orally (spoken mode) and their ideas are recorded in writing (print mode) on the anchor chart."
         }
       ],
-      "evidence": "",
-      "evidence_page": null,
+      "evidence": "As students share out, clarify and capture their ideas on the Noticing and Wondering anchor chart, writing down the language they use as accurately as possible.",
+      "evidence_page": 215,
       "confidence": "high",
-      "rationale": "The lesson does not include any activity where students are asked to identify who is speaking or telling the story at different points in a text.",
+      "rationale": "Students share relevant and accurate information about the sun and its patterns in multiple modes. In Work Time B, students turn and talk with partners about sun patterns ('What is a pattern that the sun follows?'), and their responses are captured on the Patterns of the Sun anchor chart. In Closing and Assessment A, students share new observations and questions about the sun orally with partners and the whole group, and these ideas are recorded on the Noticing and Wondering anchor chart. The lesson uses both oral sharing (spoken mode) and written recording (print mode) to communicate information.",
       "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
-        "rrf_score": 0.019334952363160844,
-        "dense_rank": 41,
-        "bm25_rank": 46,
-        "dense_score": 0.5036241,
-        "bm25_score": 52.58677755215689,
-        "rerank_score": 0.9940189123153687
+        "rrf_score": 0.1701298128981894,
+        "dense_rank": 11,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 58.77123520133727,
+        "rerank_score": 0.05574401468038559,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Investigate the relationships between authors and speakers in texts."
+      "standard_raw_text": "Share relevant and accurate information through a variety of different modes. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U2L1",
-      "standard_code": "1.T.RA.2",
-      "matched_status": "none",
+      "standard_code": "1.T.RA.1.b",
+      "matched_status": "full",
       "clauses": [
         {
-          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
+          "clause": "Work collaboratively or individually to conduct research on a shared or personal topic of interest.",
           "met": true,
-          "note": "Students are prompted to cite specific parts of the informational text when answering."
+          "note": "Students conduct research on the shared topic of sun, moon, and star patterns by examining photographs and discussing them."
         },
         {
-          "clause": "Explore various sources of information, including print, digital, and personal communication.",
+          "clause": "Gather information from provided sources including print, digital, and personal communication.",
           "met": true,
-          "note": "Students examine photographs (print), read an informational text, and watch a time-lapse video while discussing with peers."
+          "note": "Students gather information from multiple provided sources: print text (Does the Sun Sleep?), digital video (time-lapse), and photographs."
+        },
+        {
+          "clause": "Organize gathered information using graphic organizers or other support aids.",
+          "met": true,
+          "note": "Information gathered by students is organized on the Patterns of the Sun anchor chart and the Noticing and Wondering anchor chart."
         }
       ],
-      "evidence": "Reread page 7 and invite students to turn and talk with an elbow partner:\n- 'What is a pattern that the sun follows?'\n- Use equity sticks to call on one or two students to share out.\n- If productive, use a Goal 3 Conversation Cue to encourage students to provide evidence:\n- 'What, in the text, makes you think so?' (Responses will vary.) ... Play the 'Observe Sunrise and Sunset' time-lapse video.\n- Tell students they will use the Think-Pair-Share protocol to discuss what they noticed and observed about the sun in the video.",
-      "evidence_page": null,
-      "confidence": "low",
-      "rationale": "Students cite evidence from the text during discussion and explore multiple sources (print text, video, and peer discussion) to build understanding about sun patterns. [REJECTED: evidence missing or not found in lesson raw text]",
-      "grounded": false,
-      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
+      "evidence": "Tell students that now they are going to get a chance to closely examine the pattern photographs that Elvin shared with them. Explain that they are going to use the Picture Tea Party protocol to view and discuss the pattern photographs.",
+      "evidence_page": 212,
+      "confidence": "high",
+      "rationale": "Students conduct research on the shared topic of sun, moon, and star patterns throughout the lesson. In Work Time A, they examine pattern photographs using the Picture Tea Party protocol. In Work Time B, they gather information from the informational text Does the Sun Sleep? (pages 4-9) and from the 'Observe Sunrise and Sunset' time-lapse video. The information they gather is organized using anchor charts (Patterns of the Sun anchor chart and Noticing and Wondering anchor chart), where their observations and questions are recorded.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
       "retrieval": {
-        "rrf_score": 0.027783137179239824,
-        "dense_rank": 13,
-        "bm25_rank": 11,
-        "dense_score": 0.5352531,
-        "bm25_score": 72.68223589527989,
-        "rerank_score": 0.9934765696525574
+        "rrf_score": 0.16079669365219518,
+        "dense_rank": 5,
+        "bm25_rank": 4,
+        "dense_score": 0.0,
+        "bm25_score": 31.603581921492587,
+        "rerank_score": 0.028701268136501312,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
+      "standard_raw_text": "Work collaboratively or individually to conduct research on a shared or personal topic of interest by gathering and organizing information from provided sources (including print, digital, and personal communication) using graphic organizers or other support aids. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U2L1",
-      "standard_code": "1.P.EICC.3.d",
+      "standard_code": "1.P.EICC.4.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Generate ideas for writing by assessing prior knowledge.",
+          "met": true,
+          "note": "Students assess their prior knowledge from Unit 1 and generate new ideas about the sun."
+        },
+        {
+          "clause": "Generate ideas for writing by gathering information from texts.",
+          "met": true,
+          "note": "Students generate ideas by gathering information from the informational text Does the Sun Sleep?"
+        },
+        {
+          "clause": "Generate ideas for writing by engaging in discussions with others.",
+          "met": true,
+          "note": "Students generate ideas through multiple partner and whole-group discussions about their observations."
+        }
+      ],
+      "evidence": "Reread page 7 and invite students to turn and talk with an elbow partner: 'What is a pattern that the sun follows?'",
+      "evidence_page": 213,
+      "confidence": "high",
+      "rationale": "Students generate ideas for content through all three required methods. They assess prior knowledge by reviewing their Unit 1 observations on the Noticing and Wondering anchor chart (Closing A). They gather information from texts by reading Does the Sun Sleep? and discussing patterns ('What is a pattern that the sun follows?' Work Time B). They engage in discussions with partners using the Picture Tea Party protocol (Work Time A) and Think-Pair-Share protocol (Work Time C) to discuss observations from photographs and video. Their generated ideas are captured on anchor charts.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.15574675324675324,
+        "dense_rank": 26,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 27.15844522060431,
+        "rerank_score": 0.09478617459535599,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Generate ideas for content by assessing prior knowledge, gathering information from texts, and engaging in discussions with others. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L1",
+      "standard_code": "1.P.EICC.2.b",
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Summarize sections of the text to maintain understanding.",
+          "clause": "Use texts to build knowledge, develop skills, make informed decisions, or share information and ideas (any one purpose).",
+          "met": true,
+          "note": "Students use the informational text Does the Sun Sleep? to build knowledge about sun patterns, then share that information through discussion and anchor chart recording."
+        }
+      ],
+      "evidence": "Invite students to turn and talk with an elbow partner: 'What is a pattern that the sun follows?' As students share out, clarify and capture their ideas on the Patterns of the Sun anchor chart.",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "Students use texts to build knowledge and share information. In Work Time B, they read the informational text Does the Sun Sleep? (pages 4-9) to learn about sun patterns, then discuss and share what they learned ('What is a pattern that the sun follows?'). In Work Time C, they watch the time-lapse video and use Think-Pair-Share to discuss and share their observations about sun patterns. Their shared information is captured on the Patterns of the Sun anchor chart. The students actively use texts for the purpose of building knowledge and sharing information. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.15534926175573743,
+        "dense_rank": 7,
+        "bm25_rank": 3,
+        "dense_score": 0.0,
+        "bm25_score": 22.76802852205359,
+        "rerank_score": 0.06786474585533142,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Make use of texts to build knowledge, develop skills, make informed decisions, and share information and ideas. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L1",
+      "standard_code": "1.P.ST.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Develop and apply knowledge of author, audience, and context to discern the purpose of texts being interpreted or constructed.",
           "met": false,
-          "note": "Students share notices and facts while the teacher records on anchor charts; there is no task where students summarize sections of the text."
+          "note": "not met"
         },
         {
-          "clause": "Visualize sections of the text to maintain understanding.",
+          "clause": "Establish the purpose of texts being interpreted or constructed (based on author, audience, and context).",
           "met": false,
-          "note": "Students view photographs, illustrations, and a video, but they are not asked to visualize text or create visual representations from sections of the text."
+          "note": "not met"
+        },
+        {
+          "clause": "Evaluate the extent to which texts achieve their purposes (based on author, audience, and context).",
+          "met": false,
+          "note": "not met"
         }
       ],
       "evidence": "",
       "evidence_page": null,
       "confidence": "high",
-      "rationale": "The lesson focuses on noticing patterns from visuals and discussing key facts during read-alouds. It does not have students summarize sections of the text or visualize text to support understanding.",
+      "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.02878726010616578,
-        "dense_rank": 2,
-        "bm25_rank": 19,
-        "dense_score": 0.5553818,
-        "bm25_score": 63.958307368799545,
-        "rerank_score": 0.9922377467155457
+        "rrf_score": 0.15507765621541006,
+        "dense_rank": 13,
+        "bm25_rank": 5,
+        "dense_score": 0.0,
+        "bm25_score": 28.410493725605736,
+        "rerank_score": 0.039302993565797806,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)"
+      "standard_raw_text": "Develop and apply knowledge of author, audience, and context to discern and establish the purpose of texts being interpreted or constructed and to evaluate the extent to which those texts achieve those purposes. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L1",
+      "standard_code": "1.P.EICC.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Discuss personal and academic reading and writing preferences.",
+          "met": false,
+          "note": "No activity has students discuss their personal or academic reading and writing preferences."
+        },
+        {
+          "clause": "Refer to specific techniques, topics, modes, and genres that resonate most in discussion or writing.",
+          "met": false,
+          "note": "No activity has students refer to specific techniques, topics, modes, or genres they prefer."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.15482216708023158,
+        "dense_rank": 8,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 26.368410022307838,
+        "rerank_score": 0.0313996784389019,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Discuss or write about personal and academic reading and writing preferences, referring to specific techniques, topics, modes, and genres that resonate most. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L1",
+      "standard_code": "1.T.C.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Create texts in a teacher-selected mode (e.g., print, digital, auditory, and/or visual). (C) — The parenthetical examples are illustrative, not separate required clauses; the standard requires the student to CREATE a text in ANY ONE teacher-selected mode.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.1529530492030492,
+        "dense_rank": 2,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 18.227435670435842,
+        "rerank_score": 0.04532622545957565,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Create texts in teacher-selected modes (e.g., print, digital, auditory, and/or visual). (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L1",
+      "standard_code": "1.P.CP.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Communicate ideas clearly when presenting.",
+          "met": true,
+          "note": "Students present their ideas clearly to the whole group when sharing observations and questions about the sun, moon, and stars."
+        }
+      ],
+      "evidence": "Use equity sticks to call on one or two students to share their responses with the whole group. Refocus students whole group and invite a few students to share out.",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "Students communicate clearly to present ideas and information throughout the lesson. In Opening A, students share their ideas about what Elvin wondered about with the whole group using equity sticks. In Work Time A, students share what they noticed in pattern photographs. In Work Time C, students share observations about the sun from the video with the whole group. In Closing A, students share new observations and questions about the sun. The lesson provides multiple opportunities for students to present ideas clearly through oral communication. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.14984482429335372,
+        "dense_rank": 21,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 56.95235547972655,
+        "rerank_score": 0.05321764573454857,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Communicate clearly to present ideas, information, and texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L1",
+      "standard_code": "1.P.CP.2.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Recite all or part of significant poems appropriate for grade level.",
+          "met": false,
+          "note": "No activity has students recite poems."
+        },
+        {
+          "clause": "Recite all or part of significant speeches appropriate for grade level.",
+          "met": false,
+          "note": "No activity has students recite speeches."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1484881463762852,
+        "dense_rank": 6,
+        "bm25_rank": 7,
+        "dense_score": 0.0,
+        "bm25_score": 31.003063122384187,
+        "rerank_score": 0.03337710723280907,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Build background knowledge by reciting all or part of significant poems and speeches as appropriate by grade level. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L1",
+      "standard_code": "1.P.CP.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Collaborate with others to determine group norms",
+          "met": false,
+          "note": "The teacher reviews the protocol norms; students do not collaborate to determine them."
+        },
+        {
+          "clause": "Establish goals and procedures for shared projects",
+          "met": false,
+          "note": "The teacher establishes the procedure; students do not establish goals or procedures themselves."
+        },
+        {
+          "clause": "Facilitate productivity when working on shared projects",
+          "met": false,
+          "note": "No evidence that students facilitate productivity; the teacher guides the protocol."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.14771737801149568,
+        "dense_rank": 1,
+        "bm25_rank": 6,
+        "dense_score": 0.0,
+        "bm25_score": 17.61499058685283,
+        "rerank_score": 0.07219190150499344,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L1",
+      "standard_code": "1.T.C.1.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the general purpose of a text (e.g., to tell stories, provide information, share opinions, explain ideas).",
+          "met": false,
+          "note": "The teacher tells students the purpose; students do not identify it themselves."
+        },
+        {
+          "clause": "Identify the target audience of a text.",
+          "met": false,
+          "note": "No activity has students identify the target audience of any text."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.14612433862433863,
+        "dense_rank": 29,
+        "bm25_rank": 7,
+        "dense_score": 0.0,
+        "bm25_score": 21.804778521505828,
+        "rerank_score": 0.05219215899705887,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify the general purpose (e.g., to tell stories, to provide information, to share opinions, to explain ideas) and target audience in a variety of texts. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L1",
+      "standard_code": "1.P.EICC.4.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Link ideas and information to an organizational plan. (C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Highlight ideas and information that are most relevant, useful, and impactful. (C)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.14597293352345114,
+        "dense_rank": 4,
+        "bm25_rank": 7,
+        "dense_score": 0.0,
+        "bm25_score": 19.31512088007893,
+        "rerank_score": 0.04115629568696022,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Link ideas and information to the organization plan, highlighting ideas and information that are most relevant, useful, and impactful. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L1",
+      "standard_code": "1.P.CP.1.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Work with others to discuss topics (I/C)",
+          "met": true,
+          "note": "Students discuss the topic of sun, moon, and stars observations with a partner, working collaboratively."
+        },
+        {
+          "clause": "Work with others to investigate questions (I/C)",
+          "met": true,
+          "note": "Students work with partners to investigate questions about sun patterns by observing a video and discussing their noticings and wonderings."
+        },
+        {
+          "clause": "Work with others to solve problems (I/C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Work with others to explore and create texts (I/C)",
+          "met": false,
+          "note": "Students contribute ideas collaboratively that are captured on a shared anchor chart (exploring/creating a text together), but the teacher scribes — the students contribute the content orally while the teacher does the writing, so the collaborative text creation is only partially student-performed."
+        }
+      ],
+      "evidence": "Invite students to Think-Pair-Share with an elbow partner: 'What do you notice about the sun in this video? What patterns do you notice the sun following in this video?'",
+      "evidence_page": 214,
+      "confidence": "low",
+      "rationale": "⚑ REVIEW: none-or-partial — The standard decomposes into four collaborative acts joined by commas (an OR-like list of collaborative purposes). Discussing topics is met: students repeatedly turn-and-talk with elbow partners (e.g., \"Invite students to turn and talk with an elbow partner: 'What are some things that Elvin wondered about?'\"). Investigating questions is met: students use Think-Pair-Share to investigate patterns of the sun (\"Invite students to Think-Pair-Share with an elbow partner: 'What do you notice about the sun in this video? What patterns do you notice the sun following in this video?'\"). Solving problems is not met — no problem-solving task appears. Exploring and creating texts is partially met: students collaboratively contribute ideas for the Noticing and Wondering anchor chart and the Patterns of the Sun anchor chart, but the teacher scribes (\"capture their ideas on the Noticing and Wondering anchor chart, writing down the language they use as accurately as possible\"), so the creation act is teacher-performed while students supply content orally. Multiple clauses are at least partially met, so alignment is partial.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.1458406690140845,
+        "dense_rank": 20,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 43.799162333537254,
+        "rerank_score": 0.08312490582466125,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)",
+      "needs_review": true,
+      "review_reason": "none-or-partial — Oral co-composition against a (C) construction substandard: students contribute content orally for the Noticing and Wondering anchor chart while the teacher scribes, and the substandard is tagged (I/C) which includes construction.",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L1",
+      "standard_code": "1.P.EICC.4.g",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Make changes to a text based on self-evaluation or external feedback.",
+          "met": false,
+          "note": "No activity has students make changes to a text based on evaluation or feedback."
+        },
+        {
+          "clause": "Revise the organization of the text to improve clarity and flow.",
+          "met": false,
+          "note": "No revision activity occurs."
+        },
+        {
+          "clause": "Revise ideas and information to enhance content and meaning.",
+          "met": false,
+          "note": "No revision activity occurs."
+        },
+        {
+          "clause": "Revise word choices to improve expression and impact.",
+          "met": false,
+          "note": "No revision activity occurs."
+        },
+        {
+          "clause": "Revise craft techniques to increase the text's effectiveness.",
+          "met": false,
+          "note": "No revision activity occurs."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1411739864864865,
+        "dense_rank": 38,
+        "bm25_rank": 8,
+        "dense_score": 0.0,
+        "bm25_score": 21.033802545200004,
+        "rerank_score": 0.06242683157324791,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Make changes to the text based on self-evaluation or external feedback, revising the organization, ideas, information, word choices, and craft techniques in order to increase the text’s effectiveness. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L1",
+      "standard_code": "1.P.EICC.1.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Develop group norms for participation in a community of readers and writers",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Discuss texts with others in the group",
+          "met": true,
+          "note": "Students discuss texts via turn-and-talk and Think-Pair-Share protocols throughout the lesson, sharing observations and ideas about the read-aloud and informational text."
+        },
+        {
+          "clause": "Share individual writing with the group",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Listen to others as they share their writing",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Offer feedback on peers' writing",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Respond to feedback received on own writing",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "Invite students to turn and talk with an elbow partner: 'What are some things that Elvin wondered about?'",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "The standard requires six separable acts: developing group norms, discussing texts, sharing individual writing, listening to others' writing, offering feedback, and responding to feedback. Only the \"discuss texts\" clause is met: students engage in multiple turn-and-talk and Think-Pair-Share discussions about the read-aloud and informational text (e.g., \"Invite students to turn and talk with an elbow partner: 'What are some things that Elvin wondered about?'\"). The remaining five clauses are not met: group norms (equity sticks, protocols) are introduced by the teacher with no student role in developing them; no individual student writing is shared with the group; no listening to peers' writing occurs; and no feedback cycle on writing is present. The lesson is focused on oral discussion of read-alouds and observations, not on a writing-sharing community. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.14379391100702577,
+        "dense_rank": 10,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 25.40321158780997,
+        "rerank_score": 0.046207211911678314,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing individual writing, listening as others share their writing, and offering and responding to feedback. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L1",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Explain concepts and processes by interpreting texts (I)",
+          "met": false,
+          "note": "Students interpret the informational text to identify a sun pattern, but their responses are recall/identification rather than explaining a concept or process; the explaining is thin."
+        },
+        {
+          "clause": "Learn concepts and processes by interpreting texts (I)",
+          "met": true,
+          "note": "Students interpret text illustrations and content to learn the concept of sun patterns (rising, moving across sky, setting), building new knowledge from the informational text."
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes (C)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "'What is a pattern that the sun follows?' (It shines during the day. We cannot see the sun at night.)",
+      "evidence_page": 213,
+      "confidence": "high",
+      "rationale": "The \"learn concepts by interpreting texts\" clause is met: students interpret the informational text Does the Sun Sleep? and the time-lapse video to learn about sun patterns, answering questions such as \"What do you notice about where the sun is in the sky in these three pictures?\" with responses like \"near the horizon, high in the sky, and then near the horizon again.\" The \"explain concepts by interpreting texts\" clause is partially met: students respond to interpretive questions (e.g., \"What is a pattern that the sun follows?\" → \"It shines during the day. We cannot see the sun at night\"), but their responses are closer to identification/recall than full explanation of a concept or process. The \"construct texts\" (C) clause is not met: the anchor chart writing is performed by the teacher (\"clarify and capture their ideas … writing down the language they use\"), so the construction act belongs to the teacher, not the students. No student-constructed text artifact is produced.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.13420369102730256,
+        "dense_rank": 16,
+        "bm25_rank": 5,
+        "dense_score": 0.0,
+        "bm25_score": 20.37773016680851,
+        "rerank_score": 0.08201652020215988,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L1",
+      "standard_code": "1.P.EICC.1.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Generate personal and academic reading and writing goals.",
+          "met": false,
+          "note": "No activity has students generate reading or writing goals."
+        },
+        {
+          "clause": "Understand personal and academic reading and writing goals.",
+          "met": false,
+          "note": "No goals are discussed."
+        },
+        {
+          "clause": "Monitor progress toward reading and writing goals.",
+          "met": false,
+          "note": "No goals are monitored."
+        },
+        {
+          "clause": "Discuss reading and writing goals.",
+          "met": false,
+          "note": "No goals are discussed."
+        },
+        {
+          "clause": "Revise reading and writing goals as appropriate.",
+          "met": false,
+          "note": "No goals are revised."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1363345605323929,
+        "dense_rank": 12,
+        "bm25_rank": 28,
+        "dense_score": 0.0,
+        "bm25_score": 16.940846263634725,
+        "rerank_score": 0.058711446821689606,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Generate, understand, monitor, and discuss personal and academic reading and writing goals, revising as appropriate. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L1",
+      "standard_code": "1.T.RA.2.a",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts to support an idea, answer, or opinion.",
+          "met": true,
+          "note": "Students are directed to refer to the text to support their answers about sun patterns, and they respond to the evidence prompt."
+        }
+      ],
+      "evidence": "If productive, use a Goal 3 Conversation Cue to encourage students to provide evidence: 'What, in the text, makes you think so?' (Responses will vary.)",
+      "evidence_page": 213,
+      "confidence": "high",
+      "rationale": "In Work Time B, after students discuss sun patterns from Does the Sun Sleep?, the teacher uses a Goal 3 Conversation Cue to prompt students to provide text evidence: 'What, in the text, makes you think so?' This directive has students refer to parts of the text to support their answers about sun patterns. Students respond to this prompt, referring to specific parts of the text to support their ideas.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1310380744163023,
+        "dense_rank": 27,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 73.16883663497647,
+        "rerank_score": 0.08279040455818176,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Refer to parts of texts when supporting an idea, answer, or opinion. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L1",
+      "standard_code": "1.T.SS.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use illustrations to add clarity and meaning to texts (C).",
+          "met": false,
+          "note": "Students observe illustrations but do not use them to add clarity to texts they are creating."
+        },
+        {
+          "clause": "Use page numbers to add clarity and meaning to texts (C).",
+          "met": false,
+          "note": "No activity has students use page numbers in texts they create."
+        },
+        {
+          "clause": "Use bold print to add clarity and meaning to texts (C).",
+          "met": false,
+          "note": "No activity has students use bold print in texts they create."
+        },
+        {
+          "clause": "Use headings to add clarity and meaning to texts (C).",
+          "met": false,
+          "note": "No activity has students use headings in texts they create."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1385758835758836,
+        "dense_rank": 3,
+        "bm25_rank": 6,
+        "dense_score": 0.0,
+        "bm25_score": 22.383876993279884,
+        "rerank_score": 0.0444660559296608,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use text features (e.g., illustrations, page numbers, bold print, headings) to add clarity and meaning to texts. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L1",
+      "standard_code": "1.T.SS.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use descriptive words.",
+          "met": false,
+          "note": "No activity has students use descriptive words in texts they create."
+        },
+        {
+          "clause": "Craft texts that engage readers.",
+          "met": false,
+          "note": "No activity has students craft texts to engage readers."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.13272876240775233,
+        "dense_rank": 9,
+        "bm25_rank": 24,
+        "dense_score": 0.0,
+        "bm25_score": 13.572265105994116,
+        "rerank_score": 0.062288835644721985,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use descriptive words to craft engaging texts. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L1",
+      "standard_code": "1.P.EICC.3.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Scan a text to find useful structures and sections.",
+          "met": false,
+          "note": "No activity has students scan a text to find useful structures or sections."
+        },
+        {
+          "clause": "Skim a text to quickly note parts that might help with comprehension or tasks.",
+          "met": false,
+          "note": "No activity has students skim a text; the teacher reads aloud without interruption."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1354530841872614,
+        "dense_rank": 22,
+        "bm25_rank": 5,
+        "dense_score": 0.0,
+        "bm25_score": 20.44402690297639,
+        "rerank_score": 0.04954195022583008,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Scan and skim the text, making note of structures and sections that might be most useful. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L1",
+      "standard_code": "1.T.T.2.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use knowledge of expository techniques to introduce a topic.",
+          "met": false,
+          "note": "No activity has students create an expository text with an introduction."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to supply facts about the topic.",
+          "met": false,
+          "note": "No activity has students create an expository text with facts."
+        },
+        {
+          "clause": "Use knowledge of expository techniques to provide a sense of closure.",
+          "met": false,
+          "note": "No activity has students create an expository text with closure."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.12550259019331186,
+        "dense_rank": 60,
+        "bm25_rank": 6,
+        "dense_score": 0.0,
+        "bm25_score": 25.333970472554153,
+        "rerank_score": 0.08190535008907318,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U2L1",
       "standard_code": "1.P.EICC.2.d",
-      "matched_status": "partial",
+      "matched_status": "none",
       "clauses": [
         {
           "clause": "Interpret texts to analyze ideas.",
-          "met": true,
-          "note": "Students interpret an informational text and its illustrations to identify and discuss patterns, citing evidence from the text."
+          "met": false,
+          "note": "Students notice and observe but do not analyze or evaluate; noticing patterns is observation, not analysis."
         },
         {
           "clause": "Construct texts to evaluate ideas.",
           "met": false,
-          "note": "Students share observations while the teacher records on anchor charts; there is no student-created text used to evaluate ideas."
-        }
-      ],
-      "evidence": "- Reread page 7 and invite students to turn and talk with an elbow partner:\n- 'What is a pattern that the sun follows?' (It shines during the day. We cannot see the sun\n- at night.)\n- Use equity sticks to call on one or two students to share out.\n- If productive, use a Goal 3 Conversation Cue to encourage students to provide evidence:\n- 'What, in the text, makes you think so?' (Responses will vary.)",
-      "evidence_page": 213,
-      "confidence": "high",
-      "rationale": "Students analyze ideas by interpreting an informational text (identifying sun patterns and citing text evidence). They do not construct texts to evaluate ideas; writing is teacher-scribed and focuses on recording observations, not evaluation.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.024250440917107582,
-        "dense_rank": 21,
-        "bm25_rank": 24,
-        "dense_score": 0.5244935,
-        "bm25_score": 60.283244987384826,
-        "rerank_score": 0.9913700819015503
-      },
-      "standard_raw_text": "Interpret and construct texts to aid the analysis and evaluation of texts and ideas. (I/C)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U2L1",
-      "standard_code": "1.P.EICC.3",
-      "matched_status": "partial",
-      "clauses": [
-        {
-          "clause": "Establish a purpose and set goals for reading",
-          "met": false,
-          "note": "Teacher states the purpose; students do not set goals themselves."
-        },
-        {
-          "clause": "Monitor comprehension and adjust strategies as needed",
-          "met": false,
-          "note": "No explicit student monitoring or strategy adjustment described."
-        },
-        {
-          "clause": "Scan and skim the text to note useful structures and sections",
-          "met": false,
-          "note": "Reading is done as a teacher read-aloud; no skimming/scanning task for students."
-        },
-        {
-          "clause": "Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps",
-          "met": true,
-          "note": "Students revisit prior notices/wonderings and add new thinking based on the new text/video."
-        },
-        {
-          "clause": "Summarize and visualize sections of the text to maintain understanding",
-          "met": false,
-          "note": "Students share ideas, but no clear summarizing/visualizing strategy is assigned to them."
-        },
-        {
-          "clause": "Make and track predictions about upcoming events and information",
-          "met": false,
-          "note": "No prediction activity appears."
-        },
-        {
-          "clause": "Make, track, and support inferences about different levels of meaning",
-          "met": true,
-          "note": "Students are prompted to explain why the astronomer shared photos and to cite text-based reasons."
-        },
-        {
-          "clause": "Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts",
-          "met": true,
-          "note": "Students discuss astronomer/astro and locate horizon using text/illustration context."
-        }
-      ],
-      "evidence": "Direct students' attention to the Noticing and Wondering anchor chart.\n- Review what students had noticed and wondered about the sun, moon, and stars during Unit 1 by reading the chart aloud.\n- Invite students to turn to an elbow partner and talk after providing 30 seconds of wait time for each of the following questions:\n- 'What are some new things you notice about the sun?' (Student responses will vary.)\n- 'What are new questions or wonders you have about the sun?' (Student responses will vary.)\n- Refocus whole group and call students to share out.\n- As students share out, clarify and capture their ideas on the Noticing and Wondering anchor chart, writing down the language they use as accurately as possible.",
-      "evidence_page": 215,
-      "confidence": "medium",
-      "rationale": "Students actively use some comprehension strategies (integrating prior knowledge, making inferences, and determining word meanings) during and after read-alouds. Other strategies (purpose-setting by students, monitoring, skimming, summarizing, predicting) are not evidenced.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.028594771241830064,
-        "dense_rank": 12,
-        "bm25_rank": 8,
-        "dense_score": 0.53841513,
-        "bm25_score": 73.5601734398799,
-        "rerank_score": 0.9907714128494263
-      },
-      "standard_raw_text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U2L1",
-      "standard_code": "1.T.T.2",
-      "matched_status": "partial",
-      "clauses": [
-        {
-          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
-          "met": false,
-          "note": "Students identify facts/patterns from an informational text, but do not explicitly identify main topic/supporting details or other expository techniques."
-        },
-        {
-          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
-          "met": true,
-          "note": "Students connect Elvin’s wondering about facts to the astronomer’s pattern photos, describing how the ideas relate."
-        },
-        {
-          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
-          "met": false,
-          "note": "No expository writing is produced; students only share observations/questions on an anchor chart without an introduction or closure."
-        }
-      ],
-      "evidence": "- 'Why do you think the astronomer gave Elvin photographs of patterns when Elvin was wondering if there were facts about the sun, moon, and stars?' (Student responses may vary; if necessary, guide them toward: the sun, moon, and stars follow patterns or there are patterns that have to do with the sun, moon, and stars.)",
-      "evidence_page": 212,
-      "confidence": "medium",
-      "rationale": "Students describe connections between ideas in an informational context, but they do not analyze expository techniques nor produce an expository piece with introduction and closure.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.0226010101010101,
-        "dense_rank": 20,
-        "bm25_rank": 39,
-        "dense_score": 0.52655596,
-        "bm25_score": 54.73230209017745,
-        "rerank_score": 0.9905576705932617
-      },
-      "standard_raw_text": "Identify and use expository techniques to shape understanding."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U2L1",
-      "standard_code": "1.T.T.2.b",
-      "matched_status": "full",
-      "clauses": [
-        {
-          "clause": "Describe the connection between two individuals in a text.",
-          "met": true,
-          "note": "Students discuss Elvin and the astronomer."
-        },
-        {
-          "clause": "Describe the connection between two events in a text.",
-          "met": true,
-          "note": "Students discuss events such as Elvin receiving photographs from the astronomer."
-        },
-        {
-          "clause": "Describe the connection between two ideas in a text.",
-          "met": true,
-          "note": "Students discuss the idea of patterns and facts about the sun, moon, and stars."
-        },
-        {
-          "clause": "Describe the connection between two pieces of information in a text.",
-          "met": true,
-          "note": "Students connect information from photographs, videos, and text about patterns."
-        }
-      ],
-      "evidence": "- Using a total participation technique, invite responses from the group:\n- 'Why do you think the astronomer gave Elvin photographs of patterns when Elvin was wondering if there were facts about the sun, moon, and stars?' (Student responses may vary; if necessary, guide them toward: the sun, moon, and stars follow patterns or there are patterns that have to do with the sun, moon, and stars.)",
-      "evidence_page": 212,
-      "confidence": "high",
-      "rationale": "Students explicitly discuss and describe connections between individuals, events, ideas, and information in the text.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.020887166236003445,
-        "dense_rank": 48,
-        "bm25_rank": 26,
-        "dense_score": 0.49784237,
-        "bm25_score": 59.67521886642875,
-        "rerank_score": 0.9891998767852783
-      },
-      "standard_raw_text": "Describe the connection between two individuals, events, ideas, or pieces of information in a text. (I)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U2L1",
-      "standard_code": "1.P.ST.1.a",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Use prior knowledge to identify relevant context components.",
-          "met": false,
-          "note": "Students recall prior observations, but they are not directed to identify components of context; they focus on noticing patterns in celestial bodies."
-        },
-        {
-          "clause": "Use formal or informal research to find contextual information.",
-          "met": false,
-          "note": "Students listen to a read-aloud and view a video to gather facts about sun patterns, but there is no explicit research task to find contextual information or key context components."
-        },
-        {
-          "clause": "Engage in discussions with others to determine key context components.",
-          "met": false,
-          "note": "Pair and group discussions center on observations and patterns, not on determining key components of context for interpreting or constructing texts."
+          "note": "No activity has students construct texts to evaluate ideas."
         }
       ],
       "evidence": "",
       "evidence_page": null,
-      "confidence": "medium",
-      "rationale": "The lesson emphasizes observing patterns of the sun through a read-aloud, photographs, and a video with peer discussion. It does not ask students to identify key components of context or to use research/discussion specifically to determine contextual information for interpreting or constructing texts.",
+      "confidence": "high",
+      "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.020309278350515464,
-        "dense_rank": 37,
-        "bm25_rank": 40,
-        "dense_score": 0.509418,
-        "bm25_score": 53.93084206779163,
-        "rerank_score": 0.9890318512916565
-      },
-      "standard_raw_text": "Use prior knowledge, formal or informal research, and discussions with others to identify the key components of context that are most relevant. (I/C)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U2L1",
-      "standard_code": "1.T.RA.1.a",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Ask questions about topics of interest for research.",
-          "met": true,
-          "note": "Students are prompted to ask and record questions about the sun, moon, and stars."
-        }
-      ],
-      "evidence": "Learning target: I can ask and record questions about what I notice in pictures and videos of the sun, moon, and stars.\n...\n- Invite students to turn to an elbow partner and talk after providing 30 seconds of wait time for each of the following questions:\n- 'What are new questions or wonders you have about the sun?' (Student responses will vary.)\n- Refocus whole group and call students to share out.\n- As students share out, clarify and capture their ideas on the Noticing and Wondering anchor chart, writing down the language they use as accurately as possible.",
-      "evidence_page": 215,
-      "confidence": "low",
-      "rationale": "Students are directly engaged in asking questions about topics of interest related to the sun, moon, and stars. [REJECTED: evidence missing or not found in lesson raw text]",
-      "grounded": false,
-      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
-        "rrf_score": 0.02564935064935065,
-        "dense_rank": 28,
-        "bm25_rank": 10,
-        "dense_score": 0.51757115,
-        "bm25_score": 73.201849614639,
-        "rerank_score": 0.9883291721343994
+        "rrf_score": 0.12509905381431108,
+        "dense_rank": 34,
+        "bm25_rank": 5,
+        "dense_score": 0.0,
+        "bm25_score": 27.081312050983815,
+        "rerank_score": 0.06726926565170288,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Ask questions about topics of interest for research. (I)"
+      "standard_raw_text": "Interpret and construct texts to aid the analysis and evaluation of texts and ideas. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U2L1",
-      "standard_code": "1.P.EICC.1",
+      "standard_code": "1.P.EICC.1.d",
       "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Generate, understand, monitor, and revise personal and academic reading and writing goals.",
+          "clause": "Build a repertoire of comprehension skills, strategies, and techniques (I)",
           "met": false,
-          "note": "No goal-setting or reflection on goals is included."
+          "note": "Students practice comprehension strategies (answering text-dependent questions, noticing/observing, connecting prior knowledge to new text), but the lesson exercises only a narrow slice of comprehension strategies (observation, recall, text evidence) rather than building a broad repertoire across multiple strategy types."
         },
         {
-          "clause": "Discuss or write about personal and academic reading and writing preferences with reference to specific techniques, topics, modes, and genres.",
+          "clause": "Build a repertoire of composition skills, strategies, and techniques (C)",
           "met": false,
-          "note": "Students do not discuss their own reading/writing preferences."
+          "note": "not met"
         },
         {
-          "clause": "Select, read, and write texts of personal interest and academic relevance.",
+          "clause": "Draw from these skills and strategies as needed to interpret texts (I)",
           "met": false,
-          "note": "Texts are teacher-selected and students do not independently write their own texts."
+          "note": "Students draw on observation and text-evidence skills to interpret an informational text and a video, but the drawing-from-repertoire is teacher-directed rather than student-selected ('as needed'), limiting the scope."
         },
         {
-          "clause": "Build and draw from a repertoire of comprehension and composition skills, strategies, and techniques to interpret and construct texts.",
-          "met": true,
-          "note": "Students interpret an informational text using discussion/evidence and contribute ideas to shared writing captured on anchor charts."
-        },
-        {
-          "clause": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing writing, listening to others, and offering and responding to feedback.",
-          "met": true,
-          "note": "Students use structured discussion protocols (turn-and-talk, share out) and add ideas that are recorded for the class."
-        },
-        {
-          "clause": "Develop independence and autonomy as a reader and writer.",
+          "clause": "Draw from these skills and strategies as needed to construct texts (C)",
           "met": false,
-          "note": "Activities are heavily teacher-led; independence/autonomy is not emphasized."
+          "note": "not met"
         }
       ],
-      "evidence": "- Reread page 7 and invite students to turn and talk with an elbow partner:\n- 'What is a pattern that the sun follows?' (It shines during the day. We cannot see the sun\n- at night.)\n- Use equity sticks to call on one or two students to share out.\n- If productive, use a Goal 3 Conversation Cue to encourage students to provide evidence:\n- 'What, in the text, makes you think so?' (Responses will vary.)\n- As students share out, clarify and capture their ideas on the Patterns of the Sun anchor chart, writing down the language they use as accurately as possible.",
+      "evidence": "'What is a pattern that the sun follows?' (It shines during the day. We cannot see the sun at night.)",
       "evidence_page": 213,
       "confidence": "high",
-      "rationale": "Students interpret an informational text and contribute to shared writing and discussions, showing engagement with comprehension and classroom writing. However, they do not set personal goals, select texts, express preferences, or demonstrate independent reading/writing, so only some aspects of the standard are met.",
+      "rationale": "The lesson partially meets the interpretation side of 1.P.EICC.1.d. Students draw on comprehension strategies—activating prior knowledge, observing details, answering text-dependent questions, and citing text evidence—to interpret both an informational read-aloud and a time-lapse video. For example, students answer \"'What is a pattern that the sun follows?' (It shines during the day. We cannot see the sun at night.)\" and respond to \"'What do you notice about where the sun is in the sky in these three pictures?' (near the horizon, high in the sky, and then near the horizon again).\" However, the repertoire exercised is narrow (observation and recall), and the strategies are teacher-directed rather than student-selected. The construction (C) clauses are not met: the only writing/composing act is shared writing where the teacher scribes students' oral contributions onto an anchor chart, so no student composition occurs.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.02439384979302188,
-        "dense_rank": 29,
-        "bm25_rank": 16,
-        "dense_score": 0.5168256,
-        "bm25_score": 66.44276109929702,
-        "rerank_score": 0.9882572293281555
+        "rrf_score": 0.11694711538461537,
+        "dense_rank": 23,
+        "bm25_rank": 12,
+        "dense_score": 0.0,
+        "bm25_score": 18.872571843422016,
+        "rerank_score": 0.07584924250841141,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Build an identity as a reader and writer, developing a repertoire of resources and tools to continuously expand participation as an active consumer and producer of texts."
+      "standard_raw_text": "Build a repertoire of comprehension and composition skills, strategies, and techniques, drawing from them as needed to aid the interpretation and construction of texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L1",
+      "standard_code": "1.T.C.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify print mode of communication.",
+          "met": false,
+          "note": "The teacher names the texts and their purposes, but students do not identify the mode of communication."
+        },
+        {
+          "clause": "Identify digital mode of communication.",
+          "met": false,
+          "note": "Students view a digital video but do not identify it as a digital mode of communication."
+        },
+        {
+          "clause": "Identify auditory mode of communication.",
+          "met": false,
+          "note": "No activity has students identify auditory mode."
+        },
+        {
+          "clause": "Identify visual mode of communication.",
+          "met": false,
+          "note": "Students view photographs and videos but do not identify them as visual modes of communication."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.14144566544566545,
+        "dense_rank": 14,
+        "bm25_rank": 3,
+        "dense_score": 0.0,
+        "bm25_score": 15.617002514550837,
+        "rerank_score": 0.03374963626265526,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify different modes of communication: print, digital, auditory, and visual. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     }
-  ]
+  ],
+  "usage": {
+    "calls": 8,
+    "input_tokens": 39904,
+    "output_tokens": 15318,
+    "cache_write_tokens": 0,
+    "cache_read_tokens": 154382,
+    "batch_calls": 0,
+    "batch_input_tokens": 0,
+    "batch_output_tokens": 0,
+    "estimated_cost_usd": 0.525633,
+    "by_model": {
+      "claude-sonnet-4-5": {
+        "calls": 1,
+        "input_tokens": 9009,
+        "output_tokens": 11213,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 19401,
+        "batch_calls": 0,
+        "batch_input_tokens": 0,
+        "batch_output_tokens": 0,
+        "batch_cache_write_tokens": 0,
+        "batch_cache_read_tokens": 0,
+        "estimated_cost_usd": 0.201042
+      },
+      "claude-opus-4-6": {
+        "calls": 7,
+        "input_tokens": 30895,
+        "output_tokens": 4105,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 134981,
+        "batch_calls": 0,
+        "batch_input_tokens": 0,
+        "batch_output_tokens": 0,
+        "batch_cache_write_tokens": 0,
+        "batch_cache_read_tokens": 0,
+        "estimated_cost_usd": 0.324591
+      }
+    }
+  }
 }

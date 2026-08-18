@@ -9,7 +9,7 @@ downstream trusts it.
 Built against real documents (in `../data/samples/`):
 
 - `ELA Grade 1 Module 2 Teacher Guide.pdf` — EL Education, 440 pages, 40 lessons
-  (**Batch-1 locked** through retrieve; **gold-4 judge measured**)
+  (**Batch-1 locked** through retrieve; **gold-4 judge measured**; all 40 judged)
 - `Grade 1 GA ELA Standards.xlsx` — Georgia ELA, 188 standards
 - `21111_RBtL_SSManual_L1.pdf` — Reading Roots Shared Story Teacher’s Manual
   Level 1 (**Stage-1 GO** — 14 lessons in `output/stage1_ssmanual/`; normalize →
@@ -19,8 +19,9 @@ Batch-1 gold retrieve (protected bar): **R@25 = 100%** on
 `output/retrieve_gold4/`. Live gold-4 judge uses
 [`prompts/assembled_judge_prompt.md`](veramynd_parser/prompts/assembled_judge_prompt.md)
 (engine + GA Grade 1 overlay), Anthropic Sonnet batch + Opus escalate,
-`--limit 25`: **16/20 (80%)** 3-class exact on judged unique pairs. Prior
-OpenAI `align_judge.v1.1` baseline was **18/19 = 94.7%**. See
+`--limit 25`: **15/20 (75%)** 3-class exact on judged unique pairs. Prior
+OpenAI `align_judge.v1.1` baseline was **18/19 = 94.7%**. All 40 EL lessons
+have live assembled verdicts in `output/judge/` (SME exact is gold-4 only). See
 [What's still incomplete](#whats-still-incomplete).
 
 **Dynamic Stage-1 (honest):** routes EL vs generic from document signals; generic
@@ -250,14 +251,17 @@ veramynd_parser/
   Gold eval is always `--limit 25` (do not retune retrieve to hide judge
   misses). After retrieve, a coverage pass can still judge activity-driven
   feedback/present codes that missed top 25. All four gold lessons re-judged
-  Anthropic batch `--no-cache --limit 25`: **16/20 (80.0%)** 3-class exact
-  on unique judged pairs (L1 6/7, L3 4/5, L6 5/7, U3L5 1/1). Binary
-  precision 100%, recall 88.9%. Leftover misses: L1 `1.P.EICC.4.c` (gold
-  full / json partial), L3 `1.T.SS.2.a` (gold partial / json none), L6
-  `1.L.V.3.a` (gold partial / json full), L6 `1.T.T.1.c` (gold partial /
-  json none). Unjudged gold none: L1 + L3 `1.P.EICC.4.e`. Prior OpenAI
-  `align_judge.v1.1` baseline: **18/19 (94.7%)**. All 40 EL lessons, and
-  Shared Story through judge, are **not** claimed. Close-read comprehension
+  Anthropic batch `--no-cache --limit 25`: **15/20 (75.0%)** 3-class exact
+  on unique judged pairs (L1 6/7, L3 4/5, L6 4/7, U3L5 1/1). Binary
+  precision 100%, recall 77.8%. Leftover misses: L1 `1.P.EICC.4.c` (gold
+  full / json none), L3 `1.P.CP.2.d` (gold partial / json none), L6
+  `1.L.V.3.a` (gold partial / json full), L6 `1.T.RA.2.a` (gold partial /
+  json none), L6 `1.T.T.1.c` (gold partial / json none). Unjudged gold
+  none: L1 + L3 `1.P.EICC.4.e`. Prior OpenAI `align_judge.v1.1` baseline:
+  **18/19 (94.7%)**. All 40 EL lessons have live assembled verdicts
+  (`output/retrieve/` 50-standard shortlist → `--limit 25` →
+  `output/judge/` + `output/result/*.csv`); SME exact is gold-4 only.
+  Shared Story through judge is **not** claimed. Close-read comprehension
   can be understated until Read-aloud Guides are in Stage-1 (P4 caveat;
   do not hand-edit labels).
 - **Any-publisher / any-framework claim** — architecture is
@@ -510,11 +514,12 @@ fences F1–F4 / F8 are encoded there; do not rewrite the engine. Scores
 **student acts** in Stage-1 steps. Ungrounded quotes become `none`.
 `align_judge_v1.md` is unused.
 
-Gold-4 eval: `--limit 25` on `output/retrieve_gold4/` (R@25 bar stays;
-do not retune retrieve for judge misses). After the retrieve shortlist, a
-**coverage pass** appends activity-driven feedback/present codes when the
-lesson has those tasks (`1.P.EICC.4.f`, `1.P.CP.1.c`, `1.P.CP.2.a`) even if
-they missed top 25. Opt out: `--no-coverage-pass`.
+Gold-4 eval: `--limit 25` on `output/retrieve/` (or `output/retrieve_gold4/`
+for the locked R@25 bar; do not retune retrieve for judge misses). After the
+retrieve shortlist, a **coverage pass** appends activity-driven
+feedback/present codes when the lesson has those tasks (`1.P.EICC.4.f`,
+`1.P.CP.1.c`, `1.P.CP.2.a`) even if they missed top 25. Opt out:
+`--no-coverage-pass`.
 
 Close-read lessons that only *cite* a supporting Read-aloud Guide (guide body
 not in Stage-1) get `input_scope_caveat` on named comprehension codes — scores
@@ -524,7 +529,7 @@ if the client shares the guides.
 ```bash
 pip install -e '.[judge]'   # openai + anthropic + dotenv
 veramynd-parser judge-standards \
-  --retrieve-file output/retrieve_gold4/G1M2U1L1.json \
+  --retrieve-file output/retrieve/G1M2U1L1.json \
   --lesson-file output/stage1/lessons/G1M2U1L1.json \
   --standards-dir output/normalize_standards \
   --out output/judge/G1M2U1L1.json \
@@ -580,12 +585,14 @@ Also writes an HTML audit dashboard next to the CSV (disable with `--no-html`).
 CSV columns include `needs_review`, `coverage_pass`, and `input_scope_caveat`.
 
 Client-facing CSVs (no retrieve scores; includes expert-vs-system compare) live
-under `output/reports/client/`.
+under `output/reports/client/`. Per-lesson CSVs for the live 40-lesson run:
+`output/result/<lesson>.csv`.
 
 **Gold metrics:** Batch-1 positives live in
 [`docs/_ga_g1_module2_goldset.md`](../docs/_ga_g1_module2_goldset.md). Use
 `python -m veramynd_parser.scripts.eval_r20` against `output/retrieve_gold4/` for R@10/20/25/30/50
-(protected bar: **R@25 == 100%**). Judge exact vs gold: `output/reports/gold_judge_summary.csv`.
+(protected bar: **R@25 == 100%**). Live gold-4 3-class exact: **15/20 (75%)**.
+Stale `output/reports/gold_judge_*.csv` may still show the prior OpenAI run.
 With `--from-gold` JSONL, batch also writes leaf-recall summaries
 (`output/reports/retrieve_gold_metrics.json`). Offline
 sweeps (`eval_merge_aggregation`, `eval_shortlist_rescue`) still replay cached

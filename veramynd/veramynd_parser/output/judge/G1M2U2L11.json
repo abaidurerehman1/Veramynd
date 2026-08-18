@@ -1,179 +1,580 @@
 {
   "schema_version": "1.0-judge",
   "quality_profile": "enterprise_k12",
-  "prompt_version": "align_judge.batch.v1",
+  "prompt_version": "align_judge.assembled.batch.v1",
   "judge_mode": "batch",
   "resource_id": "G1M2U2L11",
   "lesson_source": "stage1:G1M2U2L11",
-  "retrieve_file": "output\\retrieve\\G1M2U2L11.json",
+  "retrieve_file": "output/retrieve/G1M2U2L11.json",
   "standards_dir": "output\\normalize_standards",
-  "judge_model": "gpt-4.1",
+  "judge_model": "claude-sonnet-4-5",
   "escalate": true,
-  "escalate_model": "gpt-5",
-  "candidate_count": 10,
-  "judged": 10,
+  "escalate_model": "claude-opus-4-6",
+  "candidate_count": 25,
+  "coverage_pass_injected": [],
+  "judged": 25,
   "failed": [],
   "complete": true,
   "by_status": {
-    "full": 3,
+    "full": 5,
     "partial": 4,
-    "none": 3
+    "none": 16
   },
   "grounding_rate": 1.0,
-  "grounding_positive_n": 7,
+  "grounding_positive_n": 9,
+  "escalated_count": 8,
+  "escalation_rate": 0.32,
+  "escalated_codes": [
+    "1.T.C.1.c",
+    "1.P.CP.2.e",
+    "1.T.RA.1.c",
+    "1.T.SS.2.b",
+    "1.P.CP.1.d",
+    "1.P.EICC.2.b",
+    "1.P.AC.3.a",
+    "1.P.EICC.4.e"
+  ],
+  "input_scope_caveat_count": 0,
+  "input_scope_caveat_codes": [],
+  "prescreen_auto_none_count": 0,
+  "prescreen_auto_none_codes": [],
   "verdicts": [
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U2L11",
-      "standard_code": "1.P.EICC.2",
+      "standard_code": "1.T.T.1.e",
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Engage in spoken or written dialogue as an author and audience.",
-          "met": true,
-          "note": "Students engage in turn-and-talk and a structured partner protocol, taking speaker and listener roles to share their own notes."
+          "clause": "Use knowledge of characters in narratives to create texts.",
+          "met": false,
+          "note": "not met"
         },
         {
-          "clause": "Make intentional connections within texts.",
+          "clause": "Use knowledge of settings in narratives to create texts.",
           "met": false,
-          "note": "Students review notes and share information but are not directed to connect parts within a single text."
+          "note": "not met"
         },
         {
-          "clause": "Make intentional connections between texts.",
+          "clause": "Use knowledge of events in narratives to create texts.",
           "met": false,
-          "note": "The lesson does not ask students to relate or compare ideas across different texts."
+          "note": "not met"
         },
         {
-          "clause": "Make intentional connections beyond texts to other knowledge or experiences.",
-          "met": true,
-          "note": "Students link learned sky patterns to real-world actions by devising motions that represent day/night and other patterns."
-        }
-      ],
-      "evidence": "Ask students to turn and talk, and use equity sticks to select students to share their responses with the whole group: \"What is something we can do safely and respectfully with our hands or bodies to show the pattern of light and dark and how it makes day and night on earth?\"",
-      "evidence_page": 322,
-      "confidence": "low",
-      "rationale": "Students clearly participate in spoken dialogue and connect content to real-life experiences through movement. However, they are not asked to make explicit connections within or between texts in this lesson. [REJECTED: evidence missing or not found in lesson raw text]",
-      "grounded": false,
-      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.016129032258064516,
-        "dense_rank": 2,
-        "bm25_rank": null,
-        "dense_score": 0.58325714,
-        "bm25_score": null,
-        "rerank_score": 0.9989055395126343
-      },
-      "standard_raw_text": "Engage in written or spoken dialogue as author and audience for a variety of tasks and purposes, making intentional connections within, between, and beyond texts."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U2L11",
-      "standard_code": "1.P.EICC.1.e",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Develop group norms for participation in a community of readers and writers",
+          "clause": "Create texts that share real or imagined experiences and events.",
           "met": false,
-          "note": "Students review an existing protocol; they do not co-create norms."
+          "note": "not met"
         },
         {
-          "clause": "Discuss texts with others in the group",
+          "clause": "Include a sense of closure in created texts.",
           "met": false,
-          "note": "Students discuss patterns in the sky and share information from notes, not specific texts."
-        },
-        {
-          "clause": "Share individual writing with the group",
-          "met": false,
-          "note": "Students do independent notebook writing but do not share their writing with peers."
-        },
-        {
-          "clause": "Listen to others as they share their writing",
-          "met": false,
-          "note": "Peers share information orally; no sharing of writing is described."
-        },
-        {
-          "clause": "Offer feedback on peers' writing",
-          "met": false,
-          "note": "No peer feedback on writing occurs."
-        },
-        {
-          "clause": "Respond to feedback received on own writing",
-          "met": false,
-          "note": "No opportunity to receive/respond to feedback on writing is included."
+          "note": "not met"
         }
       ],
       "evidence": "",
       "evidence_page": null,
       "confidence": "high",
-      "rationale": "The lesson includes oral sharing about content and independent notebook writing, but students do not share their writing, listen to others’ writing, develop norms, or give/receive feedback on writing. Discussions are about patterns, not specific texts.",
+      "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
       "retrieval": {
-        "rrf_score": 0.027673192771084338,
-        "dense_rank": 23,
-        "bm25_rank": 4,
-        "dense_score": 0.54362357,
-        "bm25_score": 104.2644255772536,
-        "rerank_score": 0.9979037046432495
+        "rrf_score": 0.2416501240694789,
+        "dense_rank": 15,
+        "bm25_rank": 3,
+        "dense_score": 0.0,
+        "bm25_score": 55.56888117930904,
+        "rerank_score": 0.1551688015460968,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing individual writing, listening as others share their writing, and offering and responding to feedback. (I/C)"
+      "standard_raw_text": "Use knowledge of narrative techniques (e.g., characters, settings, events) to create texts that share real or imagined experiences and events with a sense of closure. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U2L11",
-      "standard_code": "1.P.CP.2",
+      "standard_code": "1.T.C.1.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Create texts in a teacher-selected mode (e.g., print, digital, auditory, and/or visual). (C)",
+          "met": true,
+          "note": "Students independently write an entry in their Sky notebook (print mode), a teacher-selected mode, thereby creating a text in print."
+        }
+      ],
+      "evidence": "Tell students that now they will have a chance to complete another entry in their Sky notebook, this time focusing on the moon. ... Circulate to support students as they write.",
+      "evidence_page": 325,
+      "confidence": "high",
+      "rationale": "The standard requires students to create texts in a teacher-selected mode; the parenthetical list (print, digital, auditory, visual) is illustrative, and satisfying any one mode suffices. In the Closing and Assessment section, students independently write an entry in their Sky notebook about the moon, guided by a displayed photograph: \"Tell students that now they will have a chance to complete another entry in their Sky notebook … Circulate to support students as they write.\" The mode is print, selected by the teacher. The student is the one creating the text (writing observations), satisfying the (C) construction tag and the student-actor gate.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.24011237026862026,
+        "dense_rank": 2,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 18.229002250276768,
+        "rerank_score": 0.09251228719949722,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Create texts in teacher-selected modes (e.g., print, digital, auditory, and/or visual). (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.P.CP.2.e",
       "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Communicate clearly to present ideas, information, and texts.",
+          "clause": "Recite all or part of significant poems appropriate for grade level to build background knowledge.",
           "met": true,
-          "note": "Students share information about a selected sky pattern with partners using their notes."
+          "note": "Students recite the grade-level poem 'Where Are They? The Sun, Moon, and Stars' aloud, with volunteers leading the class, satisfying the recite-poems clause."
         },
         {
-          "clause": "Integrate modes and genres appropriate to purpose and audience.",
-          "met": true,
-          "note": "Students use visual notes with pictures/labels while orally sharing; they also use gestures to represent patterns."
-        },
-        {
-          "clause": "Vary tone, pace, and nonverbal gestures to suit purpose and audience.",
+          "clause": "Recite all or part of significant speeches appropriate for grade level to build background knowledge.",
           "met": false,
-          "note": "Students use gestures, but there is no explicit instruction to vary tone or pace for audience/purpose."
-        },
-        {
-          "clause": "Engage in dialogue by asking and answering questions with audiences.",
-          "met": false,
-          "note": "Students answer prompts; the lesson does not direct them to ask questions of their audience."
-        },
-        {
-          "clause": "Build background knowledge by reciting significant poems and speeches appropriate for grade level.",
-          "met": true,
-          "note": "Students lead the class in reciting the unit poem with accompanying motions."
+          "note": "not met"
         }
       ],
-      "evidence": "- Tell them they are going to use the Back-to-Back and Face-to-Face protocol to share information about their selected pattern. Remind them that they used this protocol in Unit 1, and review as necessary using the Back-to-Back and Face-to-Face Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of the protocol.)\n- Lead students through three rounds of the Back-to-Back and Face-to-Face protocol, reminding them to use their notes sheet as they answer the following questions:\n- 'What pattern in the sky are you sharing about?' (Responses will vary, depending on chosen pattern.)\n- 'What are one or two pieces of information you learned about this pattern in the sky?' (Responses will vary, depending on chosen pattern.)\n- 'What is one thing you still wonder about for this pattern in the sky?' (Responses will vary, depending on chosen pattern.)",
-      "evidence_page": 324,
-      "confidence": "medium",
-      "rationale": "Students practice presentation by sharing information using notes with partners and recite a poem, but there is no explicit direction to modulate tone/pace or to ask questions of an audience, so not all presentation-skill clauses are met.",
+      "evidence": "Invite a student volunteer to lead the class in reciting the poem and doing any accompanying hand motions or gestures. Repeat as time allows with other student volunteers.",
+      "evidence_page": 321,
+      "confidence": "high",
+      "rationale": "The poems clause is met: in Opening A, students recite the poem \"Where Are They? The Sun, Moon, and Stars,\" with student volunteers leading the class (\"Invite a student volunteer to lead the class in reciting the poem and doing any accompanying hand motions or gestures\"). This is a grade-level poem recited to build background knowledge about sky patterns. The speeches clause is not met: no speech is recited or referenced anywhere in the lesson.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.027777777777777776,
-        "dense_rank": 3,
-        "bm25_rank": 24,
-        "dense_score": 0.5822419,
-        "bm25_score": 81.93686198769996,
-        "rerank_score": 0.9978280663490295
+        "rrf_score": 0.23885458803491588,
+        "dense_rank": 6,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 31.003063122384187,
+        "rerank_score": 0.08392566442489624,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Use presentation skills to tailor communication to target audiences for specific purposes."
+      "standard_raw_text": "Build background knowledge by reciting all or part of significant poems and speeches as appropriate by grade level. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.P.EICC.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Discuss personal and academic reading and writing preferences.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Refer to specific techniques, topics, modes, and genres that resonate most in discussion or writing.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.23660980148883373,
+        "dense_rank": 8,
+        "bm25_rank": 5,
+        "dense_score": 0.0,
+        "bm25_score": 26.368410022307838,
+        "rerank_score": 0.0707952156662941,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Discuss or write about personal and academic reading and writing preferences, referring to specific techniques, topics, modes, and genres that resonate most. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.T.RA.1.c",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Share relevant information about a topic (C)",
+          "met": true,
+          "note": "Students share information they learned about their selected sky pattern with a partner, drawing on their notes — the information is on-topic (relevant) and drawn from their research notes."
+        },
+        {
+          "clause": "Share accurate information about a topic (C)",
+          "met": true,
+          "note": "Students use their research notes (pictures, labels, facts gathered across the unit) to share information, grounding their sharing in documented observations and thus supporting accuracy."
+        },
+        {
+          "clause": "Use a variety of communication modes to share information (C)",
+          "met": false,
+          "note": "Students share information orally (Back-to-Back and Face-to-Face partner sharing, whole-group share-outs) and through physical gestures/motions representing sky patterns, and they write observations in their Sky Notebook — oral and written modes are present, plus gestural. However, the lesson's primary sharing vehicle is oral; the written mode (Sky Notebook) is an observation recording task rather than a sharing-with-an-audience act, and the gestures are a review activity rather than a communicative sharing mode. The variety is thin but present across at least two modes (oral sharing and written notebook entry)."
+        }
+      ],
+      "evidence": "'What are one or two pieces of information you learned about this pattern in the sky?' (Responses will vary, depending on chosen pattern.)",
+      "evidence_page": 324,
+      "confidence": "high",
+      "rationale": "The standard requires students to share relevant and accurate information through a variety of different modes (C — construction). In Work Time C, students share information about their selected sky pattern with partners using the Back-to-Back and Face-to-Face protocol: \"What are one or two pieces of information you learned about this pattern in the sky?\" Students use their research notes to share, supporting both relevance and accuracy. The \"variety of different modes\" clause is only partially met: students share orally with partners and the whole group, and they write observations in their Sky Notebook, but the written notebook entry is a recording task rather than a communicative sharing act directed at an audience, making the variety of modes thin. The gestural/body-motion activity (Work Time A) is a review exercise, not an information-sharing mode. Full alignment would require clearer use of multiple distinct communication modes (e.g., oral presentation plus a written or visual product shared with an audience).",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.23245015086944348,
+        "dense_rank": 11,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 58.77123520133727,
+        "rerank_score": 0.08929509669542313,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Share relevant and accurate information through a variety of different modes. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.T.SS.2.b",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Use descriptive words (in constructing/crafting texts)",
+          "met": false,
+          "note": "Students are directed to use adjectives and prepositions (descriptive words) from anchor charts while writing their Sky notebook entry, indicating student use of descriptive words during independent writing."
+        },
+        {
+          "clause": "Craft texts that engage readers (C — student produces/constructs a text)",
+          "met": false,
+          "note": "Students independently write a Sky notebook entry (a constructed text), but the task is a structured observation recording exercise guided by a photograph and anchor charts, not a task with instructional intent focused on crafting engaging texts for a reader."
+        }
+      ],
+      "evidence": "Remind students to use the Prepositions anchor chart, Adjectives anchor chart, and the Sun, Moon, and Stars Word Wall as necessary.",
+      "evidence_page": 325,
+      "confidence": "high",
+      "rationale": "Students independently write a Sky notebook entry about the moon (Closing and Assessment A), and the lesson directs them to use the Adjectives anchor chart, Prepositions anchor chart, and Word Wall while writing — pointing toward use of descriptive words in a constructed text. However, the instructional intent of the writing task is to record observations from a photograph, not to deliberately craft an engaging text using descriptive language. The use of descriptive words is incidental scaffolding (anchor charts available as reference) rather than the lesson's targeted skill, and there is no explicit instruction or student practice focused on making the text engaging for a reader. Both clauses are therefore partially met: descriptive words are prompted but not the lesson's focus, and the student produces a text but not one aimed at engaging readers.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.2305809393839935,
+        "dense_rank": 9,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 31.249842707524326,
+        "rerank_score": 0.11693547666072845,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use descriptive words to craft engaging texts. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.T.SS.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use transition words or phrases to sequence events.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use transition words or phrases to sequence actions.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.2237420042643923,
+        "dense_rank": 30,
+        "bm25_rank": 5,
+        "dense_score": 0.0,
+        "bm25_score": 25.662677121791972,
+        "rerank_score": 0.08844459801912308,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use transition words or phrases, such as once upon a time, next, and last to sequence events and actions. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.P.ST.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Develop knowledge of author, audience, and context to discern the purpose of texts being interpreted or constructed.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Apply knowledge of author, audience, and context to establish the purpose of texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Evaluate the extent to which texts achieve their purposes based on author, audience, and context.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.21984126984126984,
+        "dense_rank": 13,
+        "bm25_rank": 7,
+        "dense_score": 0.0,
+        "bm25_score": 28.410493725605736,
+        "rerank_score": 0.08135393261909485,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Develop and apply knowledge of author, audience, and context to discern and establish the purpose of texts being interpreted or constructed and to evaluate the extent to which those texts achieve those purposes. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.P.EICC.1.d",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Build a repertoire of comprehension skills, strategies, and techniques.",
+          "met": true,
+          "note": "Students review notes and prepare comprehension strategies for Science Talk"
+        },
+        {
+          "clause": "Build a repertoire of composition skills, strategies, and techniques.",
+          "met": true,
+          "note": "Students compose Sky notebook entry using writing strategies"
+        },
+        {
+          "clause": "Draw from these skills and strategies as needed to interpret texts.",
+          "met": true,
+          "note": "Students draw from notes to interpret and share information"
+        },
+        {
+          "clause": "Draw from these skills and strategies as needed to construct texts.",
+          "met": true,
+          "note": "Students draw from anchor charts and word wall to construct Sky notebook text"
+        }
+      ],
+      "evidence": "Invite students to review and reread each of their notes sheets.",
+      "evidence_page": 323,
+      "confidence": "high",
+      "rationale": "Students build and draw from a repertoire of comprehension and composition skills throughout the lesson. They review their notes sheets to prepare for a Science Talk (Work Time B), use notes to share information during the Back-to-Back and Face-to-Face protocol (Work Time C), and draw from anchor charts and word walls to complete a Sky notebook entry (Closing and Assessment A). All four clauses are met with student performance.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.21076995920745922,
+        "dense_rank": 23,
+        "bm25_rank": 12,
+        "dense_score": 0.0,
+        "bm25_score": 21.523757562060165,
+        "rerank_score": 0.10582978278398514,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Build a repertoire of comprehension and composition skills, strategies, and techniques, drawing from them as needed to aid the interpretation and construction of texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.T.RA.1.b",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Work collaboratively or individually to conduct research on a shared or personal topic of interest.",
+          "met": true,
+          "note": "Students select personal topic of interest from sky patterns"
+        },
+        {
+          "clause": "Gather information from provided sources including print, digital, and personal communication.",
+          "met": true,
+          "note": "Students gather information from their notes sheets (print sources)"
+        },
+        {
+          "clause": "Organize gathered information using graphic organizers or other support aids.",
+          "met": true,
+          "note": "Students organize information by selecting and marking notes sheet"
+        }
+      ],
+      "evidence": "Tell students that they will now review their notes on each of the patterns in the sky and decide which pattern they would like to speak about during the Science Talk in the next lesson.",
+      "evidence_page": 323,
+      "confidence": "high",
+      "rationale": "Students conduct research on a personal topic of interest by reviewing their notes sheets about sky patterns (Work Time B). They gather information from provided print sources (What Makes Day and Night, Patterns of the Moon, and Patterns of the Stars notes sheets) and organize the information by selecting which pattern to focus on and marking that notes sheet with a star. All three clauses are met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.20913884167626148,
+        "dense_rank": 5,
+        "bm25_rank": 4,
+        "dense_score": 0.0,
+        "bm25_score": 31.603581921492587,
+        "rerank_score": 0.05404859781265259,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Work collaboratively or individually to conduct research on a shared or personal topic of interest by gathering and organizing information from provided sources (including print, digital, and personal communication) using graphic organizers or other support aids. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.T.T.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the problem in a simple plot.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Identify the solution in a simple plot.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.20777149877149878,
+        "dense_rank": 35,
+        "bm25_rank": 7,
+        "dense_score": 0.0,
+        "bm25_score": 37.85944788642521,
+        "rerank_score": 0.10343971103429794,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify a simple plot with a problem and solution. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.T.T.4.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify rhyme used in texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Identify alliteration used in texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Identify repeated lines used in texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Describe how rhyme, alliteration, and repeated lines are used to craft texts.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.20349396857619811,
+        "dense_rank": 62,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 43.20487792546285,
+        "rerank_score": 0.08709483593702316,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify and describe poetic techniques used to craft texts, including rhyme, alliteration, and repeated lines. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
@@ -182,290 +583,620 @@
       "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Work with others to discuss topics.",
+          "clause": "Work with others to discuss topics (I/C)",
           "met": true,
-          "note": "Students engage in partner discussions using a structured protocol to share information about sky patterns."
+          "note": "Students work in pairs through the Back-to-Back and Face-to-Face protocol to discuss their selected sky pattern topic with multiple partners across three rounds."
         },
         {
-          "clause": "Work with others to investigate questions.",
+          "clause": "Work with others to investigate questions (I/C)",
           "met": false,
-          "note": "Students answer prompts and share wonders but do not collaboratively investigate or pursue answers."
+          "note": "Students share wonderings about their sky pattern with partners, which touches on questioning, but they do not collaboratively investigate or pursue answers to those questions within this lesson — the investigation is deferred to the next lesson's Science Talk."
         },
         {
-          "clause": "Work with others to solve problems.",
-          "met": true,
-          "note": "Students collaborate to devise gestures/motions to represent patterns in the sky."
-        },
-        {
-          "clause": "Work with others to explore and create texts.",
+          "clause": "Work with others to solve problems (I/C)",
           "met": false,
-          "note": "Students participate in shared reading (exploring a text) but text creation is done independently, not with others."
+          "note": "not met"
+        },
+        {
+          "clause": "Work with others to explore and create texts (I/C)",
+          "met": false,
+          "note": "not met"
         }
       ],
-      "evidence": "- Lead students through three rounds of the Back-to-Back and Face-to-Face protocol, reminding them to use their notes sheet as they answer the following questions:\n- 'What pattern in the sky are you sharing about?' (Responses will vary, depending on chosen pattern.)\n- 'What are one or two pieces of information you learned about this pattern in the sky?' (Responses will vary, depending on chosen pattern.)\n- 'What is one thing you still wonder about for this pattern in the sky?' (Responses will vary, depending on chosen pattern.)",
-      "evidence_page": 324,
-      "confidence": "medium",
-      "rationale": "Students work with partners to discuss a content topic and collaboratively decide on motions to represent concepts. However, they do not conduct collaborative investigation or co-create texts in this lesson.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.02363150867823765,
-        "dense_rank": 10,
-        "bm25_rank": 47,
-        "dense_score": 0.5641159,
-        "bm25_score": 68.40951617166012,
-        "rerank_score": 0.9969592094421387
-      },
-      "standard_raw_text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U2L11",
-      "standard_code": "1.P.CP.1",
-      "matched_status": "partial",
-      "clauses": [
-        {
-          "clause": "Arrive prepared to actively participate in group discussions and collaborative meetings.",
-          "met": true,
-          "note": "Students reviewed and used their notes to participate in the discussion protocol."
-        },
-        {
-          "clause": "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects.",
-          "met": false,
-          "note": "Procedures were teacher-provided; no shared project or student-determined norms/goals evident."
-        },
-        {
-          "clause": "Contribute to discussions and shared projects by offering ideas, listening to the ideas of others, and providing feedback.",
-          "met": true,
-          "note": "Students share information with partners and listen/clarify during the protocol."
-        },
-        {
-          "clause": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts.",
-          "met": true,
-          "note": "Students work with partners to discuss the topic (patterns in the sky) using a structured protocol."
-        }
-      ],
-      "evidence": "Lead students through three rounds of the Back-to-Back and Face-to-Face protocol, reminding them to use their notes sheet as they answer the following questions:",
+      "evidence": "Lead students through three rounds of the Back-to-Back and Face-to-Face protocol, reminding them to use their notes sheet as they answer the following questions: 'What pattern in the sky are you sharing about?' … 'What are one or two pieces of information you learned about this pattern in the sky?'",
       "evidence_page": 324,
       "confidence": "high",
-      "rationale": "Students engage in structured partner discussion using notes, meeting collaboration in discussion. They do not co-create norms/procedures or complete a shared project, so not all aspects are met.",
+      "rationale": "The standard decomposes into four collaborative acts: discuss topics, investigate questions, solve problems, and explore/create texts. The \"discuss topics\" clause is met: students work in pairs through three rounds of the Back-to-Back and Face-to-Face protocol to share and discuss sky patterns — \"Lead students through three rounds of the Back-to-Back and Face-to-Face protocol … 'What are one or two pieces of information you learned about this pattern in the sky?'\" The \"investigate questions\" clause is partially met: students share wonderings with partners (\"What is one thing you still wonder about for this pattern in the sky?\"), but collaborative investigation of those questions is deferred to the next lesson's Science Talk. The \"solve problems\" clause is not met — no collaborative problem-solving activity appears. The \"explore and create texts\" clause is not met — the Sky Notebook writing is independent, not collaborative, and no joint text creation occurs.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.019924662965900078,
-        "dense_rank": 37,
-        "bm25_rank": 44,
-        "dense_score": 0.52873826,
-        "bm25_score": 70.15410040186198,
-        "rerank_score": 0.9956700801849365
+        "rrf_score": 0.2013287091375413,
+        "dense_rank": 20,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 43.799162333537254,
+        "rerank_score": 0.09627964347600937,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Collaborate with others to accomplish shared goals and projects."
+      "standard_raw_text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U2L11",
-      "standard_code": "1.T.RA.1.c",
+      "standard_code": "1.P.EICC.4.d",
       "matched_status": "full",
       "clauses": [
         {
-          "clause": "Share relevant information about a topic.",
+          "clause": "Link ideas and information to an organizational plan.",
           "met": true,
-          "note": "Students share information about sky patterns."
+          "note": "Students link notes to organizational plan for Science Talk"
         },
         {
-          "clause": "Share accurate information about a topic.",
+          "clause": "Highlight ideas and information that are most relevant, useful, and impactful.",
           "met": true,
-          "note": "Students use notes and observations to share accurate information."
-        },
-        {
-          "clause": "Use a variety of communication modes to share information.",
-          "met": true,
-          "note": "Students use oral, written, and gesture-based communication."
+          "note": "Students select and mark most relevant pattern for Science Talk"
         }
       ],
-      "evidence": "Lead students through three rounds of the Back-to-Back and Face-to-Face protocol, reminding them to use their notes sheet as they answer the following questions: 'What pattern in the sky are you sharing about?' ... 'What are one or two pieces of information you learned about this pattern in the sky?' ... 'What is one thing you still wonder about for this pattern in the sky?'",
-      "evidence_page": 324,
+      "evidence": "Tell students that they will now review their notes on each of the patterns in the sky and decide which pattern they would like to speak about during the Science Talk in the next lesson.",
+      "evidence_page": 323,
       "confidence": "high",
-      "rationale": "Students share relevant and accurate information about sky patterns using oral, written, and gesture-based modes.",
+      "rationale": "Students link ideas and information to an organizational plan and highlight the most relevant information in Work Time B. They review their notes sheets about sky patterns, decide which pattern they will speak about during the Science Talk, and mark that notes sheet with a star. The teacher prompts them to consider 'For which pattern do you have the most information?' and 'For which pattern do your notes feel the most clear and helpful?' Both clauses are met.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
-        "rrf_score": 0.027984344422700584,
-        "dense_rank": 13,
-        "bm25_rank": 10,
-        "dense_score": 0.56148136,
-        "bm25_score": 100.84294392810725,
-        "rerank_score": 0.9941923022270203
+        "rrf_score": 0.1998223169864961,
+        "dense_rank": 4,
+        "bm25_rank": 4,
+        "dense_score": 0.0,
+        "bm25_score": 23.29276108082989,
+        "rerank_score": 0.08838167786598206,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Share relevant and accurate information through a variety of different modes. (C)"
+      "standard_raw_text": "Link ideas and information to the organization plan, highlighting ideas and information that are most relevant, useful, and impactful. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U2L11",
-      "standard_code": "1.T.RA.2",
-      "matched_status": "partial",
-      "clauses": [
-        {
-          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
-          "met": true,
-          "note": "Students use their notes sheets to answer questions and share information about a selected pattern."
-        },
-        {
-          "clause": "Explore various sources of information, including print, digital, and personal communication.",
-          "met": false,
-          "note": "In this lesson, students review their own notes and a single photograph; they do not actively explore multiple sources or make cross-topic connections."
-        }
-      ],
-      "evidence": "Lead students through three rounds of the Back-to-Back and Face-to-Face protocol, reminding them to use their notes sheet as they answer the following questions:\n- 'What pattern in the sky are you sharing about?' (Responses will vary, depending on chosen pattern.)\n- 'What are one or two pieces of information you learned about this pattern in the sky?' (Responses will vary, depending on chosen pattern.)\n- 'What is one thing you still wonder about for this pattern in the sky?' (Responses will vary, depending on chosen pattern.)\n- Circulate to support students as they use their notes, prompting them to use the pictures and labels on their notes sheets to help recall information about their selected pattern in the sky.",
-      "evidence_page": 324,
-      "confidence": "high",
-      "rationale": "Students refer to their notes (a text) to answer specific questions, but they do not explore multiple sources or make broad connections in this lesson.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.027149321266968326,
-        "dense_rank": 25,
-        "bm25_rank": 5,
-        "dense_score": 0.5411061,
-        "bm25_score": 103.84253087349362,
-        "rerank_score": 0.9883124232292175
-      },
-      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U2L11",
-      "standard_code": "1.P.EICC.2.c",
-      "matched_status": "full",
-      "clauses": [
-        {
-          "clause": "Explain concepts by interpreting texts.",
-          "met": true,
-          "note": "Students use notes and anchor charts to explain patterns in the sky."
-        },
-        {
-          "clause": "Learn concepts by interpreting texts.",
-          "met": true,
-          "note": "Students review notes and anchor charts to reinforce learning."
-        },
-        {
-          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
-          "met": true,
-          "note": "Students write in their Sky notebook to demonstrate understanding."
-        }
-      ],
-      "evidence": "Invite students to review and reread each of their notes sheets. ... Tell students that now they will have a chance to complete another entry in their Sky notebook, this time focusing on the moon. ... Guide students to complete this page. ... Circulate to support students as they write.",
-      "evidence_page": 325,
-      "confidence": "high",
-      "rationale": "Students interpret notes and anchor charts to explain and learn concepts, and construct texts in their Sky notebook.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.0242296918767507,
-        "dense_rank": 8,
-        "bm25_rank": 45,
-        "dense_score": 0.56655455,
-        "bm25_score": 70.01470206357162,
-        "rerank_score": 0.9866757988929749
-      },
-      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U2L11",
-      "standard_code": "1.P.CP.2.d",
-      "matched_status": "full",
-      "clauses": [
-        {
-          "clause": "Engage in dialogue with audiences.",
-          "met": true,
-          "note": "Students conduct three rounds of Back-to-Back and Face-to-Face sharing with partners."
-        },
-        {
-          "clause": "Ask questions during dialogue.",
-          "met": true,
-          "note": "Students are cued to ask clarifying questions to partners (e.g., “So, do you mean ___?”)."
-        },
-        {
-          "clause": "Answer questions during dialogue.",
-          "met": true,
-          "note": "Students answer partner-share questions using their notes about sky patterns."
-        }
-      ],
-      "evidence": "Lead students through three rounds of the Back-to-Back and Face-to-Face protocol, reminding them to use their notes sheet as they answer the following questions: 'What pattern in the sky are you sharing about?' ... 'What is one thing you still wonder about for this pattern in the sky?' ... If productive, cue students to clarify the conversation by confirming what they mean and to listen carefully and seek to understand: 'So, do you mean _____?'",
-      "evidence_page": 324,
-      "confidence": "high",
-      "rationale": "Students participate in structured partner dialogue, answer multiple questions using notes, and are prompted to ask clarifying questions during the exchange.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.015873015873015872,
-        "dense_rank": null,
-        "bm25_rank": 3,
-        "dense_score": null,
-        "bm25_score": 105.52252390327253,
-        "rerank_score": 0.9859931468963623
-      },
-      "standard_raw_text": "Engage in dialogue with audiences by asking and answering questions. (I/C)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U2L11",
-      "standard_code": "1.T.RA.1",
+      "standard_code": "1.P.CP.1.b",
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Ask questions about topics of interest for research.",
-          "met": true,
-          "note": "Students state something they still wonder about their chosen sky pattern during sharing."
-        },
-        {
-          "clause": "Conduct research individually or collaboratively by gathering and organizing information from multiple sources using graphic organizers or support aids.",
+          "clause": "Collaborate with others to determine group norms",
           "met": false,
-          "note": "In this lesson, students only review prior notes and complete an observation entry; they do not gather information from multiple sources."
+          "note": "not met"
         },
         {
-          "clause": "Share relevant and accurate information through different communication modes.",
-          "met": true,
-          "note": "Students orally share one or two pieces of information about their selected pattern using their notes."
+          "clause": "Establish goals and procedures for shared projects",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Facilitate productivity when working on shared projects",
+          "met": false,
+          "note": "not met"
         }
       ],
       "evidence": "",
       "evidence_page": null,
       "confidence": "high",
-      "rationale": "Although students generate a wondering and share information orally, the lesson does not have them conduct research or gather information from multiple sources. Because the standard centrally requires research using multiple sources, this lesson does not meet it.",
+      "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.19916534181240064,
+        "dense_rank": 1,
+        "bm25_rank": 13,
+        "dense_score": 0.0,
+        "bm25_score": 14.387430409210737,
+        "rerank_score": 0.07964298129081726,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Collaborate with others to determine group norms, establish goals and procedures, and facilitate productivity when working on shared projects. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.P.EICC.2.b",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Make use of texts to build knowledge, develop skills, make informed decisions, and/or share information and ideas (any one purpose satisfies the clause — OR list). (I/C)",
+          "met": true,
+          "note": "Students review their notes sheets (texts they created from reading/viewing throughout the unit) and use them to share information about sky patterns with partners in the Back-to-Back and Face-to-Face protocol, satisfying 'share information and ideas' — one of the OR-list purposes."
+        }
+      ],
+      "evidence": "'What are one or two pieces of information you learned about this pattern in the sky?' (Responses will vary, depending on chosen pattern.)",
+      "evidence_page": 324,
+      "confidence": "high",
+      "rationale": "The standard's four purposes (build knowledge, develop skills, make informed decisions, share information and ideas) form an OR list; any one student-performed purpose satisfies the clause. In Work Time B–C, students review their own notes sheets — texts compiled from unit readings and viewings — and then use the Back-to-Back and Face-to-Face protocol to share information with partners: \"What are one or two pieces of information you learned about this pattern in the sky?\" Students also turn and talk earlier in the lesson to recall patterns learned \"from reading, writing, and discussing throughout the unit.\" These are student-performed acts of making use of texts to share information and ideas, and to build/consolidate knowledge. The clause is met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.02750455373406193,
-        "dense_rank": 30,
-        "bm25_rank": 1,
-        "dense_score": 0.5319809,
-        "bm25_score": 136.9023519112262,
-        "rerank_score": 0.985356867313385
+        "rrf_score": 0.19390758249907303,
+        "dense_rank": 7,
+        "bm25_rank": 4,
+        "dense_score": 0.0,
+        "bm25_score": 20.13999027829767,
+        "rerank_score": 0.0960700511932373,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Build knowledge about the world by asking or generating questions about topics of interest, researching the answers, using multiple sources, and communicating relevant and accurate information about the topic."
+      "standard_raw_text": "Make use of texts to build knowledge, develop skills, make informed decisions, and share information and ideas. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.T.T.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Describe traits of the main characters.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Explain how the characters' words support the central message, lesson, or moral.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Explain how the characters' actions support the central message, lesson, or moral.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.18065692967862357,
+        "dense_rank": 18,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 111.78717459595762,
+        "rerank_score": 0.16845574975013733,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.T.T.3.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the author's opinion in opinion texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Identify supporting reasons used in opinion texts.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.19200984167736412,
+        "dense_rank": 61,
+        "bm25_rank": 3,
+        "dense_score": 0.0,
+        "bm25_score": 27.213068021370724,
+        "rerank_score": 0.10009556263685226,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify techniques used to craft opinion texts, including the author’s opinion and supporting reasons. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.T.T.4.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use poetic techniques to create poems.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use simple words and/or phrases in poems.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Create poems that may or may not rhyme.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.18845075379166287,
+        "dense_rank": 64,
+        "bm25_rank": 1,
+        "dense_score": 0.0,
+        "bm25_score": 128.80972343603884,
+        "rerank_score": 0.0959223061800003,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use poetic techniques to create poems using simple words and/or phrases that may or may not rhyme. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.P.EICC.2.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Interpret texts to analyze ideas.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Construct texts to evaluate ideas.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1803862126245847,
+        "dense_rank": 34,
+        "bm25_rank": 7,
+        "dense_score": 0.0,
+        "bm25_score": 18.791558374015555,
+        "rerank_score": 0.11300553381443024,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Interpret and construct texts to aid the analysis and evaluation of texts and ideas. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.P.AC.3.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Explore texts in various modes and genres, developing and applying knowledge of how specific features impact meaning, tone, style, purpose, and audience (I)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Create texts in various modes and genres, developing and applying knowledge of how specific features impact meaning, tone, style, purpose, and audience (C)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.18027631832642438,
+        "dense_rank": 32,
+        "bm25_rank": 9,
+        "dense_score": 0.0,
+        "bm25_score": 14.76646034269385,
+        "rerank_score": 0.09868056327104568,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Explore and create texts in various modes and genres, developing and applying knowledge of how specific features impact meaning, tone, style, purpose, and audience. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.P.AC.3.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Apply knowledge of how mode impacts the kinds of ideas and information included in texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Apply knowledge of how genre impacts the kinds of ideas and information included in texts.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.18009205983889529,
+        "dense_rank": 52,
+        "bm25_rank": 11,
+        "dense_score": 0.0,
+        "bm25_score": 20.5469725992792,
+        "rerank_score": 0.09668299555778503,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Apply knowledge of how mode and genre impact what kinds of ideas and information are included in texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.P.EICC.4.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Construct an initial draft by integrating ideas and information (C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Select words, phrases, and sentences to include in the draft (C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Incorporate craft techniques that will best achieve the purpose of the text and resonate with the target audience (C)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.1998902473527439,
+        "dense_rank": 56,
+        "bm25_rank": 3,
+        "dense_score": 0.0,
+        "bm25_score": 35.93235539628303,
+        "rerank_score": 0.05587991699576378,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Construct an initial draft by integrating ideas and information; selecting words, phrases, and sentences; and incorporating craft techniques that will best achieve the purpose of the text and resonate with the target audience. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.T.T.3.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use knowledge of opinion techniques to create opinion pieces.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Introduce the topic in the opinion piece.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "State an opinion about the topic.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Provide two or more reasons to support the opinion.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use linking words such as 'and' and 'because' to connect reasons to the opinion.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.19602637592717895,
+        "dense_rank": 63,
+        "bm25_rank": 2,
+        "dense_score": 0.0,
+        "bm25_score": 27.239981180231666,
+        "rerank_score": 0.0738280788064003,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use knowledge of opinion techniques to create opinion pieces that introduce the topic, state an opinion about the topic, and provides two or more reasons to support the opinion with linking words and and because. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U2L11",
+      "standard_code": "1.T.SS.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use illustrations to add clarity and meaning to texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use page numbers to add clarity and meaning to texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use bold print to add clarity and meaning to texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use headings to add clarity and meaning to texts.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.19493844944997382,
+        "dense_rank": 3,
+        "bm25_rank": 6,
+        "dense_score": 0.0,
+        "bm25_score": 11.172890368492311,
+        "rerank_score": 0.08198671787977219,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use text features (e.g., illustrations, page numbers, bold print, headings) to add clarity and meaning to texts. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     }
-  ]
+  ],
+  "usage": {
+    "calls": 9,
+    "input_tokens": 38628,
+    "output_tokens": 14241,
+    "cache_write_tokens": 19401,
+    "cache_read_tokens": 154264,
+    "batch_calls": 0,
+    "batch_input_tokens": 0,
+    "batch_output_tokens": 0,
+    "estimated_cost_usd": 0.583943,
+    "by_model": {
+      "claude-sonnet-4-5": {
+        "calls": 1,
+        "input_tokens": 8414,
+        "output_tokens": 9828,
+        "cache_write_tokens": 19401,
+        "cache_read_tokens": 0,
+        "batch_calls": 0,
+        "batch_input_tokens": 0,
+        "batch_output_tokens": 0,
+        "batch_cache_write_tokens": 0,
+        "batch_cache_read_tokens": 0,
+        "estimated_cost_usd": 0.245416
+      },
+      "claude-opus-4-6": {
+        "calls": 8,
+        "input_tokens": 30214,
+        "output_tokens": 4413,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 154264,
+        "batch_calls": 0,
+        "batch_input_tokens": 0,
+        "batch_output_tokens": 0,
+        "batch_cache_write_tokens": 0,
+        "batch_cache_read_tokens": 0,
+        "estimated_cost_usd": 0.338527
+      }
+    }
+  }
 }
