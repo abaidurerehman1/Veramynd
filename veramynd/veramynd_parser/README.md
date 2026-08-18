@@ -19,8 +19,8 @@ Batch-1 gold retrieve (protected bar): **R@25 = 100%** on
 `output/retrieve_gold4/`. Live gold-4 judge uses
 [`prompts/assembled_judge_prompt.md`](veramynd_parser/prompts/assembled_judge_prompt.md)
 (engine + GA Grade 1 overlay), Anthropic Sonnet batch + Opus escalate,
-`--limit 25`. Prior OpenAI `align_judge.v1.1` baseline was **18/19 = 94.7%**.
-Assembled re-judge of L3/L6/U3L5 is still open — see
+`--limit 25`: **16/20 (80%)** 3-class exact on judged unique pairs. Prior
+OpenAI `align_judge.v1.1` baseline was **18/19 = 94.7%**. See
 [What's still incomplete](#whats-still-incomplete).
 
 **Dynamic Stage-1 (honest):** routes EL vs generic from document signals; generic
@@ -249,12 +249,14 @@ veramynd_parser/
   `assembled_judge_prompt.md` (GA overlay includes SME fences F1–F4 / F8).
   Gold eval is always `--limit 25` (do not retune retrieve to hide judge
   misses). After retrieve, a coverage pass can still judge activity-driven
-  feedback/present codes that missed top 25. **L1** on the assembled prompt
-  (Anthropic batch, `--no-cache --limit 25`): **6/7** gold overlap; leftover
-  overlap miss `1.P.EICC.4.c` (gold full / json partial); `1.P.EICC.4.e`
-  is outside top 25. **L3 / L6 / U3L5** are not yet re-judged on this prompt
-  (current JSON may be older v1 / GPT runs). Prior OpenAI `align_judge.v1.1`
-  baseline on unique top-25 pairs: **18/19 (94.7%)**. All 40 EL lessons, and
+  feedback/present codes that missed top 25. All four gold lessons re-judged
+  Anthropic batch `--no-cache --limit 25`: **16/20 (80.0%)** 3-class exact
+  on unique judged pairs (L1 6/7, L3 4/5, L6 5/7, U3L5 1/1). Binary
+  precision 100%, recall 88.9%. Leftover misses: L1 `1.P.EICC.4.c` (gold
+  full / json partial), L3 `1.T.SS.2.a` (gold partial / json none), L6
+  `1.L.V.3.a` (gold partial / json full), L6 `1.T.T.1.c` (gold partial /
+  json none). Unjudged gold none: L1 + L3 `1.P.EICC.4.e`. Prior OpenAI
+  `align_judge.v1.1` baseline: **18/19 (94.7%)**. All 40 EL lessons, and
   Shared Story through judge, are **not** claimed. Close-read comprehension
   can be understated until Read-aloud Guides are in Stage-1 (P4 caveat;
   do not hand-edit labels).

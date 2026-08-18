@@ -1,477 +1,1190 @@
 {
   "schema_version": "1.0-judge",
   "quality_profile": "enterprise_k12",
-  "prompt_version": "align_judge.batch.v1",
+  "prompt_version": "align_judge.assembled.batch.v1",
   "judge_mode": "batch",
   "resource_id": "G1M2U1L6",
   "lesson_source": "stage1:G1M2U1L6",
-  "retrieve_file": "output\\retrieve\\G1M2U1L6.json",
+  "retrieve_file": "output/retrieve_gold4/G1M2U1L6.json",
   "standards_dir": "output\\normalize_standards",
-  "judge_model": "gpt-4.1",
+  "judge_model": "claude-sonnet-4-5",
   "escalate": true,
-  "escalate_model": "gpt-5",
-  "candidate_count": 10,
-  "judged": 10,
+  "escalate_model": "claude-opus-4-6",
+  "candidate_count": 26,
+  "coverage_pass_injected": [
+    "1.P.CP.2.a"
+  ],
+  "judged": 26,
   "failed": [],
   "complete": true,
   "by_status": {
-    "full": 2,
-    "partial": 1,
-    "none": 7
+    "full": 1,
+    "partial": 9,
+    "none": 16
   },
   "grounding_rate": 1.0,
-  "grounding_positive_n": 3,
+  "grounding_positive_n": 10,
   "verdicts": [
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L6",
-      "standard_code": "1.P.EICC.3.d",
+      "standard_code": "1.L.V.1.b",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Use grade-level general, academic, or specialized vocabulary words and phrases to communicate (any one category suffices — interchangeable OR-list)",
+          "met": false,
+          "note": "Students are directed to use vocabulary from the text (setting, overhead, etc.) in their own speech via sentence frames and partner discussion, which constitutes deploying vocabulary to communicate — but this occurs in a single communicative setting (partner talk)."
+        },
+        {
+          "clause": "Communicate in a variety of settings (≥2 distinct settings for full; 1 setting = partial)",
+          "met": false,
+          "note": "Students communicate via partner talk (Think-Pair-Share) and complete a written response sheet, but the vocabulary deployment is concentrated in oral partner discussion; the written response sheet ('At the end …') is a retell frame rather than a deliberate vocabulary-use task. The oral settings (multiple Think-Pair-Shares) are essentially one setting type (partner talk), so the variety-of-settings requirement is only thinly met at best — partial."
+        }
+      ],
+      "evidence": "'Discuss with a partner what the boy and sun are doing using the frame: In the end, the boy is _____. The sun is _____.'\n(sleeping; gone or set)",
+      "evidence_page": 99,
+      "confidence": "high",
+      "rationale": "The lesson directs students to use text vocabulary in their own speech through sentence frames and partner discussion. For example, students are told to \"Discuss with a partner what the boy and sun are doing using the frame: In the end, the boy is _____. The sun is _____.\" and to use the sentence stem \"When the sun is setting (the sun/the boy/I) _________.\" — deploying words like \"setting,\" \"overhead,\" and story-specific language to communicate. However, the vocabulary deployment is thin (scaffolded frames rather than open communicative use) and occurs primarily in one setting type (oral partner talk). The written response sheet asks students to write and draw about ending events but is a retell task, not a deliberate vocabulary-communication task. Because the \"variety of settings\" requirement (≥2 distinct settings of genuine vocabulary deployment) is not clearly met, the standard is partially met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.16068947181850407,
+        "dense_rank": 2,
+        "bm25_rank": 2,
+        "dense_score": 0.6051184,
+        "bm25_score": 76.39137594128648,
+        "rerank_score": 0.01562279462814331,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use grade-level general, academic, and specialized vocabulary words and phrases to communicate in a variety of settings. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.P.EICC.3.g",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Determine the meanings of unfamiliar words and concepts by applying knowledge of context (I)",
+          "met": false,
+          "note": "Students are directed to determine the meaning of 'overhead' using context (the verse about stars) and word parts (over + head), satisfying context-based meaning determination. However this occurs only in the ELL Mini Language Dive, a scaffolded/optional support, and targets a single word."
+        },
+        {
+          "clause": "Determine the meanings of unfamiliar words and concepts by applying knowledge of academic vocabulary (I)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Determine the meanings of unfamiliar words and concepts by applying knowledge of word parts (I)",
+          "met": false,
+          "note": "Students identify the two component words in 'overhead' (over + head) and use that to determine meaning — this is applying word-part knowledge. However, this activity is within the ELL Mini Language Dive (optional/scaffolded support), not the core lesson, and covers only one word."
+        }
+      ],
+      "evidence": "'What two words do you see in overhead? What do you think overhead means? Point to something overhead.' (over + head; up above our heads)",
+      "evidence_page": 99,
+      "confidence": "high",
+      "rationale": "Two of the three clauses are partially met through the ELL Mini Language Dive, where students are asked to determine the meaning of \"overhead\" by identifying its component word parts (\"over + head\") and using the surrounding verse context (\"stars overhead\") to infer meaning. The student-directed questions \"'What two words do you see in overhead? What do you think overhead means?'\" elicit the student's own word-part analysis and context-based reasoning. However, this activity appears only in the optional ELL support section, not the core lesson path, capping those clauses at partially met. The academic-vocabulary clause is not met: no activity has students apply knowledge of academic vocabulary to unlock unfamiliar words. The core lesson's only vocabulary moment — defining \"setting\" (moving down) — is teacher-declared, not student-determined.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.15250182569061468,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.68527615,
+        "bm25_score": 84.71136350033964,
+        "rerank_score": 0.022136161103844643,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Determine the meanings of unfamiliar words and concepts by applying knowledge of context and of academic vocabulary and word parts. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.L.V.1.a",
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Summarize sections of the text to maintain understanding.",
+          "clause": "Acquire general, academic, and specialized vocabulary words and phrases through grade-level texts and content.",
           "met": true,
-          "note": "Students retell and write about the ending events of the story."
+          "note": "Students acquire vocabulary (by, tucked in, sleepin', overhead, setting) from the grade-level text Summer Sun Risin' through the Mini Language Dive."
         },
         {
-          "clause": "Visualize sections of the text to maintain understanding.",
+          "clause": "Apply general, academic, and specialized vocabulary words and phrases in appropriate contexts.",
           "met": true,
-          "note": "Students draw about the ending events, and role-play to visualize the story."
+          "note": "Students apply the acquired vocabulary (setting, sunset) in the Closing discussion using the sentence frame."
         }
       ],
-      "evidence": "Remind students that yesterday they began Part II by writing and drawing about the beginning and middle events using key details from the text. Tell them that today they will complete the response sheet by writing and drawing about the ending events of the story.\n...\nInvite students to begin the Role-Play protocol for the following sections of text:\n-Pages 21-22\n-Pages 23-24\n-Pages 25-26",
-      "evidence_page": 102,
+      "evidence": "Mini Language Dive: students respond to 'What does the word by mean in this chunk?' (next to); 'What is the sun doing?' (It is gone because it is night time); 'What two words do you see in overhead?' (over + head; up above our heads)",
+      "evidence_page": null,
       "confidence": "low",
-      "rationale": "Students both summarize (retell in writing and discussion) and visualize (draw and role-play) sections of the text to support understanding. [REJECTED: evidence missing or not found in lesson raw text]",
+      "rationale": "Work Time A Mini Language Dive has students acquire vocabulary from the grade-level text Summer Sun Risin': students respond to 'What does the word by mean in this chunk?' (next to), 'What is the sun doing?' (It is gone because it is night time), and 'What two words do you see in overhead?' (over + head; up above our heads). Closing A has students apply the acquired vocabulary: 'When the sun is setting (the sun/the boy/I) _________.' Both acquire and apply clauses met. Full. [REJECTED: evidence missing or not found in lesson raw text]",
       "grounded": false,
       "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
-        "rrf_score": 0.0277569392348087,
-        "dense_rank": 2,
-        "bm25_rank": 26,
-        "dense_score": 0.5770726,
-        "bm25_score": 109.75495045626256,
-        "rerank_score": 0.992681086063385
+        "rrf_score": 0.15237334614383796,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.72254664,
+        "bm25_score": 113.64864577223264,
+        "rerank_score": 0.028728358447551727,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Summarize and visualize sections of the text to maintain understanding. (I)",
+      "standard_raw_text": "Acquire and apply general, academic, and specialized vocabulary words and phrases through grade-level texts and content. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.P.EICC.4.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Generate ideas for writing by assessing prior knowledge.",
+          "met": true,
+          "note": "Students generate ideas by assessing prior knowledge of the beginning and middle of the story before writing."
+        },
+        {
+          "clause": "Generate ideas for writing by gathering information from texts.",
+          "met": true,
+          "note": "Students generate ideas by gathering information from the text (the ending events they read and acted out)."
+        },
+        {
+          "clause": "Generate ideas for writing by engaging in discussions with others.",
+          "met": true,
+          "note": "Students generate ideas through partner discussion before writing."
+        }
+      ],
+      "evidence": "Work Time A: 'Think back to what the boy and sun were doing at the beginning and middle of the story. With your partner, discuss why you think the sun will be at one corner of the page at the end of the story.'",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "All three idea-generation clauses met. Work Time A has students assess prior knowledge: 'Think back to what the boy and sun were doing at the beginning and middle of the story. With your partner, discuss why you think the sun will be at one corner of the page at the end of the story.' Students gather information from the text through the close read-aloud and role-play (Work Time B), then Work Time C directs 'Remind students to think about the parts they acted out for the ending of the story when completing today's writing task.' Students engage in discussions: 'Discuss with a partner what the boy and sun are doing using the frame: In the end, the boy is _____. The sun is _____.' Full. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.15057692307692305,
+        "dense_rank": 4,
+        "bm25_rank": 1,
+        "dense_score": 0.46978492,
+        "bm25_score": 22.902441863664965,
+        "rerank_score": 0.05458785966038704,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Generate ideas for content by assessing prior knowledge, gathering information from texts, and engaging in discussions with others. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.P.EICC.1.c",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Select texts of personal interest and academic relevance to grade-level topics (I/C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Read texts of personal interest and academic relevance to grade-level topics (I/C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Write texts of personal interest and academic relevance to grade-level topics (I/C)",
+          "met": false,
+          "note": "Students write and draw about ending events on a response sheet, which is a teacher-assigned writing task about a teacher-selected text — the student produces writing but it is not a text of personal interest or academic relevance that the student selected, and a response sheet is a constrained frame rather than a full text the student writes."
+        }
+      ],
+      "evidence": "Invite students to show a thumbs-up or touch their head if they are ready to begin writing and drawing about the events from the ending of Summer Sun Risin'.",
+      "evidence_page": 102,
+      "confidence": "high",
+      "rationale": "The standard requires students to select, read, and write texts of personal interest and academic relevance. The lesson has students complete a response sheet by writing and drawing about the ending events of Summer Sun Risin' (\"Invite students to show a thumbs-up or touch their head if they are ready to begin writing and drawing about the events from the ending of Summer Sun Risin'\"), which partially meets the write clause — students produce writing, but it is a teacher-directed response to a teacher-selected text rather than a text the student chose out of personal interest or academic relevance. The select clause is not met because the teacher chooses the text (Summer Sun Risin') and students have no opportunity to select texts themselves. The read clause is not met because the lesson is a teacher-led close read-aloud; students do not independently read a text they selected.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.14805359336609336,
+        "dense_rank": 8,
+        "bm25_rank": 3,
+        "dense_score": 0.51131546,
+        "bm25_score": 41.765991635033366,
+        "rerank_score": 0.015355757437646389,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Select, read, and write texts of personal interest and academic relevance to grade-level texts and topics. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.L.V.3.a",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Use context within a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases.",
+          "met": true,
+          "note": "Students use context within the sentence chunks to determine the meaning of 'by' and 'sleepin'."
+        },
+        {
+          "clause": "Use context beyond a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases.",
+          "met": true,
+          "note": "Students use context beyond the sentence (stars overhead, the verse meaning) to clarify the meaning of 'overhead.'"
+        }
+      ],
+      "evidence": "'What two words do you see in overhead? What do you think overhead means? Point to something overhead.' (over + head; up above our heads)",
+      "evidence_page": 99,
+      "confidence": "high",
+      "rationale": "Work Time A Mini Language Dive has students use context to determine word meanings. Within-sentence context: students respond to 'What does the word by mean in this chunk?' (next to) and 'What is the sun doing?' (It is gone because it is night time). Beyond-sentence context: students respond to 'What two words do you see in overhead? What do you think overhead means? Point to something overhead.' (over + head; up above our heads), using the verse context (stars overhead) and word-part analysis. Both clauses met. Full.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.14766884772330838,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.72850037,
+        "bm25_score": 105.06312553025904,
+        "rerank_score": 0.023818492889404297,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use context within and beyond a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.P.CP.1.d",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Work with others to discuss topics",
+          "met": true,
+          "note": "Students work with a partner (elbow partner) to discuss the topic of what the boy and they experience at sunset, satisfying 'work with others to discuss topics.'"
+        },
+        {
+          "clause": "Work with others to investigate questions",
+          "met": true,
+          "note": "Students work with a partner to investigate a question about why the sun will be at one corner of the page, drawing on prior knowledge from the story — this is a student-directed imperative to investigate a question collaboratively."
+        },
+        {
+          "clause": "Work with others to solve problems",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Work with others to explore and create texts",
+          "met": true,
+          "note": "Students work in pre-determined pairs to explore the text through the Role-Play protocol, acting out ending events of Summer Sun Risin' together — this is collaborative text exploration."
+        }
+      ],
+      "evidence": "'Think back to what the boy and sun were doing at the beginning and middle of the story. With your partner, discuss why you think the sun will be at one corner of the page at the end of the story. What have you learned from the story so far that makes you think this might be the case?'",
+      "evidence_page": 99,
+      "confidence": "high",
+      "rationale": "The standard decomposes into four clauses joined by commas (an AND list): discuss topics, investigate questions, solve problems, and explore and create texts. Three of four are met. Students discuss topics collaboratively via Think-Pair-Share (\"What does the boy experience when the sun is setting?\" — partner discussion). Students investigate a question with a partner (\"With your partner, discuss why you think the sun will be at one corner of the page at the end of the story. What have you learned from the story so far that makes you think this might be the case?\"). Students explore texts collaboratively through the Role-Play protocol in pairs (\"Invite students to begin the Role-Play protocol for the following sections of text: Pages 21-22, Pages 23-24, Pages 25-26\"). However, no activity has students work with others to solve problems — the lesson contains no problem-solving task. This unmet clause makes the alignment partial.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.14683119630237557,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.57197475,
+        "bm25_score": 43.799162333537254,
+        "rerank_score": 0.045056331902742386,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.L.V.3.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use a picture dictionary to clarify the meaning of unknown words and phrases with teacher support.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use a digital resource to clarify the meaning of unknown words and phrases with teacher support.",
+          "met": false,
+          "note": "The teacher encourages use of classroom resources, but these are not picture dictionaries or digital resources; no student use of picture dictionary or digital resource is evidenced."
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.14634920634920634,
+        "dense_rank": 3,
+        "bm25_rank": 3,
+        "dense_score": 0.51126635,
+        "bm25_score": 45.540172729407516,
+        "rerank_score": 0.007692527025938034,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "With teacher support, use a picture dictionary or digital resource to clarify the meaning of unknown words and phrases. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.P.EICC.2.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use texts to build knowledge, develop skills, make informed decisions, or share information and ideas (any one purpose).",
+          "met": true,
+          "note": "Students use the text Summer Sun Risin' to share information and ideas about the ending events through their writing and drawing."
+        }
+      ],
+      "evidence": "Work Time C: students complete the Summer Sun Risin' response sheet by writing and drawing about the ending events of the story.",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "Work Time C has students use the text Summer Sun Risin' to share information and ideas: 'students complete the Summer Sun Risin' response sheet by writing and drawing about the ending events of the story.' The student performs one of the four purposes (share information and ideas) by writing/drawing about the text's ending events. The OR-list rule applies: any one student-performed purpose = full. Full. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.14542908426448475,
+        "dense_rank": 4,
+        "bm25_rank": 5,
+        "dense_score": 0.56443965,
+        "bm25_score": 22.35781010430744,
+        "rerank_score": 0.04541680961847305,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Make use of texts to build knowledge, develop skills, make informed decisions, and share information and ideas. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.T.RA.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Share relevant information about a topic.",
+          "met": true,
+          "note": "Students share relevant information about the ending events of Summer Sun Risin'."
+        },
+        {
+          "clause": "Share accurate information about a topic.",
+          "met": true,
+          "note": "Students share accurate information drawn from the text's ending events."
+        },
+        {
+          "clause": "Use a variety of communication modes to share information.",
+          "met": true,
+          "note": "Students use two modes (writing and drawing) to share information."
+        }
+      ],
+      "evidence": "Work Time C: students complete the Summer Sun Risin' response sheet by writing and drawing about the ending events of the story.",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "Work Time C has students share relevant and accurate information about the ending events of Summer Sun Risin' through writing and drawing: 'students complete the Summer Sun Risin' response sheet by writing and drawing about the ending events of the story' using 'key details from the text.' Two communication modes (writing and drawing) are used. All three clauses met. Full. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.14472736788226295,
+        "dense_rank": 2,
+        "bm25_rank": 1,
+        "dense_score": 0.5643946,
+        "bm25_score": 58.77123520133727,
+        "rerank_score": 0.05182034522294998,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Share relevant and accurate information through a variety of different modes. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.P.CP.2.d",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Ask questions during dialogue",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Answer questions during dialogue",
+          "met": true,
+          "note": "Students answer multiple teacher-posed questions throughout the lesson in turn-and-talk, Think-Pair-Share, and whole-group formats, producing answers about the text."
+        }
+      ],
+      "evidence": "'What time of day do you think the end of the story takes place?' (at the end of the day); 'What does it mean when the sun is setting?' (The sun is going down.); 'Where is the sun at sunset?' (The sun is starting to disappear in the sky.); 'What does the boy experience when the sun is setting?' (The boy is reading a book with his dad and getting ready for bed.)",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "The answer clause is met: students answer numerous teacher-posed questions throughout the lesson via turn-and-talk and Think-Pair-Share protocols, e.g., \"'What time of day do you think the end of the story takes place?' (at the end of the day)\" and \"'What does the boy experience when the sun is setting?' (The boy is reading a book with his dad and getting ready for bed.).\" However, the ask clause is not met: at no point in the lesson are students directed to generate or pose their own questions. All questions originate from the teacher; students only respond. Because the standard requires both asking AND answering, the alignment is partial. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.14430569430569432,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.69491273,
+        "bm25_score": 85.17359811796582,
+        "rerank_score": 0.032681386917829514,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Engage in dialogue with audiences by asking and answering questions. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
       "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L6",
-      "standard_code": "1.T.RA.2",
+      "standard_code": "1.P.ST.1.a",
       "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion.",
-          "met": true,
-          "note": "Students discuss and justify answers by citing earlier parts of the story and key details."
+          "clause": "Use prior knowledge to identify relevant context components (I/C)",
+          "met": false,
+          "note": "Students are directed to use their prior knowledge of earlier story events to reason about the ending, activating background knowledge to identify relevant context — but this is scoped to story-internal prior knowledge, not broader contextual components."
         },
         {
-          "clause": "Explore various sources of information, including print, digital, and personal communication.",
+          "clause": "Use formal or informal research to find contextual information (I/C)",
           "met": false,
-          "note": "Lesson uses a single literary text with discussion; no multiple or varied sources are explored."
+          "note": "not met"
+        },
+        {
+          "clause": "Engage in discussions with others to determine key context components (I/C)",
+          "met": false,
+          "note": "Students discuss story events with a partner, but the discussion is about retelling/describing events rather than explicitly identifying key components of context that are most relevant to interpreting or constructing the text."
         }
       ],
-      "evidence": "To activate background knowledge before students discuss what the boy and sun do in the end of Summer Sun Risin', invite students to reflect on the relationship based on what they know about the beginning and middle of the story. (Example: 'Think back to what the boy and sun were doing at the beginning and middle of the story. With your partner, discuss why you think the sun will be at one corner of the page at the end of the story. What have you learned from the story so far that makes you think this might be the case?') (MMR)",
+      "evidence": "Think back to what the boy and sun were doing at the beginning and middle of the story. With your partner, discuss why you think the sun will be at one corner of the page at the end of the story. What have you learned from the story so far that makes you think this might be the case?",
       "evidence_page": 99,
       "confidence": "high",
-      "rationale": "Students reference parts of the text to support their ideas, but the lesson does not have them explore multiple sources of information or make cross-source connections.",
+      "rationale": "The lesson partially meets 1.P.ST.1.a. For the prior-knowledge clause, students are directed to \"Think back to what the boy and sun were doing at the beginning and middle of the story … What have you learned from the story so far that makes you think this might be the case?\" — activating prior knowledge to reason about context, though scoped narrowly to story-internal knowledge rather than broader contextual components. For the discussion clause, students discuss with partners (\"Discuss with a partner what the boy and sun are doing using the frame: In the end, the boy is _____. The sun is _____.\"), but these discussions center on retelling events rather than explicitly identifying key contextual components. The formal/informal research clause is not met — no research activity appears in the lesson.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.019523809523809527,
-        "dense_rank": 40,
-        "bm25_rank": 45,
-        "dense_score": 0.49476433,
-        "bm25_score": 82.76712161866905,
-        "rerank_score": 0.9924991726875305
+        "rrf_score": 0.1428473441615452,
+        "dense_rank": 4,
+        "bm25_rank": 1,
+        "dense_score": 0.4991088,
+        "bm25_score": 29.694074628926067,
+        "rerank_score": 0.023593207821249962,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L6",
-      "standard_code": "1.P.ST.1.c",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Explore how context shapes the author's decisions when interpreting texts.",
-          "met": false,
-          "note": "No exploration of authorial decisions or context."
-        },
-        {
-          "clause": "Explore how context shapes the audience's responses when interpreting texts.",
-          "met": false,
-          "note": "No explicit discussion of how context affects audience response."
-        },
-        {
-          "clause": "Explore how context shapes the author's decisions when constructing texts.",
-          "met": false,
-          "note": "No construction of texts with attention to context or authorial decisions."
-        },
-        {
-          "clause": "Explore how context shapes the audience's responses when constructing texts.",
-          "met": false,
-          "note": "No construction of texts with attention to audience response."
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "The lesson focuses on retelling and understanding story events, not on exploring context or author/audience dynamics.",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.02224694104560623,
-        "dense_rank": 27,
-        "bm25_rank": 33,
-        "dense_score": 0.5156776,
-        "bm25_score": 95.68671742333234,
-        "rerank_score": 0.9924511313438416
-      },
-      "standard_raw_text": "Explore how context shapes the author’s decisions and the audience’s responses during the interpretation and construction of texts. (I/C)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L6",
-      "standard_code": "1.T.C.2",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Identify who is speaking at various points in a text.",
-          "met": false,
-          "note": "No activity or discussion about identifying the speaker or narrator."
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "Students do not identify or discuss the speaker or narrator in the text.",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.024527186761229315,
-        "dense_rank": 34,
-        "bm25_rank": 12,
-        "dense_score": 0.507857,
-        "bm25_score": 146.23474239662931,
-        "rerank_score": 0.9923837780952454
-      },
-      "standard_raw_text": "Investigate the relationships between authors and speakers in texts."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L6",
-      "standard_code": "1.T.T.2",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Identify techniques used to craft expository texts, including main topic and supporting details.",
-          "met": false,
-          "note": "Lesson is based on a narrative text, not expository."
-        },
-        {
-          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
-          "met": false,
-          "note": "No expository connections described; focus is on narrative events."
-        },
-        {
-          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
-          "met": false,
-          "note": "No expository writing or analysis."
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "The lesson is focused on a narrative text and does not address expository techniques or structures.",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.026013513513513515,
-        "dense_rank": 14,
-        "bm25_rank": 20,
-        "dense_score": 0.52859557,
-        "bm25_score": 131.57224244434963,
-        "rerank_score": 0.992026150226593
-      },
-      "standard_raw_text": "Identify and use expository techniques to shape understanding."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L6",
-      "standard_code": "1.T.T.1",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue.",
-          "met": true,
-          "note": "Students discuss and write about characters, setting, and events."
-        },
-        {
-          "clause": "Identify a simple plot with a problem and solution.",
-          "met": true,
-          "note": "Students retell the sequence of events, including the ending."
-        },
-        {
-          "clause": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story.",
-          "met": true,
-          "note": "Students discuss what the boy and sun do and their experiences."
-        },
-        {
-          "clause": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures.",
-          "met": false,
-          "note": "No comparison across diverse cultures."
-        },
-        {
-          "clause": "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events with a sense of closure.",
-          "met": true,
-          "note": "Students write and draw about the ending events, showing closure."
-        }
-      ],
-      "evidence": "Remind students that yesterday they began Part II by writing and drawing about the beginning and middle events using key details from the text. Tell them that today they will complete the response sheet by writing and drawing about the ending events of the story.\n...\nInvite students to Think-Pair-Share with an elbow partner:\n'What does the boy experience when the sun is setting?' (The boy is reading a book with his dad and getting ready for bed.)",
-      "evidence_page": 102,
-      "confidence": "low",
-      "rationale": "Students identify and use narrative techniques (characters, setting, events, closure) in both discussion and writing, though no cross-cultural comparison is present. [REJECTED: evidence missing or not found in lesson raw text]",
-      "grounded": false,
-      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.03252247488101534,
-        "dense_rank": 1,
-        "bm25_rank": 2,
-        "dense_score": 0.58989584,
-        "bm25_score": 221.04801628714637,
-        "rerank_score": 0.9917340278625488
-      },
-      "standard_raw_text": "Identify and use narrative techniques to shape understanding."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L6",
-      "standard_code": "1.P.EICC.3",
-      "matched_status": "full",
-      "clauses": [
-        {
-          "clause": "Establish a purpose and set goals for reading",
-          "met": true,
-          "note": "Learning target is posted and referenced."
-        },
-        {
-          "clause": "Monitor comprehension and adjust strategies as needed",
-          "met": true,
-          "note": "Students discuss and clarify understanding with partners and teacher."
-        },
-        {
-          "clause": "Scan and skim the text to note useful structures and sections",
-          "met": true,
-          "note": "Students revisit and discuss specific sections (beginning, middle, end)."
-        },
-        {
-          "clause": "Draw from and integrate prior knowledge with the text, addressing inconsistencies or gaps",
-          "met": true,
-          "note": "Students reflect on what they know about the story to discuss the ending."
-        },
-        {
-          "clause": "Summarize and visualize sections of the text to maintain understanding",
-          "met": true,
-          "note": "Students retell and draw about events."
-        },
-        {
-          "clause": "Make and track predictions about upcoming events and information",
-          "met": true,
-          "note": "Students predict what will happen at the end of the story."
-        },
-        {
-          "clause": "Make, track, and support inferences about different levels of meaning",
-          "met": true,
-          "note": "Students infer what the boy and sun are doing and why."
-        },
-        {
-          "clause": "Determine meanings of unfamiliar words and concepts using context, academic vocabulary, and word parts",
-          "met": true,
-          "note": "Students discuss meanings of words like 'overhead' and 'setting.'"
-        }
-      ],
-      "evidence": "Invite students to turn and talk to an elbow partner:\n'What time of day do you think the end of the story takes place?' (at the end of the day)\n...\n'What does the word by mean in this chunk?' (next to)\n...\n'What two words do you see in overhead? What do you think overhead means? Point to something overhead.' (over + head; up above our heads)'\n...\nRemind students that yesterday they began Part II by writing and drawing about the beginning and middle events using key details from the text. Tell them that today they will complete the response sheet by writing and drawing about the ending events of the story.",
-      "evidence_page": 99,
-      "confidence": "high",
-      "rationale": "Students engage in a wide range of comprehension strategies before, during, and after reading, including predicting, summarizing, visualizing, inferring, and vocabulary work.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.029877369007803793,
-        "dense_rank": 5,
-        "bm25_rank": 9,
-        "dense_score": 0.5502606,
-        "bm25_score": 156.1615288999838,
-        "rerank_score": 0.9914918541908264
-      },
-      "standard_raw_text": "Engage with a range of complex texts for a variety of tasks and purposes, accessing and using strategies for comprehension before, during, and after reading as part of the meaning-making process.\nComprehension strategies are tools that students should develop throughout their K-12 education as they work to interpret increasingly complex texts. The effectiveness of these strategies depends largely on the texts themselves, the reasons students engage with them, and the preferences and knowledge bases of individual students. For these reasons, students should receive instruction in a variety of comprehension strategies. Students should learn to select and apply strategies flexibly in order to make sense of the text and accomplish their goals."
+      "standard_raw_text": "Use prior knowledge, formal or informal research, and discussions with others to identify the key components of context that are most relevant. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L6",
       "standard_code": "1.T.T.2.b",
-      "matched_status": "full",
+      "matched_status": "none",
       "clauses": [
         {
-          "clause": "Describe the connection between two individuals in a text.",
-          "met": true,
-          "note": "Students discuss the relationship between the boy and the sun."
-        },
-        {
-          "clause": "Describe the connection between two events in a text.",
-          "met": true,
-          "note": "Students retell and write about the sequence of events at the end of the story."
-        },
-        {
-          "clause": "Describe the connection between two ideas in a text.",
-          "met": true,
-          "note": "Students connect the sun setting to the boy getting ready for bed."
-        },
-        {
-          "clause": "Describe the connection between two pieces of information in a text.",
-          "met": true,
-          "note": "Students link textual details (sun's position, boy's actions) in discussion and writing."
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in an expository text.",
+          "met": false,
+          "note": "not met"
         }
       ],
-      "evidence": "Invite students to Think-Pair-Share with an elbow partner:\n'Where is the sun at sunset?' (The sun is starting to disappear in the sky.)\n'What does the boy experience when the sun is setting?' (The boy is reading a book with his dad and getting ready for bed.)\n'What do you experience when the sun is setting?' (I get ready for bed.)",
-      "evidence_page": 102,
+      "evidence": "",
+      "evidence_page": null,
       "confidence": "high",
-      "rationale": "Students explicitly describe connections between individuals (boy, sun), events (sun setting, bedtime), and ideas (sunset, bedtime routines) in the text.",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.14122562025787833,
+        "dense_rank": 3,
+        "bm25_rank": 1,
+        "dense_score": 0.50399613,
+        "bm25_score": 43.382740253533775,
+        "rerank_score": 0.0878545418381691,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Describe the connection between two individuals, events, ideas, or pieces of information in a text. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.T.T.1.a",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify characters used to craft a story.",
+          "met": true,
+          "note": "Students identify and discuss the characters (the boy and the sun) and what they are doing in the story."
+        },
+        {
+          "clause": "Identify the setting used to craft a story.",
+          "met": false,
+          "note": "Students answer questions about when/where events occur (sunset, nighttime), which touches setting, but the teacher is the one who explicitly names the setting details; the student response is limited to answering 'The sun is starting to disappear in the sky' — a time-of-day observation rather than a full identification of setting as a story-crafting technique."
+        },
+        {
+          "clause": "Identify major events used to craft a story.",
+          "met": true,
+          "note": "Students act out the ending events of the story through the Role-Play protocol, demonstrating identification of major events; they also write and draw about ending events on the response sheet ('At the end …')."
+        },
+        {
+          "clause": "Identify dialogue used to craft a story.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "Discuss with a partner what the boy and sun are doing using the frame: In the end, the boy is _____. The sun is _____.",
+      "evidence_page": 99,
+      "confidence": "high",
+      "rationale": "The standard requires students to identify four story-crafting techniques: characters, setting, major events, and dialogue. Characters: students identify and discuss the boy and the sun as characters (\"Discuss with a partner what the boy and sun are doing using the frame: In the end, the boy is _____. The sun is _____.\"). Major events: students act out ending events via the Role-Play protocol for pages 21–26 and complete a response sheet writing/drawing about ending events (\"At the end …\"). Setting is only partially addressed — students answer time/place questions (\"Where is the sun at sunset?\") but the teacher supplies most of the explicit setting identification, and the lesson never frames setting as a story technique for students to identify. Dialogue is not addressed: no activity asks students to identify or discuss dialogue as a technique used in the story. Because two clauses are met, one is partially met, and one is not met, the alignment is partial.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.02564935064935065,
-        "dense_rank": 28,
-        "bm25_rank": 10,
-        "dense_score": 0.5114725,
-        "bm25_score": 151.94195317813185,
-        "rerank_score": 0.9909522533416748
-      },
-      "standard_raw_text": "Describe the connection between two individuals, events, ideas, or pieces of information in a text. (I)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L6",
-      "standard_code": "1.T.T.1.d",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Compare characters in stories from diverse cultures with adult support.",
-          "met": false,
-          "note": "Only one story from one culture is discussed."
-        },
-        {
-          "clause": "Contrast characters in stories from diverse cultures with adult support.",
-          "met": false,
-          "note": "No contrasting of characters from diverse cultures."
-        },
-        {
-          "clause": "Compare experiences of characters in stories from diverse cultures with adult support.",
-          "met": false,
-          "note": "No comparison of experiences across cultures."
-        },
-        {
-          "clause": "Contrast experiences of characters in stories from diverse cultures with adult support.",
-          "met": false,
-          "note": "No contrasting of experiences across cultures."
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "The lesson focuses on a single story and does not involve comparing or contrasting characters or experiences across diverse cultures.",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.batch.v1",
-      "judge_model": "gpt-4.1",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.015625,
-        "dense_rank": 4,
-        "bm25_rank": null,
-        "dense_score": 0.55638564,
-        "bm25_score": null,
-        "rerank_score": 0.9909279942512512
-      },
-      "standard_raw_text": "With adult support, compare and contrast characters and their experiences in stories across diverse cultures. (I)"
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L6",
-      "standard_code": "1.P.ST.2.b",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Draw from knowledge of the author to understand texts.",
-          "met": false,
-          "note": "Students do not discuss or use information about the author."
-        },
-        {
-          "clause": "Draw from knowledge of the audience to understand texts.",
-          "met": false,
-          "note": "No tasks involve identifying or using intended audience."
-        },
-        {
-          "clause": "Draw from knowledge of the context to understand texts.",
-          "met": false,
-          "note": "Students use story events to retell, not broader author/audience/context to interpret."
-        },
-        {
-          "clause": "Use this knowledge to discern a clear point of view or unique perspective when interpreting texts.",
-          "met": false,
-          "note": "Activities focus on retelling and describing events, not analyzing POV via author/audience/context."
-        },
-        {
-          "clause": "Use this knowledge to establish a clear point of view or unique perspective when constructing texts.",
-          "met": false,
-          "note": "Writing task is a simple event retell; no requirement to craft a POV using author/audience/context."
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "Students retell, role-play, and write about ending events, but do not use knowledge of author, audience, or context to discern or establish a point of view.",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.v1.1",
-      "judge_model": "gpt-5",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.01879964695498676,
-        "dense_rank": 43,
-        "bm25_rank": 50,
-        "dense_score": 0.49401,
-        "bm25_score": 79.50946233965928,
-        "rerank_score": 0.9905960559844971
+        "rrf_score": 0.14232181679299605,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.6463758,
+        "bm25_score": 61.87149159619326,
+        "rerank_score": 0.05981238931417465,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "standard_raw_text": "Draw from knowledge of author, audience, and context to discern and establish a clear point of view or unique perspective when interpreting and constructing texts. (I/C)"
+      "standard_raw_text": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.T.T.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Describe traits of the main characters.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Explain how the characters' words support the central message, lesson, or moral.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Explain how the characters' actions support the central message, lesson, or moral.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.14098360655737702,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.6979331,
+        "bm25_score": 111.78717459595762,
+        "rerank_score": 0.1322314441204071,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.T.T.1.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use knowledge of characters in narratives to create texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use knowledge of settings in narratives to create texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use knowledge of events in narratives to create texts.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Create texts that share real or imagined experiences and events.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Include a sense of closure in created texts.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.14097055450985482,
+        "dense_rank": 1,
+        "bm25_rank": 3,
+        "dense_score": 0.545946,
+        "bm25_score": 55.56888117930904,
+        "rerank_score": 0.07614106684923172,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use knowledge of narrative techniques (e.g., characters, settings, events) to create texts that share real or imagined experiences and events with a sense of closure. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.T.T.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the main topic in an expository text.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Identify supporting details in an expository text.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Recognize techniques used to craft expository texts.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1421875,
+        "dense_rank": 5,
+        "bm25_rank": 5,
+        "dense_score": 0.54599655,
+        "bm25_score": 41.75598285532925,
+        "rerank_score": 0.04367761313915253,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify techniques used to craft expository texts, including main topic and supporting details. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.T.RA.2.a",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion. (I)",
+          "met": false,
+          "note": "The directive asks students to refer back to what they have learned from the story so far to support their thinking, which is a student-directed imperative to use parts of the text to support an answer/idea. However, most other discussion prompts in the lesson ask students to answer comprehension questions without explicitly requiring them to cite or point to specific parts of the text as support. The text-referencing act is thin and not the lesson's instructional focus."
+        }
+      ],
+      "evidence": "'Think back to what the boy and sun were doing at the beginning and middle of the story. With your partner, discuss why you think the sun will be at one corner of the page at the end of the story. What have you learned from the story so far that makes you think this might be the case?'",
+      "evidence_page": 99,
+      "confidence": "high",
+      "rationale": "The standard requires students to refer to parts of texts when supporting an idea, answer, or opinion. One directive in Work Time A asks students to discuss \"why you think the sun will be at one corner of the page at the end of the story. What have you learned from the story so far that makes you think this might be the case?\" — this directs students to draw on specific parts of the text to support their prediction/idea. However, the lesson's primary focus is describing ending events and role-playing, and the remaining discussion prompts (e.g., \"What does the boy experience when the sun is setting?\") ask for answers without explicitly requiring students to cite or point to specific text parts as evidence. Because the text-referencing act appears only in one thin prompt rather than as a sustained or focal instructional activity, the clause is partially met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.13860219605428564,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.76196575,
+        "bm25_score": 73.16883663497647,
+        "rerank_score": 0.06169162318110466,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Refer to parts of texts when supporting an idea, answer, or opinion. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.P.EICC.3.e",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Make predictions about events or information likely to come next in a text.",
+          "met": false,
+          "note": "Students predict what time of day the end of the story takes place and where the sun will be, which are predictions about what comes next before reading the ending pages."
+        },
+        {
+          "clause": "Track those predictions as reading progresses.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "'What time of day do you think the end of the story takes place?' (at the end of the day) 'Where do you think the sun will be at the end of the story?' (at one corner of the page)",
+      "evidence_page": 99,
+      "confidence": "high",
+      "rationale": "The make-predictions clause is partially met: before the close read-aloud of pages 21–26, students are invited to turn and talk to predict \"What time of day do you think the end of the story takes place?\" and \"Where do you think the sun will be at the end of the story?\" — these are forward-looking guesses about what comes next, and students respond with predictions (\"at the end of the day\"; \"at one corner of the page\"). However, the predictions are narrow (two teacher-posed prediction questions on a single pre-reading turn-and-talk) rather than a substantive, instructionally-intended prediction activity, so the clause is partially met. The track-predictions clause is not met: there is no moment in the lesson where students return to their predictions during or after reading to confirm, revise, or track them against what actually happened in the text.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.13974409015392622,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.7328233,
+        "bm25_score": 113.57839113713615,
+        "rerank_score": 0.03949454799294472,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Make and track predictions about the events and information likely to come next. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.T.SS.1.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use transition words or phrases (such as once upon a time, next, last) to sequence events (C)",
+          "met": false,
+          "note": "The student completes a sentence frame beginning with the transition phrase 'At the end,' using it to sequence the ending events of the story in their writing. However, this is a single teacher-provided transition phrase in a scaffolded frame; the student does not independently select or use multiple transition words/phrases to sequence events and actions across a text."
+        },
+        {
+          "clause": "Use transition words or phrases (such as once upon a time, next, last) to sequence actions (C)",
+          "met": false,
+          "note": "The response sheet across Parts I and II implies a temporal sequence (beginning, middle, end) and the student writes in the 'At the end' frame, but the student is not shown selecting or deploying transition words/phrases themselves to sequence actions — the frame supplies the single transition phrase."
+        }
+      ],
+      "evidence": "'At the end …'",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "The standard requires students to use transition words or phrases to sequence events and actions in their own construction (C). In Work Time C, students complete a response sheet with the sentence frame \"At the end …,\" which is a transition phrase used to sequence the ending events of Summer Sun Risin'. This shows the student writing with a transition phrase to order story events. However, the transition phrase is teacher-provided within a scaffolded frame, and only one such phrase is used in this lesson segment; there is no evidence of students independently selecting or deploying multiple transition words/phrases (e.g., \"once upon a time,\" \"next,\" \"last\") to sequence a full set of events and actions. Both clauses are therefore partially met — the student does use a transition phrase in writing, but the scope is narrow and scaffolded. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.14079900839054155,
+        "dense_rank": 2,
+        "bm25_rank": 3,
+        "dense_score": 0.47326106,
+        "bm25_score": 29.10574706741969,
+        "rerank_score": 0.032357603311538696,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use transition words or phrases, such as once upon a time, next, and last to sequence events and actions. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.P.EICC.3.f",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Make inferences about different levels of meaning within the text.",
+          "met": false,
+          "note": "Students are directed to infer why the sun will be at one corner of the page based on what they have learned, which is an inferential act (reasoning beyond the literal text). However, this is a single inference prompt, not work across different levels of meaning."
+        },
+        {
+          "clause": "Track inferences while reading.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Support inferences with evidence from the text.",
+          "met": false,
+          "note": "The prompt asks students to draw on prior textual knowledge to justify their thinking, which is a thin form of supporting an inference with evidence, but students are not explicitly directed to refer to specific parts of the text as support."
+        }
+      ],
+      "evidence": "'Think back to what the boy and sun were doing at the beginning and middle of the story. With your partner, discuss why you think the sun will be at one corner of the page at the end of the story. What have you learned from the story so far that makes you think this might be the case?'",
+      "evidence_page": 99,
+      "confidence": "low",
+      "rationale": "⚑ REVIEW: partial-or-full — The make-inferences clause is partially met: students are directed to infer why the sun will be at one corner of the page at the end of the story (\"With your partner, discuss why you think the sun will be at one corner of the page at the end of the story. What have you learned from the story so far that makes you think this might be the case?\"), but this targets a single inference rather than different levels of meaning. The support clause is thinly met by the follow-up asking students to draw on what they have learned from the story, though no explicit text-referencing act is required. The track-inferences clause (monitoring and adjusting inferences across the reading) is not met — there is no activity in which students revisit, confirm, or revise inferences during reading. Overall: partial, with the tracking sub-act absent and the make/support sub-acts only thinly evidenced.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.14045083940424793,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.7720969,
+        "bm25_score": 99.7891133714998,
+        "rerank_score": 0.03621751070022583,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Make, track, and support inferences about different levels of meaning within the text. (I)",
+      "needs_review": true,
+      "review_reason": "partial-or-full — make/track/support compound: make is evidenced via the inference prompt; support is thinly evidenced by the 'what makes you think this' follow-up; track is absent.",
+      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.T.T.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify the problem in a simple plot.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Identify the solution in a simple plot.",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.13798748194511315,
+        "dense_rank": 2,
+        "bm25_rank": 1,
+        "dense_score": 0.51225746,
+        "bm25_score": 37.85944788642521,
+        "rerank_score": 0.048232581466436386,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify a simple plot with a problem and solution. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Explain concepts by interpreting texts.",
+          "met": true,
+          "note": "Students explain the concept of the verse's meaning by interpreting the text chunks."
+        },
+        {
+          "clause": "Learn concepts by interpreting texts.",
+          "met": true,
+          "note": "Students learn the concept of sunset/setting by interpreting the text."
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
+          "met": true,
+          "note": "Students construct texts (writing and drawing) to demonstrate understanding of the ending events concept."
+        }
+      ],
+      "evidence": "Work Time A Mini Language Dive: students respond to 'What does this verse mean?' and 'Now what do you think the verse means?' (Responses will vary); students explain the concept of sunset by interpreting the text.",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "All three clauses met. Work Time A has students explain concepts by interpreting: students respond to 'What does this verse mean?' and 'Now what do you think the verse means?' and explain the concept of sunset by interpreting the text. Students learn concepts by interpreting: students learn the concept of 'setting' (moving down) and respond to 'What does the boy experience when the sun is setting?' (The boy is reading a book with his dad and getting ready for bed). Work Time C has students construct texts to demonstrate understanding: 'students complete the Summer Sun Risin' response sheet by writing and drawing about the ending events of the story.' Full. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1357796665576986,
+        "dense_rank": 4,
+        "bm25_rank": 6,
+        "dense_score": 0.5167781,
+        "bm25_score": 18.139315447588963,
+        "rerank_score": 0.05479440465569496,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.P.AC.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify important, interesting, or effective uses of language in a text (I/C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Apply understanding of word choices to interpret how they affect the target audience (I/C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Analyze and explain how specific word choices support the text's purpose (I/C)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.v1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.13806547619047618,
+        "dense_rank": 6,
+        "bm25_rank": 9,
+        "dense_score": 0.53502613,
+        "bm25_score": 20.354821306902938,
+        "rerank_score": 0.04133202135562897,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify, apply, and analyze important, interesting, or effective uses of language, explaining or evaluating how specific word choices affect the target audience and support the text’s purpose. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.L.V.3.e",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Use knowledge of word relationships when making word choices in speaking and writing.",
+          "met": true,
+          "note": "Students use knowledge of word relationships (compound words, word parts) when making word choices in speaking."
+        },
+        {
+          "clause": "Use learned vocabulary words and phrases when making word choices in speaking and writing.",
+          "met": true,
+          "note": "Students use learned vocabulary (setting, sunset) when making word choices in speaking."
+        }
+      ],
+      "evidence": "Work Time A: students use knowledge of the word relationship 'over + head' to understand 'overhead'; Closing A: students use the sentence frame 'When the sun is setting (the sun/the boy/I) _________.'",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "Work Time A has students use knowledge of word relationships: students use the relationship 'over + head' to understand 'overhead.' Closing A has students use learned vocabulary when making word choices in speaking: students use the sentence frame 'When the sun is setting (the sun/the boy/I) _________.' deploying learned vocabulary (setting, sunset, sun, boy). Both clauses met. Full. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.13758852258852258,
+        "dense_rank": 6,
+        "bm25_rank": 9,
+        "dense_score": 0.49865416,
+        "bm25_score": 25.659254218266735,
+        "rerank_score": 0.04128123074769974,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Use knowledge of word relationships and learned vocabulary words and phrases when making word choices in speaking and writing. (C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.P.CP.2.a",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Communicate ideas clearly when presenting.",
+          "met": true,
+          "note": "Students communicate ideas clearly when presenting to partners in turn-and-talk and Think-Pair-Share."
+        },
+        {
+          "clause": "Present information in an organized manner.",
+          "met": true,
+          "note": "Students present information in an organized manner using the sentence frame."
+        },
+        {
+          "clause": "Express ideas and information clearly through speech.",
+          "met": true,
+          "note": "Students express ideas and information clearly through speech in partner discussions."
+        }
+      ],
+      "evidence": "Work Time A: 'Invite students to turn and talk to an elbow partner: What time of day do you think the end of the story takes place?'; 'Discuss with a partner what the boy and sun are doing using the frame: In the end, the boy is _____. The sun is _____.'",
+      "evidence_page": null,
+      "confidence": "low",
+      "rationale": "All three clauses met. Work Time A has students communicate ideas clearly when presenting to partners: 'Invite students to turn and talk to an elbow partner: What time of day do you think the end of the story takes place?' and 'Discuss with a partner what the boy and sun are doing using the frame: In the end, the boy is _____. The sun is _____.' Students express ideas clearly through speech: students respond (at the end of the day; at one corner of the page). Closing A has students present information in an organized manner using the sentence frame 'When the sun is setting (the sun/the boy/I) _________.' The manner-modifier principle applies: students genuinely present aloud to communicate ideas/information, so both the manner (clearly) and the act (present) are satisfied. Full. [REJECTED: evidence missing or not found in lesson raw text]",
+      "grounded": false,
+      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
+      "prompt_version": "align_judge.assembled.batch.v1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.1374230575968846,
+        "dense_rank": 1,
+        "bm25_rank": 2,
+        "dense_score": 0.72298497,
+        "bm25_score": 56.95235547972655,
+        "rerank_score": 0.030569110065698624,
+        "coverage_pass": true,
+        "coverage_family": "present"
+      },
+      "standard_raw_text": "Communicate clearly to present ideas, information, and texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     }
-  ]
+  ],
+  "usage": {
+    "calls": 13,
+    "input_tokens": 303135,
+    "output_tokens": 20198,
+    "estimated_cost_usd": 1.844289,
+    "by_model": {
+      "claude-sonnet-4-5": {
+        "calls": 1,
+        "input_tokens": 27633,
+        "output_tokens": 12107,
+        "estimated_cost_usd": 0.264504
+      },
+      "claude-opus-4-6": {
+        "calls": 12,
+        "input_tokens": 275502,
+        "output_tokens": 8091,
+        "estimated_cost_usd": 1.579785
+      }
+    }
+  }
 }

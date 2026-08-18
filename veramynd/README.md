@@ -24,7 +24,7 @@ a per-publisher `if Success for All / elif Publisher B` tree.
 | Proof point | Status |
 |---|---|
 | Batch-1 EL → normalize → retrieve (gold R@25) | **Locked** |
-| Batch-1 gold-4 judge vs SME (live assembled prompt) | **Measured, not closed** — L1 **6/7** overlap; L3/L6/U3L5 not yet re-judged on assembled. Prior OpenAI `align_judge.v1.1`: 18/19 exact (94.7%) |
+| Batch-1 gold-4 judge vs SME (live assembled prompt) | **Measured, not closed** — **16/20 (80%)** 3-class exact on judged unique pairs. Prior OpenAI `align_judge.v1.1`: 18/19 exact (94.7%) |
 | Second publisher Stage-1 GO (`21111_RBtL_SSManual_L1.pdf`, Reading Roots Shared Story Level 1) | **Done** — 14 lessons in `output/stage1_ssmanual/` |
 | Second publisher normalize → retrieve → judge | **Not locked yet** |
 | Any PDF / any publisher / any grade with zero pattern work | **Not claimed** — new heading languages may need a small generic-pattern add |
@@ -55,11 +55,12 @@ not hand-edit labels).
 
 | Metric | Result |
 |---|---|
-| **L1 assembled (Anthropic batch, `--no-cache --limit 25`)** | **6/7** gold overlap |
-| L1 leftover overlap miss | `1.P.EICC.4.c` — gold **full**, json **partial** |
-| L1 unjudged gold | `1.P.EICC.4.e` — outside top 25 (L1 has no coverage inject) |
-| **L3 / L6 / U3L5 assembled** | **Not yet re-judged** (JSON may still be older v1 / GPT) |
-| Prior OpenAI `align_judge.v1.1` (unused) | **18/19 (94.7%)** 3-class exact on unique top-25 pairs |
+| **3-class exact** (unique pairs, judged shortlist + coverage pass) | **16/20 (80.0%)** |
+| Binary precision / recall | **100%** / **88.9%** |
+| Per lesson | L1 **6/7**, L3 **4/5**, L6 **5/7**, U3L5 **1/1** |
+| Leftover misses | L1 `1.P.EICC.4.c` gold full / json partial; L3 `1.T.SS.2.a` gold partial / json none; L6 `1.L.V.3.a` gold partial / json full; L6 `1.T.T.1.c` gold partial / json none |
+| Unjudged gold | L1 + L3 `1.P.EICC.4.e` (gold none, outside top 25) |
+| Prior OpenAI `align_judge.v1.1` (unused) | **18/19 (94.7%)** 3-class exact |
 
 Broader multi-publisher / all-40-lesson judge scale is **not** claimed.
 Agentic/graph track is design-only.
@@ -87,9 +88,9 @@ Agentic/graph track is design-only.
 | **Chunk** — hierarchical lesson / instructional / evidence-pointer bundles | **Implemented** (optional for gold R@25; normalize drives queries) | [`chunk/`](veramynd_parser/veramynd_parser/chunk/) |
 | **Embed → Qdrant** — leaf-only standards + rich retrieval text | **Implemented** | [`embed/`](veramynd_parser/veramynd_parser/embed/) |
 | **Hybrid retrieve + rerank** — `multi_normalize_focused` competency funnel | **Implemented (Batch-1 R@25/R@50 met)** | [`retrieve/`](veramynd_parser/veramynd_parser/retrieve/) |
-| **Alignment judge + grounding** — assembled prompt; ungrounded quotes rejected; P4 caveat + P6 coverage pass | **Implemented** (L1 assembled measured; gold-4 re-judge open) | [`judge/`](veramynd_parser/veramynd_parser/judge/), [`prompts/assembled_judge_prompt.md`](veramynd_parser/veramynd_parser/prompts/assembled_judge_prompt.md) |
+| **Alignment judge + grounding** — assembled prompt; ungrounded quotes rejected; P4 caveat + P6 coverage pass | **Implemented** (gold-4 assembled: 16/20) | [`judge/`](veramynd_parser/veramynd_parser/judge/), [`prompts/assembled_judge_prompt.md`](veramynd_parser/veramynd_parser/prompts/assembled_judge_prompt.md) |
 | **Report** — CSV + HTML; gold-4 + client (no retrieve scores) | **Implemented** | [`report/`](veramynd_parser/veramynd_parser/report/), `output/reports/` |
-| **Gold-set metrics** — leaf recall @k + judge exact vs SME | **Retrieve locked; assembled judge L1 6/7, gold-4 not closed** | gold: [`docs/_ga_g1_module2_goldset.md`](docs/_ga_g1_module2_goldset.md) |
+| **Gold-set metrics** — leaf recall @k + judge exact vs SME | **Retrieve locked; assembled gold-4 16/20 (80%), not closed** | gold: [`docs/_ga_g1_module2_goldset.md`](docs/_ga_g1_module2_goldset.md) |
 | **Agentic + standards-graph track** | **Design only** | [`docs/architecture-agentic-graph.md`](docs/architecture-agentic-graph.md) |
 
 ## How it works
