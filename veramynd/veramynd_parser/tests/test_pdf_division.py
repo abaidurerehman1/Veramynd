@@ -74,11 +74,11 @@ def test_fill_steps_distinguishes_titles_that_share_a_14_char_prefix():
     filled = fill_steps(blocks, body, cfg)
     assert filled[0].page == 10
     assert filled[1].page == 11
-    assert filled[0].steps == [
+    assert filled[0].step_texts == [
         "Group 1 discusses patterns.",
         "Record Group 1 notes.",
     ]
-    assert filled[1].steps == [
+    assert filled[1].step_texts == [
         "Group 2 discusses patterns.",
         "Record Group 2 notes.",
     ]
@@ -138,14 +138,14 @@ def test_fill_steps_ignores_a_coincidental_prefix_match_in_ordinary_prose():
     filled = fill_steps(blocks, body, cfg)
     work_time_c, closing_a, closing_b = filled
     assert work_time_c.page == 232
-    assert work_time_c.steps == [
+    assert work_time_c.step_texts == [
         "Tell students they will have a chance to help add to the anchor chart using",
         "shared writing.",
     ]
     assert closing_a.page == 233
-    assert closing_a.steps == ["Refocus students whole group."]
+    assert closing_a.step_texts == ["Refocus students whole group."]
     assert closing_b.page == 234
-    assert closing_b.steps == ["Display the recording form."]
+    assert closing_b.step_texts == ["Display the recording form."]
 
 
 def test_fill_steps_matches_truncated_body_header_via_shared_prefix():
@@ -171,4 +171,34 @@ def test_fill_steps_matches_truncated_body_header_via_shared_prefix():
     ]
     filled = fill_steps(blocks, body, cfg)
     assert filled[0].page == 2
-    assert filled[0].steps == ["Students sing."]
+    assert filled[0].step_texts == ["Students sing."]
+
+
+def test_fill_steps_keeps_each_line_on_the_page_it_came_from():
+    """A block that continues across a page break must not collapse to the start page."""
+    cfg = SimpleNamespace(
+        instructional_sections=("Opening", "Work Time", "Closing and Assessment")
+    )
+    blocks = [
+        InstructionalBlock(
+            section="Work Time",
+            letter="A",
+            title="Close Read",
+            minutes=15,
+            page=0,
+            steps=[],
+        ),
+    ]
+    page_45 = [f"Step on page 45 number {i}." for i in range(1, 21)]
+    page_46 = [f"Step on page 46 number {i}." for i in range(1, 11)]
+    body = [
+        ("section_header", "Work Time", 45),
+        ("section_header", "A. Close Read (15 minutes)", 45),
+        *(("list_item", line, 45) for line in page_45),
+        *(("list_item", line, 46) for line in page_46),
+    ]
+    filled = fill_steps(blocks, body, cfg)
+    assert filled[0].page == 45
+    pages = [s.page for s in filled[0].steps]
+    assert pages[:20] == [45] * 20
+    assert pages[20:] == [46] * 10

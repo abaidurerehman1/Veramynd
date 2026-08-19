@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-from veramynd_parser.models import InstructionalBlock, Lesson, Provenance
+from veramynd_parser.models import InstructionalBlock, InstructionalStep, Lesson, Provenance
 from veramynd_parser.pdf.export_pages import remap_lesson
 from veramynd_parser.pdf.page_map import (
     PageMapError,
@@ -85,6 +85,40 @@ def test_remap_lesson_exports_printed_only(page_map: PrintedPageMap) -> None:
     assert out.provenance is not None
     assert out.provenance.page_start == 39
     assert out.provenance.page_end == 50
+
+
+def test_remap_converts_each_step_page(page_map: PrintedPageMap) -> None:
+    lesson = Lesson(
+        code="G1M2U1L1",
+        grade=1,
+        module=2,
+        unit=1,
+        lesson=1,
+        title="Lesson 1",
+        page_start=12,
+        page_end=23,
+        instructional_blocks=[
+            InstructionalBlock(
+                section="Work Time",
+                letter="A",
+                title="Close Read",
+                page=16,
+                steps=[
+                    InstructionalStep(text="On page 16.", page=16),
+                    InstructionalStep(text="Still on 16.", page=16),
+                    InstructionalStep(text="Now page 17.", page=17),
+                ],
+            )
+        ],
+    )
+    out = remap_lesson(lesson, page_map)
+    block = out.instructional_blocks[0]
+    assert block.page == page_map.printed_of(16)
+    assert [s.page for s in block.steps] == [
+        page_map.printed_of(16),
+        page_map.printed_of(16),
+        page_map.printed_of(17),
+    ]
 
 
 def test_validate_rejects_invented_gap(page_map: PrintedPageMap) -> None:

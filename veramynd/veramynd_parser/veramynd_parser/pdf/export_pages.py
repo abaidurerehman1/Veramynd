@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from ..models import InstructionalBlock, Lesson, Provenance, Table, TeacherGuide, Unit
+from ..models import InstructionalBlock, InstructionalStep, Lesson, Provenance, Table, TeacherGuide, Unit
 from .page_map import PageMapError, PrintedPageMap, build_printed_page_map
 
 
@@ -47,6 +47,9 @@ def remap_lesson(lesson: Lesson, page_map: PrintedPageMap) -> Lesson:
     for b in remapped.instructional_blocks:
         if b.page != 0:
             page_map.validate_exported_page(b.page)
+        for step in b.steps:
+            if step.page != 0:
+                page_map.validate_exported_page(step.page)
     return remapped
 
 
@@ -72,8 +75,20 @@ def _remap_block(block: InstructionalBlock, page_map: PrintedPageMap) -> Instruc
     # Calling printed_of(0) would raise PageMapError after a GO report was already
     # possible, leaving a trusted-looking report beside an incomplete export.
     if block.page == 0:
-        return block
-    return block.model_copy(update={"page": page_map.printed_of(block.page)})
+        steps = [_remap_step(s, page_map) for s in block.steps]
+        return block.model_copy(update={"steps": steps})
+    return block.model_copy(
+        update={
+            "page": page_map.printed_of(block.page),
+            "steps": [_remap_step(s, page_map) for s in block.steps],
+        }
+    )
+
+
+def _remap_step(step: InstructionalStep, page_map: PrintedPageMap) -> InstructionalStep:
+    if step.page == 0:
+        return step
+    return step.model_copy(update={"page": page_map.printed_of(step.page)})
 
 
 def _remap_table(table: Table, page_map: PrintedPageMap) -> Table:

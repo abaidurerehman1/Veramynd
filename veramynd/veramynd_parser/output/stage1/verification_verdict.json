@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0-verify",
+  "verdict": "GO",
+  "passed": true,
+  "checks_total": 14,
+  "fail_count": 0,
+  "warn_count": 1,
+  "checks": [
+    {
+      "name": "V1 lesson count matches expected",
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": "40 (expected 40)"
+    },
+    {
+      "name": "V2 pages fully partition (no gap/overlap)",
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": "440/440 pages"
+    },
+    {
+      "name": "V3 lesson starts strictly increasing",
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": ""
+    },
+    {
+      "name": "V4 no inverted page spans",
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": ""
+    },
+    {
+      "name": "V5 lesson ids unique",
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": ""
+    },
+    {
+      "name": "V6 lessons contiguous within each unit",
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": ""
+    },
+    {
+      "name": "V7 running header matches bookmark code",
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": "40/40 confirmed"
+    },
+    {
+      "name": "V8 every lesson has required blocks",
+      "status": "PASS",
+      "severity": "WARN",
+      "detail": "all present"
+    },
+    {
+      "name": "V8 no lesson lost all instructional content",
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": "all have blocks"
+    },
+    {
+      "name": "V13 agenda plan matches body blocks",
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": "all aligned"
+    },
+    {
+      "name": "V14 every instructional block has steps",
+      "status": "PASS",
+      "severity": "WARN",
+      "detail": "all have steps"
+    },
+    {
+      "name": "V9 agenda time within sane band",
+      "status": "PASS",
+      "severity": "WARN",
+      "detail": "all in band"
+    },
+    {
+      "name": "V11 every lesson has Materials",
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": "all present"
+    },
+    {
+      "name": "V12 every lesson has Vocabulary",
+      "status": "WARN",
+      "severity": "WARN",
+      "detail": "3 empty: ['G1M2U1L15', 'G1M2U3L10', 'G1M2U3L12']"
+    }
+  ]
+}

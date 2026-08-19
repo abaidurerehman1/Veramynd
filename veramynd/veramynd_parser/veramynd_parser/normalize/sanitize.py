@@ -230,8 +230,8 @@ def lesson_source_lines_with_block(lesson: Lesson) -> list[tuple[str, str | None
         if b.title:
             lines.append((b.title, block_key))
         for step in b.steps:
-            if step and step.strip():
-                lines.append((step.strip(), block_key))
+            if step.text and step.text.strip():
+                lines.append((step.text.strip(), block_key))
     for term in lesson.vocabulary:
         if term and term.strip():
             lines.append((term.strip(), None))
@@ -536,7 +536,7 @@ def find_written_elicitation_steps(lesson: Lesson) -> list[tuple[str, str, str]]
         if not section or not letter:
             continue
         for step in block.steps or []:
-            text = (step or "").strip()
+            text = (step.text or "").strip()
             if not text:
                 continue
             if _WRITTEN_FALSE_POSITIVE.search(text):

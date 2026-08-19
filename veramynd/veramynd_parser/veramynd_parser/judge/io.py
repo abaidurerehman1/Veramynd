@@ -6,6 +6,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from ..models import InstructionalBlock, InstructionalStep, format_instructional_block_text
+
 
 class JudgeIoError(ValueError):
     pass
@@ -45,15 +47,30 @@ def lesson_raw_text_from_stage1(lesson: dict[str, Any]) -> str:
         section = (b.get("section") or "").strip()
         letter = (b.get("letter") or "").strip()
         btitle = (b.get("title") or "").strip()
-        page = b.get("page")
-        header = f"[{section} {letter}] {btitle}".strip()
-        if page is not None:
-            header = f"{header} (page {page})"
-        parts.append(header)
-        for step in b.get("steps") or []:
-            s = str(step).strip()
-            if s:
-                parts.append(f"- {s}")
+        block_page = int(b.get("page") or 0)
+        raw_steps = b.get("steps") or []
+        steps: list[InstructionalStep] = []
+        for step in raw_steps:
+            if isinstance(step, dict):
+                steps.append(InstructionalStep.model_validate(step))
+            elif isinstance(step, str) and step.strip():
+                steps.append(InstructionalStep(text=step.strip(), page=0))
+        block = InstructionalBlock(
+            section=section or "Unknown",
+            letter=letter or "A",
+            title=btitle,
+            page=block_page,
+            steps=steps,
+        )
+        parts.append(
+            format_instructional_block_text(
+                section=block.section,
+                letter=block.letter,
+                title=block.title,
+                steps=block.steps,
+                block_page=block.page,
+            )
+        )
     text = "\n".join(parts).strip()
     if not text:
         raise JudgeIoError("lesson has no instructional steps for judge grounding")

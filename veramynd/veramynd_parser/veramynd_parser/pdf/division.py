@@ -14,7 +14,7 @@ import re
 from typing import Protocol
 
 from .. import text_utils as tu
-from ..models import AgendaItem, InstructionalBlock, LearningTarget
+from ..models import AgendaItem, InstructionalBlock, InstructionalStep, LearningTarget
 
 
 class LessonDivider(Protocol):
@@ -128,5 +128,5 @@ def fill_steps(blocks: list[InstructionalBlock], body, cfg) -> list[Instructiona
         if matched:
             continue
         if idx >= 0 and label in ("list_item", "text"):
-            blocks[idx].steps.append(text)
+            blocks[idx].steps.append(InstructionalStep(text=text, page=page))
     return blocks

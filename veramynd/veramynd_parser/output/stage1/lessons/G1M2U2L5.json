@@ -45,13 +45,13 @@
     {
       "section": "Opening",
       "letter": "A",
-      "title": "Engaging the Learner: 'Where Are They? The Sun, Moon, and Stars' Poem",
+      "title": "Engaging the Learner: “Where Are They? The Sun, Moon, and Stars” Poem",
       "minutes": 5
     },
     {
       "section": "Work Time",
       "letter": "A",
-      "title": "Close Read-aloud, Session 4: What Makes Day and Night, Pages 24-27",
+      "title": "Close Read-aloud, Session 4: What Makes Day and Night, Pages 24–27",
       "minutes": 15
     },
     {
@@ -83,58 +83,339 @@
     {
       "section": "Opening",
       "letter": "A",
-      "title": "Engaging the Learner: 'Where Are They? The Sun, Moon, and Stars' Poem",
+      "title": "Engaging the Learner: “Where Are They? The Sun, Moon, and Stars” Poem",
       "minutes": 5,
       "page": 255,
       "steps": [
-        "Invite students to the whole group area.",
-        "Remind them that in previous lessons they read a poem describing the sun, moon, and stars. Tell them that today, they will learn a new poem about the sun, moon, and stars!",
-        "Direct students' attention to the 'Where Are They? The Sun, Moon, and Stars' poem.",
-        "Tell students that you will recite the poem first on your own as they listen. Say: 'As I read the poem, I want you to think about what the poem is about.'",
-        "Read aloud the entire poem, slowly, fluently, with expression, and without interruption.",
-        "After reading the final verse of the poem, invite students to turn and talk to an elbow partner:",
-        "'What is the poem about?' (where the sun, moon, and stars are in location to other things like buildings, ground, trees)",
-        "Remind students that there are different kinds of words and that they learned about nouns and verbs in Unit 1, and adjectives earlier in Lesson 2. Define the terms noun, verb, and adjective as needed.",
-        "Invite students to whisper a noun from the poem, 'Where Are They: The Sun, Moon, and Stars', into their hands. Then invite them to whisper a verb from the poem into their hands.",
-        "Affirm that this poem describes where sun, moon, and stars are in location to other things. Tell students that words that describe where things are located in relation to other things have a special name, prepositions. Define preposition (a word that describes the location of one thing in relation to another thing).",
-        "Using a total participation technique, invite responses from the group:",
-        "'What are some hand gestures, motions, or actions that go along with each verse of the poem?' (Answers will vary, but might include: lifting their arms slowly to show the sun rising up over the horizon, sun high in the sky, full moon coming up over buildings.)",
-        "Reread the poem aloud a second time and invite students to repeat each verse after it is read, using their own chosen gestures and hand motions. Tell students that they will continue to work with this poem over the next several lessons to describe where the sun, moon, and stars are located.",
-        "As students practice the poem with gestures, provide options for expression by echoing several times in different voices. (Example: Invite students to try repeating each verse in a whisper voice, in a giant voice, and/or in an opera voice.) (MMAE)",
-        "For ELLs: Prepare students for their work with prepositions by asking them to identify words that tell us where the sun, moon, and stars are located. Example: 'What are some words that tell us where the sun is?' (above, below, behind)"
+        {
+          "text": "Invite students to the whole group area.",
+          "page": 255
+        },
+        {
+          "text": "Remind them that in previous lessons they read a poem describing the sun, moon, and stars.",
+          "page": 255
+        },
+        {
+          "text": "Tell them that today, they will learn a new poem about the sun, moon, and stars!",
+          "page": 255
+        },
+        {
+          "text": "256",
+          "page": 256
+        },
+        {
+          "text": "The Sun, Moon, and Stars",
+          "page": 256
+        },
+        {
+          "text": "Direct students' attention to the \"Where Are They? The Sun, Moon, and Stars\" poem.",
+          "page": 256
+        },
+        {
+          "text": "Tell students that you will recite the poem first on your own as they listen. Say: \"As I read the",
+          "page": 256
+        },
+        {
+          "text": "poem, I want you to think about what the poem is about.\"",
+          "page": 256
+        },
+        {
+          "text": "Read aloud the entire poem, slowly, fluently, with expression, and without interruption.",
+          "page": 256
+        },
+        {
+          "text": "After reading the final verse of the poem, invite students to turn and talk to an elbow partner:",
+          "page": 256
+        },
+        {
+          "text": "\"What is the poem about?\" (where the sun, moon, and stars are in location to other things",
+          "page": 256
+        },
+        {
+          "text": "like buildings, ground, trees)",
+          "page": 256
+        },
+        {
+          "text": "Remind students that there are different kinds of words and that they learned about nouns",
+          "page": 256
+        },
+        {
+          "text": "and verbs in Unit 1, and adjectives earlier in Lesson 2. Define the terms noun, verb, and",
+          "page": 256
+        },
+        {
+          "text": "adjective as needed.",
+          "page": 256
+        },
+        {
+          "text": "Invite students to whisper a noun from the poem, \"Where Are They: The Sun, Moon, and",
+          "page": 256
+        },
+        {
+          "text": "Stars\", into their hands. Then invite them to whisper a verb from the poem into their hands.",
+          "page": 256
+        },
+        {
+          "text": "Affirm that this poem describes where sun, moon, and stars are in location to other things.",
+          "page": 256
+        },
+        {
+          "text": "Tell students that words that describe where things are located in relation to other things",
+          "page": 256
+        },
+        {
+          "text": "have a special name, prepositions. Define preposition (a word that describes the location of",
+          "page": 256
+        },
+        {
+          "text": "one thing in relation to another thing).",
+          "page": 256
+        },
+        {
+          "text": "Using a total participation technique, invite responses from the group:",
+          "page": 256
+        },
+        {
+          "text": "\"What are some hand gestures, motions, or actions that go along with each verse of the",
+          "page": 256
+        },
+        {
+          "text": "poem?\" (Answers will vary, but might include: lifting their arms slowly to show the sun",
+          "page": 256
+        },
+        {
+          "text": "rising up over the horizon, sun high in the sky, full moon coming up over buildings.)",
+          "page": 256
+        },
+        {
+          "text": "Reread the poem aloud a second time and invite students to repeat each verse after it is read,",
+          "page": 256
+        },
+        {
+          "text": "using their own chosen gestures and hand motions. Tell students that they will continue to",
+          "page": 256
+        },
+        {
+          "text": "work with this poem over the next several lessons to describe where the sun, moon, and stars",
+          "page": 256
+        },
+        {
+          "text": "are located.",
+          "page": 256
+        },
+        {
+          "text": "As students practice the poem with gestures, provide options for expression by",
+          "page": 256
+        },
+        {
+          "text": "echoing several times in different voices. (Example: Invite students to try repeating",
+          "page": 256
+        },
+        {
+          "text": "each verse in a whisper voice, in a giant voice, and/or in an opera voice.) (MMAE)",
+          "page": 256
+        },
+        {
+          "text": "For ELLs: Prepare students for their work with prepositions by asking them to",
+          "page": 256
+        },
+        {
+          "text": "identify words that tell us where the sun, moon, and stars are located. Example:",
+          "page": 256
+        },
+        {
+          "text": "\"What are some words that tell us where the sun is?\" (above, below, behind)",
+          "page": 256
+        }
       ]
     },
     {
       "section": "Work Time",
       "letter": "A",
-      "title": "Close Read-aloud, Session 4: What Makes Day and Night, Pages 24-27",
+      "title": "Close Read-aloud, Session 4: What Makes Day and Night, Pages 24–27",
       "minutes": 15,
       "page": 256,
       "steps": [
-        "Direct students' attention to the posted learning targets and read the first one aloud:",
-        "'I can distinguish what I learn from the illustrations and what I learn from the text in the book What Makes Day and Night to describe the pattern of light and dark on earth.'",
-        "Tell students that today they will continue to investigate the pattern of light and dark on earth and how it affects our day. Explain that today they will read one last part and prepare to take notes about the pattern of light and dark on earth.",
-        "Invite students to take out their imaginary bow and to take aim at the target.",
-        "Guide students through the close read-aloud for What Makes Day and Night using the Close Read-aloud Guide: What Makes Day and Night (Session 4; for teacher reference). Consider using the Reading Informational Text Checklist (see Assessment Overview and Resources).",
-        "During Session 4, refer to the guide for the use of What Makes Day and Night and the What Makes Day and Night anchor chart.",
-        "Refocus whole group.",
-        "Tell students that in the next part of the lesson, they will begin to take notes on what they have read.",
-        "Reduce barriers to comprehension by activating relevant prior knowledge of the learning target. Invite students to recall previous close read-aloud sessions in which they identified learning from the illustrations and from the text to describe light and dark on earth. (MMR)",
-        "For ELLs: Mini Language Dive. Ask students about the meaning of the chunks from the sentence in the text: 'The earth / is moving you / toward the sun.' Write and display student responses next to the chunks. Examples:",
-        "-Ask:",
-        "'What does this sentence mean?' Responses will vary.)",
-        "-Point to and read aloud the chunk: 'The earth' and ask:",
-        "'What is this sentence about?' (the earth; the planet)",
-        "-Point to and read aloud the chunk: 'is moving you' ask:",
-        "'What is the earth doing?' (moving us; spinning us around in space)",
-        "'How does the earth move us?' (When we stand on the earth, we move with it because it is spinning in space.)",
-        "-Point to and read aloud the chunk: 'toward the sun.' and ask:",
-        "'Where is the earth moving us?' (Toward the sun; closer and closer to the sun)",
-        "'What direction words, or prepositions, do you see in this chunk?' (toward; It means in the direction of something or closer to something.)",
-        "'What patterns does this sentence help us understand?' (The earth spins and moves us closer to the sun, and away again.)",
-        "'What, in the illustrations, help you understand that information? What, in the text, helps you understand that information?' (Responses will vary.)",
-        "'Now what do you think this sentence means?' (The earth spins us closer to the sun.)",
-        "'Can you use a direction word to complete the sentence frame: The earth is moving you ______?' (around in space; away from the sun; toward the light)"
+        {
+          "text": "Direct students' attention to the posted learning targets and read the first one aloud:",
+          "page": 256
+        },
+        {
+          "text": "\"I can distinguish what I learn from the illustrations and what I learn from the text in the",
+          "page": 256
+        },
+        {
+          "text": "book What Makes Day and Night to describe the pattern of light and dark on earth.\"",
+          "page": 256
+        },
+        {
+          "text": "Tell students that today they will continue to investigate the pattern of light and dark on",
+          "page": 256
+        },
+        {
+          "text": "earth and how it affects our day. Explain that today they will read one last part and prepare",
+          "page": 256
+        },
+        {
+          "text": "to take notes about the pattern of light and dark on earth.",
+          "page": 256
+        },
+        {
+          "text": "Invite students to take out their imaginary bow and to take aim at the target.",
+          "page": 256
+        },
+        {
+          "text": "EL Education Curriculum 257",
+          "page": 257
+        },
+        {
+          "text": "Grade 1: Module 2: Unit 2: Lesson 5",
+          "page": 257
+        },
+        {
+          "text": "Guide students through the close read-aloud for What Makes Day and Night using the Close",
+          "page": 257
+        },
+        {
+          "text": "Consider using the Reading Informational Text Checklist (see Assessment Overview and",
+          "page": 257
+        },
+        {
+          "text": "Resources).",
+          "page": 257
+        },
+        {
+          "text": "During Session 4, refer to the guide for the use of What Makes Day and Night and the What",
+          "page": 257
+        },
+        {
+          "text": "Refocus whole group.",
+          "page": 257
+        },
+        {
+          "text": "Tell students that in the next part of the lesson, they will begin to take notes on what they",
+          "page": 257
+        },
+        {
+          "text": "have read.",
+          "page": 257
+        },
+        {
+          "text": "Reduce barriers to comprehension by activating relevant prior knowledge of the",
+          "page": 257
+        },
+        {
+          "text": "learning target. Invite students to recall previous close read-aloud sessions in",
+          "page": 257
+        },
+        {
+          "text": "which they identified learning from the illustrations and from the text to describe",
+          "page": 257
+        },
+        {
+          "text": "light and dark on earth. (MMR)",
+          "page": 257
+        },
+        {
+          "text": "For ELLs: Mini Language Dive. Ask students about the meaning of the chunks from",
+          "page": 257
+        },
+        {
+          "text": "the sentence in the text: \"The earth / is moving you / toward the sun.\" Write and",
+          "page": 257
+        },
+        {
+          "text": "display student responses next to the chunks. Examples:",
+          "page": 257
+        },
+        {
+          "text": "–",
+          "page": 257
+        },
+        {
+          "text": "– Ask:",
+          "page": 257
+        },
+        {
+          "text": "\"What does this sentence mean?\" Responses will vary.)",
+          "page": 257
+        },
+        {
+          "text": "–",
+          "page": 257
+        },
+        {
+          "text": "– Point to and read aloud the chunk: \"The earth\" and ask:",
+          "page": 257
+        },
+        {
+          "text": "\"What is this sentence about?\" (the earth; the planet)",
+          "page": 257
+        },
+        {
+          "text": "–",
+          "page": 257
+        },
+        {
+          "text": "– Point to and read aloud the chunk: \"is moving you\" ask:",
+          "page": 257
+        },
+        {
+          "text": "\"What is the earth doing?\" (moving us; spinning us around in space)",
+          "page": 257
+        },
+        {
+          "text": "\"How does the earth move us?\" (When we stand on the earth, we move with it because it is spinning in space.)",
+          "page": 257
+        },
+        {
+          "text": "–",
+          "page": 257
+        },
+        {
+          "text": "– Point to and read aloud the chunk: \"toward the sun.\" and ask:",
+          "page": 257
+        },
+        {
+          "text": "\"Where is the earth moving us?\" (Toward the sun; closer and closer to the sun)",
+          "page": 257
+        },
+        {
+          "text": "\"What direction words, or prepositions, do you see in this chunk?\" (toward; It means",
+          "page": 257
+        },
+        {
+          "text": "in the direction of something or closer to something.)",
+          "page": 257
+        },
+        {
+          "text": "\"What patterns does this sentence help us understand?\" (The earth spins and moves",
+          "page": 257
+        },
+        {
+          "text": "us closer to the sun, and away again.)",
+          "page": 257
+        },
+        {
+          "text": "\"What, in the illustrations, help you understand that information? What, in the text,",
+          "page": 257
+        },
+        {
+          "text": "helps you understand that information?\" (Responses will vary.)",
+          "page": 257
+        },
+        {
+          "text": "\"Now what do you think this sentence means?\" (The earth spins us closer to the sun.)",
+          "page": 257
+        },
+        {
+          "text": "\"Can you use a direction word to complete the sentence frame: The earth is moving",
+          "page": 257
+        },
+        {
+          "text": "you ______?\" (around in space; away from the sun; toward the light)",
+          "page": 257
+        }
       ]
     },
     {
@@ -144,35 +425,214 @@
       "minutes": 15,
       "page": 257,
       "steps": [
-        "Refocus students whole group.",
-        "Direct their attention back to the first learning target and reread it aloud:",
-        "'I can distinguish what I learn from the illustrations and what I learn from the text in the book What Makes Day and Night to take notes on the pattern of light and dark on earth.'",
-        "Using a total participation technique, invite responses from group:",
-        "'What does it mean to take notes?' (short, written-down words to help us remember something)",
-        "'Why are notes important?' (They help us remember important things.)",
-        "Confirm for students that notes are short, written-down words to help us remember important things.",
-        "Display the What Makes Day and Night notes sheet and tell students that today they will take notes on the text What Makes Day and Night.",
-        "Direct students to the prompts at top of the page and read them aloud:",
-        "-'What makes day?'",
-        "-'What makes night?'",
-        "Tell students they will use their own notes sheet to capture quick notes about the pattern of light and dark that we call day and night. Tell students that they will use these notes in the next lesson during the Science Talk protocol. Students can use pictures and words to record their notes.",
-        "Invite students to show a thumbs-up or touch their head if they are ready to begin writing and drawing their notes.",
-        "Distribute:",
-        "-Prepared clipboards with the What Makes Day and Night notes sheet",
-        "-Pencils",
-        "-Crayons",
-        "-Colored pencils",
-        "Invite students to begin working.",
-        "As students write and draw, circulate to offer support. Prompt students by referencing the What Makes Day and Night anchor chart and asking students to think about the close readaloud sessions. Remind students that they can draw and write to record their notes.",
-        "Provide sentence frames as needed:",
-        "-'Day happens because_____________.'",
-        "-'Night happens because ___________.'",
-        "When 3 minutes remain, prompt students to complete the drawing or sentence they are working on and begin cleaning up by placing pencils and crayons back on the tables where they found them.",
-        "Refocus students whole group and invite a few students to share out their notes.",
-        "For students who may need additional support recording their ideas in writing: Provide a partially filled-in or guided What Makes Day and Night notes sheet to help students know what to record. (MMAE)",
-        "For ELLs: Point out that take and notes are words we hear a lot together. Example: 'Remember, when we take notes, we are not really taking anything. It means we are writing down words or pictures to remember something.' Prompt students to practice using the phrase take care of. Ask:",
-        "'When should you take notes?' (I should take notes when I want to remember something, and when I am listening to informational text.)",
-        "For ELLs: Invite students to use the sentence frame from the Mini Language Dive to support their work completing their What Makes Day and Night notes sheet. (Example: Day happens because the earth is moving toward the light.)"
+        {
+          "text": "Refocus students whole group.",
+          "page": 257
+        },
+        {
+          "text": "258",
+          "page": 258
+        },
+        {
+          "text": "The Sun, Moon, and Stars",
+          "page": 258
+        },
+        {
+          "text": "Direct their attention back to the first learning target and reread it aloud:",
+          "page": 258
+        },
+        {
+          "text": "\"I can distinguish what I learn from the illustrations and what I learn from the text in the",
+          "page": 258
+        },
+        {
+          "text": "book What Makes Day and Night to take notes on the pattern of light and dark on earth.\"",
+          "page": 258
+        },
+        {
+          "text": "Using a total participation technique, invite responses from group:",
+          "page": 258
+        },
+        {
+          "text": "\"What does it mean to take notes?\" (short, written-down words to help us remember",
+          "page": 258
+        },
+        {
+          "text": "something)",
+          "page": 258
+        },
+        {
+          "text": "\"Why are notes important?\" (They help us remember important things.)",
+          "page": 258
+        },
+        {
+          "text": "Confirm for students that notes are short, written-down words to help us remember",
+          "page": 258
+        },
+        {
+          "text": "important things.",
+          "page": 258
+        },
+        {
+          "text": "Display the What Makes Day and Night notes sheet and tell students that today they will",
+          "page": 258
+        },
+        {
+          "text": "take notes on the text What Makes Day and Night.",
+          "page": 258
+        },
+        {
+          "text": "Direct students to the prompts at top of the page and read them aloud:",
+          "page": 258
+        },
+        {
+          "text": "–– \"What makes day?\"",
+          "page": 258
+        },
+        {
+          "text": "–– \"What makes night?\"",
+          "page": 258
+        },
+        {
+          "text": "Tell students they will use their own notes sheet to capture quick notes about the pattern of",
+          "page": 258
+        },
+        {
+          "text": "light and dark that we call day and night. Tell students that they will use these notes in the",
+          "page": 258
+        },
+        {
+          "text": "next lesson during the Science Talk protocol. Students can use pictures and words to record",
+          "page": 258
+        },
+        {
+          "text": "their notes.",
+          "page": 258
+        },
+        {
+          "text": "Invite students to show a thumbs-up or touch their head if they are ready to begin writing",
+          "page": 258
+        },
+        {
+          "text": "and drawing their notes.",
+          "page": 258
+        },
+        {
+          "text": "Distribute:",
+          "page": 258
+        },
+        {
+          "text": "–– Prepared clipboards with the What Makes Day and Night notes sheet",
+          "page": 258
+        },
+        {
+          "text": "–– Pencils",
+          "page": 258
+        },
+        {
+          "text": "–– Crayons",
+          "page": 258
+        },
+        {
+          "text": "–– Colored pencils",
+          "page": 258
+        },
+        {
+          "text": "Invite students to begin working.",
+          "page": 258
+        },
+        {
+          "text": "As students write and draw, circulate to offer support. Prompt students by referencing the",
+          "page": 258
+        },
+        {
+          "text": "What Makes Day and Night anchor chart and asking students to think about the close readaloud sessions. Remind students that they can draw and write to record their notes.",
+          "page": 258
+        },
+        {
+          "text": "Provide sentence frames as needed:",
+          "page": 258
+        },
+        {
+          "text": "–– \"Day happens because_____________.\"",
+          "page": 258
+        },
+        {
+          "text": "–– \"Night happens because ___________.\"",
+          "page": 258
+        },
+        {
+          "text": "When 3 minutes remain, prompt students to complete the drawing or sentence they are",
+          "page": 258
+        },
+        {
+          "text": "working on and begin cleaning up by placing pencils and crayons back on the tables where",
+          "page": 258
+        },
+        {
+          "text": "they found them.",
+          "page": 258
+        },
+        {
+          "text": "Refocus students whole group and invite a few students to share out their notes.",
+          "page": 258
+        },
+        {
+          "text": "For students who may need additional support recording their ideas in writing:",
+          "page": 258
+        },
+        {
+          "text": "Provide a partially filled-in or guided What Makes Day and Night notes sheet to",
+          "page": 258
+        },
+        {
+          "text": "help students know what to record. (MMAE)",
+          "page": 258
+        },
+        {
+          "text": "EL Education Curriculum 259",
+          "page": 259
+        },
+        {
+          "text": "Grade 1: Module 2: Unit 2: Lesson 5",
+          "page": 259
+        },
+        {
+          "text": "For ELLs: Point out that take and notes are words we hear a lot together. Example:",
+          "page": 259
+        },
+        {
+          "text": "\"Remember, when we take notes, we are not really taking anything. It means we",
+          "page": 259
+        },
+        {
+          "text": "are writing down words or pictures to remember something.\" Prompt students to",
+          "page": 259
+        },
+        {
+          "text": "practice using the phrase take care of. Ask:",
+          "page": 259
+        },
+        {
+          "text": "\"When should you take notes?\" (I should take notes when I want to remember something,",
+          "page": 259
+        },
+        {
+          "text": "and when I am listening to informational text.)",
+          "page": 259
+        },
+        {
+          "text": "For ELLs: Invite students to use the sentence frame from the Mini Language Dive",
+          "page": 259
+        },
+        {
+          "text": "to support their work completing their What Makes Day and Night notes sheet.",
+          "page": 259
+        },
+        {
+          "text": "(Example: Day happens because the earth is moving toward the light.)",
+          "page": 259
+        }
       ]
     },
     {
@@ -182,27 +642,142 @@
       "minutes": 10,
       "page": 259,
       "steps": [
-        "Invite students to stretch their hands up to the sky as if they are touching the sun as they transition.",
-        "Once students are settled, direct their attention to the Unit 2 Guiding Question anchor chart and review it:",
-        "'What patterns can we observe in the sky?'",
-        "Tell students now they will have a chance to help add to the anchor chart through shared writing.",
-        "Use the following procedure to complete the shared writing:",
-        "-Point to each column on the anchor chart and read the headings aloud.",
-        "-Ask students to assist in filling out the first column of the anchor chart. Ask:",
-        "'What is the pattern?' (light and dark on earth, which we call day and night)",
-        "-Add 'light and dark (day and night)' to the chart.",
-        "-Ask students to help fill out the second column of the anchor chart. Ask:",
-        "'What information should we record about this pattern?'",
-        "-Using a total participation technique, invite responses from the group.",
-        "-As students share responses, use their ideas to complete the second column. Example: 'The earth rotates each day. When the earth faces the sun we have day; when the earth turns away from the sun we have night.'",
-        "-Ask students to help fill out the third column of the anchor chart. Ask:",
-        "'What diagram or picture should we draw?' (picture of earth rotating and the sun shining on the earth with half dark and half light)",
-        "-Add the diagram or picture to the chart.",
-        "If productive, cue students to think about their thinking:",
-        "'How does our discussion add to your understanding of how to answer the guiding question: What patterns can we observe in the sky? I'll give you time to think and discuss with a partner.' (Responses will vary.)",
-        "Give students specific, positive feedback on their thoughtful work reflecting on the guiding question and remind them that they will continue to add to this anchor chart throughout the unit as they observe more patterns in the sky. (Example: 'Noelle paraphrased Kamir's idea",
-        "that the earth should be shown half in light and half in dark when we draw the picture on the anchor chart. Thank you for working together to make sure the idea was clear!')",
-        "As students help complete the anchor chart, provide support for students who may struggle with oral language and processing. Allow ample wait time as students prepare their thinking for sharing orally. (MME, MMAE)"
+        {
+          "text": "Invite students to stretch their hands up to the sky as if they are touching the sun as they",
+          "page": 259
+        },
+        {
+          "text": "transition.",
+          "page": 259
+        },
+        {
+          "text": "Once students are settled, direct their attention to the Unit 2 Guiding Question anchor",
+          "page": 259
+        },
+        {
+          "text": "\"What patterns can we observe in the sky?\"",
+          "page": 259
+        },
+        {
+          "text": "Tell students now they will have a chance to help add to the anchor chart through",
+          "page": 259
+        },
+        {
+          "text": "shared writing.",
+          "page": 259
+        },
+        {
+          "text": "Use the following procedure to complete the shared writing:",
+          "page": 259
+        },
+        {
+          "text": "–– Point to each column on the anchor chart and read the headings aloud.",
+          "page": 259
+        },
+        {
+          "text": "–– Ask students to assist in filling out the first column of the anchor chart. Ask:",
+          "page": 259
+        },
+        {
+          "text": "\"What is the pattern?\" (light and dark on earth, which we call day and night)",
+          "page": 259
+        },
+        {
+          "text": "–– Add \"light and dark (day and night)\" to the chart.",
+          "page": 259
+        },
+        {
+          "text": "–– Ask students to help fill out the second column of the anchor chart. Ask:",
+          "page": 259
+        },
+        {
+          "text": "\"What information should we record about this pattern?\"",
+          "page": 259
+        },
+        {
+          "text": "–– Using a total participation technique, invite responses from the group.",
+          "page": 259
+        },
+        {
+          "text": "–– As students share responses, use their ideas to complete the second column. Example:",
+          "page": 259
+        },
+        {
+          "text": "\"The earth rotates each day. When the earth faces the sun we have day; when the earth",
+          "page": 259
+        },
+        {
+          "text": "turns away from the sun we have night.\"",
+          "page": 259
+        },
+        {
+          "text": "–– Ask students to help fill out the third column of the anchor chart. Ask:",
+          "page": 259
+        },
+        {
+          "text": "\"What diagram or picture should we draw?\" (picture of earth rotating and the sun",
+          "page": 259
+        },
+        {
+          "text": "shining on the earth with half dark and half light)",
+          "page": 259
+        },
+        {
+          "text": "–– Add the diagram or picture to the chart.",
+          "page": 259
+        },
+        {
+          "text": "If productive, cue students to think about their thinking:",
+          "page": 259
+        },
+        {
+          "text": "\"How does our discussion add to your understanding of how to answer the guiding question: What patterns can we observe in the sky? I'll give you time to think and discuss with",
+          "page": 259
+        },
+        {
+          "text": "a partner.\" (Responses will vary.)",
+          "page": 259
+        },
+        {
+          "text": "Give students specific, positive feedback on their thoughtful work reflecting on the guiding",
+          "page": 259
+        },
+        {
+          "text": "question and remind them that they will continue to add to this anchor chart throughout the",
+          "page": 259
+        },
+        {
+          "text": "unit as they observe more patterns in the sky. (Example: \"Noelle paraphrased Kamir's idea",
+          "page": 259
+        },
+        {
+          "text": "260",
+          "page": 260
+        },
+        {
+          "text": "The Sun, Moon, and Stars",
+          "page": 260
+        },
+        {
+          "text": "that the earth should be shown half in light and half in dark when we draw the picture on the",
+          "page": 260
+        },
+        {
+          "text": "anchor chart. Thank you for working together to make sure the idea was clear!\")",
+          "page": 260
+        },
+        {
+          "text": "As students help complete the anchor chart, provide support for students who may",
+          "page": 260
+        },
+        {
+          "text": "struggle with oral language and processing. Allow ample wait time as students",
+          "page": 260
+        },
+        {
+          "text": "prepare their thinking for sharing orally. (MME, MMAE)",
+          "page": 260
+        }
       ]
     },
     {
@@ -212,22 +787,138 @@
       "minutes": 10,
       "page": 260,
       "steps": [
-        "Refocus students whole group.",
-        "Direct their attention to the posted learning targets and read the second one aloud:",
-        "'I can record my observations from images/videos of the sky in my Sky notebook.'",
-        "Remind students that in the previous lesson they received their Sky notebook where they will record their observations of the sun and moon. Today students will write independently in their Sky notebook to describe a new sun photograph using adjectives from the Adjectives anchor chart.",
-        "Display sun photograph 4.",
-        "Invite students to turn and talk to an elbow partner:",
-        "Display page 3 of Sky notebook and read aloud the prompt at the top of the page:",
-        "'What does the sun look like?'",
-        "Students should answer the question using pictures and words to show their thinking. Remind students to use the Adjectives anchor chart to describe what the sun looks like. Remind students to use a complete sentence when answering the question.",
-        "Point out the Sky notebooks already at student workspaces.",
-        "Transition students to their workspaces and invite students to begin working on page 3.",
-        "Circulate and support students as necessary. Encourage them to use classroom resources (Word Walls, high-frequency word lists, and alphabet or letter sound combination charts). Refer to Sky notebook (answers, for teacher reference) as necessary.",
-        "When 1 minute remains, signal all students to stop working through the use of a designated sound. Model cleanup, keeping directions clear and brief. Collect the notebooks.",
-        "Before giving students a warning before the transition, support self-regulation and independence by providing a clear routine for what to do with unfinished work and using a visual timer. (MME)",
-        "For ELLs: Support students as they formulate sentences for the Describing the Sun and Moon recording form. Invite students to use the Adjectives Construction board (See Lesson 2) or the Adjectives Word Wall with the sentence frame: 'The [sun/moon] looks like a(n) [adjective] [noun].' (Example: The sun looks like an",
-        "orange ball. The sun looks bright and yellow.) Invite students to identify any new adjectives they might like to add to the board."
+        {
+          "text": "Refocus students whole group.",
+          "page": 260
+        },
+        {
+          "text": "Direct their attention to the posted learning targets and read the second one aloud:",
+          "page": 260
+        },
+        {
+          "text": "\"I can record my observations from images/videos of the sky in my Sky notebook.\"",
+          "page": 260
+        },
+        {
+          "text": "Remind students that in the previous lesson they received their Sky notebook where they",
+          "page": 260
+        },
+        {
+          "text": "will record their observations of the sun and moon. Today students will write independently",
+          "page": 260
+        },
+        {
+          "text": "in their Sky notebook to describe a new sun photograph using adjectives from the Adjectives",
+          "page": 260
+        },
+        {
+          "text": "anchor chart.",
+          "page": 260
+        },
+        {
+          "text": "Display sun photograph 4.",
+          "page": 260
+        },
+        {
+          "text": "Invite students to turn and talk to an elbow partner:",
+          "page": 260
+        },
+        {
+          "text": "\"What adjectives describe the sun?\" (Answers will vary, but may include: yellow, round.)",
+          "page": 260
+        },
+        {
+          "text": "Display page 3 of Sky notebook and read aloud the prompt at the top of the page:",
+          "page": 260
+        },
+        {
+          "text": "\"What does the sun look like?\"",
+          "page": 260
+        },
+        {
+          "text": "Students should answer the question using pictures and words to show their thinking.",
+          "page": 260
+        },
+        {
+          "text": "Remind students to use the Adjectives anchor chart to describe what the sun looks like.",
+          "page": 260
+        },
+        {
+          "text": "Remind students to use a complete sentence when answering the question.",
+          "page": 260
+        },
+        {
+          "text": "Point out the Sky notebooks already at student workspaces.",
+          "page": 260
+        },
+        {
+          "text": "Transition students to their workspaces and invite students to begin working on page 3.",
+          "page": 260
+        },
+        {
+          "text": "Circulate and support students as necessary. Encourage them to use classroom resources",
+          "page": 260
+        },
+        {
+          "text": "(Word Walls, high-frequency word lists, and alphabet or letter sound combination charts).",
+          "page": 260
+        },
+        {
+          "text": "Refer to Sky notebook (answers, for teacher reference) as necessary.",
+          "page": 260
+        },
+        {
+          "text": "When 1 minute remains, signal all students to stop working through the use of a designated",
+          "page": 260
+        },
+        {
+          "text": "sound. Model cleanup, keeping directions clear and brief. Collect the notebooks.",
+          "page": 260
+        },
+        {
+          "text": "Before giving students a warning before the transition, support self-regulation",
+          "page": 260
+        },
+        {
+          "text": "and independence by providing a clear routine for what to do with unfinished work",
+          "page": 260
+        },
+        {
+          "text": "and using a visual timer. (MME)",
+          "page": 260
+        },
+        {
+          "text": "For ELLs: Support students as they formulate sentences for the Describing the",
+          "page": 260
+        },
+        {
+          "text": "Sun and Moon recording form. Invite students to use the Adjectives Construction",
+          "page": 260
+        },
+        {
+          "text": "board (See Lesson 2) or the Adjectives Word Wall with the sentence frame: \"The",
+          "page": 260
+        },
+        {
+          "text": "[sun/moon] looks like a(n) [adjective] [noun].\" (Example: The sun looks like an",
+          "page": 260
+        },
+        {
+          "text": "EL Education Curriculum 261",
+          "page": 261
+        },
+        {
+          "text": "Grade 1: Module 2: Unit 2: Lesson 5",
+          "page": 261
+        },
+        {
+          "text": "orange ball. The sun looks bright and yellow.) Invite students to identify any new",
+          "page": 261
+        },
+        {
+          "text": "adjectives they might like to add to the board.",
+          "page": 261
+        }
       ]
     },
     {
@@ -237,44 +928,132 @@
       "minutes": 5,
       "page": 261,
       "steps": [
-        "Refocus students whole group.",
-        "Remind them that in the past few lessons they have described sun and moon pictures using adjectives in their sky notebook. Today students will examine the new sun picture and help write about where they see the sun during shared writing.",
-        "Display sun photograph 4 again.",
-        "Then display the Describing the Position of the Sun recording form and using a total participation technique, invite responses from the group.",
-        "Tell students that they will have the opportunity to describe the location of the sun in the picture through shared writing.",
-        "Use the following procedure to complete the shared writing:",
-        "-Point to the prompt at the top and read aloud: 'Where do we see the sun?'",
-        "-Using a total participation technique, invite responses from the group:",
-        "-As students share responses, use their ideas to answer the prompt. Begin by circling one of the pictures that most closely resembles the location of the sun in the photograph and then model writing a complete sentence to describe the location of the sun. (Example: 'The sun is over the building.')",
-        "Give students specific, positive feedback for their work helping to describe the position of the sun and tell them that they will write about the position of the moon during the next lesson.",
-        "During shared writing, provide options for visual perception by offering individual copies of the Describing the Position of the Sun recording form for students who may need support with using far-point display. (MMR)",
-        "For ELLs: Prepare students to learn about directional words by suggesting nonexamples and incorrect uses of prepositions. Prepare students for using the Science Talk protocol by inviting them to agree or disagree. (Example: The sun is under the building. Is that correct? Do you agree or disagree?)"
+        {
+          "text": "Refocus students whole group.",
+          "page": 261
+        },
+        {
+          "text": "Remind them that in the past few lessons they have described sun and moon pictures using",
+          "page": 261
+        },
+        {
+          "text": "adjectives in their sky notebook. Today students will examine the new sun picture and help",
+          "page": 261
+        },
+        {
+          "text": "write about where they see the sun during shared writing.",
+          "page": 261
+        },
+        {
+          "text": "Display sun photograph 4 again.",
+          "page": 261
+        },
+        {
+          "text": "Then display the Describing the Position of the Sun recording form and using a total",
+          "page": 261
+        },
+        {
+          "text": "participation technique, invite responses from the group.",
+          "page": 261
+        },
+        {
+          "text": "\"Where is the sun located in the photograph?\" (over the building)",
+          "page": 261
+        },
+        {
+          "text": "Tell students that they will have the opportunity to describe the location of the sun in the",
+          "page": 261
+        },
+        {
+          "text": "picture through shared writing.",
+          "page": 261
+        },
+        {
+          "text": "Use the following procedure to complete the shared writing:",
+          "page": 261
+        },
+        {
+          "text": "–– Point to the prompt at the top and read aloud: \"Where do we see the sun?\"",
+          "page": 261
+        },
+        {
+          "text": "–– Using a total participation technique, invite responses from the group:",
+          "page": 261
+        },
+        {
+          "text": "\"Which picture most closely resembles the sun photograph?\"",
+          "page": 261
+        },
+        {
+          "text": "–– As students share responses, use their ideas to answer the prompt. Begin by circling",
+          "page": 261
+        },
+        {
+          "text": "one of the pictures that most closely resembles the location of the sun in the photograph and then model writing a complete sentence to describe the location of the sun.",
+          "page": 261
+        },
+        {
+          "text": "(Example: \"The sun is over the building.\")",
+          "page": 261
+        },
+        {
+          "text": "Give students specific, positive feedback for their work helping to describe the position of the",
+          "page": 261
+        },
+        {
+          "text": "sun and tell them that they will write about the position of the moon during the next lesson.",
+          "page": 261
+        },
+        {
+          "text": "During shared writing, provide options for visual perception by offering individual",
+          "page": 261
+        },
+        {
+          "text": "copies of the Describing the Position of the Sun recording form for students who",
+          "page": 261
+        },
+        {
+          "text": "may need support with using far-point display. (MMR)",
+          "page": 261
+        },
+        {
+          "text": "For ELLs: Prepare students to learn about directional words by suggesting nonexamples and incorrect uses of prepositions. Prepare students for using the",
+          "page": 261
+        },
+        {
+          "text": "Science Talk protocol by inviting them to agree or disagree. (Example: The sun is",
+          "page": 261
+        },
+        {
+          "text": "under the building. Is that correct? Do you agree or disagree?)",
+          "page": 261
+        }
       ]
     }
   ],
   "materials": [
-    "'Where Are They? The Sun, Moon, and Stars' poem (one to display; for teacher read-aloud)",
+    "\"Where Are They? The Sun, Moon, and Stars\" poem (one to display; for teacher read-aloud)",
     "Close Read-aloud Guide: What Makes Day and Night (Session 4; for teacher reference)",
-    "-What Makes Day and Night (one to display; for teacher read-aloud)",
-    "-What Makes Day and Night anchor chart (begun in Lesson 3; see close read-aloud guide)",
-    "-Reading Informational Text Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "–– What Makes Day and Night (one to display; for teacher read-aloud)",
+    "–– What Makes Day and Night anchor chart (begun in Lesson 3; see close read-aloud guide)",
+    "–– Reading Informational Text Checklist (for teacher reference; see Assessment Overview and Resources)",
     "What Makes Day and Night notes sheet (one to display and one per student)",
     "Pencils (one per student)",
     "Crayons (class set; variety of colors per student)",
     "Colored pencils (class set; variety of colors per student)",
-    "Unit 2 Guiding Question anchor chart (begun in Lesson 2; added to during Work Time C; see supporting materials)",
+    "\u0007Unit 2 Guiding Question anchor chart (begun in Lesson 2; added to during Work Time C; see supporting materials)",
     "Sun photograph 4 (one to display)",
     "Sky notebook (from Lesson 4; page 3; one per student)",
     "Sky notebook (from Lesson 4; answers, for teacher reference)",
     "Adjectives anchor chart (from Lesson 4)",
-    "Describing the Position of the Sun recording form(one for teaching modeling and one per student)"
+    "\u0007Describing the Position of the Sun recording form(one for teaching modeling and one per student)"
   ],
   "vocabulary": [
-    "earth, sun, day, night, spin (L)",
-    "daylight, midnight (T)"
+    "Review: earth, sun, day, night, spin (L)",
+    "Review: daylight, midnight (T)"
   ],
   "tables": [],
-  "parsed_by": "docling",
+  "parsed_by": "pymupdf",
   "provenance": {
     "source_id": "ELA Grade 1 Module 2 Teacher Guide.pdf",
     "page_start": 251,

@@ -41,13 +41,13 @@
     {
       "section": "Work Time",
       "letter": "A",
-      "title": "Close Read-aloud, Session 2: Summer Sun Risin', Pages 2-10",
+      "title": "Close Read-aloud, Session 2: Summer Sun Risin’, Pages 2–10",
       "minutes": 25
     },
     {
       "section": "Work Time",
       "letter": "B",
-      "title": "Role-Playing and Showing Respect, Pages 3-6",
+      "title": "Role-Playing and Showing Respect, Pages 3–6",
       "minutes": 15
     },
     {
@@ -59,7 +59,7 @@
     {
       "section": "Closing and Assessment",
       "letter": "A",
-      "title": "Pinky Partners: Sun Experience-Sunrise",
+      "title": "Pinky Partners: Sun Experience—Sunrise",
       "minutes": 5
     }
   ],
@@ -71,106 +71,648 @@
       "minutes": 5,
       "page": 77,
       "steps": [
-        "Invite students to stand up and spread out inside and around the edge of the whole group meeting area. As needed, remind students to move safely and make space for everyone.",
-        "Remind students that in Lesson 2, they learned the Sun Movement routine as a way to say 'hello' to the sun. Direct students' attention to the Sun Movement chart and review Steps 1-5.",
-        "Invite students to join you as you practice Steps 1-5.",
-        "Tell students that today they will learn the remaining steps of the Sun Movement routine. Tell students you will model Steps 6-10 and then you will invite them to join you in doing the entire routine.",
-        "Model Steps 6-10 of the Sun Movement routine while referencing the Sun Movement chart:",
-        "Point to the image next to Step 6 and read aloud the step: 'Slowly stretch your body up to the right, keeping arms in line with your ears.'",
-        "Model completing Step 6.",
-        "Point to the image next to Step 7 and read aloud the step: 'Stretch up until you are standing straight with your arms raised next to your head.'",
-        "Model completing Step 7.",
-        "Point to the image next to Step 8 and read aloud the step: 'Stretch arms out and down. Then cross in front of your body to come up again.'",
-        "Model completing Step 8.",
-        "Point to the image next to Step 9 and read aloud the step: 'Take a breath and slowly stretch up and down to the left, keeping arms in line with your ears.'",
-        "Model completing Step 9.",
-        "Point to the image next to Step 10 and read aloud the step: 'Keep stretching left until your body is stretched downward and your arms, neck, and back are relaxed.'",
-        "Model completing Step 10.",
-        "As needed, remind students to move safely and make space for everyone.",
-        "Invite students to join you as you practice Steps 1-10.",
-        "Repeat once or twice as time permits.",
-        "Offer students specific, positive feedback on their work learning the new movements in the routine. (Example: 'I noticed that everyone took great care to make sure their bodies were safe as we learned the new movements.')",
-        "As you review the beginning of the Sun Movement routine, foster community by inviting a few student volunteers to model Steps 1-5 for the class. (MME)",
-        "After demonstrating Steps 6-10 of the Sun Movement routine, support comprehension by asking students to share what they think the motions represent (the sunbeams are spreading light and warmth in all directions). (MMR)",
-        "For ELLs: Briefly review some of the verbal directives involved in the Sun Movement routine and how they correspond to the model and chart before beginning the routine. (Example: 'This is how you cross your arms. Can someone show me what it looks like to cross your arms?')"
+        {
+          "text": "Invite students to stand up and spread out inside and around the edge of the whole group",
+          "page": 77
+        },
+        {
+          "text": "meeting area. As needed, remind students to move safely and make space for everyone.",
+          "page": 77
+        },
+        {
+          "text": "Remind students that in Lesson 2, they learned the Sun Movement routine as a way to",
+          "page": 77
+        },
+        {
+          "text": "say \"hello\" to the sun. Direct students' attention to the Sun Movement chart and review",
+          "page": 77
+        },
+        {
+          "text": "Steps 1–5.",
+          "page": 77
+        },
+        {
+          "text": "Invite students to join you as you practice Steps 1–5.",
+          "page": 77
+        },
+        {
+          "text": "Tell students that today they will learn the remaining steps of the Sun Movement routine.",
+          "page": 77
+        },
+        {
+          "text": "Tell students you will model Steps 6–10 and then you will invite them to join you in doing",
+          "page": 77
+        },
+        {
+          "text": "the entire routine.",
+          "page": 77
+        },
+        {
+          "text": "Model Steps 6–10 of the Sun Movement routine while referencing the Sun Movement chart:",
+          "page": 77
+        },
+        {
+          "text": "1. Point to the image next to Step 6 and read aloud the step: \"Slowly stretch your body up",
+          "page": 77
+        },
+        {
+          "text": "to the right, keeping arms in line with your ears.\"",
+          "page": 77
+        },
+        {
+          "text": "2. Model completing Step 6.",
+          "page": 77
+        },
+        {
+          "text": "3. Point to the image next to Step 7 and read aloud the step: \"Stretch up until you are",
+          "page": 77
+        },
+        {
+          "text": "standing straight with your arms raised next to your head.\"",
+          "page": 77
+        },
+        {
+          "text": "4. Model completing Step 7.",
+          "page": 77
+        },
+        {
+          "text": "5. Point to the image next to Step 8 and read aloud the step: \"Stretch arms out and down.",
+          "page": 77
+        },
+        {
+          "text": "Then cross in front of your body to come up again.\"",
+          "page": 77
+        },
+        {
+          "text": "6. Model completing Step 8.",
+          "page": 77
+        },
+        {
+          "text": "7. Point to the image next to Step 9 and read aloud the step: \"Take a breath and slowly",
+          "page": 77
+        },
+        {
+          "text": "stretch up and down to the left, keeping arms in line with your ears.\"",
+          "page": 77
+        },
+        {
+          "text": "8. Model completing Step 9.",
+          "page": 77
+        },
+        {
+          "text": "9. Point to the image next to Step 10 and read aloud the step: \"Keep stretching left until",
+          "page": 77
+        },
+        {
+          "text": "your body is stretched downward and your arms, neck, and back are relaxed.\"",
+          "page": 77
+        },
+        {
+          "text": "10. Model completing Step 10.",
+          "page": 77
+        },
+        {
+          "text": "As needed, remind students to move safely and make space for everyone.",
+          "page": 77
+        },
+        {
+          "text": "Invite students to join you as you practice Steps 1–10.",
+          "page": 77
+        },
+        {
+          "text": "Repeat once or twice as time permits.",
+          "page": 77
+        },
+        {
+          "text": "Offer students specific, positive feedback on their work learning the new movements in the",
+          "page": 77
+        },
+        {
+          "text": "routine. (Example: \"I noticed that everyone took great care to make sure their bodies were",
+          "page": 77
+        },
+        {
+          "text": "safe as we learned the new movements.\")",
+          "page": 77
+        },
+        {
+          "text": "78",
+          "page": 78
+        },
+        {
+          "text": "The Sun, Moon, and Stars",
+          "page": 78
+        },
+        {
+          "text": "As you review the beginning of the Sun Movement routine, foster community by",
+          "page": 78
+        },
+        {
+          "text": "inviting a few student volunteers to model Steps 1–5 for the class. (MME)",
+          "page": 78
+        },
+        {
+          "text": "After demonstrating Steps 6–10 of the Sun Movement routine, support",
+          "page": 78
+        },
+        {
+          "text": "comprehension by asking students to share what they think the motions represent",
+          "page": 78
+        },
+        {
+          "text": "(the sunbeams are spreading light and warmth in all directions). (MMR)",
+          "page": 78
+        },
+        {
+          "text": "For ELLs: Briefly review some of the verbal directives involved in the Sun Movement",
+          "page": 78
+        },
+        {
+          "text": "routine and how they correspond to the model and chart before beginning the",
+          "page": 78
+        },
+        {
+          "text": "routine. (Example: \"This is how you cross your arms. Can someone show me what",
+          "page": 78
+        },
+        {
+          "text": "it looks like to cross your arms?\")",
+          "page": 78
+        }
       ]
     },
     {
       "section": "Work Time",
       "letter": "A",
-      "title": "Close Read-aloud, Session 2: Summer Sun Risin', Pages 2-10",
+      "title": "Close Read-aloud, Session 2: Summer Sun Risin’, Pages 2–10",
       "minutes": 25,
       "page": 78,
       "steps": [
-        "",
-        "Direct students' attention to the posted learning target and read it aloud:",
-        "'I can describe what the boy and the sun do in the beginning of Summer Sun Risin'.'",
-        "Above the target, draw a simple picture of a speech bubble over the word describe, a stick figure over the word boy, and a picture of a sun over the word sun.",
-        "Using a total participation technique, invite responses from the group:",
-        "'How do these pictures help us understand this learning target?' (The pictures mean we will talk about what the boy and the sun do at the beginning of the story.)",
-        "If productive, cue students to listen carefully and seek to understand:",
-        "'Who can tell us what your classmate said in your own words?' (Responses will vary.)",
-        "Tell students that during today's close read-aloud session, they will read to meet this target.",
-        "Invite students to take out their magic bows and take aim at the target.",
-        "Guide students through the close read-aloud for Summer Sun Risin' using the Close Readaloud Guide: Summer Sun Risin' (Session 2; for teacher reference). Consider using the Reading Literature Checklist during the close read-aloud(see Assessment Overview and Resources).",
-        "During Session 2, refer to the guide for the use of:",
-        "-Summer Sun Risin'",
-        "-Summer Sun Risin' anchor chart",
-        "-Summer Sun Risin' icons",
-        "-Sun icon",
-        "-Summer Sun Risin' word cards",
-        "Tell students that in the next lesson they will write and draw about the key details from the middle of the text.",
-        "As you prepare students for the close read-aloud session, provide options for physical action and sensory input by differentiating seating. Some students",
-        "might benefit from sitting on a gym ball, a move-and-sit cushion, or a chair with a resistive elastic band wrapped around the legs. (MMAE)",
-        "For ELLs: Mini Language Dive. Ask students about the meaning of the chunks from the text: 'Pa cracks the door, / I swing it wide. / Summer sun's shinin', / floodin' inside.' from Summer Sun Risin.' Write and display student responses next to the chunks. Examples:",
-        "-Ask:",
-        "'What does this verse mean?' (Responses will vary.)",
-        "-Point to and read aloud the chunk: 'Pa cracks the door,' and ask:",
-        "'What is Pa doing?' (opening the barn door a little bit)",
-        "-Point to and read aloud the chunk: 'I swing it wide.' and ask:",
-        "'What is the boy doing?' (opening the barn door really wide)",
-        "-Point to and read aloud the chunks: 'Summer sun's shinin' / floodin' inside.,' and ask:",
-        "'What is the sun doing?' (Shining; filling the barn with sunlight)",
-        "'Now what do you think the verse means?' (Responses will vary.)"
+        {
+          "text": "Direct students' attention to the posted learning target and read it aloud:",
+          "page": 78
+        },
+        {
+          "text": "\"I can describe what the boy and the sun do in the beginning of Summer Sun Risin'.\"",
+          "page": 78
+        },
+        {
+          "text": "Above the target, draw a simple picture of a speech bubble over the word describe, a stick",
+          "page": 78
+        },
+        {
+          "text": "figure over the word boy, and a picture of a sun over the word sun.",
+          "page": 78
+        },
+        {
+          "text": "Using a total participation technique, invite responses from the group:",
+          "page": 78
+        },
+        {
+          "text": "\"How do these pictures help us understand this learning target?\" (The pictures mean we",
+          "page": 78
+        },
+        {
+          "text": "will talk about what the boy and the sun do at the beginning of the story.)",
+          "page": 78
+        },
+        {
+          "text": "If productive, cue students to listen carefully and seek to understand:",
+          "page": 78
+        },
+        {
+          "text": "\"Who can tell us what your classmate said in your own words?\" (Responses will vary.)",
+          "page": 78
+        },
+        {
+          "text": "Tell students that during today's close read-aloud session, they will read to meet this target.",
+          "page": 78
+        },
+        {
+          "text": "Invite students to take out their magic bows and take aim at the target.",
+          "page": 78
+        },
+        {
+          "text": "Guide students through the close read-aloud for Summer Sun Risin' using the Close ReadResources).",
+          "page": 78
+        },
+        {
+          "text": "During Session 2, refer to the guide for the use of:",
+          "page": 78
+        },
+        {
+          "text": "–– Summer Sun Risin'",
+          "page": 78
+        },
+        {
+          "text": "–– Summer Sun Risin' anchor chart",
+          "page": 78
+        },
+        {
+          "text": "–– Summer Sun Risin' icons",
+          "page": 78
+        },
+        {
+          "text": "–– Sun icon",
+          "page": 78
+        },
+        {
+          "text": "–– Summer Sun Risin' word cards",
+          "page": 78
+        },
+        {
+          "text": "Tell students that in the next lesson they will write and draw about the key details from the",
+          "page": 78
+        },
+        {
+          "text": "middle of the text.",
+          "page": 78
+        },
+        {
+          "text": "As you prepare students for the close read-aloud session, provide options for",
+          "page": 78
+        },
+        {
+          "text": "physical action and sensory input by differentiating seating. Some students",
+          "page": 78
+        },
+        {
+          "text": "EL Education Curriculum 79",
+          "page": 79
+        },
+        {
+          "text": "Grade 1: Module 2: Unit 1: Lesson 4",
+          "page": 79
+        },
+        {
+          "text": "might benefit from sitting on a gym ball, a move-and-sit cushion, or a chair with a",
+          "page": 79
+        },
+        {
+          "text": "resistive elastic band wrapped around the legs. (MMAE)",
+          "page": 79
+        },
+        {
+          "text": "For ELLs: Mini Language Dive. Ask students about the meaning of the chunks from",
+          "page": 79
+        },
+        {
+          "text": "the text: \"Pa cracks the door, / I swing it wide. / Summer sun's shinin', / floodin'",
+          "page": 79
+        },
+        {
+          "text": "inside.\" from Summer Sun Risin.' Write and display student responses next to the",
+          "page": 79
+        },
+        {
+          "text": "chunks. Examples:",
+          "page": 79
+        },
+        {
+          "text": "–",
+          "page": 79
+        },
+        {
+          "text": "– Ask:",
+          "page": 79
+        },
+        {
+          "text": "\"What does this verse mean?\" (Responses will vary.)",
+          "page": 79
+        },
+        {
+          "text": "–",
+          "page": 79
+        },
+        {
+          "text": "– Point to and read aloud the chunk: \"Pa cracks the door,\" and ask:",
+          "page": 79
+        },
+        {
+          "text": "\"What is Pa doing?\" (opening the barn door a little bit)",
+          "page": 79
+        },
+        {
+          "text": "–",
+          "page": 79
+        },
+        {
+          "text": "– Point to and read aloud the chunk: \"I swing it wide.\" and ask:",
+          "page": 79
+        },
+        {
+          "text": "\"What is the boy doing?\" (opening the barn door really wide)",
+          "page": 79
+        },
+        {
+          "text": "–",
+          "page": 79
+        },
+        {
+          "text": "– Point to and read aloud the chunks: \"Summer sun's shinin' / floodin' inside.,\" and ask:",
+          "page": 79
+        },
+        {
+          "text": "\"What is the sun doing?\" (Shining; filling the barn with sunlight)",
+          "page": 79
+        },
+        {
+          "text": "\"Now what do you think the verse means?\" (Responses will vary.)",
+          "page": 79
+        }
       ]
     },
     {
       "section": "Work Time",
       "letter": "B",
-      "title": "Role-Playing and Showing Respect, Pages 3-6",
+      "title": "Role-Playing and Showing Respect, Pages 3–6",
       "minutes": 15,
       "page": 79,
       "steps": [
-        "Refocus students whole group.",
-        "Offer specific, feedback on their close reading skills used to explore the focus question: 'What is the boy doing when the sun is rising?' (Example: 'Everyone looked closely at the pictures in the text to notice that as the sun is beginning to rise, the boy is waking up and eating breakfast.')",
-        "Tell students they are now going to act out part of Summer Sun Risin' using the Role-Play Protocol anchor chart. Share that acting out different parts of the text can help them understand it better.",
-        "Referring to the Role-Play Protocol anchor chart, explain the steps:",
-        "-Point to the image of the book. Tell students they will listen to a certain part of the text again. (Example: Today students will listen to the beginning events.)",
-        "-Point to the image of the two people talking. Tell students that with their partners, they will think and talk about what each character is saying and doing. (Example: One partner could be the boy, and the other partner could be the boy's mother.)",
-        "-Point to the image of the director's slate. Tell students that when they hear, 'Action!' they will take on the role of their character and act out that part of the text as you read it aloud. (Example: On pages 3-4, students might role-play the boy being awakened by his mother.)",
-        "-Point to the image of the check mark. Tell students when they hear, 'Cut!' they should safely make a tent with their arms. (This shows that they are done.)",
-        "Model completing the steps of the protocol with a student. Answer clarifying questions.",
-        "Direct students' attention to the posted Working to Become Effective Learners anchor chart and review what is written on it by reading it aloud. Remind students that these are habits that help us learn.",
-        "Tell students that along with habits that help us learn, there are also habits for how we treat others.",
-        "Direct students' attention to the Working to Become Ethical People anchor chart and read the title aloud.",
-        "Point to the table below the title and read the headings of each column. Tell students that throughout the unit they will learn one habit of character connected to how we treat others. Direct students' attention to the first row that reads respect. Tell students the first habit of character they will learn about is respect.",
-        "Point to the column that reads, 'What does it mean?' and read the definition for respect: 'I treat myself, others, and the environment with care.'",
-        "Using a total participation technique, invite responses from the group:",
-        "'How does the picture on the chart show respect?' (The picture shows two people working and helping each other kindly.)",
-        "If productive, cue students to listen carefully and seek to understand:",
-        "'Who can tell us what your classmate said in your own words?' (Responses will vary.)",
-        "Tell students that they can show respect by working kindly with their partners during the Role-Play protocol. Tell them that throughout the next several lessons, they will think about and reflect on how they and their classmates show respect. For today, students should focus on what it looks like and sounds like to show respect during the Role-Play protocol.",
-        "Invite students to turn and talk to an elbow partner:",
-        "'How will you show respect during our Role-Play protocol?' (I will listen to my partner and not make fun of him or her.)",
-        "Move students into pre-determined pairs and tell them today they are going to use the RolePlay protocol to act out a few of the beginning events of Summer Sun Risin'.",
-        "Invite students to begin the Role-Play protocol. All students should first act out pages 3-4, then pages 5-6.",
-        "Refocus students whole group and offer them specific, positive feedback on their roleplaying. (Example: 'I noticed everyone participated and worked with their partner to act out what the boy did at the beginning of the story.')",
-        "Tell students that in the next lesson, they will role-play the middle events from the story and use their thinking from this role-play to help them write and draw about the major events from the story.",
-        "As you and a student volunteer model the partner role-play, highlight critical features of Summer Sun Risin' by displaying specific pages on a document camera. Prompt students to refer to these pages for ideas about what to do or say as they role-play. (MMR)",
-        "As you give directions for the partner role-play, foster collaboration by soliciting strategies for resolving a disagreement. (Example: 'My partner and I might both",
-        "want to pretend to be the boy's mother. What can we do or say to respectfully resolve our problem?') (MME)",
-        "For ELLs: Clarify the meaning of respect by prompting the class to brainstorm some specific examples of how they might care for themselves, others, and the environment. (Examples: I ask the teacher if I need something; I make sure my partner understands what to do; I keep my desk tidy.)",
-        "For ELLs: Consider pairing students with a partner who has more advanced or native language proficiency. The partner with greater language proficiency can serve as a model in the pair, initiating scenes and providing dialogue."
+        {
+          "text": "Refocus students whole group.",
+          "page": 79
+        },
+        {
+          "text": "Offer specific, feedback on their close reading skills used to explore the focus question:",
+          "page": 79
+        },
+        {
+          "text": "\"What is the boy doing when the sun is rising?\" (Example: \"Everyone looked closely at the",
+          "page": 79
+        },
+        {
+          "text": "pictures in the text to notice that as the sun is beginning to rise, the boy is waking up and",
+          "page": 79
+        },
+        {
+          "text": "eating breakfast.\")",
+          "page": 79
+        },
+        {
+          "text": "Tell students they are now going to act out part of Summer Sun Risin' using the Role-Play",
+          "page": 79
+        },
+        {
+          "text": "Protocol anchor chart. Share that acting out different parts of the text can help them",
+          "page": 79
+        },
+        {
+          "text": "understand it better.",
+          "page": 79
+        },
+        {
+          "text": "Referring to the Role-Play Protocol anchor chart, explain the steps:",
+          "page": 79
+        },
+        {
+          "text": "–– Point to the image of the book. Tell students they will listen to a certain part of the text",
+          "page": 79
+        },
+        {
+          "text": "again. (Example: Today students will listen to the beginning events.)",
+          "page": 79
+        },
+        {
+          "text": "–– Point to the image of the two people talking. Tell students that with their partners, they",
+          "page": 79
+        },
+        {
+          "text": "will think and talk about what each character is saying and doing. (Example: One partner could be the boy, and the other partner could be the boy's mother.)",
+          "page": 79
+        },
+        {
+          "text": "–– Point to the image of the director's slate. Tell students that when they hear, \"Action!\"",
+          "page": 79
+        },
+        {
+          "text": "they will take on the role of their character and act out that part of the text as you read",
+          "page": 79
+        },
+        {
+          "text": "it aloud. (Example: On pages 3–4, students might role-play the boy being awakened by",
+          "page": 79
+        },
+        {
+          "text": "his mother.)",
+          "page": 79
+        },
+        {
+          "text": "–– Point to the image of the check mark. Tell students when they hear, \"Cut!\" they should",
+          "page": 79
+        },
+        {
+          "text": "safely make a tent with their arms. (This shows that they are done.)",
+          "page": 79
+        },
+        {
+          "text": "Model completing the steps of the protocol with a student. Answer clarifying questions.",
+          "page": 79
+        },
+        {
+          "text": "80",
+          "page": 80
+        },
+        {
+          "text": "The Sun, Moon, and Stars",
+          "page": 80
+        },
+        {
+          "text": "Direct students' attention to the posted Working to Become Effective Learners anchor",
+          "page": 80
+        },
+        {
+          "text": "habits that help us learn.",
+          "page": 80
+        },
+        {
+          "text": "Tell students that along with habits that help us learn, there are also habits for how we",
+          "page": 80
+        },
+        {
+          "text": "treat others.",
+          "page": 80
+        },
+        {
+          "text": "Direct students' attention to the Working to Become Ethical People anchor chart and",
+          "page": 80
+        },
+        {
+          "text": "read the title aloud.",
+          "page": 80
+        },
+        {
+          "text": "Point to the table below the title and read the headings of each column. Tell students that",
+          "page": 80
+        },
+        {
+          "text": "throughout the unit they will learn one habit of character connected to how we treat others.",
+          "page": 80
+        },
+        {
+          "text": "Direct students' attention to the first row that reads respect. Tell students the first habit of",
+          "page": 80
+        },
+        {
+          "text": "character they will learn about is respect.",
+          "page": 80
+        },
+        {
+          "text": "Point to the column that reads, \"What does it mean?\" and read the definition for respect: \"I",
+          "page": 80
+        },
+        {
+          "text": "treat myself, others, and the environment with care.\"",
+          "page": 80
+        },
+        {
+          "text": "Using a total participation technique, invite responses from the group:",
+          "page": 80
+        },
+        {
+          "text": "\"How does the picture on the chart show respect?\" (The picture shows two people working",
+          "page": 80
+        },
+        {
+          "text": "and helping each other kindly.)",
+          "page": 80
+        },
+        {
+          "text": "If productive, cue students to listen carefully and seek to understand:",
+          "page": 80
+        },
+        {
+          "text": "\"Who can tell us what your classmate said in your own words?\" (Responses will vary.)",
+          "page": 80
+        },
+        {
+          "text": "Tell students that they can show respect by working kindly with their partners during the",
+          "page": 80
+        },
+        {
+          "text": "Role-Play protocol. Tell them that throughout the next several lessons, they will think about",
+          "page": 80
+        },
+        {
+          "text": "and reflect on how they and their classmates show respect. For today, students should focus",
+          "page": 80
+        },
+        {
+          "text": "on what it looks like and sounds like to show respect during the Role-Play protocol.",
+          "page": 80
+        },
+        {
+          "text": "Invite students to turn and talk to an elbow partner:",
+          "page": 80
+        },
+        {
+          "text": "\"How will you show respect during our Role-Play protocol?\" (I will listen to my partner",
+          "page": 80
+        },
+        {
+          "text": "and not make fun of him or her.)",
+          "page": 80
+        },
+        {
+          "text": "Move students into pre-determined pairs and tell them today they are going to use the RolePlay protocol to act out a few of the beginning events of Summer Sun Risin'.",
+          "page": 80
+        },
+        {
+          "text": "Invite students to begin the Role-Play protocol. All students should first act out pages 3–4,",
+          "page": 80
+        },
+        {
+          "text": "then pages 5–6.",
+          "page": 80
+        },
+        {
+          "text": "Refocus students whole group and offer them specific, positive feedback on their roleplaying. (Example: \"I noticed everyone participated and worked with their partner to act",
+          "page": 80
+        },
+        {
+          "text": "out what the boy did at the beginning of the story.\")",
+          "page": 80
+        },
+        {
+          "text": "Tell students that in the next lesson, they will role-play the middle events from the story and",
+          "page": 80
+        },
+        {
+          "text": "use their thinking from this role-play to help them write and draw about the major events",
+          "page": 80
+        },
+        {
+          "text": "from the story.",
+          "page": 80
+        },
+        {
+          "text": "As you and a student volunteer model the partner role-play, highlight critical",
+          "page": 80
+        },
+        {
+          "text": "features of Summer Sun Risin' by displaying specific pages on a document camera.",
+          "page": 80
+        },
+        {
+          "text": "Prompt students to refer to these pages for ideas about what to do or say as they",
+          "page": 80
+        },
+        {
+          "text": "role-play. (MMR)",
+          "page": 80
+        },
+        {
+          "text": "As you give directions for the partner role-play, foster collaboration by soliciting",
+          "page": 80
+        },
+        {
+          "text": "strategies for resolving a disagreement. (Example: \"My partner and I might both",
+          "page": 80
+        },
+        {
+          "text": "EL Education Curriculum 81",
+          "page": 81
+        },
+        {
+          "text": "Grade 1: Module 2: Unit 1: Lesson 4",
+          "page": 81
+        },
+        {
+          "text": "want to pretend to be the boy's mother. What can we do or say to respectfully",
+          "page": 81
+        },
+        {
+          "text": "resolve our problem?\") (MME)",
+          "page": 81
+        },
+        {
+          "text": "For ELLs: Clarify the meaning of respect by prompting the class to brainstorm",
+          "page": 81
+        },
+        {
+          "text": "some specific examples of how they might care for themselves, others, and the",
+          "page": 81
+        },
+        {
+          "text": "environment. (Examples: I ask the teacher if I need something; I make sure my",
+          "page": 81
+        },
+        {
+          "text": "partner understands what to do; I keep my desk tidy.)",
+          "page": 81
+        },
+        {
+          "text": "For ELLs: Consider pairing students with a partner who has more advanced or",
+          "page": 81
+        },
+        {
+          "text": "native language proficiency. The partner with greater language proficiency can",
+          "page": 81
+        },
+        {
+          "text": "serve as a model in the pair, initiating scenes and providing dialogue.",
+          "page": 81
+        }
       ]
     },
     {
@@ -180,73 +722,241 @@
       "minutes": 10,
       "page": 81,
       "steps": [
-        "Direct students' attention to the Working to Become Ethical People anchor chart. Point to the column that reads, 'What does it mean?' and read the definition of respect:",
-        "'I treat myself, others, and the environment with care.'",
-        "Tell students they are going to use the Think-Pair-Share protocol to discuss how they showed respect during the Role-Play protocol. Remind them that they used this protocol in Lesson 2, and review as necessary using the Think-Pair-Share Protocol anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)",
-        "Invite students to Think-Pair-Share with an elbow partner:",
-        "'What did it look and sound like when you were showing respect during the Role-Play protocol?'",
-        "Offer the following sentence stems as necessary:",
-        "-'It sounded _________, so I saw respect today.'",
-        "-'It looked like ________, so I saw respect today.'",
-        "As students talk, circulate and listen in. Take note of the ideas they are sharing and target a few students to share out with the whole group. Consider documenting progress toward SL.1.1 using the Speaking and Listening Checklist.",
-        "Remind students to make a bridge with their arms after both partners have shared.",
-        "Gather students back together and invite a few students to share with the whole group.",
-        "If productive, cue students to listen carefully and seek to understand:",
-        "'Who can tell us what your classmate said in your own words?' (Responses will vary.)",
-        "Remind students that they will keep working on what respect looks like and sounds like throughout the unit.",
-        "As students share what they discussed with their partners, offer alternatives to auditory information by writing students' ideas on chart paper or a white board. Save this list to refer to as you begin the next lesson. (MMR)",
-        "For ELLs: Offer alternative sentence frames to expand opportunities for students to express themselves. (Examples: 'I heard others_____, so I saw respect today.'",
-        "'I saw others _____, so I saw respect today.' 'I saw _____ taking care of others by _____.')"
+        {
+          "text": "Direct students' attention to the Working to Become Ethical People anchor chart. Point to",
+          "page": 81
+        },
+        {
+          "text": "the column that reads, \"What does it mean?\" and read the definition of respect:",
+          "page": 81
+        },
+        {
+          "text": "\"I treat myself, others, and the environment with care.\"",
+          "page": 81
+        },
+        {
+          "text": "Tell students they are going to use the Think-Pair-Share protocol to discuss how they showed",
+          "page": 81
+        },
+        {
+          "text": "respect during the Role-Play protocol. Remind them that they used this protocol in Lesson 2,",
+          "page": 81
+        },
+        {
+          "text": "and review as necessary using the Think-Pair-Share Protocol anchor chart. (Refer to the",
+          "page": 81
+        },
+        {
+          "text": "Classroom Protocols document for the full version of this protocol.)",
+          "page": 81
+        },
+        {
+          "text": "Invite students to Think-Pair-Share with an elbow partner:",
+          "page": 81
+        },
+        {
+          "text": "\"What did it look and sound like when you were showing respect during the Role-Play",
+          "page": 81
+        },
+        {
+          "text": "protocol?\"",
+          "page": 81
+        },
+        {
+          "text": "Offer the following sentence stems as necessary:",
+          "page": 81
+        },
+        {
+          "text": "–– \"It sounded _________, so I saw respect today.\"",
+          "page": 81
+        },
+        {
+          "text": "–– \"It looked like ________, so I saw respect today.\"",
+          "page": 81
+        },
+        {
+          "text": "As students talk, circulate and listen in. Take note of the ideas they are sharing and target",
+          "page": 81
+        },
+        {
+          "text": "a few students to share out with the whole group. Consider documenting progress toward",
+          "page": 81
+        },
+        {
+          "text": "SL.1.1 using the Speaking and Listening Checklist.",
+          "page": 81
+        },
+        {
+          "text": "Remind students to make a bridge with their arms after both partners have shared.",
+          "page": 81
+        },
+        {
+          "text": "Gather students back together and invite a few students to share with the whole group.",
+          "page": 81
+        },
+        {
+          "text": "If productive, cue students to listen carefully and seek to understand:",
+          "page": 81
+        },
+        {
+          "text": "\"Who can tell us what your classmate said in your own words?\" (Responses will vary.)",
+          "page": 81
+        },
+        {
+          "text": "Remind students that they will keep working on what respect looks like and sounds like",
+          "page": 81
+        },
+        {
+          "text": "throughout the unit.",
+          "page": 81
+        },
+        {
+          "text": "As students share what they discussed with their partners, offer alternatives to",
+          "page": 81
+        },
+        {
+          "text": "auditory information by writing students' ideas on chart paper or a white board.",
+          "page": 81
+        },
+        {
+          "text": "Save this list to refer to as you begin the next lesson. (MMR)",
+          "page": 81
+        },
+        {
+          "text": "For ELLs: Offer alternative sentence frames to expand opportunities for students",
+          "page": 81
+        },
+        {
+          "text": "to express themselves. (Examples: \"I heard others_____, so I saw respect today.\"",
+          "page": 81
+        },
+        {
+          "text": "82",
+          "page": 82
+        },
+        {
+          "text": "The Sun, Moon, and Stars",
+          "page": 82
+        },
+        {
+          "text": "\"I saw others _____, so I saw respect today.\" \"I saw _____ taking care of others",
+          "page": 82
+        },
+        {
+          "text": "by _____.\")",
+          "page": 82
+        }
       ]
     },
     {
       "section": "Closing and Assessment",
       "letter": "A",
-      "title": "Pinky Partners: Sun Experience-Sunrise",
+      "title": "Pinky Partners: Sun Experience—Sunrise",
       "minutes": 5,
       "page": 82,
       "steps": [
-        "Gather students together whole group. Tell them that they just finished role-playing what the boy in Summer Sun Risin' experiences when the sun is rising. They now get to talk with a partner about what they experience when the sun is rising. Define experience (to feel or know).",
-        "Tell students they are going to discuss their experience when the sun is rising with a pinky partner. Remind them that they used this protocol in Module 1 and review as necessary, using the Pinky Partners anchor chart. (Refer to the Classroom Protocols document for the full version of this protocol.)",
-        "-Guide students through the protocol to discuss their experience when the sun is rising.",
-        "-As students talk, circulate and listen in. Take note of the ideas students are sharing and target a few students to share out with the whole group. Consider documenting progress toward SL.1.1 using the Speaking and Listening Checklist.",
-        "-Remind students to make a bridge with their arms after both partners have shared.",
-        "-Gather students back together and invite a few students to share with the whole group.",
-        "Tell students that in the next few lessons they will continue to discuss their experience with the sun when it is high above their heads at midday and close to the horizon at sunset.",
-        "As you circulate and listen in during the Pinky Partners protocol, scaffold partner conversations as needed. Some students may benefit from explicit prompting or a sentence frame. (Example: 'I experience _____ with my eyes when the sun is rising. I experience _____ with my skin when the sun is rising.') (MMAE)"
+        {
+          "text": "Gather students together whole group. Tell them that they just finished role-playing what",
+          "page": 82
+        },
+        {
+          "text": "the boy in Summer Sun Risin' experiences when the sun is rising. They now get to talk",
+          "page": 82
+        },
+        {
+          "text": "with a partner about what they experience when the sun is rising. Define experience (to feel",
+          "page": 82
+        },
+        {
+          "text": "or know).",
+          "page": 82
+        },
+        {
+          "text": "Tell students they are going to discuss their experience when the sun is rising with a pinky",
+          "page": 82
+        },
+        {
+          "text": "partner. Remind them that they used this protocol in Module 1 and review as necessary,",
+          "page": 82
+        },
+        {
+          "text": "using the Pinky Partners anchor chart. (Refer to the Classroom Protocols document for",
+          "page": 82
+        },
+        {
+          "text": "the full version of this protocol.)",
+          "page": 82
+        },
+        {
+          "text": "–– Guide students through the protocol to discuss their experience when the sun is rising.",
+          "page": 82
+        },
+        {
+          "text": "–– As students talk, circulate and listen in. Take note of the ideas students are sharing and",
+          "page": 82
+        },
+        {
+          "text": "target a few students to share out with the whole group. Consider documenting progress toward SL.1.1 using the Speaking and Listening Checklist.",
+          "page": 82
+        },
+        {
+          "text": "–– Remind students to make a bridge with their arms after both partners have shared.",
+          "page": 82
+        },
+        {
+          "text": "–– Gather students back together and invite a few students to share with the whole group.",
+          "page": 82
+        },
+        {
+          "text": "Tell students that in the next few lessons they will continue to discuss their experience with",
+          "page": 82
+        },
+        {
+          "text": "the sun when it is high above their heads at midday and close to the horizon at sunset.",
+          "page": 82
+        },
+        {
+          "text": "As you circulate and listen in during the Pinky Partners protocol, scaffold partner",
+          "page": 82
+        },
+        {
+          "text": "conversations as needed. Some students may benefit from explicit prompting or a",
+          "page": 82
+        },
+        {
+          "text": "sentence frame. (Example: \"I experience _____ with my eyes when the sun is rising.",
+          "page": 82
+        },
+        {
+          "text": "I experience _____ with my skin when the sun is rising.\") (MMAE)",
+          "page": 82
+        }
       ]
     }
   ],
   "materials": [
     "Sun Movement chart (from Lesson 2; one to display)",
     "Close Read-aloud Guide: Summer Sun Risin' (Session 2; for teacher reference)",
-    "-Summer Sun Risin' (one to display; for teacher read-aloud)",
-    "-Summer Sun Risin' anchor chart (begun in Lesson 3; co-created with students during Work Time A; see Close Read-aloud Guide)",
-    "-Summer Sun Risin' icons (from Lesson 3; one set for teacher use during the close read-aloud)",
-    "-Sun icon (from Lesson 3; two; for teacher use during the close read-aloud)",
-    "-Summer Sun Risin' word cards (new; teacher-created; two)",
-    "-Reading Literature Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "–– Summer Sun Risin' (one to display; for teacher read-aloud)",
+    "–– Summer Sun Risin' anchor chart (begun in Lesson 3; co-created with students during Work Time A; see Close Read-aloud Guide)",
+    "–– Summer Sun Risin' icons (from Lesson 3; one set for teacher use during the close read-aloud)",
+    "–– Sun icon (from Lesson 3; two; for teacher use during the close read-aloud)",
+    "–– Summer Sun Risin' word cards (new; teacher-created; two)",
+    "–– Reading Literature Checklist (for teacher reference; see Assessment Overview and Resources)",
     "Role-Play Protocol anchor chart (new; teacher-created; see Teaching Notes)",
     "Working to Become Effective Learners anchor chart (begun in Module 1)",
-    "Working to Become Ethical People anchor chart (new; teacher created; see supporting materials)",
-    "76",
-    "Grade 1: Module 2: Unit 1: Lesson 4",
+    "\u0007Working to Become Ethical People anchor chart (new; teacher created; see supporting materials)",
     "Think-Pair-Share Protocol anchor chart (begun in Module 1)",
-    "Speaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)",
+    "\u0007Speaking and Listening Checklist (for teacher reference; see Assessment Overview and Resources)",
     "Pinky Partners Protocol anchor chart (begun in Module 1)"
   ],
   "vocabulary": [
-    "-Sun Movement routine (see Lesson 2).",
-    "-Role-Play and Pinky Partners protocols. (Refer to the Classroom Protocols document for the full version of this protocol.)",
-    "Post: Learning target and applicable anchor charts (see materials list).",
-    "74",
-    "Grade 1: Module 2: Unit 1: Lesson 4",
     "respect (L)",
     "risin', climbin' (T)",
-    "sunrise, retell, characters, events, observations, experience (L)"
+    "Review: sunrise, retell, characters, events, observations, experience (L)"
   ],
   "tables": [],
-  "parsed_by": "docling",
+  "parsed_by": "pymupdf",
   "provenance": {
     "source_id": "ELA Grade 1 Module 2 Teacher Guide.pdf",
     "page_start": 72,
