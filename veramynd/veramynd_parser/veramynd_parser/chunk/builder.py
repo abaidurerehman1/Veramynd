@@ -188,7 +188,7 @@ def build_lesson_bundle(
         section, letter = validate_block_identity(
             resource_id, block.section or "", block.letter or ""
         )
-        steps = [s for s in (block.steps or []) if (s or "").strip()]
+        steps = [s for s in block.step_texts if s.strip()]
         if not steps:
             raise ValueError(
                 f"{resource_id}: empty steps for block {section} {letter}"
