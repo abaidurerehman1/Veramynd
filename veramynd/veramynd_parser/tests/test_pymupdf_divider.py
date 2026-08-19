@@ -175,4 +175,4 @@ def test_instructional_block_step_merges_a_hyphen_wrapped_continuation():
     ]
     blocks = d.instructional_blocks()
     assert len(blocks) == 1
-    assert blocks[0].steps == ["Point to the Story Elements board and name each icon."]
+    assert blocks[0].step_texts == ["Point to the Story Elements board and name each icon."]

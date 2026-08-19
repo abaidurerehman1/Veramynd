@@ -96,6 +96,29 @@ class LearningTarget(BaseModel):
         return _check_codes_well_formed(v, "LearningTarget.codes")
 
 
+class InstructionalStep(BaseModel):
+    """One instructional step with the page its text actually appears on."""
+
+    model_config = _STRICT
+
+    text: str
+    page: int = Field(
+        default=0,
+        ge=0,
+        description=(
+            "Page this step's text appears on. 0 means unknown — used for legacy "
+            "JSON that only stored the block start page, and for unmatched blocks."
+        ),
+    )
+
+    @model_validator(mode="before")
+    @classmethod
+    def _coerce_plain_string(cls, value: object) -> object:
+        if isinstance(value, str):
+            return {"text": value, "page": 0}
+        return value
+
+
 class InstructionalBlock(BaseModel):
     """One lettered instructional sub-block (e.g. Work Time A) with its steps.
 
@@ -103,7 +126,9 @@ class InstructionalBlock(BaseModel):
     from the lesson body. This is the evidence-bearing content: the downstream
     alignment judge reads these steps to decide what a lesson teaches, and the
     grounding check quotes from them. The agenda (on the cover) is the plan; this is
-    the execution.
+    the execution. Each step keeps the page its own lines came from, so a block
+    that runs 20 lines on page 45 and 10 on page 46 reports both pages with that
+    content rather than only the start page.
     """
 
     model_config = _STRICT
@@ -124,10 +149,81 @@ class InstructionalBlock(BaseModel):
             "still needs its content filled in) -- verifier check V13 treats page == 0 "
             "as 'unmatched'. A real page is always >= 1. (0 is the ONLY value below 1 "
             "this field ever legitimately takes -- see docs/complete-project-flow.md "
-            "section 9.6.)"
+            "section 9.6.) Per-line pages live on ``steps``."
         ),
     )
-    steps: list[str] = Field(default_factory=list, description="Instructional steps (teacher & student actions).")
+    steps: list[InstructionalStep] = Field(
+        default_factory=list,
+        description="Instructional steps (teacher & student actions), each with its page.",
+    )
+
+    @model_validator(mode="after")
+    def _inherit_block_page_for_legacy_steps(self) -> "InstructionalBlock":
+        # Old Stage-1 JSON stored steps as bare strings. After coercion those
+        # steps have page=0; fill them from the block start page so consumers
+        # still have a page, while newly extracted steps keep their own pages.
+        if self.page <= 0 or not self.steps:
+            return self
+        if all(step.page == 0 for step in self.steps):
+            self.steps = [
+                step.model_copy(update={"page": self.page}) for step in self.steps
+            ]
+        return self
+
+    @property
+    def step_texts(self) -> list[str]:
+        return [step.text for step in self.steps]
+
+    def steps_grouped_by_page(self) -> list[tuple[int, list[str]]]:
+        """Consecutive steps grouped by the page their text appears on."""
+        groups: list[tuple[int, list[str]]] = []
+        for step in self.steps:
+            text = (step.text or "").strip()
+            if not text:
+                continue
+            page = step.page if step.page else self.page
+            if groups and groups[-1][0] == page:
+                groups[-1][1].append(text)
+            else:
+                groups.append((page, [text]))
+        return groups
+
+
+def format_instructional_block_text(
+    *,
+    section: str,
+    letter: str,
+    title: str = "",
+    steps: list[InstructionalStep] | None = None,
+    block_page: int = 0,
+) -> str:
+    """Render a block with ``(page N)`` on each page the content occupies."""
+    header_base = f"[{section} {letter}] {title}".strip()
+    entries: list[tuple[str, int]] = []
+    for step in steps or []:
+        text = (step.text or "").strip()
+        if not text:
+            continue
+        page = step.page if step.page else block_page
+        entries.append((text, page))
+
+    if not entries:
+        return header_base
+
+    parts: list[str] = []
+    current_page: int | None = None
+    for text, page in entries:
+        if page and page != current_page:
+            parts.append(f"{header_base} (page {page})")
+            current_page = page
+        elif not parts:
+            if page:
+                parts.append(f"{header_base} (page {page})")
+                current_page = page
+            else:
+                parts.append(header_base)
+        parts.append(f"- {text}")
+    return "\n".join(parts)
 
 
 class Table(BaseModel):

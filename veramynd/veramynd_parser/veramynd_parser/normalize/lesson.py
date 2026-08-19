@@ -96,7 +96,7 @@ def lesson_normalize_payload(lesson: Lesson) -> dict:
                 "letter": b.letter,
                 "title": b.title,
                 "page": b.page,
-                "steps": list(b.steps),
+                "steps": [{"text": s.text, "page": s.page} for s in b.steps],
             }
             for b in lesson.instructional_blocks
         ],
