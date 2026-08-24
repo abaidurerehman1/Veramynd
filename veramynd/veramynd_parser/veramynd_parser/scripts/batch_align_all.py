@@ -20,6 +20,7 @@ _ROOT = Path(__file__).resolve().parents[1]
 if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT.parent))
 
+from veramynd_parser.judge.consistency import apply_consistency_to_judge_dir
 from veramynd_parser.judge.pipeline import (
     JudgeError,
     JudgeIncompleteError,
@@ -29,6 +30,10 @@ from veramynd_parser.judge.pipeline import (
 from veramynd_parser.normalize.llm import LlmError, is_non_retryable_openai_error
 from veramynd_parser.report.dashboard import write_html_dashboard
 from veramynd_parser.report.exporter import export_alignment_report
+from veramynd_parser.retrieve.dense_health import (
+    assess_dense_score_health,
+    scan_retrieve_dir_dense_health,
+)
 from veramynd_parser.retrieve.diagnostics import (
     build_diagnostics_payload,
     write_diagnostics,
@@ -125,6 +130,16 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--skip-retrieve", action="store_true")
     p.add_argument("--skip-judge", action="store_true")
     p.add_argument("--skip-report", action="store_true")
+    p.add_argument(
+        "--skip-consistency",
+        action="store_true",
+        help="Skip P3 cross-lesson consistency pass (same evidence type → same label).",
+    )
+    p.add_argument(
+        "--no-consistency-reconcile",
+        action="store_true",
+        help="P3: flag inconsistencies only; do not change matched_status to majority.",
+    )
     p.add_argument("--no-rerank", action="store_true")
     p.add_argument(
         "--escalate",
@@ -461,6 +476,7 @@ def main(argv: list[str] | None = None) -> int:
                         "shortlist_rrf_head_lock": int(DEFAULT_SHORTLIST_RRF_HEAD_LOCK),
                         "skip_rerank": bool(args.no_rerank),
                         "candidate_count": len(shortlist),
+                        "dense_score_health": assess_dense_score_health(shortlist),
                         "candidates": [
                             {
                                 k: v
@@ -513,12 +529,31 @@ def main(argv: list[str] | None = None) -> int:
                         "top_k": DEFAULT_HYBRID_TOP_K,
                         "rerank_k": DEFAULT_RERANK_TOP_N,
                         "skip_rerank": bool(args.no_rerank),
+                        "dense_score_health": assess_dense_score_health(hits),
                         "candidates": [c.to_dict() for c in hits],
                     }
                     atomic_write_text(out, json.dumps(payload, indent=2) + "\n")
             except (RetrieveError, OSError, ValueError, RuntimeError) as e:
                 failed.append({"resource_id": rid, "stage": "retrieve", "error": str(e)})
                 print(f"  ERROR retrieve {rid}: {e}", flush=True)
+
+        # P9: confirm dense_score=0 with healthy ranks is cosmetic.
+        try:
+            p9 = scan_retrieve_dir_dense_health(retrieve_dir)
+            p9_path = Path(args.report_csv).parent / "dense_score_p9_health.json"
+            p9_path.parent.mkdir(parents=True, exist_ok=True)
+            atomic_write_text(p9_path, json.dumps(p9, indent=2) + "\n")
+            art = (p9.get("by_status") or {}).get("logging_artifact") or {}
+            ok = (p9.get("by_status") or {}).get("ok") or {}
+            print(
+                "P9 dense_score health: "
+                f"ok={ok.get('count', 0)} "
+                f"logging_artifact={art.get('count', 0)} "
+                f"(ranks OK → cosmetic) -> {p9_path}",
+                flush=True,
+            )
+        except (OSError, ValueError, TypeError) as e:
+            print(f"  WARN P9 dense health scan failed: {e}", flush=True)
 
         if args.from_gold and args.multi_query:
             metrics = report_leaf_recall(Path(args.from_gold), retrieve_dir)
@@ -585,6 +620,29 @@ def main(argv: list[str] | None = None) -> int:
                         flush=True,
                     )
                     break
+
+    if not args.skip_consistency:
+        print("P3 cross-lesson consistency pass...", flush=True)
+        try:
+            csum = apply_consistency_to_judge_dir(
+                judge_dir,
+                reconcile=not bool(args.no_consistency_reconcile),
+                rewrite=True,
+            )
+            print(
+                "  consistency: "
+                f"groups={csum.get('groups_checked')} "
+                f"conflicts={csum.get('conflict_groups')} "
+                f"flagged={csum.get('rows_flagged')} "
+                f"reconciled={csum.get('rows_reconciled')}",
+                flush=True,
+            )
+            cpath = Path(args.report_csv).parent / "consistency_p3_summary.json"
+            cpath.parent.mkdir(parents=True, exist_ok=True)
+            atomic_write_text(cpath, json.dumps(csum, indent=2) + "\n")
+            print(f"  Wrote {cpath}", flush=True)
+        except (OSError, ValueError, TypeError, json.JSONDecodeError) as e:
+            print(f"  WARN consistency pass failed: {e}", flush=True)
 
     if not args.skip_report:
         judge_files = sorted(judge_dir.glob("*.json"))

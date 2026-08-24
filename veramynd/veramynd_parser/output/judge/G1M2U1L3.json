@@ -1,50 +1,29 @@
 {
   "schema_version": "1.0-judge",
   "quality_profile": "enterprise_k12",
-  "prompt_version": "align_judge.assembled.batch.v1",
+  "prompt_version": "align_judge.assembled.batch.v1.5",
   "judge_mode": "batch",
   "resource_id": "G1M2U1L3",
   "lesson_source": "stage1:G1M2U1L3",
-  "retrieve_file": "output/retrieve/G1M2U1L3.json",
+  "retrieve_file": "output/retrieve_gold4/G1M2U1L3.json",
   "standards_dir": "output\\normalize_standards",
   "judge_model": "claude-sonnet-4-5",
   "escalate": true,
   "escalate_model": "claude-opus-4-6",
-  "candidate_count": 25,
-  "coverage_pass_injected": [],
-  "judged": 25,
+  "candidate_count": 26,
+  "coverage_pass_injected": [
+    "1.P.CP.1.d"
+  ],
+  "judged": 26,
   "failed": [],
   "complete": true,
   "by_status": {
-    "full": 5,
-    "partial": 4,
-    "none": 16
+    "full": 6,
+    "partial": 10,
+    "none": 10
   },
   "grounding_rate": 1.0,
-  "grounding_positive_n": 9,
-  "escalated_count": 10,
-  "escalation_rate": 0.4,
-  "escalated_codes": [
-    "1.L.V.1.b",
-    "1.P.EICC.4.c",
-    "1.T.T.1.a",
-    "1.P.AC.1.b",
-    "1.P.AC.1.a",
-    "1.T.SS.2.a",
-    "1.T.RA.2.a",
-    "1.P.EICC.1.e",
-    "1.P.AC.2.d",
-    "1.P.CP.2.d"
-  ],
-  "input_scope_caveat_count": 4,
-  "input_scope_caveat_codes": [
-    "1.T.T.1.c",
-    "1.T.T.1.a",
-    "1.T.RA.2.a",
-    "1.P.CP.2.d"
-  ],
-  "prescreen_auto_none_count": 0,
-  "prescreen_auto_none_codes": [],
+  "grounding_positive_n": 16,
   "verdicts": [
     {
       "schema_version": "1.0-judge",
@@ -53,12 +32,12 @@
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Use grade-level general, academic, or specialized vocabulary words and phrases to communicate (any one category from the interchangeable OR-list suffices)",
+          "clause": "Use grade-level general, academic, or specialized vocabulary words and phrases to communicate (any one category suffices — OR list)",
           "met": false,
           "note": "not met"
         },
         {
-          "clause": "Communicate in a variety of settings (≥2 distinct settings required per lesson for full; 1 setting = partial)",
+          "clause": "Communicate in a variety of settings (≥2 distinct settings for full, 1 = partial)",
           "met": false,
           "note": "not met"
         }
@@ -69,14 +48,14 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
         "rrf_score": 0.16068947181850407,
         "dense_rank": 2,
         "bm25_rank": 2,
-        "dense_score": 0.60514116,
+        "dense_score": 0.6051493,
         "bm25_score": 76.39137594128648,
         "rerank_score": 0.03768674284219742,
         "coverage_pass": false,
@@ -91,38 +70,28 @@
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L3",
       "standard_code": "1.P.EICC.3.g",
-      "matched_status": "none",
+      "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Determine meanings of unfamiliar words using context clues.",
+          "clause": "Determine the meanings of unfamiliar words and concepts by applying knowledge of context, academic vocabulary, and/or word parts (I)",
           "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Use knowledge of academic vocabulary to understand new words.",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Apply understanding of word parts to infer meanings of unfamiliar words.",
-          "met": false,
-          "note": "not met"
+          "note": "Students determine the meaning of 'take place' using teacher-provided context, but this is in a supplemental For ELLs box, not core instruction."
         }
       ],
-      "evidence": "",
-      "evidence_page": null,
+      "evidence": "\"Where does art class happen? Where does it take place?\" (Art class takes place in the art room.)",
+      "evidence_page": 69,
       "confidence": "high",
-      "rationale": "alignment=none",
+      "rationale": "In a supplemental For ELLs box, the teacher explains the phrase 'take place' and then prompts students to practice using it: '\"Where does art class happen? Where does it take place?\" (Art class takes place in the art room.)' The student applies context to determine meaning of an unfamiliar phrase. However, this act occurs only in supplemental content (R3 cap → partial). No core-instruction moment has students determine meanings of unfamiliar words.",
       "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1",
-      "judge_model": "claude-sonnet-4-5",
-      "escalated": false,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
       "retrieval": {
         "rrf_score": 0.14522308292800096,
         "dense_rank": 1,
         "bm25_rank": 1,
-        "dense_score": 0.68527615,
+        "dense_score": 0.68543136,
         "bm25_score": 84.71136350033964,
         "rerank_score": 0.040459372103214264,
         "coverage_pass": false,
@@ -140,30 +109,30 @@
       "matched_status": "full",
       "clauses": [
         {
-          "clause": "Acquire general, academic, and specialized vocabulary words and phrases through grade-level texts and content.",
+          "clause": "Acquire general, academic, or specialized vocabulary words and phrases through grade-level texts and content (any one category suffices — OR list)",
           "met": true,
-          "note": "Students acquire vocabulary (key details, character, setting, risin') from the grade-level text Summer Sun Risin' and the lesson content."
+          "note": "Students acquire academic vocabulary ('key details,' 'character,' 'setting') through grade-level text content during the close read-aloud lesson."
         },
         {
-          "clause": "Apply general, academic, and specialized vocabulary words and phrases in appropriate contexts.",
+          "clause": "Apply general, academic, or specialized vocabulary words and phrases in appropriate contexts",
           "met": true,
-          "note": "Students apply the acquired vocabulary (main character, setting) when they discuss and write about the text."
+          "note": "Students apply the academic vocabulary 'character' and 'setting/take place' by using these terms to answer questions about the text."
         }
       ],
-      "evidence": "Invite students to turn and talk to an elbow partner: 'Who is the main character?' (the boy) 'Where does the story take place?' (a farm)",
-      "evidence_page": 70,
+      "evidence": "\"What are key details?\" (important parts of the text that support the main idea)",
+      "evidence_page": 68,
       "confidence": "high",
-      "rationale": "Students acquire grade-level vocabulary such as 'key details,' 'character,' 'setting,' and 'risin'' through the close read-aloud of Summer Sun Risin' and lesson discussions (Work Time B). They apply this vocabulary when they turn and talk to an elbow partner—'Who is the main character?' (the boy), 'Where does the story take place?' (a farm)—and when they write and draw on the Summer Sun Risin' response sheet (Closing A). Both acquire and apply are met → full.",
+      "rationale": "Students acquire academic vocabulary such as 'key details,' 'character,' and 'setting' through the grade-level close read-aloud of Summer Sun Risin'. They apply this vocabulary when answering questions: '\"Who is the main character?\" (the boy)' and '\"Where does the story take place?\" (a farm).' Both acquire and apply are evidenced with student performance.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1",
-      "judge_model": "claude-sonnet-4-5",
-      "escalated": false,
+      "prompt_version": "align_judge.assembled.batch.v1.5",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
       "retrieval": {
         "rrf_score": 0.14392401769450947,
         "dense_rank": 1,
         "bm25_rank": 1,
-        "dense_score": 0.72254413,
+        "dense_score": 0.72210485,
         "bm25_score": 113.64864577223264,
         "rerank_score": 0.0506848506629467,
         "coverage_pass": false,
@@ -189,6 +158,11 @@
           "clause": "Identify supporting details in an expository text.",
           "met": false,
           "note": "not met"
+        },
+        {
+          "clause": "Recognize techniques used to craft expository texts.",
+          "met": false,
+          "note": "not met"
         }
       ],
       "evidence": "",
@@ -197,14 +171,14 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
         "rrf_score": 0.1421875,
         "dense_rank": 3,
         "bm25_rank": 1,
-        "dense_score": 0.54599655,
+        "dense_score": 0.5459858,
         "bm25_score": 41.75598285532925,
         "rerank_score": 0.06195538863539696,
         "coverage_pass": false,
@@ -219,38 +193,28 @@
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L3",
       "standard_code": "1.T.RA.1.c",
-      "matched_status": "full",
+      "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Share relevant information about a topic.",
-          "met": true,
-          "note": "Students share relevant information (main character, setting) about the text."
-        },
-        {
-          "clause": "Share accurate information about a topic.",
-          "met": true,
-          "note": "The information students share (the boy, a farm) is accurate to the text."
-        },
-        {
-          "clause": "Use a variety of communication modes to share information.",
-          "met": true,
-          "note": "Students use multiple modes: oral discussion (turn-and-talk) and written/drawn response (response sheet)."
+          "clause": "Share relevant and accurate information through a variety of different modes (C)",
+          "met": false,
+          "note": "Students share relevant and accurate information about the text orally and through writing/drawing on the response sheet — two modes. However, the sharing is scaffolded responses to teacher questions rather than student-initiated sharing of information, and the written mode is a brief response sheet, making this thin."
         }
       ],
-      "evidence": "Invite students to turn and talk to an elbow partner: 'Who is the main character?' (the boy) 'Where does the story take place?' (a farm)",
+      "evidence": "\"Who is the main character?\" (the boy) \"Where does the story take place?\" (a farm)",
       "evidence_page": 70,
       "confidence": "high",
-      "rationale": "Students share relevant and accurate information about Summer Sun Risin' when they turn and talk to an elbow partner—'Who is the main character?' (the boy), 'Where does the story take place?' (a farm)—and when they complete the Summer Sun Risin' response sheet using both pictures and words (Closing A). The use of oral discussion and written/drawn response constitutes a variety of communication modes → full.",
+      "rationale": "Students share relevant, accurate information about Summer Sun Risin' orally ('\"Who is the main character?\" (the boy)') and through writing/drawing on the response sheet (Part 1: main character and setting). This touches two modes (oral and written/drawn), but the information shared is brief scaffolded responses to teacher prompts rather than substantive student-initiated sharing, making this partial.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1",
-      "judge_model": "claude-sonnet-4-5",
-      "escalated": false,
+      "prompt_version": "align_judge.assembled.batch.v1.5",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
       "retrieval": {
-        "rrf_score": 0.14088631381146258,
+        "rrf_score": 0.14064826302729527,
         "dense_rank": 2,
         "bm25_rank": 1,
-        "dense_score": 0.5643946,
+        "dense_score": 0.56381565,
         "bm25_score": 58.77123520133727,
         "rerank_score": 0.06929276138544083,
         "coverage_pass": false,
@@ -264,85 +228,39 @@
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L3",
-      "standard_code": "1.T.T.1.c",
-      "matched_status": "none",
+      "standard_code": "1.P.EICC.4.c",
+      "matched_status": "full",
       "clauses": [
         {
-          "clause": "Describe traits of the main characters.",
-          "met": false,
-          "note": "not met"
+          "clause": "Generate ideas for content by assessing prior knowledge.",
+          "met": true,
+          "note": "Students activate prior knowledge from previous lessons about Elvin"
         },
         {
-          "clause": "Explain how the characters' words support the central message, lesson, or moral.",
-          "met": false,
-          "note": "not met"
+          "clause": "Generate ideas for content by gathering information from texts.",
+          "met": true,
+          "note": "Students gather information from the read-aloud text and use it to generate content for their response sheet"
         },
         {
-          "clause": "Explain how the characters' actions support the central message, lesson, or moral.",
-          "met": false,
-          "note": "not met"
+          "clause": "Generate ideas for content by engaging in discussions with others.",
+          "met": true,
+          "note": "Students engage in partner discussions that feed their idea generation for the writing task"
         }
       ],
-      "evidence": "",
-      "evidence_page": null,
+      "evidence": "Remind students of the story 'Elvin, the Boy Who Loved the Sky' and what they have learned about why Elvin loves the sun and moon.",
+      "evidence_page": 66,
       "confidence": "high",
-      "rationale": "alignment=none",
+      "rationale": "Students generate ideas for their response-sheet content by drawing on all three named channels. They activate prior knowledge about the Elvin story (Opening A, page 66), gather information from the Summer Sun Risin' read-aloud (Work Time B, pages 68-69), and engage in partner discussions about the main character and setting (Closing A, page 70). These channels feed the idea-generation product: students then write and draw about the main character and setting on their response sheets (Closing A, pages 70-71). All three clauses met → full.",
       "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1",
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
-        "rrf_score": 0.1405076679005817,
-        "dense_rank": 1,
-        "bm25_rank": 1,
-        "dense_score": 0.69813216,
-        "bm25_score": 111.78717459595762,
-        "rerank_score": 0.09279030561447144,
-        "coverage_pass": false,
-        "coverage_family": ""
-      },
-      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)",
-      "needs_review": false,
-      "review_reason": "",
-      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L3",
-      "standard_code": "1.P.EICC.4.c",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Generate ideas for content by assessing prior knowledge (C)",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Generate ideas for content by gathering information from texts (C)",
-          "met": false,
-          "note": "Students gather information (key details about character and setting) from the text during the close read-aloud and use it to complete a response sheet, but this is a comprehension response task — writing/drawing about what they read — not generating ideas for their own composition content."
-        },
-        {
-          "clause": "Generate ideas for content by engaging in discussions with others (C)",
-          "met": false,
-          "note": "Students discuss character and setting with a partner before writing on the response sheet, but the discussion is a comprehension check (recalling text details), not a generative discussion to develop ideas for their own composition."
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "alignment=none",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.v1",
-      "judge_model": "claude-opus-4-6",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.1402374169040836,
+        "rrf_score": 0.1405769230769231,
         "dense_rank": 6,
         "bm25_rank": 3,
-        "dense_score": 0.46978492,
+        "dense_score": 0.47032025,
         "bm25_score": 22.902441863664965,
         "rerank_score": 0.07350341975688934,
         "coverage_pass": false,
@@ -356,21 +274,16 @@
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L3",
-      "standard_code": "1.F.F.1.c",
+      "standard_code": "1.T.T.1.c",
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Read a wide range of grade-level texts aloud.",
+          "clause": "Describe traits of the main characters (I)",
           "met": false,
           "note": "not met"
         },
         {
-          "clause": "Use appropriate phrasing, expression, juncture/pause, and intonation while reading aloud.",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Demonstrate understanding of the text through prosody.",
+          "clause": "Explain how the characters' words and/or actions support the central message, lesson, or moral of the story (I)",
           "met": false,
           "note": "not met"
         }
@@ -381,20 +294,20 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1",
-      "judge_model": "claude-sonnet-4-5",
-      "escalated": false,
+      "prompt_version": "align_judge.assembled.batch.v1.5",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
       "retrieval": {
-        "rrf_score": 0.1395480555521446,
-        "dense_rank": 3,
-        "bm25_rank": 3,
-        "dense_score": 0.49928668,
-        "bm25_score": 41.19260766744184,
-        "rerank_score": 0.022366752848029137,
+        "rrf_score": 0.1405076679005817,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.69806594,
+        "bm25_score": 111.78717459595762,
+        "rerank_score": 0.09279030561447144,
         "coverage_pass": false,
         "coverage_family": ""
       },
-      "standard_raw_text": "Read a wide range of grade-level texts aloud with appropriate prosody (phrasing, expression, juncture/pause, and intonation) to demonstrate understanding.",
+      "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)",
       "needs_review": false,
       "review_reason": "",
       "input_scope_caveat": ""
@@ -406,25 +319,25 @@
       "matched_status": "full",
       "clauses": [
         {
-          "clause": "Use texts to build knowledge, develop skills, make informed decisions, or share information and ideas.",
+          "clause": "Make use of texts to build knowledge, develop skills, make informed decisions, and/or share information and ideas (any one purpose suffices — OR list) (I/C)",
           "met": true,
-          "note": "Students use the text Summer Sun Risin' to build knowledge about the story and to share information and ideas through discussion and writing."
+          "note": "Students use the text Summer Sun Risin' to build knowledge about the story's character and setting, then share that information orally and on a response sheet — satisfying the 'build knowledge' and 'share information' purposes."
         }
       ],
-      "evidence": "Invite students to turn and talk to an elbow partner: 'Who is the main character?' (the boy) 'Where does the story take place?' (a farm) … Tell students that today they will answer these two questions using pictures and words to show their thinking.",
+      "evidence": "\"Who is the main character?\" (the boy) \"Where does the story take place?\" (a farm)",
       "evidence_page": 70,
       "confidence": "high",
-      "rationale": "Students use the text Summer Sun Risin' to build knowledge about the main character and setting during the close read-aloud (Work Time B) and to share information and ideas when they turn and talk to an elbow partner—'Who is the main character?' (the boy), 'Where does the story take place?' (a farm)—and when they complete the response sheet using pictures and words (Closing A). The OR-list requires any one purpose; students perform two (build knowledge, share information) → full.",
+      "rationale": "Students make use of the text Summer Sun Risin' to build knowledge about the story's character and setting. They demonstrate this by answering questions: '\"Who is the main character?\" (the boy)' and '\"Where does the story take place?\" (a farm),' and by completing a response sheet with words and pictures. Any one purpose from the OR list suffices; 'build knowledge' is clearly met.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1",
-      "judge_model": "claude-sonnet-4-5",
-      "escalated": false,
+      "prompt_version": "align_judge.assembled.batch.v1.5",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
       "retrieval": {
-        "rrf_score": 0.139485903814262,
+        "rrf_score": 0.1398042558741871,
         "dense_rank": 4,
         "bm25_rank": 9,
-        "dense_score": 0.56443965,
+        "dense_score": 0.563312,
         "bm25_score": 20.13999027829767,
         "rerank_score": 0.06375224143266678,
         "coverage_pass": false,
@@ -442,40 +355,40 @@
       "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Identify characters used to craft a story.",
+          "clause": "Identify characters used to craft a story (I)",
           "met": true,
-          "note": "Students identify the main character of Summer Sun Risin' as 'the boy' in a turn-and-talk, performing the identification act themselves."
+          "note": "Students identify the main character of Summer Sun Risin' as 'the boy.'"
         },
         {
-          "clause": "Identify the setting used to craft a story.",
+          "clause": "Identify the setting used to craft a story (I)",
           "met": true,
-          "note": "Students identify the setting of the story as 'a farm' in a turn-and-talk, performing the identification act themselves."
+          "note": "Students identify the setting of Summer Sun Risin' as 'a farm.'"
         },
         {
-          "clause": "Identify major events used to craft a story.",
+          "clause": "Identify major events used to craft a story (I)",
           "met": false,
           "note": "not met"
         },
         {
-          "clause": "Identify dialogue used to craft a story.",
+          "clause": "Identify dialogue used to craft a story (I)",
           "met": false,
           "note": "not met"
         }
       ],
-      "evidence": "'Who is the main character?' (the boy)",
+      "evidence": "\"Who is the main character?\" (the boy)",
       "evidence_page": 70,
       "confidence": "high",
-      "rationale": "The resource meets the characters and setting clauses: students identify the main character (\"'Who is the main character?' (the boy)\") and the setting (\"'Where does the story take place?' (a farm)\") during the Closing turn-and-talk and on the response sheet. However, the resource does not have students identify major events of the story in this lesson — the teacher mentions that in upcoming lessons students will \"role-play events\" and \"writing and drawing about the major events from the beginning, middle, and end,\" but no student identification of major events occurs here. There is also no activity in which students identify dialogue used to craft the story. Two of four required clauses are met; two are not met.",
+      "rationale": "Students identify two of the four required story techniques: characters ('\"Who is the main character?\" (the boy)') and setting ('\"Where does the story take place?\" (a farm)'). However, students do not identify major events or dialogue in this lesson — the teacher mentions that future lessons will address events. Two of four techniques met → partial.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
         "rrf_score": 0.13918561607615015,
         "dense_rank": 1,
         "bm25_rank": 1,
-        "dense_score": 0.64623743,
+        "dense_score": 0.6463512,
         "bm25_score": 61.87149159619326,
         "rerank_score": 0.06067463383078575,
         "coverage_pass": false,
@@ -484,26 +397,26 @@
       "standard_raw_text": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue. (I)",
       "needs_review": false,
       "review_reason": "",
-      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L3",
-      "standard_code": "1.P.AC.1.b",
+      "standard_code": "1.F.F.1.c",
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Identify important, interesting, or effective uses of language in a text.",
+          "clause": "Read a wide range of grade-level texts aloud",
           "met": false,
           "note": "not met"
         },
         {
-          "clause": "Apply understanding of word choices to interpret how they affect the target audience.",
+          "clause": "Use appropriate phrasing, expression, juncture/pause, and intonation while reading aloud",
           "met": false,
           "note": "not met"
         },
         {
-          "clause": "Analyze and explain how specific word choices support the text's purpose.",
+          "clause": "Demonstrate understanding of the text through prosody",
           "met": false,
           "note": "not met"
         }
@@ -514,14 +427,60 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.13896376491383122,
+        "dense_rank": 3,
+        "bm25_rank": 3,
+        "dense_score": 0.49928668,
+        "bm25_score": 41.19260766744184,
+        "rerank_score": 0.022366752848029137,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Read a wide range of grade-level texts aloud with appropriate prosody (phrasing, expression, juncture/pause, and intonation) to demonstrate understanding.",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L3",
+      "standard_code": "1.P.AC.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify important, interesting, or effective uses of language in a text (I/C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Apply understanding of word choices to interpret how they affect the target audience (I/C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Analyze and explain how specific word choices support the text's purpose (I/C)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.13806547619047618,
+        "rrf_score": 0.13756796375266525,
         "dense_rank": 6,
         "bm25_rank": 11,
-        "dense_score": 0.53502613,
+        "dense_score": 0.53567946,
         "bm25_score": 20.354821306902938,
         "rerank_score": 0.06608685106039047,
         "coverage_pass": false,
@@ -535,116 +494,34 @@
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L3",
-      "standard_code": "1.P.CP.2.a",
-      "matched_status": "full",
-      "clauses": [
-        {
-          "clause": "Communicate clearly to present ideas, information, and texts.",
-          "met": true,
-          "note": "Students communicate clearly when they present ideas in turn-and-talk discussions and when they sing the 'Sun, Moon, and Stars' song aloud with movements."
-        }
-      ],
-      "evidence": "Invite students to turn and talk to an elbow partner: 'Who is the main character?' (the boy) 'Where does the story take place?' (a farm) … If time permits, repeat the song inviting students to sing with their movements for each noun and verb.",
-      "evidence_page": 70,
-      "confidence": "high",
-      "rationale": "Students communicate clearly to present ideas and information when they turn and talk to an elbow partner—'Who is the main character?' (the boy), 'Where does the story take place?' (a farm)—(Closing A) and when they sing the 'Sun, Moon, and Stars' song aloud with movements (Opening A). The manner-modifier principle applies: the student presents aloud, so both the act (present ideas/information) and the manner (clearly) are satisfied → full.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1",
-      "judge_model": "claude-sonnet-4-5",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.1374230575968846,
-        "dense_rank": 1,
-        "bm25_rank": 2,
-        "dense_score": 0.72298497,
-        "bm25_score": 56.95235547972655,
-        "rerank_score": 0.06372058391571045,
-        "coverage_pass": false,
-        "coverage_family": ""
-      },
-      "standard_raw_text": "Communicate clearly to present ideas, information, and texts. (I/C)",
-      "needs_review": false,
-      "review_reason": "",
-      "input_scope_caveat": ""
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L3",
-      "standard_code": "1.P.EICC.2.c",
-      "matched_status": "full",
-      "clauses": [
-        {
-          "clause": "Explain concepts by interpreting texts.",
-          "met": true,
-          "note": "Students explain concepts (character, setting) by interpreting the text Summer Sun Risin'."
-        },
-        {
-          "clause": "Learn concepts by interpreting texts.",
-          "met": true,
-          "note": "Students learn concepts (key details, character, setting) by interpreting the text during the close read-aloud."
-        },
-        {
-          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
-          "met": true,
-          "note": "Students construct texts (response sheet with pictures and words) to demonstrate understanding of character and setting."
-        }
-      ],
-      "evidence": "Invite students to turn and talk to an elbow partner: 'Who is the main character?' (the boy) 'Where does the story take place?' (a farm)",
-      "evidence_page": 70,
-      "confidence": "high",
-      "rationale": "Students explain and learn concepts (character, setting, key details) by interpreting the text Summer Sun Risin' during the close read-aloud and turn-and-talk discussions (Work Time B, Closing A). They construct texts to demonstrate understanding when they complete the response sheet using pictures and words to answer 'Who are the main characters?' and 'Where does the story take place?' (Closing A). All three clauses met → full.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1",
-      "judge_model": "claude-sonnet-4-5",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.13540372670807455,
-        "dense_rank": 7,
-        "bm25_rank": 2,
-        "dense_score": 0.5167781,
-        "bm25_score": 18.139315447588963,
-        "rerank_score": 0.07882153987884521,
-        "coverage_pass": false,
-        "coverage_family": ""
-      },
-      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)",
-      "needs_review": false,
-      "review_reason": "",
-      "input_scope_caveat": ""
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L3",
       "standard_code": "1.L.V.3.a",
-      "matched_status": "none",
+      "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Use context within a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases.",
+          "clause": "Use context within a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases (I)",
           "met": false,
-          "note": "not met"
+          "note": "Students use context provided by the teacher to determine the meaning of 'take place,' but this occurs only in a supplemental For ELLs box (R3 cap → partial)."
         },
         {
-          "clause": "Use context beyond a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases.",
+          "clause": "Use context beyond a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases (I)",
           "met": false,
           "note": "not met"
         }
       ],
-      "evidence": "",
-      "evidence_page": null,
+      "evidence": "\"Where does art class happen? Where does it take place?\" (Art class takes place in the art room.)",
+      "evidence_page": 69,
       "confidence": "high",
-      "rationale": "alignment=none",
+      "rationale": "In a supplemental For ELLs box, the teacher explains 'take place' and prompts students to use it in context: '\"Where does art class happen? Where does it take place?\" (Art class takes place in the art room.)' The student uses within-sentence context to determine meaning. However, this act is supplemental-only (R3 cap → partial), and no core moment has students use context to determine word meaning.",
       "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1",
-      "judge_model": "claude-sonnet-4-5",
-      "escalated": false,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
       "retrieval": {
         "rrf_score": 0.1374097255657198,
         "dense_rank": 2,
         "bm25_rank": 2,
-        "dense_score": 0.619913,
+        "dense_score": 0.6193979,
         "bm25_score": 47.512399998412704,
         "rerank_score": 0.057936664670705795,
         "coverage_pass": false,
@@ -658,44 +535,208 @@
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L3",
-      "standard_code": "1.P.AC.1.a",
+      "standard_code": "1.P.EICC.2.c",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Explain and/or learn concepts and processes by interpreting texts (I)",
+          "met": true,
+          "note": "Students learn the concept of 'setting' by interpreting the text Summer Sun Risin' during the close read-aloud."
+        },
+        {
+          "clause": "Construct texts to demonstrate understanding of concepts and processes (C)",
+          "met": true,
+          "note": "Students construct a written/drawn response on the response sheet to demonstrate understanding of character and setting concepts."
+        }
+      ],
+      "evidence": "\"What is the setting of a story?\" (when and where a story takes place)",
+      "evidence_page": 68,
+      "confidence": "high",
+      "rationale": "Students learn concepts (character, setting) by interpreting the text Summer Sun Risin': '\"What is the setting of a story?\" (when and where a story takes place).' They then construct a text (response sheet Part 1) to demonstrate understanding: 'writing and drawing about the main character and setting using key details from the text.' Both the interpret and construct clauses are met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.13540372670807455,
+        "dense_rank": 7,
+        "bm25_rank": 2,
+        "dense_score": 0.51661724,
+        "bm25_score": 18.139315447588963,
+        "rerank_score": 0.07882153987884521,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Explain and learn concepts and processes by interpreting and constructing texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L3",
+      "standard_code": "1.P.CP.2.a",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Communicate ideas clearly when presenting.",
+          "met": true,
+          "note": "Students communicate their ideas about motions aloud to the group"
+        },
+        {
+          "clause": "Present information in an organized manner.",
+          "met": true,
+          "note": "Students present information about character and setting in response to prompts"
+        },
+        {
+          "clause": "Express ideas and information clearly through speech.",
+          "met": true,
+          "note": "Students express their understanding of key details clearly through spoken responses"
+        }
+      ],
+      "evidence": "Using a total participation technique, invite responses from the group: 'What are some hand gestures, motions, or actions that could go along with these nouns and verbs in the song?' (Responses will vary, but may include: lifting their arms to form a circle; twinkling their fingers like stars; etc.)",
+      "evidence_page": 67,
+      "confidence": "high",
+      "rationale": "Students communicate clearly through spoken presentation in multiple instances. They present ideas about hand gestures for the song to the whole group (Opening A, page 67), share information about the main character and setting in partner talk (Closing A, page 70), and express their understanding of \"key details\" in whole-group discussion (Work Time B, page 68). The manner-modifier principle applies: students genuinely present aloud, satisfying both the clarity manner and the present-ideas/information act → full.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
+      "retrieval": {
+        "rrf_score": 0.13720644189861755,
+        "dense_rank": 1,
+        "bm25_rank": 2,
+        "dense_score": 0.72217524,
+        "bm25_score": 56.95235547972655,
+        "rerank_score": 0.06372058391571045,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Communicate clearly to present ideas, information, and texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L3",
+      "standard_code": "1.T.RA.2.a",
       "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Identify literary, expository, and opinion elements in texts (I/C)",
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion (I) (any one of idea/answer/opinion suffices — OR list)",
           "met": false,
-          "note": "Students identify the main character and setting of the literary text Summer Sun Risin', which are literary (narrative) elements; however, only character and setting are identified — no identification of other literary elements such as major events, dialogue, plot, or any expository/opinion elements occurs as a student act."
+          "note": "Students are directed to use 'key details from the text' to support their answers about character and setting on the response sheet. The instruction references text parts, but the lesson does not show students explicitly pointing to or citing specific text passages — the reference is implicit in the 'key details' framing, making this thin."
+        }
+      ],
+      "evidence": "today they will complete only Part 1, by writing and drawing about the main character and setting using key details from the text.",
+      "evidence_page": 70,
+      "confidence": "high",
+      "rationale": "Students are directed to write and draw 'about the main character and setting using key details from the text' on the response sheet. The learning target states 'using key details from the text,' and the close read-aloud guide references text-based evidence. However, the lesson does not show an explicit moment where students cite or point to a specific part of the text to support their answer — the text-referencing is implicit and thin, so this is partial rather than full.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.13392271662763466,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.7636587,
+        "bm25_score": 73.16883663497647,
+        "rerank_score": 0.09012164920568466,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Refer to parts of texts when supporting an idea, answer, or opinion. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L3",
+      "standard_code": "1.T.SS.2.a",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify descriptive words in texts (I)",
+          "met": false,
+          "note": "Students identify descriptive words about the sun in the song lyrics, but this occurs only in a supplemental For ELLs box (R3 cap → partial)."
         },
         {
-          "clause": "Apply knowledge of these elements to interpret texts",
-          "met": false,
-          "note": "Students apply their knowledge of character and setting to interpret Summer Sun Risin' by naming the boy and the farm, but this application is limited to two elements and is teacher-prompted with narrow scope."
-        },
-        {
-          "clause": "Analyze how specific elements affect the target audience",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Explain or evaluate how elements support the text's purpose",
+          "clause": "Explain the use of descriptive words in texts (I)",
           "met": false,
           "note": "not met"
         }
       ],
-      "evidence": "'Who is the main character?' (the boy)",
-      "evidence_page": 70,
+      "evidence": "invite students to listen carefully for words that describe the sun and to give a silent signal when they hear one. Invite students to underline the words that they identify.",
+      "evidence_page": 67,
       "confidence": "high",
-      "rationale": "Students identify two literary elements — character and setting — in the narrative text Summer Sun Risin'. In the Closing section, students answer \"'Who is the main character?' (the boy)\" and \"'Where does the story take place?' (a farm),\" and they apply this knowledge by writing and drawing about the main character and setting on a response sheet. However, the lesson does not have students analyze how these elements affect the audience or explain/evaluate how they support the text's purpose; those higher-order clauses are entirely absent. The identify and apply clauses are therefore only partially met (limited to two narrative elements, no analysis or evaluation), and the analyze and explain/evaluate clauses are not met.",
+      "rationale": "In a supplemental For ELLs box, students are directed to 'listen carefully for words that describe the sun and to give a silent signal when they hear one. Invite students to underline the words that they identify.' This is a genuine student act of identifying descriptive words, but it is supplemental-only (R3 cap → partial). Additionally, no moment has students explain the use of those descriptive words, so the explain clause is not met. Overall: partial (identify partially met via R3; explain not met).",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.13327800202800202,
+        "rrf_score": 0.13542884990253412,
+        "dense_rank": 4,
+        "bm25_rank": 7,
+        "dense_score": 0.5231407,
+        "bm25_score": 20.97462238572294,
+        "rerank_score": 0.05877886340022087,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify and explain the use of descriptive words in texts. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L3",
+      "standard_code": "1.P.AC.1.a",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify literary, expository, or opinion elements in texts (I/C) (any one genre type suffices)",
+          "met": true,
+          "note": "Students identify literary elements (character and setting) in the narrative text Summer Sun Risin'."
+        },
+        {
+          "clause": "Apply knowledge of these elements to interpret texts (I/C)",
+          "met": true,
+          "note": "Students apply their knowledge of character and setting to interpret the text by writing and drawing about these elements on the response sheet."
+        },
+        {
+          "clause": "Analyze how specific elements affect the target audience (I/C)",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Explain or evaluate how elements support the text's purpose (I/C)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "\"Who is the main character?\" (the boy) \"Where does the story take place?\" (a farm)",
+      "evidence_page": 70,
+      "confidence": "high",
+      "rationale": "Students identify literary elements (character and setting) in Summer Sun Risin': '\"Who is the main character?\" (the boy)' and '\"Where does the story take place?\" (a farm).' They apply this knowledge by writing and drawing about these elements on the response sheet. However, students do not analyze how these elements affect the audience or explain/evaluate how they support the text's purpose — those higher-order clauses are not met. Two of four clauses met → partial.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.13232270732270732,
         "dense_rank": 3,
         "bm25_rank": 4,
-        "dense_score": 0.5661574,
+        "dense_score": 0.5667118,
         "bm25_score": 24.980015113946326,
         "rerank_score": 0.08794186264276505,
         "coverage_pass": false,
@@ -709,40 +750,35 @@
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L3",
-      "standard_code": "1.T.SS.2.a",
-      "matched_status": "partial",
+      "standard_code": "1.P.AC.2.d",
+      "matched_status": "none",
       "clauses": [
         {
-          "clause": "Identify descriptive words in texts.",
-          "met": false,
-          "note": "Students are directed to identify words that describe the sun in the song lyrics, but this activity is an ELL differentiation scaffold, not the core instructional activity for all students."
-        },
-        {
-          "clause": "Explain the use of descriptive words in texts.",
+          "clause": "Organize texts by incorporating specific formats, structures, patterns, and/or features to influence the audience, facilitate accessibility, and/or support the text's purpose (I/C)",
           "met": false,
           "note": "not met"
         }
       ],
-      "evidence": "invite students to listen carefully for words that describe the sun and to give a silent signal when they hear one. Invite students to underline the words that they identify.",
-      "evidence_page": 66,
+      "evidence": "",
+      "evidence_page": null,
       "confidence": "high",
-      "rationale": "The identify clause is partially met: the ELL differentiation note directs students to \"listen carefully for words that describe the sun and to give a silent signal when they hear one. Invite students to underline the words that they identify,\" which is a student-directed imperative to identify descriptive words in the song text. However, this activity is scoped only to ELL students as a differentiation support, not the core lesson for all learners, capping it at partially met. The core lesson focuses on identifying nouns and verbs, not descriptive words. The explain clause is not met: no activity asks students to explain how or why descriptive words are used in the text.",
+      "rationale": "alignment=none",
       "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.v1",
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
-        "rrf_score": 0.13542884990253412,
-        "dense_rank": 4,
-        "bm25_rank": 7,
-        "dense_score": 0.52348125,
-        "bm25_score": 20.97462238572294,
-        "rerank_score": 0.05877886340022087,
+        "rrf_score": 0.1340834764685675,
+        "dense_rank": 6,
+        "bm25_rank": 10,
+        "dense_score": 0.51140946,
+        "bm25_score": 19.642591018027368,
+        "rerank_score": 0.07077807188034058,
         "coverage_pass": false,
         "coverage_family": ""
       },
-      "standard_raw_text": "Identify and explain the use of descriptive words in texts. (I)",
+      "standard_raw_text": "Organize texts by incorporating specific formats, structures, patterns, and features to influence the audience, facilitate accessibility, and support the text’s purpose. (I/C)",
       "needs_review": false,
       "review_reason": "",
       "input_scope_caveat": ""
@@ -785,14 +821,14 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
         "rrf_score": 0.13331980519480519,
         "dense_rank": 3,
         "bm25_rank": 3,
-        "dense_score": 0.5457822,
+        "dense_score": 0.5470842,
         "bm25_score": 55.56888117930904,
         "rerank_score": 0.07261544466018677,
         "coverage_pass": false,
@@ -802,42 +838,6 @@
       "needs_review": false,
       "review_reason": "",
       "input_scope_caveat": ""
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L3",
-      "standard_code": "1.T.RA.2.a",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion. (I)",
-          "met": false,
-          "note": "not met"
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "alignment=none",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.v1",
-      "judge_model": "claude-opus-4-6",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.13304664049873008,
-        "dense_rank": 1,
-        "bm25_rank": 1,
-        "dense_score": 0.76196575,
-        "bm25_score": 73.16883663497647,
-        "rerank_score": 0.09012164920568466,
-        "coverage_pass": false,
-        "coverage_family": ""
-      },
-      "standard_raw_text": "Refer to parts of texts when supporting an idea, answer, or opinion. (I)",
-      "needs_review": false,
-      "review_reason": "",
-      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
     },
     {
       "schema_version": "1.0-judge",
@@ -853,7 +853,7 @@
         {
           "clause": "Discuss texts with others in the group",
           "met": true,
-          "note": "Students discuss the text with a partner by answering questions about character and setting."
+          "note": "Students discuss the text Summer Sun Risin' with an elbow partner during turn-and-talk."
         },
         {
           "clause": "Share individual writing with the group",
@@ -876,67 +876,26 @@
           "note": "not met"
         }
       ],
-      "evidence": "Invite students to turn and talk to an elbow partner: 'Who is the main character?' (the boy) 'Where does the story take place?' (a farm)",
+      "evidence": "Invite students to turn and talk to an elbow partner: \"Who is the main character?\" (the boy) \"Where does the story take place?\" (a farm)",
       "evidence_page": 70,
       "confidence": "high",
-      "rationale": "The resource meets the \"discuss texts\" clause: students turn and talk with an elbow partner about the text (\"'Who is the main character?' (the boy) 'Where does the story take place?' (a farm)\"), and they also discuss illustrations and close-reading strategies in partner talk. However, the remaining five clauses are not met. There is no activity in which students develop group norms (the teacher reminds students of existing expectations), no moment where students share their own writing with the group or listen to peers share writing, and no offering of or responding to feedback on writing. The independent writing task (response sheet) is collected by the teacher with no sharing or feedback cycle. Label is partial because only one of six clauses is met.",
+      "rationale": "Students discuss the text with an elbow partner: 'Invite students to turn and talk to an elbow partner: \"Who is the main character?\" (the boy) \"Where does the story take place?\" (a farm).' This meets the 'discuss texts' clause. However, no group norms are developed by students, no individual writing is shared with the group, no listening to others' writing occurs, and no feedback is offered or responded to. One of six clauses met → partial.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
         "rrf_score": 0.13512393807288176,
         "dense_rank": 3,
         "bm25_rank": 4,
-        "dense_score": 0.54225785,
+        "dense_score": 0.54215866,
         "bm25_score": 25.40321158780997,
         "rerank_score": 0.053438231348991394,
         "coverage_pass": false,
         "coverage_family": ""
       },
       "standard_raw_text": "Participate in a community of readers and writers by developing group norms, discussing texts, sharing individual writing, listening as others share their writing, and offering and responding to feedback. (I/C)",
-      "needs_review": false,
-      "review_reason": "",
-      "input_scope_caveat": ""
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L3",
-      "standard_code": "1.P.AC.2.d",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Organize texts by incorporating specific formats, structures, patterns, and/or features (interchangeable list — any one type suffices)",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Use these elements to influence the audience, facilitate accessibility, and/or support the text's purpose (interchangeable purpose list — any one purpose suffices)",
-          "met": false,
-          "note": "not met"
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "alignment=none",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.v1",
-      "judge_model": "claude-opus-4-6",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.13313610804751486,
-        "dense_rank": 7,
-        "bm25_rank": 10,
-        "dense_score": 0.51110256,
-        "bm25_score": 19.642591018027368,
-        "rerank_score": 0.07077807188034058,
-        "coverage_pass": false,
-        "coverage_family": ""
-      },
-      "standard_raw_text": "Organize texts by incorporating specific formats, structures, patterns, and features to influence the audience, facilitate accessibility, and support the text’s purpose. (I/C)",
       "needs_review": false,
       "review_reason": "",
       "input_scope_caveat": ""
@@ -974,61 +933,20 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
         "rrf_score": 0.1320192710515291,
         "dense_rank": 8,
         "bm25_rank": 4,
-        "dense_score": 0.50399685,
+        "dense_score": 0.50399613,
         "bm25_score": 43.382740253533775,
         "rerank_score": 0.1176837906241417,
         "coverage_pass": false,
         "coverage_family": ""
       },
       "standard_raw_text": "Describe the connection between two individuals, events, ideas, or pieces of information in a text. (I)",
-      "needs_review": false,
-      "review_reason": "",
-      "input_scope_caveat": ""
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L3",
-      "standard_code": "1.P.EICC.2.d",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Interpret texts to analyze ideas.",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Construct texts to evaluate ideas.",
-          "met": false,
-          "note": "not met"
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "alignment=none",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1",
-      "judge_model": "claude-sonnet-4-5",
-      "escalated": false,
-      "retrieval": {
-        "rrf_score": 0.13405270719224208,
-        "dense_rank": 9,
-        "bm25_rank": 15,
-        "dense_score": 0.52337354,
-        "bm25_score": 18.791558374015555,
-        "rerank_score": 0.05376320704817772,
-        "coverage_pass": false,
-        "coverage_family": ""
-      },
-      "standard_raw_text": "Interpret and construct texts to aid the analysis and evaluation of texts and ideas. (I/C)",
       "needs_review": false,
       "review_reason": "",
       "input_scope_caveat": ""
@@ -1056,14 +974,14 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
         "rrf_score": 0.13205583899163448,
         "dense_rank": 1,
         "bm25_rank": 1,
-        "dense_score": 0.4537383,
+        "dense_score": 0.45353094,
         "bm25_score": 25.662677121791972,
         "rerank_score": 0.05524889752268791,
         "coverage_pass": false,
@@ -1107,14 +1025,14 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
         "rrf_score": 0.1273667160310996,
         "dense_rank": 14,
         "bm25_rank": 5,
-        "dense_score": 0.5081231,
+        "dense_score": 0.50784487,
         "bm25_score": 31.03517923445603,
         "rerank_score": 0.07296764105558395,
         "coverage_pass": false,
@@ -1129,33 +1047,33 @@
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L3",
       "standard_code": "1.P.CP.2.d",
-      "matched_status": "none",
+      "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Ask questions during dialogue",
+          "clause": "Ask questions during dialogue (I/C)",
           "met": false,
           "note": "not met"
         },
         {
-          "clause": "Answer questions during dialogue",
+          "clause": "Answer questions during dialogue (I/C)",
           "met": true,
-          "note": "Students answer teacher-posed questions about the text throughout the lesson using total participation techniques and turn-and-talk, producing answers such as identifying the main character and setting."
+          "note": "Students answer teacher-posed questions during whole-group and turn-and-talk dialogue."
         }
       ],
-      "evidence": "'What is the setting of a story?' (when and where a story takes place); 'Who is the main character?' (the boy); 'Where does the story take place?' (a farm)",
-      "evidence_page": null,
-      "confidence": "low",
-      "rationale": "The answer clause is met: students answer multiple teacher-posed questions throughout the lesson via total participation techniques and turn-and-talk (e.g., \"'Who is the main character?' (the boy)\"; \"'Where does the story take place?' (a farm)\"; \"'What is the setting of a story?' (when and where a story takes place)\"). However, the ask clause is not met: at no point does the resource have students generate their own questions. The learning target states \"I can ask and answer questions,\" but no activity scripts a moment where students produce a question — all questions are teacher-posed. Therefore 1.P.CP.2.d is partial, with the asking gap unmet. [REJECTED: evidence missing or not found in lesson raw text]",
-      "grounded": false,
-      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
-      "prompt_version": "align_judge.assembled.v1",
+      "evidence": "\"What are key details?\" (important parts of the text that support the main idea)",
+      "evidence_page": 68,
+      "confidence": "high",
+      "rationale": "Students answer questions during dialogue: '\"What are key details?\" (important parts of the text that support the main idea)' and '\"Who is the main character?\" (the boy).' However, no moment in the lesson has students generate their own questions — all questions are teacher-posed. The ask clause is not met; the answer clause is met → partial. The learning target says 'I can ask and answer questions,' but the lesson itself only has students answering.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
         "rrf_score": 0.13064509261230572,
         "dense_rank": 1,
         "bm25_rank": 1,
-        "dense_score": 0.69491273,
+        "dense_score": 0.6951363,
         "bm25_score": 85.17359811796582,
         "rerank_score": 0.05992405116558075,
         "coverage_pass": false,
@@ -1164,46 +1082,84 @@
       "standard_raw_text": "Engage in dialogue with audiences by asking and answering questions. (I/C)",
       "needs_review": false,
       "review_reason": "",
-      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
-    }
-  ],
-  "usage": {
-    "calls": 11,
-    "input_tokens": 47692,
-    "output_tokens": 16196,
-    "cache_write_tokens": 19401,
-    "cache_read_tokens": 192830,
-    "batch_calls": 0,
-    "batch_input_tokens": 0,
-    "batch_output_tokens": 0,
-    "estimated_cost_usd": 0.685003,
-    "by_model": {
-      "claude-sonnet-4-5": {
-        "calls": 1,
-        "input_tokens": 8548,
-        "output_tokens": 11043,
-        "cache_write_tokens": 19401,
-        "cache_read_tokens": 0,
-        "batch_calls": 0,
-        "batch_input_tokens": 0,
-        "batch_output_tokens": 0,
-        "batch_cache_write_tokens": 0,
-        "batch_cache_read_tokens": 0,
-        "estimated_cost_usd": 0.264043
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L3",
+      "standard_code": "1.P.EICC.2.a",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Share real or imagined experiences by interpreting texts that tell or include stories (I)",
+          "met": true,
+          "note": "Students interpret the story Summer Sun Risin' by identifying character and setting, sharing their understanding of the story's experiences."
+        },
+        {
+          "clause": "Share real or imagined experiences by constructing texts that tell or include stories (C)",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "\"Who is the main character?\" (the boy) \"Where does the story take place?\" (a farm)",
+      "evidence_page": 70,
+      "confidence": "high",
+      "rationale": "Students interpret the story Summer Sun Risin' by identifying its character and setting: '\"Who is the main character?\" (the boy)' and '\"Where does the story take place?\" (a farm).' This meets the interpret clause. However, students do not construct a text that tells or includes a story — the response sheet records character/setting details from the read text, not a student-created story. The construct clause is not met → partial.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.12577333978558664,
+        "dense_rank": 3,
+        "bm25_rank": 4,
+        "dense_score": 0.4958568,
+        "bm25_score": 26.43655033873874,
+        "rerank_score": 0.07477270066738129,
+        "coverage_pass": false,
+        "coverage_family": ""
       },
-      "claude-opus-4-6": {
-        "calls": 10,
-        "input_tokens": 39144,
-        "output_tokens": 5153,
-        "cache_write_tokens": 0,
-        "cache_read_tokens": 192830,
-        "batch_calls": 0,
-        "batch_input_tokens": 0,
-        "batch_output_tokens": 0,
-        "batch_cache_write_tokens": 0,
-        "batch_cache_read_tokens": 0,
-        "estimated_cost_usd": 0.42096
-      }
+      "standard_raw_text": "Share real or imagined experiences by interpreting and constructing texts that tell or include stories. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L3",
+      "standard_code": "1.P.CP.1.d",
+      "matched_status": "full",
+      "clauses": [
+        {
+          "clause": "Work with others to discuss topics, investigate questions, solve problems, and/or explore and create texts (any one collaborative act suffices — OR list) (I/C)",
+          "met": true,
+          "note": "Students work with an elbow partner to discuss the topic of the story's character and setting — one genuine collaborative act from the OR list."
+        }
+      ],
+      "evidence": "Invite students to turn and talk to an elbow partner: \"Who is the main character?\" (the boy) \"Where does the story take place?\" (a farm)",
+      "evidence_page": 70,
+      "confidence": "high",
+      "rationale": "Students work with an elbow partner in a turn-and-talk to discuss the text: 'Invite students to turn and talk to an elbow partner: \"Who is the main character?\" (the boy) \"Where does the story take place?\" (a farm).' Per F9, any one student-performed collaborative act from the OR list satisfies the clause. Discussing a topic with a peer is a genuine collaborative act → full.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.12093632174277336,
+        "dense_rank": 2,
+        "bm25_rank": 2,
+        "dense_score": 0.571745,
+        "bm25_score": 41.19836427899136,
+        "rerank_score": 0.05658162385225296,
+        "coverage_pass": true,
+        "coverage_family": "collab"
+      },
+      "standard_raw_text": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
     }
-  }
+  ]
 }

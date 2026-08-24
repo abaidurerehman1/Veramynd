@@ -164,10 +164,12 @@ def dense_search_standards(
     allow_codes: set[str] | None = None,
     grade: int | None = None,
     overfetch_factor: int = DEFAULT_DENSE_OVERFETCH,
-) -> list[tuple[str, float, dict[str, Any]]]:
+) -> list[tuple[str, float | None, dict[str, Any]]]:
     """Dense cosine search over ``veramynd_standards``.
 
     Returns ``(standard_code, score, payload)`` ordered by score desc.
+    ``score`` may be ``None`` when the vector store omits it (P9: do not
+    coerce missing scores to ``0.0``, which looks like a false logging zero).
 
     When ``allow_codes`` is set (leaf corpus), non-leaf / unknown codes are
     dropped. The Qdrant arm over-fetches so filtering still fills ``limit``.
@@ -264,7 +266,7 @@ def dense_search_standards(
                         continue
                 except (TypeError, ValueError):
                     continue
-        score = float(h.score) if h.score is not None else 0.0
+        score = float(h.score) if h.score is not None else None
         out.append((code, score, payload))
         if len(out) >= limit:
             break

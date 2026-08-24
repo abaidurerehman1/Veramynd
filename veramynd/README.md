@@ -24,7 +24,7 @@ a per-publisher `if Success for All / elif Publisher B` tree.
 | Proof point | Status |
 |---|---|
 | Batch-1 EL → normalize → retrieve (gold R@25) | **Locked** |
-| Batch-1 gold-4 judge vs SME (live assembled prompt) | **Measured, not closed** — **15/20 (75%)** 3-class exact on judged unique pairs. Prior OpenAI `align_judge.v1.1`: 18/19 exact (94.7%) |
+| Batch-1 gold-4 judge vs SME (live assembled prompt `v1.5`) | **Measured** — **19/20 (95%)** 3-class exact on judged unique pairs. Leftover: L6 `1.L.V.3.a` (gold partial / json full). Prior OpenAI `align_judge.v1.1`: 18/19 exact (94.7%) |
 | Batch-1 all 40 EL lessons retrieve → judge (top 25) | **Run** — `output/retrieve/` (50-standard shortlist) + `output/judge/` + per-lesson CSVs in `output/result/`. SME exact is gold-4 only |
 | Second publisher Stage-1 GO (`21111_RBtL_SSManual_L1.pdf`, Reading Roots Shared Story Level 1) | **Done** — 14 lessons in `output/stage1_ssmanual/` |
 | Second publisher normalize → retrieve → judge | **Not locked yet** |
@@ -37,29 +37,30 @@ a per-publisher `if Success for All / elif Publisher B` tree.
 | Metric | Result | Role |
 |---|---|---|
 | **Recall@25** | **100% (20/20)** | Protected QA bar (do not tune retrieve to hide normalize/parser regressions) |
-| **Recall@20** | **85% (17/20)** | Product cut → judge shortlist |
+| **Recall@20** | **90% (18/20)** | Product cut → judge shortlist |
 | **Recall@50** | **100% (20/20)** | SME / diagnostic shortlist |
 | Recall@30 | 100% (20/20) | — |
-| Recall@10 | 40% (8/20) | Head precision still open |
+| Recall@10 | 35% (7/20) | Head precision still open |
 
-Residual @20 (all still ≤25): `1.P.EICC.3.e`, `1.P.EICC.3.f`, `1.T.RA.2.a`
-(U1L6). Three gold **none** rows sit outside top 25 and do **not** count against
-R@25.
+Residual @20 (all still ≤25): L3 `1.P.CP.2.d`, L6 `1.P.EICC.3.f`.
+Gold **none** rows outside top 25 do **not** count against R@25.
 
-**Batch-1 judge (gold-4, live `prompts/assembled_judge_prompt.md`)** — engine +
-GA Grade 1 overlay (SME fences F1–F4 / F8). Gold eval is always `--limit 25`
-(do not retune retrieve to hide judge misses). Anthropic Sonnet batch + Opus
-escalate; default `max_tokens` 16384. A coverage pass after top 25 can still
-judge activity-driven feedback/present codes. Close-read comprehension can be
+**Batch-1 judge (gold-4, live `prompts/assembled_judge_prompt.md` `v1.5`)** — engine +
+GA Grade 1 overlay (SME fences F1–F9, R3 supplemental cap, F10–F12 border
+fences). Gold eval is always `--limit 25` (do not retune retrieve to hide
+judge misses). Anthropic Sonnet batch + **Opus escalate-batch** (one call for
+all borderline codes; pair fallback if that batch fails); default
+`max_tokens` 16384. A coverage pass after top 25 can still judge
+activity-driven feedback/present codes. Close-read comprehension can be
 understated until Read-aloud Guides are in Stage-1 (`input_scope_caveat`; do
 not hand-edit labels).
 
 | Metric | Result |
 |---|---|
-| **3-class exact** (unique pairs, judged shortlist + coverage pass) | **15/20 (75.0%)** |
-| Binary precision / recall | **100%** / **77.8%** |
-| Per lesson | L1 **6/7**, L3 **4/5**, L6 **4/7**, U3L5 **1/1** |
-| Leftover misses | L1 `1.P.EICC.4.c` gold full / json none; L3 `1.P.CP.2.d` gold partial / json none; L6 `1.L.V.3.a` gold partial / json full; L6 `1.T.RA.2.a` gold partial / json none; L6 `1.T.T.1.c` gold partial / json none |
+| **3-class exact** (unique pairs, judged shortlist + coverage pass) | **19/20 (95.0%)** |
+| Binary precision / recall (pos = full\|partial) | **100%** / **100%** |
+| Per lesson | L1 **7/7**, L3 **5/5**, L6 **6/7**, U3L5 **1/1** |
+| Leftover miss | L6 `1.L.V.3.a` gold partial / json full (R3 supplemental cap) |
 | Unjudged gold | L1 + L3 `1.P.EICC.4.e` (gold none, outside top 25) |
 | Prior OpenAI `align_judge.v1.1` (unused) | **18/19 (94.7%)** 3-class exact |
 
@@ -88,9 +89,9 @@ All **40** EL G1M2 lessons have live assembled verdicts (`--limit 25`); SME exac
 | **Chunk** — hierarchical lesson / instructional / evidence-pointer bundles | **Implemented** (optional for gold R@25; normalize drives queries) | [`chunk/`](veramynd_parser/veramynd_parser/chunk/) |
 | **Embed → Qdrant** — leaf-only standards + rich retrieval text | **Implemented** | [`embed/`](veramynd_parser/veramynd_parser/embed/) |
 | **Hybrid retrieve + rerank** — `multi_normalize_focused` competency funnel | **Implemented (Batch-1 R@25/R@50 met)** | [`retrieve/`](veramynd_parser/veramynd_parser/retrieve/) |
-| **Alignment judge + grounding** — assembled prompt; ungrounded quotes rejected; P4 caveat + P6 coverage pass | **Implemented** (gold-4 assembled: 15/20; all 40 EL judged) | [`judge/`](veramynd_parser/veramynd_parser/judge/), [`prompts/assembled_judge_prompt.md`](veramynd_parser/veramynd_parser/prompts/assembled_judge_prompt.md) |
+| **Alignment judge + grounding** — assembled prompt `v1.5`; ungrounded quotes rejected; P4 caveat + P6 coverage pass; Opus escalate-batch | **Implemented** (gold-4 assembled: **19/20**; all 40 EL judged) | [`judge/`](veramynd_parser/veramynd_parser/judge/), [`prompts/assembled_judge_prompt.md`](veramynd_parser/veramynd_parser/prompts/assembled_judge_prompt.md) |
 | **Report** — CSV + HTML; gold-4 + per-lesson CSVs | **Implemented** | [`report/`](veramynd_parser/veramynd_parser/report/), `output/reports/`, `output/result/` |
-| **Gold-set metrics** — leaf recall @k + judge exact vs SME | **Retrieve locked; assembled gold-4 15/20 (75%), not closed** | gold: [`docs/_ga_g1_module2_goldset.md`](docs/_ga_g1_module2_goldset.md) |
+| **Gold-set metrics** — leaf recall @k + judge exact vs SME | **Retrieve locked; assembled gold-4 19/20 (95%)** | gold: [`docs/_ga_g1_module2_goldset.md`](docs/_ga_g1_module2_goldset.md) |
 | **Agentic + standards-graph track** | **Design only** | [`docs/architecture-agentic-graph.md`](docs/architecture-agentic-graph.md) |
 
 ## How it works
@@ -182,7 +183,7 @@ veramynd-parser retrieve-standards --chunk-file output/chunks/by_lesson/G1M2U1L3
 # After normalize changes: re-apply sanitizers without a full LLM re-run
 veramynd-parser repair-normalized output/stage1/lessons --normalize-dir output/normalize
 
-# Batch-1 gold retrieve (live: R@25=100%, R@20=85%, R@50=100%)
+# Batch-1 gold retrieve (live: R@25=100%, R@20=90%, R@50=100%)
 # Gold list: docs/_ga_g1_module2_goldset.md (FULL+PARTIAL = positives)
 python -m veramynd_parser.scripts.batch_align_all \
   --retrieve-dir output/retrieve_gold4 \

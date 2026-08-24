@@ -1,0 +1,46 @@
+{
+  "groups_checked": 390,
+  "conflict_groups": 4,
+  "rows_flagged": 8,
+  "rows_reconciled": 0,
+  "examples": [
+    {
+      "standard_code": "1.T.RA.2.a",
+      "evidence_type_key": "what did you hear that helped you understand the important events from",
+      "labels": {
+        "G1M2U1L11": "full",
+        "G1M2U1L13": "partial"
+      },
+      "majority": null
+    },
+    {
+      "standard_code": "1.P.EICC.2.b",
+      "evidence_type_key": "invite students to turn and talk to an elbow partner: who is",
+      "labels": {
+        "G1M2U1L3": "full",
+        "G1M2U1L5": "none"
+      },
+      "majority": null
+    },
+    {
+      "standard_code": "1.P.EICC.2.b",
+      "evidence_type_key": "invite students to turn and talk with an elbow partner: what is",
+      "labels": {
+        "G1M2U2L1": "none",
+        "G1M2U2L3": "full"
+      },
+      "majority": null
+    },
+    {
+      "standard_code": "1.T.SS.2.b",
+      "evidence_type_key": "remind students to use the prepositions anchor chart, the adjectives anchor chart,",
+      "labels": {
+        "G1M2U2L10": "partial",
+        "G1M2U2L9": "none"
+      },
+      "majority": null
+    }
+  ],
+  "judge_files": 40,
+  "verdict_rows": 1023
+}

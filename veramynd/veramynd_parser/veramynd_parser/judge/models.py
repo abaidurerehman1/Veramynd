@@ -45,7 +45,7 @@ class ClauseClientDraft(BaseModel):
     student_quote: str = Field(
         description=(
             "Verbatim resource text of the student act or student-directed "
-            "imperative; empty when not_met."
+            "imperative; empty when not_met. No [bracketed] glosses or paraphrase."
         )
     )
     teacher_quote: str = Field(

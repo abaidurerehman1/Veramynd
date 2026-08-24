@@ -1,0 +1,17 @@
+{
+  "retrieve_dir": "output\\retrieve_gold4",
+  "files_scanned": 4,
+  "by_status": {
+    "ok": {
+      "count": 4,
+      "ids": [
+        "G1M2U1L1",
+        "G1M2U1L3",
+        "G1M2U1L6",
+        "G1M2U3L5"
+      ]
+    }
+  },
+  "confirmed_logging_artifact": false,
+  "note": "P9: logging_artifact means dense_score=0 with healthy dense_rank \u2014 safe to ignore for ranking; fix score serialization on next retrieve."
+}

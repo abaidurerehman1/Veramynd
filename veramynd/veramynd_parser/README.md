@@ -18,10 +18,12 @@ Built against real documents (in `../data/samples/`):
 Batch-1 gold retrieve (protected bar): **R@25 = 100%** on
 `output/retrieve_gold4/`. Live gold-4 judge uses
 [`prompts/assembled_judge_prompt.md`](veramynd_parser/prompts/assembled_judge_prompt.md)
-(engine + GA Grade 1 overlay), Anthropic Sonnet batch + Opus escalate,
-`--limit 25`: **15/20 (75%)** 3-class exact on judged unique pairs. Prior
-OpenAI `align_judge.v1.1` baseline was **18/19 = 94.7%**. All 40 EL lessons
-have live assembled verdicts in `output/judge/` (SME exact is gold-4 only). See
+(engine + GA Grade 1 overlay `v1.5`), Anthropic Sonnet batch + Opus escalate-batch,
+
+`--limit 25`: **19/20 (95%)** 3-class exact on judged unique pairs. Leftover:
+L6 `1.L.V.3.a` (gold partial / json full). Prior OpenAI `align_judge.v1.1`
+baseline was **18/19 = 94.7%**. All 40 EL lessons have live assembled verdicts
+in `output/judge/` (SME exact is gold-4 only). See
 [What's still incomplete](#whats-still-incomplete).
 
 **Dynamic Stage-1 (honest):** routes EL vs generic from document signals; generic
@@ -240,23 +242,23 @@ veramynd_parser/
   lessons / 20 FULL+PARTIAL positives (`multi_normalize_focused`):
   **Recall@25 = 100% (20/20)** (protected QA bar — do not tune retrieve knobs
   to hide normalize/parser regressions),
-  **Recall@20 = 85% (17/20)**, **Recall@50 = 100% (20/20)**, R@10 = 40%.
-  Product cut for the judge is **top-20**. Gold label:
+  **Recall@20 = 90% (18/20)**, **Recall@50 = 100% (20/20)**, R@10 = 35%.
+  Product cut for the judge is **top-25** (gold eval `--limit 25`). Gold label:
   [`docs/_ga_g1_module2_goldset.md`](../docs/_ga_g1_module2_goldset.md)
-  (eval-only — never enters ranking). Residual @20 (all still ≤25, U1L6):
-  `1.P.EICC.3.e`, `1.P.EICC.3.f`, `1.T.RA.2.a`. Gold **none** rows outside
-  top 25 do not count against R@25.
-- **Batch-1 gold-4 judge (measured, not closed)** — live prompt is
-  `assembled_judge_prompt.md` (GA overlay includes SME fences F1–F4 / F8).
-  Gold eval is always `--limit 25` (do not retune retrieve to hide judge
-  misses). After retrieve, a coverage pass can still judge activity-driven
-  feedback/present codes that missed top 25. All four gold lessons re-judged
-  Anthropic batch `--no-cache --limit 25`: **15/20 (75.0%)** 3-class exact
-  on unique judged pairs (L1 6/7, L3 4/5, L6 4/7, U3L5 1/1). Binary
-  precision 100%, recall 77.8%. Leftover misses: L1 `1.P.EICC.4.c` (gold
-  full / json none), L3 `1.P.CP.2.d` (gold partial / json none), L6
-  `1.L.V.3.a` (gold partial / json full), L6 `1.T.RA.2.a` (gold partial /
-  json none), L6 `1.T.T.1.c` (gold partial / json none). Unjudged gold
+  (eval-only — never enters ranking). Residual @20 (all still ≤25): L3
+  `1.P.CP.2.d`, L6 `1.P.EICC.3.f`. Gold **none** rows outside top 25 do not
+  count against R@25.
+- **Batch-1 gold-4 judge (measured)** — live prompt is
+  `assembled_judge_prompt.md` `v1.5` (GA overlay: SME fences F1–F9, R3
+  supplemental→partial cap, F10–F12 border fences). Gold eval is always
+  `--limit 25` (do not retune retrieve to hide judge misses). After retrieve, a
+  coverage pass can still judge activity-driven feedback/present codes that
+  missed top 25. Escalate is **one Opus batch** of borderline codes (pair
+  fallback if that batch fails). Latest gold-4 re-judge
+  Anthropic batch `--no-cache --limit 25`: **19/20 (95.0%)** 3-class exact
+  on unique judged pairs (L1 7/7, L3 5/5, L6 6/7, U3L5 1/1). Binary
+  precision / recall (pos = full|partial) **100% / 100%**. Leftover miss: L6
+  `1.L.V.3.a` (gold partial / json full — R3 supplemental cap). Unjudged gold
   none: L1 + L3 `1.P.EICC.4.e`. Prior OpenAI `align_judge.v1.1` baseline:
   **18/19 (94.7%)**. All 40 EL lessons have live assembled verdicts
   (`output/retrieve/` 50-standard shortlist → `--limit 25` →
@@ -478,7 +480,7 @@ legacy opt-out). Diagnostics under `output/reports/retrieve_diag_gold4/` (or
 `--diag-dir`) record dense, BM25, merge-RRF, reranker, and final rank.
 
 ```bash
-# Batch-1 gold retrieve (live: R@25=100%, R@20=85%, R@50=100%)
+# Batch-1 gold retrieve (live: R@25=100%, R@20=90%, R@50=100%)
 # Requires local Qdrant standards collection + normalize artifacts.
 python -m veramynd_parser.scripts.batch_align_all \
   --retrieve-dir output/retrieve_gold4 \
@@ -510,7 +512,7 @@ query generation, merge, CE, or shortlist fusion** — gold is eval-only.
 
 Live prompt: [`prompts/assembled_judge_prompt.md`](veramynd_parser/prompts/assembled_judge_prompt.md)
 (framework-neutral **engine** + GA Grade 1 **overlay**). Overlay-only SME
-fences F1–F4 / F8 are encoded there; do not rewrite the engine. Scores
+fences F1–F9 are encoded there; do not rewrite the engine. Scores
 **student acts** in Stage-1 steps. Ungrounded quotes become `none`.
 `align_judge_v1.md` is unused.
 
@@ -541,8 +543,9 @@ veramynd-parser judge-standards \
    16384). If Anthropic returns `results` as a JSON string, it is coerced to a
    list. Pair mode is `--no-batch` or automatic fallback if batch JSON is
    invalid.
-2. **Escalate** — re-judge `partial`, `needs_review`, or empty-evidence
-   positives with `JUDGE_ESCALATE_MODEL` (Opus)
+2. **Escalate-batch** — collect borderline codes (`partial`, `needs_review`,
+   empty-evidence positives, etc.) and re-judge them in **one**
+   `JUDGE_ESCALATE_MODEL` (Opus) batch; pair fallback if that batch fails
 3. **Clause aggregation** — `partial` means at least one required clause met
    and at least one unmet; it is not a confidence label
 4. **Grounding** — ungrounded positive claims are rejected to `none`
@@ -591,8 +594,8 @@ under `output/reports/client/`. Per-lesson CSVs for the live 40-lesson run:
 **Gold metrics:** Batch-1 positives live in
 [`docs/_ga_g1_module2_goldset.md`](../docs/_ga_g1_module2_goldset.md). Use
 `python -m veramynd_parser.scripts.eval_r20` against `output/retrieve_gold4/` for R@10/20/25/30/50
-(protected bar: **R@25 == 100%**). Live gold-4 3-class exact: **15/20 (75%)**.
-Stale `output/reports/gold_judge_*.csv` may still show the prior OpenAI run.
+(protected bar: **R@25 == 100%**). Live gold-4 3-class exact: **19/20 (95%)**.
+Stale `output/reports/gold_judge_*.csv` may still show a prior OpenAI run.
 With `--from-gold` JSONL, batch also writes leaf-recall summaries
 (`output/reports/retrieve_gold_metrics.json`). Offline
 sweeps (`eval_merge_aggregation`, `eval_shortlist_rescue`) still replay cached

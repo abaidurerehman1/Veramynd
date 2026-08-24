@@ -69,6 +69,110 @@ def test_grounding_requires_all_ellipsis_segments():
     assert not is_grounded(bad, lesson)
 
 
+def test_grounding_accepts_semicolon_joined_noncontiguous_quotes():
+    """P8: real quotes joined with ';' must ground independently."""
+    lesson = (
+        "Invite students to turn and talk with an elbow partner: "
+        '"What does the author tell us about Papa?" '
+        "Later, students present aloud using a clear speaking voice. "
+        "Then they complete the response sheet about the story."
+    )
+    evidence = (
+        'Invite students to turn and talk with an elbow partner: '
+        '"What does the author tell us about Papa?"; '
+        "students present aloud using a clear speaking voice"
+    )
+    assert is_grounded(evidence, lesson)
+
+
+def test_grounding_rejects_semicolon_join_when_one_quote_is_fabricated():
+    lesson = (
+        "Invite students to turn and talk with an elbow partner about Papa. "
+        "Students complete the response sheet about the story."
+    )
+    evidence = (
+        "Invite students to turn and talk with an elbow partner about Papa; "
+        "Students invent multi-source research projects independently today."
+    )
+    assert not is_grounded(evidence, lesson)
+
+
+def test_grounding_keeps_contiguous_text_that_contains_semicolon():
+    lesson = (
+        "Teacher says: Listen carefully; then answer with a partner "
+        "using evidence from the text."
+    )
+    evidence = (
+        "Teacher says: Listen carefully; then answer with a partner "
+        "using evidence from the text."
+    )
+    assert is_grounded(evidence, lesson)
+
+
+def test_grounding_accepts_internal_ellipsis_when_span_is_present():
+    """P8: '...' inside one real quote is not a failed multi-stitch."""
+    lesson = (
+        "Why did Moon change its mind? What was the central message "
+        "or lesson that Moon learned? (Moon realized that the world "
+        "is beautiful no matter if it's day or night.)"
+    )
+    evidence = (
+        "'Why did Moon change its mind? What was the central message "
+        "or lesson that Moon learned?' (Moon realized that the world "
+        "is beautiful no matter if it's day or night...)"
+    )
+    assert is_grounded(evidence, lesson)
+
+
+def test_p10_scrubs_editorial_brackets_and_recovers_verbatim():
+    from veramynd_parser.judge.grounding import (
+        first_grounded_evidence,
+        scrub_editorial_brackets,
+    )
+
+    lesson = "Cold call a few selected students to share out."
+    dirty = (
+        "Cold call a few selected students to share out "
+        "[their ideas about the central message]."
+    )
+    assert scrub_editorial_brackets(dirty) == (
+        "Cold call a few selected students to share out."
+    )
+    chosen = first_grounded_evidence(dirty, lesson_raw_text=lesson)
+    assert chosen == "Cold call a few selected students to share out."
+    assert is_grounded(chosen, lesson)
+
+
+def test_p10_recovers_prefix_when_bracket_gloss_corrupts_tail():
+    from veramynd_parser.judge.grounding import first_grounded_evidence
+
+    lesson = (
+        "Invite students to complete Part I of the Unit 1 Assessment "
+        "response sheet. Remind them to use evidence."
+    )
+    dirty = (
+        "Invite students to complete Part I of the Unit 1 Assessment "
+        "response sheet. [writing about character and setting after "
+        "listening to the text]"
+    )
+    chosen = first_grounded_evidence(dirty, lesson_raw_text=lesson)
+    assert chosen is not None
+    assert "Part I of the Unit 1 Assessment response sheet" in chosen
+    assert "[" not in chosen
+    assert is_grounded(chosen, lesson)
+
+
+def test_p10_still_rejects_pure_paraphrase():
+    from veramynd_parser.judge.grounding import first_grounded_evidence
+
+    lesson = "Students identify the setting of the story."
+    dirty = (
+        "Students [independently] invent multi-source research projects "
+        "across several digital databases today."
+    )
+    assert first_grounded_evidence(dirty, lesson_raw_text=lesson) is None
+
+
 def test_judge_pair_keeps_llm_status_and_clauses_when_grounded():
     lesson = "Students identify the setting of the story."
 
@@ -126,6 +230,88 @@ def test_judge_pair_rejects_empty_evidence_full():
     assert v.matched_status == "none"
     assert v.grounded is False
     assert "REJECTED" in v.rationale
+    assert v.needs_review is True
+    assert "grounding rejection" in v.review_reason
+    assert v.confidence == "low"
+
+
+def test_p2_needs_review_on_low_confidence_even_when_grounded():
+    lesson = "Students identify the setting of the story."
+
+    def fake_complete(**kwargs):
+        return JudgeLlmDraft(
+            matched_status="partial",
+            clauses=[
+                ClauseJudgment(clause="identify setting", met=True, note=""),
+                ClauseJudgment(clause="identify characters", met=False, note=""),
+            ],
+            evidence=lesson,
+            evidence_page=1,
+            confidence="low",
+            rationale="Setting only.",
+            needs_review=False,
+            review_reason="",
+        )
+
+    v = judge_pair(
+        resource_id="G1M2U1L3",
+        lesson_raw_text=lesson,
+        standard={
+            "standard_code": "1.T.T.1.a",
+            "raw_text": "Identify characters and setting.",
+        },
+        use_cache=False,
+        escalate=False,
+        complete_fn=fake_complete,
+    )
+    assert v.grounded is True
+    assert v.needs_review is True
+    assert "confidence=low" in v.review_reason
+
+
+def test_p2_needs_review_on_list_waffle_rationale():
+    lesson = (
+        "Invite students to turn and talk with an elbow partner: "
+        "What does the author tell us about Papa?"
+    )
+
+    def fake_complete(**kwargs):
+        return JudgeLlmDraft(
+            matched_status="partial",
+            clauses=[
+                ClauseJudgment(clause="work with others", met=True, note=""),
+                ClauseJudgment(clause="discuss topics", met=True, note=""),
+            ],
+            evidence=lesson,
+            evidence_page=1,
+            confidence="high",
+            rationale=(
+                "This is an OR-like list of collaborative purposes under one "
+                "work-with-others umbrella, but each names a distinct "
+                "collaborative act, so score Partial."
+            ),
+            needs_review=False,
+            review_reason="",
+        )
+
+    v = judge_pair(
+        resource_id="G1M2U1L8",
+        lesson_raw_text=lesson,
+        standard={
+            "standard_code": "1.P.CP.1.d",
+            "raw_text": (
+                "Work with others to discuss topics, investigate questions, "
+                "solve problems, and explore and create texts."
+            ),
+        },
+        use_cache=False,
+        escalate=False,
+        complete_fn=fake_complete,
+    )
+    assert v.matched_status == "partial"
+    assert v.needs_review is True
+    assert "list-standard waffle" in v.review_reason
+    assert v.confidence == "low"
 
 
 def test_escalate_changes_cache_key():
@@ -221,6 +407,198 @@ def test_should_escalate_enterprise_triggers():
             review_reason="partial-or-full",
         )
     )
+
+
+def test_judge_lesson_batch_escalates_in_one_call(monkeypatch):
+    """Borderline codes go to one Opus batch, not N pair calls."""
+    from veramynd_parser.judge import pipeline as jp
+    from veramynd_parser.judge.models import JudgeBatchDraft, JudgeBatchItem
+
+    lesson = "Students identify the setting of the story on page 1."
+    standards = [
+        {"standard_code": "1.T.T.1.a", "raw_text": "Identify setting."},
+        {"standard_code": "1.T.T.1.b", "raw_text": "Identify characters."},
+        {"standard_code": "1.T.RA.1", "raw_text": "Conduct research."},
+    ]
+    calls: list[tuple[str, list[str]]] = []
+
+    def fake_batch(**kwargs):
+        model = kwargs["model"]
+        user = kwargs["user"]
+        if model == "claude-sonnet-4-5":
+            calls.append(("sonnet", ["1.T.T.1.a", "1.T.T.1.b", "1.T.RA.1"]))
+            return JudgeBatchDraft(
+                results=[
+                    JudgeBatchItem(
+                        standard_code="1.T.T.1.a",
+                        matched_status="partial",
+                        clauses=[
+                            ClauseJudgment(clause="setting", met=True, note="")
+                        ],
+                        evidence=lesson,
+                        evidence_page=1,
+                        confidence="medium",
+                        rationale="partial setting",
+                    ),
+                    JudgeBatchItem(
+                        standard_code="1.T.T.1.b",
+                        matched_status="partial",
+                        clauses=[
+                            ClauseJudgment(clause="characters", met=False, note="")
+                        ],
+                        evidence="",
+                        evidence_page=None,
+                        confidence="low",
+                        rationale="unclear",
+                        needs_review=True,
+                        review_reason="low confidence",
+                    ),
+                    JudgeBatchItem(
+                        standard_code="1.T.RA.1",
+                        matched_status="none",
+                        clauses=[
+                            ClauseJudgment(clause="research", met=False, note="")
+                        ],
+                        evidence="",
+                        evidence_page=None,
+                        confidence="high",
+                        rationale="no research",
+                    ),
+                ]
+            )
+        assert model == "claude-opus-4-6"
+        # Escalate batch should only include the two borderline codes.
+        assert '"standard_code": "1.T.T.1.a"' in user
+        assert '"standard_code": "1.T.T.1.b"' in user
+        assert '"standard_code": "1.T.RA.1"' not in user
+        calls.append(("opus", ["1.T.T.1.a", "1.T.T.1.b"]))
+        return JudgeBatchDraft(
+            results=[
+                JudgeBatchItem(
+                    standard_code="1.T.T.1.a",
+                    matched_status="full",
+                    clauses=[
+                        ClauseJudgment(clause="setting", met=True, note="")
+                    ],
+                    evidence=lesson,
+                    evidence_page=1,
+                    confidence="high",
+                    rationale="full after escalate",
+                ),
+                JudgeBatchItem(
+                    standard_code="1.T.T.1.b",
+                    matched_status="none",
+                    clauses=[
+                        ClauseJudgment(clause="characters", met=False, note="")
+                    ],
+                    evidence="",
+                    evidence_page=None,
+                    confidence="high",
+                    rationale="still none",
+                ),
+            ]
+        )
+
+    monkeypatch.setattr(jp, "_call_judge_batch", fake_batch)
+    pair_calls = {"n": 0}
+
+    def boom_pair(**kwargs):
+        pair_calls["n"] += 1
+        raise AssertionError("pair escalate should not run when batch succeeds")
+
+    monkeypatch.setattr(jp, "judge_pair", boom_pair)
+
+    verdicts = jp.judge_lesson_batch(
+        resource_id="G1M2U1L1",
+        lesson_raw_text=lesson,
+        standards=standards,
+        model="claude-sonnet-4-5",
+        escalate_model="claude-opus-4-6",
+        escalate=True,
+        use_cache=False,
+        complete_fn=None,
+    )
+    assert [c[0] for c in calls] == ["sonnet", "opus"]
+    assert calls[1][1] == ["1.T.T.1.a", "1.T.T.1.b"]
+    assert pair_calls["n"] == 0
+    by = {v.standard_code: v for v in verdicts}
+    assert by["1.T.T.1.a"].escalated is True
+    assert by["1.T.T.1.a"].judge_model == "claude-opus-4-6"
+    assert by["1.T.T.1.a"].matched_status == "full"
+    assert by["1.T.T.1.b"].escalated is True
+    assert by["1.T.RA.1"].escalated is False
+    assert by["1.T.RA.1"].judge_model == "claude-sonnet-4-5"
+
+
+def test_judge_lesson_batch_escalate_falls_back_to_pair(monkeypatch):
+    from veramynd_parser.judge import pipeline as jp
+    from veramynd_parser.judge.models import JudgeBatchDraft, JudgeBatchItem, JudgeLlmDraft
+
+    lesson = "Students identify the setting of the story."
+    standards = [
+        {"standard_code": "1.T.T.1.a", "raw_text": "Identify setting."},
+    ]
+    batch_n = {"n": 0}
+
+    def fake_batch(**kwargs):
+        batch_n["n"] += 1
+        if kwargs["model"] == "claude-opus-4-6":
+            raise jp.JudgeError("opus batch boom")
+        return JudgeBatchDraft(
+            results=[
+                JudgeBatchItem(
+                    standard_code="1.T.T.1.a",
+                    matched_status="partial",
+                    clauses=[ClauseJudgment(clause="setting", met=True, note="")],
+                    evidence=lesson,
+                    evidence_page=1,
+                    confidence="medium",
+                    rationale="borderline",
+                )
+            ]
+        )
+
+    def fake_pair(**kwargs):
+        return JudgeLlmDraft(
+            matched_status="full",
+            clauses=[ClauseJudgment(clause="setting", met=True, note="")],
+            evidence=lesson,
+            evidence_page=1,
+            confidence="high",
+            rationale="pair escalate ok",
+        )
+
+    monkeypatch.setattr(jp, "_call_judge_batch", fake_batch)
+    monkeypatch.setattr(
+        jp,
+        "judge_pair",
+        lambda **kwargs: jp._finalize_verdict(
+            resource_id=kwargs["resource_id"],
+            standard_code=kwargs["standard"]["standard_code"],
+            standard_raw_text=kwargs["standard"]["raw_text"],
+            lesson_raw_text=kwargs["lesson_raw_text"],
+            draft=fake_pair(**kwargs),
+            used_model=kwargs["model"],
+            escalated=False,
+            retrieval=kwargs.get("retrieval"),
+            prompt_version=jp.PROMPT_VERSION,
+        ),
+    )
+
+    verdicts = jp.judge_lesson_batch(
+        resource_id="G1M2U1L1",
+        lesson_raw_text=lesson,
+        standards=standards,
+        model="claude-sonnet-4-5",
+        escalate_model="claude-opus-4-6",
+        escalate=True,
+        use_cache=False,
+    )
+    assert batch_n["n"] == 2  # sonnet + failed opus
+    assert len(verdicts) == 1
+    assert verdicts[0].escalated is True
+    assert verdicts[0].matched_status == "full"
+    assert verdicts[0].judge_model == "claude-opus-4-6"
 
 
 def test_lesson_raw_text_joins_steps():
@@ -881,8 +1259,8 @@ def test_live_prompt_is_client_assembled_not_v1():
     )
 
     assert _PROMPT_PATH.name == "assembled_judge_prompt.md"
-    assert PROMPT_VERSION == "align_judge.assembled.v1"
-    assert BATCH_PROMPT_VERSION == "align_judge.assembled.batch.v1"
+    assert PROMPT_VERSION == "align_judge.assembled.v1.5"
+    assert BATCH_PROMPT_VERSION == "align_judge.assembled.batch.v1.5"
     text = _load_prompt()
     assert "END OF ENGINE" in text
     assert "Georgia K" in text
@@ -890,6 +1268,23 @@ def test_live_prompt_is_client_assembled_not_v1():
     batch = _load_batch_prompt()
     assert batch == text
     assert "overrides the single-object Output section" not in batch
+
+
+def test_ga_overlay_encodes_sme_fences_f1_through_f9():
+    """Sheet 3 SME rulings must be present as overlay worked instances."""
+    from veramynd_parser.judge.pipeline import _load_prompt
+
+    prompt = _load_prompt()
+    assert "1.P.EICC.2.b" in prompt  # F1
+    assert "1.L.V.1.b" in prompt  # F2
+    assert "1.P.EICC.2.d" in prompt  # F3
+    assert "all four" in prompt and "1.T.T.1.a" in prompt  # F4
+    assert "(F5 — parenthetical" in prompt
+    assert "(F6 — ambient" in prompt
+    assert "(F7 — Expository Techniques" in prompt
+    assert "1.T.T.1.e" in prompt and "CREATE" in prompt  # F8
+    assert "(F9 — collaboration" in prompt
+    assert "1.P.CP.1.d" in prompt
 
 
 def test_client_draft_maps_alignment_and_student_quote():

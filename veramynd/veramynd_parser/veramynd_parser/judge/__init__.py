@@ -1,6 +1,7 @@
 """Stage 6–7: alignment judge + evidence grounding."""
 
 from .grounding import is_grounded
+from .consistency import apply_consistency_to_judge_dir, apply_cross_lesson_consistency
 from .models import AlignmentVerdict, JudgeBatchDraft, JudgeLlmDraft
 from .pipeline import (
     DEFAULT_ESCALATE_MODEL,
@@ -23,6 +24,8 @@ __all__ = [
     "JudgeError",
     "JudgeLlmDraft",
     "PROMPT_VERSION",
+    "apply_consistency_to_judge_dir",
+    "apply_cross_lesson_consistency",
     "is_grounded",
     "judge_lesson_batch",
     "judge_pair",

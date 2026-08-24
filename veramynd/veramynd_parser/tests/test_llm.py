@@ -664,3 +664,48 @@ def test_anthropic_tool_input_parses_json_string_results():
 
     payload = _anthropic_tool_input(_Resp())
     assert payload["results"] == [{"standard_code": "1.T.T.1.a"}]
+
+
+def test_anthropic_request_marks_system_and_tools_for_prompt_cache():
+    from veramynd_parser.normalize.llm import build_anthropic_message_request
+
+    req = build_anthropic_message_request(
+        model="claude-sonnet-4-5",
+        system="long shared overlay text " * 50,
+        user="lesson payload",
+        max_tokens=1024,
+        schema_model=_Target,
+    )
+    assert isinstance(req["system"], list)
+    assert req["system"][0]["type"] == "text"
+    assert req["system"][0]["cache_control"] == {"type": "ephemeral"}
+    assert req["tools"][0]["cache_control"] == {"type": "ephemeral"}
+    assert req["messages"][0]["content"] == "lesson payload"
+
+
+def test_anthropic_usage_tracks_cache_hits_and_cheaper_cost():
+    from veramynd_parser.normalize.llm import (
+        _record_anthropic_usage,
+        anthropic_usage_report,
+        reset_anthropic_usage,
+    )
+
+    class _Usage:
+        input_tokens = 200
+        output_tokens = 50
+        cache_creation_input_tokens = 5000
+        cache_read_input_tokens = 5000
+
+    class _Resp:
+        usage = _Usage()
+
+    reset_anthropic_usage()
+    _record_anthropic_usage(_Resp(), "claude-sonnet-4-5")
+    report = anthropic_usage_report()
+    assert report["cache_creation_input_tokens"] == 5000
+    assert report["cache_read_input_tokens"] == 5000
+    # Cache read is billed at 0.1x input; write at 1.25x — cheaper than
+    # billing 10k uncached input tokens at full Sonnet rate.
+    uncached_equiv = (200 + 5000 + 5000) * 3.0 / 1_000_000 + 50 * 15.0 / 1_000_000
+    assert report["estimated_cost_usd"] < uncached_equiv
+    reset_anthropic_usage()

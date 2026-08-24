@@ -166,6 +166,37 @@ def test_judge_retrieve_limit_then_coverage_inject(tmp_path: Path):
     assert meta.get("coverage_pass") is True
 
 
+def test_detects_pinky_partners_and_share_out():
+    families = detect_activity_families(
+        "Tell students they are going to use the Pinky Partners protocol "
+        "to provide feedback. Select two students to share out their ideas."
+    )
+    names = {f.name for f in families}
+    assert "feedback" in names
+    assert "present" in names
+    assert "collab" in names
+
+
+def test_detects_think_pair_share_as_collab():
+    families = detect_activity_families(
+        "Invite students to Think-Pair-Share with an elbow partner."
+    )
+    assert {f.name for f in families} == {"collab"}
+
+
+def test_coverage_pass_injects_collab_code():
+    selected = [{"standard_code": "1.T.T.1.a"}]
+    pool = {"1.P.CP.1.d": {"standard_code": "1.P.CP.1.d", "rrf_rank": 40}}
+    out, injected = apply_activity_coverage_pass(
+        selected,
+        lesson_text="Invite students to turn and talk with an elbow partner.",
+        pool=pool,
+        available_codes=set(pool),
+    )
+    assert injected == ["1.P.CP.1.d"]
+    assert out[-1]["coverage_family"] == "collab"
+
+
 def test_u3l5_stage1_triggers_feedback_and_present():
     path = Path("output/stage1/lessons/G1M2U3L5.json")
     if not path.is_file():
@@ -175,3 +206,4 @@ def test_u3l5_stage1_triggers_feedback_and_present():
     names = {f.name for f in detect_activity_families(text)}
     assert "feedback" in names
     assert "present" in names
+    assert "collab" in names

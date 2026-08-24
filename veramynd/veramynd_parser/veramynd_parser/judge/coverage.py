@@ -18,6 +18,7 @@ MAX_COVERAGE_EXTRAS = 8
 # GA overlay instances of the activity families — not a publisher if-tree.
 _FEEDBACK_CODES = ("1.P.EICC.4.f", "1.P.CP.1.c")
 _PRESENT_CODES = ("1.P.CP.2.a",)
+_COLLAB_CODES = ("1.P.CP.1.d",)
 
 _FEEDBACK_LESSON = re.compile(
     r"(?i)\bprovide(?:\s+\w+){0,8}\s+feedback\b"
@@ -25,13 +26,29 @@ _FEEDBACK_LESSON = re.compile(
     r"|\breceiv(?:e|ing) feedback\b"
     r"|\bpeer (?:feedback|critique|review)\b"
     r"|\bfeedback\b.{0,40}\b(?:classmates?|partners?|peers?)\b"
+    r"|\bpinky partners?\b"  # EL peer-feedback protocol (SME U3 L5)
+    r"|\bkind,? helpful,? and specific feedback\b"
 )
 _PRESENT_LESSON = re.compile(
     r"(?i)\bpresent(?:s|ing|ed)?\b.{0,40}\b(?:class|group|audience|partner)"
     r"|\bshare (?:with|to) (?:the )?(?:class|whole group|small group|group|audience)\b"
+    r"|\bshare[- ]?out\b"
+    r"|\bshare out (?:their |the )?(?:ideas?|writing|work|responses?|thinking)\b"
+    r"|\binvite (?:a few |two or three |selected )?students to share\b"
+    r"|\bcold call.{0,40}\bshare\b"
     r"|\bspeak(?:ing)? (?:aloud|to the class)\b"
     r"|\bpartners? protocol\b"
     r"|\bshare .{0,50}\b(?:writing|work|poem|verse)\b"
+)
+_COLLAB_LESSON = re.compile(
+    r"(?i)\bturn and talk\b"
+    r"|\belbow partners?\b"
+    r"|\bthink[- ]pair[- ]share\b"
+    r"|\bpinky partners?\b"
+    r"|\bback[- ]to[- ]back\b"
+    r"|\bface[- ]to[- ]face\b"
+    r"|\bscience talk\b"
+    r"|\bwork with (?:an? )?(?:elbow )?partners?\b"
 )
 
 
@@ -53,7 +70,13 @@ FAMILIES: tuple[CoverageFamily, ...] = (
         lesson_re=_PRESENT_LESSON,
         known_codes=_PRESENT_CODES,
     ),
+    CoverageFamily(
+        name="collab",
+        lesson_re=_COLLAB_LESSON,
+        known_codes=_COLLAB_CODES,
+    ),
 )
+
 
 
 def detect_activity_families(lesson_text: str) -> list[CoverageFamily]:

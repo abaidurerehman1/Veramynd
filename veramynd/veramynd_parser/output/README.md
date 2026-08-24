@@ -13,7 +13,7 @@ output/
 ├── normalize_standards/    # GA leaf normalize (shared by retrieve)
 ├── retrieve_gold4/         # Batch-1 gold retrieve (R@25 bar)
 ├── retrieve/               # all 40 EL lessons — 50-standard shortlist
-├── judge/                  # alignment verdicts (assembled prompt; all 40; gold-4 15/20)
+├── judge/                  # alignment verdicts (assembled prompt v1.5; all 40; gold-4 19/20)
 ├── result/                 # per-lesson CSVs (G1M2U1L1.csv …)
 ├── reports/                # gold4_alignments.csv, gold_judge_*.csv, client/
 ├── chunks/                 # hierarchical chunks for grounding / judge
@@ -88,10 +88,10 @@ labels**. Re-run those lessons only if the client shares the guides.
 | Artifact | Honest status |
 |----------|----------------|
 | All 40 EL lessons | Assembled Anthropic batch `--limit 25` — run; SME exact is gold-4 only |
-| Gold-4 overall | Assembled Anthropic batch `--no-cache --limit 25` — **15/20 (75%)** unique 3-class |
-| `G1M2U1L1.json` | **6/7** — miss `1.P.EICC.4.c` (gold full / json none) |
-| `G1M2U1L3.json` | **4/5** — miss `1.P.CP.2.d` (gold partial / json none) |
-| `G1M2U1L6.json` | **4/7** — miss `1.L.V.3.a` (gold partial / json full), `1.T.RA.2.a` (gold partial / json none), `1.T.T.1.c` (gold partial / json none); coverage `1.P.CP.2.a` |
+| Gold-4 overall | Assembled Anthropic batch `--no-cache --limit 25` (`v1.5`) — **19/20 (95%)** unique 3-class |
+| `G1M2U1L1.json` | **7/7** |
+| `G1M2U1L3.json` | **5/5** |
+| `G1M2U1L6.json` | **6/7** — miss `1.L.V.3.a` (gold partial / json full); coverage `1.P.CP.2.a` |
 | `G1M2U3L5.json` | **1/1**; coverage `1.P.EICC.4.f`, `1.P.CP.1.c`, `1.P.CP.2.a` |
 
 ```bash

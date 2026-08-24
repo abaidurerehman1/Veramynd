@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0-judge",
   "quality_profile": "enterprise_k12",
-  "prompt_version": "align_judge.assembled.batch.v1",
+  "prompt_version": "align_judge.assembled.batch.v1.5",
   "judge_mode": "batch",
   "resource_id": "G1M2U1L6",
   "lesson_source": "stage1:G1M2U1L6",
-  "retrieve_file": "output/retrieve/G1M2U1L6.json",
+  "retrieve_file": "output/retrieve_gold4/G1M2U1L6.json",
   "standards_dir": "output\\normalize_standards",
   "judge_model": "claude-sonnet-4-5",
   "escalate": true,
@@ -18,38 +18,12 @@
   "failed": [],
   "complete": true,
   "by_status": {
-    "full": 9,
+    "full": 8,
     "partial": 8,
-    "none": 9
+    "none": 10
   },
   "grounding_rate": 1.0,
-  "grounding_positive_n": 17,
-  "escalated_count": 10,
-  "escalation_rate": 0.38461538461538464,
-  "escalated_codes": [
-    "1.L.V.1.b",
-    "1.P.EICC.3.g",
-    "1.P.EICC.1.c",
-    "1.P.CP.2.d",
-    "1.P.ST.1.a",
-    "1.T.T.1.a",
-    "1.P.EICC.3.e",
-    "1.T.SS.1.c",
-    "1.P.EICC.3.f",
-    "1.P.AC.1.b"
-  ],
-  "input_scope_caveat_count": 7,
-  "input_scope_caveat_codes": [
-    "1.P.CP.2.d",
-    "1.T.T.1.a",
-    "1.T.T.1.c",
-    "1.T.RA.2.a",
-    "1.P.EICC.3.e",
-    "1.P.EICC.3.f",
-    "1.T.T.1.b"
-  ],
-  "prescreen_auto_none_count": 0,
-  "prescreen_auto_none_codes": [],
+  "grounding_positive_n": 16,
   "verdicts": [
     {
       "schema_version": "1.0-judge",
@@ -60,28 +34,28 @@
         {
           "clause": "Use grade-level general, academic, or specialized vocabulary words and phrases to communicate (any one category suffices — OR list)",
           "met": false,
-          "note": "Students are directed to use vocabulary from the text (setting, overhead, etc.) in their own speech via sentence frames and partner discussion, which constitutes deploying vocabulary to communicate — satisfying the 'use to communicate' act."
+          "note": "Students use the target word 'setting' in a sentence frame during Think-Pair-Share, deploying grade-level vocabulary to communicate orally."
         },
         {
           "clause": "Communicate in a variety of settings (≥2 distinct settings for full; 1 setting = partial)",
           "met": false,
-          "note": "Students use vocabulary in partner discussion (Think-Pair-Share, turn-and-talk) — this is one setting (oral partner talk). The independent writing task uses a sentence frame ('At the end …') but students are not explicitly directed to deploy target vocabulary words in their writing; the writing is a retell/response, not a vocabulary-deployment task. Only one clear setting (oral discussion) is evidenced for vocabulary use → partial on the variety-of-settings clause."
+          "note": "Students use vocabulary in oral partner discussion (one setting). The response sheet writing could be a second setting, but the lesson does not show students deploying the target vocabulary word 'setting' in their writing — only in oral frames. Single setting caps at partial."
         }
       ],
-      "evidence": "'Discuss with a partner what the boy and sun are doing using the frame: In the end, the boy is _____. The sun is _____.'\n(sleeping; gone or set)",
-      "evidence_page": 99,
+      "evidence": "When the sun is setting (the sun/the boy/I) _________.",
+      "evidence_page": 103,
       "confidence": "high",
-      "rationale": "The lesson has students deploy a small number of vocabulary items (e.g., \"setting,\" \"overhead,\" \"sleepin'\") in oral partner discussion via sentence frames such as \"In the end, the boy is _____. The sun is _____\" and \"When the sun is setting (the sun/the boy/I) _________.\" This satisfies the \"use vocabulary to communicate\" act in one setting (oral partner talk). However, the lesson does not clearly direct students to deploy target vocabulary in a second distinct setting — the independent writing task is a retell/response and does not explicitly require use of the target vocabulary words. Because the \"variety of settings\" component requires ≥2 settings for full and only one is evidenced, the standard is partially met.",
+      "rationale": "Students use the word 'setting' in the oral sentence frame \"When the sun is setting (the sun/the boy/I) _________.\" during Think-Pair-Share, which is deployment of a grade-level vocabulary word to communicate. However, this deployment occurs in only one setting (oral partner discussion); the response sheet writing does not show students using the target vocabulary word in their written output. The single-setting use caps the 'variety of settings' clause at partial, yielding an overall partial alignment.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
         "rrf_score": 0.16068947181850407,
         "dense_rank": 2,
         "bm25_rank": 2,
-        "dense_score": 0.6051184,
+        "dense_score": 0.6052245,
         "bm25_score": 76.39137594128648,
         "rerank_score": 0.01562279462814331,
         "coverage_pass": false,
@@ -95,80 +69,34 @@
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L6",
-      "standard_code": "1.P.EICC.3.g",
-      "matched_status": "partial",
-      "clauses": [
-        {
-          "clause": "Determine the meanings of unfamiliar words and concepts by applying knowledge of context",
-          "met": false,
-          "note": "Students determine the meaning of 'overhead' using context from the verse and the compound-word breakdown; this is a context-based meaning-determination act, though it occurs in a single ELL Mini Language Dive instance rather than as a core instructional focus."
-        },
-        {
-          "clause": "Determine the meanings of unfamiliar words and concepts by applying knowledge of academic vocabulary",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Determine the meanings of unfamiliar words and concepts by applying knowledge of word parts",
-          "met": false,
-          "note": "Students break 'overhead' into 'over' and 'head' to determine its meaning, applying knowledge of word parts; however this is a single instance within an ELL scaffold, not a core instructional activity, capping it at partially met."
-        }
-      ],
-      "evidence": "'What two words do you see in overhead? What do you think overhead means? Point to something overhead.' (over + head; up above our heads)",
-      "evidence_page": 99,
-      "confidence": "high",
-      "rationale": "The lesson partially addresses 1.P.EICC.3.g through the ELL Mini Language Dive, where students are directed to determine the meaning of \"overhead\" by identifying its component word parts (\"over + head\") and using the surrounding verse context (\"stars overhead\") to infer its meaning: \"What two words do you see in overhead? What do you think overhead means?\" (Work Time A, ELL section). This meets the context and word-parts clauses in a limited way — the activity is an ELL scaffold rather than a core instructional focus, and it involves only one word, capping both clauses at partially met. The academic-vocabulary clause is not met: no activity has students apply knowledge of academic vocabulary to unlock unfamiliar words.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.v1",
-      "judge_model": "claude-opus-4-6",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.15250182569061468,
-        "dense_rank": 1,
-        "bm25_rank": 1,
-        "dense_score": 0.68527615,
-        "bm25_score": 84.71136350033964,
-        "rerank_score": 0.022136161103844643,
-        "coverage_pass": false,
-        "coverage_family": ""
-      },
-      "standard_raw_text": "Determine the meanings of unfamiliar words and concepts by applying knowledge of context and of academic vocabulary and word parts. (I)",
-      "needs_review": false,
-      "review_reason": "",
-      "input_scope_caveat": ""
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L6",
       "standard_code": "1.L.V.1.a",
       "matched_status": "full",
       "clauses": [
         {
           "clause": "Acquire general, academic, and specialized vocabulary words and phrases through grade-level texts and content.",
           "met": true,
-          "note": "Students acquire vocabulary (by, overhead, setting, tucked, sleepin') from the grade-level text Summer Sun Risin' through the Mini Language Dive."
+          "note": "Students acquire vocabulary (by, overhead, setting) from the grade-level text Summer Sun Risin' during the Mini Language Dive."
         },
         {
           "clause": "Apply general, academic, and specialized vocabulary words and phrases in appropriate contexts.",
           "met": true,
-          "note": "Students apply acquired vocabulary (boy, sun, end, sleeping, gone, set) in partner discussion and independent writing about the story."
+          "note": "Students apply acquired vocabulary (sleeping, gone/set) in their own speaking using the sentence frame."
         }
       ],
-      "evidence": "Discuss with a partner what the boy and sun are doing using the frame: In the end, the boy is _____. The sun is _____.",
-      "evidence_page": 99,
+      "evidence": "What does the word by mean in this chunk?",
+      "evidence_page": 100,
       "confidence": "high",
-      "rationale": "Work Time A Mini Language Dive has students acquire vocabulary from the grade-level text Summer Sun Risin': 'What does the word by mean in this chunk? What two words do you see in overhead? What do you think overhead means?' Students then apply this vocabulary in partner discussion: 'Discuss with a partner what the boy and sun are doing using the frame: In the end, the boy is _____. The sun is _____.' (sleeping, gone, set). Both acquire and apply clauses met.",
+      "rationale": "Students acquire vocabulary from the grade-level text Summer Sun Risin' during the Mini Language Dive (Work Time A: \"What does the word by mean in this chunk?\" / \"What two words do you see in overhead?\") and apply it in their own speaking (\"In the end, the boy is _____. The sun is _____.\"). Both acquire and apply are met.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
-        "rrf_score": 0.15237334614383796,
+        "rrf_score": 0.1529021922976841,
         "dense_rank": 1,
         "bm25_rank": 1,
-        "dense_score": 0.72254664,
+        "dense_score": 0.72215664,
         "bm25_score": 113.64864577223264,
         "rerank_score": 0.028728358447551727,
         "coverage_pass": false,
@@ -182,39 +110,75 @@
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L6",
+      "standard_code": "1.P.EICC.3.g",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Determine the meanings of unfamiliar words and concepts by applying knowledge of context, academic vocabulary, and/or word parts (any one method suffices — OR list)",
+          "met": false,
+          "note": "Students determine the meaning of 'by' using the context of the chunk 'Pa by the door,' and determine 'overhead' by word parts (over + head). This is a supplemental Mini Language Dive (For ELLs), so R3 caps at partial."
+        }
+      ],
+      "evidence": "What does the word by mean in this chunk? (next to)",
+      "evidence_page": 100,
+      "confidence": "high",
+      "rationale": "In the Mini Language Dive (supplemental, For ELLs), students determine the meaning of 'by' from context (\"What does the word by mean in this chunk?\" — student response: \"next to\") and determine 'overhead' via word parts (\"What two words do you see in overhead? What do you think overhead means?\" — student response: \"over + head; up above our heads\"). Both are student-performed acts of determining meaning of unfamiliar words using context and word parts. However, this activity appears only in the supplemental Mini Language Dive, so R3 caps the clause at partial.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.15250182569061468,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.6854018,
+        "bm25_score": 84.71136350033964,
+        "rerank_score": 0.022136161103844643,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Determine the meanings of unfamiliar words and concepts by applying knowledge of context and of academic vocabulary and word parts. (I)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
       "standard_code": "1.P.EICC.4.c",
       "matched_status": "full",
       "clauses": [
         {
-          "clause": "Generate ideas for writing by assessing prior knowledge.",
+          "clause": "Generate ideas for content by assessing prior knowledge.",
           "met": true,
-          "note": "Students generate ideas by reflecting on prior knowledge of the story's beginning and middle before writing about the ending."
+          "note": "Students assess prior knowledge about the beginning and middle of the story to generate ideas about the ending."
         },
         {
-          "clause": "Generate ideas for writing by gathering information from texts.",
+          "clause": "Generate ideas for content by gathering information from texts.",
           "met": true,
-          "note": "Students gather information from the text Summer Sun Risin' during the close read-aloud to inform their writing."
+          "note": "Students gather information from the close read-aloud of Summer Sun Risin' to generate ideas for their writing."
         },
         {
-          "clause": "Generate ideas for writing by engaging in discussions with others.",
+          "clause": "Generate ideas for content by engaging in discussions with others.",
           "met": true,
-          "note": "Students engage in partner discussions about the ending events before writing, generating ideas through dialogue."
+          "note": "Students engage in turn-and-talk and Think-Pair-Share discussions to generate ideas before writing."
         }
       ],
       "evidence": "Think back to what the boy and sun were doing at the beginning and middle of the story. With your partner, discuss why you think the sun will be at one corner of the page at the end of the story.",
-      "evidence_page": 99,
+      "evidence_page": 100,
       "confidence": "high",
-      "rationale": "Work Time A directs students to 'Think back to what the boy and sun were doing at the beginning and middle of the story. With your partner, discuss why you think the sun will be at one corner of the page at the end of the story' (prior knowledge). Students gather information from the close read-aloud of Summer Sun Risin' pages 21-26. Work Time A Mini Language Dive has students 'Discuss with a partner what the boy and sun are doing using the frame: In the end, the boy is _____. The sun is _____.' (discussion). All three idea-generation clauses met before Work Time C independent writing.",
+      "rationale": "Students generate ideas for their writing by assessing prior knowledge (Work Time A: \"Think back to what the boy and sun were doing at the beginning and middle of the story\"), gathering information from the text Summer Sun Risin' during the close read-aloud, and engaging in discussions with partners (Work Time C: \"What happened at the end of the story?\"). All three source channels feed the idea-generation product (the response sheet writing). Per overlay F10, full.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
         "rrf_score": 0.15057692307692305,
         "dense_rank": 4,
         "bm25_rank": 1,
-        "dense_score": 0.46978492,
+        "dense_score": 0.4702841,
         "bm25_score": 22.902441863664965,
         "rerank_score": 0.05458785966038704,
         "coverage_pass": false,
@@ -229,38 +193,38 @@
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L6",
       "standard_code": "1.P.EICC.1.c",
-      "matched_status": "partial",
+      "matched_status": "none",
       "clauses": [
         {
-          "clause": "Select texts of personal interest and academic relevance to grade-level topics (I/C)",
+          "clause": "Select texts of personal interest and academic relevance to grade-level topics",
           "met": false,
           "note": "not met"
         },
         {
-          "clause": "Read texts of personal interest and academic relevance to grade-level topics (I/C)",
+          "clause": "Read texts of personal interest and academic relevance to grade-level topics",
           "met": false,
           "note": "not met"
         },
         {
-          "clause": "Write texts of personal interest and academic relevance to grade-level topics (I/C)",
+          "clause": "Write texts of personal interest and academic relevance to grade-level topics",
           "met": false,
-          "note": "Students write and draw about ending events on a response sheet, which is a scaffolded writing task about a teacher-selected text rather than a text of personal interest; the student performs a writing act but not on a self-selected or personally interesting topic."
+          "note": "not met"
         }
       ],
-      "evidence": "Invite students to show a thumbs-up or touch their head if they are ready to begin writing and drawing about the events from the ending of Summer Sun Risin'.",
-      "evidence_page": 102,
+      "evidence": "",
+      "evidence_page": null,
       "confidence": "high",
-      "rationale": "The standard requires students to select, read, and write texts of personal interest and academic relevance. The lesson has students complete a response sheet by writing and drawing about the ending events of Summer Sun Risin' (\"Invite students to show a thumbs-up or touch their head if they are ready to begin writing and drawing about the events from the ending of Summer Sun Risin'\"), which partially meets the write clause — students do produce written text, but the text and topic are teacher-assigned rather than personally selected. The select clause is not met because students never choose a text; the teacher assigns Summer Sun Risin'. The read clause is not met because the lesson is a teacher-led close read-aloud with no evidence of students independently reading a text of personal interest.",
+      "rationale": "alignment=none",
       "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.v1",
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
         "rrf_score": 0.14805359336609336,
         "dense_rank": 8,
         "bm25_rank": 3,
-        "dense_score": 0.51131546,
+        "dense_score": 0.51168907,
         "bm25_score": 41.765991635033366,
         "rerank_score": 0.015355757437646389,
         "coverage_pass": false,
@@ -280,28 +244,28 @@
         {
           "clause": "Use context within a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases.",
           "met": true,
-          "note": "Students use context within the sentence chunks ('Pa by the door,' 'stars overhead') to determine the meanings of 'by' and 'overhead.'"
+          "note": "Students use context within the chunk 'Pa by the door' to determine the meaning of 'by' (next to)."
         },
         {
           "clause": "Use context beyond a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases.",
           "met": true,
-          "note": "Students use context from the entire verse (multiple sentences/chunks) to clarify the meaning of the verse as a whole."
+          "note": "Students use context across multiple chunks of the verse to determine the overall meaning."
         }
       ],
-      "evidence": "Now what do you think the verse means?",
-      "evidence_page": 99,
+      "evidence": "What does the word by mean in this chunk?",
+      "evidence_page": 100,
       "confidence": "high",
-      "rationale": "Work Time A Mini Language Dive directs students to use context within sentence chunks to determine word meanings: 'What does the word by mean in this chunk?' (Pa by the door) and 'What two words do you see in overhead? What do you think overhead means?' (stars overhead). Students then use context beyond a sentence: 'Now what do you think the verse means?' (integrating all chunks). Both within-sentence and beyond-sentence context clauses met.",
+      "rationale": "Students use context within a sentence to determine word meaning (Work Time A Mini Language Dive: \"What does the word by mean in this chunk?\" → next to, from \"Pa by the door\") and context beyond a sentence (\"Now what do you think the verse means?\" after analyzing multiple chunks). Both clauses met → full.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
         "rrf_score": 0.14766884772330838,
         "dense_rank": 1,
         "bm25_rank": 1,
-        "dense_score": 0.72850037,
+        "dense_score": 0.7289578,
         "bm25_score": 105.06312553025904,
         "rerank_score": 0.023818492889404297,
         "coverage_pass": false,
@@ -319,40 +283,25 @@
       "matched_status": "full",
       "clauses": [
         {
-          "clause": "Work with others to discuss topics.",
+          "clause": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts.",
           "met": true,
-          "note": "Students work with partners to discuss the story's ending and the sun's position."
-        },
-        {
-          "clause": "Work with others to investigate questions.",
-          "met": true,
-          "note": "Students work with partners to investigate the question of why the sun's position changes, using story evidence."
-        },
-        {
-          "clause": "Work with others to solve problems.",
-          "met": true,
-          "note": "Students work with partners to solve disagreements during the Role-Play protocol."
-        },
-        {
-          "clause": "Work with others to explore and create texts.",
-          "met": true,
-          "note": "Students work in pairs to explore the text by acting out ending events through the Role-Play protocol."
+          "note": "Students work with elbow partners to discuss topics (the ending of the story, sunset experiences) throughout the lesson."
         }
       ],
-      "evidence": "Invite students to turn and talk to an elbow partner: 'What time of day do you think the end of the story takes place?'",
+      "evidence": "What time of day do you think the end of the story takes place?",
       "evidence_page": 99,
       "confidence": "high",
-      "rationale": "Work Time A has students 'turn and talk to an elbow partner: What time of day do you think the end of the story takes place?' (discuss topics). Students 'discuss why you think the sun will be at one corner of the page at the end of the story. What have you learned from the story so far that makes you think this might be the case?' (investigate questions). Work Time B notes 'Yesterday we discussed strategies for what to do if you have a disagreement with your role-play partner. What can we do or say to respectfully resolve our problem?' (solve problems). Students 'use the Role-Play protocol to act out a few of the ending events of Summer Sun Risin'' in pairs (explore texts). All four clauses met.",
+      "rationale": "Students work with others to discuss topics in multiple collaborative settings: turn-and-talk (Work Time A: \"What time of day do you think the end of the story takes place?\"), Role-Play protocol with partners (Work Time B), and Think-Pair-Share (Closing A). Per overlay F9, any one genuine student-performed collaborative act satisfies the OR-list clause → full.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
         "rrf_score": 0.14683119630237557,
         "dense_rank": 1,
         "bm25_rank": 1,
-        "dense_score": 0.57197475,
+        "dense_score": 0.571745,
         "bm25_score": 43.799162333537254,
         "rerank_score": 0.045056331902742386,
         "coverage_pass": false,
@@ -386,14 +335,14 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
         "rrf_score": 0.14634920634920634,
         "dense_rank": 3,
         "bm25_rank": 3,
-        "dense_score": 0.51126635,
+        "dense_score": 0.5110688,
         "bm25_score": 45.540172729407516,
         "rerank_score": 0.007692527025938034,
         "coverage_pass": false,
@@ -411,25 +360,25 @@
       "matched_status": "full",
       "clauses": [
         {
-          "clause": "Use texts to build knowledge, develop skills, make informed decisions, or share information and ideas (any one purpose).",
+          "clause": "Use texts to build knowledge, develop skills, make informed decisions, and share information and ideas.",
           "met": true,
-          "note": "Students use the text Summer Sun Risin' to build knowledge about the story's ending events, then share that information through writing and drawing."
+          "note": "Students use the text Summer Sun Risin' to build knowledge about the ending events, which they then share in discussion and writing."
         }
       ],
-      "evidence": "Today they will complete the response sheet by writing and drawing about the ending events of the story.",
+      "evidence": "What happened at the end of the story?",
       "evidence_page": 102,
       "confidence": "high",
-      "rationale": "Work Time A has students engage with the text Summer Sun Risin' through close read-aloud to build knowledge about the ending events. Work Time C directs students to 'complete the response sheet by writing and drawing about the ending events of the story,' using the text to share information and ideas. The student performs the purpose (build knowledge and share information), not passively listening. Any one purpose suffices for full; two are evidenced here.",
+      "rationale": "Students use the text Summer Sun Risin' to build knowledge about the ending events (Work Time A close read-aloud) and to share information and ideas (Work Time C: discussing and writing \"What happened at the end of the story?\"). Per overlay worked instance on 1.P.EICC.2.b, any one student-performed purpose from the OR-list satisfies the clause → full.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
         "rrf_score": 0.14542908426448475,
         "dense_rank": 4,
         "bm25_rank": 5,
-        "dense_score": 0.56443965,
+        "dense_score": 0.5632608,
         "bm25_score": 22.35781010430744,
         "rerank_score": 0.04541680961847305,
         "coverage_pass": false,
@@ -449,33 +398,33 @@
         {
           "clause": "Share relevant information about a topic.",
           "met": true,
-          "note": "Students share relevant information about the story's ending events through writing and drawing."
+          "note": "Students share relevant information about the ending of Summer Sun Risin' in discussions and writing."
         },
         {
           "clause": "Share accurate information about a topic.",
           "met": true,
-          "note": "Students share accurate information drawn from the text and role-play about the ending events."
+          "note": "Students share accurate information about the ending events based on the text."
         },
         {
           "clause": "Use a variety of communication modes to share information.",
           "met": true,
-          "note": "Students use multiple modes: writing, drawing (Work Time C), and speaking (Closing A Think-Pair-Share)."
+          "note": "Students use multiple modes: oral discussion (turn-and-talk, Think-Pair-Share), role-play, and written/drawn response sheet."
         }
       ],
-      "evidence": "Today they will complete the response sheet by writing and drawing about the ending events of the story.",
+      "evidence": "What happened at the end of the story?",
       "evidence_page": 102,
       "confidence": "high",
-      "rationale": "Work Time C directs students to 'complete the response sheet by writing and drawing about the ending events of the story,' sharing relevant and accurate information about Summer Sun Risin'. Closing A has students Think-Pair-Share: 'What does the boy experience when the sun is setting?' Students use three modes: writing, drawing, and speaking. All three clauses met.",
+      "rationale": "Students share relevant and accurate information about the ending of Summer Sun Risin' (Work Time C: \"The boy reads a book with his dad and goes to sleep\") using a variety of modes: oral discussion (turn-and-talk, Think-Pair-Share), role-play (Work Time B), and written/drawn response (Work Time C: \"At the end …\"). All three clauses met → full.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
         "rrf_score": 0.14472736788226295,
         "dense_rank": 2,
         "bm25_rank": 1,
-        "dense_score": 0.5643946,
+        "dense_score": 0.56374246,
         "bm25_score": 58.77123520133727,
         "rerank_score": 0.05182034522294998,
         "coverage_pass": false,
@@ -493,30 +442,30 @@
       "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Ask questions during dialogue",
+          "clause": "Ask questions during dialogue with audiences",
           "met": false,
           "note": "not met"
         },
         {
-          "clause": "Answer questions during dialogue",
+          "clause": "Answer questions during dialogue with audiences",
           "met": true,
-          "note": "Students answer teacher-posed questions in turn-and-talk and Think-Pair-Share dialogues throughout the lesson, providing responses such as 'at the end of the day,' 'The sun is going down,' and 'sleeping; gone or set.'"
+          "note": "Students answer teacher-posed questions in dialogue with partners during multiple Think-Pair-Share and turn-and-talk exchanges throughout the lesson."
         }
       ],
-      "evidence": "'What time of day do you think the end of the story takes place?' (at the end of the day)",
-      "evidence_page": 99,
+      "evidence": "\"What does the boy experience when the sun is setting?\" (The boy is reading a book with his dad and getting ready for bed.)",
+      "evidence_page": 103,
       "confidence": "high",
-      "rationale": "The answer clause is met: students answer multiple teacher-posed questions throughout the lesson in Turn-and-Talk and Think-Pair-Share protocols (e.g., \"'What time of day do you think the end of the story takes place?' (at the end of the day)\" and \"'What does the boy experience when the sun is setting?' (The boy is reading a book with his dad and getting ready for bed.)\"). However, the ask clause is not met: at no point in the lesson are students directed to generate their own questions. All questions are posed by the teacher; students only answer. The expansion cue \"'Can you say more about that?'\" is a teacher prompt for elaboration, not a student-generated question. Therefore the standard is partial — the asking gap prevents full alignment.",
+      "rationale": "Students answer multiple questions in dialogue with partners via Think-Pair-Share and turn-and-talk (e.g., \"What does the boy experience when the sun is setting?\" — \"The boy is reading a book with his dad and getting ready for bed.\"). The answer clause is met. However, every question in the lesson is teacher-posed; there is no scripted moment where students generate their own questions in dialogue. The ask clause is not met, yielding partial alignment.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
         "rrf_score": 0.14430569430569432,
         "dense_rank": 1,
         "bm25_rank": 1,
-        "dense_score": 0.69491273,
+        "dense_score": 0.6951363,
         "bm25_score": 85.17359811796582,
         "rerank_score": 0.032681386917829514,
         "coverage_pass": false,
@@ -525,50 +474,106 @@
       "standard_raw_text": "Engage in dialogue with audiences by asking and answering questions. (I/C)",
       "needs_review": false,
       "review_reason": "",
-      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L6",
-      "standard_code": "1.P.ST.1.a",
-      "matched_status": "partial",
+      "standard_code": "1.F.F.1.a",
+      "matched_status": "none",
       "clauses": [
         {
-          "clause": "Use prior knowledge to identify relevant context components (I/C)",
-          "met": false,
-          "note": "Students are directed to use their prior knowledge of the story's beginning and middle to discuss and predict what happens at the end, activating background knowledge to identify relevant context — but the act is scoped to recalling story events rather than identifying key components of context broadly."
-        },
-        {
-          "clause": "Use formal or informal research to find contextual information (I/C)",
+          "clause": "Increase sight word vocabulary by reading high-frequency words.",
           "met": false,
           "note": "not met"
         },
         {
-          "clause": "Engage in discussions with others to determine key context components (I/C)",
-          "met": true,
-          "note": "Students engage in partner discussions (turn-and-talk, Think-Pair-Share) to discuss contextual elements of the story such as time of day, the sun's position, and what the boy experiences at sunset — identifying relevant context through discussion with others."
+          "clause": "Use decoding skills to read regularly spelled words.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Use decoding skills to read irregularly spelled words.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Read words both in isolation and in context with increasing automaticity.",
+          "met": false,
+          "note": "not met"
         }
       ],
-      "evidence": "'Think back to what the boy and sun were doing at the beginning and middle of the story. With your partner, discuss why you think the sun will be at one corner of the page at the end of the story. What have you learned from the story so far that makes you think this might be the case?'",
-      "evidence_page": 99,
+      "evidence": "",
+      "evidence_page": null,
       "confidence": "high",
-      "rationale": "The standard requires students to use prior knowledge, formal or informal research, and discussions with others to identify relevant context components. The discussion clause is met: students engage in multiple turn-and-talk and Think-Pair-Share exchanges to discuss contextual elements (e.g., \"What time of day do you think the end of the story takes place?\" and \"Where is the sun at sunset?\"). The prior-knowledge clause is partially met: students are directed to \"Think back to what the boy and sun were doing at the beginning and middle of the story\" to activate background knowledge, but this is narrowly scoped to recalling prior story events rather than broadly identifying key components of context. The research clause is not met: no formal or informal research activity is present in the lesson.",
+      "rationale": "alignment=none",
       "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.v1",
-      "judge_model": "claude-opus-4-6",
-      "escalated": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
       "retrieval": {
-        "rrf_score": 0.1428473441615452,
-        "dense_rank": 4,
+        "rrf_score": 0.14275056306306305,
+        "dense_rank": 1,
         "bm25_rank": 1,
-        "dense_score": 0.4991088,
-        "bm25_score": 29.694074628926067,
-        "rerank_score": 0.023593207821249962,
+        "dense_score": 0.5273926,
+        "bm25_score": 30.975981060708158,
+        "rerank_score": 0.001767692738212645,
         "coverage_pass": false,
         "coverage_family": ""
       },
-      "standard_raw_text": "Use prior knowledge, formal or informal research, and discussions with others to identify the key components of context that are most relevant. (I/C)",
+      "standard_raw_text": "Increase sight word vocabulary using decoding skills by reading grade-appropriate regularly and irregularly spelled words, including high-frequency words, in isolation and context with increasing automaticity.",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.T.T.1.a",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Identify characters used to craft a story",
+          "met": true,
+          "note": "Students identify the boy and Pa as characters and describe what they are doing, demonstrating identification of characters in the story."
+        },
+        {
+          "clause": "Identify the setting used to craft a story",
+          "met": true,
+          "note": "Students identify the time of day (end of the day/nighttime) as the setting for the end of the story."
+        },
+        {
+          "clause": "Identify major events used to craft a story",
+          "met": true,
+          "note": "Students identify the major ending events of the story — the boy reading with his dad and going to sleep."
+        },
+        {
+          "clause": "Identify dialogue used to craft a story",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "What is Pa doing? (Pa is playing guitar and singing by the door.) ... What is the boy doing? (sleeping; lying in bed)",
+      "evidence_page": 100,
+      "confidence": "high",
+      "rationale": "Students identify characters (the boy, Pa), setting (end of the day/nighttime), and major events (\"What happened at the end of the story?\" — \"The boy reads a book with his dad and goes to sleep.\") through close read-aloud discussion and the Mini Language Dive. Three of four required story techniques are met. However, there is no activity in which students identify dialogue as a technique used to craft the story. The dialogue clause is not met, yielding partial alignment.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.14232181679299605,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.64636004,
+        "bm25_score": 61.87149159619326,
+        "rerank_score": 0.05981238931417465,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue. (I)",
       "needs_review": false,
       "review_reason": "",
       "input_scope_caveat": ""
@@ -580,7 +585,22 @@
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+          "clause": "Describe the connection between two individuals in a text.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Describe the connection between two events in a text.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Describe the connection between two ideas in a text.",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Describe the connection between two pieces of information in a text.",
           "met": false,
           "note": "not met"
         }
@@ -591,14 +611,14 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
         "rrf_score": 0.14122562025787833,
         "dense_rank": 3,
         "bm25_rank": 1,
-        "dense_score": 0.50399613,
+        "dense_score": 0.5040359,
         "bm25_score": 43.382740253533775,
         "rerank_score": 0.0878545418381691,
         "coverage_pass": false,
@@ -612,90 +632,34 @@
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L6",
-      "standard_code": "1.T.T.1.a",
+      "standard_code": "1.T.T.1.c",
       "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Identify characters used to craft a story.",
-          "met": true,
-          "note": "Students identify and discuss the characters (the boy and the sun) and what they are doing in the story."
-        },
-        {
-          "clause": "Identify the setting used to craft a story.",
+          "clause": "Describe traits of the main characters",
           "met": false,
-          "note": "Students discuss time-of-day details (sunset, nighttime) which relate to setting, but the identification of setting as a story-crafting technique is not explicitly targeted — students answer questions about when/where events happen rather than being asked to identify the setting as a story element."
+          "note": "Students describe the boy's actions (sleeping, lying in bed) in the Mini Language Dive, which is supplemental (For ELLs). This is an action description, not a trait per se, and it is supplemental-only, so R3 caps at partial."
         },
         {
-          "clause": "Identify major events used to craft a story.",
-          "met": true,
-          "note": "Students role-play (act out) the ending events of the story, which requires them to identify and enact the major events; additionally they write and draw about ending events on the response sheet ('At the end …')."
-        },
-        {
-          "clause": "Identify dialogue used to craft a story.",
+          "clause": "Explain how the characters' words and actions support the central message, lesson, or moral of the story",
           "met": false,
           "note": "not met"
         }
       ],
-      "evidence": "Discuss with a partner what the boy and sun are doing using the frame: In the end, the boy is _____. The sun is _____.",
-      "evidence_page": 99,
+      "evidence": "What is the boy doing? (sleeping; lying in bed)",
+      "evidence_page": 100,
       "confidence": "high",
-      "rationale": "The lesson partially meets 1.T.T.1.a. Students identify characters: they discuss what the boy and the sun are doing using the frame \"In the end, the boy is _____. The sun is _____.\" Students identify major events by acting out ending events via the Role-Play protocol (pages 21–26) and by writing/drawing about ending events on the response sheet (\"At the end …\"). Setting is touched indirectly — students answer \"Where is the sun at sunset?\" and discuss time-of-day details — but the lesson does not explicitly ask students to identify the setting as a story element, so this clause is partially met. Dialogue is never addressed: no activity asks students to identify dialogue used to craft the story. Because not all four required techniques are fully met, alignment is partial.",
+      "rationale": "In the Mini Language Dive (supplemental, For ELLs), students describe the boy's actions: \"What is the boy doing?\" — \"sleeping; lying in bed.\" This is a student-performed description of the main character's actions, but it appears only in supplemental content (R3 caps at partial) and describes actions rather than traits. The second clause — explaining how the character's words/actions support the central message/lesson/moral — is absent from the lesson entirely. Overall partial alignment: one clause partially met, one not met.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.14232181679299605,
-        "dense_rank": 1,
-        "bm25_rank": 1,
-        "dense_score": 0.6463758,
-        "bm25_score": 61.87149159619326,
-        "rerank_score": 0.05981238931417465,
-        "coverage_pass": false,
-        "coverage_family": ""
-      },
-      "standard_raw_text": "Identify techniques used to craft stories, including characters, setting, major events, and dialogue. (I)",
-      "needs_review": false,
-      "review_reason": "",
-      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L6",
-      "standard_code": "1.T.T.1.c",
-      "matched_status": "none",
-      "clauses": [
-        {
-          "clause": "Describe traits of the main characters.",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Explain how the characters' words support the central message, lesson, or moral.",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Explain how the characters' actions support the central message, lesson, or moral.",
-          "met": false,
-          "note": "not met"
-        }
-      ],
-      "evidence": "",
-      "evidence_page": null,
-      "confidence": "high",
-      "rationale": "alignment=none",
-      "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1",
-      "judge_model": "claude-sonnet-4-5",
-      "escalated": false,
       "retrieval": {
         "rrf_score": 0.14098360655737702,
         "dense_rank": 1,
         "bm25_rank": 1,
-        "dense_score": 0.6979331,
+        "dense_score": 0.6982189,
         "bm25_score": 111.78717459595762,
         "rerank_score": 0.1322314441204071,
         "coverage_pass": false,
@@ -704,7 +668,7 @@
       "standard_raw_text": "Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)",
       "needs_review": false,
       "review_reason": "",
-      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
@@ -744,14 +708,14 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
         "rrf_score": 0.14097055450985482,
         "dense_rank": 1,
         "bm25_rank": 3,
-        "dense_score": 0.545946,
+        "dense_score": 0.54705364,
         "bm25_score": 55.56888117930904,
         "rerank_score": 0.07614106684923172,
         "coverage_pass": false,
@@ -790,7 +754,7 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -812,28 +776,28 @@
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L6",
       "standard_code": "1.T.RA.2.a",
-      "matched_status": "none",
+      "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Refer to parts of texts to support an idea, answer, or opinion.",
-          "met": true,
-          "note": "Students refer to specific text chunks (Pa by the door, me tucked in bed, stars overhead) to support their answers about what characters are doing."
+          "clause": "Refer to parts of texts when supporting an idea, answer, or opinion (any one purpose suffices — OR list)",
+          "met": false,
+          "note": "In the Mini Language Dive, the teacher points to specific text chunks and students answer questions anchored to those chunks, referring to parts of the text to support their answers. However, this occurs only in the supplemental Mini Language Dive (For ELLs), so R3 caps at partial."
         }
       ],
-      "evidence": "Point to and read aloud the chunk: 'Pa by the door,' and ask: 'What is Pa doing?' Point to and read aloud the chunk: 'me tucked in bed' and ask: 'What is the boy doing?'",
-      "evidence_page": null,
-      "confidence": "low",
-      "rationale": "Work Time A Mini Language Dive directs students to refer to specific text chunks to support answers: 'Point to and read aloud the chunk: Pa by the door, and ask: What is Pa doing?' Students answer by referring to the text part. Similarly for 'me tucked in bed' (what the boy is doing) and 'stars overhead' (where the stars are). Students refer to parts of the text to support their answers. Full. [REJECTED: evidence missing or not found in lesson raw text]",
-      "grounded": false,
-      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
-      "prompt_version": "align_judge.assembled.batch.v1",
-      "judge_model": "claude-sonnet-4-5",
-      "escalated": false,
+      "evidence": "What is Pa doing? (Pa is playing guitar and singing by the door.)",
+      "evidence_page": 100,
+      "confidence": "high",
+      "rationale": "In the Mini Language Dive (supplemental, For ELLs), the teacher reads aloud specific text chunks (e.g., \"Pa by the door\") and students answer questions anchored to those chunks: \"What is Pa doing?\" — \"Pa is playing guitar and singing by the door.\" Students refer to parts of the text to support their answers. However, this activity appears only in the supplemental Mini Language Dive, so R3 caps the clause at partial.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
       "retrieval": {
-        "rrf_score": 0.13860219605428564,
+        "rrf_score": 0.13947827218319023,
         "dense_rank": 1,
         "bm25_rank": 1,
-        "dense_score": 0.76196575,
+        "dense_score": 0.7634829,
         "bm25_score": 73.16883663497647,
         "rerank_score": 0.06169162318110466,
         "coverage_pass": false,
@@ -842,7 +806,7 @@
       "standard_raw_text": "Refer to parts of texts when supporting an idea, answer, or opinion. (I)",
       "needs_review": false,
       "review_reason": "",
-      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
@@ -851,30 +815,30 @@
       "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Make predictions about events or information likely to come next in a text.",
-          "met": false,
-          "note": "Students predict what time of day the end of the story takes place and where the sun will be, which are predictions about what comes next before reading the ending pages."
+          "clause": "Make predictions about events or information likely to come next in a text",
+          "met": true,
+          "note": "Students make a prediction about where the sun will be at the end of the story before reading the ending pages."
         },
         {
-          "clause": "Track those predictions as reading progresses.",
+          "clause": "Track those predictions as reading progresses",
           "met": false,
-          "note": "not met"
+          "note": "Students are invited to revisit their prediction and justify it based on what they have learned from the story so far, which is a form of tracking. However, there is no explicit return to confirm or revise the prediction after reading the ending pages, so tracking is only partially evidenced."
         }
       ],
-      "evidence": "'What time of day do you think the end of the story takes place?' (at the end of the day) 'Where do you think the sun will be at the end of the story?' (at one corner of the page)",
+      "evidence": "Where do you think the sun will be at the end of the story? (at one corner of the page)",
       "evidence_page": 99,
       "confidence": "high",
-      "rationale": "The make-predictions clause is partially met: before reading pages 21–26, students are invited to turn and talk to predict \"What time of day do you think the end of the story takes place?\" and \"Where do you think the sun will be at the end of the story?\" — these are forward-looking predictions about what comes next. However, the predictions are limited to two brief turn-and-talk prompts with no further prediction-making during or after reading, so the make clause is only partially met. The track-predictions clause is not met: there is no activity in which students revisit, confirm, revise, or otherwise track their predictions as the reading progresses. The lesson moves directly into close reading, role-play, and response writing without returning to the predictions.",
+      "rationale": "Students make a prediction before reading the ending: \"Where do you think the sun will be at the end of the story?\" — \"at one corner of the page.\" They are then invited to justify the prediction based on prior reading: \"What have you learned from the story so far that makes you think this might be the case?\" This shows making and partially tracking predictions. However, there is no explicit moment where students return to confirm or revise their prediction after reading the ending pages, so the track clause is only partially met. Overall partial alignment.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
         "rrf_score": 0.13974409015392622,
         "dense_rank": 1,
         "bm25_rank": 1,
-        "dense_score": 0.7328233,
+        "dense_score": 0.7329093,
         "bm25_score": 113.57839113713615,
         "rerank_score": 0.03949454799294472,
         "coverage_pass": false,
@@ -883,7 +847,7 @@
       "standard_raw_text": "Make and track predictions about the events and information likely to come next. (I)",
       "needs_review": false,
       "review_reason": "",
-      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
@@ -892,30 +856,30 @@
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Use transition words or phrases (such as once upon a time, next, last) to sequence events (C)",
+          "clause": "Use transition words or phrases to sequence events.",
           "met": false,
-          "note": "The student completes a sentence frame beginning with the transition phrase 'At the end,' using it to sequence the ending events of the story in their writing. However, this is a single scaffolded frame with one transition phrase; students do not independently select or use multiple transition words/phrases to sequence events and actions across a text."
+          "note": "not met"
         },
         {
-          "clause": "Use transition words or phrases to sequence actions (C)",
+          "clause": "Use transition words or phrases to sequence actions.",
           "met": false,
-          "note": "The response sheet has students write about ending events/actions using the 'At the end' frame, which is a transition phrase sequencing actions. But the student uses only one provided transition phrase in a scaffolded frame, not independently selecting or deploying transition words to sequence multiple actions."
+          "note": "not met"
         }
       ],
-      "evidence": "'At the end …'",
+      "evidence": "",
       "evidence_page": null,
-      "confidence": "low",
-      "rationale": "The standard requires students to use transition words or phrases to sequence events and actions in their own writing (C). In Work Time C, students complete a response sheet with the sentence frame \"At the end …,\" using that transition phrase to write about the ending events of Summer Sun Risin'. The resource also references that \"yesterday they began Part II by writing and drawing about the beginning and middle events,\" implying earlier frames for earlier sequence points. However, within this lesson the student uses only one pre-supplied transition phrase (\"At the end\") in a scaffolded frame rather than independently selecting and deploying multiple transition words/phrases (e.g., once upon a time, next, last) to sequence events and actions. Both clauses are partially met: the student does use a transition phrase to sequence, but the scope is narrow (single frame, single phrase, teacher-provided) rather than the full independent use the (C) substandard envisions. [REJECTED: evidence missing or not found in lesson raw text]",
-      "grounded": false,
-      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
-      "prompt_version": "align_judge.assembled.v1",
-      "judge_model": "claude-opus-4-6",
-      "escalated": true,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
       "retrieval": {
         "rrf_score": 0.14079900839054155,
         "dense_rank": 2,
         "bm25_rank": 3,
-        "dense_score": 0.47326106,
+        "dense_score": 0.47331774,
         "bm25_score": 29.10574706741969,
         "rerank_score": 0.032357603311538696,
         "coverage_pass": false,
@@ -925,52 +889,6 @@
       "needs_review": false,
       "review_reason": "",
       "input_scope_caveat": ""
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L6",
-      "standard_code": "1.P.EICC.3.f",
-      "matched_status": "partial",
-      "clauses": [
-        {
-          "clause": "Make inferences about different levels of meaning within the text.",
-          "met": false,
-          "note": "Students are directed to infer why the sun will be at one corner of the page based on what they have learned, which is an inferential act (reasoning beyond the literal text). However, this is a single inference prompt, not work across different levels of meaning."
-        },
-        {
-          "clause": "Track inferences while reading.",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Support inferences with evidence from the text.",
-          "met": false,
-          "note": "The prompt asks students to draw on prior textual knowledge to justify their thinking, which is a form of supporting an inference with evidence, but the support is loosely scaffolded and not an explicit cite-the-text act."
-        }
-      ],
-      "evidence": "'Think back to what the boy and sun were doing at the beginning and middle of the story. With your partner, discuss why you think the sun will be at one corner of the page at the end of the story. What have you learned from the story so far that makes you think this might be the case?'",
-      "evidence_page": 99,
-      "confidence": "low",
-      "rationale": "⚑ REVIEW: partial-or-full — The make clause is partially met: students are directed to infer why the sun will be at one corner of the page (\"With your partner, discuss why you think the sun will be at one corner of the page at the end of the story. What have you learned from the story so far that makes you think this might be the case?\"), which is an inferential act, but it targets a single inference rather than different levels of meaning. The support clause is partially met: the same prompt asks students to draw on what they have learned from the story to justify their inference, but this is implicit rather than an explicit text-citation act. The track clause is not met: there is no activity in which students monitor or track their inferences across the reading. Overall alignment is partial because the make and support sub-acts are thinly evidenced and the track sub-act is absent.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.v1",
-      "judge_model": "claude-opus-4-6",
-      "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.14045083940424793,
-        "dense_rank": 1,
-        "bm25_rank": 1,
-        "dense_score": 0.7720969,
-        "bm25_score": 99.7891133714998,
-        "rerank_score": 0.03621751070022583,
-        "coverage_pass": false,
-        "coverage_family": ""
-      },
-      "standard_raw_text": "Make, track, and support inferences about different levels of meaning within the text. (I)",
-      "needs_review": true,
-      "review_reason": "partial-or-full — make/track/support compound: student makes an inference and is prompted to support it with prior text knowledge, but tracking inferences across reading is absent and support is thin/implicit rather than explicit text citation.",
-      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
     },
     {
       "schema_version": "1.0-judge",
@@ -995,14 +913,14 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
         "rrf_score": 0.13798748194511315,
         "dense_rank": 2,
         "bm25_rank": 1,
-        "dense_score": 0.51225746,
+        "dense_score": 0.5127632,
         "bm25_score": 37.85944788642521,
         "rerank_score": 0.048232581466436386,
         "coverage_pass": false,
@@ -1011,7 +929,53 @@
       "standard_raw_text": "Identify a simple plot with a problem and solution. (I)",
       "needs_review": false,
       "review_reason": "",
-      "input_scope_caveat": "scored on provided lesson text; likely understated pending the Read-aloud Guides."
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
+      "standard_code": "1.P.EICC.3.f",
+      "matched_status": "partial",
+      "clauses": [
+        {
+          "clause": "Make inferences about different levels of meaning within a text",
+          "met": false,
+          "note": "Students infer that 'Summer sun's sleepin'' means the sun is gone because it is nighttime — an inference about figurative meaning. However, this occurs only in the supplemental Mini Language Dive (For ELLs), so R3 caps at partial. Additionally, only the 'make' sub-act is clearly evidenced; track and support are not quotable."
+        },
+        {
+          "clause": "Track inferences while reading",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Support inferences with evidence from the text",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "What is the sun doing? (It is gone because it is night",
+      "evidence_page": 100,
+      "confidence": "low",
+      "rationale": "⚑ REVIEW: partial-or-full — In the Mini Language Dive (supplemental, For ELLs), students infer that 'Summer sun's sleepin'' means the sun is gone because it is nighttime: \"What is the sun doing?\" — \"It is gone because it is night time.\" This is a student-performed inference about figurative/literal meaning. However, only the 'make' sub-act is evidenced; there is no quotable moment of tracking inferences across the text or supporting the inference with explicit textual evidence. Additionally, the activity is supplemental (R3 caps at partial). The track and support clauses are not met.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.14045083940424793,
+        "dense_rank": 1,
+        "bm25_rank": 1,
+        "dense_score": 0.77315545,
+        "bm25_score": 99.7891133714998,
+        "rerank_score": 0.03621751070022583,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Make, track, and support inferences about different levels of meaning within the text. (I)",
+      "needs_review": true,
+      "review_reason": "partial-or-full — make/track/support compound: student clearly makes an inference (figurative meaning of 'Summer sun's sleepin'') but track and support sub-acts are not quotable; also R3 supplemental cap applies.; confidence=low",
+      "input_scope_caveat": ""
     },
     {
       "schema_version": "1.0-judge",
@@ -1022,33 +986,33 @@
         {
           "clause": "Explain concepts by interpreting texts.",
           "met": true,
-          "note": "Students explain the meaning of the verse by interpreting the text chunks in the Mini Language Dive."
+          "note": "Students explain the concept of sunset by interpreting the text Summer Sun Risin'."
         },
         {
           "clause": "Learn concepts by interpreting texts.",
           "met": true,
-          "note": "Students learn the concept of 'overhead' by interpreting the text and word parts."
+          "note": "Students learn the concept of setting (moving down) by interpreting the text."
         },
         {
           "clause": "Construct texts to demonstrate understanding of concepts and processes.",
           "met": true,
-          "note": "Students construct texts (writing and drawing) to demonstrate understanding of the story's ending events."
+          "note": "Students construct a written/drawn response to demonstrate understanding of the ending events."
         }
       ],
-      "evidence": "Now what do you think the verse means? (Responses will vary.)",
-      "evidence_page": 99,
+      "evidence": "What does this verse mean?",
+      "evidence_page": 100,
       "confidence": "high",
-      "rationale": "Work Time A Mini Language Dive has students explain and learn concepts by interpreting the text: 'Now what do you think the verse means?' and 'What two words do you see in overhead? What do you think overhead means?' Work Time C directs students to 'complete the response sheet by writing and drawing about the ending events of the story,' constructing texts to demonstrate understanding. All three clauses met.",
+      "rationale": "Students explain and learn the concept of sunset by interpreting Summer Sun Risin' (Work Time A: \"What does this verse mean?\"; Work Time B: \"What does it mean when the sun is setting?\" → the sun is going down) and construct texts to demonstrate understanding (Work Time C: completing the response sheet \"At the end …\"). All three clauses met → full.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
         "rrf_score": 0.1357796665576986,
         "dense_rank": 4,
         "bm25_rank": 6,
-        "dense_score": 0.5167781,
+        "dense_score": 0.51642287,
         "bm25_score": 18.139315447588963,
         "rerank_score": 0.05479440465569496,
         "coverage_pass": false,
@@ -1062,21 +1026,16 @@
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L6",
-      "standard_code": "1.P.AC.1.b",
+      "standard_code": "1.L.V.3.e",
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Identify important, interesting, or effective uses of language in a text (I/C)",
+          "clause": "Use knowledge of word relationships when making word choices in speaking and writing",
           "met": false,
           "note": "not met"
         },
         {
-          "clause": "Apply understanding of word choices to interpret how they affect the target audience (I/C)",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Analyze and explain how specific word choices support the text's purpose (I/C)",
+          "clause": "Use learned vocabulary words and phrases when making word choices in speaking and writing",
           "met": false,
           "note": "not met"
         }
@@ -1087,55 +1046,14 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
-      "retrieval": {
-        "rrf_score": 0.13806547619047618,
-        "dense_rank": 6,
-        "bm25_rank": 9,
-        "dense_score": 0.53502613,
-        "bm25_score": 20.354821306902938,
-        "rerank_score": 0.04133202135562897,
-        "coverage_pass": false,
-        "coverage_family": ""
-      },
-      "standard_raw_text": "Identify, apply, and analyze important, interesting, or effective uses of language, explaining or evaluating how specific word choices affect the target audience and support the text’s purpose. (I/C)",
-      "needs_review": false,
-      "review_reason": "",
-      "input_scope_caveat": ""
-    },
-    {
-      "schema_version": "1.0-judge",
-      "resource_id": "G1M2U1L6",
-      "standard_code": "1.L.V.3.e",
-      "matched_status": "full",
-      "clauses": [
-        {
-          "clause": "Use knowledge of word relationships when making word choices in speaking and writing.",
-          "met": true,
-          "note": "Students use knowledge of word relationships (boy/sun, sleeping/gone, setting) when making word choices in partner discussion and writing."
-        },
-        {
-          "clause": "Use learned vocabulary words and phrases when making word choices in speaking and writing.",
-          "met": true,
-          "note": "Students use learned vocabulary (setting, overhead, tucked, sleepin') when writing and speaking about the story."
-        }
-      ],
-      "evidence": "Discuss with a partner what the boy and sun are doing using the frame: In the end, the boy is _____. The sun is _____.",
-      "evidence_page": 99,
-      "confidence": "high",
-      "rationale": "Work Time A Mini Language Dive has students 'Discuss with a partner what the boy and sun are doing using the frame: In the end, the boy is _____. The sun is _____.' Students use knowledge of word relationships (boy/sun, sleeping/gone) and learned vocabulary (setting, overhead, tucked) when making word choices in speaking. Work Time C has students write using this vocabulary. Both clauses met.",
-      "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1",
-      "judge_model": "claude-sonnet-4-5",
-      "escalated": false,
       "retrieval": {
         "rrf_score": 0.13758852258852258,
         "dense_rank": 6,
         "bm25_rank": 9,
-        "dense_score": 0.49865416,
+        "dense_score": 0.4983285,
         "bm25_score": 25.659254218266735,
         "rerank_score": 0.04128123074769974,
         "coverage_pass": false,
@@ -1149,39 +1067,85 @@
     {
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L6",
+      "standard_code": "1.P.AC.1.b",
+      "matched_status": "none",
+      "clauses": [
+        {
+          "clause": "Identify important, interesting, or effective uses of language in a text",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Apply understanding of word choices to interpret how they affect the target audience",
+          "met": false,
+          "note": "not met"
+        },
+        {
+          "clause": "Analyze and explain how specific word choices support the text's purpose",
+          "met": false,
+          "note": "not met"
+        }
+      ],
+      "evidence": "",
+      "evidence_page": null,
+      "confidence": "high",
+      "rationale": "alignment=none",
+      "grounded": true,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
+      "retrieval": {
+        "rrf_score": 0.13756796375266525,
+        "dense_rank": 6,
+        "bm25_rank": 9,
+        "dense_score": 0.53562415,
+        "bm25_score": 20.354821306902938,
+        "rerank_score": 0.04133202135562897,
+        "coverage_pass": false,
+        "coverage_family": ""
+      },
+      "standard_raw_text": "Identify, apply, and analyze important, interesting, or effective uses of language, explaining or evaluating how specific word choices affect the target audience and support the text’s purpose. (I/C)",
+      "needs_review": false,
+      "review_reason": "",
+      "input_scope_caveat": ""
+    },
+    {
+      "schema_version": "1.0-judge",
+      "resource_id": "G1M2U1L6",
       "standard_code": "1.P.CP.2.a",
       "matched_status": "full",
       "clauses": [
         {
           "clause": "Communicate ideas clearly when presenting.",
           "met": true,
-          "note": "Students communicate ideas clearly in partner discussions and Think-Pair-Share, presenting their understanding of the story's ending."
+          "note": "Students communicate ideas clearly when presenting to elbow partners during Think-Pair-Share and turn-and-talk."
         },
         {
           "clause": "Present information in an organized manner.",
           "met": true,
-          "note": "Students present information in an organized manner using sentence frames and responding to structured questions."
+          "note": "Students present information in an organized manner using the sentence frame."
         },
         {
           "clause": "Express ideas and information clearly through speech.",
           "met": true,
-          "note": "Students express ideas clearly through speech in partner and whole-group sharing."
+          "note": "Students express ideas and information clearly through speech during discussions."
         }
       ],
-      "evidence": "Discuss with a partner what the boy and sun are doing using the frame: In the end, the boy is _____. The sun is _____.",
-      "evidence_page": 99,
+      "evidence": "What happened at the end of the story?",
+      "evidence_page": 102,
       "confidence": "high",
-      "rationale": "Work Time A directs students to 'Discuss with a partner what the boy and sun are doing using the frame: In the end, the boy is _____. The sun is _____.' Students communicate ideas clearly in partner discussion. Closing A has students Think-Pair-Share about sunset experiences, then 'invite a few students to share with the whole group.' Students present information in an organized manner using frames and express ideas clearly through speech. All three clauses met (manner-modifier principle applies: the student presents aloud, so clarity is satisfied).",
+      "rationale": "Students communicate clearly to present ideas and information during Think-Pair-Share and turn-and-talk discussions (Work Time C: \"What happened at the end of the story?\" → the boy reads a book with his dad and goes to sleep; Closing A: \"What does the boy experience when the sun is setting?\"). Per the overlay manner-modifier rule for 1.P.CP.2.a, when students genuinely present aloud, both the manner (clearly) and the act (present ideas/information) are satisfied → full.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1",
+      "prompt_version": "align_judge.assembled.batch.v1.5",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
-        "rrf_score": 0.1374230575968846,
+        "rrf_score": 0.13663818670037398,
         "dense_rank": 1,
         "bm25_rank": 2,
-        "dense_score": 0.72298497,
+        "dense_score": 0.72213686,
         "bm25_score": 56.95235547972655,
         "rerank_score": 0.030569110065698624,
         "coverage_pass": true,
@@ -1192,44 +1156,5 @@
       "review_reason": "",
       "input_scope_caveat": ""
     }
-  ],
-  "usage": {
-    "calls": 11,
-    "input_tokens": 44991,
-    "output_tokens": 18083,
-    "cache_write_tokens": 0,
-    "cache_read_tokens": 212231,
-    "batch_calls": 0,
-    "batch_input_tokens": 0,
-    "batch_output_tokens": 0,
-    "estimated_cost_usd": 0.647081,
-    "by_model": {
-      "claude-sonnet-4-5": {
-        "calls": 1,
-        "input_tokens": 8232,
-        "output_tokens": 11572,
-        "cache_write_tokens": 0,
-        "cache_read_tokens": 19401,
-        "batch_calls": 0,
-        "batch_input_tokens": 0,
-        "batch_output_tokens": 0,
-        "batch_cache_write_tokens": 0,
-        "batch_cache_read_tokens": 0,
-        "estimated_cost_usd": 0.204096
-      },
-      "claude-opus-4-6": {
-        "calls": 10,
-        "input_tokens": 36759,
-        "output_tokens": 6511,
-        "cache_write_tokens": 0,
-        "cache_read_tokens": 192830,
-        "batch_calls": 0,
-        "batch_input_tokens": 0,
-        "batch_output_tokens": 0,
-        "batch_cache_write_tokens": 0,
-        "batch_cache_read_tokens": 0,
-        "estimated_cost_usd": 0.442985
-      }
-    }
-  }
+  ]
 }

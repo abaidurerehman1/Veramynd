@@ -8,6 +8,11 @@ import unicodedata
 
 _WS_RE = re.compile(r"\s+")
 _ELLIPSIS_RE = re.compile(r"(\.\.\.|…)")
+_SEMI_RE = re.compile(r"\s*;\s*")
+# P10: model-inserted editorial glosses, not lesson text.
+_EDITORIAL_BRACKET_RE = re.compile(r"\[[^\]]*\]")
+_UNCLOSED_BRACKET_RE = re.compile(r"\[[^\]]*$")
+_SPACE_BEFORE_PUNCT_RE = re.compile(r"\s+([.,;:!?])")
 _TRANS = str.maketrans(
     {
         "\u2018": "'",
@@ -22,6 +27,7 @@ _TRANS = str.maketrans(
 
 # Positive claims need a real quote of usable length.
 _MIN_EVIDENCE_CHARS = 24
+_MIN_SEGMENT_CHARS = 12
 _PAGE_HEADER_RE = re.compile(r"(?i)\(\s*page\s+(\d+)\s*\)")
 _STITCH_RE = re.compile(r"\s+/\s+")
 
@@ -31,21 +37,66 @@ def normalize_for_grounding(text: str) -> str:
     s = unicodedata.normalize("NFKC", text or "")
     s = s.translate(_TRANS)
     s = s.lower()
+    # Italics/markdown underscores and blank lines (________) → space.
+    s = s.replace("_", " ")
+    # Drop quote marks so 'frame' and "frame" match the same lesson span.
+    s = s.replace("'", " ").replace('"', " ")
     s = re.sub(r"(?m)^\s*-\s*", " ", s)
     s = _WS_RE.sub(" ", s).strip()
     return s
 
 
-def _segment_evidence(needle: str) -> list[str]:
-    """Split stitched quotes on ellipsis; drop empty pieces."""
-    parts = _ELLIPSIS_RE.split(needle)
+def _segment_ellipsis(chunk: str) -> list[str]:
+    """Split one chunk on ellipsis; drop empty/short pieces."""
+    parts = _ELLIPSIS_RE.split(chunk)
     out: list[str] = []
     for p in parts:
         if p in {"...", "…"}:
             continue
         p = _WS_RE.sub(" ", p).strip()
-        if len(p) >= 12:
+        if len(p) >= _MIN_SEGMENT_CHARS:
             out.append(p)
+    return out
+
+
+def _multi_quote_segments(needle: str) -> list[str]:
+    """Split stitched multi-quote evidence on ``;`` and ellipsis (P8).
+
+    Models often join non-contiguous verbatim spans with ``;`` or ``…``.
+    Each resulting segment must be grounded independently.
+    ``needle`` should already be normalize_for_grounding'd when used for
+    membership checks.
+    """
+    chunks = _SEMI_RE.split(needle) if ";" in needle else [needle]
+    out: list[str] = []
+    for chunk in chunks:
+        chunk = _WS_RE.sub(" ", (chunk or "").strip()).strip()
+        if not chunk:
+            continue
+        if "..." in chunk or "…" in chunk:
+            out.extend(_segment_ellipsis(chunk))
+        elif len(chunk) >= _MIN_SEGMENT_CHARS:
+            out.append(chunk)
+    return out
+
+
+def _raw_stitch_pieces(text: str) -> list[str]:
+    """Split raw evidence on ``;`` / ellipsis, preserving original wording."""
+    chunks = _SEMI_RE.split(text) if ";" in text else [text]
+    out: list[str] = []
+    for chunk in chunks:
+        chunk = (chunk or "").strip()
+        if not chunk:
+            continue
+        if "..." in chunk or "…" in chunk:
+            for part in _ELLIPSIS_RE.split(chunk):
+                if part in {"...", "…"}:
+                    continue
+                part = part.strip()
+                if len(normalize_for_grounding(part)) >= _MIN_SEGMENT_CHARS:
+                    out.append(part)
+        elif len(normalize_for_grounding(chunk)) >= _MIN_SEGMENT_CHARS:
+            out.append(chunk)
     return out
 
 
@@ -60,8 +111,9 @@ def is_grounded(
 
     Empty evidence is grounded only when ``allow_empty=True`` (use for
     ``matched_status=none``). Positive claims must pass with a real quote.
-    Stitched quotes using ``...`` must have **every** segment present (no
-    sliding-window half-match shortcuts).
+    Stitched quotes using ``;`` or ``...``/``…`` must have **every** segment
+    present (no sliding-window half-match shortcuts). A contiguous span that
+    itself contains ``;`` still passes via the whole-string check first.
     """
     ev = (evidence or "").strip()
     if not ev:
@@ -73,16 +125,93 @@ def is_grounded(
     if not needle or not hay:
         return False
 
-    if "..." in needle or "…" in needle:
-        segments = _segment_evidence(needle)
-        if len(segments) < 2:
-            return False
-        return all(seg in hay for seg in segments)
-
+    # Contiguous match (includes a single quote that happens to contain ';').
     if needle in hay:
         return True
-    # Tolerate only tiny whitespace drift already handled by normalize.
+
+    has_stitch = ";" in needle or "..." in needle or "…" in needle
+    if not has_stitch:
+        return False
+
+    segments = _multi_quote_segments(needle)
+    if len(segments) >= 2:
+        return all(seg in hay for seg in segments)
+    # Internal '...' inside one otherwise-real span (not a multi-quote stitch).
+    if len(segments) == 1:
+        return segments[0] in hay
     return False
+
+
+def scrub_editorial_brackets(text: str) -> str:
+    """P10: remove model ``[editorial notes]``; keep only candidate quote text."""
+    s = _EDITORIAL_BRACKET_RE.sub(" ", text or "")
+    s = _UNCLOSED_BRACKET_RE.sub(" ", s)
+    s = _WS_RE.sub(" ", s).strip()
+    s = _SPACE_BEFORE_PUNCT_RE.sub(r"\1", s)
+    return s.strip()
+
+
+def _longest_verbatim_window(
+    text: str,
+    lesson_raw_text: str,
+    *,
+    min_chars: int = _MIN_EVIDENCE_CHARS,
+) -> str | None:
+    """Longest contiguous word-span of ``text`` that appears in the lesson."""
+    words = (text or "").split()
+    if not words:
+        return None
+    hay = normalize_for_grounding(lesson_raw_text)
+    if not hay:
+        return None
+    best: str | None = None
+    best_len = 0
+    n = len(words)
+    for i in range(n):
+        for j in range(n, i, -1):
+            piece = " ".join(words[i:j])
+            if len(piece) < min_chars:
+                break
+            if len(piece) <= best_len:
+                break
+            if normalize_for_grounding(piece) in hay:
+                best = piece
+                best_len = len(piece)
+                break
+    return best
+
+
+def clean_evidence_quotes(*quotes: str, lesson_raw_text: str) -> list[str]:
+    """Expand quotes with P10 scrub + longest verbatim repair candidates."""
+    out: list[str] = []
+    seen: set[str] = set()
+
+    def _add(piece: str) -> None:
+        text = (piece or "").strip()
+        if not text:
+            return
+        key = normalize_for_grounding(text)
+        if not key or key in seen:
+            return
+        seen.add(key)
+        out.append(text)
+
+    for raw in quotes:
+        text = (raw or "").strip()
+        if not text:
+            continue
+        _add(text)
+        scrubbed = scrub_editorial_brackets(text)
+        if scrubbed:
+            _add(scrubbed)
+            window = _longest_verbatim_window(scrubbed, lesson_raw_text)
+            if window:
+                _add(window)
+        elif text:
+            window = _longest_verbatim_window(text, lesson_raw_text)
+            if window:
+                _add(window)
+    return out
 
 
 def _quote_candidates(*quotes: str) -> list[str]:
@@ -94,8 +223,14 @@ def _quote_candidates(*quotes: str) -> list[str]:
         if not text:
             continue
         pieces = [text]
+        scrubbed = scrub_editorial_brackets(text)
+        if scrubbed and scrubbed != text:
+            pieces.append(scrubbed)
         if _STITCH_RE.search(text):
             pieces.extend(p.strip() for p in _STITCH_RE.split(text) if p.strip())
+        for base in (text, scrubbed):
+            if base and (";" in base or "..." in base or "…" in base):
+                pieces.extend(_raw_stitch_pieces(base))
         for piece in pieces:
             key = normalize_for_grounding(piece)
             if not key or key in seen:
@@ -106,10 +241,23 @@ def _quote_candidates(*quotes: str) -> list[str]:
 
 
 def first_grounded_evidence(*quotes: str, lesson_raw_text: str) -> str | None:
-    """Return the first candidate quote that is present in lesson text."""
-    for piece in _quote_candidates(*quotes):
+    """Return the first candidate quote that is present in lesson text.
+
+    Applies P10 scrub/repair (strip ``[editorial notes]``, recover the longest
+    verbatim window) before the P8 multi-quote split check.
+    """
+    cleaned = clean_evidence_quotes(*quotes, lesson_raw_text=lesson_raw_text)
+    for piece in _quote_candidates(*cleaned):
         if is_grounded(piece, lesson_raw_text, allow_empty=False):
             return piece
+    # Last resort: longest grounded window over any original quote.
+    for raw in quotes:
+        window = _longest_verbatim_window(
+            scrub_editorial_brackets(raw) or (raw or ""),
+            lesson_raw_text,
+        )
+        if window and is_grounded(window, lesson_raw_text, allow_empty=False):
+            return window
     return None
 
 
@@ -123,8 +271,8 @@ def page_from_evidence(evidence: str, lesson_raw_text: str) -> int | None:
     needle = normalize_for_grounding(evidence)
     if not needle:
         return None
-    if "..." in needle or "…" in needle:
-        segments = _segment_evidence(needle)
+    if ";" in needle or "..." in needle or "…" in needle:
+        segments = _multi_quote_segments(needle)
         if not segments:
             return None
         needle = normalize_for_grounding(segments[0])
@@ -166,9 +314,11 @@ def grounding_note(evidence: str, *, grounded: bool, allow_empty: bool = False) 
 
 
 __all__ = [
+    "clean_evidence_quotes",
     "first_grounded_evidence",
     "grounding_note",
     "is_grounded",
     "normalize_for_grounding",
     "page_from_evidence",
+    "scrub_editorial_brackets",
 ]

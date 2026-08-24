@@ -1,0 +1,48 @@
+{
+  "gold_source": "output\\reports\\gold_set_batch1_from_md.jsonl",
+  "retrieve_dir": "output\\retrieve_gold4",
+  "candidate_count_before_rerank": null,
+  "candidate_count_after_rerank": 50,
+  "after_rerank": {
+    "n_positives": 20,
+    "missing_retrieve_files": 0,
+    "files_missing_field": 0,
+    "mrr": 0.1219,
+    "recall": {
+      "@10": {
+        "hits": 7,
+        "n": 20,
+        "rate": 0.35
+      },
+      "@15": {
+        "hits": 13,
+        "n": 20,
+        "rate": 0.65
+      },
+      "@20": {
+        "hits": 18,
+        "n": 20,
+        "rate": 0.9
+      },
+      "@30": {
+        "hits": 20,
+        "n": 20,
+        "rate": 1.0
+      },
+      "@40": {
+        "hits": 20,
+        "n": 20,
+        "rate": 1.0
+      },
+      "@50": {
+        "hits": 20,
+        "n": 20,
+        "rate": 1.0
+      }
+    }
+  },
+  "before_rerank_rrf": {
+    "available": false,
+    "reason": "no evaluable retrieve artifact with rrf_candidates (files missing, gold empty, or field absent) \u2014 before-rerank metrics cannot be computed"
+  }
+}
