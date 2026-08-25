@@ -878,7 +878,7 @@
       ],
       "evidence": "'What did you hear that helped you understand the important events from the beginning of the story?' (Moon is bored with night and asks Sun to trade places, but Sun tells him that first Moon must spend an entire night looking closely at the world.)",
       "evidence_page": 151,
-      "confidence": "high",
+      "confidence": "low",
       "rationale": "The standard requires students to refer to parts of texts when supporting an idea, answer, or opinion (an OR list — any one purpose suffices). Throughout Work Time A, the teacher asks questions that explicitly direct students to cite textual evidence: \"What did you hear that helped you understand the important events from the beginning of the story?\" and students respond by referencing specific text content — e.g., \"Moon is bored with night and asks Sun to trade places, but Sun tells him that first Moon must spend an entire night looking closely at the world.\" Students similarly cite illustrations and text events for the middle and end. The ELL Mini Language Dive also asks \"How did this sentence help you understand the central message of the story?\" prompting students to refer to a specific sentence to support their idea. The clause is met: students refer to parts of the text to support their answers.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
@@ -896,8 +896,8 @@
         "coverage_family": ""
       },
       "standard_raw_text": "Refer to parts of texts when supporting an idea, answer, or opinion. (I)",
-      "needs_review": false,
-      "review_reason": "",
+      "needs_review": true,
+      "review_reason": "cross-lesson inconsistency: 1.T.RA.2.a labels={'full': 1, 'partial': 1} peers=['G1M2U1L11', 'G1M2U1L13']",
       "input_scope_caveat": ""
     },
     {

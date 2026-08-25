@@ -611,7 +611,7 @@
       ],
       "evidence": "Invite students to turn and talk with an elbow partner: 'What is something you learned from an illustration to describe the pattern of light and dark on earth?' (I saw a picture of the earth spinning. Half of the earth faces the sun, and the other half faces away from the sun.)",
       "evidence_page": 237,
-      "confidence": "high",
+      "confidence": "low",
       "rationale": "Students use the text What Makes Day and Night to build knowledge about the pattern of light and dark on earth (Closing B, page 237). They discuss what they learned from illustrations and text: 'I saw a picture of the earth spinning. Half of the earth faces the sun, and the other half faces away from the sun.' The student performs the build-knowledge purpose → full. (Any one of the four purposes satisfies the OR-list clause.)",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
@@ -629,8 +629,8 @@
         "coverage_family": ""
       },
       "standard_raw_text": "Make use of texts to build knowledge, develop skills, make informed decisions, and share information and ideas. (I/C)",
-      "needs_review": false,
-      "review_reason": "",
+      "needs_review": true,
+      "review_reason": "cross-lesson inconsistency: 1.P.EICC.2.b labels={'none': 1, 'full': 1} peers=['G1M2U2L1', 'G1M2U2L3']",
       "input_scope_caveat": ""
     },
     {
