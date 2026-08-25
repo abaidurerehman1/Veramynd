@@ -277,7 +277,7 @@
       ],
       "evidence": "Remind students to use the Prepositions anchor chart, the Adjectives anchor chart, and the Sun, Moon, and Stars Word Wall as necessary.",
       "evidence_page": 316,
-      "confidence": "high",
+      "confidence": "low",
       "rationale": "The lesson directs students to write in their Sky notebooks using the Adjectives anchor chart, Prepositions anchor chart, and Word Wall, which constitutes student use of descriptive words in their own constructed text (clause 1 partially met). However, the Sky notebook entry is a brief observational recording task (\"record my observations of videos/images of the sky\"), not a task designed to have students craft an engaging text for an audience (clause 2 not met). The writing is functional note-taking and observation recording rather than composing a text intended to engage readers. Because one clause is partially met and the other is not met, the alignment is partial.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
@@ -295,8 +295,8 @@
         "coverage_family": ""
       },
       "standard_raw_text": "Use descriptive words to craft engaging texts. (C)",
-      "needs_review": false,
-      "review_reason": "",
+      "needs_review": true,
+      "review_reason": "cross-lesson inconsistency: 1.T.SS.2.b labels={'partial': 1, 'none': 1} peers=['G1M2U2L10', 'G1M2U2L9']",
       "input_scope_caveat": ""
     },
     {

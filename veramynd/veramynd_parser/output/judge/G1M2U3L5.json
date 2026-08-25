@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0-judge",
   "quality_profile": "enterprise_k12",
-  "prompt_version": "align_judge.assembled.batch.v1.4",
+  "prompt_version": "align_judge.assembled.batch.v1.1",
   "judge_mode": "batch",
   "resource_id": "G1M2U3L5",
   "lesson_source": "stage1:G1M2U3L5",
@@ -21,12 +21,12 @@
   "failed": [],
   "complete": true,
   "by_status": {
-    "full": 13,
-    "partial": 3,
-    "none": 13
+    "full": 9,
+    "partial": 9,
+    "none": 11
   },
   "grounding_rate": 1.0,
-  "grounding_positive_n": 16,
+  "grounding_positive_n": 18,
   "verdicts": [
     {
       "schema_version": "1.0-judge",
@@ -61,7 +61,7 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -117,7 +117,7 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -158,7 +158,7 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -199,7 +199,7 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -224,35 +224,35 @@
       "matched_status": "full",
       "clauses": [
         {
-          "clause": "Integrate ideas and information to construct an initial draft.",
+          "clause": "Construct an initial draft by integrating ideas and information",
           "met": true,
-          "note": "Students construct verse 3 independently by integrating their planned ideas into written sentences"
+          "note": "Students independently write verse 3 and the closing, integrating ideas from their planner and the model poem into a draft."
         },
         {
-          "clause": "Select words, phrases, and sentences to include in the draft.",
+          "clause": "Select words, phrases, and sentences to include in the draft",
           "met": true,
-          "note": "Students select words and phrases from their planner and anchor charts to compose verse 3"
+          "note": "Students plan and then independently write, selecting words/phrases (e.g., adjectives from anchor chart, ideas from partner discussion) for their verse."
         },
         {
-          "clause": "Incorporate craft techniques to enhance the draft's effectiveness.",
+          "clause": "Incorporate craft techniques to enhance the draft's effectiveness",
           "met": true,
-          "note": "Students incorporate craft techniques from the model poem and anchor charts into their verse 3 draft"
+          "note": "Students use the model poem and High-Quality Work anchor chart as craft references while writing their verse, incorporating craft techniques like adjectives and details."
         },
         {
-          "clause": "Ensure the draft achieves the purpose of the text and resonates with the target audience.",
+          "clause": "Ensure the draft achieves the purpose of the text and resonates with the target audience",
           "met": true,
-          "note": "Students write verse 3 with the purpose of creating a narrative poem following the model"
+          "note": "Students write a closing that serves the poem's purpose (telling the reader night is ending), demonstrating awareness of purpose and audience."
         }
       ],
       "evidence": "Tell students that now they will write their own version of verse 3 and the closing independently on the \"What the Moon Sees\" poem verse 3.",
       "evidence_page": 390,
       "confidence": "high",
-      "rationale": "Students construct an initial draft of verse 3 independently in Work Time B. The directive \"Tell students that now they will write their own version of verse 3 and the closing independently on the 'What the Moon Sees' poem verse 3\" shows students integrating their planned ideas into written sentences. Students select words, phrases, and sentences from their verse planner and anchor charts (Adjectives, Time of Night) as they compose. The feedback \"you were able to take your idea that the moon saw a howling wolf and turn it into a complete sentence\" confirms students incorporate craft techniques to turn planner ideas into complete sentences. The learning target \"I can write a narrative poem using a model and evidence\" establishes the purpose students work toward.",
+      "rationale": "Students independently construct an initial draft of verse 3 and the closing of \"What the Moon Sees\" (Work Time B, p.390): \"Tell students that now they will write their own version of verse 3 and the closing independently.\" They integrate ideas from their verse planner (completed with a partner in Work Time A) and select words/phrases using the Adjectives anchor chart and model poem. Craft techniques are incorporated via the High-Quality Work anchor chart, and purpose is addressed through the closing requirement to \"tell the reader that night is coming to an end.\" All clauses are met.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
-      "judge_model": "claude-sonnet-4-5",
-      "escalated": false,
+      "prompt_version": "align_judge.assembled.batch.v1.1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
       "retrieval": {
         "rrf_score": 0.21668470418470417,
         "dense_rank": 4,
@@ -277,21 +277,21 @@
         {
           "clause": "Use descriptive words.",
           "met": true,
-          "note": "Students use descriptive words from the Adjectives anchor chart to describe the moon in their verse 3"
+          "note": "Students use descriptive words (adjectives) from anchor chart while writing verse 3"
         },
         {
           "clause": "Craft texts that engage readers.",
           "met": true,
-          "note": "Students craft verse 3 of a narrative poem designed to engage readers"
+          "note": "Students craft verse 3 of a narrative poem designed to engage readers through descriptive language and imagery"
         }
       ],
-      "evidence": "Patrick, I heard you and Julia respectfully come to an agreement about how to describe the moon by using the Adjectives anchor chart.",
+      "evidence": "As students write, circulate and provide guidance by referring students to look at verses 1 and 2, the Time of Night anchor chart, the Adjectives anchor chart",
       "evidence_page": 390,
       "confidence": "high",
-      "rationale": "Students use descriptive words to craft engaging texts in Work Time A-B. The feedback \"Patrick, I heard you and Julia respectfully come to an agreement about how to describe the moon by using the Adjectives anchor chart\" (Work Time A, page 390) confirms students select and use descriptive words from the anchor chart. Students craft verse 3 of \"What the Moon Sees\" poem independently, creating engaging narrative text.",
+      "rationale": "Students use descriptive words to craft engaging texts when writing verse 3 of \"What the Moon Sees\" poem (Work Time A-B). They are explicitly directed to use the Adjectives anchor chart while writing (\"As students write, circulate and provide guidance by referring students to look at verses 1 and 2, the Time of Night anchor chart, the Adjectives anchor chart\"), and they independently compose verse 3 and a closing that incorporates descriptive language to create an engaging narrative poem.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -313,26 +313,26 @@
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U3L5",
       "standard_code": "1.P.AC.2.b",
-      "matched_status": "none",
+      "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Craft words and phrases to influence the audience's responses, thoughts, decisions, and questions.",
+          "clause": "Craft words and phrases to influence the audience's responses, thoughts, decisions, and questions",
           "met": false,
-          "note": "not met"
+          "note": "Students select adjectives and craft phrases for their poem verse using the Adjectives anchor chart, but the lesson does not explicitly have students consider how their word choices influence the audience's responses/thoughts."
         },
         {
-          "clause": "Achieve a specific purpose through word and phrase choices.",
+          "clause": "Achieve a specific purpose through word and phrase choices",
           "met": false,
-          "note": "not met"
+          "note": "Students write a closing with a specific purpose (signaling night's end), but the lesson does not explicitly have students reflect on how their word choices achieve that purpose — the purpose is teacher-stated, not student-analyzed."
         }
       ],
-      "evidence": "",
-      "evidence_page": null,
+      "evidence": "Dismiss students to their workspace and invite them to complete the planner.",
+      "evidence_page": 390,
       "confidence": "high",
-      "rationale": "alignment=none",
+      "rationale": "Students craft words and phrases for their poem verse using the Adjectives anchor chart and model poem (Work Time A-B), and write a closing to \"tell the reader that night is coming to an end.\" However, the lesson does not explicitly direct students to consider how their word/phrase choices influence the audience's responses or achieve a specific purpose — the crafting is present but the audience-influence and purpose-achievement dimensions are not explicitly student-practiced. Both clauses are partially met.",
       "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
@@ -359,26 +359,26 @@
         {
           "clause": "Use poetic techniques to create poems.",
           "met": true,
-          "note": "Students create verse 3 of a poem using a model that demonstrates poetic techniques"
+          "note": "Students create verse 3 of a poem using a model and poetic structure"
         },
         {
           "clause": "Use simple words and/or phrases in poems.",
           "met": true,
-          "note": "Students use simple descriptive words and phrases from anchor charts in their poem"
+          "note": "Students use simple words/phrases appropriate to grade 1 (e.g., 'the moon saw a howling wolf') in their verse 3"
         },
         {
           "clause": "Create poems that may or may not rhyme.",
           "met": true,
-          "note": "Students create verse 3 of the poem independently"
+          "note": "Students create verse 3 following the model poem structure, which may or may not rhyme"
         }
       ],
       "evidence": "Tell students that now they will write their own version of verse 3 and the closing independently on the \"What the Moon Sees\" poem verse 3.",
       "evidence_page": 390,
       "confidence": "high",
-      "rationale": "Students use poetic techniques to create poems in Work Time A-B. The directive \"Tell students that now they will write their own version of verse 3 and the closing independently on the 'What the Moon Sees' poem verse 3\" (Work Time B, page 390) shows students creating a poem using the model's poetic techniques. Students use simple words and phrases, as evidenced by the feedback \"Patrick, I heard you and Julia respectfully come to an agreement about how to describe the moon by using the Adjectives anchor chart\" (Work Time A, page 390). Students independently compose verse 3 of the narrative poem.",
+      "rationale": "Students use poetic techniques to create poems using simple words and phrases (Work Time A-B). They independently write verse 3 and a closing for \"What the Moon Sees\" narrative poem (\"Tell students that now they will write their own version of verse 3 and the closing independently\"), using a model and verse planner. Feedback confirms students used simple, grade-appropriate language (\"you were able to take your idea that the moon saw a howling wolf and turn it into a complete sentence\"). Students follow the poem's structure, which may or may not rhyme, as the standard allows.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -400,31 +400,21 @@
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U3L5",
       "standard_code": "1.L.GC.2.b",
-      "matched_status": "none",
+      "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Use a variety of simple sentences in writing.",
+          "clause": "Use a variety of simple sentences to develop clarity in written texts",
           "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Include different sentence types in writing.",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Develop clarity in written texts using these sentences.",
-          "met": false,
-          "note": "not met"
+          "note": "Students write verse 3 independently in complete sentences, but the lesson does not explicitly instruct or direct students to use a variety of sentence types — the writing is present but variety of sentence types is not targeted."
         }
       ],
-      "evidence": "",
-      "evidence_page": null,
+      "evidence": "Tell students that now they will write their own version of verse 3 and the closing independently on the \"What the Moon Sees\" poem verse 3.",
+      "evidence_page": 390,
       "confidence": "high",
-      "rationale": "alignment=none",
+      "rationale": "Students independently write verse 3 in complete sentences (Work Time B, p.390): the teacher feedback confirms students turn ideas \"into a complete sentence.\" However, the lesson does not explicitly direct students to use a variety of sentence types or focus on sentence variety for clarity — the writing act is present but the variety-of-types component is not targeted. Partially met.",
       "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
@@ -446,38 +436,28 @@
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U3L5",
       "standard_code": "1.P.EICC.1.d",
-      "matched_status": "full",
+      "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Build a repertoire of comprehension skills, strategies, and techniques.",
-          "met": true,
-          "note": "Students identify high-quality writing features in the model poem"
+          "clause": "Build a repertoire of comprehension skills, strategies, and techniques and draw from them to interpret texts",
+          "met": false,
+          "note": "Students interpret the model poem for high-quality writing features, but this is a thin interpret act — a single quality-check question rather than substantive comprehension strategy application."
         },
         {
-          "clause": "Build a repertoire of composition skills, strategies, and techniques.",
+          "clause": "Build a repertoire of composition skills, strategies, and techniques and draw from them to construct texts",
           "met": true,
-          "note": "Students apply composition skills by planning and writing verse 3 using a model"
-        },
-        {
-          "clause": "Draw from these skills and strategies as needed to interpret texts.",
-          "met": true,
-          "note": "Students draw from comprehension skills to interpret the model poem's quality"
-        },
-        {
-          "clause": "Draw from these skills and strategies as needed to construct texts.",
-          "met": true,
-          "note": "Students draw from composition strategies and anchor charts to construct verse 3"
+          "note": "Students draw from planning (verse planner), model analysis, adjective anchor chart, and peer feedback — multiple composition strategies — to construct their poem verse independently."
         }
       ],
       "evidence": "What is something you saw or heard in the poem that let you know the poem is high quality?",
       "evidence_page": 389,
       "confidence": "high",
-      "rationale": "Students build and draw from comprehension and composition skills throughout the lesson. In Opening A, students interpret the model poem for high-quality features: \"What is something you saw or heard in the poem that let you know the poem is high quality?\" In Work Time A-B, students apply composition skills by planning with a partner and writing verse 3 independently. The directive \"As students write, circulate and provide guidance by referring students to look at verses 1 and 2, the Time of Night anchor chart, the Adjectives anchor chart\" (Work Time A, page 390) shows students drawing from their repertoire of strategies to construct texts.",
+      "rationale": "Students draw from multiple composition skills and strategies (planning with a verse planner, using the Adjectives anchor chart, analyzing a model, peer feedback via Pinky Partners) to construct verse 3 independently (Work Time B, p.390). The interpret side is thin: students answer one quality-check question about the model poem (Opening A: \"What is something you saw or heard in the poem that let you know the poem is high quality?\") but do not engage in substantive comprehension strategy application. Per F15, the I/C compound needs both sides substantive for full; the thin interpret caps this at partial.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
-      "judge_model": "claude-sonnet-4-5",
-      "escalated": false,
+      "prompt_version": "align_judge.assembled.batch.v1.1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
       "retrieval": {
         "rrf_score": 0.20584332863845556,
         "dense_rank": 7,
@@ -531,7 +511,7 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -556,23 +536,18 @@
       "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Use grade-level vocabulary words and phrases to communicate (general, academic, or specialized — any one category suffices).",
+          "clause": "Use grade-level vocabulary words and phrases to communicate in a variety of settings",
           "met": false,
-          "note": "Students use adjectives from the Adjectives anchor chart in their verse planner and poem writing, deploying vocabulary in their writing — but this occurs in a single setting (written composition only), not a variety of settings."
-        },
-        {
-          "clause": "Communicate in a variety of settings (≥2 settings for full).",
-          "met": false,
-          "note": "Students discuss with partners (oral setting) and write their verse (written setting), but the vocabulary deployment itself — using adjectives from the anchor chart — is directed at the writing task; the oral discussion is about planning, not explicitly deploying grade-level vocabulary to communicate. Thin evidence for two distinct settings of vocabulary use."
+          "note": "Students use vocabulary (e.g., adjectives from the anchor chart, time-of-night words) in partner discussion and in writing their verse — two settings (speaking and writing). However, the lesson does not explicitly target vocabulary deployment; the vocabulary use is embedded in the composition task rather than being a deliberate vocabulary-use act. The two settings (partner talk + independent writing) meet the variety-of-settings threshold, but the thinness of the explicit vocabulary-deployment focus makes this partially met."
         }
       ],
-      "evidence": "What do you want to write in verse 3? Why?",
+      "evidence": "Invite students to turn and talk with their partner: \"What do you want to write in verse 3? Why?\"",
       "evidence_page": 389,
       "confidence": "high",
-      "rationale": "Students use adjectives from the Adjectives anchor chart when writing their verse 3 poem (\"referring students to look at … the Adjectives anchor chart\"), deploying vocabulary in written composition. However, the explicit vocabulary deployment is concentrated in the writing setting; the oral partner discussions focus on planning content rather than deliberately using grade-level vocabulary to communicate across a variety of settings. The 'variety of settings' clause is only thinly met.",
+      "rationale": "Students use grade-level vocabulary (adjectives from the Adjectives anchor chart, time-of-night terms) in partner discussion (\"What do you want to write in verse 3? Why?\") and in independent writing of verse 3. This covers two settings (speaking and writing). However, the lesson does not explicitly direct students to deploy specific vocabulary words to communicate — the vocabulary use is embedded in the composition task rather than being a targeted vocabulary-deployment act. Partially met.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
@@ -613,7 +588,7 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -659,7 +634,7 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -684,12 +659,7 @@
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Use transition words or phrases to sequence events.",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Use transition words or phrases to sequence actions.",
+          "clause": "Use transition words or phrases to sequence events and actions in writing",
           "met": false,
           "note": "not met"
         }
@@ -700,9 +670,9 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
-      "judge_model": "claude-sonnet-4-5",
-      "escalated": false,
+      "prompt_version": "align_judge.assembled.batch.v1.1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
       "retrieval": {
         "rrf_score": 0.1939659434415346,
         "dense_rank": 16,
@@ -722,28 +692,28 @@
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U3L5",
       "standard_code": "1.P.EICC.2.d",
-      "matched_status": "full",
+      "matched_status": "none",
       "clauses": [
         {
-          "clause": "Interpret texts to analyze ideas.",
-          "met": true,
-          "note": "Students interpret the model poem to analyze high-quality writing features"
+          "clause": "Interpret texts to aid the analysis and evaluation of texts and ideas",
+          "met": false,
+          "note": "not met"
         },
         {
-          "clause": "Construct texts to evaluate ideas.",
-          "met": true,
-          "note": "Students evaluate peers' verse 3 writing using the High-Quality Work anchor chart criteria"
+          "clause": "Construct texts to aid the analysis and evaluation of texts and ideas",
+          "met": false,
+          "note": "not met"
         }
       ],
-      "evidence": "What is something you saw or heard in the poem that let you know the poem is high quality?",
-      "evidence_page": 389,
+      "evidence": "",
+      "evidence_page": null,
       "confidence": "high",
-      "rationale": "Students interpret and construct texts to analyze and evaluate in Opening A and Work Time C. In Opening A, students analyze the model poem for high-quality features: \"What is something you saw or heard in the poem that let you know the poem is high quality?\" (page 389). In Work Time C, students evaluate peers' verse 3 writing using the Pinky Partners protocol and the High-Quality Work anchor chart: \"Tell students they are going to use the Pinky Partners protocol to provide feedback on their partners' writing\" (page 391). Students provide kind, helpful, and specific feedback on each other's writing, evaluating whether it meets high-quality criteria.",
+      "rationale": "alignment=none",
       "grounded": true,
-      "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
-      "judge_model": "claude-sonnet-4-5",
-      "escalated": false,
+      "grounding_note": "no evidence required for none",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
       "retrieval": {
         "rrf_score": 0.19364319890635678,
         "dense_rank": 9,
@@ -763,26 +733,26 @@
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U3L5",
       "standard_code": "1.L.V.3.e",
-      "matched_status": "none",
+      "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Use knowledge of word relationships when making word choices in speaking and writing.",
+          "clause": "Use knowledge of word relationships when making word choices in speaking and writing",
           "met": false,
           "note": "not met"
         },
         {
-          "clause": "Use learned vocabulary words and phrases when making word choices in speaking and writing.",
+          "clause": "Use learned vocabulary words and phrases when making word choices in speaking and writing",
           "met": false,
-          "note": "Students are directed to use the Adjectives anchor chart when making word choices for their poem verse, which constitutes using learned vocabulary when writing. However, there is no evidence of using knowledge of word relationships (synonyms, antonyms, categories) to inform those choices."
+          "note": "Students are directed to use the Adjectives anchor chart when making word choices for their verse planner and poem, which involves using learned vocabulary. However, the lesson does not explicitly have students draw on word relationships (synonyms, antonyms, categories) — only the learned-vocabulary component is present."
         }
       ],
-      "evidence": "complete the planner",
+      "evidence": "Dismiss students to their workspace and invite them to complete the planner.",
       "evidence_page": 390,
-      "confidence": "low",
-      "rationale": "Students are directed to use the Adjectives anchor chart when planning and writing verse 3, which involves making word choices using learned vocabulary in writing. However, there is no evidence that students draw on knowledge of word relationships (e.g., synonyms, antonyms, word categories) when making those choices. The word-relationships clause is not met. [REJECTED: evidence missing or not found in lesson raw text]",
-      "grounded": false,
-      "grounding_note": "evidence quote NOT found in lesson raw text (possible fabrication)",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "confidence": "high",
+      "rationale": "Students use the Adjectives anchor chart when making word choices for their verse planner and poem (Work Time A, p.390): teacher guidance refers students to \"the Adjectives anchor chart\" while writing. This shows students using learned vocabulary words when making word choices in writing. However, the lesson does not explicitly direct students to draw on knowledge of word relationships (synonyms, antonyms, categories). The learned-vocabulary clause is partially met (embedded in composition, not explicitly targeted as a vocabulary act); the word-relationships clause is not met. Overall partial.",
+      "grounded": true,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
@@ -796,8 +766,8 @@
         "coverage_family": ""
       },
       "standard_raw_text": "Use knowledge of word relationships and learned vocabulary words and phrases when making word choices in speaking and writing. (C)",
-      "needs_review": true,
-      "review_reason": "confidence=low; grounding rejection",
+      "needs_review": false,
+      "review_reason": "",
       "input_scope_caveat": ""
     },
     {
@@ -809,26 +779,26 @@
         {
           "clause": "Perform basic transcription skills to write letters.",
           "met": true,
-          "note": "Students write letters when completing the verse planner and composing verse 3"
+          "note": "Students write letters when completing verse planner and writing verse 3"
         },
         {
           "clause": "Perform basic transcription skills to write words.",
           "met": true,
-          "note": "Students write words when completing the planner and verse 3"
+          "note": "Students write words when independently composing verse 3 and closing"
         },
         {
           "clause": "Perform basic transcription skills to write sentences.",
           "met": true,
-          "note": "Students write complete sentences when composing verse 3"
+          "note": "Students write complete sentences when drafting verse 3"
         }
       ],
-      "evidence": "Tell students that at their workspace they will find the \"What the Moon Sees\" verse planners from Lesson 4 and pencils.",
+      "evidence": "Tell students that at their workspace they will find the \"What the Moon Sees\" verse planners from Lesson 4 and pencils. Dismiss students to their workspace and invite them to complete the planner.",
       "evidence_page": 390,
       "confidence": "high",
-      "rationale": "Students perform basic transcription skills throughout Work Time A-B. Students write on the verse planner and compose verse 3 independently: \"Tell students that at their workspace they will find the 'What the Moon Sees' verse planners from Lesson 4 and pencils\" (Work Time A, page 390). The feedback \"Ryan, you were able to take your idea that the moon saw a howling wolf and turn it into a complete sentence\" (Work Time C, page 391) confirms students transcribe letters, words, and sentences when writing verse 3.",
+      "rationale": "Students perform basic transcription skills to write letters, words, and sentences throughout Work Time A-B. They complete the verse planner with pencils (\"Tell students that at their workspace they will find the 'What the Moon Sees' verse planners from Lesson 4 and pencils. Dismiss students to their workspace and invite them to complete the planner\"), then independently write verse 3 and a closing (\"Tell students that now they will write their own version of verse 3 and the closing independently\"). Feedback confirms students wrote complete sentences (\"Give students specific, positive feedback on their ability to turn their ideas from the verse planner into complete sentences\").",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -850,28 +820,28 @@
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U3L5",
       "standard_code": "1.P.AC.3.a",
-      "matched_status": "full",
+      "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Explore texts in various modes and genres to understand how specific features impact meaning, tone, style, purpose, and audience.",
-          "met": true,
-          "note": "Students explore the model poem to understand how high-quality features impact the text"
+          "clause": "Explore texts in various modes and genres to understand how specific features impact meaning, tone, style, purpose, and audience",
+          "met": false,
+          "note": "Students explore the model poem for high-quality features, but the exploration is thin — one question about quality, not a substantive analysis of how features impact meaning/tone/style/purpose/audience."
         },
         {
-          "clause": "Create texts in various modes and genres applying knowledge of how features affect meaning, tone, style, purpose, and audience.",
+          "clause": "Create texts in various modes and genres applying knowledge of how features affect meaning, tone, style, purpose, and audience",
           "met": true,
-          "note": "Students create verse 3 applying knowledge of poetic features from the model"
+          "note": "Students create a poem (a specific genre) applying knowledge of features (adjectives, details, closing for purpose) that affect meaning and audience."
         }
       ],
       "evidence": "What is something you saw or heard in the poem that let you know the poem is high quality?",
       "evidence_page": 389,
       "confidence": "high",
-      "rationale": "Students explore and create texts applying knowledge of features in Opening A and Work Time A-B. In Opening A, students explore the model poem for high-quality features: \"What is something you saw or heard in the poem that let you know the poem is high quality?\" (page 389). Students analyze how specific features make the poem high quality. In Work Time A-B, students create verse 3 applying this knowledge: \"Tell students that now they will write their own version of verse 3 and the closing independently\" (Work Time B, page 390). Students use the model's features to craft their own narrative poem verse.",
+      "rationale": "Students create a poem verse independently (Work Time B, p.390), applying knowledge of craft features (adjectives, details, closing) in the poetry genre. The explore/interpret side is thin: students answer one question about high-quality features in the model poem (Opening A: \"What is something you saw or heard in the poem that let you know the poem is high quality?\") but do not substantively analyze how features impact meaning, tone, style, purpose, or audience. The create clause is met; the explore clause is only partially met due to thinness. Overall partial.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
-      "judge_model": "claude-sonnet-4-5",
-      "escalated": false,
+      "prompt_version": "align_judge.assembled.batch.v1.1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
       "retrieval": {
         "rrf_score": 0.19300082101806237,
         "dense_rank": 5,
@@ -896,21 +866,21 @@
         {
           "clause": "Acquire general, academic, and specialized vocabulary words and phrases through grade-level texts and content.",
           "met": true,
-          "note": "Students acquire vocabulary from the model poem text and content anchor charts"
+          "note": "Students acquire vocabulary from grade-level poem model (verses 1-2) and anchor charts during the writing lesson"
         },
         {
           "clause": "Apply general, academic, and specialized vocabulary words and phrases in appropriate contexts.",
           "met": true,
-          "note": "Students apply vocabulary from anchor charts in their verse 3 writing"
+          "note": "Students apply acquired vocabulary (e.g., 'howling wolf,' adjectives) when writing verse 3"
         }
       ],
       "evidence": "As students write, circulate and provide guidance by referring students to look at verses 1 and 2, the Time of Night anchor chart, the Adjectives anchor chart",
       "evidence_page": 390,
       "confidence": "high",
-      "rationale": "Students acquire and apply vocabulary through grade-level texts in Work Time A-B. Students acquire vocabulary from the model poem verses 1-2 and from content anchor charts (Adjectives, Time of Night): \"As students write, circulate and provide guidance by referring students to look at verses 1 and 2, the Time of Night anchor chart, the Adjectives anchor chart\" (Work Time A, page 390). Students apply this vocabulary in their verse 3 writing, as evidenced by the feedback \"Patrick, I heard you and Julia respectfully come to an agreement about how to describe the moon by using the Adjectives anchor chart\" (Work Time A, page 390).",
+      "rationale": "Students acquire and apply general, academic, and specialized vocabulary through the grade-level \"What the Moon Sees\" poem model and anchor charts (Work Time A-B). They are directed to look at verses 1 and 2, the Time of Night anchor chart, and the Adjectives anchor chart while writing (\"As students write, circulate and provide guidance by referring students to look at verses 1 and 2, the Time of Night anchor chart, the Adjectives anchor chart\"). Feedback confirms students applied acquired vocabulary in their writing (\"you were able to take your idea that the moon saw a howling wolf and turn it into a complete sentence\"). Per F10/1.L.V.1.a, acquire AND apply are both required for full, and both are evidenced here.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -932,26 +902,26 @@
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U3L5",
       "standard_code": "1.P.EICC.2.a",
-      "matched_status": "full",
+      "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Share real or imagined experiences by constructing texts that tell or include stories.",
+          "clause": "Share real or imagined experiences by constructing texts that tell or include stories",
           "met": true,
-          "note": "Students independently write verse 3 of a narrative poem about what the moon sees — an imagined experience told through a story-poem, constructing a text that includes a narrative."
+          "note": "Students construct a narrative poem verse sharing an imagined experience (what the moon sees at night), which tells/includes a story."
         },
         {
-          "clause": "Share real or imagined experiences by interpreting texts that tell or include stories.",
-          "met": true,
-          "note": "Students interpret the model poem 'What the Moon Sees' (a narrative poem about imagined experiences) by identifying high-quality writing elements in it."
+          "clause": "Share real or imagined experiences by interpreting texts that tell or include stories",
+          "met": false,
+          "note": "Students interpret the model poem (a narrative poem about what the moon sees) but the interpretation is thin — one quality-check question rather than substantive story interpretation."
         }
       ],
-      "evidence": "now they will write their own version of verse 3 and the closing independently on the \"What the Moon Sees\" poem verse 3.",
+      "evidence": "Tell students that now they will write their own version of verse 3 and the closing independently on the \"What the Moon Sees\" poem verse 3.",
       "evidence_page": 390,
       "confidence": "high",
-      "rationale": "Students both interpret and construct texts involving imagined experiences. In Opening A, students interpret the narrative poem 'What the Moon Sees' by identifying high-quality elements: \"What is something you saw or heard in the poem that let you know the poem is high quality?\" In Work Time B, students independently write their own verse 3 of the poem: \"now they will write their own version of verse 3 and the closing independently.\" Both the interpretation and construction clauses are met with student performance.",
+      "rationale": "Students construct a narrative poem verse independently (Work Time B, p.390), sharing an imagined experience of what the moon sees — the construct clause is met. The interpret side is thin: students answer one quality-check question about the model poem (Opening A: \"What is something you saw or heard in the poem that let you know the poem is high quality?\") but do not substantively interpret the story/experience in the poem. Per F15, the I/C compound needs both sides substantive for full; thin interpret caps at partial.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
@@ -997,9 +967,9 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
-      "judge_model": "claude-opus-4-6",
-      "escalated": true,
+      "prompt_version": "align_judge.assembled.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
       "retrieval": {
         "rrf_score": 0.17650919884629385,
         "dense_rank": 16,
@@ -1022,33 +992,33 @@
       "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Draw from knowledge of how authors consider context and audience to determine which information and ideas to highlight.",
+          "clause": "Draw from knowledge of how authors consider context and audience to determine which information and ideas to highlight",
+          "met": false,
+          "note": "Students decide what to include in verse 3 (selecting information/ideas to highlight), and the closing is framed around what the reader needs to know. However, the lesson does not explicitly have students consider context and audience as the basis for these decisions — the teacher states the audience consideration."
+        },
+        {
+          "clause": "Determine which text design is most accessible for the intended audience",
           "met": false,
           "note": "not met"
         },
         {
-          "clause": "Determine which text design is most accessible for the intended audience.",
+          "clause": "Decide which word choices and language structures are most effective for the audience and purpose",
           "met": false,
-          "note": "not met"
+          "note": "Students select adjectives and words for their poem using anchor charts, making word choices, but the effectiveness-for-audience reasoning is not explicitly student-performed."
         },
         {
-          "clause": "Decide which word choices and language structures are most effective for the audience and purpose.",
+          "clause": "Identify which craft techniques are most impactful in the text",
           "met": false,
-          "note": "Students identify effective craft elements in the model poem, which touches on recognizing effective word choices, but the activity does not explicitly frame this as considering audience/context — it is about quality, not audience-driven decisions."
-        },
-        {
-          "clause": "Identify which craft techniques are most impactful in the text.",
-          "met": false,
-          "note": "Students identify high-quality craft elements in the model poem, but the framing is about quality generally, not explicitly about how authors consider context/audience to select impactful techniques."
+          "note": "Students identify high-quality features in the model poem, which touches on impactful craft techniques, but the identification is thin (one question) and not explicitly framed as 'most impactful.'"
         }
       ],
-      "evidence": "What is something you saw or heard in the poem that let you know the poem is high quality?",
+      "evidence": "What do you want to write in verse 3? Why?",
       "evidence_page": 389,
       "confidence": "high",
-      "rationale": "Students identify high-quality writing elements in the model poem: \"What is something you saw or heard in the poem that let you know the poem is high quality?\" This touches on recognizing effective craft techniques and word choices. However, the activity does not explicitly frame these observations as drawing from knowledge of how authors consider context and audience — the framing is about quality generally. The clauses about determining accessible text design and highlighting information for an audience are not addressed. Partial alignment based on thin craft-technique identification without the audience/context framing the standard requires.",
+      "rationale": "Students make content and word-choice decisions for verse 3 (Work Time A: \"What do you want to write in verse 3? Why?\") and identify high-quality features in the model poem (Opening A). However, the lesson does not explicitly have students reason about context and audience as the basis for these decisions — the audience consideration is teacher-stated. Text design is not addressed. Three of four clauses are partially met; one is not met. Overall partial.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
@@ -1073,12 +1043,12 @@
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Consume multimodal texts that integrate various genres, text features, and craft techniques.",
+          "clause": "Consume multimodal texts that integrate various genres, text features, and craft techniques",
           "met": false,
           "note": "not met"
         },
         {
-          "clause": "Produce multimodal texts that combine genres, text features, and craft techniques to influence target audiences and achieve specific purposes.",
+          "clause": "Produce multimodal texts that combine genres, text features, and craft techniques to influence target audiences and achieve specific purposes",
           "met": false,
           "note": "not met"
         }
@@ -1089,7 +1059,7 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
@@ -1114,18 +1084,18 @@
       "matched_status": "full",
       "clauses": [
         {
-          "clause": "Create texts in teacher-selected modes (e.g., print, digital, auditory, and/or visual).",
+          "clause": "Create texts in teacher-selected modes (e.g., print, digital, auditory, and/or visual)",
           "met": true,
-          "note": "Students create a text (poem verse 3 and closing) in print mode, which is a teacher-selected mode — the teacher directs them to write at their workspaces with pencils. The parenthetical list is illustrative (F5); creating in any one mode suffices."
+          "note": "Students create a text (poem verse 3 and closing) in print mode, which is a teacher-selected mode — the teacher directs them to write at their workspaces with pencils."
         }
       ],
-      "evidence": "now they will write their own version of verse 3 and the closing independently on the \"What the Moon Sees\" poem verse 3.",
+      "evidence": "Tell students that now they will write their own version of verse 3 and the closing independently on the \"What the Moon Sees\" poem verse 3.",
       "evidence_page": 390,
       "confidence": "high",
-      "rationale": "Students create a text in print mode (teacher-selected) when they independently write verse 3 and the closing of their poem: \"now they will write their own version of verse 3 and the closing independently.\" The parenthetical examples (print, digital, auditory, visual) are illustrative per F5; creating in any one teacher-selected mode satisfies the standard.",
+      "rationale": "Students create a text (poem verse 3 and closing) in print mode at their workspaces (Work Time B, p.390): \"Tell students that now they will write their own version of verse 3 and the closing independently.\" The mode (print/handwriting) is teacher-selected. The parenthetical examples (print, digital, auditory, visual) are illustrative per F5; meeting one mode suffices. Full.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
@@ -1150,28 +1120,23 @@
       "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Evaluate the text's effectiveness based on self-review.",
+          "clause": "Evaluate the text's effectiveness based on self-review or feedback from others",
+          "met": false,
+          "note": "Students give and receive peer feedback via Pinky Partners on their verse 3, evaluating each other's writing against the High-Quality Work anchor chart (details and conventions). However, the feedback focuses on details/conventions rather than a clear student determination of whether the text matches its purpose/goals."
+        },
+        {
+          "clause": "Determine whether the text matches the purpose and goals for writing",
           "met": false,
           "note": "not met"
-        },
-        {
-          "clause": "Evaluate the text's effectiveness based on feedback from others.",
-          "met": true,
-          "note": "Students receive peer feedback on their verse 3 through the Pinky Partners protocol, using the High-Quality Work anchor chart criteria. The student receives feedback from a peer and uses it to evaluate their text's effectiveness."
-        },
-        {
-          "clause": "Determine whether the text matches the purpose and goals for writing.",
-          "met": true,
-          "note": "Students evaluate each other's writing against the High-Quality Work anchor chart criteria (details, conventions), which represent the purpose and goals for writing the poem."
         }
       ],
       "evidence": "Guide students through the protocol using their \"What the Moon Sees\" poem verse 3.",
       "evidence_page": 392,
-      "confidence": "high",
-      "rationale": "Students evaluate their text's effectiveness based on feedback from others through the Pinky Partners peer critique protocol: \"Guide students through the protocol using their 'What the Moon Sees' poem verse 3.\" Students give and receive feedback using the High-Quality Work anchor chart criteria (details, conventions), which serves as the purpose/goals check. However, there is no explicit self-review step where students independently evaluate their own writing before or after peer feedback. The self-review clause is not met, resulting in partial alignment.",
+      "confidence": "low",
+      "rationale": "⚑ REVIEW: partial-or-full — Students give and receive peer feedback via Pinky Partners protocol on their verse 3 (Work Time C, p.391-392): \"Guide students through the protocol using their 'What the Moon Sees' poem verse 3.\" The feedback focuses on \"details and following conventions\" per the High-Quality Work anchor chart. However, there is no explicit student act determining whether the text matches its purpose and goals for writing — the peer critique checks craft/conventions, not purpose-match. Per F15, a brief peer-protocol pass on details/conventions without a clear student determination that the text matches its purpose/goals → partial.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
@@ -1185,8 +1150,8 @@
         "coverage_family": "feedback"
       },
       "standard_raw_text": "Evaluate the text’s effectiveness based on self-review or feedback from others, determining whether the text matches the purpose and goals for writing. (C)",
-      "needs_review": false,
-      "review_reason": "",
+      "needs_review": true,
+      "review_reason": "partial-or-full — peer feedback via Pinky Partners focuses on details/conventions per High-Quality Work anchor chart; unclear whether students explicitly determine if the text matches its purpose/goals; confidence=low",
       "input_scope_caveat": ""
     },
     {
@@ -1198,26 +1163,26 @@
         {
           "clause": "Contribute ideas to discussions and shared projects.",
           "met": true,
-          "note": "Students contribute ideas in partner discussions about verse 3 content"
+          "note": "Students contribute ideas during elbow-partner discussions about high-quality writing features"
         },
         {
           "clause": "Listen to the ideas of others during discussions and projects.",
           "met": true,
-          "note": "Students listen to partners' ideas during planning discussions"
+          "note": "Students listen to partners' ideas during turn-and-talk and peer feedback, with teacher reminders to listen intently"
         },
         {
           "clause": "Provide feedback to others in discussions and shared projects.",
           "met": true,
-          "note": "Students provide kind, helpful, and specific feedback to peers on verse 3 writing"
+          "note": "Students provide kind, helpful, and specific feedback to peers during Pinky Partners protocol"
         }
       ],
-      "evidence": "Invite students to turn and talk with an elbow partner: \"What",
+      "evidence": "Invite students to turn and talk with an elbow partner: \"What is something you saw or heard in the poem that let you know the poem is high quality?\"",
       "evidence_page": 389,
       "confidence": "high",
-      "rationale": "Students contribute ideas, listen, and provide feedback throughout the lesson. In Work Time A, students contribute ideas in partner discussions: \"Invite students to turn and talk with an elbow partner: 'What do you want to write in verse 3? Why?'\" (page 389). Students listen to partners' ideas: \"As needed, remind them to show respect for one another's ideas by listening intently and taking turns to speak\" (Work Time A, page 389). In Work Time C, students provide feedback using the Pinky Partners protocol: \"Circulate and listen in as students receive and give feedback on each other's writing\" (page 392). The feedback \"Lia, I heard you give very kind, helpful, and specific feedback to Jin when you said that you think he should include another adjective to describe the moon\" confirms students provide feedback.",
+      "rationale": "Students contribute ideas, listen to others, and provide feedback throughout the lesson. They contribute ideas during elbow-partner discussions about high-quality writing (Opening A: \"Invite students to turn and talk with an elbow partner: 'What is something you saw or heard in the poem that let you know the poem is high quality?'\") and about verse 3 planning (Work Time A). They listen to partners' ideas with teacher reminders to listen intently and take turns (Work Time A: \"As needed, remind them to show respect for one another's ideas by listening intently and taking turns to speak\"). They provide feedback during the Pinky Partners peer critique protocol (Work Time C: \"Guide students through the protocol using their 'What the Moon Sees' poem verse 3. Circulate and listen in as students receive and give feedback on each other's writing\").",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -1244,26 +1209,26 @@
         {
           "clause": "Communicate ideas clearly when presenting.",
           "met": true,
-          "note": "Students communicate ideas clearly when sharing observations to the whole group"
+          "note": "Students communicate ideas clearly when sharing out to the whole group about high-quality writing features"
         },
         {
           "clause": "Present information in an organized manner.",
           "met": true,
-          "note": "Students present feedback in an organized manner using sentence starters"
+          "note": "Students present feedback in an organized manner using sentence starters during Pinky Partners protocol"
         },
         {
           "clause": "Express ideas and information clearly through speech.",
           "met": true,
-          "note": "Students express ideas clearly through speech when giving peer feedback"
+          "note": "Students express ideas clearly through speech during elbow-partner discussions and peer feedback"
         }
       ],
       "evidence": "Select two to three students to share out the aspects of high-quality work they noticed.",
       "evidence_page": 389,
       "confidence": "high",
-      "rationale": "Students communicate clearly to present ideas throughout the lesson. In Opening A, students share observations to the whole group: \"Select two to three students to share out the aspects of high-quality work they noticed\" (page 389). In Work Time C, students present feedback using sentence starters: \"As needed, remind them to be kind, specific, and helpful and to use the sentence starters\" (page 392). The feedback \"Lia, I heard you give very kind, helpful, and specific feedback to Jin when you said that you think he should include another adjective to describe the moon\" (Work Time C, page 392) confirms students express ideas clearly through speech when presenting feedback to peers.",
+      "rationale": "Students communicate clearly to present ideas, information, and texts throughout the lesson. They share out to the whole group about high-quality writing features (Opening A: \"Select two to three students to share out the aspects of high-quality work they noticed\"), express ideas during elbow-partner discussions (\"Invite students to turn and talk with an elbow partner: 'What is something you saw or heard in the poem that let you know the poem is high quality?'\"), and present feedback using sentence starters during the Pinky Partners protocol (Work Time C: \"Circulate and listen in as students receive and give feedback on each other's writing. As needed, remind them to be kind, specific, and helpful and to use the sentence starters\"). Per the manner-modifier fence (1.P.CP.2.a), when students genuinely present aloud, both the manner (clearly) and the act (present ideas/information) are satisfied → full.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -1288,18 +1253,18 @@
       "matched_status": "full",
       "clauses": [
         {
-          "clause": "Work with others to discuss topics, investigate questions, solve problems, and/or explore and create texts (OR-list — any one collaborative act suffices).",
+          "clause": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts (any one collaborative act suffices per F9)",
           "met": true,
-          "note": "Students work with a partner to discuss what they want to write in verse 3, which is a genuine collaborative act — discussing a topic and exploring/creating a text with a peer. Per F9, any one student-performed collaborative act satisfies this OR-list."
+          "note": "Students work with a partner to discuss what to write in verse 3 — a genuine collaborative act (discuss topics / explore and create texts). Per F9, any one student-performed collaborative act satisfies the clause."
         }
       ],
-      "evidence": "Invite students to turn and talk with an elbow partner: \"What",
+      "evidence": "Invite students to turn and talk with their partner: \"What do you want to write in verse 3? Why?\"",
       "evidence_page": 389,
       "confidence": "high",
-      "rationale": "Students collaborate with partners in multiple instances. In Work Time A, students turn and talk with an elbow partner: \"What do you want to write in verse 3? Why?\" and then work in pre-determined pairs to plan verse 3 using the verse planner. Per F9, any one genuine student-performed collaborative act (here, discussing a topic / exploring and creating a text with a partner) satisfies this OR-list standard → full.",
+      "rationale": "Students work with partners in multiple collaborative acts: turn-and-talk to discuss verse 3 content (Work Time A, p.390: \"Invite students to turn and talk with their partner: 'What do you want to write in verse 3? Why?'\") and Pinky Partners peer feedback on each other's writing (Work Time C, p.391-392). Per F9, any one genuine student-performed collaborative act satisfies the clause → full.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
