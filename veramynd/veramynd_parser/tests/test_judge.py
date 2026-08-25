@@ -173,6 +173,35 @@ def test_p10_still_rejects_pure_paraphrase():
     assert first_grounded_evidence(dirty, lesson_raw_text=lesson) is None
 
 
+def test_short_exact_frame_expands_to_grounded_window():
+    """Sentence frames / short TDQs under the 24-char floor still ground."""
+    from veramynd_parser.judge.grounding import (
+        expand_short_exact_hit,
+        first_grounded_evidence,
+    )
+
+    lesson = (
+        "Direct students' attention to the last box. As you point to the box, "
+        'read the sentence frame. ("At the end …") Invite students to complete '
+        "the response sheet by writing and drawing about the ending events."
+    )
+    short = '("At the end …")'
+    expanded = expand_short_exact_hit(short, lesson)
+    assert expanded is not None
+    assert len(expanded) >= 24
+    assert is_grounded(expanded, lesson)
+    chosen = first_grounded_evidence(short, lesson_raw_text=lesson)
+    assert chosen is not None
+    assert is_grounded(chosen, lesson)
+
+
+def test_short_fabricated_frame_still_rejected():
+    from veramynd_parser.judge.grounding import first_grounded_evidence
+
+    lesson = "Students complete the response sheet about ending events."
+    assert first_grounded_evidence('("At the end …")', lesson_raw_text=lesson) is None
+
+
 def test_judge_pair_keeps_llm_status_and_clauses_when_grounded():
     lesson = "Students identify the setting of the story."
 
@@ -1259,8 +1288,8 @@ def test_live_prompt_is_client_assembled_not_v1():
     )
 
     assert _PROMPT_PATH.name == "assembled_judge_prompt.md"
-    assert PROMPT_VERSION == "align_judge.assembled.v1.5"
-    assert BATCH_PROMPT_VERSION == "align_judge.assembled.batch.v1.5"
+    assert PROMPT_VERSION == "align_judge.assembled.v1.1"
+    assert BATCH_PROMPT_VERSION == "align_judge.assembled.batch.v1.1"
     text = _load_prompt()
     assert "END OF ENGINE" in text
     assert "Georgia K" in text

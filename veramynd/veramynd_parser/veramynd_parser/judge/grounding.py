@@ -240,16 +240,89 @@ def _quote_candidates(*quotes: str) -> list[str]:
     return out
 
 
+def expand_short_exact_hit(
+    evidence: str,
+    lesson_raw_text: str,
+    *,
+    min_chars: int = _MIN_EVIDENCE_CHARS,
+    min_needle_chars: int = _MIN_SEGMENT_CHARS,
+) -> str | None:
+    """Expand a short but exact lesson substring to a grounded ≥min_chars window.
+
+    Publisher-agnostic repair: models often quote a sentence frame or TDQ
+    shorter than the anti-fabrication floor (e.g. ``At the end …``). If that
+    short span is a real contiguous hit in the lesson, widen to neighboring
+    words until the quote clears ``min_chars``. Fabricated short strings that
+    are not in the lesson still fail.
+    """
+    ev = (evidence or "").strip()
+    if not ev or len(ev) >= min_chars:
+        return None
+    needle = normalize_for_grounding(ev)
+    if len(needle) < min_needle_chars:
+        return None
+    hay = normalize_for_grounding(lesson_raw_text)
+    if not hay or needle not in hay:
+        return None
+
+    words = (lesson_raw_text or "").split()
+    n = len(words)
+    if not n:
+        return None
+
+    # Prefer the shortest word-span whose normalized form contains the needle,
+    # then grow outward until the raw quote meets min_chars.
+    best_ij: tuple[int, int] | None = None
+    best_span = n + 1
+    for i in range(n):
+        for j in range(i + 1, n + 1):
+            span = j - i
+            if span >= best_span:
+                break
+            piece = " ".join(words[i:j])
+            norm = normalize_for_grounding(piece)
+            if needle in norm:
+                best_ij = (i, j)
+                best_span = span
+                break
+    if best_ij is None:
+        return None
+
+    i, j = best_ij
+    while (j - i) < n and len(" ".join(words[i:j])) < min_chars:
+        # Grow forward first, then backward, keeping the original hit inside.
+        if j < n:
+            j += 1
+        elif i > 0:
+            i -= 1
+        else:
+            break
+    while i > 0 and len(" ".join(words[i:j])) < min_chars:
+        i -= 1
+
+    expanded = " ".join(words[i:j]).strip()
+    if len(expanded) < min_chars:
+        return None
+    if is_grounded(expanded, lesson_raw_text, allow_empty=False, min_chars=min_chars):
+        return expanded
+    return None
+
+
 def first_grounded_evidence(*quotes: str, lesson_raw_text: str) -> str | None:
     """Return the first candidate quote that is present in lesson text.
 
     Applies P10 scrub/repair (strip ``[editorial notes]``, recover the longest
-    verbatim window) before the P8 multi-quote split check.
+    verbatim window) before the P8 multi-quote split check. Short exact lesson
+    hits (sentence frames / TDQs under the min-length floor) are expanded to a
+    surrounding verbatim window when possible.
     """
     cleaned = clean_evidence_quotes(*quotes, lesson_raw_text=lesson_raw_text)
     for piece in _quote_candidates(*cleaned):
         if is_grounded(piece, lesson_raw_text, allow_empty=False):
             return piece
+        expanded = expand_short_exact_hit(piece, lesson_raw_text)
+        if expanded:
+            return expanded
     # Last resort: longest grounded window over any original quote.
     for raw in quotes:
         window = _longest_verbatim_window(
@@ -258,6 +331,12 @@ def first_grounded_evidence(*quotes: str, lesson_raw_text: str) -> str | None:
         )
         if window and is_grounded(window, lesson_raw_text, allow_empty=False):
             return window
+        expanded = expand_short_exact_hit(
+            scrub_editorial_brackets(raw) or (raw or ""),
+            lesson_raw_text,
+        )
+        if expanded:
+            return expanded
     return None
 
 
@@ -315,6 +394,7 @@ def grounding_note(evidence: str, *, grounded: bool, allow_empty: bool = False) 
 
 __all__ = [
     "clean_evidence_quotes",
+    "expand_short_exact_hit",
     "first_grounded_evidence",
     "grounding_note",
     "is_grounded",

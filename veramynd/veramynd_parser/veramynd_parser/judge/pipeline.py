@@ -54,8 +54,8 @@ from .models import (
 if TYPE_CHECKING:
     from ..config import JudgeConfig
 
-PROMPT_VERSION = "align_judge.assembled.v1.5"
-BATCH_PROMPT_VERSION = "align_judge.assembled.batch.v1.5"
+PROMPT_VERSION = "align_judge.assembled.v1.1"
+BATCH_PROMPT_VERSION = "align_judge.assembled.batch.v1.1"
 DEFAULT_JUDGE_MODEL = "claude-sonnet-4-5"
 DEFAULT_ESCALATE_MODEL = "claude-opus-4-6"
 JUDGE_SCHEMA_VERSION = "1.0-judge"

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0-judge",
   "quality_profile": "enterprise_k12",
-  "prompt_version": "align_judge.assembled.batch.v1.4",
+  "prompt_version": "align_judge.assembled.batch.v1.1",
   "judge_mode": "batch",
   "resource_id": "G1M2U1L1",
   "lesson_source": "stage1:G1M2U1L1",
@@ -16,12 +16,12 @@
   "failed": [],
   "complete": true,
   "by_status": {
-    "full": 7,
+    "full": 8,
     "partial": 7,
-    "none": 11
+    "none": 10
   },
   "grounding_rate": 1.0,
-  "grounding_positive_n": 14,
+  "grounding_positive_n": 15,
   "verdicts": [
     {
       "schema_version": "1.0-judge",
@@ -32,21 +32,21 @@
         {
           "clause": "Use grade-level general, academic, or specialized vocabulary words and phrases to communicate (any one category suffices — OR list)",
           "met": false,
-          "note": "Students use the sentence frame with the target word 'sun' during Back-to-Back and Face-to-Face, deploying specialized vocabulary in speech — but this is a single scaffolded frame in one setting (partner talk), not a variety of settings."
+          "note": "Students use the sentence frame with the specialized word 'sun' (and later 'moon'/'stars') to communicate observations to a partner, deploying grade-level vocabulary in speech."
         },
         {
-          "clause": "Communicate in a variety of settings (≥2 distinct settings for full, 1 setting = partial)",
+          "clause": "Communicate in a variety of settings (≥2 distinct settings for full; 1 setting = partial)",
           "met": false,
-          "note": "Students use vocabulary words in partner discussion (Back-to-Back and Face-to-Face) and in the Picture Tea Party small group — these are both oral discussion settings. The response sheet ('I notice ___') could count as a writing setting, but the vocabulary deployment there is thin/scaffolded. At best one clear setting type (oral partner/small group); the written use is marginal."
+          "note": "Students use vocabulary in partner discussion (Back-to-Back and Face-to-Face) and in the Picture Tea Party small group — both are oral/discussion settings. The response sheet writing could count as a second mode, but the vocabulary deployment there is not explicitly quoted with target vocab words; the oral frames are the primary evidence, which is essentially one setting type (oral partner/small-group talk)."
         }
       ],
       "evidence": "I noticed that the sun __________.",
       "evidence_page": 48,
       "confidence": "high",
-      "rationale": "Students use specialized vocabulary words (sun, moon, stars) in sentence frames during the Back-to-Back and Face-to-Face protocol (\"I noticed that the sun __________\") and Picture Tea Party (\"In my picture, I see _______\"), deploying grade-level vocabulary to communicate orally. However, the deployment is heavily scaffolded via sentence frames and occurs primarily in one setting type (oral partner/small-group discussion). The response sheet writing is a second potential setting but vocabulary use there is not explicitly evidenced beyond the frame. The 'variety of settings' component is only thinly met, capping at partial.",
+      "rationale": "Students use specialized vocabulary (sun, moon, stars) in sentence frames during partner discussions: \"I noticed that the sun __________.\" and \"I noticed that the moon/stars __________.\" This shows students deploying grade-level vocabulary to communicate. However, the deployment occurs primarily in oral partner/small-group discussion settings; the response sheet writing is not explicitly shown to require target vocabulary deployment. The 'variety of settings' component is only thinly met (one primary setting type — oral discussion), capping the standard at partial.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
@@ -73,26 +73,26 @@
         {
           "clause": "Generate ideas for content by assessing prior knowledge.",
           "met": true,
-          "note": "Students reflect on prior learning from Module 1 to activate background knowledge."
+          "note": "Students activate prior knowledge by predicting based on the title, feeding their later idea-generation."
         },
         {
           "clause": "Generate ideas for content by gathering information from texts.",
           "met": true,
-          "note": "Students generate ideas after viewing videos and reading Elvin story, then record notices and wonders on response sheet."
+          "note": "Students generate notices and wonders on the response sheet after engaging with the read-aloud story, mystery sky photos, and videos—gathering information from multiple texts/media."
         },
         {
           "clause": "Generate ideas for content by engaging in discussions with others.",
           "met": true,
-          "note": "Students generate ideas through Picture Tea Party, Back-to-Back and Face-to-Face discussions, and turn-and-talk about habits of character."
+          "note": "Students engage in Picture Tea Party and Back-to-Back and Face-to-Face discussions, generating ideas through peer talk before writing."
         }
       ],
-      "evidence": "Which of these habits of character did you focus on using and learning more about during the last module?",
-      "evidence_page": 47,
+      "evidence": "\"Based on the title of the story, what do you think this story will be about?\" (a little boy who likes things in the sky; a little boy who likes the clouds; a little boy who likes to look at the sky)",
+      "evidence_page": 44,
       "confidence": "high",
-      "rationale": "Students generate ideas by assessing prior knowledge (Work Time A, page 47: turn-and-talk about habits of character from Module 1), gathering information from texts (Opening A read-aloud of Elvin story, Work Time B videos of sun/moon/stars, then Work Time C response sheet: \"capture the things they noticed and wondered about the sun, moon, and stars,\" page 49), and engaging in discussions (Picture Tea Party protocol, Back-to-Back and Face-to-Face protocol with sentence frames \"I noticed that the sun __________.\" and \"One thing I wonder about the moon/stars is ____________,\" Work Time B, page 48). All three source channels feed the idea-generation product (the response sheet), meeting the full standard per F10.",
+      "rationale": "Students generate ideas for their response-sheet writing by using all three named channels. Prior knowledge is activated when students predict \"what do you think this story will be about?\" based on the title (Opening A, page 44). They gather information from the read-aloud \"Elvin, the Boy Who Loved the Sky,\" mystery sky photos (Picture Tea Party, page 45), and videos of sunrise/sunset, moonrise, and starry night (Work Time B, page 47–48). They engage in discussions during Picture Tea Party and Back-to-Back and Face-to-Face protocols, sharing \"I noticed that the sun __________.\" and \"One thing I wonder about the moon/stars is ____________.\" (page 48). These channels feed the final product: students \"use the response sheet to capture the things they noticed and wondered about the sun, moon, and stars\" using pictures and words (Work Time C, page 49). All three clauses met.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -117,28 +117,18 @@
       "matched_status": "full",
       "clauses": [
         {
-          "clause": "Share relevant information about a topic.",
+          "clause": "Share relevant and accurate information through a variety of different modes.",
           "met": true,
-          "note": "Students share relevant observations about sun, moon, and stars using sentence frames."
-        },
-        {
-          "clause": "Share accurate information about a topic.",
-          "met": true,
-          "note": "Students share accurate observations from videos and pictures."
-        },
-        {
-          "clause": "Use a variety of communication modes to share information.",
-          "met": true,
-          "note": "Students share information through speaking (Picture Tea Party, Back-to-Back and Face-to-Face) and writing/drawing (response sheet)."
+          "note": "Students share accurate observations about the sun, moon, and stars through oral partner discussion (Back-to-Back and Face-to-Face) and written/drawn response sheets—two distinct modes."
         }
       ],
-      "evidence": "In my picture, I see_______.",
-      "evidence_page": 45,
+      "evidence": "\"Invite students to use the response sheet to capture the things they noticed and wondered about the sun, moon, and stars. Tell them that they can use pictures and words to show what they notice and what they wonder.\"",
+      "evidence_page": 49,
       "confidence": "high",
-      "rationale": "Students share relevant and accurate information about the sun, moon, and stars through multiple modes. They share orally using sentence frames during Picture Tea Party (\"In my picture, I see_______.\" Opening B, page 45) and Back-to-Back and Face-to-Face protocol (\"I noticed that the sun __________.\" Work Time B, page 48), and in writing/drawing on the Noticing and Wondering response sheet (\"they can use pictures and words to show what they notice and what they wonder,\" Work Time C, page 49). All three clauses met.",
+      "rationale": "Students share relevant and accurate information about the sun, moon, and stars through multiple modes. Orally, they complete sentence frames during the Back-to-Back and Face-to-Face protocol: \"I noticed that the sun __________.\" and \"One thing I wonder about the moon/stars is ____________.\" (Work Time B, page 48). In writing/drawing, they use the Noticing and Wondering response sheet to \"capture the things they noticed and wondered about the sun, moon, and stars\" using \"pictures and words\" (Work Time C, page 49). Oral discussion plus written/drawn response = a variety of modes, and the shared content is accurate (observations from videos and photos). Full.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -160,33 +150,33 @@
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L1",
       "standard_code": "1.P.EICC.1.c",
-      "matched_status": "none",
+      "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Select texts of personal interest and academic relevance to grade-level topics.",
+          "clause": "Select texts of personal interest and academic relevance",
           "met": false,
           "note": "not met"
         },
         {
-          "clause": "Read texts of personal interest and academic relevance to grade-level topics.",
+          "clause": "Read texts of personal interest and academic relevance",
           "met": false,
-          "note": "not met"
+          "note": "Students engage with a grade-level text read aloud by the teacher; at grade 1 a teacher read-aloud of a grade-level text counts as the 'read' channel, and students actively respond to the text. However, the text is teacher-assigned, not student-selected."
         },
         {
-          "clause": "Write texts of personal interest and academic relevance to grade-level topics.",
-          "met": false,
-          "note": "not met"
+          "clause": "Write texts of personal interest and academic relevance",
+          "met": true,
+          "note": "Students independently write and draw on the Noticing and Wondering response sheet about the sun, moon, and stars — a writing act on an academically relevant topic."
         }
       ],
-      "evidence": "",
-      "evidence_page": null,
+      "evidence": "Based on the title of the story, what do you think this story will be about?",
+      "evidence_page": 44,
       "confidence": "high",
-      "rationale": "alignment=none",
+      "rationale": "Students write/draw on the Noticing and Wondering response sheet: \"Invite students to use the response sheet to capture the things they noticed and wondered about the sun, moon, and stars.\" This meets the write clause. Students also engage with the read-aloud text (read clause met via teacher read-aloud at grade 1). However, the select clause is not met — the teacher assigns the text and photos; students never choose their own texts. Per F13, write-without-select is partial, not none.",
       "grounded": true,
-      "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
-      "judge_model": "claude-sonnet-4-5",
-      "escalated": false,
+      "grounding_note": "evidence quote found in lesson raw text",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
       "retrieval": {
         "rrf_score": 0.14805359336609336,
         "dense_rank": 8,
@@ -211,21 +201,21 @@
         {
           "clause": "Acquire general, academic, and specialized vocabulary words and phrases through grade-level texts and content.",
           "met": true,
-          "note": "Students acquire specialized vocabulary (sun, moon, stars) from grade-level read-aloud and videos, repeating words with gestures."
+          "note": "Students acquire specialized vocabulary (sun, moon, stars) from the grade-level read-aloud and Word Wall by repeating the words aloud with definitions."
         },
         {
           "clause": "Apply general, academic, and specialized vocabulary words and phrases in appropriate contexts.",
           "met": true,
-          "note": "Students apply acquired vocabulary in sentence frames during discussions and on response sheet."
+          "note": "Students apply the acquired vocabulary (sun, moon, stars) in oral discussions and written response sheets."
         }
       ],
-      "evidence": "Ask students to repeat the word aloud with an accompanying hand gesture.",
+      "evidence": "Show students the Sun, Moon, and Stars Word Wall card for sun. Ask students to repeat the word aloud with an accompanying hand gesture. Define the word for students: \"It is the star that is closest to the earth. The earth receives heat and light from the sun and travels around it.\"",
       "evidence_page": 46,
       "confidence": "high",
-      "rationale": "Students acquire specialized vocabulary (sun, moon, stars) through the grade-level read-aloud \"Elvin, the Boy Who Loved the Sky\" and videos (Opening A, Work Time B), repeating words aloud with gestures (\"Ask students to repeat the word aloud with an accompanying hand gesture,\" Opening B, page 46). They apply the vocabulary in discussions using sentence frames (\"I noticed that the sun __________.\" / \"I noticed that the moon/stars __________.\" Work Time B, page 48) and on the Noticing and Wondering response sheet (Work Time C, page 49). Both acquire and apply clauses met.",
+      "rationale": "Students acquire specialized vocabulary (sun, moon, stars) from the grade-level read-aloud \"Elvin, the Boy Who Loved the Sky\" and the Word Wall. The teacher introduces each word with a definition, and students \"repeat the word aloud with an accompanying hand gesture\" (Opening B, page 46; Work Time B, page 48). Students then apply the vocabulary in oral discussions using sentence frames \"I noticed that the sun __________.\" and \"One thing I wonder about the moon/stars is ____________.\" during the Back-to-Back and Face-to-Face protocol (Work Time B, page 48), and in writing on the Noticing and Wondering response sheet (Work Time C, page 49). Both acquire and apply clauses met. Full.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -257,16 +247,16 @@
         {
           "clause": "Answer questions during dialogue with audiences",
           "met": true,
-          "note": "Students answer teacher-posed questions about the text in whole-group and partner settings throughout the lesson."
+          "note": "Students answer teacher-posed questions using total participation techniques and partner protocols (Back-to-Back and Face-to-Face, Picture Tea Party), responding with observations about the sun, moon, and stars."
         }
       ],
-      "evidence": "Using a total participation technique, invite responses from the group: 'What does Elvin observe about the sun?' (He sees it in different places in the sky, he sees that sometimes it is bright and sometimes it is pale, and sometimes he can't see it at all because they sky is full of clouds.)",
-      "evidence_page": 44,
+      "evidence": "What is one thing you noticed about the sun in the video?",
+      "evidence_page": 47,
       "confidence": "high",
-      "rationale": "Students answer multiple teacher-posed questions throughout the lesson (e.g., \"What does Elvin observe about the sun?\" with student responses quoted). However, no scripted moment has students generate their own questions in dialogue with an audience. The 'I wonder' sentence frames on the response sheet are written, not spoken dialogue questions directed at an audience, and the learning target wording ('I can ask questions') is not student performance. The ask clause is not met; the answer clause is met → partial.",
+      "rationale": "Students answer questions during dialogue in multiple protocols: during the read-aloud (\"What is one thing we know about Elvin?\"), Picture Tea Party, and Back-to-Back and Face-to-Face (\"What is one thing you noticed about the sun in the video?\"). The answer clause is met. However, the ask clause is not met — every text-dependent and discussion question is teacher-posed; students only respond. The written \"I wonder\" frames on the response sheet are written wonders, not spoken dialogue questions posed to an audience/peer. The ask act in dialogue is absent → partial.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
@@ -293,16 +283,16 @@
         {
           "clause": "Work with others to discuss topics, investigate questions, solve problems, and explore and create texts.",
           "met": true,
-          "note": "Students work with partners and small groups to discuss topics (sun, moon, stars) during Picture Tea Party and Back-to-Back and Face-to-Face protocols."
+          "note": "Students work with peers to discuss the topic (sun, moon, stars) during Picture Tea Party and Back-to-Back and Face-to-Face protocols—genuine collaborative discussion acts."
         }
       ],
-      "evidence": "What is one thing you noticed about the sun in the video?",
-      "evidence_page": 47,
+      "evidence": "Once everyone has looked closely at their picture, you will signal them to share with their small group using the sentence frame \"In my picture, I see_______.\" Group member A should share first.",
+      "evidence_page": 45,
       "confidence": "high",
-      "rationale": "Students work with others to discuss topics during Picture Tea Party protocol in small groups (\"In my picture, I see_______.\" Opening B, page 45) and Back-to-Back and Face-to-Face protocol with partners (\"What is one thing you noticed about the sun in the video?\" Work Time B, page 48). The OR-list requires any one genuine student-performed collaborative act; discussing topics with peers satisfies the clause per F9. Full.",
+      "rationale": "Students work with others to discuss the topic of the sun, moon, and stars through multiple collaborative protocols. During the Picture Tea Party, students share observations with small groups using the sentence frame \"In my picture, I see_______.\" (Opening B, page 45). During the Back-to-Back and Face-to-Face protocol, students turn and talk with partners, answering \"What is one thing you noticed about the sun in the video?\" using the frame \"I noticed that the sun __________.\" (Work Time B, page 48). These are genuine student-performed collaborative discussion acts. The OR-list rule applies: any one collaborative act (discuss topics, investigate questions, solve problems, explore/create texts) suffices, and students clearly discuss topics with peers. Full.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -327,14 +317,9 @@
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Use a picture dictionary to clarify the meaning of unknown words and phrases with teacher support.",
+          "clause": "Use a picture dictionary or digital resource to clarify the meaning of unknown words and phrases with teacher support.",
           "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Use a digital resource to clarify the meaning of unknown words and phrases with teacher support.",
-          "met": false,
-          "note": "not met"
+          "note": "No activity has students use a picture dictionary or digital resource to clarify word meanings."
         }
       ],
       "evidence": "",
@@ -343,7 +328,7 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -370,17 +355,17 @@
         {
           "clause": "Determine meanings of unfamiliar words using context clues.",
           "met": false,
-          "note": "not met"
+          "note": "Teacher supplies definitions; students do not determine meanings from context."
         },
         {
           "clause": "Use knowledge of academic vocabulary to understand new words.",
           "met": false,
-          "note": "not met"
+          "note": "No activity has students use prior academic vocabulary knowledge to infer new word meanings."
         },
         {
           "clause": "Apply understanding of word parts to infer meanings of unfamiliar words.",
           "met": false,
-          "note": "not met"
+          "note": "No word-part analysis activity."
         }
       ],
       "evidence": "",
@@ -389,7 +374,7 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -416,16 +401,16 @@
         {
           "clause": "Use texts to build knowledge, develop skills, make informed decisions, and share information and ideas.",
           "met": true,
-          "note": "Students use texts (Elvin story, videos, mystery photos) to build knowledge about sun, moon, and stars, then share information and ideas during discussions and on response sheet."
+          "note": "Students use the read-aloud text, photos, and videos to build knowledge about the sun, moon, and stars, then share that information in discussions and on response sheets."
         }
       ],
-      "evidence": "What did you notice about the sky, the sun, the moon, or the stars?",
-      "evidence_page": 49,
+      "evidence": "\"What is one thing we know about Elvin?\" (He loves to look at the sky, he wonders about the sun and the moon, and he likes to lie down in the grass to look at the sky.)",
+      "evidence_page": 44,
       "confidence": "high",
-      "rationale": "Students use texts (\"Elvin, the Boy Who Loved the Sky\" read-aloud, videos of sun/moon/stars, mystery sky photos) to build knowledge about the sun, moon, and stars, then share information and ideas during Picture Tea Party (\"In my picture, I see_______.\" Opening B, page 45), Back-to-Back and Face-to-Face protocol (\"I noticed that the sun __________.\" Work Time B, page 48), and Noticing and Wondering response sheet (Work Time C, page 49). The OR-list requires any one student-performed purpose; students build knowledge and share information/ideas, satisfying the clause per F1/F10. Full.",
+      "rationale": "Students use texts (the read-aloud \"Elvin, the Boy Who Loved the Sky,\" mystery sky photos, and videos) to build knowledge about the sun, moon, and stars. They respond to comprehension questions such as \"What does Elvin observe about the sun?\" (He sees it in different places in the sky, he sees that sometimes it is bright and sometimes it is pale, and sometimes he can't see it at all because they sky is full of clouds) (Opening A, page 44). They then share this information in Picture Tea Party and Back-to-Back and Face-to-Face discussions (Opening B, page 45; Work Time B, page 48), and on the Noticing and Wondering response sheet (Work Time C, page 49). The OR-list rule applies: any one student-performed purpose (build knowledge, develop skills, make informed decisions, share information and ideas) suffices. Students clearly build knowledge and share information. Full.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -452,12 +437,12 @@
         {
           "clause": "Develop group norms for participation in a community of readers and writers",
           "met": false,
-          "note": "Students review existing norms (speakers/listeners jobs) but do not develop new norms in this lesson — the norms are pre-established and reviewed, not co-created."
+          "note": "Students review existing discussion norms (their jobs as speakers and listeners), but this is reviewing previously developed norms, not actively developing new ones — partial."
         },
         {
           "clause": "Discuss texts with others in the group",
           "met": true,
-          "note": "Students discuss the read-aloud text in whole group and in small groups during Picture Tea Party."
+          "note": "Students discuss the read-aloud text in whole group and partner protocols, sharing observations and responses."
         },
         {
           "clause": "Share individual writing with the group",
@@ -483,10 +468,10 @@
       "evidence": "Direct students' attention to the Classroom Discussion Norms anchor chart and quickly review their jobs as speakers and listeners.",
       "evidence_page": 45,
       "confidence": "high",
-      "rationale": "Students discuss the text with peers (Picture Tea Party, Back-to-Back and Face-to-Face) and review group norms (Classroom Discussion Norms anchor chart). However, the lesson does not include sharing individual writing with the group, listening to others share their writing, offering feedback on writing, or responding to feedback on writing. The discuss-texts clause is met and the norms clause is partially met (reviewed, not developed), but four writing-community clauses are unmet → partial.",
+      "rationale": "Students discuss the text with others during the read-aloud and partner protocols (\"What is one thing we know about Elvin?\"), meeting the discuss-texts clause. Students also review group norms via the Classroom Discussion Norms anchor chart, partially meeting the develop-norms clause. However, no activity has students share their individual writing with the group, listen to peers share writing, offer feedback on writing, or respond to feedback — those clauses are all unmet. Only two of six clauses are met/partially met → partial.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
@@ -511,20 +496,20 @@
       "matched_status": "full",
       "clauses": [
         {
-          "clause": "Ask questions about topics of interest for research.",
+          "clause": "Ask questions about topics of interest for research",
           "met": true,
-          "note": "Students generate and record wonder questions about sun, moon, and stars on response sheet."
+          "note": "Students generate their own wonder questions about the sun, moon, and stars — topics of interest — using the sentence frame during Back-to-Back and Face-to-Face and on the Noticing and Wondering response sheet. These wonders function as research questions about a topic of interest."
         }
       ],
-      "evidence": "Invite students to use the response sheet to capture the things they noticed and wondered about the sun, moon, and stars.",
-      "evidence_page": 49,
+      "evidence": "One thing I wonder about the moon/stars is ____________.",
+      "evidence_page": 48,
       "confidence": "high",
-      "rationale": "Students ask questions about topics of interest (sun, moon, stars) for research by recording wonders on the Noticing and Wondering response sheet (\"Invite students to use the response sheet to capture the things they noticed and wondered about the sun, moon, and stars. Tell them that they can use pictures and words to show what they notice and what they wonder,\" Work Time C, page 49). The sentence frame \"I wonder ___________\" (page 49) directs students to generate research questions. Full.",
+      "rationale": "Students ask questions about topics of interest for research by generating wonders about the sun, moon, and stars: \"One thing I wonder about the moon/stars is ____________.\" Students produce these wonders both orally during the Back-to-Back and Face-to-Face protocol and in writing on the Noticing and Wondering response sheet. The lesson explicitly frames these as questions to investigate further (\"I can ask questions about what I notice in pictures and videos of the sun, moon, and stars\"), and the teacher tells students they will continue to learn more in subsequent lessons, positioning these as research questions.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
-      "judge_model": "claude-sonnet-4-5",
-      "escalated": false,
+      "prompt_version": "align_judge.assembled.batch.v1.1",
+      "judge_model": "claude-opus-4-6",
+      "escalated": true,
       "retrieval": {
         "rrf_score": 0.14168618266978922,
         "dense_rank": 1,
@@ -549,16 +534,16 @@
         {
           "clause": "Communicate ideas clearly when presenting.",
           "met": true,
-          "note": "Students communicate ideas clearly during Picture Tea Party and Back-to-Back and Face-to-Face protocols, presenting observations to small groups and partners."
+          "note": "Students present ideas and information orally to small groups and partners during Picture Tea Party and Back-to-Back and Face-to-Face protocols. The manner-modifier principle applies: students genuinely present aloud, satisfying both the act and the clarity manner."
         }
       ],
-      "evidence": "In my picture, I see_______.",
+      "evidence": "Once everyone has looked closely at their picture, you will signal them to share with their small group using the sentence frame \"In my picture, I see_______.\" Group member A should share first.",
       "evidence_page": 45,
       "confidence": "high",
-      "rationale": "Students communicate clearly to present ideas and information during Picture Tea Party protocol (\"In my picture, I see_______.\" Opening B, page 45) and Back-to-Back and Face-to-Face protocol (\"I noticed that the sun __________.\" Work Time B, page 48). The manner-modifier principle applies: students present aloud to communicate observations, satisfying both the clarity manner and the present-ideas act. Full per the overlay fence.",
+      "rationale": "Students communicate clearly to present ideas and information about the sun, moon, and stars. During the Picture Tea Party, students share observations with small groups using the sentence frame \"In my picture, I see_______.\" (Opening B, page 45). During the Back-to-Back and Face-to-Face protocol, students present to partners using the frame \"I noticed that the sun __________.\" (Work Time B, page 48). These are genuine oral presentations to an audience (peers). The manner-modifier principle applies: students present aloud, satisfying both the act (present ideas/information) and the manner (clearly). Full.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -583,24 +568,9 @@
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Describe the connection between two individuals in a text.",
+          "clause": "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
           "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Describe the connection between two events in a text.",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Describe the connection between two ideas in a text.",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Describe the connection between two pieces of information in a text.",
-          "met": false,
-          "note": "not met"
+          "note": "No activity has students describe connections between two individuals, events, ideas, or pieces of information. The comprehension questions focus on single observations (what Elvin observes, what students notice), not connections between two elements."
         }
       ],
       "evidence": "",
@@ -609,7 +579,7 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -636,12 +606,12 @@
         {
           "clause": "Use context within a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases.",
           "met": false,
-          "note": "not met"
+          "note": "Teacher supplies definitions; students do not determine meanings from context within sentences."
         },
         {
           "clause": "Use context beyond a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases.",
           "met": false,
-          "note": "not met"
+          "note": "Teacher supplies definitions; students do not determine meanings from broader context."
         }
       ],
       "evidence": "",
@@ -650,7 +620,7 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -677,12 +647,12 @@
         {
           "clause": "Contribute ideas to discussions and shared projects",
           "met": true,
-          "note": "Students contribute their own ideas in turn-and-talk, Picture Tea Party small groups, and Back-to-Back and Face-to-Face partner discussions throughout the lesson."
+          "note": "Students contribute their own observations and ideas during the Picture Tea Party and Back-to-Back and Face-to-Face protocols, sharing what they notice and wonder."
         },
         {
           "clause": "Listen to the ideas of others during discussions and projects",
           "met": true,
-          "note": "Students are directed to listen to classmates and repeat what they heard, demonstrating active listening during discussion."
+          "note": "Students are directed to listen to peers during protocols and are asked to repeat what classmates said, demonstrating active listening."
         },
         {
           "clause": "Provide feedback to others in discussions and shared projects",
@@ -690,13 +660,13 @@
           "note": "not met"
         }
       ],
-      "evidence": "Invite students to turn and talk with an elbow partner: 'Which of these habits of character did you focus on using and learning more about during the last module? How did you show that you were using it?'",
-      "evidence_page": 47,
+      "evidence": "In my picture, I see_______.",
+      "evidence_page": 45,
       "confidence": "high",
-      "rationale": "Students contribute ideas in multiple discussion protocols — turn-and-talk (\"Which of these habits of character did you focus on…\"), Picture Tea Party small groups, and Back-to-Back and Face-to-Face partner sharing. Students also listen to others, as evidenced by the directive \"Who can repeat what your classmate said?\" However, no activity in the lesson has students provide feedback to peers on their ideas or contributions. The contribute and listen clauses are met; the provide-feedback clause is not met → partial.",
+      "rationale": "Students contribute ideas during the Picture Tea Party (\"In my picture, I see_______.\" ) and Back-to-Back and Face-to-Face protocols, meeting the contribute-ideas clause. Students listen to peers and are asked to repeat what classmates said (\"Who can repeat what your classmate said?\"), meeting the listen clause. However, no activity has students provide feedback to others on their ideas or contributions — the feedback clause is not met. Two of three clauses met → partial.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
@@ -721,28 +691,28 @@
       "matched_status": "partial",
       "clauses": [
         {
-          "clause": "Use prior knowledge to identify relevant key components of context",
-          "met": false,
-          "note": "Students activate prior knowledge about habits of character from the previous module, but this is about learning habits, not about identifying key components of context relevant to interpreting or constructing a text about the sun, moon, and stars. The prediction question ('Based on the title of the story, what do you think this story will be about?') draws on prior knowledge to anticipate content, which is closer to identifying relevant context — but it is thin."
+          "clause": "Use prior knowledge to identify relevant context components",
+          "met": true,
+          "note": "Students activate prior knowledge from the previous module and share how they used habits of character, connecting prior learning to the new topic context."
         },
         {
-          "clause": "Use formal or informal research to identify relevant key components of context",
+          "clause": "Use formal or informal research to find contextual information",
           "met": false,
           "note": "not met"
         },
         {
-          "clause": "Engage in discussions with others to identify relevant key components of context",
-          "met": false,
-          "note": "Students discuss observations in Picture Tea Party and Back-to-Back and Face-to-Face, sharing what they notice about the sun, moon, and stars — this is discussion that surfaces contextual information, but the lesson does not explicitly frame this as identifying 'key components of context' for interpreting or constructing texts; it is more observational noticing."
+          "clause": "Engage in discussions with others to determine key context components",
+          "met": true,
+          "note": "Students engage in discussions during Picture Tea Party and Back-to-Back and Face-to-Face protocols, sharing observations and wonders about the sun, moon, and stars to build contextual understanding of the topic."
         }
       ],
-      "evidence": "Invite students to turn and talk with an elbow partner: 'Which of these habits of character did you focus on using and learning more about during the last module? How did you show that you were using it?'",
+      "evidence": "Which of these habits of character did you focus on using and learning more about during the last module? How did you show that you were using it?",
       "evidence_page": 47,
       "confidence": "high",
-      "rationale": "Students activate prior knowledge (habits of character turn-and-talk, prediction from the title) and engage in discussions about observations of the sun, moon, and stars (Picture Tea Party: \"In my picture, I see _______\"; Back-to-Back and Face-to-Face). These activities surface contextual knowledge through discussion, partially meeting the prior-knowledge and discussion clauses. However, the lesson does not frame these as identifying 'key components of context' for text interpretation/construction in a deliberate way, and no formal or informal research component is present. Two clauses are partially met; one is not met → partial.",
+      "rationale": "Students activate prior knowledge by reflecting on habits of character from the previous module (\"Which of these habits of character did you focus on using and learning more about during the last module?\") and engage in discussions during Picture Tea Party and Back-to-Back and Face-to-Face protocols (\"What is one thing you noticed about the sun in the video?\"), meeting the prior-knowledge and discussion clauses. However, per F21, the research clause is not met — the teacher-assigned read-aloud, photos, and videos are content delivery, not student-initiated informal research. Prior knowledge + discussion without a genuine research act → partial.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
@@ -767,29 +737,9 @@
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Use knowledge of characters in narratives to create texts.",
+          "clause": "Use knowledge of narrative techniques to create texts that share real or imagined experiences and events.",
           "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Use knowledge of settings in narratives to create texts.",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Use knowledge of events in narratives to create texts.",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Create texts that share real or imagined experiences and events.",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Include a sense of closure in created texts.",
-          "met": false,
-          "note": "not met"
+          "note": "Students write and draw notices and wonders on a response sheet, which is not creating a narrative text. No story-creation activity."
         }
       ],
       "evidence": "",
@@ -798,7 +748,7 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -823,12 +773,12 @@
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Use knowledge of word relationships when making word choices in speaking and writing (C)",
+          "clause": "Use knowledge of word relationships when making word choices in speaking and writing",
           "met": false,
           "note": "not met"
         },
         {
-          "clause": "Use learned vocabulary words and phrases when making word choices in speaking and writing (C)",
+          "clause": "Use learned vocabulary words and phrases when making word choices in speaking and writing",
           "met": false,
           "note": "not met"
         }
@@ -839,7 +789,7 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
@@ -866,7 +816,7 @@
         {
           "clause": "Make predictions about events or information likely to come next in a text",
           "met": true,
-          "note": "Students make a prediction about the story content based on the title before reading, using a total participation technique."
+          "note": "Students make a prediction about the story's content based on the title before reading, using a total participation technique to share their predictions (a little boy who likes things in the sky, etc.)."
         },
         {
           "clause": "Track those predictions as reading progresses",
@@ -874,13 +824,13 @@
           "note": "not met"
         }
       ],
-      "evidence": "Based on the title of the story, what do you think this story will be about? (a little boy who likes things in the sky; a little boy who likes the clouds; a little boy who likes to look at the sky)",
+      "evidence": "Based on the title of the story, what do you think this story will be about?",
       "evidence_page": 44,
       "confidence": "high",
-      "rationale": "Students make a prediction before the read-aloud: \"Based on the title of the story, what do you think this story will be about?\" with student responses (\"a little boy who likes things in the sky\"). The make-predictions clause is met. However, the lesson does not return to the prediction during or after reading to track whether it was confirmed or revised — the track clause is not met → partial.",
+      "rationale": "Students make predictions before the read-aloud: \"Based on the title of the story, what do you think this story will be about?\" with student responses (\"a little boy who likes things in the sky; a little boy who likes the clouds\"). The make-predictions clause is met. However, there is no activity where students track or revisit their predictions as the reading progresses — the lesson moves through paragraphs with comprehension questions but never returns to confirm or revise the initial prediction. The track clause is not met → partial.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-opus-4-6",
       "escalated": true,
       "retrieval": {
@@ -902,33 +852,33 @@
       "schema_version": "1.0-judge",
       "resource_id": "G1M2U1L1",
       "standard_code": "1.P.EICC.2.c",
-      "matched_status": "partial",
+      "matched_status": "full",
       "clauses": [
         {
-          "clause": "Explain concepts and processes by interpreting texts (I)",
-          "met": false,
-          "note": "not met"
+          "clause": "Explain concepts by interpreting texts.",
+          "met": true,
+          "note": "Students explain concepts (what Elvin observes about the sun) by interpreting the read-aloud text."
         },
         {
-          "clause": "Learn concepts and processes by interpreting texts (I)",
-          "met": false,
-          "note": "Students learn about the sun, moon, and stars by interpreting the read-aloud text and videos — they extract observational information from the text. However, the standard requires explaining concepts, not just recalling observations."
+          "clause": "Learn concepts by interpreting texts.",
+          "met": true,
+          "note": "Students learn concepts about the sun, moon, and stars (and Elvin's observations) by interpreting the read-aloud text and videos."
         },
         {
-          "clause": "Construct texts to demonstrate understanding of concepts and processes (C)",
-          "met": false,
-          "note": "Students construct a response sheet (pictures and words) showing what they noticed and wondered — this is a constructed text, but it captures observations/wonders rather than explaining concepts or processes."
+          "clause": "Construct texts to demonstrate understanding of concepts and processes.",
+          "met": true,
+          "note": "Students construct texts (notices and wonders on response sheets) to demonstrate their understanding of the sun, moon, and stars."
         }
       ],
-      "evidence": "What does Elvin observe about the sun? (He sees it in different places in the sky, he sees that sometimes it is bright and sometimes it is pale, and sometimes he can't see it at all because they sky is full of clouds.)",
+      "evidence": "\"What does Elvin observe about the sun?\" (He sees it in different places in the sky, he sees that sometimes it is bright and sometimes it is pale, and sometimes he can't see it at all because they sky is full of clouds.)",
       "evidence_page": 44,
       "confidence": "high",
-      "rationale": "Students learn about the sun, moon, and stars by interpreting the read-aloud and videos, answering questions like \"What does Elvin observe about the sun?\" (learn-by-interpreting partially met). Students also construct a response sheet with notices and wonders (construct-texts partially met). However, no activity has students explain concepts or processes through their interpretation — they recall observations and record wonders, which is noticing rather than explaining. The explain clause is not met; the learn and construct clauses are partially met → partial.",
+      "rationale": "Students explain and learn concepts by interpreting texts and construct texts to demonstrate understanding. They interpret the read-aloud \"Elvin, the Boy Who Loved the Sky\" by answering \"What does Elvin observe about the sun?\" (He sees it in different places in the sky, he sees that sometimes it is bright and sometimes it is pale, and sometimes he can't see it at all because they sky is full of clouds) (Opening A, page 44), learning concepts about the sun, moon, and stars. They construct texts by writing and drawing on the Noticing and Wondering response sheet to \"capture the things they noticed and wondered about the sun, moon, and stars\" (Work Time C, page 49). Both interpret (explain/learn) and construct clauses are met with substantive student acts. Full.",
       "grounded": true,
       "grounding_note": "evidence quote found in lesson raw text",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
-      "judge_model": "claude-opus-4-6",
-      "escalated": true,
+      "prompt_version": "align_judge.assembled.batch.v1.1",
+      "judge_model": "claude-sonnet-4-5",
+      "escalated": false,
       "retrieval": {
         "rrf_score": 0.13632538569424965,
         "dense_rank": 1,
@@ -951,39 +901,9 @@
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Organize texts by incorporating specific formats.",
+          "clause": "Organize texts by incorporating specific formats, structures, patterns, and features to influence the audience, facilitate accessibility, and support the text's purpose.",
           "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Organize texts by incorporating specific structures.",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Organize texts by incorporating specific patterns.",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Organize texts by incorporating specific features.",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Use these elements to influence the audience.",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Use these elements to facilitate accessibility of the text.",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Use these elements to support the text's purpose.",
-          "met": false,
-          "note": "not met"
+          "note": "Students write notices and wonders on a response sheet, but there is no evidence they organize the text using specific formats, structures, patterns, or features to influence audience, facilitate accessibility, or support purpose. The response sheet is a simple notice/wonder frame, not an organizational craft act."
         }
       ],
       "evidence": "",
@@ -992,7 +912,7 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -1019,17 +939,17 @@
         {
           "clause": "Identify important, interesting, or effective uses of language in a text.",
           "met": false,
-          "note": "not met"
+          "note": "No activity has students identify specific word choices or language uses in the text."
         },
         {
           "clause": "Apply understanding of word choices to interpret how they affect the target audience.",
           "met": false,
-          "note": "not met"
+          "note": "No activity has students analyze how word choices affect the audience."
         },
         {
           "clause": "Analyze and explain how specific word choices support the text's purpose.",
           "met": false,
-          "note": "not met"
+          "note": "No activity has students explain how word choices support the text's purpose."
         }
       ],
       "evidence": "",
@@ -1038,7 +958,7 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -1063,19 +983,9 @@
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Read a wide range of grade-level texts aloud",
+          "clause": "Read a wide range of grade-level texts aloud with appropriate prosody to demonstrate understanding.",
           "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Use appropriate phrasing, expression, juncture/pause, and intonation while reading aloud",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Demonstrate understanding of the text through prosody",
-          "met": false,
-          "note": "not met"
+          "note": "Teacher reads aloud with prosody; no activity has students read aloud."
         }
       ],
       "evidence": "",
@@ -1084,7 +994,7 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {
@@ -1109,19 +1019,9 @@
       "matched_status": "none",
       "clauses": [
         {
-          "clause": "Use knowledge of expository techniques to introduce a topic.",
+          "clause": "Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure.",
           "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Use knowledge of expository techniques to supply facts about the topic.",
-          "met": false,
-          "note": "not met"
-        },
-        {
-          "clause": "Use knowledge of expository techniques to provide a sense of closure.",
-          "met": false,
-          "note": "not met"
+          "note": "Students write notices and wonders on a response sheet, which is not creating an expository text. No expository-writing activity."
         }
       ],
       "evidence": "",
@@ -1130,7 +1030,7 @@
       "rationale": "alignment=none",
       "grounded": true,
       "grounding_note": "no evidence required for none",
-      "prompt_version": "align_judge.assembled.batch.v1.4",
+      "prompt_version": "align_judge.assembled.batch.v1.1",
       "judge_model": "claude-sonnet-4-5",
       "escalated": false,
       "retrieval": {

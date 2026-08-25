@@ -1,5 +1,6 @@
 {
   "schema_version": "1.0-embed-standards-qdrant",
+  "mode": "force",
   "model_id": "text-embedding-3-large",
   "dimensions": 3072,
   "distance": "Cosine",
@@ -8,14 +9,15 @@
   "qdrant_url": "http://localhost:6333",
   "qdrant_path": null,
   "by_level": {
-    "standard": 35,
     "substandard": 135
   },
-  "total_vectors": 170,
-  "qdrant_point_count": 170,
-  "corpus_hash": "54c56f031557e993c22b662536e41658c5c824e32d40060afa53d9bac1f5266d",
+  "total_vectors": 135,
+  "upserted": 135,
+  "skipped": 0,
+  "qdrant_point_count": 135,
+  "corpus_hash": "28670de5ae72910b006a6ed03590244264807511c517a6ac7072e514d8ca934f",
   "failed": [],
   "source_standards_dir": "output\\normalize_standards",
   "codes_filter": null,
-  "note": "one vector per normalized standard/substandard leaf via embed_text"
+  "note": "incremental skips matching content_hash; one vector per leaf via embed_text"
 }
