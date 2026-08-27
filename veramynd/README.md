@@ -79,7 +79,7 @@ All **40** EL G1M2 lessons have live assembled verdicts (`--limit 25`); SME exac
   not lesson chunks)
 - Funnel: competency bridges → per-query dense+BM25 RRF → merge (`top_k_sum`) →
   local CE → shortlist fusion; rescue slots **off**. Artifacts:
-  `output/retrieve_gold4/`, eval `python -m veramynd_parser.scripts.eval_r20`
+  `output/retrieve/`, eval `python -m veramynd_parser.scripts.eval_r20`
 
 | Stage | Status | Location |
 |---|---|---|
@@ -187,7 +187,7 @@ veramynd-parser repair-normalized output/stage1/lessons --normalize-dir output/n
 # Batch-1 gold retrieve (live: R@25=100%, R@20=90%, R@50=100%)
 # Gold list: docs/_ga_g1_module2_goldset.md (FULL+PARTIAL = positives)
 python -m veramynd_parser.scripts.batch_align_all \
-  --retrieve-dir output/retrieve_gold4 \
+  --retrieve-dir output/retrieve \
   --diag-dir output/reports/retrieve_diag_gold4 \
   --from-gold output/reports/gold_set_batch1_from_md.jsonl \
   --judge-shortlist-k 50 \

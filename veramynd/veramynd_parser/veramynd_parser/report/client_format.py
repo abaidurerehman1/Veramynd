@@ -1,13 +1,18 @@
-"""Build the client GA ELA correlation DOCX from corrected alignment rows.
+"""Build client correlation DOCX/XLSX from judge (or master) alignment rows.
 
-Matches ``Example Output Format GA_ELA_G1.docx`` Table-1 style:
-- real cell merges (section banner / parent span / leaf 4-col)
-- columns: Standards | Teacher’s Guide | Other Materials
-- continuing-page header on every page except the first
+Matches ``Example Output Format GA_ELA_G1.docx`` Table-1 style and the skill-
+named parent roll-up wording in ``Rollup_Format_Example_for_Engineer.xlsx``.
+
+Publisher-agnostic: same pipeline for any curriculum — pass judge/CSV rows +
+standards tree + program/guide labels. Framework-specific display names are
+parameters, not hard-coded publisher branches.
 """
 
 from __future__ import annotations
 
+import csv
+import json
+import re
 from collections import defaultdict
 from pathlib import Path
 from typing import Any, Iterable
@@ -21,7 +26,7 @@ from openpyxl import Workbook, load_workbook
 
 from ..text_utils import atomic_write_text
 
-CLIENT_FORMAT_VERSION = "1.1-client-ga-ela"
+CLIENT_FORMAT_VERSION = "1.2-client-rollup"
 _FONT = "Times New Roman"
 _SIZE = Pt(10)  # 20 half-points, matches the example
 _GRAY = "D9D9D9"
@@ -31,6 +36,13 @@ DOMAIN_DISPLAY = {
     "1.P": "PRACTICES",
     "1.L": "LANGUAGE",
     "1.T": "TEXTS",
+}
+
+_DOMAIN_SECTION = {
+    "1.F": "Foundations",
+    "1.P": "Practices",
+    "1.L": "Language",
+    "1.T": "Texts",
 }
 
 # Roman numerals for big-idea ordering within a domain (presentation only).
@@ -52,6 +64,9 @@ _ROMAN = (
     "XV",
 )
 
+_IC_TAG_RE = re.compile(r"\s*\(([IC]|I/C)\)\s*$", re.IGNORECASE)
+_WS_RE = re.compile(r"\s+")
+
 
 class ClientFormatError(ValueError):
     pass
@@ -60,7 +75,6 @@ class ClientFormatError(ValueError):
 def _set_cell_shading(cell: Any, hex_color: str) -> None:
     tc = cell._tc
     tcPr = tc.get_or_add_tcPr()
-    # Replace any existing shading so re-runs stay deterministic.
     for old in tcPr.findall(qn("w:shd")):
         tcPr.remove(old)
     shd = OxmlElement("w:shd")
@@ -104,60 +118,6 @@ def _set_cell_text(
     _style_run(run, bold=bold)
 
 
-def _set_teacher_guide_cell(cell: Any, pages_text: str) -> None:
-    """Match example citation style inside the Teacher’s Guide column."""
-    _clear_cell(cell)
-    if not pages_text:
-        return
-    p = cell.paragraphs[0]
-    p.paragraph_format.space_before = Pt(1)
-    p.paragraph_format.space_after = Pt(1)
-    r1 = p.add_run("Module 2:")
-    _style_run(r1, bold=True)
-    r2 = p.add_run(f" {pages_text}")
-    _style_run(r2, bold=False)
-
-
-_BEYOND_SCOPE_NOTE = "This standard is beyond the scope of Module 2."
-_PARTIAL_NOTE = "This standard is partially met."
-
-
-def _short_partial_explanation(rationales: list[str], *, max_len: int = 280) -> str:
-    """Pick a concise client-facing explanation from a partial rationale."""
-    for raw in rationales:
-        text = " ".join(str(raw).split())
-        if not text:
-            continue
-        # Drop internal review tags if present.
-        text = text.replace("⚑ REVIEW:", "").strip()
-        # Prefer sentence(s) that state what is missing / scoped down.
-        parts = [p.strip() for p in text.replace("? ", ". ").split(". ") if p.strip()]
-        chosen: list[str] = []
-        for p in parts:
-            low = p.lower()
-            if any(
-                k in low
-                for k in (
-                    "partial",
-                    "not met",
-                    "however",
-                    "missing",
-                    "only",
-                    "does not",
-                    "never",
-                    "but ",
-                )
-            ):
-                chosen.append(p if p.endswith(".") else p + ".")
-            if len(" ".join(chosen)) >= 120:
-                break
-        expl = " ".join(chosen) if chosen else (parts[0] + ("." if parts and not parts[0].endswith(".") else ""))
-        if len(expl) > max_len:
-            expl = expl[: max_len - 1].rsplit(" ", 1)[0] + "…"
-        return expl
-    return ""
-
-
 def _set_multiline_cell(
     cell: Any,
     lines: list[str],
@@ -188,21 +148,187 @@ def _set_multiline_cell(
             _style_run(r, bold=False)
 
 
-def _fill_leaf_material_cells(tg_cell: Any, other_cell: Any, agg: dict[str, Any] | None) -> None:
-    """Apply client notes: beyond-scope / partial-met (+ explanation when possible).
+_BEYOND_SCOPE_NOTE = "This standard is beyond the scope of this program module."
+_PARTIAL_NOTE = "This standard is partially met."
+_FULL_NOTE = "This standard is fully met."
 
-    Partial layout (client example)::
 
-        This standard is partially met. <short explanation>
-        Module 2: pp. …
+def _short_partial_explanation(rationales: list[str], *, max_len: int = 280) -> str:
+    """Pick a concise client-facing explanation from a partial rationale."""
+    for raw in rationales:
+        text = " ".join(str(raw).split())
+        if not text:
+            continue
+        text = text.replace("⚑ REVIEW:", "").strip()
+        parts = [p.strip() for p in text.replace("? ", ". ").split(". ") if p.strip()]
+        chosen: list[str] = []
+        for p in parts:
+            low = p.lower()
+            if any(
+                k in low
+                for k in (
+                    "partial",
+                    "not met",
+                    "however",
+                    "missing",
+                    "only",
+                    "does not",
+                    "never",
+                    "but ",
+                )
+            ):
+                chosen.append(p if p.endswith(".") else p + ".")
+            if len(" ".join(chosen)) >= 120:
+                break
+        expl = " ".join(chosen) if chosen else (
+            parts[0] + ("." if parts and not parts[0].endswith(".") else "")
+        )
+        if len(expl) > max_len:
+            expl = expl[: max_len - 1].rsplit(" ", 1)[0] + "…"
+        return expl
+    return ""
 
-    Full layout::
 
-        Module 2: pp. …
+def skill_phrase(standard_text: str) -> str:
+    """Plain-language skill name from a leaf standard text (no letter codes)."""
+    t = _IC_TAG_RE.sub("", (standard_text or "").strip())
+    t = _WS_RE.sub(" ", t).strip().rstrip(".")
+    if not t:
+        return ""
+    if len(t) > 160 and ";" in t:
+        t = t.split(";", 1)[0].strip().rstrip(".")
+    if t and t[0].isupper():
+        t = t[0].lower() + t[1:]
+    return t
+
+
+def _join_skills(skills: list[str]) -> str:
+    items = [s.strip() for s in skills if s and s.strip()]
+    if not items:
+        return ""
+    if len(items) == 1:
+        return items[0]
+    if len(items) == 2:
+        return f"{items[0]} and {items[1]}"
+    return ", ".join(items[:-1]) + f", and {items[-1]}"
+
+
+def domain_section_for_code(code: str) -> str:
+    parts = (code or "").split(".")
+    if len(parts) >= 2:
+        key = f"{parts[0]}.{parts[1]}"
+        if key in _DOMAIN_SECTION:
+            return _DOMAIN_SECTION[key]
+        return key
+    return (code or "").split(".", 1)[0] or "Standards"
+
+
+def build_parent_rollups(
+    standards: list[dict[str, Any]],
+    teacher_by_code: dict[str, dict[str, Any]],
+) -> dict[str, dict[str, Any]]:
+    """Parent code → {alignment, statement, section, parent_label, …}.
+
+    Client roll-up rule (``Rollup_Format_Example_for_Engineer.xlsx``):
+    when citations do not fully cover the parent intention, open with
+    ``This standard is partially met.`` then name supported skills and gaps
+    in plain language — never ``covers a,b / does not address c``.
     """
+    children_by_parent: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    parents: dict[str, dict[str, Any]] = {}
+    for std in standards:
+        level = std.get("level")
+        code = str(std.get("code") or "").strip()
+        if not code:
+            continue
+        if level == "standard":
+            parents[code] = std
+        elif level == "substandard":
+            parent = str(std.get("parent_code") or "").strip()
+            if parent:
+                children_by_parent[parent].append(std)
+
+    out: dict[str, dict[str, Any]] = {}
+    for parent_code, kids in children_by_parent.items():
+        parent = parents.get(parent_code) or {"code": parent_code}
+        supported: list[str] = []
+        partial_only: list[str] = []
+        missing: list[str] = []
+        for kid in kids:
+            code = str(kid.get("code") or "").strip()
+            skill = skill_phrase(str(kid.get("text") or ""))
+            if not skill:
+                skill = code
+            agg = teacher_by_code.get(code)
+            if not agg or not agg.get("pages"):
+                missing.append(skill)
+            elif int(agg.get("full_n") or 0) > 0:
+                supported.append(skill)
+            else:
+                partial_only.append(skill)
+
+        section = domain_section_for_code(parent_code)
+        parent_label = _parent_label(parent)
+        base = {
+            "section": section,
+            "parent_code": parent_code,
+            "parent_label": parent_label,
+            "supported_skills": supported,
+            "partial_skills": partial_only,
+            "missing_skills": missing,
+        }
+
+        if not supported and not partial_only:
+            out[parent_code] = {
+                **base,
+                "alignment": "beyond_scope",
+                "statement": _BEYOND_SCOPE_NOTE,
+            }
+            continue
+
+        if not missing and not partial_only:
+            out[parent_code] = {
+                **base,
+                "alignment": "fully_met",
+                "statement": _FULL_NOTE,
+            }
+            continue
+
+        covered = supported + partial_only
+        stmt = (
+            f"{_PARTIAL_NOTE} Citations support {_join_skills(covered)}."
+            if covered
+            else _PARTIAL_NOTE
+        )
+        if missing:
+            stmt += (
+                " However, the citations do not cover the standard's other "
+                f"intended skills: {_join_skills(missing)}."
+            )
+        if partial_only:
+            stmt += (
+                " Where a covered skill appears only in part, student performance "
+                "is incomplete relative to the full skill named by the standard."
+            )
+        out[parent_code] = {
+            **base,
+            "alignment": "partially_met",
+            "statement": stmt,
+        }
+    return out
+
+
+def _fill_leaf_material_cells(
+    tg_cell: Any,
+    other_cell: Any,
+    agg: dict[str, Any] | None,
+    *,
+    guide_label: str,
+) -> None:
+    """Apply client notes: beyond-scope / partial-met (+ explanation when possible)."""
     pages = _teacher_pages_text(agg)
+    prefix = f"{guide_label}:"
     if not pages:
-        # Example puts the beyond-scope line in both materials columns.
         _set_cell_text(tg_cell, _BEYOND_SCOPE_NOTE, bold=False)
         _set_cell_text(other_cell, _BEYOND_SCOPE_NOTE, bold=False)
         return
@@ -217,17 +343,17 @@ def _fill_leaf_material_cells(tg_cell: Any, other_cell: Any, agg: dict[str, Any]
         note_line = _PARTIAL_NOTE
         if expl:
             note_line = f"{_PARTIAL_NOTE} {expl}"
-        lines = [note_line, f"Module 2: {pages}"]
+        lines = [note_line, f"{prefix} {pages}"]
         _set_multiline_cell(
             tg_cell,
             lines,
-            bold_line_prefixes=["", "Module 2:"],
+            bold_line_prefixes=["", prefix],
         )
     else:
         _set_multiline_cell(
             tg_cell,
-            [f"Module 2: {pages}"],
-            bold_line_prefixes=["Module 2:"],
+            [f"{prefix} {pages}"],
+            bold_line_prefixes=[prefix],
         )
     other = _other_materials_cell(agg)
     _set_cell_text(other_cell, other, bold=False)
@@ -245,17 +371,20 @@ def _add_bottom_border(paragraph: Any) -> None:
     pPr.append(pBdr)
 
 
-def _configure_continuing_page_header(doc: Document, *, program_name: str) -> None:
+def _configure_continuing_page_header(
+    doc: Document,
+    *,
+    program_name: str,
+    framework_header: str,
+) -> None:
     """Header on every page except the first (matches the example DOCX)."""
     section = doc.sections[0]
     section.different_first_page_header_footer = True
-    # First page: empty header.
     fp = section.first_page_header
     for p in list(fp.paragraphs):
         p.text = ""
 
     header = section.header
-    # Clear default empty paragraph content, then write the two-line header.
     for p in list(header.paragraphs):
         p.clear()
     while len(header.paragraphs) > 1:
@@ -269,14 +398,18 @@ def _configure_continuing_page_header(doc: Document, *, program_name: str) -> No
 
     line2 = header.add_paragraph()
     line2.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    r2 = line2.add_run(
-        "Georgia English Language Arts Standards (2023), Grade 1"
-    )
+    r2 = line2.add_run(framework_header)
     _style_run(r2, bold=True)
     _add_bottom_border(line2)
 
 
-def _add_title_page(doc: Document, *, program_name: str, grade_label: str) -> None:
+def _add_title_page(
+    doc: Document,
+    *,
+    program_name: str,
+    grade_label: str,
+    framework_title_lines: list[str],
+) -> None:
     """Centered first-page title block from the example."""
 
     def _title_line(text: str) -> None:
@@ -289,8 +422,8 @@ def _add_title_page(doc: Document, *, program_name: str, grade_label: str) -> No
     doc.add_paragraph()
     _title_line("correlated to")
     doc.add_paragraph()
-    _title_line("Georgia’s")
-    _title_line("K–12 English Language Arts Standards*")
+    for line in framework_title_lines:
+        _title_line(line)
     doc.add_paragraph()
     _title_line(grade_label)
     doc.add_paragraph()
@@ -333,7 +466,6 @@ def _parent_label(std: dict[str, Any]) -> str:
     label = (std.get("label") or "").strip()
     text = (std.get("text") or "").strip()
     if label and text:
-        # Example: "Syllables: Identify and manipulate…"
         if text.lower().startswith(label.lower()):
             return text
         return f"{label}: {text}"
@@ -343,11 +475,13 @@ def _parent_label(std: dict[str, Any]) -> str:
 def _big_idea_heading(std: dict[str, Any], index_in_domain: int) -> str:
     label = (std.get("label") or "").strip()
     text = (std.get("text") or "").strip()
-    roman = _ROMAN[index_in_domain] if index_in_domain < len(_ROMAN) else str(index_in_domain + 1)
-    # Prefer short label; fall back to text before the first colon.
+    roman = (
+        _ROMAN[index_in_domain]
+        if index_in_domain < len(_ROMAN)
+        else str(index_in_domain + 1)
+    )
     if not label and text:
         label = text.split(":", 1)[0].strip()
-    # Abbreviation from code tail when present (PA, P, F, …).
     abbr = std.get("code", "").rsplit(".", 1)[-1]
     if label and abbr and abbr.isalpha() and len(abbr) <= 4:
         return f"{roman}. BIG IDEA: {label} ({abbr})"
@@ -357,8 +491,6 @@ def _big_idea_heading(std: dict[str, Any], index_in_domain: int) -> str:
 
 
 def load_standards(path: Path | str) -> list[dict[str, Any]]:
-    import json
-
     p = Path(path)
     data = json.loads(p.read_text(encoding="utf-8"))
     standards = data.get("standards")
@@ -385,17 +517,70 @@ def load_corrected_master(path: Path | str) -> list[dict[str, Any]]:
     return rows
 
 
+def load_alignment_rows_from_judge_dir(judge_dir: Path | str) -> list[dict[str, Any]]:
+    """Load alignment rows from ``output/judge/*.json`` verdicts."""
+    root = Path(judge_dir)
+    if not root.is_dir():
+        raise ClientFormatError(f"{root}: judge dir not found")
+    rows: list[dict[str, Any]] = []
+    for fp in sorted(root.glob("*.json")):
+        try:
+            data = json.loads(fp.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as e:
+            raise ClientFormatError(f"{fp}: {e}") from e
+        rid = (data.get("resource_id") or fp.stem).strip()
+        for v in data.get("verdicts") or []:
+            code = (v.get("standard_code") or "").strip()
+            if not code:
+                continue
+            rows.append(
+                {
+                    "resource_id": rid,
+                    "standard_code": code,
+                    "matched_status": v.get("matched_status"),
+                    "evidence_page": v.get("evidence_page"),
+                    "rationale": v.get("rationale"),
+                    "input_scope_caveat": v.get("input_scope_caveat"),
+                    "evidence": v.get("evidence"),
+                    "grounded": v.get("grounded"),
+                    "confidence": v.get("confidence"),
+                    "needs_review": v.get("needs_review"),
+                    "prompt_version": v.get("prompt_version")
+                    or data.get("prompt_version"),
+                }
+            )
+    if not rows:
+        raise ClientFormatError(f"{root}: no judge verdicts found")
+    return rows
+
+
+def load_alignment_rows_from_csv_dir(csv_dir: Path | str) -> list[dict[str, Any]]:
+    """Load alignment rows from per-lesson ``output/result/*.csv`` files."""
+    root = Path(csv_dir)
+    if not root.is_dir():
+        raise ClientFormatError(f"{root}: csv dir not found")
+    rows: list[dict[str, Any]] = []
+    for fp in sorted(root.glob("*.csv")):
+        with fp.open(encoding="utf-8", newline="") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                if not row.get("resource_id") or not row.get("standard_code"):
+                    continue
+                rows.append(dict(row))
+    if not rows:
+        raise ClientFormatError(f"{root}: no CSV alignment rows found")
+    return rows
+
+
 def load_lesson_page_fallback(lessons_dir: Path | str | None) -> dict[str, int]:
     """resource_id → page_start from Stage-1 lesson JSON (fallback only)."""
-    import json
-
     out: dict[str, int] = {}
     if lessons_dir is None:
         return out
     root = Path(lessons_dir)
     if not root.is_dir():
         return out
-    for f in root.glob("G1M2*.json"):
+    for f in root.glob("*.json"):
         try:
             data = json.loads(f.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError):
@@ -520,9 +705,17 @@ def build_client_docx(
     teacher_by_code: dict[str, dict[str, Any]],
     program_name: str,
     grade_label: str = "Grade 1",
-    framework_line: str = "Georgia’s K–12 English Language Arts Standards*",
+    framework_title_lines: list[str] | None = None,
+    framework_header: str = "Georgia English Language Arts Standards (2023), Grade 1",
+    standards_column_header: str = "Georgia’s English Language Arts Standards",
+    guide_label: str = "Module 2",
+    parent_rollups: dict[str, dict[str, Any]] | None = None,
 ) -> Document:
-    del framework_line  # title block uses the example wording
+    title_lines = framework_title_lines or [
+        "Georgia’s",
+        "K–12 English Language Arts Standards*",
+    ]
+    rollups = parent_rollups or {}
     doc = Document()
     for section in doc.sections:
         section.top_margin = Inches(0.75)
@@ -530,19 +723,27 @@ def build_client_docx(
         section.left_margin = Inches(0.75)
         section.right_margin = Inches(0.75)
 
-    _configure_continuing_page_header(doc, program_name=program_name)
-    _add_title_page(doc, program_name=program_name, grade_label=grade_label)
+    _configure_continuing_page_header(
+        doc,
+        program_name=program_name,
+        framework_header=framework_header,
+    )
+    _add_title_page(
+        doc,
+        program_name=program_name,
+        grade_label=grade_label,
+        framework_title_lines=title_lines,
+    )
 
     table = doc.add_table(rows=1, cols=4)
     table.style = "Table Grid"
     table.autofit = True
 
-    # Header: merge cols 0-1 | Teacher’s Guide | Other Materials
     hdr = table.rows[0]
     standards_hdr = _merge_row_span(hdr, 0, 1)
     _set_cell_text(
         standards_hdr,
-        "Georgia’s English Language Arts Standards",
+        standards_column_header,
         bold=True,
         center=True,
     )
@@ -584,8 +785,16 @@ def build_client_docx(
         if level == "standard":
             row = table.add_row()
             _set_cell_text(row.cells[0], code, bold=False)
-            label_cell = _merge_row_span(row, 1, 3)
-            _set_cell_text(label_cell, _parent_label(std), bold=False)
+            _set_cell_text(row.cells[1], _parent_label(std), bold=False)
+            rollup = rollups.get(code) or {}
+            alignment = rollup.get("alignment")
+            if alignment == "partially_met":
+                _set_cell_text(row.cells[2], rollup.get("statement") or _PARTIAL_NOTE)
+            elif alignment == "fully_met":
+                _set_cell_text(row.cells[2], rollup.get("statement") or _FULL_NOTE)
+            else:
+                _set_cell_text(row.cells[2], "")
+            _set_cell_text(row.cells[3], "")
             continue
 
         if level == "substandard":
@@ -593,7 +802,12 @@ def build_client_docx(
             agg = teacher_by_code.get(code)
             _set_cell_text(row.cells[0], code, bold=False)
             _set_cell_text(row.cells[1], (std.get("text") or "").strip(), bold=False)
-            _fill_leaf_material_cells(row.cells[2], row.cells[3], agg)
+            _fill_leaf_material_cells(
+                row.cells[2],
+                row.cells[3],
+                agg,
+                guide_label=guide_label,
+            )
             continue
 
         row = table.add_row()
@@ -603,8 +817,9 @@ def build_client_docx(
 
     foot = doc.add_paragraph()
     fr = foot.add_run(
-        f"* Alignments drawn from {program_name} Teacher Guide (Module 2) only. "
-        "Other Materials are blank when Supporting Materials were not in the provided input."
+        f"* Alignments drawn from {program_name} Teacher Guide ({guide_label}) only. "
+        "Other Materials are blank when Supporting Materials were not in the provided input. "
+        "Parent-standard cells use skill-named roll-up wording when partially met."
     )
     _style_run(fr, bold=False)
     fr.font.size = Pt(8)
@@ -616,11 +831,16 @@ def build_client_xlsx_mirror(
     standards: list[dict[str, Any]],
     teacher_by_code: dict[str, dict[str, Any]],
     program_name: str,
+    guide_label: str = "Module 2",
+    parent_rollups: dict[str, dict[str, Any]] | None = None,
+    source_label: str = "judge",
 ) -> Workbook:
-    """Flat QA mirror of the DOCX leaf citations (easy review in Excel)."""
+    """Flat QA mirror + parent Rollup sheet (client skill wording)."""
+    rollups = parent_rollups or {}
     wb = Workbook()
     ws = wb.active
     ws.title = "Client_correlation"
+    prefix = f"{guide_label}:"
     ws.append(
         [
             "standard_code",
@@ -643,12 +863,16 @@ def build_client_xlsx_mirror(
         pages = format_page_list(agg["pages"]) if agg else ""
         if not pages:
             tg_note = _BEYOND_SCOPE_NOTE
-        elif agg and int(agg.get("partial_n") or 0) > 0 and int(agg.get("full_n") or 0) == 0:
+        elif (
+            agg
+            and int(agg.get("partial_n") or 0) > 0
+            and int(agg.get("full_n") or 0) == 0
+        ):
             expl = _short_partial_explanation(list(agg.get("partial_rationales") or []))
             note_line = f"{_PARTIAL_NOTE} {expl}".strip() if expl else _PARTIAL_NOTE
-            tg_note = f"{note_line}\nModule 2: {pages}"
+            tg_note = f"{note_line}\n{prefix} {pages}"
         else:
-            tg_note = f"Module 2: {pages}"
+            tg_note = f"{prefix} {pages}"
         ws.append(
             [
                 code,
@@ -663,41 +887,112 @@ def build_client_xlsx_mirror(
             ]
         )
 
+    roll = wb.create_sheet("Parent_rollup")
+    roll.append(
+        [
+            "Standard Section",
+            "Parent Standard",
+            "Alignment",
+            "Roll-up statement — CLIENT FORMAT",
+        ]
+    )
+    for parent_code in sorted(rollups.keys()):
+        r = rollups[parent_code]
+        align = r.get("alignment") or ""
+        align_label = {
+            "partially_met": "Partially met",
+            "fully_met": "Fully met",
+            "beyond_scope": "Beyond scope",
+        }.get(align, align)
+        roll.append(
+            [
+                r.get("section") or domain_section_for_code(parent_code),
+                f"{parent_code} — {r.get('parent_label') or ''}".rstrip(" —"),
+                align_label,
+                r.get("statement") or "",
+            ]
+        )
+
     meta = wb.create_sheet("provenance")
     meta.append(["field", "value"])
     meta.append(["client_format_version", CLIENT_FORMAT_VERSION])
     meta.append(["program_name", program_name])
-    meta.append(["source", "Veramynd_ALL40_corrected_master.xlsx"])
+    meta.append(["guide_label", guide_label])
+    meta.append(["source", source_label])
     meta.append(["include_statuses", "full,partial"])
     cited = sum(1 for a in teacher_by_code.values() if a.get("pages"))
     meta.append(["leaf_standards_with_citations", cited])
-    meta.append(["leaf_standards_total", sum(1 for s in standards if s.get("level") == "substandard")])
+    meta.append(
+        [
+            "leaf_standards_total",
+            sum(1 for s in standards if s.get("level") == "substandard"),
+        ]
+    )
+    meta.append(
+        [
+            "parents_partially_met",
+            sum(1 for r in rollups.values() if r.get("alignment") == "partially_met"),
+        ]
+    )
     return wb
 
 
 def write_client_correlation_package(
     *,
-    master_xlsx: Path | str,
     standards_json: Path | str,
     out_docx: Path | str,
     out_xlsx: Path | str | None = None,
+    master_xlsx: Path | str | None = None,
+    judge_dir: Path | str | None = None,
+    csv_dir: Path | str | None = None,
     lessons_dir: Path | str | None = None,
     program_name: str = "EL Education Curriculum",
+    guide_label: str = "Module 2",
     include_partial: bool = True,
+    grade_label: str = "Grade 1",
+    framework_title_lines: list[str] | None = None,
+    framework_header: str = "Georgia English Language Arts Standards (2023), Grade 1",
+    standards_column_header: str = "Georgia’s English Language Arts Standards",
 ) -> dict[str, Any]:
+    """Build DOCX + XLSX from judge / CSV / corrected-master rows.
+
+    Prefer ``judge_dir`` (post-judge) or ``csv_dir`` (post report / result CSVs).
+    ``master_xlsx`` remains available for hand-corrected delivery sheets.
+    """
     standards = load_standards(standards_json)
-    master_rows = load_corrected_master(master_xlsx)
+    source_label = "unknown"
+    if judge_dir:
+        master_rows = load_alignment_rows_from_judge_dir(judge_dir)
+        source_label = f"judge:{judge_dir}"
+    elif csv_dir:
+        master_rows = load_alignment_rows_from_csv_dir(csv_dir)
+        source_label = f"csv:{csv_dir}"
+    elif master_xlsx:
+        master_rows = load_corrected_master(master_xlsx)
+        source_label = f"master:{master_xlsx}"
+    else:
+        raise ClientFormatError(
+            "provide one of: judge_dir, csv_dir, or master_xlsx"
+        )
+
     fallback = load_lesson_page_fallback(lessons_dir)
     teacher_by_code = aggregate_teacher_pages(
         master_rows,
         lesson_page_fallback=fallback,
         include_partial=include_partial,
     )
+    parent_rollups = build_parent_rollups(standards, teacher_by_code)
 
     doc = build_client_docx(
         standards=standards,
         teacher_by_code=teacher_by_code,
         program_name=program_name,
+        grade_label=grade_label,
+        framework_title_lines=framework_title_lines,
+        framework_header=framework_header,
+        standards_column_header=standards_column_header,
+        guide_label=guide_label,
+        parent_rollups=parent_rollups,
     )
     out_doc_path = Path(out_docx)
     out_doc_path.parent.mkdir(parents=True, exist_ok=True)
@@ -709,24 +1004,33 @@ def write_client_correlation_package(
             standards=standards,
             teacher_by_code=teacher_by_code,
             program_name=program_name,
+            guide_label=guide_label,
+            parent_rollups=parent_rollups,
+            source_label=source_label,
         )
         xlsx_path = Path(out_xlsx)
         xlsx_path.parent.mkdir(parents=True, exist_ok=True)
         wb.save(xlsx_path)
 
     cited = sum(1 for a in teacher_by_code.values() if a.get("pages"))
+    partial_parents = sum(
+        1 for r in parent_rollups.values() if r.get("alignment") == "partially_met"
+    )
     summary = {
         "schema_version": CLIENT_FORMAT_VERSION,
         "program_name": program_name,
-        "master_rows": len(master_rows),
+        "guide_label": guide_label,
+        "source": source_label,
+        "alignment_rows": len(master_rows),
         "positive_standards_cited": cited,
+        "parents_partially_met": partial_parents,
         "docx": str(out_doc_path),
         "xlsx": str(xlsx_path) if xlsx_path else None,
         "include_partial": include_partial,
         "lesson_page_fallback_keys": len(fallback),
     }
     summary_path = out_doc_path.with_suffix(".summary.json")
-    atomic_write_text(summary_path, __import__("json").dumps(summary, indent=2) + "\n")
+    atomic_write_text(summary_path, json.dumps(summary, indent=2) + "\n")
     summary["summary_path"] = str(summary_path)
     return summary
 
@@ -735,6 +1039,10 @@ __all__ = [
     "CLIENT_FORMAT_VERSION",
     "ClientFormatError",
     "aggregate_teacher_pages",
+    "build_parent_rollups",
     "format_page_list",
+    "load_alignment_rows_from_csv_dir",
+    "load_alignment_rows_from_judge_dir",
+    "skill_phrase",
     "write_client_correlation_package",
 ]

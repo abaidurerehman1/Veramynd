@@ -21,6 +21,7 @@ fresh GO report beside a stale ``lessons/`` tree.
 ``retrieve-standards`` hybrid dense+BM25+RRF (top 30) then cross-encoder rerank.
 ``judge-standards`` alignment judge (full/partial/none) + evidence grounding.
 ``report-alignments`` export judge verdicts to CSV (+ summary JSON).
+``client-correlation`` build Example Output Format DOCX + skill-named parent roll-up XLSX.
 """
 
 from __future__ import annotations
@@ -54,6 +55,7 @@ from .judge.pipeline import (
 )
 from .report.exporter import ReportError, export_alignment_report
 from .report.dashboard import write_html_dashboard
+from .report.client_format import ClientFormatError, write_client_correlation_package
 from .retrieve.pipeline import (
     DEFAULT_HYBRID_TOP_K,
     RetrieveError,
@@ -1007,6 +1009,51 @@ def cmd_report_alignments(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_client_correlation(args: argparse.Namespace) -> int:
+    """Judge/CSV/master → Example Output Format DOCX + parent roll-up XLSX."""
+    sources = [
+        bool(args.judge_dir),
+        bool(args.csv_dir),
+        bool(args.master_xlsx),
+    ]
+    if sum(sources) != 1:
+        print(
+            "ERROR: provide exactly one of --judge-dir, --csv-dir, or --master-xlsx",
+            file=sys.stderr,
+        )
+        return 2
+
+    out_docx = Path(args.out_docx)
+    out_xlsx = Path(args.out_xlsx) if args.out_xlsx else out_docx.with_suffix(".xlsx")
+    try:
+        summary = write_client_correlation_package(
+            standards_json=args.standards,
+            out_docx=out_docx,
+            out_xlsx=out_xlsx,
+            master_xlsx=args.master_xlsx,
+            judge_dir=args.judge_dir,
+            csv_dir=args.csv_dir,
+            lessons_dir=args.lessons_dir,
+            program_name=args.program_name,
+            guide_label=args.guide_label,
+            include_partial=not bool(args.full_only),
+            grade_label=args.grade_label,
+            framework_header=args.framework_header,
+            standards_column_header=args.standards_header,
+        )
+    except ClientFormatError as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        return 1
+
+    print(
+        f"Wrote {summary.get('docx')} | {summary.get('xlsx')} "
+        f"(cited={summary.get('positive_standards_cited')}, "
+        f"partial_parents={summary.get('parents_partially_met')})",
+        flush=True,
+    )
+    return 0
+
+
 def cmd_cache_prune(args: argparse.Namespace) -> int:
     """Report (and optionally delete) cache entries orphaned by a version bump."""
     from .cache_maintenance import (
@@ -1784,6 +1831,81 @@ def build_parser() -> argparse.ArgumentParser:
         help="skip HTML dashboard generation",
     )
     rp.set_defaults(func=cmd_report_alignments)
+
+    cc = sub.add_parser(
+        "client-correlation",
+        help=(
+            "build Example Output Format DOCX + skill-named parent roll-up XLSX "
+            "from judge dir, result CSVs, or corrected master"
+        ),
+    )
+    src = cc.add_mutually_exclusive_group(required=True)
+    src.add_argument(
+        "--judge-dir",
+        default=None,
+        help="directory of judge JSON reports (preferred post-judge path)",
+    )
+    src.add_argument(
+        "--csv-dir",
+        default=None,
+        help="directory of per-lesson result CSVs (output/result)",
+    )
+    src.add_argument(
+        "--master-xlsx",
+        default=None,
+        help="corrected-master style alignment workbook (optional delivery source)",
+    )
+    cc.add_argument(
+        "--standards",
+        required=True,
+        help="Stage-1 standards.json (hierarchy for DOCX sections + parent roll-up)",
+    )
+    cc.add_argument(
+        "--lessons-dir",
+        default=None,
+        help="Stage-1 lessons dir (page_start fallback when evidence_page missing)",
+    )
+    cc.add_argument(
+        "--out-docx",
+        required=True,
+        help="output DOCX path (Example Output Format style)",
+    )
+    cc.add_argument(
+        "--out-xlsx",
+        default=None,
+        help="output XLSX mirror + Parent_rollup sheet (default: same stem as DOCX)",
+    )
+    cc.add_argument(
+        "--program-name",
+        default="EL Education Curriculum",
+        help="program name on title page / header (publisher-agnostic parameter)",
+    )
+    cc.add_argument(
+        "--guide-label",
+        default="Module 2",
+        help="citation label prefix in Teacher’s Guide cells (e.g. Module 2)",
+    )
+    cc.add_argument(
+        "--grade-label",
+        default="Grade 1",
+        help="grade line on the title page",
+    )
+    cc.add_argument(
+        "--framework-header",
+        default="Georgia English Language Arts Standards (2023), Grade 1",
+        help="continuing-page header framework line",
+    )
+    cc.add_argument(
+        "--standards-header",
+        default="Georgia’s English Language Arts Standards",
+        help="table column header for the standards side",
+    )
+    cc.add_argument(
+        "--full-only",
+        action="store_true",
+        help="cite only full matches (exclude partial) in leaf page lists",
+    )
+    cc.set_defaults(func=cmd_client_correlation)
 
     r = sub.add_parser(
         "remap-pages",

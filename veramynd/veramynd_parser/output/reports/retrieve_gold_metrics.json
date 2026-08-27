@@ -1,6 +1,6 @@
 {
   "gold_source": "output\\reports\\gold_set_batch1_from_md.jsonl",
-  "retrieve_dir": "output\\retrieve_gold4",
+  "retrieve_dir": "output\\retrieve",
   "candidate_count_before_rerank": null,
   "candidate_count_after_rerank": 50,
   "after_rerank": {

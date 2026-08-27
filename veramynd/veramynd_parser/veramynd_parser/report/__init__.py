@@ -10,6 +10,7 @@ from .dashboard import write_html_dashboard
 from .client_format import (
     CLIENT_FORMAT_VERSION,
     ClientFormatError,
+    build_parent_rollups,
     write_client_correlation_package,
 )
 
@@ -21,5 +22,6 @@ __all__ = [
     "write_html_dashboard",
     "CLIENT_FORMAT_VERSION",
     "ClientFormatError",
+    "build_parent_rollups",
     "write_client_correlation_package",
 ]

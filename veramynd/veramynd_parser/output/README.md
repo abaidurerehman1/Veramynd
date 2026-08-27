@@ -2,38 +2,34 @@
 
 Do not commit secrets. This folder is **tracked in git** as a reference-run
 snapshot of the Grade 1 Module 2 sample corpus — regenerating changes these
-files, so keep committed snapshots deliberate (or gitignore the folder if the
-churn stops being worth it).
+files, so keep committed snapshots deliberate.
+
+Experimental retrieve variants, top50 dumps, and one-off report scripts live in
+[`../../_archive/`](../../_archive/) — not here.
 
 ```text
 output/
 ├── stage1/                 # Batch-1 EL G1M2 — parse + verify (GO, locked stack)
-├── stage1_ssmanual/        # Shared Story L1 manual — Stage-1 GO (2nd publisher)
 ├── normalize/              # Batch-1 ELA normalize — schema 2.0-ela
 ├── normalize_standards/    # GA leaf normalize (shared by retrieve)
-├── retrieve_gold4/         # Batch-1 gold retrieve (R@25 bar)
-├── retrieve/               # all 40 EL lessons — 50-standard shortlist
-├── judge/                  # alignment verdicts (assembled prompt v1.5; all 40; gold-4 19/20)
-├── result/                 # per-lesson CSVs (G1M2U1L1.csv …)
-├── reports/                # gold4_alignments.csv, gold_judge_*.csv, client/
-├── chunks/                 # hierarchical chunks for grounding / judge
-└── embeddings/             # embed run manifest (vectors live in Qdrant)
+├── retrieve/               # all 40 EL + locked gold-4 shortlists (R@25 bar)
+├── judge/                  # alignment verdicts (assembled prompt v1.1)
+├── result/                 # per-lesson CSVs (G1M2U*.csv)
+├── reports/                # gold metrics + client correlation DOCX/XLSX
+└── embeddings/             # standards embed manifests (Qdrant veramynd_standards)
 ```
 
-## Stage 1 (`stage1/` and `stage1_ssmanual/`)
+## Stage 1 (`stage1/`)
 
 | Path | Role |
 |------|------|
 | `stage1/` | EL Module 2 — **Batch-1 locked** (40 lessons) |
-| `stage1_ssmanual/` | `21111_RBtL_SSManual_L1.pdf` — **Stage-1 GO** (14 lessons: L01–L02 Start-Up, L04–L15 Shared Stories; no L03 — Story 3 absent in source) |
 | `verification_report.txt` | Human-readable GO / BLOCK report |
 | `verification_verdict.json` | Machine-readable gate verdict — downstream commands check this |
 | `lessons/*.json` | Per-lesson contracts (primary Stage 1 product) |
 | `standards.json` | Standards tree from the XLSX |
 | `teacher_guide.json` | Full guide parse (audit / reload) |
 | `lessons_index.tsv` | Human-readable lesson summary |
-
-Normalize → retrieve for `stage1_ssmanual/` is **not** production-locked yet.
 
 ## Normalize (`normalize/`)
 
@@ -43,97 +39,59 @@ Normalize → retrieve for `stage1_ssmanual/` is **not** production-locked yet.
 | `normalize_progress.json` | Resume / status sidecar |
 
 **Reuse:** content-addressed LLM cache (`.normalize_cache/`) + versioned
-**artifact registry** (`.normalize_cache/artifact_registry.json`). Same Stage-1
-input + prompt + model → reuse; do not `--force` unless intentional.
-
-```bash
-veramynd-parser artifact-status
-veramynd-parser artifact-register --lessons-dir output/stage1/lessons --out output/normalize
-```
-
-## Chunks (`chunks/`)
-
-| Path | Role |
-|------|------|
-| `by_lesson/*.json` | Per-lesson bundle: lesson + instructional + evidence pointers |
-| `chunk_manifest.json` | Counts + strategy summary |
-| `chunk_progress.json` | Status sidecar |
-
-Hierarchy: **lesson** (normalize competency text) → **instructional** (Stage-1 block steps) → **evidence_pointer** (join metadata; quote string-match inside block).
+**artifact registry**. Same Stage-1 input + prompt + model → reuse; do not
+`--force` unless intentional.
 
 ## Embeddings (`embeddings/` + Qdrant)
 
+Lesson chunks + `veramynd_chunks` embed manifests are archived under
+`_archive/pipeline_experiments/chunks/` and `chunk_embeddings/`. Keep standards only:
+
 | Path | Role |
 |------|------|
-| `embed_manifest.json` | Model, dims, collection, counts |
-| `embed_progress.json` | Status sidecar |
-| `.qdrant_data/` (package root) | Local Qdrant store when `QDRANT_URL` unset |
-
-Default: OpenAI **`text-embedding-3-large`** (3072-d, Cosine) → collection `veramynd_chunks`.
-Standards: same model → collection `veramynd_standards` (`embed-standards`).
+| `embed_standards_manifest.json` | Standards collection upsert summary |
+| `embed_standards_progress.json` | Status sidecar |
+| `.qdrant_data/` / Qdrant URL | `veramynd_standards` vectors |
 
 ## Judge (`judge/`)
 
 Live prompt: [`../veramynd_parser/prompts/assembled_judge_prompt.md`](../veramynd_parser/prompts/assembled_judge_prompt.md)
-(engine + GA Grade 1 overlay). `align_judge.v1.1` / `align_judge_v1.md` is unused.
+(engine + GA Grade 1 overlay `v1.1`). Legacy `align_judge_v1.md` is archived.
 
-Gold eval is always `--limit 25` on `output/retrieve/` (R@25 bar still lives
-on `output/retrieve_gold4/`; do not retune retrieve). After the retrieve
-shortlist, a coverage pass may append
-feedback/present codes that missed top 25 (`coverage_pass_injected` in the
-JSON). Close-read rows that cite a missing Read-aloud Guide get
-`input_scope_caveat` — scores are likely understated; **do not hand-edit
-labels**. Re-run those lessons only if the client shares the guides.
+Gold eval uses `--limit 25` on `output/retrieve/` (gold-4 lesson files). Coverage pass may
+append feedback/present codes. Close-read rows may carry `input_scope_caveat`
+when Read-aloud Guides were not in the input — **do not hand-edit labels**.
 
 | Artifact | Honest status |
 |----------|----------------|
-| All 40 EL lessons | Assembled Anthropic batch `--limit 25` — run; SME exact is gold-4 only |
-| Gold-4 overall | Assembled Anthropic batch `--no-cache --limit 25` (`v1.5`) — **19/20 (95%)** unique 3-class |
-| `G1M2U1L1.json` | **7/7** |
-| `G1M2U1L3.json` | **5/5** |
-| `G1M2U1L6.json` | **6/7** — miss `1.L.V.3.a` (gold partial / json full); coverage `1.P.CP.2.a` |
-| `G1M2U3L5.json` | **1/1**; coverage `1.P.EICC.4.f`, `1.P.CP.1.c`, `1.P.CP.2.a` |
-
-```bash
-veramynd-parser judge-standards \
-  --retrieve-file output/retrieve/G1M2U1L1.json \
-  --lesson-file output/stage1/lessons/G1M2U1L1.json \
-  --standards-dir output/normalize_standards \
-  --out output/judge/G1M2U1L1.json \
-  --limit 25 --no-cache
-# opt out of coverage extras: --no-coverage-pass
-```
+| All 40 EL lessons | Assembled Anthropic batch `--limit 25` |
+| Gold-4 vs SME | **20/20 (100%)** 3-class exact (`v1.1`) |
+| Gold-4 vs corrected master | **95/102 (93.1%)** |
 
 ## Reports (`reports/` and `result/`)
 
-CSV/HTML from `report-alignments`. Columns include `needs_review`,
-`coverage_pass`, and `input_scope_caveat`. Per-lesson CSVs for the live
-40-lesson run: `output/result/G1M2U*.csv`. Gold-4 combined export:
-`output/reports/gold4_alignments.csv`.
+Keep production reports here:
+
+- `GA_ELA_G1_Module2_client_correlation.docx` / `.xlsx` (+ `.summary.json`) — all-40 client ship
+- `gold_set_batch1_from_md.jsonl`, `retrieve_gold_metrics.json` — gold-4 R@25 eval fixtures/metrics
+
+Gold-4 reports, `reference_data/`, P3/P9 scratch live in
+[`../../_archive/reports_scratch/`](../../_archive/reports_scratch/).
 
 ```bash
 veramynd-parser report-alignments --judge-dir output/judge --out output/reports/gold4_alignments.csv
-```
 
+veramynd-parser client-correlation \
+  --judge-dir output/judge \
+  --standards output/stage1/standards.json \
+  --lessons-dir output/stage1/lessons \
+  --out-docx output/reports/GA_ELA_G1_Module2_client_correlation.docx \
+  --out-xlsx output/reports/GA_ELA_G1_Module2_client_correlation.xlsx
+```
 ## Regenerate
 
 ```bash
-# Stage 1 (default --out is output/stage1)
 veramynd-parser export <guide.pdf> --out output/stage1 --standards <stds.xlsx> --expect 40
-
-# ELA normalize (only after GO)
 veramynd-parser normalize-lessons output/stage1/lessons --out output/normalize
-
-# Hierarchical chunks (no LLM)
-veramynd-parser chunk-lessons output/stage1/lessons --normalize-dir output/normalize --out output/chunks
-
-# Embed + Qdrant upsert (lessons)
-pip install -e '.[embed]'
-veramynd-parser embed-chunks output/chunks --out output/embeddings --recreate
-
-# Embed + Qdrant upsert (standards)
-veramynd-parser embed-standards output/normalize_standards --out output/embeddings --recreate
-
-# Smoke: lesson chunk → nearest GA standards
-veramynd-parser smoke-retrieve-standards --chunk-file output/chunks/by_lesson/G1M2U2L1.json --family lesson
+veramynd-parser embed-standards output/normalize_standards --out output/embeddings
 ```

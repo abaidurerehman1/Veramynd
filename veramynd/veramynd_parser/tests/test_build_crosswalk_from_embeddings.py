@@ -18,14 +18,27 @@ from pathlib import Path
 
 import pytest
 
-SCRIPTS_DIR = Path(__file__).resolve().parents[1] / "scripts_standalone"
+VERAMYND_ROOT = Path(__file__).resolve().parents[2]
+SCRIPTS_DIR = VERAMYND_ROOT / "_archive" / "scripts_standalone"
 sys.path.insert(0, str(SCRIPTS_DIR))
 
 import build_crosswalk_from_embeddings as bce  # noqa: E402
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-GROUND_TRUTH_CSV = REPO_ROOT / "output" / "reports" / "reference_data" / "crosswalk_grade1_unit1_verified.csv"
-SOURCE_CSV = REPO_ROOT / "output" / "reports" / "reference_data" / "ccss_grade1_ela.csv"
+GROUND_TRUTH_CSV = (
+    VERAMYND_ROOT
+    / "_archive"
+    / "reports_scratch"
+    / "reference_data"
+    / "crosswalk_grade1_unit1_verified.csv"
+)
+SOURCE_CSV = (
+    VERAMYND_ROOT
+    / "_archive"
+    / "reports_scratch"
+    / "reference_data"
+    / "ccss_grade1_ela.csv"
+)
 STANDARDS_DIR = REPO_ROOT / "output" / "normalize_standards"
 
 requires_openai_key = pytest.mark.skipif(

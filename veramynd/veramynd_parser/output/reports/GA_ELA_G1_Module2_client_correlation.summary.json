@@ -1,10 +1,13 @@
 {
-  "schema_version": "1.1-client-ga-ela",
+  "schema_version": "1.2-client-rollup",
   "program_name": "EL Education Curriculum",
-  "master_rows": 1023,
-  "positive_standards_cited": 51,
-  "docx": "veramynd\\veramynd_parser\\output\\reports\\GA_ELA_G1_Module2_client_correlation.docx",
-  "xlsx": "veramynd\\veramynd_parser\\output\\reports\\GA_ELA_G1_Module2_client_correlation.xlsx",
+  "guide_label": "Module 2",
+  "source": "judge:output/judge",
+  "alignment_rows": 1025,
+  "positive_standards_cited": 50,
+  "parents_partially_met": 21,
+  "docx": "output\\reports\\GA_ELA_G1_Module2_client_correlation.docx",
+  "xlsx": "output\\reports\\GA_ELA_G1_Module2_client_correlation.xlsx",
   "include_partial": true,
   "lesson_page_fallback_keys": 40
 }

@@ -16,7 +16,7 @@ Built against real documents (in `../data/samples/`):
   retrieve **not** locked yet)
 
 Batch-1 gold retrieve (protected bar): **R@25 = 100%** on
-`output/retrieve_gold4/`. Live gold-4 judge uses
+`output/retrieve/`. Live gold-4 judge uses
 [`prompts/assembled_judge_prompt.md`](veramynd_parser/prompts/assembled_judge_prompt.md)
 (engine + GA Grade 1 overlay `v1.1`), Anthropic Sonnet batch + Opus escalate-batch,
 
@@ -292,7 +292,7 @@ Integration cases that need the real PDF/xlsx are skipped automatically if those
 files are absent. Standards structural fixtures:
 `tests/fixtures/standards/` (rebuild with `python tests/fixtures/standards/build_fixtures.py`).
 
-Protected recall smoke (existing `retrieve_gold4` artifacts):
+Protected recall smoke (existing `retrieve` artifacts):
 
 ```bash
 python -m veramynd_parser.scripts.eval_r20            # R@10/20/25/30/50
@@ -484,7 +484,7 @@ legacy opt-out). Diagnostics under `output/reports/retrieve_diag_gold4/` (or
 # Batch-1 gold retrieve (live: R@25=100%, R@20=90%, R@50=100%)
 # Requires local Qdrant standards collection + normalize artifacts.
 python -m veramynd_parser.scripts.batch_align_all \
-  --retrieve-dir output/retrieve_gold4 \
+  --retrieve-dir output/retrieve \
   --diag-dir output/reports/retrieve_diag_gold4 \
   --from-gold output/reports/gold_set_batch1_from_md.jsonl \
   --judge-shortlist-k 50 \
@@ -517,7 +517,7 @@ fences F1–F9 are encoded there; do not rewrite the engine. Scores
 **student acts** in Stage-1 steps. Ungrounded quotes become `none`.
 `align_judge_v1.md` is unused.
 
-Gold-4 eval: `--limit 25` on `output/retrieve/` (or `output/retrieve_gold4/`
+Gold-4 eval: `--limit 25` on `output/retrieve/` (or `output/retrieve/`
 for the locked R@25 bar; do not retune retrieve for judge misses). After the
 retrieve shortlist, a **coverage pass** appends activity-driven
 feedback/present codes when the lesson has those tasks (`1.P.EICC.4.f`,
@@ -594,7 +594,7 @@ under `output/reports/client/`. Per-lesson CSVs for the live 40-lesson run:
 
 **Gold metrics:** Batch-1 positives live in
 [`docs/_ga_g1_module2_goldset.md`](../docs/_ga_g1_module2_goldset.md). Use
-`python -m veramynd_parser.scripts.eval_r20` against `output/retrieve_gold4/` for R@10/20/25/30/50
+`python -m veramynd_parser.scripts.eval_r20` against `output/retrieve/` for R@10/20/25/30/50
 (protected bar: **R@25 == 100%**). Live gold-4 3-class exact: **20/20 (100%)**;
 vs corrected master **95/102 (93.1%)**.
 Stale `output/reports/gold_judge_*.csv` may still show a prior OpenAI run.

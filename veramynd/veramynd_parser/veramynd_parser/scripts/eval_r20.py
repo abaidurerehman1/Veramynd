@@ -1,7 +1,7 @@
 """Batch-1 gold recall at R@10/20/25/30/50 for enterprise shortlist depth.
 
-Protected Batch-1 bar: Recall@25 = 100% on retrieve_gold4 (do not tune retrieve
-to hide parser regressions).
+Protected Batch-1 bar: Recall@25 = 100% on output/retrieve for the gold-4
+lessons (do not tune retrieve to hide parser regressions).
 """
 from __future__ import annotations
 
@@ -13,6 +13,8 @@ from pathlib import Path
 GOLD = Path(__file__).resolve().parents[3] / "docs" / "_ga_g1_module2_goldset.md"
 BASE = Path(__file__).resolve().parents[2] / "output"
 CUTOFFS = (10, 20, 25, 30, 50)
+# Gold-4 lesson ids used for the protected R@25 bar inside output/retrieve.
+GOLD4_LESSONS = ("G1M2U1L1", "G1M2U1L3", "G1M2U1L6", "G1M2U3L5")
 
 
 def load_positives() -> list[dict]:
@@ -44,7 +46,7 @@ def load_positives() -> list[dict]:
 def main() -> None:
     positives = load_positives()
     n = len(positives)
-    for name in ("retrieve_gold4", "retrieve_tuned"):
+    for name in ("retrieve",):
         retdir = BASE / name
         if not retdir.is_dir():
             print(f"=== {name} === SKIP (missing {retdir})")
@@ -73,7 +75,7 @@ def main() -> None:
             details.append((g, rank))
             by_lesson[g["resource_id"]].append((g, rank))
 
-        print(f"=== {name} ===")
+        print(f"=== {name} (gold-4 positives) ===")
         print(
             "config merge=",
             sample.get("merge_aggregation"),
@@ -87,28 +89,19 @@ def main() -> None:
         for k in CUTOFFS:
             print(f"  Recall@{k}: {hits[k]}/{n} = {hits[k]/n:.1%}")
         r25 = hits[25] / n if n else 0.0
-        if name == "retrieve_gold4":
-            status = "PASS" if r25 >= 1.0 else "FAIL"
-            print(f"  protected bar R@25 == 100%: {status}")
+        status = "PASS" if r25 >= 1.0 else "FAIL"
+        print(f"  protected bar R@25 == 100%: {status}")
         print("  per-lesson R@20:")
-        for lid in sorted(by_lesson):
-            rows = by_lesson[lid]
+        for lid in GOLD4_LESSONS:
+            rows = by_lesson.get(lid) or []
+            if not rows:
+                continue
             h = sum(1 for _g, r in rows if r and r <= 20)
             print(f"    {lid}: {h}/{len(rows)} = {h/len(rows):.1%}")
         print("  misses @20:")
         for g, rank in details:
             if rank is None or rank > 20:
-                print(
-                    f"    {g['gold_id']} {g['resource_id']} {g['standard_code']} "
-                    f"{g['status']} rank={rank}"
-                )
-        print("  misses @25:")
-        for g, rank in details:
-            if rank is None or rank > 25:
-                print(
-                    f"    {g['gold_id']} {g['resource_id']} {g['standard_code']} "
-                    f"{g['status']} rank={rank}"
-                )
+                print(f"    {g['resource_id']} {g['standard_code']} rank={rank}")
         print()
 
 

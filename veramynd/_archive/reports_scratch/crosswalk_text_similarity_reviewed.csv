@@ -1,0 +1,88 @@
+source_code,target_code,cosine_similarity,confidence,target_standard_text
+L.1.1b,1.L.GC.1.9,0.688,high,Use common and proper nouns. (Continue)
+L.1.1b,1.L.GC.1.11,0.062,low,"Use determiners (articles, possessive determiners, demonstrative adjectives). (Continue)"
+L.1.1b,1.L.GC.1.7,0.056,low,Use action verbs. (Master)
+L.1.1c,1.L.GC.2.c,0.699,high,Use singular and plural subjects with matching verbs. (C)
+L.1.1c,1.L.GC.1.19,0.347,medium,Form and use irregular plural nouns. (Introduce)
+L.1.1c,1.L.GC.1.18,0.283,medium,Use apostrophes to form contractions and singular possessive nouns. (Introduce)
+L.1.1d,1.L.GC.1.15,0.769,high,"Use personal pronouns (subject, object, and possessive). (Introduce)"
+L.1.1d,1.L.GC.1.18,0.314,medium,Use apostrophes to form contractions and singular possessive nouns. (Introduce)
+L.1.1d,1.T.RA.2.b,0.132,low,"Explore various sources of information, including print, digital, and personal communication. (I)"
+L.1.1e,1.L.GC.1.20,0.549,high,Form and use the past tense of irregular verbs. (Introduce)
+L.1.1e,1.L.GC.1.7,0.322,medium,Use action verbs. (Master)
+L.1.1e,1.T.T.1.e,0.201,low,"Use knowledge of narrative techniques (e.g., characters, settings, events) to create texts that share real or imagined experiences and events with a sense of closure. (C)"
+L.1.1f,1.L.GC.1.8,0.544,high,Use adjectives and adverbs. (Continue)
+L.1.1f,1.L.GC.1.16,0.442,medium,Use frequently occurring prepositions. (Introduce)
+L.1.1f,1.L.GC.2.d,0.313,medium,"With adult support, use adjectives or adverbs to add details or clarify meaning. (C)"
+L.1.1i,1.L.GC.1.16,1.000,high,Use frequently occurring prepositions. (Introduce)
+L.1.1i,1.L.V.2.c,0.256,medium,Construct words using frequently occurring roots words and inflectional endings. (C)
+L.1.1i,1.L.V.2.a,0.205,low,"Identify frequently occurring root words (e.g., look) and inflectional endings used to form and comprehend new words (e.g., looks, looked, looking). (I)"
+L.1.1j,1.L.GC.2.a,0.386,medium,"Distinguish between complete and incomplete simple sentences, and identify the sentence type (i.e., declarative, imperative, interrogative, and exclamatory). (I)"
+L.1.1j,1.L.GC.2.b,0.279,medium,Use a variety of simple sentences (including a variety of sentence types) to develop clarity in written texts. (C)
+L.1.1j,1.L.GC.2,0.266,medium,Recognize and compose coherent sentences that express complete thoughts.
+L.1.2a,1.L.GC.1.12,0.470,high,Capitalize proper nouns. (Continue)
+L.1.2a,1.L.GC.1.17,0.231,low,"Use commas to separate items in a series and to format dates, addresses, salutations, and closings. (Introduce)"
+L.1.2a,1.F.F.1.a,0.000,low,"Increase sight word vocabulary using decoding skills by reading grade-appropriate regularly and irregularly spelled words, including high-frequency words, in isolation and context with increasing automaticity."
+L.1.2b,1.L.GC.1.13,0.417,medium,"Use periods, exclamation marks, and question marks at the end of sentences. (Continue)"
+L.1.2b,1.L.GC.2.b,0.220,low,Use a variety of simple sentences (including a variety of sentence types) to develop clarity in written texts. (C)
+L.1.2b,1.F.H.1.c,0.168,low,"Use appropriate spacing between letters, words, and sentences across lines on a page."
+L.1.4a,1.L.V.3.a,0.448,medium,Use context within and beyond a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases. (I)
+L.1.4a,1.L.V.3.e,0.246,low,Use knowledge of word relationships and learned vocabulary words and phrases when making word choices in speaking and writing. (C)
+L.1.4a,1.L.V.2,0.238,low,Acquire and apply word analysis skills to deconstruct and construct words to make meaning.
+L.1.6,1.L.GC.1.21,0.241,low,"Use coordinating conjunctions to join words, phrases, or clauses. (Introduce)"
+L.1.6,1.L.V.2.c,0.228,low,Construct words using frequently occurring roots words and inflectional endings. (C)
+L.1.6,1.L.GC.1.16,0.190,low,Use frequently occurring prepositions. (Introduce)
+RL.1.1,1.T.RA.1.a,0.459,low,Ask questions about topics of interest for research. (I)
+RL.1.1,1.T.RA.2.a,0.220,low,"Refer to parts of texts when supporting an idea, answer, or opinion. (I)"
+RL.1.1,1.T.RA.1,0.182,low,"Build knowledge about the world by asking or generating questions about topics of interest, researching the answers, using multiple sources, and communicating relevant and accurate information about the topic."
+RL.1.2,1.T.T.1.c,0.291,medium,"Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)"
+RL.1.2,1.F.F.1.c,0.207,low,"Read a wide range of grade-level texts aloud with appropriate prosody (phrasing, expression, juncture/pause, and intonation) to demonstrate understanding."
+RL.1.2,1.T.T.2.a,0.205,low,"Identify techniques used to craft expository texts, including main topic and supporting details. (I)"
+RL.1.3,1.T.T.1.a,0.361,medium,"Identify techniques used to craft stories, including characters, setting, major events, and dialogue. (I)"
+RL.1.3,1.T.T.1.c,0.264,medium,"Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)"
+RL.1.3,1.T.T.2.b,0.166,low,"Describe the connection between two individuals, events, ideas, or pieces of information in a text. (I)"
+RL.1.4,1.P.AC.2.a,0.243,low,"Integrate literary, expository, and opinion (grades K-5) or rhetorical (grades 6-12) elements to appeal to target audiences and achieve specific purposes. (I/C)"
+RL.1.4,1.T.T.4.b,0.212,low,Use poetic techniques to create poems using simple words and/or phrases that may or may not rhyme. (C)
+RL.1.4,1.T.T.1.a,0.184,low,"Identify techniques used to craft stories, including characters, setting, major events, and dialogue. (I)"
+RL.1.5,1.P.EICC.2.a,0.265,medium,Share real or imagined experiences by interpreting and constructing texts that tell or include stories. (I/C)
+RL.1.5,1.T.T.1.a,0.253,medium,"Identify techniques used to craft stories, including characters, setting, major events, and dialogue. (I)"
+RL.1.5,1.F.F.1.b,0.222,low,Read a wide range of grade-level texts aloud with increasing accuracy.
+RL.1.7,1.T.T.1.a,0.429,medium,"Identify techniques used to craft stories, including characters, setting, major events, and dialogue. (I)"
+RL.1.7,1.T.T.1.c,0.314,medium,"Describe traits of the main characters and explain how their words and actions support the central message, lesson, or moral of the story. (I)"
+RL.1.7,1.T.T.2.b,0.197,low,"Describe the connection between two individuals, events, ideas, or pieces of information in a text. (I)"
+RL.1.10,1.F.F.1.c,0.270,medium,"Read a wide range of grade-level texts aloud with appropriate prosody (phrasing, expression, juncture/pause, and intonation) to demonstrate understanding."
+RL.1.10,1.F.F.1.a,0.260,medium,"Increase sight word vocabulary using decoding skills by reading grade-appropriate regularly and irregularly spelled words, including high-frequency words, in isolation and context with increasing automaticity."
+RL.1.10,1.F.F.1.b,0.196,low,Read a wide range of grade-level texts aloud with increasing accuracy.
+RI.1.2,1.T.T.2.a,0.571,high,"Identify techniques used to craft expository texts, including main topic and supporting details. (I)"
+RI.1.2,1.L.GC.2.d,0.200,low,"With adult support, use adjectives or adverbs to add details or clarify meaning. (C)"
+RI.1.2,1.P.ST.1.a,0.188,low,"Use prior knowledge, formal or informal research, and discussions with others to identify the key components of context that are most relevant. (I/C)"
+RI.1.4,1.T.RA.1.a,0.379,medium,Ask questions about topics of interest for research. (I)
+RI.1.4,1.L.V.3.a,0.373,medium,Use context within and beyond a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases. (I)
+RI.1.4,1.L.V.3,0.241,low,Make connections between words and phrases and use reference materials to determine or clarify word meanings in a variety of settings and for a variety of purposes.
+RI.1.6,1.T.RA.1.b,0.338,medium,"Work collaboratively or individually to conduct research on a shared or personal topic of interest by gathering and organizing information from provided sources (including print, digital, and personal communication) using graphic organizers or other support aids. (I)"
+RI.1.6,1.F.PA.6.b,0.188,low,Distinguish between short and long vowel sounds in spoken one-syllable words.
+RI.1.6,1.L.GC.2.a,0.162,low,"Distinguish between complete and incomplete simple sentences, and identify the sentence type (i.e., declarative, imperative, interrogative, and exclamatory). (I)"
+RI.1.7,1.T.T.2.b,0.249,low,"Describe the connection between two individuals, events, ideas, or pieces of information in a text. (I)"
+RI.1.7,1.L.GC.2.d,0.238,low,"With adult support, use adjectives or adverbs to add details or clarify meaning. (C)"
+RI.1.7,1.T.T.2.a,0.228,low,"Identify techniques used to craft expository texts, including main topic and supporting details. (I)"
+SL.1.1,1.T.RA.1.a,0.186,low,Ask questions about topics of interest for research. (I)
+SL.1.1,1.T.RA.1,0.169,low,"Build knowledge about the world by asking or generating questions about topics of interest, researching the answers, using multiple sources, and communicating relevant and accurate information about the topic."
+SL.1.1,1.T.T.1.d,0.165,low,"With adult support, compare and contrast characters and their experiences in stories across diverse cultures. (I)"
+SL.1.1a,1.T.SS.1.c,0.274,medium,"Use transition words or phrases, such as once upon a time, next, and last to sequence events and actions. (C)"
+SL.1.1a,1.P.EICC.4.c,0.171,low,"Generate ideas for content by assessing prior knowledge, gathering information from texts, and engaging in discussions with others. (C)"
+SL.1.1a,1.P.CP.1.c,0.159,low,"Contribute to discussions and shared projects by offering ideas, listening to the ideas of others, and providing feedback. (I/C)"
+SL.1.1b,1.P.EICC.1.e,0.200,low,"Participate in a community of readers and writers by developing group norms, discussing texts, sharing individual writing, listening as others share their writing, and offering and responding to feedback. (I/C)"
+SL.1.1b,1.T.RA.1.c,0.178,low,Share relevant and accurate information through a variety of different modes. (C)
+SL.1.1b,1.T.RA.1,0.167,low,"Build knowledge about the world by asking or generating questions about topics of interest, researching the answers, using multiple sources, and communicating relevant and accurate information about the topic."
+SL.1.2,1.T.RA.1.a,0.347,medium,Ask questions about topics of interest for research. (I)
+SL.1.2,1.F.F.1.b,0.242,low,Read a wide range of grade-level texts aloud with increasing accuracy.
+SL.1.2,1.F.F.1.c,0.211,low,"Read a wide range of grade-level texts aloud with appropriate prosody (phrasing, expression, juncture/pause, and intonation) to demonstrate understanding."
+SL.1.4,1.P.CP.2.a,0.326,medium,"Communicate clearly to present ideas, information, and texts. (I/C)"
+SL.1.4,1.T.T.2.b,0.282,medium,"Describe the connection between two individuals, events, ideas, or pieces of information in a text. (I)"
+SL.1.4,1.P.EICC.4.d,0.214,low,"Link ideas and information to the organization plan, highlighting ideas and information that are most relevant, useful, and impactful. (C)"
+W.1.3,1.T.T.2.d,0.276,medium,"Use knowledge of expository techniques to introduce a topic, supply facts about the topic, and provide a sense of closure. (C)"
+W.1.3,1.T.T.1.e,0.261,medium,"Use knowledge of narrative techniques (e.g., characters, settings, events) to create texts that share real or imagined experiences and events with a sense of closure. (C)"
+W.1.3,1.P.EICC.2.a,0.142,low,Share real or imagined experiences by interpreting and constructing texts that tell or include stories. (I/C)
+W.1.8,1.T.RA.1.b,0.260,medium,"Work collaboratively or individually to conduct research on a shared or personal topic of interest by gathering and organizing information from provided sources (including print, digital, and personal communication) using graphic organizers or other support aids. (I)"
+W.1.8,1.T.RA.2,0.250,medium,Reference parts of texts to address a specific topic or question and explore various sources of information to make connections across a broad range of topics.
+W.1.8,1.T.RA.2.a,0.204,low,"Refer to parts of texts when supporting an idea, answer, or opinion. (I)"

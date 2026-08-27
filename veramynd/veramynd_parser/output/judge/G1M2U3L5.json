@@ -5,7 +5,7 @@
   "judge_mode": "batch",
   "resource_id": "G1M2U3L5",
   "lesson_source": "stage1:G1M2U3L5",
-  "retrieve_file": "output/retrieve_gold4/G1M2U3L5.json",
+  "retrieve_file": "output/retrieve/G1M2U3L5.json",
   "standards_dir": "output\\normalize_standards",
   "judge_model": "claude-sonnet-4-5",
   "escalate": true,

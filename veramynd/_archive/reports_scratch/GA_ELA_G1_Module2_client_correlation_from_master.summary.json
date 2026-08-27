@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.2-client-rollup",
+  "program_name": "EL Education Curriculum",
+  "guide_label": "Module 2",
+  "source": "master:../docs/Veramynd_ALL40_corrected_master.xlsx",
+  "alignment_rows": 1023,
+  "positive_standards_cited": 51,
+  "parents_partially_met": 21,
+  "docx": "output\\reports\\GA_ELA_G1_Module2_client_correlation_from_master.docx",
+  "xlsx": "output\\reports\\GA_ELA_G1_Module2_client_correlation_from_master.xlsx",
+  "include_partial": true,
+  "lesson_page_fallback_keys": 40
+}

@@ -18,7 +18,7 @@ from veramynd_parser.standards.verify import verify_standards
 REPO = ROOT.parent
 GOLD = REPO / "docs" / "_ga_g1_module2_goldset.md"
 GA = REPO / "data" / "samples" / "Grade 1 GA ELA Standards.xlsx"
-GOLD4 = ROOT / "output" / "retrieve_gold4"
+GOLD4 = ROOT / "output" / "retrieve"
 CUTOFFS = (10, 20, 25, 30, 50)
 
 
@@ -74,7 +74,7 @@ def check_r25() -> int:
         print(f"FAIL: goldset missing {GOLD}")
         return 1
     if not GOLD4.is_dir():
-        print(f"FAIL: retrieve_gold4 missing {GOLD4}")
+        print(f"FAIL: retrieve dir missing {GOLD4}")
         return 1
     positives = load_positives()
     n = len(positives)
