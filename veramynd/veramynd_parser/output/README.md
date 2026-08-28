@@ -44,14 +44,16 @@ output/
 
 ## Embeddings (`embeddings/` + Qdrant)
 
-Lesson chunks + `veramynd_chunks` embed manifests are archived under
-`_archive/pipeline_experiments/chunks/` and `chunk_embeddings/`. Keep standards only:
+Standards only — lesson chunk / `veramynd_chunks` paths are removed from the
+live pipeline (archived under `_archive/` if present):
 
 | Path | Role |
 |------|------|
 | `embed_standards_manifest.json` | Standards collection upsert summary |
 | `embed_standards_progress.json` | Status sidecar |
 | `.qdrant_data/` / Qdrant URL | `veramynd_standards` vectors |
+
+Retrieve embeds NormalizedLesson query text **ephemerally** (not written here).
 
 ## Judge (`judge/`)
 
@@ -93,5 +95,6 @@ veramynd-parser client-correlation \
 ```bash
 veramynd-parser export <guide.pdf> --out output/stage1 --standards <stds.xlsx> --expect 40
 veramynd-parser normalize-lessons output/stage1/lessons --out output/normalize
+veramynd-parser normalize-standards output/stage1/standards.json --out output/normalize_standards
 veramynd-parser embed-standards output/normalize_standards --out output/embeddings
 ```
