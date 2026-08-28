@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0-report",
+  "source_files": [
+    "output\\judge\\G1M2U1L1.json"
+  ],
+  "row_count": 25,
+  "by_status_all_verdicts": {
+    "full": 8,
+    "partial": 7,
+    "none": 10
+  },
+  "filtered_out_by_status": 0,
+  "filtered_out_ungrounded": 0,
+  "status_filter": null,
+  "grounded_only": false,
+  "csv_path": "output\\result\\G1M2U1L1.csv"
+}

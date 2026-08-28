@@ -218,10 +218,8 @@ def test_cli_smoke_retrieve_wires():
     args = build_parser().parse_args(
         [
             "smoke-retrieve-standards",
-            "--chunk-file",
-            "output/chunks/by_lesson/G1M2U1L1.json",
-            "--family",
-            "lesson",
+            "--normalize-file",
+            "output/normalize/G1M2U1L1.json",
             "--limit",
             "5",
         ]

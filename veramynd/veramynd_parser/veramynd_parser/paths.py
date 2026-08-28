@@ -12,8 +12,6 @@ NON_LESSON_JSON_NAMES = frozenset(
         "teacher_guide.json",
         "standards.json",
         "verification_report.json",
-        "chunk_progress.json",
-        "chunk_manifest.json",
     }
 )
 

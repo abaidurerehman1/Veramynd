@@ -148,9 +148,13 @@ def _set_multiline_cell(
             _style_run(r, bold=False)
 
 
-_BEYOND_SCOPE_NOTE = "This standard is beyond the scope of this program module."
 _PARTIAL_NOTE = "This standard is partially met."
 _FULL_NOTE = "This standard is fully met."
+
+
+def _beyond_scope_note(guide_label: str = "this program module") -> str:
+    label = (guide_label or "").strip() or "this program module"
+    return f"This standard is beyond the scope of {label}."
 
 
 def _short_partial_explanation(rationales: list[str], *, max_len: int = 280) -> str:
@@ -202,15 +206,15 @@ def skill_phrase(standard_text: str) -> str:
     return t
 
 
-def _join_skills(skills: list[str]) -> str:
+def _join_skills(skills: list[str], *, conj: str = "and") -> str:
     items = [s.strip() for s in skills if s and s.strip()]
     if not items:
         return ""
     if len(items) == 1:
         return items[0]
     if len(items) == 2:
-        return f"{items[0]} and {items[1]}"
-    return ", ".join(items[:-1]) + f", and {items[-1]}"
+        return f"{items[0]} {conj} {items[1]}"
+    return ", ".join(items[:-1]) + f", {conj} {items[-1]}"
 
 
 def domain_section_for_code(code: str) -> str:
@@ -226,13 +230,14 @@ def domain_section_for_code(code: str) -> str:
 def build_parent_rollups(
     standards: list[dict[str, Any]],
     teacher_by_code: dict[str, dict[str, Any]],
+    *,
+    guide_label: str = "Module 2",
 ) -> dict[str, dict[str, Any]]:
     """Parent code → {alignment, statement, section, parent_label, …}.
 
-    Client roll-up rule (``Rollup_Format_Example_for_Engineer.xlsx``):
-    when citations do not fully cover the parent intention, open with
-    ``This standard is partially met.`` then name supported skills and gaps
-    in plain language — never ``covers a,b / does not address c``.
+    Matches ``Example Output Format`` + ``Rollup_Format_Example_for_Engineer``:
+    parent materials cells always open with the parent skill title, then either
+    skill-named partial/full prose or a beyond-scope note for the guide.
     """
     children_by_parent: dict[str, list[dict[str, Any]]] = defaultdict(list)
     parents: dict[str, dict[str, Any]] = {}
@@ -279,31 +284,46 @@ def build_parent_rollups(
         }
 
         if not supported and not partial_only:
+            beyond = _beyond_scope_note(guide_label)
+            if missing:
+                # Match fixed client DOCX: "None of the cited lessons ask students to …"
+                ask = _join_skills(missing, conj="or").replace(", and ", ", or ")
+                beyond += (
+                    " None of the cited lessons ask students to "
+                    f"{ask}."
+                )
             out[parent_code] = {
                 **base,
                 "alignment": "beyond_scope",
-                "statement": _BEYOND_SCOPE_NOTE,
+                "statement": beyond,
             }
             continue
 
         if not missing and not partial_only:
+            covered = supported + partial_only
+            full_stmt = _FULL_NOTE
+            if covered:
+                full_stmt += (
+                    " Citations show students "
+                    f"{_join_skills(covered)}."
+                )
             out[parent_code] = {
                 **base,
                 "alignment": "fully_met",
-                "statement": _FULL_NOTE,
+                "statement": full_stmt,
             }
             continue
 
         covered = supported + partial_only
         stmt = (
-            f"{_PARTIAL_NOTE} Citations support {_join_skills(covered)}."
+            f"{_PARTIAL_NOTE} Citations show students {_join_skills(covered)}."
             if covered
             else _PARTIAL_NOTE
         )
         if missing:
             stmt += (
-                " However, the citations do not cover the standard's other "
-                f"intended skills: {_join_skills(missing)}."
+                " However, none of the cited lessons ask students to "
+                f"{_join_skills(missing, conj='or')}."
             )
         if partial_only:
             stmt += (
@@ -329,8 +349,9 @@ def _fill_leaf_material_cells(
     pages = _teacher_pages_text(agg)
     prefix = f"{guide_label}:"
     if not pages:
-        _set_cell_text(tg_cell, _BEYOND_SCOPE_NOTE, bold=False)
-        _set_cell_text(other_cell, _BEYOND_SCOPE_NOTE, bold=False)
+        note = _beyond_scope_note(guide_label)
+        _set_cell_text(tg_cell, note, bold=False)
+        _set_cell_text(other_cell, note, bold=False)
         return
 
     only_partial = (
@@ -470,6 +491,20 @@ def _parent_label(std: dict[str, Any]) -> str:
             return text
         return f"{label}: {text}"
     return text or label or std.get("code", "")
+
+
+def _parent_short_name(std: dict[str, Any]) -> str:
+    """Example rollup form: ``1.P.EICC.3 — Comprehension Strategies``."""
+    code = str(std.get("code") or "").strip()
+    label = (std.get("label") or "").strip()
+    if not label:
+        text = (std.get("text") or "").strip()
+        label = text.split(":", 1)[0].strip() if text else ""
+        if len(label) > 80:
+            label = label[:77] + "…"
+    if code and label:
+        return f"{code} — {label}"
+    return code or label
 
 
 def _big_idea_heading(std: dict[str, Any], index_in_domain: int) -> str:
@@ -784,17 +819,14 @@ def build_client_docx(
 
         if level == "standard":
             row = table.add_row()
+            label = _parent_label(std)
             _set_cell_text(row.cells[0], code, bold=False)
-            _set_cell_text(row.cells[1], _parent_label(std), bold=False)
             rollup = rollups.get(code) or {}
-            alignment = rollup.get("alignment")
-            if alignment == "partially_met":
-                _set_cell_text(row.cells[2], rollup.get("statement") or _PARTIAL_NOTE)
-            elif alignment == "fully_met":
-                _set_cell_text(row.cells[2], rollup.get("statement") or _FULL_NOTE)
-            else:
-                _set_cell_text(row.cells[2], "")
-            _set_cell_text(row.cells[3], "")
+            statement = (rollup.get("statement") or "").strip()
+            # Fixed client layout: merge cols 1–3; full parent text in one row block.
+            body = f"{label}\n{statement}" if statement else label
+            merged = _merge_row_span(row, 1, 3)
+            _set_multiline_cell(merged, body.split("\n"))
             continue
 
         if level == "substandard":
@@ -819,7 +851,7 @@ def build_client_docx(
     fr = foot.add_run(
         f"* Alignments drawn from {program_name} Teacher Guide ({guide_label}) only. "
         "Other Materials are blank when Supporting Materials were not in the provided input. "
-        "Parent-standard cells use skill-named roll-up wording when partially met."
+        "Parent rows open with the skill title, then skill-named roll-up or beyond-scope prose."
     )
     _style_run(fr, bold=False)
     fr.font.size = Pt(8)
@@ -861,8 +893,9 @@ def build_client_xlsx_mirror(
             continue
         agg = teacher_by_code.get(code)
         pages = format_page_list(agg["pages"]) if agg else ""
+        beyond = _beyond_scope_note(guide_label)
         if not pages:
-            tg_note = _BEYOND_SCOPE_NOTE
+            tg_note = beyond
         elif (
             agg
             and int(agg.get("partial_n") or 0) > 0
@@ -882,18 +915,25 @@ def build_client_xlsx_mirror(
                 agg.get("full_n", 0) if agg else 0,
                 agg.get("partial_n", 0) if agg else 0,
                 ", ".join(sorted(agg["lessons"])) if agg else "",
-                _BEYOND_SCOPE_NOTE if not pages else _other_materials_cell(agg),
+                beyond if not pages else _other_materials_cell(agg),
                 _qa_notes_cell(agg),
             ]
         )
 
+    std_by_code = {
+        str(s.get("code") or "").strip(): s
+        for s in standards
+        if s.get("code")
+    }
+
     roll = wb.create_sheet("Parent_rollup")
+    # Match Rollup_Format_Example_for_Engineer.xlsx columns (client target only).
     roll.append(
         [
             "Standard Section",
             "Parent Standard",
             "Alignment",
-            "Roll-up statement — CLIENT FORMAT",
+            "Roll-up statement — CLIENT FORMAT (target)",
         ]
     )
     for parent_code in sorted(rollups.keys()):
@@ -904,10 +944,14 @@ def build_client_xlsx_mirror(
             "fully_met": "Fully met",
             "beyond_scope": "Beyond scope",
         }.get(align, align)
+        parent_std = std_by_code.get(parent_code) or {
+            "code": parent_code,
+            "label": r.get("parent_label") or "",
+        }
         roll.append(
             [
                 r.get("section") or domain_section_for_code(parent_code),
-                f"{parent_code} — {r.get('parent_label') or ''}".rstrip(" —"),
+                _parent_short_name(parent_std),
                 align_label,
                 r.get("statement") or "",
             ]
@@ -981,7 +1025,9 @@ def write_client_correlation_package(
         lesson_page_fallback=fallback,
         include_partial=include_partial,
     )
-    parent_rollups = build_parent_rollups(standards, teacher_by_code)
+    parent_rollups = build_parent_rollups(
+        standards, teacher_by_code, guide_label=guide_label
+    )
 
     doc = build_client_docx(
         standards=standards,

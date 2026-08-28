@@ -152,9 +152,7 @@ def test_export_standards_failure_does_not_leave_fresh_go_report(
 def test_allow_unverified_flag_wires_on_downstream_commands():
     p = build_parser()
     for argv in (
-        ["chunk-lessons", "output/stage1/lessons", "--allow-unverified"],
-        ["embed-chunks", "output/chunks", "--allow-unverified"],
-        ["retrieve-standards", "--query", "q", "--allow-unverified"],
+        ["normalize-lessons", "output/stage1/lessons", "--allow-unverified"],
         [
             "judge-standards",
             "--retrieve-file", "r.json",

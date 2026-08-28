@@ -6,7 +6,6 @@ import json
 from pathlib import Path
 
 from veramynd_parser.trust_gate import (
-    require_chunks_trusted,
     require_stage1_go,
     warn_untrusted_input_file,
 )
@@ -65,25 +64,6 @@ def test_stage1_gate_missing_everything_errors(tmp_path: Path):
     assert require_stage1_go(stage1 / "lessons", allow_unverified=True) is None
 
 
-def test_chunks_trusted_gate(tmp_path: Path):
-    chunks = tmp_path / "chunks"
-    chunks.mkdir()
-    # No manifest / legacy manifest: warn but proceed.
-    assert require_chunks_trusted(chunks, allow_unverified=False) is None
-    (chunks / "chunk_manifest.json").write_text(json.dumps({"lessons": 3}), encoding="utf-8")
-    assert require_chunks_trusted(chunks, allow_unverified=False) is None
-    # Stamped unverified: hard error unless explicitly allowed.
-    (chunks / "chunk_manifest.json").write_text(
-        json.dumps({"stage1_verdict": "unverified"}), encoding="utf-8"
-    )
-    assert require_chunks_trusted(chunks, allow_unverified=False) == 1
-    assert require_chunks_trusted(chunks, allow_unverified=True) is None
-    (chunks / "chunk_manifest.json").write_text(
-        json.dumps({"stage1_verdict": "GO"}), encoding="utf-8"
-    )
-    assert require_chunks_trusted(chunks, allow_unverified=False) is None
-
-
 def test_untrusted_single_file_gates(tmp_path: Path):
     # Stage-1 lesson file inside a BLOCK export.
     stage1 = _stage1_tree(tmp_path)
@@ -98,21 +78,10 @@ def test_untrusted_single_file_gates(tmp_path: Path):
     )
     assert warn_untrusted_input_file(str(lesson_file), "lesson") is None
 
-    # Chunk bundle whose manifest says unverified.
-    chunks = tmp_path / "chunks"
-    (chunks / "by_lesson").mkdir(parents=True)
-    chunk_file = chunks / "by_lesson" / "G1M2U1L1.json"
-    chunk_file.write_text("{}", encoding="utf-8")
-    (chunks / "chunk_manifest.json").write_text(
-        json.dumps({"stage1_verdict": "unverified"}), encoding="utf-8"
-    )
-    assert warn_untrusted_input_file(str(chunk_file), "chunk") == 1
-
     # Ad-hoc files with no provenance artifact are allowed.
     loose = tmp_path / "loose.json"
     loose.write_text("{}", encoding="utf-8")
     assert warn_untrusted_input_file(str(loose), "lesson") is None
-    assert warn_untrusted_input_file(str(loose), "chunk") is None
     assert warn_untrusted_input_file(None, "lesson") is None
 
 

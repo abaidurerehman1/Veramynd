@@ -562,8 +562,8 @@ def test_cli_retrieve_standards_wires():
     args = build_parser().parse_args(
         [
             "retrieve-standards",
-            "--chunk-file",
-            "output/chunks/by_lesson/G1M2U1L3.json",
+            "--normalize-file",
+            "output/normalize/G1M2U1L3.json",
             "--top-k",
             "30",
             "--rerank-k",

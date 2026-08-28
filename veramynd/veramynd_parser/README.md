@@ -1,19 +1,26 @@
 # veramynd-parser
 
-Structure-aware curriculum parser and alignment pipeline: teacher-guide PDF →
-lessons → pedagogical normalize → standards embed → hybrid retrieve (through
-judge/report). Separates a guide into lessons, parses a standards spreadsheet
-into a grade-indexed tree, and **verifies** with GO/REVIEW/BLOCK before anything
-downstream trusts it.
+Structure-aware curriculum parser and alignment pipeline:
+
+```text
+Teacher Guide PDF + Standards XLSX
+  → Stage-1 parse / verify (GO / BLOCK)
+  → normalize-lessons + normalize-standards
+  → embed-standards → Qdrant veramynd_standards
+  → retrieve (multi_normalize_focused from NormalizedLesson)
+  → judge (assembled v1.1 + Stage-1 grounding)
+  → report / client-correlation
+```
+
+**No lesson chunking** — there is no `chunk-lessons` / `embed-chunks` /
+`veramynd_chunks`. Standards vectors are stored in Qdrant; lesson query text is
+embedded **on the fly** at retrieve time.
 
 Built against real documents (in `../data/samples/`):
 
 - `ELA Grade 1 Module 2 Teacher Guide.pdf` — EL Education, 440 pages, 40 lessons
-  (**Batch-1 locked** through retrieve; **gold-4 judge measured**; all 40 judged)
+  (**Batch-1 locked** through retrieve + judge)
 - `Grade 1 GA ELA Standards.xlsx` — Georgia ELA, 188 standards
-- `21111_RBtL_SSManual_L1.pdf` — Reading Roots Shared Story Teacher’s Manual
-  Level 1 (**Stage-1 GO** — 14 lessons in `output/stage1_ssmanual/`; normalize →
-  retrieve **not** locked yet)
 
 Batch-1 gold retrieve (protected bar): **R@25 = 100%** on
 `output/retrieve/`. Live gold-4 judge uses
@@ -25,12 +32,6 @@ master (4-lesson overlap) **95/102 (93.1%)**. Prior OpenAI `align_judge.v1.1`
 baseline was **18/19 = 94.7%**. All 40 EL lessons have live assembled verdicts
 in `output/judge/` (SME exact is gold-4 only). See
 [What's still incomplete](#whats-still-incomplete).
-
-**Dynamic Stage-1 (honest):** routes EL vs generic from document signals; generic
-lesson starts are **shared heading patterns** (Lesson / Day / Session /
-**Shared Story N** / **Start-Up Lesson**), not `if publisher == …` branches.
-Re-running a known shape needs **no code change**. A brand-new heading style may
-need a small pattern add — then that shape is reusable.
 ## Two engines: Docling extracts, PyMuPDF verifies
 
 The parser runs **two independent PDF engines** and plays them against each other:
@@ -78,14 +79,11 @@ signals, not markup:
 
 | Concern | Mechanism |
 |---|---|
-| **Route** | Structure detector → **EL-like** (bookmark codes) or **unknown/generic**. |
-| **Separate lessons (EL)** | PyMuPDF bookmarks (`G1M2U1L1` = grade·module·unit·lesson); half-open span to next bookmark. Unit overviews held out. |
-| **Separate lessons (generic)** | Outline + page headings: Lesson/Day/Session, **Shared Story N** (title page only), **Start-Up Lesson**; collapse running-header repeats. Lesson ids follow publisher numbers (e.g. Shared Story 4 → `L04`; no `L03` if Story 3 is absent). |
-| **Divide a lesson** | EL: Docling labels / PyMuPDF font tiers. Generic: deterministic section-role map (materials aliases include “you will need”; letter-spacing repair for display PDF text). Hollow (no-step) blocks are skipped. |
-| **Steps** | Each instructional step carries **page** provenance and `kind: procedure \| scaffold` (core activity vs in-block ELL/UDL/support). Scaffolds stay under the parent block. |
+| **Separate lessons** | PyMuPDF bookmarks (`G1M2U1L1` = grade·module·unit·lesson); half-open span to next bookmark. Unit overviews held out. Font/header fallback when bookmarks are missing. |
+| **Divide a lesson** | Docling labels primary · PyMuPDF 3-tier fonts fallback → agenda · materials · vocab · instructional blocks + steps |
 | **Tables** | Docling's TableFormer recovers materials lists, vocabulary and checklist tables as row-major cells. |
-| **Standards tree** | Column-role detection → GA or generic adapter → hierarchy (parent column / level / indent / dotted / flat) → existing `GradeStandards` schema. Optional GPT-4.1-mini classifies **ambiguous structure only** (never invents codes/text/parents). |
-| **Trust** | Dual gates: teacher-guide verifier **and** standards verifier — each emits **GO / REVIEW / BLOCK**. Only GO is production-trusted. Generic exterior cover/TOC gaps are WARN (not REVIEW). |
+| **Standards tree** | Flat `Code \| Standard Text \| Notes` sheet → hierarchy from **dotted code depth** (Notes ignored for level) → `GradeStandards` |
+| **Trust** | Teacher-guide verifier emits **GO / BLOCK** (soft WARN still GO). Only GO unlocks trusted `lessons/` unless overridden. |
 
 Two vocabularies are kept deliberately separate: the guide **declares** standards in
 CCSS codes (`RL.1.1`) while the target framework uses Georgia codes (`1.F.PA.4.d`).
@@ -122,17 +120,14 @@ veramynd-parser export "../data/samples/ELA Grade 1 Module 2 Teacher Guide.pdf" 
 veramynd-parser remap-pages "../data/samples/ELA Grade 1 Module 2 Teacher Guide.pdf" \
   --lessons-dir output/stage1/lessons --from-pdf-indices
 
-# parse a standards spreadsheet (GO/REVIEW/BLOCK; --json only written on GO unless --allow-block)
+# parse a standards spreadsheet
 veramynd-parser stds "../data/samples/Grade 1 GA ELA Standards.xlsx" \
   --framework "GA ELA" --json output/stage1/standards.json
 
 # parse AND run the teacher-guide safety-net verifier
 veramynd-parser verify "../data/samples/ELA Grade 1 Module 2 Teacher Guide.pdf" --expect 40
 
-# Second-publisher example (Shared Story manual) — generic route; PDF page indices
-veramynd-parser export "../data/samples/21111_RBtL_SSManual_L1.pdf" \
-  --out output/stage1_ssmanual --publisher unknown --engine pymupdf --pdf-pages \
-  --standards "../data/samples/Grade 1 GA ELA Standards.xlsx" --framework "GA ELA"
+# Second-publisher PDFs are not part of the locked Batch-1 samples in this tree.
 ```
 
 Library:
@@ -148,36 +143,40 @@ for lesson in guide.lessons:
 
 with PdfDocument("../data/samples/ELA Grade 1 Module 2 Teacher Guide.pdf") as doc:
     report = verify(guide, doc=doc, expected_count=40)
-print(report.render())          # GO / REVIEW / BLOCK
+print(report.render())          # GO / BLOCK
 ```
 
-## Standards ingestion (dynamic Stage-1)
+## Standards ingestion
 
-Standards files are no longer assumed to be a fixed GA `Code | Standard Text` sheet.
+Live parser expects a flat spreadsheet:
 
-Pipeline:
-
+```text
+Code | Standard Text | Notes
 ```
-spreadsheet → column detection → adapter (GA | generic)
-          → hierarchy → GradeStandards → standards verify (GO/REVIEW/BLOCK)
+
+Hierarchy is encoded in the **code string**, not sheet columns:
+
+```text
+1.F           domain
+1.F.PA        big idea
+1.F.PA.4      standard
+1.F.PA.4.d    substandard
 ```
 
 | Piece | Behavior |
 |---|---|
-| **Columns** | Alias detection for code/text/grade/parent/level/subject/domain/strand (any order) |
-| **Adapters** | GA for Georgia-shaped frameworks/codes; otherwise generic — never force unknown → GA |
-| **Hierarchy** | Parent column → level column → indent → dotted codes → flat (all `standard`) |
-| **Grades** | Grade column preferred; multi-grade sheets allowed (`Standard.grade` per row) |
-| **LLM (optional)** | GPT-4.1-mini for ambiguous **structure** only (column roles, level labels, framework-shape hint). Cached under `.semantic_standards_cache`. `--no-semantic-standards-llm` disables |
-| **Verify** | S1–S12 → `standards_verification_verdict.json`. Non-GO withholds trusted `standards.json` unless `--allow-block` |
-| **Downstream gate** | `normalize-standards` requires sibling GO verdict (or `--allow-unverified`) |
+| **Columns** | Positional: col 0 = code, col 1 = standard text; Notes optional and ignored for level |
+| **Hierarchy** | Dot-depth → `domain` / `big_idea` / `standard` / `substandard`; parent = code with last segment removed |
+| **Grades** | Leading segment of code (`1` … or `K`); one grade prefix per sheet |
+| **Framework label** | Pass `--framework "GA ELA"` (not guessed from the file) |
+| **Downstream gate** | `normalize-standards` / retrieve / judge require Stage-1 teacher-guide **GO** (or `--allow-unverified`) |
 
-GA reference fixture still verifies **GO** with `--framework "GA ELA"`. Structural fixtures live under `tests/fixtures/standards/`.
+GA reference fixture: `../data/samples/Grade 1 GA ELA Standards.xlsx`.
 
 ## The safety-net verifier
 
-Teacher-guide checks use two severities that fold into three verdicts:
-**FAIL → BLOCK**, **REVIEW → REVIEW**, soft **WARN** alone still allows **GO**.
+Teacher-guide checks use two severities that fold into two verdicts:
+**FAIL → BLOCK**, soft **WARN** alone still allows **GO**.
 
 | Layer | Checks | Gate |
 |---|---|---|
@@ -203,37 +202,34 @@ line-stitching rules in `text_utils.py`; afterward all 40 lessons verify clean.
 
 ```
 veramynd_parser/
-├── models.py              # Pydantic contracts (Lesson, Table, Standard, ...)
+├── models.py              # Pydantic contracts (Lesson, Standard, …)
 ├── config.py              # one settings object; picks the engine
-├── text_utils.py          # normalization + patterns (de-hyphenate, stitch minutes, codes)
-├── fonts.py               # 3-tier font classifier (PyMuPDF fallback path)
+├── text_utils.py          # normalization + patterns
+├── fonts.py               # 3-tier font classifier (PyMuPDF fallback)
+├── trust_gate.py          # GO gate for normalize / retrieve / judge
 ├── pdf/
 │   ├── document.py        # PyMuPDF adapter (outline + verification)
 │   ├── docling_parser.py  # Docling adapter — labeled elements + tables, cached
-│   ├── separator.py       # bookmarks -> lesson spans (+ font/header fallback)
+│   ├── separator.py       # bookmarks → lesson spans (+ font/header fallback)
 │   ├── divider.py         # PyMuPDF font-tier division (fallback)
 │   ├── docling_divider.py # Docling semantic-label division (primary)
-│   ├── page_map.py        # exact PDF index → printed footer page map
-│   ├── export_pages.py    # remap page fields at JSON export boundary
-│   ├── structure_detector.py  # EL-like vs unknown vs unusable routing
-│   ├── lesson_boundaries.py   # generic lesson spans
-│   ├── generic_divider.py     # deterministic section → Lesson
-│   ├── semantic_section.py    # LLM section-role fallback (ambiguous only)
-│   └── teacher_guide.py   # orchestration: detect → EL or generic path
+│   ├── division.py        # shared division helpers
+│   ├── page_map.py        # PDF index → printed footer page map
+│   ├── export_pages.py    # remap page fields at JSON export
+│   └── teacher_guide.py   # orchestration: separate → divide → TeacherGuide
 ├── standards/
-│   ├── spreadsheet.py     # orchestrate parse → GradeStandards
-│   ├── columns.py         # header → column-role map
-│   ├── hierarchy.py       # generic hierarchy signals
-│   ├── grades.py          # grade cell / code-prefix normalization
-│   ├── dotted.py          # GA-shaped dotted helpers
-│   ├── verify.py          # standards GO / REVIEW / BLOCK
-│   ├── semantic.py        # limited LLM structure classification
-│   └── adapters/          # GA + generic → to_canonical()
+│   └── spreadsheet.py     # Code|Text|Notes → GradeStandards (dotted hierarchy)
 ├── verify/
-│   └── verifier.py        # teacher-guide safety net (incl. REVIEW)
-├── cli.py                 # guide / stds / verify / export / normalize / chunk /
-│                          # embed / retrieve / judge / report commands
-└── .docling_cache/        # content-addressed Docling parse cache
+│   └── verifier.py        # teacher-guide safety net (GO / BLOCK)
+├── normalize/             # lessons + standards normalize
+├── embed/                 # standards → Qdrant veramynd_standards only
+├── retrieve/              # hybrid dense+BM25 → RRF → CE (normalize queries)
+├── judge/                 # assembled prompt + grounding
+├── report/                # CSV / HTML / client DOCX+XLSX
+├── prompts/               # assembled_judge_prompt.md (live)
+├── scripts/               # batch_align_all, eval_r20, …
+└── cli.py                 # guide / stds / verify / export / normalize /
+                           # embed-standards / retrieve / judge / report
 ```
 
 ## What's still incomplete
@@ -267,18 +263,14 @@ veramynd_parser/
   Shared Story through judge is **not** claimed. Close-read comprehension
   can be understated until Read-aloud Guides are in Stage-1 (P4 caveat;
   do not hand-edit labels).
-- **Any-publisher / any-framework claim** — architecture is
-  curriculum-agnostic (acts + competency bridges + **shared heading patterns**,
-  not per-publisher `if/elif` trees or hard-coded lesson IDs).
-  **Validated through retrieve** on EL G1M2 + GA ELA; **gold-4 judge** on that
-  same stack. **Stage-1 GO** on Reading Roots Shared Story L1
-  (`output/stage1_ssmanual/`, 14 lessons). Next proof: that corpus through
-  **normalize → retrieve → judge** (and more publishers / grades).
+- **Any-publisher / any-framework claim** — design stays curriculum-agnostic
+  (acts + competency bridges; not hard-coded lesson IDs).
+  **Validated** on EL G1M2 + GA ELA through retrieve + gold-4 judge.
+  Second publisher / Shared Story is **not** in this tree yet.
 - **Scale / head precision** — broader multi-publisher fixtures and stronger
   **R@10** are still open.
 - **Agentic graph track** — design doc only (`docs/architecture-agentic-graph.md`).
-- Validated primarily on the sample documents under `../data/samples/` plus
-  synthetic standards fixtures.
+- Validated primarily on the sample documents under `../data/samples/`.
 
 ## Tests
 
@@ -287,7 +279,7 @@ pytest
 ```
 
 Tests cover Stage-1 parse/verify (PDF + standards fixtures), normalize sanitizers,
-chunk/embed (mocked OpenAI + in-memory Qdrant), retrieve, and judge grounding.
+embed (mocked OpenAI + in-memory Qdrant), retrieve, and judge grounding.
 Integration cases that need the real PDF/xlsx are skipped automatically if those
 files are absent. Standards structural fixtures:
 `tests/fixtures/standards/` (rebuild with `python tests/fixtures/standards/build_fixtures.py`).
@@ -376,8 +368,7 @@ maintenance recomputation.
 |---|---|---|
 | `normalize-*` | content-addressed LLM cache | `--force` / `--no-cache` |
 | `repair-normalized` | re-sanitizes existing JSON in place | re-run after Stage-1/sanitize changes |
-| `chunk-lessons` | skip when `source_fingerprint` matches | `--force` |
-| `embed-*` | skip when Qdrant `content_hash`+model+dims match | `--force` / `--recreate` |
+| `embed-standards` | skip when Qdrant `content_hash`+model+dims match | `--force` / `--recreate` |
 | `judge-standards` | content-addressed judge cache | `--no-cache` after prompt/parser changes |
 | `batch_align_all` | skip existing retrieve/judge JSON | `--force` (or `--force-retrieve` / `--force-judge`) |
 
@@ -388,60 +379,42 @@ A filtered `--recreate` never deletes points outside that scope.
 Examples:
 
 ```bash
-# Day-to-day: only changed lessons are rebuilt / re-embedded
-veramynd-parser chunk-lessons output/stage1/lessons --normalize-dir output/normalize --out output/chunks
-veramynd-parser embed-chunks output/chunks --out output/embeddings
+# Day-to-day: only changed standards are re-embedded
+veramynd-parser embed-standards output/normalize_standards --out output/embeddings
 
 # Maintenance: full recompute
-veramynd-parser chunk-lessons output/stage1/lessons --normalize-dir output/normalize --out output/chunks --force
-veramynd-parser embed-chunks output/chunks --out output/embeddings --force --recreate
+veramynd-parser embed-standards output/normalize_standards --out output/embeddings --force --recreate
+
 python -m veramynd_parser.scripts.batch_align_all --force
 ```
 
-### Chunk (hierarchical, no LLM)
-
-```bash
-veramynd-parser chunk-lessons output/stage1/lessons --normalize-dir output/normalize --out output/chunks
-```
-
-Writes lesson + instructional chunks plus evidence join pointers under `output/chunks/`.
-Re-runs skip unchanged lessons unless `--force`.
-
-### Embed → Qdrant (OpenAI text-embedding-3-large)
+### Embed standards → Qdrant (OpenAI text-embedding-3-large)
 
 ```bash
 pip install -e '.[embed]'
-veramynd-parser embed-chunks output/chunks --out output/embeddings
-```
-
-Uses `OPENAI_API_KEY` from `.env`. Default model: `text-embedding-3-large` (3072-d).  
-Stores vectors in Qdrant (`QDRANT_URL` or local `.qdrant_data`). Evidence pointers are not embedded.
-
-Incremental by default (skips unchanged `content_hash`). `--force` re-embeds the
-selected scope. `--recreate` rebuilds the embedding index for the requested scope;
-with no scope, it rebuilds the entire collection (filtered runs never wipe other
-lessons/standards).
-
-### Embed standards → Qdrant
-
-```bash
+veramynd-parser embed-standards output/normalize_standards --out output/embeddings
+# full rebuild:
 veramynd-parser embed-standards output/normalize_standards --out output/embeddings --recreate
 ```
 
-Same model (`text-embedding-3-large`). Collection default: `veramynd_standards`
-(does not use `QDRANT_COLLECTION`; override with `--collection` or
-`QDRANT_STANDARDS_COLLECTION`).
+Uses `OPENAI_API_KEY` from `.env`. Default model: `text-embedding-3-large` (3072-d).  
+Collection default: **`veramynd_standards`** (override with `--collection` or
+`QDRANT_STANDARDS_COLLECTION`). Lesson embeddings are **not** written — retrieve
+embeds query text from NormalizedLesson **on the fly**.
+
+Incremental by default (skips unchanged `content_hash`). `--force` re-embeds the
+selected scope. `--recreate` rebuilds the index for the requested scope; with no
+scope, it rebuilds the entire collection.
 
 **Defaults (enterprise):** embed **leaf codes only** (`leaves_only=True`) with
 **rich retrieval text** from normalize (`use_rich_text=True` via
 `embed/standard_text.py`). Parent standards stay on disk for hierarchy/context
-but are out of the retrieve funnel. Re-run with `--recreate` after changing these
-modes.
+but are out of the retrieve funnel.
 
-Smoke check (lesson chunk → nearest standards):
+Smoke check (normalize record → nearest standards):
 
 ```bash
-veramynd-parser smoke-retrieve-standards --chunk-file output/chunks/by_lesson/G1M2U2L1.json --family lesson
+veramynd-parser smoke-retrieve-standards --normalize-file output/normalize/G1M2U2L1.json
 ```
 
 ### Hybrid retrieve + cross-encoder rerank
@@ -449,7 +422,7 @@ veramynd-parser smoke-retrieve-standards --chunk-file output/chunks/by_lesson/G1
 ```bash
 pip install -e '.[retrieve]'   # adds sentence-transformers for local bge-reranker
 veramynd-parser retrieve-standards \
-  --chunk-file output/chunks/by_lesson/G1M2U1L3.json \
+  --normalize-file output/normalize/G1M2U1L3.json \
   --top-k 30 --rerank-k 10 \
   --out output/retrieve/G1M2U1L3.json
 ```
@@ -460,10 +433,9 @@ Pass `--no-rerank` to inspect the hybrid list only.
 **Enterprise multi-query** (preferred for gold / production runs) builds focused
 query arms from **normalized lessons** (`multi_normalize_focused`): objectives,
 skills, student actions, tasks, vocabulary, evidence, and **curriculum-agnostic
-competency bridges** (e.g. predict, infer, dialogue Q&A, descriptive words,
-context clues, create poem — signal-matched from lesson text, not hard-coded
-lesson IDs). Chunk files are optional for this path; Batch-1 gold R@25 is driven
-by normalize queries against the standards collection. Funnel:
+competency bridges** (signal-matched from lesson text, not hard-coded lesson IDs).
+Each arm’s query text is embedded on the fly against `veramynd_standards` — no
+lesson vectors are stored. Funnel:
 
 1. Per query: dense (Qdrant) + BM25 → RRF  
 2. Multi-query merge (`top_k_sum` + optional **max_blend** depth term; also

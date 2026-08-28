@@ -767,8 +767,7 @@ def judge_retrieve_file(
     *,
     retrieve_file: Path | str,
     standards_dir: Path | str,
-    lesson_file: Path | str | None = None,
-    chunk_file: Path | str | None = None,
+    lesson_file: Path | str,
     model: str | None = None,
     escalate_model: str | None = None,
     escalate: bool = True,
@@ -795,7 +794,7 @@ def judge_retrieve_file(
     coverage_injected: list[str] = []
     try:
         resource_id, lesson_raw, source = load_lesson_context(
-            lesson_file=lesson_file, chunk_file=chunk_file
+            lesson_file=lesson_file
         )
         retrieve_data = load_retrieve_document(retrieve_file)
         candidates = candidates_from_retrieve_document(retrieve_data)
