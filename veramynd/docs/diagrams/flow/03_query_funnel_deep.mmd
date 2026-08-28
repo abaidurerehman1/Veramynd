@@ -1,19 +1,20 @@
-%% Veramynd — Query Funnel Deep Dive
+%% Veramynd — Query Funnel Deep Dive (current locked path)
 %% Source for docs/diagrams/flow/03_query_funnel_deep.png
+%% Query text comes from NormalizedLesson — not lesson chunks.
 flowchart TB
-  START["START: one lesson as QUERY<br/>lesson_chunk.text"]
+  START["START: NormalizedLesson queries<br/>multi_normalize_focused arms"]
 
   subgraph ARMS["Hybrid arms"]
     DENSE["DENSE<br/>embed query → veramynd_standards<br/>Cosine top ~50"]
-    BM25["BM25<br/>word match on embed_text<br/>top ~50"]
+    BM25["BM25<br/>word match on leaf embed text<br/>top ~50"]
   end
 
-  RRF["RRF fusion → top ~30<br/>recall over-include"]
-  RERANK["Cross-encoder rerank → top ~10<br/>bge-reranker-base"]
-  JUDGE["Judge each pair<br/>raw lesson + standard raw_text<br/>full / partial / none + quote"]
-  GROUND{"Quote grounded<br/>in lesson text?"}
+  RRF["RRF / top_k_sum merge<br/>recall over-include"]
+  RERANK["Local CE rerank<br/>bge-reranker · shortlist ~25–50"]
+  JUDGE["Judge shortlist<br/>Stage-1 raw lesson + standard raw_text<br/>assembled prompt v1.1"]
+  GROUND{"Quote grounded<br/>in Stage-1 lesson?"}
   REJECT["NO → force none<br/>keep quote for audit"]
-  SHIP["YES → ship verdict<br/>CSV / HTML report"]
+  SHIP["YES → ship verdict<br/>CSV / HTML / client DOCX"]
 
   START --> DENSE
   START --> BM25

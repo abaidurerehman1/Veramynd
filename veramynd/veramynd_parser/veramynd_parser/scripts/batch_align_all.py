@@ -3,7 +3,7 @@
 Example:
   python -m veramynd_parser.scripts.batch_align_all \\
     --lessons-dir output/stage1/lessons \\
-    --chunks-dir output/chunks/by_lesson \\
+    --normalize-dir output/normalize \\
     --standards-dir output/normalize_standards
 """
 
@@ -42,11 +42,7 @@ from veramynd_parser.retrieve.gold_metrics import (
     report_leaf_recall,
     resource_ids_from_gold,
 )
-from veramynd_parser.retrieve.io import (
-    instructional_queries_from_chunk_bundle,
-    lesson_query_from_chunk_bundle,
-    rerank_query_from_chunk_bundle,
-)
+from veramynd_parser.retrieve.io import lesson_query_from_normalize
 from veramynd_parser.retrieve.pipeline import (
     DEFAULT_ARM_LIMIT,
     DEFAULT_EXHAUSTIVE_CEILING,
@@ -121,7 +117,6 @@ def _gold_codes_by_lesson(gold_jsonl: Path) -> dict[str, list[str]]:
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description="Batch retrieve+judge+report for all lessons")
     p.add_argument("--lessons-dir", default="output/stage1/lessons")
-    p.add_argument("--chunks-dir", default="output/chunks/by_lesson")
     p.add_argument("--normalize-dir", default="output/normalize")
     p.add_argument("--standards-dir", default="output/normalize_standards")
     p.add_argument("--retrieve-dir", default="output/retrieve")
@@ -309,7 +304,6 @@ def main(argv: list[str] | None = None) -> int:
         args.no_cache = True
 
     lessons_dir = Path(args.lessons_dir)
-    chunks_dir = Path(args.chunks_dir)
     normalize_dir = Path(args.normalize_dir)
     standards_dir = Path(args.standards_dir)
     retrieve_dir = Path(args.retrieve_dir)
@@ -351,11 +345,11 @@ def main(argv: list[str] | None = None) -> int:
     # Load BM25/docs once via first retrieve (process cache), and keep reranker warm.
     if not args.skip_retrieve:
         for i, rid in enumerate(ids, start=1):
-            chunk = chunks_dir / f"{rid}.json"
+            norm = normalize_dir / f"{rid}.json"
             out = retrieve_dir / f"{rid}.json"
-            if not chunk.is_file() and not args.multi_query:
-                failed.append({"resource_id": rid, "stage": "retrieve", "error": "missing chunk"})
-                print(f"[{i}/{len(ids)}] SKIP retrieve {rid}: missing chunk", flush=True)
+            if not norm.is_file():
+                failed.append({"resource_id": rid, "stage": "retrieve", "error": "missing normalize"})
+                print(f"[{i}/{len(ids)}] SKIP retrieve {rid}: missing normalize", flush=True)
                 continue
             if out.is_file() and not args.force_retrieve:
                 print(f"[{i}/{len(ids)}] SKIP retrieve {rid}: already exists", flush=True)
@@ -363,31 +357,14 @@ def main(argv: list[str] | None = None) -> int:
             print(f"[{i}/{len(ids)}] retrieve {rid}...", flush=True)
             try:
                 if args.multi_query:
-                    norm = normalize_dir / f"{rid}.json"
                     query_meta: list[dict[str, str]] = []
                     lesson_grade: int | None = None
-                    if norm.is_file():
-                        query_meta = focused_queries_from_normalize(norm)
-                        rerank_q = rerank_context_from_normalize(norm)
-                        lesson_grade = grade_from_normalize(norm)
-                        lesson_domains = domains_from_normalize(norm)
-                        lesson_skill_focus = skill_focus_text_from_normalize(norm)
-                        query_mode = "multi_normalize_focused"
-                    else:
-                        # Fallback: instructional chunks (still multi-query).
-                        qpairs = instructional_queries_from_chunk_bundle(chunk)
-                        query_meta = [
-                            {
-                                "query_id": label,
-                                "source": "instructional_chunk",
-                                "text": text,
-                            }
-                            for text, label in qpairs
-                        ]
-                        rerank_q = rerank_query_from_chunk_bundle(chunk)
-                        lesson_domains = []
-                        lesson_skill_focus = ""
-                        query_mode = "multi_instructional_fallback"
+                    query_meta = focused_queries_from_normalize(norm)
+                    rerank_q = rerank_context_from_normalize(norm)
+                    lesson_grade = grade_from_normalize(norm)
+                    lesson_domains = domains_from_normalize(norm)
+                    lesson_skill_focus = skill_focus_text_from_normalize(norm)
+                    query_mode = "multi_normalize_focused"
                     queries = [q["text"] for q in query_meta]
                     sources = [q["query_id"] for q in query_meta]
                     arm_weights = [
@@ -511,11 +488,7 @@ def main(argv: list[str] | None = None) -> int:
                     )
                     write_diagnostics(diag_dir / f"{rid}.json", diag)
                 else:
-                    if not chunk.is_file():
-                        raise FileNotFoundError(f"missing chunk: {chunk}")
-                    query, source = lesson_query_from_chunk_bundle(
-                        chunk, family="lesson"
-                    )
+                    query, source = lesson_query_from_normalize(norm)
                     hits = retrieve_and_rerank(
                         query,
                         standards_dir,

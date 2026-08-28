@@ -15,8 +15,6 @@ only together with the trusted artifacts so a mid-export failure cannot leave a
 fresh GO report beside a stale ``lessons/`` tree.
 ``normalize-lessons`` runs the ELA curriculum normalizer (OpenAI only; resumable, cached).
 ``normalize-standards`` normalizes Stage-1 standards.json leaves into retrieval records.
-``chunk-lessons`` builds production hierarchical chunks (lesson + instructional + evidence pointers).
-``embed-chunks`` embeds lesson/instructional chunks with OpenAI text-embedding-3-large into Qdrant.
 ``embed-standards`` embeds normalized standard leaves into Qdrant collection veramynd_standards.
 ``retrieve-standards`` hybrid dense+BM25+RRF (top 30) then cross-encoder rerank.
 ``judge-standards`` alignment judge (full/partial/none) + evidence grounding.
@@ -32,16 +30,13 @@ import sys
 import tempfile
 from pathlib import Path
 
-from .chunk.builder import chunk_lessons_dir
 from . import trust_gate
 from .config import Config, NormalizeConfig
 from .embed.runner import (
-    DEFAULT_COLLECTION,
     DEFAULT_DIMENSIONS,
     DEFAULT_EMBEDDING_MODEL,
     DEFAULT_STANDARDS_COLLECTION,
     EmbedError,
-    embed_chunks_to_qdrant,
     embed_standards_to_qdrant,
     query_standards_by_text,
 )
@@ -62,7 +57,7 @@ from .retrieve.pipeline import (
     retrieve_and_rerank,
 )
 from .retrieve.rerank import DEFAULT_RERANK_MODEL, DEFAULT_RERANK_TOP_N
-from .retrieve.io import lesson_query_from_chunk_bundle, lesson_query_from_normalize
+from .retrieve.io import lesson_query_from_normalize
 from .normalize.lesson import normalize_lesson, normalize_lessons_dir, repair_normalized_dir
 from .normalize.llm import (
     LlmError,
@@ -607,78 +602,6 @@ def cmd_repair_normalized(args: argparse.Namespace) -> int:
     return 0
 
 
-def cmd_chunk_lessons(args: argparse.Namespace) -> int:
-    """Build hierarchical chunks from Stage-1 + normalize (no LLM)."""
-    lessons = Path(args.lessons_dir)
-    normalize_dir = Path(args.normalize_dir)
-    out = Path(args.out)
-    if not lessons.is_dir():
-        print(f"ERROR: lessons dir not found: {lessons}", file=sys.stderr)
-        return 2
-    if not normalize_dir.is_dir():
-        print(f"ERROR: normalize dir not found: {normalize_dir}", file=sys.stderr)
-        return 2
-
-    allow_unverified = bool(getattr(args, "allow_unverified", False))
-    gate = trust_gate.require_stage1_go(lessons, allow_unverified=allow_unverified)
-    if gate is not None:
-        return gate
-
-    try:
-        manifest = chunk_lessons_dir(
-            lessons,
-            normalize_dir,
-            out,
-            force=bool(args.force),
-            resource_ids=set(args.resource_id) if args.resource_id else None,
-            stage1_verdict="unverified" if allow_unverified else "GO",
-        )
-    except (OSError, ValueError, RuntimeError) as e:
-        print(f"ERROR: {e}", file=sys.stderr)
-        return 1
-    if manifest.get("failed"):
-        return 1
-    return 0
-
-
-def cmd_embed_chunks(args: argparse.Namespace) -> int:
-    """Embed lesson/instructional chunks with OpenAI and upsert into Qdrant."""
-    chunks = Path(args.chunks_dir)
-    out = Path(args.out)
-    if not chunks.is_dir():
-        print(f"ERROR: chunks dir not found: {chunks}", file=sys.stderr)
-        return 2
-
-    gate = trust_gate.require_chunks_trusted(
-        chunks, allow_unverified=bool(getattr(args, "allow_unverified", False))
-    )
-    if gate is not None:
-        return gate
-
-    try:
-        manifest = embed_chunks_to_qdrant(
-            chunks,
-            out,
-            model=args.model,
-            dimensions=args.dimensions,
-            collection=args.collection,
-            qdrant_url=args.qdrant_url,
-            qdrant_path=args.qdrant_path,
-            recreate=bool(args.recreate),
-            force=bool(args.force),
-            resource_ids=set(args.resource_id) if args.resource_id else None,
-        )
-    except (EmbedError, LlmError) as e:
-        print(f"ERROR: {e}", file=sys.stderr)
-        return 1
-    except (OSError, ValueError, RuntimeError) as e:
-        print(f"ERROR: {e}", file=sys.stderr)
-        return 1
-    if manifest.get("failed"):
-        return 1
-    return 0
-
-
 def cmd_embed_standards(args: argparse.Namespace) -> int:
     """Embed normalized standards with OpenAI and upsert into Qdrant."""
     src = Path(args.standards_dir)
@@ -711,37 +634,21 @@ def cmd_embed_standards(args: argparse.Namespace) -> int:
 
 
 def cmd_smoke_retrieve_standards(args: argparse.Namespace) -> int:
-    """Query veramynd_standards with a lesson chunk (or free text) for a smoke check."""
+    """Query veramynd_standards with a normalize record (or free text) for a smoke check."""
     query = (args.query or "").strip()
-    if args.chunk_file:
-        path = Path(args.chunk_file)
+    if args.normalize_file:
+        path = Path(args.normalize_file)
         if not path.is_file():
-            print(f"ERROR: chunk file not found: {path}", file=sys.stderr)
+            print(f"ERROR: normalize file not found: {path}", file=sys.stderr)
             return 2
         try:
-            data = json.loads(path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError as e:
-            print(f"ERROR: invalid chunk JSON ({path}): {e}", file=sys.stderr)
+            query, label = lesson_query_from_normalize(path)
+        except (OSError, ValueError, json.JSONDecodeError) as e:
+            print(f"ERROR: invalid normalize JSON ({path}): {e}", file=sys.stderr)
             return 2
-        if not isinstance(data, dict):
-            print(f"ERROR: expected JSON object in {path}", file=sys.stderr)
-            return 2
-        if args.family == "lesson":
-            row = data.get("lesson_chunk") or {}
-            query = (row.get("text") or "").strip()
-            label = row.get("chunk_id") or path.name
-        else:
-            blocks = data.get("instructional_chunks") or []
-            if not blocks:
-                print(f"ERROR: no instructional_chunks in {path}", file=sys.stderr)
-                return 2
-            # Document order — no phonics-biased selection.
-            chosen = blocks[0]
-            query = (chosen.get("text") or "").strip()
-            label = chosen.get("chunk_id") or path.name
-        print(f"Query source: {label} ({args.family})", flush=True)
+        print(f"Query source: {label} (normalize)", flush=True)
     if not query:
-        print("ERROR: provide --query TEXT or --chunk-file PATH", file=sys.stderr)
+        print("ERROR: provide --query TEXT or --normalize-file PATH", file=sys.stderr)
         return 2
     try:
         hits = query_standards_by_text(
@@ -776,16 +683,7 @@ def cmd_retrieve_standards(args: argparse.Namespace) -> int:
     """Hybrid dense+BM25+RRF (top ~30) then cross-encoder rerank."""
     query = (args.query or "").strip()
     source_label = "query"
-    if args.chunk_file:
-        try:
-            query, source_label = lesson_query_from_chunk_bundle(
-                args.chunk_file, family=args.family
-            )
-        except (OSError, ValueError, json.JSONDecodeError) as e:
-            print(f"ERROR: {e}", file=sys.stderr)
-            return 2
-        print(f"Query source: {source_label} ({args.family})", flush=True)
-    elif args.normalize_file:
+    if args.normalize_file:
         try:
             query, source_label = lesson_query_from_normalize(args.normalize_file)
         except (OSError, ValueError, json.JSONDecodeError) as e:
@@ -794,15 +692,10 @@ def cmd_retrieve_standards(args: argparse.Namespace) -> int:
         print(f"Query source: {source_label} (normalize)", flush=True)
     if not query:
         print(
-            "ERROR: provide --query, --chunk-file, or --normalize-file",
+            "ERROR: provide --query or --normalize-file",
             file=sys.stderr,
         )
         return 2
-
-    if not getattr(args, "allow_unverified", False):
-        gate = trust_gate.warn_untrusted_input_file(args.chunk_file, "chunk")
-        if gate is not None:
-            return gate
 
     standards_dir = Path(args.standards_dir)
     if not standards_dir.is_dir():
@@ -865,9 +758,9 @@ def cmd_judge_standards(args: argparse.Namespace) -> int:
     if not args.retrieve_file:
         print("ERROR: --retrieve-file is required", file=sys.stderr)
         return 2
-    if not args.lesson_file and not args.chunk_file:
+    if not args.lesson_file:
         print(
-            "ERROR: provide --lesson-file (Stage-1) or --chunk-file for raw lesson text",
+            "ERROR: provide --lesson-file (Stage-1) for raw lesson text",
             file=sys.stderr,
         )
         return 2
@@ -877,10 +770,9 @@ def cmd_judge_standards(args: argparse.Namespace) -> int:
         return 2
 
     if not getattr(args, "allow_unverified", False):
-        for path, kind in ((args.lesson_file, "lesson"), (args.chunk_file, "chunk")):
-            gate = trust_gate.warn_untrusted_input_file(path, kind)
-            if gate is not None:
-                return gate
+        gate = trust_gate.warn_untrusted_input_file(args.lesson_file, "lesson")
+        if gate is not None:
+            return gate
 
     out = Path(args.out) if args.out else None
     if out is None:
@@ -899,7 +791,6 @@ def cmd_judge_standards(args: argparse.Namespace) -> int:
             retrieve_file=args.retrieve_file,
             standards_dir=standards_dir,
             lesson_file=args.lesson_file,
-            chunk_file=args.chunk_file,
             model=args.model,
             escalate_model=args.escalate_model,
             escalate=not bool(args.no_escalate),
@@ -1350,124 +1241,6 @@ def build_parser() -> argparse.ArgumentParser:
     )
     rp.set_defaults(func=cmd_repair_normalized)
 
-    ch = sub.add_parser(
-        "chunk-lessons",
-        help=(
-            "build production hierarchical chunks from Stage-1 lessons + normalize "
-            "(lesson + instructional blocks + evidence join pointers)"
-        ),
-    )
-    ch.add_argument(
-        "lessons_dir",
-        help="Stage-1 lessons dir (e.g. output/stage1/lessons)",
-    )
-    ch.add_argument(
-        "--normalize-dir",
-        default="output/normalize",
-        help="normalize records dir (default: output/normalize)",
-    )
-    ch.add_argument(
-        "--out",
-        default="output/chunks",
-        help="chunk output folder (default: output/chunks)",
-    )
-    ch.add_argument(
-        "--force",
-        action="store_true",
-        help="maintenance: rebuild all selected lessons (default is incremental skip)",
-    )
-    ch.add_argument(
-        "--resource-id",
-        action="append",
-        default=[],
-        help="limit to one lesson code (repeatable)",
-    )
-    ch.add_argument(
-        "--allow-unverified",
-        action="store_true",
-        help=(
-            "allow chunking without a Stage 1 GO verdict "
-            "(debug only — not for production; stamps stage1_verdict=unverified)"
-        ),
-    )
-    ch.set_defaults(func=cmd_chunk_lessons)
-
-    em = sub.add_parser(
-        "embed-chunks",
-        help=(
-            "embed lesson/instructional chunks with OpenAI "
-            f"{DEFAULT_EMBEDDING_MODEL} and upsert into Qdrant"
-        ),
-    )
-    em.add_argument(
-        "chunks_dir",
-        nargs="?",
-        default="output/chunks",
-        help="chunk dir with by_lesson/ (default: output/chunks)",
-    )
-    em.add_argument(
-        "--out",
-        default="output/embeddings",
-        help="manifest/progress output folder (default: output/embeddings)",
-    )
-    em.add_argument(
-        "--model",
-        default=DEFAULT_EMBEDDING_MODEL,
-        help=f"OpenAI embedding model (default: {DEFAULT_EMBEDDING_MODEL})",
-    )
-    em.add_argument(
-        "--dimensions",
-        type=int,
-        default=DEFAULT_DIMENSIONS,
-        help=f"embedding dimensions (default: {DEFAULT_DIMENSIONS})",
-    )
-    em.add_argument(
-        "--collection",
-        default=None,
-        help=f"Qdrant collection name (default: env QDRANT_COLLECTION or {DEFAULT_COLLECTION})",
-    )
-    em.add_argument(
-        "--qdrant-url",
-        default=None,
-        help="Qdrant server URL (default: env QDRANT_URL; else local path mode)",
-    )
-    em.add_argument(
-        "--qdrant-path",
-        default=None,
-        help="local Qdrant storage path when URL unset (default: .qdrant_data)",
-    )
-    em.add_argument(
-        "--recreate",
-        action="store_true",
-        help=(
-            "rebuild the embedding index for the requested scope; "
-            "if no --resource-id is set, rebuild the entire collection"
-        ),
-    )
-    em.add_argument(
-        "--force",
-        action="store_true",
-        help=(
-            "maintenance: re-embed all selected chunks even when content_hash matches "
-            "(default is incremental skip)"
-        ),
-    )
-    em.add_argument(
-        "--resource-id",
-        action="append",
-        default=[],
-        help="limit embed/upsert to one lesson code (repeatable), e.g. --resource-id G1M2U2L1",
-    )
-    em.add_argument(
-        "--allow-unverified",
-        action="store_true",
-        help=(
-            "allow embedding chunks whose manifest lacks a Stage 1 GO verdict "
-            "(debug only — not for production)"
-        ),
-    )
-    em.set_defaults(func=cmd_embed_chunks)
-
     es = sub.add_parser(
         "embed-standards",
         help=(
@@ -1543,25 +1316,19 @@ def build_parser() -> argparse.ArgumentParser:
     sm = sub.add_parser(
         "smoke-retrieve-standards",
         help=(
-            "smoke-test: embed a lesson chunk (or free text) and query "
-            f"{DEFAULT_STANDARDS_COLLECTION} for nearest GA codes"
+            "smoke-test: embed a normalize record (or free text) and query "
+            f"{DEFAULT_STANDARDS_COLLECTION} for nearest standards"
         ),
     )
     sm.add_argument(
-        "--chunk-file",
+        "--normalize-file",
         default=None,
-        help="path to a by_lesson/*.json bundle (uses lesson or instructional text)",
-    )
-    sm.add_argument(
-        "--family",
-        choices=("lesson", "instructional"),
-        default="lesson",
-        help="which chunk text to query when --chunk-file is set (default: lesson)",
+        help="path to a NormalizedLesson JSON (preferred query source)",
     )
     sm.add_argument(
         "--query",
         default=None,
-        help="free-text query (alternative to --chunk-file)",
+        help="free-text query (alternative to --normalize-file)",
     )
     sm.add_argument(
         "--limit",
@@ -1601,20 +1368,9 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     rs.add_argument(
-        "--chunk-file",
-        default=None,
-        help="by_lesson/*.json bundle (preferred query source)",
-    )
-    rs.add_argument(
         "--normalize-file",
         default=None,
-        help="NormalizedLesson JSON alternative query source",
-    )
-    rs.add_argument(
-        "--family",
-        choices=("lesson", "instructional"),
-        default="lesson",
-        help="chunk family when --chunk-file is set (default: lesson)",
+        help="NormalizedLesson JSON query source",
     )
     rs.add_argument("--query", default=None, help="free-text query")
     rs.add_argument(
@@ -1669,14 +1425,6 @@ def build_parser() -> argparse.ArgumentParser:
     )
     rs.add_argument("--qdrant-url", default=None, help="Qdrant server URL")
     rs.add_argument("--qdrant-path", default=None, help="local Qdrant path")
-    rs.add_argument(
-        "--allow-unverified",
-        action="store_true",
-        help=(
-            "allow retrieving from a chunk file whose manifest says Stage 1 "
-            "was not GO (debug only)"
-        ),
-    )
     rs.set_defaults(func=cmd_retrieve_standards)
 
     js = sub.add_parser(
@@ -1693,13 +1441,8 @@ def build_parser() -> argparse.ArgumentParser:
     )
     js.add_argument(
         "--lesson-file",
-        default=None,
-        help="Stage-1 lesson JSON (preferred raw text source)",
-    )
-    js.add_argument(
-        "--chunk-file",
-        default=None,
-        help="by_lesson chunk bundle alternative raw text source",
+        required=True,
+        help="Stage-1 lesson JSON (raw text source for grounding)",
     )
     js.add_argument(
         "--standards-dir",

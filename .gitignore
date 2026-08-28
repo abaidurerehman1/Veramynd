@@ -4,7 +4,7 @@ Thumbs.db
 
 # Editors
 .idea/
-.vscode/
+temp_auto_push.bat
 *.swp
 
 # Python scratch at repo root (the package has its own .gitignore)
@@ -12,3 +12,4 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+branch_structure.json

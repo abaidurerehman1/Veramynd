@@ -8,7 +8,6 @@ import pytest
 
 from veramynd_parser.config import EmbedConfig, JudgeConfig, RetrieveConfig
 from veramynd_parser.embed.runner import (
-    DEFAULT_COLLECTION,
     DEFAULT_EMBEDDING_MODEL,
     DEFAULT_STANDARDS_COLLECTION,
     resolve_embedding_model,
@@ -79,11 +78,11 @@ class TestQdrantSettings:
         assert result["path"].endswith("explicit_path")
 
     def test_cfg_collection_used(self):
-        cfg = EmbedConfig(qdrant_collection="my_chunks")
-        assert resolve_qdrant_settings(cfg=cfg)["collection"] == "my_chunks"
+        cfg = EmbedConfig(qdrant_collection="my_standards")
+        assert resolve_qdrant_settings(cfg=cfg)["collection"] == "my_standards"
 
     def test_default_collection_with_no_cfg(self):
-        assert resolve_qdrant_settings()["collection"] == DEFAULT_COLLECTION
+        assert resolve_qdrant_settings()["collection"] == DEFAULT_STANDARDS_COLLECTION
 
     def test_cfg_allows_insecure_http_with_key(self):
         cfg = EmbedConfig(qdrant_allow_insecure=True)
@@ -109,9 +108,8 @@ class TestStandardsQdrantSettings:
             resolve_standards_qdrant_settings()["collection"] == DEFAULT_STANDARDS_COLLECTION
         )
 
-    def test_cfg_chunks_collection_does_not_leak_into_standards(self):
-        # qdrant_collection is for lesson chunks -- must not affect standards.
-        cfg = EmbedConfig(qdrant_collection="my_chunks")
+    def test_cfg_general_collection_does_not_leak_into_standards(self):
+        cfg = EmbedConfig(qdrant_collection="my_general")
         assert resolve_standards_qdrant_settings(cfg=cfg)["collection"] == DEFAULT_STANDARDS_COLLECTION
 
 

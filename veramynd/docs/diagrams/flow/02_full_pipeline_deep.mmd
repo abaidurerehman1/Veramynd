@@ -1,62 +1,55 @@
-%% Veramynd — Full Product Flow (Deep) — Implemented Pipeline
+%% Veramynd — Full Product Flow (Deep) — Current locked pipeline
 %% Source for docs/diagrams/flow/02_full_pipeline_deep.png
+%% No lesson chunking: queries from normalize; judge grounds on Stage-1 raw text.
 flowchart TB
   subgraph INPUTS["INPUTS"]
     PDF["Teacher Guide PDF"]
-    XLSX["Standards XLSX"]
+    XLSX["Standards XLSX<br/>Code | Standard Text | Notes"]
   end
 
-  subgraph S1["STAGE 1 — PARSE ✅"]
+  subgraph S1["STAGE 1 — PARSE + VERIFY"]
     SEP["Separate lessons<br/>bookmarks → font-header fallback"]
     DIV["Divide lesson<br/>agenda · steps · materials · vocab"]
-    STD["Parse standards tree"]
+    STD["Parse standards tree<br/>dotted grade-prefixed codes"]
     ENG["Docling primary · PyMuPDF fallback"]
   end
 
   VER{"Verifier:<br/>any hard FAIL?"}
-  BLOCK["YES → BLOCK<br/>Do not trust / withhold lessons"]
+  BLOCK["YES → BLOCK<br/>withhold trusted lessons"]
 
-  subgraph S23["STAGE 2–3 — NORMALIZE ✅"]
-    LN["Lesson normalize gpt-4.1-mini"]
-    SN["Standards normalize + raw_text kept"]
-    LANES["Normalized = retrieval<br/>Raw = judge + grounding"]
+  subgraph NORM["NORMALIZE"]
+    LN["normalize-lessons<br/>ELA schema · OpenAI cache"]
+    SN["normalize-standards<br/>standard + substandard leaves"]
+    LANES["Normalize → retrieve queries<br/>Stage-1 raw → judge grounding"]
   end
 
-  subgraph SCH["STAGE 3b — CHUNK ✅"]
-    LC["lesson_chunk query text"]
-    IC["instructional_chunks evidence"]
-    EP["evidence_pointers not embedded"]
-  end
-
-  subgraph EMB["STAGE 4 — EMBED + INDEX ✅"]
+  subgraph EMB["EMBED + INDEX"]
     E1["text-embedding-3-large 3072-d"]
-    QS["Qdrant veramynd_standards"]
-    QC["Qdrant veramynd_chunks<br/>future lesson search"]
-    G0["Zero-vector guards · URL/PATH warn"]
+    QS["Qdrant veramynd_standards<br/>leaf-only · rich retrieval text"]
   end
 
-  subgraph RET["STAGE 5 — RETRIEVE ✅ Lesson → Standards"]
-    Q["Query = one lesson text"]
-    D["Dense → standards collection"]
-    B["BM25 → standard embed_text"]
-    RRF["RRF top ~30"]
-    RR["bge-reranker-base top ~10"]
+  subgraph RET["RETRIEVE — Lesson → Standards"]
+    Q["Queries from NormalizedLesson<br/>multi_normalize_focused"]
+    D["Dense → veramynd_standards"]
+    B["BM25 → standard embed text"]
+    RRF["RRF merge + CE rerank"]
+    SL["Judge shortlist top ~25–50"]
   end
 
-  subgraph JUD["STAGE 6 — JUDGE ✅"]
-    J1["One standard per call"]
-    J2["gpt-4.1 · escalate gpt-5 optional"]
+  subgraph JUD["JUDGE"]
+    J1["assembled_judge_prompt.md v1.1"]
+    J2["Anthropic batch + escalate"]
     J3["full / partial / none + quote"]
   end
 
-  subgraph GR["STAGE 7a — GROUNDING ✅"]
-    G1["Quote must exist in raw lesson"]
-    G2["Empty/fabricated → force none"]
+  subgraph GR["GROUNDING"]
+    G1["Quote must exist in Stage-1 lesson"]
+    G2["Empty / ungrounded → force none"]
   end
 
-  subgraph REP["STAGE 7b — REPORT ✅"]
-    CSV["CSV + summary JSON"]
-    HTML["HTML audit dashboard"]
+  subgraph REP["REPORT"]
+    CSV["CSV + HTML + gold metrics"]
+    CLIENT["Client correlation<br/>DOCX / XLSX skill roll-ups"]
   end
 
   OUT["OUTPUT: trusted alignment artifacts"]
@@ -66,11 +59,8 @@ flowchart TB
   ENG --> DIV
   VER -->|GO| LN
   VER -->|BLOCK| BLOCK
-  LN --> SN --> LANES --> LC --> IC --> EP
-  EP --> E1 --> QS
-  E1 --> QC
-  E1 --> G0
+  LN --> SN --> LANES --> E1 --> QS
   QS --> Q
   Q --> D --> RRF
   Q --> B --> RRF
-  RRF --> RR --> J1 --> J2 --> J3 --> G1 --> G2 --> CSV --> HTML --> OUT
+  RRF --> SL --> J1 --> J2 --> J3 --> G1 --> G2 --> CSV --> CLIENT --> OUT

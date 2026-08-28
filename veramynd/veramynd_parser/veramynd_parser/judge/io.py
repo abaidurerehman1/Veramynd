@@ -77,48 +77,16 @@ def lesson_raw_text_from_stage1(lesson: dict[str, Any]) -> str:
     return text
 
 
-def lesson_raw_text_from_chunks(bundle: dict[str, Any]) -> str:
-    """Prefer instructional chunk texts/steps from a by_lesson chunk bundle."""
-    parts: list[str] = []
-    title = (bundle.get("title") or "").strip()
-    if title:
-        parts.append(title)
-    for ch in bundle.get("instructional_chunks") or []:
-        if not isinstance(ch, dict):
-            continue
-        text = (ch.get("text") or "").strip()
-        if text:
-            parts.append(text)
-            continue
-        for step in ch.get("steps") or []:
-            s = str(step).strip()
-            if s:
-                parts.append(f"- {s}")
-    text = "\n".join(parts).strip()
-    if not text:
-        raise JudgeIoError("chunk bundle has no instructional text for judge grounding")
-    return text
-
-
 def load_lesson_context(
     *,
-    lesson_file: Path | str | None = None,
-    chunk_file: Path | str | None = None,
+    lesson_file: Path | str,
 ) -> tuple[str, str, str]:
     """Return ``(resource_id, lesson_raw_text, source_label)``."""
-    if lesson_file:
-        data = load_json(lesson_file)
-        rid = str(
-            data.get("code") or data.get("resource_id") or Path(lesson_file).stem
-        ).strip()
-        return rid, lesson_raw_text_from_stage1(data), f"stage1:{rid}"
-    if chunk_file:
-        data = load_json(chunk_file)
-        rid = str(
-            data.get("resource_id") or data.get("code") or Path(chunk_file).stem
-        ).strip()
-        return rid, lesson_raw_text_from_chunks(data), f"chunks:{rid}"
-    raise JudgeIoError("provide --lesson-file or --chunk-file for raw lesson text")
+    data = load_json(lesson_file)
+    rid = str(
+        data.get("code") or data.get("resource_id") or Path(lesson_file).stem
+    ).strip()
+    return rid, lesson_raw_text_from_stage1(data), f"stage1:{rid}"
 
 
 def load_retrieve_document(retrieve_file: Path | str) -> dict[str, Any]:
@@ -182,7 +150,6 @@ def load_standard_raw_text(standards_dir: Path | str, code: str) -> dict[str, An
 
 __all__ = [
     "JudgeIoError",
-    "lesson_raw_text_from_chunks",
     "lesson_raw_text_from_stage1",
     "candidates_from_retrieve_document",
     "load_json",
