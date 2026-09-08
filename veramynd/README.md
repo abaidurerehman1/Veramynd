@@ -227,6 +227,8 @@ veramynd/
 ├── README.md / LICENSE
 ├── docs/                       # design & flow documentation
 ├── data/samples/               # reference PDF + standards spreadsheet
+├── dashboard/                  # FastAPI read-only API + projects.json
+├── dashboard-ui/               # React (Vite) Overview / Curriculum / Standards / Alignments
 ├── _archive/                   # non-production one-offs (do not import)
 └── veramynd_parser/            # installable package + CLI
     ├── veramynd_parser/        # library (pdf/, normalize/, embed/, …)
@@ -252,6 +254,8 @@ compose file lives under [`_archive/docker/`](_archive/docker/) for optional HTT
 | [docs/complete-project-flow.md](docs/complete-project-flow.md) | Deep onboarding walkthrough |
 | [veramynd_parser/README.md](veramynd_parser/README.md) | Install, CLI reference, package layout |
 | [veramynd_parser/output/README.md](veramynd_parser/output/README.md) | Artifact layout under `output/` |
+| [dashboard/README.md](dashboard/README.md) | FastAPI dashboard API + project registry |
+| [dashboard-ui/README.md](dashboard-ui/README.md) | React UI (run Overview at :5173) |
 
 ## Requirements
 

@@ -1,0 +1,54 @@
+{
+  "default_project_id": "el-g1-m2-ga-ela",
+  "projects": [
+    {
+      "id": "el-g1-m2-ga-ela",
+      "name": "EL Education · Grade 1 · Module 2",
+      "publisher": "EL Education",
+      "grade": 1,
+      "subject": "ELA",
+      "module": "Module 2",
+      "framework": "GA ELA",
+      "batch_label": "",
+      "expected_lessons": 40,
+      "inputs": {
+        "guide_pdf": "data/samples/ELA Grade 1 Module 2 Teacher Guide.pdf",
+        "standards_xlsx": "data/samples/Grade 1 GA ELA Standards.xlsx"
+      },
+      "output_dir": "veramynd_parser/output",
+      "artifacts": {
+        "client_summary": "reports/GA_ELA_G1_Module2_client_correlation.summary.json",
+        "client_docx": "reports/GA_ELA_G1_Module2_client_correlation.docx",
+        "client_xlsx": "reports/GA_ELA_G1_Module2_client_correlation.xlsx",
+        "gold_metrics": "reports/retrieve_gold_metrics.json",
+        "gold_jsonl": "reports/gold_set_batch1_from_md.jsonl",
+        "corrected_master": "docs/Veramynd_ALL40_corrected_master.xlsx"
+      },
+      "labels": {
+        "curriculum_pdf": "EL Education Grade 1 Module 2 Teacher Guide",
+        "run_id": "batch1-judge-all40"
+      }
+    },
+    {
+      "id": "demo-running",
+      "name": "Demo · Pipeline in progress",
+      "publisher": "Demo Publisher",
+      "grade": 3,
+      "subject": "ELA",
+      "module": "Module 1",
+      "framework": "Common Core",
+      "batch_label": "",
+      "expected_lessons": null,
+      "inputs": {
+        "guide_pdf": "data/samples/ELA Grade 1 Module 2 Teacher Guide.pdf",
+        "standards_xlsx": "data/samples/Grade 1 GA ELA Standards.xlsx"
+      },
+      "output_dir": "dashboard/fixtures/running-project",
+      "artifacts": {},
+      "labels": {
+        "curriculum_pdf": "Demo Teacher Guide (in progress)",
+        "run_id": "demo-running"
+      }
+    }
+  ]
+}
