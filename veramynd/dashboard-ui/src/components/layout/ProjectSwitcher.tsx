@@ -134,6 +134,7 @@ export function ProjectSwitcher() {
                   >
                     <span className="pso-title">{projectShortLabel(p)}</span>
                     <span className="pso-meta">
+                      {p.source === 'upload' ? 'Upload · ' : ''}
                       {p.name}
                       {p.has_output ? ' · alignments ready' : ' · no output yet'}
                     </span>

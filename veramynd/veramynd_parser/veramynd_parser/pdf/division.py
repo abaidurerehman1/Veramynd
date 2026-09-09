@@ -35,6 +35,60 @@ class LessonDivider(Protocol):
     def vocabulary(self) -> list[str]: ...
 
 
+def _instructional_major_name(text: str, cfg) -> str | None:
+    """Return canonical instructional major for a header, or None.
+
+    Docling often prints numbered majors (``1. Opening``, ``2. Work Time``).
+    Agenda parsing already tolerates that form; ``fill_steps`` must too, or the
+    body never opens and Opening/A stays at page 0 (V13 BLOCK).
+    """
+    raw = (text or "").strip()
+    if not raw:
+        return None
+    majors = tuple(cfg.instructional_sections)
+    if raw in majors:
+        return raw
+    stripped = re.sub(r"^\d+\.\s*", "", raw).strip()
+    if stripped in majors:
+        return stripped
+    canon = tu.canonical_agenda_section(stripped)
+    if canon in majors:
+        return canon
+    return None
+
+
+def _is_cover_boundary(text: str, cfg) -> bool:
+    """True for cover/body boundary headers that sit after the agenda."""
+    raw = (text or "").strip()
+    if not raw:
+        return False
+    if raw.startswith("Daily Learning Target"):
+        return True
+    # section_headers includes Materials, Vocabulary, CCS Standards, etc.
+    # Exclude Agenda itself — that opens the cover agenda, not the body.
+    boundaries = (set(getattr(cfg, "section_headers", ()) or ()) | {"Teaching Notes"}) - {
+        "Agenda"
+    }
+    if raw in boundaries:
+        return True
+    return any(raw.startswith(h) for h in boundaries if h)
+
+
+def _looks_like_block_header(text: str) -> bool:
+    """True for lettered / timed activity titles Docling often labels ``list_item``.
+
+    Ordinary body prose must stay out of fuzzy matching (see fill_steps docstring).
+    EL body sub-block headers almost always carry ``(N minutes)`` and/or an
+    ``A.`` / ``B.`` letter prefix — use those as the gate, not the Docling label.
+    """
+    raw = (text or "").strip()
+    if not raw:
+        return False
+    if tu.MINUTES.search(raw):
+        return True
+    return bool(re.match(r"^[A-Za-z]\.\s+\S", raw))
+
+
 def fill_steps(blocks: list[InstructionalBlock], body, cfg) -> list[InstructionalBlock]:
     """Attach body step-text to an agenda-derived block skeleton.
 
@@ -56,10 +110,12 @@ def fill_steps(blocks: list[InstructionalBlock], body, cfg) -> list[Instructiona
     skipped block's own `page` staying 0 (still correctly flagged by V13) rather than
     corrupting every block after it too.
 
-    Fuzzy matching is gated on ``label == "section_header"`` because it is a partial
-    signal (a shared prefix, not full equality) and ordinary body prose can trigger it
-    by coincidence: a real lesson had a body sentence "...use the shared writing."
-    whose normalized key ("sharedwriting") is a complete prefix of a later block's key
+    Fuzzy matching is gated on ``section_header`` *or* a line that looks like a
+    lettered/timed block header (``A. …`` / ``(N minutes)``). Docling often emits
+    body sub-block titles as ``list_item`` (seen on G1M2U1L9 Opening/A, where the
+    body also adds "Version 2" so exact match fails). Ordinary body prose must stay
+    out of fuzzy matching: a real lesson had "...use the shared writing." whose
+    normalized key ("sharedwriting") is a complete prefix of a later block's key
     ("sharedwritingdescribingthepositionofthesun") -- 13 shared characters, past
     MIN_PREFIX. That false match advanced `idx` past an intervening block (which then
     never matched at all -- caught by V13) and, worse, silently absorbed the rest of
@@ -67,6 +123,12 @@ def fill_steps(blocks: list[InstructionalBlock], body, cfg) -> list[Instructiona
     block (NOT caught by any verifier check, since every block still ended up with
     >=1 step). Exact matches stay label-agnostic because full key equality on
     ordinary prose is not a realistic coincidence.
+
+    Body start is delayed until after the cover agenda: the first ``1. Opening`` /
+    ``Opening`` after ``Agenda`` is still the cover section label. We open the body
+    only after a cover boundary (Materials / Teaching Notes / …) or when the same
+    major appears a second time (body repeat). Streams with no ``Agenda`` marker
+    (PyMuPDF path) still open on the first major.
     """
     LOOKAHEAD = 3
     # Minimum shared alphanumeric prefix to treat a body line as a block header.
@@ -93,10 +155,27 @@ def fill_steps(blocks: list[InstructionalBlock], body, cfg) -> list[Instructiona
     block_keys = [key(b.title) for b in blocks]
     idx = -1
     in_body = False
+    seen_agenda = False
+    past_cover = False
+    seen_majors: set[str] = set()
     for label, text, page in body:
-        if label == "section_header" and text in cfg.instructional_sections:
-            in_body = True
-            continue
+        if label == "section_header":
+            if text == "Agenda" or text.startswith("Agenda"):
+                seen_agenda = True
+                past_cover = False
+                continue
+            if _is_cover_boundary(text, cfg):
+                past_cover = True
+                continue
+            major = _instructional_major_name(text, cfg)
+            if major:
+                # Open body on: no Agenda in stream | after cover boundary |
+                # second sighting of this major (cover then body).
+                if (not seen_agenda) or past_cover or major in seen_majors:
+                    in_body = True
+                    continue
+                seen_majors.add(major)
+                continue
         if not in_body:
             continue
         matched = False
@@ -115,7 +194,10 @@ def fill_steps(blocks: list[InstructionalBlock], body, cfg) -> list[Instructiona
             shared = shared_prefix_len(text_key, bk)
             if text_key == bk:
                 score = (0, -shared, nxt)
-            elif label == "section_header" and shared >= MIN_PREFIX:
+            elif (
+                (label == "section_header" or _looks_like_block_header(text))
+                and shared >= MIN_PREFIX
+            ):
                 score = (1, -shared, nxt)
             else:
                 continue

@@ -44,19 +44,45 @@ export function Sidebar({ collapsed, onToggle }: Props) {
               <NavLink to={`${base}/alignments`} data-nav>
                 Alignments
               </NavLink>
+              <NavLink to={`${base}/review`} data-nav>
+                Review
+              </NavLink>
+              <NavLink to={`${base}/exports`} data-nav>
+                Exports
+              </NavLink>
             </>
           ) : (
             <>
               <span className="nav-soon">Curriculum</span>
               <span className="nav-soon">Standards</span>
               <span className="nav-soon">Alignments</span>
+              <span className="nav-soon">Review</span>
+              <NavLink to={`${base}/exports`} data-nav>
+                Exports
+              </NavLink>
             </>
           )}
         </div>
         <div className="nav-group">
-          <div className="nav-label">Coming next</div>
-          <span className="nav-soon">Ingest</span>
-          <span className="nav-soon">Pipeline</span>
+          <div className="nav-label">Operations</div>
+          <NavLink to={`${base}/projects`} data-nav>
+            Projects
+          </NavLink>
+          <NavLink to={`${base}/ingestion`} data-nav>
+            Ingestion
+          </NavLink>
+          <NavLink to={`${base}/pipeline`} data-nav>
+            Pipeline
+          </NavLink>
+          <NavLink to={`${base}/logging`} data-nav>
+            Logging
+          </NavLink>
+        </div>
+        <div className="nav-group">
+          <div className="nav-label">Account</div>
+          <NavLink to={`${base}/settings`} data-nav>
+            Settings
+          </NavLink>
         </div>
       </nav>
 

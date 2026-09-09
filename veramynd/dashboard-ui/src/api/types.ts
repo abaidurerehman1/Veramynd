@@ -42,7 +42,15 @@ export interface ProjectCard {
 
   has_output: boolean
 
+  run_status?: 'empty' | 'running' | 'ready'
+
   is_default: boolean
+
+  source?: 'registry' | 'upload'
+
+  upload_batch_id?: string | null
+
+  can_purge?: boolean
 
   lessons?: number
 
@@ -89,6 +97,13 @@ export interface OverviewMetrics {
   pipeline_health: string
 
   by_status: Record<string, number>
+
+  live_job?: {
+    id: string
+    percent?: number
+    current_step?: string | null
+    status?: string
+  } | null
 
   grounded: number
 
@@ -265,6 +280,34 @@ export interface AlignmentRow {
   input_scope_caveat?: string | null
 
   retrieval?: Record<string, unknown>
+
+}
+
+
+
+export interface ReviewItem {
+
+  id: string
+
+  resource_id: string
+
+  lesson_title: string
+
+  standard_code: string
+
+  matched_status: AlignmentStatus
+
+  confidence: string
+
+  review_reason: string
+
+  evidence?: string
+
+  evidence_page?: number | null
+
+  escalated?: boolean
+
+  rationale?: string
 
 }
 

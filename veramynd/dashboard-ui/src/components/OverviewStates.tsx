@@ -11,6 +11,9 @@ type RunningProps = {
   standards?: number
   onReload?: () => void
   projectName?: string
+  /** True when a pipeline job is queued/running for this project */
+  live?: boolean
+  liveStep?: string | null
 }
 
 export function OverviewLoading() {
@@ -68,8 +71,8 @@ export function OverviewEmpty({ onReload, projectName }: EmptyProps) {
         <p className="enter-up" style={{ ['--d' as string]: '160ms' }}>
           {projectName ? (
             <>
-              <strong>{projectName}</strong> has no alignment output yet. Add a PDF and
-              XLSX, run the pipeline, and this Overview fills in automatically.
+              <strong>{projectName}</strong> has no alignment output yet. Run Complete auto or
+              step-by-step from Ingestion / Pipeline — this Overview moves to in progress, then ready.
             </>
           ) : (
             <>
@@ -115,14 +118,17 @@ export function OverviewRunning({
   standards = 0,
   onReload,
   projectName,
+  live = false,
+  liveStep = null,
 }: RunningProps) {
   const done = stages.filter((s) => s.status === 'complete' || s.status === 'warning').length
   const total = Math.max(stages.length, 1)
   const pct = Math.round((100 * done) / total)
-  const active =
+  const next =
     stages.find((s) => s.status === 'pending') ||
     stages.find((s) => s.status === 'warning') ||
     stages[stages.length - 1]
+  const label = projectName ? <strong>{projectName}</strong> : 'This project'
 
   return (
     <section className="overview-hero overview-running" aria-live="polite">
@@ -135,7 +141,7 @@ export function OverviewRunning({
       <div className="overview-hero-card enter-up">
         <div className="overview-hero-kicker running enter-up" style={{ ['--d' as string]: '40ms' }}>
           <span className="live-dot" aria-hidden />
-          In progress
+          {live ? 'Live run' : 'Partial pipeline'}
         </div>
 
         <div className="overview-hero-icon running enter-up" style={{ ['--d' as string]: '80ms' }} aria-hidden>
@@ -153,18 +159,32 @@ export function OverviewRunning({
         </div>
 
         <h2 className="enter-up" style={{ ['--d' as string]: '120ms' }}>
-          Pipeline running…
+          {live ? 'Pipeline running…' : 'Waiting for next stage'}
         </h2>
         <p className="enter-up" style={{ ['--d' as string]: '160ms' }}>
-          {projectName ? <strong>{projectName}</strong> : 'This project'} is processing. Overview
-          metrics unlock when judge results are ready
-          {active ? (
+          {live ? (
             <>
-              {' '}
-              — currently on <em>{active.name}</em>
+              {label} is processing
+              {liveStep || next ? (
+                <>
+                  {' '}
+                  — currently on <em>{liveStep || next?.name}</em>
+                </>
+              ) : null}
+              . Overview unlocks when judge results are ready.
             </>
-          ) : null}
-          .
+          ) : (
+            <>
+              {label} has {done}/{total} stages from real output folders
+              {next ? (
+                <>
+                  {' '}
+                  — next: <em>{next.name}</em>
+                </>
+              ) : null}
+              . Run the next step from Pipeline or Ingestion.
+            </>
+          )}
         </p>
 
         <div className="run-progress enter-up" style={{ ['--d' as string]: '200ms' }}>
@@ -214,7 +234,9 @@ export function OverviewRunning({
               Refresh status
             </button>
           ) : null}
-          <span className="overview-hero-note">Auto-updates when you refresh</span>
+          <span className="overview-hero-note">
+            {live ? 'Auto-updates while a job is running' : 'Stages track output folders, not guesswork'}
+          </span>
         </div>
       </div>
     </section>

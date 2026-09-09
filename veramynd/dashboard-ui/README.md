@@ -1,8 +1,8 @@
 # Veramynd Dashboard UI
 
-React + TypeScript (Vite) frontend for the curriculum alignment dashboard.
+React + TypeScript (Vite) frontend for the curriculum–standards alignment dashboard.
 
-Backend: FastAPI at `http://127.0.0.1:8765` (`veramynd/dashboard`).
+Backend: FastAPI in `../dashboard` (Vite proxies `/api` → API, default **:8000**).
 
 ## Run
 
@@ -17,43 +17,62 @@ npm install
 npm run dev
 ```
 
-Open http://127.0.0.1:5173/projects/el-g1-m2-ga-ela
+Open http://127.0.0.1:5173/
+
+- Demo: `/projects/el-g1-m2-ga-ela`
+- Upload run: `/projects/upload-<batch-id>`
+- No selection: `/projects/none/…`
 
 ## Pages
 
 | Route | Description |
 |-------|-------------|
-| `/projects/:id` | Overview — KPIs, alignment mix, coverage, pipeline flow, lesson heat map |
-| `/projects/:id/curriculum` | Lessons from `/api/lessons/coverage` (+ lesson detail) |
-| `/projects/:id/standards` | Coverage filters + hierarchy tree |
+| `/projects/:id` | **Overview** — empty / partial / ready; real output-folder stages; KPIs after judge |
+| `/projects/:id/curriculum` | Lesson list from Stage-1 |
+| `/projects/:id/curriculum/:lessonCode` | Lesson detail (agenda, instructional blocks, pages) |
+| `/projects/:id/standards` | Standards coverage + tree |
 | `/projects/:id/alignments` | Filterable alignments + evidence drawer |
-| `/projects/none` | No project selected — Go to Ingest (when Ingest exists) |
+| `/projects/:id/review` | Human review queue |
+| `/projects/:id/exports` | Download client / CSV packages |
+| `/projects/:id/projects` | Project list — open / delete (logs kept until Clear logs) |
+| `/projects/:id/ingestion` | Upload PDF + XLSX; confirm before any pipeline run |
+| `/projects/:id/pipeline` | Artifact flow + Complete auto / step-by-step (+ resume) |
+| `/projects/:id/logging` | Jobs, stage/lesson view, typed errors, Clear logs |
+| `/projects/:id/settings` | Health + catalog reload |
 
-Project switcher: search registered projects or choose **None**.
+Sidebar groups: **Main** (review surfaces) · **Operations** (ingest / run) · **Account**.
 
 ## Project model
 
-One Overview = one project (PDF + XLSX + `output_dir`), from `dashboard/projects.json`.
+One Overview = one project (PDF + XLSX + `output_dir`).
 
-UI states: **empty** / **running** / **ready** from API `readiness`.  
-`Last reviewed` = latest artifact mtime for that project.
+| Source | How it appears |
+|--------|----------------|
+| `dashboard/projects.json` | Registry cards (e.g. Batch-1 demo) |
+| `dashboard/uploads/<batch>/` | Virtual `upload-<batch>` projects after ingest / parse |
+
+UI readiness: **empty** / **running** / **ready** from API.  
+Pipeline step wizard marks **Done** from `completed_steps` (disk), then highlights the
+next stage for **Confirm & run**. Complete auto becomes **Resume complete pipeline**
+when prior stages already have output.
 
 ## Stack
 
 - React 19 + React Router  
-- Vite 8 (proxies `/api` → `:8765`)  
+- Vite 8 (proxies `/api` → local API)  
 - TypeScript  
 
 ## Scripts
 
 ```bash
-npm run dev       # local UI
+npm run dev       # local UI (:5173)
 npm run build     # production build → dist/
 npm run preview   # preview build
 ```
 
 ## Notes
 
-- Prefer this app over the legacy UI at `:8765`.  
-- Ingest / Pipeline nav items are still “coming next”.  
-- Do not invent Quality metrics in the UI without a per-project corrected master.
+- This React app is the only dashboard UI.
+- Deleting a project does not clear Logging; use **Clear logs**.
+- Do not invent Quality metrics without a per-project corrected master.
+- See [`../dashboard/README.md`](../dashboard/README.md) for API, resume, and stage details.

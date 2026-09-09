@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the Veramynd enterprise alignment dashboard."""
+"""Run the Veramynd dashboard API (React UI proxies /api here in dev)."""
 
 from __future__ import annotations
 
@@ -19,13 +19,15 @@ if str(ROOT) not in sys.path:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--host", default="127.0.0.1")
-    parser.add_argument("--port", type=int, default=8765)
+    # Internal API port for Vite proxy — not a public UI URL.
+    parser.add_argument("--port", type=int, default=int(os.environ.get("VERAMYND_API_PORT", "8000")))
     args = parser.parse_args()
 
     os.chdir(ROOT)
     import uvicorn
 
-    print(f"Veramynd dashboard -> http://{args.host}:{args.port}")
+    print(f"Veramynd API on {args.host}:{args.port}")
+    print("Open the React UI: cd veramynd/dashboard-ui && npm run dev")
     uvicorn.run(
         "api.app:app",
         host=args.host,

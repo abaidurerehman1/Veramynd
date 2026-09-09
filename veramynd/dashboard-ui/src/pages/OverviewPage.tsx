@@ -43,9 +43,11 @@ export function OverviewPage({
   const [coverage, setCoverage] = useState<LessonCoverageRow[]>([])
   const [stages, setStages] = useState<PipelineStage[]>([])
 
-  const load = useCallback(async () => {
-    setLoading(true)
-    setError(null)
+  const load = useCallback(async (opts?: { quiet?: boolean }) => {
+    if (!opts?.quiet) {
+      setLoading(true)
+      setError(null)
+    }
     try {
       const [ov, cov, pipe] = await Promise.all([
         api<OverviewMetrics>(withProject('/api/overview', projectId)),
@@ -55,19 +57,32 @@ export function OverviewPage({
       setOverview(ov)
       setCoverage(cov.rows)
       setStages(pipe.stages)
+      setError(null)
     } catch (e) {
-      setError(e instanceof Error ? e.message : String(e))
-      setOverview(null)
-      setCoverage([])
-      setStages([])
+      if (!opts?.quiet) {
+        setError(e instanceof Error ? e.message : String(e))
+        setOverview(null)
+        setCoverage([])
+        setStages([])
+      }
     } finally {
-      setLoading(false)
+      if (!opts?.quiet) setLoading(false)
     }
   }, [projectId])
 
   useEffect(() => {
     void load()
   }, [load, reloadKey])
+
+  // Live refresh while pipeline is empty/in progress (upload + registry projects)
+  useEffect(() => {
+    const r = overview?.readiness
+    if (r !== 'empty' && r !== 'running') return
+    const t = window.setInterval(() => {
+      void load({ quiet: true })
+    }, 2500)
+    return () => window.clearInterval(t)
+  }, [overview?.readiness, load])
 
   const unitStats: UnitStat[] = useMemo(() => {
     const lessonRows = [...coverage]
@@ -96,7 +111,7 @@ export function OverviewPage({
         <h3>Unable to load Overview</h3>
         <p>{error}</p>
         <p style={{ fontSize: 12, color: 'var(--muted)' }}>
-          Make sure FastAPI is running on http://127.0.0.1:8765
+          Make sure the dashboard API is running (start it from <code>veramynd/dashboard</code>), then refresh.
         </p>
         <button type="button" className="btn" onClick={() => void load()}>
           Retry
@@ -168,6 +183,8 @@ export function OverviewPage({
           standards={overview?.standards || 0}
           onReload={() => void load()}
           projectName={project?.name}
+          live={Boolean(overview?.live_job)}
+          liveStep={overview?.live_job?.current_step || null}
         />
       </div>
     )

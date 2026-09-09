@@ -57,11 +57,28 @@ export function ProjectProvider({ children }: { children?: ReactNode }) {
   }, [routeProjectId])
 
   useEffect(() => {
-    if (!projects.length || !routeProjectId) return
-    if (routeProjectId === NONE_PROJECT_ID) return
-    if (!projects.some((p) => p.id === routeProjectId)) {
-      navigate(`/projects/${defaultProjectId}`, { replace: true })
+    if (!routeProjectId || routeProjectId === NONE_PROJECT_ID) return
+    if (!projects.length) return
+    if (projects.some((p) => p.id === routeProjectId)) return
+
+    // Idle upload batches are intentionally omitted from the switcher list until
+    // they have pipeline output. Still allow direct navigation (Open Overview).
+    if (routeProjectId.startsWith('upload-')) {
+      let cancelled = false
+      void api<ProjectCard>(`/api/projects/${encodeURIComponent(routeProjectId)}`)
+        .then((card) => {
+          if (cancelled || !card?.id) return
+          setProjects((prev) => (prev.some((p) => p.id === card.id) ? prev : [...prev, card]))
+        })
+        .catch(() => {
+          if (!cancelled) navigate(`/projects/${defaultProjectId || NONE_PROJECT_ID}`, { replace: true })
+        })
+      return () => {
+        cancelled = true
+      }
     }
+
+    navigate(`/projects/${defaultProjectId || NONE_PROJECT_ID}`, { replace: true })
   }, [projects, routeProjectId, defaultProjectId, navigate])
 
   const setProjectId = useCallback(

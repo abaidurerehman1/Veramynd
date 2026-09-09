@@ -5,7 +5,7 @@ import { Topbar } from './Topbar'
 
 type Props = {
   crumbs: string
-  onReload?: () => void
+  onReload?: () => void | Promise<void>
 }
 
 const MOBILE_MQ = '(max-width: 900px)'

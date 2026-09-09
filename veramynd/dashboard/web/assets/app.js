@@ -122,7 +122,7 @@
         ${
           a.evidence
             ? `<div class="evidence-quote">${esc(a.evidence)}
-               <div style="margin-top:8px;font-size:12px;color:var(--muted)">Teacher Guide · p. ${esc(
+               <div style="margin-top:8px;font-size:12px;color:var(--muted)">Curriculum · p. ${esc(
                  a.evidence_page ?? "—"
                )}</div></div>`
             : `<p style="color:var(--muted)">No evidence quote.</p>`
@@ -658,7 +658,7 @@
                     <input name="grade_label" value="Grade 1" required />
                   </label>
                 </div>
-                <label>Teacher guide PDF
+                <label>Curriculum PDF
                   <input type="file" name="guide_pdf" accept=".pdf,application/pdf" />
                 </label>
                 <label>Standards XLSX

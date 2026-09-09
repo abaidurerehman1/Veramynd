@@ -148,30 +148,153 @@ def test_fill_steps_ignores_a_coincidental_prefix_match_in_ordinary_prose():
     assert closing_b.step_texts == ["Display the recording form."]
 
 
-def test_fill_steps_matches_truncated_body_header_via_shared_prefix():
-    """Body headers shorter than the agenda title must still attach (shared prefix)."""
+def test_fill_steps_opens_body_on_numbered_opening_after_cover():
+    """Regression: Docling often emits '1. Opening' in the body. Exact-only major
+    matching left in_body False, so Opening/A stayed page 0 and V13 BLOCKed
+    (seen on G1M2U1L9 re-export). Numbered majors after Materials must open body.
+    """
     cfg = SimpleNamespace(
-        instructional_sections=("Opening", "Work Time", "Closing and Assessment")
+        instructional_sections=("Opening", "Work Time", "Closing and Assessment"),
+        section_headers=(
+            "Agenda",
+            "Materials",
+            "Vocabulary",
+            "Teaching Notes",
+            "Daily Learning Target",
+        ),
     )
     blocks = [
         InstructionalBlock(
             section="Opening",
             letter="A",
-            title="Song and Movement: 'Sun, Moon, and Stars' Song",
-            minutes=5,
+            title="Song and Movement: Sun, Moon, and Stars Song",
+            minutes=10,
+            page=0,
+            steps=[],
+        ),
+        InstructionalBlock(
+            section="Work Time",
+            letter="A",
+            title="Focused Read-aloud",
+            minutes=15,
             page=0,
             steps=[],
         ),
     ]
     body = [
-        ("section_header", "Opening", 2),
-        # truncated vs full agenda title — still shares a long alphanumeric prefix
-        ("section_header", "A. Song and Movement: 'Sun, Moon, and Stars'", 2),
-        ("list_item", "Students sing.", 2),
+        ("section_header", "Agenda", 125),
+        ("section_header", "1. Opening", 125),
+        ("list_item", "A. Song and Movement: Sun, Moon, and Stars Song (10 minutes)", 125),
+        ("section_header", "2. Work Time", 125),
+        ("list_item", "A. Focused Read-aloud (15 minutes)", 125),
+        ("section_header", "Materials", 126),
+        ("list_item", "Song chart", 126),
+        # Body majors are numbered — must still open in_body here
+        ("section_header", "1. Opening", 129),
+        ("section_header", "A. Song and Movement: Sun, Moon, and Stars Song (10 minutes)", 129),
+        ("list_item", "Direct students to sit in a circle.", 129),
+        ("section_header", "2. Work Time", 131),
+        ("section_header", "A. Focused Read-aloud (15 minutes)", 131),
+        ("list_item", "Read the text aloud.", 131),
     ]
     filled = fill_steps(blocks, body, cfg)
-    assert filled[0].page == 2
-    assert filled[0].step_texts == ["Students sing."]
+    assert filled[0].page == 129, "Opening/A must match body, not stay page 0"
+    assert filled[0].step_texts == ["Direct students to sit in a circle."]
+    assert filled[1].page == 131
+    assert filled[1].step_texts == ["Read the text aloud."]
+
+
+def test_fill_steps_does_not_open_body_on_first_agenda_major():
+    """Cover '1. Opening' must not start body — that would attach agenda lines as steps."""
+    cfg = SimpleNamespace(
+        instructional_sections=("Opening", "Work Time", "Closing and Assessment"),
+        section_headers=("Agenda", "Materials", "Vocabulary", "Teaching Notes"),
+    )
+    blocks = [
+        InstructionalBlock(
+            section="Opening",
+            letter="A",
+            title="Song and Movement",
+            minutes=10,
+            page=0,
+            steps=[],
+        ),
+    ]
+    body = [
+        ("section_header", "Agenda", 1),
+        ("section_header", "1. Opening", 1),
+        ("list_item", "A. Song and Movement (10 minutes)", 1),
+        ("list_item", "This agenda line must not become a body step.", 1),
+        ("section_header", "Materials", 2),
+        ("list_item", "Chart", 2),
+        ("section_header", "1. Opening", 3),
+        ("section_header", "A. Song and Movement (10 minutes)", 3),
+        ("list_item", "Real body step.", 3),
+    ]
+    filled = fill_steps(blocks, body, cfg)
+    assert filled[0].page == 3
+    assert filled[0].step_texts == ["Real body step."]
+
+
+def test_fill_steps_fuzzy_matches_list_item_timed_title_variant():
+    """Regression: G1M2U1L9 Opening/A — Docling emits the body title as list_item
+    with a slight variant ('Version 2') vs the agenda. Fuzzy match must apply to
+    timed list_items, or Opening/A stays page 0 (V13 BLOCK). Ordinary prose still
+    must not fuzzy-match (covered by test_fill_steps_does_not_fuzzy_match_list_item…).
+    """
+    cfg = SimpleNamespace(
+        instructional_sections=("Opening", "Work Time", "Closing and Assessment"),
+        section_headers=(
+            "Agenda",
+            "Materials",
+            "Vocabulary",
+            "Teaching Notes",
+        ),
+    )
+    blocks = [
+        InstructionalBlock(
+            section="Opening",
+            letter="A",
+            title="Song and Movement: Sun, Moon, and Stars Song",
+            minutes=10,
+            page=0,
+            steps=[],
+        ),
+        InstructionalBlock(
+            section="Work Time",
+            letter="A",
+            title="Focused Read-aloud, Session 2",
+            minutes=15,
+            page=0,
+            steps=[],
+        ),
+    ]
+    body = [
+        ("section_header", "Agenda", 98),
+        ("section_header", "1. Opening", 99),
+        ("list_item", "Song and Movement: Sun, Moon, and Stars Song (10 minutes)", 99),
+        ("section_header", "Materials", 102),
+        ("section_header", "Opening", 102),
+        # Body title is list_item + "Version 2" — not exact, not section_header
+        (
+            "list_item",
+            "Song and Movement: Sun, Moon, and Stars Version 2 Song (10 minutes)",
+            102,
+        ),
+        ("list_item", "Display the song.", 102),
+        ("section_header", "Work Time", 103),
+        (
+            "section_header",
+            "A. Focused Read-aloud, Session 2 (15 minutes)",
+            103,
+        ),
+        ("list_item", "Read the text aloud.", 103),
+    ]
+    filled = fill_steps(blocks, body, cfg)
+    assert filled[0].page == 102, "Opening/A must fuzzy-match timed list_item title"
+    assert filled[0].step_texts == ["Display the song."]
+    assert filled[1].page == 103
+    assert filled[1].step_texts == ["Read the text aloud."]
 
 
 def test_fill_steps_keeps_each_line_on_the_page_it_came_from():

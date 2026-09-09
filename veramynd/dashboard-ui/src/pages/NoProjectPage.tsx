@@ -1,5 +1,7 @@
-/** Wire this to the sidebar Ingest route when that page exists. */
-export const INGEST_PATH = '/ingest'
+import { Link } from 'react-router-dom'
+import { NONE_PROJECT_ID } from '../project/ProjectContext'
+
+export const INGEST_PATH = `/projects/${NONE_PROJECT_ID}/ingestion`
 
 export function NoProjectPage() {
   return (
@@ -32,8 +34,10 @@ export function NoProjectPage() {
 
           <h2>Upload PDF + XLSX to start</h2>
           <p>
-            No project selected. Go to Ingest when you add it in the sidebar to upload a new PDF and
-            XLSX. After the pipeline runs, Overview fills in automatically.
+            No project selected. Go to Ingestion to upload a new PDF and XLSX. The upload appears in
+            the project switcher immediately but stays idle — you must explicitly start Complete
+            auto or step-by-step (with confirmation). Overview then updates empty → in progress →
+            ready.
           </p>
 
           <div className="overview-flow">
@@ -54,9 +58,9 @@ export function NoProjectPage() {
           </div>
 
           <div className="none-actions overview-hero-actions">
-            <a className="btn primary" href={INGEST_PATH}>
-              Upload Project
-            </a>
+            <Link className="btn primary" to={INGEST_PATH}>
+              Go to Ingestion
+            </Link>
           </div>
         </div>
       </section>

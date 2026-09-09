@@ -618,74 +618,108 @@ class Catalog:
             )
         return items
 
+    @staticmethod
+    def _artifact_count(path: Path, pattern: str = "*") -> int:
+        if not path.is_dir():
+            return 0
+        return sum(1 for _ in path.glob(pattern) if _.is_file())
+
     def pipeline(self) -> list[PipelineStage]:
+        """Stage status from real output folders — not stage1 alone.
+
+        Parse writes ``stage1/`` only. Older UI treated lessons+standards.json as
+        Normalize/Embed complete, so Overview jumped to Retrieval after a
+        parse-only job. Each stage now keys off the directory that step creates.
+        """
+        out = self.output
         n_lessons = len(self.lessons)
+        n_std = len(self.standards)
         n_judge = len(self.judge_meta)
         n_align = len(self.alignments)
         review = sum(1 for a in self.alignments if a.needs_review)
         esc = sum(1 for a in self.alignments if a.escalated)
-        # Locked path — no lesson chunking
+
+        cfg = self.config
+        guide_ok, xlsx_ok = cfg.inputs_exist()
+        inputs_ok = guide_ok and xlsx_ok
+        n_normalize = self._artifact_count(out / "normalize", "*.json")
+        n_norm_std = self._artifact_count(out / "normalize_standards", "*.json")
+        n_embed = self._artifact_count(out / "embeddings")
+        n_retrieve = self._artifact_count(out / "retrieve", "*.json")
+        n_report = self._artifact_count(out / "reports")
+
+        parsed = n_lessons > 0
+        normalized = n_normalize > 0 and n_norm_std > 0
+        embedded = n_embed > 0
+        retrieved = n_retrieve > 0
+        judged = n_align > 0 or n_judge > 0
+        reported = n_report > 0 and judged
+
         return [
             PipelineStage(
                 id="ingestion",
                 name="Ingestion",
-                status="complete" if n_lessons else "pending",
-                detail="Teacher guide + standards workbook",
-                count=f"{n_lessons} lessons",
+                status="complete" if (inputs_ok or parsed) else "pending",
+                detail="Curriculum PDF + standards workbook",
+                count=f"{n_lessons} lessons" if parsed else ("inputs ready" if inputs_ok else "pending"),
             ),
             PipelineStage(
                 id="parsing",
                 name="Parsing",
-                status="complete" if n_lessons else "pending",
+                status="complete" if parsed else "pending",
                 detail="Stage-1 structure + page provenance",
                 count=f"{n_lessons} / {n_lessons or '—'}",
             ),
             PipelineStage(
                 id="normalization",
                 name="Normalization",
-                status="complete" if n_lessons else "pending",
+                status="complete" if normalized else "pending",
                 detail="Lessons + standards leaves",
-                count=f"{n_lessons} lessons · {len(self.standards)} standards",
+                count=(
+                    f"{n_normalize} lessons · {n_norm_std} standards"
+                    if normalized
+                    else "0 — run Normalize"
+                ),
             ),
             PipelineStage(
                 id="embedding",
                 name="Embedding",
-                status="complete" if self.standards else "pending",
+                status="complete" if embedded else "pending",
                 detail="Standards → veramynd_standards",
-                count=f"{len(self.standards)} nodes",
+                count=f"{n_embed} files" if embedded else f"0 — {n_std} standards parsed",
             ),
             PipelineStage(
                 id="retrieval",
                 name="Retrieval",
-                status="complete" if n_judge else "pending",
+                status="complete" if retrieved else "pending",
                 detail="Hybrid dense + BM25 + RRF",
-                count=f"{n_judge} shortlists",
+                count=f"{n_retrieve} shortlists" if retrieved else "0 shortlists",
             ),
             PipelineStage(
                 id="reranking",
                 name="Reranking",
-                status="complete" if n_judge else "pending",
+                status="complete" if retrieved else "pending",
                 detail="Local cross-encoder fusion",
-                count=f"{n_judge} / {n_judge or '—'}",
+                count=f"{n_retrieve} / {n_retrieve or '—'}",
             ),
             PipelineStage(
                 id="judge",
                 name="Judge",
-                status="complete" if n_align else "pending",
+                status="complete" if judged else "pending",
                 detail="Assembled rubric + grounding",
                 count=f"{n_align} evaluations",
             ),
             PipelineStage(
                 id="escalation",
                 name="Escalation",
-                status="warning" if esc else ("complete" if n_align else "pending"),
+                status="warning" if esc else ("complete" if judged else "pending"),
                 detail="Borderline codes → escalate model",
                 count=f"{esc} escalated",
             ),
             PipelineStage(
                 id="results",
                 name="Final results",
-                status="warning" if review else ("complete" if n_align else "pending"),
+                status="warning" if review else ("complete" if reported or judged else "pending"),
                 detail="Client package + review flags",
                 count=f"{review} review · {n_align} rows",
             ),
@@ -853,7 +887,9 @@ class Catalog:
                 type="csv-dir",
                 path=str(result_dir),
                 available=bool(csvs),
-                download_url=None,
+                download_url=(
+                    f"/api/exports/result-csvs/download?project_id={cfg.id}" if csvs else None
+                ),
             )
         )
         return items
@@ -863,6 +899,12 @@ class Catalog:
             if item.id == export_id and item.available:
                 return Path(item.path)
         return None
+
+    def result_csv_paths(self) -> list[Path]:
+        result_dir = self.output / "result"
+        if not result_dir.is_dir():
+            return []
+        return sorted(result_dir.glob("*.csv"))
 
     def search(self, q: str, limit: int = 40) -> list[dict[str, Any]]:
         qq = (q or "").strip().lower()
@@ -918,6 +960,12 @@ def reload_catalog(project_id: str | None = None) -> Catalog:
         cat = Catalog(cfg)
         _catalogs[cfg.id] = cat
         return cat
+
+
+def drop_catalog(project_id: str) -> None:
+    """Remove a cached catalog (e.g. after deleting an upload batch)."""
+    with _catalogs_lock:
+        _catalogs.pop(project_id, None)
 
 
 # Default project catalog (Batch-1) — keeps legacy imports working.

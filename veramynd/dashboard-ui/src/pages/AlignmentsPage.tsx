@@ -157,7 +157,7 @@ export function AlignmentsPage({
         <section className="card">
           <div className="card-b">
             <p className="card-sub" style={{ margin: 0 }}>
-              No alignments match. Try another filter or clear search.
+              No alignments match. Alignment will show after alignments are generated. Try another filter or clear search.
             </p>
           </div>
         </section>
@@ -262,7 +262,7 @@ export function AlignmentsPage({
                   <div className="evidence-quote">
                     {selected.evidence}
                     <div style={{ marginTop: 8, fontSize: 12, color: 'var(--muted)' }}>
-                      Teacher Guide · p. {selected.evidence_page ?? '—'}
+                      Curriculum · p. {selected.evidence_page ?? '—'}
                     </div>
                   </div>
                 ) : (

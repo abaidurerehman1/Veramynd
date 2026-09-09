@@ -1,17 +1,32 @@
 # Veramynd — Alignment Dashboard
 
-Read-only dashboard over pipeline artifacts. One **project** = one curriculum PDF + one standards XLSX + that project’s output folder.
+Operational UI over the curriculum–standards alignment pipeline. One **project** =
+one curriculum PDF + one standards workbook + that project’s `output/` tree.
 
-Does **not** run parse / retrieve / judge. Does **not** mutate production `output/` trees.
+The **React app** (`dashboard-ui`, port **5173**) is the front door. The FastAPI
+process (default port **8000**) serves `/api/*` and can also host the built SPA
+from `/` after `npm run build`.
+
+## What you can do
+
+- Register or upload a PDF + XLSX (publisher labels optional)
+- Run the real CLI pipeline: **Complete auto** or **step-by-step** (confirm each stage)
+- **Resume** after power-off / API restart — finished stages skipped from disk;
+  Normalize / Judge continue from cached progress where the CLI supports it
+- Review Overview → Curriculum → Standards → Alignments → Review → Exports
+- Inspect jobs on **Logging**; **Clear logs** is the only path that deletes job logs
+  (deleting a project does **not** wipe Logging)
 
 ## Stack
 
 | Layer | Path | Role |
 |-------|------|------|
-| FastAPI | `dashboard/` | `/api/*` over registered projects |
-| React UI | `dashboard-ui/` | Project Overview, Curriculum, Standards, Alignments |
-| Registry | `dashboard/projects.json` | PDF / XLSX / `output_dir` per project |
-| Artifacts | `veramynd_parser/output/` (Batch-1) | stage1, judge, reports |
+| FastAPI | `dashboard/` | `/api/*`, ingest, pipeline jobs |
+| React UI | `dashboard-ui/` | All operator pages (Vite → proxies `/api`) |
+| Registry | `dashboard/projects.json` | Demo / locked projects |
+| Uploads | `dashboard/uploads/` | Ingest batches + `output/` |
+| Jobs | `dashboard/runs/` | Job JSON + logs (gitignored) |
+| Batch-1 artifacts | `veramynd_parser/output/` | Locked EL G1M2 × GA ELA demo |
 
 ## Run
 
@@ -23,7 +38,7 @@ pip install -r requirements.txt
 python run.py
 ```
 
-API: http://127.0.0.1:8765
+Default: `http://127.0.0.1:8000` (`VERAMYND_API_PORT` / `VERAMYND_API_URL` to override).
 
 **Terminal 2 — React UI**
 
@@ -33,76 +48,109 @@ npm install
 npm run dev
 ```
 
-UI: http://127.0.0.1:5173/projects/el-g1-m2-ga-ela  
-Vite proxies `/api` → `http://127.0.0.1:8765`.
+Open: http://127.0.0.1:5173/
 
-Legacy vanilla UI (older pages) is still served at http://127.0.0.1:8765 — prefer the React app.
+Demo project: `/projects/el-g1-m2-ga-ela`  
+Upload projects: `/projects/upload-<batch-id>`
+
+After `npm run build` in `dashboard-ui`, the API can serve `dist/` at `/`.
 
 ## Projects
 
-Register projects in [`projects.json`](projects.json):
+| Kind | ID shape | Notes |
+|------|----------|--------|
+| Registry | e.g. `el-g1-m2-ga-ela` | From `projects.json`; Batch-1 demo points at `veramynd_parser/output` |
+| Upload | `upload-<batch-id>` | Created under `uploads/`; output under `uploads/<batch>/output/` |
+| None | `none` | No project selected — Ingestion / Pipeline / Logging still available |
 
-```json
-{
-  "id": "el-g1-m2-ga-ela",
-  "inputs": { "guide_pdf": "...", "standards_xlsx": "..." },
-  "output_dir": "veramynd_parser/output"
-}
-```
+PDF + XLSX are required to ingest. Program / grade / module labels are optional
+(publisher-agnostic storage).
 
-Current registry:
+Delete project / batch removes inputs (and upload output) from the list; **job
+logs stay** until **Logging → Clear logs**.
 
-| ID | Role |
-|----|------|
-| `el-g1-m2-ga-ela` | Batch-1 ready (EL G1M2 × GA ELA) |
-| `demo-running` | Fixture: pipeline in progress (stage1 only) |
+## Pages (UI)
 
-**None** in the project switcher = no project selected (placeholder for future Ingest). Empty demo projects are not registered.
+| Page | Task |
+|------|------|
+| **Overview** | Empty → partial → ready; stage bars from real output folders; KPIs after judge |
+| **Curriculum** | Parsed lessons; open lesson detail (agenda, blocks, steps, pages) |
+| **Standards** | Framework tree + coverage |
+| **Alignments** | Browse `full` / `partial` / `none` verdicts + evidence drawer |
+| **Review** | Alignments flagged for human review |
+| **Exports** | Download reports / CSV packages for the active project |
+| **Projects** | List runs; open or delete |
+| **Ingestion** | Upload PDF + XLSX (save only — pipeline never auto-starts) |
+| **Pipeline** | Artifact flow + Complete auto / step-by-step run controls |
+| **Logging** | All jobs, stage/lesson view, typed errors, Clear logs |
+| **Settings** | Health + catalog reload |
 
-After editing `projects.json`, call `POST /api/reload` or restart `python run.py`.
+## Pipeline stages (runnable)
+
+Order used by Complete auto and step-by-step:
+
+1. **Parse** → `stage1/`
+2. **Normalize** → `normalize/` + `normalize_standards/`
+3. **Embed** → `embeddings/` (+ Qdrant)
+4. **Retrieve + rerank** → `retrieve/`
+5. **Judge + escalation** → `judge/`
+6. **Final report** → `reports/` / result CSVs
+
+Overview also shows Ingestion / Reranking / Escalation / Final results as
+**artifact** stages (derived from those folders — not guesses after Parse alone).
+
+### Resume
+
+- On API startup, orphaned `running`/`queued` jobs become **cancelled** (logs kept).
+- **Resume complete pipeline** / re-run skips stages whose outputs are already
+  complete for every Stage-1 lesson.
+- Partial **Normalize** / **Judge** re-runs continue from CLI caches (per lesson).
 
 ## Readiness
-
-Per project, Overview uses:
 
 | State | Meaning |
 |-------|---------|
 | `empty` | No lessons / standards / judge yet |
-| `running` | Partial artifacts (e.g. stage1) |
+| `running` | Partial artifacts (e.g. stage1 only) — or a live job |
 | `ready` | Judge alignments present |
 
 ## API (project-scoped)
 
-Most routes take `?project_id=…`:
+Most GETs take `?project_id=…`:
 
-- `GET /api/projects` — registry cards  
-- `GET /api/overview` — KPIs + readiness + `last_reviewed`  
-- `GET /api/lessons/coverage`, `GET /api/lessons/{code}`  
-- `GET /api/standards/coverage`, `GET /api/standards/tree`  
-- `GET /api/alignments`, `GET /api/alignments/{id}`  
-- `GET /api/pipeline` — stage status from artifacts  
-- `POST /api/reload` — refresh registry + catalog  
-- `POST /api/ingest` — store uploads under `dashboard/uploads/` only (no pipeline run)
+- `GET /api/projects`, `GET /api/projects/{id}`, `DELETE /api/projects/{id}`
+- `GET /api/overview` — KPIs, readiness, optional `live_job`
+- `GET /api/lessons/coverage`, `GET /api/lessons/{code}`
+- `GET /api/standards/coverage`, `GET /api/standards/tree`
+- `GET /api/alignments`, `GET /api/review`, `GET /api/exports`
+- `GET /api/pipeline` — stages + `runnable_steps` + `completed_steps` + `next_step`
+- `POST /api/pipeline/run` — `{ confirm: true, mode: "full"|"step", step?, batch_id?|project_id? }`
+- `GET /api/pipeline/jobs`, `GET /api/pipeline/jobs/{id}`
+- `GET /api/pipeline/logs`, `DELETE /api/pipeline/logs` — Clear logs
+- `GET/POST /api/ingest`, `DELETE /api/ingest/{batch_id}`
+- `POST /api/reload` — refresh registry + catalog
 
 ## Layout
 
 ```
 dashboard/
 ├── api/
-│   ├── app.py          # FastAPI routes
-│   ├── catalog.py      # Artifact adapters
-│   ├── projects.py     # projects.json loader
+│   ├── app.py              # FastAPI routes
+│   ├── catalog.py          # Artifact adapters / stage status
+│   ├── pipeline_runner.py  # CLI jobs, resume, recover interrupted
+│   ├── projects.py         # registry + upload-* projects
 │   └── schemas.py
 ├── projects.json
-├── fixtures/           # demo-running (and optional empty fixtures)
-├── uploads/            # ingest storage only
-├── web/                # legacy static UI
+├── uploads/                # ingest batches + output/
+├── runs/                   # job JSON + logs
+├── web/                    # legacy static (not primary UI)
 ├── run.py
 └── requirements.txt
 ```
 
 ## Notes
 
-- Metrics must come from artifacts — do not invent accuracy without a corrected master.  
-- Quality / gold metrics are API-available when gold files exist; the React Overview does not show a Quality card by default.  
-- Client-facing retrieve bar remains **Recall@25** only when discussing retrieve quality.
+- Use **React on :5173** for day-to-day work; do not treat the bare API process as the product UI.
+- Metrics must come from artifacts — do not invent accuracy without a corrected master.
+- Client-facing retrieve bar remains **Recall@25** when discussing retrieve quality.
+- Trust gate: Parse must **GO**; product path does not rely on `--allow-block`.

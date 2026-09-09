@@ -6,7 +6,7 @@ type Props = {
   crumbs: string
   showMenu: boolean
   onToggle: () => void
-  onReload?: () => void
+  onReload?: () => void | Promise<void>
 }
 
 export function Topbar({ crumbs, showMenu, onToggle, onReload }: Props) {
@@ -26,7 +26,13 @@ export function Topbar({ crumbs, showMenu, onToggle, onReload }: Props) {
         </div>
         <div className="top-actions">
           <ProjectSwitcher />
-          <button type="button" className="icon-btn refresh-btn" title="Refresh overview" aria-label="Refresh overview" onClick={onReload}>
+          <button
+            type="button"
+            className="icon-btn refresh-btn"
+            title="Refresh overview"
+            aria-label="Refresh overview"
+            onClick={() => void onReload?.()}
+          >
             <svg className="refresh-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
               <path
                 d="M21 12a9 9 0 0 0-15.36-6.36"

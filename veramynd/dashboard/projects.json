@@ -25,29 +25,8 @@
         "corrected_master": "docs/Veramynd_ALL40_corrected_master.xlsx"
       },
       "labels": {
-        "curriculum_pdf": "EL Education Grade 1 Module 2 Teacher Guide",
+        "curriculum_pdf": "EL Education Grade 1 Module 2 Curriculum",
         "run_id": "batch1-judge-all40"
-      }
-    },
-    {
-      "id": "demo-running",
-      "name": "Demo · Pipeline in progress",
-      "publisher": "Demo Publisher",
-      "grade": 3,
-      "subject": "ELA",
-      "module": "Module 1",
-      "framework": "Common Core",
-      "batch_label": "",
-      "expected_lessons": null,
-      "inputs": {
-        "guide_pdf": "data/samples/ELA Grade 1 Module 2 Teacher Guide.pdf",
-        "standards_xlsx": "data/samples/Grade 1 GA ELA Standards.xlsx"
-      },
-      "output_dir": "dashboard/fixtures/running-project",
-      "artifacts": {},
-      "labels": {
-        "curriculum_pdf": "Demo Teacher Guide (in progress)",
-        "run_id": "demo-running"
       }
     }
   ]
