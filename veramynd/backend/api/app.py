@@ -1,4 +1,4 @@
-"""Enterprise dashboard API — artifacts + pipeline job runner."""
+"""Enterprise backend API — artifacts + pipeline job runner."""
 
 from __future__ import annotations
 
@@ -28,12 +28,7 @@ from .projects import (
 )
 from .catalog import drop_catalog, get_catalog, reload_catalog
 from . import pipeline_runner
-
-DASHBOARD_ROOT = Path(__file__).resolve().parents[1]
-WEB_DIR = DASHBOARD_ROOT / "web"
-ASSETS_DIR = WEB_DIR / "assets"
-UI_DIST = DASHBOARD_ROOT.parent / "dashboard-ui" / "dist"
-UPLOADS_DIR = DASHBOARD_ROOT / "uploads"
+from .layout import ASSETS_DIR, UI_DIST, UPLOADS_DIR, WEB_DIR
 
 _MAX_UPLOAD_BYTES = 200 * 1024 * 1024
 _SAFE_NAME = re.compile(r"[^A-Za-z0-9._-]+")
@@ -70,7 +65,7 @@ code{background:#f4f5f8;padding:0.15em 0.4em;border-radius:6px}</style></head>
 <body>
 <h1>Veramynd API</h1>
 <p>This process serves the API only. Use the React app:</p>
-<pre><code>cd veramynd/dashboard-ui
+<pre><code>cd veramynd/frontend
 npm run dev</code></pre>
 <p>The Vite app proxies <code>/api</code> to this server automatically.</p>
 </body></html>""",
@@ -368,7 +363,7 @@ def pipeline_logs(
 
 @app.delete("/api/pipeline/logs")
 def pipeline_logs_clear() -> dict:
-    """Clear all pipeline job records and log files under ``dashboard/runs/``."""
+    """Clear all pipeline job records and log files under ``backend/runs/``."""
     return pipeline_runner.clear_all_jobs()
 
 
@@ -489,7 +484,7 @@ def ingest_status() -> dict:
     return {
         "uploads_dir": str(UPLOADS_DIR),
         "note": (
-            "Uploads are stored under dashboard/uploads and appear as projects after a run, "
+            "Uploads are stored under backend/uploads and appear as projects after a run, "
             "but never auto-run. You must explicitly start Complete auto or step-by-step "
             "(confirm each time)."
         ),

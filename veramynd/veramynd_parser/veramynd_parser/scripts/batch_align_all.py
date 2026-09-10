@@ -27,7 +27,13 @@ from veramynd_parser.judge.pipeline import (
     judge_retrieve_file,
     write_judge_report,
 )
-from veramynd_parser.normalize.llm import LlmError, is_non_retryable_openai_error
+from veramynd_parser.normalize.llm import (
+    LlmError,
+    anthropic_usage_report,
+    format_anthropic_usage_summary,
+    is_non_retryable_openai_error,
+    reset_anthropic_usage,
+)
 from veramynd_parser.report.dashboard import write_html_dashboard
 from veramynd_parser.report.exporter import export_alignment_report
 from veramynd_parser.retrieve.dense_health import (
@@ -170,12 +176,12 @@ def main(argv: list[str] | None = None) -> int:
     judge_mode.add_argument(
         "--batch",
         action="store_true",
-        help="opt into one judge call per lesson (cheaper, lower pair depth)",
+        help="one judge call per lesson for all shortlist standards (enterprise default)",
     )
     judge_mode.add_argument(
         "--no-batch",
         action="store_true",
-        help="deprecated: pair-depth judging is already the default",
+        help="pair-depth judging: one API call per standard (slower / costlier)",
     )
     p.add_argument(
         "--use-batch-api",
@@ -252,6 +258,20 @@ def main(argv: list[str] | None = None) -> int:
         help="cost-aware final candidates[] size sent to judge",
     )
     p.add_argument(
+        "--judge-limit",
+        type=int,
+        default=None,
+        help=(
+            "judge only the top N retrieve candidates, then run coverage-pass "
+            "(default: all candidates in the retrieve JSON)"
+        ),
+    )
+    p.add_argument(
+        "--no-coverage-pass",
+        action="store_true",
+        help="disable activity coverage-pass injection after the judge head",
+    )
+    p.add_argument(
         "--shortlist-rrf-weight",
         type=float,
         default=DEFAULT_SHORTLIST_RRF_WEIGHT,
@@ -302,6 +322,23 @@ def main(argv: list[str] | None = None) -> int:
         args.force_retrieve = True
         args.force_judge = True
         args.no_cache = True
+
+    if int(args.judge_shortlist_k) < 1:
+        print(
+            f"ERROR: --judge-shortlist-k must be >= 1, got {args.judge_shortlist_k}",
+            file=sys.stderr,
+        )
+        return 2
+    if args.judge_limit is not None and int(args.judge_limit) < 1:
+        print(
+            f"ERROR: --judge-limit must be >= 1, got {args.judge_limit}",
+            file=sys.stderr,
+        )
+        return 2
+
+    # Enterprise default: one LLM call per lesson (all shortlist standards).
+    # Publisher-agnostic — same for any uploaded PDF. Opt out with --no-batch.
+    use_judge_batch = not bool(args.no_batch)
 
     lessons_dir = Path(args.lessons_dir)
     normalize_dir = Path(args.normalize_dir)
@@ -540,6 +577,7 @@ def main(argv: list[str] | None = None) -> int:
             print(json.dumps(metrics, indent=2), flush=True)
 
     if not args.skip_judge:
+        reset_anthropic_usage()
         for i, rid in enumerate(ids, start=1):
             retrieve_file = retrieve_dir / f"{rid}.json"
             lesson_file = lessons_dir / f"{rid}.json"
@@ -557,24 +595,34 @@ def main(argv: list[str] | None = None) -> int:
                 continue
             print(f"[{i}/{len(ids)}] judge {rid}...", flush=True)
             try:
+                cost_before = float(anthropic_usage_report().get("estimated_cost_usd") or 0)
+                judge_limit = (
+                    int(args.judge_limit) if args.judge_limit is not None else None
+                )
                 report = judge_retrieve_file(
                     retrieve_file=retrieve_file,
                     standards_dir=standards_dir,
                     lesson_file=lesson_file,
                     escalate=not bool(args.no_escalate),
-                    batch=bool(args.batch),
+                    batch=use_judge_batch,
                     use_cache=not (
                         bool(args.no_cache) or bool(args.force_judge) or bool(args.force)
                     ),
-                    use_batch_api=bool(args.use_batch_api),
-                    self_consistency_n=int(args.self_consistency_n),
-                    prescreen_min_rerank_score=args.prescreen_min_rerank_score,
+                    limit=judge_limit,
+                    coverage_pass=not bool(args.no_coverage_pass),
                 )
+                usage = dict(anthropic_usage_report())
+                lesson_cost = max(
+                    0.0, float(usage.get("estimated_cost_usd") or 0) - cost_before
+                )
+                usage["estimated_cost_usd"] = round(lesson_cost, 6)
+                report["usage"] = usage
                 write_judge_report(report, out)
                 by = report.get("by_status") or {}
                 print(
                     f"  ok full={by.get('full', 0)} partial={by.get('partial', 0)} "
-                    f"none={by.get('none', 0)} grounding={report.get('grounding_rate')}",
+                    f"none={by.get('none', 0)} grounding={report.get('grounding_rate')}"
+                    f" cost=${lesson_cost:.4f}",
                     flush=True,
                 )
             except JudgeIncompleteError as e:
@@ -593,6 +641,9 @@ def main(argv: list[str] | None = None) -> int:
                         flush=True,
                     )
                     break
+        print(format_anthropic_usage_summary(), flush=True)
+        judge_usd = float(anthropic_usage_report().get("estimated_cost_usd") or 0)
+        print(f"COST stage=judge estimated_usd={judge_usd:.6f}", flush=True)
 
     if not args.skip_consistency:
         print("P3 cross-lesson consistency pass...", flush=True)

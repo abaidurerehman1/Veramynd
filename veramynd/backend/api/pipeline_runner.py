@@ -1,4 +1,4 @@
-"""Run real Veramynd CLI pipeline stages from the dashboard API.
+"""Run real Veramynd CLI pipeline stages from the backend API.
 
 Jobs write under a batch ``uploads/<id>/output/`` tree or a project's
 ``output_dir``. Requires ``confirm=true`` on every start. Only one job
@@ -20,17 +20,16 @@ from pathlib import Path
 from typing import Any, Callable
 from uuid import uuid4
 
+from .layout import PARSER_ROOT, RUNS_DIR, UPLOADS_DIR, VERAMYND_ROOT
 from .projects import (
-    VERAMYND_ROOT,
     batch_id_from_project,
     get_project_config,
     upload_project_id,
 )
 
-DASHBOARD_ROOT = Path(__file__).resolve().parents[1]
-UPLOADS_DIR = DASHBOARD_ROOT / "uploads"
-RUNS_DIR = DASHBOARD_ROOT / "runs"
-PARSER_ROOT = VERAMYND_ROOT / "veramynd_parser"
+# Frontend Complete / step runs: product cut is Recall@25 + activity coverage.
+FRONTEND_JUDGE_SHORTLIST_K = 25
+FRONTEND_JUDGE_LIMIT = 25
 
 # Runnable steps (UI + API). retrieval includes rerank; judge includes escalate.
 STEP_ORDER = (
@@ -57,15 +56,15 @@ STEP_META: dict[str, dict[str, str]] = {
     },
     "retrieval": {
         "name": "Retrieve + rerank",
-        "detail": "Hybrid dense + BM25 + RRF + cross-encoder",
+        "detail": "Hybrid dense + BM25 + RRF + CE → top 25 shortlist",
     },
     "judge": {
         "name": "Judge + escalation",
-        "detail": "Alignment verdicts (Anthropic)",
+        "detail": "Top 25 + coverage; one batch call/lesson (Anthropic)",
     },
     "results": {
         "name": "Final report",
-        "detail": "Alignments CSV (+ summary)",
+        "detail": "Alignments CSV + client correlation (DOCX/XLSX)",
     },
 }
 
@@ -91,6 +90,9 @@ class PipelineJob:
     message: str = ""
     # Soft progress within the active step (0-100); bumps on log lines.
     step_pct: int = 0
+    # Estimated USD cost by runnable step id (from CLI usage lines / artifacts).
+    stage_costs: dict[str, float] = field(default_factory=dict)
+    total_cost_usd: float = 0.0
 
     def to_dict(self) -> dict[str, Any]:
         data = asdict(self)
@@ -244,18 +246,31 @@ def artifact_completed_steps(output_root: Path | str | None) -> list[str]:
         return done
 
     retrieve = json_stems(p["retrieve"])
-    if lessons <= retrieve:
+    if lessons <= retrieve and _retrieve_matches_frontend_k(p["retrieve"], lessons):
         done.append("retrieval")
     else:
         return done
 
     judge = json_stems(p["judge"])
-    if lessons <= judge:
+    # Ignore *.incomplete.json stems — json_stems already is only *.json; incomplete
+    # files are named *.incomplete.json so stem ends with .incomplete — filter those.
+    judge_ok = {
+        s
+        for s in judge
+        if not s.endswith(".incomplete") and (p["judge"] / f"{s}.json").is_file()
+    }
+    if lessons <= judge_ok and _judge_matches_frontend_cut(p["judge"], lessons):
         done.append("judge")
     else:
         return done
 
-    if p["report_csv"].is_file() or has_files(p["reports"]):
+    # Results = alignments report AND client-format package (Exports downloads).
+    # Must be newer than judge so a 50→25 re-judge still regenerates exports.
+    if (
+        p["report_csv"].is_file()
+        and _has_client_format(p["reports"])
+        and _results_fresh_vs_judge(p)
+    ):
         done.append("results")
     return done
 
@@ -430,7 +445,7 @@ def delete_jobs_for_project(
 
 
 def clear_all_jobs() -> dict[str, Any]:
-    """Delete all pipeline job JSON + log files under ``dashboard/runs/``."""
+    """Delete all pipeline job JSON + log files under ``backend/runs/``."""
     global _active_job_id
     deleted = 0
     with _lock:
@@ -469,6 +484,19 @@ def job_log_full(job_id: str, max_chars: int = 500_000) -> str:
 
 
 _STEP_HDR_RE = re.compile(r"^=== STEP (?P<step>[a-z_]+):\s*(?P<label>.*?)(?:\s*===)?\s*$", re.I)
+_SKIP_HDR_RE = re.compile(
+    r"^=== SKIP (?P<step>[a-z_]+):\s*(?P<label>.*?)(?:\s*\(already complete\))?\s*(?:===)?\s*$",
+    re.I,
+)
+_COST_EST_RE = re.compile(r"Estimated total cost:\s*\$?\s*([0-9]+(?:\.[0-9]+)?)", re.I)
+_COST_MACHINE_RE = re.compile(
+    r"^COST\s+stage=(?P<stage>[a-z_]+)\s+estimated_usd=(?P<usd>[0-9]+(?:\.[0-9]+)?)\s*$",
+    re.I,
+)
+_COST_TOTAL_RE = re.compile(
+    r"^COST_TOTAL\s+estimated_usd=(?P<usd>[0-9]+(?:\.[0-9]+)?)\s*$",
+    re.I,
+)
 _LESSON_PROG_RE = re.compile(
     r"^\[(?P<i>\d+)/(?P<n>\d+)\]\s+"
     r"(?:(?P<skip>SKIP)\s+)?"
@@ -482,6 +510,96 @@ _LESSON_ERR_RE = re.compile(
     re.I,
 )
 _BATCH_ALIGN_RE = re.compile(r"^Batch aligning (?P<n>\d+) lessons", re.I)
+
+
+def _log_line_count(job: PipelineJob) -> int:
+    path = Path(job.log_path) if job.log_path else RUNS_DIR / f"{job.id}.log"
+    if not path.is_file():
+        return 0
+    try:
+        return sum(1 for _ in path.open("r", encoding="utf-8", errors="replace"))
+    except OSError:
+        return 0
+
+
+def _parse_cost_from_lines(lines: list[str]) -> float:
+    """Best estimated USD from a log slice (prefers machine COST lines)."""
+    machine = 0.0
+    found_machine = False
+    est = 0.0
+    for line in lines:
+        m = _COST_MACHINE_RE.match(line.strip())
+        if m:
+            machine += float(m.group("usd"))
+            found_machine = True
+            continue
+        em = _COST_EST_RE.search(line)
+        if em:
+            est = float(em.group(1))
+    if found_machine:
+        return round(machine, 6)
+    return round(est, 6)
+
+
+def _sum_judge_artifact_cost(output_root: Path) -> float:
+    judge_dir = output_root / "judge"
+    if not judge_dir.is_dir():
+        return 0.0
+    total = 0.0
+    for path in judge_dir.glob("*.json"):
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        usage = data.get("usage") if isinstance(data, dict) else None
+        if isinstance(usage, dict) and usage.get("estimated_cost_usd") is not None:
+            try:
+                total += float(usage["estimated_cost_usd"])
+            except (TypeError, ValueError):
+                continue
+    return round(total, 6)
+
+
+def _emit_stage_cost(
+    job: PipelineJob,
+    step: str,
+    *,
+    output_root: Path,
+    log_from_line: int,
+    skipped: bool = False,
+) -> float:
+    """Append COST lines for a finished/skipped stage and update job.stage_costs."""
+    if skipped:
+        usd = 0.0
+        note = "skipped (already complete)"
+    else:
+        path = Path(job.log_path) if job.log_path else RUNS_DIR / f"{job.id}.log"
+        lines: list[str] = []
+        if path.is_file():
+            try:
+                all_lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
+                lines = all_lines[max(0, log_from_line) :]
+            except OSError:
+                lines = []
+        usd = _parse_cost_from_lines(lines)
+        if step == "judge" and usd <= 0:
+            usd = _sum_judge_artifact_cost(output_root)
+        note = "from CLI usage" if usd > 0 else "no billable API usage recorded"
+    job.stage_costs[step] = usd
+    job.total_cost_usd = round(sum(job.stage_costs.values()), 6)
+    name = STEP_META.get(step, {}).get("name", step)
+    _append_log(job, f"COST stage={step} estimated_usd={usd:.6f}")
+    _append_log(job, f"Stage cost ({name}): ${usd:.4f} — {note}")
+    _persist(job)
+    return usd
+
+
+def _emit_total_cost(job: PipelineJob) -> None:
+    total = round(sum(float(v) for v in job.stage_costs.values()), 6)
+    job.total_cost_usd = total
+    _append_log(job, f"COST_TOTAL estimated_usd={total:.6f}")
+    _append_log(job, f"Pipeline total estimated cost: ${total:.4f}")
+    _persist(job)
 
 
 def _entry_base(job: dict[str, Any], jid: str, line_no: int, line: str) -> dict[str, Any]:
@@ -517,8 +635,10 @@ def analyze_job_logs(job_id: str | None = None, *, limit_jobs: int = 30) -> dict
     by_type["info"] = []
     by_type["stage"] = []
     by_type["lesson"] = []
+    by_type["cost"] = []
 
     stages_out: list[dict[str, Any]] = []
+    job_cost_rows: list[dict[str, Any]] = []
 
     for job in jobs:
         jid = str(job.get("id") or "")
@@ -527,6 +647,37 @@ def analyze_job_logs(job_id: str | None = None, *, limit_jobs: int = 30) -> dict
         current_label = ""
         stage_lessons: dict[str, dict[str, Any]] = {}
         stage_rows: list[dict[str, Any]] = []
+        stage_cost_map: dict[str, float] = {}
+        for raw_line in text.splitlines():
+            cm = _COST_MACHINE_RE.match(raw_line.strip())
+            if cm:
+                stage_cost_map[cm.group("stage").lower()] = float(cm.group("usd"))
+        total_from_log = None
+        for raw_line in text.splitlines():
+            tm = _COST_TOTAL_RE.match(raw_line.strip())
+            if tm:
+                total_from_log = float(tm.group("usd"))
+        if not stage_cost_map and isinstance(job.get("stage_costs"), dict):
+            stage_cost_map = {
+                str(k): float(v)
+                for k, v in job["stage_costs"].items()
+                if v is not None
+            }
+        job_total = (
+            total_from_log
+            if total_from_log is not None
+            else float(job.get("total_cost_usd") or 0)
+            or round(sum(stage_cost_map.values()), 6)
+        )
+        job_cost_rows.append(
+            {
+                "job_id": jid,
+                "total_cost_usd": job_total,
+                "stage_costs": stage_cost_map,
+                "status": job.get("status"),
+                "mode": job.get("mode"),
+            }
+        )
 
         def flush_stage() -> None:
             nonlocal stage_lessons, stage_rows, current_stage, current_label
@@ -558,6 +709,7 @@ def analyze_job_logs(job_id: str | None = None, *, limit_jobs: int = 30) -> dict
                     "skip": skip,
                     "error": err,
                     "running": running,
+                    "cost_usd": stage_cost_map.get(current_stage),
                 }
             )
             stage_lessons = {}
@@ -570,7 +722,7 @@ def analyze_job_logs(job_id: str | None = None, *, limit_jobs: int = 30) -> dict
             base = _entry_base(job, jid, i + 1, line)
             etype = classify_log_line(line)
 
-            step_m = _STEP_HDR_RE.match(line.strip())
+            step_m = _STEP_HDR_RE.match(line.strip()) or _SKIP_HDR_RE.match(line.strip())
             if step_m:
                 flush_stage()
                 current_stage = step_m.group("step").lower()
@@ -587,6 +739,28 @@ def analyze_job_logs(job_id: str | None = None, *, limit_jobs: int = 30) -> dict
                 )
                 entries.append(base)
                 by_type["stage"].append(base)
+                continue
+
+            cost_m = _COST_MACHINE_RE.match(line.strip()) or _COST_TOTAL_RE.match(line.strip())
+            if cost_m or _COST_EST_RE.search(line) or line.startswith("Stage cost (") or line.startswith(
+                "Pipeline total estimated cost:"
+            ):
+                etype = "cost"
+                base.update(
+                    {
+                        "type": "cost",
+                        "type_label": "Cost",
+                        "stage_id": current_stage,
+                        "stage_name": current_label
+                        or (
+                            STEP_META.get(current_stage or "", {}).get("name")
+                            if current_stage
+                            else None
+                        ),
+                    }
+                )
+                entries.append(base)
+                by_type.setdefault("cost", []).append(base)
                 continue
 
             batch_m = _BATCH_ALIGN_RE.match(line.strip())
@@ -744,10 +918,13 @@ def analyze_job_logs(job_id: str | None = None, *, limit_jobs: int = 30) -> dict
         stages_out.extend(stage_rows)
 
     counts = {k: len(v) for k, v in by_type.items() if v}
+    grand_total = round(sum(float(r.get("total_cost_usd") or 0) for r in job_cost_rows), 6)
     return {
         "jobs": enrich_jobs(jobs),
         "entries": entries,
         "stages": stages_out,
+        "job_costs": job_cost_rows,
+        "total_cost_usd": grand_total,
         "by_type": {k: v for k, v in by_type.items() if v},
         "counts": counts,
         "type_labels": {
@@ -755,6 +932,7 @@ def analyze_job_logs(job_id: str | None = None, *, limit_jobs: int = 30) -> dict
             "info": "Info / step markers",
             "stage": "Stage",
             "lesson": "Lesson",
+            "cost": "Cost",
         },
     }
 
@@ -891,6 +1069,231 @@ def _paths(output_root: Path) -> dict[str, Path]:
         "judge": output_root / "judge",
         "reports": output_root / "reports",
         "report_csv": output_root / "reports" / "alignments_all.csv",
+        "client_docx": output_root / "reports" / "client_correlation.docx",
+        "client_xlsx": output_root / "reports" / "client_correlation.xlsx",
+        "client_summary": output_root
+        / "reports"
+        / "client_correlation.summary.json",
+    }
+
+
+def _has_client_format(reports: Path) -> bool:
+    """True when client correlation DOCX exists (default or registry naming)."""
+    if not reports.is_dir():
+        return False
+    if (reports / "client_correlation.docx").is_file():
+        return True
+    return any(reports.glob("*client_correlation*.docx"))
+
+
+def _latest_mtime(paths: list[Path]) -> float:
+    latest = 0.0
+    for path in paths:
+        try:
+            if path.is_file():
+                latest = max(latest, path.stat().st_mtime)
+        except OSError:
+            continue
+    return latest
+
+
+def _results_fresh_vs_judge(paths: dict[str, Path]) -> bool:
+    """Report + client package must not be older than the newest judge JSON."""
+    judge_dir = paths["judge"]
+    if not judge_dir.is_dir():
+        return False
+    judge_files = [
+        f
+        for f in judge_dir.glob("*.json")
+        if f.is_file() and not f.name.endswith(".incomplete.json")
+    ]
+    if not judge_files:
+        return False
+    judge_mtime = _latest_mtime(judge_files)
+    report_mtime = _latest_mtime([paths["report_csv"]])
+    client_files = list(paths["reports"].glob("*client_correlation*.docx"))
+    client_mtime = _latest_mtime(client_files)
+    # Allow tiny FS timestamp skew.
+    return report_mtime + 1.0 >= judge_mtime and client_mtime + 1.0 >= judge_mtime
+
+
+def _read_json_obj(path: Path) -> dict[str, Any] | None:
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError, UnicodeError):
+        return None
+    return data if isinstance(data, dict) else None
+
+
+def _retrieve_file_matches_frontend_k(path: Path) -> bool:
+    data = _read_json_obj(path)
+    if not data:
+        return False
+    k = data.get("judge_shortlist_k")
+    if k is not None:
+        try:
+            return int(k) == FRONTEND_JUDGE_SHORTLIST_K
+        except (TypeError, ValueError):
+            return False
+    n = len(data.get("candidates") or [])
+    return n == FRONTEND_JUDGE_SHORTLIST_K
+
+
+def _retrieve_matches_frontend_k(retrieve_dir: Path, lessons: set[str]) -> bool:
+    if not lessons or not retrieve_dir.is_dir():
+        return False
+    for stem in lessons:
+        path = retrieve_dir / f"{stem}.json"
+        if not path.is_file() or not _retrieve_file_matches_frontend_k(path):
+            return False
+    return True
+
+
+def _judge_file_matches_frontend_cut(path: Path) -> bool:
+    """Accept judge JSON produced under top-25 (+ coverage extras ≤ 8)."""
+    data = _read_json_obj(path)
+    if not data:
+        return False
+    if data.get("judge_limit") is not None:
+        try:
+            return int(data["judge_limit"]) == FRONTEND_JUDGE_LIMIT
+        except (TypeError, ValueError):
+            return False
+    # Legacy reports (no judge_limit): head ≈ candidate_count − coverage injects.
+    try:
+        n = int(data.get("candidate_count") or 0)
+    except (TypeError, ValueError):
+        n = len(data.get("verdicts") or [])
+    injected = data.get("coverage_pass_injected") or []
+    try:
+        n_inj = len(injected)
+    except TypeError:
+        n_inj = 0
+    head = max(0, n - n_inj)
+    max_total = FRONTEND_JUDGE_LIMIT + 8  # MAX_COVERAGE_EXTRAS
+    return head <= FRONTEND_JUDGE_LIMIT and n <= max_total
+
+
+def _judge_matches_frontend_cut(judge_dir: Path, lessons: set[str]) -> bool:
+    if not lessons or not judge_dir.is_dir():
+        return False
+    for stem in lessons:
+        path = judge_dir / f"{stem}.json"
+        if not path.is_file() or not _judge_file_matches_frontend_cut(path):
+            return False
+    return True
+
+
+def _needs_force_retrieve(output_root: Path) -> bool:
+    """True when some retrieve JSON exists but is not the frontend shortlist-k."""
+    p = _paths(output_root)
+    if not p["retrieve"].is_dir() or not p["lessons"].is_dir():
+        return False
+    lessons = {f.stem for f in p["lessons"].glob("*.json") if f.is_file()}
+    for stem in lessons:
+        path = p["retrieve"] / f"{stem}.json"
+        if path.is_file() and not _retrieve_file_matches_frontend_k(path):
+            return True
+    return False
+
+
+def _needs_force_judge(output_root: Path) -> bool:
+    """True when some judge JSON exists but is not the frontend 25+coverage cut."""
+    p = _paths(output_root)
+    if not p["judge"].is_dir() or not p["lessons"].is_dir():
+        return False
+    lessons = {f.stem for f in p["lessons"].glob("*.json") if f.is_file()}
+    for stem in lessons:
+        path = p["judge"] / f"{stem}.json"
+        if path.is_file() and not _judge_file_matches_frontend_cut(path):
+            return True
+    return False
+
+
+def _job_project_id(job: PipelineJob) -> str | None:
+    if job.project_id:
+        return job.project_id
+    if job.batch_id:
+        return upload_project_id(job.batch_id)
+    return None
+
+
+def _client_output_paths(job: PipelineJob, output_root: Path) -> tuple[Path, Path, Path]:
+    """DOCX / XLSX / summary paths that Exports already knows about."""
+    p = _paths(output_root)
+    pid = _job_project_id(job)
+    if pid:
+        try:
+            cfg = get_project_config(pid)
+        except KeyError:
+            cfg = None
+        if cfg is not None:
+            docx = cfg.client_docx if cfg.client_docx else p["client_docx"]
+            xlsx = cfg.client_xlsx if cfg.client_xlsx else p["client_xlsx"]
+            # Package writes ``<docx_stem>.summary.json`` next to the DOCX.
+            summary = docx.with_suffix(".summary.json")
+            return docx, xlsx, summary
+    return p["client_docx"], p["client_xlsx"], p["client_summary"]
+
+
+def _client_format_labels(job: PipelineJob, framework: str) -> dict[str, str]:
+    """Publisher-agnostic labels from upload meta / project config (no EL hardcodes)."""
+    program_name = "Curriculum"
+    guide_label = "Guide"
+    grade_label = "Grade"
+    framework_header = (framework or "").strip() or "Standards framework"
+    standards_header = "Standards"
+
+    meta: dict[str, Any] = {}
+    if job.batch_id:
+        meta_path = UPLOADS_DIR / job.batch_id / "meta.json"
+        if meta_path.is_file():
+            try:
+                loaded = json.loads(meta_path.read_text(encoding="utf-8"))
+                if isinstance(loaded, dict):
+                    meta = loaded
+            except (OSError, json.JSONDecodeError):
+                meta = {}
+
+    pid = _job_project_id(job)
+    cfg = None
+    if pid:
+        try:
+            cfg = get_project_config(pid)
+        except KeyError:
+            cfg = None
+
+    if meta.get("program_name"):
+        program_name = str(meta["program_name"]).strip() or program_name
+    elif cfg and cfg.publisher:
+        program_name = str(cfg.publisher).strip() or program_name
+    elif cfg and cfg.name:
+        program_name = str(cfg.name).strip() or program_name
+
+    if meta.get("guide_label"):
+        guide_label = str(meta["guide_label"]).strip() or guide_label
+    elif cfg and cfg.module:
+        guide_label = str(cfg.module).strip() or guide_label
+
+    if meta.get("grade_label"):
+        grade_label = str(meta["grade_label"]).strip() or grade_label
+    elif cfg and cfg.grade is not None:
+        grade_label = f"Grade {cfg.grade}"
+
+    fw = (
+        str(meta.get("framework") or "").strip()
+        or (cfg.framework if cfg else "")
+        or framework_header
+    )
+    framework_header = str(fw).strip() or framework_header
+    standards_header = framework_header
+
+    return {
+        "program_name": program_name,
+        "guide_label": guide_label,
+        "grade_label": grade_label,
+        "framework_header": framework_header,
+        "standards_header": standards_header,
     }
 
 
@@ -977,6 +1380,8 @@ def _batch_align(
     skip_retrieve: bool = False,
     skip_judge: bool = False,
     skip_report: bool = False,
+    force_retrieve: bool = False,
+    force_judge: bool = False,
 ) -> int:
     p = _paths(output_root)
     p["reports"].mkdir(parents=True, exist_ok=True)
@@ -994,6 +1399,12 @@ def _batch_align(
         str(p["judge"]),
         "--report-csv",
         str(p["report_csv"]),
+        # Product cut: top-25 shortlist; one batch judge call per lesson + coverage.
+        "--judge-shortlist-k",
+        str(FRONTEND_JUDGE_SHORTLIST_K),
+        "--judge-limit",
+        str(FRONTEND_JUDGE_LIMIT),
+        "--batch",
     )
     if skip_retrieve:
         argv.append("--skip-retrieve")
@@ -1001,6 +1412,18 @@ def _batch_align(
         argv.append("--skip-judge")
     if skip_report:
         argv.append("--skip-report")
+    if force_retrieve and not skip_retrieve:
+        argv.append("--force-retrieve")
+    if force_judge and not skip_judge:
+        argv.append("--force-judge")
+    if not skip_retrieve or not skip_judge:
+        _append_log(
+            job,
+            f"Align config: shortlist_k={FRONTEND_JUDGE_SHORTLIST_K} "
+            f"judge_limit={FRONTEND_JUDGE_LIMIT} coverage_pass=on judge_mode=batch"
+            + (" force_retrieve" if force_retrieve and not skip_retrieve else "")
+            + (" force_judge" if force_judge and not skip_judge else ""),
+        )
     return _run_cmd(job, argv)
 
 
@@ -1008,21 +1431,130 @@ def _step_retrieval(
     job: PipelineJob, pdf: Path, xlsx: Path, output_root: Path, framework: str
 ) -> int:
     del pdf, xlsx, framework
-    return _batch_align(job, output_root, skip_judge=True, skip_report=True)
+    force = _needs_force_retrieve(output_root)
+    if force:
+        _append_log(
+            job,
+            f"Stale retrieve shortlist detected — re-running retrieve at "
+            f"k={FRONTEND_JUDGE_SHORTLIST_K}",
+        )
+    return _batch_align(
+        job,
+        output_root,
+        skip_judge=True,
+        skip_report=True,
+        force_retrieve=force,
+    )
 
 
 def _step_judge(
     job: PipelineJob, pdf: Path, xlsx: Path, output_root: Path, framework: str
 ) -> int:
     del pdf, xlsx, framework
-    return _batch_align(job, output_root, skip_retrieve=True, skip_report=True)
+    force = _needs_force_judge(output_root)
+    if force:
+        _append_log(
+            job,
+            f"Stale judge cut detected — re-running judge at "
+            f"limit={FRONTEND_JUDGE_LIMIT} + coverage",
+        )
+    return _batch_align(
+        job,
+        output_root,
+        skip_retrieve=True,
+        skip_report=True,
+        force_judge=force,
+    )
+
+
+def _write_client_correlation(
+    job: PipelineJob, output_root: Path, framework: str
+) -> int:
+    """Build client DOCX/XLSX/summary for Exports (publisher-agnostic labels)."""
+    p = _paths(output_root)
+    if not p["standards_json"].is_file():
+        _append_log(
+            job,
+            "ERROR: stage1/standards.json missing — cannot build client format",
+        )
+        return 1
+    if not p["judge"].is_dir():
+        _append_log(job, "ERROR: judge/ missing — cannot build client format")
+        return 1
+    judge_files = [
+        f
+        for f in p["judge"].glob("*.json")
+        if f.is_file() and not f.name.endswith(".incomplete.json")
+    ]
+    if not judge_files:
+        _append_log(job, "ERROR: no judge JSON files — cannot build client format")
+        return 1
+
+    docx, xlsx, summary = _client_output_paths(job, output_root)
+    docx.parent.mkdir(parents=True, exist_ok=True)
+    labels = _client_format_labels(job, framework)
+    argv = _py_mod(
+        "veramynd_parser.cli",
+        "client-correlation",
+        "--judge-dir",
+        str(p["judge"]),
+        "--standards",
+        str(p["standards_json"]),
+        "--out-docx",
+        str(docx),
+        "--out-xlsx",
+        str(xlsx),
+        "--program-name",
+        labels["program_name"],
+        "--guide-label",
+        labels["guide_label"],
+        "--grade-label",
+        labels["grade_label"],
+        "--framework-header",
+        labels["framework_header"],
+        "--standards-header",
+        labels["standards_header"],
+    )
+    if p["lessons"].is_dir():
+        argv.extend(["--lessons-dir", str(p["lessons"])])
+
+    _append_log(
+        job,
+        f"Client format → {docx.name} / {xlsx.name} "
+        f"(program={labels['program_name']!r}, guide={labels['guide_label']!r})",
+    )
+    code = _run_cmd(job, argv)
+    if code != 0:
+        return code
+
+    # CLI success must still produce the files Exports lists.
+    missing = [str(path) for path in (docx, xlsx, summary) if not path.is_file()]
+    if missing:
+        _append_log(
+            job,
+            "ERROR: client-correlation exited 0 but outputs missing:\n  "
+            + "\n  ".join(missing),
+        )
+        return 1
+    _append_log(job, f"Client format ready for Exports: {docx}")
+    return 0
 
 
 def _step_results(
     job: PipelineJob, pdf: Path, xlsx: Path, output_root: Path, framework: str
 ) -> int:
-    del pdf, xlsx, framework
-    return _batch_align(job, output_root, skip_retrieve=True, skip_judge=True)
+    del pdf, xlsx
+    code = _batch_align(job, output_root, skip_retrieve=True, skip_judge=True)
+    if code != 0:
+        return code
+    p = _paths(output_root)
+    if not p["report_csv"].is_file():
+        _append_log(
+            job,
+            f"ERROR: alignments report missing after results step: {p['report_csv']}",
+        )
+        return 1
+    return _write_client_correlation(job, output_root, framework)
 
 
 _STEP_FNS: dict[str, StepFn] = {
@@ -1074,7 +1606,9 @@ def _execute(job: PipelineJob) -> None:
                     job,
                     f"\n=== SKIP {step}: {STEP_META[step]['name']} (already complete) ===",
                 )
-                _persist(job)
+                _emit_stage_cost(
+                    job, step, output_root=output_root, log_from_line=0, skipped=True
+                )
                 continue
 
             job.current_step = step
@@ -1082,14 +1616,19 @@ def _execute(job: PipelineJob) -> None:
             job.updated_at = _now()
             _persist(job)
             _append_log(job, f"\n=== STEP {step}: {STEP_META[step]['name']} ===")
+            log_at = _log_line_count(job)
             fn = _STEP_FNS[step]
             code = fn(job, pdf, xlsx, output_root, framework)
+            _emit_stage_cost(
+                job, step, output_root=output_root, log_from_line=log_at, skipped=False
+            )
             if code != 0:
                 job.exit_code = code
                 job.status = "failed"
                 job.error = f"Step {step} exited with code {code}"
                 job.message = job.error
                 job.updated_at = _now()
+                _emit_total_cost(job)
                 _persist(job)
                 return
             job.step_pct = 100
@@ -1108,13 +1647,15 @@ def _execute(job: PipelineJob) -> None:
             except Exception:  # noqa: BLE001
                 pass
 
+        _emit_total_cost(job)
         job.exit_code = 0
         job.status = "succeeded"
         job.current_step = None
         job.step_pct = 100
         job.message = (
             f"Finished. Artifacts in {output_root}. "
-            "Open this upload in the project switcher — Overview is ready when judge output exists."
+            f"Estimated total cost ${job.total_cost_usd:.4f}. "
+            "Open this upload in the project switcher. Overview is ready when judge output exists."
         )
         job.updated_at = _now()
         _persist(job)
@@ -1135,7 +1676,10 @@ def _execute(job: PipelineJob) -> None:
         job.message = str(e)
         job.updated_at = _now()
         _append_log(job, traceback.format_exc())
-        _persist(job)
+        try:
+            _emit_total_cost(job)
+        except Exception:  # noqa: BLE001
+            _persist(job)
         # Still try to refresh so Overview can show partial "running" artifacts
         try:
             from .catalog import reload_catalog

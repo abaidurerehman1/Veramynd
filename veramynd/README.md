@@ -227,8 +227,8 @@ veramynd/
 ├── README.md / LICENSE
 ├── docs/                       # design & flow documentation
 ├── data/samples/               # reference PDF + standards spreadsheet
-├── dashboard/                  # FastAPI API + ingest + pipeline jobs + projects.json
-├── dashboard-ui/               # React UI (Overview → Exports, Ingestion, Pipeline, Logging)
+├── frontend/                   # React UI (Overview → Exports, Ingestion, Pipeline, Logging)
+├── backend/                    # FastAPI API + ingest + pipeline jobs + projects.json
 ├── _archive/                   # non-production one-offs (do not import)
 └── veramynd_parser/            # installable package + CLI
     ├── veramynd_parser/        # library (pdf/, normalize/, embed/, …)
@@ -240,9 +240,9 @@ veramynd/
     └── requirements.lock
 ```
 
-**Operator dashboard:** run API (`dashboard/`, port **8000**) + UI (`dashboard-ui/`, port **5173**).
+**Operator UI:** run API (`backend/`, port **8000**) + UI (`frontend/`, port **5173**).
 Upload PDF+XLSX, run Complete auto or step-by-step, resume after interruption from saved
-output. Details: [`dashboard/README.md`](dashboard/README.md), [`dashboard-ui/README.md`](dashboard-ui/README.md).
+output. Details: [`backend/README.md`](backend/README.md), [`frontend/README.md`](frontend/README.md).
 
 Local Qdrant: path mode (`.qdrant_data`) by default, or set `QDRANT_URL`. A Docker
 compose file lives under [`_archive/docker/`](_archive/docker/) for optional HTTP mode.
@@ -258,8 +258,8 @@ compose file lives under [`_archive/docker/`](_archive/docker/) for optional HTT
 | [docs/complete-project-flow.md](docs/complete-project-flow.md) | Deep onboarding walkthrough |
 | [veramynd_parser/README.md](veramynd_parser/README.md) | Install, CLI reference, package layout |
 | [veramynd_parser/output/README.md](veramynd_parser/output/README.md) | Artifact layout under `output/` |
-| [dashboard/README.md](dashboard/README.md) | FastAPI API, ingest, pipeline jobs, resume, project registry |
-| [dashboard-ui/README.md](dashboard-ui/README.md) | React UI pages (run at :5173; API default :8000) |
+| [backend/README.md](backend/README.md) | FastAPI API, ingest, pipeline jobs, resume, project registry |
+| [frontend/README.md](frontend/README.md) | React UI pages (run at :5173; API default :8000) |
 
 ## Requirements
 

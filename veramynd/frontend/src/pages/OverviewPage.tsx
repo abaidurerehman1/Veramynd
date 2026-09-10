@@ -111,7 +111,7 @@ export function OverviewPage({
         <h3>Unable to load Overview</h3>
         <p>{error}</p>
         <p style={{ fontSize: 12, color: 'var(--muted)' }}>
-          Make sure the dashboard API is running (start it from <code>veramynd/dashboard</code>), then refresh.
+          Make sure the backend API is running (start it from <code>veramynd/backend</code>), then refresh.
         </p>
         <button type="button" className="btn" onClick={() => void load()}>
           Retry

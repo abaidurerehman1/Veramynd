@@ -486,6 +486,48 @@ def test_openai_truncation_succeeds_after_budget_bump(monkeypatch):
     assert result.code == "G1M2U1L1"
 
 
+def test_output_token_cap_is_model_aware():
+    from veramynd_parser.normalize.llm import output_token_cap
+
+    assert output_token_cap("gpt-4.1-mini") == 32_768
+    assert output_token_cap("o4-mini") == 100_000
+    assert output_token_cap("claude-sonnet-4-5") == 64_000
+
+
+def test_openai_truncation_auto_raises_to_escalate_model(monkeypatch):
+    seen_models: list[str] = []
+
+    def create(**kwargs):
+        seen_models.append(kwargs["model"])
+        mod = sys.modules["openai"]
+        if kwargs["model"] == "gpt-4.1-mini":
+            return mod._Resp(content='{"code": "x"', finish_reason="length")
+        return mod._Resp(
+            content=(
+                '{"code": "G1M2U1L1", "student_competencies": [], '
+                '"pedagogy_terms": [], "instructional_text": "ok", '
+                '"prompt_version": "v1", "provider": "", "model": ""}'
+            ),
+            finish_reason="stop",
+        )
+
+    monkeypatch.setenv("LLM_AUTO_RAISE", "1")
+    monkeypatch.setenv("NORMALIZE_ESCALATE_MODEL", "o4-mini")
+    _install_fake_openai(monkeypatch, create)
+    tracker: list[str] = []
+    result = structured_complete(
+        system="sys",
+        user="usr",
+        schema_model=_Target,
+        model="gpt-4.1-mini",
+        max_tokens=32_768,
+        model_tracker=tracker,
+    )
+    assert result.code == "G1M2U1L1"
+    assert "o4-mini" in seen_models
+    assert tracker == ["o4-mini"]
+
+
 def _judge_token_key(kwargs: dict) -> str:
     if "max_completion_tokens" in kwargs:
         assert "max_tokens" not in kwargs

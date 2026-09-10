@@ -63,7 +63,9 @@ from .normalize.llm import (
     LlmError,
     anthropic_usage_report,
     format_anthropic_usage_summary,
+    format_openai_usage_summary,
     reset_anthropic_usage,
+    reset_openai_usage,
 )
 from .normalize.models import dump_ela_record_json
 from .normalize.standard import normalize_standard, normalize_standards_tree
@@ -441,6 +443,7 @@ def cmd_normalize_lessons(args: argparse.Namespace) -> int:
 
     out = Path(args.out)
     refresh = bool(args.force or args.no_resume)
+    reset_openai_usage()
     try:
         if args.one:
             one = Path(args.one)
@@ -479,6 +482,7 @@ def cmd_normalize_lessons(args: argparse.Namespace) -> int:
             preview = norm.objective[:160]
             suffix = "..." if len(norm.objective) > 160 else ""
             print(f"  objective: {preview}{suffix}")
+            print(format_openai_usage_summary(), flush=True)
             return 0
 
         results = normalize_lessons_dir(
@@ -498,13 +502,16 @@ def cmd_normalize_lessons(args: argparse.Namespace) -> int:
             )
         if len(results) > 5:
             print(f"  ... {len(results) - 5} more")
+        print(format_openai_usage_summary(), flush=True)
         return 0
     except LlmError as e:
         print(f"ERROR: {e}", file=sys.stderr)
+        print(format_openai_usage_summary(), flush=True)
         return 1
     except (OSError, ValueError, RuntimeError) as e:
         print(f"ERROR: {e}", file=sys.stderr)
         print("Re-run the same command to resume from the last completed lesson.", file=sys.stderr)
+        print(format_openai_usage_summary(), flush=True)
         return 1
 
 
@@ -518,6 +525,7 @@ def cmd_normalize_standards(args: argparse.Namespace) -> int:
 
     out = Path(args.out)
     refresh = bool(args.force or args.no_resume)
+    reset_openai_usage()
     try:
         tree = GradeStandards.model_validate_json(src.read_text(encoding="utf-8"))
         if args.one:
@@ -553,6 +561,7 @@ def cmd_normalize_standards(args: argparse.Namespace) -> int:
             preview = norm.competency_statement[:160]
             suffix = "..." if len(norm.competency_statement) > 160 else ""
             print(f"  competency: {preview}{suffix}")
+            print(format_openai_usage_summary(), flush=True)
             return 0
 
         results = normalize_standards_tree(
@@ -573,12 +582,15 @@ def cmd_normalize_standards(args: argparse.Namespace) -> int:
             )
         if len(results) > 5:
             print(f"  ... {len(results) - 5} more")
+        print(format_openai_usage_summary(), flush=True)
         return 0
     except LlmError as e:
         print(f"ERROR: {e}", file=sys.stderr)
+        print(format_openai_usage_summary(), flush=True)
         return 1
     except (OSError, ValueError, RuntimeError) as e:
         print(f"ERROR: {e}", file=sys.stderr)
+        print(format_openai_usage_summary(), flush=True)
         return 1
 
 
@@ -609,6 +621,7 @@ def cmd_embed_standards(args: argparse.Namespace) -> int:
     if not src.is_dir():
         print(f"ERROR: standards dir not found: {src}", file=sys.stderr)
         return 2
+    reset_openai_usage()
     try:
         manifest = embed_standards_to_qdrant(
             src,
@@ -624,10 +637,13 @@ def cmd_embed_standards(args: argparse.Namespace) -> int:
         )
     except (EmbedError, LlmError) as e:
         print(f"ERROR: {e}", file=sys.stderr)
+        print(format_openai_usage_summary(), flush=True)
         return 1
     except (OSError, ValueError, RuntimeError) as e:
         print(f"ERROR: {e}", file=sys.stderr)
+        print(format_openai_usage_summary(), flush=True)
         return 1
+    print(format_openai_usage_summary(), flush=True)
     if manifest.get("failed"):
         return 1
     return 0

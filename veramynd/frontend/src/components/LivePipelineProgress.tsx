@@ -27,6 +27,8 @@ export type PipelineJob = {
   steps_total?: number
   steps_done?: number
   step_pct?: number
+  stage_costs?: Record<string, number>
+  total_cost_usd?: number
 }
 
 type Props = {

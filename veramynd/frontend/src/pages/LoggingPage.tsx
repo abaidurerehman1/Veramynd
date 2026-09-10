@@ -46,19 +46,37 @@ type StageBlock = {
   skip: number
   error: number
   running: number
+  cost_usd?: number | null
+}
+
+type JobCost = {
+  job_id: string
+  total_cost_usd: number
+  stage_costs?: Record<string, number>
+  status?: string
+  mode?: string
 }
 
 type LogsResponse = {
   jobs: PipelineJob[]
   entries: LogEntry[]
   stages?: StageBlock[]
+  job_costs?: JobCost[]
+  total_cost_usd?: number
   by_type: Record<string, LogEntry[]>
   counts: Record<string, number>
   type_labels: Record<string, string>
 }
 
+function formatUsd(n: number | null | undefined) {
+  if (n == null || Number.isNaN(n)) return '—'
+  if (n === 0) return '$0.00'
+  if (n < 0.01) return `$${n.toFixed(4)}`
+  return `$${n.toFixed(2)}`
+}
+
 function typeBadge(t: string) {
-  if (t === 'warning' || t === 'info' || t === 'stage' || t === 'lesson') return 'info'
+  if (t === 'warning' || t === 'info' || t === 'stage' || t === 'lesson' || t === 'cost') return 'info'
   if (t === 'validation') return 'neutral'
   return 'warn'
 }
@@ -149,6 +167,18 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
     [stages],
   )
 
+  const costSummary = useMemo(() => {
+    const rows = data?.job_costs || []
+    const selected = selectedJobId ? rows.find((r) => r.job_id === selectedJobId) : null
+    const total =
+      selected != null
+        ? selected.total_cost_usd
+        : typeof data?.total_cost_usd === 'number'
+          ? data.total_cost_usd
+          : rows.reduce((n, r) => n + (r.total_cost_usd || 0), 0)
+    return { selected, total, rows }
+  }, [data, selectedJobId])
+
   const entries = useMemo(() => {
     let rows = data?.entries || []
     if (filterType !== 'all') rows = rows.filter((e) => e.type === filterType)
@@ -220,6 +250,23 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
           </div>
         </div>
         <div className="card-b">
+          <div className="log-cost-banner" style={{ marginBottom: 12 }}>
+            <span className="badge info">
+              {selectedJobId ? 'Job cost' : 'All jobs cost'} · {formatUsd(costSummary.total)}
+            </span>
+            {costSummary.selected?.stage_costs &&
+            Object.keys(costSummary.selected.stage_costs).length ? (
+              <span className="card-sub" style={{ marginLeft: 8 }}>
+                {Object.entries(costSummary.selected.stage_costs)
+                  .map(([k, v]) => `${k} ${formatUsd(v)}`)
+                  .join(' · ')}
+              </span>
+            ) : (
+              <span className="card-sub" style={{ marginLeft: 8 }}>
+                Per-stage costs appear after Normalize / Embed / Judge emit usage lines.
+              </span>
+            )}
+          </div>
           {stages.length === 0 ? (
             <p className="card-sub" style={{ margin: 0 }}>
               No stage/lesson activity yet. Run a pipeline job — normalize, retrieve, and judge
@@ -245,10 +292,11 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
                           {s.skip ? ` · ${s.skip} skip` : ''}
                           {s.error ? ` · ${s.error} error` : ''}
                           {s.running ? ` · ${s.running} running` : ''}
+                          {s.cost_usd != null ? ` · ${formatUsd(s.cost_usd)}` : ''}
                         </span>
                       </div>
                       <span className={`badge ${s.status === 'complete' ? 'ok' : s.status === 'failed' ? 'warn' : 'info'}`}>
-                        {s.status}
+                        {s.cost_usd != null ? `${s.status} · ${formatUsd(s.cost_usd)}` : s.status}
                       </span>
                     </button>
                     {open ? (
@@ -330,9 +378,19 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
                   onClick={() => setSelectedJobId('')}
                 >
                   <strong>All jobs</strong>
-                  <span className="card-sub">combined stage / lesson view</span>
+                  <span className="card-sub">
+                    combined stage / lesson view · {formatUsd(data?.total_cost_usd)}
+                  </span>
                 </button>
-                {(data?.jobs || []).map((j) => (
+                {(data?.jobs || []).map((j) => {
+                  const jc = (data?.job_costs || []).find((c) => c.job_id === j.id)
+                  const cost =
+                    jc?.total_cost_usd ??
+                    (typeof (j as PipelineJob & { total_cost_usd?: number }).total_cost_usd ===
+                    'number'
+                      ? (j as PipelineJob & { total_cost_usd?: number }).total_cost_usd
+                      : undefined)
+                  return (
                   <button
                     key={j.id}
                     type="button"
@@ -346,6 +404,7 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
                       >
                         {j.status}
                         {typeof j.percent === 'number' ? ` · ${j.percent}%` : ''}
+                        {cost != null ? ` · ${formatUsd(cost)}` : ''}
                       </span>
                     </div>
                     <span className="card-sub">
@@ -354,7 +413,8 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
                       {j.batch_id ? ` · batch ${j.batch_id}` : ''}
                     </span>
                   </button>
-                ))}
+                  )
+                })}
               </div>
             )}
           </div>

@@ -1,6 +1,6 @@
 """Project registry — one Overview = one PDF + one XLSX + one output tree.
 
-Also exposes upload batches under ``dashboard/uploads/<id>/`` as virtual
+Also exposes upload batches under ``backend/uploads/<id>/`` as virtual
 projects (``upload-<id>``) so Overview / Pipeline work the same way without
 hand-editing ``projects.json``.
 """
@@ -14,10 +14,15 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-DASHBOARD_ROOT = Path(__file__).resolve().parents[1]
-VERAMYND_ROOT = DASHBOARD_ROOT.parent
-REGISTRY_PATH = DASHBOARD_ROOT / "projects.json"
-UPLOADS_DIR = DASHBOARD_ROOT / "uploads"
+from .layout import (
+    BACKEND_ROOT,
+    REGISTRY_PATH,
+    UPLOADS_DIR,
+    VERAMYND_ROOT,
+)
+
+# Back-compat for importers that still expect these names.
+DASHBOARD_ROOT = BACKEND_ROOT
 UPLOAD_PROJECT_PREFIX = "upload-"
 
 _BATCH_ID_RE = re.compile(r"^[0-9A-Za-z][0-9A-Za-z._-]{0,79}$")
@@ -153,7 +158,7 @@ def _parse_grade(label: str) -> int | None:
 
 
 def list_upload_project_configs() -> list[ProjectConfig]:
-    """Virtual projects backed by ``dashboard/uploads/<batch_id>/``."""
+    """Virtual projects backed by ``backend/uploads/<batch_id>/``."""
     if not UPLOADS_DIR.is_dir():
         return []
     rows: list[ProjectConfig] = []

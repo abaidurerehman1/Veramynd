@@ -286,6 +286,12 @@ def openai_embed_texts(
                 input=texts,
                 dimensions=dimensions,
             )
+            try:
+                from veramynd_parser.normalize.llm import record_openai_usage
+
+                record_openai_usage(resp, model)
+            except Exception:  # noqa: BLE001 — never fail embed on usage bookkeeping
+                pass
             by_index = {item.index: item.embedding for item in resp.data}
             if len(by_index) != len(texts):
                 raise EmbedError(

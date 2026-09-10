@@ -25,6 +25,21 @@ class LlmError(RuntimeError):
     pass
 
 
+class OutputTruncatedAtCap(LlmError):
+    """Raised when the model hits its output-token cap and auto-raise is exhausted."""
+
+    def __init__(self, *, provider: str, model: str, max_tokens: int, cap: int):
+        self.provider = provider
+        self.model = model
+        self.max_tokens = max_tokens
+        self.cap = cap
+        super().__init__(
+            f"{provider} response truncated at max_tokens={max_tokens} and the "
+            f"cap ({cap}) is already reached for model {model}; enable "
+            f"LLM_AUTO_RAISE / escalate model, or shrink the payload."
+        )
+
+
 def package_root() -> Path:
     """Directory that owns ``.env`` / ``.env.example`` for this package."""
     return _PACKAGE_ROOT
@@ -125,9 +140,13 @@ _MAX_ATTEMPTS = 8
 # gpt-5/o-series omit temperature and sample, so retries genuinely can succeed.
 _MAX_VALIDATION_ATTEMPTS_DETERMINISTIC = 2
 _MAX_VALIDATION_ATTEMPTS_SAMPLED = 4
-# Cap for automatic truncation bumps (output tokens). v2 evidence is denser
-# (qualifiers, actor examples, secondary foci); 16k was truncating long lessons.
+# Fallback output-token cap when the model id is unknown. Prefer
+# ``output_token_cap(model)`` — gpt-4.1* is 32_768; o-series / gpt-5* higher.
 _MAX_TOKENS_CAP = 32_768
+# Default OpenAI model used when normalize hits the current model's output cap.
+_DEFAULT_NORMALIZE_ESCALATE_MODEL = "o4-mini"
+# Default Anthropic model used when judge hits the current model's output cap.
+_DEFAULT_ANTHROPIC_ESCALATE_MODEL = "claude-opus-4-6"
 
 # Models that reject ``max_tokens`` on chat.completions (require max_completion_tokens).
 _MAX_COMPLETION_PREFIXES = ("gpt-5", "o1", "o3", "o4")
@@ -153,6 +172,74 @@ def uses_max_completion_tokens(model: str) -> bool:
     """True when the chat Completions API requires ``max_completion_tokens``."""
     mid = (model or "").strip().lower()
     return any(mid.startswith(p) for p in _MAX_COMPLETION_PREFIXES)
+
+
+def auto_raise_enabled() -> bool:
+    """Whether truncate-at-cap should escalate / compact / split (default on)."""
+    load_dotenv()
+    raw = (os.environ.get("LLM_AUTO_RAISE") or "1").strip().lower()
+    return raw not in ("0", "false", "no", "off")
+
+
+def output_token_cap(model: str | None) -> int:
+    """Provider max *output* tokens for ``model`` (conservative, publisher-agnostic)."""
+    mid = (model or "").strip().lower()
+    if not mid:
+        return _MAX_TOKENS_CAP
+    if any(mid.startswith(p) for p in ("o1", "o3", "o4", "gpt-5")):
+        return 100_000
+    if mid.startswith("claude"):
+        # Claude 4.x / 3.7 class: 64k output; older Haiku-class stays lower.
+        if any(
+            tag in mid
+            for tag in (
+                "opus-4",
+                "sonnet-4",
+                "haiku-4",
+                "4-5",
+                "4-6",
+                "3-7",
+                "sonnet-3-7",
+            )
+        ):
+            return 64_000
+        return 8_192
+    if mid.startswith("gpt-4o") and not mid.startswith("gpt-4.1"):
+        return 16_384
+    # gpt-4.1* and unknown chat models
+    return _MAX_TOKENS_CAP
+
+
+def resolve_normalize_escalate_model(current: str) -> str | None:
+    """Higher-output OpenAI model when auto-raise is on; else ``None``."""
+    if not auto_raise_enabled():
+        return None
+    load_dotenv()
+    esc = (
+        os.environ.get("NORMALIZE_ESCALATE_MODEL") or _DEFAULT_NORMALIZE_ESCALATE_MODEL
+    ).strip()
+    cur = (current or "").strip()
+    if not esc or esc.lower() == cur.lower():
+        return None
+    if output_token_cap(esc) <= output_token_cap(cur):
+        return None
+    return esc
+
+
+def resolve_anthropic_escalate_model(current: str) -> str | None:
+    """Anthropic model to try after truncate-at-cap (judge path)."""
+    if not auto_raise_enabled():
+        return None
+    load_dotenv()
+    esc = (
+        os.environ.get("LLM_ESCALATE_MODEL")
+        or os.environ.get("JUDGE_ESCALATE_MODEL")
+        or _DEFAULT_ANTHROPIC_ESCALATE_MODEL
+    ).strip()
+    cur = (current or "").strip()
+    if not esc or esc.lower() == cur.lower():
+        return None
+    return esc
 
 
 def build_chat_completion_request(
@@ -197,9 +284,10 @@ def _token_budget_from_request(kwargs: dict) -> int:
     return int(kwargs["max_tokens"])
 
 
-def _next_max_tokens(current: int) -> int | None:
+def _next_max_tokens(current: int, model: str | None = None) -> int | None:
     """Return a higher budget after truncation, or ``None`` if already at the cap."""
-    bumped = min(max(current * 2, current + 1024), _MAX_TOKENS_CAP)
+    cap = output_token_cap(model)
+    bumped = min(max(current * 2, current + 1024), cap)
     if bumped <= current:
         return None
     return bumped
@@ -213,6 +301,7 @@ def structured_complete(
     model: str | None = None,
     api_key: str | None = None,
     max_tokens: int = 2048,
+    model_tracker: list[str] | None = None,
 ) -> T:
     """Call OpenAI and validate the response into ``schema_model``."""
     model_id = model or resolve_openai_model()
@@ -223,6 +312,7 @@ def structured_complete(
         model=model_id,
         api_key=api_key,
         max_tokens=max_tokens,
+        model_tracker=model_tracker,
     )
 
 
@@ -234,6 +324,7 @@ def _complete_openai(
     model: str,
     api_key: str | None,
     max_tokens: int,
+    model_tracker: list[str] | None = None,
 ) -> T:
     try:
         from openai import APIConnectionError, APIStatusError, APITimeoutError, OpenAI, RateLimitError
@@ -247,10 +338,15 @@ def _complete_openai(
         {"role": "system", "content": system},
         {"role": "user", "content": user},
     ]
+    max_tokens = min(max(1, max_tokens), output_token_cap(model))
+    escalated = False
 
     last_err: Exception | None = None
     validation_failures = 0
     for attempt in range(_MAX_ATTEMPTS):
+        if model_tracker is not None:
+            model_tracker.clear()
+            model_tracker.append(model)
         request = build_chat_completion_request(
             model=model,
             messages=messages,
@@ -288,30 +384,43 @@ def _complete_openai(
         except (APIConnectionError, APITimeoutError, OSError, TimeoutError, json.JSONDecodeError) as e:
             raise LlmError(f"OpenAI call failed: {e}") from e
 
+        record_openai_usage(resp, model)
         choice = resp.choices[0]
         if choice.finish_reason == "length":
-            nxt = _next_max_tokens(max_tokens)
+            nxt = _next_max_tokens(max_tokens, model)
             last_err = LlmError(
                 f"response truncated at max_tokens={max_tokens} (finish_reason="
                 f"'length') - the content was cut off mid-generation, not merely "
                 f"malformed"
             )
-            if nxt is None:
-                raise LlmError(
-                    f"OpenAI response truncated at max_tokens={max_tokens} and the "
-                    f"cap ({_MAX_TOKENS_CAP}) is already reached; raise --max-tokens "
-                    f"or shrink the lesson payload."
-                ) from last_err
-            print(
-                f"OpenAI response truncated at max_tokens={max_tokens} - raising to "
-                f"{nxt} and retrying (attempt {attempt + 1}/{_MAX_ATTEMPTS})...",
-                flush=True,
-            )
-            max_tokens = nxt
-            # The next request has a genuinely different token budget — earlier
-            # validation failures don't predict its outcome.
-            validation_failures = 0
-            continue
+            if nxt is not None:
+                print(
+                    f"OpenAI response truncated at max_tokens={max_tokens} - raising to "
+                    f"{nxt} and retrying (attempt {attempt + 1}/{_MAX_ATTEMPTS})...",
+                    flush=True,
+                )
+                max_tokens = nxt
+                validation_failures = 0
+                continue
+            esc = None if escalated else resolve_normalize_escalate_model(model)
+            if esc is not None:
+                new_cap = output_token_cap(esc)
+                print(
+                    f"AUTO-RAISE: normalize model {model} (cap {output_token_cap(model)}) "
+                    f"→ {esc} (cap {new_cap}) after truncate-at-cap...",
+                    flush=True,
+                )
+                model = esc
+                escalated = True
+                max_tokens = min(max(max_tokens * 2, max_tokens + 1024), new_cap)
+                validation_failures = 0
+                continue
+            raise OutputTruncatedAtCap(
+                provider="OpenAI",
+                model=model,
+                max_tokens=max_tokens,
+                cap=output_token_cap(model),
+            ) from last_err
 
         content = choice.message.content or ""
         try:
@@ -541,13 +650,148 @@ class AnthropicUsageTotals:
 _anthropic_usage = AnthropicUsageTotals()
 
 
+@dataclass
+class OpenAIUsageTotals:
+    calls: int = 0
+    input_tokens: int = 0
+    output_tokens: int = 0
+    by_model: dict[str, dict[str, int]] = field(default_factory=dict)
+
+    def record(self, model: str, input_tokens: int, output_tokens: int = 0) -> None:
+        self.calls += 1
+        self.input_tokens += input_tokens
+        self.output_tokens += output_tokens
+        bucket = self.by_model.setdefault(
+            model,
+            {"calls": 0, "input_tokens": 0, "output_tokens": 0},
+        )
+        bucket["calls"] += 1
+        bucket["input_tokens"] += input_tokens
+        bucket["output_tokens"] += output_tokens
+
+
+_openai_usage = OpenAIUsageTotals()
+
+
 def reset_anthropic_usage() -> None:
     global _anthropic_usage
     _anthropic_usage = AnthropicUsageTotals()
 
 
+def reset_openai_usage() -> None:
+    global _openai_usage
+    _openai_usage = OpenAIUsageTotals()
+
+
 def anthropic_usage_totals() -> AnthropicUsageTotals:
     return _anthropic_usage
+
+
+def openai_usage_totals() -> OpenAIUsageTotals:
+    return _openai_usage
+
+
+def _openai_model_rates(model: str) -> tuple[float, float]:
+    """Return (input_usd_per_mtok, output_usd_per_mtok). Embeddings use input only."""
+    name = (model or "").lower()
+    if "text-embedding-3-large" in name:
+        return 0.13, 0.0
+    if "text-embedding-3-small" in name:
+        return 0.02, 0.0
+    if "gpt-4o-mini" in name:
+        return 0.15, 0.60
+    if "gpt-4o" in name:
+        return 2.50, 10.0
+    if "gpt-4.1-mini" in name or "gpt-4.1-nano" in name:
+        return 0.40, 1.60
+    if "gpt-4.1" in name:
+        return 2.0, 8.0
+    # Default chat ballpark (gpt-4o-class / unknown)
+    return 2.50, 10.0
+
+
+def _openai_cost_usd(*, model: str, input_tokens: int, output_tokens: int = 0) -> float:
+    in_rate, out_rate = _openai_model_rates(model)
+    return (input_tokens * in_rate + output_tokens * out_rate) / 1_000_000
+
+
+def record_openai_usage(resp: object, model: str) -> None:
+    usage = getattr(resp, "usage", None)
+    if usage is None:
+        return
+    in_tok = int(
+        getattr(usage, "prompt_tokens", None)
+        or getattr(usage, "input_tokens", None)
+        or 0
+    )
+    out_tok = int(
+        getattr(usage, "completion_tokens", None)
+        or getattr(usage, "output_tokens", None)
+        or 0
+    )
+    # Embeddings often only set total_tokens
+    if in_tok == 0 and out_tok == 0:
+        in_tok = int(getattr(usage, "total_tokens", 0) or 0)
+    if in_tok or out_tok:
+        _openai_usage.record(model, in_tok, out_tok)
+
+
+def openai_usage_report() -> dict[str, object]:
+    totals = _openai_usage
+    by_model: dict[str, dict[str, int | float]] = {}
+    cost = 0.0
+    for model, bucket in totals.by_model.items():
+        model_cost = _openai_cost_usd(
+            model=model,
+            input_tokens=bucket["input_tokens"],
+            output_tokens=bucket["output_tokens"],
+        )
+        cost += model_cost
+        by_model[model] = {**bucket, "estimated_cost_usd": round(model_cost, 6)}
+    return {
+        "calls": totals.calls,
+        "input_tokens": totals.input_tokens,
+        "output_tokens": totals.output_tokens,
+        "estimated_cost_usd": round(cost, 6),
+        "by_model": by_model,
+    }
+
+
+def format_openai_usage_summary() -> str:
+    totals = _openai_usage
+    if totals.calls == 0:
+        return "OpenAI usage: no API calls recorded"
+    cost = 0.0
+    lines = [
+        (
+            f"OpenAI usage: {totals.calls} call(s), "
+            f"{totals.input_tokens:,} input + {totals.output_tokens:,} output tokens"
+        )
+    ]
+    for model, bucket in sorted(totals.by_model.items()):
+        model_cost = _openai_cost_usd(
+            model=model,
+            input_tokens=bucket["input_tokens"],
+            output_tokens=bucket["output_tokens"],
+        )
+        cost += model_cost
+        lines.append(
+            f"  {model}: {bucket['calls']} call(s), "
+            f"{bucket['input_tokens']:,} in + {bucket['output_tokens']:,} out "
+            f"~ ${model_cost:.4f}"
+        )
+    lines.append(f"Estimated total cost: ${cost:.4f}")
+    return "\n".join(lines)
+
+
+def format_llm_usage_summary() -> str:
+    """Combined OpenAI + Anthropic cost lines for CLI / pipeline logs."""
+    parts = [format_openai_usage_summary(), format_anthropic_usage_summary()]
+    o = float(openai_usage_report().get("estimated_cost_usd") or 0)
+    a = float(anthropic_usage_report().get("estimated_cost_usd") or 0)
+    if o or a:
+        parts.append(f"Estimated total cost: ${o + a:.4f}")
+    return "\n".join(parts)
 
 
 def _anthropic_model_rates(model: str) -> tuple[float, float]:
@@ -698,6 +942,7 @@ def structured_complete_anthropic(
     model: str | None = None,
     api_key: str | None = None,
     max_tokens: int = 2048,
+    model_tracker: list[str] | None = None,
 ) -> T:
     """Call Anthropic Messages API and validate into ``schema_model``."""
     if not (model or "").strip():
@@ -709,6 +954,7 @@ def structured_complete_anthropic(
         model=model.strip(),
         api_key=api_key,
         max_tokens=max_tokens,
+        model_tracker=model_tracker,
     )
 
 
@@ -720,6 +966,7 @@ def _complete_anthropic(
     model: str,
     api_key: str | None,
     max_tokens: int,
+    model_tracker: list[str] | None = None,
 ) -> T:
     try:
         from anthropic import (
@@ -735,9 +982,14 @@ def _complete_anthropic(
         ) from e
 
     client = Anthropic(api_key=anthropic_api_key(api_key))
+    max_tokens = min(max(1, max_tokens), output_token_cap(model))
+    escalated = False
     last_err: Exception | None = None
     validation_failures = 0
     for attempt in range(_MAX_ATTEMPTS):
+        if model_tracker is not None:
+            model_tracker.clear()
+            model_tracker.append(model)
         request = build_anthropic_message_request(
             model=model,
             system=system,
@@ -778,25 +1030,50 @@ def _complete_anthropic(
             raise LlmError(f"Anthropic call failed: {e}") from e
 
         if getattr(resp, "stop_reason", None) == "max_tokens":
-            nxt = _next_max_tokens(max_tokens)
+            nxt = _next_max_tokens(max_tokens, model)
             last_err = LlmError(
                 f"response truncated at max_tokens={max_tokens} (stop_reason="
                 f"'max_tokens')"
             )
-            if nxt is None:
-                raise LlmError(
-                    f"Anthropic response truncated at max_tokens={max_tokens} and "
-                    f"the cap ({_MAX_TOKENS_CAP}) is already reached; raise "
-                    f"--max-tokens or shrink the lesson payload."
-                ) from last_err
-            print(
-                f"Anthropic response truncated at max_tokens={max_tokens} - raising "
-                f"to {nxt} and retrying (attempt {attempt + 1}/{_MAX_ATTEMPTS})...",
-                flush=True,
-            )
-            max_tokens = nxt
-            validation_failures = 0
-            continue
+            if nxt is not None:
+                print(
+                    f"Anthropic response truncated at max_tokens={max_tokens} - raising "
+                    f"to {nxt} and retrying (attempt {attempt + 1}/{_MAX_ATTEMPTS})...",
+                    flush=True,
+                )
+                max_tokens = nxt
+                validation_failures = 0
+                continue
+            esc = None if escalated else resolve_anthropic_escalate_model(model)
+            if esc is not None and output_token_cap(esc) > output_token_cap(model):
+                new_cap = output_token_cap(esc)
+                print(
+                    f"AUTO-RAISE: judge model {model} (cap {output_token_cap(model)}) "
+                    f"→ {esc} (cap {new_cap}) after truncate-at-cap...",
+                    flush=True,
+                )
+                model = esc
+                escalated = True
+                max_tokens = min(max(max_tokens * 2, max_tokens + 1024), new_cap)
+                validation_failures = 0
+                continue
+            if esc is not None and not escalated:
+                # Same output cap — still try once (denser model / different path).
+                print(
+                    f"AUTO-RAISE: judge model {model} → {esc} after truncate-at-cap "
+                    f"(same output cap {output_token_cap(model)})...",
+                    flush=True,
+                )
+                model = esc
+                escalated = True
+                validation_failures = 0
+                continue
+            raise OutputTruncatedAtCap(
+                provider="Anthropic",
+                model=model,
+                max_tokens=max_tokens,
+                cap=output_token_cap(model),
+            ) from last_err
 
         try:
             return schema_model.model_validate(_anthropic_tool_input(resp))

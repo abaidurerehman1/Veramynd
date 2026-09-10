@@ -20,6 +20,7 @@ from .projects import (
     default_project_id,
     get_project_config,
 )
+from .layout import PARSER_OUTPUT, PARSER_ROOT
 from .schemas import (
     AlignmentRow,
     EvidenceRow,
@@ -37,10 +38,8 @@ from .schemas import (
     StandardNode,
 )
 
-DASHBOARD_ROOT = Path(__file__).resolve().parents[1]
-PARSER_ROOT = VERAMYND_ROOT / "veramynd_parser"
 # Legacy alias — Batch-1 default output (prefer Catalog.output via a project).
-OUTPUT = PARSER_ROOT / "output"
+OUTPUT = PARSER_OUTPUT
 PROJECT_ID = "el-g1-m2-ga-ela"
 
 
@@ -647,13 +646,24 @@ class Catalog:
         n_embed = self._artifact_count(out / "embeddings")
         n_retrieve = self._artifact_count(out / "retrieve", "*.json")
         n_report = self._artifact_count(out / "reports")
+        reports_dir = out / "reports"
+        if cfg.client_docx is not None and cfg.client_docx.is_file():
+            client_docx_ok = True
+        elif reports_dir.is_dir() and any(reports_dir.glob("*client_correlation*.docx")):
+            client_docx_ok = True
+        else:
+            client_docx_ok = False
 
         parsed = n_lessons > 0
         normalized = n_normalize > 0 and n_norm_std > 0
         embedded = n_embed > 0
         retrieved = n_retrieve > 0
         judged = n_align > 0 or n_judge > 0
-        reported = n_report > 0 and judged
+        reported = bool(
+            judged
+            and ((reports_dir / "alignments_all.csv").is_file() or n_report > 0)
+            and client_docx_ok
+        )
 
         return [
             PipelineStage(
@@ -719,9 +729,17 @@ class Catalog:
             PipelineStage(
                 id="results",
                 name="Final results",
-                status="warning" if review else ("complete" if reported or judged else "pending"),
-                detail="Client package + review flags",
-                count=f"{review} review · {n_align} rows",
+                status=(
+                    "complete"
+                    if reported
+                    else ("warning" if judged or review else "pending")
+                ),
+                detail="Alignments CSV + Correlation (Exports)",
+                count=(
+                    f"{review} review · client ready"
+                    if reported
+                    else (f"{review} review · {n_align} rows" if judged else "pending")
+                ),
             ),
         ]
 

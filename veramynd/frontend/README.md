@@ -1,18 +1,18 @@
-# Veramynd Dashboard UI
+# Veramynd — Frontend
 
-React + TypeScript (Vite) frontend for the curriculum–standards alignment dashboard.
+React + TypeScript (Vite) operator UI for curriculum–standards alignment.
 
-Backend: FastAPI in `../dashboard` (Vite proxies `/api` → API, default **:8000**).
+Backend: FastAPI in `../backend` (Vite proxies `/api` → API, default **:8000**).
 
 ## Run
 
 ```bash
 # Terminal 1 — API
-cd veramynd/dashboard
+cd veramynd/backend
 python run.py
 
 # Terminal 2 — UI
-cd veramynd/dashboard-ui
+cd veramynd/frontend
 npm install
 npm run dev
 ```
@@ -48,8 +48,8 @@ One Overview = one project (PDF + XLSX + `output_dir`).
 
 | Source | How it appears |
 |--------|----------------|
-| `dashboard/projects.json` | Registry cards (e.g. Batch-1 demo) |
-| `dashboard/uploads/<batch>/` | Virtual `upload-<batch>` projects after ingest / parse |
+| `backend/projects.json` | Registry cards (e.g. Batch-1 demo) |
+| `backend/uploads/<batch>/` | Virtual `upload-<batch>` projects after ingest / parse |
 
 UI readiness: **empty** / **running** / **ready** from API.  
 Pipeline step wizard marks **Done** from `completed_steps` (disk), then highlights the
@@ -72,7 +72,7 @@ npm run preview   # preview build
 
 ## Notes
 
-- This React app is the only dashboard UI.
+- This React app is the only operator UI.
 - Deleting a project does not clear Logging; use **Clear logs**.
 - Do not invent Quality metrics without a per-project corrected master.
-- See [`../dashboard/README.md`](../dashboard/README.md) for API, resume, and stage details.
+- See [`../backend/README.md`](../backend/README.md) for API, resume, and stage details.

@@ -23,6 +23,8 @@ from typing import TYPE_CHECKING, Any, Callable
 from ..normalize.cache import ContentAddressedCache, canonical_json
 from ..normalize.llm import (
     LlmError,
+    OutputTruncatedAtCap,
+    auto_raise_enabled,
     is_non_retryable_llm_error,
     load_dotenv,
     structured_complete_anthropic,
@@ -210,6 +212,8 @@ def _call_judge_batch(
             api_key=api_key,
             max_tokens=max_tokens,
         )
+    except OutputTruncatedAtCap:
+        raise
     except LlmError as e:
         raise JudgeError(str(e)) from e
     return _coerce_batch_draft(raw)
@@ -590,14 +594,55 @@ def judge_lesson_batch(
         f"(model={model_id}, max_tokens={max_tokens})...",
         flush=True,
     )
-    batch_draft = _call_judge_batch(
-        system=system,
-        user=user,
-        model=model_id,
-        api_key=api_key,
-        max_tokens=max_tokens,
-        complete_fn=complete_fn,
-    )
+    try:
+        batch_draft = _call_judge_batch(
+            system=system,
+            user=user,
+            model=model_id,
+            api_key=api_key,
+            max_tokens=max_tokens,
+            complete_fn=complete_fn,
+        )
+    except OutputTruncatedAtCap as e:
+        if auto_raise_enabled() and len(standards) > 1 and complete_fn is None:
+            mid = len(standards) // 2
+            print(
+                f"AUTO-RAISE: splitting judge batch {len(standards)} → "
+                f"{mid}+{len(standards) - mid} after truncate-at-cap...",
+                flush=True,
+            )
+            left = judge_lesson_batch(
+                resource_id=resource_id,
+                lesson_raw_text=lesson_raw_text,
+                standards=standards[:mid],
+                retrieval_by_code=retrieval_by_code,
+                model=model,
+                escalate_model=escalate_model,
+                escalate=escalate,
+                api_key=api_key,
+                max_tokens=max_tokens,
+                cache_dir=cache_dir,
+                use_cache=use_cache,
+                complete_fn=None,
+                pair_complete_fn=pair_complete_fn,
+            )
+            right = judge_lesson_batch(
+                resource_id=resource_id,
+                lesson_raw_text=lesson_raw_text,
+                standards=standards[mid:],
+                retrieval_by_code=retrieval_by_code,
+                model=model,
+                escalate_model=escalate_model,
+                escalate=escalate,
+                api_key=api_key,
+                max_tokens=max_tokens,
+                cache_dir=cache_dir,
+                use_cache=use_cache,
+                complete_fn=None,
+                pair_complete_fn=pair_complete_fn,
+            )
+            return left + right
+        raise JudgeError(str(e)) from e
     by_code = _validate_batch_results(batch_draft, codes)
 
     retrieval_by_code = retrieval_by_code or {}
@@ -633,7 +678,7 @@ def judge_lesson_batch(
                 complete_fn=None,
             )
             esc_by_code = _validate_batch_results(esc_draft, escalate_codes)
-        except JudgeError as e:
+        except (JudgeError, OutputTruncatedAtCap) as e:
             print(
                 f"    escalate-batch failed ({e}); falling back to pair...",
                 flush=True,
@@ -752,6 +797,8 @@ def _build_report(
         "escalate": escalate,
         "escalate_model": resolve_escalate_model(escalate_model) if escalate else None,
         "candidate_count": len(candidates),
+        "judge_limit": limit,
+        "coverage_pass": bool(coverage_pass),
         "coverage_pass_injected": list(coverage_injected or []),
         "judged": len(verdicts),
         "failed": failed,
