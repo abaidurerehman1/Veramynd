@@ -12,3 +12,7 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+
+# CI-generated deploy secrets file (never commit)
+scripts/deploy/veramynd.env
+deploy-artifacts/

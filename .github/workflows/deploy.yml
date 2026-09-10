@@ -32,23 +32,39 @@ jobs:
           LLM_AUTO_RAISE: ${{ secrets.LLM_AUTO_RAISE }}
           NORMALIZE_ESCALATE_MODEL: ${{ secrets.NORMALIZE_ESCALATE_MODEL }}
         run: |
-          umask 077
-          mkdir -p deploy-artifacts
-          cat > deploy-artifacts/veramynd.env <<EOF
-          OPENAI_API_KEY=${OPENAI_API_KEY}
-          ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
-          OPENAI_MODEL=${OPENAI_MODEL:-gpt-4.1-mini}
-          OPENAI_EMBEDDING_MODEL=${OPENAI_EMBEDDING_MODEL:-text-embedding-3-large}
-          QDRANT_COLLECTION=${QDRANT_COLLECTION:-veramynd_chunks}
-          QDRANT_STANDARDS_COLLECTION=${QDRANT_STANDARDS_COLLECTION:-veramynd_standards}
-          RERANK_MODEL=${RERANK_MODEL:-BAAI/bge-reranker-base}
-          JUDGE_MODEL=${JUDGE_MODEL:-claude-sonnet-4-5}
-          JUDGE_ESCALATE_MODEL=${JUDGE_ESCALATE_MODEL:-claude-opus-4-6}
-          LLM_AUTO_RAISE=${LLM_AUTO_RAISE:-1}
-          NORMALIZE_ESCALATE_MODEL=${NORMALIZE_ESCALATE_MODEL:-o4-mini}
-          EOF
-          sed -i 's/^[[:space:]]*//' deploy-artifacts/veramynd.env
-          cp scripts/deploy/remote_deploy.sh deploy-artifacts/remote_deploy.sh
+          python3 <<'PY'
+          import os, shutil
+          from pathlib import Path
+          out = Path("scripts/deploy")
+          out.mkdir(parents=True, exist_ok=True)
+          keys = [
+            "OPENAI_API_KEY", "ANTHROPIC_API_KEY", "OPENAI_MODEL",
+            "OPENAI_EMBEDDING_MODEL", "QDRANT_COLLECTION",
+            "QDRANT_STANDARDS_COLLECTION", "RERANK_MODEL", "JUDGE_MODEL",
+            "JUDGE_ESCALATE_MODEL", "LLM_AUTO_RAISE", "NORMALIZE_ESCALATE_MODEL",
+          ]
+          defaults = {
+            "OPENAI_MODEL": "gpt-4.1-mini",
+            "OPENAI_EMBEDDING_MODEL": "text-embedding-3-large",
+            "QDRANT_COLLECTION": "veramynd_chunks",
+            "QDRANT_STANDARDS_COLLECTION": "veramynd_standards",
+            "RERANK_MODEL": "BAAI/bge-reranker-base",
+            "JUDGE_MODEL": "claude-sonnet-4-5",
+            "JUDGE_ESCALATE_MODEL": "claude-opus-4-6",
+            "LLM_AUTO_RAISE": "1",
+            "NORMALIZE_ESCALATE_MODEL": "o4-mini",
+          }
+          lines = []
+          for k in keys:
+            v = (os.environ.get(k) or defaults.get(k) or "").strip()
+            lines.append(f"{k}={v}")
+          env_path = out / "veramynd.env"
+          env_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+          os.chmod(env_path, 0o600)
+          print(f"wrote {env_path} ({env_path.stat().st_size} bytes, values redacted)")
+          assert env_path.stat().st_size > 50
+          assert (out / "remote_deploy.sh").is_file()
+          PY
 
       - name: Upload deploy assets
         uses: appleboy/scp-action@v0.1.7
@@ -57,9 +73,9 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
-          source: "deploy-artifacts/remote_deploy.sh,deploy-artifacts/veramynd.env"
+          source: "scripts/deploy/remote_deploy.sh,scripts/deploy/veramynd.env"
           target: "~/apps/veramynd/"
-          strip_components: 1
+          strip_components: 2
           overwrite: true
 
       - name: Deploy over SSH (apps/veramynd only)
@@ -77,6 +93,7 @@ jobs:
           script: |
             set -euo pipefail
             chmod +x "$HOME/apps/veramynd/remote_deploy.sh"
+            test -f "$HOME/apps/veramynd/veramynd.env"
             export VERAMYND_REPO_REF=main
             export VERAMYND_API_PORT="${VERAMYND_API_PORT:-8080}"
             export VERAMYND_ENV_FILE="$HOME/apps/veramynd/veramynd.env"
