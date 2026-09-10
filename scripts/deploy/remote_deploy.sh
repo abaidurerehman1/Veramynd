@@ -72,11 +72,13 @@ pip install -U pip wheel setuptools
 CONSTRAINTS="${REPO_DIR}/scripts/deploy/constraints-legacy-cpu.txt"
 export PIP_CONSTRAINT="${CONSTRAINTS}"
 export PIP_PROGRESS_BAR=off
-# Drop any X86_V2 NumPy wheel left from a prior deploy before installing the stack.
-pip uninstall -y numpy 2>/dev/null || true
+# Drop any X86_V2 NumPy / NumPy-2-only SciPy left from a prior deploy.
+pip uninstall -y numpy scipy 2>/dev/null || true
 pip install -r "${REPO_DIR}/veramynd/backend/requirements.txt"
-# CPU torch index first so we do not pull CUDA builds on this host.
+# CPU torch first so we do not pull CUDA builds on this host.
 pip install --index-url https://download.pytorch.org/whl/cpu torch==2.2.2
+pip install "numpy==1.26.4" "scipy==1.11.4" "scikit-learn==1.4.2"
+pip install "transformers==4.46.3" "tokenizers==0.20.3" "huggingface-hub==0.26.5"
 pip install -e "${REPO_DIR}/veramynd/veramynd_parser[normalize,embed,retrieve,judge]"
 # Re-assert NumPy pin in case a dependency tried to upgrade it.
 pip install --force-reinstall --no-deps "numpy==1.26.4"
@@ -100,6 +102,8 @@ for m in mods:
     print(f"OK {m}")
 print("numpy", __import__("numpy").__version__)
 print("torch", __import__("torch").__version__)
+from veramynd_parser.standards.spreadsheet import parse_standards  # noqa: F401
+print("OK parse_standards_import")
 PY
 
 echo "==> Build frontend"
