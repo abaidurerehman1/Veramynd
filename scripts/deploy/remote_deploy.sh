@@ -8,7 +8,7 @@ TOOLS_DIR="${APP_ROOT}/.tools"
 VENV_DIR="${APP_ROOT}/.venv"
 LOG_DIR="${APP_ROOT}/logs"
 PID_FILE="${APP_ROOT}/api.pid"
-PORT="${VERAMYND_API_PORT:-8080}"
+PORT="${VERAMYND_API_PORT:-9102}"
 REPO_URL="${VERAMYND_REPO_URL:-https://github.com/abaidurerehman1/Veramynd.git}"
 REPO_REF="${VERAMYND_REPO_REF:-main}"
 # Vite 8 / rolldown need Node ^20.19 || >=22.12
@@ -88,8 +88,8 @@ if [[ -f "${PID_FILE}" ]]; then
   fi
   rm -f "${PID_FILE}"
 fi
-# Stop any prior veramynd uvicorn on this port owned by this user.
-pkill -f "uvicorn api.app:app --host 0.0.0.0 --port ${PORT}" 2>/dev/null || true
+# Stop any prior Veramynd uvicorn (any port) owned by this user.
+pkill -f "uvicorn api.app:app --host 0.0.0.0 --port " 2>/dev/null || true
 sleep 1
 
 cd "${REPO_DIR}/veramynd/backend"

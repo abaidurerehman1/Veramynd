@@ -97,6 +97,6 @@ jobs:
             chmod +x "$HOME/apps/veramynd/remote_deploy.sh"
             test -f "$HOME/apps/veramynd/veramynd.env"
             export VERAMYND_REPO_REF=main
-            export VERAMYND_API_PORT="${VERAMYND_API_PORT:-8080}"
+            export VERAMYND_API_PORT="${VERAMYND_API_PORT:-9102}"
             export VERAMYND_ENV_FILE="$HOME/apps/veramynd/veramynd.env"
             bash "$HOME/apps/veramynd/remote_deploy.sh"
