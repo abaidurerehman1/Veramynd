@@ -1,0 +1,59 @@
+name: Deploy Veramynd
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-veramynd-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy to server
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Upload deploy script
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          source: "scripts/deploy/remote_deploy.sh"
+          target: "~/apps/veramynd/"
+          strip_components: 2
+
+      - name: Deploy over SSH (apps/veramynd only)
+        uses: appleboy/ssh-action@v1.2.0
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+          OPENAI_EMBEDDING_MODEL: ${{ secrets.OPENAI_EMBEDDING_MODEL }}
+          QDRANT_COLLECTION: ${{ secrets.QDRANT_COLLECTION }}
+          QDRANT_STANDARDS_COLLECTION: ${{ secrets.QDRANT_STANDARDS_COLLECTION }}
+          RERANK_MODEL: ${{ secrets.RERANK_MODEL }}
+          JUDGE_MODEL: ${{ secrets.JUDGE_MODEL }}
+          JUDGE_ESCALATE_MODEL: ${{ secrets.JUDGE_ESCALATE_MODEL }}
+          LLM_AUTO_RAISE: ${{ secrets.LLM_AUTO_RAISE }}
+          NORMALIZE_ESCALATE_MODEL: ${{ secrets.NORMALIZE_ESCALATE_MODEL }}
+          VERAMYND_API_PORT: ${{ secrets.VERAMYND_API_PORT }}
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          envs: OPENAI_API_KEY,ANTHROPIC_API_KEY,OPENAI_MODEL,OPENAI_EMBEDDING_MODEL,QDRANT_COLLECTION,QDRANT_STANDARDS_COLLECTION,RERANK_MODEL,JUDGE_MODEL,JUDGE_ESCALATE_MODEL,LLM_AUTO_RAISE,NORMALIZE_ESCALATE_MODEL,VERAMYND_API_PORT
+          command_timeout: 60m
+          script_stop: true
+          script: |
+            set -euo pipefail
+            chmod +x "$HOME/apps/veramynd/remote_deploy.sh"
+            export VERAMYND_REPO_REF=main
+            bash "$HOME/apps/veramynd/remote_deploy.sh"
