@@ -57,7 +57,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
-          source: "deploy-artifacts/*"
+          source: "deploy-artifacts/remote_deploy.sh,deploy-artifacts/veramynd.env"
           target: "~/apps/veramynd/"
           strip_components: 1
           overwrite: true
