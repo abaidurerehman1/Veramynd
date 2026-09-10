@@ -11,7 +11,8 @@ PID_FILE="${APP_ROOT}/api.pid"
 PORT="${VERAMYND_API_PORT:-8080}"
 REPO_URL="${VERAMYND_REPO_URL:-https://github.com/abaidurerehman1/Veramynd.git}"
 REPO_REF="${VERAMYND_REPO_REF:-main}"
-NODE_VER="${VERAMYND_NODE_VER:-v20.18.1}"
+# Vite 8 / rolldown need Node ^20.19 || >=22.12
+NODE_VER="${VERAMYND_NODE_VER:-v22.14.0}"
 
 mkdir -p "${APP_ROOT}" "${TOOLS_DIR}" "${LOG_DIR}"
 
@@ -25,15 +26,19 @@ else
   git clone --depth 1 --branch "${REPO_REF}" "${REPO_URL}" "${REPO_DIR}"
 fi
 
-echo "==> Write parser .env from CI-provided env (no Qdrant Docker required)"
+echo "==> Install parser .env (path-mode Qdrant; no QDRANT_URL)"
 ENV_FILE="${REPO_DIR}/veramynd/veramynd_parser/.env"
+SRC_ENV="${VERAMYND_ENV_FILE:-${APP_ROOT}/veramynd.env}"
 umask 077
-cat > "${ENV_FILE}" <<EOF
+if [[ -f "${SRC_ENV}" ]]; then
+  # Copy CI-uploaded secrets file — never print contents.
+  cp "${SRC_ENV}" "${ENV_FILE}"
+else
+  cat > "${ENV_FILE}" <<EOF
 OPENAI_API_KEY=${OPENAI_API_KEY:-}
 ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
 OPENAI_MODEL=${OPENAI_MODEL:-gpt-4.1-mini}
 OPENAI_EMBEDDING_MODEL=${OPENAI_EMBEDDING_MODEL:-text-embedding-3-large}
-# Path-mode Qdrant — do not set QDRANT_URL on this host.
 QDRANT_COLLECTION=${QDRANT_COLLECTION:-veramynd_chunks}
 QDRANT_STANDARDS_COLLECTION=${QDRANT_STANDARDS_COLLECTION:-veramynd_standards}
 RERANK_MODEL=${RERANK_MODEL:-BAAI/bge-reranker-base}
@@ -42,6 +47,7 @@ JUDGE_ESCALATE_MODEL=${JUDGE_ESCALATE_MODEL:-claude-opus-4-6}
 LLM_AUTO_RAISE=${LLM_AUTO_RAISE:-1}
 NORMALIZE_ESCALATE_MODEL=${NORMALIZE_ESCALATE_MODEL:-o4-mini}
 EOF
+fi
 chmod 600 "${ENV_FILE}"
 
 echo "==> Ensure portable Node ${NODE_VER} (user-local only)"
@@ -68,6 +74,7 @@ pip install -e "${REPO_DIR}/veramynd/veramynd_parser[normalize,embed,retrieve,ju
 
 echo "==> Build frontend"
 cd "${REPO_DIR}/veramynd/frontend"
+rm -rf node_modules
 npm ci
 npm run build
 
