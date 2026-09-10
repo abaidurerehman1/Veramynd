@@ -62,15 +62,44 @@ export PATH="${NODE_HOME}/bin:${PATH}"
 node -v
 npm -v
 
-echo "==> Python venv + deps"
+echo "==> Python venv + deps (legacy-CPU safe wheels)"
 if [[ ! -d "${VENV_DIR}" ]]; then
   python3 -m venv "${VENV_DIR}"
 fi
 # shellcheck disable=SC1091
 source "${VENV_DIR}/bin/activate"
 pip install -U pip wheel setuptools
+CONSTRAINTS="${REPO_DIR}/scripts/deploy/constraints-legacy-cpu.txt"
+export PIP_CONSTRAINT="${CONSTRAINTS}"
+# Drop any X86_V2 NumPy wheel left from a prior deploy before installing the stack.
+pip uninstall -y numpy 2>/dev/null || true
 pip install -r "${REPO_DIR}/veramynd/backend/requirements.txt"
+# CPU torch index first so we do not pull CUDA builds on this host.
+pip install --index-url https://download.pytorch.org/whl/cpu torch==2.2.2
 pip install -e "${REPO_DIR}/veramynd/veramynd_parser[normalize,embed,retrieve,judge]"
+# Re-assert NumPy pin in case a dependency tried to upgrade it.
+pip install --force-reinstall --no-deps "numpy==1.26.4"
+
+echo "==> Verify pipeline imports"
+python - <<'PY'
+import importlib
+mods = [
+    "numpy",
+    "openpyxl",
+    "fitz",  # pymupdf
+    "openai",
+    "anthropic",
+    "qdrant_client",
+    "sentence_transformers",
+    "torch",
+    "veramynd_parser",
+]
+for m in mods:
+    importlib.import_module(m)
+    print(f"OK {m}")
+print("numpy", __import__("numpy").__version__)
+print("torch", __import__("torch").__version__)
+PY
 
 echo "==> Build frontend"
 cd "${REPO_DIR}/veramynd/frontend"

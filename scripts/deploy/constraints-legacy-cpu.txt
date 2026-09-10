@@ -1,0 +1,5 @@
+# Host CPU is a restricted KVM image (SSE/SSE2 only — no x86-64-v2).
+# Modern NumPy 2.x Linux wheels crash with:
+#   RuntimeError: NumPy was built with baseline optimizations (X86_V2)...
+# Keep NumPy on the last 1.x line that still ships baseline x86_64 wheels.
+numpy==1.26.4
