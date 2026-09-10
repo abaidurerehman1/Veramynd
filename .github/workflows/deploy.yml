@@ -60,7 +60,9 @@ jobs:
             lines.append(f"{k}={v}")
           env_path = out / "veramynd.env"
           env_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-          os.chmod(env_path, 0o600)
+          # World-readable in the runner workspace only so drone-scp (Docker) can tar it.
+          # Remains gitignored; remote deploy chmod 600 after copy.
+          os.chmod(env_path, 0o644)
           print(f"wrote {env_path} ({env_path.stat().st_size} bytes, values redacted)")
           assert env_path.stat().st_size > 50
           assert (out / "remote_deploy.sh").is_file()
