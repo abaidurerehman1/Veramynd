@@ -1,5 +1,11 @@
-# Host CPU is a restricted KVM image (SSE/SSE2 only — no x86-64-v2).
-# Modern NumPy 2.x Linux wheels crash with:
-#   RuntimeError: NumPy was built with baseline optimizations (X86_V2)...
-# Keep NumPy on the last 1.x line that still ships baseline x86_64 wheels.
+# Restricted KVM CPU: SSE/SSE2 only (no x86-64-v2).
+# NumPy 2.x Linux wheels require X86_V2 and crash on import.
 numpy==1.26.4
+# SciPy 1.14+ / 1.16+ require NumPy 2.x — keep 1.11 line for NumPy 1.26.
+scipy==1.11.4
+scikit-learn==1.4.2
+# Keep transformers aligned with sentence-transformers 3.4.x
+transformers==4.46.3
+sentence-transformers==3.4.1
+tokenizers==0.20.3
+huggingface-hub==0.26.5

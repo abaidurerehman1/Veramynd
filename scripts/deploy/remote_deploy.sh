@@ -71,6 +71,7 @@ source "${VENV_DIR}/bin/activate"
 pip install -U pip wheel setuptools
 CONSTRAINTS="${REPO_DIR}/scripts/deploy/constraints-legacy-cpu.txt"
 export PIP_CONSTRAINT="${CONSTRAINTS}"
+export PIP_PROGRESS_BAR=off
 # Drop any X86_V2 NumPy wheel left from a prior deploy before installing the stack.
 pip uninstall -y numpy 2>/dev/null || true
 pip install -r "${REPO_DIR}/veramynd/backend/requirements.txt"
