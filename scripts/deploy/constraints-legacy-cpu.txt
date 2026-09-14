@@ -1,11 +1,12 @@
-# Restricted KVM CPU: SSE/SSE2 only (no x86-64-v2).
-# NumPy 2.x Linux wheels require X86_V2 and crash on import.
+# Host CPU is a restricted KVM image (SSE/SSE2 only — no x86-64-v2).
 numpy==1.26.4
-# SciPy 1.14+ / 1.16+ require NumPy 2.x — keep 1.11 line for NumPy 1.26.
 scipy==1.11.4
 scikit-learn==1.4.2
-# Keep transformers aligned with sentence-transformers 3.4.x
 transformers==4.46.3
 sentence-transformers==3.4.1
 tokenizers==0.20.3
 huggingface-hub==0.26.5
+# Keep CPU torch; Docling must not upgrade to CUDA/X86_V2 wheels.
+torch==2.2.2
+torchvision==0.17.2
+python-docx==1.2.0

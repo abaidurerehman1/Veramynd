@@ -81,8 +81,10 @@ pip install "numpy==1.26.4" "scipy==1.11.4" "scikit-learn==1.4.2"
 pip install "transformers==4.46.3" "tokenizers==0.20.3" "huggingface-hub==0.26.5"
 # Full localhost parity — Docling required (same default engine as local).
 pip install -e "${REPO_DIR}/veramynd/veramynd_parser[full]"
-# Re-assert NumPy pin in case a dependency tried to upgrade it.
+# Re-assert CPU-safe pins Docling may have tried to upgrade.
+pip install --index-url https://download.pytorch.org/whl/cpu torch==2.2.2 torchvision==0.17.2 || true
 pip install --force-reinstall --no-deps "numpy==1.26.4"
+pip install "scipy==1.11.4" "scikit-learn==1.4.2"
 
 echo "==> Verify pipeline imports (localhost parity)"
 python - <<'PY'
