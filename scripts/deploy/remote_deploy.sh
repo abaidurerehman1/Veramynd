@@ -79,12 +79,12 @@ pip install -r "${REPO_DIR}/veramynd/backend/requirements.txt"
 pip install --index-url https://download.pytorch.org/whl/cpu torch==2.2.2
 pip install "numpy==1.26.4" "scipy==1.11.4" "scikit-learn==1.4.2"
 pip install "transformers==4.46.3" "tokenizers==0.20.3" "huggingface-hub==0.26.5"
-pip install -e "${REPO_DIR}/veramynd/veramynd_parser[normalize,embed,retrieve,judge,docling]" \
-  || pip install -e "${REPO_DIR}/veramynd/veramynd_parser[normalize,embed,retrieve,judge]"
+# Full localhost parity — Docling required (same default engine as local).
+pip install -e "${REPO_DIR}/veramynd/veramynd_parser[full]"
 # Re-assert NumPy pin in case a dependency tried to upgrade it.
 pip install --force-reinstall --no-deps "numpy==1.26.4"
 
-echo "==> Verify pipeline imports"
+echo "==> Verify pipeline imports (localhost parity)"
 python - <<'PY'
 import importlib
 import importlib.util
@@ -92,11 +92,13 @@ mods = [
     "numpy",
     "openpyxl",
     "fitz",  # pymupdf
+    "docx",
     "openai",
     "anthropic",
     "qdrant_client",
     "sentence_transformers",
     "torch",
+    "docling",
     "veramynd_parser",
 ]
 for m in mods:
@@ -106,10 +108,8 @@ print("numpy", __import__("numpy").__version__)
 print("torch", __import__("torch").__version__)
 from veramynd_parser.standards.spreadsheet import parse_standards  # noqa: F401
 print("OK parse_standards_import")
-if importlib.util.find_spec("docling") is not None:
-    print("OK docling")
-else:
-    print("WARN docling missing — pipeline will use --engine pymupdf")
+assert importlib.util.find_spec("docling") is not None, "docling required for localhost parity"
+print("OK docling (Parse will use engine=docling)")
 PY
 
 echo "==> Build frontend"
@@ -134,6 +134,7 @@ sleep 1
 
 cd "${REPO_DIR}/veramynd/backend"
 export VERAMYND_API_PORT="${PORT}"
+export VERAMYND_PDF_ENGINE=docling
 nohup "${VENV_DIR}/bin/uvicorn" api.app:app \
   --host 0.0.0.0 \
   --port "${PORT}" \

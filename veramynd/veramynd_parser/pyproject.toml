@@ -44,6 +44,16 @@ judge = [
     "python-dotenv==1.1.0",
     "pydantic==2.10.6",
 ]
+# Full localhost-parity stack (dashboard / server deploy).
+full = [
+    "openai==1.70.0",
+    "python-dotenv==1.1.0",
+    "qdrant-client==1.13.3",
+    "sentence-transformers==3.4.1",
+    "anthropic==0.49.0",
+    "pydantic==2.10.6",
+    "docling==2.114.0",
+]
 
 [project.scripts]
 veramynd-parser = "veramynd_parser.cli:main"
