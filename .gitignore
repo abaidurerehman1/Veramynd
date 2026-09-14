@@ -4,9 +4,9 @@ Thumbs.db
 
 # Editors
 .idea/
-.vscode/
 *.swp
 
+temp_auto_push.bat
 # Python scratch at repo root (the package has its own .gitignore)
 __pycache__/
 *.py[cod]
@@ -16,3 +16,4 @@ venv/
 # CI-generated deploy secrets file (never commit)
 scripts/deploy/veramynd.env
 deploy-artifacts/
+branch_structure.json

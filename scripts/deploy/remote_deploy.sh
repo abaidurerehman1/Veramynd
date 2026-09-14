@@ -135,8 +135,13 @@ pkill -f "uvicorn api.app:app --host 0.0.0.0 --port " 2>/dev/null || true
 sleep 1
 
 cd "${REPO_DIR}/veramynd/backend"
-export VERAMYND_API_PORT="${PORT}"
-export VERAMYND_PDF_ENGINE=docling
+umask 077
+printf '%s\n' "VERAMYND_API_PORT=${PORT}" "VERAMYND_PDF_ENGINE=docling" > "${APP_ROOT}/runtime.env"
+chmod 600 "${APP_ROOT}/runtime.env"
+set -a
+# shellcheck disable=SC1091
+source "${APP_ROOT}/runtime.env"
+set +a
 nohup "${VENV_DIR}/bin/uvicorn" api.app:app \
   --host 0.0.0.0 \
   --port "${PORT}" \
