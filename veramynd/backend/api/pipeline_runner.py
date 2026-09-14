@@ -1022,6 +1022,23 @@ def _cli_env() -> dict[str, str]:
     return env
 
 
+def _pdf_engine() -> str:
+    """Match localhost when Docling is installed; otherwise use PyMuPDF explicitly.
+
+    CLI/Config default is ``docling``, which hard-fails if the optional extra is
+    missing. Deploy installs may omit ``[docling]`` on constrained hosts.
+    Override with ``VERAMYND_PDF_ENGINE=docling|pymupdf``.
+    """
+    forced = (os.environ.get("VERAMYND_PDF_ENGINE") or "").strip().lower()
+    if forced in ("docling", "pymupdf"):
+        return forced
+    import importlib.util
+
+    if importlib.util.find_spec("docling") is not None:
+        return "docling"
+    return "pymupdf"
+
+
 def _run_cmd(job: PipelineJob, argv: list[str], *, cwd: Path | None = None) -> int:
     import time
 
@@ -1304,6 +1321,16 @@ def _step_parsing(
     job: PipelineJob, pdf: Path, xlsx: Path, output_root: Path, framework: str
 ) -> int:
     p = _paths(output_root)
+    engine = _pdf_engine()
+    if engine == "pymupdf":
+        _append_log(
+            job,
+            "Parse engine: pymupdf "
+            "(docling not installed — pip install 'veramynd-parser[docling]' "
+            "or set VERAMYND_PDF_ENGINE for parity with localhost)",
+        )
+    else:
+        _append_log(job, f"Parse engine: {engine}")
     argv = _py_mod(
         "veramynd_parser.cli",
         "export",
@@ -1314,6 +1341,8 @@ def _step_parsing(
         str(xlsx),
         "--framework",
         framework,
+        "--engine",
+        engine,
     )
     return _run_cmd(job, argv)
 
