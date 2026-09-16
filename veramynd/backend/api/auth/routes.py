@@ -528,6 +528,16 @@ def link_project(
 
 
 def bootstrap_auth() -> None:
-    init_db()
-    _AVATAR_DIR.mkdir(parents=True, exist_ok=True)
-    _ensure_oauth()
+    try:
+        init_db()
+    except Exception as e:
+        # Keep API up even if Postgres is temporarily unavailable.
+        print(f"WARN: auth DB init skipped: {e}")
+    try:
+        _AVATAR_DIR.mkdir(parents=True, exist_ok=True)
+    except Exception as e:
+        print(f"WARN: avatar dir create skipped: {e}")
+    try:
+        _ensure_oauth()
+    except Exception as e:
+        print(f"WARN: oauth init skipped: {e}")
