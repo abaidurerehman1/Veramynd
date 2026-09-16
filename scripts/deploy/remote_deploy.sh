@@ -50,6 +50,58 @@ EOF
 fi
 chmod 600 "${ENV_FILE}"
 
+echo "==> Install backend .env (auth / dashboard)"
+BACKEND_ENV_FILE="${REPO_DIR}/veramynd/backend/.env"
+SRC_BACKEND_ENV="${VERAMYND_BACKEND_ENV_FILE:-${APP_ROOT}/backend.env}"
+if [[ -f "${SRC_BACKEND_ENV}" ]]; then
+  cp "${SRC_BACKEND_ENV}" "${BACKEND_ENV_FILE}"
+else
+  cat > "${BACKEND_ENV_FILE}" <<EOF
+DATABASE_URL=${DATABASE_URL:-}
+JWT_SECRET=${JWT_SECRET:-}
+JWT_EXPIRE_HOURS=${JWT_EXPIRE_HOURS:-168}
+APP_BASE_URL=${APP_BASE_URL:-http://127.0.0.1:${PORT}}
+API_BASE_URL=${API_BASE_URL:-http://127.0.0.1:${PORT}}
+SMTP_HOST=${SMTP_HOST:-}
+SMTP_PORT=${SMTP_PORT:-587}
+SMTP_USER=${SMTP_USER:-}
+SMTP_PASSWORD=${SMTP_PASSWORD:-}
+SMTP_FROM=${SMTP_FROM:-}
+SMTP_USE_TLS=${SMTP_USE_TLS:-true}
+GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID:-}
+GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET:-}
+GOOGLE_REDIRECT_URI=${GOOGLE_REDIRECT_URI:-}
+EOF
+fi
+chmod 600 "${BACKEND_ENV_FILE}"
+# If CI still has localhost URLs, rewrite to this server's public host:port.
+PUBLIC_HOST="$(curl -fsS ifconfig.me 2>/dev/null || true)"
+if [[ -n "${PUBLIC_HOST}" ]]; then
+  python3 - "${BACKEND_ENV_FILE}" "${PUBLIC_HOST}" "${PORT}" <<'PY'
+import sys
+from pathlib import Path
+path = Path(sys.argv[1])
+host, port = sys.argv[2], sys.argv[3]
+public = f"http://{host}:{port}"
+text = path.read_text(encoding="utf-8")
+lines = []
+for line in text.splitlines():
+    if line.startswith("APP_BASE_URL=") and ("localhost" in line or "127.0.0.1" in line):
+        lines.append(f"APP_BASE_URL={public}")
+    elif line.startswith("API_BASE_URL=") and ("localhost" in line or "127.0.0.1" in line):
+        lines.append(f"API_BASE_URL={public}")
+    elif line.startswith("GOOGLE_REDIRECT_URI=") and ("localhost" in line or "127.0.0.1" in line):
+        lines.append(f"GOOGLE_REDIRECT_URI={public}/api/auth/oauth/google/callback")
+    else:
+        lines.append(line)
+path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+print("backend public URL rewrite applied (values redacted)")
+PY
+fi
+# Keep a durable copy outside the repo tree for restarts between deploys.
+cp "${BACKEND_ENV_FILE}" "${APP_ROOT}/backend.env"
+chmod 600 "${APP_ROOT}/backend.env"
+
 echo "==> Ensure portable Node ${NODE_VER} (user-local only)"
 NODE_HOME="${TOOLS_DIR}/node-${NODE_VER}-linux-x64"
 if [[ ! -x "${NODE_HOME}/bin/node" ]]; then
@@ -138,9 +190,18 @@ cd "${REPO_DIR}/veramynd/backend"
 umask 077
 printf '%s\n' "VERAMYND_API_PORT=${PORT}" "VERAMYND_PDF_ENGINE=docling" > "${APP_ROOT}/runtime.env"
 chmod 600 "${APP_ROOT}/runtime.env"
+# Ensure backend .env is present even if repo clean wiped an earlier copy.
+if [[ ! -f "${REPO_DIR}/veramynd/backend/.env" && -f "${APP_ROOT}/backend.env" ]]; then
+  cp "${APP_ROOT}/backend.env" "${REPO_DIR}/veramynd/backend/.env"
+  chmod 600 "${REPO_DIR}/veramynd/backend/.env"
+fi
 set -a
 # shellcheck disable=SC1091
 source "${APP_ROOT}/runtime.env"
+if [[ -f "${REPO_DIR}/veramynd/backend/.env" ]]; then
+  # shellcheck disable=SC1091
+  source "${REPO_DIR}/veramynd/backend/.env"
+fi
 set +a
 nohup "${VENV_DIR}/bin/uvicorn" api.app:app \
   --host 0.0.0.0 \

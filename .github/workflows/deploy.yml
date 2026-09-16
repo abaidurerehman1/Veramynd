@@ -23,8 +23,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build runtime .env (never echo values)
+      - name: Build runtime .env files (never echo values)
         env:
+          # Pipeline / parser
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
@@ -36,40 +37,83 @@ jobs:
           JUDGE_ESCALATE_MODEL: ${{ secrets.JUDGE_ESCALATE_MODEL }}
           LLM_AUTO_RAISE: ${{ secrets.LLM_AUTO_RAISE }}
           NORMALIZE_ESCALATE_MODEL: ${{ secrets.NORMALIZE_ESCALATE_MODEL }}
+          # Backend auth / dashboard
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          JWT_EXPIRE_HOURS: ${{ secrets.JWT_EXPIRE_HOURS }}
+          APP_BASE_URL: ${{ secrets.APP_BASE_URL }}
+          API_BASE_URL: ${{ secrets.API_BASE_URL }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_FROM: ${{ secrets.SMTP_FROM }}
+          SMTP_USE_TLS: ${{ secrets.SMTP_USE_TLS }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REDIRECT_URI: ${{ secrets.GOOGLE_REDIRECT_URI }}
+          VERAMYND_API_PORT: ${{ secrets.VERAMYND_API_PORT }}
         run: |
           python3 <<'PY'
-          import os, shutil
+          import os
           from pathlib import Path
+
           out = Path("scripts/deploy")
           out.mkdir(parents=True, exist_ok=True)
-          keys = [
-            "OPENAI_API_KEY", "ANTHROPIC_API_KEY", "OPENAI_MODEL",
-            "OPENAI_EMBEDDING_MODEL", "QDRANT_COLLECTION",
-            "QDRANT_STANDARDS_COLLECTION", "RERANK_MODEL", "JUDGE_MODEL",
-            "JUDGE_ESCALATE_MODEL", "LLM_AUTO_RAISE", "NORMALIZE_ESCALATE_MODEL",
-          ]
-          defaults = {
-            "OPENAI_MODEL": "gpt-4.1-mini",
-            "OPENAI_EMBEDDING_MODEL": "text-embedding-3-large",
-            "QDRANT_COLLECTION": "veramynd_chunks",
-            "QDRANT_STANDARDS_COLLECTION": "veramynd_standards",
-            "RERANK_MODEL": "BAAI/bge-reranker-base",
-            "JUDGE_MODEL": "claude-sonnet-4-5",
-            "JUDGE_ESCALATE_MODEL": "claude-opus-4-6",
-            "LLM_AUTO_RAISE": "1",
-            "NORMALIZE_ESCALATE_MODEL": "o4-mini",
-          }
-          lines = []
-          for k in keys:
-            v = (os.environ.get(k) or defaults.get(k) or "").strip()
-            lines.append(f"{k}={v}")
-          env_path = out / "veramynd.env"
-          env_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-          # World-readable in the runner workspace only so drone-scp (Docker) can tar it.
-          # Remains gitignored; remote deploy chmod 600 after copy.
-          os.chmod(env_path, 0o644)
-          print(f"wrote {env_path} ({env_path.stat().st_size} bytes, values redacted)")
-          assert env_path.stat().st_size > 50
+
+          def write_env(path: Path, keys: list[str], defaults: dict[str, str] | None = None) -> None:
+              defaults = defaults or {}
+              lines = []
+              for k in keys:
+                  v = (os.environ.get(k) or defaults.get(k) or "").strip()
+                  lines.append(f"{k}={v}")
+              path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+              os.chmod(path, 0o644)
+              print(f"wrote {path} ({path.stat().st_size} bytes, values redacted)")
+
+          write_env(
+              out / "veramynd.env",
+              [
+                  "OPENAI_API_KEY", "ANTHROPIC_API_KEY", "OPENAI_MODEL",
+                  "OPENAI_EMBEDDING_MODEL", "QDRANT_COLLECTION",
+                  "QDRANT_STANDARDS_COLLECTION", "RERANK_MODEL", "JUDGE_MODEL",
+                  "JUDGE_ESCALATE_MODEL", "LLM_AUTO_RAISE", "NORMALIZE_ESCALATE_MODEL",
+              ],
+              {
+                  "OPENAI_MODEL": "gpt-4.1-mini",
+                  "OPENAI_EMBEDDING_MODEL": "text-embedding-3-large",
+                  "QDRANT_COLLECTION": "veramynd_chunks",
+                  "QDRANT_STANDARDS_COLLECTION": "veramynd_standards",
+                  "RERANK_MODEL": "BAAI/bge-reranker-base",
+                  "JUDGE_MODEL": "claude-sonnet-4-5",
+                  "JUDGE_ESCALATE_MODEL": "claude-opus-4-6",
+                  "LLM_AUTO_RAISE": "1",
+                  "NORMALIZE_ESCALATE_MODEL": "o4-mini",
+              },
+          )
+
+          port = (os.environ.get("VERAMYND_API_PORT") or "9102").strip()
+          write_env(
+              out / "backend.env",
+              [
+                  "DATABASE_URL", "JWT_SECRET", "JWT_EXPIRE_HOURS",
+                  "APP_BASE_URL", "API_BASE_URL",
+                  "SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASSWORD",
+                  "SMTP_FROM", "SMTP_USE_TLS",
+                  "GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET", "GOOGLE_REDIRECT_URI",
+              ],
+              {
+                  "JWT_EXPIRE_HOURS": "168",
+                  "SMTP_PORT": "587",
+                  "SMTP_USE_TLS": "true",
+                  # Sensible fallbacks when public URLs are not set yet
+                  "APP_BASE_URL": f"http://127.0.0.1:{port}",
+                  "API_BASE_URL": f"http://127.0.0.1:{port}",
+              },
+          )
+
+          assert (out / "veramynd.env").stat().st_size > 50
+          assert (out / "backend.env").is_file()
           assert (out / "remote_deploy.sh").is_file()
           PY
 
@@ -80,7 +124,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
-          source: "scripts/deploy/remote_deploy.sh,scripts/deploy/veramynd.env"
+          source: "scripts/deploy/remote_deploy.sh,scripts/deploy/veramynd.env,scripts/deploy/backend.env"
           target: "~/apps/veramynd/"
           strip_components: 2
           overwrite: true
@@ -102,8 +146,10 @@ jobs:
             set -euo pipefail
             chmod +x "$HOME/apps/veramynd/remote_deploy.sh"
             test -f "$HOME/apps/veramynd/veramynd.env"
+            test -f "$HOME/apps/veramynd/backend.env"
             export VERAMYND_REPO_REF="${VERAMYND_REPO_REF:-main}"
             export VERAMYND_API_PORT="${VERAMYND_API_PORT:-9102}"
             export VERAMYND_ENV_FILE="$HOME/apps/veramynd/veramynd.env"
+            export VERAMYND_BACKEND_ENV_FILE="$HOME/apps/veramynd/backend.env"
             echo "Deploying ref: ${VERAMYND_REPO_REF}"
             bash "$HOME/apps/veramynd/remote_deploy.sh"
