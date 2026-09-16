@@ -1,0 +1,86 @@
+name: Setup Veramynd Postgres
+
+on:
+  workflow_dispatch:
+    inputs:
+      db_password:
+        description: "Postgres password (must match DATABASE_URL secret)"
+        required: true
+        type: string
+      db_user:
+        description: "Postgres user"
+        required: false
+        default: "veramynd"
+        type: string
+      db_name:
+        description: "Postgres database name"
+        required: false
+        default: "veramynd"
+        type: string
+      host_port:
+        description: "Host port to publish"
+        required: false
+        default: "5433"
+        type: string
+
+jobs:
+  setup:
+    name: Start hosted Postgres on VPS
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Ensure Docker Postgres is running
+        uses: appleboy/ssh-action@v1.2.0
+        env:
+          DB_PASSWORD: ${{ inputs.db_password }}
+          DB_USER: ${{ inputs.db_user }}
+          DB_NAME: ${{ inputs.db_name }}
+          HOST_PORT: ${{ inputs.host_port }}
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          envs: DB_PASSWORD,DB_USER,DB_NAME,HOST_PORT
+          script_stop: true
+          script: |
+            set -euo pipefail
+            APP="$HOME/apps/veramynd"
+            mkdir -p "$APP/postgres/data" "$APP/logs"
+
+            if ! command -v docker >/dev/null 2>&1; then
+              echo "Docker not found — installing user-space docker is not supported here."
+              echo "Trying podman..."
+              if ! command -v podman >/dev/null 2>&1; then
+                echo "ERROR: neither docker nor podman available"
+                exit 1
+              fi
+              DOCKER=podman
+            else
+              DOCKER=docker
+            fi
+
+            NAME=veramynd-postgres
+            $DOCKER rm -f "$NAME" 2>/dev/null || true
+            $DOCKER run -d \
+              --name "$NAME" \
+              --restart unless-stopped \
+              -e POSTGRES_USER="$DB_USER" \
+              -e POSTGRES_PASSWORD="$DB_PASSWORD" \
+              -e POSTGRES_DB="$DB_NAME" \
+              -p "127.0.0.1:${HOST_PORT}:5432" \
+              -v "$APP/postgres/data:/var/lib/postgresql/data" \
+              postgres:16-alpine
+
+            echo "Waiting for Postgres..."
+            for i in $(seq 1 30); do
+              if $DOCKER exec "$NAME" pg_isready -U "$DB_USER" -d "$DB_NAME" >/dev/null 2>&1; then
+                echo "Postgres is ready"
+                break
+              fi
+              sleep 2
+            done
+            $DOCKER exec "$NAME" pg_isready -U "$DB_USER" -d "$DB_NAME"
+
+            echo "OK: postgres listening on 127.0.0.1:${HOST_PORT}"
+            $DOCKER ps --filter "name=$NAME"
