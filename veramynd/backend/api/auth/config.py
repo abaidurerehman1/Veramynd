@@ -17,9 +17,9 @@ def settings() -> dict[str, str | int | bool]:
     return {
         "database_url": os.getenv(
             "DATABASE_URL",
-            "postgresql+psycopg://postgres:Abaid_1001@127.0.0.1:5433/veramynd",
+            "postgresql+psycopg://postgres:postgres@127.0.0.1:5432/veramynd",
         ),
-        "jwt_secret": os.getenv("JWT_SECRET", "veramynd-dev-jwt-secret"),
+        "jwt_secret": os.getenv("JWT_SECRET", "change-me-in-production"),
         "jwt_expire_hours": int(os.getenv("JWT_EXPIRE_HOURS", "168")),
         "app_base_url": os.getenv("APP_BASE_URL", "http://localhost:5173").rstrip("/"),
         "api_base_url": os.getenv("API_BASE_URL", "http://127.0.0.1:8000").rstrip("/"),
