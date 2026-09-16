@@ -49,74 +49,33 @@ jobs:
             set -euo pipefail
             APP="$HOME/apps/veramynd"
             mkdir -p "$APP/logs" "$APP/postgres"
-
-            run_sudo() {
-              if sudo -n true 2>/dev/null; then
-                sudo "$@"
-              else
-                printf '%s\n' "$SUDO_PASS" | sudo -S -p '' "$@"
-              fi
-            }
-
+            run_sudo() { if sudo -n true 2>/dev/null; then sudo "$@"; else printf '%s\n' "$SUDO_PASS" | sudo -S -p '' "$@"; fi; }
             if command -v docker >/dev/null 2>&1; then
               docker rm -f veramynd-postgres 2>/dev/null || true
-              docker run -d --name veramynd-postgres --restart unless-stopped \
-                -e POSTGRES_USER="$DB_USER" -e POSTGRES_PASSWORD="$DB_PASSWORD" -e POSTGRES_DB="$DB_NAME" \
-                -p "127.0.0.1:${HOST_PORT}:5432" \
-                -v "$APP/postgres/data:/var/lib/postgresql/data" \
-                postgres:16-alpine
-              for i in $(seq 1 30); do
-                docker exec veramynd-postgres pg_isready -U "$DB_USER" -d "$DB_NAME" && break
-                sleep 2
-              done
+              docker run -d --name veramynd-postgres --restart unless-stopped -e POSTGRES_USER="$DB_USER" -e POSTGRES_PASSWORD="$DB_PASSWORD" -e POSTGRES_DB="$DB_NAME" -p "127.0.0.1:${HOST_PORT}:5432" -v "$APP/postgres/data:/var/lib/postgresql/data" postgres:16-alpine
+              for i in $(seq 1 30); do docker exec veramynd-postgres pg_isready -U "$DB_USER" -d "$DB_NAME" && break; sleep 2; done
               echo "OK: docker postgres on 127.0.0.1:${HOST_PORT}"
               exit 0
             fi
-
             echo "Installing PostgreSQL with sudo..."
             run_sudo apt-get update -y
             run_sudo DEBIAN_FRONTEND=noninteractive apt-get install -y postgresql postgresql-contrib
             run_sudo systemctl enable --now postgresql
-
-            run_sudo -u postgres psql -v ON_ERROR_STOP=1 <<SQL
-            DO \$\$
-            BEGIN
-              IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname = '${DB_USER}') THEN
-                CREATE ROLE ${DB_USER} LOGIN PASSWORD '${DB_PASSWORD}';
-              ELSE
-                ALTER ROLE ${DB_USER} WITH LOGIN PASSWORD '${DB_PASSWORD}';
-              END IF;
-            END
-            \$\$;
-            SELECT 'CREATE DATABASE ${DB_NAME} OWNER ${DB_USER}'
-            WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = '${DB_NAME}')\gexec
-            GRANT ALL PRIVILEGES ON DATABASE ${DB_NAME} TO ${DB_USER};
-            SQL
-
+            run_sudo -u postgres psql -v ON_ERROR_STOP=1 -c "DO \$\$ BEGIN IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname = '${DB_USER}') THEN CREATE ROLE ${DB_USER} LOGIN PASSWORD '${DB_PASSWORD}'; ELSE ALTER ROLE ${DB_USER} WITH LOGIN PASSWORD '${DB_PASSWORD}'; END IF; END \$\$;"
+            EXISTS="$(run_sudo -u postgres psql -tAc "SELECT 1 FROM pg_database WHERE datname='${DB_NAME}'" | tr -d '[:space:]')"
+            if [[ "$EXISTS" != "1" ]]; then run_sudo -u postgres psql -v ON_ERROR_STOP=1 -c "CREATE DATABASE ${DB_NAME} OWNER ${DB_USER};"; fi
+            run_sudo -u postgres psql -v ON_ERROR_STOP=1 -c "GRANT ALL PRIVILEGES ON DATABASE ${DB_NAME} TO ${DB_USER};"
             PGPORT="$(run_sudo -u postgres psql -tAc 'SHOW port' | tr -d '[:space:]')"
             echo "PGPORT=${PGPORT}"
-
-            # Allow password auth from localhost
             HBA="$(run_sudo -u postgres psql -tAc 'SHOW hba_file' | tr -d '[:space:]')"
-            if ! run_sudo grep -q "veramynd-local" "$HBA" 2>/dev/null; then
-              echo "host all all 127.0.0.1/32 scram-sha-256 # veramynd-local" | run_sudo tee -a "$HBA" >/dev/null
-              run_sudo systemctl reload postgresql || run_sudo systemctl restart postgresql
-            fi
-
+            if ! run_sudo grep -q "veramynd-local" "$HBA" 2>/dev/null; then echo "host all all 127.0.0.1/32 scram-sha-256 # veramynd-local" | run_sudo tee -a "$HBA" >/dev/null; run_sudo systemctl reload postgresql || run_sudo systemctl restart postgresql; fi
             export PGPASSWORD="$DB_PASSWORD"
-            for i in $(seq 1 20); do
-              if psql -h 127.0.0.1 -p "$PGPORT" -U "$DB_USER" -d "$DB_NAME" -c 'SELECT 1' >/dev/null 2>&1; then
-                break
-              fi
-              sleep 1
-            done
+            for i in $(seq 1 20); do if psql -h 127.0.0.1 -p "$PGPORT" -U "$DB_USER" -d "$DB_NAME" -c 'SELECT 1' >/dev/null 2>&1; then break; fi; sleep 1; done
             psql -h 127.0.0.1 -p "$PGPORT" -U "$DB_USER" -d "$DB_NAME" -c 'SELECT current_database(), current_user;'
-
             if [[ "$HOST_PORT" != "$PGPORT" ]]; then
               run_sudo DEBIAN_FRONTEND=noninteractive apt-get install -y socat || true
               pkill -f "socat TCP-LISTEN:${HOST_PORT}" 2>/dev/null || true
-              nohup socat "TCP-LISTEN:${HOST_PORT},bind=127.0.0.1,reuseaddr,fork" "TCP:127.0.0.1:${PGPORT}" \
-                > "$APP/logs/pg-forward.log" 2>&1 &
+              nohup socat "TCP-LISTEN:${HOST_PORT},bind=127.0.0.1,reuseaddr,fork" "TCP:127.0.0.1:${PGPORT}" > "$APP/logs/pg-forward.log" 2>&1 &
               echo $! > "$APP/pg-forward.pid"
               sleep 1
               psql -h 127.0.0.1 -p "$HOST_PORT" -U "$DB_USER" -d "$DB_NAME" -c 'SELECT 1 AS ok_forward;'
@@ -124,7 +83,5 @@ jobs:
             else
               echo "OK: postgres on 127.0.0.1:${PGPORT}"
             fi
-
-            # Persist connection hint (no password)
             printf 'postgresql+psycopg://%s:***@127.0.0.1:%s/%s\n' "$DB_USER" "$HOST_PORT" "$DB_NAME" > "$APP/DATABASE_URL.hint"
             echo "SETUP_COMPLETE"
