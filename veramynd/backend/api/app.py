@@ -16,6 +16,7 @@ from fastapi import FastAPI, File, Form, HTTPException, Query, UploadFile
 from fastapi.responses import FileResponse, HTMLResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
+from starlette.middleware.sessions import SessionMiddleware
 
 from .projects import (
     default_project_id,
@@ -29,11 +30,19 @@ from .projects import (
 from .catalog import drop_catalog, get_catalog, reload_catalog
 from . import pipeline_runner
 from .layout import ASSETS_DIR, UI_DIST, UPLOADS_DIR, WEB_DIR
+from .auth import bootstrap_auth, router as auth_router
+from .auth.config import settings as auth_settings
 
 _MAX_UPLOAD_BYTES = 200 * 1024 * 1024
 _SAFE_NAME = re.compile(r"[^A-Za-z0-9._-]+")
 
 app = FastAPI(title="Veramynd Alignment Dashboard", version="1.1.0")
+app.add_middleware(
+    SessionMiddleware,
+    secret_key=str(auth_settings()["jwt_secret"]),
+    same_site="lax",
+)
+app.include_router(auth_router)
 
 
 def _catalog(project_id: str | None):
@@ -47,6 +56,7 @@ def _catalog(project_id: str | None):
 
 @app.on_event("startup")
 def _startup() -> None:
+    bootstrap_auth()
     pipeline_runner.recover_interrupted_jobs()
     get_catalog().ensure()
 

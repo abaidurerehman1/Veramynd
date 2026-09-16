@@ -1,4 +1,19 @@
-import { useCallback, useEffect, useMemo, useState, type CSSProperties } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import {
+  Area,
+  AreaChart,
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Cell,
+  Legend,
+  Pie,
+  PieChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from 'recharts'
 import { api, withProject } from '../api/client'
 import type { LessonCoverageRow, OverviewMetrics, PipelineStage } from '../api/types'
 import { OverviewEmpty, OverviewLoading, OverviewRunning } from '../components/OverviewStates'
@@ -11,6 +26,26 @@ type UnitStat = {
   aligned: number
   avg: number
   count: number
+}
+
+const CHART = {
+  green: '#006437',
+  greenSoft: '#34d399',
+  greenMid: '#059669',
+  amber: '#d97706',
+  teal: '#0f766e',
+  slate: '#94a3b8',
+  grid: '#e8ecea',
+  ink: '#111827',
+  muted: '#6b7280',
+}
+
+const tooltipStyle = {
+  background: '#fff',
+  border: '1px solid rgba(17,24,39,0.08)',
+  borderRadius: 12,
+  boxShadow: '0 8px 24px rgba(17,24,39,0.08)',
+  fontSize: 12,
 }
 
 function fileName(path: string) {
@@ -74,7 +109,6 @@ export function OverviewPage({
     void load()
   }, [load, reloadKey])
 
-  // Live refresh while pipeline is empty/in progress (upload + registry projects)
   useEffect(() => {
     const r = overview?.readiness
     if (r !== 'empty' && r !== 'running') return
@@ -199,231 +233,334 @@ export function OverviewPage({
   const p = overview.by_status.partial || 0
   const n = overview.by_status.none || 0
   const r = overview.review_required || 0
-  const p1 = (f / total) * 100
-  const p2 = p1 + (p / total) * 100
-  const p3 = p2 + (r / total) * 100
   const fullPct = Math.round((100 * f) / total)
   const maxAligned = Math.max(1, ...unitStats.flatMap((u) => u.rows.map((x) => x.aligned || 0)))
-  const maxUnitAvg = Math.max(1, ...unitStats.map((x) => x.avg))
   const reviewed = lastReviewedLabel(overview.last_reviewed)
+  const lastUpdate = reviewed ? reviewed.replace(/^Last reviewed\s+/i, 'Updated ') : 'Updated recently'
+  const peakUnit = unitStats.reduce<(typeof unitStats)[number] | null>(
+    (best, u) => (!best || u.avg > best.avg ? u : best),
+    null,
+  )
+
+  const unitChart = unitStats.map((u) => ({
+    name: `U${u.unit}`,
+    avg: u.avg,
+    aligned: u.aligned,
+    lessons: u.count,
+  }))
+
+  const mixChart = [
+    { name: 'Full', value: f, color: CHART.green },
+    { name: 'Partial', value: p, color: CHART.amber },
+    { name: 'Review', value: r, color: CHART.teal },
+    { name: 'None', value: n, color: CHART.slate },
+  ]
+
+  const activityChart = [...coverage]
+    .map((row) => ({ ...row, meta: lessonMeta(row.resource_id) }))
+    .sort((a, b) => a.meta.unit - b.meta.unit || a.meta.lesson - b.meta.lesson)
+    .slice(0, 12)
+    .map((row) => ({
+      name: row.meta.short.replace(/^U(\d+)L(\d+)/i, 'U$1·L$2'),
+      full: row.full || 0,
+      partial: row.partial || 0,
+      none: row.none || 0,
+      aligned: row.aligned || 0,
+    }))
+
+  const mapChart = [...coverage]
+    .map((row) => ({ ...row, meta: lessonMeta(row.resource_id) }))
+    .sort((a, b) => a.meta.unit - b.meta.unit || a.meta.lesson - b.meta.lesson)
+    .map((row) => ({
+      name: row.meta.short.replace(/^U(\d+)L(\d+)/i, 'L$2'),
+      unit: `U${row.meta.unit}`,
+      aligned: row.aligned || 0,
+      full: row.full || 0,
+      partial: row.partial || 0,
+    }))
+
+  const topLessons = [...coverage]
+    .map((row) => ({ ...row, meta: lessonMeta(row.resource_id) }))
+    .sort((a, b) => (b.aligned || 0) - (a.aligned || 0))
+    .slice(0, 5)
 
   return (
-    <div className="analytics">
-      <section className="project-banner">
-        <div className="project-banner-main">
-          <div className="project-banner-copy">
-            <div className="project-banner-kicker">
-              Project{project?.is_default ? ' · default' : ''}
-            </div>
-            <h2 className="project-banner-title">{project?.name || projectId}</h2>
-            <p className="project-banner-sub">
-              One Overview = one PDF + one XLSX + that project&apos;s output.
-            </p>
-          </div>
-          {reviewed ? (
-            <p className="project-banner-reviewed">{reviewed}</p>
-          ) : null}
+    <div className="analytics ov-dash edtech-dash">
+      <div className="ov-head">
+        <div>
+          <h2 className="ov-title">Overview</h2>
+          <p className="ov-sub">
+            Alignment summary for <strong>{project?.name || projectId}</strong>.
+          </p>
         </div>
-        <div className="project-inputs">
-          <div className="project-input">
-            <span className="pi-label">PDF</span>
-            <strong title={inputs?.guide_pdf}>{fileName(inputs?.guide_pdf || '—')}</strong>
-            <em className={inputs?.guide_pdf_exists ? 'ok' : 'missing'}>
-              {inputs?.guide_pdf_exists ? 'found' : 'missing'}
-            </em>
-          </div>
-          <div className="project-input">
-            <span className="pi-label">XLSX</span>
-            <strong title={inputs?.standards_xlsx}>{fileName(inputs?.standards_xlsx || '—')}</strong>
-            <em className={inputs?.standards_xlsx_exists ? 'ok' : 'missing'}>
-              {inputs?.standards_xlsx_exists ? 'found' : 'missing'}
-            </em>
-          </div>
-          <div className="project-input">
-            <span className="pi-label">Output</span>
-            <strong title={project?.output_dir}>{project?.output_dir || '—'}</strong>
-            <em className={project?.has_output ? 'ok' : 'missing'}>
-              {project?.has_output ? 'ready' : 'empty'}
-            </em>
-          </div>
-        </div>
-      </section>
-
-      <div className="kpi-grid kpi-4">
-        <div className="kpi">
-          <div className="label">Alignments</div>
-          <div className="value">{overview.alignments.toLocaleString()}</div>
-          <div className="hint">Judge evaluations in scope</div>
-        </div>
-        <div className="kpi">
-          <div className="label">Coverage</div>
-          <div className="value">{overview.alignment_coverage_pct}%</div>
-          <div className="hint">
-            {overview.positive_standards_cited} of {overview.standards_leaves} leaf standards
-          </div>
-        </div>
-        <div className="kpi">
-          <div className="label">Review</div>
-          <div className="value">{overview.review_required}</div>
-          <div className="hint">{overview.escalated} escalated</div>
-        </div>
-        <div className="kpi">
-          <div className="label">Lessons</div>
-          <div className="value">{overview.lessons}</div>
-          <div className="hint">
-            Pipeline {overview.pipeline_health.toLowerCase()}
-          </div>
-        </div>
-      </div>
-
-      <div className="grid-2">
-        <section className="card">
-          <div className="card-h">
-            <div>
-              <h2>Alignment mix</h2>
-              <p className="card-sub">{overview.alignments.toLocaleString()} total evaluations</p>
-            </div>
-          </div>
-          <div className="card-b">
-            <div className="donut-wrap compact">
-              <div className="donut-center">
-                <div
-                  className="donut"
-                  style={
-                    {
-                      ['--p1' as string]: `${p1}%`,
-                      ['--p2' as string]: `${p2}%`,
-                      ['--p3' as string]: `${p3}%`,
-                    } as CSSProperties
-                  }
-                />
-                <div className="donut-label">
-                  <strong>{fullPct}%</strong>
-                  <span>Full</span>
-                </div>
-              </div>
-              <div className="legend tight">
-                {[
-                  { label: 'Full', color: 'var(--ok)', count: f },
-                  { label: 'Partial', color: 'var(--warn)', count: p },
-                  { label: 'Review', color: 'var(--blue)', count: r },
-                  { label: 'None', color: '#cbd5e1', count: n },
-                ].map((row) => (
-                  <div className="legend-row" key={row.label}>
-                    <span>
-                      <span className="swatch" style={{ background: row.color }} />
-                      {row.label}
-                    </span>
-                    <span className="legend-vals">
-                      <strong>{row.count}</strong>
-                      <small>{Math.round((100 * row.count) / total)}%</small>
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="card">
-          <div className="card-h">
-            <div>
-              <h2>Coverage by unit</h2>
-              <p className="card-sub">Average aligned standards per lesson</p>
-            </div>
-          </div>
-          <div className="card-b">
-            <div className="unit-chart">
-              {unitStats.map((u) => {
-                const w = Math.round((100 * u.avg) / maxUnitAvg)
-                return (
-                  <div className="unit-bar-row" key={u.unit}>
-                    <div className="unit-lab-block">
-                      <span className="unit-lab">Unit {u.unit}</span>
-                      <span className="unit-lessons">{u.count} lessons</span>
-                    </div>
-                    <div className="unit-track">
-                      <div className="unit-fill" style={{ width: `${w}%` }} />
-                    </div>
-                    <span className="unit-val">
-                      {u.avg}
-                      <small>avg</small>
-                    </span>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <section className="card">
-        <div className="card-h">
-          <div>
-            <h2>Pipeline flow</h2>
-            <p className="card-sub">Stage status for this project</p>
-          </div>
-          <span className={`badge ${overview.pipeline_health === 'Healthy' ? 'ok' : 'info'}`}>
+        <div className="ov-head-actions">
+          <span className={`ov-status-pill ${overview.pipeline_health === 'Healthy' ? 'ok' : 'warn'}`}>
             {overview.pipeline_health}
           </span>
+          <span className="ov-updated">{lastUpdate}</span>
         </div>
-        <div className="card-b">
-          <div className="flow-diagram flow-animated">
-            {stages.map((s, i) => (
-              <div key={s.id} className="flow-item" style={{ ['--i' as string]: i }}>
-                {i > 0 ? <div className="flow-join" aria-hidden /> : null}
-                <div className={`flow-node ${s.status}`} title={s.detail}>
-                  <div className={`flow-dot ${s.status}`} aria-hidden />
-                  <div className="flow-name">{s.name}</div>
-                  <div className="flow-meta">{s.count}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      </div>
 
-      <section className="card">
-        <div className="card-h">
+      <div className="ov-kpi-grid ov-kpi-4">
+        {[
+          {
+            label: 'Alignments',
+            value: overview.alignments.toLocaleString(),
+            delta: `${fullPct}% full`,
+            tone: 'a',
+            hint: 'Judge evaluations',
+          },
+          {
+            label: 'Coverage',
+            value: `${overview.alignment_coverage_pct}%`,
+            delta: `+${overview.positive_standards_cited}`,
+            tone: 'b',
+            hint: `${overview.standards_leaves} leaf standards`,
+          },
+          {
+            label: 'Review queue',
+            value: String(overview.review_required),
+            delta: `${overview.escalated} esc`,
+            tone: 'c',
+            hint: 'Needs human check',
+          },
+          {
+            label: 'Lessons',
+            value: String(overview.lessons),
+            delta: `${overview.standards} std`,
+            tone: 'd',
+            hint: 'In this project',
+          },
+        ].map((kpi) => (
+          <article className={`ov-kpi ed-kpi tone-${kpi.tone}`} key={kpi.label}>
+            <div className="ov-kpi-top">
+              <span className="ov-kpi-label">{kpi.label}</span>
+              <span className="ed-delta">{kpi.delta}</span>
+            </div>
+            <div className="ov-kpi-value">{kpi.value}</div>
+            <div className="ov-kpi-foot">
+              <em>{kpi.hint}</em>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div className="ed-main-grid">
+        <section className="ov-card ed-chart-card">
+          <div className="ov-card-h">
+            <div>
+              <h2>Coverage by unit</h2>
+              <p>Average aligned standards per lesson</p>
+            </div>
+            {peakUnit ? <span className="ov-chart-chip">Peak U{peakUnit.unit}</span> : null}
+          </div>
+          <div className="ov-card-b chart-body">
+            <ResponsiveContainer width="100%" height={260}>
+              <BarChart data={unitChart} margin={{ top: 8, right: 8, left: -12, bottom: 0 }}>
+                <CartesianGrid stroke={CHART.grid} strokeDasharray="3 6" vertical={false} />
+                <XAxis
+                  dataKey="name"
+                  tick={{ fill: CHART.muted, fontSize: 12, fontWeight: 600 }}
+                  axisLine={false}
+                  tickLine={false}
+                />
+                <YAxis
+                  tick={{ fill: CHART.muted, fontSize: 11 }}
+                  axisLine={false}
+                  tickLine={false}
+                  allowDecimals={false}
+                />
+                <Tooltip
+                  cursor={{ fill: 'rgba(0,100,55,0.05)' }}
+                  contentStyle={tooltipStyle}
+                  formatter={(value, name) => [value as number, name === 'avg' ? 'Avg aligned' : String(name)]}
+                  labelFormatter={(label) => `Unit ${String(label).replace(/^U/, '')}`}
+                />
+                <Bar dataKey="avg" name="avg" radius={[8, 8, 0, 0]} maxBarSize={44}>
+                  {unitChart.map((entry) => (
+                    <Cell
+                      key={entry.name}
+                      fill={entry.name === `U${peakUnit?.unit}` ? CHART.green : CHART.greenSoft}
+                    />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </section>
+
+        <section className="ov-card ed-side-card">
+          <div className="ov-card-h">
+            <div>
+              <h2>Alignment mix</h2>
+              <p>{overview.alignments.toLocaleString()} evaluations</p>
+            </div>
+          </div>
+          <div className="ov-card-b chart-body">
+            <div className="donut-wrap">
+              <ResponsiveContainer width="100%" height={220}>
+                <PieChart>
+                  <Pie
+                    data={mixChart}
+                    dataKey="value"
+                    nameKey="name"
+                    innerRadius={58}
+                    outerRadius={84}
+                    paddingAngle={2}
+                    stroke="#fff"
+                    strokeWidth={3}
+                  >
+                    {mixChart.map((entry) => (
+                      <Cell key={entry.name} fill={entry.color} />
+                    ))}
+                  </Pie>
+                  <Tooltip contentStyle={tooltipStyle} formatter={(value) => [(value as number).toLocaleString(), 'Count']} />
+                </PieChart>
+              </ResponsiveContainer>
+              <div className="donut-center">
+                <strong>{fullPct}%</strong>
+                <span>Full</span>
+              </div>
+            </div>
+            <div className="chart-legend">
+              {mixChart.map((row) => (
+                <div className="chart-legend-row" key={row.name}>
+                  <span>
+                    <i style={{ background: row.color }} />
+                    {row.name}
+                  </span>
+                  <strong>{Math.round((100 * row.value) / total)}%</strong>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div className="ed-main-grid ed-second">
+        <section className="ov-card">
+          <div className="ov-card-h">
+            <div>
+              <h2>Recent lesson activity</h2>
+              <p>Full · partial · none by lesson</p>
+            </div>
+          </div>
+          <div className="ov-card-b chart-body">
+            <ResponsiveContainer width="100%" height={280}>
+              <BarChart data={activityChart} margin={{ top: 8, right: 8, left: -12, bottom: 28 }}>
+                <CartesianGrid stroke={CHART.grid} strokeDasharray="3 6" vertical={false} />
+                <XAxis
+                  dataKey="name"
+                  tick={{ fill: CHART.muted, fontSize: 10, fontWeight: 600 }}
+                  axisLine={false}
+                  tickLine={false}
+                  interval={0}
+                  angle={-28}
+                  textAnchor="end"
+                  height={48}
+                />
+                <YAxis
+                  tick={{ fill: CHART.muted, fontSize: 11 }}
+                  axisLine={false}
+                  tickLine={false}
+                  allowDecimals={false}
+                />
+                <Tooltip contentStyle={tooltipStyle} />
+                <Legend
+                  verticalAlign="top"
+                  height={28}
+                  iconType="circle"
+                  wrapperStyle={{ fontSize: 12, color: CHART.muted }}
+                />
+                <Bar dataKey="full" stackId="a" fill={CHART.green} name="Full" radius={[0, 0, 0, 0]} maxBarSize={36} />
+                <Bar dataKey="partial" stackId="a" fill={CHART.amber} name="Partial" maxBarSize={36} />
+                <Bar dataKey="none" stackId="a" fill={CHART.slate} name="None" radius={[6, 6, 0, 0]} maxBarSize={36} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </section>
+
+        <section className="ov-card ed-side-card">
+          <div className="ov-card-h">
+            <div>
+              <h2>Top lessons</h2>
+              <p>Highest alignment coverage</p>
+            </div>
+          </div>
+          <div className="ov-card-b ed-rank-list">
+            {topLessons.map((row, i) => {
+              const w = Math.round((100 * (row.aligned || 0)) / maxAligned)
+              return (
+                <div className="ed-rank-row" key={row.resource_id}>
+                  <span className="ed-rank-n">{i + 1}</span>
+                  <div className="ed-rank-body">
+                    <div className="ed-rank-top">
+                      <strong>{row.meta.short}</strong>
+                      <em>{row.aligned}</em>
+                    </div>
+                    <div className="ed-rank-bar">
+                      <span style={{ width: `${w}%` }} />
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </section>
+      </div>
+
+      <section className="ov-card">
+        <div className="ov-card-h">
           <div>
             <h2>Lesson coverage map</h2>
-            <p className="card-sub">Aligned standards per lesson (darker = more coverage)</p>
-          </div>
-          <div className="heat-scale">
-            <span>Low</span>
-            <div className="heat-grad" />
-            <span>High</span>
+            <p>Aligned standards across every lesson in the project</p>
           </div>
         </div>
-        <div className="card-b">
-          <div className="heat-board">
-            {unitStats.map((u) => (
-              <div className="heat-unit" key={u.unit}>
-                <div className="heat-unit-lab">
-                  <strong>U{u.unit}</strong>
-                  <span>{u.count}</span>
-                </div>
-                <div className="heat-grid">
-                  {u.rows.map((row) => {
-                    const intensity = (row.aligned || 0) / maxAligned
-                    const bg = `rgba(31,111,91,${(0.1 + intensity * 0.72).toFixed(3)})`
-                    return (
-                      <button
-                        key={row.resource_id}
-                        type="button"
-                        className="heat-cell"
-                        style={{ background: bg }}
-                        title={`${row.meta.short} · ${row.aligned} aligned · F${row.full}/P${row.partial}/N${row.none}`}
-                      >
-                        <span>{row.meta.short.replace(/^U\d+L/i, 'L')}</span>
-                        <em>{row.aligned}</em>
-                      </button>
-                    )
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="ov-card-b chart-body">
+          <ResponsiveContainer width="100%" height={300}>
+            <AreaChart data={mapChart} margin={{ top: 10, right: 12, left: -8, bottom: 28 }}>
+              <defs>
+                <linearGradient id="covFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor={CHART.green} stopOpacity={0.28} />
+                  <stop offset="100%" stopColor={CHART.green} stopOpacity={0.02} />
+                </linearGradient>
+              </defs>
+              <CartesianGrid stroke={CHART.grid} strokeDasharray="3 6" vertical={false} />
+              <XAxis
+                dataKey="name"
+                tick={{ fill: CHART.muted, fontSize: 10, fontWeight: 600 }}
+                axisLine={false}
+                tickLine={false}
+                interval="preserveStartEnd"
+                angle={-25}
+                textAnchor="end"
+                height={48}
+              />
+              <YAxis
+                tick={{ fill: CHART.muted, fontSize: 11 }}
+                axisLine={false}
+                tickLine={false}
+                allowDecimals={false}
+              />
+              <Tooltip
+                contentStyle={tooltipStyle}
+                labelFormatter={(_, payload) => {
+                  const row = payload?.[0]?.payload as { unit?: string; name?: string } | undefined
+                  return row ? `${row.unit} · ${row.name}` : ''
+                }}
+              />
+              <Area
+                type="monotone"
+                dataKey="aligned"
+                name="Aligned"
+                stroke={CHART.green}
+                strokeWidth={2.5}
+                fill="url(#covFill)"
+                dot={{ r: 3, fill: CHART.green, strokeWidth: 0 }}
+                activeDot={{ r: 5, fill: CHART.greenMid }}
+              />
+            </AreaChart>
+          </ResponsiveContainer>
         </div>
       </section>
     </div>
