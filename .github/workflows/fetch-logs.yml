@@ -35,32 +35,42 @@ jobs:
             else
               echo "(no backend.env)"
             fi
+            echo "===== PG FORWARD ====="
+            ps -ef | grep -E 'socat|postgres' | grep -v grep || true
+            ss -ltn 2>/dev/null | grep -E '5432|5433' || netstat -ltn 2>/dev/null | grep -E '5432|5433' || true
             echo "===== DB PING ====="
-            python3 - <<'PY' || true
-            import os
-            from pathlib import Path
-            p = Path.home() / "apps/veramynd/repo/veramynd/backend/.env"
-            if not p.exists():
-                p = Path.home() / "apps/veramynd/backend.env"
-            env = {}
-            for line in p.read_text(encoding="utf-8").splitlines():
-                line=line.strip()
-                if not line or line.startswith("#") or "=" not in line: continue
-                k,v=line.split("=",1)
-                v=v.strip().strip('"').strip("'")
-                env[k]=v
-            url=env.get("DATABASE_URL","")
-            print("DATABASE_URL_set=", bool(url))
-            print("DATABASE_HOST_hint=", "localhost" if "127.0.0.1" in url or "localhost" in url else "remote")
-            try:
-              import psycopg
-              with psycopg.connect(url.replace("postgresql+psycopg://","postgresql://"), connect_timeout=3) as conn:
-                with conn.cursor() as cur:
-                  cur.execute("select count(*) from users")
-                  print("users_count=", cur.fetchone()[0])
-                  cur.execute("select email, email_verified, (password_hash is not null) from users order by id desc limit 5")
-                  for row in cur.fetchall():
-                    print("user=", row[0], "verified=", row[1], "has_password=", row[2])
-            except Exception as e:
-              print("DB_ERROR=", type(e).__name__, str(e)[:200])
-            PY
+            PY="$APP/.venv/bin/python3"
+            if [[ ! -x "$PY" ]]; then PY=python3; fi
+            "$PY" -c '
+from pathlib import Path
+p = Path.home() / "apps/veramynd/repo/veramynd/backend/.env"
+if not p.exists():
+    p = Path.home() / "apps/veramynd/backend.env"
+env = {}
+for line in p.read_text(encoding="utf-8").splitlines():
+    line=line.strip()
+    if not line or line.startswith("#") or "=" not in line: continue
+    k,v=line.split("=",1)
+    v=v.strip().strip(chr(34)).strip(chr(39))
+    env[k]=v
+url=env.get("DATABASE_URL","")
+print("DATABASE_URL_set=", bool(url))
+print("DATABASE_HOST_hint=", "localhost" if "127.0.0.1" in url or "localhost" in url else "remote")
+try:
+  import psycopg
+  with psycopg.connect(url.replace("postgresql+psycopg://","postgresql://"), connect_timeout=3) as conn:
+    with conn.cursor() as cur:
+      cur.execute("select 1")
+      print("db_ok=", cur.fetchone()[0])
+      cur.execute("select count(*) from information_schema.tables where table_schema=%s", ("public",))
+      print("public_tables=", cur.fetchone()[0])
+      try:
+        cur.execute("select count(*) from users")
+        print("users_count=", cur.fetchone()[0])
+      except Exception as te:
+        print("users_table=", type(te).__name__, str(te)[:120])
+except Exception as e:
+  print("DB_ERROR=", type(e).__name__, str(e)[:240])
+'
+            echo "===== API LOG TAIL ====="
+            tail -n 80 "$APP/logs/api.log" 2>/dev/null || true
