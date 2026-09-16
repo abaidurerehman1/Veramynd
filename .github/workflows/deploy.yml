@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      ref:
+        description: "Git ref to deploy (branch or tag). Defaults to the workflow branch."
+        required: false
+        type: string
 
 concurrency:
   group: deploy-veramynd-production
@@ -84,19 +89,21 @@ jobs:
         uses: appleboy/ssh-action@v1.2.0
         env:
           VERAMYND_API_PORT: ${{ secrets.VERAMYND_API_PORT }}
+          VERAMYND_REPO_REF: ${{ github.event.inputs.ref || github.ref_name }}
         with:
           host: ${{ secrets.SSH_HOST }}
           port: ${{ secrets.SSH_PORT }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
-          envs: VERAMYND_API_PORT
+          envs: VERAMYND_API_PORT,VERAMYND_REPO_REF
           command_timeout: 60m
           script_stop: true
           script: |
             set -euo pipefail
             chmod +x "$HOME/apps/veramynd/remote_deploy.sh"
             test -f "$HOME/apps/veramynd/veramynd.env"
-            export VERAMYND_REPO_REF=main
+            export VERAMYND_REPO_REF="${VERAMYND_REPO_REF:-main}"
             export VERAMYND_API_PORT="${VERAMYND_API_PORT:-9102}"
             export VERAMYND_ENV_FILE="$HOME/apps/veramynd/veramynd.env"
+            echo "Deploying ref: ${VERAMYND_REPO_REF}"
             bash "$HOME/apps/veramynd/remote_deploy.sh"

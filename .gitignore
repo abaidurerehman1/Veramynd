@@ -16,3 +16,7 @@ venv/
 # CI-generated deploy secrets file (never commit)
 scripts/deploy/veramynd.env
 deploy-artifacts/
+
+# Local secrets
+**/.env
+!.env.example

@@ -1,7 +1,16 @@
 import { useCallback, useState } from 'react'
 import { BrowserRouter, Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
+import { AuthProvider, useAuth } from './auth/AuthContext'
 import { AppShell } from './components/layout/AppShell'
 import { AlignmentsPage } from './pages/AlignmentsPage'
+import {
+  ForgotPasswordPage,
+  LoginPage,
+  OAuthCallbackPage,
+  ResetPasswordPage,
+  SignupPage,
+  VerifyEmailPage,
+} from './pages/AuthPages'
 import { CurriculumPage } from './pages/CurriculumPage'
 import { ExportsPage } from './pages/ExportsPage'
 import { IngestionPage } from './pages/IngestionPage'
@@ -16,6 +25,27 @@ import { SettingsPage } from './pages/SettingsPage'
 import { StandardsPage } from './pages/StandardsPage'
 import { NONE_PROJECT_ID, ProjectProvider, useProject } from './project/ProjectContext'
 import './styles/dashboard.css'
+
+function RequireAuth({ children }: { children: React.ReactNode }) {
+  const { user, loading } = useAuth()
+  const location = useLocation()
+  if (loading) {
+    return (
+      <div className="auth-page">
+        <div className="auth-ambiance" aria-hidden>
+          <span className="auth-orb auth-orb-a" />
+          <span className="auth-orb auth-orb-b" />
+        </div>
+        <div className="auth-card glass">
+          <img src="/logo.png" alt="Veramynd" className="auth-logo" />
+          <p className="auth-sub">Loading workspace…</p>
+        </div>
+      </div>
+    )
+  }
+  if (!user) return <Navigate to="/login" replace state={{ from: location.pathname }} />
+  return children
+}
 
 function ProjectShell({ onReload }: { onReload: () => void | Promise<void> }) {
   const { project, hasProject } = useProject()
@@ -36,10 +66,12 @@ function ProjectShell({ onReload }: { onReload: () => void | Promise<void> }) {
   const crumbs = hasProject
     ? `Veramynd / ${name} / ${section}`
     : section === 'Overview'
-      ? 'Veramynd / No project'
-      : section === 'Settings' || section === 'Exports'
-        ? `Veramynd / ${section}`
-        : `Veramynd / Operations / ${section}`
+      ? 'Veramynd / Workspace'
+      : section === 'Settings'
+        ? 'Veramynd / System / Settings'
+        : section === 'Exports'
+          ? 'Veramynd / Output / Exports'
+          : `Veramynd / Operations / ${section}`
   return <AppShell crumbs={crumbs} onReload={onReload} />
 }
 
@@ -104,7 +136,7 @@ export default function App() {
       stored && stored !== NONE_PROJECT_ID
         ? `?project_id=${encodeURIComponent(stored)}`
         : ''
-    const res = await fetch(`/api/reload${q}`, { method: 'POST' })
+    const res = await fetch(`/api/reload${q}`, { method: 'POST', credentials: 'include' })
     if (!res.ok) {
       throw new Error((await res.text()) || `HTTP ${res.status}`)
     }
@@ -113,30 +145,46 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/projects/:projectId" element={<ProjectProvider />}>
-          <Route element={<ProjectShell onReload={onReload} />}>
-            <Route index element={<OverviewRoute reloadKey={reloadKey} />} />
-            <Route path="curriculum" element={<CurriculumRoute reloadKey={reloadKey} />} />
-            <Route path="curriculum/:lessonCode" element={<LessonPage reloadKey={reloadKey} />} />
-            <Route path="standards" element={<StandardsRoute reloadKey={reloadKey} />} />
-            <Route path="alignments" element={<AlignmentsRoute reloadKey={reloadKey} />} />
-            <Route path="review" element={<ReviewRoute reloadKey={reloadKey} />} />
-            <Route path="exports" element={<ExportsRoute reloadKey={reloadKey} />} />
-            <Route path="projects" element={<ProjectsPage reloadKey={reloadKey} />} />
-            <Route path="ingestion" element={<IngestionPage reloadKey={reloadKey} />} />
-            <Route path="pipeline" element={<PipelineRoute reloadKey={reloadKey} />} />
-            <Route path="logging" element={<LoggingPage reloadKey={reloadKey} />} />
-            <Route
-              path="settings"
-              element={<SettingsPage reloadKey={reloadKey} onReload={onReload} />}
-            />
+      <AuthProvider>
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/verify-email" element={<VerifyEmailPage />} />
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+          <Route path="/reset-password" element={<ResetPasswordPage />} />
+          <Route path="/oauth/callback" element={<OAuthCallbackPage />} />
+
+          <Route
+            path="/projects/:projectId"
+            element={
+              <RequireAuth>
+                <ProjectProvider />
+              </RequireAuth>
+            }
+          >
+            <Route element={<ProjectShell onReload={onReload} />}>
+              <Route index element={<OverviewRoute reloadKey={reloadKey} />} />
+              <Route path="curriculum" element={<CurriculumRoute reloadKey={reloadKey} />} />
+              <Route path="curriculum/:lessonCode" element={<LessonPage reloadKey={reloadKey} />} />
+              <Route path="standards" element={<StandardsRoute reloadKey={reloadKey} />} />
+              <Route path="alignments" element={<AlignmentsRoute reloadKey={reloadKey} />} />
+              <Route path="review" element={<ReviewRoute reloadKey={reloadKey} />} />
+              <Route path="exports" element={<ExportsRoute reloadKey={reloadKey} />} />
+              <Route path="projects" element={<ProjectsPage reloadKey={reloadKey} />} />
+              <Route path="ingestion" element={<IngestionPage reloadKey={reloadKey} />} />
+              <Route path="pipeline" element={<PipelineRoute reloadKey={reloadKey} />} />
+              <Route path="logging" element={<LoggingPage reloadKey={reloadKey} />} />
+              <Route
+                path="settings"
+                element={<SettingsPage reloadKey={reloadKey} onReload={onReload} />}
+              />
+            </Route>
           </Route>
-        </Route>
-        <Route path="/ingest" element={<Navigate to={`/projects/${NONE_PROJECT_ID}/ingestion`} replace />} />
-        <Route path="/" element={<Navigate to="/projects/el-g1-m2-ga-ela" replace />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+          <Route path="/ingest" element={<Navigate to={`/projects/${NONE_PROJECT_ID}/ingestion`} replace />} />
+          <Route path="/" element={<Navigate to="/projects/el-g1-m2-ga-ela" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   )
 }

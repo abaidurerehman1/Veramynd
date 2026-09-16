@@ -130,17 +130,17 @@ export function PipelinePage({
 
   if (!hasProject) {
     return (
-      <div className="analytics">
-        <div className="page-header">
+      <div className="analytics ov-dash ops-page">
+        <div className="ov-head">
           <div>
-            <h1>Pipeline</h1>
-            <p>Live run progress — start from Ingestion or select a project.</p>
+            <h2 className="ov-title">Pipeline</h2>
+            <p className="ov-sub">Live run progress — start from Ingestion or select a project.</p>
           </div>
-          <div className="header-actions">
+          <div className="ov-head-actions">
             <Link className="btn" to={logsPath}>
               Logging
             </Link>
-            <Link className="btn" to={`/projects/${NONE_PROJECT_ID}/ingestion`}>
+            <Link className="btn primary" to={`/projects/${NONE_PROJECT_ID}/ingestion`}>
               Ingestion
             </Link>
           </div>
@@ -148,8 +148,8 @@ export function PipelinePage({
 
         <LivePipelineProgress job={liveJob} title="Live run" />
 
-        <section className="card">
-          <div className="card-b">
+        <section className="ov-card">
+          <div className="ov-card-b">
             <p className="card-sub" style={{ margin: 0 }}>
               <Link to={`/projects/${NONE_PROJECT_ID}/ingestion`}>Upload inputs</Link> to run a
               batch, or pick a project to run against its output.{' '}
@@ -174,20 +174,29 @@ export function PipelinePage({
   }
 
   return (
-    <div className="analytics">
-      <div className="page-header">
+    <div className="analytics ov-dash ops-page">
+      <div className="ov-head">
         <div>
-          <h1>Pipeline</h1>
-          <p>
-            Live run % and stage status
-            {project?.name ? ` · ${project.name}` : ''}.
+          <h2 className="ov-title">Pipeline</h2>
+          <p className="ov-sub">
+            Live run progress and stage status
+            {project?.name ? (
+              <>
+                {' '}
+                · <strong>{project.name}</strong>
+              </>
+            ) : null}
+            .
           </p>
         </div>
-        <div className="header-actions">
+        <div className="ov-head-actions">
+          <span className={`ov-status-pill ${overview?.pipeline_health === 'Healthy' ? 'ok' : 'warn'}`}>
+            {overview?.pipeline_health || '—'}
+          </span>
           <Link className="btn" to={logsPath}>
             Logging
           </Link>
-          <Link className="btn" to={`/projects/${projectId}/ingestion`}>
+          <Link className="btn primary" to={`/projects/${projectId}/ingestion`}>
             Ingestion
           </Link>
         </div>
@@ -195,44 +204,68 @@ export function PipelinePage({
 
       <LivePipelineProgress job={liveJob} title="Live run" />
 
-      <div className="kpi-grid kpi-4">
-        <div className="kpi">
-          <div className="label">Artifact stages</div>
-          <div className="value">
+      <div className="ov-kpi-grid ov-kpi-4">
+        <article className="ov-kpi ed-kpi tone-a">
+          <div className="ov-kpi-top">
+            <span className="ov-kpi-label">Artifact stages</span>
+            <span className="ed-delta">{pct}%</span>
+          </div>
+          <div className="ov-kpi-value">
             {done}
             <span className="kpi-of">/{stages.length}</span>
           </div>
-        </div>
-        <div className="kpi">
-          <div className="label">Live job</div>
-          <div className="value" style={{ fontSize: 18 }}>
+          <div className="ov-kpi-foot">
+            <em>Complete</em>
+          </div>
+        </article>
+        <article className="ov-kpi ed-kpi tone-b">
+          <div className="ov-kpi-top">
+            <span className="ov-kpi-label">Live job</span>
+          </div>
+          <div className="ov-kpi-value">
             {typeof liveJob?.percent === 'number' ? `${liveJob.percent}%` : '—'}
           </div>
-        </div>
-        <div className="kpi">
-          <div className="label">Pending</div>
-          <div className="value">{pending}</div>
-        </div>
-        <div className="kpi">
-          <div className="label">Health</div>
-          <div className="value" style={{ fontSize: 18 }}>
+          <div className="ov-kpi-foot">
+            <em>{liveJob?.status || 'Idle'}</em>
+          </div>
+        </article>
+        <article className="ov-kpi ed-kpi tone-c">
+          <div className="ov-kpi-top">
+            <span className="ov-kpi-label">Pending</span>
+          </div>
+          <div className="ov-kpi-value">{pending}</div>
+          <div className="ov-kpi-foot">
+            <em>Stages remaining</em>
+          </div>
+        </article>
+        <article className="ov-kpi ed-kpi tone-d">
+          <div className="ov-kpi-top">
+            <span className="ov-kpi-label">Health</span>
+          </div>
+          <div className="ov-kpi-value" style={{ fontSize: 22 }}>
             {overview?.pipeline_health || '—'}
           </div>
-        </div>
+          <div className="ov-kpi-foot">
+            <em>Pipeline status</em>
+          </div>
+        </article>
       </div>
 
-      <section className="card">
-        <div className="card-h">
-          <h2>Artifact flow</h2>
-          <span className="badge info">{pct}% complete</span>
+      <section className="ov-card">
+        <div className="ov-card-h">
+          <div>
+            <h2>Artifact flow</h2>
+            <p>Stage status for this project</p>
+          </div>
+          <span className="ov-status-pill ok">{pct}% complete</span>
         </div>
-        <div className="card-b">
+        <div className="ov-card-b">
           <div className="pipe-progress">
             <div className="pipe-progress-fill" style={{ width: `${pct}%` }} />
           </div>
-          <div className="flow-diagram">
+          <div className="flow-diagram flow-animated">
             {stages.map((s, i) => (
-              <div key={s.id} className="flow-item">
+              <div key={s.id} className="flow-item" style={{ ['--i' as string]: i }}>
                 {i > 0 ? <div className="flow-join" aria-hidden /> : null}
                 <div className={`flow-node ${s.status}`}>
                   <div className="flow-step">{i + 1}</div>
@@ -245,21 +278,17 @@ export function PipelinePage({
         </div>
       </section>
 
-      <section className="card">
-        <div className="card-h">
+      <section className="ov-card">
+        <div className="ov-card-h">
           <div>
             <h2>Run pipeline</h2>
-            <p className="card-sub" style={{ margin: 0 }}>
-              Confirm before every start. Same controls as Ingestion.
-            </p>
+            <p>Confirm before every start. Same controls as Ingestion.</p>
           </div>
-          <div className="log-actions">
-            <Link className="btn" to={logsPath}>
-              Logging
-            </Link>
-          </div>
+          <Link className="btn" to={logsPath}>
+            Logging
+          </Link>
         </div>
-        <div className="card-b">
+        <div className="ov-card-b">
           <IngestRunControls
             projectId={projectId}
             projectName={project?.name || projectId}
@@ -271,11 +300,14 @@ export function PipelinePage({
         </div>
       </section>
 
-      <section className="card">
-        <div className="card-h">
-          <h2>Stage detail</h2>
+      <section className="ov-card">
+        <div className="ov-card-h">
+          <div>
+            <h2>Stage detail</h2>
+            <p>Per-stage status and notes</p>
+          </div>
         </div>
-        <div className="card-b pipe-rail">
+        <div className="ov-card-b pipe-rail">
           {stages.map((s, i) => (
             <div className="pipe-rail-row" key={s.id}>
               <div className="pipe-rail-axis">

@@ -268,41 +268,77 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
   const activeBatchName = activeBatch?.name || activeBatchId || null
 
   return (
-    <div className="analytics">
-      <div className="page-header">
-        <h1>Ingestion</h1>
-        <p>
-          Add curriculum and standards inputs, then run explicitly
-          {hasProject && project ? ` · viewing ${project.name}` : ''}.
-        </p>
+    <div className="analytics ov-dash ops-page">
+      <div className="ov-head">
+        <div>
+          <h2 className="ov-title">Ingestion</h2>
+          <p className="ov-sub">
+            Upload curriculum and standards, then start a run when ready
+            {hasProject && project ? (
+              <>
+                {' '}
+                · <strong>{project.name}</strong>
+              </>
+            ) : null}
+            .
+          </p>
+        </div>
+        <div className="ov-head-actions">
+          <Link className="btn" to={logsPath}>
+            Logging
+          </Link>
+          <Link className="btn primary" to={pipelineTo}>
+            Open pipeline
+          </Link>
+        </div>
       </div>
 
-      <div className="kpi-grid kpi-4">
-        <div className="kpi">
-          <div className="label">Upload batches</div>
-          <div className="value">{batches.length}</div>
-        </div>
-        <div className="kpi">
-          <div className="label">Active batch</div>
-          <div className="value kpi-batch-name" title={activeBatchId || undefined}>
+      <div className="ov-kpi-grid ov-kpi-4">
+        <article className="ov-kpi ed-kpi tone-a">
+          <div className="ov-kpi-top">
+            <span className="ov-kpi-label">Upload batches</span>
+          </div>
+          <div className="ov-kpi-value">{batches.length}</div>
+          <div className="ov-kpi-foot">
+            <em>Stored locally</em>
+          </div>
+        </article>
+        <article className="ov-kpi ed-kpi tone-b">
+          <div className="ov-kpi-top">
+            <span className="ov-kpi-label">Active batch</span>
+          </div>
+          <div className="ov-kpi-value kpi-batch-name" title={activeBatchId || undefined}>
             {activeBatchName || '—'}
           </div>
-        </div>
-        <div className="kpi">
-          <div className="label">Run modes</div>
-          <div className="value" style={{ fontSize: 18 }}>
+          <div className="ov-kpi-foot">
+            <em>{activeBatchId ? `ID ${activeBatchId}` : 'None selected'}</em>
+          </div>
+        </article>
+        <article className="ov-kpi ed-kpi tone-c">
+          <div className="ov-kpi-top">
+            <span className="ov-kpi-label">Run modes</span>
+          </div>
+          <div className="ov-kpi-value" style={{ fontSize: 22 }}>
             Auto / steps
           </div>
-        </div>
-        <div className="kpi">
-          <div className="label">Auto-run on upload</div>
-          <div className="value" style={{ fontSize: 18 }}>
-            Never
+          <div className="ov-kpi-foot">
+            <em>Confirm before start</em>
           </div>
-        </div>
+        </article>
+        <article className="ov-kpi ed-kpi tone-d">
+          <div className="ov-kpi-top">
+            <span className="ov-kpi-label">Auto-run</span>
+          </div>
+          <div className="ov-kpi-value" style={{ fontSize: 22 }}>
+            Off
+          </div>
+          <div className="ov-kpi-foot">
+            <em>Never on upload</em>
+          </div>
+        </article>
       </div>
 
-      <section className="card ingest-hero-card">
+      <section className="ov-card ingest-hero-card">
         <div className="ingest-hero">
           <div className="ingest-hero-main">
             <div className="ingest-hero-kicker">New project inputs</div>
@@ -431,14 +467,17 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
         </div>
       </section>
 
-      <section className="card">
-        <div className="card-h">
-          <h2>Run against upload batch</h2>
+      <section className="ov-card">
+        <div className="ov-card-h">
+          <div>
+            <h2>Run against upload batch</h2>
+            <p>Confirm before every start — nothing runs on save</p>
+          </div>
           {activeBatchId ? (
-            <span className="badge info">{activeBatchName || activeBatchId}</span>
+            <span className="ov-status-pill ok">{activeBatchName || activeBatchId}</span>
           ) : null}
         </div>
-        <div className="card-b">
+        <div className="ov-card-b">
           {batches.length === 0 ? (
             <p className="card-sub" style={{ margin: 0 }}>
               Save a PDF + XLSX first. Nothing runs until you explicitly start a job below.
@@ -466,12 +505,14 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
         </div>
       </section>
 
-      <section className="card">
-        <div className="card-h">
-          <h2>Recent uploads</h2>
-          <span className="badge info">{batches.length}</span>
+      <section className="ov-card">
+        <div className="ov-card-h">
+          <div>
+            <h2>Recent uploads</h2>
+            <p>{batches.length} batch{batches.length === 1 ? '' : 'es'} available</p>
+          </div>
         </div>
-        <div className="card-b">
+        <div className="ov-card-b">
           {batches.length === 0 ? (
             <div className="ingest-empty-batches">
               <strong>No uploads yet</strong>
