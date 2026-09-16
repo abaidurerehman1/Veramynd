@@ -53,6 +53,7 @@ jobs:
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GOOGLE_REDIRECT_URI: ${{ secrets.GOOGLE_REDIRECT_URI }}
           VERAMYND_API_PORT: ${{ secrets.VERAMYND_API_PORT }}
+          VERAMYND_DOMAIN: ${{ secrets.VERAMYND_DOMAIN }}
         run: |
           python3 <<'PY'
           import os
@@ -66,7 +67,17 @@ jobs:
               lines = []
               for k in keys:
                   v = (os.environ.get(k) or defaults.get(k) or "").strip()
-                  lines.append(f"{k}={v}")
+                  # Quote values so special chars (e.g. SMTP_FROM=<...>) are dotenv-safe
+                  # and never break shell if accidentally sourced.
+                  if v and any(ch in v for ch in ' \t\n#"\'\\<>$`|&;()'):
+                      escaped = (
+                          v.replace("\\", "\\\\")
+                          .replace('"', '\\"')
+                          .replace("\n", "\\n")
+                      )
+                      lines.append(f'{k}="{escaped}"')
+                  else:
+                      lines.append(f"{k}={v}")
               path.write_text("\n".join(lines) + "\n", encoding="utf-8")
               os.chmod(path, 0o644)
               print(f"wrote {path} ({path.stat().st_size} bytes, values redacted)")
@@ -93,6 +104,17 @@ jobs:
           )
 
           port = (os.environ.get("VERAMYND_API_PORT") or "9102").strip()
+          domain = (os.environ.get("VERAMYND_DOMAIN") or "").strip().lower()
+          if domain:
+              public = f"https://{domain}"
+              app_default = public
+              api_default = public
+              google_redirect = f"{public}/api/auth/oauth/google/callback"
+          else:
+              app_default = f"http://127.0.0.1:{port}"
+              api_default = f"http://127.0.0.1:{port}"
+              google_redirect = f"http://127.0.0.1:{port}/api/auth/oauth/google/callback"
+
           write_env(
               out / "backend.env",
               [
@@ -101,16 +123,25 @@ jobs:
                   "SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASSWORD",
                   "SMTP_FROM", "SMTP_USE_TLS",
                   "GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET", "GOOGLE_REDIRECT_URI",
+                  "VERAMYND_DOMAIN",
               ],
               {
                   "JWT_EXPIRE_HOURS": "168",
                   "SMTP_PORT": "587",
                   "SMTP_USE_TLS": "true",
-                  # Sensible fallbacks when public URLs are not set yet
-                  "APP_BASE_URL": f"http://127.0.0.1:{port}",
-                  "API_BASE_URL": f"http://127.0.0.1:{port}",
+                  "APP_BASE_URL": app_default,
+                  "API_BASE_URL": api_default,
+                  "GOOGLE_REDIRECT_URI": google_redirect,
+                  "VERAMYND_DOMAIN": domain,
               },
           )
+
+          # Pass domain to remote deploy for Caddy / tunnel selection
+          (out / "public.env").write_text(
+              f"VERAMYND_DOMAIN={domain}\nVERAMYND_API_PORT={port}\n",
+              encoding="utf-8",
+          )
+          os.chmod(out / "public.env", 0o644)
 
           assert (out / "veramynd.env").stat().st_size > 50
           assert (out / "backend.env").is_file()
@@ -124,7 +155,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
-          source: "scripts/deploy/remote_deploy.sh,scripts/deploy/veramynd.env,scripts/deploy/backend.env"
+          source: "scripts/deploy/remote_deploy.sh,scripts/deploy/veramynd.env,scripts/deploy/backend.env,scripts/deploy/public.env"
           target: "~/apps/veramynd/"
           strip_components: 2
           overwrite: true
@@ -151,5 +182,11 @@ jobs:
             export VERAMYND_API_PORT="${VERAMYND_API_PORT:-9102}"
             export VERAMYND_ENV_FILE="$HOME/apps/veramynd/veramynd.env"
             export VERAMYND_BACKEND_ENV_FILE="$HOME/apps/veramynd/backend.env"
+            if [[ -f "$HOME/apps/veramynd/public.env" ]]; then
+              set -a
+              # shellcheck disable=SC1091
+              source "$HOME/apps/veramynd/public.env"
+              set +a
+            fi
             echo "Deploying ref: ${VERAMYND_REPO_REF}"
             bash "$HOME/apps/veramynd/remote_deploy.sh"

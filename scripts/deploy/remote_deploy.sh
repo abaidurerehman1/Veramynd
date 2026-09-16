@@ -183,7 +183,7 @@ if [[ -f "${PID_FILE}" ]]; then
   rm -f "${PID_FILE}"
 fi
 # Stop any prior Veramynd uvicorn (any port) owned by this user.
-pkill -f "uvicorn api.app:app --host 0.0.0.0 --port " 2>/dev/null || true
+pkill -f "uvicorn api.app:app --host " 2>/dev/null || true
 sleep 1
 
 cd "${REPO_DIR}/veramynd/backend"
@@ -195,16 +195,14 @@ if [[ ! -f "${REPO_DIR}/veramynd/backend/.env" && -f "${APP_ROOT}/backend.env" ]
   cp "${APP_ROOT}/backend.env" "${REPO_DIR}/veramynd/backend/.env"
   chmod 600 "${REPO_DIR}/veramynd/backend/.env"
 fi
+# Do NOT bash-source backend/.env (SMTP_FROM etc. can break the shell).
+# Python dotenv loads it inside the API process.
 set -a
 # shellcheck disable=SC1091
 source "${APP_ROOT}/runtime.env"
-if [[ -f "${REPO_DIR}/veramynd/backend/.env" ]]; then
-  # shellcheck disable=SC1091
-  source "${REPO_DIR}/veramynd/backend/.env"
-fi
 set +a
 nohup "${VENV_DIR}/bin/uvicorn" api.app:app \
-  --host 0.0.0.0 \
+  --host 127.0.0.1 \
   --port "${PORT}" \
   --workers 1 \
   > "${LOG_DIR}/api.log" 2>&1 &
@@ -217,5 +215,113 @@ if ! kill -0 "$(cat "${PID_FILE}")" 2>/dev/null; then
   exit 1
 fi
 
-echo "OK: Veramynd listening on http://0.0.0.0:${PORT}/ (pid $(cat "${PID_FILE}"))"
-echo "Public URL: http://$(curl -fsS ifconfig.me 2>/dev/null || echo HOST):${PORT}/"
+echo "OK: Veramynd API on 127.0.0.1:${PORT}/ (pid $(cat "${PID_FILE}"))"
+
+DOMAIN="${VERAMYND_DOMAIN:-}"
+LIVE_URL=""
+
+echo "==> Configure public HTTPS front door"
+CLOUDFLARED_BIN="${TOOLS_DIR}/cloudflared"
+CADDY_BIN="${TOOLS_DIR}/caddy"
+mkdir -p "${TOOLS_DIR}" "${LOG_DIR}"
+
+if [[ -n "${DOMAIN}" ]]; then
+  # Prefer Caddy + Let's Encrypt for a clean https://domain URL.
+  if [[ ! -x "${CADDY_BIN}" ]]; then
+    echo "Downloading Caddy..."
+    curl -fsSL "https://caddyserver.com/api/download?os=linux&arch=amd64" -o "${CADDY_BIN}"
+    chmod +x "${CADDY_BIN}"
+  fi
+  cat > "${APP_ROOT}/Caddyfile" <<EOF
+${DOMAIN} {
+  encode gzip
+  reverse_proxy 127.0.0.1:${PORT}
+  header {
+    Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    X-Content-Type-Options nosniff
+    Referrer-Policy strict-origin-when-cross-origin
+  }
+}
+EOF
+  pkill -f "${CADDY_BIN} run --config" 2>/dev/null || true
+  sleep 1
+  nohup "${CADDY_BIN}" run --config "${APP_ROOT}/Caddyfile" --adapter caddyfile \
+    > "${LOG_DIR}/caddy.log" 2>&1 &
+  echo $! > "${APP_ROOT}/caddy.pid"
+  LIVE_URL="https://${DOMAIN}"
+  # Point auth links at the HTTPS domain.
+  python3 - "${BACKEND_ENV_FILE}" "${LIVE_URL}" <<'PY'
+import sys
+from pathlib import Path
+path = Path(sys.argv[1])
+base = sys.argv[2].rstrip("/")
+text = path.read_text(encoding="utf-8")
+out = []
+for line in text.splitlines():
+    if line.startswith("APP_BASE_URL="):
+        out.append(f'APP_BASE_URL="{base}"')
+    elif line.startswith("API_BASE_URL="):
+        out.append(f'API_BASE_URL="{base}"')
+    elif line.startswith("GOOGLE_REDIRECT_URI="):
+        out.append(f'GOOGLE_REDIRECT_URI="{base}/api/auth/oauth/google/callback"')
+    else:
+        out.append(line)
+path.write_text("\n".join(out) + "\n", encoding="utf-8")
+PY
+  cp "${BACKEND_ENV_FILE}" "${APP_ROOT}/backend.env"
+  chmod 600 "${APP_ROOT}/backend.env"
+else
+  # No custom domain: Cloudflare quick tunnel → stable-enough https://*.trycloudflare.com
+  if [[ ! -x "${CLOUDFLARED_BIN}" ]]; then
+    echo "Downloading cloudflared..."
+    curl -fsSL "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64" \
+      -o "${CLOUDFLARED_BIN}"
+    chmod +x "${CLOUDFLARED_BIN}"
+  fi
+  pkill -f "${CLOUDFLARED_BIN} tunnel --url" 2>/dev/null || true
+  sleep 1
+  rm -f "${LOG_DIR}/cloudflared.log" "${APP_ROOT}/LIVE_URL"
+  nohup "${CLOUDFLARED_BIN}" tunnel --url "http://127.0.0.1:${PORT}" \
+    > "${LOG_DIR}/cloudflared.log" 2>&1 &
+  echo $! > "${APP_ROOT}/cloudflared.pid"
+  # Wait for trycloudflare URL
+  for _ in $(seq 1 30); do
+    LIVE_URL="$(grep -oE 'https://[a-zA-Z0-9.-]+\.trycloudflare\.com' "${LOG_DIR}/cloudflared.log" | tail -n1 || true)"
+    if [[ -n "${LIVE_URL}" ]]; then
+      break
+    fi
+    sleep 1
+  done
+  if [[ -z "${LIVE_URL}" ]]; then
+    PUBLIC_HOST="$(curl -fsS ifconfig.me 2>/dev/null || echo HOST)"
+    LIVE_URL="http://${PUBLIC_HOST}:${PORT}"
+    echo "WARN: Cloudflare tunnel URL not ready; falling back to ${LIVE_URL}"
+  else
+    python3 - "${BACKEND_ENV_FILE}" "${LIVE_URL}" <<'PY'
+import sys
+from pathlib import Path
+path = Path(sys.argv[1])
+base = sys.argv[2].rstrip("/")
+text = path.read_text(encoding="utf-8")
+out = []
+for line in text.splitlines():
+    if line.startswith("APP_BASE_URL="):
+        out.append(f'APP_BASE_URL="{base}"')
+    elif line.startswith("API_BASE_URL="):
+        out.append(f'API_BASE_URL="{base}"')
+    elif line.startswith("GOOGLE_REDIRECT_URI="):
+        out.append(f'GOOGLE_REDIRECT_URI="{base}/api/auth/oauth/google/callback"')
+    else:
+        out.append(line)
+path.write_text("\n".join(out) + "\n", encoding="utf-8")
+PY
+    cp "${BACKEND_ENV_FILE}" "${APP_ROOT}/backend.env"
+    chmod 600 "${APP_ROOT}/backend.env"
+  fi
+fi
+
+printf '%s\n' "${LIVE_URL}" > "${APP_ROOT}/LIVE_URL"
+chmod 644 "${APP_ROOT}/LIVE_URL"
+echo "==============================================="
+echo "LIVE_URL=${LIVE_URL}"
+echo "==============================================="
