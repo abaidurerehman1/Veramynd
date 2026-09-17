@@ -4,7 +4,6 @@ Thumbs.db
 
 # Editors
 .idea/
-.vscode/
 *.swp
 
 # Python scratch at repo root (the package has its own .gitignore)
@@ -22,3 +21,6 @@ deploy-artifacts/
 # Local secrets
 **/.env
 !.env.example
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
