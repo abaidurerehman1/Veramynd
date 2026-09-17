@@ -770,6 +770,8 @@ def _build_report(
     verdicts: list[AlignmentVerdict],
     failed: list[dict[str, str]],
     judge_mode: str,
+    limit: int | None = None,
+    coverage_pass: bool = True,
     coverage_injected: list[str] | None = None,
 ) -> dict[str, Any]:
     by_status = {"full": 0, "partial": 0, "none": 0}
@@ -965,6 +967,8 @@ def judge_retrieve_file(
         verdicts=verdicts,
         failed=failed,
         judge_mode=judge_mode,
+        limit=limit,
+        coverage_pass=coverage_pass,
         coverage_injected=coverage_injected,
     )
     if failed:

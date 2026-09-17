@@ -958,6 +958,8 @@ def test_judge_retrieve_file_mocked(tmp_path: Path):
     )
     assert report["judged"] == 1
     assert report["judge_mode"] == "pair"
+    assert report["judge_limit"] is None
+    assert report["coverage_pass"] is True
     assert report["by_status"]["full"] == 1
     assert report["verdicts"][0]["grounded"] is True
     assert load_retrieve_candidates(retrieve_path)[0]["standard_code"] == "1.T.T.1.a"
@@ -1057,6 +1059,8 @@ def test_judge_retrieve_file_batch_mocked(tmp_path: Path):
     )
     assert report["judge_mode"] == "batch"
     assert report["judged"] == 2
+    assert report["judge_limit"] is None
+    assert report["coverage_pass"] is True
     assert report["by_status"]["full"] == 1
     assert report["by_status"]["none"] == 1
 
