@@ -396,39 +396,47 @@ export function OverviewPage({
               <p>{overview.alignments.toLocaleString()} evaluations</p>
             </div>
           </div>
-          <div className="ov-card-b chart-body">
-            <div className="donut-wrap">
-              <ResponsiveContainer width="100%" height={220}>
-                <PieChart>
+          <div className="ov-card-b ov-mix-body">
+            <div className="ov-mix-donut">
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart margin={{ top: 12, right: 12, bottom: 12, left: 12 }}>
                   <Pie
                     data={mixChart}
                     dataKey="value"
                     nameKey="name"
-                    innerRadius={58}
-                    outerRadius={84}
-                    paddingAngle={2}
+                    cx="50%"
+                    cy="50%"
+                    innerRadius="46%"
+                    outerRadius="70%"
+                    paddingAngle={3}
+                    cornerRadius={4}
                     stroke="#fff"
-                    strokeWidth={3}
+                    strokeWidth={2}
+                    isAnimationActive={false}
                   >
                     {mixChart.map((entry) => (
                       <Cell key={entry.name} fill={entry.color} />
                     ))}
                   </Pie>
-                  <Tooltip contentStyle={tooltipStyle} formatter={(value) => [(value as number).toLocaleString(), 'Count']} />
+                  <Tooltip
+                    contentStyle={tooltipStyle}
+                    formatter={(value) => [(value as number).toLocaleString(), 'Count']}
+                  />
                 </PieChart>
               </ResponsiveContainer>
-              <div className="donut-center">
+              <div className="ov-mix-center" aria-hidden="true">
                 <strong>{fullPct}%</strong>
                 <span>Full</span>
               </div>
             </div>
-            <div className="chart-legend">
+            <div className="ov-mix-legend">
               {mixChart.map((row) => (
-                <div className="chart-legend-row" key={row.name}>
+                <div className="ov-mix-legend-row" key={row.name}>
                   <span>
                     <i style={{ background: row.color }} />
                     {row.name}
                   </span>
+                  <em>{row.value.toLocaleString()}</em>
                   <strong>{Math.round((100 * row.value) / total)}%</strong>
                 </div>
               ))}
