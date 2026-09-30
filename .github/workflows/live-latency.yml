@@ -1,0 +1,32 @@
+﻿name: Live Latency Check
+on:
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script_stop: false
+          script: |
+            set -euo pipefail
+            APP="$HOME/apps/veramynd"
+            echo "===== LIVE_URL ====="
+            cat "$APP/LIVE_URL" 2>/dev/null || echo "(none)"
+            echo "===== PROCESSES ====="
+            ps -ef | grep -E 'uvicorn|cloudflared' | grep -v grep || true
+            echo "===== TIMING LOCAL API ====="
+            for path in /api/health /api/auth/providers /api/projects /api/overview; do
+              /usr/bin/time -f "$path %{time}s" curl -sS -o /tmp/out.json -w "http=%{http_code} bytes=%{size_download} " "http://127.0.0.1:9102$path" || echo "$path FAIL"
+              echo
+              head -c 120 /tmp/out.json 2>/dev/null; echo
+            done
+            echo "===== UPLOADS COUNT ====="
+            ls -1 "$APP/repo/veramynd/backend/uploads" 2>/dev/null | wc -l || true
+            echo "===== JUDGE FILES ====="
+            find "$APP/repo/veramynd/backend" -path '*/output/judge/*.json' 2>/dev/null | wc -l || true
