@@ -2,7 +2,8 @@ import { useCallback, useState } from 'react'
 import { BrowserRouter, Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
 import { AuthProvider, useAuth } from './auth/AuthContext'
 import { AppShell } from './components/layout/AppShell'
-import { AlignmentsPage } from './pages/AlignmentsPage'
+import { AlignmentLensPage } from './pages/AlignmentLensPage'
+import { CoverageExplorerPage } from './pages/CoverageExplorerPage'
 import {
   ForgotPasswordPage,
   LoginPage,
@@ -11,10 +12,12 @@ import {
   SignupPage,
   VerifyEmailPage,
 } from './pages/AuthPages'
-import { CurriculumPage } from './pages/CurriculumPage'
 import { ExportsPage } from './pages/ExportsPage'
 import { IngestionPage } from './pages/IngestionPage'
-import { LessonPage } from './pages/LessonPage'
+import { LandingPage } from './pages/LandingPage'
+import { PrivacyPage } from './pages/PrivacyPage'
+import { TermsPage } from './pages/TermsPage'
+import { DocsPage } from './pages/DocsPage'
 import { LoggingPage } from './pages/LoggingPage'
 import { NoProjectPage } from './pages/NoProjectPage'
 import { OverviewPage } from './pages/OverviewPage'
@@ -22,9 +25,9 @@ import { PipelinePage } from './pages/PipelinePage'
 import { ProjectsPage } from './pages/ProjectsPage'
 import { ReviewPage } from './pages/ReviewPage'
 import { SettingsPage } from './pages/SettingsPage'
-import { StandardsPage } from './pages/StandardsPage'
 import { NONE_PROJECT_ID, ProjectProvider, useProject } from './project/ProjectContext'
 import './styles/dashboard.css'
+import { Wordmark } from './components/layout/Wordmark'
 
 function RequireAuth({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth()
@@ -32,14 +35,13 @@ function RequireAuth({ children }: { children: React.ReactNode }) {
   if (loading) {
     return (
       <div className="auth-page">
-        <div className="auth-ambiance" aria-hidden>
-          <span className="auth-orb auth-orb-a" />
-          <span className="auth-orb auth-orb-b" />
-        </div>
-        <div className="auth-card glass">
-          <img src="/logo.png" alt="Veramynd" className="auth-logo" />
-          <p className="auth-sub">Loading workspace…</p>
-        </div>
+        <div className="auth-bg" aria-hidden />
+        <main className="auth-main auth-main--center">
+          <div className="auth-card auth-card--loading">
+            <Wordmark size={26} />
+            <p className="auth-sub">Loading workspace…</p>
+          </div>
+        </main>
       </div>
     )
   }
@@ -51,12 +53,10 @@ function ProjectShell({ onReload }: { onReload: () => void | Promise<void> }) {
   const { project, hasProject } = useProject()
   const { pathname } = useLocation()
   const name = hasProject ? project?.name || '…' : 'None'
-  let section = 'Overview'
-  if (pathname.includes('/curriculum/')) section = 'Lesson'
-  else if (pathname.includes('/curriculum')) section = 'Curriculum'
-  else if (pathname.includes('/standards')) section = 'Standards'
-  else if (pathname.includes('/alignments')) section = 'Alignments'
-  else if (pathname.includes('/review')) section = 'Review'
+  let section = 'Dashboard'
+  if (pathname.includes('/coverage')) section = 'National overview'
+  else if (pathname.includes('/alignment')) section = 'Alignment'
+  else if (pathname.includes('/review')) section = 'SME review'
   else if (pathname.includes('/exports')) section = 'Exports'
   else if (pathname.includes('/settings')) section = 'Settings'
   else if (/\/projects\/[^/]+\/projects\/?$/.test(pathname)) section = 'Projects'
@@ -65,7 +65,7 @@ function ProjectShell({ onReload }: { onReload: () => void | Promise<void> }) {
   else if (pathname.includes('/logging')) section = 'Logging'
   const crumbs = hasProject
     ? `Veramynd / ${name} / ${section}`
-    : section === 'Overview'
+    : section === 'Dashboard'
       ? 'Veramynd / Workspace'
       : section === 'Settings'
         ? 'Veramynd / System / Settings'
@@ -83,36 +83,28 @@ function OverviewRoute({ reloadKey }: { reloadKey: number }) {
   return <OverviewPage reloadKey={reloadKey} projectId={projectId} />
 }
 
-function CurriculumRoute({ reloadKey }: { reloadKey: number }) {
-  const { projectId } = useParams()
-  const { hasProject } = useProject()
-  if (!projectId) return <Navigate to="/" replace />
-  if (!hasProject) return <Navigate to={`/projects/${NONE_PROJECT_ID}`} replace />
-  return <CurriculumPage reloadKey={reloadKey} projectId={projectId} />
-}
-
-function StandardsRoute({ reloadKey }: { reloadKey: number }) {
-  const { projectId } = useParams()
-  const { hasProject } = useProject()
-  if (!projectId) return <Navigate to="/" replace />
-  if (!hasProject) return <Navigate to={`/projects/${NONE_PROJECT_ID}`} replace />
-  return <StandardsPage reloadKey={reloadKey} projectId={projectId} />
-}
-
-function AlignmentsRoute({ reloadKey }: { reloadKey: number }) {
-  const { projectId } = useParams()
-  const { hasProject } = useProject()
-  if (!projectId) return <Navigate to="/" replace />
-  if (!hasProject) return <Navigate to={`/projects/${NONE_PROJECT_ID}`} replace />
-  return <AlignmentsPage reloadKey={reloadKey} projectId={projectId} />
-}
-
 function ReviewRoute({ reloadKey }: { reloadKey: number }) {
   const { projectId } = useParams()
   const { hasProject } = useProject()
   if (!projectId) return <Navigate to="/" replace />
   if (!hasProject) return <Navigate to={`/projects/${NONE_PROJECT_ID}`} replace />
   return <ReviewPage reloadKey={reloadKey} projectId={projectId} />
+}
+
+function CoverageRoute({ reloadKey }: { reloadKey: number }) {
+  const { projectId } = useParams()
+  const { hasProject } = useProject()
+  if (!projectId) return <Navigate to="/" replace />
+  if (!hasProject) return <Navigate to={`/projects/${NONE_PROJECT_ID}`} replace />
+  return <CoverageExplorerPage reloadKey={reloadKey} projectId={projectId} />
+}
+
+function AlignmentLensRoute({ reloadKey }: { reloadKey: number }) {
+  const { projectId } = useParams()
+  const { hasProject } = useProject()
+  if (!projectId) return <Navigate to="/" replace />
+  if (!hasProject) return <Navigate to={`/projects/${NONE_PROJECT_ID}`} replace />
+  return <AlignmentLensPage reloadKey={reloadKey} projectId={projectId} />
 }
 
 function PipelineRoute({ reloadKey }: { reloadKey: number }) {
@@ -147,7 +139,11 @@ export default function App() {
     <BrowserRouter>
       <AuthProvider>
         <Routes>
+          <Route path="/landing" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/docs" element={<DocsPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/verify-email" element={<VerifyEmailPage />} />
           <Route path="/forgot-password" element={<ForgotPasswordPage />} />
@@ -164,10 +160,13 @@ export default function App() {
           >
             <Route element={<ProjectShell onReload={onReload} />}>
               <Route index element={<OverviewRoute reloadKey={reloadKey} />} />
-              <Route path="curriculum" element={<CurriculumRoute reloadKey={reloadKey} />} />
-              <Route path="curriculum/:lessonCode" element={<LessonPage reloadKey={reloadKey} />} />
-              <Route path="standards" element={<StandardsRoute reloadKey={reloadKey} />} />
-              <Route path="alignments" element={<AlignmentsRoute reloadKey={reloadKey} />} />
+              <Route path="standards" element={<Navigate to="../coverage" replace />} />
+              {/* Removed pages: old links land on the matching Align screen. */}
+              <Route path="curriculum/*" element={<Navigate to="../alignment" replace />} />
+              <Route path="alignments" element={<Navigate to="../alignment" replace />} />
+              <Route path="coverage" element={<CoverageRoute reloadKey={reloadKey} />} />
+              <Route path="alignment" element={<AlignmentLensRoute reloadKey={reloadKey} />} />
+              <Route path="standards-alignment" element={<Navigate to="../alignment" replace />} />
               <Route path="review" element={<ReviewRoute reloadKey={reloadKey} />} />
               <Route path="exports" element={<ExportsRoute reloadKey={reloadKey} />} />
               <Route path="projects" element={<ProjectsPage reloadKey={reloadKey} />} />

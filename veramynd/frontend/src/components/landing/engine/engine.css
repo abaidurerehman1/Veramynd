@@ -1,0 +1,272 @@
+/* "Challenges" section — layout values are tuned against a 1216px-wide reference. */
+
+.ch-section {
+  --ch-font: 'Inter Tight', Inter, 'Helvetica Neue', Arial, sans-serif;
+  --ch-display: 'Hanken Grotesk', var(--ch-font);
+  position: relative;
+  overflow: hidden;
+  min-height: 890px;
+  padding: 32px 16px 0;
+  background: #fff;
+  color: #000;
+  font-family: var(--ch-font);
+  box-sizing: border-box;
+}
+
+.ch-section__bg,
+.ch-section__grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Layered radial gradients fitted to the reference colour field. */
+.ch-section__bg {
+  background:
+    radial-gradient(ellipse 42.03% 53.02% at 90.4% 48.47%, rgba(251, 232, 244, 1.000) 0%, rgba(251, 232, 244, 0.962) 12.5%, rgba(251, 232, 244, 0.854) 25%, rgba(251, 232, 244, 0.691) 37.5%, rgba(251, 232, 244, 0.500) 50%, rgba(251, 232, 244, 0.309) 62.5%, rgba(251, 232, 244, 0.146) 75%, rgba(251, 232, 244, 0.038) 87.5%, rgba(251, 232, 244, 0.000) 100%),
+    radial-gradient(ellipse 46.84% 60.07% at 19.95% 80.65%, rgba(137, 175, 224, 0.207) 0%, rgba(137, 175, 224, 0.199) 12.5%, rgba(137, 175, 224, 0.176) 25%, rgba(137, 175, 224, 0.143) 37.5%, rgba(137, 175, 224, 0.103) 50%, rgba(137, 175, 224, 0.064) 62.5%, rgba(137, 175, 224, 0.030) 75%, rgba(137, 175, 224, 0.008) 87.5%, rgba(137, 175, 224, 0.000) 100%),
+    radial-gradient(ellipse 45.9% 59.72% at 85.27% 51.4%, rgba(239, 185, 241, 0.387) 0%, rgba(239, 185, 241, 0.372) 12.5%, rgba(239, 185, 241, 0.330) 25%, rgba(239, 185, 241, 0.267) 37.5%, rgba(239, 185, 241, 0.193) 50%, rgba(239, 185, 241, 0.119) 62.5%, rgba(239, 185, 241, 0.057) 75%, rgba(239, 185, 241, 0.015) 87.5%, rgba(239, 185, 241, 0.000) 100%),
+    #fff;
+}
+
+.ch-section__grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='3' intercept='-0.65'/%3E%3CfeFuncG type='linear' slope='3' intercept='-0.65'/%3E%3CfeFuncB type='linear' slope='3' intercept='-0.65'/%3E%3CfeFuncA type='linear' slope='0' intercept='1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 240px 240px;
+  opacity: 0.1;
+  /* Grain only where the pastel glows are. */
+  mask-image:
+    radial-gradient(ellipse 45.9% 59.72% at 85.27% 51.4%, #000 30%, transparent 100%),
+    radial-gradient(ellipse 46.84% 60.07% at 19.95% 80.65%, #000 30%, transparent 100%),
+    radial-gradient(ellipse 42.03% 53.02% at 90.4% 48.47%, #000 30%, transparent 100%);
+}
+
+.ch-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1013px;
+  margin: 0 auto;
+}
+
+/* ---------- Header ---------- */
+
+.ch-header {
+  display: grid;
+  grid-template-columns: 513px minmax(0, 1fr);
+  align-items: start;
+}
+
+.ch-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #111;
+}
+
+.ch-label__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #000;
+}
+
+.ch-title {
+  margin: 52px 0 0;
+  font-family: var(--ch-display);
+  font-size: 48.6px;
+  font-weight: 600;
+  line-height: 55px;
+  letter-spacing: -0.047em;
+}
+
+.ch-title span {
+  display: block;
+  white-space: nowrap;
+}
+
+.ch-desc {
+  margin: 74px 0 0;
+  font-size: 14px;
+  line-height: 21px;
+  color: #111;
+}
+
+/* ---------- Tabs ---------- */
+
+.ch-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5px;
+  margin-top: 44px;
+}
+
+.ch-tabs__tab {
+  height: 28px;
+  padding: 0 13.5px;
+  border: 0;
+  border-radius: 6px;
+  background: #f6f6f6;
+  color: #666;
+  font: 400 10.5px/1 var(--ch-font);
+  cursor: pointer;
+}
+
+.ch-tabs__tab[aria-selected='true'] {
+  background: #000;
+  color: #fff;
+  font-weight: 500;
+}
+
+.ch-tabs__tab:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+/* ---------- Terminal ---------- */
+
+.ch-term {
+  display: flex;
+  flex-direction: column;
+  height: 477px;
+  margin-top: 28px;
+  overflow: hidden;
+  border-radius: 7px;
+  background: #000;
+}
+
+.ch-term__header {
+  position: relative;
+  display: flex;
+  flex: none;
+  align-items: center;
+  height: 60px;
+  padding: 0 35px 0 36px;
+  background: #2c2c2c;
+}
+
+.ch-term__title {
+  margin: 0;
+  color: #fff;
+  font-size: 17.4px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.ch-term__controls {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  display: flex;
+  gap: 7.5px;
+}
+
+.ch-term__dot {
+  width: 10.5px;
+  height: 10.5px;
+  border-radius: 50%;
+}
+
+.ch-term__dot--red { background: #ff5f57; }
+.ch-term__dot--yellow { background: #febc2e; }
+.ch-term__dot--green { background: #28c845; }
+
+/* Content box ends 36px before the right edge so long lines clip there, without a scrollbar. */
+.ch-term__body {
+  flex: 1;
+  min-height: 0;
+  margin-right: 36px;
+  overflow: hidden;
+}
+
+.ch-code {
+  margin: 0;
+  padding: 27px 0 0 36px;
+  font: 400 14.5px/24.4px var(--ch-font);
+  white-space: pre;
+}
+
+.ch-code code {
+  font: inherit;
+}
+
+.ch-code__line {
+  display: block;
+}
+
+.ch-code__blank {
+  display: block;
+  height: 21px;
+}
+
+.ch-tok-tx { color: #979797; }
+.ch-tok-fn { color: #bb8d52; }
+.ch-tok-str { color: #31876a; }
+.ch-tok-cm { color: #979797; }
+.ch-tok-id { color: #e4e4e4; }
+.ch-tok-pl { color: #cfcfcf; }
+.ch-tok-kw { color: #4479a3; }
+
+/* Comments sit after a fixed gap, as in the reference. */
+.ch-tok-cm:not(:first-child) {
+  margin-left: 17px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1060px) {
+  .ch-header {
+    grid-template-columns: 1fr;
+  }
+
+  .ch-desc {
+    margin-top: 20px;
+    max-width: 420px;
+  }
+
+  .ch-desc br {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .ch-section {
+    min-height: 0;
+    padding-bottom: 64px;
+  }
+
+  .ch-title {
+    margin-top: 32px;
+    font-size: clamp(32px, 9.5vw, 48.6px);
+    line-height: 1.12;
+  }
+
+  .ch-term {
+    height: 420px;
+  }
+
+  .ch-term__header {
+    padding-left: 20px;
+  }
+
+  .ch-term__title {
+    font-size: 15px;
+  }
+
+  .ch-term__controls {
+    right: 18px;
+  }
+
+  .ch-term__body {
+    margin-right: 0;
+  }
+
+  .ch-code {
+    padding-left: 20px;
+    font-size: 12.5px;
+    line-height: 21px;
+  }
+}

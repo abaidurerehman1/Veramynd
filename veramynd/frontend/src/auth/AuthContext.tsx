@@ -54,6 +54,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           setUser(me)
           setGoogleEnabled(Boolean(providers.google))
         }
+      } catch {
+        if (!cancelled) setUser(null)
       } finally {
         if (!cancelled) setLoading(false)
       }

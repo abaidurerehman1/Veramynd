@@ -9,6 +9,31 @@ export type AuthUser = {
   avatar_url?: string | null
 }
 
+const AUTH_FETCH_TIMEOUT_MS = 8_000
+
+async function fetchWithTimeout(
+  path: string,
+  opts?: RequestInit,
+  timeoutMs = AUTH_FETCH_TIMEOUT_MS,
+): Promise<Response> {
+  const controller = new AbortController()
+  const timer = window.setTimeout(() => controller.abort(), timeoutMs)
+  try {
+    return await fetch(path, {
+      ...opts,
+      signal: opts?.signal ?? controller.signal,
+      credentials: 'include',
+    })
+  } catch (err) {
+    if (err instanceof DOMException && err.name === 'AbortError') {
+      throw new Error('Auth request timed out — is the API running on port 8000?')
+    }
+    throw err
+  } finally {
+    window.clearTimeout(timer)
+  }
+}
+
 export async function authApi<T>(
   path: string,
   opts?: RequestInit & { json?: unknown },
@@ -21,11 +46,10 @@ export async function authApi<T>(
     headers['Content-Type'] = 'application/json'
     body = JSON.stringify(opts.json)
   }
-  const res = await fetch(path, {
+  const res = await fetchWithTimeout(path, {
     ...opts,
     headers,
     body,
-    credentials: 'include',
   })
   const text = await res.text()
   let data: unknown = null

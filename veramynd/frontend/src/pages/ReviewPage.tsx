@@ -1,232 +1,273 @@
-import { useCallback, useEffect, useState } from 'react'
-import { api, withProject } from '../api/client'
-import type { AlignmentRow, ReviewItem } from '../api/types'
+import { useMemo, useState } from 'react'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
+import type { ReviewItem } from '../api/types'
+import {
+  STATE_NAMES,
+  cleanQuote,
+  describeReviewReason,
+  gradeLabel,
+  gradesOf,
+  lessonName,
+  pageRange,
+  rememberGrade,
+  storedGrade,
+  useAlignProjects,
+  useReviewDecisions,
+  useReviewQueue,
+  type LeafStandard,
+  type ProjectAlign,
+} from '../components/align/data'
+import { formatDecisionDate } from '../components/align/scale'
+import { AlignTopbar, Kpi } from '../components/align/ui'
 import { OverviewLoading } from '../components/OverviewStates'
-import { useProject } from '../project/ProjectContext'
+import '../components/align/align.css'
 
-export function ReviewPage({
-  reloadKey = 0,
-  projectId,
-}: {
-  reloadKey?: number
-  projectId: string
-}) {
-  const { project, loading: projectsLoading } = useProject()
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-  const [rows, setRows] = useState<ReviewItem[]>([])
-  const [selected, setSelected] = useState<AlignmentRow | null>(null)
-  const [detailLoading, setDetailLoading] = useState(false)
+type Filter = 'pending' | 'accepted' | 'rejected' | 'all'
 
-  const load = useCallback(async () => {
-    setLoading(true)
-    setError(null)
+// Confidence comes as a label; the bar shows it on a three-step scale, not a made-up percentage.
+const CONFIDENCE: Record<string, { width: number; cls: string }> = {
+  high: { width: 90, cls: 'hi' },
+  medium: { width: 60, cls: 'mid' },
+  low: { width: 30, cls: 'lo' },
+}
+
+type QueueItem = { it: ReviewItem; project: ProjectAlign; leaf?: LeafStandard }
+
+/** SME review queue: flagged citations from every state project wait here until an expert accepts or rejects them. */
+export function ReviewPage({ reloadKey = 0, projectId }: { reloadKey?: number; projectId: string }) {
+  const navigate = useNavigate()
+  const [params, setParams] = useSearchParams()
+  const grade = params.get('grade') || storedGrade()
+  const { data: alignProjects, error: alignError } = useAlignProjects(reloadKey)
+  const projects = useMemo(() => alignProjects ?? [], [alignProjects])
+  const ids = useMemo(() => projects.map((p) => p.project.id), [projects])
+  const { rows: queue, error } = useReviewQueue(ids, reloadKey)
+  const { decisions, available, error: decideError, decide } = useReviewDecisions(ids)
+  const [filter, setFilter] = useState<Filter>('pending')
+  const [busy, setBusy] = useState<string | null>(null)
+
+  const items = useMemo(() => {
+    const out: QueueItem[] = []
+    projects
+      .filter((p) => grade === 'all' || p.grade === grade)
+      .forEach((p) => {
+        const leafByCode = new Map(p.leaves.map((l) => [l.code, l]))
+        ;(queue?.[p.project.id] ?? []).forEach((it) => out.push({ it, project: p, leaf: leafByCode.get(it.standard_code) }))
+      })
+    return out
+  }, [projects, queue, grade])
+
+  if (!alignProjects && !alignError) return <OverviewLoading />
+  if (queue === null && ids.length) return <OverviewLoading />
+
+  const decisionOf = (pid: string, id: string) => decisions[pid]?.[id]
+  const statusOf = (pid: string, id: string): Exclude<Filter, 'all'> => decisionOf(pid, id)?.decision ?? 'pending'
+  const counts = { pending: 0, accepted: 0, rejected: 0 }
+  items.forEach(({ it, project }) => {
+    counts[statusOf(project.project.id, it.id)] += 1
+  })
+  const shown = items.filter(({ it, project }) => filter === 'all' || statusOf(project.project.id, it.id) === filter)
+
+  const act = async (pid: string, id: string, d: 'accepted' | 'rejected' | 'pending') => {
+    setBusy(id)
     try {
-      const data = await api<{ rows: ReviewItem[] }>(withProject('/api/review', projectId))
-      setRows(data.rows || [])
-    } catch (e) {
-      setError(e instanceof Error ? e.message : String(e))
-      setRows([])
+      await decide(pid, id, d)
     } finally {
-      setLoading(false)
-    }
-  }, [projectId])
-
-  useEffect(() => {
-    void load()
-  }, [load, reloadKey])
-
-  const openDetail = async (id: string) => {
-    setDetailLoading(true)
-    try {
-      const row = await api<AlignmentRow>(
-        withProject(`/api/alignments/${encodeURIComponent(id)}`, projectId),
-      )
-      setSelected(row)
-    } catch (e) {
-      setError(e instanceof Error ? e.message : String(e))
-    } finally {
-      setDetailLoading(false)
+      setBusy(null)
     }
   }
 
-  if (projectsLoading || loading) return <OverviewLoading />
-
-  if (error && !rows.length) {
-    return (
-      <div className="error-box">
-        <h3>Unable to load Review</h3>
-        <p>{error}</p>
-        <button type="button" className="btn" onClick={() => void load()}>
-          Retry
-        </button>
-      </div>
-    )
+  const setGrade = (g: string) => {
+    rememberGrade(g)
+    const next = new URLSearchParams(params)
+    if (g === 'all') next.delete('grade')
+    else next.set('grade', g)
+    setParams(next)
   }
 
   return (
-    <div className="analytics">
-      <div className="page-header">
-        <h1>Review</h1>
-        <p>
-          Results flagged for human verification
-          {project?.name ? ` · ${project.name}` : ''}.
-        </p>
-      </div>
+    <div className="va">
+      <AlignTopbar
+        trail={[{ label: 'National overview', onClick: () => navigate(`/projects/${projectId}/coverage`) }]}
+        here="Expert review queue"
+        grade={grade}
+        gradeOptions={gradesOf(projects)}
+        onGrade={setGrade}
+        exportHref={`/projects/${projectId}/exports`}
+      />
+      <section className="va-screen">
+        <div className="phead">
+          <span className="eyebrow accent">The Veramynd method · Verify</span>
+          <h1>
+            Expert review queue<span className="bluedot">.</span>
+          </h1>
+          <p className="lede">
+            Candidate alignments the judge flags are held here for a subject matter expert to confirm. Accept a citation
+            to mark it verified, or reject it to return it for re-sourcing. Nothing counts as expert-verified until it is
+            accepted, and every decision is saved with the reviewer’s name and date.
+          </p>
+        </div>
 
-      <div className="kpi-grid kpi-4">
-        <div className="kpi">
-          <div className="label">In queue</div>
-          <div className="value">{rows.length}</div>
-          <div className="hint">Needs review</div>
+        <div className="kpis kpis-3">
+          <Kpi label="Awaiting review" value={counts.pending} sub="Flagged for an expert" />
+          <Kpi label="Accepted" value={counts.accepted} sub="Marked verified" accent />
+          <Kpi label="Rejected" value={counts.rejected} sub="Returned for re-sourcing" />
         </div>
-        <div className="kpi">
-          <div className="label">Escalated</div>
-          <div className="value">{rows.filter((r) => r.escalated).length}</div>
-          <div className="hint">Higher scrutiny</div>
-        </div>
-        <div className="kpi">
-          <div className="label">Low confidence</div>
-          <div className="value">{rows.filter((r) => r.confidence === 'low').length}</div>
-          <div className="hint">Confidence = low</div>
-        </div>
-        <div className="kpi">
-          <div className="label">With evidence</div>
-          <div className="value">{rows.filter((r) => Boolean(r.evidence)).length}</div>
-          <div className="hint">Has quote</div>
-        </div>
-      </div>
 
-      {rows.length === 0 ? (
-        <section className="card">
-          <div className="card-b">
-            <p className="card-sub" style={{ margin: 0 }}>
-              You&apos;re all caught up — no items currently flagged for review.
-            </p>
-          </div>
-        </section>
-      ) : (
-        <div className="tile-grid">
-          {rows.map((r) => (
-            <article
-              key={r.id}
-              className="tile clickable"
-              onClick={() => void openDetail(r.id)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault()
-                  void openDetail(r.id)
-                }
-              }}
-              role="button"
-              tabIndex={0}
-            >
-              <div className="tile-top">
-                <div className="tile-id">{r.resource_id}</div>
-                <span className={`badge ${r.matched_status}`}>{r.matched_status}</span>
-              </div>
-              <div className="tile-meta">
-                <div className="row">{r.lesson_title || 'Lesson'}</div>
-                <div className="row">{r.standard_code}</div>
-                <div className="row">
-                  Confidence: {r.confidence || '—'}
-                  {r.escalated ? ' · Escalated' : ''}
-                </div>
-                <div className="row">
-                  {(r.review_reason || 'Needs review').slice(0, 100)}
-                  {(r.review_reason || '').length > 100 ? '…' : ''}
-                </div>
-              </div>
-              <div className="tile-foot">
-                <div className="tile-price">
-                  {r.evidence_page != null ? `p. ${r.evidence_page}` : 'Review'}
-                </div>
+        {alignError ? <div className="va-error">Could not load projects: {alignError}</div> : null}
+        {error ? <div className="va-error">Could not load the review queue: {error}</div> : null}
+        {!available ? (
+          <div className="va-error">Review storage is unavailable, so decisions can’t be saved right now.</div>
+        ) : null}
+        {decideError ? <div className="va-error">{decideError}</div> : null}
+
+        <div className="panel">
+          <div className="panel-head">
+            <h2>Flagged citations</h2>
+            <div className="filters" role="group" aria-label="Filter by decision">
+              {(['pending', 'accepted', 'rejected', 'all'] as Filter[]).map((f) => (
                 <button
+                  key={f}
                   type="button"
-                  className="btn primary"
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    void openDetail(r.id)
-                  }}
+                  className={`chip${filter === f ? ' on' : ''}`}
+                  aria-pressed={filter === f}
+                  onClick={() => setFilter(f)}
                 >
-                  Open review
+                  {f[0].toUpperCase() + f.slice(1)}
+                  <span className="chip-n">{f === 'all' ? items.length : counts[f]}</span>
                 </button>
-              </div>
-              <p className="review-note">
-                Approve / change / note are display-ready; write-back is disabled to protect
-                production data.
-              </p>
-            </article>
-          ))}
-        </div>
-      )}
-
-      {selected || detailLoading ? (
-        <div className="drawer">
-          <button
-            type="button"
-            className="drawer-backdrop"
-            aria-label="Close review detail"
-            onClick={() => setSelected(null)}
-          />
-          <aside className="drawer-panel" role="dialog" aria-modal="true" aria-label="Review detail">
-            <button type="button" className="btn ghost" onClick={() => setSelected(null)}>
-              Close
-            </button>
-            {detailLoading && !selected ? (
-              <p className="card-sub">Loading…</p>
-            ) : selected ? (
-              <>
-                <h2 style={{ marginTop: 12 }}>
-                  {selected.resource_id} → {selected.standard_code}
-                </h2>
-                <p style={{ color: 'var(--muted)', margin: '4px 0 12px' }}>{selected.lesson_title}</p>
-                <div className="meta-grid">
-                  <div className="cell">
-                    <div className="k">Alignment</div>
-                    <div className="v">
-                      <span className={`badge ${selected.matched_status}`}>{selected.matched_status}</span>
+              ))}
+            </div>
+          </div>
+          <div className="panel-body">
+            <div className="rv-list">
+              {shown.length === 0 ? <div className="rv-empty">Nothing in this view. The queue is clear.</div> : null}
+              {shown.map(({ it, project, leaf }) => {
+                const pid = project.project.id
+                const status = statusOf(pid, it.id)
+                const conf = CONFIDENCE[it.confidence] ?? CONFIDENCE.medium
+                const decision = decisionOf(pid, it.id)
+                const reason = describeReviewReason(it.review_reason)
+                const matchCls = it.matched_status === 'full' ? 'met' : it.matched_status === 'partial' ? 'partial' : 'gap'
+                const matchLabel = it.matched_status === 'full' ? 'Full' : it.matched_status === 'partial' ? 'Partial' : 'None'
+                const frameworkLine = [
+                  project.state ? STATE_NAMES[project.state] : project.project.name,
+                  project.framework,
+                  project.grade ? gradeLabel(project.grade) : null,
+                ]
+                  .filter(Boolean)
+                  .join(' · ')
+                const evidenceHref =
+                  `/projects/${projectId}/coverage?` +
+                  new URLSearchParams({
+                    ...(project.state ? { state: project.state } : {}),
+                    std: it.standard_code,
+                    pid,
+                    from: 'review',
+                  }).toString()
+                return (
+                  <article className="rv-card" key={`${pid}:${it.id}`}>
+                    <div className="rv-top">
+                      <div>
+                        <span className="rv-code">{it.standard_code}</span>
+                        {leaf ? <span className="rv-strand">{leaf.domainLabel}</span> : null}
+                        <div className="rv-state">{frameworkLine}</div>
+                      </div>
+                      <div className="rv-flag">
+                        <span className={`badge fill ${matchCls}`}>
+                          <span className="dot" />
+                          {matchLabel} match
+                        </span>
+                        <div className="rv-reason">
+                          {it.escalated ? 'Escalated · ' : ''}
+                          {reason.headline}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="cell">
-                    <div className="k">Confidence</div>
-                    <div className="v">{selected.confidence || '—'}</div>
-                  </div>
-                  <div className="cell">
-                    <div className="k">Review</div>
-                    <div className="v">{selected.needs_review ? 'Required' : 'No'}</div>
-                  </div>
-                  <div className="cell">
-                    <div className="k">Escalated</div>
-                    <div className="v">{selected.escalated ? 'Yes' : 'No'}</div>
-                  </div>
-                </div>
-                <h3 className="lesson-subhead">Standard</h3>
-                <p style={{ margin: 0, fontSize: 13, lineHeight: 1.5 }}>{selected.standard_text || '—'}</p>
-                <h3 className="lesson-subhead">Evidence</h3>
-                {selected.evidence ? (
-                  <div className="evidence-quote">
-                    {selected.evidence}
-                    <div style={{ marginTop: 8, fontSize: 12, color: 'var(--muted)' }}>
-                      Curriculum · p. {selected.evidence_page ?? '—'}
+                    {leaf ? <p className="rv-std">{leaf.text}</p> : <div style={{ height: 14 }} />}
+                    {reason.note ? (
+                      <p className="rv-note">
+                        <span>Why it was flagged</span>
+                        {reason.note}
+                      </p>
+                    ) : null}
+                    <div className="rv-cite">
+                      <div className="rv-cite-head">
+                        <span className="rv-res">{lessonName(it.resource_id, it.lesson_title)}</span>
+                        <span className="rv-loc">
+                          {it.evidence_page ? pageRange([it.evidence_page]) : 'Teacher guide'}
+                        </span>
+                        <span className="rv-conf">
+                          <span className="rv-conf-lbl">Model confidence</span>
+                          <span className="rv-conf-bar" aria-hidden="true">
+                            <span className={conf.cls} style={{ width: `${conf.width}%` }} />
+                          </span>
+                          <span className="rv-conf-num">{it.confidence || 'medium'}</span>
+                        </span>
+                      </div>
+                      <div className="rv-ev">
+                        {it.evidence ? <div className="ev-quote">“{cleanQuote(it.evidence)}”</div> : null}
+                        {it.rationale}
+                      </div>
                     </div>
-                  </div>
-                ) : (
-                  <p className="card-sub">No evidence quote.</p>
-                )}
-                <h3 className="lesson-subhead">Alignment reasoning</h3>
-                <p style={{ margin: 0, fontSize: 13, color: '#374151' }}>{selected.rationale || '—'}</p>
-                {selected.review_reason ? (
-                  <>
-                    <h3 className="lesson-subhead">Review reason</h3>
-                    <p style={{ margin: 0, fontSize: 13 }}>{selected.review_reason}</p>
-                  </>
-                ) : null}
-              </>
-            ) : null}
-          </aside>
+                    <div className="rv-actions">
+                      {status === 'pending' ? (
+                        <>
+                          <button
+                            type="button"
+                            className="btn primary"
+                            disabled={busy === it.id || !available}
+                            onClick={() => void act(pid, it.id, 'accepted')}
+                          >
+                            Accept citation
+                          </button>
+                          <button
+                            type="button"
+                            className="btn"
+                            disabled={busy === it.id || !available}
+                            onClick={() => void act(pid, it.id, 'rejected')}
+                          >
+                            Reject
+                          </button>
+                          <Link className="btn ghostlink" to={evidenceHref}>
+                            Review full evidence →
+                          </Link>
+                        </>
+                      ) : (
+                        <>
+                          <span className={`badge roll ${status === 'accepted' ? 'met' : 'gap'}`}>
+                            <span className="dot" />
+                            {status === 'accepted' ? 'Accepted' : 'Rejected'}
+                          </span>
+                          <span className="rv-done">
+                            {status === 'accepted' ? 'Accepted, marked verified' : 'Rejected, returned for re-sourcing'}
+                            {decision?.reviewer ? ` by ${decision.reviewer}` : ''}
+                            {decision?.decided_at ? ` · ${formatDecisionDate(decision.decided_at)}` : ''}
+                          </span>
+                          <button
+                            type="button"
+                            className="btn ghostlink"
+                            disabled={busy === it.id || !available}
+                            onClick={() => void act(pid, it.id, 'pending')}
+                          >
+                            Undo
+                          </button>
+                        </>
+                      )}
+                    </div>
+                  </article>
+                )
+              })}
+            </div>
+          </div>
         </div>
-      ) : null}
+        <p className="screen-note">
+          Alignments the judge marks low confidence, escalated or borderline are routed here. Accepted citations count as
+          expert-verified on the National overview and on each standard’s evidence.
+        </p>
+      </section>
     </div>
   )
 }
+
+export default ReviewPage
