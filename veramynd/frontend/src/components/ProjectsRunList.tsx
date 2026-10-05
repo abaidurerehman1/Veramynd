@@ -68,7 +68,7 @@ export function ProjectsRunList({
   return (
     <>
       {(error || actionError) && (
-        <p className="card-sub" role="alert" style={{ color: '#a84a3b', margin: '0 0 10px' }}>
+        <p className="card-sub" role="alert" style={{ color: '#c4483b', margin: '0 0 10px' }}>
           {actionError || error}
         </p>
       )}

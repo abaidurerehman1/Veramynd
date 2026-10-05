@@ -1,4 +1,3 @@
-import { useAuth } from '../../auth/AuthContext'
 import { ProjectSwitcher } from './ProjectSwitcher'
 import { SidebarToggleIcon } from './SidebarToggleIcon'
 
@@ -7,14 +6,18 @@ type Props = {
   showMenu: boolean
   onToggle: () => void
   onReload?: () => void | Promise<void>
+  /** Where a page can render its own crumbs and controls (see TopbarContent). */
+  slotRef?: (el: HTMLElement | null) => void
+  claimed?: boolean
 }
 
-export function Topbar({ showMenu, onToggle, onReload }: Props) {
-  const { user } = useAuth()
-  const firstName = (user?.name || 'there').split(/\s+/)[0]
+export function Topbar({ crumbs, showMenu, onToggle, onReload, slotRef, claimed = false }: Props) {
+  // "Veramynd / Project / Section": the last part is the current page.
+  const parts = crumbs.split(' / ').filter(Boolean)
+  const here = parts.pop() ?? ''
 
   return (
-    <header className="app-header" role="banner">
+    <header className={`app-header${claimed ? ' has-slot' : ''}`} role="banner">
       <div className="app-header-inner">
         <div className="greet">
           {showMenu && (
@@ -22,11 +25,24 @@ export function Topbar({ showMenu, onToggle, onReload }: Props) {
               <SidebarToggleIcon />
             </button>
           )}
-          <div className="greet-copy">
-            <h1 className="greet-title">Welcome back, {firstName}</h1>
-            <p className="greet-sub">Here is your alignment workspace summary.</p>
-          </div>
+          {claimed ? null : (
+          <nav className="greet-copy app-crumbs" aria-label="Breadcrumb">
+            {parts.map((p) => (
+              <span key={p} className="app-crumb">
+                {p}
+                <span className="app-crumb-sep" aria-hidden="true">
+                  /
+                </span>
+              </span>
+            ))}
+            <span className="app-crumb here" aria-current="page">
+              {here}
+            </span>
+          </nav>
+          )}
         </div>
+        <div className="topbar-slot" ref={slotRef} />
+        {claimed ? null : (
         <div className="top-actions">
           <button
             type="button"
@@ -44,6 +60,7 @@ export function Topbar({ showMenu, onToggle, onReload }: Props) {
           </button>
           <ProjectSwitcher />
         </div>
+        )}
       </div>
     </header>
   )

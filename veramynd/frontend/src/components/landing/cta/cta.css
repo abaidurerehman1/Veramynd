@@ -1,0 +1,129 @@
+/* Closing CTA banner — tuned against a reference captured at ~1224px wide (scaled to 927). */
+
+.cf-section,
+.cf-site-footer {
+  --cf-font: 'Inter Tight', Inter, 'Helvetica Neue', Arial, sans-serif;
+  --cf-display: 'Hanken Grotesk', var(--cf-font);
+  overflow: hidden;
+  background: #fff;
+  color: #000;
+  font-family: var(--cf-font);
+}
+
+.cf-inner {
+  max-width: 1013px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: content-box;
+}
+
+.cf-section {
+  padding: 85.8px 0 174.4px;
+}
+
+/* ---------- CTA card ---------- */
+
+.cf-cta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 434.5px;
+  padding-top: 63.6px;
+  overflow: hidden;
+  border-radius: 10.6px;
+  box-sizing: border-box;
+  /* Blue glow top-left, mauve glow bottom-right, fitted to the reference. */
+  background:
+    radial-gradient(ellipse 34.34% 79.84% at 46.71% 25.79%, rgba(0, 1, 1, 0.769) 0%, rgba(0, 1, 1, 0.740) 12.5%, rgba(0, 1, 1, 0.656) 25%, rgba(0, 1, 1, 0.532) 37.5%, rgba(0, 1, 1, 0.384) 50%, rgba(0, 1, 1, 0.237) 62.5%, rgba(0, 1, 1, 0.113) 75%, rgba(0, 1, 1, 0.029) 87.5%, rgba(0, 1, 1, 0.000) 100%),
+    radial-gradient(ellipse 24.01% 57.35% at 95.62% 127.76%, rgba(255, 163, 226, 1.000) 0%, rgba(255, 163, 226, 0.962) 12.5%, rgba(255, 163, 226, 0.854) 25%, rgba(255, 163, 226, 0.691) 37.5%, rgba(255, 163, 226, 0.500) 50%, rgba(255, 163, 226, 0.309) 62.5%, rgba(255, 163, 226, 0.146) 75%, rgba(255, 163, 226, 0.038) 87.5%, rgba(255, 163, 226, 0.000) 100%),
+    radial-gradient(ellipse 51.4% 121.96% at 3.35% -16.87%, rgba(81, 125, 239, 0.823) 0%, rgba(81, 125, 239, 0.792) 12.5%, rgba(81, 125, 239, 0.702) 25%, rgba(81, 125, 239, 0.569) 37.5%, rgba(81, 125, 239, 0.411) 50%, rgba(81, 125, 239, 0.254) 62.5%, rgba(81, 125, 239, 0.121) 75%, rgba(81, 125, 239, 0.031) 87.5%, rgba(81, 125, 239, 0.000) 100%),
+    radial-gradient(ellipse 31.91% 62.52% at 5.65% -10.08%, rgba(64, 243, 255, 1.000) 0%, rgba(64, 243, 255, 0.962) 12.5%, rgba(64, 243, 255, 0.854) 25%, rgba(64, 243, 255, 0.691) 37.5%, rgba(64, 243, 255, 0.500) 50%, rgba(64, 243, 255, 0.309) 62.5%, rgba(64, 243, 255, 0.146) 75%, rgba(64, 243, 255, 0.038) 87.5%, rgba(64, 243, 255, 0.000) 100%),
+    #000;
+  color: #fff;
+  text-align: center;
+}
+
+.cf-cta__grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='3' intercept='-1'/%3E%3CfeFuncG type='linear' slope='3' intercept='-1'/%3E%3CfeFuncB type='linear' slope='3' intercept='-1'/%3E%3CfeFuncA type='linear' slope='0' intercept='1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 240px 240px;
+  mix-blend-mode: overlay;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.cf-cta > :not(.cf-cta__grain) {
+  position: relative;
+}
+
+.cf-cta__title {
+  margin: 0;
+  font-family: var(--cf-display);
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 62.1px;
+}
+
+.cf-cta__title span,
+.cf-cta__text span {
+  display: block;
+  white-space: nowrap;
+}
+
+/* Two-line display headline; each line keeps its own tracking. */
+.cf-cta__title span {
+  letter-spacing: -0.06em;
+}
+
+.cf-cta__text {
+  margin: 30px 0 0;
+  font-size: 14px;
+  line-height: 21.1px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cf-cta__button {
+  display: grid;
+  place-items: center;
+  width: 109.6px;
+  height: 33px;
+  margin-top: 47.3px;
+  border-radius: 10.6px;
+  background: #fff;
+  color: #000;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cf-cta__button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1060px) {
+  .cf-cta {
+    height: auto;
+    padding: 64px 24px 72px;
+  }
+
+  .cf-cta__title {
+    font-size: clamp(34px, 6.2vw, 64px);
+    line-height: 1.02;
+  }
+
+  .cf-cta__text span {
+    display: inline;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 600px) {
+  .cf-section {
+    padding-bottom: 96px;
+  }
+}

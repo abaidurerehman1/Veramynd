@@ -1,0 +1,656 @@
+/*
+ * Project Overview dashboard.
+ * Sizes are reference-design pixels multiplied by --u, which scales the 1580px-wide design
+ * to the width of the dashboard (and to 785px when stacked on narrow screens).
+ */
+
+.vd {
+  container-type: inline-size;
+  width: 100%;
+}
+
+.vd-grid {
+  --u: calc(100cqw / 1580);
+  --vd-ink: #000000;
+  --vd-muted: #5f5f5f;
+  --vd-card: #ffffff;
+  --vd-rule: #cfcfcf;
+  --vd-accent: #3b70f0;
+  --vd-tint: #ebf1fe;
+  --vd-partial: #a87533;
+  --vd-partial-tint: #f8f1e7;
+  --vd-font: 'Inter Tight', Inter, -apple-system, 'Segoe UI', sans-serif;
+  --vd-display: 'Hanken Grotesk', 'Inter Tight', sans-serif;
+  display: grid;
+  grid-template-columns: calc(785 * var(--u)) calc(785 * var(--u));
+  gap: calc(10 * var(--u));
+  color: var(--vd-ink);
+  font-family: var(--vd-font);
+}
+
+.vd-grid *,
+.vd-grid *::before,
+.vd-grid *::after {
+  box-sizing: border-box;
+}
+
+.vd-card {
+  position: relative;
+  overflow: hidden;
+  border: 0.5px solid var(--vd-rule);
+  border-radius: 4px;
+  background: var(--vd-card);
+}
+
+.vd-grid h2,
+.vd-grid h3,
+.vd-grid p {
+  margin: 0;
+}
+
+/* ================= Activity phone panel ================= */
+
+.vd-phone-panel {
+  height: calc(1180 * var(--u));
+  /* Soft blue / lavender / cyan wash, as in the landing hero. */
+  /* The landing hero's colour field (blue, pink, cyan), softened behind the phone. */
+  background:
+    radial-gradient(ellipse 70% 55% at 20% 0%, rgba(0, 101, 231, 0.42) 0%, rgba(0, 101, 231, 0) 100%),
+    radial-gradient(ellipse 55% 45% at 90% 8%, rgba(255, 186, 222, 0.75) 0%, rgba(255, 186, 222, 0) 100%),
+    radial-gradient(ellipse 70% 50% at 100% 70%, rgba(0, 200, 234, 0.45) 0%, rgba(0, 200, 234, 0) 100%),
+    #ffffff;
+}
+
+.vd-phone {
+  position: absolute;
+  left: calc(187 * var(--u));
+  top: calc(118 * var(--u));
+  width: calc(424 * var(--u));
+  height: calc(942 * var(--u));
+  overflow: hidden;
+  border-radius: calc(58 * var(--u));
+  background: #000000;
+}
+
+/* Light app surface; its rounded bottom sits on the dark tab-bar area and clips the list. */
+.vd-phone__screen {
+  position: absolute;
+  inset: 0 0 calc(128 * var(--u));
+  overflow: hidden;
+  border-radius: 0 0 calc(40 * var(--u)) calc(40 * var(--u));
+  background: #f6f6f6;
+}
+
+.vd-phone__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(60 * var(--u));
+  margin: calc(68 * var(--u)) calc(22 * var(--u)) 0 calc(25 * var(--u));
+}
+
+.vd-phone__head h2 {
+  font-size: calc(44 * var(--u));
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.vd-phone__actions {
+  display: flex;
+  gap: calc(6 * var(--u));
+}
+
+.vd-round-btn {
+  display: grid;
+  place-items: center;
+  width: calc(60 * var(--u));
+  height: calc(60 * var(--u));
+  border: 0.5px solid var(--vd-rule);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--vd-ink);
+}
+
+.vd-round-btn svg {
+  width: calc(24 * var(--u));
+  height: calc(24 * var(--u));
+}
+
+.vd-round-btn:hover {
+  background: #fff;
+}
+
+/* ---- Month card ---- */
+
+.vd-cal {
+  margin: calc(21 * var(--u)) calc(24 * var(--u)) 0 calc(23 * var(--u));
+  padding: calc(18 * var(--u)) calc(15 * var(--u)) calc(14 * var(--u));
+  border: 0.5px solid var(--vd-rule);
+  border-radius: calc(14 * var(--u));
+  background: #fff;
+}
+
+.vd-cal__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(28 * var(--u));
+  padding: 0 calc(7 * var(--u));
+  font-size: max(11px, calc(16.5 * var(--u)));
+}
+
+.vd-cal__range {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: calc(8 * var(--u));
+  cursor: pointer;
+}
+
+.vd-cal__range select {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.vd-cal__range svg {
+  width: calc(18 * var(--u));
+  height: calc(18 * var(--u));
+}
+
+.vd-cal__grid {
+  display: grid;
+  grid-template-columns: repeat(7, calc(49.5 * var(--u)));
+  grid-auto-rows: calc(45 * var(--u));
+  margin-top: calc(14 * var(--u));
+  justify-items: center;
+  align-items: center;
+}
+
+.vd-cal__dow {
+  font-size: max(11px, calc(16.5 * var(--u)));
+  font-weight: 500;
+}
+
+.vd-day {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: calc(38 * var(--u));
+  height: calc(38 * var(--u));
+  border-radius: 50%;
+  background: #f6f6f6;
+  font-size: max(10px, calc(16 * var(--u)));
+  font-weight: 500;
+}
+
+.vd-day.today {
+  background: #000000;
+  color: #fff;
+}
+
+/* A full pipeline run that day: the solid "avatar" circle of the design. */
+.vd-day.run {
+  background: var(--vd-accent);
+  color: #fff;
+}
+
+.vd-day.today.run {
+  background: #000000;
+}
+
+.vd-day .dot {
+  position: absolute;
+  bottom: calc(-7 * var(--u));
+  width: calc(6 * var(--u));
+  height: calc(6 * var(--u));
+  border-radius: 50%;
+}
+
+.vd-day .dot.green {
+  background: var(--vd-accent);
+}
+
+.vd-day .dot.red {
+  background: #c4483b;
+}
+
+/* ---- Review list ---- */
+
+.vd-today {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: calc(18 * var(--u)) calc(24 * var(--u)) 0 calc(24 * var(--u));
+}
+
+.vd-today h3 {
+  font-size: calc(25 * var(--u));
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.vd-today a {
+  color: var(--vd-ink);
+  font-size: max(11px, calc(16.5 * var(--u)));
+  text-decoration: none;
+}
+
+.vd-today a:hover {
+  text-decoration: underline;
+}
+
+.vd-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: calc(15 * var(--u));
+  margin: calc(16 * var(--u)) calc(24 * var(--u)) 0 calc(23 * var(--u));
+  padding: 0;
+  list-style: none;
+}
+
+.vd-task {
+  display: flex;
+  align-items: center;
+  gap: calc(13 * var(--u));
+  height: calc(97 * var(--u));
+  padding: 0 calc(21 * var(--u));
+  border: 0.5px solid var(--vd-rule);
+  border-radius: calc(14 * var(--u));
+  background: #fff;
+}
+
+.vd-task__icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: calc(58 * var(--u));
+  height: calc(58 * var(--u));
+  border-radius: 50%;
+  background: #f6f6f6;
+}
+
+.vd-task__icon svg {
+  width: calc(26 * var(--u));
+  height: calc(26 * var(--u));
+}
+
+.vd-task__text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: calc(6 * var(--u));
+  min-width: 0;
+}
+
+.vd-task__text strong {
+  overflow: hidden;
+  font-size: max(11px, calc(17.5 * var(--u)));
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vd-task__text > span {
+  display: flex;
+  align-items: center;
+  gap: calc(7 * var(--u));
+  overflow: hidden;
+  color: #8a8a8a;
+  font-size: max(9px, calc(12.5 * var(--u)));
+  white-space: nowrap;
+}
+
+.vd-task__chips {
+  display: inline-flex;
+  flex: none;
+}
+
+.vd-task__chips i {
+  display: grid;
+  place-items: center;
+  width: calc(21 * var(--u));
+  height: calc(21 * var(--u));
+  border: calc(1.5 * var(--u)) solid #fff;
+  border-radius: 50%;
+  background: var(--vd-tint);
+  color: var(--vd-accent);
+  font-size: max(7px, calc(8.5 * var(--u)));
+  font-style: normal;
+  font-weight: 600;
+}
+
+.vd-task__chips i + i {
+  margin-left: calc(-6 * var(--u));
+  background: #efeafb;
+}
+
+.vd-task__pill {
+  flex: none;
+  min-width: calc(89 * var(--u));
+  height: calc(37 * var(--u));
+  padding: 0 calc(12 * var(--u));
+  border-radius: calc(19 * var(--u));
+  background: #000000;
+  color: #fff;
+  font-size: max(10px, calc(16 * var(--u)));
+  line-height: calc(37 * var(--u));
+  text-align: center;
+  white-space: nowrap;
+}
+
+.vd-task--empty .vd-task__text strong {
+  white-space: normal;
+}
+
+/* ---- Tab bar ---- */
+
+.vd-tabbar {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(128 * var(--u));
+  padding: 0 calc(30 * var(--u)) calc(14 * var(--u)) calc(38 * var(--u));
+  color: #fff;
+}
+
+.vd-tabbar a {
+  display: grid;
+  place-items: center;
+  width: calc(40 * var(--u));
+  height: calc(40 * var(--u));
+  border-radius: 50%;
+  color: #fff;
+  opacity: 0.92;
+}
+
+.vd-tabbar a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.vd-tabbar svg {
+  width: calc(23 * var(--u));
+  height: calc(23 * var(--u));
+}
+
+.vd-tabbar__active {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(8 * var(--u));
+  width: calc(130 * var(--u));
+  height: calc(58 * var(--u));
+  border-radius: calc(29 * var(--u));
+  background: #fff;
+  color: var(--vd-ink);
+  font-size: max(11px, calc(17 * var(--u)));
+  font-weight: 500;
+}
+
+.vd-tabbar__home {
+  position: absolute;
+  bottom: calc(22 * var(--u));
+  left: 50%;
+  width: calc(138 * var(--u));
+  height: calc(4 * var(--u));
+  border-radius: 2px;
+  background: #fff;
+  transform: translateX(-50%);
+}
+
+/* ================= Right column ================= */
+
+.vd-right {
+  display: grid;
+  grid-template-rows: calc(585 * var(--u)) 1fr;
+  gap: calc(10 * var(--u));
+}
+
+/* ---- Trend card ---- */
+
+.vd-trend__chart {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.vd-trend__head,
+.vd-trend__row,
+.vd-trend__units {
+  position: relative;
+}
+
+.vd-trend__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: calc(30 * var(--u)) calc(33 * var(--u)) 0 calc(32 * var(--u));
+}
+
+.vd-trend__title,
+.vd-trend__total,
+.vd-metric__value strong,
+.vd-phone__head h2 {
+  font-family: var(--vd-display);
+}
+
+.vd-trend__title {
+  font-size: calc(32.5 * var(--u));
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.vd-trend__pct {
+  color: var(--vd-accent);
+  font-size: calc(34 * var(--u));
+  font-weight: 500;
+}
+
+.vd-trend__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 calc(33 * var(--u)) 0 calc(28 * var(--u));
+  margin-top: calc(15 * var(--u));
+}
+
+.vd-trend__total {
+  font-size: calc(104 * var(--u));
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.vd-legend {
+  display: flex;
+  gap: calc(24 * var(--u));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--vd-muted);
+  font-size: calc(26 * var(--u));
+}
+
+.vd-legend li {
+  display: flex;
+  align-items: center;
+  gap: calc(4 * var(--u));
+}
+
+.vd-legend i {
+  width: calc(15 * var(--u));
+  height: calc(15 * var(--u));
+  border-radius: 50%;
+}
+
+.vd-legend .pink {
+  background: #8fe6f6;
+}
+
+.vd-legend .orange {
+  background: #3b70f0;
+}
+
+.vd-legend .green {
+  background: #2c46b8;
+}
+
+.vd-trend__units {
+  position: absolute !important;
+  right: calc(33 * var(--u));
+  bottom: calc(30 * var(--u));
+  left: calc(32 * var(--u));
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: calc(32.5 * var(--u));
+  font-weight: 500;
+}
+
+/* ---- Metric cards ---- */
+
+.vd-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: calc(285 * var(--u));
+  gap: calc(12 * var(--u)) calc(15 * var(--u));
+}
+
+.vd-metric {
+  padding: calc(34 * var(--u)) calc(33 * var(--u)) 0 calc(32 * var(--u));
+}
+
+.vd-metric__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.vd-metric__head h3 {
+  font-size: calc(27 * var(--u));
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.vd-metric__icon svg {
+  display: block;
+  width: calc(37 * var(--u));
+  height: calc(37 * var(--u));
+}
+
+.vd-metric__value {
+  display: flex;
+  align-items: flex-end;
+  gap: calc(8 * var(--u));
+  margin-top: calc(30 * var(--u));
+}
+
+.vd-metric__value strong {
+  font-size: calc(68 * var(--u));
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.vd-chip {
+  margin-bottom: calc(2 * var(--u));
+  padding: calc(2 * var(--u)) calc(6 * var(--u));
+  border-radius: calc(7 * var(--u));
+  font-size: max(10px, calc(17.5 * var(--u)));
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.vd-chip.up {
+  background: var(--vd-tint);
+  color: var(--vd-accent);
+}
+
+.vd-chip.down {
+  background: #fbecea;
+  color: #c4483b;
+}
+
+.vd-chip.warn {
+  background: var(--vd-partial-tint);
+  color: var(--vd-partial);
+}
+
+.vd-metric__sub {
+  margin-top: calc(16 * var(--u)) !important;
+  color: var(--vd-muted);
+  font-size: max(11px, calc(19 * var(--u)));
+}
+
+.vd-metric__bar {
+  position: absolute;
+  right: calc(33 * var(--u));
+  bottom: calc(29 * var(--u));
+  left: calc(31 * var(--u));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(20 * var(--u));
+}
+
+.vd-progress {
+  flex: 1;
+  max-width: calc(260 * var(--u));
+  height: calc(8 * var(--u));
+  overflow: hidden;
+  border-radius: 2px;
+  background: #e6e6e6;
+}
+
+.vd-progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--vd-accent);
+}
+
+.vd-metric__bar em {
+  font-size: calc(24.5 * var(--u));
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* ================= Narrow dashboards: stack the two halves ================= */
+
+@container (max-width: 980px) {
+  .vd-grid {
+    --u: calc(100cqw / 785);
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Phones: let the app screen use most of the width instead of shrinking with the panel. */
+@container (max-width: 600px) {
+  .vd-phone-panel {
+    height: auto;
+    padding: 28px 0;
+  }
+
+  .vd-phone {
+    --u: calc((100cqw - 40px) / 424);
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0 auto;
+  }
+}
+
+/* Landing colours: each metric bar gets its own landing gradient. */
+.vd-progress span { background: linear-gradient(90deg, #3b70f0, #14dffe); }
+.vd-metrics > :nth-child(2) .vd-progress span { background: linear-gradient(90deg, #d09149, #ff80d5); }
+.vd-metrics > :nth-child(3) .vd-progress span { background: linear-gradient(90deg, #ff80d5, #c9a7f5); }
+.vd-metrics > :nth-child(4) .vd-progress span { background: linear-gradient(90deg, #14dffe, #3b70f0); }

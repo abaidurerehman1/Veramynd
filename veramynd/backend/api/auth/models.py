@@ -67,3 +67,24 @@ class DashboardProject(Base):
     )
 
     owner: Mapped[User] = relationship(back_populates="projects")
+
+
+class ReviewDecision(Base):
+    """A subject-matter expert's decision on one alignment citation (lesson × standard)."""
+
+    __tablename__ = "review_decisions"
+    __table_args__ = (UniqueConstraint("project_id", "item_id", name="uq_review_project_item"),)
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    project_id: Mapped[str] = mapped_column(String(120), nullable=False, index=True)
+    # Alignment id, e.g. "G1M2U1L1:1.L.V.1.b:0".
+    item_id: Mapped[str] = mapped_column(String(255), nullable=False)
+    decision: Mapped[str] = mapped_column(String(16), nullable=False)  # accepted | rejected
+    reviewer_id: Mapped[int | None] = mapped_column(
+        ForeignKey("users.id", ondelete="SET NULL"), nullable=True
+    )
+    reviewer_name: Mapped[str] = mapped_column(String(255), nullable=False, default="")
+    note: Mapped[str | None] = mapped_column(Text, nullable=True)
+    decided_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=_utcnow, onupdate=_utcnow
+    )

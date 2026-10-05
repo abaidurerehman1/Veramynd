@@ -25,7 +25,9 @@ def get_engine():
         _engine = create_engine(
             str(cfg["database_url"]),
             pool_pre_ping=True,
+            pool_timeout=10,
             future=True,
+            connect_args={"connect_timeout": 5},
         )
         _SessionLocal = sessionmaker(bind=_engine, autoflush=False, autocommit=False)
     return _engine

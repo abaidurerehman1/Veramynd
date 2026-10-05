@@ -31,6 +31,7 @@ from .catalog import drop_catalog, get_catalog, reload_catalog
 from . import pipeline_runner
 from .layout import ASSETS_DIR, UI_DIST, UPLOADS_DIR, WEB_DIR
 from .auth import bootstrap_auth, router as auth_router
+from .review_decisions import router as review_decisions_router
 from .auth.config import settings as auth_settings
 
 _MAX_UPLOAD_BYTES = 200 * 1024 * 1024
@@ -43,6 +44,7 @@ app.add_middleware(
     same_site="lax",
 )
 app.include_router(auth_router)
+app.include_router(review_decisions_router)
 
 
 def _catalog(project_id: str | None):

@@ -1,0 +1,347 @@
+/* "Roles" section — tuned against a reference captured at ~1241px wide (scaled to 940). */
+
+.ro-section {
+  --ro-font: 'Inter Tight', Inter, 'Helvetica Neue', Arial, sans-serif;
+  --ro-display: 'Hanken Grotesk', var(--ro-font);
+  /* Base sits under 13% grain; the blend lands on the reference #507eee. */
+  --ro-blue: #3b70f0;
+  position: relative;
+  overflow: hidden;
+  padding: 104px 16px 62px;
+  background: #fff;
+  color: #000;
+  font-family: var(--ro-font);
+}
+
+.ro-section__bg,
+.ro-section__grain {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 634px;
+  pointer-events: none;
+}
+
+/* Lavender wash in the top-left, fitted to the reference colour field. */
+.ro-section__bg {
+  background:
+    radial-gradient(ellipse 61.19% 44.81% at 20.31% 15.63%, rgba(250, 255, 254, 0.528) 0%, rgba(250, 255, 254, 0.508) 12.5%, rgba(250, 255, 254, 0.451) 25%, rgba(250, 255, 254, 0.365) 37.5%, rgba(250, 255, 254, 0.264) 50%, rgba(250, 255, 254, 0.163) 62.5%, rgba(250, 255, 254, 0.077) 75%, rgba(250, 255, 254, 0.020) 87.5%, rgba(250, 255, 254, 0.000) 100%),
+    radial-gradient(ellipse 109.38% 70.64% at 88.57% -52.92%, rgba(93, 38, 85, 0.048) 0%, rgba(93, 38, 85, 0.046) 12.5%, rgba(93, 38, 85, 0.041) 25%, rgba(93, 38, 85, 0.033) 37.5%, rgba(93, 38, 85, 0.024) 50%, rgba(93, 38, 85, 0.015) 62.5%, rgba(93, 38, 85, 0.007) 75%, rgba(93, 38, 85, 0.002) 87.5%, rgba(93, 38, 85, 0.000) 100%),
+    radial-gradient(ellipse 8.97% 24.81% at 53.5% 22.69%, rgba(255, 254, 255, 1.000) 0%, rgba(255, 254, 255, 0.962) 12.5%, rgba(255, 254, 255, 0.854) 25%, rgba(255, 254, 255, 0.691) 37.5%, rgba(255, 254, 255, 0.500) 50%, rgba(255, 254, 255, 0.309) 62.5%, rgba(255, 254, 255, 0.146) 75%, rgba(255, 254, 255, 0.038) 87.5%, rgba(255, 254, 255, 0.000) 100%),
+    radial-gradient(ellipse 38.68% 47.58% at 20.74% 5.58%, rgba(206, 214, 242, 0.584) 0%, rgba(206, 214, 242, 0.562) 12.5%, rgba(206, 214, 242, 0.499) 25%, rgba(206, 214, 242, 0.404) 37.5%, rgba(206, 214, 242, 0.292) 50%, rgba(206, 214, 242, 0.180) 62.5%, rgba(206, 214, 242, 0.086) 75%, rgba(206, 214, 242, 0.022) 87.5%, rgba(206, 214, 242, 0.000) 100%),
+    #fff;
+}
+
+.ro-section__grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='3' intercept='-0.65'/%3E%3CfeFuncG type='linear' slope='3' intercept='-0.65'/%3E%3CfeFuncB type='linear' slope='3' intercept='-0.65'/%3E%3CfeFuncA type='linear' slope='0' intercept='1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 240px 240px;
+  opacity: 0.2;
+  mask-image: radial-gradient(ellipse 38.7% 47.6% at 20.7% 5.6%, #000 30%, transparent 100%);
+}
+
+.ro-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1013px;
+  margin: 0 auto;
+}
+
+/* ---------- Header ---------- */
+
+.ro-header {
+  text-align: center;
+}
+
+.ro-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.ro-label__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #000;
+}
+
+.ro-title {
+  margin: 53px 0 0;
+  font-family: var(--ro-display);
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 56px;
+  letter-spacing: -0.06em;
+}
+
+.ro-subtitle {
+  margin: 18px 0 0;
+  font-size: 14px;
+  line-height: 21px;
+  color: #222;
+}
+
+/* ---------- Role columns ---------- */
+
+.ro-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 87px 0 0;
+  padding: 0;
+  list-style: none;
+  border-right: 1px solid #888;
+}
+
+.ro-col {
+  display: flex;
+  gap: 13px;
+  padding-left: 29px;
+  border-left: 1px solid #888;
+}
+
+/* The third column's rule is drawn darker in the reference. */
+.ro-col:last-child {
+  border-left-color: #111;
+}
+
+.ro-icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #000;
+}
+
+.ro-col__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+}
+
+.ro-col__desc {
+  margin: 13px 0 0;
+  font-size: 14px;
+  line-height: 21.1px;
+  color: #777;
+}
+
+.ro-col__desc span {
+  display: block;
+  white-space: nowrap;
+}
+
+/* ---------- InvestGPT card ---------- */
+
+.ro-card {
+  display: grid;
+  grid-template-columns: 438.5px minmax(0, 1fr);
+  height: 478px;
+  margin-top: 176px;
+}
+
+.ro-card__visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 27.09% 24.3% at 45.82% 44.7%, rgba(255, 158, 214, 0.184) 0%, rgba(255, 158, 214, 0.177) 12.5%, rgba(255, 158, 214, 0.157) 25%, rgba(255, 158, 214, 0.127) 37.5%, rgba(255, 158, 214, 0.092) 50%, rgba(255, 158, 214, 0.057) 62.5%, rgba(255, 158, 214, 0.027) 75%, rgba(255, 158, 214, 0.007) 87.5%, rgba(255, 158, 214, 0.000) 100%),
+    radial-gradient(ellipse 43.9% 39.57% at 52.78% 61.29%, rgba(63, 132, 255, 0.343) 0%, rgba(63, 132, 255, 0.330) 12.5%, rgba(63, 132, 255, 0.293) 25%, rgba(63, 132, 255, 0.237) 37.5%, rgba(63, 132, 255, 0.172) 50%, rgba(63, 132, 255, 0.106) 62.5%, rgba(63, 132, 255, 0.050) 75%, rgba(63, 132, 255, 0.013) 87.5%, rgba(63, 132, 255, 0.000) 100%),
+    radial-gradient(ellipse 44.42% 38.38% at 47.16% 46.58%, rgba(108, 67, 93, 0.660) 0%, rgba(108, 67, 93, 0.635) 12.5%, rgba(108, 67, 93, 0.563) 25%, rgba(108, 67, 93, 0.456) 37.5%, rgba(108, 67, 93, 0.330) 50%, rgba(108, 67, 93, 0.204) 62.5%, rgba(108, 67, 93, 0.097) 75%, rgba(108, 67, 93, 0.025) 87.5%, rgba(108, 67, 93, 0.000) 100%),
+    #000;
+}
+
+.ro-card__visual > * {
+  grid-area: 1 / 1;
+}
+
+.ro-card__ring {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+}
+
+.ro-card__ring--outer {
+  width: 261.5px;
+  height: 261.5px;
+}
+
+.ro-card__ring--inner {
+  width: 174.3px;
+  height: 174.3px;
+}
+
+.ro-card__core {
+  display: grid;
+  place-items: center;
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.ro-card__panel {
+  position: relative;
+  overflow: hidden;
+  background: var(--ro-blue);
+  color: #fff;
+}
+
+.ro-card__lines,
+.ro-card__grain {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.ro-card__lines line {
+  stroke: #000;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.ro-card__grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='3' intercept='-0.65'/%3E%3CfeFuncG type='linear' slope='3' intercept='-0.65'/%3E%3CfeFuncB type='linear' slope='3' intercept='-0.65'/%3E%3CfeFuncA type='linear' slope='0' intercept='1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 240px 240px;
+  opacity: 0.13;
+}
+
+.ro-card__content {
+  position: relative;
+  z-index: 1;
+  padding: 87.6px 24px 0 55.5px;
+}
+
+.ro-card__label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.ro-card__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.ro-card__title {
+  margin: 35px 0 0;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 31.7px;
+}
+
+.ro-card__title span {
+  display: block;
+  white-space: nowrap;
+}
+
+.ro-card__sub {
+  margin: 18.3px 0 0;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ro-card__points {
+  margin: 18.3px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  line-height: 23.8px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.ro-card__points span {
+  display: inline-block;
+  width: 21.5px;
+}
+
+.ro-card__cta {
+  display: inline-block;
+  margin-top: 45.3px;
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 18px;
+  text-decoration: none;
+}
+
+.ro-card__cta:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1060px) {
+  .ro-columns {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    max-width: 420px;
+    margin-inline: auto;
+    border-right: 0;
+  }
+
+  .ro-col,
+  .ro-col:last-child {
+    border-left-color: #888;
+  }
+
+  .ro-card {
+    grid-template-columns: 1fr;
+    height: auto;
+    margin-top: 96px;
+  }
+
+  .ro-card__visual {
+    height: 340px;
+  }
+
+  .ro-card__content {
+    padding: 56px 24px 64px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ro-section {
+    padding-top: 72px;
+  }
+
+  .ro-title {
+    margin-top: 32px;
+    font-size: clamp(30px, 8.5vw, 50px);
+    line-height: 1.12;
+  }
+
+  .ro-subtitle br {
+    display: none;
+  }
+
+  .ro-col__desc span {
+    display: inline;
+    white-space: normal;
+    padding-left: 0 !important;
+  }
+
+  .ro-col__desc span + span::before {
+    content: ' ';
+  }
+
+  .ro-card__title {
+    font-size: clamp(22px, 7vw, 28px);
+  }
+}

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from 're
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { authApi } from '../api/auth'
 import { useAuth } from '../auth/AuthContext'
+import { Wordmark } from '../components/layout/Wordmark'
 
 function validateName(name: string): string | null {
   const n = name.trim()
@@ -21,6 +22,14 @@ function validatePassword(password: string): string | null {
   return null
 }
 
+// Same proof points the landing page makes, shown beside every auth form.
+const AUTH_POINTS = [
+  'Every match cites a page in your teacher guide.',
+  'Borderline verdicts go to a subject matter expert.',
+  'Coverage from the national map down to each standard.',
+]
+
+/** Auth layout in the landing hero style: atmospheric gradient, brand copy on the left, form card on the right. */
 function AuthShell({
   title,
   subtitle,
@@ -32,20 +41,38 @@ function AuthShell({
 }) {
   return (
     <div className="auth-page">
-      <div className="auth-ambiance" aria-hidden>
-        <span className="auth-orb auth-orb-a" />
-        <span className="auth-orb auth-orb-b" />
-        <span className="auth-orb auth-orb-c" />
-        <span className="auth-grid" />
-      </div>
-      <div className="auth-card glass">
-        <div className="auth-brand">
-          <img src="/logo.png" alt="Veramynd" className="auth-logo" />
+      <div className="auth-bg" aria-hidden />
+      <div className="auth-grain" aria-hidden />
+      <header className="auth-top">
+        <Link to="/landing" className="auth-logo" aria-label="Veramynd home">
+          <Wordmark size={22} />
+        </Link>
+      </header>
+      <main className="auth-main">
+        <section className="auth-intro" aria-hidden="true">
+          <p className="auth-eyebrow">Auditable alignment of teacher guides to state academic standards.</p>
+          <p className="auth-headline">
+            <span>Evidence-Backed</span>
+            <span>Standards Alignment.</span>
+          </p>
+          <ul className="auth-points">
+            {AUTH_POINTS.map((point) => (
+              <li key={point}>{point}</li>
+            ))}
+          </ul>
+        </section>
+        <div className="auth-card">
+          <h1>{title}</h1>
+          <p className="auth-sub">{subtitle}</p>
+          {children}
         </div>
-        <h1>{title}</h1>
-        <p className="auth-sub">{subtitle}</p>
-        {children}
-      </div>
+      </main>
+      <footer className="auth-foot">
+        <span>© {new Date().getFullYear()} Veramynd</span>
+        <Link to="/privacy">Privacy</Link>
+        <Link to="/terms">Terms</Link>
+        <Link to="/docs">Docs</Link>
+      </footer>
     </div>
   )
 }
@@ -63,9 +90,8 @@ export function LoginPage() {
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setError(null)
-    const emailErr = validateEmail(email)
-    if (emailErr) return setError(emailErr)
-    if (!password) return setError('Password is required')
+    const em = validateEmail(email)
+    if (em) return setError(em)
     setBusy(true)
     try {
       await login(email.trim(), password)
@@ -78,7 +104,7 @@ export function LoginPage() {
   }
 
   return (
-    <AuthShell title="Welcome back" subtitle="Sign in to your Veramynd workspace">
+    <AuthShell title="Welcome back" subtitle="Sign in to continue to Veramynd">
       <form className="auth-form" onSubmit={onSubmit} noValidate>
         <label>
           Email
@@ -86,28 +112,27 @@ export function LoginPage() {
         </label>
         <label>
           Password
-          <input
-            type="password"
-            autoComplete="current-password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+          <input type="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         </label>
         {error ? <div className="auth-error">{error}</div> : null}
         <button type="submit" className="btn primary auth-submit" disabled={busy}>
           {busy ? 'Signing in…' : 'Sign in'}
         </button>
       </form>
-      <div className="auth-links">
+      <div className="auth-links auth-links--end">
         <Link to="/forgot-password">Forgot password?</Link>
-        <Link to="/signup">Create account</Link>
       </div>
       {googleEnabled ? (
         <a className="btn auth-oauth" href="/api/auth/oauth/google/start">
           Continue with Google
         </a>
       ) : null}
+      <div className="auth-switch">
+        <span className="auth-switch-label">New to Veramynd?</span>
+        <Link to="/signup" className="btn auth-alt">
+          Create account
+        </Link>
+      </div>
     </AuthShell>
   )
 }
@@ -196,14 +221,17 @@ export function SignupPage() {
           {busy ? 'Creating…' : 'Sign up'}
         </button>
       </form>
-      <div className="auth-links">
-        <Link to="/login">Already have an account?</Link>
-      </div>
       {googleEnabled ? (
         <a className="btn auth-oauth" href="/api/auth/oauth/google/start">
           Continue with Google
         </a>
       ) : null}
+      <div className="auth-switch">
+        <span className="auth-switch-label">Already have an account?</span>
+        <Link to="/login" className="btn auth-alt">
+          Sign in
+        </Link>
+      </div>
     </AuthShell>
   )
 }
