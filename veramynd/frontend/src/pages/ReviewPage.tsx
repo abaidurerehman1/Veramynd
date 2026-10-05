@@ -18,8 +18,10 @@ import {
   type ProjectAlign,
 } from '../components/align/data'
 import { formatDecisionDate } from '../components/align/scale'
+import { scopeOptions, useProjectScope } from '../components/align/scope'
 import { AlignTopbar, Kpi } from '../components/align/ui'
 import { OverviewLoading } from '../components/OverviewStates'
+import { useProject } from '../project/ProjectContext'
 import '../components/align/align.css'
 
 type Filter = 'pending' | 'accepted' | 'rejected' | 'all'
@@ -33,10 +35,12 @@ const CONFIDENCE: Record<string, { width: number; cls: string }> = {
 
 type QueueItem = { it: ReviewItem; project: ProjectAlign; leaf?: LeafStandard }
 
-/** SME review queue: flagged citations from every state project wait here until an expert accepts or rejects them. */
+/** SME review queue: the selected project's flagged citations (or every project's) wait here for an expert. */
 export function ReviewPage({ reloadKey = 0, projectId }: { reloadKey?: number; projectId: string }) {
   const navigate = useNavigate()
   const [params, setParams] = useSearchParams()
+  const { project: activeProject } = useProject()
+  const { scope, setScope, isAll } = useProjectScope(projectId, 'review')
   const grade = params.get('grade') || storedGrade()
   const { data: alignProjects, error: alignError } = useAlignProjects(reloadKey)
   const projects = useMemo(() => alignProjects ?? [], [alignProjects])
@@ -49,13 +53,13 @@ export function ReviewPage({ reloadKey = 0, projectId }: { reloadKey?: number; p
   const items = useMemo(() => {
     const out: QueueItem[] = []
     projects
-      .filter((p) => grade === 'all' || p.grade === grade)
+      .filter((p) => (isAll ? grade === 'all' || p.grade === grade : p.project.id === projectId))
       .forEach((p) => {
         const leafByCode = new Map(p.leaves.map((l) => [l.code, l]))
         ;(queue?.[p.project.id] ?? []).forEach((it) => out.push({ it, project: p, leaf: leafByCode.get(it.standard_code) }))
       })
     return out
-  }, [projects, queue, grade])
+  }, [projects, queue, grade, isAll, projectId])
 
   if (!alignProjects && !alignError) return <OverviewLoading />
   if (queue === null && ids.length) return <OverviewLoading />
@@ -90,7 +94,8 @@ export function ReviewPage({ reloadKey = 0, projectId }: { reloadKey?: number; p
       <AlignTopbar
         trail={[{ label: 'National overview', onClick: () => navigate(`/projects/${projectId}/coverage`) }]}
         here="Expert review queue"
-        grade={grade}
+        scope={{ value: scope, onChange: setScope, options: scopeOptions(projects, projectId, activeProject?.name) }}
+        grade={isAll ? grade : undefined}
         gradeOptions={gradesOf(projects)}
         onGrade={setGrade}
         exportHref={`/projects/${projectId}/exports`}

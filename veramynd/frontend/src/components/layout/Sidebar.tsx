@@ -5,7 +5,7 @@ import { UserAvatar } from '../UserAvatar'
 import { NONE_PROJECT_ID, useProject } from '../../project/ProjectContext'
 import { SidebarToggleIcon } from './SidebarToggleIcon'
 import { Wordmark } from './Wordmark'
-import { gradeLabel, useAlignProjects, useReviewDecisions, useReviewQueue } from '../align/data'
+import { gradeLabel, useReviewDecisions, useReviewQueue } from '../align/data'
 
 type Props = {
   collapsed: boolean
@@ -114,15 +114,11 @@ export function Sidebar({ collapsed, onToggle }: Props) {
   const { pathname } = useLocation()
   const base = hasProject ? `/projects/${projectId}` : `/projects/${NONE_PROJECT_ID}`
 
-  // Pending SME review items across every project, as the mockup's nav count shows.
-  const { data: alignProjects } = useAlignProjects(0)
-  const alignIds = useMemo(() => (alignProjects ?? []).map((p) => p.project.id), [alignProjects])
-  const { rows: queue } = useReviewQueue(alignIds)
-  const { decisions } = useReviewDecisions(alignIds)
-  const pendingReview = alignIds.reduce(
-    (n, id) => n + (queue?.[id] ?? []).filter((r) => !decisions[id]?.[r.id]).length,
-    0,
-  )
+  const reviewIds = useMemo(() => (hasProject ? [projectId] : []), [hasProject, projectId])
+  const { rows: queue } = useReviewQueue(reviewIds)
+  const { decisions } = useReviewDecisions(reviewIds)
+  // Matches the SME review page's default view: the selected project's queue.
+  const pendingReview = (queue?.[projectId] ?? []).filter((r) => !decisions[projectId]?.[r.id]).length
 
   const engagement = [
     { label: 'National overview', to: `${base}/coverage`, icon: <IconMap /> },

@@ -5113,7 +5113,6 @@ table.data tr.clickable { cursor: pointer; }
 .app-header {
   background: #ffffff;
   border-bottom: 0.5px solid var(--line-strong);
-  backdrop-filter: none;
 }
 .app-header-inner {
   min-height: 60px;
@@ -5543,9 +5542,10 @@ table.data tr.clickable { cursor: pointer; }
 }
 /* Topbar turns translucent so the colour reads through it. */
 .app-header {
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: saturate(140%) blur(16px);
-  -webkit-backdrop-filter: saturate(140%) blur(16px);
+  background: rgba(255, 255, 255, 0.72);
+  /* Prefixed first, standard last: the minifier keeps only one of an adjacent pair, and Chrome needs the standard one. */
+  -webkit-backdrop-filter: saturate(160%) blur(18px);
+  backdrop-filter: saturate(160%) blur(18px);
 }
 /* Engagement screens: the work area shows the colour field; their blocks sit on white. */
 .page:has(> .va),

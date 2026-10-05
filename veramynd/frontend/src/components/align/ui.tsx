@@ -119,21 +119,36 @@ export function Crumbs({ trail, here }: { trail: Crumb[]; here: string }) {
 type TopbarProps = {
   trail: Crumb[]
   here: string
+  /** Alignment and SME review: which project the page shows, or All projects. */
+  scope?: { value: string; onChange: (v: string) => void; options: { value: string; label: string }[] }
   /** The State select shows only on state and standard screens, as in the mockup. */
   states?: { value: string; onChange: (s: string) => void; options: string[] }
-  grade: string
-  gradeOptions: string[]
-  onGrade: (g: string) => void
+  /** Omitted when the page is scoped to one project (its grade is fixed). */
+  grade?: string
+  gradeOptions?: string[]
+  onGrade?: (g: string) => void
   exportHref: string
 }
 
 /** The Align topbar: clickable crumbs, then State, Grade and Export report. Rendered into the app topbar. */
-export function AlignTopbar({ trail, here, states, grade, gradeOptions, onGrade, exportHref }: TopbarProps) {
+export function AlignTopbar({ trail, here, scope, states, grade, gradeOptions = [], onGrade, exportHref }: TopbarProps) {
   return (
     <TopbarContent>
       <div className="va va-topbar">
         <Crumbs trail={trail} here={here} />
         <div className="va-topbar-right">
+          {scope ? (
+            <label className="ctrl">
+              <span className="lbl">Project</span>
+              <select className="brand ctrl-project" value={scope.value} onChange={(e) => scope.onChange(e.target.value)}>
+                {scope.options.map((o) => (
+                  <option key={o.value} value={o.value}>
+                    {o.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+          ) : null}
           {states ? (
             <label className="ctrl">
               <span className="lbl">State</span>
@@ -146,17 +161,19 @@ export function AlignTopbar({ trail, here, states, grade, gradeOptions, onGrade,
               </select>
             </label>
           ) : null}
-          <label className="ctrl">
-            <span className="lbl">Grade</span>
-            <select className="brand" value={grade} onChange={(e) => onGrade(e.target.value)}>
-              <option value="all">All grades{gradeOptions.length > 1 ? ` (${gradeOptions.map((g) => (g === 'K' ? 'K' : g)).join(', ')})` : ''}</option>
-              {gradeOptions.map((g) => (
-                <option key={g} value={g}>
-                  {gradeLabel(g)}
-                </option>
-              ))}
-            </select>
-          </label>
+          {grade !== undefined && onGrade ? (
+            <label className="ctrl">
+              <span className="lbl">Grade</span>
+              <select className="brand" value={grade} onChange={(e) => onGrade(e.target.value)}>
+                <option value="all">All grades{gradeOptions.length > 1 ? ` (${gradeOptions.join(', ')})` : ''}</option>
+                {gradeOptions.map((g) => (
+                  <option key={g} value={g}>
+                    {gradeLabel(g)}
+                  </option>
+                ))}
+              </select>
+            </label>
+          ) : null}
           <Link className="btn" to={exportHref}>
             Export report
           </Link>
