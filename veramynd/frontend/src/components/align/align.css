@@ -1844,3 +1844,7 @@
 .va .strand-row.current { background: linear-gradient(90deg, rgba(59, 112, 240, 0.07), rgba(255, 128, 213, 0.06)); }
 .va .drill,
 .va .strand-name .arrow { color: #3b70f0; }
+
+/* Project select in the topbar: long project names stay on one line. */
+.va select.brand.ctrl-project { max-width: 320px; text-overflow: ellipsis; }
+.va .rs-project + .rs-project { margin-top: 28px; padding-top: 22px; border-top: 1px solid #e6e6e6; }

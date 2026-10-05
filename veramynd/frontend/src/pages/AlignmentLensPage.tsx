@@ -13,39 +13,35 @@ import {
   useProjectAlignments,
   type ProjectAlign,
 } from '../components/align/data'
+import { scopeOptions, useProjectScope } from '../components/align/scope'
 import { AlignTopbar, MatchBadge, RollBadge } from '../components/align/ui'
+import { useProject } from '../project/ProjectContext'
 import '../components/align/align.css'
 
 type Lens = 'resource' | 'standard'
 
-/** The mockup's select lists states; a state with several grades adds the grade to tell them apart. */
-function projectLabel(p: ProjectAlign, all: ProjectAlign[]) {
-  const name = p.state ? STATE_NAMES[p.state] : p.project.name
-  const twins = all.filter((q) => (q.state ?? q.project.id) === (p.state ?? p.project.id)).length
-  return twins > 1 && p.grade ? `${name} · ${gradeLabel(p.grade)}` : name
-}
-
 /** "Alignment" screen of the Align mockup: one alignment, two lenses (by resource / by standard). */
 export function AlignmentLensPage({ reloadKey = 0, projectId }: { reloadKey?: number; projectId: string }) {
   const { data, error } = useAlignProjects(reloadKey)
+  const { project: activeProject } = useProject()
   const navigate = useNavigate()
   const [params, setParams] = useSearchParams()
+  const { scope, setScope, isAll } = useProjectScope(projectId, 'alignment')
   const grade = params.get('grade') || storedGrade()
   const [lens, setLens] = useState<Lens>('resource')
-  const [picked, setPicked] = useState<string | null>(null)
   const all = useMemo(() => data ?? [], [data])
-  const inGrade = useMemo(() => all.filter((p) => grade === 'all' || p.grade === grade), [all, grade])
-  const options = useMemo(
-    () => [...inGrade].sort((a, b) => projectLabel(a, inGrade).localeCompare(projectLabel(b, inGrade))),
-    [inGrade],
-  )
-  const current = inGrade.find((p) => p.project.id === (picked ?? projectId)) ?? options[0]
-  const rows = useProjectAlignments(current?.project.id ?? null)
 
-  const openStandard = (code: string) => {
-    if (!current) return
-    const q = new URLSearchParams({ std: code, pid: current.project.id, from: 'alignment' })
-    if (current.state) q.set('state', current.state)
+  // One project by default; every project (within the grade filter) when scoped to All projects.
+  const shown = useMemo(() => {
+    if (!isAll) return all.filter((p) => p.project.id === projectId)
+    return all
+      .filter((p) => grade === 'all' || p.grade === grade)
+      .sort((a, b) => a.project.name.localeCompare(b.project.name))
+  }, [all, isAll, projectId, grade])
+
+  const openStandard = (project: ProjectAlign, code: string) => {
+    const q = new URLSearchParams({ std: code, pid: project.project.id, from: 'alignment' })
+    if (project.state) q.set('state', project.state)
     navigate(`/projects/${projectId}/coverage?${q.toString()}`)
   }
 
@@ -62,10 +58,11 @@ export function AlignmentLensPage({ reloadKey = 0, projectId }: { reloadKey?: nu
       <AlignTopbar
         trail={[{ label: 'National overview', onClick: () => navigate(`/projects/${projectId}/coverage`) }]}
         here="Standards alignment"
-        grade={grade}
+        scope={{ value: scope, onChange: setScope, options: scopeOptions(all, projectId, activeProject?.name) }}
+        grade={isAll ? grade : undefined}
         gradeOptions={gradesOf(all)}
         onGrade={setGrade}
-        exportHref={`/projects/${current?.project.id ?? projectId}/exports`}
+        exportHref={`/projects/${projectId}/exports`}
       />
       <section className="va-screen">
         <div className="phead">
@@ -75,17 +72,22 @@ export function AlignmentLensPage({ reloadKey = 0, projectId }: { reloadKey?: nu
           </h1>
           <p className="lede">
             The same alignment, viewed two ways. By resource shows what each lesson earns. By standard shows which
-            lessons cover each standard. Switch the state to change the framework.
+            lessons cover each standard. Use Project in the top bar to switch projects, or choose All projects to see
+            every state framework.
           </p>
         </div>
 
         {error ? <div className="va-error">Could not load alignment data: {error}</div> : null}
         {!data && !error ? <div className="va-loading">Loading alignments…</div> : null}
-        {data && !current ? (
-          <div className="rv-empty">No project has standards output{grade === 'all' ? '' : ` for ${gradeLabel(grade)}`} yet.</div>
+        {data && !shown.length ? (
+          <div className="rv-empty">
+            {isAll
+              ? `No project has standards output${grade === 'all' ? '' : ` for ${gradeLabel(grade)}`} yet.`
+              : 'This project has no alignment results yet. Run the pipeline, or choose All projects.'}
+          </div>
         ) : null}
 
-        {current ? (
+        {shown.length ? (
           <div className="panel">
             <div className="panel-head">
               <div className="filters" role="group" aria-label="Lens">
@@ -96,30 +98,14 @@ export function AlignmentLensPage({ reloadKey = 0, projectId }: { reloadKey?: nu
                   By standard
                 </button>
               </div>
-              <label className="ctrl">
-                <span className="lbl">State</span>
-                <select className="brand" value={current.project.id} onChange={(e) => setPicked(e.target.value)}>
-                  {options.map((p) => (
-                    <option key={p.project.id} value={p.project.id}>
-                      {projectLabel(p, inGrade)}
-                    </option>
-                  ))}
-                </select>
-              </label>
+              <span className="meta">
+                {isAll ? `${shown.length} project${shown.length === 1 ? '' : 's'}` : shown[0].project.name}
+              </span>
             </div>
             <div className="panel-body">
-              <div className="rs-fwbar">
-                {lens === 'resource' ? 'What each lesson earns against ' : 'Which lessons cover each standard in '}
-                <b>{current.state ? STATE_NAMES[current.state] : current.project.name}</b> · {current.framework} ·{' '}
-                {gradeLabel(current.grade)}
-              </div>
-              {rows === null ? (
-                <div className="va-loading">Loading alignments…</div>
-              ) : lens === 'resource' ? (
-                <ByResource project={current} rows={rows} onOpen={openStandard} />
-              ) : (
-                <ByStandard project={current} rows={rows} onOpen={openStandard} />
-              )}
+              {shown.map((p) => (
+                <ProjectLens key={p.project.id} project={p} lens={lens} onOpen={(code) => openStandard(p, code)} />
+              ))}
             </div>
           </div>
         ) : null}
@@ -128,6 +114,27 @@ export function AlignmentLensPage({ reloadKey = 0, projectId }: { reloadKey?: nu
           evidence and expert verification.
         </p>
       </section>
+    </div>
+  )
+}
+
+/** One project's alignment under the chosen lens. */
+function ProjectLens({ project, lens, onOpen }: { project: ProjectAlign; lens: Lens; onOpen: (code: string) => void }) {
+  const rows = useProjectAlignments(project.project.id)
+  return (
+    <div className="rs-project">
+      <div className="rs-fwbar">
+        {lens === 'resource' ? 'What each lesson earns against ' : 'Which lessons cover each standard in '}
+        <b>{project.state ? STATE_NAMES[project.state] : project.project.name}</b> · {project.framework} ·{' '}
+        {gradeLabel(project.grade)}
+      </div>
+      {rows === null ? (
+        <div className="va-loading">Loading alignments…</div>
+      ) : lens === 'resource' ? (
+        <ByResource project={project} rows={rows} onOpen={onOpen} />
+      ) : (
+        <ByStandard project={project} rows={rows} onOpen={onOpen} />
+      )}
     </div>
   )
 }
