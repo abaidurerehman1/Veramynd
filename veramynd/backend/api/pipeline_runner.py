@@ -74,7 +74,7 @@ class PipelineJob:
     id: str
     mode: str  # full | step
     steps: list[str]
-    status: str  # queued | running | succeeded | failed | cancelled
+    status: str  # queued | running | paused | succeeded | failed | cancelled
     created_at: str
     updated_at: str
     confirm: bool = True
@@ -144,6 +144,8 @@ def job_progress(job: PipelineJob) -> dict[str, Any]:
             st, sp = "failed", int(job.step_pct or 0)
         elif job.current_step == sid and job.status in ("running", "queued"):
             st, sp = "running", max(5, min(95, int(job.step_pct or 15)))
+        elif job.current_step == sid and job.status == "paused":
+            st, sp = "paused", max(5, min(95, int(job.step_pct or 15)))
         elif job.status == "failed" and sid not in completed:
             st, sp = "pending", 0
         else:
@@ -167,7 +169,7 @@ def job_progress(job: PipelineJob) -> dict[str, Any]:
         cur = 0.0
         if job.current_step and job.current_step in steps and job.current_step not in completed:
             cur = max(0.05, min(0.95, (job.step_pct or 15) / 100.0))
-        percent = int(min(99 if job.status == "running" else 100, 100 * (n_done + cur) / total))
+        percent = int(min(99 if job.status in ("running", "paused") else 100, 100 * (n_done + cur) / total))
         if job.status == "failed":
             percent = int(min(100, 100 * (n_done + cur) / total))
 
@@ -197,6 +199,12 @@ def enrich_jobs(jobs: list[dict[str, Any]]) -> list[dict[str, Any]]:
 _lock = threading.Lock()
 _jobs: dict[str, PipelineJob] = {}
 _active_job_id: str | None = None
+# Live CLI subprocess per job (so a pause can freeze it) and a "may continue" flag per job.
+_procs: dict[str, subprocess.Popen] = {}
+_resume_events: dict[str, threading.Event] = {}
+
+# A job in any of these states holds the single pipeline slot.
+ACTIVE_STATUSES = ("queued", "running", "paused")
 _worker: threading.Thread | None = None
 
 
@@ -298,7 +306,7 @@ def recover_interrupted_jobs() -> int:
             data = json.loads(path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError):
             continue
-        if data.get("status") not in ("queued", "running"):
+        if data.get("status") not in ACTIVE_STATUSES:
             continue
         data["status"] = "cancelled"
         data["error"] = "interrupted"
@@ -942,11 +950,11 @@ def active_job() -> PipelineJob | None:
         if not _active_job_id:
             return None
         job = _jobs.get(_active_job_id)
-        if job and job.status in ("queued", "running"):
+        if job and job.status in ACTIVE_STATUSES:
             return job
     # Fall back to newest running from disk
     for row in list_jobs(limit=5):
-        if row.get("status") in ("queued", "running"):
+        if row.get("status") in ACTIVE_STATUSES:
             return get_job(str(row["id"]))
     return None
 
@@ -1039,9 +1047,116 @@ def _pdf_engine() -> str:
     return "pymupdf"
 
 
+def _set_tree_suspended(pid: int, suspend: bool) -> None:
+    """Freeze (or unfreeze) a CLI process and any children it started.
+
+    psutil does this the same way on Windows and Linux. Without it, fall back to
+    SIGSTOP/SIGCONT on POSIX or NtSuspendProcess/NtResumeProcess on Windows (parent only).
+    """
+    try:
+        import psutil  # type: ignore
+
+        try:
+            root = psutil.Process(pid)
+        except psutil.NoSuchProcess:
+            return
+        procs = [root, *root.children(recursive=True)]
+        # Suspend children first so none of them races ahead; resume the parent first.
+        for p in (reversed(procs) if suspend else procs):
+            try:
+                p.suspend() if suspend else p.resume()
+            except psutil.Error:
+                pass
+        return
+    except ImportError:
+        pass
+    if os.name == "posix":
+        import signal
+
+        try:
+            os.kill(pid, signal.SIGSTOP if suspend else signal.SIGCONT)
+        except ProcessLookupError:
+            pass
+        return
+    import ctypes
+
+    PROCESS_SUSPEND_RESUME = 0x0800
+    kernel32 = ctypes.windll.kernel32  # type: ignore[attr-defined]
+    ntdll = ctypes.windll.ntdll  # type: ignore[attr-defined]
+    handle = kernel32.OpenProcess(PROCESS_SUSPEND_RESUME, False, pid)
+    if not handle:
+        return
+    try:
+        (ntdll.NtSuspendProcess if suspend else ntdll.NtResumeProcess)(handle)
+    finally:
+        kernel32.CloseHandle(handle)
+
+
+def _wait_if_paused(job: PipelineJob) -> None:
+    """Block the worker between stages while the job is paused."""
+    with _lock:
+        go = _resume_events.get(job.id)
+    if go is not None:
+        go.wait()
+
+
+def pause_job(job_id: str) -> PipelineJob:
+    """Pause a running job: freeze the current CLI step and hold back the next one.
+
+    Work already done stays in memory/on disk; resume continues from the same point.
+    """
+    job = get_job(job_id)
+    if not job:
+        raise KeyError(f"Unknown job: {job_id}")
+    with _lock:
+        if job.status == "paused":
+            return job
+        if job.status not in ("queued", "running"):
+            raise RuntimeError(f"Job {job_id} is {job.status}; only a running job can be paused.")
+        go = _resume_events.get(job_id)
+        if go is None:
+            raise RuntimeError(f"Job {job_id} is not running in this server process.")
+        go.clear()
+        job.status = "paused"
+        proc = _procs.get(job_id)
+    if proc is not None and proc.poll() is None:
+        _set_tree_suspended(proc.pid, True)
+    step = STEP_META.get(job.current_step or "", {}).get("name", job.current_step or "the next stage")
+    job.message = f"Paused during {step}. Resume to continue from the same point."
+    job.updated_at = _now()
+    _append_log(job, f"\n=== PAUSED during {job.current_step or 'start'} at {job.updated_at} ===")
+    _persist(job)
+    return job
+
+
+def resume_job(job_id: str) -> PipelineJob:
+    """Resume a paused job exactly where it stopped."""
+    job = get_job(job_id)
+    if not job:
+        raise KeyError(f"Unknown job: {job_id}")
+    with _lock:
+        if job.status != "paused":
+            raise RuntimeError(f"Job {job_id} is {job.status}, not paused.")
+        go = _resume_events.get(job_id)
+        if go is None:
+            raise RuntimeError(f"Job {job_id} is no longer held by this server process.")
+        job.status = "running"
+        proc = _procs.get(job_id)
+    if proc is not None and proc.poll() is None:
+        _set_tree_suspended(proc.pid, False)
+    step = STEP_META.get(job.current_step or "", {}).get("name", job.current_step or "")
+    job.message = f"Resumed{f' {step}' if step else ''}."
+    job.updated_at = _now()
+    _append_log(job, f"=== RESUMED at {job.updated_at} ===\n")
+    _persist(job)
+    go.set()
+    return job
+
+
 def _run_cmd(job: PipelineJob, argv: list[str], *, cwd: Path | None = None) -> int:
     import time
 
+    _wait_if_paused(job)
     _append_log(job, f"\n$ {' '.join(argv)}\n")
     proc = subprocess.Popen(
         argv,
@@ -1054,6 +1169,12 @@ def _run_cmd(job: PipelineJob, argv: list[str], *, cwd: Path | None = None) -> i
         errors="replace",
     )
     assert proc.stdout is not None
+    with _lock:
+        _procs[job.id] = proc
+        paused_now = job.status == "paused"
+    if paused_now:
+        # Paused in the instant between the check above and the spawn: freeze it straight away.
+        _set_tree_suspended(proc.pid, True)
     last_persist = 0.0
     n_lines = 0
     for line in proc.stdout:
@@ -1067,7 +1188,10 @@ def _run_cmd(job: PipelineJob, argv: list[str], *, cwd: Path | None = None) -> i
             _persist(job)
             last_persist = now
     _persist(job)
-    return proc.wait()
+    code = proc.wait()
+    with _lock:
+        _procs.pop(job.id, None)
+    return code
 
 
 def _py_mod(*args: str) -> list[str]:
@@ -1605,8 +1729,9 @@ def _execute(job: PipelineJob) -> None:
             framework=job.framework,
         )
         job.output_dir = str(output_root)
-        job.status = "running"
-        job.message = f"Running against {label}"
+        if job.status != "paused":  # a pause can arrive while the job is still queued
+            job.status = "running"
+            job.message = f"Running against {label}"
         job.updated_at = _now()
         _persist(job)
         _append_log(job, f"Workspace: {label}")
@@ -1640,6 +1765,7 @@ def _execute(job: PipelineJob) -> None:
                 )
                 continue
 
+            _wait_if_paused(job)
             job.current_step = step
             job.step_pct = 5
             job.updated_at = _now()
@@ -1724,6 +1850,8 @@ def _execute(job: PipelineJob) -> None:
         with _lock:
             if _active_job_id == job.id:
                 _active_job_id = None
+            _procs.pop(job.id, None)
+            _resume_events.pop(job.id, None)
 
 
 def start_job(
@@ -1782,9 +1910,10 @@ def start_job(
     with _lock:
         if _active_job_id:
             active = _jobs.get(_active_job_id)
-            if active and active.status in ("queued", "running"):
+            if active and active.status in ACTIVE_STATUSES:
                 raise RuntimeError(
-                    f"Job {_active_job_id} is already {active.status}. Wait for it to finish."
+                    f"Job {_active_job_id} is already {active.status}. "
+                    + ("Resume it or wait for it to finish." if active.status == "paused" else "Wait for it to finish.")
                 )
         job_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "-" + uuid4().hex[:8]
         log_path = RUNS_DIR / f"{job_id}.log"
@@ -1816,6 +1945,9 @@ def start_job(
         )
         _jobs[job_id] = job
         _active_job_id = job_id
+        go = threading.Event()
+        go.set()
+        _resume_events[job_id] = go
         _persist(job)
         _worker = threading.Thread(target=_execute, args=(job,), daemon=True)
         _worker.start()

@@ -2,6 +2,8 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { api, withProject } from '../api/client'
 import { ConfirmDialog } from './ConfirmDialog'
+import { isJobActive } from '../lib/jobs'
+import { JobPauseButton } from './JobPauseButton'
 import type { PipelineJob } from './LivePipelineProgress'
 import type { RunnableStep } from './PipelineRunPanel'
 
@@ -35,6 +37,7 @@ function statusClass(status: string) {
   if (status === 'succeeded') return 'ok'
   if (status === 'failed') return 'warn'
   if (status === 'running' || status === 'queued') return 'info'
+  if (status === 'paused') return 'paused'
   return 'neutral'
 }
 
@@ -71,7 +74,13 @@ export function IngestRunControls({
   const writeWhere = batchId
     ? `uploads/${batchId}/output/`
     : 'this project’s output folder'
-  const running = job?.status === 'running' || job?.status === 'queued'
+  // A paused job still holds the pipeline: keep polling it and keep new runs disabled.
+  const running = isJobActive(job?.status)
+  const paused = job?.status === 'paused'
+  const onPauseChange = (next: PipelineJob) => {
+    setJob(next)
+    onJobChange?.(next)
+  }
   const targetOk = Boolean(batchId || projectId)
 
   const doneIds = useMemo(() => {
@@ -140,7 +149,25 @@ export function IngestRunControls({
     setError(null)
     setPending(null)
     void syncArtifacts()
-  }, [targetKey, syncArtifacts])
+    // Pick up a run already in progress for this target (e.g. after a reload) so it can be paused here.
+    let cancelled = false
+    void api<{ active_job?: PipelineJob | null }>('/api/pipeline/jobs?limit=5')
+      .then((d) => {
+        const a = d.active_job
+        if (cancelled || !a || !isJobActive(a.status)) return
+        const mine = (resolvedProjectId && a.project_id === resolvedProjectId) || (batchId && a.batch_id === batchId)
+        if (mine) {
+          setJob(a)
+          onJobChange?.(a)
+        }
+      })
+      .catch(() => undefined)
+    return () => {
+      cancelled = true
+    }
+    // onJobChange is a parent callback; re-running on its identity would reset the panel.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [targetKey, syncArtifacts, resolvedProjectId, batchId])
 
   // Keep step wizard in sync while idle (e.g. Parse finished from another tab)
   useEffect(() => {
@@ -263,12 +290,15 @@ export function IngestRunControls({
               disabled={busy || running}
               onClick={() => setPending('full')}
             >
-              {running && job?.mode === 'full'
+              {paused && job?.mode === 'full'
+                ? 'Complete pipeline paused'
+                : running && job?.mode === 'full'
                 ? 'Running complete pipeline…'
                 : artifactDone.length
                   ? 'Resume complete pipeline'
                   : 'Run complete pipeline'}
             </button>
+            <JobPauseButton job={job} onChange={onPauseChange} />
             {logsPath ? (
               <Link className="btn" to={logsPath}>
                 Open logs
@@ -300,9 +330,10 @@ export function IngestRunControls({
               const isNext = nextStep?.id === s.id
               const isActive = running && job?.current_step === s.id
               const failed = job?.status === 'failed' && job.current_step === s.id && !done
-              let state: 'done' | 'active' | 'ready' | 'waiting' | 'failed' = 'waiting'
+              let state: 'done' | 'active' | 'paused' | 'ready' | 'waiting' | 'failed' = 'waiting'
               if (done) state = 'done'
               else if (failed) state = 'failed'
+              else if (isActive && paused) state = 'paused'
               else if (isActive) state = 'active'
               else if (isNext) state = 'ready'
 
@@ -326,14 +357,18 @@ export function IngestRunControls({
                               ? 'failed'
                               : state === 'active'
                                 ? 'running'
-                                : 'queued',
+                                : state === 'paused'
+                                  ? 'paused'
+                                  : 'queued',
                         )}`}
                       >
                         {state === 'done'
                           ? 'Done'
                           : state === 'active'
                             ? 'Running'
-                            : state === 'ready'
+                            : state === 'paused'
+                              ? 'Paused'
+                              : state === 'ready'
                               ? 'Ready'
                               : state === 'failed'
                                 ? 'Failed'
@@ -367,6 +402,7 @@ export function IngestRunControls({
           </ol>
 
           <div className="ingest-stepwise-foot">
+            <JobPauseButton job={job} onChange={onPauseChange} />
             {logsPath ? (
               <Link className="btn" to={logsPath}>
                 Open logs

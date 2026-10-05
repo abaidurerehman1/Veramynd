@@ -1,3 +1,6 @@
+import { isJobActive } from '../lib/jobs'
+import { JobPauseButton } from './JobPauseButton'
+
 export type StageProgress = {
   id: string
   name: string
@@ -34,16 +37,19 @@ export type PipelineJob = {
 type Props = {
   job: PipelineJob | null
   title?: string
+  /** Receives the job after Pause / Resume so the page can update right away. */
+  onJobChange?: (job: PipelineJob) => void
 }
 
 function statusBadge(status: string) {
   if (status === 'succeeded' || status === 'complete') return 'ok'
   if (status === 'failed') return 'warn'
   if (status === 'running' || status === 'queued') return 'info'
+  if (status === 'paused') return 'paused'
   return 'neutral'
 }
 
-export function LivePipelineProgress({ job, title = 'Live run' }: Props) {
+export function LivePipelineProgress({ job, title = 'Live run', onJobChange }: Props) {
   if (!job) {
     return (
       <section className="card live-pipe-card">
@@ -62,15 +68,18 @@ export function LivePipelineProgress({ job, title = 'Live run' }: Props) {
 
   const pct = typeof job.percent === 'number' ? job.percent : 0
   const stages = job.stage_progress || []
-  const live = job.status === 'running' || job.status === 'queued'
+  const live = isJobActive(job.status)
 
   return (
     <section className={`card live-pipe-card ${live ? 'is-live' : ''}`}>
       <div className="card-h">
         <h2>{title}</h2>
-        <span className={`badge ${statusBadge(job.status)}`}>
-          {job.status} · {pct}%
-        </span>
+        <div className="live-pipe-actions">
+          <JobPauseButton job={job} onChange={onJobChange} />
+          <span className={`badge ${statusBadge(job.status)}`}>
+            {job.status} · {pct}%
+          </span>
+        </div>
       </div>
       <div className="card-b">
         <div className="live-pipe-meta">

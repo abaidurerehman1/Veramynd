@@ -181,7 +181,7 @@ def overview(project_id: str | None = None) -> dict:
     data = cat.overview().model_dump()
     # If a live job targets this project/upload, surface "running"
     active = pipeline_runner.active_job()
-    if active and active.status in ("queued", "running"):
+    if active and active.status in pipeline_runner.ACTIVE_STATUSES:
         from .projects import batch_id_from_project, upload_project_id
 
         pid = cat.config.id
@@ -351,6 +351,30 @@ def pipeline_jobs(limit: int = Query(20, ge=1, le=100)) -> dict:
         "active_job": active.to_dict() if active else None,
         "runnable_steps": pipeline_runner.list_runnable_steps(),
     }
+
+
+@app.post("/api/pipeline/jobs/{job_id}/pause")
+def pipeline_job_pause(job_id: str) -> dict[str, Any]:
+    """Pause a running job: freezes the current stage and holds back the next one."""
+    try:
+        job = pipeline_runner.pause_job(job_id)
+    except KeyError as e:
+        raise HTTPException(404, e.args[0] if e.args else "Unknown job") from e
+    except RuntimeError as e:
+        raise HTTPException(409, str(e)) from e
+    return {"ok": True, "job": job.to_dict()}
+
+
+@app.post("/api/pipeline/jobs/{job_id}/resume")
+def pipeline_job_resume(job_id: str) -> dict[str, Any]:
+    """Resume a paused job from exactly where it stopped."""
+    try:
+        job = pipeline_runner.resume_job(job_id)
+    except KeyError as e:
+        raise HTTPException(404, e.args[0] if e.args else "Unknown job") from e
+    except RuntimeError as e:
+        raise HTTPException(409, str(e)) from e
+    return {"ok": True, "job": job.to_dict()}
 
 
 @app.get("/api/pipeline/jobs/{job_id}")

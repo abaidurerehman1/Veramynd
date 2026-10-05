@@ -5675,3 +5675,16 @@ table.data tr.clickable { cursor: pointer; }
 .btn:focus-visible { outline: 2px solid #3b70f0; outline-offset: 2px; }
 .icon-btn { border-radius: 10px; }
 .project-switcher-trigger { border-radius: 10px; }
+
+/* ---------- Pipeline pause / resume ---------- */
+.job-pause { display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.btn.job-pause-btn { display: inline-flex; align-items: center; gap: 7px; }
+.btn.job-pause-btn.is-paused { background: var(--grad-blue); border-color: transparent; color: #ffffff; }
+.btn.job-pause-btn.is-paused:hover:not(:disabled) { background: var(--grad-blue); filter: brightness(1.05); }
+.job-pause-error { color: #c4483b; font-size: 12px; }
+.live-pipe-actions { display: inline-flex; align-items: center; gap: 10px; }
+.badge.paused { background: linear-gradient(90deg, #fbf1e4, #ffeaf7); color: #a8612c; }
+.live-pipe-pct-fill.paused { background: var(--grad-warm); }
+.live-stage.paused { border-color: #ecd9bf; background: linear-gradient(90deg, #fdf7ef, #fff3fa); }
+.live-stage.paused .live-stage-bar-fill { background: var(--grad-warm); }
+.step-wizard-item.paused .step-wizard-dot { background: var(--grad-warm); color: #ffffff; }

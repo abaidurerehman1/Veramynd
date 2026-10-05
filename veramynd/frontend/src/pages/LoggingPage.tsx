@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import { isJobActive } from '../lib/jobs'
 import { Link } from 'react-router-dom'
 import { api } from '../api/client'
 import { ConfirmDialog } from '../components/ConfirmDialog'
@@ -148,7 +149,7 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
   }, [selectedJobId, reloadKey])
 
   useEffect(() => {
-    const live = data?.jobs?.some((j) => j.status === 'running' || j.status === 'queued')
+    const live = data?.jobs?.some((j) => isJobActive(j.status))
     if (!live) return
     const t = window.setInterval(() => {
       void load()

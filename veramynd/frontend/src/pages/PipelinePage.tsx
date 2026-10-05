@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import { isJobActive } from '../lib/jobs'
 import { Link } from 'react-router-dom'
 import { api, withProject } from '../api/client'
 import type { OverviewMetrics, PipelineStage } from '../api/types'
@@ -56,7 +57,7 @@ export function PipelinePage({
         setRunnableSteps(d.runnable_steps || [])
         const active =
           d.active_job ||
-          d.jobs?.find((j) => j.status === 'running' || j.status === 'queued') ||
+          d.jobs?.find((j) => isJobActive(j.status)) ||
           null
         setLiveJob(active)
       } catch {
@@ -84,7 +85,7 @@ export function PipelinePage({
           ? jobs.active_job
           : jobs.jobs?.find(
               (j) =>
-                (j.status === 'running' || j.status === 'queued') &&
+                isJobActive(j.status) &&
                 jobMatchesProject(j, projectId),
             ) ||
             jobs.jobs?.find((j) => jobMatchesProject(j, projectId)) ||
@@ -104,7 +105,7 @@ export function PipelinePage({
   }, [load, reloadKey])
 
   useEffect(() => {
-    const live = liveJob?.status === 'running' || liveJob?.status === 'queued'
+    const live = isJobActive(liveJob?.status)
     if (!live || !liveJob?.id) return
     const t = window.setInterval(() => {
       void api<{ job: PipelineJob }>(`/api/pipeline/jobs/${liveJob.id}?log=false`)
@@ -146,7 +147,7 @@ export function PipelinePage({
           </div>
         </div>
 
-        <LivePipelineProgress job={liveJob} title="Live run" />
+        <LivePipelineProgress job={liveJob} title="Live run" onJobChange={setLiveJob} />
 
         <section className="ov-card">
           <div className="ov-card-b">
@@ -202,7 +203,7 @@ export function PipelinePage({
         </div>
       </div>
 
-      <LivePipelineProgress job={liveJob} title="Live run" />
+      <LivePipelineProgress job={liveJob} title="Live run" onJobChange={setLiveJob} />
 
       <div className="ov-kpi-grid ov-kpi-4">
         <article className="ov-kpi ed-kpi tone-a">
