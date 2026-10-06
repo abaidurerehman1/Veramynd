@@ -17,6 +17,7 @@ from typing import Any
 from .layout import (
     BACKEND_ROOT,
     REGISTRY_PATH,
+    RESERVED_UPLOAD_DIRS,
     UPLOADS_DIR,
     VERAMYND_ROOT,
 )
@@ -26,6 +27,11 @@ DASHBOARD_ROOT = BACKEND_ROOT
 UPLOAD_PROJECT_PREFIX = "upload-"
 
 _BATCH_ID_RE = re.compile(r"^[0-9A-Za-z][0-9A-Za-z._-]{0,79}$")
+
+
+def is_upload_batch_dir(path: Path) -> bool:
+    """True for a curriculum upload folder; False for files and reserved folders like avatars/."""
+    return path.is_dir() and path.name not in RESERVED_UPLOAD_DIRS and bool(_BATCH_ID_RE.match(path.name))
 
 
 @dataclass(frozen=True)
@@ -163,11 +169,9 @@ def list_upload_project_configs() -> list[ProjectConfig]:
         return []
     rows: list[ProjectConfig] = []
     for batch_dir in sorted(UPLOADS_DIR.iterdir(), reverse=True):
-        if not batch_dir.is_dir():
+        if not is_upload_batch_dir(batch_dir):
             continue
         batch_id = batch_dir.name
-        if not _BATCH_ID_RE.match(batch_id):
-            continue
         meta: dict[str, Any] = {}
         meta_path = batch_dir / "meta.json"
         if meta_path.is_file():
