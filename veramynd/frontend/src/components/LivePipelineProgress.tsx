@@ -117,8 +117,15 @@ export function LivePipelineProgress({ job, title = 'Live run', onJobChange }: P
           ))}
         </div>
 
-        {job.message ? <p className="live-pipe-msg">{job.message}</p> : null}
-        {job.error ? <p className="none-error">{job.error}</p> : null}
+        {job.status === 'failed' || job.status === 'cancelled' ? (
+          <div className="run-error" role="alert">
+            <strong>{job.status === 'failed' ? 'Run failed' : 'Run stopped'}</strong>
+            <span>{job.error || job.message || 'The run stopped without a message. Open Logging for details.'}</span>
+            {job.error && job.message && job.message !== job.error ? <span>{job.message}</span> : null}
+          </div>
+        ) : job.message ? (
+          <p className="live-pipe-msg">{job.message}</p>
+        ) : null}
       </div>
     </section>
   )

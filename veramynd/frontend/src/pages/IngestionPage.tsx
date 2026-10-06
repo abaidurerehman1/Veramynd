@@ -6,6 +6,7 @@ import { IngestRunControls } from '../components/IngestRunControls'
 import { OverviewLoading } from '../components/OverviewStates'
 import type { RunnableStep } from '../components/PipelineRunPanel'
 import { NONE_PROJECT_ID, useProject } from '../project/ProjectContext'
+import { detailMessage, friendlyError } from '../lib/errors'
 
 type IngestBatch = { id: string; name?: string; files: string[] }
 
@@ -16,14 +17,7 @@ type IngestStatus = {
   runnable_steps?: RunnableStep[]
 }
 
-function detailMessage(body: { detail?: unknown; message?: string }, status: number): string {
-  const detail = body?.detail
-  if (typeof detail === 'string') return detail
-  if (Array.isArray(detail)) {
-    return detail.map((d: { msg?: string }) => d.msg || JSON.stringify(d)).join('; ')
-  }
-  return body?.message || `HTTP ${status}`
-}
+const MAX_UPLOAD_BYTES = 200 * 1024 * 1024
 
 function formatBytes(n: number) {
   if (n < 1024) return `${n} B`
@@ -51,8 +45,25 @@ function FileDropField({
   const inputRef = useRef<HTMLInputElement>(null)
   const [dragOver, setDragOver] = useState(false)
 
+  const [pickError, setPickError] = useState<string | null>(null)
+  // Same rules as the server, checked as soon as a file is chosen or dropped.
   const pick = (list: FileList | null) => {
     const f = list?.[0] || null
+    if (!f) return onFile(null)
+    const exts = accept.split(',').filter((x) => x.startsWith('.'))
+    if (exts.length && !exts.some((x) => f.name.toLowerCase().endsWith(x))) {
+      setPickError(`“${f.name}” is not a ${exts.join(' or ')} file. Choose the ${label} again.`)
+      return onFile(null)
+    }
+    if (f.size === 0) {
+      setPickError(`“${f.name}” is empty. Choose a file that has content.`)
+      return onFile(null)
+    }
+    if (f.size > MAX_UPLOAD_BYTES) {
+      setPickError(`“${f.name}” is ${formatBytes(f.size)}; the limit is 200 MB.`)
+      return onFile(null)
+    }
+    setPickError(null)
     onFile(f)
   }
 
@@ -138,6 +149,11 @@ function FileDropField({
           </svg>
         </button>
       ) : null}
+      {pickError ? (
+        <p className="ingest-drop-error" role="alert">
+          {pickError}
+        </p>
+      ) : null}
     </div>
   )
 }
@@ -173,7 +189,7 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
         return batches[0]?.id ?? null
       })
     } catch (e) {
-      setError(e instanceof Error ? e.message : String(e))
+      setError(friendlyError(e))
       setStatus({ batches: [] })
     } finally {
       setLoading(false)
@@ -220,7 +236,7 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
       if (batchId) setActiveBatchId(batchId)
       if (uploadProjectId) setLastProjectId(uploadProjectId)
     } catch (err) {
-      setError(err instanceof Error ? err.message : String(err))
+      setError(friendlyError(err))
     } finally {
       setSaving(false)
     }
@@ -241,7 +257,7 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
       await load()
       await refreshProjects()
     } catch (err) {
-      setError(err instanceof Error ? err.message : String(err))
+      setError(friendlyError(err))
       setDeleteTarget(null)
     } finally {
       setDeletingId(null)

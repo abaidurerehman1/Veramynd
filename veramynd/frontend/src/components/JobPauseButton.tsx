@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { isJobActive } from '../lib/jobs'
 import type { PipelineJob } from './LivePipelineProgress'
+import { detailMessage, friendlyError } from '../lib/errors'
 
 async function setPaused(jobId: string, pause: boolean): Promise<PipelineJob> {
   const res = await fetch(`/api/pipeline/jobs/${encodeURIComponent(jobId)}/${pause ? 'pause' : 'resume'}`, {
@@ -9,8 +10,7 @@ async function setPaused(jobId: string, pause: boolean): Promise<PipelineJob> {
   })
   const data = await res.json().catch(() => ({}))
   if (!res.ok) {
-    const detail = data?.detail
-    throw new Error(typeof detail === 'string' ? detail : `HTTP ${res.status}`)
+    throw new Error(detailMessage(data, res.status))
   }
   return (data as { job: PipelineJob }).job
 }
@@ -37,7 +37,7 @@ export function JobPauseButton({ job, onChange, className = '' }: Props) {
     try {
       onChange?.(await setPaused(job.id, !paused))
     } catch (e) {
-      setError(e instanceof Error ? e.message : String(e))
+      setError(friendlyError(e))
     } finally {
       setBusy(false)
     }

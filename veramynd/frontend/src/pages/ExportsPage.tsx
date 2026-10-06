@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { api, withProject } from '../api/client'
 import { OverviewLoading } from '../components/OverviewStates'
 import { NONE_PROJECT_ID, useProject } from '../project/ProjectContext'
+import { friendlyError } from '../lib/errors'
 
 type ExportItem = {
   id: string
@@ -37,7 +38,7 @@ export function ExportsPage({
       const data = await api<{ rows: ExportItem[] }>(withProject('/api/exports', projectId))
       setRows(data.rows || [])
     } catch (e) {
-      setError(e instanceof Error ? e.message : String(e))
+      setError(friendlyError(e))
       setRows([])
     } finally {
       setLoading(false)

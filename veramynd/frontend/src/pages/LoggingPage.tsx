@@ -6,6 +6,7 @@ import { ConfirmDialog } from '../components/ConfirmDialog'
 import type { PipelineJob } from '../components/LivePipelineProgress'
 import { OverviewLoading } from '../components/OverviewStates'
 import { useProject } from '../project/ProjectContext'
+import { friendlyError, responseError } from '../lib/errors'
 
 type LogEntry = {
   job_id: string
@@ -109,7 +110,7 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
       const res = await api<LogsResponse>(`/api/pipeline/logs${q}`)
       setData(res)
     } catch (e) {
-      setError(e instanceof Error ? e.message : String(e))
+      setError(friendlyError(e))
       setData(null)
     } finally {
       setLoading(false)
@@ -121,14 +122,14 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
     setError(null)
     try {
       const res = await fetch('/api/pipeline/logs', { method: 'DELETE' })
-      if (!res.ok) throw new Error((await res.text()) || `HTTP ${res.status}`)
+      if (!res.ok) throw await responseError(res)
       setConfirmClear(false)
       setSelectedJobId('')
       setRawLog('')
       setExpandedStage(null)
       await load()
     } catch (e) {
-      setError(e instanceof Error ? e.message : String(e))
+      setError(friendlyError(e))
     } finally {
       setClearing(false)
     }

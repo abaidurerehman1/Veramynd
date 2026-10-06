@@ -29,6 +29,7 @@ from .projects import (
     upload_project_id,
 )
 from .catalog import drop_catalog, get_catalog, reload_catalog
+from .input_checks import InputError, check_guide_pdf, check_standards_xlsx
 from . import pipeline_runner
 from .layout import ASSETS_DIR, RESERVED_UPLOAD_DIRS, UI_DIST, UPLOADS_DIR, WEB_DIR
 from .auth import bootstrap_auth, router as auth_router
@@ -340,7 +341,7 @@ def pipeline_run(body: PipelineRunRequest) -> dict[str, Any]:
     except RuntimeError as e:
         raise HTTPException(409, str(e)) from e
     except KeyError as e:
-        raise HTTPException(404, str(e)) from e
+        raise HTTPException(404, str(e.args[0]) if e.args else "Not found") from e
     return {"ok": True, "job": job.to_dict()}
 
 
@@ -568,11 +569,17 @@ async def ingest_upload(
 
     try:
         if guide_pdf and guide_pdf.filename:
-            await _save(guide_pdf, "guide.pdf", (".pdf",))
+            pdf_name = await _save(guide_pdf, "guide.pdf", (".pdf",))
         if standards_xlsx and standards_xlsx.filename:
-            await _save(standards_xlsx, "standards.xlsx", (".xlsx", ".xlsm"))
+            xlsx_name = await _save(standards_xlsx, "standards.xlsx", (".xlsx", ".xlsm"))
         if len(saved) < 2:
             raise HTTPException(400, "Both a curriculum PDF and a standards XLSX are required")
+        # Check the contents now, so a bad file is rejected here rather than failing hours later in Parse.
+        try:
+            pages = check_guide_pdf(dest / pdf_name)
+            n_standards = check_standards_xlsx(dest / xlsx_name)
+        except InputError as e:
+            raise HTTPException(400, str(e)) from e
         meta = {
             "program_name": program,
             "guide_label": guide,
@@ -582,8 +589,11 @@ async def ingest_upload(
         }
         (dest / "meta.json").write_text(json.dumps(meta, indent=2) + "\n", encoding="utf-8")
     except HTTPException:
+        # Do not leave a half-saved batch behind (it would show up on Ingestion with missing files).
+        shutil.rmtree(dest, ignore_errors=True)
         raise
     except OSError as e:
+        shutil.rmtree(dest, ignore_errors=True)
         raise HTTPException(500, f"Could not save upload: {e}") from e
 
     return {
@@ -593,8 +603,9 @@ async def ingest_upload(
         "project_id": upload_project_id(batch_id),
         "files": saved,
         "message": (
-            f"Saved “{display_name}”. Pipeline did NOT start — "
-            "explicitly run Complete auto or step-by-step (confirm each time)."
+            f"Saved “{display_name}”"
+            + (f" ({pages} PDF pages, {n_standards} standards)" if pages and n_standards else "")
+            + ". Pipeline did NOT start — explicitly run Complete auto or step-by-step (confirm each time)."
         ),
         "runnable_steps": pipeline_runner.list_runnable_steps(),
         "auto_run": False,

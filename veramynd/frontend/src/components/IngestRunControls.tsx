@@ -6,6 +6,7 @@ import { isJobActive } from '../lib/jobs'
 import { JobPauseButton } from './JobPauseButton'
 import type { PipelineJob } from './LivePipelineProgress'
 import type { RunnableStep } from './PipelineRunPanel'
+import { detailMessage, friendlyError } from '../lib/errors'
 
 type Mode = 'auto' | 'stepwise'
 
@@ -27,8 +28,7 @@ async function postRun(body: Record<string, unknown>): Promise<{ job: PipelineJo
   })
   const data = await res.json().catch(() => ({}))
   if (!res.ok) {
-    const detail = data?.detail
-    throw new Error(typeof detail === 'string' ? detail : data?.message || `HTTP ${res.status}`)
+    throw new Error(detailMessage(data, res.status))
   }
   return data as { job: PipelineJob }
 }
@@ -230,7 +230,7 @@ export function IngestRunControls({
       setLog('')
       await refreshJob(started.id)
     } catch (e) {
-      setError(e instanceof Error ? e.message : String(e))
+      setError(friendlyError(e))
     } finally {
       setBusy(false)
     }
@@ -446,7 +446,14 @@ export function IngestRunControls({
             <code className="pipe-job-id">{job.id}</code>
             {job.current_step ? <span className="card-sub">step: {job.current_step}</span> : null}
           </div>
-          {job.message ? <p className="pipe-job-msg">{job.message}</p> : null}
+          {job.status === 'failed' || job.status === 'cancelled' ? (
+            <div className="run-error" role="alert">
+              <strong>{job.status === 'failed' ? 'Run failed' : 'Run stopped'}</strong>
+              <span>{job.error || job.message || 'The run stopped without a message. Open logs for details.'}</span>
+            </div>
+          ) : job.message ? (
+            <p className="pipe-job-msg">{job.message}</p>
+          ) : null}
           {log ? (
             <pre className="pipe-log" tabIndex={0}>
               {log}
