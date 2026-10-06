@@ -30,6 +30,9 @@ FRONTEND_ROOT = _env_path("VERAMYND_FRONTEND_ROOT", VERAMYND_ROOT / "frontend")
 PARSER_ROOT = _env_path("VERAMYND_PARSER_ROOT", VERAMYND_ROOT / "veramynd_parser")
 
 UPLOADS_DIR = BACKEND_ROOT / "uploads"
+# Profile pictures live beside upload batches; this folder is never a curriculum batch.
+AVATARS_DIR = UPLOADS_DIR / "avatars"
+RESERVED_UPLOAD_DIRS = frozenset({AVATARS_DIR.name})
 RUNS_DIR = BACKEND_ROOT / "runs"
 REGISTRY_PATH = BACKEND_ROOT / "projects.json"
 WEB_DIR = BACKEND_ROOT / "web"

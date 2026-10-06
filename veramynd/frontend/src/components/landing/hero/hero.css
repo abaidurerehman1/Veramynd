@@ -27,14 +27,38 @@
   overflow: hidden;
 }
 
+/* Two copies of the list side by side; the track slides by one copy, so the loop is seamless. */
+.fs-ticker__track {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  animation: fs-ticker-scroll 60s linear infinite;
+}
+
+.fs-ticker:hover .fs-ticker__track {
+  animation-play-state: paused;
+}
+
+@keyframes fs-ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 .fs-ticker__list {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
-  justify-content: space-between;
+  gap: 72px;
   height: 100%;
   margin: 0;
-  padding: 0 37px 0 25px;
+  padding: 0 36px;
   list-style: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fs-ticker { overflow-x: auto; scrollbar-width: none; }
+  .fs-ticker__track { animation: none; }
+  .fs-ticker__list[aria-hidden='true'] { display: none; }
 }
 
 .fs-ticker__item {
@@ -234,10 +258,8 @@
 
 @media (max-width: 1100px) {
   .fs-ticker__list {
-    justify-content: flex-start;
     gap: 48px;
-    overflow-x: auto;
-    scrollbar-width: none;
+    padding: 0 24px;
   }
 
   .fs-hero__top {

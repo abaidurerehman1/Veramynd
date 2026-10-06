@@ -24,12 +24,13 @@ from .projects import (
     list_project_configs,
     project_card,
     get_project_config,
+    is_upload_batch_dir,
     reload_registry,
     upload_project_id,
 )
 from .catalog import drop_catalog, get_catalog, reload_catalog
 from . import pipeline_runner
-from .layout import ASSETS_DIR, UI_DIST, UPLOADS_DIR, WEB_DIR
+from .layout import ASSETS_DIR, RESERVED_UPLOAD_DIRS, UI_DIST, UPLOADS_DIR, WEB_DIR
 from .auth import bootstrap_auth, router as auth_router
 from .review_decisions import router as review_decisions_router
 from .auth.config import settings as auth_settings
@@ -496,7 +497,7 @@ def ingest_status() -> dict:
     UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
     batches = []
     for p in sorted(UPLOADS_DIR.iterdir(), reverse=True):
-        if not p.is_dir():
+        if not is_upload_batch_dir(p):  # skips avatars/ and anything that is not a batch
             continue
         files = [f.name for f in p.iterdir() if f.is_file()]
         display_name = p.name
@@ -606,6 +607,9 @@ def ingest_delete(batch_id: str) -> dict:
     bid = (batch_id or "").strip()
     if not bid or any(ch in bid for ch in ("/", "\\", "..")) or bid in (".", ".."):
         raise HTTPException(400, "Invalid batch id")
+    if bid in RESERVED_UPLOAD_DIRS:
+        # e.g. avatars/ holds profile pictures; never delete it as a batch.
+        raise HTTPException(404, f"Unknown batch: {bid}")
     root = UPLOADS_DIR.resolve()
     dest = (UPLOADS_DIR / bid).resolve()
     try:

@@ -895,21 +895,7 @@ class Catalog:
                     download_url=f"/api/exports/{eid}/download?project_id={cfg.id}" if ok else None,
                 )
             )
-        # result CSVs exist as folder
-        result_dir = self.output / "result"
-        csvs = list(result_dir.glob("*.csv")) if result_dir.is_dir() else []
-        items.append(
-            ExportItem(
-                id="result-csvs",
-                name=f"Per-lesson result CSVs ({len(csvs)} files)",
-                type="csv-dir",
-                path=str(result_dir),
-                available=bool(csvs),
-                download_url=(
-                    f"/api/exports/result-csvs/download?project_id={cfg.id}" if csvs else None
-                ),
-            )
-        )
+        # Per-lesson result CSVs are not a pipeline output, so they are not offered as an export.
         return items
 
     def export_path(self, export_id: str) -> Path | None:

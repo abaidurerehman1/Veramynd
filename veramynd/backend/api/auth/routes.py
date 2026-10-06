@@ -14,7 +14,7 @@ from pydantic import BaseModel, EmailStr, Field, field_validator
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from ..layout import UPLOADS_DIR
+from ..layout import AVATARS_DIR, UPLOADS_DIR
 from .config import settings
 from .db import get_db, init_db
 from .emailer import send_password_reset_email, send_verification_email
@@ -31,7 +31,7 @@ router = APIRouter(prefix="/api/auth", tags=["auth"])
 
 COOKIE_NAME = "veramynd_token"
 _NAME_RE = re.compile(r"^[A-Za-z][A-Za-z .'-]{1,118}$")
-_AVATAR_DIR = UPLOADS_DIR / "avatars"
+_AVATAR_DIR = AVATARS_DIR
 _AVATAR_MAX_BYTES = 2 * 1024 * 1024
 _AVATAR_TYPES = {
     "image/jpeg": ".jpg",
