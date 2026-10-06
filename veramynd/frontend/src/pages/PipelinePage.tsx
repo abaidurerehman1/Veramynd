@@ -8,6 +8,7 @@ import { LivePipelineProgress, type PipelineJob } from '../components/LivePipeli
 import { OverviewLoading } from '../components/OverviewStates'
 import type { RunnableStep } from '../components/PipelineRunPanel'
 import { NONE_PROJECT_ID, useProject } from '../project/ProjectContext'
+import { friendlyError } from '../lib/errors'
 
 function isDone(status: string) {
   return /complete|ok|healthy/i.test(status || '')
@@ -92,7 +93,7 @@ export function PipelinePage({
             null
       setLiveJob(match)
     } catch (e) {
-      setError(e instanceof Error ? e.message : String(e))
+      setError(friendlyError(e))
       setStages([])
       setOverview(null)
     } finally {

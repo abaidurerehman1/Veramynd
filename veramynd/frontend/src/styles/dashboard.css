@@ -5688,3 +5688,33 @@ table.data tr.clickable { cursor: pointer; }
 .live-stage.paused { border-color: #ecd9bf; background: linear-gradient(90deg, #fdf7ef, #fff3fa); }
 .live-stage.paused .live-stage-bar-fill { background: var(--grad-warm); }
 .step-wizard-item.paused .step-wizard-dot { background: var(--grad-warm); color: #ffffff; }
+
+/* ---------- Error messages (upload checks, failed runs, refresh) ---------- */
+.ingest-drop-error {
+  margin: 8px 0 0;
+  color: #c4483b;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+.run-error {
+  display: grid;
+  gap: 4px;
+  margin-top: 12px;
+  padding: 12px 14px;
+  border: 1px solid #f3cfca;
+  border-left: 3px solid #c4483b;
+  border-radius: 10px;
+  background: #fdf3f2;
+  color: #5f2a24;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.run-error strong { color: #c4483b; font-size: 13px; }
+.top-error {
+  max-width: 340px;
+  overflow: hidden;
+  color: #c4483b;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

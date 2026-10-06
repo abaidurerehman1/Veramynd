@@ -28,6 +28,7 @@ import { SettingsPage } from './pages/SettingsPage'
 import { NONE_PROJECT_ID, ProjectProvider, useProject } from './project/ProjectContext'
 import './styles/dashboard.css'
 import { Wordmark } from './components/layout/Wordmark'
+import { responseError } from './lib/errors'
 
 function RequireAuth({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth()
@@ -130,7 +131,7 @@ export default function App() {
         : ''
     const res = await fetch(`/api/reload${q}`, { method: 'POST', credentials: 'include' })
     if (!res.ok) {
-      throw new Error((await res.text()) || `HTTP ${res.status}`)
+      throw await responseError(res)
     }
     setReloadKey((k) => k + 1)
   }, [])

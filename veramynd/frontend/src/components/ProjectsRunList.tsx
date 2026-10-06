@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { ConfirmDialog } from './ConfirmDialog'
 import { NONE_PROJECT_ID, useProject } from '../project/ProjectContext'
 import type { ProjectCard } from '../api/types'
+import { friendlyError, responseError } from '../lib/errors'
 
 function statusLabel(p: ProjectCard) {
   const s = p.run_status || (p.has_output ? 'running' : 'empty')
@@ -46,8 +47,7 @@ export function ProjectsRunList({
     setActionError(null)
     try {
       const res = await fetch(`/api/projects/${encodeURIComponent(id)}`, { method: 'DELETE' })
-      const text = await res.text()
-      if (!res.ok) throw new Error(text || `HTTP ${res.status}`)
+      if (!res.ok) throw await responseError(res)
       setDeleteTarget(null)
       await refreshProjects()
       if (projectId === id) {
@@ -57,7 +57,7 @@ export function ProjectsRunList({
         }
       }
     } catch (e) {
-      setActionError(e instanceof Error ? e.message : String(e))
+      setActionError(friendlyError(e))
     } finally {
       setDeletingId(null)
     }

@@ -1,12 +1,12 @@
+import { responseError } from '../lib/errors'
+
 async function api<T>(path: string): Promise<T> {
 
   const res = await fetch(path)
 
   if (!res.ok) {
 
-    const text = await res.text()
-
-    throw new Error(text || `HTTP ${res.status}`)
+    throw await responseError(res)
 
   }
 

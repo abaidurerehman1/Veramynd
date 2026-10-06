@@ -1441,6 +1441,105 @@ def _client_format_labels(job: PipelineJob, framework: str) -> dict[str, str]:
 StepFn = Callable[[PipelineJob, Path, Path, Path, str], int]
 
 
+
+# ---------- Readable failure messages ----------
+# (pattern, what went wrong, what to do). First match wins; patterns are checked against
+# the error lines a failed stage wrote to the log.
+_FAILURE_HINTS: tuple[tuple[str, str, str], ...] = (
+    (r"already accessed by another instance of Qdrant",
+     "the vector database folder (.qdrant_data) is locked by another process, usually an earlier run that is still running or stuck",
+     "Stop the other pipeline process, then resume. Only one run can use the local Qdrant folder at a time."),
+    (r"qdrant.*(refused|10061|111\b)|connection refused.*6333|6333.*refused",
+     "the Qdrant server at QDRANT_URL is not reachable",
+     "Start Qdrant (e.g. the Docker container) or remove QDRANT_URL from .env to use the local folder, then resume."),
+    (r"api.?key|authentication|unauthorized|\b401\b|invalid x-api-key",
+     "the AI provider rejected the API key",
+     "Check OPENAI_API_KEY / ANTHROPIC_API_KEY in the backend .env, restart the API, then resume."),
+    (r"credit balance|insufficient_quota|billing",
+     "the AI provider account is out of credit",
+     "Top up the OpenAI / Anthropic account, then resume."),
+    (r"rate.?limit|\b429\b|too many requests|overloaded|\b529\b",
+     "the AI provider is rate-limiting or overloaded",
+     "Wait a few minutes, then resume. Finished lessons are kept."),
+    (r"timed? ?out|timeout",
+     "a request timed out",
+     "Resume to retry. Finished lessons are kept."),
+    (r"MemoryError|out of memory|Killed\b|cannot allocate",
+     "the server ran out of memory",
+     "Close other heavy processes or use a server with more RAM, then resume."),
+    (r"No space left on device",
+     "the server disk is full",
+     "Free disk space, then resume."),
+    (r"SpreadsheetStructureError|MultiGradeSheetError|UngradedCodeError|cannot open workbook|BadZipFile",
+     "the standards spreadsheet is not in the expected format",
+     "Fix the spreadsheet (code in column 1, standard text in column 2, one grade per sheet), upload it again, and re-run."),
+    (r"FileDataError|PDFSyntaxError|cannot open broken document|not a PDF|password|encrypted",
+     "the curriculum PDF could not be read",
+     "Upload an unprotected, text-based PDF and re-run."),
+    (r"missing normalize|missing retrieve|missing lesson|stage1/lessons missing|standards\.json missing|normalize_standards missing|No such file|not found",
+     "an earlier stage's output is missing",
+     "Re-run the earlier stage (or Complete auto, which redoes anything missing)."),
+    (r"\bBLOCK\b|trust.?gate|verification fail",
+     "the output failed a validation check",
+     "Open the log to see which check blocked it; fix the input and re-run."),
+)
+
+
+def _failure_lines(job: PipelineJob, log_from_line: int) -> list[str]:
+    path = Path(job.log_path) if job.log_path else RUNS_DIR / f"{job.id}.log"
+    try:
+        lines = path.read_text(encoding="utf-8", errors="replace").splitlines()[max(0, log_from_line):]
+    except OSError:
+        return []
+    # Error-classified lines plus Python exception lines such as "ValueError: ..." from tracebacks.
+    exc_line = re.compile(r"^\s*[\w.]*(Error|Exception):")
+    keep = [
+        ln.strip()
+        for ln in lines
+        if classify_log_line(ln) not in (None, "warning") or exc_line.match(ln)
+    ]
+    return [ln for ln in keep if ln and not ln.startswith(("File ", "^", "~"))]
+
+
+def _batch_failures(output_root: Path) -> tuple[int, int, str]:
+    """(failed lessons, total lessons, most common error) from the align manifest, if any."""
+    man = _paths(output_root)["reports"] / "batch_align_manifest.json"
+    data = _read_json_obj(man)
+    if not data:
+        return 0, 0, ""
+    failed = data.get("failed") or []
+    ids = {str(f.get("resource_id")) for f in failed if isinstance(f, dict)}
+    lessons = data.get("lessons")
+    total = len(lessons) if isinstance(lessons, list) else int(data.get("ok_count") or 0) + len(ids)
+    errors = [str(f.get("error") or "") for f in failed if isinstance(f, dict)]
+    common = max(set(errors), key=errors.count) if errors else ""
+    return len(ids), total, common
+
+
+def explain_step_failure(
+    job: PipelineJob, step: str, code: int, *, output_root: Path, log_from_line: int
+) -> str:
+    """One readable sentence: what failed, why, and what to do next."""
+    name = STEP_META.get(step, {}).get("name", step)
+    lines = _failure_lines(job, log_from_line)
+    scope = ""
+    if step in ("retrieval", "judge"):
+        n_failed, total, common = _batch_failures(output_root)
+        if n_failed:
+            scope = f" for {n_failed} of {total} lessons" if total else f" for {n_failed} lessons"
+            if common:
+                lines.append(common)
+    haystack = "\n".join(lines[-40:])
+    for pattern, why, todo in _FAILURE_HINTS:
+        if re.search(pattern, haystack, re.I):
+            return f"{name} failed{scope}: {why}. {todo}"
+    if code in (-9, 137):
+        return f"{name} was stopped by the system (likely out of memory). Free memory or use a larger server, then resume."
+    last = next((ln for ln in reversed(lines) if not ln.startswith("Traceback")), "")
+    detail = f" Last error: {last[:240].rstrip('.')}." if last else ""
+    return f"{name} failed{scope} (exit code {code}).{detail} Open Logging for the full output, fix the cause, then resume."
+
+
 def _step_parsing(
     job: PipelineJob, pdf: Path, xlsx: Path, output_root: Path, framework: str
 ) -> int:
@@ -1780,8 +1879,14 @@ def _execute(job: PipelineJob) -> None:
             if code != 0:
                 job.exit_code = code
                 job.status = "failed"
-                job.error = f"Step {step} exited with code {code}"
+                try:
+                    job.error = explain_step_failure(
+                        job, step, code, output_root=output_root, log_from_line=log_at
+                    )
+                except Exception:  # noqa: BLE001 — never let the explanation hide the failure
+                    job.error = f"Step {step} exited with code {code}"
                 job.message = job.error
+                _append_log(job, f"ERROR: {job.error}")
                 job.updated_at = _now()
                 _emit_total_cost(job)
                 _persist(job)
@@ -1827,8 +1932,9 @@ def _execute(job: PipelineJob) -> None:
             _append_log(job, "Note: catalog reload after run failed (non-fatal)")
     except Exception as e:  # noqa: BLE001
         job.status = "failed"
-        job.error = str(e)
-        job.message = str(e)
+        where = STEP_META.get(job.current_step or "", {}).get("name")
+        job.error = f"{where + ' failed: ' if where else ''}{e or type(e).__name__}"
+        job.message = job.error + " Open Logging for details, fix the cause, then resume."
         job.updated_at = _now()
         _append_log(job, traceback.format_exc())
         try:
@@ -1895,9 +2001,18 @@ def start_job(
         project_id=None if batch_id else project_id,
         framework=framework,
     )
-    del pdf, xlsx
 
     already = artifact_completed_steps(output_root)
+    if "parsing" in steps and "parsing" not in already:
+        # Parse reads the PDF and spreadsheet: reject bad inputs now, not hours into the run.
+        from .input_checks import InputError, check_guide_pdf, check_standards_xlsx
+
+        try:
+            check_guide_pdf(pdf)
+            check_standards_xlsx(xlsx, fw)
+        except InputError as e:
+            raise ValueError(str(e)) from e
+    del pdf, xlsx
     if mode == "full" and already:
         # Keep full step list for progress UI; _execute skips completed ones.
         pass

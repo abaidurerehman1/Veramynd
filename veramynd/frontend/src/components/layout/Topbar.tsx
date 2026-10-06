@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { friendlyError } from '../../lib/errors'
 import { ProjectSwitcher } from './ProjectSwitcher'
 import { SidebarToggleIcon } from './SidebarToggleIcon'
 
@@ -15,6 +17,15 @@ export function Topbar({ crumbs, showMenu, onToggle, onReload, slotRef, claimed 
   // "Veramynd / Project / Section": the last part is the current page.
   const parts = crumbs.split(' / ').filter(Boolean)
   const here = parts.pop() ?? ''
+  const [reloadError, setReloadError] = useState<string | null>(null)
+  const reload = async () => {
+    setReloadError(null)
+    try {
+      await onReload?.()
+    } catch (e) {
+      setReloadError(`Refresh failed: ${friendlyError(e)}`)
+    }
+  }
 
   return (
     <header className={`app-header${claimed ? ' has-slot' : ''}`} role="banner">
@@ -44,12 +55,17 @@ export function Topbar({ crumbs, showMenu, onToggle, onReload, slotRef, claimed 
         <div className="topbar-slot" ref={slotRef} />
         {claimed ? null : (
         <div className="top-actions">
+          {reloadError ? (
+            <span className="top-error" role="alert" title={reloadError}>
+              {reloadError}
+            </span>
+          ) : null}
           <button
             type="button"
             className="icon-btn refresh-btn"
             title="Refresh data"
             aria-label="Refresh data"
-            onClick={() => void onReload?.()}
+            onClick={() => void reload()}
           >
             <svg className="refresh-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
               <path d="M21 12a9 9 0 0 0-15.36-6.36" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
