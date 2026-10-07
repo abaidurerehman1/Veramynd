@@ -4,6 +4,7 @@ import { ConfirmDialog } from './ConfirmDialog'
 import { NONE_PROJECT_ID, useProject } from '../project/ProjectContext'
 import type { ProjectCard } from '../api/types'
 import { friendlyError, responseError } from '../lib/errors'
+import { uploadedLabel } from '../lib/labels'
 
 function statusLabel(p: ProjectCard) {
   const s = p.run_status || (p.has_output ? 'running' : 'empty')
@@ -21,7 +22,7 @@ type Props = {
 
 export function ProjectsRunList({
   openTo = 'overview',
-  title = 'Pipeline runs',
+  title = 'Your projects',
   subtitle,
 }: Props) {
   const { projects, projectId, error, refreshProjects, clearProject } = useProject()
@@ -63,7 +64,7 @@ export function ProjectsRunList({
     }
   }
 
-  const countLabel = subtitle ?? `${runs.length} project${runs.length === 1 ? '' : 's'} with output`
+  const countLabel = subtitle ?? `${runs.length} project${runs.length === 1 ? '' : 's'} with results`
 
   return (
     <>
@@ -113,15 +114,15 @@ export function ProjectsRunList({
                         {p.source === 'upload' ? (
                           <span className="badge neutral">Upload</span>
                         ) : (
-                          <span className="badge neutral">Registry</span>
+                          <span className="badge neutral">Built-in</span>
                         )}
                         {active ? <span className="badge info">Active</span> : null}
                         {p.is_default ? <span className="badge info">Default</span> : null}
                       </div>
                       <h3 className="projects-run-title">{p.name}</h3>
                       {meta ? <p className="card-sub">{meta}</p> : null}
-                      <p className="projects-run-id" title={p.id}>
-                        {p.id}
+                      <p className="projects-run-id" title={`ID: ${p.id}`}>
+                        {p.source === 'upload' ? uploadedLabel(p.upload_batch_id || p.id) : 'Built-in project'}
                       </p>
                     </div>
                     <div className="projects-run-actions">

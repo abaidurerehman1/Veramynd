@@ -13,18 +13,18 @@ export function ProjectsPage({ reloadKey = 0 }: { reloadKey?: number }) {
 
   if (loading && !projects.length) {
     return (
-      <div className="page">
+      <div className="page ops-clean">
         <OverviewLoading />
       </div>
     )
   }
 
   return (
-    <div className="page">
+    <div className="page ops-clean">
       <header className="page-header">
         <div>
           <h1>Projects</h1>
-          <p>Completed and in-progress pipeline runs. Delete removes the project; Logging stays until you Clear logs.</p>
+          <p>Every curriculum project with results. Open one to see its dashboard, or delete it when you no longer need it.</p>
         </div>
         <div className="header-actions">
           <Link className="btn" to={`/projects/${projectId || NONE_PROJECT_ID}/pipeline`}>

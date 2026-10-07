@@ -7,6 +7,7 @@ import type { PipelineJob } from '../components/LivePipelineProgress'
 import { OverviewLoading } from '../components/OverviewStates'
 import { useProject } from '../project/ProjectContext'
 import { friendlyError, responseError } from '../lib/errors'
+import { runLabel, uploadedLabel } from '../lib/labels'
 
 type LogEntry = {
   job_id: string
@@ -91,7 +92,8 @@ function lessonBadge(status: string) {
 }
 
 export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
-  const { projectId, hasProject } = useProject()
+  const { projectId, hasProject, projects } = useProject()
+  const projectNames = useMemo(() => new Map(projects.map((p) => [p.id, p.name])), [projects])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [data, setData] = useState<LogsResponse | null>(null)
@@ -192,11 +194,11 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
   if (loading && !data) return <OverviewLoading />
 
   return (
-    <div className="analytics">
+    <div className="analytics ops-clean">
       <div className="page-header">
         <div>
           <h1>Logging</h1>
-          <p>Per-stage and per-lesson pipeline activity, plus typed errors.</p>
+          <p>What each pipeline run did, stage by stage and lesson by lesson, with any errors.</p>
         </div>
         <div className="header-actions">
           <button
@@ -212,7 +214,7 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
 
       <div className="kpi-grid kpi-4">
         <div className="kpi">
-          <div className="label">Jobs</div>
+          <div className="label">Runs</div>
           <div className="value">{data?.jobs?.length ?? 0}</div>
         </div>
         <div className="kpi">
@@ -220,11 +222,11 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
           <div className="value">{stages.length}</div>
         </div>
         <div className="kpi">
-          <div className="label">Lesson events</div>
+          <div className="label">Lesson updates</div>
           <div className="value">{lessonTotal}</div>
         </div>
         <div className="kpi">
-          <div className="label">Typed lines</div>
+          <div className="label">Log entries</div>
           <div className="value">{data?.entries?.length ?? 0}</div>
         </div>
       </div>
@@ -241,7 +243,7 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
 
       <section className="card">
         <div className="card-h">
-          <h2>Stages & lessons</h2>
+          <h2>Stages and lessons</h2>
           <div className="log-actions">
             <button type="button" className="btn" onClick={() => void load()}>
               Refresh
@@ -254,7 +256,7 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
         <div className="card-b">
           <div className="log-cost-banner" style={{ marginBottom: 12 }}>
             <span className="badge info">
-              {selectedJobId ? 'Job cost' : 'All jobs cost'} · {formatUsd(costSummary.total)}
+              {selectedJobId ? 'Run cost' : 'All runs cost'} · {formatUsd(costSummary.total)}
             </span>
             {costSummary.selected?.stage_costs &&
             Object.keys(costSummary.selected.stage_costs).length ? (
@@ -265,7 +267,7 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
               </span>
             ) : (
               <span className="card-sub" style={{ marginLeft: 8 }}>
-                Per-stage costs appear after Normalize / Embed / Judge emit usage lines.
+                Costs appear once a stage that uses AI (Normalize, Embed or Judge) has run.
               </span>
             )}
           </div>
@@ -288,8 +290,8 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
                     >
                       <div>
                         <strong>{s.stage_name || s.stage_id}</strong>
-                        <span className="card-sub">
-                          {s.job_id} · {s.lesson_count} lessons
+                        <span className="card-sub" title={`Run ID: ${s.job_id}`}>
+                          {runLabel(s.job_id)} · {s.lesson_count} lessons
                           {s.ok ? ` · ${s.ok} ok` : ''}
                           {s.skip ? ` · ${s.skip} skip` : ''}
                           {s.error ? ` · ${s.error} error` : ''}
@@ -337,7 +339,7 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
 
       <section className="card">
         <div className="card-h">
-          <h2>Filter by type</h2>
+          <h2>Show only</h2>
         </div>
         <div className="card-b">
           <div className="log-type-chips">
@@ -365,7 +367,7 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
       <div className="grid-2">
         <section className="card">
           <div className="card-h">
-            <h2>Jobs</h2>
+            <h2>Runs</h2>
           </div>
           <div className="card-b">
             {(data?.jobs || []).length === 0 ? (
@@ -379,9 +381,9 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
                   className={`log-job-row ${!selectedJobId ? 'selected' : ''}`}
                   onClick={() => setSelectedJobId('')}
                 >
-                  <strong>All jobs</strong>
+                  <strong>All runs</strong>
                   <span className="card-sub">
-                    combined stage / lesson view · {formatUsd(data?.total_cost_usd)}
+                    every run combined · {formatUsd(data?.total_cost_usd)}
                   </span>
                 </button>
                 {(data?.jobs || []).map((j) => {
@@ -400,7 +402,9 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
                     onClick={() => setSelectedJobId(j.id)}
                   >
                     <div className="log-job-top">
-                      <code>{j.id}</code>
+                      <span className="log-job-when" title={`Run ID: ${j.id}`}>
+                        {runLabel(j.id)}
+                      </span>
                       <span
                         className={`badge ${j.status === 'succeeded' ? 'ok' : j.status === 'failed' ? 'warn' : 'info'}`}
                       >
@@ -410,9 +414,10 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
                       </span>
                     </div>
                     <span className="card-sub">
-                      {j.mode}
-                      {j.project_id ? ` · ${j.project_id}` : ''}
-                      {j.batch_id ? ` · batch ${j.batch_id}` : ''}
+                      {j.mode === 'full' ? 'Complete run' : j.mode === 'step' ? 'Single step' : j.mode}
+                      {' · '}
+                      {projectNames.get(j.project_id || '') ||
+                        (j.batch_id ? uploadedLabel(j.batch_id) : j.project_id ? 'Removed project' : 'No project')}
                     </span>
                   </button>
                   )
@@ -424,7 +429,7 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
 
         <section className="card">
           <div className="card-h">
-            <h2>Typed entries</h2>
+            <h2>Log entries</h2>
             <span className="badge info">{entries.length}</span>
           </div>
           <div className="card-b">
@@ -440,8 +445,10 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
                       <span className={`badge ${typeBadge(e.type)}`}>{e.type_label}</span>
                       {e.stage_name ? <span className="badge neutral">{e.stage_name}</span> : null}
                       {e.lesson_code ? <code className="log-entry-job">{e.lesson_code}</code> : null}
-                      <code className="log-entry-job">{e.job_id}</code>
-                      <span className="card-sub">L{e.line_no}</span>
+                      <span className="log-entry-job" title={`Run ID: ${e.job_id}`}>
+                        {runLabel(e.job_id)}
+                      </span>
+                      <span className="card-sub">Log line {e.line_no}</span>
                     </div>
                     <pre className="log-entry-msg">{e.message}</pre>
                   </article>

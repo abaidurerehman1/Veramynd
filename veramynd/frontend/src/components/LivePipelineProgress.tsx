@@ -1,5 +1,6 @@
 import { isJobActive } from '../lib/jobs'
 import { JobPauseButton } from './JobPauseButton'
+import { runLabel, runProblem, stepDescription } from '../lib/labels'
 
 export type StageProgress = {
   id: string
@@ -83,7 +84,7 @@ export function LivePipelineProgress({ job, title = 'Live run', onJobChange }: P
       </div>
       <div className="card-b">
         <div className="live-pipe-meta">
-          <code>{job.id}</code>
+          <span title={`Run ID: ${job.id}`}>{runLabel(job.id)}</span>
           <span>
             {job.steps_done ?? 0}/
             {job.steps_total ?? (stages.length || job.steps?.length || 0)} stages
@@ -112,7 +113,7 @@ export function LivePipelineProgress({ job, title = 'Live run', onJobChange }: P
               <div className="live-stage-bar">
                 <div className="live-stage-bar-fill" style={{ width: `${s.percent}%` }} />
               </div>
-              <div className="live-stage-detail">{s.detail}</div>
+              <div className="live-stage-detail" title={s.detail}>{stepDescription(s.id, s.detail)}</div>
             </div>
           ))}
         </div>
@@ -120,8 +121,8 @@ export function LivePipelineProgress({ job, title = 'Live run', onJobChange }: P
         {job.status === 'failed' || job.status === 'cancelled' ? (
           <div className="run-error" role="alert">
             <strong>{job.status === 'failed' ? 'Run failed' : 'Run stopped'}</strong>
-            <span>{job.error || job.message || 'The run stopped without a message. Open Logging for details.'}</span>
-            {job.error && job.message && job.message !== job.error ? <span>{job.message}</span> : null}
+            <span>{runProblem(job.error, job.message)}</span>
+            {job.error && job.error.includes(' ') && job.message && job.message !== job.error ? <span>{job.message}</span> : null}
           </div>
         ) : job.message ? (
           <p className="live-pipe-msg">{job.message}</p>

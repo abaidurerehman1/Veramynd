@@ -7,6 +7,8 @@ import { OverviewLoading } from '../components/OverviewStates'
 import type { RunnableStep } from '../components/PipelineRunPanel'
 import { NONE_PROJECT_ID, useProject } from '../project/ProjectContext'
 import { detailMessage, friendlyError } from '../lib/errors'
+import { UploadCancelled, uploadForm } from '../lib/upload'
+import { uploadedLabel } from '../lib/labels'
 
 type IngestBatch = { id: string; name?: string; files: string[] }
 
@@ -162,6 +164,11 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
   const { projectId, hasProject, project, refreshProjects, setProjectId } = useProject()
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
+  // Save progress: bytes sent while uploading, then the server's file checks.
+  const [savePhase, setSavePhase] = useState<'uploading' | 'checking' | null>(null)
+  const [uploadPct, setUploadPct] = useState(0)
+  const [uploadBytes, setUploadBytes] = useState<{ loaded: number; total: number } | null>(null)
+  const uploadAbort = useRef<AbortController | null>(null)
   const [deletingId, setDeletingId] = useState<string | null>(null)
   const [deleteTarget, setDeleteTarget] = useState<IngestBatch | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -217,28 +224,38 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
       return
     }
     setSaving(true)
+    setSavePhase('uploading')
+    setUploadPct(0)
+    setUploadBytes({ loaded: 0, total: pdfFile.size + xlsxFile.size })
+    const ctrl = new AbortController()
+    uploadAbort.current = ctrl
     try {
-      const res = await fetch('/api/ingest', { method: 'POST', body: fd })
-      const body = await res.json().catch(() => ({}))
-      if (!res.ok) throw new Error(detailMessage(body, res.status))
-      const batchId = body.batch_id as string | undefined
-      const uploadProjectId =
-        (body.project_id as string | undefined) || (batchId ? `upload-${batchId}` : null)
-      setMsg(
-        body.message ||
-          `Saved batch ${batchId || '—'}. Run explicitly below — nothing starts on save.`,
-      )
+      const res = await uploadForm('/api/ingest', fd, {
+        signal: ctrl.signal,
+        onProgress: (p) => {
+          setUploadPct(p.percent)
+          setUploadBytes({ loaded: p.loaded, total: p.total })
+        },
+        onSent: () => setSavePhase('checking'),
+      })
+      const body = (res.body ?? {}) as { batch_id?: string; project_id?: string; message?: string }
+      if (res.status < 200 || res.status >= 300) throw new Error(detailMessage(body, res.status))
+      const batchId = body.batch_id
+      const uploadProjectId = body.project_id || (batchId ? `upload-${batchId}` : null)
+      setMsg(body.message || `Saved batch ${batchId || '—'}. Run explicitly below — nothing starts on save.`)
       form.reset()
       setPdfFile(null)
       setXlsxFile(null)
-      await load()
-      await refreshProjects()
       if (batchId) setActiveBatchId(batchId)
       if (uploadProjectId) setLastProjectId(uploadProjectId)
+      // Saved: unlock the form now and refresh the lists in the background.
+      void Promise.all([load(), refreshProjects()]).catch(() => undefined)
     } catch (err) {
-      setError(friendlyError(err))
+      setError(err instanceof UploadCancelled ? 'Upload cancelled. Nothing was saved.' : friendlyError(err))
     } finally {
+      uploadAbort.current = null
       setSaving(false)
+      setSavePhase(null)
     }
   }
 
@@ -284,7 +301,7 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
   const activeBatchName = activeBatch?.name || activeBatchId || null
 
   return (
-    <div className="analytics ov-dash ops-page">
+    <div className="analytics ov-dash ops-page ops-clean">
       <div className="ov-head">
         <div>
           <h2 className="ov-title">Ingestion</h2>
@@ -309,47 +326,27 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
         </div>
       </div>
 
-      <div className="ov-kpi-grid ov-kpi-4">
+      <div className="ov-kpi-grid ov-kpi-2">
         <article className="ov-kpi ed-kpi tone-a">
           <div className="ov-kpi-top">
-            <span className="ov-kpi-label">Upload batches</span>
+            <span className="ov-kpi-label">Uploads</span>
           </div>
           <div className="ov-kpi-value">{batches.length}</div>
           <div className="ov-kpi-foot">
-            <em>Stored locally</em>
+            <em>Saved curriculum + standards pairs</em>
           </div>
         </article>
         <article className="ov-kpi ed-kpi tone-b">
           <div className="ov-kpi-top">
-            <span className="ov-kpi-label">Active batch</span>
+            <span className="ov-kpi-label">Selected upload</span>
           </div>
           <div className="ov-kpi-value kpi-batch-name" title={activeBatchId || undefined}>
             {activeBatchName || '—'}
           </div>
           <div className="ov-kpi-foot">
-            <em>{activeBatchId ? `ID ${activeBatchId}` : 'None selected'}</em>
-          </div>
-        </article>
-        <article className="ov-kpi ed-kpi tone-c">
-          <div className="ov-kpi-top">
-            <span className="ov-kpi-label">Run modes</span>
-          </div>
-          <div className="ov-kpi-value" style={{ fontSize: 22 }}>
-            Auto / steps
-          </div>
-          <div className="ov-kpi-foot">
-            <em>Confirm before start</em>
-          </div>
-        </article>
-        <article className="ov-kpi ed-kpi tone-d">
-          <div className="ov-kpi-top">
-            <span className="ov-kpi-label">Auto-run</span>
-          </div>
-          <div className="ov-kpi-value" style={{ fontSize: 22 }}>
-            Off
-          </div>
-          <div className="ov-kpi-foot">
-            <em>Never on upload</em>
+            <em title={activeBatchId ? `ID: ${activeBatchId}` : undefined}>
+              {activeBatchId ? uploadedLabel(activeBatchId) : 'None selected'}
+            </em>
           </div>
         </article>
       </div>
@@ -360,7 +357,7 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
             <div className="ingest-hero-kicker">New project inputs</div>
             <h2>Upload curriculum + standards</h2>
             <p>
-              Files are stored locally as a batch. The pipeline never starts until you confirm a run.
+              Your files are saved as one upload. Nothing runs until you choose to start a run.
             </p>
 
             <form
@@ -427,8 +424,17 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
 
               <div className="ingest-actions-pro">
                 <button type="submit" className="btn primary" disabled={saving || !readyToSave}>
-                  {saving ? 'Saving…' : 'Save inputs'}
+                  {savePhase === 'uploading'
+                    ? `Uploading ${uploadPct}%…`
+                    : savePhase === 'checking'
+                      ? 'Checking files…'
+                      : 'Save inputs'}
                 </button>
+                {savePhase === 'uploading' ? (
+                  <button type="button" className="btn" onClick={() => uploadAbort.current?.abort()}>
+                    Cancel
+                  </button>
+                ) : null}
                 <Link className="btn" to={pipelineTo}>
                   Pipeline
                 </Link>
@@ -448,6 +454,21 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
                 </span>
               </div>
 
+              {savePhase ? (
+                <div className="ingest-save-progress" role="status" aria-live="polite">
+                  <div className="ingest-save-track">
+                    <div
+                      className={`ingest-save-fill${savePhase === 'checking' ? ' is-checking' : ''}`}
+                      style={{ width: `${savePhase === 'checking' ? 100 : uploadPct}%` }}
+                    />
+                  </div>
+                  <span>
+                    {savePhase === 'uploading'
+                      ? `Uploading ${uploadBytes ? `${formatBytes(uploadBytes.loaded)} of ${formatBytes(uploadBytes.total)}` : ''} — keep this page open.`
+                      : 'Upload complete. Checking the PDF and spreadsheet and saving the batch…'}
+                  </span>
+                </div>
+              ) : null}
               {error ? <p className="none-error">{error}</p> : null}
               {msg ? <p className="none-ok">{msg}</p> : null}
             </form>
@@ -460,7 +481,7 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
                 <span>01</span>
                 <div>
                   <strong>Save inputs</strong>
-                  <p>PDF + standards stored as a batch</p>
+                  <p>Teacher guide PDF + standards spreadsheet</p>
                 </div>
               </li>
               <li>
@@ -486,8 +507,8 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
       <section className="ov-card">
         <div className="ov-card-h">
           <div>
-            <h2>Run against upload batch</h2>
-            <p>Confirm before every start — nothing runs on save</p>
+            <h2>Run a saved upload</h2>
+            <p>Pick an upload below, then start a run. You confirm before anything starts.</p>
           </div>
           {activeBatchId ? (
             <span className="ov-status-pill ok">{activeBatchName || activeBatchId}</span>
@@ -496,7 +517,7 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
         <div className="ov-card-b">
           {batches.length === 0 ? (
             <p className="card-sub" style={{ margin: 0 }}>
-              Save a PDF + XLSX first. Nothing runs until you explicitly start a job below.
+              Save a teacher guide PDF and a standards spreadsheet first. You can start a run here once it is saved.
             </p>
           ) : (
             <>
@@ -514,7 +535,12 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
                 </select>
               </label>
               {activeBatchId ? (
-                <IngestRunControls batchId={activeBatchId} steps={steps} logsPath={logsPath} />
+                <IngestRunControls
+                  batchId={activeBatchId}
+                  projectName={status.batches.find((b) => b.id === activeBatchId)?.name ?? null}
+                  steps={steps}
+                  logsPath={logsPath}
+                />
               ) : null}
             </>
           )}
@@ -524,15 +550,17 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
       <section className="ov-card">
         <div className="ov-card-h">
           <div>
-            <h2>Recent uploads</h2>
-            <p>{batches.length} batch{batches.length === 1 ? '' : 'es'} available</p>
+            <h2>Saved uploads</h2>
+            <p>
+              {batches.length} saved upload{batches.length === 1 ? '' : 's'} · select one to run it
+            </p>
           </div>
         </div>
         <div className="ov-card-b">
           {batches.length === 0 ? (
             <div className="ingest-empty-batches">
               <strong>No uploads yet</strong>
-              <p>Add a curriculum PDF and standards workbook above to create your first batch.</p>
+              <p>Add a teacher guide PDF and a standards spreadsheet above to create your first upload.</p>
             </div>
           ) : (
             <div className="batch-grid">
@@ -553,7 +581,9 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
                       </div>
                       <div className="batch-id">{b.name || b.id}</div>
                       {b.name && b.name !== b.id ? (
-                        <div className="batch-id-sub">{b.id}</div>
+                        <div className="batch-id-sub" title={`ID: ${b.id}`}>
+                          {uploadedLabel(b.id)}
+                        </div>
                       ) : null}
                       <div className="batch-files">
                         {files.length ? (
@@ -600,7 +630,7 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
         title="Delete upload batch?"
         body={
           deleteTarget
-            ? `Permanently delete batch ${deleteTarget.id} and any pipeline output under it? Job logs stay on Logging until you Clear logs.`
+            ? `Permanently delete “${deleteTarget.name || 'this upload'}” and any pipeline output under it? A run in progress for it is stopped. Job logs stay on Logging until you Clear logs.`
             : ''
         }
         confirmLabel="Delete batch"

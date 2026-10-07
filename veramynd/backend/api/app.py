@@ -6,6 +6,7 @@ import json
 import io
 import re
 import shutil
+import threading
 import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
@@ -26,11 +27,13 @@ from .projects import (
     project_card,
     get_project_config,
     is_upload_batch_dir,
+    untitled_upload_name,
     reload_registry,
     upload_project_id,
 )
 from .catalog import drop_catalog, get_catalog, reload_catalog
-from .input_checks import InputError, check_guide_pdf, check_standards_xlsx
+from .input_checks import InputError, check_guide_pdf, check_standards_xlsx, warm_up as warm_up_input_checks
+from starlette.concurrency import run_in_threadpool
 from . import pipeline_runner
 from .layout import ASSETS_DIR, RESERVED_UPLOAD_DIRS, UI_DIST, UPLOADS_DIR, WEB_DIR
 from .auth import bootstrap_auth, router as auth_router
@@ -64,6 +67,8 @@ def _startup() -> None:
     bootstrap_auth()
     pipeline_runner.recover_interrupted_jobs()
     get_catalog().ensure()
+    # Load the upload-check readers in the background so the first "Save inputs" is not slowed.
+    threading.Thread(target=warm_up_input_checks, name="warm-input-checks", daemon=True).start()
 
 
 @app.get("/", response_class=HTMLResponse)
@@ -500,7 +505,7 @@ def _make_batch_id(program_name: str, guide_label: str, grade_label: str) -> str
     ]
     parts = [p for p in parts if p and p != "project"]
     stamp = datetime.now(timezone.utc).strftime("%Y%m%d")
-    base = "-".join(parts) if parts else f"upload-{uuid4().hex[:8]}"
+    base = "-".join(parts) if parts else "untitled"
     candidate = f"{base}-{stamp}"[:72]
     if not (UPLOADS_DIR / candidate).exists():
         return candidate
@@ -520,7 +525,7 @@ def ingest_status() -> dict:
         if not is_upload_batch_dir(p):  # skips avatars/ and anything that is not a batch
             continue
         files = [f.name for f in p.iterdir() if f.is_file()]
-        display_name = p.name
+        display_name = untitled_upload_name(p.name)
         meta_path = p / "meta.json"
         if meta_path.is_file():
             try:
@@ -534,7 +539,9 @@ def ingest_status() -> dict:
                     )
                 )
             except (OSError, json.JSONDecodeError, TypeError):
-                display_name = p.name
+                display_name = untitled_upload_name(p.name)
+        if display_name == "Untitled upload":
+            display_name = untitled_upload_name(p.name)
         batches.append({"id": p.name, "name": display_name, "files": files})
         if len(batches) >= 10:
             break
@@ -571,18 +578,29 @@ async def ingest_upload(
     dest.mkdir(parents=True, exist_ok=True)
     saved: list[str] = []
 
+    def _label(fallback: str) -> str:
+        return {"guide.pdf": "The curriculum PDF", "standards.xlsx": "The standards spreadsheet"}.get(fallback, fallback)
+
     async def _save(upload: UploadFile, fallback: str, allowed: tuple[str, ...]) -> str:
         name = _safe_filename(upload.filename or "", fallback)
         lower = name.lower()
         if not any(lower.endswith(ext) for ext in allowed):
-            raise HTTPException(400, f"{fallback} must be one of {', '.join(allowed)}")
-        data = await upload.read()
-        if not data:
-            raise HTTPException(400, f"{fallback} is empty")
-        if len(data) > _MAX_UPLOAD_BYTES:
-            raise HTTPException(400, f"{fallback} exceeds 200 MB limit")
+            raise HTTPException(400, f"{_label(fallback)} must be a {' or '.join(allowed)} file.")
         path = dest / name
-        path.write_bytes(data)
+        size = 0
+        # Stream to disk in 1 MB chunks: large guides never sit fully in memory, and an
+        # oversized file is stopped as soon as it passes the limit.
+        with path.open("wb") as out:
+            while True:
+                chunk = await upload.read(1024 * 1024)
+                if not chunk:
+                    break
+                size += len(chunk)
+                if size > _MAX_UPLOAD_BYTES:
+                    raise HTTPException(400, f"{_label(fallback)} is larger than the 200 MB limit.")
+                out.write(chunk)
+        if size == 0:
+            raise HTTPException(400, f"{_label(fallback)} is empty. Choose a file that has content.")
         saved.append(name)
         return name
 
@@ -595,8 +613,8 @@ async def ingest_upload(
             raise HTTPException(400, "Both a curriculum PDF and a standards XLSX are required")
         # Check the contents now, so a bad file is rejected here rather than failing hours later in Parse.
         try:
-            pages = check_guide_pdf(dest / pdf_name)
-            n_standards = check_standards_xlsx(dest / xlsx_name)
+            pages = await run_in_threadpool(check_guide_pdf, dest / pdf_name)
+            n_standards = await run_in_threadpool(check_standards_xlsx, dest / xlsx_name)
         except InputError as e:
             raise HTTPException(400, str(e)) from e
         meta = {

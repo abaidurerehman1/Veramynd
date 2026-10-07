@@ -7,6 +7,7 @@ import { JobPauseButton } from './JobPauseButton'
 import type { PipelineJob } from './LivePipelineProgress'
 import type { RunnableStep } from './PipelineRunPanel'
 import { detailMessage, friendlyError } from '../lib/errors'
+import { runLabel, runProblem, stepDescription } from '../lib/labels'
 
 type Mode = 'auto' | 'stepwise'
 
@@ -68,12 +69,8 @@ export function IngestRunControls({
 
   const resolvedProjectId = resolveProjectId(batchId, projectId)
   const targetKey = batchId || projectId || ''
-  const targetLabel = batchId
-    ? `batch ${batchId}`
-    : projectName || projectId || 'this project'
-  const writeWhere = batchId
-    ? `uploads/${batchId}/output/`
-    : 'this project’s output folder'
+  const targetLabel = projectName ? `“${projectName}”` : batchId ? 'this upload' : 'this project'
+  const writeWhere = batchId ? 'this upload’s output folder' : 'this project’s output folder'
   // A paused job still holds the pipeline: keep polling it and keep new runs disabled.
   const running = isJobActive(job?.status)
   const paused = job?.status === 'paused'
@@ -347,7 +344,7 @@ export function IngestRunControls({
                     <div className="step-wizard-top">
                       <div>
                         <strong>{s.name}</strong>
-                        <p>{s.detail}</p>
+                        <p title={s.detail}>{stepDescription(s.id, s.detail)}</p>
                       </div>
                       <span
                         className={`badge ${statusClass(
@@ -443,13 +440,15 @@ export function IngestRunControls({
               {job.status}
               {typeof job.percent === 'number' ? ` · ${job.percent}%` : ''}
             </span>
-            <code className="pipe-job-id">{job.id}</code>
+            <span className="pipe-job-id" title={`Run ID: ${job.id}`}>
+              {runLabel(job.id)}
+            </span>
             {job.current_step ? <span className="card-sub">step: {job.current_step}</span> : null}
           </div>
           {job.status === 'failed' || job.status === 'cancelled' ? (
             <div className="run-error" role="alert">
               <strong>{job.status === 'failed' ? 'Run failed' : 'Run stopped'}</strong>
-              <span>{job.error || job.message || 'The run stopped without a message. Open logs for details.'}</span>
+              <span>{runProblem(job.error, job.message)}</span>
             </div>
           ) : job.message ? (
             <p className="pipe-job-msg">{job.message}</p>
