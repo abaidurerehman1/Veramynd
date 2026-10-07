@@ -9,6 +9,7 @@ import { NONE_PROJECT_ID, useProject } from '../project/ProjectContext'
 import { detailMessage, friendlyError } from '../lib/errors'
 import { UploadCancelled, uploadForm } from '../lib/upload'
 import { uploadedLabel } from '../lib/labels'
+import { STATE_NAMES } from '../components/align/data'
 
 type IngestBatch = { id: string; name?: string; files: string[] }
 
@@ -20,6 +21,8 @@ type IngestStatus = {
 }
 
 const MAX_UPLOAD_BYTES = 200 * 1024 * 1024
+
+const STATE_OPTIONS = Object.entries(STATE_NAMES).sort((a, b) => a[1].localeCompare(b[1]))
 
 function formatBytes(n: number) {
   if (n < 1024) return `${n} B`
@@ -178,6 +181,8 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
   const [activeBatchId, setActiveBatchId] = useState<string | null>(null)
   const [pdfFile, setPdfFile] = useState<File | null>(null)
   const [xlsxFile, setXlsxFile] = useState<File | null>(null)
+  // Which state's standards these are (saved as the framework, e.g. "TX ELA").
+  const [stateCode, setStateCode] = useState('')
 
   const load = useCallback(async () => {
     setLoading(true)
@@ -223,6 +228,10 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
       setError('Both a curriculum PDF and a standards XLSX are required.')
       return
     }
+    if (!stateCode) {
+      setError('Choose the state the standards are from.')
+      return
+    }
     setSaving(true)
     setSavePhase('uploading')
     setUploadPct(0)
@@ -246,6 +255,7 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
       form.reset()
       setPdfFile(null)
       setXlsxFile(null)
+      setStateCode('')
       if (batchId) setActiveBatchId(batchId)
       if (uploadProjectId) setLastProjectId(uploadProjectId)
       // Saved: unlock the form now and refresh the lists in the background.
@@ -296,7 +306,7 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
       ? `/projects/${activeUploadProjectId}/logging`
       : `/projects/${NONE_PROJECT_ID}/logging`
   const steps = status.runnable_steps || []
-  const readyToSave = Boolean(pdfFile && xlsxFile)
+  const readyToSave = Boolean(pdfFile && xlsxFile && stateCode)
   const activeBatch = batches.find((b) => b.id === activeBatchId) || null
   const activeBatchName = activeBatch?.name || activeBatchId || null
 
@@ -396,6 +406,28 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
                     />
                   </label>
                 </div>
+                <div className="ingest-row">
+                  <label>
+                    State the standards are from
+                    <select
+                      name="state"
+                      required
+                      value={stateCode}
+                      onChange={(e) => setStateCode(e.target.value)}
+                    >
+                      <option value="">Choose a state…</option>
+                      {STATE_OPTIONS.map(([code, label]) => (
+                        <option key={code} value={code}>
+                          {label}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <label>
+                    Subject
+                    <input name="subject" type="text" defaultValue="ELA" placeholder="ELA, Math, Science…" />
+                  </label>
+                </div>
               </div>
 
               <div className="ingest-files-block">
@@ -449,8 +481,10 @@ export function IngestionPage({ reloadKey = 0 }: { reloadKey?: number }) {
                 ) : null}
                 <span className="ingest-actions-hint">
                   {readyToSave
-                    ? 'Ready to save · no auto-run'
-                    : 'Add curriculum PDF and standards XLSX to continue'}
+                    ? 'Ready to save · nothing runs until you start it'
+                    : pdfFile && xlsxFile
+                      ? 'Choose the state the standards are from'
+                      : 'Add the teacher guide PDF and the standards spreadsheet to continue'}
                 </span>
               </div>
 

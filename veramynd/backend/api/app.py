@@ -496,6 +496,13 @@ def _slug_part(text: str, max_len: int = 28) -> str:
     return (cleaned or "project")[:max_len].strip("-")
 
 
+# Two-letter codes accepted for the upload "State" field (50 states + DC).
+US_STATE_CODES = frozenset(
+    "AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM "
+    "NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY".split()
+)
+
+
 def _make_batch_id(program_name: str, guide_label: str, grade_label: str) -> str:
     """Human-readable batch folder id, unique under uploads/."""
     parts = [
@@ -562,6 +569,8 @@ async def ingest_upload(
     program_name: str = Form(""),
     guide_label: str = Form(""),
     grade_label: str = Form(""),
+    state: str = Form(""),
+    subject: str = Form(""),
     guide_pdf: UploadFile | None = File(None),
     standards_xlsx: UploadFile | None = File(None),
 ) -> dict:
@@ -572,6 +581,14 @@ async def ingest_upload(
     program = (program_name or "").strip()
     guide = (guide_label or "").strip()
     grade = (grade_label or "").strip()
+    # Which state's standards these are: saved as the framework (e.g. "TX ELA") so Parse labels
+    # them correctly and the Align screens place the project in the right state. Older clients
+    # that send no state keep the previous default (the run falls back to "GA ELA").
+    state_code = (state or "").strip().upper()
+    subject_name = " ".join((subject or "").split())[:40] or "ELA"
+    if state_code and state_code not in US_STATE_CODES:
+        raise HTTPException(400, f"Unknown state “{state}”. Choose a US state from the list.")
+    framework = f"{state_code} {subject_name}" if state_code else ""
     display_name = _batch_display_name(program, guide, grade)
     batch_id = _make_batch_id(program, guide, grade)
     dest = UPLOADS_DIR / batch_id
@@ -621,6 +638,7 @@ async def ingest_upload(
             "program_name": program,
             "guide_label": guide,
             "grade_label": grade,
+            **({"state": state_code, "subject": subject_name, "framework": framework} if framework else {}),
             "display_name": display_name,
             "files": saved,
         }
