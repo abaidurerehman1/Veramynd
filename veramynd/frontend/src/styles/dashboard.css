@@ -5933,3 +5933,16 @@ table.data tr.clickable { cursor: pointer; }
 }
 .ops-clean .tile .path-row,
 .ops-clean .projects-run-id { font-family: inherit; font-size: 12.5px; color: #6b6b6b; word-break: break-word; }
+.ops-clean.ops-page .ingest-form select {
+  width: 100%;
+  height: 42px;
+  padding: 0 36px 0 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  background: #ffffff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M1 1l4 4 4-4' fill='none' stroke='%236b6b6b' stroke-width='1.3'/></svg>") no-repeat right 14px center;
+  color: #000000;
+  font: inherit;
+  font-size: 13px;
+  appearance: none;
+}
+.ops-clean.ops-page .ingest-form select:focus { border-color: #000000; box-shadow: 0 0 0 1px #000000; outline: none; }
