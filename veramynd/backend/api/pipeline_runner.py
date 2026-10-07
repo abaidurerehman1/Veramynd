@@ -74,7 +74,7 @@ class PipelineJob:
     id: str
     mode: str  # full | step
     steps: list[str]
-    status: str  # queued | running | paused | succeeded | failed | cancelled
+    status: str  # queued | running | paused | succeeded | failed | cancelled (stopped by user or by delete)
     created_at: str
     updated_at: str
     confirm: bool = True
@@ -202,6 +202,8 @@ _active_job_id: str | None = None
 # Live CLI subprocess per job (so a pause can freeze it) and a "may continue" flag per job.
 _procs: dict[str, subprocess.Popen] = {}
 _resume_events: dict[str, threading.Event] = {}
+# Jobs a user (or a project delete) asked to stop; the worker ends them as "cancelled".
+_cancel_requested: set[str] = set()
 
 # A job in any of these states holds the single pipeline slot.
 ACTIVE_STATUSES = ("queued", "running", "paused")
@@ -1153,10 +1155,97 @@ def resume_job(job_id: str) -> PipelineJob:
     return job
 
 
+def _stop_tree(pid: int) -> None:
+    """End a CLI process and its children; wake them first in case they are paused."""
+    _set_tree_suspended(pid, False)
+    try:
+        import psutil  # type: ignore
+
+        try:
+            root = psutil.Process(pid)
+        except psutil.NoSuchProcess:
+            return
+        procs = [*root.children(recursive=True), root]
+        for p in procs:
+            try:
+                p.terminate()
+            except psutil.Error:
+                pass
+        _gone, alive = psutil.wait_procs(procs, timeout=5)
+        for p in alive:
+            try:
+                p.kill()
+            except psutil.Error:
+                pass
+        return
+    except ImportError:
+        pass
+    import signal
+
+    try:
+        os.kill(pid, signal.SIGTERM)
+    except (ProcessLookupError, OSError):
+        pass
+
+
+def _is_cancelled(job: PipelineJob) -> bool:
+    with _lock:
+        return job.id in _cancel_requested
+
+
+def cancel_job(job_id: str, reason: str = "Stopped by user.") -> PipelineJob:
+    """Stop a queued, running or paused job. Finished stages and lessons stay on disk."""
+    global _active_job_id
+    job = get_job(job_id)
+    if not job:
+        raise KeyError(f"Unknown job: {job_id}")
+    with _lock:
+        if job.status not in ACTIVE_STATUSES:
+            raise RuntimeError(f"Job {job_id} is already {job.status}; there is nothing to stop.")
+        _cancel_requested.add(job_id)
+        held_here = job_id in _resume_events
+        proc = _procs.get(job_id)
+        go = _resume_events.get(job_id)
+        job.status = "cancelled"
+        job.error = None
+        job.message = f"{reason} Finished stages are kept; start the run again to continue from saved output."
+        job.updated_at = _now()
+        if not held_here and _active_job_id == job_id:
+            # Not owned by a worker in this process (stale record): just release the slot.
+            _active_job_id = None
+    _append_log(job, f"\n=== CANCELLED at {job.updated_at}: {reason} ===")
+    _persist(job)
+    if proc is not None and proc.poll() is None:
+        _stop_tree(proc.pid)
+    if go is not None:
+        go.set()  # release a paused worker so it can finish as cancelled
+    return job
+
+
+def cancel_jobs_for(*, project_id: str | None = None, batch_id: str | None = None, reason: str) -> list[str]:
+    """Stop any active job that targets this project or upload batch (e.g. before deleting it)."""
+    stopped: list[str] = []
+    for row in list_jobs(limit=50):
+        if row.get("status") not in ACTIVE_STATUSES:
+            continue
+        same = (project_id and row.get("project_id") == project_id) or (
+            batch_id and row.get("batch_id") == batch_id
+        )
+        if same:
+            try:
+                cancel_job(str(row["id"]), reason)
+                stopped.append(str(row["id"]))
+            except (KeyError, RuntimeError):
+                continue
+    return stopped
+
+
 def _run_cmd(job: PipelineJob, argv: list[str], *, cwd: Path | None = None) -> int:
     import time
 
     _wait_if_paused(job)
+    if _is_cancelled(job):
+        return 1
     _append_log(job, f"\n$ {' '.join(argv)}\n")
     proc = subprocess.Popen(
         argv,
@@ -1828,7 +1917,7 @@ def _execute(job: PipelineJob) -> None:
             framework=job.framework,
         )
         job.output_dir = str(output_root)
-        if job.status != "paused":  # a pause can arrive while the job is still queued
+        if job.status not in ("paused", "cancelled"):  # a pause/stop can arrive while still queued
             job.status = "running"
             job.message = f"Running against {label}"
         job.updated_at = _now()
@@ -1865,6 +1954,9 @@ def _execute(job: PipelineJob) -> None:
                 continue
 
             _wait_if_paused(job)
+            if _is_cancelled(job):
+                _emit_total_cost(job)
+                return
             job.current_step = step
             job.step_pct = 5
             job.updated_at = _now()
@@ -1876,6 +1968,11 @@ def _execute(job: PipelineJob) -> None:
             _emit_stage_cost(
                 job, step, output_root=output_root, log_from_line=log_at, skipped=False
             )
+            if _is_cancelled(job):
+                job.exit_code = code
+                job.updated_at = _now()
+                _emit_total_cost(job)
+                return
             if code != 0:
                 job.exit_code = code
                 job.status = "failed"
@@ -1907,6 +2004,9 @@ def _execute(job: PipelineJob) -> None:
             except Exception:  # noqa: BLE001
                 pass
 
+        if _is_cancelled(job):
+            _emit_total_cost(job)
+            return
         _emit_total_cost(job)
         job.exit_code = 0
         job.status = "succeeded"
@@ -1931,6 +2031,10 @@ def _execute(job: PipelineJob) -> None:
         except Exception:  # noqa: BLE001
             _append_log(job, "Note: catalog reload after run failed (non-fatal)")
     except Exception as e:  # noqa: BLE001
+        if _is_cancelled(job):
+            _append_log(job, traceback.format_exc())
+            _persist(job)
+            return
         job.status = "failed"
         where = STEP_META.get(job.current_step or "", {}).get("name")
         job.error = f"{where + ' failed: ' if where else ''}{e or type(e).__name__}"
@@ -1958,6 +2062,7 @@ def _execute(job: PipelineJob) -> None:
                 _active_job_id = None
             _procs.pop(job.id, None)
             _resume_events.pop(job.id, None)
+            _cancel_requested.discard(job.id)
 
 
 def start_job(

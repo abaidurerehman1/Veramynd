@@ -5718,3 +5718,7 @@ table.data tr.clickable { cursor: pointer; }
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+/* Stop run: secondary button that turns red on hover. */
+.btn.job-stop-btn { display: inline-flex; align-items: center; gap: 7px; }
+.btn.job-stop-btn:hover:not(:disabled) { border-color: #c4483b; background: #fdf3f2; color: #c4483b; box-shadow: none; }
