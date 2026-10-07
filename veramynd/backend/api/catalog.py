@@ -641,7 +641,10 @@ class Catalog:
         cfg = self.config
         guide_ok, xlsx_ok = cfg.inputs_exist()
         inputs_ok = guide_ok and xlsx_ok
-        n_normalize = self._artifact_count(out / "normalize", "*.json")
+        # normalize_progress.json is Normalize's resume bookkeeping, not a lesson.
+        n_normalize = self._artifact_count(out / "normalize", "*.json") - int(
+            (out / "normalize" / "normalize_progress.json").is_file()
+        )
         n_norm_std = self._artifact_count(out / "normalize_standards", "*.json")
         n_embed = self._artifact_count(out / "embeddings")
         n_retrieve = self._artifact_count(out / "retrieve", "*.json")
