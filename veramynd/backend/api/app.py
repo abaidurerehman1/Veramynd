@@ -19,6 +19,7 @@ from pydantic import BaseModel, Field
 from starlette.middleware.sessions import SessionMiddleware
 
 from .projects import (
+    batch_id_from_project,
     default_project_id,
     delete_project,
     list_project_configs,
@@ -154,6 +155,12 @@ def project_delete(project_id: str) -> dict:
     Upload projects purge ``uploads/<batch>/``. Registry projects are removed from
     ``projects.json`` only (locked Batch-1 artifacts stay on disk).
     """
+    # A run for this project would otherwise keep the pipeline busy after its files are gone.
+    pipeline_runner.cancel_jobs_for(
+        project_id=project_id,
+        batch_id=batch_id_from_project(project_id),
+        reason="Stopped because its project was deleted.",
+    )
     try:
         result = delete_project(project_id)
     except KeyError as e:
@@ -372,6 +379,18 @@ def pipeline_job_resume(job_id: str) -> dict[str, Any]:
     """Resume a paused job from exactly where it stopped."""
     try:
         job = pipeline_runner.resume_job(job_id)
+    except KeyError as e:
+        raise HTTPException(404, e.args[0] if e.args else "Unknown job") from e
+    except RuntimeError as e:
+        raise HTTPException(409, str(e)) from e
+    return {"ok": True, "job": job.to_dict()}
+
+
+@app.post("/api/pipeline/jobs/{job_id}/cancel")
+def pipeline_job_cancel(job_id: str) -> dict[str, Any]:
+    """Stop a running or paused job. Finished stages and lessons stay on disk."""
+    try:
+        job = pipeline_runner.cancel_job(job_id)
     except KeyError as e:
         raise HTTPException(404, e.args[0] if e.args else "Unknown job") from e
     except RuntimeError as e:
@@ -629,6 +648,11 @@ def ingest_delete(batch_id: str) -> dict:
         raise HTTPException(400, "Invalid batch path") from e
     if dest == root or not dest.is_dir():
         raise HTTPException(404, f"Unknown batch: {bid}")
+    pipeline_runner.cancel_jobs_for(
+        project_id=upload_project_id(bid),
+        batch_id=bid,
+        reason="Stopped because its upload was deleted.",
+    )
     try:
         shutil.rmtree(dest)
     except OSError as e:
