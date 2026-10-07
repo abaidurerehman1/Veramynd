@@ -4,6 +4,14 @@ import { api, withProject } from '../api/client'
 import { OverviewLoading } from '../components/OverviewStates'
 import { NONE_PROJECT_ID, useProject } from '../project/ProjectContext'
 import { friendlyError } from '../lib/errors'
+import { fileName } from '../lib/labels'
+
+const FILE_KIND: Record<string, string> = {
+  docx: 'Word document',
+  xlsx: 'Excel spreadsheet',
+  json: 'Data file (JSON)',
+  csv: 'CSV spreadsheet',
+}
 
 type ExportItem = {
   id: string
@@ -53,10 +61,10 @@ export function ExportsPage({
 
   if (!hasProject) {
     return (
-      <div className="analytics">
+      <div className="analytics ops-clean">
         <div className="page-header">
           <h1>Exports</h1>
-          <p>Download client packages and evaluation artifacts.</p>
+          <p>Download the reports for this project.</p>
         </div>
         <section className="card">
           <div className="card-b">
@@ -83,12 +91,12 @@ export function ExportsPage({
   }
 
   return (
-    <div className="analytics">
+    <div className="analytics ops-clean">
       <div className="page-header">
         <div>
           <h1>Exports</h1>
           <p>
-            Download client packages and evaluation artifacts
+            Download the reports for this project
             {project?.name ? ` · ${project.name}` : ''}.
           </p>
         </div>
@@ -104,8 +112,12 @@ export function ExportsPage({
               </span>
             </div>
             <div className="tile-meta">
-              <div className="row">Type: {e.type}</div>
-              {e.path ? <div className="row path-row">{e.path}</div> : null}
+              <div className="row">{FILE_KIND[e.type] ?? e.type}</div>
+              {e.path ? (
+                <div className="row path-row" title={e.path}>
+                  File: {fileName(e.path)}
+                </div>
+              ) : null}
             </div>
             <div className="tile-foot">
               <span className="tile-price">{e.available ? 'Available' : 'Not generated'}</span>

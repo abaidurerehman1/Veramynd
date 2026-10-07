@@ -120,3 +120,12 @@ def check_standards_xlsx(path: Path, framework: str = "", label: str = "The stan
     if count == 0:
         raise InputError(f"{label} has no standards rows under its header.")
     return count
+
+
+def warm_up() -> None:
+    """Load the PDF and spreadsheet readers once, so the first upload is not slowed by imports."""
+    try:
+        import fitz  # type: ignore  # noqa: F401
+    except ImportError:
+        pass
+    _parse_standards()

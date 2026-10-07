@@ -29,6 +29,20 @@ UPLOAD_PROJECT_PREFIX = "upload-"
 _BATCH_ID_RE = re.compile(r"^[0-9A-Za-z][0-9A-Za-z._-]{0,79}$")
 
 
+def untitled_upload_name(batch_id: str) -> str:
+    """Readable name for an upload saved without a title, e.g. "Untitled upload · Sep 14, 2026"."""
+    m = re.search(r"(\d{4})(\d{2})(\d{2})(?:-[0-9a-f]{4})?$", batch_id or "")
+    if m:
+        try:
+            from datetime import date
+
+            d = date(int(m.group(1)), int(m.group(2)), int(m.group(3)))
+            return f"Untitled upload · {d.strftime('%b')} {d.day}, {d.year}"
+        except ValueError:
+            pass
+    return "Untitled upload"
+
+
 def is_upload_batch_dir(path: Path) -> bool:
     """True for a curriculum upload folder; False for files and reserved folders like avatars/."""
     return path.is_dir() and path.name not in RESERVED_UPLOAD_DIRS and bool(_BATCH_ID_RE.match(path.name))
@@ -192,7 +206,7 @@ def list_upload_project_configs() -> list[ProjectConfig]:
         name = str(meta.get("display_name") or "").strip()
         if not name:
             name_bits = [b for b in [program, guide_label, grade_label] if b]
-            name = " · ".join(name_bits) if name_bits else f"Upload {batch_id}"
+            name = " · ".join(name_bits) if name_bits else untitled_upload_name(batch_id)
 
         output_dir = batch_dir / "output"
         output_dir.mkdir(parents=True, exist_ok=True)
