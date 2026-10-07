@@ -93,6 +93,8 @@ class PipelineJob:
     # Estimated USD cost by runnable step id (from CLI usage lines / artifacts).
     stage_costs: dict[str, float] = field(default_factory=dict)
     total_cost_usd: float = 0.0
+    # Process ID of the CLI stage currently running (None between stages).
+    pid: int | None = None
 
     def to_dict(self) -> dict[str, Any]:
         data = asdict(self)
@@ -288,12 +290,60 @@ def artifact_completed_steps(output_root: Path | str | None) -> list[str]:
 _recovered_jobs = False
 
 
-def recover_interrupted_jobs() -> int:
-    """Mark orphaned queued/running jobs as cancelled after process/machine stop.
+def _process_cmdline(pid: int) -> str:
+    """Command line of a live process ("" if it is gone or unreadable)."""
+    try:
+        import psutil  # type: ignore
 
-    Pipeline workers are in-process threads — a power-off or API restart leaves
-    stale ``running`` rows that would otherwise block new starts. Cleared jobs
-    stay in Logging; re-run Complete auto / next step to resume from disk.
+        try:
+            return " ".join(psutil.Process(pid).cmdline())
+        except psutil.Error:
+            return ""
+    except ImportError:
+        pass
+    try:
+        raw = Path(f"/proc/{pid}/cmdline").read_bytes()
+        return raw.replace(b"\0", b" ").decode("utf-8", "replace")
+    except OSError:
+        return ""
+
+
+def _stop_leftover_process(data: dict[str, Any]) -> bool:
+    """Stop the CLI stage a previous server process left running for this job.
+
+    After an API restart the stage subprocess keeps running unsupervised (and holds the
+    local Qdrant lock), so the resumed run would collide with it. Only a process whose
+    command line is a Veramynd pipeline command for this job's output folder is stopped.
+    """
+    try:
+        pid = int(data.get("pid") or 0)
+    except (TypeError, ValueError):
+        return False
+    if pid <= 0:
+        return False
+    cmd = _process_cmdline(pid)
+    out = str(data.get("output_dir") or "")
+    if "veramynd_parser" not in cmd or (out and out not in cmd):
+        return False
+    try:
+        _stop_tree(pid)
+    except Exception:  # noqa: BLE001 — best effort; the resumed run reports any lock error
+        return False
+    return True
+
+
+def _auto_resume_enabled() -> bool:
+    return os.environ.get("VERAMYND_AUTO_RESUME", "1").strip().lower() not in ("0", "false", "no", "off")
+
+
+def recover_interrupted_jobs() -> int:
+    """Clean up runs a server restart interrupted, then continue the latest one.
+
+    Pipeline workers are in-process threads, so a restart or power-off ends them. For each
+    run that was queued, running or paused: stop any stage process it left behind, and mark
+    it interrupted. The most recent run that was running (not one a user paused) is then
+    started again automatically; it skips finished stages and lessons and continues from
+    saved output. Set VERAMYND_AUTO_RESUME=0 to only mark runs interrupted.
     """
     global _recovered_jobs, _active_job_id
     if _recovered_jobs:
@@ -301,6 +351,7 @@ def recover_interrupted_jobs() -> int:
     _recovered_jobs = True
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
     n = 0
+    resumable: list[dict[str, Any]] = []
     with _lock:
         _active_job_id = None
     for path in sorted(RUNS_DIR.glob("*.json")):
@@ -310,14 +361,18 @@ def recover_interrupted_jobs() -> int:
             continue
         if data.get("status") not in ACTIVE_STATUSES:
             continue
+        was_paused = data.get("status") == "paused"
+        stopped = _stop_leftover_process(data)
         data["status"] = "cancelled"
         data["error"] = "interrupted"
         data["message"] = (
-            "Interrupted (server or machine stopped). "
-            "Re-run Complete auto or the next step — finished stages are skipped from saved output."
+            "Interrupted (server or machine stopped)"
+            + (" — its unfinished stage was stopped" if stopped else "")
+            + ". Re-run Complete auto or the next step — finished stages are skipped from saved output."
         )
         data["updated_at"] = _now()
         data["current_step"] = data.get("current_step")
+        data["pid"] = None
         try:
             path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
             n += 1
@@ -329,9 +384,53 @@ def recover_interrupted_jobs() -> int:
                     job.error = "interrupted"
                     job.message = data["message"]
                     job.updated_at = data["updated_at"]
+                    job.pid = None
+            if not was_paused:
+                resumable.append(data)
         except OSError:
             continue
+
+    if resumable and _auto_resume_enabled():
+        last = max(resumable, key=lambda d: str(d.get("updated_at") or d.get("created_at") or ""))
+        _auto_resume(last)
     return n
+
+
+def _auto_resume(data: dict[str, Any]) -> None:
+    """Start the interrupted run again; it continues from saved output."""
+    old_id = str(data.get("id") or "")
+    steps = list(data.get("steps") or [])
+    mode = str(data.get("mode") or "full")
+    try:
+        job = start_job(
+            mode=mode,
+            step=steps[0] if mode == "step" and steps else None,
+            batch_id=data.get("batch_id"),
+            project_id=data.get("project_id"),
+            framework=str(data.get("framework") or ""),
+            confirm=True,
+        )
+    except Exception as e:  # noqa: BLE001 — e.g. its upload was deleted; leave it interrupted
+        note = f" Could not continue automatically: {e}"
+        _annotate_job_file(old_id, note)
+        return
+    _append_log(job, f"Resumed automatically after an interruption of run {old_id}.")
+    job.message = "Continuing automatically after an interruption — finished stages and lessons are skipped."
+    _persist(job)
+    _annotate_job_file(old_id, f" Continued automatically as run {job.id}.")
+
+
+def _annotate_job_file(job_id: str, note: str) -> None:
+    path = RUNS_DIR / f"{job_id}.json"
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        data["message"] = str(data.get("message") or "") + note
+        path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+        with _lock:
+            if job_id in _jobs:
+                _jobs[job_id].message = data["message"]
+    except (OSError, json.JSONDecodeError):
+        pass
 
 
 def _now() -> str:
@@ -1261,6 +1360,8 @@ def _run_cmd(job: PipelineJob, argv: list[str], *, cwd: Path | None = None) -> i
     with _lock:
         _procs[job.id] = proc
         paused_now = job.status == "paused"
+    job.pid = proc.pid
+    _persist(job)
     if paused_now:
         # Paused in the instant between the check above and the spawn: freeze it straight away.
         _set_tree_suspended(proc.pid, True)
@@ -1280,6 +1381,8 @@ def _run_cmd(job: PipelineJob, argv: list[str], *, cwd: Path | None = None) -> i
     code = proc.wait()
     with _lock:
         _procs.pop(job.id, None)
+    job.pid = None
+    _persist(job)
     return code
 
 
