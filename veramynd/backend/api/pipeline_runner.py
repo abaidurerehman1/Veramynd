@@ -523,12 +523,13 @@ def delete_jobs_for_project(
 
     deleted = 0
     global _active_job_id
+    keep = _live_job_ids()
 
     with _lock:
         to_drop = [
             j
             for j in list(_jobs.values())
-            if (pid and j.project_id == pid) or (bid and j.batch_id == bid)
+            if ((pid and j.project_id == pid) or (bid and j.batch_id == bid)) and j.id not in keep
         ]
         for j in to_drop:
             _jobs.pop(j.id, None)
@@ -547,32 +548,44 @@ def delete_jobs_for_project(
         jb = str(data.get("batch_id") or "") or None
         if (pid and jp == pid) or (bid and jb == bid):
             jid = str(data.get("id") or path.stem)
+            if jid in keep:
+                continue
             _unlink_job_files(jid, str(data.get("log_path") or ""))
             deleted += 1
 
     return {"ok": True, "deleted": deleted, "project_id": pid, "batch_id": bid}
 
 
+def _live_job_ids() -> set[str]:
+    """Jobs that are queued, running or paused in this server process (never delete these)."""
+    with _lock:
+        return {jid for jid, j in _jobs.items() if j.status in ACTIVE_STATUSES and jid in _resume_events}
+
+
 def clear_all_jobs() -> dict[str, Any]:
-    """Delete all pipeline job JSON + log files under ``backend/runs/``."""
-    global _active_job_id
+    """Delete finished pipeline job records and logs under ``backend/runs/``.
+
+    A run that is still queued, running or paused is kept (record, log and the
+    active-run slot), so clearing logs never makes the app lose track of it.
+    """
+    keep = _live_job_ids()
     deleted = 0
     with _lock:
-        ids = list(_jobs.keys())
-        for jid in ids:
+        for jid in [j for j in _jobs if j not in keep]:
             job = _jobs.pop(jid, None)
             _unlink_job_files(jid, job.log_path if job else "")
             deleted += 1
-        _active_job_id = None
 
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
     for path in list(RUNS_DIR.glob("*.json")) + list(RUNS_DIR.glob("*.log")):
+        if path.stem in keep:
+            continue
         try:
             path.unlink()
             deleted += 1
         except OSError:
             continue
-    return {"ok": True, "deleted": deleted}
+    return {"ok": True, "deleted": deleted, "kept_active": sorted(keep)}
 
 
 def job_log_tail(job_id: str, max_chars: int = 80_000) -> str:
@@ -1191,6 +1204,47 @@ def _set_tree_suspended(pid: int, suspend: bool) -> None:
         (ntdll.NtSuspendProcess if suspend else ntdll.NtResumeProcess)(handle)
     finally:
         kernel32.CloseHandle(handle)
+
+
+def _stop_orphan_pipeline_processes(job: PipelineJob) -> None:
+    """Stop Veramynd pipeline processes from this app that no current run owns.
+
+    Only one run may use the pipeline at a time, so a pipeline CLI process from this
+    app's Python that is not this server's current stage is a leftover (e.g. from before
+    a restart, or a record that was deleted). Left alive it keeps the local Qdrant
+    folder locked and every lesson fails with "already accessed by another instance".
+    """
+    with _lock:
+        owned = {p.pid for p in _procs.values()}
+    marker = f"{sys.executable} -m veramynd_parser"
+    candidates: list[int] = []
+    try:
+        import psutil  # type: ignore
+
+        for p in psutil.process_iter(["pid", "cmdline"]):
+            try:
+                cmd = " ".join(p.info.get("cmdline") or [])
+            except psutil.Error:
+                continue
+            if marker in cmd and p.info["pid"] not in owned and p.info["pid"] != os.getpid():
+                candidates.append(int(p.info["pid"]))
+    except ImportError:
+        proc_dir = Path("/proc")
+        if proc_dir.is_dir():
+            for d in proc_dir.iterdir():
+                if not d.name.isdigit():
+                    continue
+                pid = int(d.name)
+                if pid in owned or pid == os.getpid():
+                    continue
+                if marker in _process_cmdline(pid):
+                    candidates.append(pid)
+    for pid in candidates:
+        try:
+            _stop_tree(pid)
+            _append_log(job, f"Stopped a leftover pipeline process (pid {pid}) that was holding the vector database.")
+        except Exception:  # noqa: BLE001 — best effort; the stage reports any remaining lock
+            continue
 
 
 def _wait_if_paused(job: PipelineJob) -> None:
@@ -2031,6 +2085,7 @@ def _execute(job: PipelineJob) -> None:
         _append_log(job, f"Output: {output_root}")
         _append_log(job, f"Steps: {', '.join(job.steps)}")
 
+        _stop_orphan_pipeline_processes(job)
         already = set(artifact_completed_steps(output_root))
         if already:
             _append_log(
