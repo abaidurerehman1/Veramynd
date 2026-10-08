@@ -3,28 +3,24 @@ import { useEffect, useState } from 'react'
 // Landing ticker: live figures from the most recent finished pipeline run, scrolling continuously.
 type Metric = { label: string; value: string; note: string }
 
-type ProjectRow = {
-  id: string
-  name?: string
+// Public summary of the latest finished run (counts only; see GET /api/public/latest-run).
+type LatestRun = {
+  available: boolean
   framework?: string
   grade?: number | string | null
-  has_output?: boolean
-  run_status?: string
-}
-
-type Overview = {
-  readiness?: string
   last_reviewed?: string | null
   lessons?: number
   standards?: number
   standards_leaves?: number
   alignments?: number
-  review_required?: number
-  escalated?: number
+  full?: number
+  partial?: number
   alignment_coverage_pct?: number
-  grounded?: number
   positive_standards_cited?: number
-  by_status?: { full?: number; partial?: number; none?: number }
+  grounded?: number
+  escalated?: number
+  review_required?: number
+  projects_aligned?: number
 }
 
 // Shown only if the live figures cannot be loaded (Batch-1 gold-set results).
@@ -41,56 +37,33 @@ const n = (v?: number | null) => (typeof v === 'number' ? v.toLocaleString() : '
 const pct = (part?: number, whole?: number) =>
   typeof part === 'number' && whole ? `${Math.round((100 * part) / whole)}%` : '—'
 
-function toMetrics(project: ProjectRow, ov: Overview, readyCount: number): Metric[] {
+function toMetrics(r: LatestRun): Metric[] {
   // Uploads may have no framework/grade saved; fall back to plain labels instead of guessing.
-  const fw = (project.framework || '').trim()
-  const grade = project.grade != null && project.grade !== '' ? `Grade ${project.grade}` : ''
-  const full = ov.by_status?.full
-  const partial = ov.by_status?.partial
-  const when = ov.last_reviewed ? new Date(ov.last_reviewed).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }) : ''
+  const fw = (r.framework || '').trim()
+  const grade = r.grade != null && r.grade !== '' ? `Grade ${r.grade}` : ''
+  const when = r.last_reviewed ? new Date(r.last_reviewed).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }) : ''
   return [
-    {
-      label: 'Latest run',
-      value: [fw, grade].filter(Boolean).join(' · ') || when || 'Complete',
-      note: `${project.name || project.id}${when ? ` · ${when}` : ''}`,
-    },
-    { label: 'Lessons judged', value: n(ov.lessons), note: 'Lessons in the teacher guide that were judged' },
-    { label: fw ? `${fw} standards` : 'Framework standards', value: n(ov.standards), note: 'Standards in the state framework' },
-    { label: 'Alignments judged', value: n(ov.alignments), note: 'Lesson × standard pairs the judge evaluated' },
-    { label: 'Full matches', value: n(full), note: 'Every clause of the standard met' },
-    { label: 'Partial matches', value: n(partial), note: 'Some clauses met' },
-    { label: 'Coverage', value: typeof ov.alignment_coverage_pct === 'number' ? `${ov.alignment_coverage_pct}%` : '—', note: 'Share of leaf standards with at least one aligned lesson' },
-    { label: 'Standards cited', value: `${n(ov.positive_standards_cited)} of ${n(ov.standards_leaves)}`, note: 'Leaf standards cited by at least one lesson' },
-    { label: 'Evidence grounded', value: pct(ov.grounded, ov.alignments), note: 'Verdicts whose evidence was found on a page of the source' },
-    { label: 'Escalated', value: n(ov.escalated), note: 'Verdicts escalated to the stronger judge model' },
-    { label: 'Awaiting SME review', value: n(ov.review_required), note: 'Flagged citations waiting for an expert' },
-    { label: 'Projects aligned', value: n(readyCount), note: 'Curriculum projects with finished results' },
+    { label: 'Latest run', value: [fw, grade].filter(Boolean).join(' · ') || when || 'Complete', note: when ? `Finished ${when}` : 'Latest finished run' },
+    { label: 'Lessons judged', value: n(r.lessons), note: 'Lessons in the teacher guide that were judged' },
+    { label: fw ? `${fw} standards` : 'Framework standards', value: n(r.standards), note: 'Standards in the state framework' },
+    { label: 'Alignments judged', value: n(r.alignments), note: 'Lesson × standard pairs the judge evaluated' },
+    { label: 'Full matches', value: n(r.full), note: 'Every clause of the standard met' },
+    { label: 'Partial matches', value: n(r.partial), note: 'Some clauses met' },
+    { label: 'Coverage', value: typeof r.alignment_coverage_pct === 'number' ? `${r.alignment_coverage_pct}%` : '—', note: 'Share of leaf standards with at least one aligned lesson' },
+    { label: 'Standards cited', value: `${n(r.positive_standards_cited)} of ${n(r.standards_leaves)}`, note: 'Leaf standards cited by at least one lesson' },
+    { label: 'Evidence grounded', value: pct(r.grounded, r.alignments), note: 'Verdicts whose evidence was found on a page of the source' },
+    { label: 'Escalated', value: n(r.escalated), note: 'Verdicts escalated to the stronger judge model' },
+    { label: 'Awaiting SME review', value: n(r.review_required), note: 'Flagged citations waiting for an expert' },
+    { label: 'Projects aligned', value: n(r.projects_aligned), note: 'Curriculum projects with finished results' },
   ]
 }
 
-async function getJson<T>(url: string): Promise<T> {
-  const res = await fetch(url, { credentials: 'include' })
-  if (!res.ok) throw new Error(`HTTP ${res.status}`)
-  return (await res.json()) as T
-}
-
-/** Most recent project whose pipeline finished with alignments, plus how many are finished. */
+/** Latest finished run from the public summary endpoint (no sign-in needed). */
 async function loadLatestRun(): Promise<Metric[] | null> {
-  const { projects } = await getJson<{ projects: ProjectRow[] }>('/api/projects')
-  const candidates = projects.filter((p) => p.has_output && p.run_status === 'ready')
-  const overviews = await Promise.all(
-    candidates.map((p) =>
-      getJson<Overview>(`/api/overview?project_id=${encodeURIComponent(p.id)}`)
-        .then((ov) => ({ p, ov }))
-        .catch(() => null),
-    ),
-  )
-  const finished = overviews.filter(
-    (x): x is { p: ProjectRow; ov: Overview } => !!x && x.ov.readiness === 'ready' && (x.ov.alignments ?? 0) > 0,
-  )
-  if (!finished.length) return null
-  finished.sort((a, b) => Date.parse(b.ov.last_reviewed || '') - Date.parse(a.ov.last_reviewed || ''))
-  return toMetrics(finished[0].p, finished[0].ov, finished.length)
+  const res = await fetch('/api/public/latest-run')
+  if (!res.ok) throw new Error(`HTTP ${res.status}`)
+  const r = (await res.json()) as LatestRun
+  return r.available ? toMetrics(r) : null
 }
 
 export function MetricsTicker() {
