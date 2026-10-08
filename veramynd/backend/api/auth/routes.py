@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import os
+
 import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -14,6 +16,7 @@ from pydantic import BaseModel, EmailStr, Field, field_validator
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
+from .access import NOT_ALLOWED, email_allowed
 from ..layout import AVATARS_DIR, UPLOADS_DIR
 from .config import settings
 from .db import get_db, init_db
@@ -137,13 +140,23 @@ class ProjectLinkIn(BaseModel):
     meta_json: str | None = None
 
 
+def _cookie_secure() -> bool:
+    flag = os.getenv("COOKIE_SECURE", "").strip().lower()
+    if flag in ("1", "true", "yes"):
+        return True
+    if flag in ("0", "false", "no"):
+        return False
+    return str(settings()["app_base_url"]).lower().startswith("https://")
+
+
 def _set_auth_cookie(response: Response, token: str) -> None:
     response.set_cookie(
         key=COOKIE_NAME,
         value=token,
         httponly=True,
         samesite="lax",
-        secure=False,
+        # Only sent over HTTPS once the site runs on an https:// domain (or COOKIE_SECURE=1).
+        secure=_cookie_secure(),
         max_age=int(settings()["jwt_expire_hours"]) * 3600,
         path="/",
     )
@@ -199,6 +212,8 @@ def get_current_user(
     user = db.get(User, int(payload["sub"]))
     if not user:
         raise HTTPException(401, "User not found")
+    if not email_allowed(user.email):
+        raise HTTPException(403, NOT_ALLOWED)
     return user
 
 
@@ -234,6 +249,8 @@ def auth_providers() -> dict:
 @router.post("/signup")
 def signup(body: SignupIn, db: Annotated[Session, Depends(get_db)]) -> dict:
     email = body.email.lower().strip()
+    if not email_allowed(email):
+        raise HTTPException(403, NOT_ALLOWED)
     existing = db.scalar(select(User).where(User.email == email))
     if existing:
         raise HTTPException(400, "An account with this email already exists")
@@ -287,6 +304,8 @@ def login(body: LoginIn, response: Response, db: Annotated[Session, Depends(get_
         raise HTTPException(401, "Invalid email or password")
     if not user.email_verified:
         raise HTTPException(403, "Please verify your email before signing in")
+    if not email_allowed(user.email):
+        raise HTTPException(403, NOT_ALLOWED)
 
     token = create_access_token(user.id, user.email)
     _set_auth_cookie(response, token)
@@ -446,6 +465,8 @@ async def google_callback(request: Request, db: Annotated[Session, Depends(get_d
     picture = str(info.get("picture") or "").strip() or None
     if not email or not sub:
         raise HTTPException(400, "Google account is missing email")
+    if not email_allowed(email):
+        raise HTTPException(403, NOT_ALLOWED)
 
     user = db.scalar(select(User).where(User.email == email))
     if not user:

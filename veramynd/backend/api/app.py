@@ -13,8 +13,8 @@ from pathlib import Path
 from typing import Any
 from uuid import uuid4
 
-from fastapi import FastAPI, File, Form, HTTPException, Query, UploadFile
-from fastapi.responses import FileResponse, HTMLResponse, StreamingResponse
+from fastapi import FastAPI, File, Form, HTTPException, Query, Request, UploadFile
+from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from starlette.middleware.sessions import SessionMiddleware
@@ -39,6 +39,7 @@ from .layout import ASSETS_DIR, RESERVED_UPLOAD_DIRS, UI_DIST, UPLOADS_DIR, WEB_
 from .auth import bootstrap_auth, router as auth_router
 from .review_decisions import router as review_decisions_router
 from .auth.config import settings as auth_settings
+from .auth.access import NOT_ALLOWED, access_restricted, email_allowed
 
 _MAX_UPLOAD_BYTES = 200 * 1024 * 1024
 _SAFE_NAME = re.compile(r"[^A-Za-z0-9._-]+")
@@ -53,6 +54,98 @@ app.include_router(auth_router)
 app.include_router(review_decisions_router)
 
 
+# ---------- Sign-in required for the API ----------
+# Everything under /api/ needs a valid session, except signing in itself, the health check
+# and the landing page's public summary. Pages and static files are not affected.
+_PUBLIC_API = ("/api/auth/", "/api/public/")
+_PUBLIC_API_EXACT = {"/api/health"}
+
+
+def _signed_in_user(request: Request):
+    from .auth.db import SessionLocal
+    from .auth.models import User
+    from .auth.security import decode_access_token
+
+    token = request.cookies.get("veramynd_token")
+    header = request.headers.get("Authorization") or ""
+    if not token and header.lower().startswith("bearer "):
+        token = header[7:].strip()
+    payload = decode_access_token(token) if token else None
+    if not payload or "sub" not in payload:
+        return None
+    db = SessionLocal()
+    try:
+        user = db.get(User, int(payload["sub"]))
+        return user if user and user.email_verified else None
+    except (ValueError, TypeError):
+        return None
+    finally:
+        db.close()
+
+
+@app.middleware("http")
+async def require_sign_in(request: Request, call_next):
+    path = request.url.path
+    if (
+        request.method != "OPTIONS"
+        and path.startswith("/api/")
+        and path not in _PUBLIC_API_EXACT
+        and not path.startswith(_PUBLIC_API)
+    ):
+        user = await run_in_threadpool(_signed_in_user, request)
+        if user is None:
+            return JSONResponse({"detail": "Sign in to continue."}, status_code=401)
+        if not email_allowed(user.email):
+            return JSONResponse({"detail": NOT_ALLOWED}, status_code=403)
+    return await call_next(request)
+
+
+@app.get("/api/public/latest-run")
+def public_latest_run() -> dict:
+    """Summary numbers of the most recent finished run, for the public landing page.
+
+    Counts only: no project or client names, lesson text, evidence or file paths.
+    """
+    finished: list[tuple[str, Any, Any]] = []
+    for cfg in list_project_configs():
+        try:
+            card = project_card(cfg)
+            if not card.get("has_output") or card.get("run_status") != "ready":
+                continue
+            cat = get_catalog(cfg.id)
+            if cat.error:
+                continue
+            ov = cat.overview()
+            if getattr(ov, "readiness", "") == "ready" and (ov.alignments or 0) > 0:
+                finished.append((str(ov.last_reviewed or ""), cfg, ov))
+        except Exception:  # noqa: BLE001 — a broken project must not break the landing page
+            continue
+    if not finished:
+        return {"available": False}
+    finished.sort(key=lambda x: x[0], reverse=True)
+    _, cfg, ov = finished[0]
+    by = getattr(ov, "by_status", None) or {}
+    by = by if isinstance(by, dict) else getattr(by, "model_dump", lambda: {})()
+    return {
+        "available": True,
+        "framework": cfg.framework or "",
+        "grade": cfg.grade,
+        "last_reviewed": ov.last_reviewed,
+        "lessons": ov.lessons,
+        "standards": ov.standards,
+        "standards_leaves": ov.standards_leaves,
+        "alignments": ov.alignments,
+        "full": by.get("full"),
+        "partial": by.get("partial"),
+        "alignment_coverage_pct": ov.alignment_coverage_pct,
+        "positive_standards_cited": ov.positive_standards_cited,
+        "grounded": ov.grounded,
+        "escalated": ov.escalated,
+        "review_required": ov.review_required,
+        "projects_aligned": len(finished),
+    }
+
+
 def _catalog(project_id: str | None):
     try:
         cat = get_catalog(project_id)
@@ -65,6 +158,14 @@ def _catalog(project_id: str | None):
 @app.on_event("startup")
 def _startup() -> None:
     bootstrap_auth()
+    if str(auth_settings()["jwt_secret"]) == "change-me-in-production":
+        print("WARNING: JWT_SECRET is the default; set a long random JWT_SECRET in backend/.env", flush=True)
+    if not access_restricted():
+        print(
+            "NOTE: any verified account can use Veramynd. To limit access, set VERAMYND_ALLOWED_DOMAINS "
+            "and/or VERAMYND_ALLOWED_EMAILS in backend/.env",
+            flush=True,
+        )
     pipeline_runner.recover_interrupted_jobs()
     get_catalog().ensure()
     # Load the upload-check readers in the background so the first "Save inputs" is not slowed.

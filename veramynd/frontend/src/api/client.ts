@@ -6,6 +6,11 @@ async function api<T>(path: string): Promise<T> {
 
   if (!res.ok) {
 
+    // Session expired or signed out elsewhere: go to sign-in instead of showing errors.
+    if (res.status === 401 && !window.location.pathname.startsWith('/login')) {
+      window.location.assign(`/login?next=${encodeURIComponent(window.location.pathname)}`)
+    }
+
     throw await responseError(res)
 
   }
