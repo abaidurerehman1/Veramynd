@@ -481,7 +481,7 @@ export function LoggingPage({ reloadKey = 0 }: { reloadKey?: number }) {
       <ConfirmDialog
         open={confirmClear}
         title="Clear all logs?"
-        body="Permanently delete all pipeline job records and log files from this dashboard. This cannot be undone."
+        body="Permanently delete the records and log files of finished runs. A run that is still running or paused is kept and keeps going. This cannot be undone."
         confirmLabel="Clear logs"
         danger
         busy={clearing}
