@@ -5,6 +5,7 @@ import {
   STATE_NAMES,
   gradeLabel,
   gradesOf,
+  cleanQuote,
   lessonName,
   pageRange,
   rememberGrade,
@@ -139,19 +140,61 @@ function ProjectLens({ project, lens, onOpen }: { project: ProjectAlign; lens: L
   )
 }
 
+type Pair = { match: 'full' | 'partial'; rows: AlignmentRow[] }
+
+/** Strongest match across a lesson × standard pair's evidence rows. */
+function pairMatch(rows: AlignmentRow[]): 'full' | 'partial' {
+  return rows.some((r) => r.matched_status === 'full') ? 'full' : 'partial'
+}
+
+const CONFIDENCE_TEXT: Record<string, string> = { high: 'High confidence', medium: 'Medium confidence', low: 'Low confidence' }
+
+/** The judge's evidence for one lesson × one standard, shown in place. */
+function PairEvidence({
+  rows,
+  standardText,
+  onOpenAll,
+}: {
+  rows: AlignmentRow[]
+  standardText?: string
+  onOpenAll: () => void
+}) {
+  return (
+    <div className="pair-ev" role="region" aria-label="Evidence for this lesson and standard">
+      {standardText ? <p className="pair-ev-std">{standardText}</p> : null}
+      {rows.map((r) => (
+        <div className="pair-ev-item" key={r.id}>
+          <div className="pair-ev-top">
+            <MatchBadge match={r.matched_status} />
+            <span className="pair-ev-page">{r.evidence_page ? pageRange([r.evidence_page]) : 'Teacher guide'}</span>
+            {r.confidence ? <span className="pair-ev-conf">{CONFIDENCE_TEXT[r.confidence] ?? r.confidence}</span> : null}
+          </div>
+          {r.evidence ? <blockquote className="pair-ev-quote">“{cleanQuote(r.evidence)}”</blockquote> : null}
+          {r.rationale ? <p className="pair-ev-why">{r.rationale}</p> : null}
+        </div>
+      ))}
+      <button type="button" className="pair-ev-all" onClick={onOpenAll}>
+        Compare all lessons for this standard →
+      </button>
+    </div>
+  )
+}
+
+function Chevron({ open }: { open: boolean }) {
+  return <span className={`rs-chev${open ? ' open' : ''}`} aria-hidden="true" />
+}
+
 function ByResource({ project, rows, onOpen }: { project: ProjectAlign; rows: AlignmentRow[]; onOpen: (code: string) => void }) {
   const leafByCode = useMemo(() => new Map(project.leaves.map((l) => [l.code, l])), [project])
+  const [openLesson, setOpenLesson] = useState<string | null>(null)
+  const [openStd, setOpenStd] = useState<string | null>(null)
   const lessons = useMemo(() => {
-    const map = new Map<string, { title: string; pages: number[]; stds: Map<string, 'full' | 'partial'> }>()
+    const map = new Map<string, { title: string; pages: number[]; stds: Map<string, AlignmentRow[]> }>()
     rows.forEach((r) => {
       if (r.matched_status === 'none') return
-      const entry = map.get(r.resource_id) ?? {
-        title: r.lesson_title,
-        pages: [] as number[],
-        stds: new Map<string, 'full' | 'partial'>(),
-      }
+      const entry = map.get(r.resource_id) ?? { title: r.lesson_title, pages: [] as number[], stds: new Map<string, AlignmentRow[]>() }
       if (r.evidence_page) entry.pages.push(r.evidence_page)
-      if (entry.stds.get(r.standard_code) !== 'full') entry.stds.set(r.standard_code, r.matched_status)
+      entry.stds.set(r.standard_code, [...(entry.stds.get(r.standard_code) ?? []), r])
       map.set(r.resource_id, entry)
     })
     return [...map.entries()].sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
@@ -161,12 +204,24 @@ function ByResource({ project, rows, onOpen }: { project: ProjectAlign; rows: Al
 
   return (
     <div className="rs-list">
+      <p className="rs-hint">Select a lesson to see the standards it earns, then a standard to see the evidence.</p>
       {lessons.map(([rid, l]) => {
-        const stds = [...l.stds.entries()].sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
-        const full = stds.filter(([, m]) => m === 'full').length
+        const stds: [string, Pair][] = [...l.stds.entries()]
+          .map(([code, rs]): [string, Pair] => [code, { match: pairMatch(rs), rows: rs }])
+          .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+        const full = stds.filter(([, p]) => p.match === 'full').length
+        const isOpen = openLesson === rid
         return (
-          <div className="rs-card" key={rid}>
-            <div className="rs-head">
+          <div className={`rs-card${isOpen ? ' is-open' : ''}`} key={rid}>
+            <button
+              type="button"
+              className="rs-head rs-head-click"
+              aria-expanded={isOpen}
+              onClick={() => {
+                setOpenLesson(isOpen ? null : rid)
+                setOpenStd(null)
+              }}
+            >
               <div>
                 <div className="rs-name">{lessonName(rid, l.title)}</div>
                 <div className="rs-loc">
@@ -181,17 +236,35 @@ function ByResource({ project, rows, onOpen }: { project: ProjectAlign; rows: Al
                   {full} full · {stds.length - full} partial
                 </div>
               </div>
-            </div>
-            {stds.map(([code, match]) => (
-              <button type="button" className="rs-std" key={code} onClick={() => onOpen(code)}>
-                <span className="std-code">{code}</span>
-                <span className="rv-strand">{leafByCode.get(code)?.domainLabel ?? ''}</span>
-                <span className="rs-right">
-                  <MatchBadge match={match} />
-                  <span className="drill">Evidence →</span>
-                </span>
-              </button>
-            ))}
+              <Chevron open={isOpen} />
+            </button>
+            {isOpen
+              ? stds.map(([code, pair]) => {
+                  const key = `${rid}|${code}`
+                  const stdOpen = openStd === key
+                  const leaf = leafByCode.get(code)
+                  return (
+                    <div className="rs-std-wrap" key={code}>
+                      <button
+                        type="button"
+                        className={`rs-std${stdOpen ? ' is-open' : ''}`}
+                        aria-expanded={stdOpen}
+                        onClick={() => setOpenStd(stdOpen ? null : key)}
+                      >
+                        <span className="std-code">{code}</span>
+                        <span className="rv-strand">{leaf?.domainLabel ?? ''}</span>
+                        <span className="rs-right">
+                          <MatchBadge match={pair.match} />
+                          <span className="drill">{stdOpen ? 'Hide evidence' : 'Evidence'}</span>
+                        </span>
+                      </button>
+                      {stdOpen ? (
+                        <PairEvidence rows={pair.rows} standardText={leaf?.text} onOpenAll={() => onOpen(code)} />
+                      ) : null}
+                    </div>
+                  )
+                })
+              : null}
           </div>
         )
       })}
@@ -200,13 +273,16 @@ function ByResource({ project, rows, onOpen }: { project: ProjectAlign; rows: Al
 }
 
 function ByStandard({ project, rows, onOpen }: { project: ProjectAlign; rows: AlignmentRow[]; onOpen: (code: string) => void }) {
+  const [openStdCode, setOpenStdCode] = useState<string | null>(null)
+  const [openPair, setOpenPair] = useState<string | null>(null)
   const lessonsByStd = useMemo(() => {
-    const map = new Map<string, Map<string, { title: string; pages: number[] }>>()
+    const map = new Map<string, Map<string, { title: string; pages: number[]; rows: AlignmentRow[] }>>()
     rows.forEach((r) => {
       if (r.matched_status === 'none') return
-      const per = map.get(r.standard_code) ?? new Map<string, { title: string; pages: number[] }>()
-      const entry = per.get(r.resource_id) ?? { title: r.lesson_title, pages: [] as number[] }
+      const per = map.get(r.standard_code) ?? new Map<string, { title: string; pages: number[]; rows: AlignmentRow[] }>()
+      const entry = per.get(r.resource_id) ?? { title: r.lesson_title, pages: [] as number[], rows: [] as AlignmentRow[] }
       if (r.evidence_page) entry.pages.push(r.evidence_page)
+      entry.rows.push(r)
       per.set(r.resource_id, entry)
       map.set(r.standard_code, per)
     })
@@ -215,48 +291,64 @@ function ByStandard({ project, rows, onOpen }: { project: ProjectAlign; rows: Al
 
   return (
     <div className="rs-list">
+      <p className="rs-hint">Select a standard to see the lessons that cover it, then a lesson to see the evidence.</p>
       {project.leaves.map((leaf) => {
         const lessons = [...(lessonsByStd.get(leaf.code)?.entries() ?? [])].sort(([a], [b]) =>
           a.localeCompare(b, undefined, { numeric: true }),
         )
-        const open = leaf.status !== 'gap'
-        const head = (
-          <>
-            <div>
-              <div className="rs-name">
-                {leaf.code} <span className="rv-strand">{leaf.domainLabel}</span>
-              </div>
-              <div className="rs-loc">{leaf.text}</div>
-            </div>
-            <div className="rs-sum">
-              <RollBadge status={leaf.status} fill />
-              {open ? (
-                <div className="rs-evlink">
-                  <span className="drill">Evidence →</span>
-                </div>
-              ) : null}
-            </div>
-          </>
-        )
+        const isOpen = openStdCode === leaf.code
         return (
-          <div className="rs-card" key={leaf.code}>
-            {open ? (
-              <button type="button" className="rs-head rs-head-click" onClick={() => onOpen(leaf.code)}>
-                {head}
-              </button>
-            ) : (
-              <div className="rs-head">{head}</div>
-            )}
-            {lessons.length ? (
-              lessons.map(([rid, l]) => (
-                <div className="rs-rsrc" key={rid}>
-                  <span className="rs-rsrc-name">{lessonName(rid, l.title)}</span>
-                  <span className="rs-rsrc-loc">{pageRange(l.pages)}</span>
+          <div className={`rs-card${isOpen ? ' is-open' : ''}`} key={leaf.code}>
+            <button
+              type="button"
+              className="rs-head rs-head-click"
+              aria-expanded={isOpen}
+              onClick={() => {
+                setOpenStdCode(isOpen ? null : leaf.code)
+                setOpenPair(null)
+              }}
+            >
+              <div>
+                <div className="rs-name">
+                  {leaf.code} <span className="rv-strand">{leaf.domainLabel}</span>
                 </div>
-              ))
-            ) : (
-              <div className="rs-none">No aligned lesson in this curriculum</div>
-            )}
+                <div className="rs-loc">{leaf.text}</div>
+              </div>
+              <div className="rs-sum">
+                <RollBadge status={leaf.status} fill />
+                <div className="rs-sum-d">
+                  {lessons.length} lesson{lessons.length === 1 ? '' : 's'}
+                </div>
+              </div>
+              <Chevron open={isOpen} />
+            </button>
+            {isOpen ? (
+              lessons.length ? (
+                lessons.map(([rid, l]) => {
+                  const key = `${leaf.code}|${rid}`
+                  const pairOpen = openPair === key
+                  return (
+                    <div className="rs-std-wrap" key={rid}>
+                      <button
+                        type="button"
+                        className={`rs-rsrc rs-rsrc-click${pairOpen ? ' is-open' : ''}`}
+                        aria-expanded={pairOpen}
+                        onClick={() => setOpenPair(pairOpen ? null : key)}
+                      >
+                        <span className="rs-rsrc-name">{lessonName(rid, l.title)}</span>
+                        <span className="rs-right rs-right-inline">
+                          <MatchBadge match={pairMatch(l.rows)} />
+                          <span className="rs-rsrc-loc">{pageRange(l.pages)}</span>
+                        </span>
+                      </button>
+                      {pairOpen ? <PairEvidence rows={l.rows} onOpenAll={() => onOpen(leaf.code)} /> : null}
+                    </div>
+                  )
+                })
+              ) : (
+                <div className="rs-none">No aligned lesson in this curriculum</div>
+              )
+            ) : null}
           </div>
         )
       })}
