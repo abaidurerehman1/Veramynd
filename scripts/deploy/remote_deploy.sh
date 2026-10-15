@@ -74,9 +74,33 @@ GOOGLE_REDIRECT_URI=${GOOGLE_REDIRECT_URI:-}
 EOF
 fi
 chmod 600 "${BACKEND_ENV_FILE}"
-# If CI still has localhost URLs, rewrite to this server's public host:port.
+DOMAIN="${VERAMYND_DOMAIN:-veramynd.paisolsolutions.com}"
+if [[ -n "${DOMAIN}" ]]; then
+  # Point email / OAuth links at the HTTPS domain before the API starts
+  # (the API reads backend/.env once at startup).
+  python3 - "${BACKEND_ENV_FILE}" "https://${DOMAIN}" <<'PY'
+import sys
+from pathlib import Path
+path = Path(sys.argv[1])
+base = sys.argv[2].rstrip("/")
+text = path.read_text(encoding="utf-8")
+out = []
+for line in text.splitlines():
+    if line.startswith("APP_BASE_URL="):
+        out.append(f'APP_BASE_URL="{base}"')
+    elif line.startswith("API_BASE_URL="):
+        out.append(f'API_BASE_URL="{base}"')
+    elif line.startswith("GOOGLE_REDIRECT_URI="):
+        out.append(f'GOOGLE_REDIRECT_URI="{base}/api/auth/oauth/google/callback"')
+    else:
+        out.append(line)
+path.write_text("\n".join(out) + "\n", encoding="utf-8")
+print("backend public URLs set to the domain (values redacted)")
+PY
+fi
+# Without a domain, if CI still has localhost URLs, rewrite to this server's public host:port.
 PUBLIC_HOST="$(curl -fsS ifconfig.me 2>/dev/null || true)"
-if [[ -n "${PUBLIC_HOST}" ]]; then
+if [[ -z "${DOMAIN}" && -n "${PUBLIC_HOST}" ]]; then
   python3 - "${BACKEND_ENV_FILE}" "${PUBLIC_HOST}" "${PORT}" <<'PY'
 import sys
 from pathlib import Path
@@ -217,7 +241,6 @@ fi
 
 echo "OK: Veramynd API on 127.0.0.1:${PORT}/ (pid $(cat "${PID_FILE}"))"
 
-DOMAIN="${VERAMYND_DOMAIN:-}"
 LIVE_URL=""
 
 echo "==> Configure public HTTPS front door"
@@ -225,7 +248,12 @@ CLOUDFLARED_BIN="${TOOLS_DIR}/cloudflared"
 CADDY_BIN="${TOOLS_DIR}/caddy"
 mkdir -p "${TOOLS_DIR}" "${LOG_DIR}"
 
-if [[ -n "${DOMAIN}" ]]; then
+if [[ -n "${DOMAIN}" ]] && ! pgrep -f "${CADDY_BIN} run --config" >/dev/null 2>&1 \
+  && (exec 3<>/dev/tcp/127.0.0.1/443) 2>/dev/null; then
+  # Another web server (e.g. nginx) already serves HTTPS here and proxies the domain to us.
+  echo "Port 443 is already served by another web server; skipping Caddy."
+  LIVE_URL="https://${DOMAIN}"
+elif [[ -n "${DOMAIN}" ]]; then
   # Prefer Caddy + Let's Encrypt for a clean https://domain URL.
   if [[ ! -x "${CADDY_BIN}" ]]; then
     echo "Downloading Caddy..."
@@ -249,27 +277,7 @@ EOF
     > "${LOG_DIR}/caddy.log" 2>&1 &
   echo $! > "${APP_ROOT}/caddy.pid"
   LIVE_URL="https://${DOMAIN}"
-  # Point auth links at the HTTPS domain.
-  python3 - "${BACKEND_ENV_FILE}" "${LIVE_URL}" <<'PY'
-import sys
-from pathlib import Path
-path = Path(sys.argv[1])
-base = sys.argv[2].rstrip("/")
-text = path.read_text(encoding="utf-8")
-out = []
-for line in text.splitlines():
-    if line.startswith("APP_BASE_URL="):
-        out.append(f'APP_BASE_URL="{base}"')
-    elif line.startswith("API_BASE_URL="):
-        out.append(f'API_BASE_URL="{base}"')
-    elif line.startswith("GOOGLE_REDIRECT_URI="):
-        out.append(f'GOOGLE_REDIRECT_URI="{base}/api/auth/oauth/google/callback"')
-    else:
-        out.append(line)
-path.write_text("\n".join(out) + "\n", encoding="utf-8")
-PY
-  cp "${BACKEND_ENV_FILE}" "${APP_ROOT}/backend.env"
-  chmod 600 "${APP_ROOT}/backend.env"
+  # Auth links were already pointed at the domain before the API started.
 else
   # No custom domain: Cloudflare quick tunnel → stable-enough https://*.trycloudflare.com
   if [[ ! -x "${CLOUDFLARED_BIN}" ]]; then
