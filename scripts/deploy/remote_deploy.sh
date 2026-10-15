@@ -217,7 +217,7 @@ fi
 
 echo "OK: Veramynd API on 127.0.0.1:${PORT}/ (pid $(cat "${PID_FILE}"))"
 
-DOMAIN="${VERAMYND_DOMAIN:-}"
+DOMAIN="${VERAMYND_DOMAIN:-veramynd.paisolsolutions.com}"
 LIVE_URL=""
 
 echo "==> Configure public HTTPS front door"
