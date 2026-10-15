@@ -27,11 +27,17 @@ def send_email(to_email: str, subject: str, html_body: str, text_body: str | Non
     msg.add_alternative(html_body, subtype="html")
 
     port = int(cfg["smtp_port"])
-    with smtplib.SMTP(host, port, timeout=30) as smtp:
-        if cfg["smtp_use_tls"]:
-            smtp.starttls()
-        smtp.login(user, password)
-        smtp.send_message(msg)
+    # Port 465 is SSL from the first byte (e.g. Gmail); other ports upgrade with STARTTLS.
+    if port == 465:
+        with smtplib.SMTP_SSL(host, port, timeout=30) as smtp:
+            smtp.login(user, password)
+            smtp.send_message(msg)
+    else:
+        with smtplib.SMTP(host, port, timeout=30) as smtp:
+            if cfg["smtp_use_tls"]:
+                smtp.starttls()
+            smtp.login(user, password)
+            smtp.send_message(msg)
     log.info("Sent email to %s (%s)", to_email, subject)
 
 

@@ -10,6 +10,8 @@ export type AuthUser = {
 }
 
 const AUTH_FETCH_TIMEOUT_MS = 8_000
+// Sign-up and password reset wait for the email to send (SMTP timeout is 30s server-side).
+export const AUTH_EMAIL_TIMEOUT_MS = 45_000
 
 async function fetchWithTimeout(
   path: string,
@@ -26,7 +28,7 @@ async function fetchWithTimeout(
     })
   } catch (err) {
     if (err instanceof DOMException && err.name === 'AbortError') {
-      throw new Error('Auth request timed out — is the API running on port 8000?')
+      throw new Error('Auth request timed out — the server took too long to respond. Please try again.')
     }
     throw err
   } finally {
@@ -36,7 +38,7 @@ async function fetchWithTimeout(
 
 export async function authApi<T>(
   path: string,
-  opts?: RequestInit & { json?: unknown },
+  opts?: RequestInit & { json?: unknown; timeoutMs?: number },
 ): Promise<T> {
   const headers: Record<string, string> = {
     ...(opts?.headers as Record<string, string> | undefined),
@@ -46,11 +48,15 @@ export async function authApi<T>(
     headers['Content-Type'] = 'application/json'
     body = JSON.stringify(opts.json)
   }
-  const res = await fetchWithTimeout(path, {
-    ...opts,
-    headers,
-    body,
-  })
+  const res = await fetchWithTimeout(
+    path,
+    {
+      ...opts,
+      headers,
+      body,
+    },
+    opts?.timeoutMs,
+  )
   const text = await res.text()
   let data: unknown = null
   try {
