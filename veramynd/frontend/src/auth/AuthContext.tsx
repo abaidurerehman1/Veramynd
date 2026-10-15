@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from 'react'
 import {
+  AUTH_EMAIL_TIMEOUT_MS,
   authApi,
   fetchMe,
   removeAvatar as removeAvatarApi,
@@ -77,6 +78,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const res = await authApi<{ message: string }>('/api/auth/signup', {
       method: 'POST',
       json: { name, email, password },
+      timeoutMs: AUTH_EMAIL_TIMEOUT_MS,
     })
     return res.message
   }, [])
