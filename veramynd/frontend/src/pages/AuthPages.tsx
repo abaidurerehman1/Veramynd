@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
-import { authApi } from '../api/auth'
+import { AUTH_EMAIL_TIMEOUT_MS, authApi } from '../api/auth'
 import { useAuth } from '../auth/AuthContext'
 import { Wordmark } from '../components/layout/Wordmark'
 
@@ -295,6 +295,7 @@ export function ForgotPasswordPage() {
       const res = await authApi<{ message: string }>('/api/auth/forgot-password', {
         method: 'POST',
         json: { email: email.trim() },
+        timeoutMs: AUTH_EMAIL_TIMEOUT_MS,
       })
       setInfo(res.message)
     } catch (err) {
